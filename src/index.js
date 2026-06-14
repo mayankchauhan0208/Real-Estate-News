@@ -55,6 +55,7 @@ const requiredPayloadFields = [
   "newsLink",
   "thumbnailImage",
   "postedBy",
+  "createdAt",
   "postedByLogo"
 ];
 
@@ -227,6 +228,7 @@ function toApiPayload(article) {
     newsLink: article.newsLink,
     thumbnailImage: article.thumbnailImage,
     postedBy: article.postedBy,
+    createdAt: article.createdAt || article.fetchedAt || new Date().toISOString(),
     postedByLogo: article.postedByLogo
   };
 }
@@ -266,6 +268,7 @@ function createTestArticle() {
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
     postedBy: "PropertyMaster Automation",
     postedByLogo: "https://www.google.com/s2/favicons?domain=propertymaster.com&sz=128",
+    createdAt: timestamp,
     publishedAt: timestamp,
     fetchedAt: timestamp
   };
@@ -332,6 +335,7 @@ async function fetchFeed(sourceUrl) {
       thumbnailImage: rawArticle.thumbnailImage,
       postedBy: rawArticle.postedBy,
       postedByLogo: rawArticle.postedByLogo,
+      createdAt: rawArticle.fetchedAt,
       publishedAt: rawArticle.publishedAt,
       fetchedAt: rawArticle.fetchedAt
     });
@@ -423,6 +427,7 @@ async function fetchPage(sourceUrl) {
       thumbnailImage: absoluteUrl($(element).find("img").first().attr("src"), sourceUrl),
       postedBy: publisher,
       postedByLogo: publisherLogo,
+      createdAt: new Date().toISOString(),
       publishedAt: null,
       fetchedAt: new Date().toISOString()
     });

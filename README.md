@@ -57,6 +57,7 @@ The script sends one POST per article:
   "newsLink": "https://source.example/article",
   "thumbnailImage": "https://source.example/image.jpg",
   "postedBy": "Times of India",
+  "createdAt": "2026-06-14T06:50:00.000Z",
   "postedByLogo": "https://source.example/logo.png"
 }
 ```
