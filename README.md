@@ -36,6 +36,7 @@ Optional repository variable:
 - `MAX_ITEMS_PER_RUN`: Default is `30`.
 - `MAX_ITEMS_PER_SOURCE`: Default is `10`.
 - `DEFAULT_CITY_CODE`: Default is `gurugram`.
+- `ALLOW_DEFAULT_CITY_CODE`: Default is `false`. Keep this false to skip articles where Gurugram/Faridabad cannot be detected.
 
 The workflow is already scheduled for every 10 minutes:
 
@@ -66,7 +67,7 @@ If `APP_API_KEY` is provided, the script also sends:
 Authorization: Bearer YOUR_APP_API_KEY
 ```
 
-Supported API city codes are `gurugram` and `faridabad`. Greater Faridabad and Neharpar news is sent as `faridabad`; Sohna and Pataudi news is sent as `gurugram`. The script detects the city from the title, description, and link. If it cannot detect a city, it uses `DEFAULT_CITY_CODE`.
+Supported API city codes are `gurugram` and `faridabad`. Greater Faridabad and Neharpar news is sent as `faridabad`; Sohna and Pataudi news is sent as `gurugram`. The script detects the city from the title, description, and link. If it cannot detect a target city, the article is skipped unless `ALLOW_DEFAULT_CITY_CODE` is set to `true`.
 
 ## Default sources
 

@@ -167,7 +167,17 @@ function detectCityCode(article) {
     rule.keywords.some((keyword) => haystack.includes(keyword))
   );
 
-  return match?.code || env("DEFAULT_CITY_CODE", "gurugram");
+  return match?.code || "";
+}
+
+function applyCityCode(article) {
+  const detectedCityCode = detectCityCode(article);
+  const allowDefaultCityCode = env("ALLOW_DEFAULT_CITY_CODE", "false").toLowerCase() === "true";
+
+  return {
+    ...article,
+    cityCode: detectedCityCode || (allowDefaultCityCode ? env("DEFAULT_CITY_CODE", "gurugram") : "")
+  };
 }
 
 async function readSentIds() {
@@ -218,10 +228,9 @@ async function fetchFeed(sourceUrl) {
       fetchedAt: new Date().toISOString()
     };
 
-    const article = {
+    const article = applyCityCode({
       title: rawArticle.title,
       description: rawArticle.description || rawArticle.title,
-      cityCode: detectCityCode(rawArticle),
       isActive: true,
       newsLink: rawArticle.newsLink,
       thumbnailImage: rawArticle.thumbnailImage,
@@ -229,7 +238,7 @@ async function fetchFeed(sourceUrl) {
       postedByLogo: rawArticle.postedByLogo,
       publishedAt: rawArticle.publishedAt,
       fetchedAt: rawArticle.fetchedAt
-    };
+    });
 
     return {
       ...article,
@@ -328,16 +337,12 @@ async function fetchPage(sourceUrl) {
 
   for (const candidate of limitedCandidates) {
     const metadata = await fetchArticleMetadata(candidate.newsLink, candidate);
-    const article = {
+    const article = applyCityCode({
       ...candidate,
       ...metadata,
       description: stripHtml(metadata.description || candidate.description),
-      thumbnailImage: absoluteUrl(metadata.thumbnailImage || candidate.thumbnailImage, candidate.newsLink),
-      cityCode: detectCityCode({
-        ...candidate,
-        description: metadata.description || candidate.description
-      })
-    };
+      thumbnailImage: absoluteUrl(metadata.thumbnailImage || candidate.thumbnailImage, candidate.newsLink)
+    });
 
     articles.push({
       ...article,
@@ -414,7 +419,7 @@ async function main() {
   }
 
   const uniqueArticles = allArticles
-    .filter((article) => article.title && article.newsLink && !sentIds.has(article.id))
+    .filter((article) => article.title && article.newsLink && article.cityCode && !sentIds.has(article.id))
     .sort((a, b) => new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0))
     .slice(0, Number.isFinite(maxItems) ? maxItems : 30);
 

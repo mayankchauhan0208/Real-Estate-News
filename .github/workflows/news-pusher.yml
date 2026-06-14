@@ -43,3 +43,4 @@ jobs:
           MAX_ITEMS_PER_RUN: ${{ vars.MAX_ITEMS_PER_RUN || '30' }}
           MAX_ITEMS_PER_SOURCE: ${{ vars.MAX_ITEMS_PER_SOURCE || '10' }}
           DEFAULT_CITY_CODE: ${{ vars.DEFAULT_CITY_CODE || 'gurugram' }}
+          ALLOW_DEFAULT_CITY_CODE: ${{ vars.ALLOW_DEFAULT_CITY_CODE || 'false' }}
