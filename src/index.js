@@ -59,7 +59,9 @@ const requiredPayloadFields = [
   "postedByLogo"
 ];
 
-const targetCityKeywords = cityRules.flatMap((rule) => rule.keywords);
+const ncrKeywords = ["delhi ncr", "ncr", "national capital region"];
+const ncrCityCodes = ["gurugram", "faridabad"];
+const targetCityKeywords = [...cityRules.flatMap((rule) => rule.keywords), ...ncrKeywords];
 const outsideCityKeywords = [
   "ahmedabad",
   "andhra",
@@ -124,7 +126,14 @@ function getSources() {
 }
 
 function stableId(article) {
-  const value = [article.newsLink, article.url, article.title, article.postedBy, article.source]
+  const value = [
+    article.newsLink,
+    article.url,
+    article.title,
+    article.postedBy,
+    article.source,
+    article.cityCode
+  ]
     .filter(Boolean)
     .join("|")
     .toLowerCase();
@@ -232,14 +241,47 @@ function detectCityCode(article) {
   return match?.code || "";
 }
 
+function detectCityCodes(article) {
+  const haystack = [article.title, article.description, article.newsLink]
+    .join(" ")
+    .toLowerCase();
+
+  if (ncrKeywords.some((keyword) => haystack.includes(keyword))) {
+    return ncrCityCodes;
+  }
+
+  const cityCode = detectCityCode(article);
+  return cityCode ? [cityCode] : [];
+}
+
 function applyCityCode(article) {
-  const detectedCityCode = detectCityCode(article);
+  const [detectedCityCode] = detectCityCodes(article);
   const allowDefaultCityCode = env("ALLOW_DEFAULT_CITY_CODE", "false").toLowerCase() === "true";
 
   return {
     ...article,
     cityCode: detectedCityCode || (allowDefaultCityCode ? env("DEFAULT_CITY_CODE", "gurugram") : "")
   };
+}
+
+function expandCityArticles(article) {
+  const cityCodes = detectCityCodes(article);
+
+  if (cityCodes.length === 0) {
+    return [article];
+  }
+
+  return cityCodes.map((cityCode) => {
+    const cityArticle = {
+      ...article,
+      cityCode
+    };
+
+    return {
+      ...cityArticle,
+      id: stableId(cityArticle)
+    };
+  });
 }
 
 function toApiPayload(article) {
@@ -350,7 +392,7 @@ async function fetchFeed(sourceUrl) {
       fetchedAt: new Date().toISOString()
     };
 
-    const article = applyCityCode({
+    const article = {
       title: rawArticle.title,
       description: rawArticle.description || rawArticle.title,
       isActive: true,
@@ -361,11 +403,13 @@ async function fetchFeed(sourceUrl) {
       createdAt: rawArticle.publishedAt || rawArticle.fetchedAt,
       publishedAt: rawArticle.publishedAt,
       fetchedAt: rawArticle.fetchedAt
-    });
+    };
+
+    const cityArticle = applyCityCode(article);
 
     return {
-      ...article,
-      id: stableId(article)
+      ...cityArticle,
+      id: stableId(cityArticle)
     };
   });
 }
@@ -460,17 +504,19 @@ async function fetchPage(sourceUrl) {
 
   for (const candidate of limitedCandidates) {
     const metadata = await fetchArticleMetadata(candidate.newsLink, candidate);
-    const article = applyCityCode({
+    const article = {
       ...candidate,
       ...metadata,
       description: stripHtml(metadata.description || candidate.description),
       thumbnailImage: absoluteUrl(metadata.thumbnailImage || candidate.thumbnailImage, candidate.newsLink),
       createdAt: metadata.publishedAt || candidate.fetchedAt
-    });
+    };
+
+    const cityArticle = applyCityCode(article);
 
     articles.push({
-      ...article,
-      id: stableId(article)
+      ...cityArticle,
+      id: stableId(cityArticle)
     });
   }
 
@@ -484,6 +530,19 @@ async function fetchSource(sourceUrl) {
     console.log(`RSS parse failed for ${sourceUrl}; trying page scrape. ${error.message}`);
     return fetchPage(sourceUrl);
   }
+}
+
+function uniqueById(articles) {
+  const seenIds = new Set();
+
+  return articles.filter((article) => {
+    if (!article.id || seenIds.has(article.id)) {
+      return false;
+    }
+
+    seenIds.add(article.id);
+    return true;
+  });
 }
 
 async function pushArticle(article) {
@@ -562,7 +621,10 @@ async function main() {
     }
   }
 
-  const uniqueArticles = allArticles
+  const expandedArticles = allArticles.flatMap(expandCityArticles);
+
+  const uniqueArticles = uniqueById(
+    expandedArticles
     .filter(
       (article) =>
         article.title &&
@@ -573,11 +635,11 @@ async function main() {
         (resendKnownArticles || !sentIds.has(article.id))
     )
     .sort((a, b) => new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0))
-    .slice(0, Number.isFinite(maxItems) ? maxItems : 30);
-  const skippedWithoutCity = allArticles.filter(
+  ).slice(0, Number.isFinite(maxItems) ? maxItems : 30);
+  const skippedWithoutCity = expandedArticles.filter(
     (article) => article.title && article.newsLink && !article.cityCode
   ).length;
-  const skippedMissingFields = allArticles.filter(
+  const skippedMissingFields = expandedArticles.filter(
     (article) =>
       article.title &&
       article.newsLink &&
@@ -585,7 +647,7 @@ async function main() {
       missingRequiredPayloadFields(article).length > 0 &&
       (resendKnownArticles || !sentIds.has(article.id))
   ).length;
-  const skippedOutsideCity = allArticles.filter(
+  const skippedOutsideCity = expandedArticles.filter(
     (article) =>
       article.title &&
       article.newsLink &&
@@ -596,7 +658,7 @@ async function main() {
   ).length;
   const skippedAlreadySent = resendKnownArticles
     ? 0
-    : allArticles.filter((article) => sentIds.has(article.id)).length;
+    : expandedArticles.filter((article) => sentIds.has(article.id)).length;
 
   console.log(`Found ${uniqueArticles.length} new articles.`);
   console.log(`Skipped ${skippedWithoutCity} articles without Gurugram/Faridabad city match.`);
@@ -604,7 +666,7 @@ async function main() {
   console.log(`Skipped ${skippedOutsideCity} articles with outside-city headline conflicts.`);
   console.log(`Skipped ${skippedAlreadySent} already-sent articles.`);
 
-  for (const article of allArticles.slice(0, 100)) {
+  for (const article of expandedArticles.slice(0, 100)) {
     const missingFields = missingRequiredPayloadFields(article);
 
     if (article.title && article.newsLink && article.cityCode && missingFields.length > 0) {
