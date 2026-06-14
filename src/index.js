@@ -250,6 +250,32 @@ function hasOutsideCityConflict(article) {
   return hasKeyword(title, outsideCityKeywords) && !hasKeyword(title, targetCityKeywords);
 }
 
+function createTestArticle() {
+  const timestamp = new Date().toISOString();
+  const title = `PropertyMaster automation test news ${timestamp}`;
+  const article = {
+    title,
+    description:
+      "This complete test news item was created by the Real-Estate-News GitHub Action to verify PropertyMaster app display.",
+    cityCode: "gurugram",
+    isActive: true,
+    newsLink: `https://github.com/mayankchauhan0208/Real-Estate-News/actions?test=${encodeURIComponent(
+      timestamp
+    )}`,
+    thumbnailImage:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
+    postedBy: "PropertyMaster Automation",
+    postedByLogo: "https://www.google.com/s2/favicons?domain=propertymaster.com&sz=128",
+    publishedAt: timestamp,
+    fetchedAt: timestamp
+  };
+
+  return {
+    ...article,
+    id: stableId(article)
+  };
+}
+
 async function readSentIds() {
   try {
     const content = await fs.readFile(sentNewsPath, "utf8");
@@ -469,6 +495,23 @@ async function pushArticle(article) {
 
 async function main() {
   await loadDotEnv();
+
+  if (env("PUSH_TEST_NEWS", "false").toLowerCase() === "true") {
+    const testArticle = createTestArticle();
+    const missingFields = missingRequiredPayloadFields(testArticle);
+
+    if (missingFields.length > 0) {
+      throw new Error(`Test article missing required fields: ${missingFields.join(", ")}`);
+    }
+
+    const result = await pushArticle(testArticle);
+    console.log(
+      `Pushed test (${result.status}, ${testArticle.cityCode}): ${testArticle.title} | API response: ${
+        result.body || "<empty>"
+      }`
+    );
+    return;
+  }
 
   const sources = getSources();
   const selectedSources = sources.length > 0 ? sources : defaultSources;
