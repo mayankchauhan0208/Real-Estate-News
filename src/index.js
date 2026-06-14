@@ -48,6 +48,16 @@ const cityRules = [
   }
 ];
 
+const requiredPayloadFields = [
+  "title",
+  "description",
+  "cityCode",
+  "newsLink",
+  "thumbnailImage",
+  "postedBy",
+  "postedByLogo"
+];
+
 function env(name, fallback = "") {
   return process.env[name]?.trim() || fallback;
 }
@@ -142,8 +152,8 @@ function getPublisherName(sourceUrl, pageTitle = "") {
 }
 
 function getFallbackLogo(sourceUrl) {
-  const url = new URL(sourceUrl);
-  return `${url.origin}/favicon.ico`;
+  const host = new URL(sourceUrl).hostname;
+  return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(host)}&sz=128`;
 }
 
 function absoluteUrl(value, baseUrl) {
@@ -193,6 +203,15 @@ function toApiPayload(article) {
   };
 }
 
+function missingRequiredPayloadFields(article) {
+  const payload = toApiPayload(article);
+
+  return requiredPayloadFields.filter((field) => {
+    const value = payload[field];
+    return typeof value !== "string" || !value.trim();
+  });
+}
+
 async function readSentIds() {
   try {
     const content = await fs.readFile(sentNewsPath, "utf8");
@@ -227,7 +246,7 @@ async function writeSentIds(sentIds) {
 async function fetchFeed(sourceUrl) {
   const feed = await parser.parseURL(sourceUrl);
   const source = feed.title || new URL(sourceUrl).hostname;
-  const publisherLogo = getPublisherLogo(feed);
+  const publisherLogo = pickFirst(getPublisherLogo(feed), getFallbackLogo(sourceUrl));
 
   return feed.items.map((item) => {
     const rawArticle = {
@@ -430,17 +449,41 @@ async function main() {
   }
 
   const uniqueArticles = allArticles
-    .filter((article) => article.title && article.newsLink && article.cityCode && !sentIds.has(article.id))
+    .filter(
+      (article) =>
+        article.title &&
+        article.newsLink &&
+        article.cityCode &&
+        missingRequiredPayloadFields(article).length === 0 &&
+        !sentIds.has(article.id)
+    )
     .sort((a, b) => new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0))
     .slice(0, Number.isFinite(maxItems) ? maxItems : 30);
   const skippedWithoutCity = allArticles.filter(
     (article) => article.title && article.newsLink && !article.cityCode
   ).length;
+  const skippedMissingFields = allArticles.filter(
+    (article) =>
+      article.title &&
+      article.newsLink &&
+      article.cityCode &&
+      missingRequiredPayloadFields(article).length > 0 &&
+      !sentIds.has(article.id)
+  ).length;
   const skippedAlreadySent = allArticles.filter((article) => sentIds.has(article.id)).length;
 
   console.log(`Found ${uniqueArticles.length} new articles.`);
   console.log(`Skipped ${skippedWithoutCity} articles without Gurugram/Faridabad city match.`);
+  console.log(`Skipped ${skippedMissingFields} articles missing required display fields.`);
   console.log(`Skipped ${skippedAlreadySent} already-sent articles.`);
+
+  for (const article of allArticles.slice(0, 100)) {
+    const missingFields = missingRequiredPayloadFields(article);
+
+    if (article.title && article.newsLink && article.cityCode && missingFields.length > 0) {
+      console.log(`Skipped missing ${missingFields.join(", ")}: ${article.title}`);
+    }
+  }
 
   for (const article of uniqueArticles) {
     const result = await pushArticle(article);
