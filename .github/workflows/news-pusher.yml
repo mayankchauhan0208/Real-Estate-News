@@ -29,7 +29,7 @@ concurrency:
 jobs:
   push-news:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 15
 
     steps:
       - name: Checkout
@@ -58,7 +58,7 @@ jobs:
           APP_API_KEY: ${{ secrets.APP_API_KEY }}
           NEWS_SOURCES: ${{ secrets.NEWS_SOURCES }}
           MAX_ITEMS_PER_RUN: ${{ vars.MAX_ITEMS_PER_RUN || '30' }}
-          MAX_ITEMS_PER_SOURCE: ${{ vars.MAX_ITEMS_PER_SOURCE || '10' }}
+          MAX_ITEMS_PER_SOURCE: ${{ vars.MAX_ITEMS_PER_SOURCE || '4' }}
           DEFAULT_CITY_CODE: ${{ vars.DEFAULT_CITY_CODE || 'gurugram' }}
           ALLOW_DEFAULT_CITY_CODE: ${{ vars.ALLOW_DEFAULT_CITY_CODE || 'false' }}
           PUSH_TEST_NEWS: ${{ inputs.push_test_news || 'false' }}

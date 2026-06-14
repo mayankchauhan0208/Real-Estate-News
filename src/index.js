@@ -125,6 +125,20 @@ function getSources() {
     .filter(Boolean);
 }
 
+async function fetchWithTimeout(url, options = {}, timeoutMs = 8000) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+
+  try {
+    return await fetch(url, {
+      ...options,
+      signal: controller.signal
+    });
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
 function stableId(article) {
   const value = [
     article.newsLink,
@@ -415,7 +429,7 @@ async function fetchFeed(sourceUrl) {
 }
 
 async function fetchHtml(sourceUrl) {
-  const response = await fetch(sourceUrl, {
+  const response = await fetchWithTimeout(sourceUrl, {
     headers: {
       "User-Agent": "news-api-pusher/1.0 (+https://github.com)",
       Accept: "text/html,application/xhtml+xml"
@@ -465,7 +479,7 @@ async function fetchPage(sourceUrl) {
     absoluteUrl($('link[rel="shortcut icon"]').attr("href"), sourceUrl),
     getFallbackLogo(sourceUrl)
   );
-  const maxPerSource = Number.parseInt(env("MAX_ITEMS_PER_SOURCE", "10"), 10);
+  const maxPerSource = Number.parseInt(env("MAX_ITEMS_PER_SOURCE", "4"), 10);
   const seenLinks = new Set();
   const candidates = [];
 
@@ -499,7 +513,7 @@ async function fetchPage(sourceUrl) {
     });
   });
 
-  const limitedCandidates = candidates.slice(0, Number.isFinite(maxPerSource) ? maxPerSource : 10);
+  const limitedCandidates = candidates.slice(0, Number.isFinite(maxPerSource) ? maxPerSource : 4);
   const articles = [];
 
   for (const candidate of limitedCandidates) {

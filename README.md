@@ -34,7 +34,7 @@ Create a new GitHub repo for this folder, then add these repository secrets:
 Optional repository variable:
 
 - `MAX_ITEMS_PER_RUN`: Default is `30`.
-- `MAX_ITEMS_PER_SOURCE`: Default is `10`.
+- `MAX_ITEMS_PER_SOURCE`: Default is `4`.
 - `DEFAULT_CITY_CODE`: Default is `gurugram`.
 - `ALLOW_DEFAULT_CITY_CODE`: Default is `false`. Keep this false to skip articles where Gurugram/Faridabad cannot be detected.
 
