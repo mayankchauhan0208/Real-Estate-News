@@ -58,6 +58,34 @@ const requiredPayloadFields = [
   "postedByLogo"
 ];
 
+const targetCityKeywords = cityRules.flatMap((rule) => rule.keywords);
+const outsideCityKeywords = [
+  "ahmedabad",
+  "andhra",
+  "bengaluru",
+  "bangalore",
+  "bengal",
+  "bhopal",
+  "chandigarh",
+  "chennai",
+  "delhi",
+  "goa",
+  "gujarat",
+  "hyderabad",
+  "jaipur",
+  "kerala",
+  "kolkata",
+  "lucknow",
+  "maharashtra",
+  "mumbai",
+  "new delhi",
+  "noida",
+  "pune",
+  "rajasthan",
+  "telangana",
+  "uttar pradesh"
+];
+
 function env(name, fallback = "") {
   return process.env[name]?.trim() || fallback;
 }
@@ -210,6 +238,16 @@ function missingRequiredPayloadFields(article) {
     const value = payload[field];
     return typeof value !== "string" || !value.trim();
   });
+}
+
+function hasKeyword(value, keywords) {
+  const normalized = value.toLowerCase();
+  return keywords.some((keyword) => normalized.includes(keyword));
+}
+
+function hasOutsideCityConflict(article) {
+  const title = article.title || "";
+  return hasKeyword(title, outsideCityKeywords) && !hasKeyword(title, targetCityKeywords);
 }
 
 async function readSentIds() {
@@ -455,6 +493,7 @@ async function main() {
         article.newsLink &&
         article.cityCode &&
         missingRequiredPayloadFields(article).length === 0 &&
+        !hasOutsideCityConflict(article) &&
         !sentIds.has(article.id)
     )
     .sort((a, b) => new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0))
@@ -470,11 +509,21 @@ async function main() {
       missingRequiredPayloadFields(article).length > 0 &&
       !sentIds.has(article.id)
   ).length;
+  const skippedOutsideCity = allArticles.filter(
+    (article) =>
+      article.title &&
+      article.newsLink &&
+      article.cityCode &&
+      missingRequiredPayloadFields(article).length === 0 &&
+      hasOutsideCityConflict(article) &&
+      !sentIds.has(article.id)
+  ).length;
   const skippedAlreadySent = allArticles.filter((article) => sentIds.has(article.id)).length;
 
   console.log(`Found ${uniqueArticles.length} new articles.`);
   console.log(`Skipped ${skippedWithoutCity} articles without Gurugram/Faridabad city match.`);
   console.log(`Skipped ${skippedMissingFields} articles missing required display fields.`);
+  console.log(`Skipped ${skippedOutsideCity} articles with outside-city headline conflicts.`);
   console.log(`Skipped ${skippedAlreadySent} already-sent articles.`);
 
   for (const article of allArticles.slice(0, 100)) {
@@ -482,6 +531,16 @@ async function main() {
 
     if (article.title && article.newsLink && article.cityCode && missingFields.length > 0) {
       console.log(`Skipped missing ${missingFields.join(", ")}: ${article.title}`);
+    }
+
+    if (
+      article.title &&
+      article.newsLink &&
+      article.cityCode &&
+      missingFields.length === 0 &&
+      hasOutsideCityConflict(article)
+    ) {
+      console.log(`Skipped outside-city headline: ${article.title}`);
     }
   }
 
