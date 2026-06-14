@@ -197,6 +197,29 @@ function absoluteUrl(value, baseUrl) {
   }
 }
 
+function toIsoDate(value) {
+  if (!value) {
+    return "";
+  }
+
+  const date = new Date(value);
+
+  if (Number.isNaN(date.getTime())) {
+    return "";
+  }
+
+  return date.toISOString();
+}
+
+function getCreatedAt(article) {
+  return (
+    toIsoDate(article.createdAt) ||
+    toIsoDate(article.publishedAt) ||
+    toIsoDate(article.fetchedAt) ||
+    new Date().toISOString()
+  );
+}
+
 function detectCityCode(article) {
   const haystack = [article.title, article.description, article.newsLink]
     .join(" ")
@@ -228,7 +251,7 @@ function toApiPayload(article) {
     newsLink: article.newsLink,
     thumbnailImage: article.thumbnailImage,
     postedBy: article.postedBy,
-    createdAt: article.createdAt || article.fetchedAt || new Date().toISOString(),
+    createdAt: getCreatedAt(article),
     postedByLogo: article.postedByLogo
   };
 }
@@ -335,7 +358,7 @@ async function fetchFeed(sourceUrl) {
       thumbnailImage: rawArticle.thumbnailImage,
       postedBy: rawArticle.postedBy,
       postedByLogo: rawArticle.postedByLogo,
-      createdAt: rawArticle.fetchedAt,
+      createdAt: rawArticle.publishedAt || rawArticle.fetchedAt,
       publishedAt: rawArticle.publishedAt,
       fetchedAt: rawArticle.fetchedAt
     });
@@ -427,7 +450,6 @@ async function fetchPage(sourceUrl) {
       thumbnailImage: absoluteUrl($(element).find("img").first().attr("src"), sourceUrl),
       postedBy: publisher,
       postedByLogo: publisherLogo,
-      createdAt: new Date().toISOString(),
       publishedAt: null,
       fetchedAt: new Date().toISOString()
     });
@@ -442,7 +464,8 @@ async function fetchPage(sourceUrl) {
       ...candidate,
       ...metadata,
       description: stripHtml(metadata.description || candidate.description),
-      thumbnailImage: absoluteUrl(metadata.thumbnailImage || candidate.thumbnailImage, candidate.newsLink)
+      thumbnailImage: absoluteUrl(metadata.thumbnailImage || candidate.thumbnailImage, candidate.newsLink),
+      createdAt: metadata.publishedAt || candidate.fetchedAt
     });
 
     articles.push({
