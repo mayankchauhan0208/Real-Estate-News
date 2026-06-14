@@ -521,8 +521,13 @@ async function main() {
   const sources = getSources();
   const selectedSources = sources.length > 0 ? sources : defaultSources;
   const maxItems = Number.parseInt(env("MAX_ITEMS_PER_RUN", "30"), 10);
+  const resendKnownArticles = env("RESEND_KNOWN_ARTICLES", "false").toLowerCase() === "true";
   const sentIds = await readSentIds();
   const allArticles = [];
+
+  if (resendKnownArticles) {
+    console.log("Manual resend enabled: ignoring saved dedupe for this run.");
+  }
 
   for (const source of selectedSources) {
     try {
@@ -542,7 +547,7 @@ async function main() {
         article.cityCode &&
         missingRequiredPayloadFields(article).length === 0 &&
         !hasOutsideCityConflict(article) &&
-        !sentIds.has(article.id)
+        (resendKnownArticles || !sentIds.has(article.id))
     )
     .sort((a, b) => new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0))
     .slice(0, Number.isFinite(maxItems) ? maxItems : 30);
@@ -555,7 +560,7 @@ async function main() {
       article.newsLink &&
       article.cityCode &&
       missingRequiredPayloadFields(article).length > 0 &&
-      !sentIds.has(article.id)
+      (resendKnownArticles || !sentIds.has(article.id))
   ).length;
   const skippedOutsideCity = allArticles.filter(
     (article) =>
@@ -564,9 +569,11 @@ async function main() {
       article.cityCode &&
       missingRequiredPayloadFields(article).length === 0 &&
       hasOutsideCityConflict(article) &&
-      !sentIds.has(article.id)
+      (resendKnownArticles || !sentIds.has(article.id))
   ).length;
-  const skippedAlreadySent = allArticles.filter((article) => sentIds.has(article.id)).length;
+  const skippedAlreadySent = resendKnownArticles
+    ? 0
+    : allArticles.filter((article) => sentIds.has(article.id)).length;
 
   console.log(`Found ${uniqueArticles.length} new articles.`);
   console.log(`Skipped ${skippedWithoutCity} articles without Gurugram/Faridabad city match.`);
