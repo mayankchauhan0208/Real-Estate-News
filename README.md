@@ -66,7 +66,7 @@ If `APP_API_KEY` is provided, the script also sends:
 Authorization: Bearer YOUR_APP_API_KEY
 ```
 
-Supported city codes are `gurugram`, `faridabad`, `sohna`, `greater-faridabad-`, and `pataudi`. The script detects them from the title, description, and link. If it cannot detect a city, it uses `DEFAULT_CITY_CODE`.
+Supported API city codes are `gurugram` and `faridabad`. Greater Faridabad and Neharpar news is sent as `faridabad`; Sohna and Pataudi news is sent as `gurugram`. The script detects the city from the title, description, and link. If it cannot detect a city, it uses `DEFAULT_CITY_CODE`.
 
 ## Default sources
 

@@ -31,24 +31,20 @@ const defaultSources = [
 
 const cityRules = [
   {
-    code: "greater-faridabad-",
-    keywords: ["greater faridabad", "neharpar"]
+    code: "faridabad",
+    keywords: ["greater faridabad", "neharpar", "faridabad"]
   },
   {
     code: "gurugram",
-    keywords: ["gurugram", "gurgaon", "dwarka expressway", "golf course road", "sohna road"]
-  },
-  {
-    code: "faridabad",
-    keywords: ["faridabad"]
-  },
-  {
-    code: "sohna",
-    keywords: ["sohna"]
-  },
-  {
-    code: "pataudi",
-    keywords: ["pataudi"]
+    keywords: [
+      "gurugram",
+      "gurgaon",
+      "dwarka expressway",
+      "golf course road",
+      "sohna",
+      "sohna road",
+      "pataudi"
+    ]
   }
 ];
 
