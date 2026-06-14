@@ -35,7 +35,6 @@ Optional repository variable:
 
 - `MAX_ITEMS_PER_RUN`: Default is `30`.
 - `MAX_ITEMS_PER_SOURCE`: Default is `10`.
-- `DEFAULT_STATE_CODE`: Default is `haryana`.
 - `DEFAULT_CITY_CODE`: Default is `gurugram`.
 - `ALLOW_DEFAULT_CITY_CODE`: Default is `false`. Keep this false to skip articles where Gurugram/Faridabad cannot be detected.
 
@@ -53,7 +52,6 @@ The script sends one POST per article:
 {
   "title": "News title",
   "description": "Full news description from RSS",
-  "stateCode": "haryana",
   "cityCode": "gurugram",
   "isActive": true,
   "newsLink": "https://source.example/article",
