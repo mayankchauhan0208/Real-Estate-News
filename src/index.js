@@ -180,6 +180,19 @@ function applyCityCode(article) {
   };
 }
 
+function toApiPayload(article) {
+  return {
+    title: article.title,
+    description: article.description,
+    cityCode: article.cityCode,
+    isActive: article.isActive,
+    newsLink: article.newsLink,
+    thumbnailImage: article.thumbnailImage,
+    postedBy: article.postedBy,
+    postedByLogo: article.postedByLogo
+  };
+}
+
 async function readSentIds() {
   try {
     const content = await fs.readFile(sentNewsPath, "utf8");
@@ -378,25 +391,23 @@ async function pushArticle(article) {
     headers.Authorization = `Bearer ${apiKey}`;
   }
 
+  const payload = toApiPayload(article);
   const response = await fetch(apiUrl, {
     method: "POST",
     headers,
-    body: JSON.stringify({
-      title: article.title,
-      description: article.description,
-      cityCode: article.cityCode,
-      isActive: article.isActive,
-      newsLink: article.newsLink,
-      thumbnailImage: article.thumbnailImage,
-      postedBy: article.postedBy,
-      postedByLogo: article.postedByLogo
-    })
+    body: JSON.stringify(payload)
   });
 
+  const body = await response.text();
+
   if (!response.ok) {
-    const body = await response.text();
     throw new Error(`API rejected "${article.title}" with ${response.status}: ${body}`);
   }
+
+  return {
+    status: response.status,
+    body: body.slice(0, 500)
+  };
 }
 
 async function main() {
@@ -422,13 +433,23 @@ async function main() {
     .filter((article) => article.title && article.newsLink && article.cityCode && !sentIds.has(article.id))
     .sort((a, b) => new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0))
     .slice(0, Number.isFinite(maxItems) ? maxItems : 30);
+  const skippedWithoutCity = allArticles.filter(
+    (article) => article.title && article.newsLink && !article.cityCode
+  ).length;
+  const skippedAlreadySent = allArticles.filter((article) => sentIds.has(article.id)).length;
 
   console.log(`Found ${uniqueArticles.length} new articles.`);
+  console.log(`Skipped ${skippedWithoutCity} articles without Gurugram/Faridabad city match.`);
+  console.log(`Skipped ${skippedAlreadySent} already-sent articles.`);
 
   for (const article of uniqueArticles) {
-    await pushArticle(article);
+    const result = await pushArticle(article);
     sentIds.add(article.id);
-    console.log(`Pushed: ${article.title}`);
+    console.log(
+      `Pushed (${result.status}, ${article.cityCode}): ${article.title} | API response: ${
+        result.body || "<empty>"
+      }`
+    );
   }
 
   await writeSentIds(sentIds);
