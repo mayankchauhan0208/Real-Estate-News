@@ -51,6 +51,7 @@ const cityRules = [
 const requiredPayloadFields = [
   "title",
   "description",
+  "stateCode",
   "cityCode",
   "newsLink",
   "thumbnailImage",
@@ -222,6 +223,7 @@ function toApiPayload(article) {
   return {
     title: article.title,
     description: article.description,
+    stateCode: article.stateCode || env("DEFAULT_STATE_CODE", "haryana"),
     cityCode: article.cityCode,
     isActive: article.isActive,
     newsLink: article.newsLink,
@@ -257,6 +259,7 @@ function createTestArticle() {
     title,
     description:
       "This complete test news item was created by the Real-Estate-News GitHub Action to verify PropertyMaster app display.",
+    stateCode: "haryana",
     cityCode: "gurugram",
     isActive: true,
     newsLink: `https://github.com/mayankchauhan0208/Real-Estate-News/actions?test=${encodeURIComponent(
@@ -327,6 +330,7 @@ async function fetchFeed(sourceUrl) {
     const article = applyCityCode({
       title: rawArticle.title,
       description: rawArticle.description || rawArticle.title,
+      stateCode: env("DEFAULT_STATE_CODE", "haryana"),
       isActive: true,
       newsLink: rawArticle.newsLink,
       thumbnailImage: rawArticle.thumbnailImage,
@@ -417,6 +421,7 @@ async function fetchPage(sourceUrl) {
     candidates.push({
       title,
       description: title,
+      stateCode: env("DEFAULT_STATE_CODE", "haryana"),
       cityCode: "",
       isActive: true,
       newsLink: link,
