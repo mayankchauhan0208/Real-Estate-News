@@ -345,12 +345,24 @@ function toIsoDate(value) {
 }
 
 function getCreatedAt(article) {
-  return (
+  const createdAt =
     toIsoDate(article.createdAt) ||
     toIsoDate(article.publishedAt) ||
     toIsoDate(article.fetchedAt) ||
-    new Date().toISOString()
-  );
+    new Date().toISOString();
+
+  return article.sharedCityArticle ? startOfDayIso(createdAt) : createdAt;
+}
+
+function startOfDayIso(value) {
+  const date = new Date(value);
+
+  if (Number.isNaN(date.getTime())) {
+    return value;
+  }
+
+  date.setUTCHours(0, 0, 0, 0);
+  return date.toISOString();
 }
 
 function detectCityCode(article) {
@@ -442,7 +454,8 @@ function expandCityArticles(article) {
   return cityCodes.map((cityCode) => {
     const cityArticle = {
       ...article,
-      cityCode
+      cityCode,
+      sharedCityArticle: cityCodes.length > 1
     };
 
     return {
@@ -464,6 +477,10 @@ function toApiPayload(article) {
     createdAt: getCreatedAt(article),
     postedByLogo: article.postedByLogo
   };
+}
+
+function articlePriority(article) {
+  return article.sharedCityArticle ? 1 : 0;
 }
 
 function missingRequiredPayloadFields(article) {
@@ -827,8 +844,25 @@ async function main() {
         !hasOutsideCityConflict(article) &&
         (resendKnownArticles || !sentIds.has(article.id))
     )
-    .sort((a, b) => new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0))
+    .sort((a, b) => {
+      const priorityDifference = articlePriority(a) - articlePriority(b);
+
+      if (priorityDifference !== 0) {
+        return priorityDifference;
+      }
+
+      return new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0);
+    })
   ).slice(0, Number.isFinite(maxItems) ? maxItems : 30);
+  const articlesToPush = [...uniqueArticles].sort((a, b) => {
+    const priorityDifference = articlePriority(b) - articlePriority(a);
+
+    if (priorityDifference !== 0) {
+      return priorityDifference;
+    }
+
+    return new Date(a.publishedAt || 0) - new Date(b.publishedAt || 0);
+  });
   const skippedWithoutCity = expandedArticles.filter(
     (article) => article.title && article.newsLink && isRealEstateRelated(article) && !article.cityCode
   ).length;
@@ -885,7 +919,13 @@ async function main() {
     }
   }
 
-  for (const article of uniqueArticles) {
+  console.log(
+    `Push order: ${articlesToPush.filter((article) => article.sharedCityArticle).length} shared-city articles first, then ${
+      articlesToPush.filter((article) => !article.sharedCityArticle).length
+    } city-specific articles.`
+  );
+
+  for (const article of articlesToPush) {
     const result = await pushArticle(article);
     sentIds.add(article.id);
     console.log(
