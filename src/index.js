@@ -18,15 +18,27 @@ const defaultSources = [
   "https://www.hindustantimes.com/real-estate",
   "https://www.aninews.in/category/business/",
   "https://www.cnbctv18.com/real-estate/",
+  "https://realty.economictimes.indiatimes.com/",
   "https://www.moneycontrol.com/news/business/real-estate/",
+  "https://www.moneycontrol.com/real-estate-property/",
   "https://www.business-standard.com/search?q=REAL%20ESTATE",
+  "https://www.business-standard.com/topic/real-estate",
   "https://www.outlookmoney.com/topic/real-estate",
   "https://www.tribuneindia.com/topic/real-estate",
   "https://torbitrealty.com/category/news/city-updates/gurugram/",
   "https://realtynmore.com/latest-news/",
+  "https://realtynxt.com/",
   "https://www.hindustantimes.com/topic/faridabad/news",
+  "https://www.track2realty.track2media.com/",
   "https://www.lokmattimes.com/business/",
-  "https://propnewstime.com/"
+  "https://propnewstime.com/",
+  "https://www.rprealtyplus.com/",
+  "https://housing.com/news/",
+  "https://www.proptiger.com/guide/",
+  "https://content.magicbricks.com/property-news/",
+  "https://www.squareyards.com/blog",
+  "https://www.99acres.com/articles/",
+  "https://www.financialexpress.com/about/real-estate/"
 ];
 
 const cityRules = [
