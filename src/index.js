@@ -18,7 +18,7 @@ const defaultSources = [
   "https://www.hindustantimes.com/real-estate",
   "https://www.aninews.in/category/business/",
   "https://www.cnbctv18.com/real-estate/",
-  "https://www.moneycontrol.com/news/business/",
+  "https://www.moneycontrol.com/news/business/real-estate/",
   "https://www.business-standard.com/search?q=REAL%20ESTATE",
   "https://www.outlookmoney.com/topic/real-estate",
   "https://www.tribuneindia.com/topic/real-estate",
@@ -86,10 +86,12 @@ const realEstateKeywords = [
   "affordable housing",
   "apartment",
   "builder",
+  "carpet area",
   "commercial property",
   "commercial real estate",
   "developer",
   "development authority",
+  "dlf",
   "dwelling",
   "flat",
   "floor",
@@ -99,6 +101,7 @@ const realEstateKeywords = [
   "land parcel",
   "lease",
   "luxury housing",
+  "luxury homes",
   "office space",
   "plot",
   "project",
@@ -111,6 +114,51 @@ const realEstateKeywords = [
   "sector",
   "stamp duty",
   "township"
+];
+const realEstateCompanyKeywords = [
+  "dlf",
+  "godrej properties",
+  "lodha",
+  "macrotech",
+  "prestige estates",
+  "brigade enterprises",
+  "sobha",
+  "oberoi realty",
+  "phoenix mills",
+  "signature global",
+  "anant raj",
+  "eldeco",
+  "ashiana housing",
+  "kolte-patil",
+  "mahindra lifespace",
+  "raymond realty"
+];
+const nationalBusinessKeywords = [
+  "q1",
+  "q2",
+  "q3",
+  "q4",
+  "quarter",
+  "quarterly",
+  "net profit",
+  "profit",
+  "revenue",
+  "sales",
+  "pre-sales",
+  "presales",
+  "booking",
+  "bookings",
+  "earnings",
+  "results",
+  "ipo",
+  "shares",
+  "stock",
+  "market cap",
+  "fundraise",
+  "fund raising",
+  "investment",
+  "acquisition",
+  "merger"
 ];
 const outsideCityKeywords = [
   "ahmedabad",
@@ -318,12 +366,24 @@ function isCourtRealEstateRelated(article) {
   return hasKeyword(haystack, courtKeywords) && hasKeyword(haystack, realEstateKeywords);
 }
 
+function isNationalRealEstateBusinessUpdate(article) {
+  const haystack = getArticleSearchText(article);
+  const title = article.title || "";
+
+  return (
+    hasKeyword(haystack, realEstateCompanyKeywords) &&
+    hasKeyword(haystack, nationalBusinessKeywords) &&
+    !hasKeyword(title, outsideCityKeywords)
+  );
+}
+
 function isRealEstateRelated(article) {
   const haystack = getArticleSearchText(article);
   return (
     hasKeyword(haystack, realEstateKeywords) ||
     isReraRelated(article) ||
-    isCourtRealEstateRelated(article)
+    isCourtRealEstateRelated(article) ||
+    isNationalRealEstateBusinessUpdate(article)
   );
 }
 
@@ -332,7 +392,8 @@ function shouldSendToBothCities(article) {
   return (
     hasKeyword(haystack, ncrKeywords) ||
     isReraRelated(article) ||
-    isCourtRealEstateRelated(article)
+    isCourtRealEstateRelated(article) ||
+    isNationalRealEstateBusinessUpdate(article)
   );
 }
 
