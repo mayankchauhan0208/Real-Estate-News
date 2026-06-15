@@ -41,9 +41,12 @@ const cityRules = [
       "gurgaon",
       "dwarka expressway",
       "golf course road",
+      "manesar",
+      "manasar",
       "sohna",
       "sohna road",
-      "pataudi"
+      "pataudi",
+      "patodi"
     ]
   }
 ];
@@ -62,6 +65,53 @@ const requiredPayloadFields = [
 const ncrKeywords = ["delhi ncr", "ncr", "national capital region"];
 const ncrCityCodes = ["gurugram", "faridabad"];
 const targetCityKeywords = [...cityRules.flatMap((rule) => rule.keywords), ...ncrKeywords];
+const reraKeywords = ["rera", "hrera", "h-rera", "real estate regulatory authority"];
+const courtKeywords = [
+  "court",
+  "supreme court",
+  "high court",
+  "tribunal",
+  "nclt",
+  "nclat",
+  "case",
+  "cases",
+  "litigation",
+  "order",
+  "judgment",
+  "judgement",
+  "plea",
+  "petition"
+];
+const realEstateKeywords = [
+  "affordable housing",
+  "apartment",
+  "builder",
+  "commercial property",
+  "commercial real estate",
+  "developer",
+  "development authority",
+  "dwelling",
+  "flat",
+  "floor",
+  "homebuyer",
+  "homebuyers",
+  "housing",
+  "land parcel",
+  "lease",
+  "luxury housing",
+  "office space",
+  "plot",
+  "project",
+  "property",
+  "real estate",
+  "realty",
+  "redevelopment",
+  "registry",
+  "residential",
+  "sector",
+  "stamp duty",
+  "township"
+];
 const outsideCityKeywords = [
   "ahmedabad",
   "andhra",
@@ -244,9 +294,7 @@ function getCreatedAt(article) {
 }
 
 function detectCityCode(article) {
-  const haystack = [article.title, article.description, article.newsLink]
-    .join(" ")
-    .toLowerCase();
+  const haystack = getArticleSearchText(article);
 
   const match = cityRules.find((rule) =>
     rule.keywords.some((keyword) => haystack.includes(keyword))
@@ -255,12 +303,45 @@ function detectCityCode(article) {
   return match?.code || "";
 }
 
-function detectCityCodes(article) {
-  const haystack = [article.title, article.description, article.newsLink]
+function getArticleSearchText(article) {
+  return [article.title, article.description, article.articleText, article.newsLink]
     .join(" ")
     .toLowerCase();
+}
 
-  if (ncrKeywords.some((keyword) => haystack.includes(keyword))) {
+function isReraRelated(article) {
+  return hasKeyword(getArticleSearchText(article), reraKeywords);
+}
+
+function isCourtRealEstateRelated(article) {
+  const haystack = getArticleSearchText(article);
+  return hasKeyword(haystack, courtKeywords) && hasKeyword(haystack, realEstateKeywords);
+}
+
+function isRealEstateRelated(article) {
+  const haystack = getArticleSearchText(article);
+  return (
+    hasKeyword(haystack, realEstateKeywords) ||
+    isReraRelated(article) ||
+    isCourtRealEstateRelated(article)
+  );
+}
+
+function shouldSendToBothCities(article) {
+  const haystack = getArticleSearchText(article);
+  return (
+    hasKeyword(haystack, ncrKeywords) ||
+    isReraRelated(article) ||
+    isCourtRealEstateRelated(article)
+  );
+}
+
+function detectCityCodes(article) {
+  if (!isRealEstateRelated(article)) {
+    return [];
+  }
+
+  if (shouldSendToBothCities(article)) {
     return ncrCityCodes;
   }
 
@@ -328,6 +409,10 @@ function hasKeyword(value, keywords) {
 
 function hasOutsideCityConflict(article) {
   const title = article.title || "";
+  if (shouldSendToBothCities(article)) {
+    return false;
+  }
+
   return hasKeyword(title, outsideCityKeywords) && !hasKeyword(title, targetCityKeywords);
 }
 
@@ -393,22 +478,30 @@ async function fetchFeed(sourceUrl) {
   const feed = await parser.parseURL(sourceUrl);
   const source = feed.title || new URL(sourceUrl).hostname;
   const publisherLogo = pickFirst(getPublisherLogo(feed), getFallbackLogo(sourceUrl));
+  const maxPerSource = Number.parseInt(env("MAX_ITEMS_PER_SOURCE", "4"), 10);
+  const feedItems = feed.items.slice(0, Number.isFinite(maxPerSource) ? maxPerSource : 4);
 
-  return feed.items.map((item) => {
+  return Promise.all(feedItems.map(async (item) => {
+    const newsLink = item.link || item.guid;
+    const metadata = newsLink ? await fetchArticleMetadata(newsLink) : {};
     const rawArticle = {
       title: stripHtml(item.title),
-      description: stripHtml(item.contentSnippet || item.content || item.summary || item.description || ""),
-      newsLink: item.link || item.guid,
-      thumbnailImage: getThumbnail(item),
+      description: stripHtml(
+        metadata.description || item.contentSnippet || item.content || item.summary || item.description || ""
+      ),
+      articleText: stripHtml(metadata.articleText || ""),
+      newsLink,
+      thumbnailImage: absoluteUrl(metadata.thumbnailImage || getThumbnail(item), newsLink || sourceUrl),
       postedBy: source,
       postedByLogo: publisherLogo,
-      publishedAt: item.isoDate || item.pubDate || null,
+      publishedAt: metadata.publishedAt || item.isoDate || item.pubDate || null,
       fetchedAt: new Date().toISOString()
     };
 
     const article = {
       title: rawArticle.title,
       description: rawArticle.description || rawArticle.title,
+      articleText: rawArticle.articleText,
       isActive: true,
       newsLink: rawArticle.newsLink,
       thumbnailImage: rawArticle.thumbnailImage,
@@ -425,7 +518,7 @@ async function fetchFeed(sourceUrl) {
       ...cityArticle,
       id: stableId(cityArticle)
     };
-  });
+  }));
 }
 
 async function fetchHtml(sourceUrl) {
@@ -447,6 +540,16 @@ async function fetchArticleMetadata(articleUrl, fallback = {}) {
   try {
     const html = await fetchHtml(articleUrl);
     const $ = cheerio.load(html);
+    const articleText = stripHtml(
+      pickFirst(
+        $("article").text(),
+        $("main").text(),
+        $("p")
+          .map((_, element) => $(element).text())
+          .get()
+          .join(" ")
+      )
+    ).slice(0, 5000);
 
     return {
       description: pickFirst(
@@ -463,7 +566,8 @@ async function fetchArticleMetadata(articleUrl, fallback = {}) {
         $('meta[property="article:published_time"]').attr("content"),
         $("time[datetime]").first().attr("datetime"),
         fallback.publishedAt
-      )
+      ),
+      articleText
     };
   } catch {
     return fallback;
@@ -502,6 +606,7 @@ async function fetchPage(sourceUrl) {
     candidates.push({
       title,
       description: title,
+      articleText: "",
       cityCode: "",
       isActive: true,
       newsLink: link,
@@ -522,6 +627,7 @@ async function fetchPage(sourceUrl) {
       ...candidate,
       ...metadata,
       description: stripHtml(metadata.description || candidate.description),
+      articleText: stripHtml(metadata.articleText || candidate.articleText || ""),
       thumbnailImage: absoluteUrl(metadata.thumbnailImage || candidate.thumbnailImage, candidate.newsLink),
       createdAt: metadata.publishedAt || candidate.fetchedAt
     };
@@ -651,7 +757,10 @@ async function main() {
     .sort((a, b) => new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0))
   ).slice(0, Number.isFinite(maxItems) ? maxItems : 30);
   const skippedWithoutCity = expandedArticles.filter(
-    (article) => article.title && article.newsLink && !article.cityCode
+    (article) => article.title && article.newsLink && isRealEstateRelated(article) && !article.cityCode
+  ).length;
+  const skippedNotRealEstate = expandedArticles.filter(
+    (article) => article.title && article.newsLink && !isRealEstateRelated(article)
   ).length;
   const skippedMissingFields = expandedArticles.filter(
     (article) =>
@@ -675,6 +784,7 @@ async function main() {
     : expandedArticles.filter((article) => sentIds.has(article.id)).length;
 
   console.log(`Found ${uniqueArticles.length} new articles.`);
+  console.log(`Skipped ${skippedNotRealEstate} articles that were not real-estate related.`);
   console.log(`Skipped ${skippedWithoutCity} articles without Gurugram/Faridabad city match.`);
   console.log(`Skipped ${skippedMissingFields} articles missing required display fields.`);
   console.log(`Skipped ${skippedOutsideCity} articles with outside-city headline conflicts.`);
@@ -682,6 +792,10 @@ async function main() {
 
   for (const article of expandedArticles.slice(0, 100)) {
     const missingFields = missingRequiredPayloadFields(article);
+
+    if (article.title && article.newsLink && !isRealEstateRelated(article)) {
+      console.log(`Skipped not real estate: ${article.title}`);
+    }
 
     if (article.title && article.newsLink && article.cityCode && missingFields.length > 0) {
       console.log(`Skipped missing ${missingFields.join(", ")}: ${article.title}`);
