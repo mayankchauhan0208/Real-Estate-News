@@ -16,12 +16,9 @@ const sentNewsPath = path.join(stateDir, "sent-news.json");
 
 const defaultSources = [
   "https://www.hindustantimes.com/real-estate",
-  "https://www.aninews.in/category/business/",
   "https://www.cnbctv18.com/real-estate/",
   "https://realty.economictimes.indiatimes.com/",
   "https://www.moneycontrol.com/news/business/real-estate/",
-  "https://www.moneycontrol.com/real-estate-property/",
-  "https://www.business-standard.com/search?q=REAL%20ESTATE",
   "https://www.business-standard.com/topic/real-estate",
   "https://www.outlookmoney.com/topic/real-estate",
   "https://www.tribuneindia.com/topic/real-estate",
@@ -30,14 +27,10 @@ const defaultSources = [
   "https://realtynxt.com/",
   "https://www.hindustantimes.com/topic/faridabad/news",
   "https://www.track2realty.track2media.com/",
-  "https://www.lokmattimes.com/business/",
   "https://propnewstime.com/",
   "https://www.rprealtyplus.com/",
   "https://housing.com/news/",
-  "https://www.proptiger.com/guide/",
   "https://content.magicbricks.com/property-news/",
-  "https://www.squareyards.com/blog",
-  "https://www.99acres.com/articles/",
   "https://www.financialexpress.com/about/real-estate/"
 ];
 
@@ -172,6 +165,50 @@ const nationalBusinessKeywords = [
   "acquisition",
   "merger"
 ];
+const blockedTitleKeywords = [
+  "about us",
+  "advertise",
+  "awards",
+  "brand awareness",
+  "careers",
+  "conference",
+  "contact us",
+  "digital branding",
+  "education & careers",
+  "expo",
+  "integrated campaigns",
+  "login",
+  "newsletter",
+  "privacy policy",
+  "register",
+  "subscription",
+  "terms of use",
+  "virtual engagement",
+  "webinar"
+];
+const blockedExactTitles = [
+  "latest news",
+  "real estate news",
+  "terms of use"
+];
+const blockedUrlParts = [
+  "/about",
+  "/advertise",
+  "/awards",
+  "/campaign",
+  "/career",
+  "/conference",
+  "/contact",
+  "/education",
+  "/event",
+  "/login",
+  "/newsletter",
+  "/privacy",
+  "/register",
+  "/subscription",
+  "/terms",
+  "/webinar"
+];
 const outsideCityKeywords = [
   "ahmedabad",
   "andhra",
@@ -179,12 +216,15 @@ const outsideCityKeywords = [
   "bangalore",
   "bengal",
   "bhopal",
+  "bhubaneswar",
   "chandigarh",
   "chennai",
   "delhi",
   "goa",
   "gujarat",
+  "haridwar",
   "hyderabad",
+  "indore",
   "jaipur",
   "kerala",
   "kolkata",
@@ -193,8 +233,12 @@ const outsideCityKeywords = [
   "mumbai",
   "new delhi",
   "noida",
+  "perumbakkam",
+  "phuket",
   "pune",
   "rajasthan",
+  "singapore",
+  "tamil nadu",
   "telangana",
   "uttar pradesh"
 ];
@@ -381,13 +425,21 @@ function getArticleSearchText(article) {
     .toLowerCase();
 }
 
+function getArticlePrimaryText(article) {
+  return [article.title, article.description].join(" ").toLowerCase();
+}
+
 function isReraRelated(article) {
-  return hasKeyword(getArticleSearchText(article), reraKeywords);
+  return !isBlockedArticle(article) && hasKeyword(getArticleSearchText(article), reraKeywords);
 }
 
 function isCourtRealEstateRelated(article) {
   const haystack = getArticleSearchText(article);
-  return hasKeyword(haystack, courtKeywords) && hasKeyword(haystack, realEstateKeywords);
+  return (
+    !isBlockedArticle(article) &&
+    hasKeyword(haystack, courtKeywords) &&
+    hasRealEstateEvidence(article)
+  );
 }
 
 function isNationalRealEstateBusinessUpdate(article) {
@@ -395,6 +447,7 @@ function isNationalRealEstateBusinessUpdate(article) {
   const title = article.title || "";
 
   return (
+    !isBlockedArticle(article) &&
     hasKeyword(haystack, realEstateCompanyKeywords) &&
     hasKeyword(haystack, nationalBusinessKeywords) &&
     !hasKeyword(title, outsideCityKeywords)
@@ -402,9 +455,12 @@ function isNationalRealEstateBusinessUpdate(article) {
 }
 
 function isRealEstateRelated(article) {
-  const haystack = getArticleSearchText(article);
+  if (isBlockedArticle(article)) {
+    return false;
+  }
+
   return (
-    hasKeyword(haystack, realEstateKeywords) ||
+    hasRealEstateEvidence(article) ||
     isReraRelated(article) ||
     isCourtRealEstateRelated(article) ||
     isNationalRealEstateBusinessUpdate(article)
@@ -495,6 +551,29 @@ function missingRequiredPayloadFields(article) {
 function hasKeyword(value, keywords) {
   const normalized = value.toLowerCase();
   return keywords.some((keyword) => normalized.includes(keyword));
+}
+
+function hasRealEstateEvidence(article) {
+  const primaryText = getArticlePrimaryText(article);
+  const fullText = getArticleSearchText(article);
+
+  return (
+    hasKeyword(primaryText, realEstateKeywords) ||
+    hasKeyword(primaryText, realEstateCompanyKeywords) ||
+    (hasKeyword(fullText, realEstateKeywords) && hasKeyword(primaryText, targetCityKeywords))
+  );
+}
+
+function isBlockedArticle(article) {
+  const title = article.title || "";
+  const newsLink = article.newsLink || "";
+  const normalizedTitle = title.trim().toLowerCase();
+
+  return (
+    blockedExactTitles.includes(normalizedTitle) ||
+    hasKeyword(title, blockedTitleKeywords) ||
+    hasKeyword(newsLink, blockedUrlParts)
+  );
 }
 
 function hasOutsideCityConflict(article) {
@@ -681,7 +760,7 @@ async function fetchPage(sourceUrl) {
     const link = absoluteUrl($(element).attr("href"), sourceUrl);
     const title = stripHtml($(element).text());
 
-    if (!link || seenLinks.has(link) || title.length < 18) {
+    if (!link || seenLinks.has(link) || title.length < 18 || isBlockedArticle({ title, newsLink: link })) {
       return;
     }
 
@@ -840,6 +919,7 @@ async function main() {
         article.title &&
         article.newsLink &&
         article.cityCode &&
+        !isBlockedArticle(article) &&
         missingRequiredPayloadFields(article).length === 0 &&
         !hasOutsideCityConflict(article) &&
         (resendKnownArticles || !sentIds.has(article.id))
@@ -869,11 +949,15 @@ async function main() {
   const skippedNotRealEstate = expandedArticles.filter(
     (article) => article.title && article.newsLink && !isRealEstateRelated(article)
   ).length;
+  const skippedBlocked = expandedArticles.filter(
+    (article) => article.title && article.newsLink && isBlockedArticle(article)
+  ).length;
   const skippedMissingFields = expandedArticles.filter(
     (article) =>
       article.title &&
       article.newsLink &&
       article.cityCode &&
+      !isBlockedArticle(article) &&
       missingRequiredPayloadFields(article).length > 0 &&
       (resendKnownArticles || !sentIds.has(article.id))
   ).length;
@@ -882,6 +966,7 @@ async function main() {
       article.title &&
       article.newsLink &&
       article.cityCode &&
+      !isBlockedArticle(article) &&
       missingRequiredPayloadFields(article).length === 0 &&
       hasOutsideCityConflict(article) &&
       (resendKnownArticles || !sentIds.has(article.id))
@@ -891,6 +976,7 @@ async function main() {
     : expandedArticles.filter((article) => sentIds.has(article.id)).length;
 
   console.log(`Found ${uniqueArticles.length} new articles.`);
+  console.log(`Skipped ${skippedBlocked} blocked menu/spam pages.`);
   console.log(`Skipped ${skippedNotRealEstate} articles that were not real-estate related.`);
   console.log(`Skipped ${skippedWithoutCity} articles without Gurugram/Faridabad city match.`);
   console.log(`Skipped ${skippedMissingFields} articles missing required display fields.`);
@@ -899,6 +985,10 @@ async function main() {
 
   for (const article of expandedArticles.slice(0, 100)) {
     const missingFields = missingRequiredPayloadFields(article);
+
+    if (article.title && article.newsLink && isBlockedArticle(article)) {
+      console.log(`Skipped blocked page: ${article.title}`);
+    }
 
     if (article.title && article.newsLink && !isRealEstateRelated(article)) {
       console.log(`Skipped not real estate: ${article.title}`);
