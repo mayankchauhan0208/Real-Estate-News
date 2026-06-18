@@ -494,7 +494,7 @@ function isWithinBackfillRange(article) {
 }
 
 function detectCityCode(article) {
-  const haystack = getArticleSearchText(article);
+  const haystack = getArticlePrimaryText(article);
 
   const match = cityRules.find((rule) =>
     rule.keywords.some((keyword) => haystack.includes(keyword))
@@ -566,6 +566,11 @@ function detectCityCodes(article) {
 
   const cityCode = detectCityCode(article);
   return cityCode ? [cityCode] : [];
+}
+
+function hasTargetRegionInPrimaryText(article) {
+  const primaryText = getArticlePrimaryText(article);
+  return hasKeyword(primaryText, targetCityKeywords);
 }
 
 function applyCityCode(article) {
@@ -660,12 +665,12 @@ function isBlockedArticle(article) {
 }
 
 function hasOutsideCityConflict(article) {
-  const title = article.title || "";
+  const primaryText = getArticlePrimaryText(article);
   if (shouldSendToBothCities(article)) {
     return false;
   }
 
-  return hasKeyword(title, outsideCityKeywords) && !hasKeyword(title, targetCityKeywords);
+  return hasKeyword(primaryText, outsideCityKeywords) && !hasKeyword(primaryText, targetCityKeywords);
 }
 
 function createTestArticle() {
@@ -1015,6 +1020,7 @@ async function main() {
         article.newsLink &&
         article.cityCode &&
         !isBlockedArticle(article) &&
+        hasTargetRegionInPrimaryText(article) &&
         isWithinBackfillRange(article) &&
         missingRequiredPayloadFields(article).length === 0 &&
         !hasOutsideCityConflict(article) &&
@@ -1042,6 +1048,14 @@ async function main() {
   const skippedWithoutCity = expandedArticles.filter(
     (article) => article.title && article.newsLink && isRealEstateRelated(article) && !article.cityCode
   ).length;
+  const skippedWithoutTargetRegion = expandedArticles.filter(
+    (article) =>
+      article.title &&
+      article.newsLink &&
+      article.cityCode &&
+      !isBlockedArticle(article) &&
+      !hasTargetRegionInPrimaryText(article)
+  ).length;
   const skippedNotRealEstate = expandedArticles.filter(
     (article) => article.title && article.newsLink && !isRealEstateRelated(article)
   ).length;
@@ -1054,6 +1068,7 @@ async function main() {
       article.newsLink &&
       article.cityCode &&
       !isBlockedArticle(article) &&
+      hasTargetRegionInPrimaryText(article) &&
       missingRequiredPayloadFields(article).length > 0 &&
       (resendKnownArticles || !articleDedupeIds(article).some((id) => sentIds.has(id)))
   ).length;
@@ -1063,6 +1078,7 @@ async function main() {
       article.newsLink &&
       article.cityCode &&
       !isBlockedArticle(article) &&
+      hasTargetRegionInPrimaryText(article) &&
       missingRequiredPayloadFields(article).length === 0 &&
       hasOutsideCityConflict(article) &&
       (resendKnownArticles || !articleDedupeIds(article).some((id) => sentIds.has(id)))
@@ -1077,6 +1093,7 @@ async function main() {
           article.newsLink &&
           article.cityCode &&
           !isBlockedArticle(article) &&
+          hasTargetRegionInPrimaryText(article) &&
           missingRequiredPayloadFields(article).length === 0 &&
           !hasOutsideCityConflict(article) &&
           !isWithinBackfillRange(article)
@@ -1087,6 +1104,7 @@ async function main() {
   console.log(`Skipped ${skippedBlocked} blocked menu/spam pages.`);
   console.log(`Skipped ${skippedNotRealEstate} articles that were not real-estate related.`);
   console.log(`Skipped ${skippedWithoutCity} articles without Gurugram/Faridabad city match.`);
+  console.log(`Skipped ${skippedWithoutTargetRegion} articles without target region in title/description.`);
   console.log(`Skipped ${skippedMissingFields} articles missing required display fields.`);
   console.log(`Skipped ${skippedOutsideCity} articles with outside-city headline conflicts.`);
   console.log(`Skipped ${skippedOutsideBackfillRange} articles outside the backfill date range.`);
@@ -1101,6 +1119,10 @@ async function main() {
 
     if (article.title && article.newsLink && !isRealEstateRelated(article)) {
       console.log(`Skipped not real estate: ${article.title}`);
+    }
+
+    if (article.title && article.newsLink && article.cityCode && !hasTargetRegionInPrimaryText(article)) {
+      console.log(`Skipped no target region in title/description: ${article.title}`);
     }
 
     if (article.title && article.newsLink && article.cityCode && missingFields.length > 0) {
