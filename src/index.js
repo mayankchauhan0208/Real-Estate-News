@@ -37,21 +37,20 @@ const defaultSources = [
 const cityRules = [
   {
     code: "faridabad",
-    keywords: ["greater faridabad", "neharpar", "faridabad"]
+    keywords: ["faridabad", "greater faridabad", "neharpar"]
   },
   {
     code: "gurugram",
     keywords: [
       "gurugram",
       "gurgaon",
-      "dwarka expressway",
-      "golf course road",
       "manesar",
       "manasar",
-      "sohna",
-      "sohna road",
       "pataudi",
-      "patodi"
+      "patudi",
+      "patodi",
+      "sohna",
+      "sohna road"
     ]
   }
 ];
@@ -468,13 +467,7 @@ function isRealEstateRelated(article) {
 }
 
 function shouldSendToBothCities(article) {
-  const haystack = getArticleSearchText(article);
-  return (
-    hasKeyword(haystack, ncrKeywords) ||
-    isReraRelated(article) ||
-    isCourtRealEstateRelated(article) ||
-    isNationalRealEstateBusinessUpdate(article)
-  );
+  return hasNcrMatch(article);
 }
 
 function detectCityCodes(article) {
@@ -551,6 +544,11 @@ function missingRequiredPayloadFields(article) {
 function hasKeyword(value, keywords) {
   const normalized = value.toLowerCase();
   return keywords.some((keyword) => normalized.includes(keyword));
+}
+
+function hasNcrMatch(article) {
+  const haystack = getArticleSearchText(article);
+  return /\b(delhi ncr|national capital region|ncr)\b/i.test(haystack);
 }
 
 function hasRealEstateEvidence(article) {
