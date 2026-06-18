@@ -278,6 +278,31 @@ function getSources() {
     .filter(Boolean);
 }
 
+function isBackfillMode() {
+  return env("BACKFILL_NEWS", "false").toLowerCase() === "true";
+}
+
+function getPositiveIntegerEnv(name, fallback) {
+  const value = Number.parseInt(env(name, String(fallback)), 10);
+  return Number.isFinite(value) && value > 0 ? value : fallback;
+}
+
+function getMaxItemsPerSource() {
+  if (isBackfillMode()) {
+    return getPositiveIntegerEnv("BACKFILL_MAX_ITEMS_PER_SOURCE", 25);
+  }
+
+  return getPositiveIntegerEnv("MAX_ITEMS_PER_SOURCE", 4);
+}
+
+function getMaxItemsPerRun() {
+  if (isBackfillMode()) {
+    return getPositiveIntegerEnv("BACKFILL_MAX_ITEMS_PER_RUN", 120);
+  }
+
+  return getPositiveIntegerEnv("MAX_ITEMS_PER_RUN", 30);
+}
+
 async function fetchWithTimeout(url, options = {}, timeoutMs = 8000) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
@@ -406,6 +431,44 @@ function startOfDayIso(value) {
 
   date.setUTCHours(0, 0, 0, 0);
   return date.toISOString();
+}
+
+function parseDateOnly(value, endOfDay = false) {
+  const trimmed = value?.trim();
+
+  if (!trimmed || !/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) {
+    return null;
+  }
+
+  const suffix = endOfDay ? "T23:59:59.999Z" : "T00:00:00.000Z";
+  const date = new Date(`${trimmed}${suffix}`);
+
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function getArticleDate(article) {
+  const value =
+    toIsoDate(article.publishedAt) ||
+    toIsoDate(article.createdAt) ||
+    toIsoDate(article.fetchedAt);
+
+  return value ? new Date(value) : null;
+}
+
+function isWithinBackfillRange(article) {
+  if (!isBackfillMode()) {
+    return true;
+  }
+
+  const fromDate = parseDateOnly(env("BACKFILL_FROM"));
+  const toDate = parseDateOnly(env("BACKFILL_TO"), true);
+  const articleDate = getArticleDate(article);
+
+  if (!fromDate || !toDate) {
+    throw new Error("Backfill requires BACKFILL_FROM and BACKFILL_TO in YYYY-MM-DD format.");
+  }
+
+  return articleDate && articleDate >= fromDate && articleDate <= toDate;
 }
 
 function detectCityCode(article) {
@@ -645,8 +708,7 @@ async function fetchFeed(sourceUrl) {
   const feed = await parser.parseURL(sourceUrl);
   const source = feed.title || new URL(sourceUrl).hostname;
   const publisherLogo = pickFirst(getPublisherLogo(feed), getFallbackLogo(sourceUrl));
-  const maxPerSource = Number.parseInt(env("MAX_ITEMS_PER_SOURCE", "4"), 10);
-  const feedItems = feed.items.slice(0, Number.isFinite(maxPerSource) ? maxPerSource : 4);
+  const feedItems = feed.items.slice(0, getMaxItemsPerSource());
 
   return Promise.all(feedItems.map(async (item) => {
     const newsLink = item.link || item.guid;
@@ -750,7 +812,6 @@ async function fetchPage(sourceUrl) {
     absoluteUrl($('link[rel="shortcut icon"]').attr("href"), sourceUrl),
     getFallbackLogo(sourceUrl)
   );
-  const maxPerSource = Number.parseInt(env("MAX_ITEMS_PER_SOURCE", "4"), 10);
   const seenLinks = new Set();
   const candidates = [];
 
@@ -785,7 +846,7 @@ async function fetchPage(sourceUrl) {
     });
   });
 
-  const limitedCandidates = candidates.slice(0, Number.isFinite(maxPerSource) ? maxPerSource : 4);
+  const limitedCandidates = candidates.slice(0, getMaxItemsPerSource());
   const articles = [];
 
   for (const candidate of limitedCandidates) {
@@ -889,10 +950,19 @@ async function main() {
 
   const sources = getSources();
   const selectedSources = sources.length > 0 ? sources : defaultSources;
-  const maxItems = Number.parseInt(env("MAX_ITEMS_PER_RUN", "30"), 10);
-  const resendKnownArticles = env("RESEND_KNOWN_ARTICLES", "false").toLowerCase() === "true";
+  const maxItems = getMaxItemsPerRun();
+  const backfillMode = isBackfillMode();
+  const resendKnownArticles = backfillMode || env("RESEND_KNOWN_ARTICLES", "false").toLowerCase() === "true";
   const sentIds = await readSentIds();
   const allArticles = [];
+
+  if (backfillMode) {
+    console.log(
+      `Backfill enabled: scanning up to ${getMaxItemsPerSource()} items per source from ${env(
+        "BACKFILL_FROM"
+      )} to ${env("BACKFILL_TO")} and ignoring saved dedupe for this run.`
+    );
+  }
 
   if (resendKnownArticles) {
     console.log("Manual resend enabled: ignoring saved dedupe for this run.");
@@ -918,6 +988,7 @@ async function main() {
         article.newsLink &&
         article.cityCode &&
         !isBlockedArticle(article) &&
+        isWithinBackfillRange(article) &&
         missingRequiredPayloadFields(article).length === 0 &&
         !hasOutsideCityConflict(article) &&
         (resendKnownArticles || !sentIds.has(article.id))
@@ -931,7 +1002,7 @@ async function main() {
 
       return new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0);
     })
-  ).slice(0, Number.isFinite(maxItems) ? maxItems : 30);
+  ).slice(0, maxItems);
   const articlesToPush = [...uniqueArticles].sort((a, b) => {
     const priorityDifference = articlePriority(b) - articlePriority(a);
 
@@ -972,6 +1043,18 @@ async function main() {
   const skippedAlreadySent = resendKnownArticles
     ? 0
     : expandedArticles.filter((article) => sentIds.has(article.id)).length;
+  const skippedOutsideBackfillRange = backfillMode
+    ? expandedArticles.filter(
+        (article) =>
+          article.title &&
+          article.newsLink &&
+          article.cityCode &&
+          !isBlockedArticle(article) &&
+          missingRequiredPayloadFields(article).length === 0 &&
+          !hasOutsideCityConflict(article) &&
+          !isWithinBackfillRange(article)
+      ).length
+    : 0;
 
   console.log(`Found ${uniqueArticles.length} new articles.`);
   console.log(`Skipped ${skippedBlocked} blocked menu/spam pages.`);
@@ -979,6 +1062,7 @@ async function main() {
   console.log(`Skipped ${skippedWithoutCity} articles without Gurugram/Faridabad city match.`);
   console.log(`Skipped ${skippedMissingFields} articles missing required display fields.`);
   console.log(`Skipped ${skippedOutsideCity} articles with outside-city headline conflicts.`);
+  console.log(`Skipped ${skippedOutsideBackfillRange} articles outside the backfill date range.`);
   console.log(`Skipped ${skippedAlreadySent} already-sent articles.`);
 
   for (const article of expandedArticles.slice(0, 100)) {

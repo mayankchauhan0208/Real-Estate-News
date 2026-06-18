@@ -21,6 +21,34 @@ on:
         options:
           - "false"
           - "true"
+      backfill_news:
+        description: "One-time backfill by original article date using strict city rules"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+      backfill_from:
+        description: "Backfill start date, YYYY-MM-DD"
+        required: false
+        default: "2026-06-13"
+        type: string
+      backfill_to:
+        description: "Backfill end date, YYYY-MM-DD"
+        required: false
+        default: "2026-06-18"
+        type: string
+      backfill_max_items_per_source:
+        description: "How many items to scan per source during backfill"
+        required: false
+        default: "25"
+        type: string
+      backfill_max_items_per_run:
+        description: "Maximum articles to push during backfill"
+        required: false
+        default: "120"
+        type: string
 
 concurrency:
   group: news-api-pusher
@@ -63,3 +91,8 @@ jobs:
           ALLOW_DEFAULT_CITY_CODE: ${{ vars.ALLOW_DEFAULT_CITY_CODE || 'false' }}
           PUSH_TEST_NEWS: ${{ inputs.push_test_news || 'false' }}
           RESEND_KNOWN_ARTICLES: ${{ inputs.resend_known_articles || 'false' }}
+          BACKFILL_NEWS: ${{ inputs.backfill_news || 'false' }}
+          BACKFILL_FROM: ${{ inputs.backfill_from || '' }}
+          BACKFILL_TO: ${{ inputs.backfill_to || '' }}
+          BACKFILL_MAX_ITEMS_PER_SOURCE: ${{ inputs.backfill_max_items_per_source || '25' }}
+          BACKFILL_MAX_ITEMS_PER_RUN: ${{ inputs.backfill_max_items_per_run || '120' }}
