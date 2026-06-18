@@ -166,6 +166,8 @@ const nationalBusinessKeywords = [
 ];
 const blockedTitleKeywords = [
   "about us",
+  "actor",
+  "actress",
   "advertise",
   "awards",
   "brand awareness",
@@ -179,6 +181,7 @@ const blockedTitleKeywords = [
   "login",
   "newsletter",
   "privacy policy",
+  "preity zinta",
   "register",
   "subscription",
   "terms of use",
@@ -331,6 +334,25 @@ function stableId(article) {
     .toLowerCase();
 
   return crypto.createHash("sha256").update(value).digest("hex");
+}
+
+function normalizeTitle(value = "") {
+  return value
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function titleCityId(article) {
+  const value = [normalizeTitle(article.title), article.cityCode].filter(Boolean).join("|");
+
+  return crypto.createHash("sha256").update(value).digest("hex");
+}
+
+function articleDedupeIds(article) {
+  return [article.id, titleCityId(article)].filter(Boolean);
 }
 
 function stripHtml(value = "") {
@@ -610,7 +632,7 @@ function hasKeyword(value, keywords) {
 }
 
 function hasNcrMatch(article) {
-  const haystack = getArticleSearchText(article);
+  const haystack = getArticlePrimaryText(article);
   return /\b(delhi ncr|national capital region|ncr)\b/i.test(haystack);
 }
 
@@ -880,15 +902,20 @@ async function fetchSource(sourceUrl) {
   }
 }
 
-function uniqueById(articles) {
+function uniqueByDedupeIds(articles) {
   const seenIds = new Set();
 
   return articles.filter((article) => {
-    if (!article.id || seenIds.has(article.id)) {
+    const dedupeIds = articleDedupeIds(article);
+
+    if (dedupeIds.length === 0 || dedupeIds.some((id) => seenIds.has(id))) {
       return false;
     }
 
-    seenIds.add(article.id);
+    for (const id of dedupeIds) {
+      seenIds.add(id);
+    }
+
     return true;
   });
 }
@@ -980,7 +1007,7 @@ async function main() {
 
   const expandedArticles = allArticles.flatMap(expandCityArticles);
 
-  const uniqueArticles = uniqueById(
+  const uniqueArticles = uniqueByDedupeIds(
     expandedArticles
     .filter(
       (article) =>
@@ -991,7 +1018,7 @@ async function main() {
         isWithinBackfillRange(article) &&
         missingRequiredPayloadFields(article).length === 0 &&
         !hasOutsideCityConflict(article) &&
-        (resendKnownArticles || !sentIds.has(article.id))
+        (resendKnownArticles || !articleDedupeIds(article).some((id) => sentIds.has(id)))
     )
     .sort((a, b) => {
       const priorityDifference = articlePriority(a) - articlePriority(b);
@@ -1028,7 +1055,7 @@ async function main() {
       article.cityCode &&
       !isBlockedArticle(article) &&
       missingRequiredPayloadFields(article).length > 0 &&
-      (resendKnownArticles || !sentIds.has(article.id))
+      (resendKnownArticles || !articleDedupeIds(article).some((id) => sentIds.has(id)))
   ).length;
   const skippedOutsideCity = expandedArticles.filter(
     (article) =>
@@ -1038,11 +1065,11 @@ async function main() {
       !isBlockedArticle(article) &&
       missingRequiredPayloadFields(article).length === 0 &&
       hasOutsideCityConflict(article) &&
-      (resendKnownArticles || !sentIds.has(article.id))
+      (resendKnownArticles || !articleDedupeIds(article).some((id) => sentIds.has(id)))
   ).length;
   const skippedAlreadySent = resendKnownArticles
     ? 0
-    : expandedArticles.filter((article) => sentIds.has(article.id)).length;
+    : expandedArticles.filter((article) => articleDedupeIds(article).some((id) => sentIds.has(id))).length;
   const skippedOutsideBackfillRange = backfillMode
     ? expandedArticles.filter(
         (article) =>
@@ -1099,7 +1126,9 @@ async function main() {
 
   for (const article of articlesToPush) {
     const result = await pushArticle(article);
-    sentIds.add(article.id);
+    for (const id of articleDedupeIds(article)) {
+      sentIds.add(id);
+    }
     console.log(
       `Pushed (${result.status}, ${article.cityCode}): ${article.title} | API response: ${
         result.body || "<empty>"
