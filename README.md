@@ -83,14 +83,27 @@ If it cannot detect real-estate relevance, the article is skipped. If it is real
 ## Default sources
 
 - `https://www.hindustantimes.com/real-estate`
-- `https://www.aninews.in/category/business/`
+- `https://www.hindustantimes.com/cities/gurugram-news`
+- `https://www.hindustantimes.com/topic/faridabad/news`
 - `https://www.cnbctv18.com/real-estate/`
-- `https://www.moneycontrol.com/news/business/`
-- `https://www.business-standard.com/search?q=REAL%20ESTATE`
+- `https://realty.economictimes.indiatimes.com/`
+- `https://www.moneycontrol.com/news/business/real-estate/`
+- `https://www.business-standard.com/topic/real-estate`
 - `https://www.outlookmoney.com/topic/real-estate`
 - `https://www.tribuneindia.com/topic/real-estate`
+- `https://www.tribuneindia.com/news/haryana`
+- `https://timesofindia.indiatimes.com/city/gurgaon`
+- `https://timesofindia.indiatimes.com/city/faridabad`
+- `https://indianexpress.com/section/cities/delhi/`
+- `https://www.thehindu.com/news/cities/Delhi/`
+- `https://www.amarujala.com/haryana/faridabad`
 - `https://torbitrealty.com/category/news/city-updates/gurugram/`
 - `https://realtynmore.com/latest-news/`
-- `https://www.hindustantimes.com/topic/faridabad/news`
-- `https://www.lokmattimes.com/business/`
+- `https://realtynxt.com/`
+- `https://www.track2realty.track2media.com/`
 - `https://propnewstime.com/`
+- `https://www.constructionworld.in/`
+- `https://housing.com/news/`
+- `https://content.magicbricks.com/`
+- `https://www.99acres.com/articles/`
+- `https://www.squareyards.com/blog`
