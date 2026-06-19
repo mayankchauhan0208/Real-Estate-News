@@ -219,8 +219,10 @@ const outsideCityKeywords = [
   "bengal",
   "bhopal",
   "bhubaneswar",
+  "bihar",
   "chandigarh",
   "chennai",
+  "coimbatore",
   "delhi",
   "goa",
   "gujarat",
@@ -235,7 +237,10 @@ const outsideCityKeywords = [
   "mumbai",
   "new delhi",
   "noida",
+  "pallikaranai",
+  "patna",
   "perumbakkam",
+  "perungudi",
   "phuket",
   "pune",
   "rajasthan",
@@ -571,6 +576,14 @@ function detectCityCodes(article) {
 function hasTargetRegionInPrimaryText(article) {
   const primaryText = getArticlePrimaryText(article);
   return hasKeyword(primaryText, targetCityKeywords);
+}
+
+function hasOutsideRegionInPrimaryText(article) {
+  if (hasNcrMatch(article)) {
+    return false;
+  }
+
+  return hasKeyword(getArticlePrimaryText(article), outsideCityKeywords);
 }
 
 function applyCityCode(article) {
@@ -1021,6 +1034,7 @@ async function main() {
         article.cityCode &&
         !isBlockedArticle(article) &&
         hasTargetRegionInPrimaryText(article) &&
+        !hasOutsideRegionInPrimaryText(article) &&
         isWithinBackfillRange(article) &&
         missingRequiredPayloadFields(article).length === 0 &&
         !hasOutsideCityConflict(article) &&
@@ -1056,6 +1070,14 @@ async function main() {
       !isBlockedArticle(article) &&
       !hasTargetRegionInPrimaryText(article)
   ).length;
+  const skippedOutsideRegionPrimary = expandedArticles.filter(
+    (article) =>
+      article.title &&
+      article.newsLink &&
+      article.cityCode &&
+      !isBlockedArticle(article) &&
+      hasOutsideRegionInPrimaryText(article)
+  ).length;
   const skippedNotRealEstate = expandedArticles.filter(
     (article) => article.title && article.newsLink && !isRealEstateRelated(article)
   ).length;
@@ -1069,6 +1091,7 @@ async function main() {
       article.cityCode &&
       !isBlockedArticle(article) &&
       hasTargetRegionInPrimaryText(article) &&
+      !hasOutsideRegionInPrimaryText(article) &&
       missingRequiredPayloadFields(article).length > 0 &&
       (resendKnownArticles || !articleDedupeIds(article).some((id) => sentIds.has(id)))
   ).length;
@@ -1079,6 +1102,7 @@ async function main() {
       article.cityCode &&
       !isBlockedArticle(article) &&
       hasTargetRegionInPrimaryText(article) &&
+      !hasOutsideRegionInPrimaryText(article) &&
       missingRequiredPayloadFields(article).length === 0 &&
       hasOutsideCityConflict(article) &&
       (resendKnownArticles || !articleDedupeIds(article).some((id) => sentIds.has(id)))
@@ -1094,6 +1118,7 @@ async function main() {
           article.cityCode &&
           !isBlockedArticle(article) &&
           hasTargetRegionInPrimaryText(article) &&
+          !hasOutsideRegionInPrimaryText(article) &&
           missingRequiredPayloadFields(article).length === 0 &&
           !hasOutsideCityConflict(article) &&
           !isWithinBackfillRange(article)
@@ -1105,6 +1130,7 @@ async function main() {
   console.log(`Skipped ${skippedNotRealEstate} articles that were not real-estate related.`);
   console.log(`Skipped ${skippedWithoutCity} articles without Gurugram/Faridabad city match.`);
   console.log(`Skipped ${skippedWithoutTargetRegion} articles without target region in title/description.`);
+  console.log(`Skipped ${skippedOutsideRegionPrimary} articles with outside region in title/description.`);
   console.log(`Skipped ${skippedMissingFields} articles missing required display fields.`);
   console.log(`Skipped ${skippedOutsideCity} articles with outside-city headline conflicts.`);
   console.log(`Skipped ${skippedOutsideBackfillRange} articles outside the backfill date range.`);
@@ -1123,6 +1149,10 @@ async function main() {
 
     if (article.title && article.newsLink && article.cityCode && !hasTargetRegionInPrimaryText(article)) {
       console.log(`Skipped no target region in title/description: ${article.title}`);
+    }
+
+    if (article.title && article.newsLink && article.cityCode && hasOutsideRegionInPrimaryText(article)) {
+      console.log(`Skipped outside region in title/description: ${article.title}`);
     }
 
     if (article.title && article.newsLink && article.cityCode && missingFields.length > 0) {
