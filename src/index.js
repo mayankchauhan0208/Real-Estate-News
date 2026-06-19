@@ -66,7 +66,7 @@ const requiredPayloadFields = [
   "postedByLogo"
 ];
 
-const ncrKeywords = ["delhi ncr", "ncr", "national capital region"];
+const ncrKeywords = ["delhi ncr"];
 const ncrCityCodes = ["gurugram", "faridabad"];
 const targetCityKeywords = [...cityRules.flatMap((rule) => rule.keywords), ...ncrKeywords];
 const reraKeywords = ["rera", "hrera", "h-rera", "real estate regulatory authority"];
@@ -377,6 +377,10 @@ const outsideCityKeywords = [
   "telangana",
   "uttar pradesh"
 ];
+const allLocationKeywords = [
+  ...targetCityKeywords,
+  ...outsideCityKeywords
+];
 
 function env(name, fallback = "") {
   return process.env[name]?.trim() || fallback;
@@ -627,13 +631,19 @@ function isWithinBackfillRange(article) {
 }
 
 function detectCityCode(article) {
-  const haystack = getArticlePrimaryText(article);
+  const primaryText = getArticlePrimaryText(article);
 
-  const match = cityRules.find((rule) =>
-    rule.keywords.some((keyword) => haystack.includes(keyword))
+  const primaryMatch = cityRules.find((rule) =>
+    rule.keywords.some((keyword) => primaryText.includes(keyword))
   );
 
-  return match?.code || "";
+  if (primaryMatch) {
+    return primaryMatch.code;
+  }
+
+  const articleMatch = cityRules.find((rule) => hasStrongArticleCityMatch(article, rule));
+
+  return articleMatch?.code || "";
 }
 
 function getArticleSearchText(article) {
@@ -704,6 +714,10 @@ function detectCityCodes(article) {
 function hasTargetRegionInPrimaryText(article) {
   const primaryText = getArticlePrimaryText(article);
   return hasKeyword(primaryText, targetCityKeywords);
+}
+
+function hasTargetRegionEvidence(article) {
+  return hasTargetRegionInPrimaryText(article) || cityRules.some((rule) => hasStrongArticleCityMatch(article, rule));
 }
 
 function hasOutsideRegionInPrimaryText(article) {
@@ -777,6 +791,17 @@ function hasKeyword(value, keywords) {
   return keywords.some((keyword) => normalized.includes(keyword));
 }
 
+function countKeywordMentions(value, keywords) {
+  const normalized = value.toLowerCase();
+
+  return keywords.reduce((count, keyword) => {
+    const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const matches = normalized.match(new RegExp(`\\b${escaped}\\b`, "gi"));
+
+    return count + (matches?.length || 0);
+  }, 0);
+}
+
 function hasWholeWordKeyword(value, keywords) {
   const normalized = value.toLowerCase();
 
@@ -788,7 +813,20 @@ function hasWholeWordKeyword(value, keywords) {
 
 function hasNcrMatch(article) {
   const haystack = getArticlePrimaryText(article);
-  return /\b(delhi ncr|national capital region|ncr)\b/i.test(haystack);
+  return /\bdelhi ncr\b/i.test(haystack);
+}
+
+function hasStrongArticleCityMatch(article, rule) {
+  const fullText = getArticleSearchText(article);
+  const targetMentions = countKeywordMentions(fullText, rule.keywords);
+
+  if (targetMentions < 2) {
+    return false;
+  }
+
+  const allLocationMentions = countKeywordMentions(fullText, allLocationKeywords);
+
+  return allLocationMentions > 0 && targetMentions / allLocationMentions >= 0.5;
 }
 
 function hasRealEstateEvidence(article) {
@@ -798,7 +836,7 @@ function hasRealEstateEvidence(article) {
   return (
     hasKeyword(primaryText, realEstateKeywords) ||
     hasKeyword(primaryText, realEstateCompanyKeywords) ||
-    (hasKeyword(fullText, realEstateKeywords) && hasKeyword(primaryText, targetCityKeywords))
+    (hasKeyword(fullText, realEstateKeywords) && hasTargetRegionEvidence(article))
   );
 }
 
@@ -832,6 +870,24 @@ function hasOutsideCityConflict(article) {
   return hasKeyword(primaryText, outsideCityKeywords) && !hasKeyword(primaryText, targetCityKeywords);
 }
 
+function hasOutsideLocationDominance(article) {
+  if (shouldSendToBothCities(article) || !article.cityCode) {
+    return false;
+  }
+
+  const rule = cityRules.find((cityRule) => cityRule.code === article.cityCode);
+
+  if (!rule) {
+    return false;
+  }
+
+  const fullText = getArticleSearchText(article);
+  const targetMentions = countKeywordMentions(fullText, rule.keywords);
+  const outsideMentions = countKeywordMentions(fullText, outsideCityKeywords);
+
+  return outsideMentions > 0 && outsideMentions > targetMentions;
+}
+
 function getRejectionReasons(article, sentIds, { resendKnownArticles = false } = {}) {
   const reasons = [];
 
@@ -856,8 +912,8 @@ function getRejectionReasons(article, sentIds, { resendKnownArticles = false } =
     reasons.push("filter 4: no allowed city match");
   }
 
-  if (article.cityCode && !hasTargetRegionInPrimaryText(article)) {
-    reasons.push("filter 5: target region missing from title/description");
+  if (article.cityCode && !hasTargetRegionEvidence(article)) {
+    reasons.push("filter 5: target region missing or weak");
   }
 
   if (article.cityCode && hasOutsideRegionInPrimaryText(article)) {
@@ -868,18 +924,22 @@ function getRejectionReasons(article, sentIds, { resendKnownArticles = false } =
     reasons.push("filter 7: outside-city conflict");
   }
 
+  if (article.cityCode && hasOutsideLocationDominance(article)) {
+    reasons.push("filter 8: outside location dominates full article");
+  }
+
   if (!isWithinBackfillRange(article)) {
-    reasons.push("filter 8: outside backfill date range");
+    reasons.push("filter 9: outside backfill date range");
   }
 
   const missingFields = article.cityCode ? missingRequiredPayloadFields(article) : [];
 
   if (missingFields.length > 0) {
-    reasons.push(`filter 9: missing required fields (${missingFields.join(", ")})`);
+    reasons.push(`filter 10: missing required fields (${missingFields.join(", ")})`);
   }
 
   if (!resendKnownArticles && articleDedupeIds(article).some((id) => sentIds.has(id))) {
-    reasons.push("filter 10: already sent");
+    reasons.push("filter 11: already sent");
   }
 
   return reasons;
