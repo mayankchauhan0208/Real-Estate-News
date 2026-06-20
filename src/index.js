@@ -29,7 +29,6 @@ const defaultSources = [
   "https://timesofindia.indiatimes.com/city/faridabad",
   "https://indianexpress.com/section/cities/delhi/",
   "https://www.thehindu.com/news/cities/Delhi/",
-  "https://www.amarujala.com/haryana/faridabad",
   "https://torbitrealty.com/category/news/city-updates/gurugram/",
   "https://realtynmore.com/latest-news/",
   "https://realtynxt.com/",
@@ -328,6 +327,7 @@ const negativeNewsKeywords = [
   "demolish",
   "demolished",
   "demolition",
+  "diesel",
   "death",
   "dead",
   "default",
@@ -350,6 +350,8 @@ const negativeNewsKeywords = [
   "frauds",
   "grievance",
   "grievances",
+  "genset",
+  "generator",
   "hospital",
   "illegal",
   "injured",
@@ -363,6 +365,7 @@ const negativeNewsKeywords = [
   "notices",
   "penalty",
   "police",
+  "powercut",
   "protest",
   "protests",
   "rape",
@@ -386,7 +389,9 @@ const negativeNewsKeywords = [
   "unable",
   "violation",
   "violations",
-  "violence"
+  "violence",
+  "worries",
+  "worry"
 ];
 const negativePhraseKeywords = [
   "accused of",
@@ -398,6 +403,7 @@ const negativePhraseKeywords = [
   "construction ban",
   "construction halted",
   "construction stopped",
+  "diesel bulk buying",
   "died by suicide",
   "dies by suicide",
   "director arrested",
@@ -412,6 +418,10 @@ const negativePhraseKeywords = [
   "left in lurch",
   "murdered over property",
   "payment default",
+  "power backup",
+  "power backup worries",
+  "power outage",
+  "power supply issue",
   "property tax",
   "property dispute murder",
   "property registration crisis",
@@ -425,6 +435,7 @@ const negativePhraseKeywords = [
   "rera complaint",
   "rera order",
   "rera penalty",
+  "short circuit",
   "registry stalled",
   "registration stalled",
   "real estate agent killed",
@@ -1005,6 +1016,20 @@ function hasPromotionalRealEstateSignal(article) {
   return hasKeyword(primaryText, promotionalRealEstateKeywords) || hasKeyword(fullText, promotionalRealEstateKeywords);
 }
 
+function hasDisallowedLanguage(article) {
+  const text = [
+    article.title,
+    article.description,
+    article.articleText,
+    article.postedBy,
+    article.newsLink
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  return /[\u0900-\u097F]/u.test(text) || /\bnews in hindi\b/i.test(text) || /amarujala\.com/i.test(text);
+}
+
 function isGurugramCorridorArticle(article) {
   return hasWholeWordKeyword(getArticleSearchText(article), gurugramCorridorKeywords);
 }
@@ -1074,52 +1099,56 @@ function getRejectionReasons(article, sentIds, { resendKnownArticles = false } =
     reasons.push("filter 1: spam/menu page");
   }
 
+  if (hasDisallowedLanguage(article)) {
+    reasons.push("filter 2: non-English/Hindi content");
+  }
+
   if (isNegativeNews(article)) {
-    reasons.push("filter 2: negative/crime news");
+    reasons.push("filter 3: negative/crime/utility concern news");
   }
 
   if (!isRealEstateRelated(article)) {
-    reasons.push("filter 3: not positive target real-estate/project news");
+    reasons.push("filter 4: not positive target real-estate/project news");
   }
 
   if (!article.cityCode) {
-    reasons.push("filter 4: no allowed city match");
+    reasons.push("filter 5: no allowed city match");
   }
 
   if (article.cityCode && !hasTargetRegionEvidence(article)) {
-    reasons.push("filter 5: target region missing or weak");
+    reasons.push("filter 6: target region missing or weak");
   }
 
   if (article.cityCode && hasOutsideRegionInPrimaryText(article)) {
-    reasons.push("filter 6: outside region in title/description");
+    reasons.push("filter 7: outside region in title/description");
   }
 
   if (article.cityCode && hasOutsideCityConflict(article)) {
-    reasons.push("filter 7: outside-city conflict");
+    reasons.push("filter 8: outside-city conflict");
   }
 
   if (article.cityCode && hasOutsideLocationDominance(article)) {
-    reasons.push("filter 8: outside location dominates full article");
+    reasons.push("filter 9: outside location dominates full article");
   }
 
   if (!isWithinBackfillRange(article)) {
-    reasons.push("filter 9: outside backfill date range");
+    reasons.push("filter 10: outside backfill date range");
   }
 
   const missingFields = article.cityCode ? missingRequiredPayloadFields(article) : [];
 
   if (missingFields.length > 0) {
-    reasons.push(`filter 10: missing required fields (${missingFields.join(", ")})`);
+    reasons.push(`filter 11: missing required fields (${missingFields.join(", ")})`);
   }
 
   const invalidUrlFields = article.cityCode ? invalidPayloadUrlFields(article) : [];
 
   if (invalidUrlFields.length > 0) {
-    reasons.push(`filter 11: invalid URL fields (${invalidUrlFields.join(", ")})`);
+    reasons.push(`filter 12: invalid URL fields (${invalidUrlFields.join(", ")})`);
   }
 
   if (!resendKnownArticles && articleDedupeIds(article).some((id) => sentIds.has(id))) {
-    reasons.push("filter 12: already sent");
+    reasons.push("filter 13: already sent");
   }
 
   return reasons;

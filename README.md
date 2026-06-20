@@ -96,7 +96,6 @@ If it cannot detect positive real-estate relevance and a target city, the articl
 - `https://timesofindia.indiatimes.com/city/faridabad`
 - `https://indianexpress.com/section/cities/delhi/`
 - `https://www.thehindu.com/news/cities/Delhi/`
-- `https://www.amarujala.com/haryana/faridabad`
 - `https://torbitrealty.com/category/news/city-updates/gurugram/`
 - `https://realtynmore.com/latest-news/`
 - `https://realtynxt.com/`
