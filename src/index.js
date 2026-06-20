@@ -52,6 +52,8 @@ const cityRules = [
     keywords: [
       "gurugram",
       "gurgaon",
+      "dwarka expressway",
+      "golf course road",
       "manesar",
       "manasar",
       "pataudi",
