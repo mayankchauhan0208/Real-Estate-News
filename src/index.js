@@ -209,14 +209,19 @@ const blockedTitleKeywords = [
   "digital branding",
   "education & careers",
   "expo",
+  "gallery",
   "integrated campaigns",
   "login",
   "newsletter",
+  "photo gallery",
+  "photos",
   "privacy policy",
   "preity zinta",
   "register",
   "subscription",
   "terms of use",
+  "video",
+  "videos",
   "virtual engagement",
   "webinar"
 ];
@@ -235,12 +240,17 @@ const blockedUrlParts = [
   "/contact",
   "/education",
   "/event",
+  "/gallery",
   "/login",
   "/newsletter",
+  "/photo",
+  "/photos",
   "/privacy",
   "/register",
   "/subscription",
   "/terms",
+  "/video",
+  "/videos",
   "/webinar"
 ];
 const negativeNewsKeywords = [
@@ -501,10 +511,53 @@ function articleDedupeIds(article) {
 }
 
 function stripHtml(value = "") {
-  return value
+  const text = value
     .replace(/<[^>]*>/g, " ")
+    .replace(/&nbsp;/gi, " ")
+    .replace(/&amp;/gi, "&")
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/g, "'")
     .replace(/\s+/g, " ")
     .trim();
+
+  return text;
+}
+
+function cleanText(value = "", maxLength = 600) {
+  const text = stripHtml(String(value))
+    .replace(/[\u200B-\u200D\uFEFF]/g, "")
+    .replace(/\s*[\r\n]+\s*/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  if (text.length <= maxLength) {
+    return text;
+  }
+
+  return `${text.slice(0, maxLength).replace(/\s+\S*$/, "").trim()}.`;
+}
+
+function cleanTitle(value = "") {
+  return cleanText(value, 180)
+    .replace(/\s+[|-]\s+(latest news|news|real estate news)$/i, "")
+    .replace(/^(watch|photos?|video):\s*/i, "")
+    .trim();
+}
+
+function cleanArticleFields(article) {
+  const title = cleanTitle(article.title);
+  const description = cleanText(article.description, 700) || title;
+
+  return {
+    ...article,
+    title,
+    description,
+    articleText: cleanText(article.articleText, 5000),
+    newsLink: cleanText(article.newsLink, 1000),
+    thumbnailImage: cleanText(article.thumbnailImage, 1000),
+    postedBy: cleanText(article.postedBy, 120),
+    postedByLogo: cleanText(article.postedByLogo, 1000)
+  };
 }
 
 function pickFirst(...values) {
@@ -559,9 +612,19 @@ function absoluteUrl(value, baseUrl) {
   }
 
   try {
-    return new URL(value, baseUrl).toString();
+    const url = new URL(value, baseUrl);
+    return ["http:", "https:"].includes(url.protocol) ? url.toString() : "";
   } catch {
     return "";
+  }
+}
+
+function isHttpUrl(value) {
+  try {
+    const url = new URL(value);
+    return ["http:", "https:"].includes(url.protocol);
+  } catch {
+    return false;
   }
 }
 
@@ -794,6 +857,12 @@ function missingRequiredPayloadFields(article) {
   });
 }
 
+function invalidPayloadUrlFields(article) {
+  const payload = toApiPayload(article);
+
+  return ["newsLink", "thumbnailImage", "postedByLogo"].filter((field) => !isHttpUrl(payload[field]));
+}
+
 function hasKeyword(value, keywords) {
   const normalized = value.toLowerCase();
   return keywords.some((keyword) => normalized.includes(keyword));
@@ -946,8 +1015,14 @@ function getRejectionReasons(article, sentIds, { resendKnownArticles = false } =
     reasons.push(`filter 10: missing required fields (${missingFields.join(", ")})`);
   }
 
+  const invalidUrlFields = article.cityCode ? invalidPayloadUrlFields(article) : [];
+
+  if (invalidUrlFields.length > 0) {
+    reasons.push(`filter 11: invalid URL fields (${invalidUrlFields.join(", ")})`);
+  }
+
   if (!resendKnownArticles && articleDedupeIds(article).some((id) => sentIds.has(id))) {
-    reasons.push("filter 11: already sent");
+    reasons.push("filter 12: already sent");
   }
 
   return reasons;
@@ -1052,7 +1127,7 @@ async function fetchFeed(sourceUrl) {
       fetchedAt: rawArticle.fetchedAt
     };
 
-    const cityArticle = applyCityCode(article);
+    const cityArticle = applyCityCode(cleanArticleFields(article));
 
     return {
       ...cityArticle,
@@ -1171,7 +1246,7 @@ async function fetchPage(sourceUrl) {
       createdAt: metadata.publishedAt || candidate.fetchedAt
     };
 
-    const cityArticle = applyCityCode(article);
+    const cityArticle = applyCityCode(cleanArticleFields(article));
 
     articles.push({
       ...cityArticle,
