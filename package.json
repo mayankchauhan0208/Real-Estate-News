@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
-    "check": "node --check src/index.js"
+    "check": "node --check src/index.js && node --check src/filter-smoke-test.js",
+    "test": "node src/filter-smoke-test.js",
+    "build": "node --check src/index.js && node --check src/filter-smoke-test.js && node src/filter-smoke-test.js"
   },
   "dependencies": {
     "cheerio": "^1.0.0",

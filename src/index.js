@@ -1,6 +1,7 @@
 import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 import * as cheerio from "cheerio";
 import Parser from "rss-parser";
 
@@ -1119,11 +1120,11 @@ function getRejectionReasons(article, sentIds, { resendKnownArticles = false } =
     reasons.push("filter 6: target region missing or weak");
   }
 
-  if (article.cityCode && hasOutsideRegionInPrimaryText(article)) {
+  if (hasOutsideRegionInPrimaryText(article)) {
     reasons.push("filter 7: outside region in title/description");
   }
 
-  if (article.cityCode && hasOutsideCityConflict(article)) {
+  if (hasOutsideCityConflict(article)) {
     reasons.push("filter 8: outside-city conflict");
   }
 
@@ -1565,7 +1566,19 @@ async function main() {
   await writeSentIds(sentIds);
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+export {
+  applyCityCode,
+  cleanArticleFields,
+  detectCityCodes,
+  getRejectionReasons,
+  hasDisallowedLanguage,
+  isNegativeNews,
+  isPublishableArticle
+};
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+}
