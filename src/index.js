@@ -64,6 +64,7 @@ const cityRules = [
     ]
   }
 ];
+const gurugramCorridorKeywords = ["dwarka expressway", "golf course road"];
 
 const requiredPayloadFields = [
   "title",
@@ -825,7 +826,7 @@ function isNationalRealEstateBusinessUpdate(article) {
     hasPromotionalRealEstateSignal(article) &&
     hasKeyword(haystack, realEstateCompanyKeywords) &&
     hasKeyword(haystack, nationalBusinessKeywords) &&
-    !hasWholeWordKeyword(title, outsideCityKeywords)
+    !hasWholeWordKeyword(title, getDisqualifyingOutsideCityKeywords(article))
   );
 }
 
@@ -868,11 +869,11 @@ function hasTargetRegionEvidence(article) {
 }
 
 function hasOutsideRegionInPrimaryText(article) {
-  return hasWholeWordKeyword(getArticlePrimaryText(article), outsideCityKeywords);
+  return hasWholeWordKeyword(getArticlePrimaryText(article), getDisqualifyingOutsideCityKeywords(article));
 }
 
 function hasOutsideRegionEvidence(article) {
-  return hasWholeWordKeyword(getArticleSearchText(article), outsideCityKeywords);
+  return hasWholeWordKeyword(getArticleSearchText(article), getDisqualifyingOutsideCityKeywords(article));
 }
 
 function applyCityCode(article) {
@@ -1004,6 +1005,18 @@ function hasPromotionalRealEstateSignal(article) {
   return hasKeyword(primaryText, promotionalRealEstateKeywords) || hasKeyword(fullText, promotionalRealEstateKeywords);
 }
 
+function isGurugramCorridorArticle(article) {
+  return hasWholeWordKeyword(getArticleSearchText(article), gurugramCorridorKeywords);
+}
+
+function getDisqualifyingOutsideCityKeywords(article) {
+  if (!isGurugramCorridorArticle(article)) {
+    return outsideCityKeywords;
+  }
+
+  return outsideCityKeywords.filter((keyword) => !["delhi", "new delhi"].includes(keyword));
+}
+
 function isBlockedArticle(article) {
   const title = article.title || "";
   const newsLink = article.newsLink || "";
@@ -1044,7 +1057,7 @@ function hasOutsideLocationDominance(article) {
 
   const fullText = getArticleSearchText(article);
   const targetMentions = countKeywordMentions(fullText, rule.keywords);
-  const outsideMentions = countKeywordMentions(fullText, outsideCityKeywords);
+  const outsideMentions = countKeywordMentions(fullText, getDisqualifyingOutsideCityKeywords(article));
 
   return outsideMentions > 0 && outsideMentions >= targetMentions;
 }
