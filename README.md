@@ -68,17 +68,17 @@ If `APP_API_KEY` is provided, the script also sends:
 Authorization: Bearer YOUR_APP_API_KEY
 ```
 
-Supported API city codes are `gurugram` and `faridabad`. The script reads article page text before deciding whether to post. It only sends real-estate-related news.
+Supported API city codes are `gurugram` and `faridabad`. The script reads the headline, description, article page text, and URL before deciding whether to post. It only sends positive real-estate, infrastructure, development, launch, investment, and project-promotion news for the target cities.
 
 City handling:
 
 - Gurugram, Gurgaon, Sohna, Pataudi/Patodi, Manesar/Manasar, Dwarka Expressway, Golf Course Road -> `gurugram`
 - Faridabad, Greater Faridabad, Neharpar -> `faridabad`
-- Delhi NCR/NCR real-estate news -> both `gurugram` and `faridabad`
-- RERA/HRERA real-estate updates/cases -> both `gurugram` and `faridabad`
-- Real-estate court/legal cases -> both `gurugram` and `faridabad`
+- Articles must contain clear Gurugram/Faridabad evidence. Generic Delhi NCR news is skipped unless the target cities are explicitly detected.
+- RERA, court, legal, complaint, fraud, crime, death, murder, suicide, protest, delay, stalled-project, buyer-distress, demolition, penalty, and other negative/defaming stories are skipped even if they mention real estate.
+- Any outside-city evidence in the headline, description, full article text, or URL is treated as a hard reject.
 
-If it cannot detect real-estate relevance, the article is skipped. If it is real-estate-related but cannot detect a target city/special both-city rule, it is skipped unless `ALLOW_DEFAULT_CITY_CODE` is set to `true`.
+If it cannot detect positive real-estate relevance and a target city, the article is skipped. If it is real-estate-related but cannot detect a target city, it is skipped unless `ALLOW_DEFAULT_CITY_CODE` is set to `true`.
 
 ## Default sources
 

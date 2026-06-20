@@ -76,7 +76,7 @@ const requiredPayloadFields = [
 
 const ncrKeywords = ["delhi ncr"];
 const ncrCityCodes = ["gurugram", "faridabad"];
-const targetCityKeywords = [...cityRules.flatMap((rule) => rule.keywords), ...ncrKeywords];
+const targetCityKeywords = cityRules.flatMap((rule) => rule.keywords);
 const reraKeywords = ["rera", "hrera", "h-rera", "real estate regulatory authority"];
 const courtKeywords = [
   "court",
@@ -150,6 +150,52 @@ const realEstateKeywords = [
   "stamp duty",
   "township",
   "transit-oriented development"
+];
+const promotionalRealEstateKeywords = [
+  "affordable housing",
+  "appreciation",
+  "approval",
+  "approved",
+  "bookings",
+  "commercial property",
+  "commercial real estate",
+  "completion",
+  "connectivity",
+  "corridor",
+  "delivered",
+  "delivery",
+  "develop",
+  "developed",
+  "developer",
+  "development",
+  "expansion",
+  "expressway",
+  "growth",
+  "growth corridor",
+  "highway",
+  "housing",
+  "infra",
+  "infrastructure",
+  "inaugurated",
+  "investment",
+  "launch",
+  "launched",
+  "launches",
+  "luxury housing",
+  "luxury homes",
+  "metro",
+  "new project",
+  "new project launch",
+  "office space",
+  "possession",
+  "price appreciation",
+  "project",
+  "real estate",
+  "realty",
+  "redevelopment",
+  "residential",
+  "sales",
+  "township"
 ];
 const realEstateCompanyKeywords = [
   "dlf",
@@ -255,8 +301,12 @@ const blockedUrlParts = [
 ];
 const negativeNewsKeywords = [
   "accident",
+  "accused",
+  "arrest",
+  "arrested",
   "assault",
   "attack",
+  "banned",
   "bankruptcy",
   "body found",
   "boycott",
@@ -271,6 +321,7 @@ const negativeNewsKeywords = [
   "crime",
   "criminal",
   "crisis",
+  "debarred",
   "demolish",
   "demolished",
   "demolition",
@@ -291,11 +342,18 @@ const negativeNewsKeywords = [
   "eviction",
   "fir",
   "fine",
+  "fined",
   "fraud",
   "frauds",
+  "grievance",
+  "grievances",
   "hospital",
+  "illegal",
+  "injured",
+  "jail",
   "killed",
   "lawsuit",
+  "legal",
   "litigation",
   "murder",
   "notice",
@@ -305,6 +363,8 @@ const negativeNewsKeywords = [
   "protest",
   "protests",
   "rape",
+  "raid",
+  "raided",
   "revoked",
   "scam",
   "sealed",
@@ -313,24 +373,34 @@ const negativeNewsKeywords = [
   "stalled",
   "stranded",
   "strike",
+  "summon",
+  "summoned",
   "stuck",
   "suicide",
   "suicides",
   "tax hike",
   "threat",
   "unable",
+  "violation",
+  "violations",
   "violence"
 ];
 const negativePhraseKeywords = [
+  "accused of",
   "bear the brunt",
+  "builder arrested",
   "builder suicide",
   "buyers stranded",
+  "cheated homebuyers",
   "construction ban",
   "construction halted",
   "construction stopped",
   "died by suicide",
   "dies by suicide",
+  "director arrested",
   "eow complaint",
+  "fraud case",
+  "homebuyer complaint",
   "homebuyers bear the brunt",
   "homebuyers stranded",
   "homebuyer suicide",
@@ -349,6 +419,9 @@ const negativePhraseKeywords = [
   "project stalled",
   "project stuck",
   "project suspended",
+  "rera complaint",
+  "rera order",
+  "rera penalty",
   "registry stalled",
   "registration stalled",
   "real estate agent killed",
@@ -705,7 +778,7 @@ function detectCityCode(article) {
   const primaryText = getArticlePrimaryText(article);
 
   const primaryMatch = cityRules.find((rule) =>
-    rule.keywords.some((keyword) => primaryText.includes(keyword))
+    hasWholeWordKeyword(primaryText, rule.keywords)
   );
 
   if (primaryMatch) {
@@ -735,7 +808,7 @@ function isCourtRealEstateRelated(article) {
   const haystack = getArticleSearchText(article);
   return (
     !isBlockedArticle(article) &&
-    hasKeyword(haystack, courtKeywords) &&
+    hasWholeWordKeyword(haystack, courtKeywords) &&
     hasRealEstateEvidence(article)
   );
 }
@@ -746,9 +819,11 @@ function isNationalRealEstateBusinessUpdate(article) {
 
   return (
     !isBlockedArticle(article) &&
+    hasTargetRegionEvidence(article) &&
+    hasPromotionalRealEstateSignal(article) &&
     hasKeyword(haystack, realEstateCompanyKeywords) &&
     hasKeyword(haystack, nationalBusinessKeywords) &&
-    !hasKeyword(title, outsideCityKeywords)
+    !hasWholeWordKeyword(title, outsideCityKeywords)
   );
 }
 
@@ -757,16 +832,11 @@ function isRealEstateRelated(article) {
     return false;
   }
 
-  return (
-    hasRealEstateEvidence(article) ||
-    isReraRelated(article) ||
-    isCourtRealEstateRelated(article) ||
-    isNationalRealEstateBusinessUpdate(article)
-  );
+  return hasRealEstateEvidence(article) || isNationalRealEstateBusinessUpdate(article);
 }
 
 function shouldSendToBothCities(article) {
-  return hasNcrMatch(article);
+  return detectMatchedCityCodes(article).length === ncrCityCodes.length;
 }
 
 function detectCityCodes(article) {
@@ -774,17 +844,21 @@ function detectCityCodes(article) {
     return [];
   }
 
-  if (shouldSendToBothCities(article)) {
-    return ncrCityCodes;
-  }
+  return detectMatchedCityCodes(article);
+}
 
-  const cityCode = detectCityCode(article);
-  return cityCode ? [cityCode] : [];
+function detectMatchedCityCodes(article) {
+  const primaryText = getArticlePrimaryText(article);
+  const cityCodes = cityRules
+    .filter((rule) => hasWholeWordKeyword(primaryText, rule.keywords) || hasStrongArticleCityMatch(article, rule))
+    .map((rule) => rule.code);
+
+  return [...new Set(cityCodes)];
 }
 
 function hasTargetRegionInPrimaryText(article) {
   const primaryText = getArticlePrimaryText(article);
-  return hasKeyword(primaryText, targetCityKeywords);
+  return hasWholeWordKeyword(primaryText, targetCityKeywords);
 }
 
 function hasTargetRegionEvidence(article) {
@@ -792,11 +866,11 @@ function hasTargetRegionEvidence(article) {
 }
 
 function hasOutsideRegionInPrimaryText(article) {
-  if (hasNcrMatch(article)) {
-    return false;
-  }
+  return hasWholeWordKeyword(getArticlePrimaryText(article), outsideCityKeywords);
+}
 
-  return hasKeyword(getArticlePrimaryText(article), outsideCityKeywords);
+function hasOutsideRegionEvidence(article) {
+  return hasWholeWordKeyword(getArticleSearchText(article), outsideCityKeywords);
 }
 
 function applyCityCode(article) {
@@ -911,10 +985,21 @@ function hasRealEstateEvidence(article) {
   const fullText = getArticleSearchText(article);
 
   return (
-    hasKeyword(primaryText, realEstateKeywords) ||
-    hasKeyword(primaryText, realEstateCompanyKeywords) ||
-    (hasKeyword(fullText, realEstateKeywords) && hasTargetRegionEvidence(article))
+    hasTargetRegionEvidence(article) &&
+    hasPromotionalRealEstateSignal(article) &&
+    (
+      hasKeyword(primaryText, realEstateKeywords) ||
+      hasKeyword(primaryText, realEstateCompanyKeywords) ||
+      hasKeyword(fullText, realEstateKeywords)
+    )
   );
+}
+
+function hasPromotionalRealEstateSignal(article) {
+  const primaryText = getArticlePrimaryText(article);
+  const fullText = getArticleSearchText(article);
+
+  return hasKeyword(primaryText, promotionalRealEstateKeywords) || hasKeyword(fullText, promotionalRealEstateKeywords);
 }
 
 function isBlockedArticle(article) {
@@ -930,25 +1015,22 @@ function isBlockedArticle(article) {
 }
 
 function isNegativeNews(article) {
-  const primaryText = [article.title, article.description, article.newsLink].join(" ").toLowerCase();
+  const fullText = getArticleSearchText(article);
 
   return (
-    hasWholeWordKeyword(primaryText, negativeNewsKeywords) ||
-    hasKeyword(primaryText, negativePhraseKeywords)
+    hasWholeWordKeyword(fullText, negativeNewsKeywords) ||
+    hasKeyword(fullText, negativePhraseKeywords) ||
+    isReraRelated(article) ||
+    isCourtRealEstateRelated(article)
   );
 }
 
 function hasOutsideCityConflict(article) {
-  const primaryText = getArticlePrimaryText(article);
-  if (shouldSendToBothCities(article)) {
-    return false;
-  }
-
-  return hasKeyword(primaryText, outsideCityKeywords) && !hasKeyword(primaryText, targetCityKeywords);
+  return hasOutsideRegionEvidence(article);
 }
 
 function hasOutsideLocationDominance(article) {
-  if (shouldSendToBothCities(article) || !article.cityCode) {
+  if (!article.cityCode) {
     return false;
   }
 
@@ -962,7 +1044,7 @@ function hasOutsideLocationDominance(article) {
   const targetMentions = countKeywordMentions(fullText, rule.keywords);
   const outsideMentions = countKeywordMentions(fullText, outsideCityKeywords);
 
-  return outsideMentions > 0 && outsideMentions > targetMentions;
+  return outsideMentions > 0 && outsideMentions >= targetMentions;
 }
 
 function getRejectionReasons(article, sentIds, { resendKnownArticles = false } = {}) {
@@ -982,7 +1064,7 @@ function getRejectionReasons(article, sentIds, { resendKnownArticles = false } =
   }
 
   if (!isRealEstateRelated(article)) {
-    reasons.push("filter 3: not real-estate related");
+    reasons.push("filter 3: not positive target real-estate/project news");
   }
 
   if (!article.cityCode) {
