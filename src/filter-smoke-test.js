@@ -38,6 +38,44 @@ function reasons(overrides = {}) {
 assert.equal(publishable().cityCode, "gurugram");
 assert.equal(isPublishableArticle(publishable(), sentIds), true);
 
+assert.equal(
+  isPublishableArticle(
+    publishable({
+      title: "DLF Q2 results: Net profit rises 54% QoQ to Rs 1,180 crore",
+      description: "DLF reported stronger revenue and earnings in its real estate business.",
+      articleText: "DLF, the Gurugram-based real estate developer, reported higher net profit and sales bookings.",
+      newsLink:
+        "https://www.moneycontrol.com/news/business/real-estate/dlf-q2-results-net-profit-rises-54-qoq-to-rs-1-180-crore-yearly-profits-dips-14-13643536.html"
+    }),
+    sentIds
+  ),
+  true
+);
+
+assert.equal(
+  isPublishableArticle(
+    publishable({
+      title: "Delhi NCR-based businessman buys four apartments in DLF's The Dahlias in Gurugram",
+      description: "The luxury housing transaction highlights demand for premium Gurugram real estate.",
+      articleText: "The apartments are in DLF's The Dahlias in Gurugram.",
+      newsLink:
+        "https://www.moneycontrol.com/news/business/real-estate/delhi-ncr-based-businessman-buys-four-apartments-in-dlf-s-the-dahlias-in-gurugram-for-rs-380-crore-13643229.html"
+    }),
+    sentIds
+  ),
+  true
+);
+
+assert.match(
+  reasons({
+    title: "NCR housing market records strong premium demand",
+    description: "Housing sales grew across NCR with new launches and residential demand.",
+    articleText: "The report discusses Noida, Greater Noida and Ghaziabad without Gurugram or Faridabad.",
+    newsLink: "https://example.com/ncr-housing-market"
+  }).join("; "),
+  /no allowed city match|outside-city conflict|outside region/
+);
+
 assert.match(
   reasons({
     title: "फरीदाबाद में नई योजना के लाभार्थी",

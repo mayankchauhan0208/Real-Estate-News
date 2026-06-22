@@ -86,10 +86,13 @@ If it cannot detect positive real-estate relevance and a target city, the articl
 - `https://www.hindustantimes.com/topic/faridabad/news`
 - `https://www.cnbctv18.com/real-estate/`
 - `https://realty.economictimes.indiatimes.com/`
+- `https://realty.economictimes.indiatimes.com/tag/gurugram`
+- `https://realty.economictimes.indiatimes.com/tag/faridabad`
 - `https://www.moneycontrol.com/news/business/real-estate/`
 - `https://www.business-standard.com/topic/real-estate`
 - `https://www.outlookmoney.com/topic/real-estate`
 - `https://www.tribuneindia.com/topic/real-estate`
+- `https://timesofindia.indiatimes.com/real-estate`
 - `https://torbitrealty.com/category/news/city-updates/gurugram/`
 - `https://realtynmore.com/latest-news/`
 - `https://realtynxt.com/`
@@ -97,6 +100,4 @@ If it cannot detect positive real-estate relevance and a target city, the articl
 - `https://propnewstime.com/`
 - `https://www.constructionworld.in/`
 - `https://housing.com/news/`
-- `https://content.magicbricks.com/`
-- `https://www.99acres.com/articles/`
 - `https://www.squareyards.com/blog`

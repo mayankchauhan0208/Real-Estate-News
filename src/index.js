@@ -20,10 +20,13 @@ const defaultSources = [
   "https://www.hindustantimes.com/topic/faridabad/news",
   "https://www.cnbctv18.com/real-estate/",
   "https://realty.economictimes.indiatimes.com/",
+  "https://realty.economictimes.indiatimes.com/tag/gurugram",
+  "https://realty.economictimes.indiatimes.com/tag/faridabad",
   "https://www.moneycontrol.com/news/business/real-estate/",
   "https://www.business-standard.com/topic/real-estate",
   "https://www.outlookmoney.com/topic/real-estate",
   "https://www.tribuneindia.com/topic/real-estate",
+  "https://timesofindia.indiatimes.com/real-estate",
   "https://torbitrealty.com/category/news/city-updates/gurugram/",
   "https://realtynmore.com/latest-news/",
   "https://realtynxt.com/",
@@ -31,8 +34,6 @@ const defaultSources = [
   "https://propnewstime.com/",
   "https://www.constructionworld.in/",
   "https://housing.com/news/",
-  "https://content.magicbricks.com/",
-  "https://www.99acres.com/articles/",
   "https://www.squareyards.com/blog"
 ];
 
@@ -46,15 +47,20 @@ const cityRules = [
     keywords: [
       "gurugram",
       "gurgaon",
+      "dlf",
       "dwarka expressway",
       "golf course road",
       "manesar",
       "manasar",
+      "m3m",
       "pataudi",
       "patudi",
       "patodi",
+      "signature global",
       "sohna",
-      "sohna road"
+      "sohna road",
+      "smartworld",
+      "tulip group"
     ]
   }
 ];
@@ -167,6 +173,7 @@ const promotionalRealEstateKeywords = [
   "development",
   "expansion",
   "expressway",
+  "earnings",
   "growth",
   "growth corridor",
   "highway",
@@ -185,12 +192,16 @@ const promotionalRealEstateKeywords = [
   "new project launch",
   "office space",
   "possession",
+  "profit",
+  "net profit",
   "price appreciation",
   "project",
   "real estate",
   "realty",
   "redevelopment",
   "residential",
+  "results",
+  "revenue",
   "sales",
   "township"
 ];
@@ -942,6 +953,10 @@ function detectCityCodes(article) {
 }
 
 function detectMatchedCityCodes(article) {
+  if (hasNcrMatch(article)) {
+    return ncrCityCodes;
+  }
+
   const primaryText = getArticlePrimaryText(article);
   const cityCodes = cityRules
     .filter((rule) => hasWholeWordKeyword(primaryText, rule.keywords) || hasStrongArticleCityMatch(article, rule))
@@ -1115,6 +1130,10 @@ function isGurugramCorridorArticle(article) {
 }
 
 function getDisqualifyingOutsideCityKeywords(article) {
+  if (hasNcrMatch(article)) {
+    return outsideCityKeywords.filter((keyword) => !["delhi", "new delhi"].includes(keyword));
+  }
+
   if (!isGurugramCorridorArticle(article)) {
     return outsideCityKeywords;
   }
@@ -1549,7 +1568,7 @@ async function main() {
   }
 
   const sources = getSources();
-  const selectedSources = (sources.length > 0 ? sources : defaultSources).filter(isAllowedSource);
+  const selectedSources = [...new Set([...defaultSources, ...sources])].filter(isAllowedSource);
   const maxItems = getMaxItemsPerRun();
   const backfillMode = isBackfillMode();
   const resendKnownArticles = backfillMode || env("RESEND_KNOWN_ARTICLES", "false").toLowerCase() === "true";
