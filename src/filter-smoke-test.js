@@ -3,6 +3,7 @@ import {
   applyCityCode,
   cleanArticleFields,
   getRejectionReasons,
+  isAllowedSource,
   isPublishableArticle
 } from "./index.js";
 
@@ -37,6 +38,12 @@ function reasons(overrides = {}) {
 
 assert.equal(publishable().cityCode, "gurugram");
 assert.equal(isPublishableArticle(publishable(), sentIds), true);
+
+assert.equal(isAllowedSource("https://www.moneycontrol.com/news/business/real-estate/"), true);
+assert.equal(isAllowedSource("https://www.moneycontrol.com/news/business/"), false);
+assert.equal(isAllowedSource("https://www.aninews.in/category/business/"), false);
+assert.equal(isAllowedSource("https://www.lokmattimes.com/business/"), false);
+assert.equal(isAllowedSource("https://www.business-standard.com/search?q=REAL%20ESTATE"), false);
 
 assert.equal(
   isPublishableArticle(

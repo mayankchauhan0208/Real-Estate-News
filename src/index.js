@@ -539,9 +539,12 @@ const allLocationKeywords = [
   ...outsideCityKeywords
 ];
 const blockedSourceUrlParts = [
+  "aninews.in",
   "content.magicbricks.com",
   "financialexpress.com/about/real-estate",
+  "business-standard.com/search",
   "hindustantimes.com/cities/gurugram-news",
+  "lokmattimes.com",
   "rprealtyplus.com",
   "99acres.com/articles",
   "timesofindia.indiatimes.com/city/gurgaon",
@@ -590,7 +593,24 @@ function getSources() {
 
 function isAllowedSource(source) {
   const normalized = source.toLowerCase();
-  return Boolean(source) && !blockedSourceUrlParts.some((part) => normalized.includes(part));
+
+  if (!source || blockedSourceUrlParts.some((part) => normalized.includes(part))) {
+    return false;
+  }
+
+  try {
+    const url = new URL(source);
+    const host = url.hostname.replace(/^www\./, "");
+    const pathname = url.pathname.replace(/\/+$/, "");
+
+    if (host === "moneycontrol.com" && pathname === "/news/business") {
+      return false;
+    }
+  } catch {
+    return false;
+  }
+
+  return true;
 }
 
 function isBackfillMode() {
@@ -768,11 +788,9 @@ function getPublisherLogo(feed) {
 function getPublisherName(sourceUrl, pageTitle = "") {
   const host = new URL(sourceUrl).hostname.replace(/^www\./, "");
   const names = {
-    "aninews.in": "ANI News",
     "business-standard.com": "Business Standard",
     "cnbctv18.com": "CNBC TV18",
     "hindustantimes.com": "Hindustan Times",
-    "lokmattimes.com": "Lokmat Times",
     "moneycontrol.com": "Moneycontrol",
     "outlookmoney.com": "Outlook Money",
     "propnewstime.com": "Prop News Time",
@@ -1682,6 +1700,7 @@ export {
   detectCityCodes,
   getRejectionReasons,
   hasDisallowedLanguage,
+  isAllowedSource,
   isNegativeNews,
   isPublishableArticle
 };
