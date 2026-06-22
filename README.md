@@ -5,7 +5,7 @@ Fetches real estate and business news every 10 minutes with GitHub Actions, remo
 ## How it works
 
 - GitHub Actions runs `.github/workflows/news-pusher.yml` every 10 minutes.
-- The script reads sources from `NEWS_SOURCES`.
+- The script uses the built-in strict source list first, then adds any extra allowed sources from `NEWS_SOURCES`.
 - RSS feeds are parsed directly.
 - Normal webpage/category pages are scraped for article links, then each article page is checked for description and thumbnail metadata.
 - Each article gets a stable ID from its URL/title/source.
@@ -81,6 +81,8 @@ City handling:
 If it cannot detect positive real-estate relevance and a target city, the article is skipped. If it is real-estate-related but cannot detect a target city, it is skipped unless `ALLOW_DEFAULT_CITY_CODE` is set to `true`.
 
 ## Default sources
+
+Default sources are always used. Any `NEWS_SOURCES` secret entries are added on top, then known noisy or broken sources are filtered out.
 
 - `https://www.hindustantimes.com/real-estate`
 - `https://www.hindustantimes.com/topic/faridabad/news`

@@ -66,6 +66,42 @@ assert.equal(
   true
 );
 
+assert.equal(
+  isPublishableArticle(
+    publishable({
+      title: "Delhi NCR housing sales rise with premium launches",
+      description: "Delhi NCR residential launches and sales improved with new real estate projects.",
+      articleText: "Premium housing demand increased across Delhi NCR.",
+      newsLink: "https://example.com/delhi-ncr-housing-sales"
+    }),
+    sentIds
+  ),
+  true
+);
+
+assert.equal(
+  isPublishableArticle(
+    publishable({
+      title: "Premium housing sales rise with new launches",
+      description: "Residential launches and sales improved with new real estate projects.",
+      articleText: "The report says Delhi NCR premium housing demand increased with new launches.",
+      newsLink: "https://example.com/body-delhi-ncr-housing-sales"
+    }),
+    sentIds
+  ),
+  true
+);
+
+assert.match(
+  reasons({
+    title: "DLF reports higher profit on real estate sales",
+    description: "The developer reported higher revenue and bookings without mentioning a target city.",
+    articleText: "The company discussed national real estate results.",
+    newsLink: "https://example.com/dlf-results-no-city"
+  }).join("; "),
+  /no allowed city match|target region missing|not positive target real-estate/
+);
+
 assert.match(
   reasons({
     title: "NCR housing market records strong premium demand",

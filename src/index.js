@@ -5,10 +5,13 @@ import { pathToFileURL } from "node:url";
 import * as cheerio from "cheerio";
 import Parser from "rss-parser";
 
+const userAgent =
+  "Mozilla/5.0 news-api-pusher check";
+
 const parser = new Parser({
   timeout: 15000,
   headers: {
-    "User-Agent": "news-api-pusher/1.0 (+https://github.com)"
+    "User-Agent": userAgent
   }
 });
 
@@ -47,20 +50,15 @@ const cityRules = [
     keywords: [
       "gurugram",
       "gurgaon",
-      "dlf",
       "dwarka expressway",
       "golf course road",
       "manesar",
       "manasar",
-      "m3m",
       "pataudi",
       "patudi",
       "patodi",
-      "signature global",
       "sohna",
-      "sohna road",
-      "smartworld",
-      "tulip group"
+      "sohna road"
     ]
   }
 ];
@@ -79,7 +77,7 @@ const requiredPayloadFields = [
 
 const ncrKeywords = ["delhi ncr"];
 const ncrCityCodes = ["gurugram", "faridabad"];
-const targetCityKeywords = cityRules.flatMap((rule) => rule.keywords);
+const targetCityKeywords = [...cityRules.flatMap((rule) => rule.keywords), ...ncrKeywords];
 const reraKeywords = ["rera", "hrera", "h-rera", "real estate regulatory authority"];
 const courtKeywords = [
   "court",
@@ -221,7 +219,10 @@ const realEstateCompanyKeywords = [
   "ashiana housing",
   "kolte-patil",
   "mahindra lifespace",
-  "raymond realty"
+  "m3m",
+  "raymond realty",
+  "smartworld",
+  "tulip group"
 ];
 const nationalBusinessKeywords = [
   "q1",
@@ -538,7 +539,11 @@ const allLocationKeywords = [
   ...outsideCityKeywords
 ];
 const blockedSourceUrlParts = [
+  "content.magicbricks.com",
+  "financialexpress.com/about/real-estate",
   "hindustantimes.com/cities/gurugram-news",
+  "rprealtyplus.com",
+  "99acres.com/articles",
   "timesofindia.indiatimes.com/city/gurgaon",
   "timesofindia.indiatimes.com/city/faridabad",
   "tribuneindia.com/news/haryana",
@@ -971,7 +976,7 @@ function hasTargetRegionInPrimaryText(article) {
 }
 
 function hasTargetRegionEvidence(article) {
-  return hasTargetRegionInPrimaryText(article) || cityRules.some((rule) => hasStrongArticleCityMatch(article, rule));
+  return hasNcrMatch(article) || hasTargetRegionInPrimaryText(article) || cityRules.some((rule) => hasStrongArticleCityMatch(article, rule));
 }
 
 function hasOutsideRegionInPrimaryText(article) {
@@ -1072,7 +1077,7 @@ function hasWholeWordKeyword(value, keywords) {
 }
 
 function hasNcrMatch(article) {
-  const haystack = getArticlePrimaryText(article);
+  const haystack = getArticleSearchText(article);
   return /\bdelhi ncr\b/i.test(haystack);
 }
 
@@ -1080,11 +1085,15 @@ function hasStrongArticleCityMatch(article, rule) {
   const fullText = getArticleSearchText(article);
   const targetMentions = countKeywordMentions(fullText, rule.keywords);
 
-  if (targetMentions < 2) {
+  const allLocationMentions = countKeywordMentions(fullText, allLocationKeywords);
+
+  if (targetMentions < 1 || allLocationMentions === 0) {
     return false;
   }
 
-  const allLocationMentions = countKeywordMentions(fullText, allLocationKeywords);
+  if (targetMentions === allLocationMentions) {
+    return true;
+  }
 
   return allLocationMentions > 0 && targetMentions / allLocationMentions >= 0.5;
 }
@@ -1367,8 +1376,8 @@ async function fetchFeed(sourceUrl) {
 async function fetchHtml(sourceUrl) {
   const response = await fetchWithTimeout(sourceUrl, {
     headers: {
-      "User-Agent": "news-api-pusher/1.0 (+https://github.com)",
-      Accept: "text/html,application/xhtml+xml"
+      "User-Agent": userAgent,
+      Accept: "text/html,*/*"
     }
   });
 
