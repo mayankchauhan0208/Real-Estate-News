@@ -68,6 +68,58 @@ assert.match(
 
 assert.match(
   reasons({
+    title: "Yellow alert for thunderstorms in Haryana till June 24",
+    description: "According to IMD data, thunderstorms and rain are expected in Gurugram.",
+    articleText: "Weather officials issued a yellow alert for rain in Haryana.",
+    newsLink: "https://timesofindia.indiatimes.com/city/gurgaon/yellow-alert/articleshow/131841000.cms",
+    postedBy: "Gurgaon News: Latest Updates, Breaking Headlines & City News - Times of India"
+  }).join("; "),
+  /negative\/crime\/utility concern news|spam\/menu page/
+);
+
+assert.match(
+  reasons({
+    title: "Fresh survey to focus on existing built-up areas, not new claims in Haryana",
+    description: "SC-appointed panel will review Aravali built-up areas in Gurugram and Faridabad.",
+    articleText: "The survey is about existing claims and not a new project launch.",
+    newsLink: "https://timesofindia.indiatimes.com/city/gurgaon/fresh-survey/articleshow/131841001.cms",
+    postedBy: "Gurgaon News: Latest Updates, Breaking Headlines & City News - Times of India"
+  }).join("; "),
+  /negative\/crime\/utility concern news|spam\/menu page/
+);
+
+assert.match(
+  reasons({
+    title: "CAQM, pollution boards inspect sites for air monitors in Ggm, Fbad",
+    description: "Pollution boards inspected air monitors in Gurugram and Faridabad.",
+    articleText: "CAQM pollution monitoring update for the city.",
+    newsLink: "https://www.hindustantimes.com/cities/gurugram-news/caqm-pollution-board"
+  }).join("; "),
+  /negative\/crime\/utility concern news|spam\/menu page/
+);
+
+assert.match(
+  reasons({
+    title: "Traffic jam on Sohna E-way triggered by leak in water pipeline",
+    description: "Traffic jam and water pipeline leak on Sohna E-way.",
+    articleText: "Commuters faced delays after a pipeline leak.",
+    newsLink: "https://www.hindustantimes.com/cities/gurugram-news/traffic-jam-pipeline"
+  }).join("; "),
+  /negative\/crime\/utility concern news|spam\/menu page/
+);
+
+assert.match(
+  reasons({
+    title: "Haryana women's commission chief plans stronger grievance redressal",
+    description: "Grievance redressal update in Gurugram.",
+    articleText: "The commission discussed complaint handling.",
+    newsLink: "https://www.hindustantimes.com/cities/gurugram-news/grievance-redressal"
+  }).join("; "),
+  /negative\/crime\/utility concern news|spam\/menu page/
+);
+
+assert.match(
+  reasons({
     title: "Mumbai real estate project launched by developer",
     description: "Mumbai housing project launched with new residential towers.",
     articleText: "The project is in Mumbai and not in Gurugram or Faridabad.",

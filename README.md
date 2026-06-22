@@ -83,7 +83,6 @@ If it cannot detect positive real-estate relevance and a target city, the articl
 ## Default sources
 
 - `https://www.hindustantimes.com/real-estate`
-- `https://www.hindustantimes.com/cities/gurugram-news`
 - `https://www.hindustantimes.com/topic/faridabad/news`
 - `https://www.cnbctv18.com/real-estate/`
 - `https://realty.economictimes.indiatimes.com/`
@@ -91,11 +90,6 @@ If it cannot detect positive real-estate relevance and a target city, the articl
 - `https://www.business-standard.com/topic/real-estate`
 - `https://www.outlookmoney.com/topic/real-estate`
 - `https://www.tribuneindia.com/topic/real-estate`
-- `https://www.tribuneindia.com/news/haryana`
-- `https://timesofindia.indiatimes.com/city/gurgaon`
-- `https://timesofindia.indiatimes.com/city/faridabad`
-- `https://indianexpress.com/section/cities/delhi/`
-- `https://www.thehindu.com/news/cities/Delhi/`
 - `https://torbitrealty.com/category/news/city-updates/gurugram/`
 - `https://realtynmore.com/latest-news/`
 - `https://realtynxt.com/`

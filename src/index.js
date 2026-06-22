@@ -17,7 +17,6 @@ const sentNewsPath = path.join(stateDir, "sent-news.json");
 
 const defaultSources = [
   "https://www.hindustantimes.com/real-estate",
-  "https://www.hindustantimes.com/cities/gurugram-news",
   "https://www.hindustantimes.com/topic/faridabad/news",
   "https://www.cnbctv18.com/real-estate/",
   "https://realty.economictimes.indiatimes.com/",
@@ -25,11 +24,6 @@ const defaultSources = [
   "https://www.business-standard.com/topic/real-estate",
   "https://www.outlookmoney.com/topic/real-estate",
   "https://www.tribuneindia.com/topic/real-estate",
-  "https://www.tribuneindia.com/news/haryana",
-  "https://timesofindia.indiatimes.com/city/gurgaon",
-  "https://timesofindia.indiatimes.com/city/faridabad",
-  "https://indianexpress.com/section/cities/delhi/",
-  "https://www.thehindu.com/news/cities/Delhi/",
   "https://torbitrealty.com/category/news/city-updates/gurugram/",
   "https://realtynmore.com/latest-news/",
   "https://realtynxt.com/",
@@ -247,31 +241,56 @@ const nationalBusinessKeywords = [
 ];
 const blockedTitleKeywords = [
   "about us",
+  "admission",
+  "admissions",
   "actor",
   "actress",
   "advertise",
+  "air monitor",
+  "air monitors",
+  "aravali",
   "awards",
   "brand awareness",
+  "built-up areas",
+  "caqm",
   "careers",
+  "college",
   "conference",
   "contact us",
   "digital branding",
   "education & careers",
+  "ecological stress",
+  "environment",
   "expo",
+  "fish death",
+  "fish deaths",
   "gallery",
+  "grievance",
+  "grievance redressal",
   "integrated campaigns",
   "login",
   "newsletter",
+  "panel",
+  "pipeline",
+  "pollution",
   "photo gallery",
   "photos",
   "privacy policy",
   "preity zinta",
   "register",
+  "school",
+  "sewage",
+  "survey",
+  "traffic jam",
   "subscription",
   "terms of use",
+  "ug admission",
   "video",
   "videos",
   "virtual engagement",
+  "water pipeline",
+  "water supply",
+  "waterbody",
   "webinar"
 ];
 const blockedExactTitles = [
@@ -282,6 +301,7 @@ const blockedExactTitles = [
 const blockedUrlParts = [
   "/about",
   "/advertise",
+  "amarujala.com",
   "/awards",
   "/campaign",
   "/career",
@@ -305,6 +325,7 @@ const blockedUrlParts = [
 const negativeNewsKeywords = [
   "accident",
   "accused",
+  "alert",
   "arrest",
   "arrested",
   "assault",
@@ -313,6 +334,8 @@ const negativeNewsKeywords = [
   "bankruptcy",
   "body found",
   "boycott",
+  "built-up areas",
+  "caqm",
   "cancel",
   "canceled",
   "cancelled",
@@ -347,6 +370,7 @@ const negativeNewsKeywords = [
   "fir",
   "fine",
   "fined",
+  "fish deaths",
   "fraud",
   "frauds",
   "grievance",
@@ -355,6 +379,7 @@ const negativeNewsKeywords = [
   "generator",
   "hospital",
   "illegal",
+  "imd",
   "injured",
   "jail",
   "killed",
@@ -366,14 +391,18 @@ const negativeNewsKeywords = [
   "notices",
   "penalty",
   "police",
+  "pollution",
   "powercut",
   "protest",
   "protests",
+  "rain",
+  "rainfall",
   "rape",
   "raid",
   "raided",
   "revoked",
   "scam",
+  "sc-appointed",
   "sealed",
   "seized",
   "shooting",
@@ -386,11 +415,14 @@ const negativeNewsKeywords = [
   "suicide",
   "suicides",
   "tax hike",
+  "thunderstorm",
   "threat",
   "unable",
   "violation",
   "violations",
   "violence",
+  "weather",
+  "yellow alert",
   "worries",
   "worry"
 ];
@@ -400,6 +432,7 @@ const negativePhraseKeywords = [
   "builder arrested",
   "builder suicide",
   "buyers stranded",
+  "caqm pollution",
   "cheated homebuyers",
   "construction ban",
   "construction halted",
@@ -416,8 +449,10 @@ const negativePhraseKeywords = [
   "homebuyer suicide",
   "housing project halted",
   "housing project suspended",
+  "imd data",
   "left in lurch",
   "murdered over property",
+  "not new claims",
   "payment default",
   "power backup",
   "power backup worries",
@@ -436,6 +471,7 @@ const negativePhraseKeywords = [
   "rera complaint",
   "rera order",
   "rera penalty",
+  "sc-appointed panel",
   "short circuit",
   "registry stalled",
   "registration stalled",
@@ -443,7 +479,10 @@ const negativePhraseKeywords = [
   "real estate broker killed",
   "strike hits",
   "suicide due to property",
-  "suicide over property"
+  "suicide over property",
+  "traffic jam",
+  "water pipeline",
+  "yellow alert"
 ];
 const outsideCityKeywords = [
   "ahmedabad",
@@ -487,6 +526,15 @@ const allLocationKeywords = [
   ...targetCityKeywords,
   ...outsideCityKeywords
 ];
+const blockedSourceUrlParts = [
+  "hindustantimes.com/cities/gurugram-news",
+  "timesofindia.indiatimes.com/city/gurgaon",
+  "timesofindia.indiatimes.com/city/faridabad",
+  "tribuneindia.com/news/haryana",
+  "indianexpress.com/section/cities/delhi",
+  "thehindu.com/news/cities/delhi",
+  "amarujala.com"
+];
 
 function env(name, fallback = "") {
   return process.env[name]?.trim() || fallback;
@@ -521,7 +569,12 @@ function getSources() {
   return env("NEWS_SOURCES")
     .split(",")
     .map((source) => source.trim())
-    .filter(Boolean);
+    .filter(isAllowedSource);
+}
+
+function isAllowedSource(source) {
+  const normalized = source.toLowerCase();
+  return Boolean(source) && !blockedSourceUrlParts.some((part) => normalized.includes(part));
 }
 
 function isBackfillMode() {
@@ -594,8 +647,34 @@ function titleCityId(article) {
   return crypto.createHash("sha256").update(value).digest("hex");
 }
 
+function canonicalUrlId(article) {
+  const rawUrl = article.newsLink || article.url;
+
+  if (!rawUrl) {
+    return "";
+  }
+
+  try {
+    const url = new URL(rawUrl);
+    url.hash = "";
+    url.search = "";
+
+    return crypto.createHash("sha256").update(url.toString().toLowerCase()).digest("hex");
+  } catch {
+    return crypto.createHash("sha256").update(rawUrl.toLowerCase()).digest("hex");
+  }
+}
+
+function titleOnlyId(article) {
+  const title = normalizeTitle(article.title);
+
+  return title ? crypto.createHash("sha256").update(title).digest("hex") : "";
+}
+
 function articleDedupeIds(article) {
-  return [article.id, titleCityId(article)].filter(Boolean);
+  const sharedCityIds = article.sharedCityArticle ? [titleCityId(article)] : [canonicalUrlId(article), titleOnlyId(article)];
+
+  return [article.id, ...sharedCityIds].filter(Boolean);
 }
 
 function stripHtml(value = "") {
@@ -1045,12 +1124,15 @@ function getDisqualifyingOutsideCityKeywords(article) {
 
 function isBlockedArticle(article) {
   const title = article.title || "";
+  const description = article.description || "";
   const newsLink = article.newsLink || "";
   const normalizedTitle = title.trim().toLowerCase();
+  const primaryText = `${title} ${description}`;
 
   return (
     blockedExactTitles.includes(normalizedTitle) ||
-    hasKeyword(title, blockedTitleKeywords) ||
+    /[\u0900-\u097F]/.test(primaryText) ||
+    hasKeyword(primaryText, blockedTitleKeywords) ||
     hasKeyword(newsLink, blockedUrlParts)
   );
 }
@@ -1467,7 +1549,7 @@ async function main() {
   }
 
   const sources = getSources();
-  const selectedSources = sources.length > 0 ? sources : defaultSources;
+  const selectedSources = (sources.length > 0 ? sources : defaultSources).filter(isAllowedSource);
   const maxItems = getMaxItemsPerRun();
   const backfillMode = isBackfillMode();
   const resendKnownArticles = backfillMode || env("RESEND_KNOWN_ARTICLES", "false").toLowerCase() === "true";
