@@ -109,6 +109,55 @@ assert.match(
   /no allowed city match|target region missing|not positive target real-estate/
 );
 
+process.env.ALLOW_DEFAULT_CITY_CODE = "true";
+assert.equal(
+  applyCityCode(
+    article({
+      title: "Bengaluru infrastructure-led growth drives real estate expansion",
+      description: "Bengaluru real estate market update.",
+      articleText: "Bengaluru infrastructure and real estate expansion update."
+    })
+  ).cityCode,
+  ""
+);
+delete process.env.ALLOW_DEFAULT_CITY_CODE;
+
+assert.match(
+  reasons({
+    title: "Real estate approvals need faster coordination: Karnataka RERA chairman",
+    description: "Karnataka RERA chairman discussed approvals.",
+    articleText: "The update is about Karnataka RERA approvals and not Gurugram or Faridabad."
+  }).join("; "),
+  /negative\/crime\/utility concern news|no allowed city match|outside-city conflict|outside region/
+);
+
+assert.match(
+  reasons({
+    title: "Bombay High Court Affirms Right to Unilateral Deemed Conveyance Over Future TDR",
+    description: "Bombay High Court ruling on conveyance.",
+    articleText: "The case is linked to Bombay and not to Gurugram or Faridabad."
+  }).join("; "),
+  /no allowed city match|outside-city conflict|outside region/
+);
+
+assert.match(
+  reasons({
+    title: "Bengaluru's Future: Infrastructure-Led Growth Drives Real Estate Expansion",
+    description: "Bengaluru infrastructure-led real estate growth.",
+    articleText: "Bengaluru market expansion update."
+  }).join("; "),
+  /no allowed city match|outside-city conflict|outside region/
+);
+
+assert.match(
+  reasons({
+    title: "Bengaluru's Urban Growth Needs Focused Planning, Not Unchecked Expansion",
+    description: "Bengaluru urban planning update.",
+    articleText: "Bengaluru planning and expansion update."
+  }).join("; "),
+  /no allowed city match|outside-city conflict|outside region/
+);
+
 assert.match(
   reasons({
     title: "NCR housing market records strong premium demand",

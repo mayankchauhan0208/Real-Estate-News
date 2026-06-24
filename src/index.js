@@ -505,6 +505,7 @@ const outsideCityKeywords = [
   "bhopal",
   "bhubaneswar",
   "bihar",
+  "bombay",
   "chandigarh",
   "chennai",
   "coimbatore",
@@ -1007,11 +1008,10 @@ function hasOutsideRegionEvidence(article) {
 
 function applyCityCode(article) {
   const [detectedCityCode] = detectCityCodes(article);
-  const allowDefaultCityCode = env("ALLOW_DEFAULT_CITY_CODE", "false").toLowerCase() === "true";
 
   return {
     ...article,
-    cityCode: detectedCityCode || (allowDefaultCityCode ? env("DEFAULT_CITY_CODE", "gurugram") : "")
+    cityCode: detectedCityCode || ""
   };
 }
 

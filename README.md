@@ -35,8 +35,6 @@ Optional repository variable:
 
 - `MAX_ITEMS_PER_RUN`: Default is `30`.
 - `MAX_ITEMS_PER_SOURCE`: Default is `4`.
-- `DEFAULT_CITY_CODE`: Default is `gurugram`.
-- `ALLOW_DEFAULT_CITY_CODE`: Default is `false`. Keep this false to skip articles where Gurugram/Faridabad cannot be detected.
 
 The workflow is already scheduled for every 10 minutes:
 
@@ -78,7 +76,7 @@ City handling:
 - RERA, court, legal, complaint, fraud, crime, death, murder, suicide, protest, delay, stalled-project, buyer-distress, demolition, penalty, and other negative/defaming stories are skipped even if they mention real estate.
 - Any outside-city evidence in the headline, description, full article text, or URL is treated as a hard reject.
 
-If it cannot detect positive real-estate relevance and a target city, the article is skipped. If it is real-estate-related but cannot detect a target city, it is skipped unless `ALLOW_DEFAULT_CITY_CODE` is set to `true`.
+If it cannot detect positive real-estate relevance and a target city, the article is skipped. There is no default city fallback.
 
 ## Default sources
 
