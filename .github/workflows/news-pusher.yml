@@ -1,13 +1,6 @@
 name: News API Pusher
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - ".github/workflows/news-pusher.yml"
-      - "package.json"
-      - "src/**"
   schedule:
     - cron: "*/10 * * * *"
   workflow_dispatch:
@@ -59,7 +52,7 @@ on:
 
 concurrency:
   group: news-api-pusher
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   push-news:
