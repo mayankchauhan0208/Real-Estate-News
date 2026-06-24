@@ -258,4 +258,26 @@ assert.match(
   /outside-city conflict|outside region/
 );
 
+assert.match(
+  reasons({
+    title: "Gurugram luxury project launch sees strong buyer interest",
+    description: "The Gurugram residential project adds premium housing near Golf Course Road.",
+    articleText:
+      "The Gurugram project focuses on premium residential development in Gurugram. The report also compares demand with Bengaluru.",
+    newsLink: "https://example.com/gurugram-project-with-bengaluru-mention"
+  }).join("; "),
+  /outside-city conflict|outside region/
+);
+
+assert.match(
+  reasons({
+    title: "Faridabad housing project launch adds new inventory",
+    description: "The Faridabad residential project adds new apartments in Greater Faridabad.",
+    articleText:
+      "The Faridabad launch focuses on Greater Faridabad and Neharpar. The article also mentions Mumbai market trends.",
+    newsLink: "https://example.com/faridabad-project-with-mumbai-mention"
+  }).join("; "),
+  /outside-city conflict|outside region/
+);
+
 console.log("Filter smoke tests passed.");

@@ -1102,18 +1102,13 @@ function hasNcrMatch(article) {
 function hasStrongArticleCityMatch(article, rule) {
   const fullText = getArticleSearchText(article);
   const targetMentions = countKeywordMentions(fullText, rule.keywords);
-
   const allLocationMentions = countKeywordMentions(fullText, allLocationKeywords);
 
   if (targetMentions < 1 || allLocationMentions === 0) {
     return false;
   }
 
-  if (targetMentions === allLocationMentions) {
-    return true;
-  }
-
-  return allLocationMentions > 0 && targetMentions / allLocationMentions >= 0.5;
+  return targetMentions === allLocationMentions;
 }
 
 function hasRealEstateEvidence(article) {
@@ -1198,24 +1193,6 @@ function hasOutsideCityConflict(article) {
   return hasOutsideRegionEvidence(article);
 }
 
-function hasOutsideLocationDominance(article) {
-  if (!article.cityCode) {
-    return false;
-  }
-
-  const rule = cityRules.find((cityRule) => cityRule.code === article.cityCode);
-
-  if (!rule) {
-    return false;
-  }
-
-  const fullText = getArticleSearchText(article);
-  const targetMentions = countKeywordMentions(fullText, rule.keywords);
-  const outsideMentions = countKeywordMentions(fullText, getDisqualifyingOutsideCityKeywords(article));
-
-  return outsideMentions > 0 && outsideMentions >= targetMentions;
-}
-
 function getRejectionReasons(article, sentIds, { resendKnownArticles = false } = {}) {
   const reasons = [];
 
@@ -1254,10 +1231,6 @@ function getRejectionReasons(article, sentIds, { resendKnownArticles = false } =
 
   if (hasOutsideCityConflict(article)) {
     reasons.push("filter 8: outside-city conflict");
-  }
-
-  if (article.cityCode && hasOutsideLocationDominance(article)) {
-    reasons.push("filter 9: outside location dominates full article");
   }
 
   if (!isWithinBackfillRange(article)) {
