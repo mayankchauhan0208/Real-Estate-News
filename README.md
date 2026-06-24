@@ -42,6 +42,8 @@ The workflow is already scheduled for every 10 minutes:
 - cron: "*/10 * * * *"
 ```
 
+Push-triggered runs are disabled. Manual runs are allowed, but they use the same normal strict scan and do not expose test, resend, or backfill options.
+
 ## API payload
 
 The script sends one POST per article:
@@ -72,7 +74,7 @@ City handling:
 
 - Gurugram, Gurgaon, Sohna, Pataudi/Patodi, Manesar/Manasar, Dwarka Expressway, Golf Course Road -> `gurugram`
 - Faridabad, Greater Faridabad, Neharpar -> `faridabad`
-- Articles must contain clear Gurugram/Faridabad evidence. Generic Delhi NCR news is skipped unless the target cities are explicitly detected.
+- Exact Delhi NCR articles go to both `gurugram` and `faridabad`. Plain NCR without Delhi, or any outside-city/state evidence, is rejected.
 - RERA, court, legal, complaint, fraud, crime, death, murder, suicide, protest, delay, stalled-project, buyer-distress, demolition, penalty, and other negative/defaming stories are skipped even if they mention real estate.
 - Any outside-city evidence in the headline, description, full article text, or URL is treated as a hard reject.
 
