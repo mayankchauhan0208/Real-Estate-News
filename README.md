@@ -5,7 +5,7 @@ Fetches real estate and business news every 10 minutes with GitHub Actions, remo
 ## How it works
 
 - GitHub Actions runs `.github/workflows/news-pusher.yml` every 10 minutes.
-- The script uses the built-in strict source list first, then adds any extra allowed sources from `NEWS_SOURCES`.
+- The script uses only the built-in strict source list. GitHub secrets cannot add broad/old source links.
 - RSS feeds are parsed directly.
 - Normal webpage/category pages are scraped for article links, then each article page is checked for description and thumbnail metadata.
 - Each article gets a stable ID from its URL/title/source.
@@ -29,8 +29,6 @@ Create a new GitHub repo for this folder, then add these repository secrets:
 
 - `APP_API_URL`: Your app API endpoint. Use `https://api.propertymaster.com/api/news`.
 - `APP_API_KEY`: Optional API key or token, only if your API starts requiring auth.
-- `NEWS_SOURCES`: Comma-separated RSS feed URLs or category/news page URLs.
-
 Optional repository variable:
 
 - `MAX_ITEMS_PER_RUN`: Default is `30`.
@@ -82,24 +80,19 @@ If it cannot detect positive real-estate relevance and a target city, the articl
 
 ## Default sources
 
-Default sources are always used. Any `NEWS_SOURCES` secret entries are added on top, then known noisy or broken sources are filtered out.
+Default sources are always used. Broad old source injection is disabled, so `NEWS_SOURCES` is ignored even if it still exists as a GitHub secret.
 
 - `https://www.hindustantimes.com/real-estate`
 - `https://www.hindustantimes.com/topic/faridabad/news`
 - `https://www.cnbctv18.com/real-estate/`
-- `https://realty.economictimes.indiatimes.com/`
 - `https://realty.economictimes.indiatimes.com/tag/gurugram`
 - `https://realty.economictimes.indiatimes.com/tag/faridabad`
 - `https://www.moneycontrol.com/news/business/real-estate/`
 - `https://www.business-standard.com/topic/real-estate`
 - `https://www.outlookmoney.com/topic/real-estate`
 - `https://www.tribuneindia.com/topic/real-estate`
-- `https://timesofindia.indiatimes.com/real-estate`
 - `https://torbitrealty.com/category/news/city-updates/gurugram/`
 - `https://realtynmore.com/latest-news/`
 - `https://realtynxt.com/`
 - `https://www.track2realty.track2media.com/`
 - `https://propnewstime.com/`
-- `https://www.constructionworld.in/`
-- `https://housing.com/news/`
-- `https://www.squareyards.com/blog`

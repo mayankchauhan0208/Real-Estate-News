@@ -22,22 +22,17 @@ const defaultSources = [
   "https://www.hindustantimes.com/real-estate",
   "https://www.hindustantimes.com/topic/faridabad/news",
   "https://www.cnbctv18.com/real-estate/",
-  "https://realty.economictimes.indiatimes.com/",
   "https://realty.economictimes.indiatimes.com/tag/gurugram",
   "https://realty.economictimes.indiatimes.com/tag/faridabad",
   "https://www.moneycontrol.com/news/business/real-estate/",
   "https://www.business-standard.com/topic/real-estate",
   "https://www.outlookmoney.com/topic/real-estate",
   "https://www.tribuneindia.com/topic/real-estate",
-  "https://timesofindia.indiatimes.com/real-estate",
   "https://torbitrealty.com/category/news/city-updates/gurugram/",
   "https://realtynmore.com/latest-news/",
   "https://realtynxt.com/",
   "https://www.track2realty.track2media.com/",
-  "https://propnewstime.com/",
-  "https://www.constructionworld.in/",
-  "https://housing.com/news/",
-  "https://www.squareyards.com/blog"
+  "https://propnewstime.com/"
 ];
 
 const cityRules = [
@@ -556,6 +551,11 @@ const blockedSourceUrlParts = [
   "amarujala.com"
 ];
 
+const allowedSourceUrlParts = defaultSources.map((source) => {
+  const url = new URL(source);
+  return `${url.hostname.replace(/^www\./, "")}${url.pathname.replace(/\/+$/, "")}`.toLowerCase();
+});
+
 function env(name, fallback = "") {
   return process.env[name]?.trim() || fallback;
 }
@@ -586,10 +586,7 @@ async function loadDotEnv() {
 }
 
 function getSources() {
-  return env("NEWS_SOURCES")
-    .split(",")
-    .map((source) => source.trim())
-    .filter(isAllowedSource);
+  return [];
 }
 
 function isAllowedSource(source) {
@@ -599,23 +596,16 @@ function isAllowedSource(source) {
     return false;
   }
 
+  let key = "";
+
   try {
     const url = new URL(source);
-    const host = url.hostname.replace(/^www\./, "");
-    const pathname = url.pathname.replace(/\/+$/, "");
-
-    if (host === "moneycontrol.com" && pathname === "/news/business") {
-      return false;
-    }
+    key = `${url.hostname.replace(/^www\./, "")}${url.pathname.replace(/\/+$/, "")}`.toLowerCase();
   } catch {
     return false;
   }
 
-  return true;
-}
-
-function isBackfillMode() {
-  return env("BACKFILL_NEWS", "false").toLowerCase() === "true";
+  return allowedSourceUrlParts.includes(key);
 }
 
 function getPositiveIntegerEnv(name, fallback) {
@@ -624,18 +614,10 @@ function getPositiveIntegerEnv(name, fallback) {
 }
 
 function getMaxItemsPerSource() {
-  if (isBackfillMode()) {
-    return getPositiveIntegerEnv("BACKFILL_MAX_ITEMS_PER_SOURCE", 25);
-  }
-
   return getPositiveIntegerEnv("MAX_ITEMS_PER_SOURCE", 4);
 }
 
 function getMaxItemsPerRun() {
-  if (isBackfillMode()) {
-    return getPositiveIntegerEnv("BACKFILL_MAX_ITEMS_PER_RUN", 120);
-  }
-
   return getPositiveIntegerEnv("MAX_ITEMS_PER_RUN", 30);
 }
 
@@ -863,44 +845,6 @@ function startOfDayIso(value) {
 
   date.setUTCHours(0, 0, 0, 0);
   return date.toISOString();
-}
-
-function parseDateOnly(value, endOfDay = false) {
-  const trimmed = value?.trim();
-
-  if (!trimmed || !/^\d{4}-\d{2}-\d{2}$/.test(trimmed)) {
-    return null;
-  }
-
-  const suffix = endOfDay ? "T23:59:59.999Z" : "T00:00:00.000Z";
-  const date = new Date(`${trimmed}${suffix}`);
-
-  return Number.isNaN(date.getTime()) ? null : date;
-}
-
-function getArticleDate(article) {
-  const value =
-    toIsoDate(article.publishedAt) ||
-    toIsoDate(article.createdAt) ||
-    toIsoDate(article.fetchedAt);
-
-  return value ? new Date(value) : null;
-}
-
-function isWithinBackfillRange(article) {
-  if (!isBackfillMode()) {
-    return true;
-  }
-
-  const fromDate = parseDateOnly(env("BACKFILL_FROM"));
-  const toDate = parseDateOnly(env("BACKFILL_TO"), true);
-  const articleDate = getArticleDate(article);
-
-  if (!fromDate || !toDate) {
-    throw new Error("Backfill requires BACKFILL_FROM and BACKFILL_TO in YYYY-MM-DD format.");
-  }
-
-  return articleDate && articleDate >= fromDate && articleDate <= toDate;
 }
 
 function detectCityCode(article) {
@@ -1193,7 +1137,7 @@ function hasOutsideCityConflict(article) {
   return hasOutsideRegionEvidence(article);
 }
 
-function getRejectionReasons(article, sentIds, { resendKnownArticles = false } = {}) {
+function getRejectionReasons(article, sentIds) {
   const reasons = [];
 
   if (!article.title || !article.newsLink) {
@@ -1233,10 +1177,6 @@ function getRejectionReasons(article, sentIds, { resendKnownArticles = false } =
     reasons.push("filter 8: outside-city conflict");
   }
 
-  if (!isWithinBackfillRange(article)) {
-    reasons.push("filter 10: outside backfill date range");
-  }
-
   const missingFields = article.cityCode ? missingRequiredPayloadFields(article) : [];
 
   if (missingFields.length > 0) {
@@ -1249,42 +1189,15 @@ function getRejectionReasons(article, sentIds, { resendKnownArticles = false } =
     reasons.push(`filter 12: invalid URL fields (${invalidUrlFields.join(", ")})`);
   }
 
-  if (!resendKnownArticles && articleDedupeIds(article).some((id) => sentIds.has(id))) {
+  if (articleDedupeIds(article).some((id) => sentIds.has(id))) {
     reasons.push("filter 13: already sent");
   }
 
   return reasons;
 }
 
-function isPublishableArticle(article, sentIds, options) {
-  return getRejectionReasons(article, sentIds, options).length === 0;
-}
-
-function createTestArticle() {
-  const timestamp = new Date().toISOString();
-  const title = `Gurugram PropertyMaster automation test news ${timestamp}`;
-  const article = {
-    title,
-    description:
-      "This complete Gurugram test news item was created by the Real-Estate-News GitHub Action to verify PropertyMaster app display.",
-    cityCode: "gurugram",
-    isActive: true,
-    newsLink: `https://github.com/mayankchauhan0208/Real-Estate-News/actions?test=${encodeURIComponent(
-      timestamp
-    )}`,
-    thumbnailImage:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80",
-    postedBy: "PropertyMaster Automation",
-    postedByLogo: "https://www.google.com/s2/favicons?domain=propertymaster.com&sz=128",
-    createdAt: timestamp,
-    publishedAt: timestamp,
-    fetchedAt: timestamp
-  };
-
-  return {
-    ...article,
-    id: stableId(article)
-  };
+function isPublishableArticle(article, sentIds) {
+  return getRejectionReasons(article, sentIds).length === 0;
 }
 
 async function readSentIds() {
@@ -1550,42 +1463,11 @@ async function pushArticle(article) {
 async function main() {
   await loadDotEnv();
 
-  if (env("PUSH_TEST_NEWS", "false").toLowerCase() === "true") {
-    const testArticle = createTestArticle();
-    const missingFields = missingRequiredPayloadFields(testArticle);
-
-    if (missingFields.length > 0) {
-      throw new Error(`Test article missing required fields: ${missingFields.join(", ")}`);
-    }
-
-    const result = await pushArticle(testArticle);
-    console.log(
-      `Pushed test (${result.status}, ${testArticle.cityCode}): ${testArticle.title} | API response: ${
-        result.body || "<empty>"
-      }`
-    );
-    return;
-  }
-
   const sources = getSources();
   const selectedSources = [...new Set([...defaultSources, ...sources])].filter(isAllowedSource);
   const maxItems = getMaxItemsPerRun();
-  const backfillMode = isBackfillMode();
-  const resendKnownArticles = backfillMode || env("RESEND_KNOWN_ARTICLES", "false").toLowerCase() === "true";
   const sentIds = await readSentIds();
   const allArticles = [];
-
-  if (backfillMode) {
-    console.log(
-      `Backfill enabled: scanning up to ${getMaxItemsPerSource()} items per source from ${env(
-        "BACKFILL_FROM"
-      )} to ${env("BACKFILL_TO")} and ignoring saved dedupe for this run.`
-    );
-  }
-
-  if (resendKnownArticles) {
-    console.log("Manual resend enabled: ignoring saved dedupe for this run.");
-  }
 
   for (const source of selectedSources) {
     try {
@@ -1601,9 +1483,7 @@ async function main() {
 
   const uniqueArticles = uniqueByDedupeIds(
     expandedArticles
-    .filter(
-      (article) => isPublishableArticle(article, sentIds, { resendKnownArticles })
-    )
+    .filter((article) => isPublishableArticle(article, sentIds))
     .sort((a, b) => {
       const priorityDifference = articlePriority(a) - articlePriority(b);
 
@@ -1626,7 +1506,7 @@ async function main() {
   const rejectionCounts = new Map();
 
   for (const article of expandedArticles) {
-    const reasons = getRejectionReasons(article, sentIds, { resendKnownArticles });
+    const reasons = getRejectionReasons(article, sentIds);
 
     for (const reason of reasons) {
       rejectionCounts.set(reason, (rejectionCounts.get(reason) || 0) + 1);
@@ -1639,7 +1519,7 @@ async function main() {
   }
 
   for (const article of expandedArticles.slice(0, 100)) {
-    const reasons = getRejectionReasons(article, sentIds, { resendKnownArticles });
+    const reasons = getRejectionReasons(article, sentIds);
 
     if (reasons.length > 0 && article.title) {
       console.log(`Skipped ${article.title}: ${reasons.join("; ")}`);

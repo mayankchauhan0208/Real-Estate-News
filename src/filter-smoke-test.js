@@ -44,6 +44,11 @@ assert.equal(isAllowedSource("https://www.moneycontrol.com/news/business/"), fal
 assert.equal(isAllowedSource("https://www.aninews.in/category/business/"), false);
 assert.equal(isAllowedSource("https://www.lokmattimes.com/business/"), false);
 assert.equal(isAllowedSource("https://www.business-standard.com/search?q=REAL%20ESTATE"), false);
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/"), false);
+assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/real-estate"), false);
+assert.equal(isAllowedSource("https://www.constructionworld.in/"), false);
+assert.equal(isAllowedSource("https://housing.com/news/"), false);
+assert.equal(isAllowedSource("https://www.squareyards.com/blog"), false);
 
 assert.equal(
   isPublishableArticle(
@@ -109,7 +114,6 @@ assert.match(
   /no allowed city match|target region missing|not positive target real-estate/
 );
 
-process.env.ALLOW_DEFAULT_CITY_CODE = "true";
 assert.equal(
   applyCityCode(
     article({
@@ -120,7 +124,17 @@ assert.equal(
   ).cityCode,
   ""
 );
-delete process.env.ALLOW_DEFAULT_CITY_CODE;
+
+assert.match(
+  reasons({
+    title: "West Bengal CM Halts Commercial Construction Projects Following Warehouse Fire",
+    description: "West Bengal halted commercial construction projects after a warehouse incident.",
+    articleText: "The construction and real estate update is about Kolkata and West Bengal, not Gurugram or Faridabad.",
+    newsLink:
+      "https://realty.economictimes.indiatimes.com/news/industry/west-bengal-cm-halts-commercial-construction-projects"
+  }).join("; "),
+  /not positive target real-estate|no allowed city match|outside-city conflict|outside region/
+);
 
 assert.match(
   reasons({

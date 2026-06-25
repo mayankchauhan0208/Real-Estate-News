@@ -42,6 +42,5 @@ jobs:
         env:
           APP_API_URL: ${{ secrets.APP_API_URL }}
           APP_API_KEY: ${{ secrets.APP_API_KEY }}
-          NEWS_SOURCES: ${{ secrets.NEWS_SOURCES }}
           MAX_ITEMS_PER_RUN: ${{ vars.MAX_ITEMS_PER_RUN || '30' }}
           MAX_ITEMS_PER_SOURCE: ${{ vars.MAX_ITEMS_PER_SOURCE || '4' }}
