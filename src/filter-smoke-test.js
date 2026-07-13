@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {
   applyCityCode,
   cleanArticleFields,
+  detectCityCodes,
   getRejectionReasons,
   isAllowedSource,
   isPublishableArticle,
@@ -97,6 +98,18 @@ assert.equal(
   true
 );
 
+assert.deepEqual(
+  detectCityCodes(
+    article({
+      title: "Oberoi Realty launches premium project in Gurugram",
+      description: "The developer said the Gurugram project expands its residential portfolio.",
+      articleText: "The article body mentions Delhi NCR as wider market context, but no Faridabad project.",
+      newsLink: "https://example.com/gurugram/oberoi-realty-project"
+    })
+  ),
+  ["gurugram"]
+);
+
 assert.equal(
   isPublishableArticle(
     publishable({
@@ -134,7 +147,7 @@ assert.equal(
     }),
     sentIds
   ),
-  true
+  false
 );
 
 assert.match(

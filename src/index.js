@@ -1148,7 +1148,7 @@ function hasWholeWordKeyword(value, keywords) {
 }
 
 function hasNcrMatch(article) {
-  const haystack = getArticleSearchText(article);
+  const haystack = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
   return /\bdelhi ncr\b/i.test(haystack);
 }
 
