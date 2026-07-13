@@ -26,6 +26,7 @@ const defaultSources = [
   "https://realty.economictimes.indiatimes.com/tag/faridabad",
   "https://www.moneycontrol.com/news/business/real-estate/",
   "https://www.business-standard.com/topic/real-estate",
+  "https://www.constructionworld.in/latest-construction-news/real-estate-news",
   "https://www.outlookmoney.com/topic/real-estate",
   "https://www.tribuneindia.com/topic/real-estate",
   "https://torbitrealty.com/category/news/city-updates/gurugram/",
@@ -255,6 +256,87 @@ const nationalBusinessKeywords = [
   "acquisition",
   "merger"
 ];
+const specificProjectKeywords = [
+  "acquires land",
+  "adds new inventory",
+  "branded residences",
+  "commercial project",
+  "develop land",
+  "developed a residential",
+  "developing a residential",
+  "development project",
+  "dwarka expressway",
+  "golf course extension road",
+  "golf course road",
+  "gurugram project",
+  "group housing project",
+  "hand over",
+  "hands over",
+  "housing project",
+  "land acquisition",
+  "land parcel",
+  "luxury project",
+  "metro extension",
+  "mixed-use development",
+  "new project",
+  "faridabad project",
+  "plotted township",
+  "possession",
+  "project launch",
+  "rapid rail",
+  "residential development",
+  "residential project",
+  "township",
+  "ultra-luxury residences",
+  "unveils homes",
+  "unveils luxury",
+  "unveils project",
+  "unveils residential",
+  "unveils township"
+];
+const broadNonProjectKeywords = [
+  "across india",
+  "all about",
+  "amid global uncertainty",
+  "annual report",
+  "buyers should know",
+  "calculator",
+  "cities where",
+  "company update",
+  "demand to remain",
+  "earnings call",
+  "explained",
+  "global uncertainty",
+  "housing data",
+  "housing demand",
+  "housing market recovery",
+  "india's housing",
+  "india’s housing",
+  "india's office leasing",
+  "india’s office leasing",
+  "market recovery",
+  "market report",
+  "markets",
+  "office leasing",
+  "pan india",
+  "pan-india",
+  "quarterly update",
+  "q1 fy",
+  "q2 fy",
+  "q3 fy",
+  "q4 fy",
+  "recovery",
+  "records sales",
+  "reports bookings",
+  "retail expansion",
+  "retail sector",
+  "sales dip",
+  "sales fall",
+  "sales value",
+  "sector records",
+  "what buyers should know",
+  "what the housing data suggests"
+];
 const blockedTitleKeywords = [
   "about us",
   "admission",
@@ -285,6 +367,7 @@ const blockedTitleKeywords = [
   "fish death",
   "fish deaths",
   "gallery",
+  "global disruptions",
   "grievance",
   "grievance redressal",
   "integrated campaigns",
@@ -304,6 +387,7 @@ const blockedTitleKeywords = [
   "register",
   "school",
   "sewage",
+  "spring effect",
   "survey",
   "traffic jam",
   "subscription",
@@ -1350,6 +1434,20 @@ function isRealEstateRelated(article) {
   return hasRealEstateEvidence(article) || isNationalRealEstateBusinessUpdate(article);
 }
 
+function hasSpecificProjectOrDevelopmentSignal(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  return hasKeyword(primaryAndUrl, specificProjectKeywords);
+}
+
+function isBroadNonProjectUpdate(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  return (
+    hasKeyword(primaryAndUrl, broadNonProjectKeywords) &&
+    !hasSpecificProjectOrDevelopmentSignal(article)
+  );
+}
+
 function shouldSendToBothCities(article) {
   return detectMatchedCityCodes(article).length === ncrCityCodes.length;
 }
@@ -1380,13 +1478,13 @@ function hasTargetRegionInPrimaryText(article) {
   return hasWholeWordKeyword(primaryText, targetCityKeywords);
 }
 
-function hasTargetRegionInPrimaryOrUrl(article) {
-  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
-  return hasWholeWordKeyword(primaryAndUrl, targetCityKeywords);
+function hasTargetRegionInTitleOrUrl(article) {
+  const titleAndUrl = `${article.title || ""} ${getArticleUrlText(article)}`;
+  return hasWholeWordKeyword(titleAndUrl, targetCityKeywords);
 }
 
 function hasTargetRegionEvidence(article) {
-  return hasNcrMatch(article) || hasTargetRegionInPrimaryOrUrl(article);
+  return hasNcrMatch(article) || hasTargetRegionInTitleOrUrl(article);
 }
 
 function hasOutsideRegionInPrimaryText(article) {
@@ -1492,7 +1590,7 @@ function hasWholeWordKeyword(value, keywords) {
 }
 
 function hasNcrMatch(article) {
-  const haystack = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const haystack = `${article.title || ""} ${getArticleUrlText(article)}`.toLowerCase();
   return /\bdelhi ncr\b/i.test(haystack);
 }
 
@@ -1637,6 +1735,14 @@ function getRejectionReasons(article, sentIds) {
 
   if (!isRealEstateRelated(article)) {
     reasons.push("filter 4: not positive target real-estate/project news");
+  }
+
+  if (isRealEstateRelated(article) && !hasSpecificProjectOrDevelopmentSignal(article)) {
+    reasons.push("filter 9: no specific project/development signal");
+  }
+
+  if (isBroadNonProjectUpdate(article)) {
+    reasons.push("filter 10: broad market/company update, not city project news");
   }
 
   if (!article.cityCode) {
@@ -2387,6 +2493,13 @@ async function main() {
   );
 
   for (const article of articlesToPush) {
+    if (getBooleanEnv("DRY_RUN")) {
+      console.log(
+        `Dry run candidate (${article.cityCode}): ${article.title} | ${article.newsLink}`
+      );
+      continue;
+    }
+
     const result = await pushArticle(article);
     for (const id of articleDedupeIds(article)) {
       sentIds.add(id);

@@ -34,6 +34,7 @@ Optional repository variable:
 - `MAX_ITEMS_PER_RUN`: Default is `30`.
 - `MAX_ITEMS_PER_SOURCE`: Default is `300`.
 - `MAX_PAGES_PER_SOURCE`: Default is `15` for supported paginated source pages.
+- `DRY_RUN`: Set to `true` only for local audits. It prints publish candidates without calling the API or updating sent-news state.
 - `EXTRA_ARTICLE_URLS`: Optional exact article URLs, separated by comma, semicolon, or newline. Use only for manually found articles; each URL still has to pass the strict full-article filters.
 
 The workflow is already scheduled for every 10 minutes:
@@ -115,6 +116,7 @@ Default sources are always used. Broad old source injection is disabled, so `NEW
 - `https://realty.economictimes.indiatimes.com/tag/faridabad`
 - `https://www.moneycontrol.com/news/business/real-estate/`
 - `https://www.business-standard.com/topic/real-estate`
+- `https://www.constructionworld.in/latest-construction-news/real-estate-news`
 - `https://www.outlookmoney.com/topic/real-estate`
 - `https://www.tribuneindia.com/topic/real-estate`
 - `https://torbitrealty.com/category/news/city-updates/gurugram/`

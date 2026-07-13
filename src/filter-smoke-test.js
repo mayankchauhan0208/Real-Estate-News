@@ -56,6 +56,7 @@ assert.equal(isAllowedSource("https://www.business-standard.com/search?q=REAL%20
 assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/"), false);
 assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/real-estate"), false);
 assert.equal(isAllowedSource("https://www.constructionworld.in/"), false);
+assert.equal(isAllowedSource("https://www.constructionworld.in/latest-construction-news/real-estate-news"), true);
 assert.equal(isAllowedSource("https://housing.com/news/"), false);
 assert.equal(isAllowedSource("https://www.squareyards.com/blog"), false);
 assert.equal(isLikelyFeedUrl("https://www.hindustantimes.com/real-estate"), false);
@@ -230,7 +231,7 @@ assert.equal(
     }),
     sentIds
   ),
-  true
+  false
 );
 
 assert.equal(
@@ -267,6 +268,19 @@ assert.equal(
       description: "Delhi NCR residential launches and sales improved with new real estate projects.",
       articleText: "Premium housing demand increased across Delhi NCR.",
       newsLink: "https://example.com/delhi-ncr-housing-sales"
+    }),
+    sentIds
+  ),
+  false
+);
+
+assert.equal(
+  isPublishableArticle(
+    publishable({
+      title: "Delhi NCR developer launches residential project on Dwarka Expressway",
+      description: "The residential project on Dwarka Expressway adds premium housing inventory.",
+      articleText: "The project is located on Dwarka Expressway in Gurugram.",
+      newsLink: "https://example.com/dwarka-expressway-project-launch"
     }),
     sentIds
   ),
@@ -384,6 +398,36 @@ assert.match(
     newsLink: "https://example.com/ncr-housing-market"
   }).join("; "),
   /no allowed city match|outside-city conflict|outside region/
+);
+
+assert.match(
+  reasons({
+    title: "Gurugram housing demand to remain steady in 2026 despite global uncertainty",
+    description: "A market report says demand remained steady in Gurugram.",
+    articleText: "The report discusses market trends and buyer demand, not a specific project launch.",
+    newsLink: "https://example.com/gurugram-housing-demand-market-report"
+  }).join("; "),
+  /no specific project\/development signal|broad market\/company update/
+);
+
+assert.match(
+  reasons({
+    title: "Global disruptions create a 'spring effect', says Vikas Oberoi of Oberoi Realty",
+    description: "The company discusses its Gurugram expansion plans.",
+    articleText: "The article mentions a Gurugram project, but the headline is broad market commentary.",
+    newsLink: "https://example.com/oberoi-realty-bets-on-gurugram-despite-global-uncertainty"
+  }).join("; "),
+  /spam\/menu page/
+);
+
+assert.match(
+  reasons({
+    title: "Oberoi Realty reports bookings worth Rs 8,109 crore for its first Gurugram project",
+    description: "The company reported bookings for its first Gurugram project.",
+    articleText: "The Gurugram project bookings update includes the specific project context.",
+    newsLink: "https://example.com/oberoi-realty-gurugram-project-bookings"
+  }).join("; "),
+  /^$/
 );
 
 assert.match(
