@@ -68,6 +68,15 @@ const gurugramCorridorKeywords = [
   "southern peripheral road",
   "spr"
 ];
+const targetInfrastructureCorridorKeywords = [
+  "dpr",
+  "metro corridor",
+  "ncrtc",
+  "rapid rail",
+  "regional rapid transit",
+  "rrts",
+  "transit corridor"
+];
 
 const requiredPayloadFields = [
   "title",
@@ -193,18 +202,22 @@ const promotionalRealEstateKeywords = [
   "metro",
   "new project",
   "new project launch",
+  "ncrtc",
   "office space",
   "possession",
   "profit",
   "net profit",
   "price appreciation",
   "project",
+  "rapid rail",
   "real estate",
   "realty",
   "redevelopment",
+  "regional rapid transit",
   "residential",
   "results",
   "revenue",
+  "rrts",
   "sales",
   "township"
 ];
@@ -284,6 +297,8 @@ const specificProjectKeywords = [
   "possession",
   "project launch",
   "rapid rail",
+  "regional rapid transit",
+  "rrts",
   "residential development",
   "residential project",
   "township",
@@ -1487,8 +1502,33 @@ function hasTargetRegionEvidence(article) {
   return hasNcrMatch(article) || hasTargetRegionInTitleOrUrl(article);
 }
 
+function hasTargetInfrastructureCorridorSignal(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  return hasKeyword(primaryAndUrl, targetInfrastructureCorridorKeywords);
+}
+
+function isTargetDominantInfrastructureCorridor(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const hasGurugram = hasWholeWordKeyword(primaryAndUrl, cityRules.find((rule) => rule.code === "gurugram").keywords);
+  const hasFaridabad = hasWholeWordKeyword(primaryAndUrl, cityRules.find((rule) => rule.code === "faridabad").keywords);
+  const outsideMatches = outsideCityKeywords.filter((keyword) => hasWholeWordKeyword(primaryAndUrl, [keyword]));
+
+  return (
+    hasTargetInfrastructureCorridorSignal(article) &&
+    hasGurugram &&
+    hasFaridabad &&
+    !/\bgreater noida\b/i.test(primaryAndUrl) &&
+    outsideMatches.length > 0 &&
+    outsideMatches.every((keyword) => keyword === "noida")
+  );
+}
+
 function hasOutsideRegionInPrimaryText(article) {
   const primaryText = getArticlePrimaryText(article);
+
+  if (isTargetDominantInfrastructureCorridor(article)) {
+    return false;
+  }
 
   if (/\b(new delhi|south delhi|central delhi|east delhi|west delhi|north delhi|delhi,|delhi:)\b/i.test(primaryText)) {
     return true;
@@ -1646,6 +1686,10 @@ function isGurugramCorridorArticle(article) {
 }
 
 function getDisqualifyingOutsideCityKeywords(article) {
+  if (isTargetDominantInfrastructureCorridor(article)) {
+    return outsideCityKeywords.filter((keyword) => keyword !== "noida");
+  }
+
   if (hasNcrMatch(article)) {
     return outsideCityKeywords.filter((keyword) => !["delhi", "new delhi"].includes(keyword));
   }

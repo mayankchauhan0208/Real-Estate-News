@@ -287,6 +287,29 @@ assert.equal(
   true
 );
 
+const rrtsCorridorArticle = publishable({
+  title: "NCRTC submits DPR of RRTS connecting Gurugram, Faridabad and Noida",
+  description:
+    "The regional rapid transit corridor will improve infrastructure connectivity for Gurugram and Faridabad.",
+  articleText:
+    "The proposed RRTS corridor connects Gurugram and Faridabad with Noida, with most local development benefits focused on Gurugram and Faridabad.",
+  newsLink: "https://example.com/ncrtc-rrts-gurugram-faridabad-noida-dpr",
+  thumbnailImage: "https://example.com/rrts.jpg"
+});
+
+assert.deepEqual(detectCityCodes(rrtsCorridorArticle).sort(), ["faridabad", "gurugram"]);
+assert.equal(isPublishableArticle(rrtsCorridorArticle, sentIds), true);
+
+assert.match(
+  reasons({
+    title: "Noida and Greater Noida RRTS corridor gets new DPR",
+    description: "The regional rapid transit corridor focuses on Noida and Greater Noida.",
+    articleText: "The Noida infrastructure project does not include Gurugram or Faridabad as project cities.",
+    newsLink: "https://example.com/noida-greater-noida-rrts-dpr"
+  }).join("; "),
+  /no allowed city match|outside-city conflict|outside region/
+);
+
 assert.equal(
   isPublishableArticle(
     publishable({
