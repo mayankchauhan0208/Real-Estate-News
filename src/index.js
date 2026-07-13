@@ -346,6 +346,7 @@ const negativeNewsKeywords = [
   "arrested",
   "assault",
   "attack",
+  "barred",
   "banned",
   "bankruptcy",
   "body found",
@@ -393,6 +394,7 @@ const negativeNewsKeywords = [
   "frauds",
   "grievance",
   "grievances",
+  "grap",
   "genset",
   "generator",
   "hospital",
@@ -429,6 +431,7 @@ const negativeNewsKeywords = [
   "strike",
   "summon",
   "summoned",
+  "steep hike",
   "stuck",
   "suicide",
   "suicides",
@@ -454,6 +457,7 @@ const negativePhraseKeywords = [
   "buyers stranded",
   "caqm pollution",
   "cheated homebuyers",
+  "circle rates surge",
   "construction ban",
   "construction halted",
   "construction stopped",
@@ -471,6 +475,8 @@ const negativePhraseKeywords = [
   "housing project suspended",
   "imd data",
   "left in lurch",
+  "licence lapses",
+  "license lapses",
   "missing links",
   "murdered over property",
   "not new claims",
@@ -479,6 +485,7 @@ const negativePhraseKeywords = [
   "power backup worries",
   "power outage",
   "power supply issue",
+  "property sales barred",
   "property tax",
   "property dispute murder",
   "property registration crisis",
@@ -2088,8 +2095,20 @@ async function fetchPage(sourceUrl) {
   let publisher = "";
   let publisherLogo = "";
 
-  for (const pageUrl of pageUrls) {
-    const html = await fetchHtml(pageUrl);
+  for (const [pageIndex, pageUrl] of pageUrls.entries()) {
+    let html = "";
+
+    try {
+      html = await fetchHtml(pageUrl);
+    } catch (error) {
+      if (pageIndex > 0) {
+        console.log(`Skipped paginated source page ${pageUrl}: ${error.message}`);
+        continue;
+      }
+
+      throw error;
+    }
+
     const $ = cheerio.load(html);
 
     publisher ||= getPublisherName(sourceUrl, $("title").text());

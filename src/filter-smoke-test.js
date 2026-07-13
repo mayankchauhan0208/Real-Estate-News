@@ -456,6 +456,26 @@ assert.match(
 
 assert.match(
   reasons({
+    title: "Property sales, registrations barred in Valley View Estate in Gurugram as licence lapses",
+    description: "Property sales and registrations were barred after the development licence lapsed.",
+    articleText: "The article is about a lapsed licence and barred transactions in Gurugram.",
+    newsLink: "https://realty.economictimes.indiatimes.com/news/regulatory/property-sales-barred"
+  }).join("; "),
+  /negative\/crime\/utility concern news/
+);
+
+assert.match(
+  reasons({
+    title: "GRAP-4 in action, so what? Construction waste lies in open in Gurugram",
+    description: "The report discusses GRAP-4 and construction dust concerns.",
+    articleText: "Pollution and construction dust concerns continue under GRAP restrictions.",
+    newsLink: "https://realty.economictimes.indiatimes.com/news/infrastructure/grap-4-gurugram"
+  }).join("; "),
+  /negative\/crime\/utility concern news/
+);
+
+assert.match(
+  reasons({
     title: "Haryana women's commission chief plans stronger grievance redressal",
     description: "Grievance redressal update in Gurugram.",
     articleText: "The commission discussed complaint handling.",
