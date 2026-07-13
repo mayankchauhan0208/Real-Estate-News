@@ -16,7 +16,7 @@ on:
       max_items_per_source:
         description: "How many links to inspect from each source"
         required: false
-        default: "50"
+        default: "100"
       max_items_per_run:
         description: "Maximum publish count for this run"
         required: false
@@ -73,4 +73,4 @@ jobs:
           RESEND_BACKFILL: ${{ github.event.inputs.resend_backfill || 'false' }}
           SKIP_TITLES: ${{ github.event.inputs.skip_titles || '' }}
           MAX_ITEMS_PER_RUN: ${{ github.event.inputs.max_items_per_run || vars.MAX_ITEMS_PER_RUN || '30' }}
-          MAX_ITEMS_PER_SOURCE: ${{ github.event.inputs.max_items_per_source || vars.MAX_ITEMS_PER_SOURCE || '50' }}
+          MAX_ITEMS_PER_SOURCE: ${{ github.event.inputs.max_items_per_source || vars.MAX_ITEMS_PER_SOURCE || '100' }}

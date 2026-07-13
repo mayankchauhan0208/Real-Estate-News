@@ -32,7 +32,7 @@ Create a new GitHub repo for this folder, then add these repository secrets:
 Optional repository variable:
 
 - `MAX_ITEMS_PER_RUN`: Default is `30`.
-- `MAX_ITEMS_PER_SOURCE`: Default is `50`.
+- `MAX_ITEMS_PER_SOURCE`: Default is `100`.
 
 The workflow is already scheduled for every 10 minutes:
 
@@ -44,7 +44,7 @@ Push-triggered runs are disabled. Manual runs are allowed. To rerun a date windo
 
 - `backfill_from`: `2026-06-30`
 - `backfill_to`: `2026-07-13`
-- `max_items_per_source`: `50` or higher
+- `max_items_per_source`: `100` or higher
 - `max_items_per_run`: `80` or higher
 - `resend_backfill`: keep unchecked
 - `skip_titles`: optional exact titles to skip, separated by `||`
@@ -55,7 +55,7 @@ For the June 25 cleanup run, use:
 
 - `backfill_from`: `2026-06-25`
 - `backfill_to`: `2026-07-13`
-- `max_items_per_source`: `50`
+- `max_items_per_source`: `100`
 - `max_items_per_run`: `120`
 - `resend_backfill`: checked
 - `skip_titles`: any already-restored titles separated by `||`
