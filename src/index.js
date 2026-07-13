@@ -747,7 +747,7 @@ function getPositiveIntegerEnv(name, fallback) {
 }
 
 function getMaxItemsPerSource() {
-  return getPositiveIntegerEnv("MAX_ITEMS_PER_SOURCE", 200);
+  return getPositiveIntegerEnv("MAX_ITEMS_PER_SOURCE", 300);
 }
 
 function getMaxPagesPerSource() {

@@ -16,7 +16,7 @@ on:
       max_items_per_source:
         description: "How many links to inspect from each source"
         required: false
-        default: "200"
+        default: "300"
       max_pages_per_source:
         description: "How many paginated source pages to inspect where supported"
         required: false
@@ -55,7 +55,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
       - name: Restore dedupe state
         uses: actions/cache@v4
@@ -82,5 +82,5 @@ jobs:
           SKIP_TITLES: ${{ github.event.inputs.skip_titles || '' }}
           EXTRA_ARTICLE_URLS: ${{ github.event.inputs.extra_article_urls || '' }}
           MAX_ITEMS_PER_RUN: ${{ github.event.inputs.max_items_per_run || vars.MAX_ITEMS_PER_RUN || '30' }}
-          MAX_ITEMS_PER_SOURCE: ${{ github.event.inputs.max_items_per_source || vars.MAX_ITEMS_PER_SOURCE || '200' }}
+          MAX_ITEMS_PER_SOURCE: ${{ github.event.inputs.max_items_per_source || vars.MAX_ITEMS_PER_SOURCE || '300' }}
           MAX_PAGES_PER_SOURCE: ${{ github.event.inputs.max_pages_per_source || vars.MAX_PAGES_PER_SOURCE || '5' }}
