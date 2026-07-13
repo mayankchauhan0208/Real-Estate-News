@@ -459,6 +459,31 @@ const ncrOfficeLeasingArticle = publishable({
 assert.deepEqual(detectCityCodes(ncrOfficeLeasingArticle).sort(), ["faridabad", "gurugram"]);
 assert.equal(isPublishableArticle(ncrOfficeLeasingArticle, sentIds), true);
 
+const faridabadJewarArticle = publishable({
+  title: "How Jewar Airport could trigger a Gurugram-like boom in Faridabad",
+  description:
+    "Faridabad is poised for rapid transformation driven by Noida International Airport and the proposed Faridabad-Jewar Expressway.",
+  articleText:
+    "Improved connectivity, infrastructure upgrades and attractive pricing are drawing investor interest and signalling a new era of development for Faridabad.",
+  newsLink:
+    "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/how-jewar-airport-could-trigger-a-gurugram-like-boom-in-faridabad/articleshow/132137532.cms",
+  thumbnailImage: "https://img.etimg.com/thumb/msid-132137553,width-1200,height-630,imgsize-195266,overlay-economictimes/articleshow.jpg"
+});
+
+assert.deepEqual(detectCityCodes(faridabadJewarArticle), ["faridabad"]);
+assert.equal(isPublishableArticle(faridabadJewarArticle, sentIds), true);
+
+assert.match(
+  reasons({
+    title: "Days after two foresters assaulted, 1 acre of protected Aravali land cleared in Faridabad",
+    description: "Protected Aravali land was cleared after two foresters were assaulted.",
+    articleText: "The report mentions assault, protected land clearing, forest officials and environmental damage.",
+    newsLink:
+      "https://timesofindia.indiatimes.com/city/gurgaon/days-after-two-foresters-assaulted-1-acre-of-protected-aravali-land-cleared-in-faridabad/articleshow/132247476.cms"
+  }).join("; "),
+  /negative\/crime\/utility concern news|spam\/menu page/
+);
+
 assert.match(
   reasons({
     title: "Gurugram housing demand to remain steady in 2026 despite global uncertainty",

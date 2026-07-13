@@ -85,6 +85,24 @@ const ncrCommercialOfficeKeywords = [
   "office market",
   "office space"
 ];
+const faridabadJewarGrowthKeywords = [
+  "faridabad-jewar expressway",
+  "jewar airport",
+  "jewar expressway",
+  "noida international airport"
+];
+const positiveGrowthCatalystKeywords = [
+  "appreciation catalyst",
+  "boom",
+  "connectivity",
+  "development",
+  "growth",
+  "infrastructure upgrades",
+  "investor",
+  "poised for rapid transformation",
+  "real estate market",
+  "transformation"
+];
 
 const requiredPayloadFields = [
   "title",
@@ -1458,7 +1476,7 @@ function isRealEstateRelated(article) {
 }
 
 function hasSpecificProjectOrDevelopmentSignal(article) {
-  if (isNcrCommercialOfficeMarketArticle(article)) {
+  if (isNcrCommercialOfficeMarketArticle(article) || isFaridabadJewarGrowthArticle(article)) {
     return true;
   }
 
@@ -1467,7 +1485,7 @@ function hasSpecificProjectOrDevelopmentSignal(article) {
 }
 
 function isBroadNonProjectUpdate(article) {
-  if (isNcrCommercialOfficeMarketArticle(article)) {
+  if (isNcrCommercialOfficeMarketArticle(article) || isFaridabadJewarGrowthArticle(article)) {
     return false;
   }
 
@@ -1492,6 +1510,10 @@ function detectCityCodes(article) {
 }
 
 function detectMatchedCityCodes(article) {
+  if (isFaridabadJewarGrowthArticle(article)) {
+    return ["faridabad"];
+  }
+
   if (hasNcrMatch(article) || isNcrCommercialOfficeMarketArticle(article)) {
     return ncrCityCodes;
   }
@@ -1515,7 +1537,12 @@ function hasTargetRegionInTitleOrUrl(article) {
 }
 
 function hasTargetRegionEvidence(article) {
-  return hasNcrMatch(article) || isNcrCommercialOfficeMarketArticle(article) || hasTargetRegionInTitleOrUrl(article);
+  return (
+    hasNcrMatch(article) ||
+    isNcrCommercialOfficeMarketArticle(article) ||
+    isFaridabadJewarGrowthArticle(article) ||
+    hasTargetRegionInTitleOrUrl(article)
+  );
 }
 
 function hasNcrTitleOrUrlMatch(article) {
@@ -1530,6 +1557,16 @@ function isNcrCommercialOfficeMarketArticle(article) {
     hasNcrTitleOrUrlMatch(article) &&
     hasKeyword(primaryAndUrl, ncrCommercialOfficeKeywords) &&
     !hasKeyword(primaryAndUrl, ["housing sales", "housing demand", "residential sales", "home sales"])
+  );
+}
+
+function isFaridabadJewarGrowthArticle(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  return (
+    hasWholeWordKeyword(primaryAndUrl, ["faridabad"]) &&
+    hasKeyword(primaryAndUrl, faridabadJewarGrowthKeywords) &&
+    hasKeyword(primaryAndUrl, positiveGrowthCatalystKeywords)
   );
 }
 
@@ -1566,7 +1603,11 @@ function isTargetDominantInfrastructureCorridor(article) {
 function hasOutsideRegionInPrimaryText(article) {
   const primaryText = getArticlePrimaryText(article);
 
-  if (isTargetDominantInfrastructureCorridor(article) || isNcrCommercialOfficeMarketArticle(article)) {
+  if (
+    isTargetDominantInfrastructureCorridor(article) ||
+    isNcrCommercialOfficeMarketArticle(article) ||
+    isFaridabadJewarGrowthArticle(article)
+  ) {
     return false;
   }
 
@@ -1726,6 +1767,10 @@ function isGurugramCorridorArticle(article) {
 }
 
 function getDisqualifyingOutsideCityKeywords(article) {
+  if (isFaridabadJewarGrowthArticle(article)) {
+    return outsideCityKeywords.filter((keyword) => !["delhi", "new delhi", "noida", "uttar pradesh"].includes(keyword));
+  }
+
   if (isNcrCommercialOfficeMarketArticle(article)) {
     return outsideCityKeywords.filter((keyword) => !["delhi", "new delhi", "noida"].includes(keyword));
   }
@@ -1761,6 +1806,10 @@ function isBlockedArticle(article) {
 }
 
 function isNegativeNews(article) {
+  if (isFaridabadJewarGrowthArticle(article)) {
+    return false;
+  }
+
   const primaryText = getArticlePrimaryText(article);
   const urlText = getArticleUrlText(article);
   const bodyText = getArticleBodyText(article);
