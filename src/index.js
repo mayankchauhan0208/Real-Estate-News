@@ -602,6 +602,33 @@ const allowedSourceUrlParts = defaultSources.map((source) => {
   const url = new URL(source);
   return `${url.hostname.replace(/^www\./, "")}${url.pathname.replace(/\/+$/, "")}`.toLowerCase();
 });
+const monthNumbers = {
+  jan: 0,
+  january: 0,
+  feb: 1,
+  february: 1,
+  mar: 2,
+  march: 2,
+  apr: 3,
+  april: 3,
+  may: 4,
+  jun: 5,
+  june: 5,
+  jul: 6,
+  july: 6,
+  aug: 7,
+  august: 7,
+  sep: 8,
+  sept: 8,
+  september: 8,
+  oct: 9,
+  october: 9,
+  nov: 10,
+  november: 10,
+  dec: 11,
+  december: 11
+};
+const monthPattern = Object.keys(monthNumbers).join("|");
 
 function env(name, fallback = "") {
   return process.env[name]?.trim() || fallback;
@@ -701,8 +728,7 @@ function getBackfillDateRange() {
 function getArticleDate(article) {
   const value =
     toIsoDate(article.publishedAt) ||
-    toIsoDate(article.createdAt) ||
-    toIsoDate(article.fetchedAt);
+    toIsoDate(article.createdAt);
 
   return value ? new Date(value) : null;
 }
@@ -827,6 +853,8 @@ function cleanTitle(value = "") {
   return cleanText(value, 180)
     .replace(/\s+[|-]\s+(latest news|news|real estate news)$/i, "")
     .replace(/^(watch|photos?|video):\s*/i, "")
+    .replace(new RegExp(`\\s*(?:${monthPattern})\\.?\\s+\\d{1,2},?\\s+\\d{4}.*$`, "i"), "")
+    .replace(new RegExp(`\\s*\\d{1,2}\\s+(?:${monthPattern})\\.?\\s+\\d{4}.*$`, "i"), "")
     .trim();
 }
 
@@ -912,9 +940,94 @@ function isHttpUrl(value) {
   }
 }
 
+function parseNewsDateValue(value) {
+  if (!value) {
+    return "";
+  }
+
+  const raw = String(value)
+    .replace(/\b(updated|published|last updated|posted)\s*(on|at)?\s*:?\s*/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  const normalized = raw.replace(/\bIST\b/i, "+05:30");
+  const directDate = new Date(normalized);
+
+  if (!Number.isNaN(directDate.getTime())) {
+    return directDate.toISOString();
+  }
+
+  const monthFirst = raw.match(
+    new RegExp(
+      `(${monthPattern})\\.?\\s+(\\d{1,2}),?\\s+(\\d{4})(?:\\s+(\\d{1,2}):(\\d{2})\\s*(AM|PM)?)?`,
+      "i"
+    )
+  );
+
+  if (monthFirst) {
+    return buildNewsDateIso({
+      year: monthFirst[3],
+      monthName: monthFirst[1],
+      day: monthFirst[2],
+      hour: monthFirst[4],
+      minute: monthFirst[5],
+      meridiem: monthFirst[6]
+    });
+  }
+
+  const dayFirst = raw.match(
+    new RegExp(
+      `(\\d{1,2})\\s+(${monthPattern})\\.?\\s+(\\d{4})(?:,?\\s+(\\d{1,2}):(\\d{2})\\s*(AM|PM)?)?`,
+      "i"
+    )
+  );
+
+  if (dayFirst) {
+    return buildNewsDateIso({
+      year: dayFirst[3],
+      monthName: dayFirst[2],
+      day: dayFirst[1],
+      hour: dayFirst[4],
+      minute: dayFirst[5],
+      meridiem: dayFirst[6]
+    });
+  }
+
+  return "";
+}
+
+function buildNewsDateIso({ year, monthName, day, hour = "0", minute = "0", meridiem = "" }) {
+  const month = monthNumbers[String(monthName).toLowerCase().replace(/\.$/, "")];
+  let hours = Number.parseInt(hour || "0", 10);
+  const minutes = Number.parseInt(minute || "0", 10);
+
+  if (meridiem) {
+    const period = meridiem.toLowerCase();
+
+    if (period === "pm" && hours < 12) {
+      hours += 12;
+    } else if (period === "am" && hours === 12) {
+      hours = 0;
+    }
+  }
+
+  const date = new Date(Date.UTC(Number(year), month, Number(day), hours, minutes) - 330 * 60 * 1000);
+
+  return Number.isNaN(date.getTime()) ? "" : date.toISOString();
+}
+
+function extractPublishedAtFromText(value = "") {
+  return parseNewsDateValue(value);
+}
+
 function toIsoDate(value) {
   if (!value) {
     return "";
+  }
+
+  const parsedNewsDate = parseNewsDateValue(value);
+
+  if (parsedNewsDate) {
+    return parsedNewsDate;
   }
 
   const date = new Date(value);
@@ -1398,7 +1511,7 @@ async function fetchFeed(sourceUrl) {
       thumbnailImage: rawArticle.thumbnailImage,
       postedBy: rawArticle.postedBy,
       postedByLogo: rawArticle.postedByLogo,
-      createdAt: rawArticle.publishedAt || rawArticle.fetchedAt,
+      createdAt: rawArticle.publishedAt || "",
       publishedAt: rawArticle.publishedAt,
       fetchedAt: rawArticle.fetchedAt
     };
@@ -1484,6 +1597,80 @@ function extractArticleText($) {
   ).slice(0, 5000);
 }
 
+function findStructuredDate(value) {
+  if (!value) {
+    return "";
+  }
+
+  if (Array.isArray(value)) {
+    for (const item of value) {
+      const date = findStructuredDate(item);
+
+      if (date) {
+        return date;
+      }
+    }
+
+    return "";
+  }
+
+  if (typeof value !== "object") {
+    return "";
+  }
+
+  for (const key of ["datePublished", "dateCreated", "uploadDate", "dateModified"]) {
+    const date = toIsoDate(value[key]);
+
+    if (date) {
+      return date;
+    }
+  }
+
+  for (const child of Object.values(value)) {
+    const date = findStructuredDate(child);
+
+    if (date) {
+      return date;
+    }
+  }
+
+  return "";
+}
+
+function extractStructuredPublishedAt($) {
+  const scripts = $("script[type='application/ld+json']")
+    .map((_, element) => $(element).contents().text())
+    .get();
+
+  for (const script of scripts) {
+    try {
+      const date = findStructuredDate(JSON.parse(script));
+
+      if (date) {
+        return date;
+      }
+    } catch {
+      // Ignore malformed publisher JSON-LD.
+    }
+  }
+
+  return "";
+}
+
+function extractPagePublishedAt($, fallback = {}) {
+  return pickFirst(
+    toIsoDate($('meta[property="article:published_time"]').attr("content")),
+    toIsoDate($('meta[name="publish-date"]').attr("content")),
+    toIsoDate($('meta[name="pubdate"]').attr("content")),
+    toIsoDate($('meta[name="date"]').attr("content")),
+    toIsoDate($('[itemprop="datePublished"]').attr("content")),
+    toIsoDate($("time[datetime]").first().attr("datetime")),
+    extractStructuredPublishedAt($),
+    extractPublishedAtFromText($("article, main").first().text().slice(0, 1500)),
+    toIsoDate(fallback.publishedAt)
+  );
+}
+
 async function fetchArticleMetadata(articleUrl, fallback = {}) {
   try {
     const html = await fetchHtml(articleUrl);
@@ -1502,8 +1689,7 @@ async function fetchArticleMetadata(articleUrl, fallback = {}) {
         fallback.thumbnailImage
       ),
       publishedAt: pickFirst(
-        $('meta[property="article:published_time"]').attr("content"),
-        $("time[datetime]").first().attr("datetime"),
+        extractPagePublishedAt($, fallback),
         fallback.publishedAt
       ),
       articleText
@@ -1528,6 +1714,12 @@ async function fetchPage(sourceUrl) {
   $("a[href]").each((_, element) => {
     const link = absoluteUrl($(element).attr("href"), sourceUrl);
     const title = stripHtml($(element).text());
+    const listingText = stripHtml(
+      $(element)
+        .closest("article, li, div")
+        .text()
+    );
+    const listingPublishedAt = extractPublishedAtFromText(`${title} ${listingText}`);
 
     if (!link || seenLinks.has(link) || title.length < 18 || isBlockedArticle({ title, newsLink: link })) {
       return;
@@ -1551,7 +1743,7 @@ async function fetchPage(sourceUrl) {
       thumbnailImage: absoluteUrl($(element).find("img").first().attr("src"), sourceUrl),
       postedBy: publisher,
       postedByLogo: publisherLogo,
-      publishedAt: null,
+      publishedAt: listingPublishedAt || null,
       fetchedAt: new Date().toISOString()
     });
   });
@@ -1567,7 +1759,7 @@ async function fetchPage(sourceUrl) {
       description: stripHtml(metadata.description || candidate.description),
       articleText: stripHtml(metadata.articleText || candidate.articleText || ""),
       thumbnailImage: absoluteUrl(metadata.thumbnailImage || candidate.thumbnailImage, candidate.newsLink),
-      createdAt: metadata.publishedAt || candidate.fetchedAt
+      createdAt: metadata.publishedAt || candidate.publishedAt || ""
     };
 
     const cityArticle = applyCityCode(cleanArticleFields(article));

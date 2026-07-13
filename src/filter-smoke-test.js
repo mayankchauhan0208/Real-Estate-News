@@ -85,6 +85,39 @@ assert.equal(
 );
 
 assert.equal(
+  cleanArticleFields(
+    article({
+      title: "Oberoi Realty bets big on GurugramJul 8, 2026 11:09 AM IST"
+    })
+  ).title,
+  "Oberoi Realty bets big on Gurugram"
+);
+
+assert.equal(
+  isWithinBackfillDateRange(
+    article({
+      createdAt: "",
+      publishedAt: "Jul 10, 2026 10:24 PM IST",
+      fetchedAt: "2026-07-13T06:18:00.000Z"
+    }),
+    { from: new Date("2026-07-10T00:00:00.000Z"), to: new Date("2026-07-10T23:59:59.999Z") }
+  ),
+  true
+);
+
+assert.equal(
+  isWithinBackfillDateRange(
+    article({
+      createdAt: "",
+      publishedAt: "",
+      fetchedAt: "2026-07-13T06:18:00.000Z"
+    }),
+    { from: new Date("2026-06-30T00:00:00.000Z"), to: new Date("2026-07-13T23:59:59.999Z") }
+  ),
+  false
+);
+
+assert.equal(
   isPublishableArticle(
     publishable({
       title: "DLF Q2 results: Net profit rises 54% QoQ to Rs 1,180 crore",
