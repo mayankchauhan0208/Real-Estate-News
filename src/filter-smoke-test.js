@@ -97,6 +97,18 @@ assert.equal(
 assert.equal(
   extractMetadataImage(
     cheerio.load(`
+      <html>
+        <head><meta property="og:image" content="https://example.com/story-real.png" /></head>
+        <body><article><img src="data:image/svg+xml;base64,placeholder" data-src="https://example.com/story-real.png" /></article></body>
+      </html>
+    `)
+  ),
+  "https://example.com/story-real.png"
+);
+
+assert.equal(
+  extractMetadataImage(
+    cheerio.load(`
       <html><head><script type="application/ld+json">{"@type":"NewsArticle","image":{"url":"https://example.com/news.jpg"}}</script></head></html>
     `)
   ),
@@ -192,7 +204,7 @@ assert.equal(
     }),
     sentIds
   ),
-  true
+  false
 );
 
 assert.deepEqual(
@@ -282,6 +294,16 @@ assert.match(
     newsLink: "https://example.com/dlf-results-no-city"
   }).join("; "),
   /no allowed city match|target region missing|not positive target real-estate/
+);
+
+assert.match(
+  reasons({
+    title: "Developer unveils strong residential growth plan",
+    description: "The company announced new homes and commercial expansion.",
+    articleText: "The body mentions Gurugram as one of several operating markets, but the article is a broad company update.",
+    newsLink: "https://example.com/company-growth-plan"
+  }).join("; "),
+  /target region missing|no allowed city match/
 );
 
 assert.match(
@@ -492,6 +514,16 @@ assert.match(
     newsLink: "https://example.com/mumbai/project-launch"
   }).join("; "),
   /outside-city conflict|outside region/
+);
+
+assert.match(
+  reasons({
+    title: "Housr Introduces Zero-Deposit Rentals For Premium Co-Living Across India",
+    description: "The rental product is available across India.",
+    articleText: "The article mentions Gurugram only as one operating market.",
+    newsLink: "https://realtynmore.com/housr-introduces-zero-deposit-rentals-for-premium-co-living-across-india/"
+  }).join("; "),
+  /spam\/menu page|target region missing|no allowed city match/
 );
 
 assert.match(

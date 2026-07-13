@@ -264,9 +264,13 @@ const blockedTitleKeywords = [
   "advertise",
   "air monitor",
   "air monitors",
+  "appoints",
+  "appointed",
+  "across india",
   "aravali",
   "awards",
   "brand awareness",
+  "business head",
   "built-up areas",
   "caqm",
   "careers",
@@ -286,7 +290,11 @@ const blockedTitleKeywords = [
   "integrated campaigns",
   "login",
   "newsletter",
+  "names",
+  "nationwide",
   "panel",
+  "pan india",
+  "pan-india",
   "pipeline",
   "pollution",
   "photo gallery",
@@ -1372,8 +1380,13 @@ function hasTargetRegionInPrimaryText(article) {
   return hasWholeWordKeyword(primaryText, targetCityKeywords);
 }
 
+function hasTargetRegionInPrimaryOrUrl(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  return hasWholeWordKeyword(primaryAndUrl, targetCityKeywords);
+}
+
 function hasTargetRegionEvidence(article) {
-  return hasNcrMatch(article) || hasTargetRegionInPrimaryText(article) || cityRules.some((rule) => hasStrongArticleCityMatch(article, rule));
+  return hasNcrMatch(article) || hasTargetRegionInPrimaryOrUrl(article);
 }
 
 function hasOutsideRegionInPrimaryText(article) {
@@ -1971,7 +1984,11 @@ function getImageCandidate($, element) {
 }
 
 function isRejectedImageCandidate(value = "") {
-  return /blank|placeholder|spacer|logo|icon|avatar|favicon|advertise|banner|youtube|ytimg|playstore|app store|social|facebook|instagram|whatsapp|linkedin|loader|buffering/i.test(
+  if (!value || /^data:/i.test(value)) {
+    return true;
+  }
+
+  return /blank|placeholder|spacer|logo|icon|avatar|favicon|advertise|banner|flipcoin|youtube|ytimg|playstore|app store|social|facebook|instagram|whatsapp|linkedin|loader|buffering/i.test(
     value
   );
 }
