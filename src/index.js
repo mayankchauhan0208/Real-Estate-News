@@ -932,6 +932,15 @@ function pickFirst(...values) {
   return values.find((value) => typeof value === "string" && value.trim())?.trim() || "";
 }
 
+function isGenericDescription(value = "") {
+  const normalized = cleanText(value, 120).toLowerCase();
+  return ["your description", "description", "article description", "news description"].includes(normalized);
+}
+
+function pickDescription(...values) {
+  return values.find((value) => typeof value === "string" && value.trim() && !isGenericDescription(value))?.trim() || "";
+}
+
 function getNestedValue(object, pathParts) {
   return pathParts.reduce((value, key) => value?.[key], object);
 }
@@ -1732,9 +1741,12 @@ async function fetchArticleMetadata(articleUrl, fallback = {}) {
 
     return {
       description: pickFirst(
-        $('meta[property="og:description"]').attr("content"),
-        $('meta[name="description"]').attr("content"),
-        fallback.description
+        pickDescription(
+          $('meta[property="og:description"]').attr("content"),
+          $('meta[name="description"]').attr("content"),
+          fallback.description
+        ),
+        fallback.title
       ),
       thumbnailImage: pickFirst(
         $('meta[property="og:image"]').attr("content"),
