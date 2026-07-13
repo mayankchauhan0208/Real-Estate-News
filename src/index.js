@@ -1509,17 +1509,26 @@ function hasTargetInfrastructureCorridorSignal(article) {
 
 function isTargetDominantInfrastructureCorridor(article) {
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const fullText = getArticleSearchText(article);
   const hasGurugram = hasWholeWordKeyword(primaryAndUrl, cityRules.find((rule) => rule.code === "gurugram").keywords);
   const hasFaridabad = hasWholeWordKeyword(primaryAndUrl, cityRules.find((rule) => rule.code === "faridabad").keywords);
-  const outsideMatches = outsideCityKeywords.filter((keyword) => hasWholeWordKeyword(primaryAndUrl, [keyword]));
+  const hasNoida = hasWholeWordKeyword(primaryAndUrl, ["noida"]);
+  const targetMentions = countKeywordMentions(fullText, targetCityKeywords);
+  const outsideMentions = countKeywordMentions(fullText, outsideCityKeywords);
+  const hasNamedTargetNoidaCorridor = hasGurugram && hasFaridabad && hasNoida;
 
   return (
     hasTargetInfrastructureCorridorSignal(article) &&
     hasGurugram &&
     hasFaridabad &&
-    !/\bgreater noida\b/i.test(primaryAndUrl) &&
-    outsideMatches.length > 0 &&
-    outsideMatches.every((keyword) => keyword === "noida")
+    (
+      hasNamedTargetNoidaCorridor ||
+      (
+        targetMentions >= 2 &&
+        outsideMentions > 0 &&
+        targetMentions / (targetMentions + outsideMentions) >= 0.67
+      )
+    )
   );
 }
 
@@ -2127,7 +2136,6 @@ function extractPagePublishedAt($, fallback = {}) {
 function getImageCandidate($, element) {
   const image = $(element);
   return pickFirst(
-    image.attr("src"),
     image.attr("data-src"),
     image.attr("data-original"),
     image.attr("data-lazy-src"),
@@ -2135,7 +2143,8 @@ function getImageCandidate($, element) {
     image.attr("data-url"),
     image.attr("content"),
     parseSrcset(image.attr("srcset")),
-    parseSrcset(image.attr("data-srcset"))
+    parseSrcset(image.attr("data-srcset")),
+    image.attr("src")
   );
 }
 
@@ -2144,7 +2153,7 @@ function isRejectedImageCandidate(value = "") {
     return true;
   }
 
-  return /blank|placeholder|spacer|logo|icon|avatar|favicon|advertise|banner|flipcoin|youtube|ytimg|playstore|app store|social|facebook|instagram|whatsapp|linkedin|loader|buffering/i.test(
+  return /1x1|artshare|blank|placeholder|spacer|logo|icon|avatar|favicon|advertise|banner|copylink|flipcoin|youtube|ytimg|playstore|app store|social|facebook|instagram|whatsapp|linkedin|loader|buffering/i.test(
     value
   );
 }

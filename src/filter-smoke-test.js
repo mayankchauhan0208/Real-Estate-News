@@ -117,6 +117,29 @@ assert.equal(
 );
 
 assert.equal(
+  extractMetadataImage(
+    cheerio.load(`
+      <html>
+        <head><meta property="og:image" content="https://www.hindustantimes.com/ht-img/img/2026/06/26/550x309/rrts.jpg" /></head>
+        <body><article><img src="https://www.hindustantimes.com/static-content/1y/ht/artShare@2x.png" /></article></body>
+      </html>
+    `)
+  ),
+  "https://www.hindustantimes.com/ht-img/img/2026/06/26/550x309/rrts.jpg"
+);
+
+assert.equal(
+  extractMetadataImage(
+    cheerio.load(`
+      <html>
+        <body><article><img src="https://www.hindustantimes.com/static-content/1y/ht/1x1-white.png" data-src="https://www.hindustantimes.com/ht-img/img/2026/06/26/400x225/rrts.jpg" /></article></body>
+      </html>
+    `)
+  ),
+  "https://www.hindustantimes.com/ht-img/img/2026/06/26/400x225/rrts.jpg"
+);
+
+assert.equal(
   isPublishableArticle(
     publishable({
       title: "BPTP to invest Rs 1,100 crore in Greater Faridabad housing project",
