@@ -661,11 +661,64 @@ function getPositiveIntegerEnv(name, fallback) {
 }
 
 function getMaxItemsPerSource() {
-  return getPositiveIntegerEnv("MAX_ITEMS_PER_SOURCE", 4);
+  return getPositiveIntegerEnv("MAX_ITEMS_PER_SOURCE", 20);
 }
 
 function getMaxItemsPerRun() {
   return getPositiveIntegerEnv("MAX_ITEMS_PER_RUN", 30);
+}
+
+function parseDateBoundary(value, endOfDay = false) {
+  const input = env(value);
+
+  if (!input) {
+    return null;
+  }
+
+  const normalized = /^\d{4}-\d{2}-\d{2}$/.test(input)
+    ? `${input}T${endOfDay ? "23:59:59.999" : "00:00:00.000"}Z`
+    : input;
+  const date = new Date(normalized);
+
+  if (Number.isNaN(date.getTime())) {
+    throw new Error(`${value} must be a valid date or ISO timestamp.`);
+  }
+
+  return date;
+}
+
+function getBackfillDateRange() {
+  const from = parseDateBoundary("BACKFILL_FROM");
+  const to = parseDateBoundary("BACKFILL_TO", true);
+
+  if (from && to && from > to) {
+    throw new Error("BACKFILL_FROM must be before or equal to BACKFILL_TO.");
+  }
+
+  return { from, to };
+}
+
+function getArticleDate(article) {
+  const value =
+    toIsoDate(article.publishedAt) ||
+    toIsoDate(article.createdAt) ||
+    toIsoDate(article.fetchedAt);
+
+  return value ? new Date(value) : null;
+}
+
+function isWithinBackfillDateRange(article, dateRange) {
+  if (!dateRange.from && !dateRange.to) {
+    return true;
+  }
+
+  const articleDate = getArticleDate(article);
+
+  if (!articleDate) {
+    return false;
+  }
+
+  return (!dateRange.from || articleDate >= dateRange.from) && (!dateRange.to || articleDate <= dateRange.to);
 }
 
 async function fetchWithTimeout(url, options = {}, timeoutMs = 8000) {
@@ -1596,8 +1649,17 @@ async function main() {
   const sources = getSources();
   const selectedSources = [...new Set([...defaultSources, ...sources])].filter(isAllowedSource);
   const maxItems = getMaxItemsPerRun();
+  const backfillDateRange = getBackfillDateRange();
   const sentIds = await readSentIds();
   const allArticles = [];
+
+  if (backfillDateRange.from || backfillDateRange.to) {
+    console.log(
+      `Backfill date window: ${backfillDateRange.from?.toISOString() || "beginning"} to ${
+        backfillDateRange.to?.toISOString() || "now"
+      }`
+    );
+  }
 
   for (const source of selectedSources) {
     try {
@@ -1609,7 +1671,9 @@ async function main() {
     }
   }
 
-  const expandedArticles = allArticles.flatMap(expandCityArticles);
+  const expandedArticles = allArticles
+    .flatMap(expandCityArticles)
+    .filter((article) => isWithinBackfillDateRange(article, backfillDateRange));
 
   const uniqueArticles = uniqueByDedupeIds(
     expandedArticles
@@ -1685,7 +1749,8 @@ export {
   hasDisallowedLanguage,
   isAllowedSource,
   isNegativeNews,
-  isPublishableArticle
+  isPublishableArticle,
+  isWithinBackfillDateRange
 };
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

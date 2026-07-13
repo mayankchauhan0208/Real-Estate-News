@@ -4,6 +4,23 @@ on:
   schedule:
     - cron: "*/10 * * * *"
   workflow_dispatch:
+    inputs:
+      backfill_from:
+        description: "Only consider articles published on or after this date, e.g. 2026-06-30"
+        required: false
+        default: ""
+      backfill_to:
+        description: "Only consider articles published on or before this date, e.g. 2026-07-13"
+        required: false
+        default: ""
+      max_items_per_source:
+        description: "How many links to inspect from each source"
+        required: false
+        default: "20"
+      max_items_per_run:
+        description: "Maximum publish count for this run"
+        required: false
+        default: "80"
 
 concurrency:
   group: news-api-pusher
@@ -42,5 +59,7 @@ jobs:
         env:
           APP_API_URL: ${{ secrets.APP_API_URL }}
           APP_API_KEY: ${{ secrets.APP_API_KEY }}
-          MAX_ITEMS_PER_RUN: ${{ vars.MAX_ITEMS_PER_RUN || '30' }}
-          MAX_ITEMS_PER_SOURCE: ${{ vars.MAX_ITEMS_PER_SOURCE || '4' }}
+          BACKFILL_FROM: ${{ github.event.inputs.backfill_from || '' }}
+          BACKFILL_TO: ${{ github.event.inputs.backfill_to || '' }}
+          MAX_ITEMS_PER_RUN: ${{ github.event.inputs.max_items_per_run || vars.MAX_ITEMS_PER_RUN || '30' }}
+          MAX_ITEMS_PER_SOURCE: ${{ github.event.inputs.max_items_per_source || vars.MAX_ITEMS_PER_SOURCE || '20' }}

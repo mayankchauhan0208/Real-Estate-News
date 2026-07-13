@@ -4,7 +4,8 @@ import {
   cleanArticleFields,
   getRejectionReasons,
   isAllowedSource,
-  isPublishableArticle
+  isPublishableArticle,
+  isWithinBackfillDateRange
 } from "./index.js";
 
 const sentIds = new Set();
@@ -64,6 +65,22 @@ assert.equal(
     sentIds
   ),
   true
+);
+
+assert.equal(
+  isWithinBackfillDateRange(
+    article({ publishedAt: "2026-06-30T08:00:00.000Z" }),
+    { from: new Date("2026-06-30T00:00:00.000Z"), to: new Date("2026-07-13T23:59:59.999Z") }
+  ),
+  true
+);
+
+assert.equal(
+  isWithinBackfillDateRange(
+    article({ publishedAt: "2026-06-29T23:59:59.000Z" }),
+    { from: new Date("2026-06-30T00:00:00.000Z"), to: new Date("2026-07-13T23:59:59.999Z") }
+  ),
+  false
 );
 
 assert.equal(

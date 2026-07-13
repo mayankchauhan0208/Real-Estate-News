@@ -32,7 +32,7 @@ Create a new GitHub repo for this folder, then add these repository secrets:
 Optional repository variable:
 
 - `MAX_ITEMS_PER_RUN`: Default is `30`.
-- `MAX_ITEMS_PER_SOURCE`: Default is `4`.
+- `MAX_ITEMS_PER_SOURCE`: Default is `20`.
 
 The workflow is already scheduled for every 10 minutes:
 
@@ -40,7 +40,14 @@ The workflow is already scheduled for every 10 minutes:
 - cron: "*/10 * * * *"
 ```
 
-Push-triggered runs are disabled. Manual runs are allowed, but they use the same normal strict scan and do not expose test, resend, or backfill options.
+Push-triggered runs are disabled. Manual runs are allowed. To rerun a date window without reposting already-sent articles, start the workflow manually and set:
+
+- `backfill_from`: `2026-06-30`
+- `backfill_to`: `2026-07-13`
+- `max_items_per_source`: `20` or higher
+- `max_items_per_run`: `80` or higher
+
+The backfill still uses the same strict positive real-estate filters and the same sent-news dedupe state.
 
 ## API payload
 
