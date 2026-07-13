@@ -695,6 +695,16 @@ function getMaxItemsPerRun() {
   return getPositiveIntegerEnv("MAX_ITEMS_PER_RUN", 30);
 }
 
+function getBooleanEnv(name, fallback = false) {
+  const value = env(name);
+
+  if (!value) {
+    return fallback;
+  }
+
+  return ["1", "true", "yes", "y", "on"].includes(value.toLowerCase());
+}
+
 function parseDateBoundary(value, endOfDay = false) {
   const input = env(value);
 
@@ -745,6 +755,10 @@ function isWithinBackfillDateRange(article, dateRange) {
   }
 
   return (!dateRange.from || articleDate >= dateRange.from) && (!dateRange.to || articleDate <= dateRange.to);
+}
+
+function hasBackfillDateRange(dateRange) {
+  return Boolean(dateRange.from || dateRange.to);
 }
 
 async function fetchWithTimeout(url, options = {}, timeoutMs = 8000) {
@@ -1842,6 +1856,8 @@ async function main() {
   const maxItems = getMaxItemsPerRun();
   const backfillDateRange = getBackfillDateRange();
   const sentIds = await readSentIds();
+  const resendBackfill = getBooleanEnv("RESEND_BACKFILL") && hasBackfillDateRange(backfillDateRange);
+  const filterSentIds = resendBackfill ? new Set() : sentIds;
   const allArticles = [];
 
   if (backfillDateRange.from || backfillDateRange.to) {
@@ -1850,6 +1866,10 @@ async function main() {
         backfillDateRange.to?.toISOString() || "now"
       }`
     );
+  }
+
+  if (resendBackfill) {
+    console.log("Backfill resend mode: ignoring sent-news dedupe while selecting articles.");
   }
 
   for (const source of selectedSources) {
@@ -1868,7 +1888,7 @@ async function main() {
 
   const uniqueArticles = uniqueByDedupeIds(
     expandedArticles
-    .filter((article) => isPublishableArticle(article, sentIds))
+    .filter((article) => isPublishableArticle(article, filterSentIds))
     .sort((a, b) => {
       const priorityDifference = articlePriority(a) - articlePriority(b);
 
@@ -1891,7 +1911,7 @@ async function main() {
   const rejectionCounts = new Map();
 
   for (const article of expandedArticles) {
-    const reasons = getRejectionReasons(article, sentIds);
+    const reasons = getRejectionReasons(article, filterSentIds);
 
     for (const reason of reasons) {
       rejectionCounts.set(reason, (rejectionCounts.get(reason) || 0) + 1);
@@ -1904,7 +1924,7 @@ async function main() {
   }
 
   for (const article of expandedArticles.slice(0, 100)) {
-    const reasons = getRejectionReasons(article, sentIds);
+    const reasons = getRejectionReasons(article, filterSentIds);
 
     if (reasons.length > 0 && article.title) {
       console.log(`Skipped ${article.title}: ${reasons.join("; ")}`);
@@ -1938,6 +1958,7 @@ export {
   detectCityCodes,
   getRejectionReasons,
   hasDisallowedLanguage,
+  hasBackfillDateRange,
   isAllowedSource,
   isNegativeNews,
   isPublishableArticle,

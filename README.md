@@ -46,8 +46,19 @@ Push-triggered runs are disabled. Manual runs are allowed. To rerun a date windo
 - `backfill_to`: `2026-07-13`
 - `max_items_per_source`: `20` or higher
 - `max_items_per_run`: `80` or higher
+- `resend_backfill`: keep unchecked
 
-The backfill still uses the same strict positive real-estate filters and the same sent-news dedupe state.
+If you deleted old API news and need to recreate the same date window, use the same backfill dates and set `resend_backfill` to checked. This bypasses the sent-news dedupe only for that dated manual run.
+
+For the June 25 cleanup run, use:
+
+- `backfill_from`: `2026-06-25`
+- `backfill_to`: `2026-07-13`
+- `max_items_per_source`: `20`
+- `max_items_per_run`: `120`
+- `resend_backfill`: checked
+
+The backfill still uses the same strict positive real-estate filters.
 
 ## API payload
 

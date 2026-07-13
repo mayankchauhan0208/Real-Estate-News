@@ -4,6 +4,7 @@ import {
   cleanArticleFields,
   detectCityCodes,
   getRejectionReasons,
+  hasBackfillDateRange,
   isAllowedSource,
   isPublishableArticle,
   isWithinBackfillDateRange
@@ -116,6 +117,9 @@ assert.equal(
   ),
   false
 );
+
+assert.equal(hasBackfillDateRange({ from: new Date("2026-06-25T00:00:00.000Z"), to: null }), true);
+assert.equal(hasBackfillDateRange({ from: null, to: null }), false);
 
 assert.equal(
   isPublishableArticle(
