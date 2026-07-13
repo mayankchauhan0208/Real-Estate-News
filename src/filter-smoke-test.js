@@ -67,6 +67,11 @@ assert.deepEqual(getSourcePageUrls("https://realty.economictimes.indiatimes.com/
   "https://realty.economictimes.indiatimes.com/tag/faridabad/2",
   "https://realty.economictimes.indiatimes.com/tag/faridabad/3"
 ]);
+assert.deepEqual(getSourcePageUrls("https://propnewstime.com/").slice(0, 3), [
+  "https://propnewstime.com/",
+  "https://propnewstime.com/page/2/",
+  "https://propnewstime.com/page/3/"
+]);
 
 assert.equal(
   extractMetadataImage(

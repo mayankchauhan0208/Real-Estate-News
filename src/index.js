@@ -751,7 +751,7 @@ function getMaxItemsPerSource() {
 }
 
 function getMaxPagesPerSource() {
-  return getPositiveIntegerEnv("MAX_PAGES_PER_SOURCE", 5);
+  return getPositiveIntegerEnv("MAX_PAGES_PER_SOURCE", 15);
 }
 
 function getMaxItemsPerRun() {
@@ -875,6 +875,26 @@ function getSourcePageUrls(sourceUrl) {
 
         const pageUrl = new URL(sourceUrl);
         pageUrl.pathname = `${normalizedPath}/${index + 1}`;
+        return pageUrl.toString();
+      });
+    }
+
+    const wordpressPagedHosts = new Set([
+      "torbitrealty.com",
+      "realtynmore.com",
+      "realtynxt.com",
+      "www.track2realty.track2media.com",
+      "propnewstime.com"
+    ]);
+
+    if (wordpressPagedHosts.has(url.hostname)) {
+      return Array.from({ length: maxPages }, (_, index) => {
+        if (index === 0) {
+          return sourceUrl;
+        }
+
+        const pageUrl = new URL(sourceUrl);
+        pageUrl.pathname = `${normalizedPath || ""}/page/${index + 1}/`.replace(/\/{2,}/g, "/");
         return pageUrl.toString();
       });
     }

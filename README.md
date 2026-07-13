@@ -33,7 +33,7 @@ Optional repository variable:
 
 - `MAX_ITEMS_PER_RUN`: Default is `30`.
 - `MAX_ITEMS_PER_SOURCE`: Default is `300`.
-- `MAX_PAGES_PER_SOURCE`: Default is `5` for supported paginated source pages.
+- `MAX_PAGES_PER_SOURCE`: Default is `15` for supported paginated source pages.
 - `EXTRA_ARTICLE_URLS`: Optional exact article URLs, separated by comma, semicolon, or newline. Use only for manually found articles; each URL still has to pass the strict full-article filters.
 
 The workflow is already scheduled for every 10 minutes:
@@ -47,7 +47,7 @@ Push-triggered runs are disabled. Manual runs are allowed. To rerun a date windo
 - `backfill_from`: `2026-06-30`
 - `backfill_to`: `2026-07-13`
 - `max_items_per_source`: `300` or higher
-- `max_pages_per_source`: `5`
+- `max_pages_per_source`: `15`
 - `max_items_per_run`: `80` or higher
 - `resend_backfill`: keep unchecked
 - `skip_titles`: optional exact titles to skip, separated by `||`
@@ -60,7 +60,7 @@ For the June 25 cleanup run, use:
 - `backfill_from`: `2026-06-25`
 - `backfill_to`: `2026-07-13`
 - `max_items_per_source`: `300`
-- `max_pages_per_source`: `5`
+- `max_pages_per_source`: `15`
 - `max_items_per_run`: `120`
 - `resend_backfill`: checked
 - `skip_titles`: any already-restored titles separated by `||`

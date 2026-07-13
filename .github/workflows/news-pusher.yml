@@ -20,7 +20,7 @@ on:
       max_pages_per_source:
         description: "How many paginated source pages to inspect where supported"
         required: false
-        default: "5"
+        default: "15"
       max_items_per_run:
         description: "Maximum publish count for this run"
         required: false
@@ -83,4 +83,4 @@ jobs:
           EXTRA_ARTICLE_URLS: ${{ github.event.inputs.extra_article_urls || '' }}
           MAX_ITEMS_PER_RUN: ${{ github.event.inputs.max_items_per_run || vars.MAX_ITEMS_PER_RUN || '30' }}
           MAX_ITEMS_PER_SOURCE: ${{ github.event.inputs.max_items_per_source || vars.MAX_ITEMS_PER_SOURCE || '300' }}
-          MAX_PAGES_PER_SOURCE: ${{ github.event.inputs.max_pages_per_source || vars.MAX_PAGES_PER_SOURCE || '5' }}
+          MAX_PAGES_PER_SOURCE: ${{ github.event.inputs.max_pages_per_source || vars.MAX_PAGES_PER_SOURCE || '15' }}
