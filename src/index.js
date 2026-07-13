@@ -77,6 +77,14 @@ const targetInfrastructureCorridorKeywords = [
   "rrts",
   "transit corridor"
 ];
+const ncrCommercialOfficeKeywords = [
+  "commercial leasing",
+  "commercial office",
+  "gross office leasing",
+  "office leasing",
+  "office market",
+  "office space"
+];
 
 const requiredPayloadFields = [
   "title",
@@ -1446,15 +1454,23 @@ function isRealEstateRelated(article) {
     return false;
   }
 
-  return hasRealEstateEvidence(article) || isNationalRealEstateBusinessUpdate(article);
+  return hasRealEstateEvidence(article) || isNationalRealEstateBusinessUpdate(article) || isNcrCommercialOfficeMarketArticle(article);
 }
 
 function hasSpecificProjectOrDevelopmentSignal(article) {
+  if (isNcrCommercialOfficeMarketArticle(article)) {
+    return true;
+  }
+
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
   return hasKeyword(primaryAndUrl, specificProjectKeywords);
 }
 
 function isBroadNonProjectUpdate(article) {
+  if (isNcrCommercialOfficeMarketArticle(article)) {
+    return false;
+  }
+
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
 
   return (
@@ -1476,7 +1492,7 @@ function detectCityCodes(article) {
 }
 
 function detectMatchedCityCodes(article) {
-  if (hasNcrMatch(article)) {
+  if (hasNcrMatch(article) || isNcrCommercialOfficeMarketArticle(article)) {
     return ncrCityCodes;
   }
 
@@ -1499,7 +1515,22 @@ function hasTargetRegionInTitleOrUrl(article) {
 }
 
 function hasTargetRegionEvidence(article) {
-  return hasNcrMatch(article) || hasTargetRegionInTitleOrUrl(article);
+  return hasNcrMatch(article) || isNcrCommercialOfficeMarketArticle(article) || hasTargetRegionInTitleOrUrl(article);
+}
+
+function hasNcrTitleOrUrlMatch(article) {
+  const haystack = `${article.title || ""} ${getArticleUrlText(article)}`.toLowerCase();
+  return /\bncr\b/i.test(haystack) || /\bdelhi ncr\b/i.test(haystack);
+}
+
+function isNcrCommercialOfficeMarketArticle(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  return (
+    hasNcrTitleOrUrlMatch(article) &&
+    hasKeyword(primaryAndUrl, ncrCommercialOfficeKeywords) &&
+    !hasKeyword(primaryAndUrl, ["housing sales", "housing demand", "residential sales", "home sales"])
+  );
 }
 
 function hasTargetInfrastructureCorridorSignal(article) {
@@ -1535,7 +1566,7 @@ function isTargetDominantInfrastructureCorridor(article) {
 function hasOutsideRegionInPrimaryText(article) {
   const primaryText = getArticlePrimaryText(article);
 
-  if (isTargetDominantInfrastructureCorridor(article)) {
+  if (isTargetDominantInfrastructureCorridor(article) || isNcrCommercialOfficeMarketArticle(article)) {
     return false;
   }
 
@@ -1695,6 +1726,10 @@ function isGurugramCorridorArticle(article) {
 }
 
 function getDisqualifyingOutsideCityKeywords(article) {
+  if (isNcrCommercialOfficeMarketArticle(article)) {
+    return outsideCityKeywords.filter((keyword) => !["delhi", "new delhi", "noida"].includes(keyword));
+  }
+
   if (isTargetDominantInfrastructureCorridor(article)) {
     return outsideCityKeywords.filter((keyword) => keyword !== "noida");
   }

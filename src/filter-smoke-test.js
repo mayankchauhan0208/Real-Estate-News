@@ -446,6 +446,19 @@ assert.match(
   /no allowed city match|outside-city conflict|outside region/
 );
 
+const ncrOfficeLeasingArticle = publishable({
+  title: "NCR office leasing dips 1% to 7.2 million sq ft in H1 2026: Report",
+  description:
+    "Commercial office leasing in NCR remained steady at 7.2 million sq ft, supporting business activity across Delhi NCR.",
+  articleText:
+    "The NCR office market report covers commercial office space, leasing, occupier demand and real estate activity in Delhi NCR.",
+  newsLink:
+    "https://realty.economictimes.indiatimes.com/news/commercial/ncr-office-leasing-declines-slightly-to-72-million-sq-ft-in-h1-2026/132356292"
+});
+
+assert.deepEqual(detectCityCodes(ncrOfficeLeasingArticle).sort(), ["faridabad", "gurugram"]);
+assert.equal(isPublishableArticle(ncrOfficeLeasingArticle, sentIds), true);
+
 assert.match(
   reasons({
     title: "Gurugram housing demand to remain steady in 2026 despite global uncertainty",
