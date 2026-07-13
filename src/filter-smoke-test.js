@@ -167,6 +167,33 @@ assert.equal(
 assert.equal(
   isPublishableArticle(
     publishable({
+      title:
+        "How DLF The Arbour contributed to the evolution of Golf Course Extension Road as a luxury housing corridor",
+      description:
+        "The luxury housing corridor on Golf Course Extension Road has seen premium residential development.",
+      articleText:
+        "DLF The Arbour contributed to luxury housing demand and residential development along Golf Course Extension Road.",
+      newsLink:
+        "https://propnewstime.com/how-dlf-the-arbour-contributed-to-the-evolution-of-golf-course-extension-road"
+    }),
+    sentIds
+  ),
+  true
+);
+
+assert.equal(
+  publishable({
+    title: "Luxury project launched on SPR with improved connectivity",
+    description: "The Southern Peripheral Road residential project adds new premium housing inventory.",
+    articleText: "SPR is a Gurugram growth corridor for residential development.",
+    newsLink: "https://example.com/spr-luxury-project"
+  }).cityCode,
+  "gurugram"
+);
+
+assert.equal(
+  isPublishableArticle(
+    publishable({
       title: "Delhi NCR housing sales rise with premium launches",
       description: "Delhi NCR residential launches and sales improved with new real estate projects.",
       articleText: "Premium housing demand increased across Delhi NCR.",

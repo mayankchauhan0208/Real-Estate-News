@@ -47,17 +47,26 @@ const cityRules = [
       "gurgaon",
       "dwarka expressway",
       "golf course road",
+      "golf course extension road",
       "manesar",
       "manasar",
       "pataudi",
       "patudi",
       "patodi",
+      "southern peripheral road",
+      "spr",
       "sohna",
       "sohna road"
     ]
   }
 ];
-const gurugramCorridorKeywords = ["dwarka expressway", "golf course road"];
+const gurugramCorridorKeywords = [
+  "dwarka expressway",
+  "golf course road",
+  "golf course extension road",
+  "southern peripheral road",
+  "spr"
+];
 
 const requiredPayloadFields = [
   "title",
@@ -1995,6 +2004,8 @@ export {
   applyCityCode,
   cleanArticleFields,
   detectCityCodes,
+  expandCityArticles,
+  fetchSource,
   getRejectionReasons,
   hasDisallowedLanguage,
   hasBackfillDateRange,
