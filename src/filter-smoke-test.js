@@ -6,6 +6,7 @@ import {
   detectCityCodes,
   extractMetadataImage,
   getRejectionReasons,
+  getSourcePageUrls,
   hasBackfillDateRange,
   isAllowedSource,
   isLikelyFeedUrl,
@@ -60,6 +61,11 @@ assert.equal(isLikelyFeedUrl("https://www.hindustantimes.com/real-estate"), fals
 assert.equal(isLikelyFeedUrl("https://realty.economictimes.indiatimes.com/tag/gurugram"), false);
 assert.equal(isLikelyFeedUrl("https://example.com/feed"), true);
 assert.equal(isLikelyFeedUrl("https://example.com/rss.xml"), true);
+assert.deepEqual(getSourcePageUrls("https://realty.economictimes.indiatimes.com/tag/faridabad").slice(0, 3), [
+  "https://realty.economictimes.indiatimes.com/tag/faridabad",
+  "https://realty.economictimes.indiatimes.com/tag/faridabad/2",
+  "https://realty.economictimes.indiatimes.com/tag/faridabad/3"
+]);
 
 assert.equal(
   extractMetadataImage(

@@ -715,7 +715,11 @@ function getPositiveIntegerEnv(name, fallback) {
 }
 
 function getMaxItemsPerSource() {
-  return getPositiveIntegerEnv("MAX_ITEMS_PER_SOURCE", 100);
+  return getPositiveIntegerEnv("MAX_ITEMS_PER_SOURCE", 200);
+}
+
+function getMaxPagesPerSource() {
+  return getPositiveIntegerEnv("MAX_PAGES_PER_SOURCE", 5);
 }
 
 function getMaxItemsPerRun() {
@@ -786,6 +790,35 @@ function isWithinBackfillDateRange(article, dateRange) {
 
 function hasBackfillDateRange(dateRange) {
   return Boolean(dateRange.from || dateRange.to);
+}
+
+function getSourcePageUrls(sourceUrl) {
+  const maxPages = getMaxPagesPerSource();
+
+  if (maxPages <= 1) {
+    return [sourceUrl];
+  }
+
+  try {
+    const url = new URL(sourceUrl);
+    const normalizedPath = url.pathname.replace(/\/+$/, "");
+
+    if (url.hostname === "realty.economictimes.indiatimes.com" && normalizedPath.startsWith("/tag/")) {
+      return Array.from({ length: maxPages }, (_, index) => {
+        if (index === 0) {
+          return sourceUrl;
+        }
+
+        const pageUrl = new URL(sourceUrl);
+        pageUrl.pathname = `${normalizedPath}/${index + 1}`;
+        return pageUrl.toString();
+      });
+    }
+  } catch {
+    return [sourceUrl];
+  }
+
+  return [sourceUrl];
 }
 
 function getSkipTitleSet() {
@@ -1916,54 +1949,61 @@ async function fetchArticleMetadata(articleUrl, fallback = {}) {
 }
 
 async function fetchPage(sourceUrl) {
-  const html = await fetchHtml(sourceUrl);
-  const $ = cheerio.load(html);
-  const publisher = getPublisherName(sourceUrl, $("title").text());
-  const publisherLogo = pickFirst(
-    absoluteUrl($('link[rel="icon"]').attr("href"), sourceUrl),
-    absoluteUrl($('link[rel="shortcut icon"]').attr("href"), sourceUrl),
-    getFallbackLogo(sourceUrl)
-  );
+  const pageUrls = getSourcePageUrls(sourceUrl);
   const seenLinks = new Set();
   const candidates = [];
+  let publisher = "";
+  let publisherLogo = "";
 
-  $("a[href]").each((_, element) => {
-    const link = absoluteUrl($(element).attr("href"), sourceUrl);
-    const title = stripHtml($(element).text());
-    const listingText = stripHtml(
-      $(element)
-        .closest("article, li, div")
-        .text()
+  for (const pageUrl of pageUrls) {
+    const html = await fetchHtml(pageUrl);
+    const $ = cheerio.load(html);
+
+    publisher ||= getPublisherName(sourceUrl, $("title").text());
+    publisherLogo ||= pickFirst(
+      absoluteUrl($('link[rel="icon"]').attr("href"), sourceUrl),
+      absoluteUrl($('link[rel="shortcut icon"]').attr("href"), sourceUrl),
+      getFallbackLogo(sourceUrl)
     );
-    const listingPublishedAt = extractPublishedAtFromText(`${title} ${listingText}`);
 
-    if (!link || seenLinks.has(link) || title.length < 18 || isBlockedArticle({ title, newsLink: link })) {
-      return;
-    }
+    $("a[href]").each((_, element) => {
+      const link = absoluteUrl($(element).attr("href"), sourceUrl);
+      const title = stripHtml($(element).text());
+      const listingText = stripHtml(
+        $(element)
+          .closest("article, li, div")
+          .text()
+      );
+      const listingPublishedAt = extractPublishedAtFromText(`${title} ${listingText}`);
 
-    const linkHost = new URL(link).hostname.replace(/^www\./, "");
-    const sourceHost = new URL(sourceUrl).hostname.replace(/^www\./, "");
+      if (!link || seenLinks.has(link) || title.length < 18 || isBlockedArticle({ title, newsLink: link })) {
+        return;
+      }
 
-    if (linkHost !== sourceHost) {
-      return;
-    }
+      const linkHost = new URL(link).hostname.replace(/^www\./, "");
+      const sourceHost = new URL(sourceUrl).hostname.replace(/^www\./, "");
 
-    seenLinks.add(link);
-    const candidateThumbnail = getImageCandidate($, $(element).find("img").first());
-    candidates.push({
-      title,
-      description: title,
-      articleText: "",
-      cityCode: "",
-      isActive: true,
-      newsLink: link,
-      thumbnailImage: isRejectedImageCandidate(candidateThumbnail) ? "" : absoluteUrl(candidateThumbnail, sourceUrl),
-      postedBy: publisher,
-      postedByLogo: publisherLogo,
-      publishedAt: listingPublishedAt || null,
-      fetchedAt: new Date().toISOString()
+      if (linkHost !== sourceHost) {
+        return;
+      }
+
+      seenLinks.add(link);
+      const candidateThumbnail = getImageCandidate($, $(element).find("img").first());
+      candidates.push({
+        title,
+        description: title,
+        articleText: "",
+        cityCode: "",
+        isActive: true,
+        newsLink: link,
+        thumbnailImage: isRejectedImageCandidate(candidateThumbnail) ? "" : absoluteUrl(candidateThumbnail, sourceUrl),
+        postedBy: publisher,
+        postedByLogo: publisherLogo,
+        publishedAt: listingPublishedAt || null,
+        fetchedAt: new Date().toISOString()
+      });
     });
-  });
+  }
 
   const limitedCandidates = candidates.slice(0, getMaxItemsPerSource());
   const articles = await mapWithConcurrency(limitedCandidates, 8, async (candidate) => {
@@ -2175,6 +2215,7 @@ export {
   expandCityArticles,
   extractMetadataImage,
   fetchSource,
+  getSourcePageUrls,
   getRejectionReasons,
   hasDisallowedLanguage,
   hasBackfillDateRange,
