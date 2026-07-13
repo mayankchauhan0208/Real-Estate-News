@@ -1279,24 +1279,23 @@ function hasStrongArticleCityMatch(article, rule) {
 
 function hasRealEstateEvidence(article) {
   const primaryText = getArticlePrimaryText(article);
-  const fullText = getArticleSearchText(article);
+  const primaryAndUrl = `${primaryText} ${getArticleUrlText(article)}`;
 
   return (
     hasTargetRegionEvidence(article) &&
     hasPromotionalRealEstateSignal(article) &&
     (
-      hasKeyword(primaryText, realEstateKeywords) ||
-      hasKeyword(primaryText, realEstateCompanyKeywords) ||
-      hasKeyword(fullText, realEstateKeywords)
+      hasKeyword(primaryAndUrl, realEstateKeywords) ||
+      hasKeyword(primaryAndUrl, realEstateCompanyKeywords)
     )
   );
 }
 
 function hasPromotionalRealEstateSignal(article) {
   const primaryText = getArticlePrimaryText(article);
-  const fullText = getArticleSearchText(article);
+  const primaryAndUrl = `${primaryText} ${getArticleUrlText(article)}`;
 
-  return hasKeyword(primaryText, promotionalRealEstateKeywords) || hasKeyword(fullText, promotionalRealEstateKeywords);
+  return hasKeyword(primaryAndUrl, promotionalRealEstateKeywords);
 }
 
 function hasDisallowedLanguage(article) {
@@ -1817,11 +1816,11 @@ async function pushArticle(article) {
   }
 
   const payload = toApiPayload(article);
-  const response = await fetch(apiUrl, {
+  const response = await fetchWithTimeout(apiUrl, {
     method: "POST",
     headers,
     body: JSON.stringify(payload)
-  });
+  }, 15000);
 
   const body = await response.text();
 

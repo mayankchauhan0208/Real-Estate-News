@@ -193,6 +193,18 @@ assert.match(
   /no allowed city match|target region missing|not positive target real-estate/
 );
 
+assert.match(
+  reasons({
+    title: "Faridabad leads Hry in ABHA IDs registrations as Gurugram slips to second",
+    description:
+      "The district logged 1.37 million registrations between 2021 and June 2026 as Haryana achieved 63.2% coverage under the national digital health mission.",
+    articleText:
+      "The page body has related links about property registration and housing projects, but this article is about health registrations.",
+    newsLink: "https://www.hindustantimes.com/cities/gurugram-news/faridabad-leads-hry-in-abha-ids-registrations"
+  }).join("; "),
+  /not positive target real-estate/
+);
+
 assert.equal(
   applyCityCode(
     article({
