@@ -21,9 +21,15 @@ const sentNewsPath = path.join(stateDir, "sent-news.json");
 const defaultSources = [
   "https://www.hindustantimes.com/real-estate",
   "https://www.hindustantimes.com/topic/faridabad/news",
+  "https://economictimes.indiatimes.com/industry/services/property-/-cstruction",
   "https://www.cnbctv18.com/real-estate/",
+  "https://timesofindia.indiatimes.com/real-estate/news",
   "https://realty.economictimes.indiatimes.com/tag/gurugram",
   "https://realty.economictimes.indiatimes.com/tag/faridabad",
+  "https://realty.economictimes.indiatimes.com/news/residential",
+  "https://realty.economictimes.indiatimes.com/news/commercial",
+  "https://realty.economictimes.indiatimes.com/news/infrastructure",
+  "https://realty.economictimes.indiatimes.com/news/industry",
   "https://www.moneycontrol.com/news/business/real-estate/",
   "https://www.business-standard.com/topic/real-estate",
   "https://www.constructionworld.in/latest-construction-news/real-estate-news",
@@ -1015,6 +1021,18 @@ function getSourcePageUrls(sourceUrl) {
 
         const pageUrl = new URL(sourceUrl);
         pageUrl.pathname = `${normalizedPath}/${index + 1}`;
+        return pageUrl.toString();
+      });
+    }
+
+    if (url.hostname === "www.hindustantimes.com" && normalizedPath === "/real-estate") {
+      return Array.from({ length: maxPages }, (_, index) => {
+        if (index === 0) {
+          return sourceUrl;
+        }
+
+        const pageUrl = new URL(sourceUrl);
+        pageUrl.pathname = `${normalizedPath}/page-${index + 1}`;
         return pageUrl.toString();
       });
     }

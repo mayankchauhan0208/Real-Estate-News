@@ -53,8 +53,14 @@ assert.equal(isAllowedSource("https://www.moneycontrol.com/news/business/"), fal
 assert.equal(isAllowedSource("https://www.aninews.in/category/business/"), false);
 assert.equal(isAllowedSource("https://www.lokmattimes.com/business/"), false);
 assert.equal(isAllowedSource("https://www.business-standard.com/search?q=REAL%20ESTATE"), false);
+assert.equal(isAllowedSource("https://economictimes.indiatimes.com/industry/services/property-/-cstruction"), true);
 assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/"), false);
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/news/residential"), true);
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/news/commercial"), true);
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/news/infrastructure"), true);
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/news/industry"), true);
 assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/real-estate"), false);
+assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/real-estate/news"), true);
 assert.equal(isAllowedSource("https://www.constructionworld.in/"), false);
 assert.equal(isAllowedSource("https://www.constructionworld.in/latest-construction-news/real-estate-news"), true);
 assert.equal(isAllowedSource("https://housing.com/news/"), false);
@@ -72,6 +78,11 @@ assert.deepEqual(getSourcePageUrls("https://propnewstime.com/").slice(0, 3), [
   "https://propnewstime.com/",
   "https://propnewstime.com/page/2/",
   "https://propnewstime.com/page/3/"
+]);
+assert.deepEqual(getSourcePageUrls("https://www.hindustantimes.com/real-estate").slice(0, 3), [
+  "https://www.hindustantimes.com/real-estate",
+  "https://www.hindustantimes.com/real-estate/page-2",
+  "https://www.hindustantimes.com/real-estate/page-3"
 ]);
 
 assert.equal(
