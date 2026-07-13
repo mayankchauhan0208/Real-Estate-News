@@ -528,6 +528,17 @@ assert.match(
 
 assert.match(
   reasons({
+    title: "How Infrastructure and Urban Growth Are Driving Retail Expansion in NCR Markets",
+    description:
+      "New Delhi, June 25, 2026: NCR retail geography revolved around South Delhi and Central Gurugram.",
+    articleText: "The article compares South Delhi with Central Gurugram retail markets.",
+    newsLink: "https://realtynmore.com/how-infrastructure-and-urban-growth-ncr-markets/"
+  }).join("; "),
+  /outside region/
+);
+
+assert.match(
+  reasons({
     title: "Gurugram luxury project launch sees strong buyer interest",
     description: "The Gurugram residential project adds premium housing near Golf Course Road.",
     articleText:

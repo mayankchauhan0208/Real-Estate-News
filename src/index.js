@@ -1390,7 +1390,13 @@ function hasTargetRegionEvidence(article) {
 }
 
 function hasOutsideRegionInPrimaryText(article) {
-  return hasWholeWordKeyword(getArticlePrimaryText(article), getDisqualifyingOutsideCityKeywords(article));
+  const primaryText = getArticlePrimaryText(article);
+
+  if (/\b(new delhi|south delhi|central delhi|east delhi|west delhi|north delhi|delhi,|delhi:)\b/i.test(primaryText)) {
+    return true;
+  }
+
+  return hasWholeWordKeyword(primaryText, getDisqualifyingOutsideCityKeywords(article));
 }
 
 function hasOutsideRegionEvidence(article) {
