@@ -691,6 +691,24 @@ function isAllowedSource(source) {
   return allowedSourceUrlParts.includes(key);
 }
 
+function isLikelyFeedUrl(sourceUrl) {
+  try {
+    const url = new URL(sourceUrl);
+    const pathName = url.pathname.toLowerCase();
+    const query = url.search.toLowerCase();
+
+    return (
+      pathName.endsWith(".xml") ||
+      pathName.endsWith(".rss") ||
+      pathName.endsWith(".atom") ||
+      /(^|\/)(rss|feed|feeds|atom)(\/|$)/i.test(pathName) ||
+      /[?&](output|format)=(rss|xml|atom)\b/i.test(query)
+    );
+  } catch {
+    return false;
+  }
+}
+
 function getPositiveIntegerEnv(name, fallback) {
   const value = Number.parseInt(env(name, String(fallback)), 10);
   return Number.isFinite(value) && value > 0 ? value : fallback;
@@ -1837,10 +1855,14 @@ async function fetchPage(sourceUrl) {
 }
 
 async function fetchSource(sourceUrl) {
+  if (!isLikelyFeedUrl(sourceUrl)) {
+    return fetchPage(sourceUrl);
+  }
+
   try {
     return await fetchFeed(sourceUrl);
   } catch (error) {
-    console.log(`RSS parse failed for ${sourceUrl}; trying page scrape. ${error.message}`);
+    console.log(`Feed parse failed for ${sourceUrl}; trying page scrape. ${error.message}`);
     return fetchPage(sourceUrl);
   }
 }
@@ -2021,6 +2043,7 @@ export {
   getRejectionReasons,
   hasDisallowedLanguage,
   hasBackfillDateRange,
+  isLikelyFeedUrl,
   shouldSkipTitle,
   isAllowedSource,
   isNegativeNews,

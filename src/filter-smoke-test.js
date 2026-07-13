@@ -6,6 +6,7 @@ import {
   getRejectionReasons,
   hasBackfillDateRange,
   isAllowedSource,
+  isLikelyFeedUrl,
   isPublishableArticle,
   isWithinBackfillDateRange,
   shouldSkipTitle
@@ -53,6 +54,10 @@ assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/real-estate"),
 assert.equal(isAllowedSource("https://www.constructionworld.in/"), false);
 assert.equal(isAllowedSource("https://housing.com/news/"), false);
 assert.equal(isAllowedSource("https://www.squareyards.com/blog"), false);
+assert.equal(isLikelyFeedUrl("https://www.hindustantimes.com/real-estate"), false);
+assert.equal(isLikelyFeedUrl("https://realty.economictimes.indiatimes.com/tag/gurugram"), false);
+assert.equal(isLikelyFeedUrl("https://example.com/feed"), true);
+assert.equal(isLikelyFeedUrl("https://example.com/rss.xml"), true);
 
 assert.equal(
   isPublishableArticle(
