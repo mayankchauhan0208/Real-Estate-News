@@ -7,7 +7,8 @@ import {
   hasBackfillDateRange,
   isAllowedSource,
   isPublishableArticle,
-  isWithinBackfillDateRange
+  isWithinBackfillDateRange,
+  shouldSkipTitle
 } from "./index.js";
 
 const sentIds = new Set();
@@ -120,6 +121,8 @@ assert.equal(
 
 assert.equal(hasBackfillDateRange({ from: new Date("2026-06-25T00:00:00.000Z"), to: null }), true);
 assert.equal(hasBackfillDateRange({ from: null, to: null }), false);
+assert.equal(shouldSkipTitle(article({ title: "Existing reposted title" }), new Set(["existing reposted title"])), true);
+assert.equal(shouldSkipTitle(article({ title: "Different title" }), new Set(["existing reposted title"])), false);
 
 assert.equal(
   isPublishableArticle(

@@ -16,7 +16,7 @@ on:
       max_items_per_source:
         description: "How many links to inspect from each source"
         required: false
-        default: "20"
+        default: "50"
       max_items_per_run:
         description: "Maximum publish count for this run"
         required: false
@@ -26,6 +26,10 @@ on:
         required: false
         type: boolean
         default: false
+      skip_titles:
+        description: "Exact titles to skip, separated by ||"
+        required: false
+        default: ""
 
 concurrency:
   group: news-api-pusher
@@ -34,7 +38,7 @@ concurrency:
 jobs:
   push-news:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
 
     steps:
       - name: Checkout
@@ -67,5 +71,6 @@ jobs:
           BACKFILL_FROM: ${{ github.event.inputs.backfill_from || '' }}
           BACKFILL_TO: ${{ github.event.inputs.backfill_to || '' }}
           RESEND_BACKFILL: ${{ github.event.inputs.resend_backfill || 'false' }}
+          SKIP_TITLES: ${{ github.event.inputs.skip_titles || '' }}
           MAX_ITEMS_PER_RUN: ${{ github.event.inputs.max_items_per_run || vars.MAX_ITEMS_PER_RUN || '30' }}
-          MAX_ITEMS_PER_SOURCE: ${{ github.event.inputs.max_items_per_source || vars.MAX_ITEMS_PER_SOURCE || '20' }}
+          MAX_ITEMS_PER_SOURCE: ${{ github.event.inputs.max_items_per_source || vars.MAX_ITEMS_PER_SOURCE || '50' }}

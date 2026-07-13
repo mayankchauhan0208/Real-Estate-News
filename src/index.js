@@ -688,7 +688,7 @@ function getPositiveIntegerEnv(name, fallback) {
 }
 
 function getMaxItemsPerSource() {
-  return getPositiveIntegerEnv("MAX_ITEMS_PER_SOURCE", 20);
+  return getPositiveIntegerEnv("MAX_ITEMS_PER_SOURCE", 50);
 }
 
 function getMaxItemsPerRun() {
@@ -759,6 +759,37 @@ function isWithinBackfillDateRange(article, dateRange) {
 
 function hasBackfillDateRange(dateRange) {
   return Boolean(dateRange.from || dateRange.to);
+}
+
+function getSkipTitleSet() {
+  return new Set(
+    env("SKIP_TITLES")
+      .split(/\r?\n|\|\|/g)
+      .map((title) => normalizeTitle(title))
+      .filter(Boolean)
+  );
+}
+
+function shouldSkipTitle(article, skipTitleSet) {
+  return skipTitleSet.size > 0 && skipTitleSet.has(normalizeTitle(article.title));
+}
+
+async function mapWithConcurrency(items, limit, mapper) {
+  const results = new Array(items.length);
+  let index = 0;
+
+  async function worker() {
+    while (index < items.length) {
+      const currentIndex = index;
+      index += 1;
+      results[currentIndex] = await mapper(items[currentIndex], currentIndex);
+    }
+  }
+
+  const workerCount = Math.min(limit, items.length);
+  await Promise.all(Array.from({ length: workerCount }, () => worker()));
+
+  return results;
 }
 
 async function fetchWithTimeout(url, options = {}, timeoutMs = 8000) {
@@ -1762,9 +1793,7 @@ async function fetchPage(sourceUrl) {
   });
 
   const limitedCandidates = candidates.slice(0, getMaxItemsPerSource());
-  const articles = [];
-
-  for (const candidate of limitedCandidates) {
+  const articles = await mapWithConcurrency(limitedCandidates, 8, async (candidate) => {
     const metadata = await fetchArticleMetadata(candidate.newsLink, candidate);
     const article = {
       ...candidate,
@@ -1777,11 +1806,11 @@ async function fetchPage(sourceUrl) {
 
     const cityArticle = applyCityCode(cleanArticleFields(article));
 
-    articles.push({
+    return {
       ...cityArticle,
       id: stableId(cityArticle)
-    });
-  }
+    };
+  });
 
   return articles;
 }
@@ -1858,6 +1887,7 @@ async function main() {
   const sentIds = await readSentIds();
   const resendBackfill = getBooleanEnv("RESEND_BACKFILL") && hasBackfillDateRange(backfillDateRange);
   const filterSentIds = resendBackfill ? new Set() : sentIds;
+  const skipTitleSet = getSkipTitleSet();
   const allArticles = [];
 
   if (backfillDateRange.from || backfillDateRange.to) {
@@ -1870,6 +1900,10 @@ async function main() {
 
   if (resendBackfill) {
     console.log("Backfill resend mode: ignoring sent-news dedupe while selecting articles.");
+  }
+
+  if (skipTitleSet.size > 0) {
+    console.log(`Manual skip-title list: ${skipTitleSet.size} titles.`);
   }
 
   for (const source of selectedSources) {
@@ -1888,6 +1922,7 @@ async function main() {
 
   const uniqueArticles = uniqueByDedupeIds(
     expandedArticles
+    .filter((article) => !shouldSkipTitle(article, skipTitleSet))
     .filter((article) => isPublishableArticle(article, filterSentIds))
     .sort((a, b) => {
       const priorityDifference = articlePriority(a) - articlePriority(b);
@@ -1911,7 +1946,9 @@ async function main() {
   const rejectionCounts = new Map();
 
   for (const article of expandedArticles) {
-    const reasons = getRejectionReasons(article, filterSentIds);
+    const reasons = shouldSkipTitle(article, skipTitleSet)
+      ? ["manual skip: title already reposted"]
+      : getRejectionReasons(article, filterSentIds);
 
     for (const reason of reasons) {
       rejectionCounts.set(reason, (rejectionCounts.get(reason) || 0) + 1);
@@ -1924,7 +1961,9 @@ async function main() {
   }
 
   for (const article of expandedArticles.slice(0, 100)) {
-    const reasons = getRejectionReasons(article, filterSentIds);
+    const reasons = shouldSkipTitle(article, skipTitleSet)
+      ? ["manual skip: title already reposted"]
+      : getRejectionReasons(article, filterSentIds);
 
     if (reasons.length > 0 && article.title) {
       console.log(`Skipped ${article.title}: ${reasons.join("; ")}`);
@@ -1959,6 +1998,7 @@ export {
   getRejectionReasons,
   hasDisallowedLanguage,
   hasBackfillDateRange,
+  shouldSkipTitle,
   isAllowedSource,
   isNegativeNews,
   isPublishableArticle,
