@@ -5,6 +5,7 @@ import {
   cleanArticleFields,
   detectCityCodes,
   extractMetadataImage,
+  getExtraArticleUrls,
   getRejectionReasons,
   getSourcePageUrls,
   hasBackfillDateRange,
@@ -166,6 +167,14 @@ assert.equal(hasBackfillDateRange({ from: new Date("2026-06-25T00:00:00.000Z"), 
 assert.equal(hasBackfillDateRange({ from: null, to: null }), false);
 assert.equal(shouldSkipTitle(article({ title: "Existing reposted title" }), new Set(["existing reposted title"])), true);
 assert.equal(shouldSkipTitle(article({ title: "Different title" }), new Set(["existing reposted title"])), false);
+
+process.env.EXTRA_ARTICLE_URLS = "https://example.com/one, https://example.com/two; https://example.com/three";
+assert.deepEqual(getExtraArticleUrls(), [
+  "https://example.com/one",
+  "https://example.com/two",
+  "https://example.com/three"
+]);
+delete process.env.EXTRA_ARTICLE_URLS;
 
 assert.equal(
   isPublishableArticle(

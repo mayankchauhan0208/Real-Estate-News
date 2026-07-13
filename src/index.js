@@ -682,6 +682,28 @@ function getSources() {
   return [];
 }
 
+function getExtraArticleUrls() {
+  return env("EXTRA_ARTICLE_URLS")
+    .split(/[\n,;]+/)
+    .map((url) => url.trim())
+    .filter(Boolean);
+}
+
+function isAllowedExtraArticleUrl(articleUrl) {
+  const normalized = articleUrl.toLowerCase();
+
+  if (blockedSourceUrlParts.some((part) => normalized.includes(part))) {
+    return false;
+  }
+
+  try {
+    const url = new URL(articleUrl);
+    return ["http:", "https:"].includes(url.protocol);
+  } catch {
+    return false;
+  }
+}
+
 function isAllowedSource(source) {
   const normalized = source.toLowerCase();
 
@@ -1881,6 +1903,17 @@ function extractStructuredImage($) {
   return "";
 }
 
+function extractPageTitle($) {
+  return stripHtml(
+    pickFirst(
+      $('meta[property="og:title"]').attr("content"),
+      $('meta[name="twitter:title"]').attr("content"),
+      $("h1").first().text(),
+      $("title").text()
+    )
+  ).replace(/\s+[|-]\s+.*$/, "");
+}
+
 function extractPagePublishedAt($, fallback = {}) {
   return pickFirst(
     toIsoDate($('meta[property="article:published_time"]').attr("content")),
@@ -1988,6 +2021,44 @@ async function fetchArticleMetadata(articleUrl, fallback = {}) {
   } catch {
     return fallback;
   }
+}
+
+async function fetchDirectArticle(articleUrl) {
+  const html = await fetchHtml(articleUrl);
+  const $ = cheerio.load(html);
+  const title = extractPageTitle($);
+  const publisher = getPublisherName(articleUrl, $("title").text());
+  const publisherLogo = pickFirst(
+    absoluteUrl($('link[rel="icon"]').attr("href"), articleUrl),
+    absoluteUrl($('link[rel="shortcut icon"]').attr("href"), articleUrl),
+    getFallbackLogo(articleUrl)
+  );
+  const article = {
+    title,
+    description: pickFirst(
+      pickDescription(
+        $('meta[property="og:description"]').attr("content"),
+        $('meta[name="description"]').attr("content")
+      ),
+      title
+    ),
+    articleText: extractArticleText($),
+    cityCode: "",
+    isActive: true,
+    newsLink: articleUrl,
+    thumbnailImage: absoluteUrl(extractMetadataImage($), articleUrl),
+    postedBy: publisher,
+    postedByLogo: publisherLogo,
+    publishedAt: extractPagePublishedAt($),
+    createdAt: extractPagePublishedAt($),
+    fetchedAt: new Date().toISOString()
+  };
+  const cityArticle = applyCityCode(cleanArticleFields(article));
+
+  return {
+    ...cityArticle,
+    id: stableId(cityArticle)
+  };
 }
 
 async function fetchPage(sourceUrl) {
@@ -2141,6 +2212,7 @@ async function main() {
 
   const sources = getSources();
   const selectedSources = [...new Set([...defaultSources, ...sources])].filter(isAllowedSource);
+  const extraArticleUrls = [...new Set(getExtraArticleUrls())].filter(isAllowedExtraArticleUrl);
   const maxItems = getMaxItemsPerRun();
   const backfillDateRange = getBackfillDateRange();
   const sentIds = await readSentIds();
@@ -2165,6 +2237,10 @@ async function main() {
     console.log(`Manual skip-title list: ${skipTitleSet.size} titles.`);
   }
 
+  if (extraArticleUrls.length > 0) {
+    console.log(`Extra direct article URLs: ${extraArticleUrls.length}.`);
+  }
+
   for (const source of selectedSources) {
     try {
       const articles = await fetchSource(source);
@@ -2172,6 +2248,16 @@ async function main() {
       console.log(`Fetched ${articles.length} items from ${source}`);
     } catch (error) {
       console.error(`Failed to fetch ${source}: ${error.message}`);
+    }
+  }
+
+  for (const articleUrl of extraArticleUrls) {
+    try {
+      const article = await fetchDirectArticle(articleUrl);
+      allArticles.push(article);
+      console.log(`Fetched direct article: ${article.title || articleUrl}`);
+    } catch (error) {
+      console.error(`Failed to fetch direct article ${articleUrl}: ${error.message}`);
     }
   }
 
@@ -2262,6 +2348,7 @@ export {
   fetchSource,
   getSourcePageUrls,
   getRejectionReasons,
+  getExtraArticleUrls,
   hasDisallowedLanguage,
   hasBackfillDateRange,
   isLikelyFeedUrl,

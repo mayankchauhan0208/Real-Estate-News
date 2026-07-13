@@ -34,6 +34,7 @@ Optional repository variable:
 - `MAX_ITEMS_PER_RUN`: Default is `30`.
 - `MAX_ITEMS_PER_SOURCE`: Default is `200`.
 - `MAX_PAGES_PER_SOURCE`: Default is `5` for supported paginated source pages.
+- `EXTRA_ARTICLE_URLS`: Optional exact article URLs, separated by comma, semicolon, or newline. Use only for manually found articles; each URL still has to pass the strict full-article filters.
 
 The workflow is already scheduled for every 10 minutes:
 
@@ -50,6 +51,7 @@ Push-triggered runs are disabled. Manual runs are allowed. To rerun a date windo
 - `max_items_per_run`: `80` or higher
 - `resend_backfill`: keep unchecked
 - `skip_titles`: optional exact titles to skip, separated by `||`
+- `extra_article_urls`: optional exact URLs for clean manually found articles that the approved source list missed
 
 If you deleted old API news and need to recreate the same date window, use the same backfill dates and set `resend_backfill` to checked. This bypasses the sent-news dedupe only for that dated manual run.
 
@@ -62,6 +64,7 @@ For the June 25 cleanup run, use:
 - `max_items_per_run`: `120`
 - `resend_backfill`: checked
 - `skip_titles`: any already-restored titles separated by `||`
+- `extra_article_urls`: optional exact URLs for clean manually found articles that the approved source list missed
 
 The backfill still uses the same strict positive real-estate filters.
 
