@@ -491,6 +491,53 @@ const negativePhraseKeywords = [
   "water pipeline",
   "yellow alert"
 ];
+const severeBodyNegativeKeywords = [
+  "accident",
+  "arrest",
+  "arrested",
+  "assault",
+  "attack",
+  "body found",
+  "cheated",
+  "cheating",
+  "collapse",
+  "crime",
+  "criminal",
+  "death",
+  "dead",
+  "dies",
+  "died",
+  "fir",
+  "fire",
+  "fraud",
+  "hospital",
+  "injured",
+  "jail",
+  "killed",
+  "murder",
+  "police",
+  "rape",
+  "scam",
+  "shooting",
+  "suicide",
+  "violence"
+];
+const severeBodyNegativePhrases = [
+  "builder arrested",
+  "builder suicide",
+  "died by suicide",
+  "dies by suicide",
+  "director arrested",
+  "fraud case",
+  "homebuyer suicide",
+  "murdered over property",
+  "property dispute murder",
+  "real estate agent killed",
+  "real estate broker killed",
+  "short circuit",
+  "suicide due to property",
+  "suicide over property"
+];
 const outsideCityKeywords = [
   "ahmedabad",
   "andhra",
@@ -873,12 +920,21 @@ function getArticlePrimaryText(article) {
   return [article.title, article.description].join(" ").toLowerCase();
 }
 
+function getArticleBodyText(article) {
+  return (article.articleText || "").toLowerCase();
+}
+
+function getArticleUrlText(article) {
+  return (article.newsLink || "").toLowerCase();
+}
+
 function isReraRelated(article) {
-  return !isBlockedArticle(article) && hasKeyword(getArticleSearchText(article), reraKeywords);
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  return !isBlockedArticle(article) && hasKeyword(primaryAndUrl, reraKeywords);
 }
 
 function isCourtRealEstateRelated(article) {
-  const haystack = getArticleSearchText(article);
+  const haystack = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
   return (
     !isBlockedArticle(article) &&
     hasWholeWordKeyword(haystack, courtKeywords) &&
@@ -1123,18 +1179,44 @@ function isBlockedArticle(article) {
 }
 
 function isNegativeNews(article) {
-  const fullText = getArticleSearchText(article);
+  const primaryText = getArticlePrimaryText(article);
+  const urlText = getArticleUrlText(article);
+  const bodyText = getArticleBodyText(article);
 
   return (
-    hasWholeWordKeyword(fullText, negativeNewsKeywords) ||
-    hasKeyword(fullText, negativePhraseKeywords) ||
+    hasWholeWordKeyword(primaryText, negativeNewsKeywords) ||
+    hasKeyword(primaryText, negativePhraseKeywords) ||
+    hasWholeWordKeyword(urlText, negativeNewsKeywords) ||
+    hasKeyword(urlText, negativePhraseKeywords) ||
+    hasWholeWordKeyword(bodyText, severeBodyNegativeKeywords) ||
+    hasKeyword(bodyText, severeBodyNegativePhrases) ||
     isReraRelated(article) ||
     isCourtRealEstateRelated(article)
   );
 }
 
 function hasOutsideCityConflict(article) {
-  return hasOutsideRegionEvidence(article);
+  const disqualifyingOutsideCities = getDisqualifyingOutsideCityKeywords(article);
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  if (hasWholeWordKeyword(primaryAndUrl, disqualifyingOutsideCities)) {
+    return true;
+  }
+
+  return hasOutsideLocationDominance(article);
+}
+
+function hasOutsideLocationDominance(article) {
+  const bodyText = getArticleBodyText(article);
+
+  if (!bodyText) {
+    return false;
+  }
+
+  const targetMentions = countKeywordMentions(bodyText, targetCityKeywords);
+  const outsideMentions = countKeywordMentions(bodyText, getDisqualifyingOutsideCityKeywords(article));
+
+  return outsideMentions > 0 && outsideMentions > targetMentions * 2;
 }
 
 function getRejectionReasons(article, sentIds) {
@@ -1292,20 +1374,68 @@ async function fetchHtml(sourceUrl) {
   return response.text();
 }
 
+function extractArticleText($) {
+  $(
+    [
+      "script",
+      "style",
+      "noscript",
+      "nav",
+      "header",
+      "footer",
+      "aside",
+      "form",
+      "button",
+      "iframe",
+      "[role='navigation']",
+      "[class*='related']",
+      "[class*='recommend']",
+      "[class*='trending']",
+      "[class*='popular']",
+      "[class*='sidebar']",
+      "[class*='share']",
+      "[class*='social']",
+      "[class*='comment']",
+      "[id*='related']",
+      "[id*='recommend']",
+      "[id*='trending']",
+      "[id*='popular']",
+      "[id*='sidebar']"
+    ].join(",")
+  ).remove();
+
+  const selectors = [
+    "article [class*='story']",
+    "article [class*='article']",
+    "article [class*='content']",
+    "article",
+    "main article",
+    "main [class*='story']",
+    "main [class*='article']",
+    "main [class*='content']"
+  ];
+
+  const candidates = selectors
+    .map((selector) => stripHtml($(selector).text()))
+    .filter((text) => text.length >= 120);
+
+  if (candidates.length > 0) {
+    return candidates.sort((a, b) => b.length - a.length)[0].slice(0, 5000);
+  }
+
+  return stripHtml(
+    $("p")
+      .map((_, element) => $(element).text())
+      .get()
+      .join(" ")
+  ).slice(0, 5000);
+}
+
 async function fetchArticleMetadata(articleUrl, fallback = {}) {
   try {
     const html = await fetchHtml(articleUrl);
     const $ = cheerio.load(html);
-    const articleText = stripHtml(
-      pickFirst(
-        $("article").text(),
-        $("main").text(),
-        $("p")
-          .map((_, element) => $(element).text())
-          .get()
-          .join(" ")
-      )
-    ).slice(0, 5000);
+    const articleText = extractArticleText($);
 
     return {
       description: pickFirst(

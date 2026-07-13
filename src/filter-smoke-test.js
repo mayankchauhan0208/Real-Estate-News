@@ -53,6 +53,22 @@ assert.equal(isAllowedSource("https://www.squareyards.com/blog"), false);
 assert.equal(
   isPublishableArticle(
     publishable({
+      title: "BPTP to invest Rs 1,100 crore in Greater Faridabad housing project",
+      description:
+        "BPTP will invest Rs 1,100 crore to develop a residential housing project in Greater Faridabad.",
+      articleText:
+        "BPTP will invest in a Greater Faridabad residential project with new housing inventory in Neharpar. Related links mention Mumbai and Noida market updates.",
+      newsLink:
+        "https://realty.economictimes.indiatimes.com/news/residential/bptp-to-invest-rs-1100-crore-in-greater-faridabad-housing-project"
+    }),
+    sentIds
+  ),
+  true
+);
+
+assert.equal(
+  isPublishableArticle(
+    publishable({
       title: "DLF Q2 results: Net profit rises 54% QoQ to Rs 1,180 crore",
       description: "DLF reported stronger revenue and earnings in its real estate business.",
       articleText: "DLF, the Gurugram-based real estate developer, reported higher net profit and sales bookings.",
@@ -278,9 +294,9 @@ assert.match(
     description: "The Gurugram residential project adds premium housing near Golf Course Road.",
     articleText:
       "The Gurugram project focuses on premium residential development in Gurugram. The report also compares demand with Bengaluru.",
-    newsLink: "https://example.com/gurugram-project-with-bengaluru-mention"
+    newsLink: "https://example.com/gurugram-project-launch"
   }).join("; "),
-  /outside-city conflict|outside region/
+  /^$/
 );
 
 assert.match(
@@ -289,9 +305,20 @@ assert.match(
     description: "The Faridabad residential project adds new apartments in Greater Faridabad.",
     articleText:
       "The Faridabad launch focuses on Greater Faridabad and Neharpar. The article also mentions Mumbai market trends.",
-    newsLink: "https://example.com/faridabad-project-with-mumbai-mention"
+    newsLink: "https://example.com/faridabad-project-launch"
   }).join("; "),
-  /outside-city conflict|outside region/
+  /^$/
+);
+
+assert.match(
+  reasons({
+    title: "Gurugram luxury project launch sees strong buyer interest",
+    description: "The Gurugram residential project adds premium housing near Golf Course Road.",
+    articleText:
+      "Police said a fire and short circuit injured workers at the project site.",
+    newsLink: "https://example.com/gurugram-project-severe-body-negative"
+  }).join("; "),
+  /negative\/crime\/utility concern news/
 );
 
 console.log("Filter smoke tests passed.");
