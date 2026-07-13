@@ -422,6 +422,26 @@ assert.match(
 
 assert.match(
   reasons({
+    title: "Gurugram: Two missing links force seven km detour to e-way for Vatika commuters",
+    description: "Commuters face a long detour due to missing road links near Gurugram.",
+    articleText: "Residents said the missing links force a seven km detour to the expressway.",
+    newsLink: "https://realty.economictimes.indiatimes.com/news/infrastructure/gurugram-two-missing-links-force-detour"
+  }).join("; "),
+  /negative\/crime\/utility concern news/
+);
+
+assert.match(
+  reasons({
+    title: "Gurugram civic body plans to seal properties, auction assets over unpaid GRAP challans",
+    description: "The civic body may seal properties and auction assets over unpaid challans.",
+    articleText: "The update concerns enforcement action and unpaid GRAP challans.",
+    newsLink: "https://realty.economictimes.indiatimes.com/news/industry/mcg-to-seal-properties-auction-assets"
+  }).join("; "),
+  /negative\/crime\/utility concern news/
+);
+
+assert.match(
+  reasons({
     title: "Haryana women's commission chief plans stronger grievance redressal",
     description: "Grievance redressal update in Gurugram.",
     articleText: "The commission discussed complaint handling.",

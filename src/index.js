@@ -363,6 +363,8 @@ const negativeNewsKeywords = [
   "crime",
   "criminal",
   "crisis",
+  "crash",
+  "detour",
   "debarred",
   "demolish",
   "demolished",
@@ -434,6 +436,7 @@ const negativeNewsKeywords = [
   "thunderstorm",
   "threat",
   "unable",
+  "unpaid",
   "violation",
   "violations",
   "violence",
@@ -447,6 +450,7 @@ const negativePhraseKeywords = [
   "bear the brunt",
   "builder arrested",
   "builder suicide",
+  "market crash",
   "buyers stranded",
   "caqm pollution",
   "cheated homebuyers",
@@ -467,6 +471,7 @@ const negativePhraseKeywords = [
   "housing project suspended",
   "imd data",
   "left in lurch",
+  "missing links",
   "murdered over property",
   "not new claims",
   "payment default",
@@ -488,6 +493,10 @@ const negativePhraseKeywords = [
   "rera order",
   "rera penalty",
   "sc-appointed panel",
+  "seal properties",
+  "auction assets",
+  "grap challan",
+  "grap challans",
   "short circuit",
   "registry stalled",
   "registration stalled",
@@ -497,6 +506,7 @@ const negativePhraseKeywords = [
   "suicide due to property",
   "suicide over property",
   "traffic jam",
+  "seven km detour",
   "water pipeline",
   "yellow alert"
 ];
@@ -790,6 +800,38 @@ function isWithinBackfillDateRange(article, dateRange) {
 
 function hasBackfillDateRange(dateRange) {
   return Boolean(dateRange.from || dateRange.to);
+}
+
+function formatArticleDate(article) {
+  const articleDate = getArticleDate(article);
+  return articleDate ? articleDate.toISOString().slice(0, 10) : "unknown-date";
+}
+
+function logDateExcludedPublishableArticles(articles, dateRange, filterSentIds, skipTitleSet) {
+  if (!hasBackfillDateRange(dateRange)) {
+    return;
+  }
+
+  const dateExcludedArticles = uniqueByDedupeIds(
+    articles
+      .filter((article) => !isWithinBackfillDateRange(article, dateRange))
+      .filter((article) => !shouldSkipTitle(article, skipTitleSet))
+      .filter((article) => isPublishableArticle(article, filterSentIds))
+      .sort((a, b) => new Date(b.publishedAt || b.createdAt || 0) - new Date(a.publishedAt || a.createdAt || 0))
+  ).slice(0, 25);
+
+  if (dateExcludedArticles.length === 0) {
+    return;
+  }
+
+  console.log(`Date-excluded publishable articles: ${dateExcludedArticles.length} clean articles outside backfill window.`);
+  for (const article of dateExcludedArticles) {
+    console.log(
+      `Date-excluded publishable (${article.cityCode || "no-city"}, ${formatArticleDate(article)}): ${article.title} | ${
+        article.newsLink || ""
+      }`
+    );
+  }
 }
 
 function getSourcePageUrls(sourceUrl) {
@@ -2133,9 +2175,12 @@ async function main() {
     }
   }
 
-  const expandedArticles = allArticles
-    .flatMap(expandCityArticles)
-    .filter((article) => isWithinBackfillDateRange(article, backfillDateRange));
+  const expandedAllArticles = allArticles.flatMap(expandCityArticles);
+  logDateExcludedPublishableArticles(expandedAllArticles, backfillDateRange, filterSentIds, skipTitleSet);
+
+  const expandedArticles = expandedAllArticles.filter((article) =>
+    isWithinBackfillDateRange(article, backfillDateRange)
+  );
 
   const uniqueArticles = uniqueByDedupeIds(
     expandedArticles
