@@ -959,6 +959,13 @@ function pickDescription(...values) {
   return values.find((value) => typeof value === "string" && value.trim() && !isGenericDescription(value))?.trim() || "";
 }
 
+function parseSrcset(value = "") {
+  return String(value)
+    .split(",")
+    .map((entry) => entry.trim().split(/\s+/)[0])
+    .find(Boolean) || "";
+}
+
 function getNestedValue(object, pathParts) {
   return pathParts.reduce((value, key) => value?.[key], object);
 }
@@ -1717,6 +1724,48 @@ function findStructuredDate(value) {
   return "";
 }
 
+function findStructuredImage(value) {
+  if (!value) {
+    return "";
+  }
+
+  if (typeof value === "string") {
+    return value;
+  }
+
+  if (Array.isArray(value)) {
+    for (const item of value) {
+      const image = findStructuredImage(item);
+
+      if (image) {
+        return image;
+      }
+    }
+
+    return "";
+  }
+
+  if (typeof value !== "object") {
+    return "";
+  }
+
+  for (const key of ["url", "contentUrl"]) {
+    if (typeof value[key] === "string" && value[key].trim()) {
+      return value[key].trim();
+    }
+  }
+
+  for (const key of ["image", "thumbnail", "thumbnailUrl", "primaryImageOfPage"]) {
+    const image = findStructuredImage(value[key]);
+
+    if (image) {
+      return image;
+    }
+  }
+
+  return "";
+}
+
 function extractStructuredPublishedAt($) {
   const scripts = $("script[type='application/ld+json']")
     .map((_, element) => $(element).contents().text())
@@ -1728,6 +1777,26 @@ function extractStructuredPublishedAt($) {
 
       if (date) {
         return date;
+      }
+    } catch {
+      // Ignore malformed publisher JSON-LD.
+    }
+  }
+
+  return "";
+}
+
+function extractStructuredImage($) {
+  const scripts = $("script[type='application/ld+json']")
+    .map((_, element) => $(element).contents().text())
+    .get();
+
+  for (const script of scripts) {
+    try {
+      const image = findStructuredImage(JSON.parse(script));
+
+      if (image) {
+        return image;
       }
     } catch {
       // Ignore malformed publisher JSON-LD.
@@ -1751,6 +1820,71 @@ function extractPagePublishedAt($, fallback = {}) {
   );
 }
 
+function getImageCandidate($, element) {
+  const image = $(element);
+  return pickFirst(
+    image.attr("src"),
+    image.attr("data-src"),
+    image.attr("data-original"),
+    image.attr("data-lazy-src"),
+    image.attr("data-lazy"),
+    image.attr("data-url"),
+    image.attr("content"),
+    parseSrcset(image.attr("srcset")),
+    parseSrcset(image.attr("data-srcset"))
+  );
+}
+
+function isRejectedImageCandidate(value = "") {
+  return /blank|placeholder|spacer|logo|icon|avatar|favicon|advertise|banner|youtube|ytimg|playstore|app store|social|facebook|instagram|whatsapp|linkedin|loader|buffering/i.test(
+    value
+  );
+}
+
+function extractPageImage($) {
+  const selectors = [
+    "#zoom_class",
+    "img[alt*='Story Image' i]",
+    "img[class*='zoom' i]",
+    "article img",
+    "main img",
+    "[class*='article'] img",
+    "[class*='story'] img",
+    "[class*='content'] img",
+    "figure img",
+    "img"
+  ];
+
+  for (const selector of selectors) {
+    const images = $(selector).toArray();
+
+    for (const image of images) {
+      const candidate = getImageCandidate($, image);
+
+      if (candidate && !isRejectedImageCandidate(candidate)) {
+        return candidate;
+      }
+    }
+  }
+
+  return "";
+}
+
+function extractMetadataImage($, fallback = {}) {
+  return pickFirst(
+    extractPageImage($),
+    ...[
+      extractStructuredImage($),
+      $('meta[property="og:image:secure_url"]').attr("content"),
+      $('meta[property="og:image"]').attr("content"),
+      $('meta[name="twitter:image"]').attr("content"),
+      $('meta[name="twitter:image:src"]').attr("content"),
+      $('meta[itemprop="image"]').attr("content"),
+      fallback.thumbnailImage
+    ].filter((image) => image && !isRejectedImageCandidate(image))
+  );
+}
+
 async function fetchArticleMetadata(articleUrl, fallback = {}) {
   try {
     const html = await fetchHtml(articleUrl);
@@ -1767,8 +1901,7 @@ async function fetchArticleMetadata(articleUrl, fallback = {}) {
         fallback.title
       ),
       thumbnailImage: pickFirst(
-        $('meta[property="og:image"]').attr("content"),
-        $('meta[name="twitter:image"]').attr("content"),
+        extractMetadataImage($, fallback),
         fallback.thumbnailImage
       ),
       publishedAt: pickFirst(
@@ -1816,6 +1949,7 @@ async function fetchPage(sourceUrl) {
     }
 
     seenLinks.add(link);
+    const candidateThumbnail = getImageCandidate($, $(element).find("img").first());
     candidates.push({
       title,
       description: title,
@@ -1823,7 +1957,7 @@ async function fetchPage(sourceUrl) {
       cityCode: "",
       isActive: true,
       newsLink: link,
-      thumbnailImage: absoluteUrl($(element).find("img").first().attr("src"), sourceUrl),
+      thumbnailImage: isRejectedImageCandidate(candidateThumbnail) ? "" : absoluteUrl(candidateThumbnail, sourceUrl),
       postedBy: publisher,
       postedByLogo: publisherLogo,
       publishedAt: listingPublishedAt || null,
@@ -2039,6 +2173,7 @@ export {
   cleanArticleFields,
   detectCityCodes,
   expandCityArticles,
+  extractMetadataImage,
   fetchSource,
   getRejectionReasons,
   hasDisallowedLanguage,

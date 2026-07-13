@@ -1,8 +1,10 @@
 import assert from "node:assert/strict";
+import * as cheerio from "cheerio";
 import {
   applyCityCode,
   cleanArticleFields,
   detectCityCodes,
+  extractMetadataImage,
   getRejectionReasons,
   hasBackfillDateRange,
   isAllowedSource,
@@ -58,6 +60,36 @@ assert.equal(isLikelyFeedUrl("https://www.hindustantimes.com/real-estate"), fals
 assert.equal(isLikelyFeedUrl("https://realty.economictimes.indiatimes.com/tag/gurugram"), false);
 assert.equal(isLikelyFeedUrl("https://example.com/feed"), true);
 assert.equal(isLikelyFeedUrl("https://example.com/rss.xml"), true);
+
+assert.equal(
+  extractMetadataImage(
+    cheerio.load(`
+      <html><body><article><figure><img data-src="/article-image.jpg" /></figure></article></body></html>
+    `)
+  ),
+  "/article-image.jpg"
+);
+
+assert.equal(
+  extractMetadataImage(
+    cheerio.load(`
+      <html>
+        <head><meta property="og:image" content="https://example.com/logo.svg" /></head>
+        <body><img id="zoom_class" src="https://example.com/story.png" alt="Story Image" /></body>
+      </html>
+    `)
+  ),
+  "https://example.com/story.png"
+);
+
+assert.equal(
+  extractMetadataImage(
+    cheerio.load(`
+      <html><head><script type="application/ld+json">{"@type":"NewsArticle","image":{"url":"https://example.com/news.jpg"}}</script></head></html>
+    `)
+  ),
+  "https://example.com/news.jpg"
+);
 
 assert.equal(
   isPublishableArticle(
