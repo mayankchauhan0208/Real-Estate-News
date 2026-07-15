@@ -22,6 +22,7 @@ const defaultSources = [
   "https://www.hindustantimes.com/real-estate",
   "https://www.hindustantimes.com/topic/faridabad/news",
   "https://economictimes.indiatimes.com/industry/services/property-/-cstruction",
+  "https://economictimes.indiatimes.com/news/company/corporate-trends",
   "https://www.cnbctv18.com/real-estate/",
   "https://timesofindia.indiatimes.com/real-estate/news",
   "https://realty.economictimes.indiatimes.com/tag/gurugram",
@@ -300,6 +301,20 @@ const nationalBusinessKeywords = [
   "investment",
   "acquisition",
   "merger"
+];
+const targetRealEstateCorporateCompanies = [
+  {
+    code: "gurugram",
+    keywords: ["dlf"]
+  }
+];
+const positiveCorporateRealEstateKeywords = [
+  "chairman",
+  "compensation",
+  "fy",
+  "pay",
+  "remuneration",
+  "salary"
 ];
 const specificProjectKeywords = [
   "acquires land",
@@ -1498,16 +1513,42 @@ function isNationalRealEstateBusinessUpdate(article) {
   );
 }
 
+function getTargetRealEstateCorporateCompany(article) {
+  const haystack = getArticleSearchText(article);
+  return targetRealEstateCorporateCompanies.find((company) => hasWholeWordKeyword(haystack, company.keywords));
+}
+
+function isTargetRealEstateCorporateUpdate(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  return (
+    !isBlockedArticle(article) &&
+    hasCleanPrimaryText(article) &&
+    Boolean(getTargetRealEstateCorporateCompany(article)) &&
+    hasKeyword(primaryAndUrl, positiveCorporateRealEstateKeywords) &&
+    !hasWholeWordKeyword(primaryAndUrl, outsideCityKeywords)
+  );
+}
+
 function isRealEstateRelated(article) {
   if (isBlockedArticle(article)) {
     return false;
   }
 
-  return hasRealEstateEvidence(article) || isNationalRealEstateBusinessUpdate(article) || isNcrCommercialOfficeMarketArticle(article);
+  return (
+    hasRealEstateEvidence(article) ||
+    isNationalRealEstateBusinessUpdate(article) ||
+    isNcrCommercialOfficeMarketArticle(article) ||
+    isTargetRealEstateCorporateUpdate(article)
+  );
 }
 
 function hasSpecificProjectOrDevelopmentSignal(article) {
-  if (isNcrCommercialOfficeMarketArticle(article) || isFaridabadJewarGrowthArticle(article)) {
+  if (
+    isNcrCommercialOfficeMarketArticle(article) ||
+    isFaridabadJewarGrowthArticle(article) ||
+    isTargetRealEstateCorporateUpdate(article)
+  ) {
     return true;
   }
 
@@ -1516,7 +1557,11 @@ function hasSpecificProjectOrDevelopmentSignal(article) {
 }
 
 function isBroadNonProjectUpdate(article) {
-  if (isNcrCommercialOfficeMarketArticle(article) || isFaridabadJewarGrowthArticle(article)) {
+  if (
+    isNcrCommercialOfficeMarketArticle(article) ||
+    isFaridabadJewarGrowthArticle(article) ||
+    isTargetRealEstateCorporateUpdate(article)
+  ) {
     return false;
   }
 
@@ -1541,6 +1586,12 @@ function detectCityCodes(article) {
 }
 
 function detectMatchedCityCodes(article) {
+  const corporateCompany = getTargetRealEstateCorporateCompany(article);
+
+  if (corporateCompany) {
+    return [corporateCompany.code];
+  }
+
   if (isFaridabadJewarGrowthArticle(article)) {
     return ["faridabad"];
   }
@@ -1582,6 +1633,7 @@ function hasTargetRegionEvidence(article) {
     hasNcrMatch(article) ||
     isNcrCommercialOfficeMarketArticle(article) ||
     isFaridabadJewarGrowthArticle(article) ||
+    isTargetRealEstateCorporateUpdate(article) ||
     hasTargetRegionInTitleOrUrl(article)
   );
 }

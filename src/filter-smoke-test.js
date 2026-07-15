@@ -55,6 +55,7 @@ assert.equal(isAllowedSource("https://www.lokmattimes.com/business/"), false);
 assert.equal(isAllowedSource("https://www.business-standard.com/search?q=REAL%20ESTATE"), false);
 assert.equal(isAllowedSource("https://economictimes.indiatimes.com/industry/services/property-/-cstruction"), true);
 assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/"), false);
+assert.equal(isAllowedSource("https://economictimes.indiatimes.com/news/company/corporate-trends"), true);
 assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/news/residential"), true);
 assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/news/commercial"), true);
 assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/news/infrastructure"), true);
@@ -241,6 +242,19 @@ assert.equal(
   ),
   false
 );
+
+const dlfRemunerationArticle = publishable({
+  title: "DLF Chairman Rajiv Singh's remuneration rises 20% to Rs 44.06 cr in FY26",
+  description:
+    "DLF Chairman Rajiv Singh's remuneration rose in FY26, reflecting a positive corporate update for the real estate company.",
+  articleText:
+    "DLF is a major real estate developer. The company update covers chairman remuneration and annual compensation.",
+  newsLink:
+    "https://m.economictimes.com/news/company/corporate-trends/dlf-chairman-rajiv-singhs-remuneration-rises-20-to-rs-44-06-cr-in-fy26/amp_articleshow/132342357.cms"
+});
+
+assert.deepEqual(detectCityCodes(dlfRemunerationArticle), ["gurugram"]);
+assert.equal(isPublishableArticle(dlfRemunerationArticle, sentIds), true);
 
 assert.deepEqual(
   detectCityCodes(
