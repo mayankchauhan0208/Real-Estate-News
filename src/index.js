@@ -1979,14 +1979,14 @@ function detectCityCodes(article) {
 }
 
 function detectMatchedCityCodes(article) {
+  if (isFaridabadJewarGrowthArticle(article)) {
+    return ["faridabad"];
+  }
+
   const corporateCompany = getTargetRealEstateCorporateCompany(article);
 
   if (corporateCompany && isPositiveTargetBusinessOrDevelopmentArticle(article)) {
     return getCorporateCompanyCityCodes(article, corporateCompany);
-  }
-
-  if (isFaridabadJewarGrowthArticle(article)) {
-    return ["faridabad"];
   }
 
   if (isNcrCommercialOfficeMarketArticle(article)) {

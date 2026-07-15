@@ -587,7 +587,7 @@ const faridabadJewarArticle = publishable({
   description:
     "Faridabad is poised for rapid transformation driven by Noida International Airport and the proposed Faridabad-Jewar Expressway.",
   articleText:
-    "Improved connectivity, infrastructure upgrades and attractive pricing are drawing investor interest and signalling a new era of development for Faridabad.",
+    "Improved connectivity, infrastructure upgrades and attractive pricing are drawing investor interest and signalling a new era of development for Faridabad. The article compares Gurugram's airport-led growth and quotes BPTP leadership on Faridabad's demand shift.",
   newsLink:
     "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/how-jewar-airport-could-trigger-a-gurugram-like-boom-in-faridabad/articleshow/132137532.cms",
   thumbnailImage: "https://img.etimg.com/thumb/msid-132137553,width-1200,height-630,imgsize-195266,overlay-economictimes/articleshow.jpg"
