@@ -34,6 +34,7 @@ Optional repository variable:
 - `MAX_ITEMS_PER_RUN`: Default is `30`.
 - `MAX_ITEMS_PER_SOURCE`: Default is `300`.
 - `MAX_PAGES_PER_SOURCE`: Default is `15` for supported paginated source pages.
+- `DEFAULT_LOOKBACK_DAYS`: Default is `20` when no manual backfill date range is supplied.
 - `DRY_RUN`: Set to `true` only for local audits. It prints publish candidates without calling the API or updating sent-news state.
 - `EXTRA_ARTICLE_URLS`: Optional exact article URLs, separated by comma, semicolon, or newline. Use only for manually found articles; each URL still has to pass the strict full-article filters.
 

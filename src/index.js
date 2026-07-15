@@ -6,7 +6,7 @@ import * as cheerio from "cheerio";
 import Parser from "rss-parser";
 
 const userAgent =
-  "Mozilla/5.0 news-api-pusher check";
+  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
 
 const parser = new Parser({
   timeout: 15000,
@@ -904,6 +904,10 @@ function getMaxItemsPerRun() {
   return getPositiveIntegerEnv("MAX_ITEMS_PER_RUN", 30);
 }
 
+function getDefaultLookbackDays() {
+  return getPositiveIntegerEnv("DEFAULT_LOOKBACK_DAYS", 20);
+}
+
 function getBooleanEnv(name, fallback = false) {
   const value = env(name);
 
@@ -934,8 +938,14 @@ function parseDateBoundary(value, endOfDay = false) {
 }
 
 function getBackfillDateRange() {
-  const from = parseDateBoundary("BACKFILL_FROM");
-  const to = parseDateBoundary("BACKFILL_TO", true);
+  let from = parseDateBoundary("BACKFILL_FROM");
+  let to = parseDateBoundary("BACKFILL_TO", true);
+
+  if (!from && !to) {
+    const defaultLookbackDays = getDefaultLookbackDays();
+    to = new Date();
+    from = new Date(to.getTime() - defaultLookbackDays * 24 * 60 * 60 * 1000);
+  }
 
   if (from && to && from > to) {
     throw new Error("BACKFILL_FROM must be before or equal to BACKFILL_TO.");
@@ -1094,7 +1104,7 @@ async function mapWithConcurrency(items, limit, mapper) {
   return results;
 }
 
-async function fetchWithTimeout(url, options = {}, timeoutMs = 8000) {
+async function fetchWithTimeout(url, options = {}, timeoutMs = 15000) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
@@ -2017,18 +2027,38 @@ async function fetchFeed(sourceUrl) {
 }
 
 async function fetchHtml(sourceUrl) {
-  const response = await fetchWithTimeout(sourceUrl, {
-    headers: {
-      "User-Agent": userAgent,
-      Accept: "text/html,*/*"
-    }
-  });
+  let lastError;
 
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status}`);
+  for (let attempt = 1; attempt <= 2; attempt += 1) {
+    try {
+      const response = await fetchWithTimeout(sourceUrl, {
+        headers: {
+          "User-Agent": userAgent,
+          Accept: "text/html,*/*"
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      return response.text();
+    } catch (error) {
+      lastError = error;
+
+      if (isMissingPaginatedPageError(error) || attempt === 2) {
+        throw error;
+      }
+
+      await new Promise((resolve) => setTimeout(resolve, 750));
+    }
   }
 
-  return response.text();
+  throw lastError;
+}
+
+function isMissingPaginatedPageError(error) {
+  return /^HTTP (404|410)\b/.test(error.message || "");
 }
 
 function extractArticleText($) {
@@ -2386,6 +2416,11 @@ async function fetchPage(sourceUrl) {
       html = await fetchHtml(pageUrl);
     } catch (error) {
       if (pageIndex > 0) {
+        if (isMissingPaginatedPageError(error)) {
+          console.log(`Reached end of paginated source ${sourceUrl} at ${pageUrl}.`);
+          break;
+        }
+
         console.log(`Skipped paginated source page ${pageUrl}: ${error.message}`);
         continue;
       }
