@@ -39,7 +39,8 @@ const defaultSources = [
   "https://realtynmore.com/latest-news/",
   "https://realtynxt.com/",
   "https://www.track2realty.track2media.com/",
-  "https://propnewstime.com/"
+  "https://propnewstime.com/",
+  "https://hsvphry.org.in/"
 ];
 
 const cityRules = [
@@ -1343,6 +1344,14 @@ function getSourcePageUrls(sourceUrl) {
   return [sourceUrl];
 }
 
+function isHsvpSource(sourceUrl) {
+  try {
+    return new URL(sourceUrl).hostname.replace(/^www\./, "") === "hsvphry.org.in";
+  } catch {
+    return false;
+  }
+}
+
 function getSkipTitleSet() {
   return new Set(
     env("SKIP_TITLES")
@@ -1834,10 +1843,22 @@ function isAuthorityPipelineArticle(article) {
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
 
   return (
-    hasCleanPrimaryAndUrlText(article) &&
+    (hasCleanPrimaryAndUrlText(article) || isOfficialAuthorityPipelineNotice(article)) &&
     hasTargetRegionInTitleOrUrl(article) &&
     hasKeyword(primaryAndUrl, authorityPipelineKeywords) &&
     hasKeyword(primaryAndUrl, ["development", "commercial", "infrastructure", "sector", "mixed-use", "tod"])
+  );
+}
+
+function isOfficialAuthorityPipelineNotice(article) {
+  const primaryText = getArticlePrimaryText(article);
+  const urlText = getArticleUrlText(article);
+
+  return (
+    /hsvphry\.org\.in\/documents\/notices\/NEWS_/i.test(urlText) &&
+    hasWholeWordKeyword(primaryText, ["faridabad"]) &&
+    hasKeyword(primaryText, ["auction", "demarcation", "e-auction", "commercial", "community", "infrastructure", "sector", "sites"]) &&
+    !hasKeyword(primaryText, negativePhraseKeywords)
   );
 }
 
@@ -2344,7 +2365,11 @@ function isBlockedArticle(article) {
 }
 
 function isNegativeNews(article) {
-  if (isFaridabadJewarGrowthArticle(article) || isPositiveTargetProjectUpdate(article)) {
+  if (
+    isFaridabadJewarGrowthArticle(article) ||
+    isPositiveTargetProjectUpdate(article) ||
+    isOfficialAuthorityPipelineNotice(article)
+  ) {
     return false;
   }
 
@@ -2786,6 +2811,22 @@ function extractPagePublishedAt($, fallback = {}) {
   );
 }
 
+function parseHsvpNoticeDate(value = "") {
+  const match = String(value).match(/NEWS_(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/i);
+
+  if (!match) {
+    return "";
+  }
+
+  return buildNewsDateIso({
+    year: match[1],
+    monthName: Object.entries(monthNumbers).find(([, index]) => index === Number(match[2]) - 1)?.[0] || "jan",
+    day: match[3],
+    hour: match[4],
+    minute: match[5]
+  });
+}
+
 function getImageCandidate($, element) {
   const image = $(element);
   return pickFirst(
@@ -2963,6 +3004,188 @@ async function fetchArticleHtml(articleUrl) {
   throw lastError;
 }
 
+async function fetchBinary(sourceUrl) {
+  const response = await fetchWithTimeout(sourceUrl, {
+    headers: {
+      "User-Agent": userAgent,
+      Accept: "application/pdf,*/*"
+    }
+  }, 20000);
+
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status}`);
+  }
+
+  return Buffer.from(await response.arrayBuffer());
+}
+
+function extractPdfLinksFromLatinText(value = "") {
+  return [...String(value).matchAll(/https?:\/\/[^\s)<>]+/g)]
+    .map((match) => match[0])
+    .filter((url) => isHttpUrl(url));
+}
+
+function normalizeSectorLabel(value = "") {
+  const match = String(value).match(/sector\s*-?\s*(\d{1,3})/i);
+  return match ? `Sector ${match[1]}` : "";
+}
+
+function extractHsvpFaridabadDetails(pdfLatinText = "") {
+  const faridabadLinks = extractPdfLinksFromLatinText(pdfLatinText)
+    .filter((link) => /faridabad/i.test(link));
+  const sectors = [...new Set(
+    faridabadLinks
+      .flatMap((link) => [...link.matchAll(/sector\s*-?\s*(\d{1,3})/gi)].map((match) => normalizeSectorLabel(match[0])))
+      .filter(Boolean)
+  )].sort((a, b) => Number(a.match(/\d+/)?.[0] || 0) - Number(b.match(/\d+/)?.[0] || 0));
+  const linkLabels = faridabadLinks
+    .map((link) => {
+      try {
+        return new URL(link).pathname.split("/").pop() || "";
+      } catch {
+        return link;
+      }
+    })
+    .join(" ");
+  const locations = [...new Set(
+    faridabadLinks.flatMap((link) =>
+      ["Budena", "Tikawali", "Kheri Kalan", "Bhupani"]
+        .filter((location) => new RegExp(location.replace(/\s+/g, ""), "i").test(link.replace(/\s+/g, "")))
+    )
+  )];
+  const siteTypes = [];
+
+  if (/(^|\d)PS|Primary/i.test(linkLabels)) {
+    siteTypes.push("primary school");
+  }
+
+  if (/(^|\d)NS|nursery/i.test(linkLabels)) {
+    siteTypes.push("nursery school");
+  }
+
+  if (/(^|\d)HS|High/i.test(linkLabels)) {
+    siteTypes.push("high school");
+  }
+
+  if (/Dispensary|HF|Health/i.test(linkLabels)) {
+    siteTypes.push("health facility");
+  }
+
+  if (/Creche/i.test(linkLabels)) {
+    siteTypes.push("creche");
+  }
+
+  return {
+    faridabadLinks,
+    sectors,
+    locations,
+    siteTypes: [...new Set(siteTypes)]
+  };
+}
+
+function getHsvpCardTitle($, element) {
+  let current = $(element);
+
+  for (let depth = 0; depth < 5; depth += 1) {
+    const container = current.parent();
+
+    if (!container.length) {
+      break;
+    }
+
+    const title = stripHtml(
+      container
+        .find(".announcement-title, .notice-title, .card-title")
+        .first()
+        .text()
+    );
+
+    if (title && !/^view\b/i.test(title)) {
+      return title;
+    }
+
+    current = container;
+  }
+
+  return stripHtml($(element).text());
+}
+
+function buildHsvpFaridabadArticle({ sourceUrl, noticeUrl, cardTitle, pdfLatinText }) {
+  const details = extractHsvpFaridabadDetails(pdfLatinText);
+
+  if (details.faridabadLinks.length === 0) {
+    return null;
+  }
+
+  const sectorText = details.sectors.length > 0 ? details.sectors.join(", ") : "Faridabad sectors";
+  const locationText = details.locations.length > 0 ? ` across ${details.locations.join(", ")}` : "";
+  const siteTypeText = details.siteTypes.length > 0 ? "institutional and social infrastructure" : "social infrastructure";
+  const publishedAt = parseHsvpNoticeDate(noticeUrl);
+  const title = /commercial|community/i.test(cardTitle)
+    ? `HSVP e-auction pipeline includes Faridabad commercial and community sites`
+    : `HSVP July e-auction demarcation plan lists Faridabad sites in ${sectorText}`;
+  const description =
+    `HSVP's July 2026 e-auction material lists Faridabad ${siteTypeText} sites in ${sectorText}${locationText}, adding a positive authority-backed development pipeline signal.`;
+  const article = {
+    title,
+    description,
+    articleText: `${description} Source notice: ${cardTitle}. Faridabad-linked plan references: ${details.faridabadLinks.length}.`,
+    isActive: true,
+    newsLink: noticeUrl,
+    thumbnailImage: getFallbackLogo(sourceUrl),
+    postedBy: "Haryana Shehri Vikas Pradhikaran (HSVP)",
+    postedByLogo: getFallbackLogo(sourceUrl),
+    createdAt: publishedAt,
+    publishedAt,
+    fetchedAt: new Date().toISOString()
+  };
+  const cityArticle = applyCityCode(cleanArticleFields(article));
+
+  return {
+    ...cityArticle,
+    id: stableId(cityArticle)
+  };
+}
+
+async function fetchHsvpNotices(sourceUrl) {
+  const html = await fetchHtml(sourceUrl);
+  const $ = cheerio.load(html);
+  const seenLinks = new Set();
+  const noticeCandidates = [];
+
+  $("a[href]").each((_, element) => {
+    const noticeUrl = absoluteUrl($(element).attr("href"), sourceUrl);
+
+    if (!/\/documents\/notices\/NEWS_\d+.*\.pdf/i.test(noticeUrl) || seenLinks.has(noticeUrl)) {
+      return;
+    }
+
+    seenLinks.add(noticeUrl);
+    noticeCandidates.push({
+      noticeUrl,
+      cardTitle: getHsvpCardTitle($, element)
+    });
+  });
+
+  const limitedCandidates = noticeCandidates.slice(0, getMaxItemsPerSource());
+  const articles = await mapWithConcurrency(limitedCandidates, 4, async (candidate) => {
+    try {
+      const pdfBuffer = await fetchBinary(candidate.noticeUrl);
+      const pdfLatinText = pdfBuffer.toString("latin1");
+      return buildHsvpFaridabadArticle({
+        sourceUrl,
+        ...candidate,
+        pdfLatinText
+      });
+    } catch (error) {
+      console.log(`Skipped HSVP notice ${candidate.noticeUrl}: ${error.message}`);
+      return null;
+    }
+  });
+
+  return articles.filter(Boolean);
+}
+
 async function fetchPage(sourceUrl) {
   const pageUrls = getSourcePageUrls(sourceUrl);
   const seenLinks = new Set();
@@ -3061,6 +3284,10 @@ async function fetchPage(sourceUrl) {
 }
 
 async function fetchSource(sourceUrl) {
+  if (isHsvpSource(sourceUrl)) {
+    return fetchHsvpNotices(sourceUrl);
+  }
+
   if (!isLikelyFeedUrl(sourceUrl)) {
     return fetchPage(sourceUrl);
   }

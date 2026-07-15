@@ -66,6 +66,7 @@ assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/real-estate"),
 assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/real-estate/news"), true);
 assert.equal(isAllowedSource("https://www.constructionworld.in/"), false);
 assert.equal(isAllowedSource("https://www.constructionworld.in/latest-construction-news/real-estate-news"), true);
+assert.equal(isAllowedSource("https://hsvphry.org.in/"), true);
 assert.equal(isAllowedSource("https://housing.com/news/"), false);
 assert.equal(isAllowedSource("https://www.squareyards.com/blog"), false);
 assert.equal(isLikelyFeedUrl("https://www.hindustantimes.com/real-estate"), false);
@@ -345,6 +346,19 @@ const hsvpPipelineArticle = publishable({
 assert.deepEqual(detectCityCodes(hsvpPipelineArticle), ["faridabad"]);
 assert.equal(isPublishableArticle(hsvpPipelineArticle, sentIds), true);
 assert.equal(classifyArticle(hsvpPipelineArticle), "authority_pipeline");
+
+const officialHsvpPipelineArticle = publishable({
+  title: "HSVP July e-auction demarcation plan lists Faridabad sites in Sector 84, Sector 89, Sector 97, Sector 98",
+  description:
+    "HSVP's July 2026 e-auction material lists Faridabad social infrastructure sites in multiple sectors, adding a positive authority-backed development pipeline signal.",
+  articleText:
+    "The official authority pipeline includes sector demarcation, infrastructure and auction site details for Faridabad.",
+  newsLink: "https://hsvphry.org.in/documents/notices/NEWS_202607041240_d0827b76.pdf"
+});
+
+assert.deepEqual(detectCityCodes(officialHsvpPipelineArticle), ["faridabad"]);
+assert.equal(isPublishableArticle(officialHsvpPipelineArticle, sentIds), true);
+assert.equal(classifyArticle(officialHsvpPipelineArticle), "authority_pipeline");
 
 const connectivityCatalystArticle = publishable({
   title: "Metro corridor improves Faridabad-Noida-Ghaziabad connectivity for real estate growth",
