@@ -594,15 +594,27 @@ assert.match(
   /negative\/crime\/utility concern news|spam\/menu page/
 );
 
-assert.match(
-  reasons({
+const gurugramPositiveMarketArticle = publishable({
     title: "Gurugram housing demand to remain steady in 2026 despite global uncertainty",
     description: "A market report says demand remained steady in Gurugram.",
     articleText: "The report discusses market trends and buyer demand, not a specific project launch.",
     newsLink: "https://example.com/gurugram-housing-demand-market-report"
-  }).join("; "),
-  /no specific project\/development signal|broad market\/company update/
-);
+});
+
+assert.deepEqual(detectCityCodes(gurugramPositiveMarketArticle), ["gurugram"]);
+assert.equal(isPublishableArticle(gurugramPositiveMarketArticle, sentIds), true);
+assert.equal(classifyArticle(gurugramPositiveMarketArticle), "positive_city_market");
+
+const faridabadPositiveMarketArticle = publishable({
+  title: "Faridabad emerges as a strong real estate destination in NCR",
+  description: "The report says Faridabad property market is gaining momentum with housing demand.",
+  articleText: "Faridabad real estate growth is supported by infrastructure and better connectivity.",
+  newsLink: "https://example.com/faridabad-strong-real-estate-destination"
+});
+
+assert.deepEqual(detectCityCodes(faridabadPositiveMarketArticle), ["faridabad"]);
+assert.equal(isPublishableArticle(faridabadPositiveMarketArticle, sentIds), true);
+assert.equal(classifyArticle(faridabadPositiveMarketArticle), "positive_city_market");
 
 assert.match(
   reasons({

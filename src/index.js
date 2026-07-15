@@ -109,6 +109,21 @@ const positiveGrowthCatalystKeywords = [
   "real estate market",
   "transformation"
 ];
+const positiveCityMarketKeywords = [
+  "demand remains resilient",
+  "drives ncr housing market",
+  "emerges as a strong real estate destination",
+  "growth market",
+  "housing demand",
+  "housing market",
+  "investment destination",
+  "market remains resilient",
+  "property market",
+  "real estate destination",
+  "real estate growth",
+  "real estate market",
+  "strong real estate destination"
+];
 
 const requiredPayloadFields = [
   "title",
@@ -1184,8 +1199,17 @@ function isActionableMissedNewsCandidate(article, reasons) {
     Boolean(article.cityCode) &&
     hasTargetRegionInPrimaryText(article) &&
     hasKeyword(primaryAndUrl, realEstateCompanyKeywords);
+  const articleType = classifyArticle(article);
+  const hasMappedDeveloperContext =
+    Boolean(getTargetRealEstateCorporateCompany(article)) &&
+    getCorporateCompanyCityCodes(article).length > 0 &&
+    hasKeyword(primaryAndUrl, ["real estate", "realty", "developer", "project", "launch", "land", "market"]);
+  const hasAuditTargetContext =
+    Boolean(article.cityCode) ||
+    (articleType !== "unclassified" && hasMappedDeveloperContext);
 
   if (
+    !hasAuditTargetContext ||
     !isTargetLookingArticle(article) ||
     isBlockedArticle(article) ||
     hasDisallowedLanguage(article) ||
@@ -1194,8 +1218,6 @@ function isActionableMissedNewsCandidate(article, reasons) {
   ) {
     return false;
   }
-
-  const articleType = classifyArticle(article);
 
   if (articleType !== "unclassified" && articleType !== "reject_negative") {
     return true;
@@ -1830,13 +1852,26 @@ function isConnectivityCatalystArticle(article) {
   );
 }
 
+function isPositiveCityMarketArticle(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  return (
+    hasCleanPrimaryAndUrlText(article) &&
+    hasTargetRegionInTitleOrUrl(article) &&
+    hasKeyword(primaryAndUrl, ["real estate", "realty", "property", "housing"]) &&
+    hasKeyword(primaryAndUrl, positiveCityMarketKeywords) &&
+    !hasWholeWordKeyword(primaryAndUrl, getDisqualifyingOutsideCityKeywords(article))
+  );
+}
+
 function isPositiveTargetBusinessOrDevelopmentArticle(article) {
   return (
     isTargetRealEstateCorporateUpdate(article) ||
     isLeadershipBusinessConfidenceArticle(article) ||
     isLuxuryTransactionArticle(article) ||
     isAuthorityPipelineArticle(article) ||
-    isConnectivityCatalystArticle(article)
+    isConnectivityCatalystArticle(article) ||
+    isPositiveCityMarketArticle(article)
   );
 }
 
@@ -1875,6 +1910,10 @@ function classifyArticle(article) {
 
   if (isLeadershipBusinessConfidenceArticle(article)) {
     return "leadership_confidence";
+  }
+
+  if (isPositiveCityMarketArticle(article)) {
+    return "positive_city_market";
   }
 
   if (isPositiveTargetProjectUpdate(article) || (hasRealEstateEvidence(article) && hasSpecificProjectOrDevelopmentSignal(article))) {
