@@ -312,6 +312,19 @@ assert.deepEqual(detectCityCodes(dlfLuxuryTransactionArticle), ["gurugram"]);
 assert.equal(isPublishableArticle(dlfLuxuryTransactionArticle, sentIds), true);
 assert.equal(classifyArticle(dlfLuxuryTransactionArticle), "luxury_transaction");
 
+const dlfLuxuryEcosystemArticle = publishable({
+  title: "DLF MD reflects on ecosystem that defines luxury, Rs 100 Cr Gurugram apartments",
+  description: "The DLF MD said Gurugram luxury apartments are supported by a mature real estate ecosystem.",
+  articleText:
+    "The article mentions Delhi NCR, Mumbai and other cities only as wider luxury-market context, while the core focus is Gurugram.",
+  newsLink:
+    "https://www.hindustantimes.com/real-estate/100-crore-apartments-in-gurugram-are-the-product-of-an-ecosystem-years-in-the-making-dlf-md-aakash-ohri-101782554459997.html"
+});
+
+assert.deepEqual(detectCityCodes(dlfLuxuryEcosystemArticle), ["gurugram"]);
+assert.equal(isPublishableArticle(dlfLuxuryEcosystemArticle, sentIds), true);
+assert.equal(classifyArticle(dlfLuxuryEcosystemArticle), "leadership_confidence");
+
 assert.match(
   reasons({
     title: "Police probe dispute over apartment purchase in DLF The Dahlias in Gurugram",

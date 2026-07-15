@@ -2365,7 +2365,10 @@ function isNegativeNews(article) {
 }
 
 function hasOutsideCityConflict(article) {
-  if (isPositiveTargetProjectUpdate(article)) {
+  if (
+    isPositiveTargetProjectUpdate(article) ||
+    (isPositiveTargetBusinessOrDevelopmentArticle(article) && hasTargetRegionInTitleOrUrl(article))
+  ) {
     return false;
   }
 
