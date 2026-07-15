@@ -32,7 +32,6 @@ const defaultSources = [
   "https://realty.economictimes.indiatimes.com/news/infrastructure",
   "https://realty.economictimes.indiatimes.com/news/industry",
   "https://www.moneycontrol.com/news/business/real-estate/",
-  "https://www.business-standard.com/topic/real-estate",
   "https://www.constructionworld.in/latest-construction-news/real-estate-news",
   "https://www.outlookmoney.com/topic/real-estate",
   "https://www.tribuneindia.com/topic/real-estate",
@@ -350,23 +349,13 @@ const positiveCorporateRealEstateKeywords = [
   "chairman",
   "ceo",
   "compensation",
-  "expansion",
   "fy",
-  "growth market",
-  "land",
-  "launch pipeline",
-  "leadership",
-  "md",
-  "new launches",
   "pay",
-  "plans launches",
   "remuneration",
-  "salary",
-  "scouts land",
-  "sees",
-  "to launch"
+  "salary"
 ];
 const leadershipBusinessConfidenceKeywords = [
+  "aims to create",
   "chairman",
   "ceo",
   "managing director",
@@ -379,6 +368,7 @@ const leadershipBusinessConfidenceKeywords = [
   "plans launches",
   "launch pipeline",
   "new launches",
+  "offering",
   "core growth market",
   "as important as",
   "bets big"
@@ -827,7 +817,6 @@ const severeBodyNegativeKeywords = [
   "fir",
   "fire",
   "fraud",
-  "hospital",
   "injured",
   "jail",
   "killed",
@@ -1165,18 +1154,60 @@ function logDateExcludedPublishableArticles(articles, dateRange, filterSentIds, 
 }
 
 function isTargetLookingArticle(article) {
-  const haystack = getArticleSearchText(article);
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const hasTargetCityAndRealEstateSignal =
+    hasWholeWordKeyword(primaryAndUrl, targetCityKeywords) &&
+    (
+      hasKeyword(primaryAndUrl, realEstateKeywords) ||
+      hasKeyword(primaryAndUrl, promotionalRealEstateKeywords) ||
+      hasKeyword(primaryAndUrl, realEstateCompanyKeywords)
+    );
 
   return (
-    hasWholeWordKeyword(haystack, targetCityKeywords) ||
-    hasKeyword(haystack, realEstateCompanyKeywords) ||
-    hasKeyword(haystack, authorityPipelineKeywords) ||
-    hasKeyword(haystack, connectivityCatalystKeywords) ||
-    hasKeyword(haystack, gurugramLuxuryProjectKeywords)
+    hasTargetCityAndRealEstateSignal ||
+    hasKeyword(primaryAndUrl, realEstateCompanyKeywords) ||
+    hasKeyword(primaryAndUrl, authorityPipelineKeywords) ||
+    hasKeyword(primaryAndUrl, connectivityCatalystKeywords) ||
+    hasKeyword(primaryAndUrl, gurugramLuxuryProjectKeywords)
   );
 }
 
-function logMissedNewsAudit(articles, filterSentIds, skipTitleSet, limit = 30) {
+function isActionableMissedNewsCandidate(article, reasons) {
+  if (
+    !isTargetLookingArticle(article) ||
+    isBlockedArticle(article) ||
+    hasDisallowedLanguage(article) ||
+    isNegativeNews(article)
+  ) {
+    return false;
+  }
+
+  const articleType = classifyArticle(article);
+
+  if (articleType !== "unclassified" && articleType !== "reject_negative") {
+    return true;
+  }
+
+  return (
+    reasons.some((reason) =>
+      [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 6: target region missing or weak",
+        "filter 9: no specific project/development signal",
+        "filter 10: broad market/company update, not city project news"
+      ].includes(reason)
+    ) &&
+    !reasons.some((reason) =>
+      [
+        "filter 7: outside region in title/description",
+        "filter 8: outside-city conflict"
+      ].includes(reason)
+    )
+  );
+}
+
+function logMissedNewsAudit(articles, filterSentIds, skipTitleSet, limit = 20) {
   if (!getBooleanEnv("MISSED_NEWS_AUDIT", true)) {
     return;
   }
@@ -1185,14 +1216,14 @@ function logMissedNewsAudit(articles, filterSentIds, skipTitleSet, limit = 30) {
   const seenTitles = new Set();
 
   for (const article of articles) {
-    if (!article.title || !isTargetLookingArticle(article) || shouldSkipTitle(article, skipTitleSet)) {
+    if (!article.title || shouldSkipTitle(article, skipTitleSet)) {
       continue;
     }
 
     const reasons = getRejectionReasons(article, filterSentIds)
       .filter((reason) => reason !== "filter 13: already sent");
 
-    if (reasons.length === 0) {
+    if (reasons.length === 0 || !isActionableMissedNewsCandidate(article, reasons)) {
       continue;
     }
 
@@ -1214,9 +1245,9 @@ function logMissedNewsAudit(articles, filterSentIds, skipTitleSet, limit = 30) {
 
   for (const { article, reasons } of missedCandidates.slice(0, limit)) {
     console.log(
-      `Missed-news audit candidate (${article.cityCode || "no-city"}): ${article.title} | ${reasons.join("; ")} | ${
-        article.newsLink || ""
-      }`
+      `Missed-news audit candidate (${classifyArticle(article)}, ${article.cityCode || "no-city"}): ${
+        article.title
+      } | ${reasons.join("; ")} | ${article.newsLink || ""}`
     );
   }
 }
@@ -1738,7 +1769,7 @@ function isTargetRealEstateCorporateUpdate(article) {
 
   return (
     !isBlockedArticle(article) &&
-    hasCleanPrimaryText(article) &&
+    hasCleanPrimaryAndUrlText(article) &&
     Boolean(company) &&
     getCorporateCompanyCityCodes(article, company).length > 0 &&
     hasKeyword(primaryAndUrl, positiveCorporateRealEstateKeywords) &&
@@ -1750,7 +1781,7 @@ function isLeadershipBusinessConfidenceArticle(article) {
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
 
   return (
-    hasCleanPrimaryText(article) &&
+    hasCleanPrimaryAndUrlText(article) &&
     Boolean(getTargetRealEstateCorporateCompany(article)) &&
     getCorporateCompanyCityCodes(article).length > 0 &&
     hasKeyword(primaryAndUrl, leadershipBusinessConfidenceKeywords) &&
@@ -1773,7 +1804,7 @@ function isAuthorityPipelineArticle(article) {
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
 
   return (
-    hasCleanPrimaryText(article) &&
+    hasCleanPrimaryAndUrlText(article) &&
     hasTargetRegionInTitleOrUrl(article) &&
     hasKeyword(primaryAndUrl, authorityPipelineKeywords) &&
     hasKeyword(primaryAndUrl, ["development", "commercial", "infrastructure", "sector", "mixed-use", "tod"])
@@ -1784,7 +1815,7 @@ function isConnectivityCatalystArticle(article) {
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
 
   return (
-    hasCleanPrimaryText(article) &&
+    hasCleanPrimaryAndUrlText(article) &&
     (hasTargetRegionInTitleOrUrl(article) || hasNcrMatch(article) || isFaridabadJewarGrowthArticle(article)) &&
     hasKeyword(primaryAndUrl, connectivityCatalystKeywords) &&
     hasKeyword(primaryAndUrl, ["connectivity", "development", "growth", "real estate", "property", "infrastructure"])
@@ -1799,6 +1830,50 @@ function isPositiveTargetBusinessOrDevelopmentArticle(article) {
     isAuthorityPipelineArticle(article) ||
     isConnectivityCatalystArticle(article)
   );
+}
+
+function classifyArticle(article) {
+  if (isNegativeNews(article)) {
+    return "reject_negative";
+  }
+
+  if (isNcrCommercialOfficeMarketArticle(article)) {
+    return "ncr_office_market";
+  }
+
+  if (isFaridabadJewarGrowthArticle(article)) {
+    return "faridabad_jewar_catalyst";
+  }
+
+  if (isTargetDominantInfrastructureCorridor(article)) {
+    return "target_corridor";
+  }
+
+  if (isConnectivityCatalystArticle(article)) {
+    return "connectivity_catalyst";
+  }
+
+  if (isAuthorityPipelineArticle(article)) {
+    return "authority_pipeline";
+  }
+
+  if (isLuxuryTransactionArticle(article)) {
+    return "luxury_transaction";
+  }
+
+  if (isTargetRealEstateCorporateUpdate(article)) {
+    return "developer_corporate_positive";
+  }
+
+  if (isLeadershipBusinessConfidenceArticle(article)) {
+    return "leadership_confidence";
+  }
+
+  if (isPositiveTargetProjectUpdate(article) || hasSpecificProjectOrDevelopmentSignal(article)) {
+    return "project_development";
+  }
+
+  return "unclassified";
 }
 
 function isRealEstateRelated(article) {
@@ -1931,6 +2006,18 @@ function hasCleanPrimaryText(article) {
     !hasKeyword(urlText, negativePhraseKeywords) &&
     !hasWholeWordKeyword(bodyText, severeBodyNegativeKeywords) &&
     !hasKeyword(bodyText, severeBodyNegativePhrases)
+  );
+}
+
+function hasCleanPrimaryAndUrlText(article) {
+  const primaryText = getArticlePrimaryText(article);
+  const urlText = getArticleUrlText(article);
+
+  return (
+    !hasWholeWordKeyword(primaryText, negativeNewsKeywords) &&
+    !hasKeyword(primaryText, negativePhraseKeywords) &&
+    !hasWholeWordKeyword(urlText, negativeNewsKeywords) &&
+    !hasKeyword(urlText, negativePhraseKeywords)
   );
 }
 
@@ -3128,6 +3215,7 @@ async function main() {
 
 export {
   applyCityCode,
+  classifyArticle,
   cleanArticleFields,
   detectCityCodes,
   expandCityArticles,

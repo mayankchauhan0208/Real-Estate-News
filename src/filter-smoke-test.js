@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import * as cheerio from "cheerio";
 import {
   applyCityCode,
+  classifyArticle,
   cleanArticleFields,
   detectCityCodes,
   extractMetadataImage,
@@ -53,6 +54,7 @@ assert.equal(isAllowedSource("https://www.moneycontrol.com/news/business/"), fal
 assert.equal(isAllowedSource("https://www.aninews.in/category/business/"), false);
 assert.equal(isAllowedSource("https://www.lokmattimes.com/business/"), false);
 assert.equal(isAllowedSource("https://www.business-standard.com/search?q=REAL%20ESTATE"), false);
+assert.equal(isAllowedSource("https://www.business-standard.com/topic/real-estate"), false);
 assert.equal(isAllowedSource("https://economictimes.indiatimes.com/industry/services/property-/-cstruction"), true);
 assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/"), false);
 assert.equal(isAllowedSource("https://economictimes.indiatimes.com/news/company/corporate-trends"), true);
@@ -255,6 +257,7 @@ const dlfRemunerationArticle = publishable({
 
 assert.deepEqual(detectCityCodes(dlfRemunerationArticle), ["gurugram"]);
 assert.equal(isPublishableArticle(dlfRemunerationArticle, sentIds), true);
+assert.equal(classifyArticle(dlfRemunerationArticle), "developer_corporate_positive");
 
 const bptpFaridabadCorporateArticle = publishable({
   title: "BPTP plans new launches in Greater Faridabad as real estate demand rises",
@@ -275,6 +278,18 @@ const signatureLeadershipArticle = publishable({
 
 assert.deepEqual(detectCityCodes(signatureLeadershipArticle), ["gurugram"]);
 assert.equal(isPublishableArticle(signatureLeadershipArticle, sentIds), true);
+assert.equal(classifyArticle(signatureLeadershipArticle), "leadership_confidence");
+
+const dlfSeniorLivingArticle = publishable({
+  title: "DLF aims to create a meaningful offering for seniors in Gurugram",
+  description: "DLF leadership said senior living can become a positive real estate offering in Gurugram.",
+  articleText: "The developer discussed housing, community facilities and healthcare amenities for senior living.",
+  newsLink: "https://example.com/dlf-senior-living-gurugram-offering"
+});
+
+assert.deepEqual(detectCityCodes(dlfSeniorLivingArticle), ["gurugram"]);
+assert.equal(isPublishableArticle(dlfSeniorLivingArticle, sentIds), true);
+assert.equal(classifyArticle(dlfSeniorLivingArticle), "leadership_confidence");
 
 assert.match(
   reasons({
@@ -295,6 +310,7 @@ const dlfLuxuryTransactionArticle = publishable({
 
 assert.deepEqual(detectCityCodes(dlfLuxuryTransactionArticle), ["gurugram"]);
 assert.equal(isPublishableArticle(dlfLuxuryTransactionArticle, sentIds), true);
+assert.equal(classifyArticle(dlfLuxuryTransactionArticle), "luxury_transaction");
 
 assert.match(
   reasons({
@@ -315,6 +331,7 @@ const hsvpPipelineArticle = publishable({
 
 assert.deepEqual(detectCityCodes(hsvpPipelineArticle), ["faridabad"]);
 assert.equal(isPublishableArticle(hsvpPipelineArticle, sentIds), true);
+assert.equal(classifyArticle(hsvpPipelineArticle), "authority_pipeline");
 
 const connectivityCatalystArticle = publishable({
   title: "Metro corridor improves Faridabad-Noida-Ghaziabad connectivity for real estate growth",
@@ -325,6 +342,7 @@ const connectivityCatalystArticle = publishable({
 
 assert.deepEqual(detectCityCodes(connectivityCatalystArticle), ["faridabad"]);
 assert.equal(isPublishableArticle(connectivityCatalystArticle, sentIds), true);
+assert.equal(classifyArticle(connectivityCatalystArticle), "connectivity_catalyst");
 
 assert.deepEqual(
   detectCityCodes(

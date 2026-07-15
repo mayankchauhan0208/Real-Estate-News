@@ -122,7 +122,6 @@ Default sources are always used. Broad old source injection is disabled, so `NEW
 - `https://realty.economictimes.indiatimes.com/news/infrastructure`
 - `https://realty.economictimes.indiatimes.com/news/industry`
 - `https://www.moneycontrol.com/news/business/real-estate/`
-- `https://www.business-standard.com/topic/real-estate`
 - `https://www.constructionworld.in/latest-construction-news/real-estate-news`
 - `https://www.outlookmoney.com/topic/real-estate`
 - `https://www.tribuneindia.com/topic/real-estate`
