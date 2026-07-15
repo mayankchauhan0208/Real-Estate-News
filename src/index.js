@@ -1545,7 +1545,7 @@ function detectMatchedCityCodes(article) {
     return ["faridabad"];
   }
 
-  if (hasNcrMatch(article) || isNcrCommercialOfficeMarketArticle(article)) {
+  if (isNcrCommercialOfficeMarketArticle(article)) {
     return ncrCityCodes;
   }
 
@@ -1554,7 +1554,17 @@ function detectMatchedCityCodes(article) {
     .filter((rule) => hasWholeWordKeyword(primaryText, rule.keywords) || hasStrongArticleCityMatch(article, rule))
     .map((rule) => rule.code);
 
-  return [...new Set(cityCodes)];
+  const matchedCityCodes = [...new Set(cityCodes)];
+
+  if (matchedCityCodes.length > 0) {
+    return matchedCityCodes;
+  }
+
+  if (hasNcrMatch(article)) {
+    return ncrCityCodes;
+  }
+
+  return [];
 }
 
 function hasTargetRegionInPrimaryText(article) {
