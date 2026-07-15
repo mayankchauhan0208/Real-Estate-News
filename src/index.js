@@ -1173,11 +1173,24 @@ function isTargetLookingArticle(article) {
 }
 
 function isActionableMissedNewsCandidate(article, reasons) {
+  const hasOutsideConflict = reasons.some((reason) =>
+    [
+      "filter 7: outside region in title/description",
+      "filter 8: outside-city conflict"
+    ].includes(reason)
+  );
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const hasStrongTargetCompanyContext =
+    Boolean(article.cityCode) &&
+    hasTargetRegionInPrimaryText(article) &&
+    hasKeyword(primaryAndUrl, realEstateCompanyKeywords);
+
   if (
     !isTargetLookingArticle(article) ||
     isBlockedArticle(article) ||
     hasDisallowedLanguage(article) ||
-    isNegativeNews(article)
+    isNegativeNews(article) ||
+    (hasOutsideConflict && !hasStrongTargetCompanyContext)
   ) {
     return false;
   }
@@ -1198,12 +1211,7 @@ function isActionableMissedNewsCandidate(article, reasons) {
         "filter 10: broad market/company update, not city project news"
       ].includes(reason)
     ) &&
-    !reasons.some((reason) =>
-      [
-        "filter 7: outside region in title/description",
-        "filter 8: outside-city conflict"
-      ].includes(reason)
-    )
+    !hasOutsideConflict
   );
 }
 
@@ -1869,7 +1877,7 @@ function classifyArticle(article) {
     return "leadership_confidence";
   }
 
-  if (isPositiveTargetProjectUpdate(article) || hasSpecificProjectOrDevelopmentSignal(article)) {
+  if (isPositiveTargetProjectUpdate(article) || (hasRealEstateEvidence(article) && hasSpecificProjectOrDevelopmentSignal(article))) {
     return "project_development";
   }
 
