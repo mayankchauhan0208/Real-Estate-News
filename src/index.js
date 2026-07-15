@@ -1676,7 +1676,8 @@ function hasOutsideRegionInPrimaryText(article) {
   if (
     isTargetDominantInfrastructureCorridor(article) ||
     isNcrCommercialOfficeMarketArticle(article) ||
-    isFaridabadJewarGrowthArticle(article)
+    isFaridabadJewarGrowthArticle(article) ||
+    isPositiveTargetProjectUpdate(article)
   ) {
     return false;
   }
@@ -1897,6 +1898,10 @@ function isNegativeNews(article) {
 }
 
 function hasOutsideCityConflict(article) {
+  if (isPositiveTargetProjectUpdate(article)) {
+    return false;
+  }
+
   const disqualifyingOutsideCities = getDisqualifyingOutsideCityKeywords(article);
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
 

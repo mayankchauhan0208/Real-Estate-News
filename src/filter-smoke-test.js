@@ -528,8 +528,10 @@ assert.match(
 assert.match(
   reasons({
     title: "Oberoi Realty bets big on Delhi-NCR with Rs 6,000 crore luxury Gurugram project",
-    description: "The developer is expanding its residential portfolio with a premium Gurugram project.",
-    articleText: "The Gurugram project adds ultra-luxury residences and supports Delhi-NCR real estate growth.",
+    description:
+      "The Mumbai developer is expanding its residential portfolio with a premium Gurugram project in Delhi-NCR.",
+    articleText:
+      "The Gurugram project adds ultra-luxury residences and supports Delhi-NCR real estate growth. Mumbai is mentioned only as developer context.",
     newsLink: "https://example.com/oberoi-realty-delhi-ncr-gurugram-project"
   }).join("; "),
   /^$/
