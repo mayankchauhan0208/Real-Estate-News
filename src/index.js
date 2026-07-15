@@ -2769,6 +2769,9 @@ function extractPageTitle($) {
 }
 
 function extractPagePublishedAt($, fallback = {}) {
+  const articleText = $("article, main").first().text();
+  const pageText = $("body").text();
+
   return pickFirst(
     toIsoDate($('meta[property="article:published_time"]').attr("content")),
     toIsoDate($('meta[name="publish-date"]').attr("content")),
@@ -2777,7 +2780,8 @@ function extractPagePublishedAt($, fallback = {}) {
     toIsoDate($('[itemprop="datePublished"]').attr("content")),
     toIsoDate($("time[datetime]").first().attr("datetime")),
     extractStructuredPublishedAt($),
-    extractPublishedAtFromText($("article, main").first().text().slice(0, 1500)),
+    extractPublishedAtFromText(articleText.slice(0, 1500)),
+    extractPublishedAtFromText(pageText.slice(0, 3000)),
     toIsoDate(fallback.publishedAt)
   );
 }
