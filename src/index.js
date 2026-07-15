@@ -256,6 +256,10 @@ const promotionalRealEstateKeywords = [
 ];
 const realEstateCompanyKeywords = [
   "dlf",
+  "dlf homes",
+  "dlf ltd",
+  "bptp",
+  "bptp ltd",
   "godrej properties",
   "lodha",
   "macrotech",
@@ -273,7 +277,18 @@ const realEstateCompanyKeywords = [
   "m3m",
   "raymond realty",
   "smartworld",
-  "tulip group"
+  "elan",
+  "whiteland",
+  "tulip",
+  "tulip group",
+  "central park",
+  "emaar india",
+  "emaar",
+  "omaxe",
+  "puri constructions",
+  "puri",
+  "rps",
+  "srs"
 ];
 const nationalBusinessKeywords = [
   "q1",
@@ -305,22 +320,131 @@ const nationalBusinessKeywords = [
 const targetRealEstateCorporateCompanies = [
   {
     code: "gurugram",
-    keywords: ["dlf"]
+    keywords: ["dlf", "dlf homes", "dlf ltd"]
+  },
+  {
+    code: "",
+    keywords: ["bptp", "bptp ltd"]
+  },
+  {
+    code: "gurugram",
+    keywords: [
+      "m3m",
+      "signature global",
+      "smartworld",
+      "elan",
+      "whiteland",
+      "tulip",
+      "tulip group",
+      "central park",
+      "emaar india",
+      "emaar"
+    ]
+  },
+  {
+    code: "faridabad",
+    keywords: ["omaxe", "puri", "puri constructions", "rps", "srs"]
   }
 ];
 const positiveCorporateRealEstateKeywords = [
   "chairman",
+  "ceo",
   "compensation",
+  "expansion",
   "fy",
+  "growth market",
+  "land",
+  "launch pipeline",
+  "leadership",
+  "md",
+  "new launches",
   "pay",
+  "plans launches",
   "remuneration",
-  "salary"
+  "salary",
+  "scouts land",
+  "sees",
+  "to launch"
+];
+const leadershipBusinessConfidenceKeywords = [
+  "chairman",
+  "ceo",
+  "managing director",
+  "md",
+  "growth market",
+  "market expansion",
+  "scouts land",
+  "scouting land",
+  "plans new launches",
+  "plans launches",
+  "launch pipeline",
+  "new launches",
+  "core growth market",
+  "as important as",
+  "bets big"
+];
+const luxuryTransactionKeywords = [
+  "apartment purchase",
+  "apartments",
+  "buys",
+  "bought",
+  "crore apartment",
+  "luxury apartment",
+  "luxury apartments",
+  "premium apartment",
+  "record deal",
+  "transaction"
+];
+const gurugramLuxuryProjectKeywords = [
+  "the dahlias",
+  "dlf dahlias",
+  "the camellias",
+  "dlf camellias",
+  "the arbour",
+  "dlf arbour",
+  "the magnolias",
+  "dlf magnolias",
+  "three sixty north",
+  "360 north"
+];
+const authorityPipelineKeywords = [
+  "commercial auction",
+  "commercial sites",
+  "demarcation",
+  "development authority",
+  "hsvp",
+  "huda",
+  "mixed land use",
+  "mixed-use policy",
+  "new commercial sites",
+  "sector demarcation",
+  "social infrastructure",
+  "tod",
+  "transit-oriented development"
+];
+const connectivityCatalystKeywords = [
+  "connectivity catalyst",
+  "expressway",
+  "interchange",
+  "jewar connectivity",
+  "metro corridor",
+  "metro extension",
+  "spr",
+  "southern peripheral road",
+  "golf course extension road",
+  "golf course road",
+  "dwarka expressway",
+  "sohna road",
+  "faridabad-noida-ghaziabad",
+  "fng corridor"
 ];
 const specificProjectKeywords = [
   "acquires land",
   "adds new inventory",
+  "auction",
   "branded residences",
   "commercial project",
+  "commercial sites",
   "develop land",
   "developed a residential",
   "developing a residential",
@@ -341,6 +465,7 @@ const specificProjectKeywords = [
   "luxury project",
   "metro extension",
   "mixed-use development",
+  "new commercial sites",
   "new project",
   "faridabad project",
   "plotted township",
@@ -352,7 +477,11 @@ const specificProjectKeywords = [
   "projects worth",
   "residential development",
   "residential project",
+  "sector demarcation",
+  "social infrastructure",
   "township",
+  "tod",
+  "transit-oriented development",
   "ultra-luxury residences",
   "unveils homes",
   "unveils luxury",
@@ -443,7 +572,6 @@ const blockedTitleKeywords = [
   "panel",
   "pan india",
   "pan-india",
-  "pipeline",
   "pollution",
   "photo gallery",
   "photos",
@@ -642,6 +770,10 @@ const negativePhraseKeywords = [
   "power backup worries",
   "power outage",
   "power supply issue",
+  "pre-sales decline",
+  "pre-sales drop",
+  "presales decline",
+  "presales drop",
   "property sales barred",
   "property tax",
   "property dispute murder",
@@ -666,6 +798,8 @@ const negativePhraseKeywords = [
   "registration stalled",
   "real estate agent killed",
   "real estate broker killed",
+  "sales decline",
+  "sales drop",
   "strike hits",
   "suicide due to property",
   "suicide over property",
@@ -1024,6 +1158,63 @@ function logDateExcludedPublishableArticles(articles, dateRange, filterSentIds, 
   for (const article of dateExcludedArticles) {
     console.log(
       `Date-excluded publishable (${article.cityCode || "no-city"}, ${formatArticleDate(article)}): ${article.title} | ${
+        article.newsLink || ""
+      }`
+    );
+  }
+}
+
+function isTargetLookingArticle(article) {
+  const haystack = getArticleSearchText(article);
+
+  return (
+    hasWholeWordKeyword(haystack, targetCityKeywords) ||
+    hasKeyword(haystack, realEstateCompanyKeywords) ||
+    hasKeyword(haystack, authorityPipelineKeywords) ||
+    hasKeyword(haystack, connectivityCatalystKeywords) ||
+    hasKeyword(haystack, gurugramLuxuryProjectKeywords)
+  );
+}
+
+function logMissedNewsAudit(articles, filterSentIds, skipTitleSet, limit = 30) {
+  if (!getBooleanEnv("MISSED_NEWS_AUDIT", true)) {
+    return;
+  }
+
+  const missedCandidates = [];
+  const seenTitles = new Set();
+
+  for (const article of articles) {
+    if (!article.title || !isTargetLookingArticle(article) || shouldSkipTitle(article, skipTitleSet)) {
+      continue;
+    }
+
+    const reasons = getRejectionReasons(article, filterSentIds)
+      .filter((reason) => reason !== "filter 13: already sent");
+
+    if (reasons.length === 0) {
+      continue;
+    }
+
+    const normalizedTitle = normalizeTitle(article.title);
+
+    if (seenTitles.has(normalizedTitle)) {
+      continue;
+    }
+
+    seenTitles.add(normalizedTitle);
+    missedCandidates.push({ article, reasons });
+  }
+
+  if (missedCandidates.length === 0) {
+    return;
+  }
+
+  console.log(`Missed-news audit: ${missedCandidates.length} target-looking rejected articles.`);
+
+  for (const { article, reasons } of missedCandidates.slice(0, limit)) {
+    console.log(
+      `Missed-news audit candidate (${article.cityCode || "no-city"}): ${article.title} | ${reasons.join("; ")} | ${
         article.newsLink || ""
       }`
     );
@@ -1518,15 +1709,95 @@ function getTargetRealEstateCorporateCompany(article) {
   return targetRealEstateCorporateCompanies.find((company) => hasWholeWordKeyword(haystack, company.keywords));
 }
 
+function detectExplicitTargetCityCodes(article) {
+  const primaryText = getArticlePrimaryText(article);
+  const cityCodes = cityRules
+    .filter((rule) => hasWholeWordKeyword(primaryText, rule.keywords) || hasStrongArticleCityMatch(article, rule))
+    .map((rule) => rule.code);
+
+  return [...new Set(cityCodes)];
+}
+
+function getCorporateCompanyCityCodes(article, company = getTargetRealEstateCorporateCompany(article)) {
+  if (!company) {
+    return [];
+  }
+
+  const explicitCityCodes = detectExplicitTargetCityCodes(article);
+
+  if (explicitCityCodes.length > 0) {
+    return explicitCityCodes;
+  }
+
+  return company.code ? [company.code] : [];
+}
+
 function isTargetRealEstateCorporateUpdate(article) {
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const company = getTargetRealEstateCorporateCompany(article);
 
   return (
     !isBlockedArticle(article) &&
     hasCleanPrimaryText(article) &&
-    Boolean(getTargetRealEstateCorporateCompany(article)) &&
+    Boolean(company) &&
+    getCorporateCompanyCityCodes(article, company).length > 0 &&
     hasKeyword(primaryAndUrl, positiveCorporateRealEstateKeywords) &&
-    !hasWholeWordKeyword(primaryAndUrl, outsideCityKeywords)
+    !hasWholeWordKeyword(primaryAndUrl, getDisqualifyingOutsideCityKeywords(article))
+  );
+}
+
+function isLeadershipBusinessConfidenceArticle(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  return (
+    hasCleanPrimaryText(article) &&
+    Boolean(getTargetRealEstateCorporateCompany(article)) &&
+    getCorporateCompanyCityCodes(article).length > 0 &&
+    hasKeyword(primaryAndUrl, leadershipBusinessConfidenceKeywords) &&
+    hasKeyword(primaryAndUrl, ["real estate", "realty", "developer", "project", "launch", "land", "market"])
+  );
+}
+
+function isLuxuryTransactionArticle(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  return (
+    hasCleanPrimaryText(article) &&
+    hasKeyword(primaryAndUrl, luxuryTransactionKeywords) &&
+    hasKeyword(primaryAndUrl, gurugramLuxuryProjectKeywords) &&
+    hasWholeWordKeyword(primaryAndUrl, ["gurugram", "gurgaon"])
+  );
+}
+
+function isAuthorityPipelineArticle(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  return (
+    hasCleanPrimaryText(article) &&
+    hasTargetRegionInTitleOrUrl(article) &&
+    hasKeyword(primaryAndUrl, authorityPipelineKeywords) &&
+    hasKeyword(primaryAndUrl, ["development", "commercial", "infrastructure", "sector", "mixed-use", "tod"])
+  );
+}
+
+function isConnectivityCatalystArticle(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  return (
+    hasCleanPrimaryText(article) &&
+    (hasTargetRegionInTitleOrUrl(article) || hasNcrMatch(article) || isFaridabadJewarGrowthArticle(article)) &&
+    hasKeyword(primaryAndUrl, connectivityCatalystKeywords) &&
+    hasKeyword(primaryAndUrl, ["connectivity", "development", "growth", "real estate", "property", "infrastructure"])
+  );
+}
+
+function isPositiveTargetBusinessOrDevelopmentArticle(article) {
+  return (
+    isTargetRealEstateCorporateUpdate(article) ||
+    isLeadershipBusinessConfidenceArticle(article) ||
+    isLuxuryTransactionArticle(article) ||
+    isAuthorityPipelineArticle(article) ||
+    isConnectivityCatalystArticle(article)
   );
 }
 
@@ -1539,7 +1810,7 @@ function isRealEstateRelated(article) {
     hasRealEstateEvidence(article) ||
     isNationalRealEstateBusinessUpdate(article) ||
     isNcrCommercialOfficeMarketArticle(article) ||
-    isTargetRealEstateCorporateUpdate(article)
+    isPositiveTargetBusinessOrDevelopmentArticle(article)
   );
 }
 
@@ -1547,7 +1818,7 @@ function hasSpecificProjectOrDevelopmentSignal(article) {
   if (
     isNcrCommercialOfficeMarketArticle(article) ||
     isFaridabadJewarGrowthArticle(article) ||
-    isTargetRealEstateCorporateUpdate(article)
+    isPositiveTargetBusinessOrDevelopmentArticle(article)
   ) {
     return true;
   }
@@ -1560,7 +1831,7 @@ function isBroadNonProjectUpdate(article) {
   if (
     isNcrCommercialOfficeMarketArticle(article) ||
     isFaridabadJewarGrowthArticle(article) ||
-    isTargetRealEstateCorporateUpdate(article)
+    isPositiveTargetBusinessOrDevelopmentArticle(article)
   ) {
     return false;
   }
@@ -1588,8 +1859,8 @@ function detectCityCodes(article) {
 function detectMatchedCityCodes(article) {
   const corporateCompany = getTargetRealEstateCorporateCompany(article);
 
-  if (corporateCompany) {
-    return [corporateCompany.code];
+  if (corporateCompany && isPositiveTargetBusinessOrDevelopmentArticle(article)) {
+    return getCorporateCompanyCityCodes(article, corporateCompany);
   }
 
   if (isFaridabadJewarGrowthArticle(article)) {
@@ -1600,12 +1871,7 @@ function detectMatchedCityCodes(article) {
     return ncrCityCodes;
   }
 
-  const primaryText = getArticlePrimaryText(article);
-  const cityCodes = cityRules
-    .filter((rule) => hasWholeWordKeyword(primaryText, rule.keywords) || hasStrongArticleCityMatch(article, rule))
-    .map((rule) => rule.code);
-
-  const matchedCityCodes = [...new Set(cityCodes)];
+  const matchedCityCodes = detectExplicitTargetCityCodes(article);
 
   if (matchedCityCodes.length > 0) {
     return matchedCityCodes;
@@ -1633,7 +1899,7 @@ function hasTargetRegionEvidence(article) {
     hasNcrMatch(article) ||
     isNcrCommercialOfficeMarketArticle(article) ||
     isFaridabadJewarGrowthArticle(article) ||
-    isTargetRealEstateCorporateUpdate(article) ||
+    isPositiveTargetBusinessOrDevelopmentArticle(article) ||
     hasTargetRegionInTitleOrUrl(article)
   );
 }
@@ -1739,6 +2005,7 @@ function hasOutsideRegionInPrimaryText(article) {
     isTargetDominantInfrastructureCorridor(article) ||
     isNcrCommercialOfficeMarketArticle(article) ||
     isFaridabadJewarGrowthArticle(article) ||
+    isConnectivityCatalystArticle(article) ||
     isPositiveTargetProjectUpdate(article)
   ) {
     return false;
@@ -1909,6 +2176,10 @@ function getDisqualifyingOutsideCityKeywords(article) {
   }
 
   if (isTargetDominantInfrastructureCorridor(article)) {
+    return outsideCityKeywords.filter((keyword) => keyword !== "noida");
+  }
+
+  if (isConnectivityCatalystArticle(article)) {
     return outsideCityKeywords.filter((keyword) => keyword !== "noida");
   }
 
@@ -2445,7 +2716,7 @@ function extractMetadataImage($, fallback = {}) {
 
 async function fetchArticleMetadata(articleUrl, fallback = {}) {
   try {
-    const html = await fetchHtml(articleUrl);
+    const html = await fetchArticleHtml(articleUrl);
     const $ = cheerio.load(html);
     const articleText = extractArticleText($);
 
@@ -2474,7 +2745,7 @@ async function fetchArticleMetadata(articleUrl, fallback = {}) {
 }
 
 async function fetchDirectArticle(articleUrl) {
-  const html = await fetchHtml(articleUrl);
+  const html = await fetchArticleHtml(articleUrl);
   const $ = cheerio.load(html);
   const title = extractPageTitle($);
   const publisher = getPublisherName(articleUrl, $("title").text());
@@ -2509,6 +2780,46 @@ async function fetchDirectArticle(articleUrl) {
     ...cityArticle,
     id: stableId(cityArticle)
   };
+}
+
+function getArticleUrlVariants(articleUrl) {
+  const variants = [articleUrl];
+
+  try {
+    const url = new URL(articleUrl);
+    const host = url.hostname.replace(/^www\./, "");
+    const pathName = url.pathname;
+
+    if (host === "economictimes.indiatimes.com") {
+      variants.push(`https://m.economictimes.com${pathName}${url.search}`);
+
+      if (/\/articleshow\//i.test(pathName)) {
+        variants.push(`https://m.economictimes.com${pathName.replace(/\/articleshow\//i, "/amp_articleshow/")}${url.search}`);
+      }
+    }
+
+    if (host === "m.economictimes.com" && /\/amp_articleshow\//i.test(pathName)) {
+      variants.push(`https://economictimes.indiatimes.com${pathName.replace(/\/amp_articleshow\//i, "/articleshow/")}${url.search}`);
+    }
+  } catch {
+    // Ignore malformed URLs; the original fetch will report the real failure.
+  }
+
+  return [...new Set(variants)];
+}
+
+async function fetchArticleHtml(articleUrl) {
+  let lastError;
+
+  for (const variant of getArticleUrlVariants(articleUrl)) {
+    try {
+      return await fetchHtml(variant);
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  throw lastError;
 }
 
 async function fetchPage(sourceUrl) {
@@ -2774,6 +3085,8 @@ async function main() {
   for (const [reason, count] of [...rejectionCounts.entries()].sort((a, b) => a[0].localeCompare(b[0]))) {
     console.log(`Skipped ${count} articles by ${reason}.`);
   }
+
+  logMissedNewsAudit(expandedArticles, filterSentIds, skipTitleSet);
 
   for (const article of expandedArticles.slice(0, 100)) {
     const reasons = shouldSkipTitle(article, skipTitleSet)

@@ -256,6 +256,76 @@ const dlfRemunerationArticle = publishable({
 assert.deepEqual(detectCityCodes(dlfRemunerationArticle), ["gurugram"]);
 assert.equal(isPublishableArticle(dlfRemunerationArticle, sentIds), true);
 
+const bptpFaridabadCorporateArticle = publishable({
+  title: "BPTP plans new launches in Greater Faridabad as real estate demand rises",
+  description: "BPTP leadership said Greater Faridabad remains a growth market for residential projects.",
+  articleText: "The developer is scouting land and planning new launches in Greater Faridabad.",
+  newsLink: "https://example.com/bptp-greater-faridabad-new-launches"
+});
+
+assert.deepEqual(detectCityCodes(bptpFaridabadCorporateArticle), ["faridabad"]);
+assert.equal(isPublishableArticle(bptpFaridabadCorporateArticle, sentIds), true);
+
+const signatureLeadershipArticle = publishable({
+  title: "Signature Global sees Gurugram as core growth market, plans new launches",
+  description: "The developer's MD said Gurugram will remain central to its market expansion.",
+  articleText: "Signature Global is scouting land and planning new launches in Gurugram.",
+  newsLink: "https://example.com/signature-global-gurugram-growth-market"
+});
+
+assert.deepEqual(detectCityCodes(signatureLeadershipArticle), ["gurugram"]);
+assert.equal(isPublishableArticle(signatureLeadershipArticle, sentIds), true);
+
+assert.match(
+  reasons({
+    title: "Signature Global pre-sales decline 25% to Rs 1,970 crore in Q1 FY27",
+    description: "The developer reported a drop in pre-sales during the quarter.",
+    articleText: "The Gurugram developer reported lower bookings and pre-sales decline.",
+    newsLink: "https://example.com/signature-global-pre-sales-decline"
+  }).join("; "),
+  /negative\/crime\/utility concern news/
+);
+
+const dlfLuxuryTransactionArticle = publishable({
+  title: "Business leader buys apartment in DLF The Dahlias in Gurugram for Rs 95 crore",
+  description: "The luxury apartment transaction highlights demand for premium Gurugram real estate.",
+  articleText: "The apartment is in DLF The Dahlias in Gurugram.",
+  newsLink: "https://example.com/dlf-dahlias-gurugram-apartment-purchase"
+});
+
+assert.deepEqual(detectCityCodes(dlfLuxuryTransactionArticle), ["gurugram"]);
+assert.equal(isPublishableArticle(dlfLuxuryTransactionArticle, sentIds), true);
+
+assert.match(
+  reasons({
+    title: "Police probe dispute over apartment purchase in DLF The Dahlias in Gurugram",
+    description: "Police said the property dispute involved a luxury apartment transaction.",
+    articleText: "The case involves a complaint and police investigation.",
+    newsLink: "https://example.com/dlf-dahlias-police-dispute"
+  }).join("; "),
+  /negative\/crime\/utility concern news/
+);
+
+const hsvpPipelineArticle = publishable({
+  title: "HSVP commercial auction pipeline opens new commercial sites in Faridabad",
+  description: "The development authority listed sector demarcation and social infrastructure sites.",
+  articleText: "The Faridabad auction includes commercial sites, social infrastructure and TOD-related mixed-use development opportunities.",
+  newsLink: "https://example.com/hsvp-faridabad-commercial-auction-pipeline"
+});
+
+assert.deepEqual(detectCityCodes(hsvpPipelineArticle), ["faridabad"]);
+assert.equal(isPublishableArticle(hsvpPipelineArticle, sentIds), true);
+
+const connectivityCatalystArticle = publishable({
+  title: "Metro corridor improves Faridabad-Noida-Ghaziabad connectivity for real estate growth",
+  description: "The connectivity catalyst is expected to support Faridabad property development.",
+  articleText: "The corridor improves infrastructure access and supports Faridabad real estate growth.",
+  newsLink: "https://example.com/faridabad-noida-ghaziabad-metro-connectivity"
+});
+
+assert.deepEqual(detectCityCodes(connectivityCatalystArticle), ["faridabad"]);
+assert.equal(isPublishableArticle(connectivityCatalystArticle, sentIds), true);
+
 assert.deepEqual(
   detectCityCodes(
     article({
@@ -268,19 +338,16 @@ assert.deepEqual(
   ["gurugram"]
 );
 
-assert.equal(
-  isPublishableArticle(
-    publishable({
-      title: "Delhi NCR-based businessman buys four apartments in DLF's The Dahlias in Gurugram",
-      description: "The luxury housing transaction highlights demand for premium Gurugram real estate.",
-      articleText: "The apartments are in DLF's The Dahlias in Gurugram.",
-      newsLink:
-        "https://www.moneycontrol.com/news/business/real-estate/delhi-ncr-based-businessman-buys-four-apartments-in-dlf-s-the-dahlias-in-gurugram-for-rs-380-crore-13643229.html"
-    }),
-    sentIds
-  ),
-  false
-);
+const dlfDahliasTransactionArticle = publishable({
+  title: "Delhi NCR-based businessman buys four apartments in DLF's The Dahlias in Gurugram",
+  description: "The luxury housing transaction highlights demand for premium Gurugram real estate.",
+  articleText: "The apartments are in DLF's The Dahlias in Gurugram.",
+  newsLink:
+    "https://www.moneycontrol.com/news/business/real-estate/delhi-ncr-based-businessman-buys-four-apartments-in-dlf-s-the-dahlias-in-gurugram-for-rs-380-crore-13643229.html"
+});
+
+assert.deepEqual(detectCityCodes(dlfDahliasTransactionArticle), ["gurugram"]);
+assert.equal(isPublishableArticle(dlfDahliasTransactionArticle, sentIds), true);
 
 assert.equal(
   isPublishableArticle(
