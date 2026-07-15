@@ -527,6 +527,26 @@ assert.match(
 
 assert.match(
   reasons({
+    title: "Oberoi Realty bets big on Delhi-NCR with Rs 6,000 crore luxury Gurugram project",
+    description: "The developer is expanding its residential portfolio with a premium Gurugram project.",
+    articleText: "The Gurugram project adds ultra-luxury residences and supports Delhi-NCR real estate growth.",
+    newsLink: "https://example.com/oberoi-realty-delhi-ncr-gurugram-project"
+  }).join("; "),
+  /^$/
+);
+
+assert.match(
+  reasons({
+    title: "Gurugram RERA approves 51 real estate projects worth Rs 38,000 crore in H1 2026",
+    description: "The approvals cover new Gurugram real estate projects and development activity.",
+    articleText: "The approved projects add residential and commercial development in Gurugram.",
+    newsLink: "https://example.com/gurugram-rera-approves-projects-worth-rs-38000-crore"
+  }).join("; "),
+  /^$/
+);
+
+assert.match(
+  reasons({
     title: "फरीदाबाद में नई योजना के लाभार्थी",
     description: "फरीदाबाद में 50 परिवारों को लाभ मिला",
     postedBy: "Faridabad News In Hindi, Amarujala.com",

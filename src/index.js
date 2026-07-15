@@ -318,6 +318,9 @@ const specificProjectKeywords = [
   "hand over",
   "hands over",
   "housing project",
+  "first gurugram project",
+  "first faridabad project",
+  "bookings worth",
   "land acquisition",
   "land parcel",
   "luxury project",
@@ -331,6 +334,7 @@ const specificProjectKeywords = [
   "rapid rail",
   "regional rapid transit",
   "rrts",
+  "projects worth",
   "residential development",
   "residential project",
   "township",
@@ -374,7 +378,6 @@ const broadNonProjectKeywords = [
   "q4 fy",
   "recovery",
   "records sales",
-  "reports bookings",
   "retail expansion",
   "retail sector",
   "sales dip",
@@ -1588,6 +1591,45 @@ function isNcrCommercialOfficeMarketArticle(article) {
   );
 }
 
+function hasCleanPrimaryText(article) {
+  const primaryText = getArticlePrimaryText(article);
+  const urlText = getArticleUrlText(article);
+  const bodyText = getArticleBodyText(article);
+
+  return (
+    !hasWholeWordKeyword(primaryText, negativeNewsKeywords) &&
+    !hasKeyword(primaryText, negativePhraseKeywords) &&
+    !hasWholeWordKeyword(urlText, negativeNewsKeywords) &&
+    !hasKeyword(urlText, negativePhraseKeywords) &&
+    !hasWholeWordKeyword(bodyText, severeBodyNegativeKeywords) &&
+    !hasKeyword(bodyText, severeBodyNegativePhrases)
+  );
+}
+
+function isPositiveTargetProjectUpdate(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  return (
+    hasCleanPrimaryText(article) &&
+    hasTargetRegionEvidence(article) &&
+    hasPromotionalRealEstateSignal(article) &&
+    hasSpecificProjectOrDevelopmentSignal(article) &&
+    hasKeyword(primaryAndUrl, [
+      "approved",
+      "approves",
+      "approval",
+      "bookings worth",
+      "first faridabad project",
+      "first gurugram project",
+      "faridabad project",
+      "gurugram project",
+      "reports bookings",
+      "worth rs",
+      "worth ₹"
+    ])
+  );
+}
+
 function isFaridabadJewarGrowthArticle(article) {
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
 
@@ -1740,7 +1782,7 @@ function hasWholeWordKeyword(value, keywords) {
 
 function hasNcrMatch(article) {
   const haystack = `${article.title || ""} ${getArticleUrlText(article)}`.toLowerCase();
-  return /\bdelhi ncr\b/i.test(haystack);
+  return /\bdelhi[\s-]?ncr\b/i.test(haystack);
 }
 
 function hasStrongArticleCityMatch(article, rule) {
@@ -1834,7 +1876,7 @@ function isBlockedArticle(article) {
 }
 
 function isNegativeNews(article) {
-  if (isFaridabadJewarGrowthArticle(article)) {
+  if (isFaridabadJewarGrowthArticle(article) || isPositiveTargetProjectUpdate(article)) {
     return false;
   }
 
