@@ -104,23 +104,42 @@ assert.equal(isAllowedSource("https://www.hindustantimes.com/cities/noida-news")
 assert.equal(isAllowedSource("https://www.hindustantimes.com/topic/noida-authority/news"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://www.niairport.in/en/company/news/overview/news-overview"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://www.yamunaexpresswayauthority.com/web/announcement/"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.greaternoidaauthority.in/"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.nmrcnoida.com/"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.atsgreens.com/media/"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.gaurs.com/media"), noidaCityEnabled);
+assert.equal(isAllowedSource("https://gnida.up.gov.in/en/news"), noidaCityEnabled);
+assert.equal(isAllowedSource("https://gnida.up.gov.in/en/announcements"), noidaCityEnabled);
+assert.equal(isAllowedSource("https://www.atsgreens.com/blog"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://www.mahagunindia.com/media"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://countygroup.in/"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.bhutaniinfra.com/"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.sayaindia.com/media/"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.eldecogroup.com/media/"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.prateekgroup.com/media/"), noidaCityEnabled);
+assert.equal(isAllowedSource("https://www.prateekgroup.com/blog"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://www.gulshangroup.com/"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://www.aba-corp.com/"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.purvanchalprojects.com/"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://indianexpress.com/about/noida-authority/"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/city/noida"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://housing.com/news/"), false);
 assert.equal(isAllowedSource("https://www.squareyards.com/blog"), false);
+assert.equal(
+  isPublishableArticle(
+    publishable({
+      title: "Commercial Projects",
+      description: "Commercial projects category page.",
+      articleText: "Commercial projects category page.",
+      newsLink: "https://maxestates.in/category/commercial/"
+    }),
+    sentIds
+  ),
+  false
+);
+assert.equal(
+  isPublishableArticle(
+    publishable({
+      title: "Online Allotte Payment Services",
+      description: "Citizen payment services page.",
+      articleText: "Online allotte payment services and citizen portal.",
+      newsLink: "https://www.yamunaexpresswayauthority.com/web/citizen-services/citizen-portal-ots-system/"
+    }),
+    sentIds
+  ),
+  false
+);
 assert.equal(isLikelyFeedUrl("https://www.hindustantimes.com/real-estate"), false);
 assert.equal(isLikelyFeedUrl("https://realty.economictimes.indiatimes.com/tag/gurugram"), false);
 assert.equal(isLikelyFeedUrl("https://example.com/feed"), true);
