@@ -47,7 +47,7 @@ const defaultSources = [
 const cityRules = [
   {
     code: "faridabad",
-    keywords: ["faridabad", "greater faridabad", "neharpar"]
+    keywords: ["faridabad", "greater faridabad", "neharpar", "skynest", "skynest towers"]
   },
   {
     code: "gurugram",
@@ -55,6 +55,7 @@ const cityRules = [
       "gurugram",
       "gurgaon",
       "dwarka expressway",
+      "downtown 66",
       "golf course road",
       "golf course extension road",
       "manesar",
@@ -83,6 +84,7 @@ const targetInfrastructureCorridorKeywords = [
   "rapid rail",
   "regional rapid transit",
   "rrts",
+  "namo bharat",
   "transit corridor"
 ];
 const ncrCommercialOfficeKeywords = [
@@ -118,6 +120,8 @@ const positiveCityMarketKeywords = [
   "growth market",
   "housing demand",
   "housing market",
+  "homebuyers are looking beyond",
+  "infrastructure inflection",
   "investment destination",
   "largest market",
   "office market",
@@ -126,7 +130,10 @@ const positiveCityMarketKeywords = [
   "property market",
   "real estate destination",
   "real estate growth",
+  "real estate hierarchy",
   "real estate market",
+  "premium housing market",
+  "redefining ncr",
   "strong real estate destination"
 ];
 
@@ -223,6 +230,8 @@ const promotionalRealEstateKeywords = [
   "appreciation",
   "approval",
   "approved",
+  "allotment",
+  "allotments",
   "bookings",
   "customer confidence",
   "commercial property",
@@ -252,10 +261,13 @@ const promotionalRealEstateKeywords = [
   "launches",
   "luxury housing",
   "luxury homes",
+  "luxury living",
   "metro",
   "new project",
   "new project launch",
   "ncrtc",
+  "premium housing",
+  "premium housing market",
   "office space",
   "possession",
   "profit",
@@ -455,6 +467,8 @@ const connectivityCatalystKeywords = [
 const specificProjectKeywords = [
   "acquires land",
   "adds new inventory",
+  "allotment",
+  "allotments",
   "auction",
   "branded residences",
   "commercial project",
@@ -479,15 +493,20 @@ const specificProjectKeywords = [
   "land acquisition",
   "land parcel",
   "luxury project",
+  "new benchmark",
   "metro extension",
   "mixed-use development",
   "new commercial sites",
   "new project",
   "faridabad project",
+  "new real estate projects",
   "plotted township",
+  "premium housing market",
+  "pumped into new real estate projects",
   "possession",
   "project launch",
   "rapid rail",
+  "real estate projects",
   "regional rapid transit",
   "rrts",
   "projects worth",
@@ -995,11 +1014,25 @@ function getSources() {
   return [];
 }
 
-function getExtraArticleUrls() {
-  return env("EXTRA_ARTICLE_URLS")
+function splitDelimitedValues(value) {
+  return value
     .split(/[\n,;]+/)
-    .map((url) => url.trim())
+    .map((item) => item.trim())
     .filter(Boolean);
+}
+
+function getSourceUrls() {
+  const sourceUrls = splitDelimitedValues(env("SOURCE_URLS"));
+
+  if (sourceUrls.length > 0) {
+    return [...new Set(sourceUrls)];
+  }
+
+  return [...new Set([...defaultSources, ...getSources()])];
+}
+
+function getExtraArticleUrls() {
+  return splitDelimitedValues(env("EXTRA_ARTICLE_URLS"));
 }
 
 function isAllowedExtraArticleUrl(articleUrl) {
@@ -1483,7 +1516,16 @@ function stripHtml(value = "") {
     .replace(/&nbsp;/gi, " ")
     .replace(/&amp;/gi, "&")
     .replace(/&quot;/gi, '"')
+    .replace(/&apos;/gi, "'")
+    .replace(/&rsquo;/gi, "'")
+    .replace(/&lsquo;/gi, "'")
+    .replace(/&rdquo;/gi, '"')
+    .replace(/&ldquo;/gi, '"')
+    .replace(/&ndash;/gi, "-")
+    .replace(/&mdash;/gi, "-")
     .replace(/&#39;/g, "'")
+    .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(Number.parseInt(code, 16)))
+    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number.parseInt(code, 10)))
     .replace(/\s+/g, " ")
     .trim();
 
@@ -1818,7 +1860,24 @@ function getCorporateCompanyCityCodes(article, company = getTargetRealEstateCorp
     return explicitCityCodes;
   }
 
-  if (!company.code && /\bdelhi[\s-]?ncr\b/i.test(`${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`)) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  if (
+    !company.code &&
+    hasWholeWordKeyword(primaryAndUrl, outsideCityKeywords.filter((keyword) => !["delhi", "new delhi"].includes(keyword)))
+  ) {
+    return [];
+  }
+
+  if (
+    !company.code &&
+    hasWholeWordKeyword(primaryAndUrl, ["bptp", "bptp ltd"]) &&
+    hasKeyword(primaryAndUrl, ["customer confidence", "top developer", "top developers"])
+  ) {
+    return ncrCityCodes;
+  }
+
+  if (!company.code && /\bdelhi[\s-]?ncr\b/i.test(primaryAndUrl)) {
     return ncrCityCodes;
   }
 
@@ -1940,6 +1999,10 @@ function classifyArticle(article) {
     return "connectivity_catalyst";
   }
 
+  if (isFaridabadNcrGrowthComparisonArticle(article)) {
+    return "positive_city_market";
+  }
+
   if (isAuthorityPipelineArticle(article)) {
     return "authority_pipeline";
   }
@@ -1980,6 +2043,7 @@ function isRealEstateRelated(article) {
     hasRealEstateEvidence(article) ||
     isNationalRealEstateBusinessUpdate(article) ||
     isNcrCommercialOfficeMarketArticle(article) ||
+    isFaridabadNcrGrowthComparisonArticle(article) ||
     isTargetProjectAwardArticle(article) ||
     isPositiveTargetBusinessOrDevelopmentArticle(article)
   );
@@ -1987,8 +2051,10 @@ function isRealEstateRelated(article) {
 
 function hasSpecificProjectOrDevelopmentSignal(article) {
   if (
+    isTargetDominantInfrastructureCorridor(article) ||
     isNcrCommercialOfficeMarketArticle(article) ||
     isFaridabadJewarGrowthArticle(article) ||
+    isFaridabadNcrGrowthComparisonArticle(article) ||
     isTargetProjectAwardArticle(article) ||
     isPositiveCityMarketArticle(article) ||
     isPositiveTargetBusinessOrDevelopmentArticle(article)
@@ -2002,8 +2068,10 @@ function hasSpecificProjectOrDevelopmentSignal(article) {
 
 function isBroadNonProjectUpdate(article) {
   if (
+    isTargetDominantInfrastructureCorridor(article) ||
     isNcrCommercialOfficeMarketArticle(article) ||
     isFaridabadJewarGrowthArticle(article) ||
+    isFaridabadNcrGrowthComparisonArticle(article) ||
     isPositiveCityMarketArticle(article) ||
     isPositiveTargetBusinessOrDevelopmentArticle(article)
   ) {
@@ -2032,6 +2100,10 @@ function detectCityCodes(article) {
 
 function detectMatchedCityCodes(article) {
   if (isFaridabadJewarGrowthArticle(article)) {
+    return ["faridabad"];
+  }
+
+  if (isFaridabadNcrGrowthComparisonArticle(article)) {
     return ["faridabad"];
   }
 
@@ -2094,6 +2166,18 @@ function isNcrCommercialOfficeMarketArticle(article) {
   );
 }
 
+function isFaridabadNcrGrowthComparisonArticle(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  return (
+    hasCleanPrimaryAndUrlText(article) &&
+    hasWholeWordKeyword(primaryAndUrl, ["faridabad"]) &&
+    hasWholeWordKeyword(primaryAndUrl, ["gurugram", "gurgaon", "noida"]) &&
+    hasKeyword(primaryAndUrl, ["real estate", "realty", "property", "housing"]) &&
+    (hasKeyword(primaryAndUrl, positiveCityMarketKeywords) || hasKeyword(primaryAndUrl, positiveGrowthCatalystKeywords))
+  );
+}
+
 function hasCleanPrimaryText(article) {
   const primaryText = getArticlePrimaryText(article);
   const urlText = getArticleUrlText(article);
@@ -2133,12 +2217,20 @@ function isPositiveTargetProjectUpdate(article) {
       "approved",
       "approves",
       "approval",
+      "allotment",
+      "allotments",
       "bookings worth",
       "first faridabad project",
       "first gurugram project",
       "faridabad project",
+      "gdv",
       "gurugram project",
+      "invest",
+      "investment",
+      "joint development",
+      "launches",
       "reports bookings",
+      "residential project",
       "worth rs",
       "worth ₹"
     ])
@@ -2192,6 +2284,7 @@ function hasOutsideRegionInPrimaryText(article) {
     isTargetDominantInfrastructureCorridor(article) ||
     isNcrCommercialOfficeMarketArticle(article) ||
     isFaridabadJewarGrowthArticle(article) ||
+    isFaridabadNcrGrowthComparisonArticle(article) ||
     isConnectivityCatalystArticle(article) ||
     isPositiveTargetBusinessOrDevelopmentArticle(article) ||
     isPositiveTargetProjectUpdate(article)
@@ -2369,6 +2462,10 @@ function isGurugramCorridorArticle(article) {
 function getDisqualifyingOutsideCityKeywords(article) {
   if (isFaridabadJewarGrowthArticle(article)) {
     return outsideCityKeywords.filter((keyword) => !["delhi", "new delhi", "noida", "uttar pradesh"].includes(keyword));
+  }
+
+  if (isFaridabadNcrGrowthComparisonArticle(article)) {
+    return outsideCityKeywords.filter((keyword) => !["delhi", "new delhi", "gurugram", "gurgaon", "noida"].includes(keyword));
   }
 
   if (isNcrCommercialOfficeMarketArticle(article)) {
@@ -3305,9 +3402,7 @@ function buildBptpMediaArticle(item, sourceUrl, typeLabel) {
   const article = {
     title,
     description,
-    articleText: stripHtml(
-      `${description} BPTP ${typeLabel} update for Delhi NCR real estate, Faridabad and Gurugram project markets.`
-    ),
+    articleText: stripHtml(`${description} BPTP ${typeLabel} real estate update.`),
     isActive: true,
     newsLink,
     thumbnailImage: thumbnailImage || getFallbackLogo(sourceUrl),
@@ -3537,8 +3632,7 @@ async function pushArticle(article) {
 async function main() {
   await loadDotEnv();
 
-  const sources = getSources();
-  const selectedSources = [...new Set([...defaultSources, ...sources])].filter(isAllowedSource);
+  const selectedSources = getSourceUrls().filter(isAllowedSource);
   const extraArticleUrls = [...new Set(getExtraArticleUrls())].filter(isAllowedExtraArticleUrl);
   const maxItems = getMaxItemsPerRun();
   const backfillDateRange = getBackfillDateRange();
@@ -3684,6 +3778,7 @@ export {
   extractMetadataImage,
   fetchSource,
   getSourcePageUrls,
+  getSourceUrls,
   getRejectionReasons,
   getExtraArticleUrls,
   hasDisallowedLanguage,

@@ -9,6 +9,7 @@ import {
   getExtraArticleUrls,
   getRejectionReasons,
   getSourcePageUrls,
+  getSourceUrls,
   hasBackfillDateRange,
   isAllowedSource,
   isLikelyFeedUrl,
@@ -233,6 +234,10 @@ assert.deepEqual(getExtraArticleUrls(), [
 ]);
 delete process.env.EXTRA_ARTICLE_URLS;
 
+process.env.SOURCE_URLS = "https://www.bptp.com/media, https://hsvphry.org.in/";
+assert.deepEqual(getSourceUrls(), ["https://www.bptp.com/media", "https://hsvphry.org.in/"]);
+delete process.env.SOURCE_URLS;
+
 assert.equal(
   isPublishableArticle(
     publishable({
@@ -292,6 +297,16 @@ const bptpSkynestAwardArticle = publishable({
 assert.deepEqual(detectCityCodes(bptpSkynestAwardArticle), ["faridabad"]);
 assert.equal(isPublishableArticle(bptpSkynestAwardArticle, sentIds), true);
 assert.equal(classifyArticle(bptpSkynestAwardArticle), "project_development");
+
+const bptpNoidaArticle = publishable({
+  title: "BPTP Capital City, Sector 94, Noida, Receives Recognised Sustainability Certifications",
+  description: "The update is about BPTP Capital City in Sector 94, Noida.",
+  articleText: "BPTP media real estate update.",
+  newsLink: "https://cms.bptp.com/pressrelease/bptp-capital-city-sector-94-noida-receives-recognised-sustainability-certifications/"
+});
+
+assert.deepEqual(detectCityCodes(bptpNoidaArticle), []);
+assert.equal(isPublishableArticle(bptpNoidaArticle, sentIds), false);
 
 const signatureLeadershipArticle = publishable({
   title: "Signature Global sees Gurugram as core growth market, plans new launches",
@@ -456,18 +471,15 @@ assert.equal(
   "gurugram"
 );
 
-assert.equal(
-  isPublishableArticle(
-    publishable({
-      title: "Delhi NCR housing sales rise with premium launches",
-      description: "Delhi NCR residential launches and sales improved with new real estate projects.",
-      articleText: "Premium housing demand increased across Delhi NCR.",
-      newsLink: "https://example.com/delhi-ncr-housing-sales"
-    }),
-    sentIds
-  ),
-  false
-);
+const delhiNcrPremiumHousingArticle = publishable({
+  title: "Delhi NCR housing sales rise with premium launches",
+  description: "Delhi NCR residential launches and sales improved with new real estate projects.",
+  articleText: "Premium housing demand increased across Delhi NCR.",
+  newsLink: "https://example.com/delhi-ncr-housing-sales"
+});
+
+assert.deepEqual(detectCityCodes(delhiNcrPremiumHousingArticle), ["gurugram", "faridabad"]);
+assert.equal(isPublishableArticle(delhiNcrPremiumHousingArticle, sentIds), true);
 
 assert.equal(
   isPublishableArticle(
@@ -511,7 +523,7 @@ assert.equal(
       title: "Premium housing sales rise with new launches",
       description: "Residential launches and sales improved with new real estate projects.",
       articleText: "The report says Delhi NCR premium housing demand increased with new launches.",
-      newsLink: "https://example.com/body-delhi-ncr-housing-sales"
+      newsLink: "https://example.com/body-only-housing-sales"
     }),
     sentIds
   ),

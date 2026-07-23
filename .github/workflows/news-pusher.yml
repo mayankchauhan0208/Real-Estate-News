@@ -34,6 +34,10 @@ on:
         description: "Exact titles to skip, separated by ||"
         required: false
         default: ""
+      source_urls:
+        description: "Optional source URLs to run instead of the default sources, separated by comma, semicolon, or newline"
+        required: false
+        default: ""
       extra_article_urls:
         description: "Exact extra article URLs to evaluate, separated by comma, semicolon, or newline"
         required: false
@@ -80,6 +84,7 @@ jobs:
           BACKFILL_TO: ${{ github.event.inputs.backfill_to || '' }}
           RESEND_BACKFILL: ${{ github.event.inputs.resend_backfill || 'false' }}
           SKIP_TITLES: ${{ github.event.inputs.skip_titles || '' }}
+          SOURCE_URLS: ${{ github.event.inputs.source_urls || '' }}
           EXTRA_ARTICLE_URLS: ${{ github.event.inputs.extra_article_urls || '' }}
           MAX_ITEMS_PER_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_items_per_run || '80' }}
           MAX_ITEMS_PER_SOURCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_items_per_source || '300' }}
