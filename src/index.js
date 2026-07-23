@@ -3658,6 +3658,7 @@ async function fetchM3mMedia(sourceUrl) {
 async function fetchSignatureGlobalMedia(sourceUrl) {
   let html = "";
   let lastError;
+  let pageData;
 
   for (let attempt = 1; attempt <= 3; attempt += 1) {
     try {
@@ -3689,18 +3690,54 @@ async function fetchSignatureGlobalMedia(sourceUrl) {
   }
 
   if (!html && lastError) {
-    throw lastError;
+    console.warn(`Signature Global page fetch failed; trying JSON data fallback. ${lastError.message}`);
   }
 
-  const $ = cheerio.load(html);
-  const rawJson = $("#__NEXT_DATA__").first().text();
+  if (html) {
+    const $ = cheerio.load(html);
+    const rawJson = $("#__NEXT_DATA__").first().text();
 
-  if (!rawJson) {
+    if (rawJson) {
+      pageData = JSON.parse(rawJson);
+    }
+  }
+
+  if (!pageData) {
+    const fallbackUrls = [
+      "https://www.signatureglobal.in/_next/data/1MPKgSgQ9QFViTWLX484R/index.json"
+    ];
+
+    for (const fallbackUrl of fallbackUrls) {
+      try {
+        const response = await fetchWithTimeout(fallbackUrl, {
+          headers: {
+            "User-Agent": userAgent,
+            Accept: "application/json,*/*"
+          }
+        }, 30000);
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        pageData = await response.json();
+        break;
+      } catch (error) {
+        lastError = error;
+      }
+    }
+  }
+
+  if (!pageData) {
+    if (lastError) {
+      throw lastError;
+    }
+
     return [];
   }
 
-  const pageData = JSON.parse(rawJson);
-  const mediaBlogs = pageData?.props?.pageProps?.newsData?.[0]?.media_blog;
+  const pageProps = pageData?.props?.pageProps || pageData?.pageProps;
+  const mediaBlogs = pageProps?.newsData?.[0]?.media_blog;
   const articles = (Array.isArray(mediaBlogs) ? mediaBlogs : []).map((item) =>
     buildOfficialDeveloperMediaArticle({
       sourceUrl,
