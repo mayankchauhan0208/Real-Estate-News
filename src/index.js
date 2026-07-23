@@ -3656,7 +3656,42 @@ async function fetchM3mMedia(sourceUrl) {
 }
 
 async function fetchSignatureGlobalMedia(sourceUrl) {
-  const html = await fetchHtml(sourceUrl);
+  let html = "";
+  let lastError;
+
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      const response = await fetchWithTimeout(sourceUrl, {
+        headers: {
+          "User-Agent": userAgent,
+          Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+          "Accept-Language": "en-US,en;q=0.9",
+          "Cache-Control": "no-cache",
+          Pragma: "no-cache"
+        }
+      }, 30000);
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+
+      html = await response.text();
+      break;
+    } catch (error) {
+      lastError = error;
+
+      if (attempt === 3) {
+        throw error;
+      }
+
+      await new Promise((resolve) => setTimeout(resolve, attempt * 1500));
+    }
+  }
+
+  if (!html && lastError) {
+    throw lastError;
+  }
+
   const $ = cheerio.load(html);
   const rawJson = $("#__NEXT_DATA__").first().text();
 
