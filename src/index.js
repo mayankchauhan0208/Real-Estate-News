@@ -41,7 +41,12 @@ const defaultSources = [
   "https://www.track2realty.track2media.com/",
   "https://propnewstime.com/",
   "https://hsvphry.org.in/",
-  "https://www.bptp.com/media"
+  "https://www.bptp.com/media",
+  "https://www.dlf.in/media",
+  "https://m3mindia.com/media",
+  "https://smartworlddevelopers.com/media",
+  "https://www.signatureglobal.in/",
+  "https://www.centralpark.in/media.php"
 ];
 
 const cityRules = [
@@ -79,6 +84,7 @@ const gurugramCorridorKeywords = [
 ];
 const targetInfrastructureCorridorKeywords = [
   "dpr",
+  "highway",
   "metro corridor",
   "ncrtc",
   "rapid rail",
@@ -494,6 +500,7 @@ const specificProjectKeywords = [
   "land parcel",
   "luxury project",
   "new benchmark",
+  "hospitality living",
   "metro extension",
   "mixed-use development",
   "new commercial sites",
@@ -502,6 +509,7 @@ const specificProjectKeywords = [
   "new real estate projects",
   "plotted township",
   "premium housing market",
+  "property hotspot",
   "pumped into new real estate projects",
   "possession",
   "project launch",
@@ -512,11 +520,16 @@ const specificProjectKeywords = [
   "projects worth",
   "residential development",
   "residential project",
+  "retail project",
+  "records",
+  "records sales",
   "sector demarcation",
   "social infrastructure",
+  "sold out",
   "township",
   "tod",
   "transit-oriented development",
+  "traffic booths",
   "ultra-luxury residences",
   "unveils homes",
   "unveils luxury",
@@ -544,6 +557,8 @@ const broadNonProjectKeywords = [
   "india’s housing",
   "india's office leasing",
   "india’s office leasing",
+  "looking to buy a home",
+  "marketing spends",
   "market recovery",
   "market report",
   "markets",
@@ -564,7 +579,8 @@ const broadNonProjectKeywords = [
   "sales value",
   "sector records",
   "what buyers should know",
-  "what the housing data suggests"
+  "what the housing data suggests",
+  "consider these four options"
 ];
 const blockedTitleKeywords = [
   "about us",
@@ -600,7 +616,9 @@ const blockedTitleKeywords = [
   "grievance",
   "grievance redressal",
   "integrated campaigns",
+  "looking to buy a home",
   "login",
+  "marketing spends",
   "newsletter",
   "names",
   "nationwide",
@@ -620,6 +638,7 @@ const blockedTitleKeywords = [
   "traffic jam",
   "subscription",
   "terms of use",
+  "consider these four options",
   "ug admission",
   "video",
   "videos",
@@ -630,6 +649,7 @@ const blockedTitleKeywords = [
   "webinar"
 ];
 const blockedExactTitles = [
+  "bbd gurgaon",
   "latest news",
   "real estate news",
   "terms of use"
@@ -809,6 +829,7 @@ const negativePhraseKeywords = [
   "pre-sales drop",
   "presales decline",
   "presales drop",
+  "policy remains constrained",
   "property sales barred",
   "property tax",
   "property dispute murder",
@@ -1404,6 +1425,24 @@ function isBptpMediaSource(sourceUrl) {
   }
 }
 
+function isOfficialDeveloperMediaSource(sourceUrl) {
+  try {
+    const url = new URL(sourceUrl);
+    const host = url.hostname.replace(/^www\./, "");
+    const pathName = url.pathname.replace(/\/+$/, "") || "/";
+
+    return (
+      (host === "dlf.in" && pathName === "/media") ||
+      (host === "m3mindia.com" && pathName === "/media") ||
+      (host === "smartworlddevelopers.com" && pathName === "/media") ||
+      (host === "signatureglobal.in" && pathName === "/") ||
+      (host === "centralpark.in" && pathName === "/media.php")
+    );
+  } catch {
+    return false;
+  }
+}
+
 function getSkipTitleSet() {
   return new Set(
     env("SKIP_TITLES")
@@ -1660,6 +1699,7 @@ function parseNewsDateValue(value) {
 
   const raw = String(value)
     .replace(/\b(updated|published|last updated|posted)\s*(on|at)?\s*:?\s*/gi, " ")
+    .replace(/\b(\d{1,2})(st|nd|rd|th)\b/gi, "$1")
     .replace(/\s+/g, " ")
     .trim();
   const normalized = raw.replace(/\bIST\b/i, "+05:30");
@@ -1861,6 +1901,13 @@ function getCorporateCompanyCityCodes(article, company = getTargetRealEstateCorp
   }
 
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  if (
+    company.code &&
+    hasWholeWordKeyword(primaryAndUrl, getDisqualifyingOutsideCityKeywords({ ...article, cityCode: company.code }))
+  ) {
+    return [];
+  }
 
   if (
     !company.code &&
@@ -2073,6 +2120,7 @@ function isBroadNonProjectUpdate(article) {
     isFaridabadJewarGrowthArticle(article) ||
     isFaridabadNcrGrowthComparisonArticle(article) ||
     isPositiveCityMarketArticle(article) ||
+    isPositiveTargetProjectUpdate(article) ||
     isPositiveTargetBusinessOrDevelopmentArticle(article)
   ) {
     return false;
@@ -2108,6 +2156,10 @@ function detectMatchedCityCodes(article) {
   }
 
   const corporateCompany = getTargetRealEstateCorporateCompany(article);
+
+  if (corporateCompany && isTargetProjectAwardArticle(article)) {
+    return getCorporateCompanyCityCodes(article, corporateCompany);
+  }
 
   if (corporateCompany && isPositiveTargetBusinessOrDevelopmentArticle(article)) {
     return getCorporateCompanyCityCodes(article, corporateCompany);
@@ -2229,8 +2281,13 @@ function isPositiveTargetProjectUpdate(article) {
       "investment",
       "joint development",
       "launches",
+      "property hotspot",
+      "records",
+      "records sales",
       "reports bookings",
       "residential project",
+      "sold out",
+      "traffic booths",
       "worth rs",
       "worth ₹"
     ])
@@ -2445,10 +2502,11 @@ function hasDisallowedLanguage(article) {
 
 function isTargetProjectAwardArticle(article) {
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const companyCityCodes = getCorporateCompanyCityCodes(article);
 
   return (
     hasCleanPrimaryAndUrlText(article) &&
-    hasWholeWordKeyword(primaryAndUrl, targetCityKeywords) &&
+    (hasWholeWordKeyword(primaryAndUrl, targetCityKeywords) || companyCityCodes.length > 0) &&
     hasKeyword(primaryAndUrl, realEstateCompanyKeywords) &&
     hasKeyword(primaryAndUrl, ["award", "awards", "wins", "won"]) &&
     hasKeyword(primaryAndUrl, ["development", "housing", "project", "real estate", "realty", "residential"])
@@ -3458,6 +3516,242 @@ async function fetchBptpMedia(sourceUrl) {
   return items.map(({ item, typeLabel }) => buildBptpMediaArticle(item, sourceUrl, typeLabel));
 }
 
+function getOfficialDeveloperPublisher(sourceUrl) {
+  const host = new URL(sourceUrl).hostname.replace(/^www\./, "");
+
+  return {
+    "dlf.in": "DLF Media",
+    "m3mindia.com": "M3M Media",
+    "smartworlddevelopers.com": "Smartworld Media",
+    "signatureglobal.in": "Signature Global Media",
+    "centralpark.in": "Central Park Media"
+  }[host] || new URL(sourceUrl).hostname;
+}
+
+function buildOfficialDeveloperMediaArticle({
+  sourceUrl,
+  title,
+  description = "",
+  articleText = "",
+  newsLink = "",
+  thumbnailImage = "",
+  publishedAt = "",
+  postedBy = ""
+}) {
+  const publisher = postedBy || getOfficialDeveloperPublisher(sourceUrl);
+  const cleanedTitle = stripHtml(title);
+  const cleanedDescription = stripHtml(description || cleanedTitle);
+  const article = {
+    title: cleanedTitle,
+    description: cleanedDescription,
+    articleText: stripHtml(`${articleText || cleanedDescription} ${publisher} official real estate media update.`),
+    isActive: true,
+    newsLink: absoluteUrl(newsLink || sourceUrl, sourceUrl),
+    thumbnailImage: absoluteUrl(thumbnailImage, sourceUrl) || getFallbackLogo(sourceUrl),
+    postedBy: publisher,
+    postedByLogo: getFallbackLogo(sourceUrl),
+    createdAt: toIsoDate(publishedAt),
+    publishedAt: toIsoDate(publishedAt),
+    fetchedAt: new Date().toISOString()
+  };
+  const cityArticle = applyCityCode(cleanArticleFields(article));
+
+  return {
+    ...cityArticle,
+    id: stableId(cityArticle)
+  };
+}
+
+function uniqueOfficialMediaArticles(articles) {
+  return uniqueByDedupeIds(articles.filter((article) => article.title && article.newsLink)).slice(0, getMaxItemsPerSource());
+}
+
+async function fetchDlfMedia(sourceUrl) {
+  const html = await fetchHtml(sourceUrl);
+  const $ = cheerio.load(html);
+  const articles = $(".news_box.media_news").map((_, element) => {
+    const card = $(element);
+
+    return buildOfficialDeveloperMediaArticle({
+      sourceUrl,
+      title: card.find("h4").first().text(),
+      description: card.find("p").first().text(),
+      articleText: card.text(),
+      newsLink: card.find("a[href]").first().attr("href"),
+      thumbnailImage: card.find("a[href]").first().attr("href"),
+      publishedAt: card.find("span").first().text(),
+      postedBy: "DLF Media"
+    });
+  }).get();
+
+  return uniqueOfficialMediaArticles(articles);
+}
+
+async function fetchSmartworldMedia(sourceUrl) {
+  const html = await fetchHtml(sourceUrl);
+  const $ = cheerio.load(html);
+  const articles = $(".mediabox").map((_, element) => {
+    const card = $(element);
+
+    return buildOfficialDeveloperMediaArticle({
+      sourceUrl,
+      title: card.find("h4").first().text(),
+      description: card.find("p").first().text(),
+      articleText: card.text(),
+      newsLink: card.find("a[href]").first().attr("href") || card.find("img[src]").first().attr("src"),
+      thumbnailImage: card.find("img[src]").first().attr("src"),
+      publishedAt: card.find("h5").first().text(),
+      postedBy: "Smartworld Media"
+    });
+  }).get();
+
+  return uniqueOfficialMediaArticles(articles);
+}
+
+async function fetchM3mMedia(sourceUrl) {
+  const tabNames = ["news", "press_release", "event"];
+  const articles = [];
+
+  for (const tabName of tabNames) {
+    for (let page = 1; page <= getMaxPagesPerSource(); page += 1) {
+      const apiUrl = `https://m3mindia.com/media-section-tab-data/${tabName}?page=${page}`;
+      const response = await fetchWithTimeout(apiUrl, {
+        headers: {
+          "User-Agent": userAgent,
+          Accept: "application/json"
+        }
+      });
+
+      if (!response.ok) {
+        break;
+      }
+
+      const result = await response.json();
+      const rows = Array.isArray(result.data) ? result.data : [];
+
+      if (rows.length === 0) {
+        break;
+      }
+
+      for (const item of rows) {
+        articles.push(buildOfficialDeveloperMediaArticle({
+          sourceUrl,
+          title: item.title,
+          description: item.description || item.title,
+          articleText: item.description || item.title,
+          newsLink: item.link || item.image || sourceUrl,
+          thumbnailImage: item.image,
+          publishedAt: item.date_time,
+          postedBy: "M3M Media"
+        }));
+      }
+
+      if (!result.last_page || page >= result.last_page || articles.length >= getMaxItemsPerSource()) {
+        break;
+      }
+    }
+  }
+
+  return uniqueOfficialMediaArticles(articles);
+}
+
+async function fetchSignatureGlobalMedia(sourceUrl) {
+  const html = await fetchHtml(sourceUrl);
+  const $ = cheerio.load(html);
+  const rawJson = $("#__NEXT_DATA__").first().text();
+
+  if (!rawJson) {
+    return [];
+  }
+
+  const pageData = JSON.parse(rawJson);
+  const mediaBlogs = pageData?.props?.pageProps?.newsData?.[0]?.media_blog;
+  const articles = (Array.isArray(mediaBlogs) ? mediaBlogs : []).map((item) =>
+    buildOfficialDeveloperMediaArticle({
+      sourceUrl,
+      title: item.title,
+      description: stripHtml(item.title),
+      articleText: stripHtml(item.title),
+      newsLink: item.source_link,
+      thumbnailImage: item.desktop_image?.url || item.mobile_image?.url,
+      publishedAt: item.date,
+      postedBy: "Signature Global Media"
+    })
+  );
+
+  return uniqueOfficialMediaArticles(articles);
+}
+
+async function fetchCentralParkMedia(sourceUrl) {
+  const response = await fetchWithTimeout("https://www.centralpark.in/pressreleases.php", {
+    method: "POST",
+    headers: {
+      "User-Agent": userAgent,
+      "Content-Type": "application/x-www-form-urlencoded",
+      Accept: "text/html,*/*"
+    },
+    body: new URLSearchParams({ pag: "1", page: "1" }).toString()
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status}`);
+  }
+
+  const html = await response.text();
+  const $ = cheerio.load(html);
+  const articles = $(".board-thumb").map((_, element) => {
+    const card = $(element);
+    const lines = card.find("p").first().text().split(/\r?\n/)
+      .map((line) => stripHtml(line))
+      .filter(Boolean);
+    const [firstLine = "", ...descriptionLines] = lines;
+    const description = descriptionLines.join(" ") || firstLine;
+    const awardSummary = description.split(/,\s+including\b/i)[0];
+    const title = firstLine && descriptionLines.length > 0 && /awards?/i.test(firstLine)
+      ? `${awardSummary} at ${firstLine}`
+      : firstLine;
+
+    return buildOfficialDeveloperMediaArticle({
+      sourceUrl,
+      title,
+      description,
+      articleText: lines.join(" "),
+      newsLink: card.find("a[href]").first().attr("href"),
+      thumbnailImage: card.find("img[src]").first().attr("src"),
+      publishedAt: card.find("h5").first().text(),
+      postedBy: "Central Park Media"
+    });
+  }).get();
+
+  return uniqueOfficialMediaArticles(articles);
+}
+
+async function fetchOfficialDeveloperMedia(sourceUrl) {
+  const host = new URL(sourceUrl).hostname.replace(/^www\./, "");
+
+  if (host === "dlf.in") {
+    return fetchDlfMedia(sourceUrl);
+  }
+
+  if (host === "m3mindia.com") {
+    return fetchM3mMedia(sourceUrl);
+  }
+
+  if (host === "smartworlddevelopers.com") {
+    return fetchSmartworldMedia(sourceUrl);
+  }
+
+  if (host === "signatureglobal.in") {
+    return fetchSignatureGlobalMedia(sourceUrl);
+  }
+
+  if (host === "centralpark.in") {
+    return fetchCentralParkMedia(sourceUrl);
+  }
+
+  return [];
+}
+
 async function fetchPage(sourceUrl) {
   const pageUrls = getSourcePageUrls(sourceUrl);
   const seenLinks = new Set();
@@ -3562,6 +3856,10 @@ async function fetchSource(sourceUrl) {
 
   if (isBptpMediaSource(sourceUrl)) {
     return fetchBptpMedia(sourceUrl);
+  }
+
+  if (isOfficialDeveloperMediaSource(sourceUrl)) {
+    return fetchOfficialDeveloperMedia(sourceUrl);
   }
 
   if (!isLikelyFeedUrl(sourceUrl)) {

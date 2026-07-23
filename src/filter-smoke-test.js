@@ -69,6 +69,11 @@ assert.equal(isAllowedSource("https://www.constructionworld.in/"), false);
 assert.equal(isAllowedSource("https://www.constructionworld.in/latest-construction-news/real-estate-news"), true);
 assert.equal(isAllowedSource("https://hsvphry.org.in/"), true);
 assert.equal(isAllowedSource("https://www.bptp.com/media"), true);
+assert.equal(isAllowedSource("https://www.dlf.in/media"), true);
+assert.equal(isAllowedSource("https://m3mindia.com/media"), true);
+assert.equal(isAllowedSource("https://smartworlddevelopers.com/media"), true);
+assert.equal(isAllowedSource("https://www.signatureglobal.in/"), true);
+assert.equal(isAllowedSource("https://www.centralpark.in/media.php"), true);
 assert.equal(isAllowedSource("https://housing.com/news/"), false);
 assert.equal(isAllowedSource("https://www.squareyards.com/blog"), false);
 assert.equal(isLikelyFeedUrl("https://www.hindustantimes.com/real-estate"), false);
@@ -307,6 +312,27 @@ const bptpNoidaArticle = publishable({
 
 assert.deepEqual(detectCityCodes(bptpNoidaArticle), []);
 assert.equal(isPublishableArticle(bptpNoidaArticle, sentIds), false);
+
+const m3mNoidaArticle = publishable({
+  title: "M3M India announces the launch of Jacob & Co Residences, Noida, with Rs 2,100 crore investment",
+  description: "The official developer update is about a Noida residential project.",
+  articleText: "M3M Media real estate update for Noida.",
+  newsLink: "https://m3mindia.com/media/m3m-india-announces-the-launch-of-jacob-co-residences-noida"
+});
+
+assert.deepEqual(detectCityCodes(m3mNoidaArticle), []);
+assert.equal(isPublishableArticle(m3mNoidaArticle, sentIds), false);
+
+const centralParkAwardArticle = publishable({
+  title: "Central Park recognised across three categories at Times Realty Awards 2026",
+  description: "Central Park was recognised for Trusted Real Estate Brand and luxury development excellence.",
+  articleText: "Central Park Media official real estate media update.",
+  newsLink: "https://www.goodhomes.co.in/home-and-design-trends/meet-the-winners-of-the-times-realty-awards-north-2026-9621.html"
+});
+
+assert.deepEqual(detectCityCodes(centralParkAwardArticle), ["gurugram"]);
+assert.equal(isPublishableArticle(centralParkAwardArticle, sentIds), true);
+assert.equal(classifyArticle(centralParkAwardArticle), "project_development");
 
 const signatureLeadershipArticle = publishable({
   title: "Signature Global sees Gurugram as core growth market, plans new launches",
