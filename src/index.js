@@ -36,6 +36,13 @@ const defaultSources = [
   "https://www.outlookmoney.com/topic/real-estate",
   "https://www.tribuneindia.com/topic/real-estate",
   "https://torbitrealty.com/category/news/city-updates/gurugram/",
+  "https://indianinfrastructure.com/",
+  "https://urbantransportnews.com/",
+  "https://www.metrorailnews.in/",
+  "https://themetrorailguy.com/",
+  "https://news.railanalysis.com/",
+  "https://www.delhimetrorail.com/",
+  "https://ncrtc.in/",
   "https://realtynmore.com/latest-news/",
   "https://realtynxt.com/",
   "https://www.track2realty.track2media.com/",
@@ -46,7 +53,15 @@ const defaultSources = [
   "https://m3mindia.com/media",
   "https://smartworlddevelopers.com/media",
   "https://www.signatureglobal.in/",
-  "https://www.centralpark.in/media.php"
+  "https://www.centralpark.in/media.php",
+  "https://www.godrejproperties.com/media/press",
+  "https://www.emaarindia.com/media/",
+  "https://www.whitelandcorporation.com/",
+  "https://maxestates.in/news_and_media",
+  "https://www.birlaestates.com/media-centre.aspx",
+  "https://www.puriconstructions.com/",
+  "https://www.omaxe.com/",
+  "https://www.rpsgroupindia.com/"
 ];
 
 const noidaCityEnabledAtStartup = ["1", "true", "yes", "on"].includes(
@@ -87,6 +102,19 @@ const noidaSources = [
   "https://www.niairport.in/en/company/news/overview/news-overview",
   "https://www.yamunaexpresswayauthority.com/web/",
   "https://www.yamunaexpresswayauthority.com/web/announcement/",
+  "https://www.greaternoidaauthority.in/",
+  "https://www.nmrcnoida.com/",
+  "https://www.atsgreens.com/media/",
+  "https://www.gaurs.com/media",
+  "https://www.mahagunindia.com/media",
+  "https://countygroup.in/",
+  "https://www.bhutaniinfra.com/",
+  "https://www.sayaindia.com/media/",
+  "https://www.eldecogroup.com/media/",
+  "https://www.prateekgroup.com/media/",
+  "https://www.gulshangroup.com/",
+  "https://www.aba-corp.com/",
+  "https://www.purvanchalprojects.com/",
   "https://indianexpress.com/about/noida-authority/",
   "https://indianexpress.com/about/greater-noida-authority/",
   "https://timesofindia.indiatimes.com/city/noida"
@@ -99,7 +127,7 @@ function isNoidaCityEnabled() {
 const cityRules = [
   {
     code: "faridabad",
-    keywords: ["faridabad", "greater faridabad", "neharpar", "skynest", "skynest towers"]
+    keywords: ["faridabad", "faridabads", "greater faridabad", "neharpar", "skynest", "skynest towers"]
   },
   {
     code: "gurugram",
@@ -2399,7 +2427,7 @@ function isFaridabadNcrGrowthComparisonArticle(article) {
 
   return (
     hasCleanPrimaryAndUrlText(article) &&
-    hasWholeWordKeyword(primaryAndUrl, ["faridabad"]) &&
+    hasWholeWordKeyword(primaryAndUrl, ["faridabad", "faridabads"]) &&
     hasWholeWordKeyword(primaryAndUrl, ["gurugram", "gurgaon", "noida"]) &&
     hasKeyword(primaryAndUrl, ["real estate", "realty", "property", "housing"]) &&
     (hasKeyword(primaryAndUrl, positiveCityMarketKeywords) || hasKeyword(primaryAndUrl, positiveGrowthCatalystKeywords))
