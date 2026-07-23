@@ -5,8 +5,6 @@
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
-    "preview:generate": "node tools/generate_feed_preview.mjs",
-    "preview:serve": "node tools/serve_preview.mjs",
     "check": "node --check src/index.js && node --check src/filter-smoke-test.js",
     "test": "node src/filter-smoke-test.js",
     "build": "node --check src/index.js && node --check src/filter-smoke-test.js && node src/filter-smoke-test.js"
