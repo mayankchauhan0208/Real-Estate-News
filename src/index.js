@@ -56,10 +56,39 @@ const noidaSources = [
   "https://realty.economictimes.indiatimes.com/tag/noida",
   "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida",
   "https://realty.economictimes.indiatimes.com/amp/tag/greater%2Bnoida",
+  "https://realty.economictimes.indiatimes.com/tag/jewar",
+  "https://realty.economictimes.indiatimes.com/tag/yamuna%2Bexpressway",
+  "https://realty.economictimes.indiatimes.com/tag/noida%2Bairport",
+  "https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority",
+  "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida%2Bauthority",
+  "https://realty.economictimes.indiatimes.com/tag/yeida",
   "https://realty.economictimes.indiatimes.com/rss/residential",
+  "https://realty.economictimes.indiatimes.com/rss/commercial",
   "https://realty.economictimes.indiatimes.com/rss/infrastructure",
   "https://realty.economictimes.indiatimes.com/rss/industry",
+  "https://realty.economictimes.indiatimes.com/rss/regulatory",
   "https://www.hindustantimes.com/cities/noida-news",
+  "https://www.hindustantimes.com/topic/noida/news",
+  "https://www.hindustantimes.com/topic/greater-noida/news",
+  "https://www.hindustantimes.com/topic/noida-authority/news",
+  "https://www.hindustantimes.com/topic/greater-noida-authority/news",
+  "https://www.hindustantimes.com/topic/yamuna-expressway/news",
+  "https://www.hindustantimes.com/topic/jewar-airport/news",
+  "https://www.hindustantimes.com/topic/yeida/news",
+  "https://economictimes.indiatimes.com/industry/services/property-/-cstruction",
+  "https://www.moneycontrol.com/news/business/real-estate/",
+  "https://www.cnbctv18.com/real-estate/",
+  "https://timesofindia.indiatimes.com/real-estate/news",
+  "https://www.constructionworld.in/latest-construction-news/real-estate-news",
+  "https://realtynmore.com/latest-news/",
+  "https://realtynxt.com/",
+  "https://propnewstime.com/",
+  "https://www.track2realty.track2media.com/",
+  "https://www.niairport.in/en/company/news/overview/news-overview",
+  "https://www.yamunaexpresswayauthority.com/web/",
+  "https://www.yamunaexpresswayauthority.com/web/announcement/",
+  "https://indianexpress.com/about/noida-authority/",
+  "https://indianexpress.com/about/greater-noida-authority/",
   "https://timesofindia.indiatimes.com/city/noida"
 ];
 
@@ -521,9 +550,15 @@ const specificProjectKeywords = [
   "allotments",
   "auction",
   "airport-linked",
+  "authority hq",
   "branded residences",
+  "charging stations",
   "commercial project",
   "commercial sites",
+  "commercial plot",
+  "commercial plots",
+  "industrial project",
+  "industrial projects",
   "develop land",
   "developed a residential",
   "developing a residential",
@@ -538,8 +573,11 @@ const specificProjectKeywords = [
   "hands over",
   "housing project",
   "industrial plots",
+  "inaugurate noida authority hq",
+  "inaugurates noida authority hq",
   "investment board",
   "investment board nod",
+  "kiosks",
   "landmark high-rise development",
   "first gurugram project",
   "first faridabad project",
@@ -553,6 +591,7 @@ const specificProjectKeywords = [
   "metro extension",
   "metro line",
   "metro corridor approval",
+  "metro station",
   "given approval from central body",
   "mixed-use development",
   "new commercial sites",
@@ -584,6 +623,7 @@ const specificProjectKeywords = [
   "records sales",
   "sector demarcation",
   "social infrastructure",
+  "sports complex",
   "sold out",
   "township",
   "tod",
@@ -1468,6 +1508,30 @@ function getSourcePageUrls(sourceUrl) {
       });
     }
 
+    if (url.hostname === "www.hindustantimes.com" && normalizedPath.startsWith("/topic/")) {
+      return Array.from({ length: maxPages }, (_, index) => {
+        if (index === 0) {
+          return sourceUrl;
+        }
+
+        const pageUrl = new URL(sourceUrl);
+        pageUrl.pathname = `${normalizedPath}/page-${index + 1}`;
+        return pageUrl.toString();
+      });
+    }
+
+    if (url.hostname === "indianexpress.com" && normalizedPath.startsWith("/about/")) {
+      return Array.from({ length: maxPages }, (_, index) => {
+        if (index === 0) {
+          return sourceUrl;
+        }
+
+        const pageUrl = new URL(sourceUrl);
+        pageUrl.pathname = `${normalizedPath}/page/${index + 1}/`.replace(/\/{2,}/g, "/");
+        return pageUrl.toString();
+      });
+    }
+
     const wordpressPagedHosts = new Set([
       "torbitrealty.com",
       "realtynmore.com",
@@ -2100,6 +2164,26 @@ function isPositiveCityMarketArticle(article) {
   );
 }
 
+function isPositiveCivicInfrastructureArticle(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  return (
+    hasCleanPrimaryAndUrlText(article) &&
+    hasTargetRegionInTitleOrUrl(article) &&
+    hasKeyword(primaryAndUrl, [
+      "authority hq",
+      "charging stations",
+      "industrial projects",
+      "kiosks",
+      "metro station",
+      "sports complex"
+    ]) &&
+    hasKeyword(primaryAndUrl, ["add", "allot", "building", "emerges", "inaugurate", "launch", "project", "spend"]) &&
+    !hasKeyword(primaryAndUrl, negativePhraseKeywords) &&
+    !hasWholeWordKeyword(primaryAndUrl, ["accident", "arrest", "chargesheet", "crime", "fraud", "illegal", "murder", "police", "suicide"])
+  );
+}
+
 function isPositiveTargetBusinessOrDevelopmentArticle(article) {
   return (
     isTargetRealEstateCorporateUpdate(article) ||
@@ -2107,6 +2191,7 @@ function isPositiveTargetBusinessOrDevelopmentArticle(article) {
     isLuxuryTransactionArticle(article) ||
     isAuthorityPipelineArticle(article) ||
     isConnectivityCatalystArticle(article) ||
+    isPositiveCivicInfrastructureArticle(article) ||
     isPositiveCityMarketArticle(article)
   );
 }
@@ -2682,6 +2767,7 @@ function isNegativeNews(article) {
   if (
     isFaridabadJewarGrowthArticle(article) ||
     isPositiveTargetProjectUpdate(article) ||
+    isPositiveCivicInfrastructureArticle(article) ||
     isOfficialAuthorityPipelineNotice(article)
   ) {
     return false;

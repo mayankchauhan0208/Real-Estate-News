@@ -80,8 +80,16 @@ assert.equal(isAllowedSource("https://www.centralpark.in/media.php"), true);
 assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/noida"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/amp/tag/greater%2Bnoida"), noidaCityEnabled);
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/jewar"), noidaCityEnabled);
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/yamuna%2Bexpressway"), noidaCityEnabled);
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/rss/residential"), noidaCityEnabled);
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/rss/commercial"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://www.hindustantimes.com/cities/noida-news"), noidaCityEnabled);
+assert.equal(isAllowedSource("https://www.hindustantimes.com/topic/noida-authority/news"), noidaCityEnabled);
+assert.equal(isAllowedSource("https://www.niairport.in/en/company/news/overview/news-overview"), noidaCityEnabled);
+assert.equal(isAllowedSource("https://www.yamunaexpresswayauthority.com/web/announcement/"), noidaCityEnabled);
+assert.equal(isAllowedSource("https://indianexpress.com/about/noida-authority/"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/city/noida"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://housing.com/news/"), false);
 assert.equal(isAllowedSource("https://www.squareyards.com/blog"), false);
@@ -108,6 +116,16 @@ assert.deepEqual(getSourcePageUrls("https://www.hindustantimes.com/cities/noida-
   "https://www.hindustantimes.com/cities/noida-news",
   "https://www.hindustantimes.com/cities/noida-news/page-2",
   "https://www.hindustantimes.com/cities/noida-news/page-3"
+]);
+assert.deepEqual(getSourcePageUrls("https://www.hindustantimes.com/topic/noida-authority/news").slice(0, 3), [
+  "https://www.hindustantimes.com/topic/noida-authority/news",
+  "https://www.hindustantimes.com/topic/noida-authority/news/page-2",
+  "https://www.hindustantimes.com/topic/noida-authority/news/page-3"
+]);
+assert.deepEqual(getSourcePageUrls("https://indianexpress.com/about/noida-authority/").slice(0, 3), [
+  "https://indianexpress.com/about/noida-authority/",
+  "https://indianexpress.com/about/noida-authority/page/2/",
+  "https://indianexpress.com/about/noida-authority/page/3/"
 ]);
 
 assert.equal(
@@ -619,6 +637,45 @@ if (noidaCityEnabled) {
 
   assert.deepEqual(detectCityCodes(noidaRrtsArticle), ["noida"]);
   assert.equal(isPublishableArticle(noidaRrtsArticle, sentIds), true);
+
+  const noidaIndustrialLaunchArticle = publishable({
+    title: "CM Yogi to inaugurate Noida authority HQ, launch Rs 6,785 crore industrial projects",
+    description: "The authority headquarters and industrial projects add a positive development pipeline for Noida.",
+    articleText: "The launch includes Noida Authority infrastructure and industrial projects for the city.",
+    newsLink: "https://www.hindustantimes.com/cities/noida-news/cm-yogi-to-inaugurate-noida-authority-hq-launch-industrial-projects"
+  });
+
+  assert.deepEqual(detectCityCodes(noidaIndustrialLaunchArticle), ["noida"]);
+  assert.equal(isPublishableArticle(noidaIndustrialLaunchArticle, sentIds), true);
+
+  const noidaCommercialKioskArticle = publishable({
+    title: "Street market near GIP mall: Noida authority to allot 19 kiosks",
+    description: "The authority allotment adds organized commercial kiosks near a Noida retail hub.",
+    articleText: "The Noida authority will allot kiosks as a commercial development update.",
+    newsLink: "https://www.hindustantimes.com/cities/noida-news/street-market-near-gip-mall-noida-authority-to-allot-19-kiosks"
+  });
+
+  assert.deepEqual(detectCityCodes(noidaCommercialKioskArticle), ["noida"]);
+  assert.equal(isPublishableArticle(noidaCommercialKioskArticle, sentIds), true);
+
+  const noidaSportsComplexArticle = publishable({
+    title: "Noida to spend Rs 145 crore on building sports complex in Sector 123",
+    description: "The sports complex is a positive social infrastructure project for Noida sectors.",
+    articleText: "The Noida project supports social infrastructure and sector development.",
+    newsLink: "https://www.hindustantimes.com/cities/noida-news/noida-to-spend-145-crore-on-building-sports-complex-in-sector-123"
+  });
+
+  assert.deepEqual(detectCityCodes(noidaSportsComplexArticle), ["noida"]);
+  assert.equal(isPublishableArticle(noidaSportsComplexArticle, sentIds), true);
+
+  const noidaNegativeBuilderArticle = publishable({
+    title: "CBI files chargesheet against Noida builder and bank officials",
+    description: "The article is about a legal case and alleged builder fraud.",
+    articleText: "The chargesheet and fraud case are negative real estate news.",
+    newsLink: "https://www.hindustantimes.com/cities/noida-news/cbi-files-chargesheet-against-noida-builder"
+  });
+
+  assert.equal(isPublishableArticle(noidaNegativeBuilderArticle, sentIds), false);
 } else {
   assert.match(noidaRrtsReasons, /no allowed city match|outside-city conflict|outside region/);
 }
