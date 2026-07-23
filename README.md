@@ -31,7 +31,7 @@ Create a new GitHub repo for this folder, then add these repository secrets:
 - `APP_API_KEY`: Optional API key or token, only if your API starts requiring auth.
 Optional repository variable:
 
-- `MAX_ITEMS_PER_RUN`: Default is `30`.
+- `MAX_ITEMS_PER_RUN`: Default is `80`.
 - `MAX_ITEMS_PER_SOURCE`: Default is `300`.
 - `MAX_PAGES_PER_SOURCE`: Default is `15` for supported paginated source pages.
 - `DEFAULT_LOOKBACK_DAYS`: Default is `20` when no manual backfill date range is supplied.
@@ -113,6 +113,7 @@ Default sources are always used. Broad old source injection is disabled, so `NEW
 - `https://www.hindustantimes.com/real-estate`
 - `https://www.hindustantimes.com/topic/faridabad/news`
 - `https://economictimes.indiatimes.com/industry/services/property-/-cstruction`
+- `https://economictimes.indiatimes.com/news/company/corporate-trends`
 - `https://www.cnbctv18.com/real-estate/`
 - `https://timesofindia.indiatimes.com/real-estate/news`
 - `https://realty.economictimes.indiatimes.com/tag/gurugram`
@@ -130,3 +131,10 @@ Default sources are always used. Broad old source injection is disabled, so `NEW
 - `https://realtynxt.com/`
 - `https://www.track2realty.track2media.com/`
 - `https://propnewstime.com/`
+- `https://hsvphry.org.in/`
+- `https://www.bptp.com/media`
+- `https://www.dlf.in/media`
+- `https://m3mindia.com/media`
+- `https://smartworlddevelopers.com/media`
+- `https://www.signatureglobal.in/`
+- `https://www.centralpark.in/media.php`
