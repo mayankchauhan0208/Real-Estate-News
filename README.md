@@ -36,6 +36,8 @@ Optional repository variable:
 - `MAX_PAGES_PER_SOURCE`: Default is `15` for supported paginated source pages.
 - `DEFAULT_LOOKBACK_DAYS`: Default is `20` when no manual backfill date range is supplied.
 - `DRY_RUN`: Set to `true` only for local audits. It prints publish candidates without calling the API or updating sent-news state.
+- `ENABLE_NOIDA_CITY`: Set to `true` only for local Noida preparation. Noida API posting is blocked unless `ALLOW_NOIDA_API=true` is added later.
+- `TARGET_CITY_CODES`: Optional comma-separated city filter, e.g. `noida` for a Noida-only dry run.
 - `EXTRA_ARTICLE_URLS`: Optional exact article URLs, separated by comma, semicolon, or newline. Use only for manually found articles; each URL still has to pass the strict full-article filters.
 
 The workflow is already scheduled for every 10 minutes:
@@ -56,6 +58,17 @@ Push-triggered runs are disabled. Manual runs are allowed. To rerun a date windo
 - `extra_article_urls`: optional exact URLs for clean manually found articles that the approved source list missed
 
 If you deleted old API news and need to recreate the same date window, use the same backfill dates and set `resend_backfill` to checked. This bypasses the sent-news dedupe only for that dated manual run.
+
+For a local Noida-only dry run, do not send to the API. Use:
+
+```powershell
+$env:ENABLE_NOIDA_CITY='true'
+$env:DRY_RUN='true'
+$env:TARGET_CITY_CODES='noida'
+$env:BACKFILL_FROM='2026-06-23'
+$env:BACKFILL_TO='2026-07-23'
+npm.cmd start
+```
 
 For the June 25 cleanup run, use:
 
@@ -138,3 +151,8 @@ Default sources are always used. Broad old source injection is disabled, so `NEW
 - `https://smartworlddevelopers.com/media`
 - `https://www.signatureglobal.in/`
 - `https://www.centralpark.in/media.php`
+
+Noida sources are opt-in only when `ENABLE_NOIDA_CITY=true`:
+
+- `https://realty.economictimes.indiatimes.com/tag/noida`
+- `https://timesofindia.indiatimes.com/city/noida`

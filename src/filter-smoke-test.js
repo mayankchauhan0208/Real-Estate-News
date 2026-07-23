@@ -19,6 +19,9 @@ import {
 } from "./index.js";
 
 const sentIds = new Set();
+const noidaCityEnabled = ["1", "true", "yes", "on"].includes(
+  (process.env.ENABLE_NOIDA_CITY || "").trim().toLowerCase()
+);
 
 function article(overrides = {}) {
   return cleanArticleFields({
@@ -74,6 +77,8 @@ assert.equal(isAllowedSource("https://m3mindia.com/media"), true);
 assert.equal(isAllowedSource("https://smartworlddevelopers.com/media"), true);
 assert.equal(isAllowedSource("https://www.signatureglobal.in/"), true);
 assert.equal(isAllowedSource("https://www.centralpark.in/media.php"), true);
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/noida"), noidaCityEnabled);
+assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/city/noida"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://housing.com/news/"), false);
 assert.equal(isAllowedSource("https://www.squareyards.com/blog"), false);
 assert.equal(isLikelyFeedUrl("https://www.hindustantimes.com/real-estate"), false);
@@ -288,7 +293,10 @@ const bptpConfidenceArticle = publishable({
   newsLink: "https://cms.bptp.com/new/bptp-ranks-among-north-indias-top-3-developers-kabul-chawla-says-customer-confidence-remains-the-companys-greatest-strength/"
 });
 
-assert.deepEqual(detectCityCodes(bptpConfidenceArticle), ["gurugram", "faridabad"]);
+assert.deepEqual(
+  detectCityCodes(bptpConfidenceArticle),
+  noidaCityEnabled ? ["gurugram", "faridabad", "noida"] : ["gurugram", "faridabad"]
+);
 assert.equal(isPublishableArticle(bptpConfidenceArticle, sentIds), true);
 assert.equal(classifyArticle(bptpConfidenceArticle), "leadership_confidence");
 
@@ -320,8 +328,8 @@ const m3mNoidaArticle = publishable({
   newsLink: "https://m3mindia.com/media/m3m-india-announces-the-launch-of-jacob-co-residences-noida"
 });
 
-assert.deepEqual(detectCityCodes(m3mNoidaArticle), []);
-assert.equal(isPublishableArticle(m3mNoidaArticle, sentIds), false);
+assert.deepEqual(detectCityCodes(m3mNoidaArticle), noidaCityEnabled ? ["noida"] : []);
+assert.equal(isPublishableArticle(m3mNoidaArticle, sentIds), noidaCityEnabled);
 
 const centralParkAwardArticle = publishable({
   title: "Central Park recognised across three categories at Times Realty Awards 2026",
@@ -443,7 +451,10 @@ const connectivityCatalystArticle = publishable({
   newsLink: "https://example.com/faridabad-noida-ghaziabad-metro-connectivity"
 });
 
-assert.deepEqual(detectCityCodes(connectivityCatalystArticle), ["faridabad"]);
+assert.deepEqual(
+  detectCityCodes(connectivityCatalystArticle),
+  noidaCityEnabled ? ["faridabad", "noida"] : ["faridabad"]
+);
 assert.equal(isPublishableArticle(connectivityCatalystArticle, sentIds), true);
 assert.equal(classifyArticle(connectivityCatalystArticle), "connectivity_catalyst");
 
@@ -504,7 +515,10 @@ const delhiNcrPremiumHousingArticle = publishable({
   newsLink: "https://example.com/delhi-ncr-housing-sales"
 });
 
-assert.deepEqual(detectCityCodes(delhiNcrPremiumHousingArticle), ["gurugram", "faridabad"]);
+assert.deepEqual(
+  detectCityCodes(delhiNcrPremiumHousingArticle),
+  noidaCityEnabled ? ["gurugram", "faridabad", "noida"] : ["gurugram", "faridabad"]
+);
 assert.equal(isPublishableArticle(delhiNcrPremiumHousingArticle, sentIds), true);
 
 assert.equal(
@@ -530,18 +544,55 @@ const rrtsCorridorArticle = publishable({
   thumbnailImage: "https://example.com/rrts.jpg"
 });
 
-assert.deepEqual(detectCityCodes(rrtsCorridorArticle).sort(), ["faridabad", "gurugram"]);
+assert.deepEqual(
+  detectCityCodes(rrtsCorridorArticle).sort(),
+  noidaCityEnabled ? ["faridabad", "gurugram", "noida"] : ["faridabad", "gurugram"]
+);
 assert.equal(isPublishableArticle(rrtsCorridorArticle, sentIds), true);
 
-assert.match(
-  reasons({
+const noidaRrtsReasons = reasons({
     title: "Noida and Greater Noida RRTS corridor gets new DPR",
     description: "The regional rapid transit corridor focuses on Noida and Greater Noida.",
     articleText: "The Noida infrastructure project does not include Gurugram or Faridabad as project cities.",
     newsLink: "https://example.com/noida-greater-noida-rrts-dpr"
-  }).join("; "),
-  /no allowed city match|outside-city conflict|outside region/
-);
+  }).join("; ");
+
+if (noidaCityEnabled) {
+  const godrejNoidaLandArticle = publishable({
+    title: "Godrej Properties acquires 4.95-acre land parcel in Noida for Rs 331.75 crore",
+    description: "The developer won a bid for a land parcel in Noida for a real estate project.",
+    articleText: "The Noida land acquisition will support a residential development project.",
+    newsLink: "https://realty.economictimes.indiatimes.com/news/industry/godrej-properties-wins-bid-for-495-acre-land-in-noida-for-33175-crore/132105197"
+  });
+
+  assert.deepEqual(detectCityCodes(godrejNoidaLandArticle), ["noida"]);
+  assert.equal(isPublishableArticle(godrejNoidaLandArticle, sentIds), true);
+
+  assert.equal(
+    isPublishableArticle(
+      publishable({
+        title: "Hybon expects revenue to grow 20-25% in FY27; to invest Rs 100 crore in Pilkhuwa facility",
+        description: "The investment is for a Pilkhuwa facility outside the target cities.",
+        articleText: "The company update is not about Noida, Gurugram or Faridabad real estate development.",
+        newsLink: "https://realty.economictimes.indiatimes.com/news/allied-industries/hybon-targets-20-25-revenue-growth-in-fy27-with-100-crore-expansion/132013992"
+      }),
+      sentIds
+    ),
+    false
+  );
+
+  const noidaRrtsArticle = publishable({
+    title: "Noida and Greater Noida RRTS corridor gets new DPR",
+    description: "The regional rapid transit corridor focuses on Noida and Greater Noida.",
+    articleText: "The Noida infrastructure project supports Noida property and development.",
+    newsLink: "https://example.com/noida-greater-noida-rrts-dpr"
+  });
+
+  assert.deepEqual(detectCityCodes(noidaRrtsArticle), ["noida"]);
+  assert.equal(isPublishableArticle(noidaRrtsArticle, sentIds), true);
+} else {
+  assert.match(noidaRrtsReasons, /no allowed city match|outside-city conflict|outside region/);
+}
 
 assert.equal(
   isPublishableArticle(
@@ -666,7 +717,10 @@ const ncrOfficeLeasingArticle = publishable({
     "https://realty.economictimes.indiatimes.com/news/commercial/ncr-office-leasing-declines-slightly-to-72-million-sq-ft-in-h1-2026/132356292"
 });
 
-assert.deepEqual(detectCityCodes(ncrOfficeLeasingArticle).sort(), ["faridabad", "gurugram"]);
+assert.deepEqual(
+  detectCityCodes(ncrOfficeLeasingArticle).sort(),
+  noidaCityEnabled ? ["faridabad", "gurugram", "noida"] : ["faridabad", "gurugram"]
+);
 assert.equal(isPublishableArticle(ncrOfficeLeasingArticle, sentIds), true);
 
 const faridabadJewarArticle = publishable({

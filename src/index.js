@@ -49,6 +49,18 @@ const defaultSources = [
   "https://www.centralpark.in/media.php"
 ];
 
+const noidaCityEnabledAtStartup = ["1", "true", "yes", "on"].includes(
+  (process.env.ENABLE_NOIDA_CITY || "").trim().toLowerCase()
+);
+const noidaSources = [
+  "https://realty.economictimes.indiatimes.com/tag/noida",
+  "https://timesofindia.indiatimes.com/city/noida"
+];
+
+function isNoidaCityEnabled() {
+  return noidaCityEnabledAtStartup;
+}
+
 const cityRules = [
   {
     code: "faridabad",
@@ -73,7 +85,25 @@ const cityRules = [
       "sohna",
       "sohna road"
     ]
-  }
+  },
+  ...(isNoidaCityEnabled()
+    ? [{
+      code: "noida",
+      keywords: [
+        "noida",
+        "greater noida",
+        "greater noida west",
+        "noida extension",
+        "new noida",
+        "jewar",
+        "jewar airport",
+        "noida airport",
+        "noida international airport",
+        "yamuna expressway",
+        "yeida"
+      ]
+    }]
+    : [])
 ];
 const gurugramCorridorKeywords = [
   "dwarka expressway",
@@ -155,7 +185,7 @@ const requiredPayloadFields = [
 ];
 
 const ncrKeywords = ["delhi ncr"];
-const ncrCityCodes = ["gurugram", "faridabad"];
+const ncrCityCodes = isNoidaCityEnabled() ? ["gurugram", "faridabad", "noida"] : ["gurugram", "faridabad"];
 const targetCityKeywords = [...cityRules.flatMap((rule) => rule.keywords), ...ncrKeywords];
 const reraKeywords = ["rera", "hrera", "h-rera", "real estate regulatory authority"];
 const courtKeywords = [
@@ -461,6 +491,7 @@ const connectivityCatalystKeywords = [
   "jewar connectivity",
   "metro corridor",
   "metro extension",
+  "metro line",
   "spr",
   "southern peripheral road",
   "golf course extension road",
@@ -492,6 +523,8 @@ const specificProjectKeywords = [
   "hand over",
   "hands over",
   "housing project",
+  "investment board",
+  "investment board nod",
   "landmark high-rise development",
   "first gurugram project",
   "first faridabad project",
@@ -502,15 +535,20 @@ const specificProjectKeywords = [
   "new benchmark",
   "hospitality living",
   "metro extension",
+  "metro line",
   "mixed-use development",
   "new commercial sites",
+  "new noida",
   "new project",
   "faridabad project",
   "new real estate projects",
+  "noida project",
+  "noida projects",
   "plotted township",
   "premium housing market",
   "property hotspot",
   "pumped into new real estate projects",
+  "steel span",
   "possession",
   "project launch",
   "rapid rail",
@@ -791,6 +829,7 @@ const negativeNewsKeywords = [
 const negativePhraseKeywords = [
   "accused of",
   "bear the brunt",
+  "broken roads",
   "builder arrested",
   "builder suicide",
   "market crash",
@@ -908,9 +947,10 @@ const severeBodyNegativePhrases = [
   "real estate broker killed",
   "short circuit",
   "suicide due to property",
-  "suicide over property"
+  "suicide over property",
+  "unfulfilled promises"
 ];
-const outsideCityKeywords = [
+const baseOutsideCityKeywords = [
   "ahmedabad",
   "andhra",
   "bengaluru",
@@ -926,6 +966,7 @@ const outsideCityKeywords = [
   "delhi",
   "goa",
   "gujarat",
+  "ghaziabad",
   "haridwar",
   "hyderabad",
   "indore",
@@ -937,8 +978,10 @@ const outsideCityKeywords = [
   "mumbai",
   "new delhi",
   "noida",
+  "greater noida",
   "pallikaranai",
   "patna",
+  "pilkhuwa",
   "perumbakkam",
   "perungudi",
   "phuket",
@@ -949,6 +992,9 @@ const outsideCityKeywords = [
   "telangana",
   "uttar pradesh"
 ];
+const outsideCityKeywords = baseOutsideCityKeywords.filter((keyword) =>
+  !isNoidaCityEnabled() || !["greater noida", "noida", "uttar pradesh"].includes(keyword)
+);
 const allLocationKeywords = [
   ...targetCityKeywords,
   ...outsideCityKeywords
@@ -970,7 +1016,8 @@ const blockedSourceUrlParts = [
   "amarujala.com"
 ];
 
-const allowedSourceUrlParts = defaultSources.map((source) => {
+const activeDefaultSources = isNoidaCityEnabled() ? [...defaultSources, ...noidaSources] : defaultSources;
+const allowedSourceUrlParts = activeDefaultSources.map((source) => {
   const url = new URL(source);
   return `${url.hostname.replace(/^www\./, "")}${url.pathname.replace(/\/+$/, "")}`.toLowerCase();
 });
@@ -1049,11 +1096,20 @@ function getSourceUrls() {
     return [...new Set(sourceUrls)];
   }
 
-  return [...new Set([...defaultSources, ...getSources()])];
+  return [...new Set([...activeDefaultSources, ...getSources()])];
 }
 
 function getExtraArticleUrls() {
   return splitDelimitedValues(env("EXTRA_ARTICLE_URLS"));
+}
+
+function getTargetCityCodeFilter() {
+  const allowedCityCodes = new Set(cityRules.map((rule) => rule.code));
+  return new Set(
+    splitDelimitedValues(env("TARGET_CITY_CODES"))
+      .map((cityCode) => cityCode.toLowerCase())
+      .filter((cityCode) => allowedCityCodes.has(cityCode))
+  );
 }
 
 function isAllowedExtraArticleUrl(articleUrl) {
@@ -2101,6 +2157,7 @@ function hasSpecificProjectOrDevelopmentSignal(article) {
     isTargetDominantInfrastructureCorridor(article) ||
     isNcrCommercialOfficeMarketArticle(article) ||
     isFaridabadJewarGrowthArticle(article) ||
+    isFngConnectivityCatalystArticle(article) ||
     isFaridabadNcrGrowthComparisonArticle(article) ||
     isTargetProjectAwardArticle(article) ||
     isPositiveCityMarketArticle(article) ||
@@ -2147,6 +2204,10 @@ function detectCityCodes(article) {
 }
 
 function detectMatchedCityCodes(article) {
+  if (isFngConnectivityCatalystArticle(article)) {
+    return isNoidaCityEnabled() ? ["faridabad", "noida"] : ["faridabad"];
+  }
+
   if (isFaridabadJewarGrowthArticle(article)) {
     return ["faridabad"];
   }
@@ -2277,6 +2338,7 @@ function isPositiveTargetProjectUpdate(article) {
       "faridabad project",
       "gdv",
       "gurugram project",
+      "noida project",
       "invest",
       "investment",
       "joint development",
@@ -2301,6 +2363,19 @@ function isFaridabadJewarGrowthArticle(article) {
     hasWholeWordKeyword(primaryAndUrl, ["faridabad"]) &&
     hasKeyword(primaryAndUrl, faridabadJewarGrowthKeywords) &&
     hasKeyword(primaryAndUrl, positiveGrowthCatalystKeywords)
+  );
+}
+
+function isFngConnectivityCatalystArticle(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  return (
+    hasCleanPrimaryAndUrlText(article) &&
+    hasWholeWordKeyword(primaryAndUrl, ["faridabad"]) &&
+    hasWholeWordKeyword(primaryAndUrl, ["noida"]) &&
+    hasWholeWordKeyword(primaryAndUrl, ["ghaziabad"]) &&
+    hasKeyword(primaryAndUrl, connectivityCatalystKeywords) &&
+    hasKeyword(primaryAndUrl, ["connectivity", "corridor", "development", "growth", "infrastructure", "real estate"])
   );
 }
 
@@ -2518,6 +2593,14 @@ function isGurugramCorridorArticle(article) {
 }
 
 function getDisqualifyingOutsideCityKeywords(article) {
+  if (isFngConnectivityCatalystArticle(article)) {
+    return outsideCityKeywords.filter((keyword) => !["delhi", "new delhi", "ghaziabad", "noida", "uttar pradesh"].includes(keyword));
+  }
+
+  if (article.cityCode === "noida") {
+    return outsideCityKeywords.filter((keyword) => !["delhi", "new delhi"].includes(keyword));
+  }
+
   if (isFaridabadJewarGrowthArticle(article)) {
     return outsideCityKeywords.filter((keyword) => !["delhi", "new delhi", "noida", "uttar pradesh"].includes(keyword));
   }
@@ -4010,7 +4093,16 @@ async function main() {
   const resendBackfill = getBooleanEnv("RESEND_BACKFILL") && hasBackfillDateRange(backfillDateRange);
   const filterSentIds = resendBackfill ? new Set() : sentIds;
   const skipTitleSet = getSkipTitleSet();
+  const targetCityCodeFilter = getTargetCityCodeFilter();
   const allArticles = [];
+
+  if (isNoidaCityEnabled() && !getBooleanEnv("DRY_RUN") && !getBooleanEnv("ALLOW_NOIDA_API")) {
+    throw new Error("Noida city mode is local-only for now. Set DRY_RUN=true, or set ALLOW_NOIDA_API=true after the API supports cityCode=noida.");
+  }
+
+  if (isNoidaCityEnabled()) {
+    console.log("Noida city mode enabled: using Uttar Pradesh - Noida filters and opt-in sources.");
+  }
 
   if (backfillDateRange.from || backfillDateRange.to) {
     console.log(
@@ -4030,6 +4122,10 @@ async function main() {
 
   if (extraArticleUrls.length > 0) {
     console.log(`Extra direct article URLs: ${extraArticleUrls.length}.`);
+  }
+
+  if (targetCityCodeFilter.size > 0) {
+    console.log(`Target city filter: ${[...targetCityCodeFilter].join(", ")}.`);
   }
 
   for (const source of selectedSources) {
@@ -4052,7 +4148,9 @@ async function main() {
     }
   }
 
-  const expandedAllArticles = allArticles.flatMap(expandCityArticles);
+  const expandedAllArticles = allArticles
+    .flatMap(expandCityArticles)
+    .filter((article) => targetCityCodeFilter.size === 0 || targetCityCodeFilter.has(article.cityCode));
   logDateExcludedPublishableArticles(expandedAllArticles, backfillDateRange, filterSentIds, skipTitleSet);
 
   const expandedArticles = expandedAllArticles.filter((article) =>
