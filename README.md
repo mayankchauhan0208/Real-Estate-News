@@ -70,6 +70,26 @@ $env:BACKFILL_TO='2026-07-23'
 npm.cmd start
 ```
 
+To preview feeds in the local dummy frontend without posting anything:
+
+```powershell
+$env:DRY_RUN='true'
+$env:PREVIEW_SOURCE_LIMIT='40'
+$env:MAX_ITEMS_PER_SOURCE='5'
+$env:MAX_PAGES_PER_SOURCE='1'
+npm.cmd run preview:generate
+npm.cmd run preview:serve
+```
+
+Then open `http://127.0.0.1:4173`. For a Noida preview, add:
+
+```powershell
+$env:ENABLE_NOIDA_CITY='true'
+$env:TARGET_CITY_CODES='noida'
+```
+
+The preview generator always forces dry-run mode and never posts to `APP_API_URL`.
+
 For the June 25 cleanup run, use:
 
 - `backfill_from`: `2026-06-25`

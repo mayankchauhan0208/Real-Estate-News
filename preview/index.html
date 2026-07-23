@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Real Estate Feed Preview</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="topbar">
+        <div>
+          <p class="eyebrow">Local dry-run preview</p>
+          <h1>Real Estate Feed Monitor</h1>
+        </div>
+        <div class="status-pill" id="apiStatus">No API posting</div>
+      </section>
+
+      <section class="metrics" id="metrics"></section>
+
+      <section class="toolbar">
+        <div class="tabs" id="cityTabs"></div>
+        <label class="search">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="Title, source, city">
+        </label>
+      </section>
+
+      <section class="layout">
+        <section class="feed-panel">
+          <div class="panel-head">
+            <h2>Publishable Feed</h2>
+            <p id="feedCount"></p>
+          </div>
+          <div class="feed-list" id="feedList"></div>
+        </section>
+
+        <aside class="side-panel">
+          <div class="panel-block">
+            <h2>Source Health</h2>
+            <div id="sourceHealth"></div>
+          </div>
+          <div class="panel-block">
+            <h2>Rejected Sample</h2>
+            <div id="rejectList"></div>
+          </div>
+        </aside>
+      </section>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
