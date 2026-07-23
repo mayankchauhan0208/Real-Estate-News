@@ -40,7 +40,8 @@ const defaultSources = [
   "https://realtynxt.com/",
   "https://www.track2realty.track2media.com/",
   "https://propnewstime.com/",
-  "https://hsvphry.org.in/"
+  "https://hsvphry.org.in/",
+  "https://www.bptp.com/media"
 ];
 
 const cityRules = [
@@ -118,6 +119,9 @@ const positiveCityMarketKeywords = [
   "housing demand",
   "housing market",
   "investment destination",
+  "largest market",
+  "office market",
+  "office stock",
   "market remains resilient",
   "property market",
   "real estate destination",
@@ -220,6 +224,7 @@ const promotionalRealEstateKeywords = [
   "approval",
   "approved",
   "bookings",
+  "customer confidence",
   "commercial property",
   "commercial real estate",
   "completion",
@@ -387,7 +392,10 @@ const leadershipBusinessConfidenceKeywords = [
   "offering",
   "core growth market",
   "as important as",
-  "bets big"
+  "bets big",
+  "customer confidence",
+  "top developer",
+  "top developers"
 ];
 const luxuryTransactionKeywords = [
   "apartment purchase",
@@ -455,6 +463,7 @@ const specificProjectKeywords = [
   "developed a residential",
   "developing a residential",
   "development project",
+  "development of the year",
   "dwarka expressway",
   "golf course extension road",
   "golf course road",
@@ -463,6 +472,7 @@ const specificProjectKeywords = [
   "hand over",
   "hands over",
   "housing project",
+  "landmark high-rise development",
   "first gurugram project",
   "first faridabad project",
   "bookings worth",
@@ -1352,6 +1362,15 @@ function isHsvpSource(sourceUrl) {
   }
 }
 
+function isBptpMediaSource(sourceUrl) {
+  try {
+    const url = new URL(sourceUrl);
+    return url.hostname.replace(/^www\./, "") === "bptp.com" && url.pathname.replace(/\/+$/, "") === "/media";
+  } catch {
+    return false;
+  }
+}
+
 function getSkipTitleSet() {
   return new Set(
     env("SKIP_TITLES")
@@ -1799,6 +1818,10 @@ function getCorporateCompanyCityCodes(article, company = getTargetRealEstateCorp
     return explicitCityCodes;
   }
 
+  if (!company.code && /\bdelhi[\s-]?ncr\b/i.test(`${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`)) {
+    return ncrCityCodes;
+  }
+
   return company.code ? [company.code] : [];
 }
 
@@ -1933,6 +1956,10 @@ function classifyArticle(article) {
     return "leadership_confidence";
   }
 
+  if (isTargetProjectAwardArticle(article)) {
+    return "project_development";
+  }
+
   if (isPositiveCityMarketArticle(article)) {
     return "positive_city_market";
   }
@@ -1953,6 +1980,7 @@ function isRealEstateRelated(article) {
     hasRealEstateEvidence(article) ||
     isNationalRealEstateBusinessUpdate(article) ||
     isNcrCommercialOfficeMarketArticle(article) ||
+    isTargetProjectAwardArticle(article) ||
     isPositiveTargetBusinessOrDevelopmentArticle(article)
   );
 }
@@ -1961,6 +1989,8 @@ function hasSpecificProjectOrDevelopmentSignal(article) {
   if (
     isNcrCommercialOfficeMarketArticle(article) ||
     isFaridabadJewarGrowthArticle(article) ||
+    isTargetProjectAwardArticle(article) ||
+    isPositiveCityMarketArticle(article) ||
     isPositiveTargetBusinessOrDevelopmentArticle(article)
   ) {
     return true;
@@ -1974,6 +2004,7 @@ function isBroadNonProjectUpdate(article) {
   if (
     isNcrCommercialOfficeMarketArticle(article) ||
     isFaridabadJewarGrowthArticle(article) ||
+    isPositiveCityMarketArticle(article) ||
     isPositiveTargetBusinessOrDevelopmentArticle(article)
   ) {
     return false;
@@ -2042,6 +2073,7 @@ function hasTargetRegionEvidence(article) {
     hasNcrMatch(article) ||
     isNcrCommercialOfficeMarketArticle(article) ||
     isFaridabadJewarGrowthArticle(article) ||
+    isTargetProjectAwardArticle(article) ||
     isPositiveTargetBusinessOrDevelopmentArticle(article) ||
     hasTargetRegionInTitleOrUrl(article)
   );
@@ -2161,6 +2193,7 @@ function hasOutsideRegionInPrimaryText(article) {
     isNcrCommercialOfficeMarketArticle(article) ||
     isFaridabadJewarGrowthArticle(article) ||
     isConnectivityCatalystArticle(article) ||
+    isPositiveTargetBusinessOrDevelopmentArticle(article) ||
     isPositiveTargetProjectUpdate(article)
   ) {
     return false;
@@ -2266,7 +2299,7 @@ function hasWholeWordKeyword(value, keywords) {
 }
 
 function hasNcrMatch(article) {
-  const haystack = `${article.title || ""} ${getArticleUrlText(article)}`.toLowerCase();
+  const haystack = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`.toLowerCase();
   return /\bdelhi[\s-]?ncr\b/i.test(haystack);
 }
 
@@ -2317,6 +2350,18 @@ function hasDisallowedLanguage(article) {
   return /[\u0900-\u097F]/u.test(text) || /\bnews in hindi\b/i.test(text) || /amarujala\.com/i.test(text);
 }
 
+function isTargetProjectAwardArticle(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  return (
+    hasCleanPrimaryAndUrlText(article) &&
+    hasWholeWordKeyword(primaryAndUrl, targetCityKeywords) &&
+    hasKeyword(primaryAndUrl, realEstateCompanyKeywords) &&
+    hasKeyword(primaryAndUrl, ["award", "awards", "wins", "won"]) &&
+    hasKeyword(primaryAndUrl, ["development", "housing", "project", "real estate", "realty", "residential"])
+  );
+}
+
 function isGurugramCorridorArticle(article) {
   return hasWholeWordKeyword(getArticleSearchText(article), gurugramCorridorKeywords);
 }
@@ -2355,12 +2400,13 @@ function isBlockedArticle(article) {
   const newsLink = article.newsLink || "";
   const normalizedTitle = title.trim().toLowerCase();
   const primaryText = `${title} ${description}`;
+  const allowProjectAwardArticle = isTargetProjectAwardArticle(article);
 
   return (
     blockedExactTitles.includes(normalizedTitle) ||
     /[\u0900-\u097F]/.test(primaryText) ||
-    hasKeyword(primaryText, blockedTitleKeywords) ||
-    hasKeyword(newsLink, blockedUrlParts)
+    (!allowProjectAwardArticle && hasKeyword(primaryText, blockedTitleKeywords)) ||
+    (!allowProjectAwardArticle && hasKeyword(newsLink, blockedUrlParts))
   );
 }
 
@@ -2392,7 +2438,7 @@ function isNegativeNews(article) {
 function hasOutsideCityConflict(article) {
   if (
     isPositiveTargetProjectUpdate(article) ||
-    (isPositiveTargetBusinessOrDevelopmentArticle(article) && hasTargetRegionInTitleOrUrl(article))
+    (isPositiveTargetBusinessOrDevelopmentArticle(article) && (hasTargetRegionInTitleOrUrl(article) || hasNcrMatch(article)))
   ) {
     return false;
   }
@@ -3186,6 +3232,137 @@ async function fetchHsvpNotices(sourceUrl) {
   return articles.filter(Boolean);
 }
 
+function getNestedImageUrl(value) {
+  if (!value) {
+    return "";
+  }
+
+  if (typeof value === "string") {
+    return value;
+  }
+
+  if (Array.isArray(value)) {
+    for (const item of value) {
+      const image = getNestedImageUrl(item);
+
+      if (image) {
+        return image;
+      }
+    }
+
+    return "";
+  }
+
+  if (typeof value !== "object") {
+    return "";
+  }
+
+  return pickFirst(
+    value.source_url,
+    value.url,
+    value.guid?.rendered,
+    value.sizes?.large,
+    value.sizes?.medium_large,
+    value.sizes?.medium,
+    getNestedImageUrl(value.image),
+    getNestedImageUrl(value.banner),
+    getNestedImageUrl(value.featured_image),
+    getNestedImageUrl(value._embedded?.["wp:featuredmedia"])
+  );
+}
+
+function getBptpExternalLink(item) {
+  const value = item?.acf?.external_link;
+
+  if (typeof value === "string") {
+    return value;
+  }
+
+  if (value && typeof value === "object") {
+    return pickFirst(value.url, value.href, value.link);
+  }
+
+  return "";
+}
+
+function buildBptpMediaArticle(item, sourceUrl, typeLabel) {
+  const acf = item.acf || {};
+  const title = stripHtml(pickFirst(acf.title, item.title?.rendered, item.title));
+  const description = stripHtml(
+    pickFirst(acf.desc, acf.meta_description, item.excerpt?.rendered, item.content?.rendered, title)
+  );
+  const publishedAt = toIsoDate(item.date_gmt || item.date);
+  const newsLink = pickFirst(getBptpExternalLink(item), item.link);
+  const thumbnailImage = absoluteUrl(
+    pickFirst(
+      getNestedImageUrl(acf.image),
+      getNestedImageUrl(acf.banner),
+      getNestedImageUrl(item.featured_image),
+      getNestedImageUrl(item._embedded?.["wp:featuredmedia"])
+    ),
+    sourceUrl
+  );
+  const article = {
+    title,
+    description,
+    articleText: stripHtml(
+      `${description} BPTP ${typeLabel} update for Delhi NCR real estate, Faridabad and Gurugram project markets.`
+    ),
+    isActive: true,
+    newsLink,
+    thumbnailImage: thumbnailImage || getFallbackLogo(sourceUrl),
+    postedBy: "BPTP Media",
+    postedByLogo: "https://cms.bptp.com/wp-content/uploads/2025/01/logo.svg",
+    createdAt: publishedAt,
+    publishedAt,
+    fetchedAt: new Date().toISOString()
+  };
+  const cityArticle = applyCityCode(cleanArticleFields(article));
+
+  return {
+    ...cityArticle,
+    id: stableId(cityArticle)
+  };
+}
+
+function collectBptpMediaItems(pageProps = {}) {
+  return [
+    ...(Array.isArray(pageProps.newsData) ? pageProps.newsData.map((item) => ({ item, typeLabel: "media" })) : []),
+    ...(Array.isArray(pageProps.pressReleasesData)
+      ? pageProps.pressReleasesData.map((item) => ({ item, typeLabel: "press release" }))
+      : [])
+  ];
+}
+
+async function fetchBptpMedia(sourceUrl) {
+  const html = await fetchHtml(sourceUrl);
+  const $ = cheerio.load(html);
+  const rawJson = $("#__NEXT_DATA__").first().text();
+
+  if (!rawJson) {
+    return [];
+  }
+
+  const pageData = JSON.parse(rawJson);
+  const pageProps = pageData?.props?.pageProps || {};
+  const seenKeys = new Set();
+  const items = collectBptpMediaItems(pageProps)
+    .filter(({ item }) => item?.title || item?.title?.rendered || item?.acf?.title)
+    .filter(({ item }) => {
+      const key = normalizeTitle(stripHtml(pickFirst(item?.acf?.title, item?.title?.rendered, item?.title)));
+
+      if (!key || seenKeys.has(key)) {
+        return false;
+      }
+
+      seenKeys.add(key);
+      return true;
+    })
+    .slice(0, getMaxItemsPerSource());
+
+  return items.map(({ item, typeLabel }) => buildBptpMediaArticle(item, sourceUrl, typeLabel));
+}
+
 async function fetchPage(sourceUrl) {
   const pageUrls = getSourcePageUrls(sourceUrl);
   const seenLinks = new Set();
@@ -3286,6 +3463,10 @@ async function fetchPage(sourceUrl) {
 async function fetchSource(sourceUrl) {
   if (isHsvpSource(sourceUrl)) {
     return fetchHsvpNotices(sourceUrl);
+  }
+
+  if (isBptpMediaSource(sourceUrl)) {
+    return fetchBptpMedia(sourceUrl);
   }
 
   if (!isLikelyFeedUrl(sourceUrl)) {

@@ -67,6 +67,7 @@ assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/real-estate/ne
 assert.equal(isAllowedSource("https://www.constructionworld.in/"), false);
 assert.equal(isAllowedSource("https://www.constructionworld.in/latest-construction-news/real-estate-news"), true);
 assert.equal(isAllowedSource("https://hsvphry.org.in/"), true);
+assert.equal(isAllowedSource("https://www.bptp.com/media"), true);
 assert.equal(isAllowedSource("https://housing.com/news/"), false);
 assert.equal(isAllowedSource("https://www.squareyards.com/blog"), false);
 assert.equal(isLikelyFeedUrl("https://www.hindustantimes.com/real-estate"), false);
@@ -270,6 +271,28 @@ const bptpFaridabadCorporateArticle = publishable({
 assert.deepEqual(detectCityCodes(bptpFaridabadCorporateArticle), ["faridabad"]);
 assert.equal(isPublishableArticle(bptpFaridabadCorporateArticle, sentIds), true);
 
+const bptpConfidenceArticle = publishable({
+  title: "BPTP Ranks Among North India's Top 3 Developers, Kabul Chawla Says Customer Confidence Remains the Company's Greatest Strength",
+  description: "BPTP leadership said customer confidence supports the company's Delhi NCR real estate growth.",
+  articleText: "BPTP Media update for Delhi NCR real estate, Faridabad and Gurugram project markets.",
+  newsLink: "https://cms.bptp.com/new/bptp-ranks-among-north-indias-top-3-developers-kabul-chawla-says-customer-confidence-remains-the-companys-greatest-strength/"
+});
+
+assert.deepEqual(detectCityCodes(bptpConfidenceArticle), ["gurugram", "faridabad"]);
+assert.equal(isPublishableArticle(bptpConfidenceArticle, sentIds), true);
+assert.equal(classifyArticle(bptpConfidenceArticle), "leadership_confidence");
+
+const bptpSkynestAwardArticle = publishable({
+  title: "BPTP's Skynest Wins Landmark High-Rise Development of the Year at ET NOW Realty Conclave & Awards 2026",
+  description: "BPTP's Skynest project in Greater Faridabad won a real estate development award.",
+  articleText: "The award highlights Skynest, BPTP's high-rise residential project in Sector 80, Greater Faridabad.",
+  newsLink: "https://cms.bptp.com/pressrelease/bptps-skynest-wins-landmark-high-rise-development-of-the-year-at-et-now-realty-conclave-awards-2026/"
+});
+
+assert.deepEqual(detectCityCodes(bptpSkynestAwardArticle), ["faridabad"]);
+assert.equal(isPublishableArticle(bptpSkynestAwardArticle, sentIds), true);
+assert.equal(classifyArticle(bptpSkynestAwardArticle), "project_development");
+
 const signatureLeadershipArticle = publishable({
   title: "Signature Global sees Gurugram as core growth market, plans new launches",
   description: "The developer's MD said Gurugram will remain central to its market expansion.",
@@ -325,6 +348,18 @@ const dlfLuxuryEcosystemArticle = publishable({
 assert.deepEqual(detectCityCodes(dlfLuxuryEcosystemArticle), ["gurugram"]);
 assert.equal(isPublishableArticle(dlfLuxuryEcosystemArticle, sentIds), true);
 assert.equal(classifyArticle(dlfLuxuryEcosystemArticle), "leadership_confidence");
+
+const gurugramOfficeStockArticle = publishable({
+  title: "Gurugram surpasses 100 million sq ft office stock, becoming North India's largest market",
+  description: "Gurugram office market growth highlights commercial real estate momentum in the city.",
+  articleText: "The milestone reflects strong commercial property demand and office space expansion in Gurugram.",
+  newsLink:
+    "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gurugram-surpasses-100-million-sq-ft-office-stock-becoming-north-indias-largest-market/articleshow/132573095.cms"
+});
+
+assert.deepEqual(detectCityCodes(gurugramOfficeStockArticle), ["gurugram"]);
+assert.equal(isPublishableArticle(gurugramOfficeStockArticle, sentIds), true);
+assert.equal(classifyArticle(gurugramOfficeStockArticle), "positive_city_market");
 
 assert.match(
   reasons({
