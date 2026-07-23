@@ -155,4 +155,10 @@ Default sources are always used. Broad old source injection is disabled, so `NEW
 Noida sources are opt-in only when `ENABLE_NOIDA_CITY=true`:
 
 - `https://realty.economictimes.indiatimes.com/tag/noida`
+- `https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida`
+- `https://realty.economictimes.indiatimes.com/amp/tag/greater%2Bnoida`
+- `https://realty.economictimes.indiatimes.com/rss/residential`
+- `https://realty.economictimes.indiatimes.com/rss/infrastructure`
+- `https://realty.economictimes.indiatimes.com/rss/industry`
+- `https://www.hindustantimes.com/cities/noida-news`
 - `https://timesofindia.indiatimes.com/city/noida`

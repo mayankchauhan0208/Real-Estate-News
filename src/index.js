@@ -54,6 +54,12 @@ const noidaCityEnabledAtStartup = ["1", "true", "yes", "on"].includes(
 );
 const noidaSources = [
   "https://realty.economictimes.indiatimes.com/tag/noida",
+  "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida",
+  "https://realty.economictimes.indiatimes.com/amp/tag/greater%2Bnoida",
+  "https://realty.economictimes.indiatimes.com/rss/residential",
+  "https://realty.economictimes.indiatimes.com/rss/infrastructure",
+  "https://realty.economictimes.indiatimes.com/rss/industry",
+  "https://www.hindustantimes.com/cities/noida-news",
   "https://timesofindia.indiatimes.com/city/noida"
 ];
 
@@ -474,21 +480,28 @@ const authorityPipelineKeywords = [
   "commercial sites",
   "demarcation",
   "development authority",
+  "gnida",
   "hsvp",
   "huda",
   "mixed land use",
   "mixed-use policy",
   "new commercial sites",
+  "noida authority",
+  "plot scheme",
+  "plots",
   "sector demarcation",
   "social infrastructure",
   "tod",
-  "transit-oriented development"
+  "transit-oriented development",
+  "yeida"
 ];
 const connectivityCatalystKeywords = [
   "connectivity catalyst",
   "expressway",
   "interchange",
   "jewar connectivity",
+  "noida airport",
+  "noida international airport",
   "metro corridor",
   "metro extension",
   "metro line",
@@ -507,6 +520,7 @@ const specificProjectKeywords = [
   "allotment",
   "allotments",
   "auction",
+  "airport-linked",
   "branded residences",
   "commercial project",
   "commercial sites",
@@ -523,6 +537,7 @@ const specificProjectKeywords = [
   "hand over",
   "hands over",
   "housing project",
+  "industrial plots",
   "investment board",
   "investment board nod",
   "landmark high-rise development",
@@ -531,11 +546,14 @@ const specificProjectKeywords = [
   "bookings worth",
   "land acquisition",
   "land parcel",
+  "land rates",
   "luxury project",
   "new benchmark",
   "hospitality living",
   "metro extension",
   "metro line",
+  "metro corridor approval",
+  "given approval from central body",
   "mixed-use development",
   "new commercial sites",
   "new noida",
@@ -544,6 +562,9 @@ const specificProjectKeywords = [
   "new real estate projects",
   "noida project",
   "noida projects",
+  "plot rates",
+  "plot scheme",
+  "plots off noida airport",
   "plotted township",
   "premium housing market",
   "property hotspot",
@@ -712,6 +733,10 @@ const blockedUrlParts = [
   "/register",
   "/subscription",
   "/terms",
+  "unauthorised-pg",
+  "unauthorised-pgs",
+  "unauthorized-pg",
+  "unauthorized-pgs",
   "/video",
   "/videos",
   "/webinar"
@@ -864,6 +889,7 @@ const negativePhraseKeywords = [
   "power backup worries",
   "power outage",
   "power supply issue",
+  "poor upkeep",
   "pre-sales decline",
   "pre-sales drop",
   "presales decline",
@@ -948,6 +974,10 @@ const severeBodyNegativePhrases = [
   "short circuit",
   "suicide due to property",
   "suicide over property",
+  "unauthorised pg",
+  "unauthorised pgs",
+  "unauthorized pg",
+  "unauthorized pgs",
   "unfulfilled promises"
 ];
 const baseOutsideCityKeywords = [
@@ -1426,7 +1456,7 @@ function getSourcePageUrls(sourceUrl) {
       });
     }
 
-    if (url.hostname === "www.hindustantimes.com" && normalizedPath === "/real-estate") {
+    if (url.hostname === "www.hindustantimes.com" && ["/real-estate", "/cities/noida-news"].includes(normalizedPath)) {
       return Array.from({ length: maxPages }, (_, index) => {
         if (index === 0) {
           return sourceUrl;

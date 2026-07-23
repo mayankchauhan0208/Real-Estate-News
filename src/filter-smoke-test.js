@@ -78,6 +78,10 @@ assert.equal(isAllowedSource("https://smartworlddevelopers.com/media"), true);
 assert.equal(isAllowedSource("https://www.signatureglobal.in/"), true);
 assert.equal(isAllowedSource("https://www.centralpark.in/media.php"), true);
 assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/noida"), noidaCityEnabled);
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida"), noidaCityEnabled);
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/amp/tag/greater%2Bnoida"), noidaCityEnabled);
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/rss/residential"), noidaCityEnabled);
+assert.equal(isAllowedSource("https://www.hindustantimes.com/cities/noida-news"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/city/noida"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://housing.com/news/"), false);
 assert.equal(isAllowedSource("https://www.squareyards.com/blog"), false);
@@ -99,6 +103,11 @@ assert.deepEqual(getSourcePageUrls("https://www.hindustantimes.com/real-estate")
   "https://www.hindustantimes.com/real-estate",
   "https://www.hindustantimes.com/real-estate/page-2",
   "https://www.hindustantimes.com/real-estate/page-3"
+]);
+assert.deepEqual(getSourcePageUrls("https://www.hindustantimes.com/cities/noida-news").slice(0, 3), [
+  "https://www.hindustantimes.com/cities/noida-news",
+  "https://www.hindustantimes.com/cities/noida-news/page-2",
+  "https://www.hindustantimes.com/cities/noida-news/page-3"
 ]);
 
 assert.equal(
@@ -567,6 +576,26 @@ if (noidaCityEnabled) {
 
   assert.deepEqual(detectCityCodes(godrejNoidaLandArticle), ["noida"]);
   assert.equal(isPublishableArticle(godrejNoidaLandArticle, sentIds), true);
+
+  const greaterNoidaPlotRateArticle = publishable({
+    title: "Greater Noida authority revises property rates across all categories",
+    description: "Commercial and residential plot rates were revised ahead of Noida airport opening.",
+    articleText: "The authority update supports Greater Noida real estate development and airport-linked growth.",
+    newsLink: "https://www.hindustantimes.com/cities/noida-news/greater-noida-authority-revises-property-rates"
+  });
+
+  assert.deepEqual(detectCityCodes(greaterNoidaPlotRateArticle), ["noida"]);
+  assert.equal(isPublishableArticle(greaterNoidaPlotRateArticle, sentIds), true);
+
+  const noidaAirportPlotsArticle = publishable({
+    title: "Over 1.1 lakh applicants vie for 973 plots off Noida airport",
+    description: "YEIDA's plot scheme near Noida International Airport saw strong demand.",
+    articleText: "The plots near Noida airport are part of an authority-backed development pipeline.",
+    newsLink: "https://realty.economictimes.indiatimes.com/news/industry/over-1-lakh-applicants-vie-for-plots-off-noida-airport"
+  });
+
+  assert.deepEqual(detectCityCodes(noidaAirportPlotsArticle), ["noida"]);
+  assert.equal(isPublishableArticle(noidaAirportPlotsArticle, sentIds), true);
 
   assert.equal(
     isPublishableArticle(
