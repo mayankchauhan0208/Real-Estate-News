@@ -17,6 +17,7 @@ const parser = new Parser({
 
 const stateDir = path.resolve(".state");
 const sentNewsPath = path.join(stateDir, "sent-news.json");
+const sentNewsSeedPath = path.resolve("data", "sent-news-seed.json");
 
 const defaultSources = [
   "https://www.hindustantimes.com/real-estate",
@@ -2920,17 +2921,33 @@ function isPublishableArticle(article, sentIds) {
 }
 
 async function readSentIds() {
+  const sentIds = new Set();
+
+  try {
+    const content = await fs.readFile(sentNewsSeedPath, "utf8");
+    const parsed = JSON.parse(content);
+    for (const id of Array.isArray(parsed.sentIds) ? parsed.sentIds : []) {
+      sentIds.add(id);
+    }
+  } catch (error) {
+    if (error.code !== "ENOENT") {
+      throw error;
+    }
+  }
+
   try {
     const content = await fs.readFile(sentNewsPath, "utf8");
     const parsed = JSON.parse(content);
-    return new Set(Array.isArray(parsed.sentIds) ? parsed.sentIds : []);
-  } catch (error) {
-    if (error.code === "ENOENT") {
-      return new Set();
+    for (const id of Array.isArray(parsed.sentIds) ? parsed.sentIds : []) {
+      sentIds.add(id);
     }
-
-    throw error;
+  } catch (error) {
+    if (error.code !== "ENOENT") {
+      throw error;
+    }
   }
+
+  return sentIds;
 }
 
 async function writeSentIds(sentIds) {
