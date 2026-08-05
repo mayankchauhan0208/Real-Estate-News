@@ -1716,16 +1716,69 @@ function canonicalUrlId(article) {
   }
 }
 
+function canonicalUrlCityId(article) {
+  const rawUrl = article.newsLink || article.url;
+
+  if (!rawUrl || !article.cityCode) {
+    return "";
+  }
+
+  try {
+    const url = new URL(rawUrl);
+    url.hash = "";
+    url.search = "";
+
+    return crypto
+      .createHash("sha256")
+      .update(`${url.toString().toLowerCase()}|${article.cityCode}`)
+      .digest("hex");
+  } catch {
+    return crypto.createHash("sha256").update(`${rawUrl.toLowerCase()}|${article.cityCode}`).digest("hex");
+  }
+}
+
 function titleOnlyId(article) {
   const title = normalizeTitle(article.title);
 
   return title ? crypto.createHash("sha256").update(title).digest("hex") : "";
 }
 
-function articleDedupeIds(article) {
-  const sharedCityIds = article.sharedCityArticle ? [titleCityId(article)] : [canonicalUrlId(article), titleOnlyId(article)];
+function sourceSlugCityId(article) {
+  const rawUrl = article.newsLink || article.url;
 
-  return [article.id, ...sharedCityIds].filter(Boolean);
+  if (!rawUrl || !article.cityCode) {
+    return "";
+  }
+
+  try {
+    const url = new URL(rawUrl);
+    const slug = url.pathname
+      .toLowerCase()
+      .replace(/\/+$/, "")
+      .split("/")
+      .filter(Boolean)
+      .at(-1)
+      ?.replace(/\.(html|htm|amp)$/i, "")
+      .replace(/[^a-z0-9]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+
+    if (!slug || slug.length < 12) {
+      return "";
+    }
+
+    const host = url.hostname.replace(/^www\./, "").toLowerCase();
+    return crypto.createHash("sha256").update(`${host}|${slug}|${article.cityCode}`).digest("hex");
+  } catch {
+    return "";
+  }
+}
+
+function articleDedupeIds(article) {
+  const cityScopedIds = [titleCityId(article), canonicalUrlCityId(article), sourceSlugCityId(article)];
+  const articleScopedIds = article.sharedCityArticle ? [] : [canonicalUrlId(article), titleOnlyId(article)];
+
+  return [article.id, ...cityScopedIds, ...articleScopedIds].filter(Boolean);
 }
 
 function stripHtml(value = "") {
@@ -4388,6 +4441,7 @@ async function main() {
     for (const id of articleDedupeIds(article)) {
       sentIds.add(id);
     }
+    await writeSentIds(sentIds);
     console.log(
       `Pushed (${result.status}, ${article.cityCode}): ${article.title} | API response: ${
         result.body || "<empty>"
@@ -4414,6 +4468,7 @@ export {
   hasBackfillDateRange,
   isLikelyFeedUrl,
   shouldSkipTitle,
+  articleDedupeIds,
   isAllowedSource,
   isNegativeNews,
   isPublishableArticle,

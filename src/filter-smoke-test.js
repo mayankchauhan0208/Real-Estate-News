@@ -15,7 +15,8 @@ import {
   isLikelyFeedUrl,
   isPublishableArticle,
   isWithinBackfillDateRange,
-  shouldSkipTitle
+  shouldSkipTitle,
+  articleDedupeIds
 } from "./index.js";
 
 const sentIds = new Set();
@@ -309,6 +310,33 @@ assert.equal(hasBackfillDateRange({ from: new Date("2026-06-25T00:00:00.000Z"), 
 assert.equal(hasBackfillDateRange({ from: null, to: null }), false);
 assert.equal(shouldSkipTitle(article({ title: "Existing reposted title" }), new Set(["existing reposted title"])), true);
 assert.equal(shouldSkipTitle(article({ title: "Different title" }), new Set(["existing reposted title"])), false);
+
+const noidaDedupeIds = articleDedupeIds(
+  article({
+    title: "Noida Airport connectivity boosts real estate demand",
+    cityCode: "noida",
+    newsLink: "https://example.com/news/noida-airport-connectivity?utm_source=tagListing"
+  })
+);
+const noidaDuplicateDedupeIds = articleDedupeIds(
+  article({
+    title: "Noida Airport connectivity boosts real estate demand!",
+    cityCode: "noida",
+    newsLink: "https://example.com/news/noida-airport-connectivity?utm_medium=homepage"
+  })
+);
+assert.equal(noidaDuplicateDedupeIds.some((id) => noidaDedupeIds.includes(id)), true);
+assert.equal(
+  articleDedupeIds(
+    article({
+      title: "Noida Airport connectivity boosts real estate demand",
+      cityCode: "gurugram",
+      newsLink: "https://example.com/news/noida-airport-connectivity?utm_medium=homepage",
+      sharedCityArticle: true
+    })
+  ).some((id) => noidaDedupeIds.includes(id)),
+  false
+);
 
 process.env.EXTRA_ARTICLE_URLS = "https://example.com/one, https://example.com/two; https://example.com/three";
 assert.deepEqual(getExtraArticleUrls(), [
