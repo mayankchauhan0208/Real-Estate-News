@@ -2,7 +2,7 @@ name: News API Pusher
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/30 * * * *"
   workflow_dispatch:
     inputs:
       backfill_from:
@@ -42,15 +42,19 @@ on:
         description: "Exact extra article URLs to evaluate, separated by comma, semicolon, or newline"
         required: false
         default: ""
+      target_city_codes:
+        description: "Optional city filter, e.g. gurugram,faridabad,noida"
+        required: false
+        default: ""
 
 concurrency:
   group: news-api-pusher
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   push-news:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
 
     steps:
       - name: Checkout
@@ -86,6 +90,9 @@ jobs:
           SKIP_TITLES: ${{ github.event.inputs.skip_titles || '' }}
           SOURCE_URLS: ${{ github.event.inputs.source_urls || '' }}
           EXTRA_ARTICLE_URLS: ${{ github.event.inputs.extra_article_urls || '' }}
+          TARGET_CITY_CODES: ${{ github.event.inputs.target_city_codes || '' }}
+          ENABLE_NOIDA_CITY: "true"
+          ALLOW_NOIDA_API: "true"
           MAX_ITEMS_PER_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_items_per_run || '80' }}
           MAX_ITEMS_PER_SOURCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_items_per_source || '300' }}
           MAX_PAGES_PER_SOURCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_pages_per_source || '15' }}
