@@ -97,3 +97,11 @@ jobs:
           MAX_ITEMS_PER_SOURCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_items_per_source || '300' }}
           MAX_PAGES_PER_SOURCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_pages_per_source || '15' }}
           DEFAULT_LOOKBACK_DAYS: "20"
+
+      - name: Upload run report
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: news-run-report-${{ github.run_id }}
+          path: reports/runs/
+          if-no-files-found: ignore

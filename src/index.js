@@ -18,6 +18,7 @@ const parser = new Parser({
 const stateDir = path.resolve(".state");
 const sentNewsPath = path.join(stateDir, "sent-news.json");
 const sentNewsSeedPath = path.resolve("data", "sent-news-seed.json");
+const runReportsDir = path.resolve("reports", "runs");
 
 const defaultSources = [
   "https://www.hindustantimes.com/real-estate",
@@ -209,6 +210,10 @@ const positiveGrowthCatalystKeywords = [
   "transformation"
 ];
 const positiveCityMarketKeywords = [
+  "100 mn sq ft office market",
+  "built-up area expands",
+  "built up area expands",
+  "capital appreciation",
   "demand remains resilient",
   "drives ncr housing market",
   "emerges as a strong real estate destination",
@@ -220,9 +225,12 @@ const positiveCityMarketKeywords = [
   "investment destination",
   "largest market",
   "office market",
+  "office milestone",
   "office stock",
   "market remains resilient",
   "property market",
+  "rental yield",
+  "rental yields",
   "real estate destination",
   "real estate growth",
   "real estate hierarchy",
@@ -576,6 +584,7 @@ const specificProjectKeywords = [
   "airport-linked",
   "authority hq",
   "branded residences",
+  "capital appreciation",
   "charging stations",
   "commercial project",
   "commercial sites",
@@ -635,9 +644,12 @@ const specificProjectKeywords = [
   "steel span",
   "possession",
   "project launch",
+  "project takes shape",
   "rapid rail",
   "real estate projects",
   "regional rapid transit",
+  "rental yield",
+  "rental yields",
   "rrts",
   "projects worth",
   "residential development",
@@ -1457,11 +1469,7 @@ function isActionableMissedNewsCandidate(article, reasons) {
   );
 }
 
-function logMissedNewsAudit(articles, filterSentIds, skipTitleSet, limit = 20) {
-  if (!getBooleanEnv("MISSED_NEWS_AUDIT", true)) {
-    return;
-  }
-
+function collectMissedNewsAudit(articles, filterSentIds, skipTitleSet) {
   const missedCandidates = [];
   const seenTitles = new Set();
 
@@ -1487,6 +1495,14 @@ function logMissedNewsAudit(articles, filterSentIds, skipTitleSet, limit = 20) {
     missedCandidates.push({ article, reasons });
   }
 
+  return missedCandidates;
+}
+
+function logMissedNewsAudit(missedCandidates, limit = 20) {
+  if (!getBooleanEnv("MISSED_NEWS_AUDIT", true) || missedCandidates.length === 0) {
+    return;
+  }
+
   if (missedCandidates.length === 0) {
     return;
   }
@@ -1500,6 +1516,70 @@ function logMissedNewsAudit(articles, filterSentIds, skipTitleSet, limit = 20) {
       } | ${reasons.join("; ")} | ${article.newsLink || ""}`
     );
   }
+}
+
+function reportArticle(article) {
+  return {
+    title: article.title || "",
+    cityCode: article.cityCode || "",
+    classification: classifyArticle(article),
+    publishedAt: article.publishedAt || "",
+    newsLink: article.newsLink || "",
+    postedBy: article.postedBy || ""
+  };
+}
+
+function mapToObject(map) {
+  return Object.fromEntries([...map.entries()].sort((a, b) => a[0].localeCompare(b[0])));
+}
+
+function safeReportFileName(date = new Date()) {
+  return `news-run-${date.toISOString().replace(/[:.]/g, "-")}`;
+}
+
+async function writeRunReport(report) {
+  await fs.mkdir(runReportsDir, { recursive: true });
+  const fileName = safeReportFileName();
+  const jsonPath = path.join(runReportsDir, `${fileName}.json`);
+  const markdownPath = path.join(runReportsDir, `${fileName}.md`);
+  const fetchedTotal = report.sources.reduce((sum, source) => sum + source.count, 0);
+  const markdownLines = [
+    "# News Run Report",
+    "",
+    `- Mode: ${report.mode}`,
+    `- Window: ${report.window.from || "beginning"} to ${report.window.to || "now"}`,
+    `- Sources fetched: ${report.sources.length}`,
+    `- Items fetched: ${fetchedTotal}`,
+    `- Source failures: ${report.failures.length}`,
+    `- New candidates: ${report.candidates.length}`,
+    `- Posted: ${report.posted.length}`,
+    `- Dry run: ${report.dryRun}`,
+    "",
+    "## Skipped By Reason",
+    ...Object.entries(report.skippedByReason).map(([reason, count]) => `- ${reason}: ${count}`),
+    "",
+    "## Failed Sources",
+    ...(report.failures.length
+      ? report.failures.map((failure) => `- ${failure.source}: ${failure.error}`)
+      : ["- None"]),
+    "",
+    "## Posted Or Dry-Run Candidates",
+    ...(report.posted.length
+      ? report.posted.map((article) => `- [${article.cityCode}] ${article.title} | ${article.newsLink}`)
+      : report.candidates.map((article) => `- [${article.cityCode}] ${article.title} | ${article.newsLink}`)),
+    "",
+    "## Missed-News Candidates",
+    ...(report.missedCandidates.length
+      ? report.missedCandidates.map(
+          (item) => `- [${item.article.cityCode || "no-city"}] ${item.article.title} | ${item.reasons.join("; ")} | ${item.article.newsLink || ""}`
+        )
+      : ["- None"])
+  ];
+
+  await fs.writeFile(jsonPath, JSON.stringify(report, null, 2));
+  await fs.writeFile(markdownPath, `${markdownLines.join("\n")}\n`);
+  console.log(`Run report written: ${jsonPath}`);
+  console.log(`Run report written: ${markdownPath}`);
 }
 
 function getSourcePageUrls(sourceUrl) {
@@ -2079,6 +2159,14 @@ function getArticleUrlText(article) {
   return (article.newsLink || "").toLowerCase();
 }
 
+function getArticleHost(article) {
+  try {
+    return new URL(article.newsLink || article.url || "").hostname.replace(/^www\./, "").toLowerCase();
+  } catch {
+    return "";
+  }
+}
+
 function isReraRelated(article) {
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
   return !isBlockedArticle(article) && hasKeyword(primaryAndUrl, reraKeywords);
@@ -2246,6 +2334,95 @@ function isPositiveCityMarketArticle(article) {
   );
 }
 
+function isStrongPositiveMarketOrInfrastructureArticle(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const disqualifyingOutsideCities = getDisqualifyingOutsideCityKeywords(article).filter(
+    (keyword) => !["faridabad", "gurugram", "gurgaon", "noida"].includes(keyword)
+  );
+
+  return (
+    hasCleanPrimaryAndUrlText(article) &&
+    (hasTargetRegionInTitleOrUrl(article) || hasNcrMatch(article)) &&
+    hasKeyword(primaryAndUrl, [
+      "appreciation",
+      "built-up area",
+      "built up area",
+      "capital financial center",
+      "financial center",
+      "expressway",
+      "interchange",
+      "invest",
+      "investment",
+      "leasing",
+      "metro",
+      "office",
+      "rental yield",
+      "rental yields",
+      "road approved"
+    ]) &&
+    hasKeyword(primaryAndUrl, [
+      "approval",
+      "approved",
+      "capital appreciation",
+      "development",
+      "expands",
+      "growth",
+      "infrastructure",
+      "market",
+      "open",
+      "opens",
+      "project",
+      "takes shape",
+      "real estate",
+      "realty",
+      "rental yield",
+      "rental yields",
+      "to open",
+      "to invest"
+    ]) &&
+    !hasWholeWordKeyword(primaryAndUrl, disqualifyingOutsideCities)
+  );
+}
+
+function isNoidaDeveloperBlogArticle(article) {
+  const host = getArticleHost(article);
+  const urlText = getArticleUrlText(article);
+
+  return ["atsgreens.com", "prateekgroup.com"].includes(host) && urlText.includes("/blog");
+}
+
+function hasNoidaDeveloperBlogQualitySignal(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  return (
+    article.cityCode === "noida" &&
+    hasCleanPrimaryAndUrlText(article) &&
+    hasTargetRegionInTitleOrUrl(article) &&
+    hasKeyword(primaryAndUrl, [
+      "airport",
+      "builder",
+      "capital values",
+      "connectivity",
+      "expressway",
+      "greater noida",
+      "jewar",
+      "launch",
+      "market data",
+      "metro",
+      "noida airport",
+      "noida expressway",
+      "price",
+      "prices",
+      "project",
+      "projects",
+      "rera",
+      "sector",
+      "sector 150"
+    ]) &&
+    hasKeyword(primaryAndUrl, ["apartment", "builder", "housing", "investment", "property", "real estate", "residential"])
+  );
+}
+
 function isPositiveCivicInfrastructureArticle(article) {
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
 
@@ -2274,6 +2451,7 @@ function isPositiveTargetBusinessOrDevelopmentArticle(article) {
     isAuthorityPipelineArticle(article) ||
     isConnectivityCatalystArticle(article) ||
     isPositiveCivicInfrastructureArticle(article) ||
+    isStrongPositiveMarketOrInfrastructureArticle(article) ||
     isPositiveCityMarketArticle(article)
   );
 }
@@ -2327,6 +2505,10 @@ function classifyArticle(article) {
     return "positive_city_market";
   }
 
+  if (isStrongPositiveMarketOrInfrastructureArticle(article)) {
+    return "positive_market_infrastructure";
+  }
+
   if (isPositiveTargetProjectUpdate(article) || (hasRealEstateEvidence(article) && hasSpecificProjectOrDevelopmentSignal(article))) {
     return "project_development";
   }
@@ -2358,6 +2540,7 @@ function hasSpecificProjectOrDevelopmentSignal(article) {
     isFaridabadNcrGrowthComparisonArticle(article) ||
     isTargetProjectAwardArticle(article) ||
     isPositiveCityMarketArticle(article) ||
+    isStrongPositiveMarketOrInfrastructureArticle(article) ||
     isPositiveTargetBusinessOrDevelopmentArticle(article)
   ) {
     return true;
@@ -2934,6 +3117,10 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("filter 10: broad market/company update, not city project news");
   }
 
+  if (isNoidaDeveloperBlogArticle(article) && !hasNoidaDeveloperBlogQualitySignal(article)) {
+    reasons.push("filter 14: weak Noida developer blog signal");
+  }
+
   if (!article.cityCode) {
     reasons.push("filter 5: no allowed city match");
   }
@@ -2942,7 +3129,7 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("filter 6: target region missing or weak");
   }
 
-  if (hasOutsideRegionInPrimaryText(article)) {
+  if (hasOutsideRegionInPrimaryText(article) && !isStrongPositiveMarketOrInfrastructureArticle(article)) {
     reasons.push("filter 7: outside region in title/description");
   }
 
@@ -4309,6 +4496,10 @@ async function main() {
   const skipTitleSet = getSkipTitleSet();
   const targetCityCodeFilter = getTargetCityCodeFilter();
   const allArticles = [];
+  const fetchedSources = [];
+  const failedSources = [];
+  const postedArticles = [];
+  const dryRunCandidates = [];
 
   if (isNoidaCityEnabled() && !getBooleanEnv("DRY_RUN") && !getBooleanEnv("ALLOW_NOIDA_API")) {
     throw new Error("Noida city mode is local-only for now. Set DRY_RUN=true, or set ALLOW_NOIDA_API=true after the API supports cityCode=noida.");
@@ -4346,8 +4537,10 @@ async function main() {
     try {
       const articles = await fetchSource(source);
       allArticles.push(...articles);
+      fetchedSources.push({ source, count: articles.length });
       console.log(`Fetched ${articles.length} items from ${source}`);
     } catch (error) {
+      failedSources.push({ source, error: error.message });
       console.error(`Failed to fetch ${source}: ${error.message}`);
     }
   }
@@ -4356,8 +4549,10 @@ async function main() {
     try {
       const article = await fetchDirectArticle(articleUrl);
       allArticles.push(article);
+      fetchedSources.push({ source: articleUrl, count: 1, direct: true });
       console.log(`Fetched direct article: ${article.title || articleUrl}`);
     } catch (error) {
+      failedSources.push({ source: articleUrl, error: error.message, direct: true });
       console.error(`Failed to fetch direct article ${articleUrl}: ${error.message}`);
     }
   }
@@ -4411,7 +4606,8 @@ async function main() {
     console.log(`Skipped ${count} articles by ${reason}.`);
   }
 
-  logMissedNewsAudit(expandedArticles, filterSentIds, skipTitleSet);
+  const missedNewsCandidates = collectMissedNewsAudit(expandedArticles, filterSentIds, skipTitleSet);
+  logMissedNewsAudit(missedNewsCandidates);
 
   for (const article of expandedArticles.slice(0, 100)) {
     const reasons = shouldSkipTitle(article, skipTitleSet)
@@ -4434,6 +4630,7 @@ async function main() {
       console.log(
         `Dry run candidate (${article.cityCode}): ${article.title} | ${article.newsLink}`
       );
+      dryRunCandidates.push(reportArticle(article));
       continue;
     }
 
@@ -4442,6 +4639,7 @@ async function main() {
       sentIds.add(id);
     }
     await writeSentIds(sentIds);
+    postedArticles.push(reportArticle(article));
     console.log(
       `Pushed (${result.status}, ${article.cityCode}): ${article.title} | API response: ${
         result.body || "<empty>"
@@ -4450,6 +4648,30 @@ async function main() {
   }
 
   await writeSentIds(sentIds);
+  await writeRunReport({
+    generatedAt: new Date().toISOString(),
+    mode: getBooleanEnv("DRY_RUN") ? "dry-run" : "live",
+    dryRun: getBooleanEnv("DRY_RUN"),
+    noidaEnabled: isNoidaCityEnabled(),
+    targetCityCodes: [...targetCityCodeFilter],
+    window: {
+      from: backfillDateRange.from?.toISOString() || "",
+      to: backfillDateRange.to?.toISOString() || ""
+    },
+    sourceCount: selectedSources.length,
+    sources: fetchedSources,
+    failures: failedSources,
+    fetchedArticleCount: allArticles.length,
+    expandedArticleCount: expandedArticles.length,
+    skippedByReason: mapToObject(rejectionCounts),
+    candidates: articlesToPush.map(reportArticle),
+    posted: postedArticles,
+    dryRunCandidates,
+    missedCandidates: missedNewsCandidates.slice(0, 50).map(({ article, reasons }) => ({
+      article: reportArticle(article),
+      reasons
+    }))
+  });
 }
 
 export {

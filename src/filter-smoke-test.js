@@ -946,6 +946,59 @@ assert.equal(classifyArticle(faridabadPositiveMarketArticle), "positive_city_mar
 
 assert.match(
   reasons({
+    title: "Noida, Gurugram lead capital appreciation and increase in rental yields in residential real estate",
+    description: "The report says both cities recorded strong capital appreciation and rental yields.",
+    articleText: "The residential real estate market data highlights positive growth in Noida and Gurugram.",
+    newsLink: "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/noida-gurugram-lead-capital-appreciation/articleshow/132853098.cms"
+  }).join("; "),
+  /^$/
+);
+
+assert.match(
+  reasons({
+    title: "Gurugram's built-up area expands 64% in a decade: GIS study",
+    description: "The built-up area expansion signals infrastructure growth and real estate market momentum in Gurugram.",
+    articleText: "The city has seen positive development, housing demand and infrastructure-led real estate growth.",
+    newsLink: "https://realty.economictimes.indiatimes.com/news/infrastructure/gurugrams-urban-expansion-built-up-area-grows-64-in-10-years/132817244"
+  }).join("; "),
+  /^$/
+);
+
+assert.match(
+  reasons({
+    title: "M3M India to invest Rs 600 crore in developing Capital Financial Center in Gurugram",
+    description: "The developer investment will add a commercial real estate project in Gurugram.",
+    articleText: "M3M is developing Capital Financial Center as a Gurugram commercial realty project.",
+    newsLink: "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/m3m-india-to-invest-rs-600-crore-in-developing-capital-financial-center-in-gurugram/articleshow/132732493.cms"
+  }).join("; "),
+  /^$/
+);
+
+if (noidaCityEnabled) {
+  assert.match(
+    reasons({
+      title: "EPE-Yamuna Expressway interchange to open from October 15: NHAI",
+      description: "The interchange will improve Noida and Yamuna Expressway connectivity.",
+      articleText: "The infrastructure update strengthens access to Noida airport and Greater Noida real estate corridors.",
+      newsLink: "https://www.hindustantimes.com/cities/noida-news/epeyamuna-expressway-interchange-to-open-from-october-15-nhai-101785436659383.html"
+    }).join("; "),
+    /^$/
+  );
+
+  assert.match(
+    reasons({
+      title: "Things to check before buying any flat",
+      description: "A generic buyer guide without a Noida sector, project, market data or connectivity signal.",
+      articleText: "This blog gives general advice for homebuyers.",
+      cityCode: "noida",
+      newsLink: "https://prateekgroup.com/blog/things-to-check-before-buying-any-flat/"
+    }).join("; "),
+    /weak Noida developer blog signal/
+  );
+}
+
+assert.match(
+  reasons({
     title: "Global disruptions create a 'spring effect', says Vikas Oberoi of Oberoi Realty",
     description: "The company discusses its Gurugram expansion plans.",
     articleText: "The article mentions a Gurugram project, but the headline is broad market commentary.",
