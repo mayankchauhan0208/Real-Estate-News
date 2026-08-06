@@ -788,6 +788,7 @@ const blockedExactTitles = [
   "commercial projects",
   "latest news",
   "online allotte payment services",
+  "property / c'struction",
   "real estate news",
   "terms of use"
 ];
@@ -1916,8 +1917,8 @@ function cleanArticleFields(article) {
     description,
     articleText: cleanText(article.articleText, 5000),
     newsLink: cleanText(article.newsLink, 1000),
-    thumbnailImage: cleanText(article.thumbnailImage, 1000),
-    postedBy: cleanText(article.postedBy, 120),
+    thumbnailImage: cleanText(article.thumbnailImage, 1000) || safeFallbackLogo(article.newsLink || article.url),
+    postedBy: cleanPublisherName(article.postedBy, article.newsLink || article.url),
     postedByLogo: cleanText(article.postedByLogo, 1000)
   };
 }
@@ -1965,11 +1966,15 @@ function getPublisherName(sourceUrl, pageTitle = "") {
   const names = {
     "business-standard.com": "Business Standard",
     "cnbctv18.com": "CNBC TV18",
+    "economictimes.indiatimes.com": "The Economic Times",
     "hindustantimes.com": "Hindustan Times",
+    "indianexpress.com": "The Indian Express",
     "moneycontrol.com": "Moneycontrol",
     "outlookmoney.com": "Outlook Money",
     "propnewstime.com": "Prop News Time",
+    "realty.economictimes.indiatimes.com": "ET Realty",
     "realtynmore.com": "RealtyNMore",
+    "timesofindia.indiatimes.com": "Times of India",
     "torbitrealty.com": "Torbit Realty",
     "tribuneindia.com": "The Tribune"
   };
@@ -1977,9 +1982,56 @@ function getPublisherName(sourceUrl, pageTitle = "") {
   return names[host] || stripHtml(pageTitle).split("|")[0].trim() || host;
 }
 
+function cleanPublisherName(value = "", sourceUrl = "") {
+  let hostPublisher = "";
+
+  try {
+    hostPublisher = sourceUrl ? getPublisherName(sourceUrl) : "";
+  } catch {
+    hostPublisher = "";
+  }
+
+  if (hostPublisher && !/^[a-z0-9.-]+\.[a-z]{2,}$/i.test(hostPublisher)) {
+    return hostPublisher;
+  }
+
+  const text = cleanText(value, 160);
+  const publisherAliases = [
+    ["The Economic Times", /\b(the\s+)?economic\s+times\b/i],
+    ["ET Realty", /\bet\s+realty\b|\brealty\.economictimes\b/i],
+    ["Times of India", /\btimes\s+of\s+india\b/i],
+    ["Hindustan Times", /\bhindustan\s+times\b/i],
+    ["The Indian Express", /\bindian\s+express\b/i],
+    ["Moneycontrol", /\bmoneycontrol\b/i],
+    ["CNBC TV18", /\bcnbc\s*tv\s*18\b/i],
+    ["RealtyNMore", /\brealtynmore\b/i],
+    ["Prop News Time", /\bprop\s*news\s*time\b/i]
+  ];
+  const alias = publisherAliases.find(([, pattern]) => pattern.test(text));
+
+  if (alias) {
+    return alias[0];
+  }
+
+  return text
+    .split(/\s+[|-]\s+/)
+    .at(-1)
+    ?.replace(/\s*:\s*(latest|breaking).*$/i, "")
+    .trim()
+    .slice(0, 48) || text.slice(0, 48);
+}
+
 function getFallbackLogo(sourceUrl) {
   const host = new URL(sourceUrl).hostname;
   return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(host)}&sz=128`;
+}
+
+function safeFallbackLogo(sourceUrl = "") {
+  try {
+    return sourceUrl ? getFallbackLogo(sourceUrl) : "";
+  } catch {
+    return "";
+  }
 }
 
 function absoluteUrl(value, baseUrl) {
@@ -3022,9 +3074,31 @@ function isBlockedArticle(article) {
 
   return (
     blockedExactTitles.includes(normalizedTitle) ||
+    isAddressLikeHeadline(title) ||
+    isMalformedCategoryHeadline(title) ||
     /[\u0900-\u097F]/.test(primaryText) ||
     (!allowProjectAwardArticle && hasKeyword(primaryText, blockedTitleKeywords)) ||
     (!allowProjectAwardArticle && hasKeyword(newsLink, blockedUrlParts))
+  );
+}
+
+function isAddressLikeHeadline(title = "") {
+  const normalized = cleanText(title, 240).toLowerCase();
+
+  return (
+    /\b\d+(st|nd|rd|th)\s+floor\b/.test(normalized) &&
+    /\bsector\s+\d+\b/.test(normalized) &&
+    /\b(noida|gurugram|gurgaon|faridabad|uttar pradesh|haryana|delhi)\b/.test(normalized)
+  );
+}
+
+function isMalformedCategoryHeadline(title = "") {
+  const normalized = cleanText(title, 240).toLowerCase().replace(/\s+/g, " ");
+
+  return (
+    /\bproperty\s*\/\s*c['’]?struction\b/i.test(normalized) ||
+    /\bauto\s*homeno\s*auto\b/i.test(normalized) ||
+    /^realtynmore,\s*\d/.test(normalized)
   );
 }
 

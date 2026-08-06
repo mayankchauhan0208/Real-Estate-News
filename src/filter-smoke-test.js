@@ -283,6 +283,57 @@ assert.equal(
 );
 
 assert.equal(
+  cleanArticleFields(
+    article({
+      title: "DLF's net profit rose to Rs 794 crore in Q1FY27",
+      postedBy: "Property / C'struction - Services - Industry - The Economic Times",
+      newsLink:
+        "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/dlfs-net-profit-rose-to-rs-794-crore-in-q1fy27/articleshow/132831340.cms"
+    })
+  ).postedBy,
+  "The Economic Times"
+);
+
+assert.equal(
+  cleanArticleFields(
+    article({
+      postedBy: "Noida News Today, Latest Noida News Headlines & Live Updates - Times of India",
+      newsLink: "https://timesofindia.indiatimes.com/city/noida"
+    })
+  ).postedBy,
+  "Times of India"
+);
+
+assert.equal(
+  cleanArticleFields(
+    article({
+      thumbnailImage: "",
+      newsLink: "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/dlf-profit/articleshow/1.cms"
+    })
+  ).thumbnailImage,
+  "https://www.google.com/s2/favicons?domain=economictimes.indiatimes.com&sz=128"
+);
+
+assert.match(
+  reasons({
+    title: "Realtynmore, 2nd Floor, Ofis Square, The Iconic Corenthum, Sector 62, Noida, Uttar Pradesh 201301",
+    description: "Realtynmore, 2nd Floor, Ofis Square, The Iconic Corenthum, Sector 62, Noida, Uttar Pradesh 201301",
+    cityCode: "noida",
+    newsLink: "https://realtynmore.com/contact/"
+  }).join("; "),
+  /spam\/menu page/
+);
+
+assert.match(
+  reasons({
+    title: "Property / C'struction",
+    description: "Services - Industry - The Economic Times",
+    newsLink: "https://economictimes.indiatimes.com/industry/services/property-/-cstruction"
+  }).join("; "),
+  /spam\/menu page/
+);
+
+assert.equal(
   isWithinBackfillDateRange(
     article({
       createdAt: "",
