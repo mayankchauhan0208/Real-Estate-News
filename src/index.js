@@ -395,6 +395,11 @@ const realEstateCompanyKeywords = [
   "dlf ltd",
   "bptp",
   "bptp ltd",
+  "gaurs",
+  "gaur group",
+  "gaursons",
+  "gaursons india",
+  "gaurs group",
   "godrej properties",
   "lodha",
   "macrotech",
@@ -475,6 +480,10 @@ const targetRealEstateCorporateCompanies = [
       "emaar india",
       "emaar"
     ]
+  },
+  {
+    code: "noida",
+    keywords: ["gaurs", "gaur group", "gaursons", "gaursons india", "gaurs group"]
   },
   {
     code: "faridabad",
@@ -2290,6 +2299,13 @@ function getCorporateCompanyCityCodes(article, company = getTargetRealEstateCorp
   }
 
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  if (
+    company.code &&
+    !ncrCityCodes.includes(company.code)
+  ) {
+    return [];
+  }
 
   if (
     company.code &&

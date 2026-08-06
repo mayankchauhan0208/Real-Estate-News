@@ -503,6 +503,26 @@ const m3mNoidaArticle = publishable({
 assert.deepEqual(detectCityCodes(m3mNoidaArticle), noidaCityEnabled ? ["noida"] : []);
 assert.equal(isPublishableArticle(m3mNoidaArticle, sentIds), noidaCityEnabled);
 
+const gaursNoidaArticle = publishable({
+  title: "Gaurs Group plans new residential launches in Greater Noida West",
+  description: "Gaurs Group said buyer confidence and infrastructure growth support new projects in Greater Noida West.",
+  articleText: "The developer update focuses on Noida Extension, Greater Noida West, new launches and residential demand.",
+  newsLink: "https://example.com/gaurs-group-greater-noida-west-launches"
+});
+
+assert.deepEqual(detectCityCodes(gaursNoidaArticle), noidaCityEnabled ? ["noida"] : []);
+assert.equal(isPublishableArticle(gaursNoidaArticle, sentIds), noidaCityEnabled);
+
+const gaursFaridabadArticle = publishable({
+  title: "Gaurs Group plans new residential project in Faridabad",
+  description: "Gaurs Group said Faridabad is a growth market for real estate and new residential launches.",
+  articleText: "The developer update focuses on Faridabad housing demand, project development and infrastructure growth.",
+  newsLink: "https://example.com/gaurs-group-faridabad-residential-project"
+});
+
+assert.deepEqual(detectCityCodes(gaursFaridabadArticle), ["faridabad"]);
+assert.equal(isPublishableArticle(gaursFaridabadArticle, sentIds), true);
+
 const centralParkAwardArticle = publishable({
   title: "Central Park recognised across three categories at Times Realty Awards 2026",
   description: "Central Park was recognised for Trusted Real Estate Brand and luxury development excellence.",
