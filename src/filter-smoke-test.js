@@ -713,6 +713,17 @@ assert.deepEqual(
 );
 assert.equal(isPublishableArticle(delhiNcrPremiumHousingArticle, sentIds), true);
 
+const noidaDominantNcrArticle = publishable({
+  title: "Delhi NCR developer plans new residential launches",
+  description: "The developer said infrastructure growth is supporting premium housing demand.",
+  articleText:
+    "The full article focuses on Noida Extension and Greater Noida West. Noida homebuyers are seeing better connectivity near Noida airport, while Greater Noida projects continue to attract real estate demand.",
+  newsLink: "https://example.com/delhi-ncr-developer-noida-extension-launches"
+});
+
+assert.deepEqual(detectCityCodes(noidaDominantNcrArticle), noidaCityEnabled ? ["noida"] : []);
+assert.equal(isPublishableArticle(noidaDominantNcrArticle, sentIds), noidaCityEnabled);
+
 assert.equal(
   isPublishableArticle(
     publishable({
@@ -916,7 +927,8 @@ assert.match(
   reasons({
     title: "Real estate approvals need faster coordination: Karnataka RERA chairman",
     description: "Karnataka RERA chairman discussed approvals.",
-    articleText: "The update is about Karnataka RERA approvals and not Gurugram or Faridabad."
+    articleText: "The update is about Karnataka RERA approvals and not Gurugram or Faridabad.",
+    newsLink: "https://example.com/karnataka-rera-real-estate-approvals"
   }).join("; "),
   /negative\/crime\/utility concern news|no allowed city match|outside-city conflict|outside region/
 );

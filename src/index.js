@@ -121,6 +121,23 @@ function isNoidaCityEnabled() {
   return noidaCityEnabledAtStartup;
 }
 
+const noidaCityRule = {
+  code: "noida",
+  keywords: [
+    "noida",
+    "greater noida",
+    "greater noida west",
+    "noida extension",
+    "new noida",
+    "jewar",
+    "jewar airport",
+    "noida airport",
+    "noida international airport",
+    "yamuna expressway",
+    "yeida"
+  ]
+};
+
 const cityRules = [
   {
     code: "faridabad",
@@ -147,24 +164,12 @@ const cityRules = [
     ]
   },
   ...(isNoidaCityEnabled()
-    ? [{
-      code: "noida",
-      keywords: [
-        "noida",
-        "greater noida",
-        "greater noida west",
-        "noida extension",
-        "new noida",
-        "jewar",
-        "jewar airport",
-        "noida airport",
-        "noida international airport",
-        "yamuna expressway",
-        "yeida"
-      ]
-    }]
+    ? [noidaCityRule]
     : [])
 ];
+const allCityRules = cityRules.some((rule) => rule.code === noidaCityRule.code)
+  ? cityRules
+  : [...cityRules, noidaCityRule];
 const gurugramCorridorKeywords = [
   "dwarka expressway",
   "golf course road",
@@ -2287,6 +2292,50 @@ function detectExplicitTargetCityCodes(article) {
   return [...new Set(cityCodes)];
 }
 
+function detectDominantFullArticleCityCodes(article) {
+  const fullText = getArticleSearchText(article);
+  const counts = allCityRules
+    .map((rule) => ({
+      code: rule.code,
+      count: countKeywordMentions(fullText, rule.keywords)
+    }))
+    .filter((entry) => entry.count > 0);
+
+  if (counts.length === 0) {
+    return [];
+  }
+
+  const total = counts.reduce((sum, entry) => sum + entry.count, 0);
+  const maxCount = Math.max(...counts.map((entry) => entry.count));
+  const dominantCodes = counts
+    .filter((entry) => entry.count === maxCount && entry.count >= 2 && entry.count / total >= 0.6)
+    .map((entry) => entry.code);
+
+  return dominantCodes.length === 1 && ncrCityCodes.includes(dominantCodes[0]) ? dominantCodes : [];
+}
+
+function hasDisabledDominantFullArticleCity(article) {
+  const fullText = getArticleSearchText(article);
+  const counts = allCityRules
+    .map((rule) => ({
+      code: rule.code,
+      count: countKeywordMentions(fullText, rule.keywords)
+    }))
+    .filter((entry) => entry.count > 0);
+
+  if (counts.length === 0) {
+    return false;
+  }
+
+  const total = counts.reduce((sum, entry) => sum + entry.count, 0);
+  const maxCount = Math.max(...counts.map((entry) => entry.count));
+  const dominantCodes = counts
+    .filter((entry) => entry.count === maxCount && entry.count >= 2 && entry.count / total >= 0.6)
+    .map((entry) => entry.code);
+
+  return dominantCodes.length === 1 && !ncrCityCodes.includes(dominantCodes[0]);
+}
+
 function getCorporateCompanyCityCodes(article, company = getTargetRealEstateCorporateCompany(article)) {
   if (!company) {
     return [];
@@ -2296,6 +2345,16 @@ function getCorporateCompanyCityCodes(article, company = getTargetRealEstateCorp
 
   if (explicitCityCodes.length > 0) {
     return explicitCityCodes;
+  }
+
+  const dominantFullArticleCityCodes = detectDominantFullArticleCityCodes(article);
+
+  if (dominantFullArticleCityCodes.length > 0) {
+    return dominantFullArticleCityCodes;
+  }
+
+  if (hasDisabledDominantFullArticleCity(article)) {
+    return [];
   }
 
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
@@ -2699,6 +2758,16 @@ function detectMatchedCityCodes(article) {
 
   if (matchedCityCodes.length > 0) {
     return matchedCityCodes;
+  }
+
+  const dominantFullArticleCityCodes = detectDominantFullArticleCityCodes(article);
+
+  if (dominantFullArticleCityCodes.length > 0) {
+    return dominantFullArticleCityCodes;
+  }
+
+  if (hasDisabledDominantFullArticleCity(article)) {
+    return [];
   }
 
   if (hasNcrMatch(article)) {
