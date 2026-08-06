@@ -314,6 +314,25 @@ assert.equal(
   "https://www.google.com/s2/favicons?domain=economictimes.indiatimes.com&sz=128"
 );
 
+assert.equal(
+  cleanArticleFields(
+    article({
+      postedByLogo: "",
+      newsLink: "https://timesofindia.indiatimes.com/city/noida/example/articleshow/1.cms"
+    })
+  ).postedByLogo,
+  "https://www.google.com/s2/favicons?domain=timesofindia.indiatimes.com&sz=128"
+);
+
+const longHeadlineArticle = cleanArticleFields(
+  article({
+    title:
+      "Noida Expressway luxury housing demand rises strongly as airport connectivity, metro access, premium projects and market data support buyer confidence"
+  })
+);
+assert.equal(longHeadlineArticle.title.length <= 120, true);
+assert.equal(longHeadlineArticle.title.endsWith("..."), true);
+
 assert.match(
   reasons({
     title: "Realtynmore, 2nd Floor, Ofis Square, The Iconic Corenthum, Sector 62, Noida, Uttar Pradesh 201301",

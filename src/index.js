@@ -1895,11 +1895,27 @@ function cleanText(value = "", maxLength = 600) {
     return text;
   }
 
-  return `${text.slice(0, maxLength).replace(/\s+\S*$/, "").trim()}.`;
+  return truncateWithEllipsis(text, maxLength);
+}
+
+function truncateWithEllipsis(value = "", maxLength = 120) {
+  const text = String(value).trim();
+
+  if (text.length <= maxLength) {
+    return text;
+  }
+
+  const suffix = "...";
+  const truncated = text
+    .slice(0, Math.max(0, maxLength - suffix.length))
+    .replace(/\s+\S*$/, "")
+    .trim();
+
+  return `${truncated || text.slice(0, maxLength - suffix.length).trim()}${suffix}`;
 }
 
 function cleanTitle(value = "") {
-  return cleanText(value, 180)
+  return cleanText(value, 120)
     .replace(/\s+[|-]\s+(latest news|news|real estate news)$/i, "")
     .replace(/^(watch|photos?|video):\s*/i, "")
     .replace(new RegExp(`\\s*(?:${monthPattern})\\.?\\s+\\d{1,2},?\\s+\\d{4}.*$`, "i"), "")
@@ -1909,7 +1925,8 @@ function cleanTitle(value = "") {
 
 function cleanArticleFields(article) {
   const title = cleanTitle(article.title);
-  const description = cleanText(article.description, 700) || title;
+  const description = cleanText(article.description, 180) || title;
+  const fallbackLogo = safeFallbackLogo(article.newsLink || article.url);
 
   return {
     ...article,
@@ -1917,9 +1934,9 @@ function cleanArticleFields(article) {
     description,
     articleText: cleanText(article.articleText, 5000),
     newsLink: cleanText(article.newsLink, 1000),
-    thumbnailImage: cleanText(article.thumbnailImage, 1000) || safeFallbackLogo(article.newsLink || article.url),
+    thumbnailImage: cleanText(article.thumbnailImage, 1000) || fallbackLogo,
     postedBy: cleanPublisherName(article.postedBy, article.newsLink || article.url),
-    postedByLogo: cleanText(article.postedByLogo, 1000)
+    postedByLogo: cleanText(article.postedByLogo, 1000) || fallbackLogo
   };
 }
 
@@ -2898,16 +2915,20 @@ function expandCityArticles(article) {
 }
 
 function toApiPayload(article) {
+  const fallbackLogo = safeFallbackLogo(article.newsLink || article.url);
+  const thumbnailImage = isHttpUrl(article.thumbnailImage) ? article.thumbnailImage : fallbackLogo;
+  const postedByLogo = isHttpUrl(article.postedByLogo) ? article.postedByLogo : fallbackLogo;
+
   return {
-    title: article.title,
-    description: article.description,
+    title: cleanTitle(article.title),
+    description: cleanText(article.description, 180) || cleanTitle(article.title),
     cityCode: article.cityCode,
     isActive: article.isActive,
     newsLink: article.newsLink,
-    thumbnailImage: article.thumbnailImage,
-    postedBy: article.postedBy,
+    thumbnailImage,
+    postedBy: cleanPublisherName(article.postedBy, article.newsLink || article.url),
     createdAt: getCreatedAt(article),
-    postedByLogo: article.postedByLogo
+    postedByLogo
   };
 }
 
