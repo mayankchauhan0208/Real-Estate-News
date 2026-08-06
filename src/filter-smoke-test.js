@@ -834,6 +834,17 @@ if (noidaCityEnabled) {
   assert.deepEqual(detectCityCodes(noidaCommercialKioskArticle), ["noida"]);
   assert.equal(isPublishableArticle(noidaCommercialKioskArticle, sentIds), true);
 
+  const noidaDepotAutoWaitArticle = publishable({
+    title: "Getting off Depot station? Long wait to get an auto home",
+    description: "Noida Depot metro station last-mile connectivity update around the station.",
+    articleText: "Noida Depot metro station last-mile connectivity around the station.",
+    newsLink:
+      "https://timesofindia.indiatimes.com/city/noida/getting-off-depot-station-long-wait-to-get-an-auto-home/articleshow/132939408.cms"
+  });
+
+  assert.equal(isPublishableArticle(noidaDepotAutoWaitArticle, sentIds), false);
+  assert.match(getRejectionReasons(noidaDepotAutoWaitArticle, sentIds).join("; "), /negative\/crime\/utility concern news/);
+
   const noidaSportsComplexArticle = publishable({
     title: "Noida to spend Rs 145 crore on building sports complex in Sector 123",
     description: "The sports complex is a positive social infrastructure project for Noida sectors.",
