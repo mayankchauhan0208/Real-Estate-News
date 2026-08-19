@@ -523,6 +523,27 @@ const gaursFaridabadArticle = publishable({
 assert.deepEqual(detectCityCodes(gaursFaridabadArticle), ["faridabad"]);
 assert.equal(isPublishableArticle(gaursFaridabadArticle, sentIds), true);
 
+const tataFaridabadArticle = publishable({
+  title: "Tata Realty plans residential project in Faridabad",
+  description: "Tata Realty said Faridabad is a growth market for residential real estate development.",
+  articleText: "The company update focuses on Faridabad housing demand, project development and infrastructure growth.",
+  newsLink: "https://example.com/tata-realty-faridabad-residential-project"
+});
+
+assert.deepEqual(detectCityCodes(tataFaridabadArticle), ["faridabad"]);
+assert.equal(isPublishableArticle(tataFaridabadArticle, sentIds), true);
+
+const tataGenericBrandArticle = publishable({
+  title: "Tata brand expands office presence in Delhi NCR",
+  description: "The update mentions Delhi NCR commercial space but is not a real estate developer project.",
+  articleText: "The article focuses on a generic Tata brand office move without a Faridabad, Gurugram or Noida real estate project.",
+  newsLink: "https://example.com/tata-brand-delhi-ncr-office"
+});
+
+assert.deepEqual(detectCityCodes(tataGenericBrandArticle), []);
+assert.equal(isPublishableArticle(tataGenericBrandArticle, sentIds), false);
+assert.match(getRejectionReasons(tataGenericBrandArticle, sentIds).join("; "), /spam\/menu page|no allowed city match/);
+
 const centralParkAwardArticle = publishable({
   title: "Central Park recognised across three categories at Times Realty Awards 2026",
   description: "Central Park was recognised for Trusted Real Estate Brand and luxury development excellence.",

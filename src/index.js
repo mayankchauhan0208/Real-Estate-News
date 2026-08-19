@@ -394,6 +394,14 @@ const promotionalRealEstateKeywords = [
   "sales",
   "township"
 ];
+const tataRealEstateCompanyKeywords = [
+  "tata housing",
+  "tata realty",
+  "tata realty and infrastructure",
+  "tata value homes",
+  "tril"
+];
+
 const realEstateCompanyKeywords = [
   "dlf",
   "dlf homes",
@@ -406,6 +414,7 @@ const realEstateCompanyKeywords = [
   "gaursons india",
   "gaurs group",
   "godrej properties",
+  ...tataRealEstateCompanyKeywords,
   "lodha",
   "macrotech",
   "prestige estates",
@@ -470,6 +479,10 @@ const targetRealEstateCorporateCompanies = [
   {
     code: "",
     keywords: ["bptp", "bptp ltd"]
+  },
+  {
+    code: "",
+    keywords: tataRealEstateCompanyKeywords
   },
   {
     code: "gurugram",
@@ -2384,6 +2397,10 @@ function getCorporateCompanyCityCodes(article, company = getTargetRealEstateCorp
     return [];
   }
 
+  if (!company.code && hasWholeWordKeyword(primaryAndUrl, tataRealEstateCompanyKeywords)) {
+    return [];
+  }
+
   if (
     !company.code &&
     hasWholeWordKeyword(primaryAndUrl, ["bptp", "bptp ltd"]) &&
@@ -3186,10 +3203,16 @@ function isBlockedArticle(article) {
     blockedExactTitles.includes(normalizedTitle) ||
     isAddressLikeHeadline(title) ||
     isMalformedCategoryHeadline(title) ||
+    isUnsupportedTataBrandArticle(article) ||
     /[\u0900-\u097F]/.test(primaryText) ||
     (!allowProjectAwardArticle && hasKeyword(primaryText, blockedTitleKeywords)) ||
     (!allowProjectAwardArticle && hasKeyword(newsLink, blockedUrlParts))
   );
+}
+
+function isUnsupportedTataBrandArticle(article) {
+  const haystack = getArticleSearchText(article);
+  return hasWholeWordKeyword(haystack, ["tata"]) && !hasWholeWordKeyword(haystack, tataRealEstateCompanyKeywords);
 }
 
 function isAddressLikeHeadline(title = "") {
