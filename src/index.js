@@ -399,6 +399,7 @@ const tataRealEstateCompanyKeywords = [
   "tata realty",
   "tata realty and infrastructure",
   "tata value homes",
+  "tata projects",
   "tril"
 ];
 
@@ -753,6 +754,11 @@ const blockedTitleKeywords = [
   "advertise",
   "air monitor",
   "air monitors",
+  "spotify",
+  "tata play",
+  "premium trial",
+  "streaming date",
+  "ott release",
   "appoints",
   "appointed",
   "across india",
@@ -2397,10 +2403,6 @@ function getCorporateCompanyCityCodes(article, company = getTargetRealEstateCorp
     return [];
   }
 
-  if (!company.code && hasWholeWordKeyword(primaryAndUrl, tataRealEstateCompanyKeywords)) {
-    return [];
-  }
-
   if (
     !company.code &&
     hasWholeWordKeyword(primaryAndUrl, ["bptp", "bptp ltd"]) &&
@@ -3203,16 +3205,10 @@ function isBlockedArticle(article) {
     blockedExactTitles.includes(normalizedTitle) ||
     isAddressLikeHeadline(title) ||
     isMalformedCategoryHeadline(title) ||
-    isUnsupportedTataBrandArticle(article) ||
     /[\u0900-\u097F]/.test(primaryText) ||
     (!allowProjectAwardArticle && hasKeyword(primaryText, blockedTitleKeywords)) ||
     (!allowProjectAwardArticle && hasKeyword(newsLink, blockedUrlParts))
   );
-}
-
-function isUnsupportedTataBrandArticle(article) {
-  const haystack = getArticleSearchText(article);
-  return hasWholeWordKeyword(haystack, ["tata"]) && !hasWholeWordKeyword(haystack, tataRealEstateCompanyKeywords);
 }
 
 function isAddressLikeHeadline(title = "") {

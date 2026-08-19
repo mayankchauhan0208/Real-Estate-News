@@ -533,16 +533,26 @@ const tataFaridabadArticle = publishable({
 assert.deepEqual(detectCityCodes(tataFaridabadArticle), ["faridabad"]);
 assert.equal(isPublishableArticle(tataFaridabadArticle, sentIds), true);
 
-const tataGenericBrandArticle = publishable({
-  title: "Tata brand expands office presence in Delhi NCR",
-  description: "The update mentions Delhi NCR commercial space but is not a real estate developer project.",
-  articleText: "The article focuses on a generic Tata brand office move without a Faridabad, Gurugram or Noida real estate project.",
-  newsLink: "https://example.com/tata-brand-delhi-ncr-office"
+const tataProjectsNoidaArticle = publishable({
+  title: "Tata Projects wins contract for Noida airport terminal expansion",
+  description: "Tata Projects will execute infrastructure expansion work connected to Noida airport development.",
+  articleText: "The project update focuses on Noida airport infrastructure, construction and regional real estate growth.",
+  newsLink: "https://example.com/tata-projects-noida-airport-terminal-expansion"
 });
 
-assert.deepEqual(detectCityCodes(tataGenericBrandArticle), []);
-assert.equal(isPublishableArticle(tataGenericBrandArticle, sentIds), false);
-assert.match(getRejectionReasons(tataGenericBrandArticle, sentIds).join("; "), /spam\/menu page|no allowed city match/);
+assert.deepEqual(detectCityCodes(tataProjectsNoidaArticle), noidaCityEnabled ? ["noida"] : []);
+assert.equal(isPublishableArticle(tataProjectsNoidaArticle, sentIds), noidaCityEnabled);
+
+const tataPlaySpotifyArticle = publishable({
+  title: "Tata Play partners Spotify to offer four-month Premium trial",
+  description: "Tata Play subscribers can access a Spotify premium trial as part of an entertainment partnership.",
+  articleText: "The article is about music streaming, subscription offers, entertainment and OTT services, not real estate or infrastructure development.",
+  newsLink: "https://economictimes.indiatimes.com/industry/media/entertainment/tata-play-partners-spotify-premium-trial"
+});
+
+assert.deepEqual(detectCityCodes(tataPlaySpotifyArticle), []);
+assert.equal(isPublishableArticle(tataPlaySpotifyArticle, sentIds), false);
+assert.match(getRejectionReasons(tataPlaySpotifyArticle, sentIds).join("; "), /spam\/menu page|not positive target real-estate|no allowed city match/);
 
 const centralParkAwardArticle = publishable({
   title: "Central Park recognised across three categories at Times Realty Awards 2026",
