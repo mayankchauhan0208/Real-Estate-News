@@ -894,6 +894,23 @@ if (noidaCityEnabled) {
   });
 
   assert.equal(isPublishableArticle(noidaNegativeBuilderArticle, sentIds), false);
+
+  const noidaTwoSistersCrimeArticle = publishable({
+    title: "Two sisters chased and harassed by men in Thar in Noida",
+    description:
+      "A group of men allegedly chased and harassed two sisters travelling by scooter near a Noida metro station.",
+    articleText:
+      "Police registered a case after the sisters alleged harassment, lewd comments and threatening behaviour by the men.",
+    newsLink:
+      "https://timesofindia.indiatimes.com/city/noida/two-sisters-chased-harassed-by-men-in-thar-in-noida/amp_articleshow/133577917.cms"
+  });
+
+  assert.deepEqual(detectCityCodes(noidaTwoSistersCrimeArticle), []);
+  assert.equal(isPublishableArticle(noidaTwoSistersCrimeArticle, sentIds), false);
+  assert.match(
+    getRejectionReasons(noidaTwoSistersCrimeArticle, sentIds).join("; "),
+    /negative\/crime\/utility concern news|not positive target real-estate/
+  );
 } else {
   assert.match(noidaRrtsReasons, /no allowed city match|outside-city conflict|outside region/);
 }
