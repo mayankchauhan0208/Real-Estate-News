@@ -37,6 +37,7 @@ const defaultSources = [
   "https://www.constructionworld.in/latest-construction-news/real-estate-news",
   "https://www.outlookmoney.com/topic/real-estate",
   "https://www.tribuneindia.com/topic/real-estate",
+  "https://www.businessoffood.in/category/food-service/",
   "https://torbitrealty.com/category/news/city-updates/gurugram/",
   "https://indianinfrastructure.com/",
   "https://urbantransportnews.com/",
@@ -682,7 +683,11 @@ const specificProjectKeywords = [
   "projects worth",
   "residential development",
   "residential project",
+  "retail destination",
+  "retail hub",
   "retail project",
+  "retail and f&b mix",
+  "tenant mix",
   "records",
   "records sales",
   "sector demarcation",
@@ -2513,6 +2518,45 @@ function isConnectivityCatalystArticle(article) {
   );
 }
 
+function isTargetCommercialRetailProjectArticle(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  return (
+    hasCleanPrimaryAndUrlText(article) &&
+    hasTargetRegionInPrimaryText(article) &&
+    hasKeyword(primaryAndUrl, [
+      "commercial complex",
+      "commercial project",
+      "high-street retail",
+      "mall",
+      "mixed-use retail",
+      "open-air destination",
+      "retail and f&b mix",
+      "retail centre",
+      "retail center",
+      "retail destination",
+      "retail hub",
+      "retail project",
+      "shopping centre",
+      "shopping center",
+      "tenant mix"
+    ]) &&
+    hasKeyword(primaryAndUrl, [
+      "adds",
+      "arrival",
+      "expands",
+      "expansion",
+      "launch",
+      "launched",
+      "launches",
+      "leasing",
+      "opens",
+      "strengthen"
+    ]) &&
+    hasKeyword(primaryAndUrl, ["gurugram", "gurgaon", "faridabad", "noida", "delhi ncr"]) &&
+    !hasWholeWordKeyword(primaryAndUrl, getDisqualifyingOutsideCityKeywords(article))
+  );
+}
 function isPositiveCityMarketArticle(article) {
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
 
@@ -2642,6 +2686,7 @@ function isPositiveTargetBusinessOrDevelopmentArticle(article) {
     isAuthorityPipelineArticle(article) ||
     isConnectivityCatalystArticle(article) ||
     isPositiveCivicInfrastructureArticle(article) ||
+    isTargetCommercialRetailProjectArticle(article) ||
     isStrongPositiveMarketOrInfrastructureArticle(article) ||
     isPositiveCityMarketArticle(article)
   );
@@ -2690,6 +2735,10 @@ function classifyArticle(article) {
 
   if (isTargetProjectAwardArticle(article)) {
     return "project_development";
+  }
+
+  if (isTargetCommercialRetailProjectArticle(article)) {
+    return "commercial_retail_project";
   }
 
   if (isPositiveCityMarketArticle(article)) {
@@ -4930,3 +4979,4 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     process.exitCode = 1;
   });
 }
+

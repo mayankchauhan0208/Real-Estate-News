@@ -71,6 +71,7 @@ assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/real-estate"),
 assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/real-estate/news"), true);
 assert.equal(isAllowedSource("https://www.constructionworld.in/"), false);
 assert.equal(isAllowedSource("https://www.constructionworld.in/latest-construction-news/real-estate-news"), true);
+assert.equal(isAllowedSource("https://www.businessoffood.in/category/food-service/"), true);
 assert.equal(isAllowedSource("https://indianinfrastructure.com/"), true);
 assert.equal(isAllowedSource("https://urbantransportnews.com/"), true);
 assert.equal(isAllowedSource("https://www.metrorailnews.in/"), true);
@@ -1376,6 +1377,19 @@ assert.match(
   /^$/
 );
 
+const reach3RoadsArticle = publishable({
+  title: "Reach 3Roads Expands its Retail and F&B Mix with SQR and Café By Soul",
+  description:
+    "Reach 3Roads in Sector 70, Gurugram, has expanded its retail and F&B mix with SQR and Cafe By Soul.",
+  articleText:
+    "The new brands complement Reach 3Roads' tenant mix and strengthen the open-air retail destination in Gurugram.",
+  newsLink: "https://www.businessoffood.in/reach-3roads-expands-its-retail-and-fb-mix-with-sqr-and-cafe-by-soul/",
+  postedBy: "Business of Food Bureau"
+});
+
+assert.equal(classifyArticle(reach3RoadsArticle), "commercial_retail_project");
+assert.deepEqual(detectCityCodes(reach3RoadsArticle), ["gurugram"]);
+assert.equal(isPublishableArticle(reach3RoadsArticle, sentIds), true);
 assert.match(
   reasons({
     title: "Faridabad housing project launch adds new inventory",
@@ -1399,3 +1413,4 @@ assert.match(
 );
 
 console.log("Filter smoke tests passed.");
+
