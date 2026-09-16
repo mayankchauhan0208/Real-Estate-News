@@ -466,10 +466,7 @@ const bptpConfidenceArticle = publishable({
   newsLink: "https://cms.bptp.com/new/bptp-ranks-among-north-indias-top-3-developers-kabul-chawla-says-customer-confidence-remains-the-companys-greatest-strength/"
 });
 
-assert.deepEqual(
-  detectCityCodes(bptpConfidenceArticle),
-  noidaCityEnabled ? ["gurugram", "faridabad", "noida"] : ["gurugram", "faridabad"]
-);
+assert.deepEqual(detectCityCodes(bptpConfidenceArticle).sort(), ["faridabad", "gurugram"]);
 assert.equal(isPublishableArticle(bptpConfidenceArticle, sentIds), true);
 assert.equal(classifyArticle(bptpConfidenceArticle), "leadership_confidence");
 
@@ -739,11 +736,8 @@ const delhiNcrPremiumHousingArticle = publishable({
   newsLink: "https://example.com/delhi-ncr-housing-sales"
 });
 
-assert.deepEqual(
-  detectCityCodes(delhiNcrPremiumHousingArticle),
-  noidaCityEnabled ? ["gurugram", "faridabad", "noida"] : ["gurugram", "faridabad"]
-);
-assert.equal(isPublishableArticle(delhiNcrPremiumHousingArticle, sentIds), true);
+assert.deepEqual(detectCityCodes(delhiNcrPremiumHousingArticle), []);
+assert.equal(isPublishableArticle(delhiNcrPremiumHousingArticle, sentIds), false);
 
 const noidaDominantNcrArticle = publishable({
   title: "Delhi NCR developer plans new residential launches",
@@ -1040,11 +1034,31 @@ const ncrOfficeLeasingArticle = publishable({
     "https://realty.economictimes.indiatimes.com/news/commercial/ncr-office-leasing-declines-slightly-to-72-million-sq-ft-in-h1-2026/132356292"
 });
 
-assert.deepEqual(
-  detectCityCodes(ncrOfficeLeasingArticle).sort(),
-  noidaCityEnabled ? ["faridabad", "gurugram", "noida"] : ["faridabad", "gurugram"]
-);
-assert.equal(isPublishableArticle(ncrOfficeLeasingArticle, sentIds), true);
+assert.deepEqual(detectCityCodes(ncrOfficeLeasingArticle), []);
+assert.equal(isPublishableArticle(ncrOfficeLeasingArticle, sentIds), false);
+const gurugramFocusedNcrOfficeArticle = publishable({
+  title: "NCR office leasing grows as Gurugram drives occupier demand",
+  description:
+    "Commercial office leasing in NCR remained strong with Gurugram driving most real estate demand.",
+  articleText:
+    "The report says Gurugram accounted for the bulk of new commercial office leasing in Delhi NCR.",
+  newsLink: "https://example.com/ncr-office-leasing-gurugram"
+});
+
+assert.deepEqual(detectCityCodes(gurugramFocusedNcrOfficeArticle), ["gurugram"]);
+assert.equal(isPublishableArticle(gurugramFocusedNcrOfficeArticle, sentIds), true);
+
+const gurugramFaridabadNcrOfficeArticle = publishable({
+  title: "NCR office leasing improves in Gurugram and Faridabad corridors",
+  description:
+    "Commercial office leasing in NCR improved across Gurugram and Faridabad real estate corridors.",
+  articleText:
+    "The report discusses Gurugram and Faridabad as the main commercial office markets in Delhi NCR.",
+  newsLink: "https://example.com/ncr-office-leasing-gurugram-faridabad"
+});
+
+assert.deepEqual(detectCityCodes(gurugramFaridabadNcrOfficeArticle).sort(), ["faridabad", "gurugram"]);
+assert.equal(isPublishableArticle(gurugramFaridabadNcrOfficeArticle, sentIds), true);
 
 const faridabadJewarArticle = publishable({
   title: "How Jewar Airport could trigger a Gurugram-like boom in Faridabad",

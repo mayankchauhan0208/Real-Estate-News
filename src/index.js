@@ -2344,6 +2344,11 @@ function detectExplicitTargetCityCodes(article) {
   return [...new Set(cityCodes)];
 }
 
+function detectTargetCityCodesFromFullArticle(article) {
+  return cityRules
+    .filter((rule) => countKeywordMentions(getArticleSearchText(article), rule.keywords) > 0)
+    .map((rule) => rule.code);
+}
 function detectDominantFullArticleCityCodes(article) {
   const fullText = getArticleSearchText(article);
   const counts = allCityRules
@@ -2437,11 +2442,11 @@ function getCorporateCompanyCityCodes(article, company = getTargetRealEstateCorp
     hasWholeWordKeyword(primaryAndUrl, ["bptp", "bptp ltd"]) &&
     hasKeyword(primaryAndUrl, ["customer confidence", "top developer", "top developers"])
   ) {
-    return ncrCityCodes;
+    return detectTargetCityCodesFromFullArticle(article);
   }
 
   if (!company.code && /\bdelhi[\s-]?ncr\b/i.test(primaryAndUrl)) {
-    return ncrCityCodes;
+    return detectTargetCityCodesFromFullArticle(article);
   }
 
   return company.code ? [company.code] : [];
@@ -2847,7 +2852,11 @@ function detectMatchedCityCodes(article) {
   }
 
   if (isNcrCommercialOfficeMarketArticle(article)) {
-    return ncrCityCodes;
+    return detectTargetCityCodesFromFullArticle(article);
+  }
+
+  if (isTargetCommercialRetailProjectArticle(article)) {
+    return detectExplicitTargetCityCodes(article);
   }
 
   const matchedCityCodes = detectExplicitTargetCityCodes(article);
@@ -2867,7 +2876,7 @@ function detectMatchedCityCodes(article) {
   }
 
   if (hasNcrMatch(article)) {
-    return ncrCityCodes;
+    return detectTargetCityCodesFromFullArticle(article);
   }
 
   return [];
