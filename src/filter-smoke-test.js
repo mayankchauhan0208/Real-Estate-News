@@ -94,6 +94,21 @@ assert.equal(isAllowedSource("https://www.birlaestates.com/media-centre.aspx"), 
 assert.equal(isAllowedSource("https://www.puriconstructions.com/"), true);
 assert.equal(isAllowedSource("https://www.omaxe.com/"), true);
 assert.equal(isAllowedSource("https://www.rpsgroupindia.com/"), true);
+assert.equal(isAllowedSource("https://www.magicbricks.com/news/feed"), true);
+assert.equal(isAllowedSource("https://www.hindustantimes.com/feeds/rss/cities/gurugram-news/rssfeed.xml"), true);
+assert.equal(isAllowedSource("https://www.hindustantimes.com/feeds/rss/cities/faridabad-news/rssfeed.xml"), true);
+assert.equal(isAllowedSource("https://www.hindustantimes.com/feeds/rss/real-estate/rssfeed.xml"), true);
+assert.equal(isAllowedSource("https://economictimes.indiatimes.com/rssfeeds/13357019.cms"), true);
+assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/rssfeeds/6547154.cms"), true);
+assert.equal(isAllowedSource("https://indianexpress.com/section/cities/delhi/feed/"), true);
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/rss/topstories"), true);
+assert.equal(isAllowedSource("https://www.business-standard.com/rss/content/real-estate-22310.rss"), true);
+assert.equal(isAllowedSource("https://www.business-standard.com/rss/latest.rss"), true);
+assert.equal(isAllowedSource("https://swarajyamag.com/stories.rss"), true);
+assert.equal(isAllowedSource("https://realtynmore.com/feed/"), true);
+assert.equal(isAllowedSource("https://realtyquarter.com/feed/"), true);
+assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/rssfeeds/8021716.cms"), noidaCityEnabled);
+assert.equal(isAllowedSource("https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/noida"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida"), noidaCityEnabled);
 assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/amp/tag/greater%2Bnoida"), noidaCityEnabled);
@@ -146,6 +161,9 @@ assert.equal(isLikelyFeedUrl("https://www.hindustantimes.com/real-estate"), fals
 assert.equal(isLikelyFeedUrl("https://realty.economictimes.indiatimes.com/tag/gurugram"), false);
 assert.equal(isLikelyFeedUrl("https://example.com/feed"), true);
 assert.equal(isLikelyFeedUrl("https://example.com/rss.xml"), true);
+assert.equal(isLikelyFeedUrl("https://timesofindia.indiatimes.com/rssfeeds/6547154.cms"), true);
+assert.equal(isLikelyFeedUrl("https://economictimes.indiatimes.com/rssfeeds/13357019.cms"), true);
+assert.equal(isLikelyFeedUrl("https://realty.economictimes.indiatimes.com/rss/topstories"), true);
 assert.deepEqual(getSourcePageUrls("https://realty.economictimes.indiatimes.com/tag/faridabad").slice(0, 3), [
   "https://realty.economictimes.indiatimes.com/tag/faridabad",
   "https://realty.economictimes.indiatimes.com/tag/faridabad/2",

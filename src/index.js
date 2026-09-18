@@ -21,22 +21,33 @@ const sentNewsSeedPath = path.resolve("data", "sent-news-seed.json");
 const runReportsDir = path.resolve("reports", "runs");
 
 const defaultSources = [
+  "https://www.magicbricks.com/news/feed",
   "https://www.hindustantimes.com/real-estate",
+  "https://www.hindustantimes.com/feeds/rss/cities/gurugram-news/rssfeed.xml",
   "https://www.hindustantimes.com/topic/faridabad/news",
+  "https://www.hindustantimes.com/feeds/rss/cities/faridabad-news/rssfeed.xml",
+  "https://www.hindustantimes.com/feeds/rss/real-estate/rssfeed.xml",
   "https://economictimes.indiatimes.com/industry/services/property-/-cstruction",
+  "https://economictimes.indiatimes.com/rssfeeds/13357019.cms",
   "https://economictimes.indiatimes.com/news/company/corporate-trends",
   "https://www.cnbctv18.com/real-estate/",
   "https://timesofindia.indiatimes.com/real-estate/news",
+  "https://timesofindia.indiatimes.com/rssfeeds/6547154.cms",
+  "https://indianexpress.com/section/cities/delhi/feed/",
   "https://realty.economictimes.indiatimes.com/tag/gurugram",
   "https://realty.economictimes.indiatimes.com/tag/faridabad",
   "https://realty.economictimes.indiatimes.com/news/residential",
   "https://realty.economictimes.indiatimes.com/news/commercial",
   "https://realty.economictimes.indiatimes.com/news/infrastructure",
   "https://realty.economictimes.indiatimes.com/news/industry",
+  "https://realty.economictimes.indiatimes.com/rss/topstories",
   "https://www.moneycontrol.com/news/business/real-estate/",
+  "https://www.business-standard.com/rss/content/real-estate-22310.rss",
+  "https://www.business-standard.com/rss/latest.rss",
   "https://www.constructionworld.in/latest-construction-news/real-estate-news",
   "https://www.outlookmoney.com/topic/real-estate",
   "https://www.tribuneindia.com/topic/real-estate",
+  "https://swarajyamag.com/stories.rss",
   "https://www.businessoffood.in/category/food-service/",
   "https://torbitrealty.com/category/news/city-updates/gurugram/",
   "https://indianinfrastructure.com/",
@@ -47,9 +58,11 @@ const defaultSources = [
   "https://www.delhimetrorail.com/",
   "https://ncrtc.in/",
   "https://realtynmore.com/latest-news/",
+  "https://realtynmore.com/feed/",
   "https://realtynxt.com/",
   "https://www.track2realty.track2media.com/",
   "https://propnewstime.com/",
+  "https://realtyquarter.com/feed/",
   "https://hsvphry.org.in/",
   "https://www.bptp.com/media",
   "https://www.dlf.in/media",
@@ -71,6 +84,8 @@ const noidaCityEnabledAtStartup = ["1", "true", "yes", "on"].includes(
   (process.env.ENABLE_NOIDA_CITY || "").trim().toLowerCase()
 );
 const noidaSources = [
+  "https://timesofindia.indiatimes.com/rssfeeds/8021716.cms",
+  "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
   "https://realty.economictimes.indiatimes.com/tag/noida",
   "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida",
   "https://realty.economictimes.indiatimes.com/amp/tag/greater%2Bnoida",
@@ -94,13 +109,20 @@ const noidaSources = [
   "https://www.hindustantimes.com/topic/jewar-airport/news",
   "https://www.hindustantimes.com/topic/yeida/news",
   "https://economictimes.indiatimes.com/industry/services/property-/-cstruction",
+  "https://economictimes.indiatimes.com/rssfeeds/13357019.cms",
   "https://www.moneycontrol.com/news/business/real-estate/",
+  "https://www.business-standard.com/rss/content/real-estate-22310.rss",
+  "https://www.business-standard.com/rss/latest.rss",
   "https://www.cnbctv18.com/real-estate/",
   "https://timesofindia.indiatimes.com/real-estate/news",
+  "https://timesofindia.indiatimes.com/rssfeeds/6547154.cms",
+  "https://indianexpress.com/section/cities/delhi/feed/",
   "https://www.constructionworld.in/latest-construction-news/real-estate-news",
   "https://realtynmore.com/latest-news/",
+  "https://realtynmore.com/feed/",
   "https://realtynxt.com/",
   "https://propnewstime.com/",
+  "https://realtyquarter.com/feed/",
   "https://www.track2realty.track2media.com/",
   "https://www.niairport.in/en/company/news/overview/news-overview",
   "https://www.yamunaexpresswayauthority.com/web/",
@@ -1306,9 +1328,7 @@ function isAllowedExtraArticleUrl(articleUrl) {
 }
 
 function isAllowedSource(source) {
-  const normalized = source.toLowerCase();
-
-  if (!source || blockedSourceUrlParts.some((part) => normalized.includes(part))) {
+  if (!source) {
     return false;
   }
 
@@ -1321,7 +1341,16 @@ function isAllowedSource(source) {
     return false;
   }
 
-  return allowedSourceUrlParts.includes(key);
+  if (allowedSourceUrlParts.includes(key)) {
+    return true;
+  }
+
+  const normalized = source.toLowerCase();
+  if (blockedSourceUrlParts.some((part) => normalized.includes(part))) {
+    return false;
+  }
+
+  return false;
 }
 
 function isLikelyFeedUrl(sourceUrl) {
@@ -1334,7 +1363,7 @@ function isLikelyFeedUrl(sourceUrl) {
       pathName.endsWith(".xml") ||
       pathName.endsWith(".rss") ||
       pathName.endsWith(".atom") ||
-      /(^|\/)(rss|feed|feeds|atom)(\/|$)/i.test(pathName) ||
+      /(^|\/)(rss|rssfeeds|feed|feeds|atom)(\/|$)/i.test(pathName) ||
       /[?&](output|format)=(rss|xml|atom)\b/i.test(query)
     );
   } catch {
