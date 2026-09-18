@@ -71,7 +71,7 @@ const defaultSources = [
   "https://www.signatureglobal.in/",
   "https://www.centralpark.in/media.php",
   "https://www.godrejproperties.com/media/press",
-  "https://www.emaarindia.com/media/",
+  "https://in.emaar.com/en/media/",
   "https://www.whitelandcorporation.com/",
   "https://maxestates.in/news_and_media",
   "https://www.birlaestates.com/media-centre.aspx",

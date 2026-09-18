@@ -87,7 +87,7 @@ assert.equal(isAllowedSource("https://smartworlddevelopers.com/media"), true);
 assert.equal(isAllowedSource("https://www.signatureglobal.in/"), true);
 assert.equal(isAllowedSource("https://www.centralpark.in/media.php"), true);
 assert.equal(isAllowedSource("https://www.godrejproperties.com/media/press"), true);
-assert.equal(isAllowedSource("https://www.emaarindia.com/media/"), true);
+assert.equal(isAllowedSource("https://in.emaar.com/en/media/"), true);
 assert.equal(isAllowedSource("https://www.whitelandcorporation.com/"), true);
 assert.equal(isAllowedSource("https://maxestates.in/news_and_media"), true);
 assert.equal(isAllowedSource("https://www.birlaestates.com/media-centre.aspx"), true);
