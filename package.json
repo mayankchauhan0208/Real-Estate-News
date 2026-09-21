@@ -9,7 +9,8 @@
     "test": "node src/filter-smoke-test.js",
     "build": "npm run check && node src/filter-smoke-test.js",
     "admin": "node src/admin-server.js",
-    "admin:export": "node tools/export-admin-static-state.js"
+    "admin:export": "node tools/export-admin-static-state.js",
+    "local:backfill-other-cities": "node tools/local-other-cities-backfill.mjs"
   },
   "dependencies": {
     "cheerio": "^1.0.0",

@@ -47,6 +47,21 @@ ADMIN_AUTH=true
 
 Set `ADMIN_AUTH=false` only for temporary local testing. See `ADMIN_GUIDE.md` for the safe operating checklist.
 
+## Local 30-day other-city backfill
+
+To fetch the last 30 days for all configured cities except Noida, Gurugram, and Faridabad, run:
+
+```bash
+npm run local:backfill-other-cities
+```
+
+This is dry-run only by default. It uses `ENABLED_CITY_CODES=all`, disables `noida,gurugram,faridabad`, and keeps `RESEND_BACKFILL=false` so saved dedupe is not bypassed.
+
+After reviewing quality, run the same local backfill with API push enabled:
+
+```bash
+npm run local:backfill-other-cities -- --push
+```
 ## GitHub setup
 
 Create a new GitHub repo for this folder, then add these repository secrets:
@@ -238,4 +253,5 @@ Noida sources are opt-in only when `ENABLE_NOIDA_CITY=true`:
 - `https://indianexpress.com/about/noida-authority/`
 - `https://indianexpress.com/about/greater-noida-authority/`
 - `https://timesofindia.indiatimes.com/city/noida`
+
 
