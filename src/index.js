@@ -742,6 +742,12 @@ const blockedTitleKeywords = [
   "advertise",
   "air monitor",
   "air monitors",
+  "commodity rate",
+  "commodity rates",
+  "gold price",
+  "gold rate",
+  "silver price",
+  "silver rate",
   "spotify",
   "tata play",
   "premium trial",
@@ -826,6 +832,10 @@ const blockedUrlParts = [
   "/citizen-services",
   "/education",
   "/event",
+  "/markets/gold-rate",
+  "/markets/silver-rate",
+  "gold-rate-in-",
+  "silver-rate-in-",
   "/gallery",
   "/login",
   "/newsletter",
@@ -1423,6 +1433,21 @@ function getMaxItemsPerRun() {
   return getPositiveIntegerEnv("MAX_ITEMS_PER_RUN", 30);
 }
 
+function getBuildVersion() {
+  return env("BUILD_VERSION", "local-dev");
+}
+
+function getCommitSha() {
+  return env("GITHUB_SHA", "");
+}
+
+function getSourceStrategyName() {
+  return env(
+    "SOURCE_STRATEGY",
+    getBooleanEnv("AUTO_SOURCE_BATCH") ? "rotating-source-batch" : "full-source-coverage"
+  );
+}
+
 function applySourceBatch(sourceUrls) {
   const offset = getNonNegativeIntegerEnv("SOURCE_OFFSET", 0);
   const limit = Number.parseInt(env("SOURCE_LIMIT", "0"), 10);
@@ -1788,7 +1813,12 @@ async function writeRunReport(report) {
     "# News Run Report",
     "",
     `- Mode: ${report.mode}`,
+    `- Build version: ${report.buildVersion || "unknown"}`,
+    `- Commit: ${report.commitSha || "local"}`,
+    `- Source strategy: ${report.sourceStrategy || "default"}`,
     `- Window: ${report.window.from || "beginning"} to ${report.window.to || "now"}`,
+    `- Allowed sources: ${report.allSelectedSourceCount ?? report.sourceCount ?? report.sources.length}`,
+    `- Selected sources: ${report.selectedSourceCount ?? report.sourceCount ?? report.sources.length}`,
     `- Sources fetched: ${report.sources.length}`,
     `- Items fetched: ${fetchedTotal}`,
     `- Source failures: ${report.failures.length}`,
@@ -5140,6 +5170,9 @@ async function main() {
   const filterSentIds = resendBackfill ? new Set() : sentIds;
   const skipTitleSet = getSkipTitleSet();
   const targetCityCodeFilter = getTargetCityCodeFilter();
+  const buildVersion = getBuildVersion();
+  const commitSha = getCommitSha();
+  const sourceStrategy = getSourceStrategyName();
   const allArticles = [];
   const fetchedSources = [];
   const failedSources = [];
@@ -5153,6 +5186,11 @@ async function main() {
   if (isNoidaCityEnabled()) {
     console.log("Noida city mode enabled: using Uttar Pradesh - Noida filters and opt-in sources.");
   }
+
+  console.log(`Build version: ${buildVersion}${commitSha ? ` (${commitSha.slice(0, 7)})` : ""}.`);
+  console.log(
+    `Source strategy: ${sourceStrategy}. Processing ${selectedSources.length}/${allSelectedSources.length} allowed sources.`
+  );
 
   if (selectedSources.length !== allSelectedSources.length) {
     console.log(`Source batch: processing ${selectedSources.length} of ${allSelectedSources.length} allowed sources.`);
@@ -5195,6 +5233,13 @@ async function main() {
       return { source, error: error.message };
     }
   });
+
+  const sourceHealth = sourceResults.map((result) => ({
+    source: result.source,
+    status: result.error ? "failed" : "ok",
+    count: result.error ? 0 : result.articles.length,
+    error: result.error || ""
+  }));
 
   for (const result of sourceResults) {
     if (result.error) {
@@ -5337,6 +5382,17 @@ async function main() {
     window: {
       from: backfillDateRange.from?.toISOString() || "",
       to: backfillDateRange.to?.toISOString() || ""
+    },
+    buildVersion,
+    commitSha,
+    sourceStrategy,
+    allSelectedSourceCount: allSelectedSources.length,
+    selectedSourceCount: selectedSources.length,
+    sourceHealth,
+    sourceHealthSummary: {
+      ok: sourceHealth.filter((source) => source.status === "ok").length,
+      failed: sourceHealth.filter((source) => source.status === "failed").length,
+      zeroItem: sourceHealth.filter((source) => source.status === "ok" && source.count === 0).length
     },
     sourceCount: selectedSources.length,
     sources: fetchedSources,

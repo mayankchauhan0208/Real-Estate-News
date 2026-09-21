@@ -2,7 +2,7 @@ name: News API Pusher
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/30 * * * *"
   workflow_dispatch:
     inputs:
       backfill_from:
@@ -74,7 +74,7 @@ concurrency:
 jobs:
   push-news:
     runs-on: ubuntu-latest
-    timeout-minutes: 28
+    timeout-minutes: 45
 
     steps:
       - name: Checkout
@@ -116,11 +116,13 @@ jobs:
           SOURCE_OFFSET: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_offset || '0' }}
           SOURCE_LIMIT: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_limit || '0' }}
           SOURCE_CONCURRENCY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_concurrency || '18' }}
-          AUTO_SOURCE_BATCH: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
-          SOURCE_BATCH_COUNT: "3"
+          BUILD_VERSION: "source-intelligence-v1"
+          SOURCE_STRATEGY: "full-source-coverage-30m"
+          AUTO_SOURCE_BATCH: "false"
+          SOURCE_BATCH_COUNT: "1"
           ARTICLE_METADATA_CONCURRENCY: "6"
-          FETCH_TIMEOUT_MS: "10000"
-          SOURCE_FETCH_TIMEOUT_MS: "45000"
+          FETCH_TIMEOUT_MS: "15000"
+          SOURCE_FETCH_TIMEOUT_MS: "120000"
           ENABLE_NOIDA_CITY: "true"
           ALLOW_NOIDA_API: "true"
           MAX_ITEMS_PER_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_items_per_run || '80' }}
