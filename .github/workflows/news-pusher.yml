@@ -16,11 +16,11 @@ on:
       max_items_per_source:
         description: "How many links to inspect from each source"
         required: false
-        default: "300"
+        default: "8"
       max_pages_per_source:
         description: "How many paginated source pages to inspect where supported"
         required: false
-        default: "15"
+        default: "1"
       max_items_per_run:
         description: "Maximum publish count for this run"
         required: false
@@ -63,9 +63,9 @@ on:
         required: false
         default: "0"
       source_concurrency:
-        description: "How many sources to fetch in parallel. Default 8, max 16."
+        description: "How many sources to fetch in parallel. Default 16, max 16."
         required: false
-        default: "8"
+        default: "16"
 
 concurrency:
   group: news-api-pusher
@@ -74,7 +74,7 @@ concurrency:
 jobs:
   push-news:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 28
 
     steps:
       - name: Checkout
@@ -115,11 +115,12 @@ jobs:
           DISABLED_CITY_CODES: ${{ github.event.inputs.disabled_city_codes || '' }}
           SOURCE_OFFSET: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_offset || '0' }}
           SOURCE_LIMIT: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_limit || '0' }}
+          SOURCE_CONCURRENCY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_concurrency || '16' }}
           ENABLE_NOIDA_CITY: "true"
           ALLOW_NOIDA_API: "true"
           MAX_ITEMS_PER_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_items_per_run || '80' }}
-          MAX_ITEMS_PER_SOURCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_items_per_source || '300' }}
-          MAX_PAGES_PER_SOURCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_pages_per_source || '15' }}
+          MAX_ITEMS_PER_SOURCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_items_per_source || '8' }}
+          MAX_PAGES_PER_SOURCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_pages_per_source || '1' }}
           DEFAULT_LOOKBACK_DAYS: "20"
 
       - name: Upload run report
