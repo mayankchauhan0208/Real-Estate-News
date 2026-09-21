@@ -1,4 +1,6 @@
 import { spawn } from "node:child_process";
+import crypto from "node:crypto";
+import fsSync from "node:fs";
 import fs from "node:fs/promises";
 import http from "node:http";
 import path from "node:path";
@@ -12,7 +14,11 @@ const adminDir = path.join(rootDir, "admin");
 const settingsPath = path.join(rootDir, "config", "admin-settings.json");
 const reportsDir = path.join(rootDir, "reports", "runs");
 const indexPath = path.join(rootDir, "src", "index.js");
+
+loadLocalEnv();
+
 const port = Number(process.env.ADMIN_PORT || 3000);
+const adminAuth = getAdminAuthConfig();
 
 let activeDryRun = null;
 let activeDryRunLog = [];
@@ -23,6 +29,69 @@ const contentTypes = new Map([
   [".js", "text/javascript; charset=utf-8"],
   [".json", "application/json; charset=utf-8"]
 ]);
+
+function loadLocalEnv() {
+  const envPath = path.join(rootDir, ".env");
+  if (!fsSync.existsSync(envPath)) return;
+  const lines = fsSync.readFileSync(envPath, "utf8").split(/\r?\n/);
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+    const equals = trimmed.indexOf("=");
+    if (equals <= 0) continue;
+    const key = trimmed.slice(0, equals).trim();
+    let value = trimmed.slice(equals + 1).trim();
+    if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+      value = value.slice(1, -1);
+    }
+    if (key && process.env[key] === undefined) process.env[key] = value;
+  }
+}
+
+function getAdminAuthConfig() {
+  const enabled = !["0", "false", "off", "no"].includes(String(process.env.ADMIN_AUTH || "true").trim().toLowerCase());
+  const username = String(process.env.ADMIN_USERNAME || "admin");
+  const password = String(process.env.ADMIN_PASSWORD || "brokket-admin");
+  return {
+    enabled,
+    username,
+    password,
+    usingDefaultPassword: !process.env.ADMIN_PASSWORD
+  };
+}
+
+function isAuthorized(request) {
+  if (!adminAuth.enabled) return true;
+  const header = request.headers.authorization || "";
+  if (!header.startsWith("Basic ")) return false;
+  try {
+    const decoded = Buffer.from(header.slice(6), "base64").toString("utf8");
+    const separator = decoded.indexOf(":");
+    if (separator < 0) return false;
+    const username = decoded.slice(0, separator);
+    const password = decoded.slice(separator + 1);
+    return safeEqual(username, adminAuth.username) && safeEqual(password, adminAuth.password);
+  } catch {
+    return false;
+  }
+}
+
+function safeEqual(actual, expected) {
+  const actualBuffer = Buffer.from(String(actual));
+  const expectedBuffer = Buffer.from(String(expected));
+  return actualBuffer.length === expectedBuffer.length && crypto.timingSafeEqual(actualBuffer, expectedBuffer);
+}
+
+function requireAdminAuth(request, response) {
+  if (isAuthorized(request)) return true;
+  response.writeHead(401, {
+    "WWW-Authenticate": 'Basic realm="Brokket Live News Admin", charset="UTF-8"',
+    "Content-Type": "text/plain; charset=utf-8",
+    "Cache-Control": "no-store"
+  });
+  response.end("Admin login required.");
+  return false;
+}
 
 async function ensureSettings() {
   await fs.mkdir(path.dirname(settingsPath), { recursive: true });
@@ -772,6 +841,7 @@ export { getDashboardState };
 
 function startAdminServer() {
   const server = http.createServer(async (request, response) => {
+    if (!requireAdminAuth(request, response)) return;
     const url = new URL(request.url, `http://${request.headers.host || "localhost"}`);
     if (url.pathname.startsWith("/api/")) {
       await routeApi(request, response, url);
@@ -782,6 +852,12 @@ function startAdminServer() {
 
   server.listen(port, () => {
     console.log(`News admin running at http://localhost:${port}`);
+    if (adminAuth.enabled) {
+      console.log(`Admin login enabled. Username: ${adminAuth.username}`);
+      if (adminAuth.usingDefaultPassword) console.log("Using default admin password. Set ADMIN_PASSWORD in .env before serious use.");
+    } else {
+      console.log("Admin login disabled by ADMIN_AUTH=false.");
+    }
     console.log("Dry runs launched from this admin force DRY_RUN=true and clear APP_API_URL/APP_API_KEY.");
   });
 }

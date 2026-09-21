@@ -32,7 +32,20 @@ Run the local admin panel when you want to review sources, city toggles, dry-run
 npm run admin
 ```
 
-Open `http://localhost:3000`. See `ADMIN_GUIDE.md` for the safe operating checklist.
+Open `http://localhost:3000`. The local admin is password protected by default:
+
+- Username: `admin`
+- Password: `brokket-admin`
+
+Change these in `.env` before serious use:
+
+```bash
+ADMIN_USERNAME=your-user
+ADMIN_PASSWORD=your-strong-password
+ADMIN_AUTH=true
+```
+
+Set `ADMIN_AUTH=false` only for temporary local testing. See `ADMIN_GUIDE.md` for the safe operating checklist.
 
 ## GitHub setup
 
@@ -225,5 +238,4 @@ Noida sources are opt-in only when `ENABLE_NOIDA_CITY=true`:
 - `https://indianexpress.com/about/noida-authority/`
 - `https://indianexpress.com/about/greater-noida-authority/`
 - `https://timesofindia.indiatimes.com/city/noida`
-
 
