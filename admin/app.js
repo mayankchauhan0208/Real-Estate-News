@@ -100,7 +100,7 @@ function activateTab(name) {
   $$('[data-panel]').forEach((panel) => panel.classList.toggle('active', panel.dataset.panel === name));
   const [title, subtitle] = titles[name] || titles.news;
   elements.pageTitle.textContent = title;
-  elements.pageSubtitle.textContent = staticMode ? `${subtitle} Live GitHub Pages is read-only; use local admin for changes.` : subtitle;
+  elements.pageSubtitle.textContent = staticMode ? `${subtitle} GitHub Pages is a read-only preview; run local admin to save repo config changes.` : `${subtitle} Local changes save to config/admin-settings.json; commit and push for the next automatic run.`;
 }
 
 function renderMetrics() {
@@ -438,12 +438,12 @@ function createManualArticleDraft(event) {
   event.preventDefault();
   const form = new FormData(event.currentTarget);
   const payload = Object.fromEntries(form.entries());
-  elements.manualNewsMessage.textContent = staticMode ? `Draft preview ready for ${payload.state} / ${cityLabel(payload.cityCode)}. GitHub Pages is read-only; open local admin to create/push.` : `Draft ready for ${payload.state} / ${cityLabel(payload.cityCode)}. Manual API publish is intentionally not wired from this local UI yet.`;
+  elements.manualNewsMessage.textContent = staticMode ? `Draft preview ready for ${payload.state} / ${cityLabel(payload.cityCode)}. GitHub Pages is read-only; run local admin to save repo changes.` : `Draft ready for ${payload.state} / ${cityLabel(payload.cityCode)}. Manual API publish is intentionally not wired from this local UI yet.`;
 }
 
 function requireLiveAdmin(action) {
   if (!staticMode) return true;
-  alert(`This GitHub Pages admin is read-only. To ${action}, run npm run admin locally and use http://localhost:3000.`);
+  alert(`This GitHub Pages admin is read-only and cannot write to the repo. To ${action}, run npm run admin locally, use http://localhost:3000, then commit and push config/admin-settings.json.`);
   return false;
 }
 function clearNewsFilters() {

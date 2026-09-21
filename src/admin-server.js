@@ -253,7 +253,7 @@ function getCityRows(settings, sources = []) {
   }
   return workbookCityRules.map((city) => ({
     ...city,
-    enabled: enabled.has(city.code) && !disabled.has(city.code),
+    enabled: settings.allCitiesEnabled ? !disabled.has(city.code) : enabled.has(city.code) && !disabled.has(city.code),
     sourceCount: sourceCounts.get(city.code) || 0
   }));
 }
@@ -350,6 +350,7 @@ async function getReportRows() {
           const filePath = path.join(reportsDir, name);
           const stat = await fs.stat(filePath);
           const report = JSON.parse(await fs.readFile(filePath, "utf8"));
+          const candidates = (report.candidates || report.dryRunCandidates || []).filter(isAdminVisibleCandidate);
           return {
             name,
             generatedAt: report.generatedAt || stat.mtime.toISOString(),
@@ -358,11 +359,11 @@ async function getReportRows() {
             sourceCount: report.sourceCount || report.sources?.length || 0,
             fetchedArticleCount: report.fetchedArticleCount || 0,
             expandedArticleCount: report.expandedArticleCount || 0,
-            candidateCount: report.readyToPostCount ?? report.candidates?.length ?? report.dryRunCandidates?.length ?? 0,
+            candidateCount: candidates.length,
             postedCount: report.posted?.length || 0,
             rejectedArticleCount: report.rejectedArticleCount ?? sumObjectValues(report.skippedByReason || {}),
             failureCount: report.failures?.length || 0,
-            candidates: report.candidates || report.dryRunCandidates || [],
+            candidates,
             posted: report.posted || [],
             rejectedArticles: report.rejectedArticles || [],
             cityBreakdown: report.cityBreakdown || [],
@@ -502,6 +503,7 @@ function collectCandidateNews(reports) {
   const latestReport = reports[0];
   if (!latestReport) return [];
   return (latestReport.candidates || [])
+    .filter(isAdminVisibleCandidate)
     .map((item) => ({
       ...item,
       reportName: latestReport.name,
@@ -511,16 +513,50 @@ function collectCandidateNews(reports) {
     .sort((a, b) => new Date(b.publishedAt || b.reportGeneratedAt || 0) - new Date(a.publishedAt || a.reportGeneratedAt || 0));
 }
 
+function isAdminVisibleCandidate(item) {
+  const text = [item.title, item.description, item.summary, item.url]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+  const blocked = [
+    "gold rate",
+    "silver rate",
+    "petrol price",
+    "diesel price",
+    "weather",
+    "thunderstorm",
+    "rain alert",
+    "admission",
+    "exam",
+    "murder",
+    "suicide",
+    "rape",
+    "crime",
+    "election",
+    "politics"
+  ];
+  return !blocked.some((term) => text.includes(term));
+}
+
 async function updateCity(code, enabled) {
   const settings = await ensureSettings();
   const normalizedCode = String(code || "").trim().toLowerCase();
   if (!workbookCityRules.some((city) => city.code === normalizedCode)) {
     throw new Error(`Unknown city code: ${normalizedCode}`);
   }
-  const enabledSet = new Set(settings.enabledCityCodes);
-  if (enabled) enabledSet.add(normalizedCode);
-  else enabledSet.delete(normalizedCode);
-  settings.enabledCityCodes = [...enabledSet].sort();
+
+  if (settings.allCitiesEnabled) {
+    const disabledSet = new Set(settings.disabledCityCodes);
+    if (enabled) disabledSet.delete(normalizedCode);
+    else disabledSet.add(normalizedCode);
+    settings.disabledCityCodes = [...disabledSet].sort();
+  } else {
+    const enabledSet = new Set(settings.enabledCityCodes);
+    if (enabled) enabledSet.add(normalizedCode);
+    else enabledSet.delete(normalizedCode);
+    settings.enabledCityCodes = [...enabledSet].sort();
+  }
+
   await saveSettings(settings);
   return settings;
 }
@@ -753,7 +789,4 @@ function startAdminServer() {
 if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
   startAdminServer();
 }
-
-
-
 
