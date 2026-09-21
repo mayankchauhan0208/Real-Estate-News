@@ -33,6 +33,7 @@ const elements = {
   dryRunLog: $("#dryRunLog"),
   modal: $("#newsModal"),
   manualNewsForm: $("#manualNewsForm"),
+  manualNewsState: $("#manualNewsState"),
   manualNewsCity: $("#manualNewsCity"),
   manualNewsMessage: $("#manualNewsMessage")
 };
@@ -50,6 +51,8 @@ $("#addNewsBtn").addEventListener("click", openNewsModal);
 $("#clearNewsFilters").addEventListener("click", clearNewsFilters);
 $$("[data-modal-close]").forEach((node) => node.addEventListener("click", closeNewsModal));
 elements.manualNewsForm.addEventListener("submit", createManualArticleDraft);
+elements.manualNewsState.addEventListener("change", renderManualCityOptions);
+elements.manualNewsForm.querySelectorAll("[data-media-preview]").forEach((input) => input.addEventListener("input", updateMediaPreview));
 elements.sourceForm.addEventListener("submit", addSource);
 
 [elements.postedSearch, elements.newsCityFilter, elements.newsSourceFilter, elements.newsStatusFilter, elements.newsFromDate, elements.newsToDate]
@@ -117,13 +120,21 @@ function renderMetrics() {
 }
 
 function renderCityOptions() {
-  const cityOptions = state.cities
-    .filter((city) => city.enabled)
+  const enabledCities = getEnabledCities();
+  const cityOptions = enabledCities
     .map((city) => `<option value="${escapeAttribute(city.code)}">${escapeHtml(city.name)}</option>`)
     .join("");
   elements.sourceCitySelect.innerHTML = cityOptions;
   elements.backfillCitySelect.innerHTML = cityOptions;
-  elements.manualNewsCity.innerHTML = `<option value="">Select city</option>${cityOptions}`;
+
+  const currentState = elements.manualNewsState.value;
+  const states = [...new Set(enabledCities.map((city) => city.state).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+  elements.manualNewsState.innerHTML = `<option value="">Select state</option>${states
+    .map((stateName) => `<option value="${escapeAttribute(stateName)}">${escapeHtml(stateName)}</option>`)
+    .join("")}`;
+  if (states.includes(currentState)) elements.manualNewsState.value = currentState;
+  renderManualCityOptions();
+
   const lastBackfill = state.settings.lastBackfill || {};
   for (const option of elements.backfillCitySelect.options) option.selected = (lastBackfill.cityCodes || []).includes(option.value);
   $("#backfillFrom").value = lastBackfill.from || "";
@@ -178,13 +189,21 @@ function renderNews() {
 
 function renderNewsRow(item) {
   const image = item.thumbnailImage || item.image || "";
+  const logo = getNewsSourceLogo(item);
   const sourceInitials = initials(item.postedBy || "Brokket News");
+  const imageCell = image
+    ? `<a class="media-link" href="${escapeAttribute(image)}" target="_blank" rel="noreferrer"><img class="news-thumb" src="${escapeAttribute(image)}" alt="Article thumbnail" loading="lazy" onerror="this.closest('a').classList.add('broken')"></a>`
+    : `<span class="news-thumb source-logo">${escapeHtml(sourceInitials)}</span>`;
+  const logoCell = logo
+    ? `<img class="publisher-logo" src="${escapeAttribute(logo)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'), { className: 'publisher-logo fallback', textContent: '${escapeJsAttribute(sourceInitials)}' }))">`
+    : `<span class="publisher-logo fallback">${escapeHtml(sourceInitials)}</span>`;
+
   return `
     <article class="news-row">
-      <span>${image ? `<img class="news-thumb" src="${escapeAttribute(image)}" alt="">` : `<span class="news-thumb source-logo">${escapeHtml(sourceInitials)}</span>`}</span>
+      <span>${imageCell}</span>
       <span class="news-title"><b>${escapeHtml(item.title || "Untitled")}</b><a href="${escapeAttribute(item.newsLink || "#")}" target="_blank" rel="noreferrer">${escapeHtml(item.newsLink || "No link")}</a></span>
       <span>${escapeHtml(cityLabel(item.cityCode || "unknown"))}</span>
-      <span>${escapeHtml(item.postedBy || "Brokket News")}</span>
+      <span class="source-identity">${logoCell}<span>${escapeHtml(item.postedBy || "Brokket News")}</span></span>
       <span>${formatDate(item.publishedAt || item.createdAt || item.reportGeneratedAt)}</span>
       <span><span class="status-pill">${escapeHtml(item.uiStatus || "Active")}</span></span>
       <span class="row-actions"><button type="button" title="Open article" onclick="window.open('${escapeJsAttribute(item.newsLink || "#")}', '_blank')">O</button><button type="button" class="danger" title="Delete requires app admin">D</button></span>
@@ -231,9 +250,11 @@ function renderSources() {
 
 function renderSourceCard(source) {
   const host = getHost(source.url);
+  const logo = source.logo || source.sourceLogo || faviconUrl(host);
+  const fallback = initials(source.label || host || "S");
   return `
     <article class="source-card">
-      <span class="source-logo">${escapeHtml(initials(source.label || host || "S"))}</span>
+      ${logo ? `<img class="source-logo image" src="${escapeAttribute(logo)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'), { className: 'source-logo', textContent: '${escapeJsAttribute(fallback)}' }))">` : `<span class="source-logo">${escapeHtml(fallback)}</span>`}
       <span>
         <b>${escapeHtml(source.label || host || "Source")}</b>
         <small>${escapeHtml(host || source.url)}</small>
@@ -400,6 +421,7 @@ function renderDryRun(dryRun) {
 
 function openNewsModal() {
   elements.manualNewsMessage.textContent = "";
+  elements.manualNewsForm.querySelectorAll("[data-media-preview]").forEach(updateMediaPreview);
   elements.modal.classList.add("open");
   elements.modal.setAttribute("aria-hidden", "false");
   const now = new Date();
@@ -416,7 +438,7 @@ function createManualArticleDraft(event) {
   event.preventDefault();
   const form = new FormData(event.currentTarget);
   const payload = Object.fromEntries(form.entries());
-  elements.manualNewsMessage.textContent = staticMode ? `Draft preview ready for ${cityLabel(payload.cityCode)}. GitHub Pages is read-only; open local admin to create/push.` : `Draft ready for ${cityLabel(payload.cityCode)}. Manual API publish is intentionally not wired from this local UI yet.`;
+  elements.manualNewsMessage.textContent = staticMode ? `Draft preview ready for ${payload.state} / ${cityLabel(payload.cityCode)}. GitHub Pages is read-only; open local admin to create/push.` : `Draft ready for ${payload.state} / ${cityLabel(payload.cityCode)}. Manual API publish is intentionally not wired from this local UI yet.`;
 }
 
 function requireLiveAdmin(action) {
@@ -434,6 +456,48 @@ function clearNewsFilters() {
   renderNews();
 }
 
+function getEnabledCities() {
+  return [...(state?.cities || [])]
+    .filter((city) => city.enabled)
+    .sort((a, b) => `${a.state} ${a.name}`.localeCompare(`${b.state} ${b.name}`));
+}
+
+function renderManualCityOptions() {
+  const selectedState = elements.manualNewsState.value;
+  const cities = getEnabledCities().filter((city) => city.state === selectedState);
+  elements.manualNewsCity.disabled = !selectedState;
+  elements.manualNewsCity.innerHTML = selectedState
+    ? `<option value="">Select city</option>${cities.map((city) => `<option value="${escapeAttribute(city.code)}">${escapeHtml(city.name)}</option>`).join("")}`
+    : `<option value="">Select state first</option>`;
+}
+
+function updateMediaPreview(eventOrInput) {
+  const input = eventOrInput?.target || eventOrInput;
+  if (!input?.dataset?.mediaPreview) return;
+  const preview = document.getElementById(input.dataset.mediaPreview);
+  const url = input.value.trim();
+  if (!url) {
+    preview.className = "media-preview empty";
+    preview.textContent = preview.id === "thumbnailPreview" ? "No thumbnail selected" : "No logo selected";
+    return;
+  }
+  preview.className = "media-preview";
+  preview.innerHTML = `<img src="${escapeAttribute(url)}" alt="Preview" loading="lazy" onerror="this.parentElement.classList.add('empty'); this.parentElement.textContent='Preview could not load';"><span>${escapeHtml(getHost(url) || "Image URL")}</span>`;
+}
+
+function getNewsSourceLogo(item) {
+  if (item.postedByLogo || item.sourceLogo || item.logo) return item.postedByLogo || item.sourceLogo || item.logo;
+  const itemHost = getHost(item.newsLink || "");
+  const source = (state?.sources || []).find((candidate) => {
+    const candidateHost = getHost(candidate.url || "");
+    return candidateHost && itemHost && candidateHost === itemHost;
+  });
+  return source?.logo || source?.sourceLogo || faviconUrl(itemHost || getHost(source?.url || ""));
+}
+
+function faviconUrl(host) {
+  return host ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(host)}&sz=64` : "";
+}
 function cityLabel(code) {
   const city = state?.cities?.find((item) => item.code === code);
   return city ? city.name : String(code || "").replaceAll("_", " ");

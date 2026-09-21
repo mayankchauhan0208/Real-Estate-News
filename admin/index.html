@@ -149,7 +149,8 @@
             <legend>Publisher & location</legend>
             <div class="form-grid two">
               <label>Source name <input name="sourceName" placeholder="Select or enter source"></label>
-              <label>City * <select id="manualNewsCity" name="cityCode" required></select></label>
+              <label>State * <select id="manualNewsState" name="state" required></select></label>
+              <label>City * <select id="manualNewsCity" name="cityCode" required disabled></select></label>
               <label>Published date & time <input name="publishedAt" type="datetime-local"></label>
               <label>Publisher name <input name="postedBy" value="Brokket News"></label>
               <label>Publisher tagline <input name="tagline" value="Real Estate Intelligence"></label>
@@ -158,9 +159,9 @@
           </fieldset>
           <fieldset>
             <legend>Media</legend>
-            <label>Thumbnail image <div class="upload-drop">Upload Thumbnail image</div><input name="thumbnailImage" type="url" placeholder="Or paste image URL"></label>
-            <label>Source logo <div class="upload-drop">Upload Source logo</div><input name="sourceLogo" type="url" placeholder="Or paste image URL"></label>
-            <label>Publisher logo <div class="upload-drop">Upload Publisher logo</div><input name="postedByLogo" type="url" placeholder="Or paste image URL"></label>
+            <label>Thumbnail image <div class="upload-drop">Upload Thumbnail image</div><input name="thumbnailImage" type="url" placeholder="Or paste image URL" data-media-preview="thumbnailPreview"><span id="thumbnailPreview" class="media-preview empty">No thumbnail selected</span></label>
+            <label>Source logo <div class="upload-drop">Upload Source logo</div><input name="sourceLogo" type="url" placeholder="Or paste image URL" data-media-preview="sourceLogoPreview"><span id="sourceLogoPreview" class="media-preview empty">No source logo selected</span></label>
+            <label>Publisher logo <div class="upload-drop">Upload Publisher logo</div><input name="postedByLogo" type="url" placeholder="Or paste image URL" data-media-preview="publisherLogoPreview"><span id="publisherLogoPreview" class="media-preview empty">No publisher logo selected</span></label>
           </fieldset>
         </div>
         <div class="modal-actions">
