@@ -2,7 +2,7 @@ name: News API Pusher
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/10 * * * *"
   workflow_dispatch:
     inputs:
       backfill_from:
@@ -116,6 +116,8 @@ jobs:
           SOURCE_OFFSET: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_offset || '0' }}
           SOURCE_LIMIT: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_limit || '0' }}
           SOURCE_CONCURRENCY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_concurrency || '16' }}
+          AUTO_SOURCE_BATCH: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
+          SOURCE_BATCH_COUNT: "3"
           ENABLE_NOIDA_CITY: "true"
           ALLOW_NOIDA_API: "true"
           MAX_ITEMS_PER_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_items_per_run || '80' }}

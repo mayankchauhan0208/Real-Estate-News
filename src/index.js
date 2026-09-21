@@ -1428,11 +1428,31 @@ function applySourceBatch(sourceUrls) {
   const limit = Number.parseInt(env("SOURCE_LIMIT", "0"), 10);
   const safeLimit = Number.isFinite(limit) && limit > 0 ? limit : 0;
 
-  if (offset === 0 && safeLimit === 0) {
+  if (offset !== 0 || safeLimit !== 0) {
+    return sourceUrls.slice(offset, safeLimit > 0 ? offset + safeLimit : undefined);
+  }
+
+  if (!getBooleanEnv("AUTO_SOURCE_BATCH")) {
     return sourceUrls;
   }
 
-  return sourceUrls.slice(offset, safeLimit > 0 ? offset + safeLimit : undefined);
+  const batchCount = Math.min(getPositiveIntegerEnv("SOURCE_BATCH_COUNT", 1), 24);
+  if (batchCount <= 1) {
+    return sourceUrls;
+  }
+
+  const explicitIndex = Number.parseInt(env("SOURCE_BATCH_INDEX", ""), 10);
+  const timeSlotIndex = Math.floor(Date.now() / (10 * 60 * 1000));
+  const batchIndex = Number.isFinite(explicitIndex) && explicitIndex >= 0
+    ? explicitIndex % batchCount
+    : timeSlotIndex % batchCount;
+  const batchedSources = sourceUrls.filter((_, index) => index % batchCount === batchIndex);
+
+  console.log(
+    `Auto source batch: processing batch ${batchIndex + 1}/${batchCount} with ${batchedSources.length} of ${sourceUrls.length} sources.`
+  );
+
+  return batchedSources;
 }
 
 function getSourceConcurrency() {

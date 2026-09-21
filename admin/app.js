@@ -1,4 +1,5 @@
 let state = null;
+let staticMode = false;
 let sourceVisibleLimit = 258;
 
 const $ = (selector) => document.querySelector(selector);
@@ -61,12 +62,25 @@ loadState();
 setInterval(refreshDryRun, 4000);
 
 async function loadState() {
-  const response = await fetch("/api/state");
-  state = await response.json();
+  const isStaticHost = window.location.protocol === "file:" || /github\.io$/i.test(window.location.hostname);
+  try {
+    if (isStaticHost) throw new Error("Static admin host");
+    const response = await fetch("/api/state", { cache: "no-store" });
+    if (!response.ok) throw new Error(`API state failed: ${response.status}`);
+    state = await response.json();
+    staticMode = false;
+  } catch {
+    const response = await fetch("./static-state.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("Admin state is unavailable. Run npm run admin locally or regenerate admin/static-state.json.");
+    state = await response.json();
+    staticMode = true;
+  }
   render();
 }
 
 function render() {
+  document.body.classList.toggle("static-mode", staticMode);
+  activateTab($("[data-tab].active")?.dataset.tab || "news");
   renderMetrics();
   renderCityOptions();
   renderNewsFilters();
@@ -83,7 +97,7 @@ function activateTab(name) {
   $$('[data-panel]').forEach((panel) => panel.classList.toggle('active', panel.dataset.panel === name));
   const [title, subtitle] = titles[name] || titles.news;
   elements.pageTitle.textContent = title;
-  elements.pageSubtitle.textContent = subtitle;
+  elements.pageSubtitle.textContent = staticMode ? `${subtitle} Live GitHub Pages is read-only; use local admin for changes.` : subtitle;
 }
 
 function renderMetrics() {
@@ -196,6 +210,7 @@ function renderSources() {
   if (showMore) showMore.addEventListener("click", () => { sourceVisibleLimit += 258; renderSources(); });
   elements.sourceRows.querySelectorAll("[data-source-enabled]").forEach((input) => {
     input.addEventListener("change", async () => {
+      if (!requireLiveAdmin("change sources")) { input.checked = !input.checked; return; }
       await fetch(`/api/sources/${encodeURIComponent(input.dataset.sourceEnabled)}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -206,6 +221,7 @@ function renderSources() {
   });
   elements.sourceRows.querySelectorAll("[data-source-delete]").forEach((button) => {
     button.addEventListener("click", async () => {
+      if (!requireLiveAdmin("remove sources")) return;
       if (!confirm("Remove this manual source?")) return;
       await fetch(`/api/sources/${encodeURIComponent(button.dataset.sourceDelete)}`, { method: "DELETE" });
       await loadState();
@@ -250,6 +266,7 @@ function renderCities() {
   `).join("");
   elements.cityRows.querySelectorAll("[data-city-toggle]").forEach((input) => {
     input.addEventListener("change", async () => {
+      if (!requireLiveAdmin("change cities")) { input.checked = !input.checked; return; }
       await fetch(`/api/cities/${encodeURIComponent(input.dataset.cityToggle)}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -272,6 +289,7 @@ function renderMasterControls() {
   elements.masterControls.querySelectorAll("[data-setting-toggle]").forEach((input) => {
     input.addEventListener("change", async () => {
       const key = input.dataset.settingToggle;
+      if (!requireLiveAdmin("change settings")) { input.checked = !input.checked; return; }
       if (key === "apiPushEnabled" && input.checked && !confirm("Enable API push? Only continue if reviewed quality is clean.")) {
         input.checked = false;
         return;
@@ -294,6 +312,7 @@ function renderControlSummary() {
 }
 
 async function updateSettings(patch) {
+  if (!requireLiveAdmin("change settings")) return;
   const response = await fetch("/api/settings", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -305,6 +324,7 @@ async function updateSettings(patch) {
 
 async function addSource(event) {
   event.preventDefault();
+  if (!requireLiveAdmin("add sources")) return;
   const form = new FormData(event.currentTarget);
   const payload = {
     label: form.get("label"),
@@ -327,6 +347,7 @@ async function addSource(event) {
 }
 
 async function startDryRun() {
+  if (!requireLiveAdmin("start dry runs")) return;
   const payload = {
     enabledCityCodes: state.settings.enabledCityCodes,
     targetCityCodes: [...elements.backfillCitySelect.selectedOptions].map((option) => option.value),
@@ -353,6 +374,7 @@ async function startDryRun() {
 }
 
 async function refreshDryRun() {
+  if (staticMode) return;
   const response = await fetch("/api/dry-run");
   if (response.ok) renderDryRun(await response.json());
 }
@@ -394,9 +416,14 @@ function createManualArticleDraft(event) {
   event.preventDefault();
   const form = new FormData(event.currentTarget);
   const payload = Object.fromEntries(form.entries());
-  elements.manualNewsMessage.textContent = `Draft ready for ${cityLabel(payload.cityCode)}. Manual API publish is intentionally not wired from this local UI yet.`;
+  elements.manualNewsMessage.textContent = staticMode ? `Draft preview ready for ${cityLabel(payload.cityCode)}. GitHub Pages is read-only; open local admin to create/push.` : `Draft ready for ${cityLabel(payload.cityCode)}. Manual API publish is intentionally not wired from this local UI yet.`;
 }
 
+function requireLiveAdmin(action) {
+  if (!staticMode) return true;
+  alert(`This GitHub Pages admin is read-only. To ${action}, run npm run admin locally and use http://localhost:3000.`);
+  return false;
+}
 function clearNewsFilters() {
   elements.postedSearch.value = "";
   elements.newsCityFilter.value = "all";

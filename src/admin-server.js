@@ -732,19 +732,27 @@ async function routeApi(request, response, url) {
   }
 }
 
-const server = http.createServer(async (request, response) => {
-  const url = new URL(request.url, `http://${request.headers.host || "localhost"}`);
-  if (url.pathname.startsWith("/api/")) {
-    await routeApi(request, response, url);
-    return;
-  }
-  await serveStatic(response, url.pathname);
-});
+export { getDashboardState };
 
-server.listen(port, () => {
-  console.log(`News admin running at http://localhost:${port}`);
-  console.log("Dry runs launched from this admin force DRY_RUN=true and clear APP_API_URL/APP_API_KEY.");
-});
+function startAdminServer() {
+  const server = http.createServer(async (request, response) => {
+    const url = new URL(request.url, `http://${request.headers.host || "localhost"}`);
+    if (url.pathname.startsWith("/api/")) {
+      await routeApi(request, response, url);
+      return;
+    }
+    await serveStatic(response, url.pathname);
+  });
+
+  server.listen(port, () => {
+    console.log(`News admin running at http://localhost:${port}`);
+    console.log("Dry runs launched from this admin force DRY_RUN=true and clear APP_API_URL/APP_API_KEY.");
+  });
+}
+
+if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
+  startAdminServer();
+}
 
 
 
