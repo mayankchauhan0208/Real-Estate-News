@@ -3,3 +3,11 @@ node_modules/
 .state/
 reports/runs/
 npm-debug.log*
+output/
+reports/*.json
+reports/*.md
+reports/*.csv
+tmp_*.mjs
+tmp_*.js
+tmp_*.py
+

@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Brokket News Control Center</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-block">
+          <div class="brand-mark">B</div>
+          <div>
+            <p class="eyebrow">Brokket</p>
+            <h1>News Control</h1>
+          </div>
+        </div>
+
+        <nav class="tabs" aria-label="Admin sections">
+          <button class="tab active" data-tab="overview" type="button"><span>Command Center</span><small>Readiness and safeguards</small></button>
+          <button class="tab" data-tab="reports" type="button"><span>Run & Review</span><small>Dry run, ready, rejected</small></button>
+          <button class="tab" data-tab="sources" type="button"><span>Sources</span><small>Links and city mapping</small></button>
+          <button class="tab" data-tab="cities" type="button"><span>Cities</span><small>Coverage controls</small></button>
+          <button class="tab" data-tab="posted" type="button"><span>Posted News</span><small>API history</small></button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <button id="refreshBtn" type="button">Refresh Data</button>
+          <p>Local admin access. API push is off until you turn it on.</p>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <section class="page-hero">
+          <div>
+            <p class="eyebrow">Automation Operator Console</p>
+            <h2 id="pageTitle">Command Center</h2>
+            <p class="subhead">Review status, protect API publishing, run safe dry runs, and inspect every accepted or rejected article. Local-only until you deploy it.</p>
+          </div>
+          <div class="top-actions">
+            <button id="dryRunBtn" type="button" class="primary">Start Safe Dry Run</button>
+          </div>
+        </section>
+
+        <section class="metrics" id="metrics"></section>
+
+        <section class="readiness-strip" id="readinessStrip"></section>
+
+        <section class="tab-panel active" data-panel="overview">
+          <div class="command-grid">
+            <section class="panel safety-panel">
+              <div class="panel-head compact-head">
+                <div>
+                  <h2>Safety Controls</h2>
+                  <p>Production safeguards. Keep API push off until review quality is clean.</p>
+                </div>
+              </div>
+              <div id="masterControls" class="master-controls"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-head compact-head">
+                <div>
+                  <h2>Control Summary</h2>
+                  <p>Current operating mode and latest run signals.</p>
+                </div>
+              </div>
+              <div id="controlSummary" class="summary-list"></div>
+            </section>
+          </div>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <h2>Run Analytics</h2>
+                <p>Totals across saved reports. New dry runs will show richer rejected-article detail.</p>
+              </div>
+            </div>
+            <div id="analyticsMetrics" class="metrics compact-metrics"></div>
+            <div class="analytics-grid">
+              <div>
+                <h3>City-Wise News Status</h3>
+                <div class="table-wrap medium">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>City</th>
+                        <th>Fetched</th>
+                        <th>Ready</th>
+                        <th>Posted</th>
+                        <th>Rejected</th>
+                      </tr>
+                    </thead>
+                    <tbody id="analyticsCityRows"></tbody>
+                  </table>
+                </div>
+              </div>
+              <div>
+                <h3>Top Rejection Reasons</h3>
+                <div id="rejectionReasonRows" class="reason-list"></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <h2>State-Wise City Coverage</h2>
+                <p>Live cities are enabled for the automation. Requested cities came from your city sheet.</p>
+              </div>
+            </div>
+            <div id="stateSummary" class="state-grid"></div>
+          </section>
+        </section>
+
+        <section class="tab-panel" data-panel="reports">
+          <div class="review-layout">
+            <section class="panel run-card">
+              <div class="panel-head compact-head">
+                <div>
+                  <h2>Run News</h2>
+                  <p>Select city and date scope. This button always starts a safe dry run from admin.</p>
+                </div>
+              </div>
+              <div class="backfill-box">
+                <label>Cities <select id="backfillCitySelect" multiple></select></label>
+                <div class="run-options">
+                  <label>From <input id="backfillFrom" type="date"></label>
+                  <label>To <input id="backfillTo" type="date"></label>
+                  <label>Max/source <input id="maxItemsPerSource" type="number" min="1" max="50" value="12"></label>
+                  <label>Max/run <input id="maxItemsPerRun" type="number" min="1" max="200" value="80"></label>
+                  <label>Lookback days <input id="lookbackDays" type="number" min="1" max="90" value="20"></label>
+                </div>
+                <label class="checkline"><input id="resendBackfill" type="checkbox"> Ignore dedupe for this dry-run backfill</label>
+              </div>
+              <pre id="dryRunLog" class="console">No dry run started from admin yet.</pre>
+            </section>
+
+            <section class="panel queue-card">
+              <div class="queue-header">
+                <div>
+                  <h2>Review Queue</h2>
+                  <p>Latest-run candidates only. Rejected items explain what failed in the newest report.</p>
+                </div>
+              </div>
+              <div class="queue-columns">
+                <div>
+                  <h3>Ready To Post</h3>
+                  <div id="candidateRows" class="news-list"></div>
+                </div>
+                <div>
+                  <h3>Rejected With Reasons</h3>
+                  <div id="rejectedRows" class="news-list"></div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <h2>Run History</h2>
+                <p>Every saved report with fetched, ready, posted, and rejection counts.</p>
+              </div>
+            </div>
+            <div id="reportRows" class="report-list"></div>
+          </section>
+        </section>
+
+        <section class="tab-panel" data-panel="sources">
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <h2>Source Library</h2>
+                <p>Add links, attach them to cities, and disable any source that becomes noisy.</p>
+              </div>
+              <input id="sourceSearch" type="search" placeholder="Search source, city, URL">
+            </div>
+
+            <form id="sourceForm" class="source-form">
+              <label>Label <input name="label" placeholder="Moneycontrol Real Estate"></label>
+              <label class="wide">URL <input name="url" placeholder="https://example.com/feed-or-news-page" required></label>
+              <label>Assign Cities <select id="sourceCitySelect" name="cityCodes" multiple></select></label>
+              <label>Type
+                <select name="category">
+                  <option value="manual">Manual</option>
+                  <option value="rss">RSS</option>
+                  <option value="city">City Page</option>
+                  <option value="developer">Developer</option>
+                  <option value="government">Government</option>
+                </select>
+              </label>
+              <button type="submit" class="primary">Add Source</button>
+            </form>
+
+            <div class="toolbar">
+              <div>
+                <button id="showManualSources" type="button">Manual Only</button>
+                <button id="showAllSources" type="button">All Sources</button>
+                <button type="button" data-source-status="enabled">Enabled</button>
+                <button type="button" data-source-status="disabled">Disabled</button>
+                <button type="button" data-source-status="all">Any Status</button>
+              </div>
+              <span id="sourceCountLabel" class="muted"></span>
+            </div>
+
+            <div class="table-wrap tall">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Status</th>
+                    <th>Type</th>
+                    <th>Label</th>
+                    <th>URL</th>
+                    <th>Cities</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="sourceRows"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+
+        <section class="tab-panel" data-panel="cities">
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <h2>City Control</h2>
+                <p>Enable cities slowly. Always dry-run before trusting new city coverage.</p>
+              </div>
+              <input id="citySearch" type="search" placeholder="Search city or state">
+            </div>
+            <div class="table-wrap tall">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Status</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Code</th>
+                    <th>Keywords</th>
+                    <th>Sources</th>
+                  </tr>
+                </thead>
+                <tbody id="cityRows"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+
+        <section class="tab-panel" data-panel="posted">
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <h2>Posted News</h2>
+                <p>Actual API-pushed history from saved reports. Dry-run candidates remain in Run & Review.</p>
+              </div>
+              <input id="postedSearch" type="search" placeholder="Search posted title/city/source">
+            </div>
+            <div id="pushedByDate" class="state-grid slim"></div>
+            <div class="table-wrap tall">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>City</th>
+                    <th>Title</th>
+                    <th>Posted By</th>
+                    <th>Report</th>
+                  </tr>
+                </thead>
+                <tbody id="postedRows"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
+
+
+

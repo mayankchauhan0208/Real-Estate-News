@@ -46,6 +46,26 @@ on:
         description: "Optional city filter, e.g. gurugram,faridabad,noida"
         required: false
         default: ""
+      enabled_city_codes:
+        description: "Cities to enable for source/filter rules. Use all, or comma list. Empty keeps current gurugram/faridabad/noida behavior."
+        required: false
+        default: ""
+      disabled_city_codes:
+        description: "Cities to keep disabled even if enabled_city_codes is all or includes them"
+        required: false
+        default: ""
+      source_offset:
+        description: "Start source index for batched runs. Leave 0 for normal runs."
+        required: false
+        default: "0"
+      source_limit:
+        description: "How many sources to process in this batch. Leave 0 for all sources."
+        required: false
+        default: "0"
+      source_concurrency:
+        description: "How many sources to fetch in parallel. Default 8, max 16."
+        required: false
+        default: "8"
 
 concurrency:
   group: news-api-pusher
@@ -91,6 +111,10 @@ jobs:
           SOURCE_URLS: ${{ github.event.inputs.source_urls || '' }}
           EXTRA_ARTICLE_URLS: ${{ github.event.inputs.extra_article_urls || '' }}
           TARGET_CITY_CODES: ${{ github.event.inputs.target_city_codes || '' }}
+          ENABLED_CITY_CODES: ${{ github.event.inputs.enabled_city_codes || '' }}
+          DISABLED_CITY_CODES: ${{ github.event.inputs.disabled_city_codes || '' }}
+          SOURCE_OFFSET: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_offset || '0' }}
+          SOURCE_LIMIT: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_limit || '0' }}
           ENABLE_NOIDA_CITY: "true"
           ALLOW_NOIDA_API: "true"
           MAX_ITEMS_PER_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_items_per_run || '80' }}
@@ -105,3 +129,6 @@ jobs:
           name: news-run-report-${{ github.run_id }}
           path: reports/runs/
           if-no-files-found: ignore
+
+
+

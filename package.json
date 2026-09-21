@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
-    "check": "node --check src/index.js && node --check src/filter-smoke-test.js",
+    "check": "node --check src/index.js && node --check src/filter-smoke-test.js && node --check src/admin-server.js && node --check admin/app.js",
     "test": "node src/filter-smoke-test.js",
-    "build": "node --check src/index.js && node --check src/filter-smoke-test.js && node src/filter-smoke-test.js"
+    "build": "npm run check && node src/filter-smoke-test.js",
+    "admin": "node src/admin-server.js"
   },
   "dependencies": {
     "cheerio": "^1.0.0",

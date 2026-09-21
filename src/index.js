@@ -1,9 +1,11 @@
 import crypto from "node:crypto";
+import { readFileSync } from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import * as cheerio from "cheerio";
 import Parser from "rss-parser";
+import { citySourceRules, workbookCityRules } from "./city-config.js";
 
 const userAgent =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
@@ -19,6 +21,8 @@ const stateDir = path.resolve(".state");
 const sentNewsPath = path.join(stateDir, "sent-news.json");
 const sentNewsSeedPath = path.resolve("data", "sent-news-seed.json");
 const runReportsDir = path.resolve("reports", "runs");
+const adminSettingsPath = path.resolve("config", "admin-settings.json");
+const adminSettings = readAdminSettings();
 
 const defaultSources = [
   "https://www.magicbricks.com/news/feed",
@@ -88,127 +92,62 @@ const defaultSources = [
   "https://www.rpsgroupindia.com/"
 ];
 
-const noidaCityEnabledAtStartup = ["1", "true", "yes", "on"].includes(
-  (process.env.ENABLE_NOIDA_CITY || "").trim().toLowerCase()
-);
-const noidaSources = [
-  "https://timesofindia.indiatimes.com/rssfeeds/8021716.cms",
-  "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
-  "https://realty.economictimes.indiatimes.com/tag/noida",
-  "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida",
-  "https://realty.economictimes.indiatimes.com/amp/tag/greater%2Bnoida",
-  "https://realty.economictimes.indiatimes.com/tag/jewar",
-  "https://realty.economictimes.indiatimes.com/tag/yamuna%2Bexpressway",
-  "https://realty.economictimes.indiatimes.com/tag/noida%2Bairport",
-  "https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority",
-  "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida%2Bauthority",
-  "https://realty.economictimes.indiatimes.com/tag/yeida",
-  "https://realty.economictimes.indiatimes.com/rss/residential",
-  "https://realty.economictimes.indiatimes.com/rss/commercial",
-  "https://realty.economictimes.indiatimes.com/rss/infrastructure",
-  "https://realty.economictimes.indiatimes.com/rss/industry",
-  "https://realty.economictimes.indiatimes.com/rss/regulatory",
-  "https://www.hindustantimes.com/cities/noida-news",
-  "https://www.hindustantimes.com/topic/noida/news",
-  "https://www.hindustantimes.com/topic/greater-noida/news",
-  "https://www.hindustantimes.com/topic/noida-authority/news",
-  "https://www.hindustantimes.com/topic/greater-noida-authority/news",
-  "https://www.hindustantimes.com/topic/yamuna-expressway/news",
-  "https://www.hindustantimes.com/topic/jewar-airport/news",
-  "https://www.hindustantimes.com/topic/yeida/news",
-  "https://economictimes.indiatimes.com/industry/services/property-/-cstruction",
-  "https://economictimes.indiatimes.com/rssfeeds/13357019.cms",
-  "https://www.moneycontrol.com/news/business/real-estate/",
-  "https://www.business-standard.com/rss/content/real-estate-22310.rss",
-  "https://www.business-standard.com/rss/latest.rss",
-  "https://www.cnbctv18.com/real-estate/",
-  "https://timesofindia.indiatimes.com/real-estate/news",
-  "https://timesofindia.indiatimes.com/rssfeeds/6547154.cms",
-  "https://indianexpress.com/section/cities/delhi/feed/",
-  "https://www.constructionworld.in/latest-construction-news/real-estate-news",
-  "https://realtynmore.com/latest-news/",
-  "https://realtynmore.com/feed/",
-  "https://realtynxt.com/",
-  "https://propnewstime.com/",
-  "https://realtyquarter.com/feed/",
-  "https://www.track2realty.track2media.com/",
-  "https://www.niairport.in/en/company/news/overview/news-overview",
-  "https://www.yamunaexpresswayauthority.com/web/",
-  "https://www.yamunaexpresswayauthority.com/web/announcement/",
-  "https://up-rera.in",
-  "https://noidaauthorityonline.in",
-  "https://www.abacorp.in",
-  "https://www.acegroupindia.com",
-  "https://www.gaursonsindia.com",
-  "https://www.sayahomes.com",
-  "https://www.sikka.in",
-  "https://www.supertechlimited.com",
-  "https://gnida.up.gov.in/en/news",
-  "https://gnida.up.gov.in/en/announcements",
-  "https://www.atsgreens.com/blog",
-  "https://www.mahagunindia.com/media",
-  "https://countygroup.in/",
-  "https://www.prateekgroup.com/blog",
-  "https://www.gulshangroup.com/",
-  "https://www.aba-corp.com/",
-  "https://indianexpress.com/about/noida-authority/",
-  "https://indianexpress.com/about/greater-noida-authority/",
-  "https://timesofindia.indiatimes.com/city/noida"
-];
-
-function isNoidaCityEnabled() {
-  return noidaCityEnabledAtStartup;
+function isLegacyNoidaCityEnabled() {
+  return ["1", "true", "yes", "on"].includes((process.env.ENABLE_NOIDA_CITY || "").trim().toLowerCase());
 }
 
-const noidaCityRule = {
-  code: "noida",
-  keywords: [
-    "noida",
-    "greater noida",
-    "greater noida west",
-    "noida extension",
-    "new noida",
-    "jewar",
-    "jewar airport",
-    "noida airport",
-    "noida international airport",
-    "yamuna expressway",
-    "yeida"
-  ]
-};
+const legacyDefaultCityCodes = ["faridabad", "gurugram"];
+const allCityRules = workbookCityRules;
+const allCityCodeSet = new Set(allCityRules.map((rule) => rule.code));
+const enabledCityCodeSet = getEnabledCityCodeSet();
+const cityRules = allCityRules.filter((rule) => enabledCityCodeSet.has(rule.code));
 
-const cityRules = [
-  {
-    code: "faridabad",
-    keywords: ["faridabad", "faridabads", "greater faridabad", "neharpar", "skynest", "skynest towers"]
-  },
-  {
-    code: "gurugram",
-    keywords: [
-      "gurugram",
-      "gurgaon",
-      "dwarka expressway",
-      "downtown 66",
-      "golf course road",
-      "golf course extension road",
-      "manesar",
-      "manasar",
-      "pataudi",
-      "patudi",
-      "patodi",
-      "southern peripheral road",
-      "spr",
-      "sohna",
-      "sohna road"
-    ]
-  },
-  ...(isNoidaCityEnabled()
-    ? [noidaCityRule]
-    : [])
-];
-const allCityRules = cityRules.some((rule) => rule.code === noidaCityRule.code)
-  ? cityRules
-  : [...cityRules, noidaCityRule];
+function getEnabledCityCodeSet() {
+  const requestedCityCodes = splitDelimitedValues(env("ENABLED_CITY_CODES"))
+    .map((code) => code.toLowerCase())
+    .filter(Boolean);
+  const adminEnabledCityCodes = Array.isArray(adminSettings.enabledCityCodes)
+    ? adminSettings.enabledCityCodes.map((code) => String(code || "").trim().toLowerCase()).filter(Boolean)
+    : [];
+  const disabledCityCodes = new Set([
+    ...(Array.isArray(adminSettings.disabledCityCodes) ? adminSettings.disabledCityCodes : []),
+    ...splitDelimitedValues(env("DISABLED_CITY_CODES"))
+  ].map((code) => String(code || "").trim().toLowerCase()).filter(Boolean));
+
+  const enabled = requestedCityCodes.length > 0
+    ? new Set(
+      requestedCityCodes.includes("all")
+        ? allCityRules.map((rule) => rule.code)
+        : requestedCityCodes.filter((code) => allCityCodeSet.has(code))
+    )
+    : adminSettings.allCitiesEnabled === true
+      ? new Set(allCityRules.map((rule) => rule.code))
+      : new Set(
+        adminEnabledCityCodes.length > 0
+          ? adminEnabledCityCodes.filter((code) => allCityCodeSet.has(code))
+          : [
+            ...legacyDefaultCityCodes,
+            ...(isLegacyNoidaCityEnabled() ? ["noida"] : [])
+          ]
+      );
+
+  for (const code of disabledCityCodes) {
+    enabled.delete(code);
+  }
+
+  return enabled;
+}
+
+function isNoidaCityEnabled() {
+  return enabledCityCodeSet.has("noida");
+}
+
+function getActiveCitySources() {
+  return citySourceRules
+    .filter((rule) => enabledCityCodeSet.has(rule.code))
+    .flatMap((rule) => rule.urls);
+}
+
 const gurugramCorridorKeywords = [
   "dwarka expressway",
   "golf course road",
@@ -301,6 +240,12 @@ const targetCityKeywords = [...cityRules.flatMap((rule) => rule.keywords), ...nc
 const reraKeywords = ["rera", "hrera", "h-rera", "real estate regulatory authority"];
 const courtKeywords = [
   "court",
+  "courts",
+  "hc",
+  "interim",
+  "restrain",
+  "restrained",
+  "restraining",
   "supreme court",
   "high court",
   "tribunal",
@@ -1093,6 +1038,8 @@ const negativePhraseKeywords = [
   "real estate agent killed",
   "real estate broker killed",
   "sales decline",
+  "unchecked expansion",
+  "needs focused planning",
   "sales drop",
   "strike hits",
   "sexual harassment",
@@ -1232,7 +1179,49 @@ const blockedSourceUrlParts = [
   "amarujala.com"
 ];
 
-const activeDefaultSources = isNoidaCityEnabled() ? [...defaultSources, ...noidaSources] : defaultSources;
+function normalizeSourceUrl(value) {
+  const raw = String(value || "").trim();
+  if (!raw) return "";
+  try {
+    const url = new URL(raw);
+    url.hash = "";
+    return url.toString().replace(/\/+$/, "").toLowerCase();
+  } catch {
+    return raw.replace(/\/+$/, "").toLowerCase();
+  }
+}
+
+function sourceControlId(value) {
+  let hash = 0;
+  for (const char of String(value || "")) hash = ((hash << 5) - hash + char.charCodeAt(0)) | 0;
+  return `id-${Math.abs(hash)}`.toLowerCase();
+}
+
+function getDisabledSourceIds() {
+  return new Set([
+    ...(Array.isArray(adminSettings.disabledSourceIds) ? adminSettings.disabledSourceIds : []),
+    ...splitDelimitedValues(env("DISABLED_SOURCE_IDS"))
+  ].map((id) => String(id || "").trim().toLowerCase()).filter(Boolean));
+}
+
+function getDisabledSourceUrls() {
+  return new Set([
+    ...(Array.isArray(adminSettings.disabledSourceUrls) ? adminSettings.disabledSourceUrls : []),
+    ...splitDelimitedValues(env("DISABLED_SOURCE_URLS"))
+  ].map(normalizeSourceUrl).filter(Boolean));
+}
+
+const disabledSourceIds = getDisabledSourceIds();
+const disabledSourceUrls = getDisabledSourceUrls();
+
+function isSourceDisabledByAdmin(sourceUrl) {
+  return disabledSourceIds.has(sourceControlId(sourceUrl)) || disabledSourceUrls.has(normalizeSourceUrl(sourceUrl));
+}
+
+const activeDefaultSources = [
+  ...defaultSources,
+  ...getActiveCitySources()
+].filter((source) => !isSourceDisabledByAdmin(source));
 const allowedSourceUrlParts = activeDefaultSources.map((source) => {
   const url = new URL(source);
   return `${url.hostname.replace(/^www\./, "")}${url.pathname.replace(/\/+$/, "")}`.toLowerCase();
@@ -1294,8 +1283,33 @@ async function loadDotEnv() {
   }
 }
 
+function readAdminSettings() {
+  try {
+    return JSON.parse(readFileSync(adminSettingsPath, "utf8"));
+  } catch {
+    return {};
+  }
+}
+
 function getSources() {
-  return [];
+  const manualSourceUrls = Array.isArray(adminSettings.manualSources)
+    ? adminSettings.manualSources
+      .filter((source) => source && source.enabled !== false)
+      .filter((source) => {
+        const cityCodes = Array.isArray(source.cityCodes)
+          ? source.cityCodes.map((code) => String(code || "").trim().toLowerCase()).filter(Boolean)
+          : [];
+        return cityCodes.length === 0 || cityCodes.some((code) => enabledCityCodeSet.has(code));
+      })
+      .map((source) => String(source.url || "").trim())
+      .filter(Boolean)
+      .filter((source) => !isSourceDisabledByAdmin(source))
+    : [];
+
+  return [
+    ...manualSourceUrls,
+    ...splitDelimitedValues(env("MANUAL_SOURCE_URLS")).filter((source) => !isSourceDisabledByAdmin(source))
+  ];
 }
 
 function splitDelimitedValues(value) {
@@ -1309,7 +1323,7 @@ function getSourceUrls() {
   const sourceUrls = splitDelimitedValues(env("SOURCE_URLS"));
 
   if (sourceUrls.length > 0) {
-    return [...new Set(sourceUrls)];
+    return [...new Set(sourceUrls.filter((source) => !isSourceDisabledByAdmin(source)))];
   }
 
   return [...new Set([...activeDefaultSources, ...getSources()])];
@@ -1392,6 +1406,11 @@ function getPositiveIntegerEnv(name, fallback) {
   return Number.isFinite(value) && value > 0 ? value : fallback;
 }
 
+function getNonNegativeIntegerEnv(name, fallback = 0) {
+  const value = Number.parseInt(env(name, String(fallback)), 10);
+  return Number.isFinite(value) && value >= 0 ? value : fallback;
+}
+
 function getMaxItemsPerSource() {
   return getPositiveIntegerEnv("MAX_ITEMS_PER_SOURCE", 300);
 }
@@ -1402,6 +1421,22 @@ function getMaxPagesPerSource() {
 
 function getMaxItemsPerRun() {
   return getPositiveIntegerEnv("MAX_ITEMS_PER_RUN", 30);
+}
+
+function applySourceBatch(sourceUrls) {
+  const offset = getNonNegativeIntegerEnv("SOURCE_OFFSET", 0);
+  const limit = Number.parseInt(env("SOURCE_LIMIT", "0"), 10);
+  const safeLimit = Number.isFinite(limit) && limit > 0 ? limit : 0;
+
+  if (offset === 0 && safeLimit === 0) {
+    return sourceUrls;
+  }
+
+  return sourceUrls.slice(offset, safeLimit > 0 ? offset + safeLimit : undefined);
+}
+
+function getSourceConcurrency() {
+  return Math.min(getPositiveIntegerEnv("SOURCE_CONCURRENCY", 8), 16);
 }
 
 function getDefaultLookbackDays() {
@@ -1645,6 +1680,66 @@ function mapToObject(map) {
   return Object.fromEntries([...map.entries()].sort((a, b) => a[0].localeCompare(b[0])));
 }
 
+function articleReportKey(article) {
+  return [article.cityCode || "", article.newsLink || "", normalizeTitle(article.title || "")].join("|");
+}
+
+function buildRunAnalytics(expandedArticles, readyArticles, postedArticles, skipTitleSet, sentIds) {
+  const readyKeys = new Set(readyArticles.map(articleReportKey));
+  const postedKeys = new Set(postedArticles.map(articleReportKey));
+  const byCity = new Map();
+  const rejectedArticles = [];
+
+  for (const article of expandedArticles) {
+    const cityCode = article.cityCode || "unknown";
+    const row = byCity.get(cityCode) || {
+      cityCode,
+      expanded: 0,
+      readyToPost: 0,
+      posted: 0,
+      rejected: 0,
+      rejectionReasons: {}
+    };
+
+    row.expanded += 1;
+    const key = articleReportKey(article);
+
+    if (readyKeys.has(key)) {
+      row.readyToPost += 1;
+    }
+
+    if (postedKeys.has(key)) {
+      row.posted += 1;
+    }
+
+    const reasons = shouldSkipTitle(article, skipTitleSet)
+      ? ["manual skip: title already reposted"]
+      : getRejectionReasons(article, sentIds);
+
+    if (reasons.length > 0) {
+      row.rejected += 1;
+      for (const reason of reasons) {
+        row.rejectionReasons[reason] = (row.rejectionReasons[reason] || 0) + 1;
+      }
+      if (rejectedArticles.length < 300) {
+        rejectedArticles.push({ article: reportArticle(article), reasons });
+      }
+    }
+
+    byCity.set(cityCode, row);
+  }
+
+  const cityBreakdown = [...byCity.values()].sort((a, b) =>
+    (b.readyToPost + b.posted + b.rejected + b.expanded) - (a.readyToPost + a.posted + a.rejected + a.expanded)
+  );
+
+  return {
+    readyToPostCount: readyArticles.length,
+    rejectedArticleCount: rejectedArticles.length,
+    cityBreakdown,
+    rejectedArticles
+  };
+}
 function safeReportFileName(date = new Date()) {
   return `news-run-${date.toISOString().replace(/[:.]/g, "-")}`;
 }
@@ -1967,7 +2062,7 @@ function sourceSlugCityId(article) {
 }
 
 function articleDedupeIds(article) {
-  const cityScopedIds = [titleCityId(article), canonicalUrlCityId(article), sourceSlugCityId(article)];
+  const cityScopedIds = [titleCityId(article), canonicalUrlCityId(article), sourceSlugCityId(article), storyClusterId(article)];
   const articleScopedIds = article.sharedCityArticle ? [] : [canonicalUrlId(article), titleOnlyId(article)];
 
   return [article.id, ...cityScopedIds, ...articleScopedIds].filter(Boolean);
@@ -2347,6 +2442,64 @@ function getArticleHost(article) {
   }
 }
 
+function isDirectMediaUrl(value = "") {
+  try {
+    const url = new URL(value);
+    return /\.(avif|gif|jpe?g|png|svg|webp|bmp|pdf)(\?.*)?$/i.test(url.pathname);
+  } catch {
+    return /\.(avif|gif|jpe?g|png|svg|webp|bmp|pdf)(\?.*)?$/i.test(String(value));
+  }
+}
+
+function hasNewsArticlePageLink(article) {
+  return isHttpUrl(article.newsLink || article.url || "") && !isDirectMediaUrl(article.newsLink || article.url || "");
+}
+
+function normalizeStoryText(value = "") {
+  return normalizeTitle(value)
+    .replace(/\b(rs|inr|crore|cr|lakh|mn|million|billion|sq|ft|for|the|and|with|from|over|into|to|of|in|at|by|on|its|their|project|projects|developers|developer|realty|fund|investment|invest|partner|partnership|join|joins|forces|tie|up|scale|living|luxury|ncr)\b/g, " ")
+    .replace(/\b\d+\b/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function storyClusterId(article) {
+  const title = normalizeStoryText(article.title || "");
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  if (/\b(smartworld|kotak)\b/i.test(primaryAndUrl) && /\b(800|₹800|rs 800)\b/i.test(primaryAndUrl)) {
+    return `smartworld-kotak-800cr|${article.cityCode || ""}`;
+  }
+
+  if (/\bdwarka expressway\b/i.test(primaryAndUrl) && /\b(135|price|prices|surge|power corridor)\b/i.test(primaryAndUrl)) {
+    return `dwarka-expressway-price-surge|${article.cityCode || ""}`;
+  }
+
+  return title && title.length >= 18 ? `${title}|${article.cityCode || ""}` : "";
+}
+
+function hasSourceCityUrlMismatch(article) {
+  const urlText = getArticleUrlText(article);
+
+  if (!urlText || !article.cityCode) {
+    return false;
+  }
+
+  const cityPathMap = {
+    gurugram: ["/noida-news/", "/mumbai-news/", "/bengaluru-news/", "/bangalore-news/", "/chennai-news/", "/kolkata-news/", "/pune-news/", "/delhi-news/"],
+    faridabad: ["/noida-news/", "/mumbai-news/", "/bengaluru-news/", "/bangalore-news/", "/chennai-news/", "/kolkata-news/", "/pune-news/", "/delhi-news/"],
+    noida: ["/gurugram-news/", "/gurgaon-news/", "/mumbai-news/", "/bengaluru-news/", "/bangalore-news/", "/chennai-news/", "/kolkata-news/", "/pune-news/", "/delhi-news/"]
+  };
+
+  const blockedPaths = cityPathMap[article.cityCode] || [];
+  if (!blockedPaths.some((part) => urlText.includes(part))) {
+    return false;
+  }
+
+  const rule = allCityRules.find((cityRule) => cityRule.code === article.cityCode);
+  const primaryMentions = rule ? countKeywordMentions(getArticlePrimaryText(article), rule.keywords) : 0;
+  return primaryMentions < 2;
+}
 function isReraRelated(article) {
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
   return !isBlockedArticle(article) && hasKeyword(primaryAndUrl, reraKeywords);
@@ -2401,7 +2554,7 @@ function detectDominantFullArticleCityCodes(article) {
       code: rule.code,
       count: countKeywordMentions(fullText, rule.keywords)
     }))
-    .filter((entry) => entry.count > 0);
+    .filter((entry) => entry.count > 0 && !["delhi_ncr", "new_delhi"].includes(entry.code));
 
   if (counts.length === 0) {
     return [];
@@ -2416,6 +2569,28 @@ function detectDominantFullArticleCityCodes(article) {
   return dominantCodes.length === 1 && ncrCityCodes.includes(dominantCodes[0]) ? dominantCodes : [];
 }
 
+function detectConcreteNcrCityCodesFromFullArticle(article) {
+  const fullText = getArticleSearchText(article);
+  const counts = ncrCityCodes
+    .map((code) => {
+      const rule = allCityRules.find((cityRule) => cityRule.code === code);
+      return {
+        code,
+        count: rule ? countKeywordMentions(fullText, rule.keywords) : 0
+      };
+    })
+    .filter((entry) => entry.count > 0);
+
+  if (counts.length === 0) {
+    return [];
+  }
+
+  const total = counts.reduce((sum, entry) => sum + entry.count, 0);
+  const maxCount = Math.max(...counts.map((entry) => entry.count));
+  return counts
+    .filter((entry) => entry.count === maxCount && entry.count >= 2 && entry.count / total >= 0.6)
+    .map((entry) => entry.code);
+}
 function hasDisabledDominantFullArticleCity(article) {
   const fullText = getArticleSearchText(article);
   const counts = allCityRules
@@ -2423,7 +2598,7 @@ function hasDisabledDominantFullArticleCity(article) {
       code: rule.code,
       count: countKeywordMentions(fullText, rule.keywords)
     }))
-    .filter((entry) => entry.count > 0);
+    .filter((entry) => entry.count > 0 && !["delhi_ncr", "new_delhi"].includes(entry.code));
 
   if (counts.length === 0) {
     return false;
@@ -2475,6 +2650,10 @@ function getCorporateCompanyCityCodes(article, company = getTargetRealEstateCorp
     return [];
   }
 
+  if (!company.code && /\bdelhi[\s-]?ncr\b/i.test(primaryAndUrl)) {
+    return detectConcreteNcrCityCodesFromFullArticle(article);
+  }
+
   if (
     !company.code &&
     hasWholeWordKeyword(primaryAndUrl, outsideCityKeywords.filter((keyword) => !["delhi", "new delhi"].includes(keyword)))
@@ -2487,11 +2666,7 @@ function getCorporateCompanyCityCodes(article, company = getTargetRealEstateCorp
     hasWholeWordKeyword(primaryAndUrl, ["bptp", "bptp ltd"]) &&
     hasKeyword(primaryAndUrl, ["customer confidence", "top developer", "top developers"])
   ) {
-    return detectTargetCityCodesFromFullArticle(article);
-  }
-
-  if (!company.code && /\bdelhi[\s-]?ncr\b/i.test(primaryAndUrl)) {
-    return detectTargetCityCodesFromFullArticle(article);
+    return detectConcreteNcrCityCodesFromFullArticle(article);
   }
 
   return company.code ? [company.code] : [];
@@ -2866,11 +3041,16 @@ function shouldSendToBothCities(article) {
 }
 
 function detectCityCodes(article) {
-  if (!isRealEstateRelated(article)) {
+  if (!isRealEstateRelated(article) || isBlockedArticle(article) || isNegativeNews(article)) {
     return [];
   }
 
-  return detectMatchedCityCodes(article);
+  const primaryText = getArticlePrimaryText(article);
+  const concreteNcrCityCodes = hasNcrMatch(article) ? detectConcreteNcrCityCodesFromFullArticle(article) : [];
+  const matchedCodes = concreteNcrCityCodes.length > 0 ? concreteNcrCityCodes : detectMatchedCityCodes(article);
+  return matchedCodes.filter((code) =>
+    code !== "delhi_ncr" && (code !== "new_delhi" || /\\bnew delhi\\b|\\bcentral delhi\\b|\\bsouth delhi\\b|\\bnorth delhi\\b|\\beast delhi\\b|\\bwest delhi\\b/i.test(primaryText))
+  );
 }
 
 function detectMatchedCityCodes(article) {
@@ -2921,7 +3101,7 @@ function detectMatchedCityCodes(article) {
   }
 
   if (hasNcrMatch(article)) {
-    return detectTargetCityCodesFromFullArticle(article);
+    return detectConcreteNcrCityCodesFromFullArticle(article);
   }
 
   return [];
@@ -3071,8 +3251,10 @@ function hasTargetInfrastructureCorridorSignal(article) {
 function isTargetDominantInfrastructureCorridor(article) {
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
   const fullText = getArticleSearchText(article);
-  const hasGurugram = hasWholeWordKeyword(primaryAndUrl, cityRules.find((rule) => rule.code === "gurugram").keywords);
-  const hasFaridabad = hasWholeWordKeyword(primaryAndUrl, cityRules.find((rule) => rule.code === "faridabad").keywords);
+  const gurugramRule = allCityRules.find((rule) => rule.code === "gurugram");
+  const faridabadRule = allCityRules.find((rule) => rule.code === "faridabad");
+  const hasGurugram = hasWholeWordKeyword(primaryAndUrl, gurugramRule?.keywords || ["gurugram", "gurgaon"]);
+  const hasFaridabad = hasWholeWordKeyword(primaryAndUrl, faridabadRule?.keywords || ["faridabad"]);
   const hasNoida = hasWholeWordKeyword(primaryAndUrl, ["noida"]);
   const targetMentions = countKeywordMentions(fullText, targetCityKeywords);
   const outsideMentions = countKeywordMentions(fullText, outsideCityKeywords);
@@ -3327,11 +3509,14 @@ function isBlockedArticle(article) {
   const normalizedTitle = title.trim().toLowerCase();
   const primaryText = `${title} ${description}`;
   const allowProjectAwardArticle = isTargetProjectAwardArticle(article);
+  const articleHost = getArticleHost(article);
+  const isWeakFoodRetailSource = articleHost === "businessoffood.in" && !hasKeyword(`${title} ${description} ${newsLink}`.toLowerCase(), ["real estate", "realty", "developer", "residential", "commercial project", "retail destination", "tenant mix", "open-air retail", "sector 70", "office space", "leased", "rents", "sq ft"]);
 
   return (
     blockedExactTitles.includes(normalizedTitle) ||
     isAddressLikeHeadline(title) ||
     isMalformedCategoryHeadline(title) ||
+    isWeakFoodRetailSource ||
     /[\u0900-\u097F]/.test(primaryText) ||
     (!allowProjectAwardArticle && hasKeyword(primaryText, blockedTitleKeywords)) ||
     (!allowProjectAwardArticle && hasKeyword(newsLink, blockedUrlParts))
@@ -3359,18 +3544,29 @@ function isMalformedCategoryHeadline(title = "") {
 }
 
 function isNegativeNews(article) {
+  const primaryText = getArticlePrimaryText(article);
+  const urlText = getArticleUrlText(article);
+  const bodyText = getArticleBodyText(article);
+  const primaryAndUrl = `${primaryText} ${urlText}`;
+
+  if (/\b(dumping|dumped|industrial waste|vacant land|residents flag|pollution|sewage|garbage|waste dumped)\b/i.test(primaryAndUrl)) {
+    return true;
+  }
+
+  if (
+    hasWholeWordKeyword(primaryAndUrl, courtKeywords) &&
+    (hasKeyword(primaryAndUrl, negativePhraseKeywords) || hasWholeWordKeyword(primaryAndUrl, ["restraining", "restrained", "interim", "litigation", "petition", "plea"]))
+  ) {
+    return true;
+  }
+
   if (
     isFaridabadJewarGrowthArticle(article) ||
     isPositiveTargetProjectUpdate(article) ||
-    isPositiveCivicInfrastructureArticle(article) ||
     isOfficialAuthorityPipelineNotice(article)
   ) {
     return false;
   }
-
-  const primaryText = getArticlePrimaryText(article);
-  const urlText = getArticleUrlText(article);
-  const bodyText = getArticleBodyText(article);
 
   return (
     hasWholeWordKeyword(primaryText, negativeNewsKeywords) ||
@@ -3427,6 +3623,10 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("filter 1: spam/menu page");
   }
 
+  if (!hasNewsArticlePageLink(article)) {
+    reasons.push("filter 15: direct media/PDF link, not article page");
+  }
+
   if (hasDisallowedLanguage(article)) {
     reasons.push("filter 2: non-English/Hindi content");
   }
@@ -3435,7 +3635,7 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("filter 3: negative/crime/utility concern news");
   }
 
-  if (!isRealEstateRelated(article)) {
+  if (!isRealEstateRelated(article) || isBlockedArticle(article) || isNegativeNews(article)) {
     reasons.push("filter 4: not positive target real-estate/project news");
   }
 
@@ -3465,6 +3665,10 @@ function getRejectionReasons(article, sentIds) {
 
   if (hasOutsideCityConflict(article)) {
     reasons.push("filter 8: outside-city conflict");
+  }
+
+  if (hasSourceCityUrlMismatch(article)) {
+    reasons.push("filter 16: source URL city mismatch");
   }
 
   const missingFields = article.cityCode ? missingRequiredPayloadFields(article) : [];
@@ -4778,6 +4982,10 @@ function uniqueByDedupeIds(articles) {
   });
 }
 
+function shouldDryRun() {
+  return getBooleanEnv("DRY_RUN") || adminSettings.apiPushEnabled !== true;
+}
+
 async function pushArticle(article) {
   const apiUrl = env("APP_API_URL");
   const apiKey = env("APP_API_KEY");
@@ -4816,7 +5024,8 @@ async function pushArticle(article) {
 async function main() {
   await loadDotEnv();
 
-  const selectedSources = getSourceUrls().filter(isAllowedSource);
+  const allSelectedSources = getSourceUrls().filter(isAllowedSource);
+  const selectedSources = applySourceBatch(allSelectedSources);
   const extraArticleUrls = [...new Set(getExtraArticleUrls())].filter(isAllowedExtraArticleUrl);
   const maxItems = getMaxItemsPerRun();
   const backfillDateRange = getBackfillDateRange();
@@ -4837,6 +5046,10 @@ async function main() {
 
   if (isNoidaCityEnabled()) {
     console.log("Noida city mode enabled: using Uttar Pradesh - Noida filters and opt-in sources.");
+  }
+
+  if (selectedSources.length !== allSelectedSources.length) {
+    console.log(`Source batch: processing ${selectedSources.length} of ${allSelectedSources.length} allowed sources.`);
   }
 
   if (backfillDateRange.from || backfillDateRange.to) {
@@ -4863,18 +5076,26 @@ async function main() {
     console.log(`Target city filter: ${[...targetCityCodeFilter].join(", ")}.`);
   }
 
-  for (const source of selectedSources) {
+  console.log(`Fetching ${selectedSources.length} sources with concurrency ${getSourceConcurrency()}.`);
+  const sourceResults = await mapWithConcurrency(selectedSources, getSourceConcurrency(), async (source) => {
     try {
       const articles = await fetchSource(source);
-      allArticles.push(...articles);
-      fetchedSources.push({ source, count: articles.length });
       console.log(`Fetched ${articles.length} items from ${source}`);
+      return { source, articles };
     } catch (error) {
-      failedSources.push({ source, error: error.message });
       console.error(`Failed to fetch ${source}: ${error.message}`);
+      return { source, error: error.message };
     }
-  }
+  });
 
+  for (const result of sourceResults) {
+    if (result.error) {
+      failedSources.push({ source: result.source, error: result.error });
+      continue;
+    }
+    allArticles.push(...result.articles);
+    fetchedSources.push({ source: result.source, count: result.articles.length });
+  }
   for (const articleUrl of extraArticleUrls) {
     try {
       const article = await fetchDirectArticle(articleUrl);
@@ -4931,6 +5152,8 @@ async function main() {
     }
   }
 
+  const runAnalytics = buildRunAnalytics(expandedArticles, articlesToPush, postedArticles, skipTitleSet, filterSentIds);
+
   console.log(`Found ${uniqueArticles.length} new articles.`);
   for (const [reason, count] of [...rejectionCounts.entries()].sort((a, b) => a[0].localeCompare(b[0]))) {
     console.log(`Skipped ${count} articles by ${reason}.`);
@@ -4956,7 +5179,7 @@ async function main() {
   );
 
   for (const article of articlesToPush) {
-    if (getBooleanEnv("DRY_RUN")) {
+    if (shouldDryRun()) {
       console.log(
         `Dry run candidate (${article.cityCode}): ${article.title} | ${article.newsLink}`
       );
@@ -4980,8 +5203,8 @@ async function main() {
   await writeSentIds(sentIds);
   await writeRunReport({
     generatedAt: new Date().toISOString(),
-    mode: getBooleanEnv("DRY_RUN") ? "dry-run" : "live",
-    dryRun: getBooleanEnv("DRY_RUN"),
+    mode: shouldDryRun() ? "dry-run" : "live",
+    dryRun: shouldDryRun(),
     noidaEnabled: isNoidaCityEnabled(),
     targetCityCodes: [...targetCityCodeFilter],
     window: {
@@ -5033,4 +5256,33 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     process.exitCode = 1;
   });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

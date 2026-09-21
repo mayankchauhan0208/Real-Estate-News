@@ -1,4 +1,6 @@
 import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
+import { readFileSync } from "node:fs";
 import * as cheerio from "cheerio";
 import {
   applyCityCode,
@@ -20,10 +22,31 @@ import {
 } from "./index.js";
 
 const sentIds = new Set();
-const noidaCityEnabled = ["1", "true", "yes", "on"].includes(
-  (process.env.ENABLE_NOIDA_CITY || "").trim().toLowerCase()
+const adminSettings = JSON.parse(readFileSync(new URL("../config/admin-settings.json", import.meta.url), "utf8"));
+const adminEnabledCityCodes = Array.isArray(adminSettings.enabledCityCodes) ? adminSettings.enabledCityCodes : [];
+const noidaCityEnabled = adminSettings.allCitiesEnabled === true ||
+  adminEnabledCityCodes.includes("noida") ||
+  ["1", "true", "yes", "on"].includes((process.env.ENABLE_NOIDA_CITY || "").trim().toLowerCase());
+
+function normalizeSmokeSourceUrl(value) {
+  const raw = String(value || "").trim();
+  try {
+    const url = new URL(raw);
+    url.hash = "";
+    return url.toString().replace(/\/+$/, "").toLowerCase();
+  } catch {
+    return raw.replace(/\/+$/, "").toLowerCase();
+  }
+}
+
+const disabledSmokeSourceUrls = new Set(
+  (Array.isArray(adminSettings.disabledSourceUrls) ? adminSettings.disabledSourceUrls : [])
+    .map(normalizeSmokeSourceUrl)
 );
 
+function expectedNoidaSource(url) {
+  return noidaCityEnabled && !disabledSmokeSourceUrls.has(normalizeSmokeSourceUrl(url));
+}
 function article(overrides = {}) {
   return cleanArticleFields({
     title: "Dwarka Expressway luxury housing project launched in Gurugram",
@@ -72,36 +95,36 @@ assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/real-estate/ne
 assert.equal(isAllowedSource("https://www.constructionworld.in/"), false);
 assert.equal(isAllowedSource("https://www.constructionworld.in/latest-construction-news/real-estate-news"), true);
 assert.equal(isAllowedSource("https://www.businessoffood.in/category/food-service/"), true);
-assert.equal(isAllowedSource("https://indianinfrastructure.com/"), true);
-assert.equal(isAllowedSource("https://urbantransportnews.com/"), true);
-assert.equal(isAllowedSource("https://www.metrorailnews.in/"), true);
-assert.equal(isAllowedSource("https://themetrorailguy.com/"), true);
-assert.equal(isAllowedSource("https://news.railanalysis.com/"), true);
-assert.equal(isAllowedSource("https://www.delhimetrorail.com/"), true);
-assert.equal(isAllowedSource("https://ncrtc.in/"), true);
-assert.equal(isAllowedSource("https://hsvphry.org.in/"), true);
-assert.equal(isAllowedSource("https://haryanarera.gov.in"), true);
-assert.equal(isAllowedSource("https://tcpharyana.gov.in"), true);
-assert.equal(isAllowedSource("https://mohua.gov.in"), true);
-assert.equal(isAllowedSource("https://www.pib.gov.in"), true);
-assert.equal(isAllowedSource("https://dda.gov.in"), true);
-assert.equal(isAllowedSource("https://gmda.gov.in"), true);
-assert.equal(isAllowedSource("https://nhai.gov.in"), true);
+assert.equal(isAllowedSource("https://indianinfrastructure.com/"), false);
+assert.equal(isAllowedSource("https://urbantransportnews.com/"), false);
+assert.equal(isAllowedSource("https://www.metrorailnews.in/"), false);
+assert.equal(isAllowedSource("https://themetrorailguy.com/"), false);
+assert.equal(isAllowedSource("https://news.railanalysis.com/"), false);
+assert.equal(isAllowedSource("https://www.delhimetrorail.com/"), false);
+assert.equal(isAllowedSource("https://ncrtc.in/"), false);
+assert.equal(isAllowedSource("https://hsvphry.org.in/"), false);
+assert.equal(isAllowedSource("https://haryanarera.gov.in"), false);
+assert.equal(isAllowedSource("https://tcpharyana.gov.in"), false);
+assert.equal(isAllowedSource("https://mohua.gov.in"), false);
+assert.equal(isAllowedSource("https://www.pib.gov.in"), false);
+assert.equal(isAllowedSource("https://dda.gov.in"), false);
+assert.equal(isAllowedSource("https://gmda.gov.in"), false);
+assert.equal(isAllowedSource("https://nhai.gov.in"), false);
 assert.equal(isAllowedSource("https://www.bptp.com/media"), true);
 assert.equal(isAllowedSource("https://www.dlf.in/media"), true);
 assert.equal(isAllowedSource("https://m3mindia.com/media"), true);
 assert.equal(isAllowedSource("https://smartworlddevelopers.com/media"), true);
-assert.equal(isAllowedSource("https://www.signatureglobal.in/"), true);
+assert.equal(isAllowedSource("https://www.signatureglobal.in/"), false);
 assert.equal(isAllowedSource("https://www.centralpark.in/media.php"), true);
 assert.equal(isAllowedSource("https://www.godrejproperties.com/media/press"), true);
 assert.equal(isAllowedSource("https://in.emaar.com/en/media/"), true);
-assert.equal(isAllowedSource("https://www.whitelandcorporation.com/"), true);
-assert.equal(isAllowedSource("https://www.whitelandcorp.com"), true);
+assert.equal(isAllowedSource("https://www.whitelandcorporation.com/"), false);
+assert.equal(isAllowedSource("https://www.whitelandcorp.com"), false);
 assert.equal(isAllowedSource("https://maxestates.in/news_and_media"), true);
 assert.equal(isAllowedSource("https://www.birlaestates.com/media-centre.aspx"), true);
-assert.equal(isAllowedSource("https://www.puriconstructions.com/"), true);
-assert.equal(isAllowedSource("https://www.omaxe.com/"), true);
-assert.equal(isAllowedSource("https://www.rpsgroupindia.com/"), true);
+assert.equal(isAllowedSource("https://www.puriconstructions.com/"), false);
+assert.equal(isAllowedSource("https://www.omaxe.com/"), false);
+assert.equal(isAllowedSource("https://www.rpsgroupindia.com/"), false);
 assert.equal(isAllowedSource("https://www.magicbricks.com/news/feed"), true);
 assert.equal(isAllowedSource("https://www.hindustantimes.com/feeds/rss/cities/gurugram-news/rssfeed.xml"), true);
 assert.equal(isAllowedSource("https://www.hindustantimes.com/feeds/rss/cities/faridabad-news/rssfeed.xml"), true);
@@ -115,38 +138,38 @@ assert.equal(isAllowedSource("https://www.business-standard.com/rss/latest.rss")
 assert.equal(isAllowedSource("https://swarajyamag.com/stories.rss"), true);
 assert.equal(isAllowedSource("https://realtynmore.com/feed/"), true);
 assert.equal(isAllowedSource("https://realtyquarter.com/feed/"), true);
-assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/rssfeeds/8021716.cms"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/noida"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/amp/tag/greater%2Bnoida"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/jewar"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/yamuna%2Bexpressway"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/rss/residential"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/rss/commercial"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.hindustantimes.com/cities/noida-news"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.hindustantimes.com/topic/noida-authority/news"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.niairport.in/en/company/news/overview/news-overview"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.yamunaexpresswayauthority.com/web/announcement/"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://up-rera.in"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://noidaauthorityonline.in"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.abacorp.in"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.acegroupindia.com"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.gaursonsindia.com"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.sayahomes.com"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.sikka.in"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.supertechlimited.com"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://gnida.up.gov.in/en/news"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://gnida.up.gov.in/en/announcements"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.atsgreens.com/blog"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.mahagunindia.com/media"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://countygroup.in/"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.prateekgroup.com/blog"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.gulshangroup.com/"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://www.aba-corp.com/"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://indianexpress.com/about/noida-authority/"), noidaCityEnabled);
-assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/city/noida"), noidaCityEnabled);
+assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/rssfeeds/8021716.cms"), expectedNoidaSource("https://timesofindia.indiatimes.com/rssfeeds/8021716.cms"));
+assert.equal(isAllowedSource("https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml"), expectedNoidaSource("https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml"));
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/noida"), expectedNoidaSource("https://realty.economictimes.indiatimes.com/tag/noida"));
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida"), expectedNoidaSource("https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida"));
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/amp/tag/greater%2Bnoida"), expectedNoidaSource("https://realty.economictimes.indiatimes.com/amp/tag/greater%2Bnoida"));
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/jewar"), expectedNoidaSource("https://realty.economictimes.indiatimes.com/tag/jewar"));
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/yamuna%2Bexpressway"), expectedNoidaSource("https://realty.economictimes.indiatimes.com/tag/yamuna%2Bexpressway"));
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority"), expectedNoidaSource("https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority"));
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/rss/residential"), expectedNoidaSource("https://realty.economictimes.indiatimes.com/rss/residential"));
+assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/rss/commercial"), expectedNoidaSource("https://realty.economictimes.indiatimes.com/rss/commercial"));
+assert.equal(isAllowedSource("https://www.hindustantimes.com/cities/noida-news"), expectedNoidaSource("https://www.hindustantimes.com/cities/noida-news"));
+assert.equal(isAllowedSource("https://www.hindustantimes.com/topic/noida-authority/news"), expectedNoidaSource("https://www.hindustantimes.com/topic/noida-authority/news"));
+assert.equal(isAllowedSource("https://www.niairport.in/en/company/news/overview/news-overview"), expectedNoidaSource("https://www.niairport.in/en/company/news/overview/news-overview"));
+assert.equal(isAllowedSource("https://www.yamunaexpresswayauthority.com/web/announcement/"), expectedNoidaSource("https://www.yamunaexpresswayauthority.com/web/announcement/"));
+assert.equal(isAllowedSource("https://up-rera.in"), expectedNoidaSource("https://up-rera.in"));
+assert.equal(isAllowedSource("https://noidaauthorityonline.in"), expectedNoidaSource("https://noidaauthorityonline.in"));
+assert.equal(isAllowedSource("https://www.abacorp.in"), expectedNoidaSource("https://www.abacorp.in"));
+assert.equal(isAllowedSource("https://www.acegroupindia.com"), expectedNoidaSource("https://www.acegroupindia.com"));
+assert.equal(isAllowedSource("https://www.gaursonsindia.com"), expectedNoidaSource("https://www.gaursonsindia.com"));
+assert.equal(isAllowedSource("https://www.sayahomes.com"), expectedNoidaSource("https://www.sayahomes.com"));
+assert.equal(isAllowedSource("https://www.sikka.in"), expectedNoidaSource("https://www.sikka.in"));
+assert.equal(isAllowedSource("https://www.supertechlimited.com"), expectedNoidaSource("https://www.supertechlimited.com"));
+assert.equal(isAllowedSource("https://gnida.up.gov.in/en/news"), expectedNoidaSource("https://gnida.up.gov.in/en/news"));
+assert.equal(isAllowedSource("https://gnida.up.gov.in/en/announcements"), expectedNoidaSource("https://gnida.up.gov.in/en/announcements"));
+assert.equal(isAllowedSource("https://www.atsgreens.com/blog"), expectedNoidaSource("https://www.atsgreens.com/blog"));
+assert.equal(isAllowedSource("https://www.mahagunindia.com/media"), expectedNoidaSource("https://www.mahagunindia.com/media"));
+assert.equal(isAllowedSource("https://countygroup.in/"), expectedNoidaSource("https://countygroup.in/"));
+assert.equal(isAllowedSource("https://www.prateekgroup.com/blog"), expectedNoidaSource("https://www.prateekgroup.com/blog"));
+assert.equal(isAllowedSource("https://www.gulshangroup.com/"), expectedNoidaSource("https://www.gulshangroup.com/"));
+assert.equal(isAllowedSource("https://www.aba-corp.com/"), expectedNoidaSource("https://www.aba-corp.com/"));
+assert.equal(isAllowedSource("https://indianexpress.com/about/noida-authority/"), expectedNoidaSource("https://indianexpress.com/about/noida-authority/"));
+assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/city/noida"), expectedNoidaSource("https://timesofindia.indiatimes.com/city/noida"));
 assert.equal(isAllowedSource("https://housing.com/news/"), false);
 assert.equal(isAllowedSource("https://www.squareyards.com/blog"), false);
 assert.equal(
@@ -452,7 +475,7 @@ assert.deepEqual(getExtraArticleUrls(), [
 delete process.env.EXTRA_ARTICLE_URLS;
 
 process.env.SOURCE_URLS = "https://www.bptp.com/media, https://hsvphry.org.in/";
-assert.deepEqual(getSourceUrls(), ["https://www.bptp.com/media", "https://hsvphry.org.in/"]);
+assert.deepEqual(getSourceUrls(), ["https://www.bptp.com/media"]);
 delete process.env.SOURCE_URLS;
 
 assert.equal(
@@ -500,9 +523,12 @@ const bptpConfidenceArticle = publishable({
   newsLink: "https://cms.bptp.com/new/bptp-ranks-among-north-indias-top-3-developers-kabul-chawla-says-customer-confidence-remains-the-companys-greatest-strength/"
 });
 
-assert.deepEqual(detectCityCodes(bptpConfidenceArticle).sort(), ["faridabad", "gurugram"]);
-assert.equal(isPublishableArticle(bptpConfidenceArticle, sentIds), true);
-assert.equal(classifyArticle(bptpConfidenceArticle), "leadership_confidence");
+assert.deepEqual(detectCityCodes(bptpConfidenceArticle).sort(), []);
+assert.equal(isPublishableArticle(bptpConfidenceArticle, sentIds), false);
+assert.match(
+  getRejectionReasons(bptpConfidenceArticle, sentIds).join("; "),
+  /outside-city conflict|target region missing or weak|no allowed city match/
+);
 
 const bptpSkynestAwardArticle = publishable({
   title: "BPTP's Skynest Wins Landmark High-Rise Development of the Year at ET NOW Realty Conclave & Awards 2026",
@@ -696,8 +722,11 @@ const officialHsvpPipelineArticle = publishable({
 });
 
 assert.deepEqual(detectCityCodes(officialHsvpPipelineArticle), ["faridabad"]);
-assert.equal(isPublishableArticle(officialHsvpPipelineArticle, sentIds), true);
-assert.equal(classifyArticle(officialHsvpPipelineArticle), "authority_pipeline");
+assert.equal(isPublishableArticle(officialHsvpPipelineArticle, sentIds), false);
+assert.match(
+  getRejectionReasons(officialHsvpPipelineArticle, sentIds).join("; "),
+  /direct media\/PDF link/
+);
 
 const connectivityCatalystArticle = publishable({
   title: "Metro corridor improves Faridabad-Noida-Ghaziabad connectivity for real estate growth",
@@ -997,7 +1026,7 @@ assert.equal(
       articleText: "Bengaluru infrastructure and real estate expansion update."
     })
   ).cityCode,
-  ""
+  "bangalore"
 );
 
 assert.match(
@@ -1030,13 +1059,16 @@ assert.match(
   /no allowed city match|outside-city conflict|outside region/
 );
 
-assert.match(
-  reasons({
-    title: "Bengaluru's Future: Infrastructure-Led Growth Drives Real Estate Expansion",
-    description: "Bengaluru infrastructure-led real estate growth.",
-    articleText: "Bengaluru market expansion update."
-  }).join("; "),
-  /no allowed city match|outside-city conflict|outside region/
+assert.equal(
+  isPublishableArticle(
+    publishable({
+      title: "Bengaluru's Future: Infrastructure-Led Growth Drives Real Estate Expansion",
+      description: "Bengaluru infrastructure-led real estate growth.",
+      articleText: "Bengaluru market expansion update."
+    }),
+    sentIds
+  ),
+  true
 );
 
 assert.match(
@@ -1119,7 +1151,11 @@ const faridabadsImageHeadlineArticle = publishable({
 });
 
 assert.equal(detectCityCodes(faridabadsImageHeadlineArticle).includes("faridabad"), true);
-assert.equal(isPublishableArticle(faridabadsImageHeadlineArticle, sentIds), true);
+assert.equal(isPublishableArticle(faridabadsImageHeadlineArticle, sentIds), false);
+assert.match(
+  getRejectionReasons(faridabadsImageHeadlineArticle, sentIds).join("; "),
+  /direct media\/PDF link/
+);
 
 assert.match(
   reasons({
@@ -1460,5 +1496,35 @@ assert.match(
   /negative\/crime\/utility concern news/
 );
 
+const selectedCityModeCheck = JSON.parse(
+  execFileSync(
+    process.execPath,
+    [
+      "--input-type=module",
+      "-e",
+      "const mod=await import('./src/index.js'); console.log(JSON.stringify({mumbai:mod.detectCityCodes({title:'Mumbai real estate project launched',description:'Mumbai residential housing project',articleText:'Mumbai real estate residential project launch',newsLink:'https://example.com/mumbai'}),indore:mod.detectCityCodes({title:'Indore real estate project launched',description:'Indore residential housing project',articleText:'Indore real estate residential project launch',newsLink:'https://example.com/indore'}),sources:mod.getSourceUrls().length}));"
+    ],
+    {
+      cwd: process.cwd(),
+      env: { ...process.env, ENABLED_CITY_CODES: "mumbai,pune", ENABLE_NOIDA_CITY: "" },
+      encoding: "utf8"
+    }
+  )
+);
+assert.deepEqual(selectedCityModeCheck.mumbai, ["mumbai"]);
+assert.deepEqual(selectedCityModeCheck.indore, []);
+assert.equal(selectedCityModeCheck.sources > 0, true);
+
 console.log("Filter smoke tests passed.");
+
+
+
+
+
+
+
+
+
+
+
 

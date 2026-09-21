@@ -1,0 +1,5085 @@
+{
+  "automationEnabled": true,
+  "apiPushEnabled": true,
+  "allCitiesEnabled": true,
+  "enabledCityCodes": [
+    "faridabad",
+    "gurugram",
+    "noida"
+  ],
+  "disabledCityCodes": [],
+  "disabledSourceIds": [],
+  "disabledSourceUrls": [
+    "https://ahmedabadcity.gov.in/dc/tenders",
+    "https://aiforera.org",
+    "https://ajmera.com",
+    "https://apiic.in",
+    "https://auda.org.in",
+    "https://bbmp.gov.in",
+    "https://bda.gov.in",
+    "https://cidco.maharashtra.gov.in",
+    "https://cidco.maharashtra.gov.in/page?token=1c64f4f8470",
+    "https://cochinport.gov.in/tenders",
+    "https://corporate-old.mmrcl.com/en/content/press-releases",
+    "https://countygroup.in",
+    "https://cpc.parivesh.nic.in",
+    "https://cpc.parivesh.nic.in/onlinesearch_dashboard.aspx?pid=tornotissuedyet&status=na",
+    "https://crda.ap.gov.in",
+    "https://dda.gov.in",
+    "https://dfccil.com",
+    "https://english.bmrc.co.in",
+    "https://gccservices.chennaicorporation.gov.in",
+    "https://gcda.kerala.gov.in",
+    "https://gidc.gujarat.gov.in",
+    "https://gmada.gov.in",
+    "https://gmda.assam.gov.in",
+    "https://gmda.gov.in",
+    "https://gujrera.gujarat.gov.in",
+    "https://haryanarera.gov.in",
+    "https://hginfra.com/investors-presentation.php",
+    "https://hsiidc.etenders.in",
+    "https://hsiidc.org.in",
+    "https://hsvphry.org.in",
+    "https://ibbi.gov.in/orders/nclt",
+    "https://ibbi.gov.in/search/index/press-release",
+    "https://indiainvestmentgrid.gov.in/index.jsp",
+    "https://indianinfrastructure.com",
+    "https://indianrailways.gov.in",
+    "https://investor.clint.com.sg/newsroom.html",
+    "https://ipm.mospi.gov.in/home/index",
+    "https://ipm.mospi.gov.in/home/showpressrelease",
+    "https://jda.rajasthan.gov.in",
+    "https://jharera.jharkhand.gov.in",
+    "https://kmda.wb.gov.in",
+    "https://kochimetro.org",
+    "https://ltmetro.com/press",
+    "https://maharera.maharashtra.gov.in",
+    "https://maxestates.in/investors",
+    "https://mcg.gov.in",
+    "https://mchi.net",
+    "https://mddaonline.in",
+    "https://mmrda.maharashtra.gov.in/en",
+    "https://mmrda.maharashtra.gov.in/en/news-and-announcements/archive",
+    "https://mohua.gov.in",
+    "https://morth.nic.in",
+    "https://mpmetrorail.com",
+    "https://msrdc.in",
+    "https://navaraipuratalnagar.com",
+    "https://ncrpb.nic.in",
+    "https://ncrtc.in",
+    "https://news.railanalysis.com",
+    "https://nhai.gov.in",
+    "https://nhsrcl.in/en/media/press-release",
+    "https://nicdc.in",
+    "https://noidaauthorityonline.in",
+    "https://prera.py.gov.in",
+    "https://puda.punjab.gov.in",
+    "https://punemetrorail.org",
+    "https://rera.assam.gov.in",
+    "https://rera.cgstate.gov.in",
+    "https://rera.chbonline.in",
+    "https://rera.goa.gov.in",
+    "https://rera.karnataka.gov.in",
+    "https://rera.kerala.gov.in",
+    "https://rera.odisha.gov.in",
+    "https://rera.punjab.gov.in",
+    "https://rera.rajasthan.gov.in",
+    "https://rera.telangana.gov.in",
+    "https://rera.tn.gov.in",
+    "https://rera.tripura.gov.in",
+    "https://rera.wb.gov.in",
+    "https://residex.nhbonline.org.in",
+    "https://riico.rajasthan.gov.in",
+    "https://sipcotweb.tn.gov.in",
+    "https://sumadhuragroup.com",
+    "https://surajestate.com/investor-corner",
+    "https://surajestate.com/investor-relations",
+    "https://tcpharyana.gov.in",
+    "https://tgiic.telangana.gov.in",
+    "https://themetrorailguy.com",
+    "https://transport.rajasthan.gov.in/jmrc",
+    "https://uhuda.uk.gov.in",
+    "https://up-rera.in",
+    "https://urbantransportnews.com",
+    "https://vpt.shipping.gov.in",
+    "https://www.aai.aero",
+    "https://www.aba-corp.com",
+    "https://www.abacorp.in",
+    "https://www.acegroupindia.com",
+    "https://www.anantrajlimited.com/investors",
+    "https://www.assetzproperty.com/investors",
+    "https://www.bda.gov.in/circular",
+    "https://www.bda.org.in",
+    "https://www.bdabangalore.org",
+    "https://www.brigadegroup.com/investor",
+    "https://www.bseindia.com/corporates.html",
+    "https://www.bseindia.com/corporates/ann.html",
+    "https://www.casagrand.co.in/investor-relation",
+    "https://www.cmdachennai.gov.in",
+    "https://www.colliers.com/en-in/research",
+    "https://www.delhimetrorail.com",
+    "https://www.dlf.in/investor",
+    "https://www.gaursonsindia.com",
+    "https://www.giftgujarat.in",
+    "https://www.gmda.gov.in",
+    "https://www.greaternoidaauthority.in",
+    "https://www.grinfra.com/intimations-under-regulation-30",
+    "https://www.gujaratmetrorail.com",
+    "https://www.gulshangroup.com",
+    "https://www.hmda.gov.in/news",
+    "https://www.hprera.in",
+    "https://www.hsvphry.org.in",
+    "https://www.idaindore.org",
+    "https://www.kalpataru.com/investor-corner",
+    "https://www.kiadb.org",
+    "https://www.knrcl.com/investors_presentation.html",
+    "https://www.livemint.com/rss/airss",
+    "https://www.livemint.com/rss/budgetrss",
+    "https://www.livemint.com/rss/companiesrss",
+    "https://www.livemint.com/rss/industryrss",
+    "https://www.livemint.com/rss/insurancerss",
+    "https://www.livemint.com/rss/marketsrss",
+    "https://www.livemint.com/rss/moneyrss",
+    "https://www.livemint.com/rss/newsrss",
+    "https://www.livemint.com/rss/politicsrss",
+    "https://www.livemint.com/rss/technologyrss",
+    "https://www.lntrealty.com/news-blogs",
+    "https://www.mahametro.org",
+    "https://www.metrorailnews.in",
+    "https://www.mhada.gov.in",
+    "https://www.mumbaiport.gov.in/show_tenders.php?catid=3&depid=1&lang=1",
+    "https://www.nhsrcl.in",
+    "https://www.noidaauthority.in",
+    "https://www.nseindia.com/companies-listing/corporate-filings",
+    "https://www.omaxe.com",
+    "https://www.pib.gov.in",
+    "https://www.pib.gov.in/allrel.aspx",
+    "https://www.pppinindia.gov.in",
+    "https://www.puravankara.com/investors",
+    "https://www.puriconstructions.com",
+    "https://www.rera.ap.gov.in",
+    "https://www.rera.delhi.gov.in",
+    "https://www.rera.mp.gov.in",
+    "https://www.rpsgroupindia.com",
+    "https://www.savills.in/research.aspx",
+    "https://www.sayahomes.com",
+    "https://www.signatureglobal.in",
+    "https://www.signatureglobal.in/financials",
+    "https://www.sikka.in",
+    "https://www.sobha.com/investor-relations",
+    "https://www.sunteckindia.com/investor-relations",
+    "https://www.supertechlimited.com",
+    "https://www.tarc.in/dis-46-pt-2025-26",
+    "https://www.track2realty.track2media.com",
+    "https://www.ukrera.org.in",
+    "https://www.up-rera.in",
+    "https://www.vocport.gov.in",
+    "https://www.wbhidcoltd.com",
+    "https://www.whitelandcorp.com",
+    "https://www.whitelandcorporation.com",
+    "https://yamunaexpresswayauthority.com"
+  ],
+  "manualSources": [
+    {
+      "id": "id-730294178",
+      "url": "https://acegroupindia.com/media-presence.php",
+      "label": "ACE Group | P1",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-494890200",
+      "url": "https://aiforera.org",
+      "label": "AIFORERA — State RERA Directory | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-785975198",
+      "url": "https://aiforera.org/publications",
+      "label": "AIFORERA — Publications | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-137533251",
+      "url": "https://aiforera.org/publications/public_notice",
+      "label": "AIFORERA — Public Notices | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-2036628058",
+      "url": "https://aipl.com/media-coverage",
+      "label": "AIPL | P1",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-68406290",
+      "url": "https://ajmera.com",
+      "label": "Ajmera Realty | P2",
+      "cityCodes": [
+        "ahmedabad",
+        "bangalore",
+        "mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-1990684562",
+      "url": "https://apiic.in",
+      "label": "APIIC | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-907816733",
+      "url": "https://auda.org.in",
+      "label": "Ahmedabad Urban Development Authority | P1",
+      "cityCodes": [
+        "ahmedabad",
+        "gujarat"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-819837699",
+      "url": "https://bda.gov.in",
+      "label": "Bhubaneswar Development Authority | P1",
+      "cityCodes": [
+        "bhubaneswar"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-1464887574",
+      "url": "https://chennaimetrorail.org/press-release",
+      "label": "Chennai Metro — Press Releases | P1",
+      "cityCodes": [
+        "chennai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-906730412",
+      "url": "https://cidco.maharashtra.gov.in",
+      "label": "CIDCO | P1",
+      "cityCodes": [
+        "mumbai",
+        "navi_mumbai",
+        "raigad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-1662839045",
+      "url": "https://conscient.in/news-and-awards",
+      "label": "Conscient | P1",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "goa",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-2133153935",
+      "url": "https://crda.ap.gov.in",
+      "label": "APCRDA | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-643082321",
+      "url": "https://credai.org/media/news-updates",
+      "label": "CREDAI — News Updates | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-466768770",
+      "url": "https://credai.org/media/press-release",
+      "label": "CREDAI — Press Releases | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-1017717953",
+      "url": "https://dda.gov.in/dda-in-news",
+      "label": "DDA — In News | P1",
+      "cityCodes": [
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-310337100",
+      "url": "https://dda.gov.in/whats-new",
+      "label": "DDA — What's New | P1",
+      "cityCodes": [
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-142971175",
+      "url": "https://dfccil.com",
+      "label": "DFCCIL | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-1908458070",
+      "url": "https://embassygroup.com/news-media",
+      "label": "Embassy Group | P1",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "hyderabad",
+        "mumbai",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-434470018",
+      "url": "https://english.bmrc.co.in",
+      "label": "BMRCL | P1",
+      "cityCodes": [
+        "bangalore"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-305444630",
+      "url": "https://faridabad.nic.in/department/faridabad-metropolitan-development-authority-fmda",
+      "label": "FMDA | P1",
+      "cityCodes": [
+        "faridabad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-1647128465",
+      "url": "https://gcda.kerala.gov.in",
+      "label": "GCDA | P1",
+      "cityCodes": [
+        "kochi"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-362771887",
+      "url": "https://gidc.gujarat.gov.in",
+      "label": "GIDC | P1",
+      "cityCodes": [
+        "gujarat"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-630269834",
+      "url": "https://gmada.gov.in",
+      "label": "GMADA | P1",
+      "cityCodes": [
+        "chandigarh",
+        "mohali"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-1916103070",
+      "url": "https://gmda.assam.gov.in",
+      "label": "Guwahati Metropolitan Development Authority | P1",
+      "cityCodes": [
+        "guwahati"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-258954098",
+      "url": "https://gujrera.gujarat.gov.in",
+      "label": "Gujarat RERA | P1",
+      "cityCodes": [
+        "ahmadnagar",
+        "ahmedabad",
+        "anand",
+        "banaskantha",
+        "bardoli",
+        "bharuch",
+        "bhavnagar",
+        "dholera",
+        "gandhinagar",
+        "gujarat",
+        "junagadh",
+        "kalol",
+        "kheda",
+        "kutch",
+        "navsari",
+        "patan",
+        "rajkot",
+        "sabarkantha",
+        "surat",
+        "surendranagar",
+        "vadodara",
+        "valsad",
+        "vapi"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-262081326",
+      "url": "https://homekraft.in/media",
+      "label": "ATS HomeKraft | P1",
+      "cityCodes": [
+        "ghaziabad",
+        "gurugram",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-495845910",
+      "url": "https://housing.com/news/category/news",
+      "label": "Housing.com — Current News | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-1931571388",
+      "url": "https://hsiidc.org.in",
+      "label": "HSIIDC | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-1424517031",
+      "url": "https://indianexpress.com/section/business/aviation/feed",
+      "label": "Indian Express — Aviation | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-921044605",
+      "url": "https://indianexpress.com/section/business/banking-and-finance/feed",
+      "label": "Indian Express — Banking & Finance | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.030194Z"
+    },
+    {
+      "id": "id-1212842779",
+      "url": "https://indianexpress.com/section/business/companies/feed",
+      "label": "Indian Express — Companies | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1261397794",
+      "url": "https://indianexpress.com/section/business/economy/feed",
+      "label": "Indian Express — Economy | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1546709233",
+      "url": "https://indianexpress.com/section/business/feed",
+      "label": "Indian Express — Business | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1329590050",
+      "url": "https://indianexpress.com/section/business/market/feed",
+      "label": "Indian Express — Market | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1967127544",
+      "url": "https://indianexpress.com/section/cities/feed",
+      "label": "Indian Express — Cities | P2",
+      "cityCodes": [
+        "agartala",
+        "agra",
+        "ahmadnagar",
+        "ahmednagar",
+        "ajmer",
+        "akola",
+        "aligarh",
+        "allahabad",
+        "alwar",
+        "ambala",
+        "amravati",
+        "amritsar",
+        "anand",
+        "anantapur",
+        "asansol",
+        "aurangabad",
+        "avadi",
+        "balasore",
+        "banaskantha",
+        "barabanki",
+        "bardoli",
+        "bareilly",
+        "barmer",
+        "beed",
+        "belgaum",
+        "berhampur",
+        "betul",
+        "bharuch",
+        "bhatinda",
+        "bhavnagar",
+        "bhilai",
+        "bhilwara",
+        "bhimavaram",
+        "bhiwadi",
+        "bikaner",
+        "bilaspur",
+        "burhanpur",
+        "calicut",
+        "chandrapur",
+        "chhindwara",
+        "chittoor",
+        "coimbatore",
+        "cuddalore",
+        "cuttack",
+        "daman_and_diu",
+        "damoh",
+        "delhi_ncr",
+        "dewas",
+        "dhanbad",
+        "dholera",
+        "dhule",
+        "dibrugarh",
+        "dindigul",
+        "durg",
+        "durgapur",
+        "eluru",
+        "ernakulam",
+        "erode",
+        "faridabad",
+        "firozabad",
+        "gandhinagar",
+        "ghaziabad",
+        "goa",
+        "golaghat",
+        "gorakhpur",
+        "gujarat",
+        "gurugram",
+        "guwahati",
+        "gwalior",
+        "hanumangarh",
+        "hapur",
+        "haridwar",
+        "hoshiarpur",
+        "hosur",
+        "howrah",
+        "hubli",
+        "jabalpur",
+        "jalandhar",
+        "jalgaon",
+        "jalna",
+        "jamshedpur",
+        "jhalawar",
+        "jhansi",
+        "jodhpur",
+        "jorhat",
+        "junagadh",
+        "kadapa",
+        "kakinada",
+        "kalol",
+        "kamrup",
+        "kanpur",
+        "karimnagar",
+        "karnal",
+        "karur",
+        "khammam",
+        "khandwa",
+        "khargone",
+        "kheda",
+        "kochi",
+        "kolhapur",
+        "korba",
+        "kota",
+        "kota_chhattisgarh",
+        "krishna",
+        "kurnool",
+        "kurukshetra",
+        "kutch",
+        "latur",
+        "ludhiana",
+        "madurai",
+        "mahabubnagar",
+        "mancherial",
+        "mandsaur",
+        "mangalore",
+        "marigaon",
+        "mathura",
+        "meerut",
+        "moradabad",
+        "mumbai",
+        "mysore",
+        "nagaon",
+        "nagaur",
+        "nagpur",
+        "nalbari",
+        "nalgonda",
+        "namakkal",
+        "nanded",
+        "nashik",
+        "navi_mumbai",
+        "navsari",
+        "neemrana",
+        "neemuch",
+        "nellore",
+        "new_delhi",
+        "nizamabad",
+        "noida",
+        "osmanabad",
+        "palakkad",
+        "palghar",
+        "pali",
+        "palwal",
+        "panchkula",
+        "panipat",
+        "patan",
+        "patiala",
+        "pondicherry",
+        "pudukkottai",
+        "puri",
+        "raigad",
+        "raipur",
+        "rajahmundry",
+        "rajkot",
+        "rajnandgaon",
+        "ranchi",
+        "ratlam",
+        "ratnagiri",
+        "rewa",
+        "rewari",
+        "rishikesh",
+        "rohtak",
+        "roorkee",
+        "rourkela",
+        "rudrapur",
+        "sabarkantha",
+        "sagar",
+        "salem",
+        "sambalpur",
+        "sangli",
+        "sangrur",
+        "satna",
+        "sehore",
+        "seoni",
+        "shimla",
+        "sikar",
+        "silchar",
+        "siliguri",
+        "silvassa",
+        "sindhudurg",
+        "sirohi",
+        "solan",
+        "solapur",
+        "sonipat",
+        "sri_ganganagar",
+        "srikakulam",
+        "surat",
+        "surendranagar",
+        "suryapet",
+        "tambaram",
+        "tezpur",
+        "thanjavur",
+        "thoothukudi",
+        "thrissur",
+        "tinsukia",
+        "tiruchirappalli",
+        "tirunelveli",
+        "tirupati",
+        "tiruppur",
+        "tiruvannamalai",
+        "tonk",
+        "trivandrum",
+        "udaipur",
+        "udupi",
+        "ujjain",
+        "vadodara",
+        "valsad",
+        "vapi",
+        "varanasi",
+        "vellore",
+        "vijayawada",
+        "visakhapatnam",
+        "vizianagaram",
+        "vrindavan",
+        "warangal",
+        "wardha",
+        "west_godavari",
+        "yamunanagar",
+        "yavatmal"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-545364409",
+      "url": "https://indianexpress.com/section/cities/jammu/feed",
+      "label": "Indian Express — Jammu | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-597705586",
+      "url": "https://indianexpress.com/section/cities/mysuru/feed",
+      "label": "Indian Express — Mysuru | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1889234634",
+      "url": "https://indianexpress.com/section/cities/nagpur/feed",
+      "label": "Indian Express — Nagpur | P2",
+      "cityCodes": [
+        "nagpur"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1643476871",
+      "url": "https://indianexpress.com/section/cities/nashik/feed",
+      "label": "Indian Express — Nashik | P2",
+      "cityCodes": [
+        "nashik"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1141757707",
+      "url": "https://indianexpress.com/section/cities/navi-mumbai/feed",
+      "label": "Indian Express — Navi Mumbai | P2",
+      "cityCodes": [
+        "mumbai",
+        "navi_mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-948984906",
+      "url": "https://indianexpress.com/section/cities/panchkula/feed",
+      "label": "Indian Express — Panchkula | P2",
+      "cityCodes": [
+        "panchkula"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-56638727",
+      "url": "https://indianexpress.com/section/cities/patiala/feed",
+      "label": "Indian Express — Patiala | P2",
+      "cityCodes": [
+        "patiala"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1004025503",
+      "url": "https://indianexpress.com/section/cities/patna/feed",
+      "label": "Indian Express — Patna | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-2122330984",
+      "url": "https://indianexpress.com/section/cities/srinagar/feed",
+      "label": "Indian Express — Srinagar | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-196500269",
+      "url": "https://indianexpress.com/section/cities/thane/feed",
+      "label": "Indian Express — Thane | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1113094561",
+      "url": "https://indianexpress.com/section/cities/thiruvananthapuram/feed",
+      "label": "Indian Express — Thiruvananthapuram | P2",
+      "cityCodes": [
+        "calicut",
+        "ernakulam",
+        "kochi",
+        "palakkad",
+        "thrissur",
+        "trivandrum"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1719410447",
+      "url": "https://indianexpress.com/section/governance/feed",
+      "label": "Indian Express — Governance | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1348315246",
+      "url": "https://indianexpress.com/section/india/feed",
+      "label": "Indian Express — India | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-952943684",
+      "url": "https://indianexpress.com/section/north-east-india/assam/feed",
+      "label": "Indian Express — Assam | P2",
+      "cityCodes": [
+        "dibrugarh",
+        "golaghat",
+        "jorhat",
+        "kamrup",
+        "marigaon",
+        "nagaon",
+        "nalbari",
+        "silchar",
+        "tezpur",
+        "tinsukia"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1253336290",
+      "url": "https://indianexpress.com/section/north-east-india/feed",
+      "label": "Indian Express — North East India | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1726327250",
+      "url": "https://indianexpress.com/section/north-east-india/tripura/feed",
+      "label": "Indian Express — Tripura | P2",
+      "cityCodes": [
+        "agartala"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-132891415",
+      "url": "https://indianrailways.gov.in",
+      "label": "Indian Railways | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1609042975",
+      "url": "https://infra.economictimes.indiatimes.com/rss/aviation",
+      "label": "ETInfra — Aviation | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1050345489",
+      "url": "https://infra.economictimes.indiatimes.com/rss/construction",
+      "label": "ETInfra — Construction | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1447730907",
+      "url": "https://infra.economictimes.indiatimes.com/rss/corporate",
+      "label": "ETInfra — Corporate | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-642150658",
+      "url": "https://infra.economictimes.indiatimes.com/rss/economy",
+      "label": "ETInfra — Economy | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-266244552",
+      "url": "https://infra.economictimes.indiatimes.com/rss/energy",
+      "label": "ETInfra — Energy | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1686989908",
+      "url": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+      "label": "ETInfra — Latest Stories | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1904201005",
+      "url": "https://infra.economictimes.indiatimes.com/rss/logistics",
+      "label": "ETInfra — Logistics | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1802042441",
+      "url": "https://infra.economictimes.indiatimes.com/rss/ports-shipping",
+      "label": "ETInfra — Ports & Shipping | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-801461558",
+      "url": "https://infra.economictimes.indiatimes.com/rss/railways",
+      "label": "ETInfra — Railways | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-2000337320",
+      "url": "https://infra.economictimes.indiatimes.com/rss/recentstories",
+      "label": "ETInfra — Recent Stories | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-409950848",
+      "url": "https://infra.economictimes.indiatimes.com/rss/roads-highways",
+      "label": "ETInfra — Roads & Highways | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1124331542",
+      "url": "https://infra.economictimes.indiatimes.com/rss/rural-infrastructure",
+      "label": "ETInfra — Rural Infrastructure | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-160289193",
+      "url": "https://infra.economictimes.indiatimes.com/rss/telecom",
+      "label": "ETInfra — Telecom | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1657985890",
+      "url": "https://infra.economictimes.indiatimes.com/rss/topstories",
+      "label": "ETInfra — Top Stories | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-183494590",
+      "url": "https://infra.economictimes.indiatimes.com/rss/urban-infrastructure",
+      "label": "ETInfra — Urban Infrastructure | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1721644935",
+      "url": "https://infra.economictimes.indiatimes.com/rss/urban-transportation",
+      "label": "ETInfra — Urban Transportation | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-649770312",
+      "url": "https://infra.economictimes.indiatimes.com/rss/videostories",
+      "label": "ETInfra — Video Stories | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1083540009",
+      "url": "https://infra.economictimes.indiatimes.com/rss/water",
+      "label": "ETInfra — Water | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-17608127",
+      "url": "https://infra.economictimes.indiatimes.com/rss/webstories",
+      "label": "ETInfra — Web Stories | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1345103291",
+      "url": "https://jda.rajasthan.gov.in",
+      "label": "Jaipur Development Authority | P1",
+      "cityCodes": [
+        "jaipur"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1881313952",
+      "url": "https://jharera.jharkhand.gov.in",
+      "label": "Jharkhand RERA | P1",
+      "cityCodes": [
+        "dhanbad",
+        "jamshedpur",
+        "ranchi"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-154474040",
+      "url": "https://kmda.wb.gov.in",
+      "label": "Kolkata Metropolitan Development Authority | P1",
+      "cityCodes": [
+        "kolkata"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-568210526",
+      "url": "https://kochimetro.org",
+      "label": "Kochi Metro | P1",
+      "cityCodes": [
+        "kochi"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-687462953",
+      "url": "https://ltmetro.com/press",
+      "label": "Hyderabad Metro — Press | P1",
+      "cityCodes": [
+        "hyderabad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1300960561",
+      "url": "https://maharera.maharashtra.gov.in",
+      "label": "MahaRERA | P1",
+      "cityCodes": [
+        "ahmednagar",
+        "akola",
+        "amravati",
+        "aurangabad",
+        "beed",
+        "chandrapur",
+        "daman_and_diu",
+        "dhule",
+        "jalgaon",
+        "jalna",
+        "kolhapur",
+        "latur",
+        "mumbai",
+        "nagpur",
+        "nanded",
+        "nashik",
+        "navi_mumbai",
+        "osmanabad",
+        "palghar",
+        "pune",
+        "raigad",
+        "ratnagiri",
+        "sangli",
+        "silvassa",
+        "sindhudurg",
+        "solapur",
+        "wardha",
+        "yavatmal"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-202972659",
+      "url": "https://maxestates.in/investors",
+      "label": "Max Estates — Investors | P1",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-246604286",
+      "url": "https://maxestates.in/news-and-media",
+      "label": "Max Estates — News & Media | P1",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-768890275",
+      "url": "https://mddaonline.in",
+      "label": "MDDA | P1",
+      "cityCodes": [
+        "dehradun"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-463953833",
+      "url": "https://mmrda.maharashtra.gov.in/en",
+      "label": "MMRDA | P1",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1045950731",
+      "url": "https://mmrda.maharashtra.gov.in/en/news-and-announcements/archive",
+      "label": "MMRDA — News Archive | P1",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-580331836",
+      "url": "https://morth.nic.in",
+      "label": "Ministry of Road Transport & Highways | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-2055728692",
+      "url": "https://mpmetrorail.com",
+      "label": "Madhya Pradesh Metro Rail Corporation | P1",
+      "cityCodes": [
+        "bhopal",
+        "indore"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-363758775",
+      "url": "https://msrdc.in",
+      "label": "MSRDC | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-970113587",
+      "url": "https://naredco.in/naredco-news",
+      "label": "NAREDCO — In News | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-641165158",
+      "url": "https://navaraipuratalnagar.com",
+      "label": "Nava Raipur Atal Nagar Vikas Pradhikaran | P1",
+      "cityCodes": [
+        "raipur"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-705253849",
+      "url": "https://ncrpb.nic.in",
+      "label": "NCR Planning Board | P1",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-78231600",
+      "url": "https://ncrtc.in/ncrtc-updates",
+      "label": "NCRTC — Updates | P1",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "ghaziabad",
+        "gurugram",
+        "meerut",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1392029627",
+      "url": "https://nicdc.in",
+      "label": "NICDC | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-883370111",
+      "url": "https://prera.py.gov.in",
+      "label": "Puducherry RERA | P1",
+      "cityCodes": [
+        "pondicherry"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-404727298",
+      "url": "https://publish.tribuneindia.com/city/amritsar/feed",
+      "label": "The Tribune — Amritsar | P2",
+      "cityCodes": [
+        "amritsar"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-81229248",
+      "url": "https://publish.tribuneindia.com/city/bathinda/feed",
+      "label": "The Tribune — Bathinda | P2",
+      "cityCodes": [
+        "bhatinda"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1138448146",
+      "url": "https://publish.tribuneindia.com/city/chandigarh/feed",
+      "label": "The Tribune — Chandigarh | P2",
+      "cityCodes": [
+        "chandigarh",
+        "mohali"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.031194Z"
+    },
+    {
+      "id": "id-1819597785",
+      "url": "https://publish.tribuneindia.com/city/delhi/feed",
+      "label": "The Tribune — Delhi | P2",
+      "cityCodes": [
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-849258830",
+      "url": "https://publish.tribuneindia.com/city/jalandhar/feed",
+      "label": "The Tribune — Jalandhar | P2",
+      "cityCodes": [
+        "jalandhar"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1651217373",
+      "url": "https://publish.tribuneindia.com/city/ludhiana/feed",
+      "label": "The Tribune — Ludhiana | P2",
+      "cityCodes": [
+        "ludhiana"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1303362827",
+      "url": "https://publish.tribuneindia.com/city/patiala/feed",
+      "label": "The Tribune — Patiala | P2",
+      "cityCodes": [
+        "patiala"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-312456219",
+      "url": "https://publish.tribuneindia.com/newscategory/business/feed",
+      "label": "The Tribune — Business | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-544677675",
+      "url": "https://publish.tribuneindia.com/state/chhattisgarh/feed",
+      "label": "The Tribune — Chhattisgarh | P2",
+      "cityCodes": [
+        "bhilai",
+        "bilaspur",
+        "durg",
+        "korba",
+        "kota",
+        "kota_chhattisgarh",
+        "raipur",
+        "rajnandgaon"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-532385027",
+      "url": "https://publish.tribuneindia.com/state/haryana/feed",
+      "label": "The Tribune — Haryana | P2",
+      "cityCodes": [
+        "ambala",
+        "faridabad",
+        "karnal",
+        "kurukshetra",
+        "palwal",
+        "panipat",
+        "rewari",
+        "rohtak",
+        "sonipat",
+        "yamunanagar"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1681652862",
+      "url": "https://publish.tribuneindia.com/state/himachal/feed",
+      "label": "The Tribune — Himachal Pradesh | P2",
+      "cityCodes": [
+        "solan"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1874856453",
+      "url": "https://publish.tribuneindia.com/state/madhya-pradesh/feed",
+      "label": "The Tribune — Madhya Pradesh | P2",
+      "cityCodes": [
+        "betul",
+        "burhanpur",
+        "chhindwara",
+        "damoh",
+        "dewas",
+        "gwalior",
+        "indore",
+        "jabalpur",
+        "khandwa",
+        "khargone",
+        "mandsaur",
+        "neemuch",
+        "ratlam",
+        "rewa",
+        "sagar",
+        "satna",
+        "sehore",
+        "seoni",
+        "ujjain"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1428279071",
+      "url": "https://publish.tribuneindia.com/state/punjab/feed",
+      "label": "The Tribune — Punjab | P2",
+      "cityCodes": [
+        "bhatinda",
+        "hoshiarpur",
+        "sangrur"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1672807703",
+      "url": "https://publish.tribuneindia.com/state/rajasthan/feed",
+      "label": "The Tribune — Rajasthan | P2",
+      "cityCodes": [
+        "ajmer",
+        "alwar",
+        "barmer",
+        "bhilwara",
+        "bhiwadi",
+        "bikaner",
+        "hanumangarh",
+        "jhalawar",
+        "jodhpur",
+        "kota",
+        "nagaur",
+        "neemrana",
+        "pali",
+        "sikar",
+        "sirohi",
+        "sri_ganganagar",
+        "tonk",
+        "udaipur"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-858225417",
+      "url": "https://publish.tribuneindia.com/state/uttar-pradesh/feed",
+      "label": "The Tribune — Uttar Pradesh | P2",
+      "cityCodes": [
+        "agra",
+        "aligarh",
+        "barabanki",
+        "bareilly",
+        "firozabad",
+        "ghaziabad",
+        "gorakhpur",
+        "hapur",
+        "jhansi",
+        "mathura",
+        "meerut",
+        "moradabad",
+        "vrindavan"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1711792120",
+      "url": "https://publish.tribuneindia.com/state/uttarakhand/feed",
+      "label": "The Tribune — Uttarakhand | P2",
+      "cityCodes": [
+        "dehradun",
+        "haridwar",
+        "rishikesh",
+        "roorkee",
+        "rudrapur"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1568576268",
+      "url": "https://puda.punjab.gov.in",
+      "label": "PUDA | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1480398671",
+      "url": "https://rajapushpa.in/news",
+      "label": "Rajapushpa Properties | P1",
+      "cityCodes": [
+        "hyderabad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1199443025",
+      "url": "https://realty.economictimes.indiatimes.com/rss/allied-industries",
+      "label": "ETRealty — Allied Industries | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-2105919791",
+      "url": "https://realty.economictimes.indiatimes.com/rss/cement",
+      "label": "ETRealty — Cement | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-456899389",
+      "url": "https://realty.economictimes.indiatimes.com/rss/hospitality",
+      "label": "ETRealty — Hospitality | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-493604601",
+      "url": "https://realty.economictimes.indiatimes.com/rss/housing-finance",
+      "label": "ETRealty — Housing Finance | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1776708771",
+      "url": "https://realty.economictimes.indiatimes.com/rss/international",
+      "label": "ETRealty — International | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1179729989",
+      "url": "https://realty.economictimes.indiatimes.com/rss/lateststories",
+      "label": "ETRealty — Latest Stories | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1027283165",
+      "url": "https://realty.economictimes.indiatimes.com/rss/lighting",
+      "label": "ETRealty — Lighting | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1757250045",
+      "url": "https://realty.economictimes.indiatimes.com/rss/lighting/commercial-lighting",
+      "label": "ETRealty — Commercial Lighting | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1308186193",
+      "url": "https://realty.economictimes.indiatimes.com/rss/lighting/consumer-lighting",
+      "label": "ETRealty — Consumer Lighting | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1828558868",
+      "url": "https://realty.economictimes.indiatimes.com/rss/lighting/indoor-lighting",
+      "label": "ETRealty — Indoor Lighting | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1495866752",
+      "url": "https://realty.economictimes.indiatimes.com/rss/lighting/led-technology",
+      "label": "ETRealty — LED Technology | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-179889327",
+      "url": "https://realty.economictimes.indiatimes.com/rss/lighting/outdoor-lighting",
+      "label": "ETRealty — Outdoor Lighting | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1701352962",
+      "url": "https://realty.economictimes.indiatimes.com/rss/lighting/smart-lighting",
+      "label": "ETRealty — Smart Lighting | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1737545242",
+      "url": "https://realty.economictimes.indiatimes.com/rss/paints",
+      "label": "ETRealty — Paints | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1493077401",
+      "url": "https://realty.economictimes.indiatimes.com/rss/recentstories",
+      "label": "ETRealty — Recent Stories | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-998391309",
+      "url": "https://realty.economictimes.indiatimes.com/rss/rera",
+      "label": "ETRealty — RERA | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1676277996",
+      "url": "https://realty.economictimes.indiatimes.com/rss/retail",
+      "label": "ETRealty — Retail | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-2018574464",
+      "url": "https://realty.economictimes.indiatimes.com/rss/smart-city",
+      "label": "ETRealty — Smart City | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1352131431",
+      "url": "https://realty.economictimes.indiatimes.com/rss/startups",
+      "label": "ETRealty — Startups | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-2103170403",
+      "url": "https://realty.economictimes.indiatimes.com/rss/technology",
+      "label": "ETRealty — Technology | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1306255561",
+      "url": "https://realty.economictimes.indiatimes.com/rss/videostories",
+      "label": "ETRealty — Video Stories | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1203999760",
+      "url": "https://realty.economictimes.indiatimes.com/rss/webstories",
+      "label": "ETRealty — Web Stories | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-494403325",
+      "url": "https://rera.assam.gov.in",
+      "label": "Assam RERA | P1",
+      "cityCodes": [
+        "dibrugarh",
+        "golaghat",
+        "guwahati",
+        "jorhat",
+        "kamrup",
+        "marigaon",
+        "nagaon",
+        "nalbari",
+        "silchar",
+        "tezpur",
+        "tinsukia"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-970307197",
+      "url": "https://rera.cgstate.gov.in",
+      "label": "Chhattisgarh RERA | P1",
+      "cityCodes": [
+        "bhilai",
+        "bilaspur",
+        "durg",
+        "korba",
+        "kota",
+        "kota_chhattisgarh",
+        "raipur",
+        "rajnandgaon"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1444113792",
+      "url": "https://rera.chbonline.in",
+      "label": "Chandigarh RERA | P1",
+      "cityCodes": [
+        "chandigarh"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1935673527",
+      "url": "https://rera.goa.gov.in",
+      "label": "Goa RERA | P1",
+      "cityCodes": [
+        "goa"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-324708418",
+      "url": "https://rera.karnataka.gov.in",
+      "label": "Karnataka RERA | P1",
+      "cityCodes": [
+        "bangalore",
+        "belgaum",
+        "hubli",
+        "mangalore",
+        "mysore",
+        "udupi"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-124085752",
+      "url": "https://rera.kerala.gov.in",
+      "label": "Kerala RERA | P1",
+      "cityCodes": [
+        "calicut",
+        "ernakulam",
+        "kochi",
+        "palakkad",
+        "thrissur",
+        "trivandrum"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1506658814",
+      "url": "https://rera.odisha.gov.in",
+      "label": "Odisha RERA | P1",
+      "cityCodes": [
+        "balasore",
+        "berhampur",
+        "bhubaneswar",
+        "cuttack",
+        "puri",
+        "rourkela",
+        "sambalpur"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1996583764",
+      "url": "https://rera.punjab.gov.in",
+      "label": "Punjab RERA | P1",
+      "cityCodes": [
+        "amritsar",
+        "bhatinda",
+        "hoshiarpur",
+        "jalandhar",
+        "ludhiana",
+        "mohali",
+        "patiala",
+        "sangrur"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1605406430",
+      "url": "https://rera.rajasthan.gov.in",
+      "label": "Rajasthan RERA | P1",
+      "cityCodes": [
+        "ajmer",
+        "alwar",
+        "barmer",
+        "bhilwara",
+        "bhiwadi",
+        "bikaner",
+        "hanumangarh",
+        "jaipur",
+        "jhalawar",
+        "jodhpur",
+        "kota",
+        "nagaur",
+        "neemrana",
+        "pali",
+        "sikar",
+        "sirohi",
+        "sri_ganganagar",
+        "tonk",
+        "udaipur"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1804557915",
+      "url": "https://rera.telangana.gov.in",
+      "label": "Telangana RERA | P1",
+      "cityCodes": [
+        "hyderabad",
+        "karimnagar",
+        "khammam",
+        "mahabubnagar",
+        "mancherial",
+        "nalgonda",
+        "nizamabad",
+        "suryapet",
+        "warangal"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1027281340",
+      "url": "https://rera.tn.gov.in",
+      "label": "Tamil Nadu RERA | P1",
+      "cityCodes": [
+        "avadi",
+        "chennai",
+        "coimbatore",
+        "cuddalore",
+        "dindigul",
+        "erode",
+        "hosur",
+        "karur",
+        "madurai",
+        "namakkal",
+        "pudukkottai",
+        "salem",
+        "tambaram",
+        "thanjavur",
+        "thoothukudi",
+        "tiruchirappalli",
+        "tirunelveli",
+        "tiruppur",
+        "tiruvannamalai",
+        "vellore"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1296959279",
+      "url": "https://rera.tripura.gov.in",
+      "label": "Tripura RERA | P1",
+      "cityCodes": [
+        "agartala"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-460997707",
+      "url": "https://rera.wb.gov.in",
+      "label": "West Bengal RERA | P1",
+      "cityCodes": [
+        "asansol",
+        "durgapur",
+        "howrah",
+        "kolkata",
+        "siliguri"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-925990844",
+      "url": "https://riico.rajasthan.gov.in",
+      "label": "RIICO | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1324126059",
+      "url": "https://sattvagroup.in/category/real-estate-development",
+      "label": "Sattva Group | P1",
+      "cityCodes": [
+        "bangalore",
+        "coimbatore",
+        "goa",
+        "hyderabad",
+        "kolkata",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1727371390",
+      "url": "https://sipcotweb.tn.gov.in",
+      "label": "SIPCOT | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1241150775",
+      "url": "https://sumadhuragroup.com",
+      "label": "Sumadhura Group | P2",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "hyderabad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-588228811",
+      "url": "https://tgiic.telangana.gov.in",
+      "label": "TGIIC | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-479791132",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128816011.cms",
+      "label": "Times of India — Hyderabad | P2",
+      "cityCodes": [
+        "hyderabad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1753548417",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128816762.cms",
+      "label": "Times of India — Chandigarh | P2",
+      "cityCodes": [
+        "chandigarh"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1730676414",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128819658.cms",
+      "label": "Times of India — Lucknow | P2",
+      "cityCodes": [
+        "lucknow"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-447913087",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128821153.cms",
+      "label": "Times of India — Ahmedabad | P2",
+      "cityCodes": [
+        "ahmedabad",
+        "gujarat"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1825148669",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128821991.cms",
+      "label": "Times of India — Pune | P2",
+      "cityCodes": [
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-2126613387",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128830821.cms",
+      "label": "Times of India — Kolkata | P2",
+      "cityCodes": [
+        "kolkata"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-290108742",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128833038.cms",
+      "label": "Times of India — Bangalore | P2",
+      "cityCodes": [
+        "bangalore"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-727628319",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128838597.cms",
+      "label": "Times of India — Mumbai | P2",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1825452163",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+      "label": "Times of India — Delhi | P2",
+      "cityCodes": [
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-465616761",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms",
+      "label": "Times of India — India | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-389235871",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/1898055.cms",
+      "label": "Times of India — Business | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-2120620254",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/2647163.cms",
+      "label": "Times of India — Environment | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-436889324",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/2950623.cms",
+      "label": "Times of India — Chennai | P2",
+      "cityCodes": [
+        "chennai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1677035952",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3012535.cms",
+      "label": "Times of India — Goa | P2",
+      "cityCodes": [
+        "goa"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1704741582",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+      "label": "Times of India — Jaipur | P2",
+      "cityCodes": [
+        "jaipur"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-250208157",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3942660.cms",
+      "label": "Times of India — Surat | P2",
+      "cityCodes": [
+        "surat"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-247437594",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms",
+      "label": "Times of India — Rajkot | P2",
+      "cityCodes": [
+        "rajkot"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-244667031",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3942666.cms",
+      "label": "Times of India — Vadodara | P2",
+      "cityCodes": [
+        "gujarat",
+        "vadodara"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-164320704",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms",
+      "label": "Times of India — Mangaluru | P2",
+      "cityCodes": [
+        "mangalore"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-161550141",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3942693.cms",
+      "label": "Times of India — Mysuru | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1183851494",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3947051.cms",
+      "label": "Times of India — Ludhiana | P2",
+      "cityCodes": [
+        "ludhiana"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1156145864",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3947060.cms",
+      "label": "Times of India — Prayagraj / Allahabad | P2",
+      "cityCodes": [
+        "allahabad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1149681217",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3947067.cms",
+      "label": "Times of India — Kanpur | P2",
+      "cityCodes": [
+        "kanpur"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1126593192",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3947071.cms",
+      "label": "Times of India — Varanasi | P2",
+      "cityCodes": [
+        "varanasi"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1169270839",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/4118215.cms",
+      "label": "Times of India — Guwahati | P2",
+      "cityCodes": [
+        "guwahati"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1112012537",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/4118235.cms",
+      "label": "Times of India — Bhubaneswar | P2",
+      "cityCodes": [
+        "bhubaneswar"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1083383386",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/4118245.cms",
+      "label": "Times of India — Ranchi | P2",
+      "cityCodes": [
+        "ranchi"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1872561567",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/442002.cms",
+      "label": "Times of India — Nagpur | P2",
+      "cityCodes": [
+        "nagpur"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1377424798",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/7503091.cms",
+      "label": "Times of India — Coimbatore | P2",
+      "cityCodes": [
+        "coimbatore"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-128554197",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/878156304.cms",
+      "label": "Times of India — Thiruvananthapuram | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1814839804",
+      "url": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
+      "label": "Times of India — Top Stories | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-696274186",
+      "url": "https://transport.rajasthan.gov.in/jmrc",
+      "label": "Jaipur Metro | P1",
+      "cityCodes": [
+        "jaipur"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-691704001",
+      "url": "https://uhuda.uk.gov.in",
+      "label": "Uttarakhand Housing & Urban Development Authority | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1900974143",
+      "url": "https://upeida.up.gov.in/en/news",
+      "label": "UPEIDA — News | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1289383252",
+      "url": "https://www.aai.aero",
+      "label": "Airports Authority of India | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1168549638",
+      "url": "https://www.adanirealty.com/news-and-media",
+      "label": "Adani Realty | P1",
+      "cityCodes": [
+        "ahmedabad",
+        "gandhinagar",
+        "gurugram",
+        "mumbai",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1518043738",
+      "url": "https://www.aparnaconstructions.com/aparna-news",
+      "label": "Aparna Constructions | P1",
+      "cityCodes": [
+        "hyderabad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1363089378",
+      "url": "https://www.arvindsmartspaces.com/investors/compliances",
+      "label": "Arvind SmartSpaces — Compliances | P1",
+      "cityCodes": [
+        "ahmedabad",
+        "bangalore",
+        "gandhinagar",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-656124001",
+      "url": "https://www.arvindsmartspaces.com/investors/financial-reports",
+      "label": "Arvind SmartSpaces — Financial Reports | P1",
+      "cityCodes": [
+        "ahmedabad",
+        "bangalore",
+        "gandhinagar",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-98238599",
+      "url": "https://www.ashianahousing.com/media/media-release",
+      "label": "Ashiana Housing | P1",
+      "cityCodes": [
+        "bhiwadi",
+        "chennai",
+        "gurugram",
+        "jaipur",
+        "jamshedpur",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1290390093",
+      "url": "https://www.bda.gov.in/notice",
+      "label": "Bhubaneswar Development Authority — Notices | P1",
+      "cityCodes": [
+        "bhubaneswar"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-179180068",
+      "url": "https://www.bda.org.in",
+      "label": "Bhopal Development Authority | P1",
+      "cityCodes": [
+        "bhopal"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-496593188",
+      "url": "https://www.bdabangalore.org",
+      "label": "Bangalore Development Authority | P1",
+      "cityCodes": [
+        "bangalore"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-2037747400",
+      "url": "https://www.bseindia.com/corporates.html",
+      "label": "BSE — Corporate Filings | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-349039194",
+      "url": "https://www.bseindia.com/corporates/ann.html",
+      "label": "BSE — Corporate Announcements | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1945181977",
+      "url": "https://www.cbre.co.in/insights",
+      "label": "CBRE India — Insights | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1625478632",
+      "url": "https://www.cmdachennai.gov.in",
+      "label": "Chennai Metropolitan Development Authority | P1",
+      "cityCodes": [
+        "chennai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-73416366",
+      "url": "https://www.colliers.com/en-in/research",
+      "label": "Colliers India — Research | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-724886298",
+      "url": "https://www.cushmanwakefield.com/en/india/insights",
+      "label": "Cushman & Wakefield India — Insights | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-554669142",
+      "url": "https://www.dlf.in/press-releases",
+      "label": "DLF — Press Releases | P1",
+      "cityCodes": [
+        "faridabad",
+        "goa",
+        "gurugram",
+        "mumbai",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1398406557",
+      "url": "https://www.financialexpress.com/business/infrastructure",
+      "label": "Financial Express — Infrastructure | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-822093681",
+      "url": "https://www.gaursonsindia.com/media-centre.php",
+      "label": "Gaurs Group | P1",
+      "cityCodes": [
+        "ghaziabad",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-585988631",
+      "url": "https://www.giftgujarat.in",
+      "label": "GIFT City | P1",
+      "cityCodes": [
+        "gandhinagar",
+        "gujarat"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1205852566",
+      "url": "https://www.gmda.gov.in",
+      "label": "GMDA | P1",
+      "cityCodes": [
+        "gurugram"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1951536001",
+      "url": "https://www.greaternoidaauthority.in",
+      "label": "Greater Noida Authority | P1",
+      "cityCodes": [
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-2035438684",
+      "url": "https://www.gujaratmetrorail.com",
+      "label": "Gujarat Metro Rail Corporation | P1",
+      "cityCodes": [
+        "ahmedabad",
+        "gandhinagar",
+        "gujarat",
+        "surat"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-236366909",
+      "url": "https://www.hindustantimes.com/feeds/rss/business/rssfeed.xml",
+      "label": "Hindustan Times — Business | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-422414427",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/bhopal-news/rssfeed.xml",
+      "label": "Hindustan Times — Bhopal | P2",
+      "cityCodes": [
+        "bhopal"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-345050060",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/indore-news/rssfeed.xml",
+      "label": "Hindustan Times — Indore | P2",
+      "cityCodes": [
+        "indore"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-938335200",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/others/rssfeed.xml",
+      "label": "Hindustan Times — Others / Tier-2-3 | P2",
+      "cityCodes": [
+        "anantapur",
+        "bhimavaram",
+        "chittoor",
+        "daman_and_diu",
+        "dhanbad",
+        "eluru",
+        "jamshedpur",
+        "kadapa",
+        "kakinada",
+        "krishna",
+        "kurnool",
+        "nellore",
+        "pondicherry",
+        "rajahmundry",
+        "silvassa",
+        "srikakulam",
+        "tirupati",
+        "vijayawada",
+        "visakhapatnam",
+        "vizianagaram",
+        "west_godavari"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1381330215",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/patna-news/rssfeed.xml",
+      "label": "Hindustan Times — Patna | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-47906042",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/rssfeed.xml",
+      "label": "Hindustan Times — Cities | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-90428390",
+      "url": "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml",
+      "label": "Hindustan Times — India | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1110272580",
+      "url": "https://www.hindustantimes.com/feeds/rss/latest/rssfeed.xml",
+      "label": "Hindustan Times — Latest | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-524668179",
+      "url": "https://www.hiranandani.com/media-press-release.aspx",
+      "label": "Hiranandani Group | P1",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-851114697",
+      "url": "https://www.hmda.gov.in/news",
+      "label": "HMDA — News | P1",
+      "cityCodes": [
+        "hyderabad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-276613859",
+      "url": "https://www.hprera.in",
+      "label": "Himachal Pradesh RERA | P1",
+      "cityCodes": [
+        "shimla",
+        "solan"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-147771495",
+      "url": "https://www.hsvphry.org.in",
+      "label": "HSVP | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-2119826119",
+      "url": "https://www.idaindore.org",
+      "label": "Indore Development Authority | P1",
+      "cityCodes": [
+        "indore"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1614576458",
+      "url": "https://www.jll.co.in/en/trends-and-insights/research",
+      "label": "JLL India — Research | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1881891825",
+      "url": "https://www.kiadb.org",
+      "label": "KIADB | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1739713550",
+      "url": "https://www.knightfrank.co.in/research",
+      "label": "Knight Frank India — Research | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-2049308142",
+      "url": "https://www.koltepatil.com/news-media/press-releases",
+      "label": "Kolte-Patil Developers | P1",
+      "cityCodes": [
+        "bangalore",
+        "mumbai",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1403152805",
+      "url": "https://www.livemint.com/rss/AIRSS",
+      "label": "Livemint — AI | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1449511912",
+      "url": "https://www.livemint.com/rss/budgetRSS",
+      "label": "Livemint — Budget | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-757010052",
+      "url": "https://www.livemint.com/rss/companiesRSS",
+      "label": "Livemint — Companies | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1293757423",
+      "url": "https://www.livemint.com/rss/industryRSS",
+      "label": "Livemint — Industry | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1239259165",
+      "url": "https://www.livemint.com/rss/insuranceRSS",
+      "label": "Livemint — Insurance | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-501530784",
+      "url": "https://www.livemint.com/rss/marketsRSS",
+      "label": "Livemint — Markets | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-2032380169",
+      "url": "https://www.livemint.com/rss/moneyRSS",
+      "label": "Livemint — Money | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1929816154",
+      "url": "https://www.livemint.com/rss/newsRSS",
+      "label": "Livemint — News | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-948416396",
+      "url": "https://www.livemint.com/rss/politicsRSS",
+      "label": "Livemint — Politics | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1045186369",
+      "url": "https://www.livemint.com/rss/technologyRSS",
+      "label": "Livemint — Technology | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1058527012",
+      "url": "https://www.lodhagroup.in/investor-relations/shareholder-information",
+      "label": "Lodha — Investor Relations | P1",
+      "cityCodes": [
+        "bangalore",
+        "mumbai",
+        "navi_mumbai",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-117704309",
+      "url": "https://www.lodhagroup.in/newsroom",
+      "label": "Lodha — Newsroom | P1",
+      "cityCodes": [
+        "bangalore",
+        "mumbai",
+        "navi_mumbai",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-23710033",
+      "url": "https://www.mahagunindia.com/media/press-coverage",
+      "label": "Mahagun Group | P1",
+      "cityCodes": [
+        "ghaziabad",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1899715228",
+      "url": "https://www.mahametro.org",
+      "label": "Maha Metro | P1",
+      "cityCodes": [
+        "nagpur",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1665327054",
+      "url": "https://www.mahindralifespaces.com/newsroom/media-resources",
+      "label": "Mahindra Lifespaces | P1",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "mumbai",
+        "noida",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1312241014",
+      "url": "https://www.mhada.gov.in",
+      "label": "MHADA | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-8558402",
+      "url": "https://www.naredco.in/industry-news",
+      "label": "NAREDCO — Industry News | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1789601589",
+      "url": "https://www.nhsrcl.in",
+      "label": "NHSRCL | P1",
+      "cityCodes": [
+        "gujarat"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-298680687",
+      "url": "https://www.noidaauthority.in",
+      "label": "NOIDA Authority | P1",
+      "cityCodes": [
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-35448586",
+      "url": "https://www.nseindia.com/companies-listing/corporate-filings",
+      "label": "NSE — Corporate Filings | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-891223925",
+      "url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements",
+      "label": "NSE — Corporate Announcements | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1445305468",
+      "url": "https://www.omaxe.com/investor/other-disclosures",
+      "label": "Omaxe — Other Disclosures | P1",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "indore",
+        "lucknow",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1843153651",
+      "url": "https://www.omaxe.com/media/press-releases",
+      "label": "Omaxe — Press Releases | P1",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "indore",
+        "lucknow",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1994112335",
+      "url": "https://www.pib.gov.in/Allrel.aspx",
+      "label": "PIB — All Releases | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1036719703",
+      "url": "https://www.pib.gov.in/ViewRss.aspx?lang=1&reg=1",
+      "label": "PIB — RSS | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1675985428",
+      "url": "https://www.pmrda.gov.in/en/pmrda-news",
+      "label": "PMRDA — News | P1",
+      "cityCodes": [
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-366299199",
+      "url": "https://www.pmrda.gov.in/en/press-release",
+      "label": "PMRDA — Press Releases | P1",
+      "cityCodes": [
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1595420778",
+      "url": "https://www.prestigeconstructions.com/news",
+      "label": "Prestige Group — News | P1",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "hyderabad",
+        "mumbai",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-131109124",
+      "url": "https://www.providenthousing.com/media",
+      "label": "Provident Housing | P1",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "coimbatore",
+        "hyderabad",
+        "kochi",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1751997555",
+      "url": "https://www.puravankara.com/investors",
+      "label": "Puravankara — Investors | P1",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "coimbatore",
+        "goa",
+        "hyderabad",
+        "kochi",
+        "mangalore",
+        "mumbai",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-10475550",
+      "url": "https://www.rera.ap.gov.in",
+      "label": "Andhra Pradesh RERA | P1",
+      "cityCodes": [
+        "anantapur",
+        "bhimavaram",
+        "chittoor",
+        "eluru",
+        "kadapa",
+        "kakinada",
+        "krishna",
+        "kurnool",
+        "nellore",
+        "rajahmundry",
+        "srikakulam",
+        "tirupati",
+        "vijayawada",
+        "visakhapatnam",
+        "vizianagaram",
+        "west_godavari"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-706957101",
+      "url": "https://www.rera.delhi.gov.in",
+      "label": "Delhi RERA | P1",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-204141526",
+      "url": "https://www.rera.mp.gov.in",
+      "label": "Madhya Pradesh RERA | P1",
+      "cityCodes": [
+        "betul",
+        "bhopal",
+        "burhanpur",
+        "chhindwara",
+        "damoh",
+        "dewas",
+        "gwalior",
+        "indore",
+        "jabalpur",
+        "khandwa",
+        "khargone",
+        "mandsaur",
+        "neemuch",
+        "ratlam",
+        "rewa",
+        "sagar",
+        "satna",
+        "sehore",
+        "seoni",
+        "ujjain"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1245609192",
+      "url": "https://www.rustomjee.com/newsroom",
+      "label": "Rustomjee | P1",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-495256027",
+      "url": "https://www.savills.in/research.aspx",
+      "label": "Savills India — Research | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1462156633",
+      "url": "https://www.shapoorjipallonji.com/Media/Press-Releases",
+      "label": "Shapoorji Pallonji | P1",
+      "cityCodes": [
+        "bangalore",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "hyderabad",
+        "mumbai",
+        "noida",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1419986880",
+      "url": "https://www.shriramproperties.com/press-release",
+      "label": "Shriram Properties | P1",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "coimbatore",
+        "kolkata",
+        "visakhapatnam"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-2107367717",
+      "url": "https://www.signatureglobal.in/financials",
+      "label": "Signature Global — Financials | P1",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1128454885",
+      "url": "https://www.signatureglobal.in/mediacoverage/page/1",
+      "label": "Signature Global — Media | P1",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1137390619",
+      "url": "https://www.sobha.com/investor-relations",
+      "label": "SOBHA — Investor Relations | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-779873141",
+      "url": "https://www.sobha.com/media-centre/press-release",
+      "label": "SOBHA — Press Releases | P1",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "gurugram",
+        "hyderabad",
+        "kochi",
+        "mumbai",
+        "noida",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1421348054",
+      "url": "https://www.tvsemerald.com/news",
+      "label": "TVS Emerald | P1",
+      "cityCodes": [
+        "bangalore",
+        "chennai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1638221601",
+      "url": "https://www.ukrera.org.in",
+      "label": "Uttarakhand RERA | P1",
+      "cityCodes": [
+        "dehradun",
+        "haridwar",
+        "rishikesh",
+        "roorkee",
+        "rudrapur"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-28187397",
+      "url": "https://www.up-rera.in",
+      "label": "UP RERA | P1",
+      "cityCodes": [
+        "agra",
+        "aligarh",
+        "allahabad",
+        "barabanki",
+        "bareilly",
+        "firozabad",
+        "ghaziabad",
+        "gorakhpur",
+        "hapur",
+        "jhansi",
+        "kanpur",
+        "lucknow",
+        "mathura",
+        "meerut",
+        "moradabad",
+        "noida",
+        "varanasi",
+        "vrindavan"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1076663598",
+      "url": "https://www.up-rera.in/PressRelease",
+      "label": "UP RERA — Press Releases | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-545059815",
+      "url": "https://www.vatikacollections.com/public-notice",
+      "label": "Vatika Group | P1",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-637322993",
+      "url": "https://www.wbhidcoltd.com",
+      "label": "WBHIDCO | P1",
+      "cityCodes": [
+        "kolkata"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1580140283",
+      "url": "https://yamunaexpresswayauthority.com",
+      "label": "YEIDA | P1",
+      "cityCodes": [
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "manual-v3-5519534523356f7c",
+      "url": "https://ahmedabadcity.gov.in/DC/Tenders/",
+      "label": "Ahmedabad Municipal Corporation — Tenders",
+      "cityCodes": [
+        "ahmedabad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-db9cda172bd757d0",
+      "url": "https://apiic.in/downloads-tenders/",
+      "label": "APIIC — Downloads & Tenders",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-c9ea90ba8e58e0ef",
+      "url": "https://apiic.in/old-tenders/",
+      "label": "APIIC — Old Tenders",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-8e6bfbb88ea2c67c",
+      "url": "https://bbmp.gov.in/",
+      "label": "Greater Bengaluru Authority / BBMP",
+      "cityCodes": [
+        "bangalore"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-f547f27a27a86896",
+      "url": "https://cci.gov.in/combination/green-channel-view",
+      "label": "CCI — Green Channel Combinations",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-22ae8ab6983f181c",
+      "url": "https://chennaicorporation.gov.in/gcc/tender/",
+      "label": "Greater Chennai Corporation — Tender Bulletin",
+      "cityCodes": [
+        "chennai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-94a48f14aa512412",
+      "url": "https://cidco.maharashtra.gov.in/Page?Token=1C64F4F8470",
+      "label": "CIDCO — Press Releases",
+      "cityCodes": [
+        "mumbai",
+        "navi_mumbai",
+        "raigad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-a6d725941d03068c",
+      "url": "https://cochinport.gov.in/tenders",
+      "label": "Cochin Port Authority — Tenders",
+      "cityCodes": [
+        "kochi"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-e130123186468d1d",
+      "url": "https://www.mmrcl.com/en/content/press-releases",
+      "label": "Mumbai Metro Rail Corporation — Press Releases",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-5974dbd4ac02b953",
+      "url": "https://cpc.parivesh.nic.in/",
+      "label": "PARIVESH — Main Portal",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-2852cf1b6d8fb34d",
+      "url": "https://cpc.parivesh.nic.in/onlinesearch_dashboard.aspx?pid=tornotissuedyet&status=NA",
+      "label": "PARIVESH — Project / Clearance Search",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-004baee336fe028c",
+      "url": "https://crmapp.mcgm.gov.in/irj/portal/anonymous/qlpressrelease",
+      "label": "BMC Mumbai — Press Releases",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-2db5943fc51b7fc8",
+      "url": "https://gccservices.chennaicorporation.gov.in/",
+      "label": "Greater Chennai Corporation — What's New",
+      "cityCodes": [
+        "chennai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-e8b21196335e6c3b",
+      "url": "https://ghmc.gov.in/Tenderspage.aspx",
+      "label": "GHMC — Tenders",
+      "cityCodes": [
+        "hyderabad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-be76261203c366d3",
+      "url": "https://gidc.gujarat.gov.in/tender",
+      "label": "GIDC — Tenders",
+      "cityCodes": [
+        "gujarat"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-85936e8c3f05f018",
+      "url": "https://hginfra.com/announcements.php",
+      "label": "H.G. Infra — Announcements",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-5798ea1a5fbdd49e",
+      "url": "https://hginfra.com/investors-presentation.php",
+      "label": "H.G. Infra — Investor Presentations",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-407b196ddd04e9fa",
+      "url": "https://hsiidc.etenders.in",
+      "label": "HSIIDC — E-Tender Portal",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-24fc235493d1c89d",
+      "url": "https://hsvphry.org.in/Home/Tenders",
+      "label": "HSVP — Active Tenders",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-3af7be7f279b5052",
+      "url": "https://ibbi.gov.in/orders/nclt",
+      "label": "IBBI — NCLT Orders",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-dbbf3a7b44284bfa",
+      "url": "https://ibbi.gov.in/search/index/press-release",
+      "label": "IBBI — Press Releases",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-46148dfe90fc782e",
+      "url": "https://in.esr.com/newsroom",
+      "label": "ESR India — Newsroom",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-aab7c055d8d1c6f1",
+      "url": "https://in.esr.com/newsroom/news",
+      "label": "ESR India — News",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "hyderabad",
+        "mumbai",
+        "noida",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-ec8497a2f5f42e89",
+      "url": "https://indiainvestmentgrid.gov.in/index.jsp",
+      "label": "India Investment Grid",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-9772c076a7489803",
+      "url": "https://investor.clint.com.sg/newsroom.html",
+      "label": "CapitaLand India Trust — Announcements",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "hyderabad",
+        "mumbai",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-6b0f55de31ed937a",
+      "url": "https://investors.larsentoubro.com/news.aspx",
+      "label": "Larsen & Toubro — Exchange Announcements",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-2e47260f883d792e",
+      "url": "https://ipm.mospi.gov.in/Home/Index",
+      "label": "MoSPI PAIMANA — Infrastructure Project Monitoring",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-e73629c6ede86e56",
+      "url": "https://ipm.mospi.gov.in/Home/ShowPressRelease",
+      "label": "MoSPI PAIMANA — Press Releases",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-19a2ff1c74f30013",
+      "url": "https://mcg.gov.in/",
+      "label": "Municipal Corporation of Gurugram — Updates & Tenders",
+      "cityCodes": [
+        "gurugram"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-d1bb850c40cc4fe7",
+      "url": "https://mchi.net/",
+      "label": "CREDAI-MCHI",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-6737def57d723c17",
+      "url": "https://mchi.net/newsletters/",
+      "label": "CREDAI-MCHI — Newsletters",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-1f5edcad4b098389",
+      "url": "https://mhada.gov.in/en/latest-news",
+      "label": "MHADA — Latest News",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-b9f3e91f2af571c8",
+      "url": "https://nhsrcl.in/en/media/press-release",
+      "label": "NHSRCL — Press Releases",
+      "cityCodes": [
+        "ahmedabad",
+        "gujarat",
+        "mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-a52a4a88a58474da",
+      "url": "https://paradipport.gov.in/tenders/",
+      "label": "Paradip Port Authority — Tenders",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-54f076d58b389c3a",
+      "url": "https://portal.mcgm.gov.in/irj/portal/anonymous/qletenders_new?guest_user=english",
+      "label": "BMC Mumbai — E-Tenders",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "manual-v3-3b5dd76275304eaf",
+      "url": "https://punemetrorail.org/",
+      "label": "Pune Metro — Latest News",
+      "cityCodes": [
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-584b615091f0498f",
+      "url": "https://residex.nhbonline.org.in/",
+      "label": "NHB RESIDEX",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-44578803ea908e29",
+      "url": "https://riico.rajasthan.gov.in/Tender.aspx",
+      "label": "RIICO — Tenders",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-ba2c2d5dfb324271",
+      "url": "https://runwalenterprises.com/load-news",
+      "label": "Runwal Enterprises — Newsroom",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-157cdd6c1a107466",
+      "url": "https://shipmin.gov.in/en/highlights",
+      "label": "Ministry of Ports — Highlights",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-09ac93993079b0b8",
+      "url": "https://shipmin.gov.in/publication/trw-publication",
+      "label": "Ministry of Ports — Transport Research Publications",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-bd17f7159d7b9e47",
+      "url": "https://surajestate.com/investor-corner/",
+      "label": "Suraj Estate Developers — Investor Corner",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-9beafe3bc33fcb2c",
+      "url": "https://surajestate.com/investor-relations/",
+      "label": "Suraj Estate Developers — Investor Relations",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-a97ca87f630328c2",
+      "url": "https://tatarealty.in/newsroom",
+      "label": "Tata Realty — Newsroom",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "mumbai",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-0d1df5ca7ed36279",
+      "url": "https://transport.rajasthan.gov.in/content/transportportal/en/metro/News/past-news.html",
+      "label": "Jaipur Metro — Past News",
+      "cityCodes": [
+        "jaipur"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-feb99c36bd53d222",
+      "url": "https://vpt.shipping.gov.in/",
+      "label": "Visakhapatnam Port Authority — News & Tenders",
+      "cityCodes": [
+        "visakhapatnam"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-fb96150672da854b",
+      "url": "https://www.aai.aero/en/media/latest-news",
+      "label": "Airports Authority of India — Latest News",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-a09989aaf7ee8341",
+      "url": "https://www.aai.aero/en/media/press-news-events_archive",
+      "label": "Airports Authority of India — Press Archive",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-b2364c91c1213bdf",
+      "url": "https://www.aai.aero/en/media/press-releases",
+      "label": "Airports Authority of India — Press Releases",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-2bf6181e567c66bc",
+      "url": "https://www.adaniairports.com/media-centre",
+      "label": "Adani Airports — Media Centre",
+      "cityCodes": [
+        "ahmedabad",
+        "guwahati",
+        "jaipur",
+        "lucknow",
+        "mangalore",
+        "mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-e977ad2c5c4139a9",
+      "url": "https://www.anantrajlimited.com/investors",
+      "label": "Anant Raj — Investors",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-b6c316f7fa9fbbf9",
+      "url": "https://www.anantrajlimited.com/media-center",
+      "label": "Anant Raj — Media Center",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-a4229397d43740fe",
+      "url": "https://www.assetzproperty.com/investors",
+      "label": "Assetz Property — Investors",
+      "cityCodes": [
+        "bangalore"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-0bdb801de540d94d",
+      "url": "https://www.bda.gov.in/archiveTender",
+      "label": "Bhubaneswar Development Authority — Tender Archive",
+      "cityCodes": [
+        "bhubaneswar"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-aec87feb1bb37ba1",
+      "url": "https://www.bda.gov.in/circular",
+      "label": "Bhubaneswar Development Authority — Circulars",
+      "cityCodes": [
+        "bhubaneswar"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-4e1fb6b4e4c4b6b2",
+      "url": "https://www.brigadegroup.com/investor",
+      "label": "Brigade Group — Investor Relations",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "hyderabad",
+        "kochi"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-dcb6e5a17207739e",
+      "url": "https://www.brookfieldindiareit.in/stock-exchange-filings#Stock-Exchange-Filings",
+      "label": "Brookfield India REIT — Stock Exchange Filings",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "kolkata",
+        "mumbai",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-eed0cacc3fd42265",
+      "url": "https://www.casagrand.co.in/investor-relation/",
+      "label": "Casagrand — Investor Relations",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "coimbatore",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "hyderabad",
+        "noida",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-109a427451649981",
+      "url": "https://www.cci.gov.in/combination/orders-section31",
+      "label": "CCI — Combination Orders",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-11a9c2b745b1c178",
+      "url": "https://www.cci.gov.in/combination/press-release",
+      "label": "CCI — Combination Press Releases",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-d3a6ac11414f5116",
+      "url": "https://www.cial.aero/News-Updates/URL",
+      "label": "Cochin International Airport — Updates",
+      "cityCodes": [
+        "kochi"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-8f4eb8d93d833f82",
+      "url": "https://www.credaincr.org/news",
+      "label": "CREDAI NCR — News",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-3246f94be8b8cf29",
+      "url": "https://www.credaincr.org/press_release",
+      "label": "CREDAI NCR — Press Releases",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-0fa9fe5470e0fa4d",
+      "url": "https://www.deendayalport.gov.in/tenders/e-tender",
+      "label": "Deendayal Port Authority — E-Tenders",
+      "cityCodes": [
+        "gujarat"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-e89e8908c49ed714",
+      "url": "https://www.dlf.in/investor",
+      "label": "DLF — Investor Zone",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-d650f1727e25319b",
+      "url": "https://www.eldecogroup.com/investor/eldeco-housing-industries-ltd/investor-relations",
+      "label": "Eldeco Group — Investor Relations",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "lucknow",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-6f85a1212d4f8b35",
+      "url": "https://www.embassyofficeparks.com/investors/regulatory-filings/",
+      "label": "Embassy Office Parks REIT — Regulatory Filings",
+      "cityCodes": [
+        "bangalore",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "mumbai",
+        "noida",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-39816d4ed5ddd995",
+      "url": "https://www.embassyofficeparks.com/newsroom/press/",
+      "label": "Embassy Office Parks REIT — Press Releases",
+      "cityCodes": [
+        "bangalore",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "mumbai",
+        "noida",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-b90ba714f66cc8c3",
+      "url": "https://www.experion.co/media",
+      "label": "Experion Developers — Media",
+      "cityCodes": [
+        "amritsar",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "lucknow",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-ef1a913ff353c108",
+      "url": "https://www.gera.in/press-releases",
+      "label": "Gera Developments — Press Releases",
+      "cityCodes": [
+        "bangalore",
+        "goa",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-8fb4dac4bc4778b8",
+      "url": "https://www.grinfra.com/intimations-under-regulation-30/",
+      "label": "G R Infraprojects — Regulation 30",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-fa07d7b80f6d36a4",
+      "url": "https://www.grinfra.com/media-coverage/",
+      "label": "G R Infraprojects — Media Coverage",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-cbdb370f09d8a6e5",
+      "url": "https://www.indospace.in/indospace-news/",
+      "label": "IndoSpace — Latest News",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-f006e15a72c8be13",
+      "url": "https://www.irb.co.in/home/disclosurescorp-announcements/",
+      "label": "IRB Infrastructure — Corporate Announcements",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-be4e3b9e2aafba21",
+      "url": "https://www.irb.co.in/home/press-release/",
+      "label": "IRB Infrastructure — Press Releases",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-d34bd247b318896e",
+      "url": "https://www.jnport.gov.in/page/press-release/NGE5SGlDdCtpOEdnRWphM1JlWGJLQT09/?media_id=1",
+      "label": "JNPA — Press Releases",
+      "cityCodes": [
+        "mumbai",
+        "navi_mumbai",
+        "raigad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-ddacdb5908ae5b35",
+      "url": "https://www.kalpataru.com/investor-corner",
+      "label": "Kalpataru — Investor Corner",
+      "cityCodes": [
+        "hyderabad",
+        "mumbai",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-545c53bbf31cf72b",
+      "url": "https://www.kalpataru.com/press",
+      "label": "Kalpataru — Press",
+      "cityCodes": [
+        "hyderabad",
+        "mumbai",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-0bef81ab08e27e9f",
+      "url": "https://www.knrcl.com/investors_presentation.html",
+      "label": "KNR Constructions — Investor Presentations",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-e9d7fcd56b43e732",
+      "url": "https://www.krahejacorp.com/newsroom",
+      "label": "K Raheja Corp — Newsroom",
+      "cityCodes": [
+        "bangalore",
+        "goa",
+        "hyderabad",
+        "mumbai",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-743090c0a79b6aaf",
+      "url": "https://www.lntrealty.com/news-blogs/",
+      "label": "L&T Realty — News & Blogs",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "mumbai",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-8a2cb5a207cd961f",
+      "url": "https://www.mindspacereit.com/investor-relations/stock-exchange-filings",
+      "label": "Mindspace Business Parks REIT — Stock Exchange Filings",
+      "cityCodes": [
+        "chennai",
+        "hyderabad",
+        "mumbai",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-b16d40a8b9ac964a",
+      "url": "https://www.mindspacereit.com/newsroom",
+      "label": "Mindspace Business Parks REIT — Newsroom",
+      "cityCodes": [
+        "chennai",
+        "hyderabad",
+        "mumbai",
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-f69799450fab90ca",
+      "url": "https://www.mumbaiport.gov.in/show_tenders.php?catid=3&depid=1&lang=1",
+      "label": "Mumbai Port Authority — Civil Engineering Tenders",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-8e7de748c5d661dc",
+      "url": "https://www.nbccindia.in/webEnglish/announcementNotices/timeline/webEnglish/orderBook",
+      "label": "NBCC — Announcements & Notices",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-d654827dd713e20c",
+      "url": "https://www.nexusselecttrust.com/regulatory-filings",
+      "label": "Nexus Select Trust — Regulatory Filings",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-909abf0903dfec52",
+      "url": "https://www.nhb.org.in/en/media-corner/media-press-releases/",
+      "label": "National Housing Bank — Media / Press Releases",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-e6ba5b01793a3440",
+      "url": "https://www.panchshil.com/media",
+      "label": "Panchshil Realty — Media",
+      "cityCodes": [
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-83394b2e5ed0ea7c",
+      "url": "https://www.pmrda.gov.in/en/tender-notice/",
+      "label": "PMRDA — Tender Notice",
+      "cityCodes": [
+        "pune"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-6d0dce6a887e893e",
+      "url": "https://www.pncinfratech.com/notice.html",
+      "label": "PNC Infratech — Notices & Intimations",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-9f1e14b047f6fb36",
+      "url": "https://www.pncinfratech.com/press-releases.html",
+      "label": "PNC Infratech — Press Releases",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-84786539d489fa68",
+      "url": "https://www.pppinindia.gov.in/",
+      "label": "PPP in India",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-f01d73f5801d67bf",
+      "url": "https://www.pppinindia.gov.in/goverment_infrastructure_projects_ppp",
+      "label": "PPP India — Government Infrastructure Projects",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-f77e3980bafb9dce",
+      "url": "https://www.pppinindia.gov.in/pppac-statewises/pppac-projects-list_Across-India",
+      "label": "PPP India — PPPAC Projects List",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-2e704fe5fe1260c3",
+      "url": "https://www.puriconstructions.com/media",
+      "label": "Puri Constructions — Media",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "noida",
+        "puri"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-a16ec66f775c70a6",
+      "url": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-real-estate-investment-trusts-reits-_95232.html",
+      "label": "SEBI — 2025 REIT Master Circular",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-ce07897160e9cc80",
+      "url": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=1&ssid=6",
+      "label": "SEBI — REIT/InvIT Master Circulars",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-1918397a03439a18",
+      "url": "https://www.shriramproperties.com/company-announcements",
+      "label": "Shriram Properties — Company Announcements",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "coimbatore",
+        "kolkata",
+        "visakhapatnam"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-4be859a24c219f24",
+      "url": "https://www.sunteckindia.com/investor-relations",
+      "label": "Sunteck Realty — Investor Relations",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-4978777b1ffcac99",
+      "url": "https://www.sunteckindia.com/media",
+      "label": "Sunteck Realty — Media",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-88671cda7bb3477a",
+      "url": "https://www.suratmunicipal.gov.in/Information/News",
+      "label": "Surat Municipal Corporation — News & Updates",
+      "cityCodes": [
+        "surat"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-a9687063fdebba6d",
+      "url": "https://www.suratmunicipal.gov.in/Information/Tender/Tenders",
+      "label": "Surat Municipal Corporation — Active Tenders",
+      "cityCodes": [
+        "surat"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-22450a3c48bd4c6c",
+      "url": "https://www.suratmunicipal.gov.in/Information/pressreleases",
+      "label": "Surat Municipal Corporation — Press Releases",
+      "cityCodes": [
+        "surat"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.646793+05:30"
+    },
+    {
+      "id": "manual-v3-2faa9935611722e5",
+      "url": "https://www.tarc.in/dis-46-pt-2025-26",
+      "label": "TARC — Regulation 30 Disclosures",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.647792+05:30"
+    },
+    {
+      "id": "manual-v3-be87edc37b599083",
+      "url": "https://www.vocport.gov.in/",
+      "label": "V.O. Chidambaranar Port Authority — What's New & Tenders",
+      "cityCodes": [
+        "thoothukudi"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.647792+05:30"
+    },
+    {
+      "id": "manual-v3-c5ca0cbf9d3c2b9c",
+      "url": "https://www.welspunone.com/news-insights/news-articles",
+      "label": "Welspun One — News Articles",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.647792+05:30"
+    },
+    {
+      "id": "manual-v3-d889f28c1078b241",
+      "url": "https://www.welspunone.com/news-insights/press-release",
+      "label": "Welspun One — Press Releases",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.647792+05:30"
+    },
+    {
+      "id": "manual-v3-09e7de07969b16c3",
+      "url": "https://www.yamunaexpresswayauthority.com/hi/tender/tender-archives",
+      "label": "YEIDA — Tender Archive",
+      "cityCodes": [
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-19T13:57:42.647792+05:30"
+    }
+  ],
+  "lastBackfill": {
+    "cityCodes": [
+      "faridabad",
+      "gurugram",
+      "rohtak",
+      "panipat",
+      "karnal",
+      "sonipat",
+      "yamunanagar",
+      "panchkula",
+      "ambala",
+      "kurukshetra",
+      "rewari",
+      "palwal",
+      "indore",
+      "bhopal",
+      "gwalior",
+      "jabalpur",
+      "ujjain",
+      "sagar",
+      "dewas",
+      "satna",
+      "ratlam",
+      "rewa",
+      "burhanpur",
+      "khandwa",
+      "chhindwara",
+      "mandsaur",
+      "damoh",
+      "neemuch",
+      "khargone",
+      "sehore",
+      "betul",
+      "seoni",
+      "anantapur",
+      "bhimavaram",
+      "chittoor",
+      "eluru",
+      "kadapa",
+      "kakinada",
+      "krishna",
+      "kurnool",
+      "nellore",
+      "rajahmundry",
+      "srikakulam",
+      "tirupati",
+      "vijayawada",
+      "visakhapatnam",
+      "vizianagaram",
+      "west_godavari",
+      "dibrugarh",
+      "golaghat",
+      "guwahati",
+      "jorhat",
+      "kamrup",
+      "marigaon",
+      "nagaon",
+      "nalbari",
+      "silchar",
+      "tezpur",
+      "tinsukia",
+      "chandigarh",
+      "bhilai",
+      "bilaspur",
+      "durg",
+      "korba",
+      "kota_chhattisgarh",
+      "raipur",
+      "rajnandgaon",
+      "daman_and_diu",
+      "silvassa",
+      "delhi_ncr",
+      "new_delhi",
+      "goa",
+      "ahmadnagar",
+      "ahmedabad",
+      "anand",
+      "banaskantha",
+      "bardoli",
+      "bharuch",
+      "bhavnagar",
+      "dholera",
+      "gandhinagar",
+      "junagadh",
+      "kalol",
+      "kheda",
+      "kutch",
+      "navsari",
+      "patan",
+      "rajkot",
+      "sabarkantha",
+      "surat",
+      "surendranagar",
+      "gujarat",
+      "vadodara",
+      "valsad",
+      "vapi",
+      "jamshedpur",
+      "ranchi",
+      "dhanbad",
+      "calicut",
+      "ernakulam",
+      "kochi",
+      "palakkad",
+      "thrissur",
+      "trivandrum",
+      "bangalore",
+      "belgaum",
+      "hubli",
+      "mangalore",
+      "mysore",
+      "udupi",
+      "shimla",
+      "solan",
+      "mohali",
+      "ludhiana",
+      "amritsar",
+      "jalandhar",
+      "patiala",
+      "hoshiarpur",
+      "bhatinda",
+      "sangrur",
+      "chennai",
+      "madurai",
+      "coimbatore",
+      "tiruchirappalli",
+      "salem",
+      "tirunelveli",
+      "vellore",
+      "tiruppur",
+      "erode",
+      "thoothukudi",
+      "thanjavur",
+      "dindigul",
+      "hosur",
+      "avadi",
+      "cuddalore",
+      "karur",
+      "tambaram",
+      "namakkal",
+      "pudukkottai",
+      "tiruvannamalai",
+      "hyderabad",
+      "warangal",
+      "nizamabad",
+      "karimnagar",
+      "khammam",
+      "mahabubnagar",
+      "mancherial",
+      "nalgonda",
+      "suryapet",
+      "kolkata",
+      "howrah",
+      "asansol",
+      "durgapur",
+      "siliguri",
+      "agartala",
+      "mumbai",
+      "pune",
+      "navi_mumbai",
+      "nagpur",
+      "nashik",
+      "aurangabad",
+      "kolhapur",
+      "solapur",
+      "ahmednagar",
+      "amravati",
+      "akola",
+      "jalgaon",
+      "nanded",
+      "latur",
+      "sangli",
+      "ratnagiri",
+      "chandrapur",
+      "wardha",
+      "dhule",
+      "jalna",
+      "yavatmal",
+      "beed",
+      "osmanabad",
+      "palghar",
+      "sindhudurg",
+      "raigad",
+      "bhubaneswar",
+      "cuttack",
+      "puri",
+      "rourkela",
+      "sambalpur",
+      "berhampur",
+      "balasore",
+      "dehradun",
+      "haridwar",
+      "roorkee",
+      "rudrapur",
+      "rishikesh",
+      "pondicherry",
+      "jaipur",
+      "bhiwadi",
+      "kota",
+      "udaipur",
+      "jodhpur",
+      "ajmer",
+      "sikar",
+      "alwar",
+      "neemrana",
+      "bikaner",
+      "bhilwara",
+      "pali",
+      "sri_ganganagar",
+      "sirohi",
+      "tonk",
+      "hanumangarh",
+      "nagaur",
+      "barmer",
+      "jhalawar",
+      "noida",
+      "ghaziabad",
+      "lucknow",
+      "kanpur",
+      "varanasi",
+      "agra",
+      "meerut",
+      "vrindavan",
+      "allahabad",
+      "mathura",
+      "gorakhpur",
+      "bareilly",
+      "aligarh",
+      "jhansi",
+      "moradabad",
+      "hapur",
+      "barabanki",
+      "firozabad"
+    ],
+    "from": "",
+    "to": "",
+    "resendBackfill": false,
+    "maxItemsPerSource": 8,
+    "maxItemsPerRun": 150
+  },
+  "filterProfile": {
+    "blockNegativeNews": true,
+    "blockHindiArticles": true,
+    "requireRealEstateSignal": true,
+    "requireCitySignal": true,
+    "notes": "Local admin controls are active for this checkout. Commit and deploy before expecting GitHub scheduled runs to use them."
+  }
+}

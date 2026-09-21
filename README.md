@@ -1,6 +1,6 @@
 # News API Pusher
 
-Fetches real estate and business news every 10 minutes with GitHub Actions, removes duplicates, and sends only new articles to your PropertyMaster API.
+Fetches real estate and business news every 10 minutes with GitHub Actions, removes duplicates, and sends only new articles to your Brokket API.
 
 ## How it works
 
@@ -23,11 +23,22 @@ npm start
 
 Edit `.env` with your real values before running locally.
 
+
+## Admin control center
+
+Run the local admin panel when you want to review sources, city toggles, dry-run results, rejected reasons, and posted-news history without starting a live news push:
+
+```bash
+npm run admin
+```
+
+Open `http://localhost:3000`. See `ADMIN_GUIDE.md` for the safe operating checklist.
+
 ## GitHub setup
 
 Create a new GitHub repo for this folder, then add these repository secrets:
 
-- `APP_API_URL`: Your app API endpoint. Use `https://api.propertymaster.com/api/news`.
+- `APP_API_URL`: Your app API endpoint. Use your Brokket news API endpoint.
 - `APP_API_KEY`: Optional API key or token, only if your API starts requiring auth.
 Optional repository variable:
 
@@ -214,3 +225,5 @@ Noida sources are opt-in only when `ENABLE_NOIDA_CITY=true`:
 - `https://indianexpress.com/about/noida-authority/`
 - `https://indianexpress.com/about/greater-noida-authority/`
 - `https://timesofindia.indiatimes.com/city/noida`
+
+
