@@ -1,62 +1,61 @@
 let state = null;
-let sourceMode = "all";
-let sourceVisibleLimit = 150;
-let sourceStatusMode = "all";
+let sourceVisibleLimit = 258;
 
-const metricsEl = document.querySelector("#metrics");
-const readinessStripEl = document.querySelector("#readinessStrip");
-const cityRowsEl = document.querySelector("#cityRows");
-const sourceRowsEl = document.querySelector("#sourceRows");
-const stateSummaryEl = document.querySelector("#stateSummary");
-const reportRowsEl = document.querySelector("#reportRows");
-const candidateRowsEl = document.querySelector("#candidateRows");
-const rejectedRowsEl = document.querySelector("#rejectedRows");
-const analyticsMetricsEl = document.querySelector("#analyticsMetrics");
-const analyticsCityRowsEl = document.querySelector("#analyticsCityRows");
-const rejectionReasonRowsEl = document.querySelector("#rejectionReasonRows");
-const postedRowsEl = document.querySelector("#postedRows");
-const pushedByDateEl = document.querySelector("#pushedByDate");
-const controlSummaryEl = document.querySelector("#controlSummary");
-const masterControlsEl = document.querySelector("#masterControls");
-const dryRunLogEl = document.querySelector("#dryRunLog");
-const citySearchEl = document.querySelector("#citySearch");
-const sourceSearchEl = document.querySelector("#sourceSearch");
-const postedSearchEl = document.querySelector("#postedSearch");
-const sourceCitySelectEl = document.querySelector("#sourceCitySelect");
-const backfillCitySelectEl = document.querySelector("#backfillCitySelect");
-const sourceCountLabelEl = document.querySelector("#sourceCountLabel");
-const pageTitleEl = document.querySelector("#pageTitle");
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => [...document.querySelectorAll(selector)];
 
-for (const tab of document.querySelectorAll(".tab")) {
-  tab.addEventListener("click", () => activateTab(tab.dataset.tab));
-}
+const elements = {
+  metrics: $("#metrics"),
+  sourceTabCount: $("#sourceTabCount"),
+  pageTitle: $("#pageTitle"),
+  pageSubtitle: $("#pageSubtitle"),
+  postedRows: $("#postedRows"),
+  newsCountLabel: $("#newsCountLabel"),
+  newsCityFilter: $("#newsCityFilter"),
+  newsSourceFilter: $("#newsSourceFilter"),
+  newsStatusFilter: $("#newsStatusFilter"),
+  newsFromDate: $("#newsFromDate"),
+  newsToDate: $("#newsToDate"),
+  postedSearch: $("#postedSearch"),
+  sourceRows: $("#sourceRows"),
+  sourceSearch: $("#sourceSearch"),
+  sourceTypeFilter: $("#sourceTypeFilter"),
+  sourceStatusFilter: $("#sourceStatusFilter"),
+  sourceCountLabel: $("#sourceCountLabel"),
+  sourceCitySelect: $("#sourceCitySelect"),
+  sourceForm: $("#sourceForm"),
+  cityRows: $("#cityRows"),
+  citySearch: $("#citySearch"),
+  backfillCitySelect: $("#backfillCitySelect"),
+  masterControls: $("#masterControls"),
+  controlSummary: $("#controlSummary"),
+  dryRunLog: $("#dryRunLog"),
+  modal: $("#newsModal"),
+  manualNewsForm: $("#manualNewsForm"),
+  manualNewsCity: $("#manualNewsCity"),
+  manualNewsMessage: $("#manualNewsMessage")
+};
 
-document.querySelector("#refreshBtn").addEventListener("click", loadState);
-document.querySelector("#dryRunBtn").addEventListener("click", startDryRun);
-document.querySelector("#sourceForm").addEventListener("submit", addSource);
-document.querySelector("#showManualSources").addEventListener("click", () => {
-  sourceMode = "manual";
-  sourceVisibleLimit = 150;
-  renderSources();
-});
-document.querySelector("#showAllSources").addEventListener("click", () => {
-  sourceMode = "all";
-  sourceVisibleLimit = 150;
-  renderSources();
-});
-document.querySelectorAll("[data-source-status]").forEach((button) => {
-  button.addEventListener("click", () => {
-    sourceStatusMode = button.dataset.sourceStatus || "all";
-    sourceVisibleLimit = 150;
-    renderSources();
-  });
-});
-citySearchEl.addEventListener("input", debounce(renderCities, 180));
-sourceSearchEl.addEventListener("input", debounce(() => {
-  sourceVisibleLimit = 150;
-  renderSources();
-}, 180));
-postedSearchEl.addEventListener("input", debounce(renderPostedNews, 180));
+const titles = {
+  news: ["News management", "Review, edit and control every article shown in the Brokket app."],
+  sources: ["Source directory", "Every publisher, developer and official channel monitored by automation."],
+  control: ["Automation control", "Switch cities, run dry checks and protect API publishing."]
+};
+
+$$("[data-tab]").forEach((button) => button.addEventListener("click", () => activateTab(button.dataset.tab)));
+$("#refreshBtn").addEventListener("click", loadState);
+$("#dryRunBtn").addEventListener("click", startDryRun);
+$("#addNewsBtn").addEventListener("click", openNewsModal);
+$("#clearNewsFilters").addEventListener("click", clearNewsFilters);
+$$("[data-modal-close]").forEach((node) => node.addEventListener("click", closeNewsModal));
+elements.manualNewsForm.addEventListener("submit", createManualArticleDraft);
+elements.sourceForm.addEventListener("submit", addSource);
+
+[elements.postedSearch, elements.newsCityFilter, elements.newsSourceFilter, elements.newsStatusFilter, elements.newsFromDate, elements.newsToDate]
+  .forEach((el) => el.addEventListener("input", debounce(renderNews, 120)));
+[elements.sourceSearch, elements.sourceTypeFilter, elements.sourceStatusFilter]
+  .forEach((el) => el.addEventListener("input", debounce(() => { sourceVisibleLimit = 258; renderSources(); }, 120)));
+elements.citySearch.addEventListener("input", debounce(renderCities, 120));
 
 loadState();
 setInterval(refreshDryRun, 4000);
@@ -67,265 +66,135 @@ async function loadState() {
   render();
 }
 
-function activateTab(name) {
-  const titles = {
-    overview: "Command Center",
-    reports: "Run & Review",
-    sources: "Source Library",
-    cities: "City Control",
-    posted: "Posted News"
-  };
-  document.querySelectorAll(".tab").forEach((tab) => tab.classList.toggle("active", tab.dataset.tab === name));
-  document.querySelectorAll(".tab-panel").forEach((panel) => panel.classList.toggle("active", panel.dataset.panel === name));
-  if (pageTitleEl) pageTitleEl.textContent = titles[name] || "Command Center";
-}
-
 function render() {
   renderMetrics();
-  renderReadiness();
   renderCityOptions();
-  renderAnalytics();
-  renderStateSummary();
+  renderNewsFilters();
+  renderNews();
+  renderSources();
+  renderCities();
   renderMasterControls();
   renderControlSummary();
-  renderCities();
-  renderSources();
-  renderPostedNews();
-  renderReports();
-  renderCandidates();
-  renderRejectedNews();
   renderDryRun(state.dryRun);
 }
 
-function renderMetrics() {
-  const totals = state.totals;
-  metricsEl.innerHTML = [
-    ["Live cities", totals.liveCities, "Enabled now"],
-    ["Requested cities", totals.requestedCities, "From sheet"],
-    ["More requested", totals.moreRequestedCities, "Not live yet"],
-    ["Sources", totals.enabledSources, `${totals.disabledSources || 0} off`],
-    ["Ready news", state.analytics?.totals?.readyToPost || totals.candidateNews || 0, "Passed filters"]
-  ].map(([label, value, hint]) => `
-    <div class="metric">
-      <span>${escapeHtml(label)}</span>
-      <b>${escapeHtml(value)}</b>
-      <small>${escapeHtml(hint)}</small>
-    </div>
-  `).join("");
+function activateTab(name) {
+  $$('[data-tab]').forEach((item) => item.classList.toggle('active', item.dataset.tab === name));
+  $$('[data-panel]').forEach((panel) => panel.classList.toggle('active', panel.dataset.panel === name));
+  const [title, subtitle] = titles[name] || titles.news;
+  elements.pageTitle.textContent = title;
+  elements.pageSubtitle.textContent = subtitle;
 }
-function renderReadiness() {
-  const readiness = state.readiness || { checks: [] };
-  const checks = readiness.checks || [];
-  readinessStripEl.innerHTML = `
-    <article class="readiness-card ${readiness.readyForApiPush ? "ready" : "hold"}">
-      <div>
-        <span class="status-dot ${readiness.readyForApiPush ? "good" : "warn"}"></span>
-        <b>${readiness.readyForApiPush ? "Ready for reviewed API push" : "Safe local mode"}</b>
-        <small>${readiness.readyForApiPush ? "Dry-run signals are available. Confirm manually before enabling push." : "Keep this mode while preparing Git upload and reviewing city quality."}</small>
-      </div>
-      <div class="readiness-meta">
-        <span>${state.totals.enabledSources} enabled sources</span>
-        <span>${state.totals.disabledSources || 0} disabled</span>
-        <span>${readiness.duplicateSourceUrlGroups || 0} duplicate groups</span>
-      </div>
-    </article>
-    ${checks.map((check) => `
-      <article class="check-card ${check.ok ? "ok" : "attention"}">
-        <span>${check.ok ? "OK" : "Check"}</span>
-        <b>${escapeHtml(check.label)}</b>
-        <small>${escapeHtml(check.detail)}</small>
-      </article>
-    `).join("")}
-  `;
+
+function renderMetrics() {
+  const postedCount = state.postedNews?.length || 0;
+  const candidateCount = state.candidateNews?.length || 0;
+  const totalResults = postedCount || candidateCount || state.analytics?.totals?.readyToPost || 0;
+  const totalCities = state.totals?.requestedCities || state.cities.length;
+  const monitoredSources = state.totals?.enabledSources || state.sources.filter((source) => source.enabled).length;
+  elements.sourceTabCount.textContent = state.sources.length;
+  elements.metrics.innerHTML = [
+    ["Total results", totalResults, postedCount ? "Posted news in reports" : "Latest ready candidates"],
+    ["Configured cities", totalCities, `${state.totals?.liveCities || 0} currently live`],
+    ["Monitored sources", monitoredSources, `${state.totals?.disabledSources || 0} disabled`]
+  ].map(([label, value, hint]) => `
+    <article class="metric"><span>${escapeHtml(label)}</span><b>${escapeHtml(value)}</b><small>${escapeHtml(hint)}</small></article>
+  `).join("");
 }
 
 function renderCityOptions() {
-  const options = state.cities
+  const cityOptions = state.cities
     .filter((city) => city.enabled)
-    .map((city) => `<option value="${escapeAttribute(city.code)}">${escapeHtml(city.name)} (${escapeHtml(city.code)})</option>`)
+    .map((city) => `<option value="${escapeAttribute(city.code)}">${escapeHtml(city.name)}</option>`)
     .join("");
-  sourceCitySelectEl.innerHTML = options;
-  backfillCitySelectEl.innerHTML = options;
-
+  elements.sourceCitySelect.innerHTML = cityOptions;
+  elements.backfillCitySelect.innerHTML = cityOptions;
+  elements.manualNewsCity.innerHTML = `<option value="">Select city</option>${cityOptions}`;
   const lastBackfill = state.settings.lastBackfill || {};
-  for (const option of backfillCitySelectEl.options) {
-    option.selected = (lastBackfill.cityCodes || []).includes(option.value);
+  for (const option of elements.backfillCitySelect.options) option.selected = (lastBackfill.cityCodes || []).includes(option.value);
+  $("#backfillFrom").value = lastBackfill.from || "";
+  $("#backfillTo").value = lastBackfill.to || "";
+  $("#resendBackfill").checked = lastBackfill.resendBackfill === true;
+}
+
+function renderNewsFilters() {
+  const cityCodes = new Set();
+  const sources = new Set();
+  for (const item of getNewsItems()) {
+    if (item.cityCode) cityCodes.add(item.cityCode);
+    if (item.postedBy) sources.add(item.postedBy);
   }
-  document.querySelector("#backfillFrom").value = lastBackfill.from || "";
-  document.querySelector("#backfillTo").value = lastBackfill.to || "";
-  document.querySelector("#resendBackfill").checked = lastBackfill.resendBackfill === true;
+  const currentCity = elements.newsCityFilter.value || "all";
+  const currentSource = elements.newsSourceFilter.value || "all";
+  elements.newsCityFilter.innerHTML = `<option value="all">All ${state.totals?.requestedCities || state.cities.length} cities</option>` +
+    [...cityCodes].sort().map((city) => `<option value="${escapeAttribute(city)}">${escapeHtml(cityLabel(city))}</option>`).join("");
+  elements.newsSourceFilter.innerHTML = `<option value="all">All sources</option>` +
+    [...sources].sort().map((source) => `<option value="${escapeAttribute(source)}">${escapeHtml(source)}</option>`).join("");
+  elements.newsCityFilter.value = [...elements.newsCityFilter.options].some((option) => option.value === currentCity) ? currentCity : "all";
+  elements.newsSourceFilter.value = [...elements.newsSourceFilter.options].some((option) => option.value === currentSource) ? currentSource : "all";
 }
 
-function renderAnalytics() {
-  const analytics = state.analytics || { totals: {}, byCity: [], rejectionReasons: [] };
-  const totals = analytics.totals || {};
-  analyticsMetricsEl.innerHTML = [
-    ["Total fetched", totals.fetched || 0, "Raw fetched articles"],
-    ["Expanded", totals.expanded || 0, "City-expanded articles"],
-    ["Ready to post", totals.readyToPost || 0, "Passed filters"],
-    ["Rejected", totals.rejected || 0, "Failed filters"],
-    ["Posted", totals.posted || 0, "API pushed"]
-  ].map(([label, value, hint]) => `
-    <div class="metric">
-      <span>${escapeHtml(label)}</span>
-      <b>${escapeHtml(value)}</b>
-      <small>${escapeHtml(hint)}</small>
-    </div>
-  `).join("");
-
-  analyticsCityRowsEl.innerHTML = analytics.byCity.slice(0, 50).map((row) => `
-    <tr>
-      <td><span class="tag">${escapeHtml(row.cityCode)}</span></td>
-      <td>${row.expanded || 0}</td>
-      <td><b>${row.readyToPost || 0}</b></td>
-      <td>${row.posted || 0}</td>
-      <td>${row.rejected || 0}</td>
-    </tr>
-  `).join("") || `<tr><td colspan="5" class="muted">No city analytics yet. Run a dry run to generate more detail.</td></tr>`;
-
-  rejectionReasonRowsEl.innerHTML = analytics.rejectionReasons.slice(0, 15).map((row) => `
-    <div class="reason-row">
-      <span>${escapeHtml(row.reason)}</span>
-      <b>${escapeHtml(row.count)}</b>
-    </div>
-  `).join("") || `<p class="muted">No rejection reasons yet.</p>`;
+function getNewsItems() {
+  const posted = (state.postedNews || []).map((item) => ({ ...item, uiStatus: "Active", sourceKind: "posted" }));
+  if (posted.length) return posted;
+  return (state.candidateNews || []).map((item) => ({ ...item, uiStatus: "Ready", sourceKind: "candidate" }));
 }
 
-function renderStateSummary() {
-  stateSummaryEl.innerHTML = state.requestedByState.map((row) => `
-    <div class="state-card ${row.live > 0 ? "active-state" : ""}">
-      <b>${escapeHtml(row.state)}</b>
-      <span>${row.live} live / ${row.requested} requested / ${row.moreRequested} more</span>
-      ${row.liveCities.length ? `<small>${escapeHtml(row.liveCities.join(", "))}</small>` : ""}
-    </div>
-  `).join("");
+function renderNews() {
+  const query = elements.postedSearch.value.trim().toLowerCase();
+  const city = elements.newsCityFilter.value || "all";
+  const source = elements.newsSourceFilter.value || "all";
+  const from = elements.newsFromDate.value ? new Date(`${elements.newsFromDate.value}T00:00:00`) : null;
+  const to = elements.newsToDate.value ? new Date(`${elements.newsToDate.value}T23:59:59`) : null;
+
+  const rows = getNewsItems().filter((item) => {
+    const text = `${item.title || ""} ${item.cityCode || ""} ${item.postedBy || ""} ${item.newsLink || ""}`.toLowerCase();
+    const date = item.publishedAt || item.createdAt || item.reportGeneratedAt;
+    const parsed = date ? new Date(date) : null;
+    return (!query || text.includes(query)) &&
+      (city === "all" || item.cityCode === city) &&
+      (source === "all" || item.postedBy === source) &&
+      (!from || (parsed && parsed >= from)) &&
+      (!to || (parsed && parsed <= to));
+  });
+
+  elements.newsCountLabel.textContent = `${rows.length} news items on this page`;
+  elements.postedRows.innerHTML = rows.slice(0, 80).map(renderNewsRow).join("") || `<div class="empty-state">No news found for these filters.</div>`;
 }
 
-function renderMasterControls() {
-  const settings = state.settings;
-  masterControlsEl.innerHTML = `
-    <label class="control-toggle">
-      <input type="checkbox" data-setting-toggle="automationEnabled" ${settings.automationEnabled ? "checked" : ""}>
-      <span><b>Full Tool Running</b><small>Turn off to stop scheduled fetch/push behavior.</small></span>
-    </label>
-    <label class="control-toggle">
-      <input type="checkbox" data-setting-toggle="apiPushEnabled" ${settings.apiPushEnabled ? "checked" : ""}>
-      <span><b>API Push Enabled</b><small>Off means runs become dry-run and cannot push to API.</small></span>
-    </label>
-    <label class="control-toggle">
-      <input type="checkbox" data-setting-toggle="allCitiesEnabled" ${settings.allCitiesEnabled ? "checked" : ""}>
-      <span><b>All Cities Enabled</b><small>Use only after dry-run checks. Enables every city from the sheet.</small></span>
-    </label>
+function renderNewsRow(item) {
+  const image = item.thumbnailImage || item.image || "";
+  const sourceInitials = initials(item.postedBy || "Brokket News");
+  return `
+    <article class="news-row">
+      <span>${image ? `<img class="news-thumb" src="${escapeAttribute(image)}" alt="">` : `<span class="news-thumb source-logo">${escapeHtml(sourceInitials)}</span>`}</span>
+      <span class="news-title"><b>${escapeHtml(item.title || "Untitled")}</b><a href="${escapeAttribute(item.newsLink || "#")}" target="_blank" rel="noreferrer">${escapeHtml(item.newsLink || "No link")}</a></span>
+      <span>${escapeHtml(cityLabel(item.cityCode || "unknown"))}</span>
+      <span>${escapeHtml(item.postedBy || "Brokket News")}</span>
+      <span>${formatDate(item.publishedAt || item.createdAt || item.reportGeneratedAt)}</span>
+      <span><span class="status-pill">${escapeHtml(item.uiStatus || "Active")}</span></span>
+      <span class="row-actions"><button type="button" title="Open article" onclick="window.open('${escapeJsAttribute(item.newsLink || "#")}', '_blank')">O</button><button type="button" class="danger" title="Delete requires app admin">D</button></span>
+    </article>
   `;
-
-  masterControlsEl.querySelectorAll("[data-setting-toggle]").forEach((input) => {
-    input.addEventListener("change", async () => {
-      const key = input.dataset.settingToggle;
-      const confirmed = key !== "apiPushEnabled" || !input.checked || confirm("Enable API push? Only do this when dry-run quality is clean.");
-      if (!confirmed) {
-        input.checked = false;
-        return;
-      }
-      await updateSettings({ [key]: input.checked });
-    });
-  });
-}
-
-async function updateSettings(patch) {
-  const response = await fetch("/api/settings", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(patch)
-  });
-  if (!response.ok) {
-    alert((await response.json()).error || "Could not update settings");
-    await loadState();
-    return;
-  }
-  state = await response.json();
-  render();
-}
-
-function renderControlSummary() {
-  const lastReport = state.reports[0];
-  const liveCities = state.cities.filter((city) => city.enabled).map((city) => city.name).join(", ") || "None";
-  controlSummaryEl.innerHTML = `
-    <div class="summary-item"><span>Live cities</span><b>${escapeHtml(liveCities)}</b></div>
-    <div class="summary-item"><span>Manual sources</span><b>${state.totals.manualSources}</b></div>
-    <div class="summary-item"><span>Latest report</span><b>${lastReport ? escapeHtml(lastReport.name) : "No report yet"}</b></div>
-    <div class="summary-item"><span>Latest ready news</span><b>${lastReport ? lastReport.candidateCount : 0}</b></div>
-    <div class="summary-item"><span>Safety</span><b>${state.settings.apiPushEnabled ? "API push enabled" : "API push off"}</b></div>
-  `;
-}
-
-function renderCities() {
-  const q = citySearchEl.value.trim().toLowerCase();
-  const rows = state.cities.filter((city) =>
-    !q || city.name.toLowerCase().includes(q) || city.state.toLowerCase().includes(q) || city.code.toLowerCase().includes(q)
-  );
-
-  cityRowsEl.innerHTML = rows.map((city) => `
-    <tr>
-      <td>
-        <label class="switch">
-          <input type="checkbox" ${city.enabled ? "checked" : ""} data-city-toggle="${escapeHtml(city.code)}">
-          <span>${city.enabled ? "Live" : "Off"}</span>
-        </label>
-      </td>
-      <td><b>${escapeHtml(city.name)}</b></td>
-      <td>${escapeHtml(city.state)}</td>
-      <td><code>${escapeHtml(city.code)}</code></td>
-      <td>${city.keywords.slice(0, 8).map((keyword) => `<span class="tag">${escapeHtml(keyword)}</span>`).join("")}</td>
-      <td>${city.sourceCount}</td>
-    </tr>
-  `).join("");
-
-  cityRowsEl.querySelectorAll("[data-city-toggle]").forEach((input) => {
-    input.addEventListener("change", async () => {
-      await fetch(`/api/cities/${encodeURIComponent(input.dataset.cityToggle)}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ enabled: input.checked, url: input.dataset.sourceUrl || "" })
-      });
-      await loadState();
-    });
-  });
 }
 
 function renderSources() {
-  const q = sourceSearchEl.value.trim().toLowerCase();
-  const rows = state.sources.filter((source) => {
-    const matchesMode = sourceMode === "all" || source.category === "manual";
-    const matchesStatus = sourceStatusMode === "all" || (sourceStatusMode === "enabled" ? source.enabled : !source.enabled);
-    const matchesSearch = !q || source.url.toLowerCase().includes(q) || source.label.toLowerCase().includes(q) || source.cityCodes.join(",").toLowerCase().includes(q);
-    return matchesMode && matchesStatus && matchesSearch;
+  const query = elements.sourceSearch.value.trim().toLowerCase();
+  const type = elements.sourceTypeFilter.value || "all";
+  const status = elements.sourceStatusFilter.value || "all";
+  const matched = state.sources.filter((source) => {
+    const haystack = `${source.label || ""} ${source.url || ""} ${(source.cityCodes || []).join(" ")} ${source.category || ""}`.toLowerCase();
+    return (!query || haystack.includes(query)) &&
+      (type === "all" || source.category === type) &&
+      (status === "all" || (status === "enabled" ? source.enabled : !source.enabled));
   });
-  const visibleRows = rows.slice(0, sourceVisibleLimit);
-  sourceCountLabelEl.textContent = `${visibleRows.length} shown / ${rows.length} matched / ${state.sources.length} total`;
-
-  sourceRowsEl.innerHTML = visibleRows.map((source) => `
-    <tr>
-      <td>${renderSourceSwitch(source)}</td>
-      <td>${escapeHtml(source.category)}</td>
-      <td><b>${escapeHtml(source.label || "Source")}</b></td>
-      <td><a href="${escapeAttribute(source.url)}" target="_blank" rel="noreferrer">${escapeHtml(source.url)}</a></td>
-      <td>${source.cityCodes.length ? source.cityCodes.map((code) => `<span class="tag">${escapeHtml(code)}</span>`).join("") : "<span class=\"muted\">shared</span>"}</td>
-      <td>${source.category === "manual" ? `<button class="danger" type="button" data-source-delete="${escapeHtml(source.id)}">Remove</button>` : "Disable only"}</td>
-    </tr>
-  `).join("") + (rows.length > visibleRows.length ? `\n    <tr><td colspan="6"><button class="ghost wide" type="button" id="showMoreSources">Show ${Math.min(150, rows.length - visibleRows.length)} more sources</button></td></tr>` : "");
-
-  const showMoreButton = document.querySelector("#showMoreSources");
-  if (showMoreButton) {
-    showMoreButton.addEventListener("click", () => {
-      sourceVisibleLimit += 150;
-      renderSources();
-    });
-  }
-  document.querySelectorAll("[data-source-status]").forEach((button) => {
-    button.classList.toggle("active-filter", button.dataset.sourceStatus === sourceStatusMode);
-  });
-
-  sourceRowsEl.querySelectorAll("[data-source-enabled]").forEach((input) => {
+  const visible = matched.slice(0, sourceVisibleLimit);
+  elements.sourceCountLabel.textContent = `${visible.length} of ${matched.length} monitored sources`;
+  elements.sourceRows.innerHTML = visible.map(renderSourceCard).join("") +
+    (visible.length < matched.length ? `<button class="source-card" type="button" id="showMoreSources"><b>Show more sources</b><small>${matched.length - visible.length} remaining</small></button>` : "");
+  const showMore = $("#showMoreSources");
+  if (showMore) showMore.addEventListener("click", () => { sourceVisibleLimit += 258; renderSources(); });
+  elements.sourceRows.querySelectorAll("[data-source-enabled]").forEach((input) => {
     input.addEventListener("change", async () => {
       await fetch(`/api/sources/${encodeURIComponent(input.dataset.sourceEnabled)}`, {
         method: "POST",
@@ -335,8 +204,7 @@ function renderSources() {
       await loadState();
     });
   });
-
-  sourceRowsEl.querySelectorAll("[data-source-delete]").forEach((button) => {
+  elements.sourceRows.querySelectorAll("[data-source-delete]").forEach((button) => {
     button.addEventListener("click", async () => {
       if (!confirm("Remove this manual source?")) return;
       await fetch(`/api/sources/${encodeURIComponent(button.dataset.sourceDelete)}`, { method: "DELETE" });
@@ -345,97 +213,94 @@ function renderSources() {
   });
 }
 
-function renderSourceSwitch(source) {
+function renderSourceCard(source) {
+  const host = getHost(source.url);
   return `
-    <label class="switch">
-      <input type="checkbox" ${source.enabled ? "checked" : ""} data-source-enabled="${escapeHtml(source.id)}" data-source-url="${escapeAttribute(source.url)}">
-      <span>${source.enabled ? "On" : "Off"}</span>
-    </label>
+    <article class="source-card">
+      <span class="source-logo">${escapeHtml(initials(source.label || host || "S"))}</span>
+      <span>
+        <b>${escapeHtml(source.label || host || "Source")}</b>
+        <small>${escapeHtml(host || source.url)}</small>
+        <span class="type-pill">${escapeHtml(source.category || "source")}</span>
+        <div class="source-meta">${source.enabled ? "Monitored every 30 minutes" : "Disabled"}</div>
+      </span>
+      <span class="source-actions">
+        <label class="switch"><input type="checkbox" ${source.enabled ? "checked" : ""} data-source-enabled="${escapeAttribute(source.id)}" data-source-url="${escapeAttribute(source.url)}"> ${source.enabled ? "On" : "Off"}</label>
+        <button type="button" onclick="window.open('${escapeJsAttribute(source.url)}', '_blank')">Open</button>
+        ${source.category === "manual" ? `<button class="danger" type="button" data-source-delete="${escapeAttribute(source.id)}">Remove</button>` : ""}
+      </span>
+    </article>
   `;
 }
 
-function renderPostedNews() {
-  const q = postedSearchEl.value.trim().toLowerCase();
-  pushedByDateEl.innerHTML = state.pushedByDate.slice(0, 12).map((row) => `
-    <div class="state-card">
-      <b>${escapeHtml(row.date)}</b>
-      <span>${row.count} pushed</span>
-      <small>${escapeHtml(Object.entries(row.cityCounts).map(([city, count]) => `${city}: ${count}`).join(", "))}</small>
-    </div>
-  `).join("") || "<p class=\"muted\">No live posted reports found yet.</p>";
-
-  const rows = state.postedNews.filter((item) => {
-    const haystack = `${item.title || ""} ${item.cityCode || ""} ${item.postedBy || ""}`.toLowerCase();
-    return !q || haystack.includes(q);
+function renderCities() {
+  const query = elements.citySearch.value.trim().toLowerCase();
+  const cities = state.cities.filter((city) => {
+    const haystack = `${city.name} ${city.state} ${city.code}`.toLowerCase();
+    return !query || haystack.includes(query);
   });
-
-  postedRowsEl.innerHTML = rows.map((item) => `
-    <tr>
-      <td>${formatDate(item.publishedAt || item.reportGeneratedAt)}</td>
-      <td><span class="tag">${escapeHtml(item.cityCode || "unknown")}</span></td>
-      <td><a href="${escapeAttribute(item.newsLink || "#")}" target="_blank" rel="noreferrer"><b>${escapeHtml(item.title || "Untitled")}</b></a></td>
-      <td>${escapeHtml(item.postedBy || "")}</td>
-      <td>${escapeHtml(item.reportName || "")}</td>
-    </tr>
-  `).join("") || `<tr><td colspan="5" class="muted">No posted news found in local reports.</td></tr>`;
-}
-
-function renderReports() {
-  reportRowsEl.innerHTML = state.reports.slice(0, 10).map((report) => `
-    <article class="report">
-      <h3>${escapeHtml(report.name)}</h3>
-      <div class="report-grid">
-        <div><span>Mode</span>${report.dryRun ? "Dry run" : "Live"}</div>
-        <div><span>Sources</span>${report.sourceCount}</div>
-        <div><span>Fetched</span>${report.fetchedArticleCount}</div>
-        <div><span>Ready</span>${report.candidateCount}</div>
-        <div><span>Rejected</span>${report.rejectedArticleCount || 0}</div>
-      </div>
-      ${renderSkipped(report.skippedByReason)}
+  elements.cityRows.innerHTML = cities.map((city) => `
+    <article class="city-row">
+      <label class="switch"><input type="checkbox" ${city.enabled ? "checked" : ""} data-city-toggle="${escapeAttribute(city.code)}"> ${city.enabled ? "Live" : "Off"}</label>
+      <b>${escapeHtml(city.name)}</b>
+      <span>${escapeHtml(city.state)}</span>
+      <span class="code-pill">${escapeHtml(city.code)}</span>
+      <span>${city.sourceCount || 0} sources</span>
     </article>
-  `).join("") || "<p class=\"muted\">No reports found yet.</p>";
+  `).join("");
+  elements.cityRows.querySelectorAll("[data-city-toggle]").forEach((input) => {
+    input.addEventListener("change", async () => {
+      await fetch(`/api/cities/${encodeURIComponent(input.dataset.cityToggle)}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ enabled: input.checked })
+      });
+      await loadState();
+    });
+  });
 }
 
-function renderCandidates() {
-  candidateRowsEl.innerHTML = state.candidateNews.slice(0, 30).map((candidate) => `
-    <article class="news-card">
-      <div>
-        <span class="tag">${escapeHtml(candidate.cityCode || "unknown")}</span>
-        <span class="muted">${escapeHtml(candidate.classification || "candidate")}</span>
-      </div>
-      <a href="${escapeAttribute(candidate.newsLink || "#")}" target="_blank" rel="noreferrer"><b>${escapeHtml(candidate.title || "Untitled")}</b></a>
-      <small>${escapeHtml(candidate.postedBy || "")} · ${formatDate(candidate.publishedAt || candidate.reportGeneratedAt)} · ${escapeHtml(candidate.reportName || "")}</small>
-    </article>
-  `).join("") || "<p class=\"muted\">No ready-to-post candidates found yet.</p>";
+function renderMasterControls() {
+  const settings = state.settings;
+  elements.masterControls.innerHTML = [
+    ["automationEnabled", "Full tool running", "Turn off to pause scheduled fetch/push behavior."],
+    ["apiPushEnabled", "API push enabled", "Off means local/admin runs are dry-run only."],
+    ["allCitiesEnabled", "All cities enabled", "Use when all city filters are reviewed and ready."]
+  ].map(([key, label, hint]) => `
+    <label class="control-toggle"><input type="checkbox" data-setting-toggle="${key}" ${settings[key] ? "checked" : ""}><span><b>${label}</b><small>${hint}</small></span></label>
+  `).join("");
+  elements.masterControls.querySelectorAll("[data-setting-toggle]").forEach((input) => {
+    input.addEventListener("change", async () => {
+      const key = input.dataset.settingToggle;
+      if (key === "apiPushEnabled" && input.checked && !confirm("Enable API push? Only continue if reviewed quality is clean.")) {
+        input.checked = false;
+        return;
+      }
+      await updateSettings({ [key]: input.checked });
+    });
+  });
 }
 
-function renderRejectedNews() {
-  const latestReport = state.reports[0];
-  const rejected = latestReport
-    ? (latestReport.rejectedArticles || []).map((item) => ({
-      ...(item.article || {}),
-      reasons: item.reasons || [],
-      reportName: latestReport.name,
-      reportGeneratedAt: latestReport.generatedAt
-    }))
-    : [];
-
-  rejectedRowsEl.innerHTML = rejected.slice(0, 30).map((item) => `
-    <article class="news-card rejected-card">
-      <div>
-        <span class="tag">${escapeHtml(item.cityCode || "unknown")}</span>
-        <span class="muted">${formatDate(item.publishedAt || item.reportGeneratedAt)} · ${escapeHtml(item.reportName || "")}</span>
-      </div>
-      <a href="${escapeAttribute(item.newsLink || "#")}" target="_blank" rel="noreferrer"><b>${escapeHtml(item.title || "Untitled")}</b></a>
-      <div class="skip-list">${item.reasons.map((reason) => `<span>${escapeHtml(reason)}</span>`).join("")}</div>
-    </article>
-  `).join("") || `<p class="muted">Rejected article detail from the latest run will appear after the next dry run. Older reports remain in Run History.</p>`;
+function renderControlSummary() {
+  const latest = state.reports?.[0];
+  elements.controlSummary.innerHTML = [
+    ["Live cities", state.totals?.liveCities || 0],
+    ["Enabled sources", state.totals?.enabledSources || 0],
+    ["Disabled sources", state.totals?.disabledSources || 0],
+    ["Latest report", latest ? latest.name : "No report yet"],
+    ["Latest ready news", latest ? latest.candidateCount : 0],
+    ["Mode", state.settings.apiPushEnabled ? "API push enabled" : "Dry-run protected"]
+  ].map(([label, value]) => `<div class="summary-item"><b>${escapeHtml(value)}</b><span>${escapeHtml(label)}</span></div>`).join("");
 }
 
-function renderSkipped(skippedByReason = {}) {
-  const entries = Object.entries(skippedByReason).slice(0, 5);
-  if (entries.length === 0) return "";
-  return `<div class="skip-list">${entries.map(([reason, count]) => `<span>${escapeHtml(reason)}: <b>${count}</b></span>`).join("")}</div>`;
+async function updateSettings(patch) {
+  const response = await fetch("/api/settings", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(patch)
+  });
+  if (!response.ok) alert((await response.json()).error || "Could not update settings");
+  await loadState();
 }
 
 async function addSource(event) {
@@ -445,7 +310,7 @@ async function addSource(event) {
     label: form.get("label"),
     url: form.get("url"),
     category: form.get("category"),
-    cityCodes: [...sourceCitySelectEl.selectedOptions].map((option) => option.value)
+    cityCodes: [...elements.sourceCitySelect.selectedOptions].map((option) => option.value)
   };
   const response = await fetch("/api/sources", {
     method: "POST",
@@ -464,14 +329,14 @@ async function addSource(event) {
 async function startDryRun() {
   const payload = {
     enabledCityCodes: state.settings.enabledCityCodes,
-    targetCityCodes: [...backfillCitySelectEl.selectedOptions].map((option) => option.value),
-    backfillFrom: document.querySelector("#backfillFrom").value,
-    backfillTo: document.querySelector("#backfillTo").value,
-    resendBackfill: document.querySelector("#resendBackfill").checked,
-    maxItemsPerSource: document.querySelector("#maxItemsPerSource").value,
-    maxItemsPerRun: document.querySelector("#maxItemsPerRun").value,
+    targetCityCodes: [...elements.backfillCitySelect.selectedOptions].map((option) => option.value),
+    backfillFrom: $("#backfillFrom").value,
+    backfillTo: $("#backfillTo").value,
+    resendBackfill: $("#resendBackfill").checked,
+    maxItemsPerSource: $("#maxItemsPerSource").value,
+    maxItemsPerRun: $("#maxItemsPerRun").value,
     maxPagesPerSource: 1,
-    lookbackDays: document.querySelector("#lookbackDays").value
+    lookbackDays: $("#lookbackDays").value
   };
   const response = await fetch("/api/dry-run", {
     method: "POST",
@@ -483,19 +348,18 @@ async function startDryRun() {
     alert(body.error || "Could not start dry run");
     return;
   }
-  activateTab("reports");
+  activateTab("control");
   renderDryRun(body);
 }
 
 async function refreshDryRun() {
   const response = await fetch("/api/dry-run");
-  if (!response.ok) return;
-  renderDryRun(await response.json());
+  if (response.ok) renderDryRun(await response.json());
 }
 
 function renderDryRun(dryRun) {
   if (!dryRun || !dryRun.startedAt) {
-    dryRunLogEl.textContent = "No dry run started from admin yet.";
+    elements.dryRunLog.textContent = "No dry run started from admin yet.";
     return;
   }
   const header = [
@@ -504,12 +368,57 @@ function renderDryRun(dryRun) {
     dryRun.finishedAt ? `Finished: ${dryRun.finishedAt}` : "",
     dryRun.exitCode !== null && dryRun.exitCode !== undefined ? `Exit code: ${dryRun.exitCode}` : "",
     "",
-    "Forced safe env:",
+    "Safe env:",
     JSON.stringify(dryRun.env, null, 2),
     "",
     "Log:"
   ].filter(Boolean).join("\n");
-  dryRunLogEl.textContent = `${header}\n${(dryRun.log || []).join("\n")}`;
+  elements.dryRunLog.textContent = `${header}\n${(dryRun.log || []).join("\n")}`;
+}
+
+function openNewsModal() {
+  elements.manualNewsMessage.textContent = "";
+  elements.modal.classList.add("open");
+  elements.modal.setAttribute("aria-hidden", "false");
+  const now = new Date();
+  now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+  elements.manualNewsForm.elements.publishedAt.value = now.toISOString().slice(0, 16);
+}
+
+function closeNewsModal() {
+  elements.modal.classList.remove("open");
+  elements.modal.setAttribute("aria-hidden", "true");
+}
+
+function createManualArticleDraft(event) {
+  event.preventDefault();
+  const form = new FormData(event.currentTarget);
+  const payload = Object.fromEntries(form.entries());
+  elements.manualNewsMessage.textContent = `Draft ready for ${cityLabel(payload.cityCode)}. Manual API publish is intentionally not wired from this local UI yet.`;
+}
+
+function clearNewsFilters() {
+  elements.postedSearch.value = "";
+  elements.newsCityFilter.value = "all";
+  elements.newsSourceFilter.value = "all";
+  elements.newsStatusFilter.value = "active";
+  elements.newsFromDate.value = "";
+  elements.newsToDate.value = "";
+  renderNews();
+}
+
+function cityLabel(code) {
+  const city = state?.cities?.find((item) => item.code === code);
+  return city ? city.name : String(code || "").replaceAll("_", " ");
+}
+
+function getHost(url) {
+  try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return url || ""; }
+}
+
+function initials(value) {
+  const words = String(value || "").replace(/[^a-z0-9 ]/gi, " ").split(/\s+/).filter(Boolean);
+  return (words[0]?.[0] || "B").toUpperCase() + (words[1]?.[0] || "").toUpperCase();
 }
 
 function formatDate(value) {
@@ -532,8 +441,9 @@ function escapeAttribute(value) {
   return escapeHtml(value).replaceAll("`", "&#096;");
 }
 
-
-
+function escapeJsAttribute(value) {
+  return String(value || "").replaceAll("\\", "\\\\").replaceAll("'", "\\'").replaceAll("\n", "");
+}
 
 function debounce(fn, delay = 150) {
   let timer = null;
@@ -542,9 +452,3 @@ function debounce(fn, delay = 150) {
     timer = setTimeout(() => fn(...args), delay);
   };
 }
-
-
-
-
-
-
