@@ -11,7 +11,7 @@ const userAgent =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
 
 const parser = new Parser({
-  timeout: 15000,
+  timeout: 10000,
   headers: {
     "User-Agent": userAgent
   }
@@ -1456,7 +1456,19 @@ function applySourceBatch(sourceUrls) {
 }
 
 function getSourceConcurrency() {
-  return Math.min(getPositiveIntegerEnv("SOURCE_CONCURRENCY", 8), 16);
+  return Math.min(getPositiveIntegerEnv("SOURCE_CONCURRENCY", 8), 24);
+}
+
+function getArticleMetadataConcurrency() {
+  return Math.min(getPositiveIntegerEnv("ARTICLE_METADATA_CONCURRENCY", 6), 16);
+}
+
+function getFetchTimeoutMs() {
+  return Math.min(getPositiveIntegerEnv("FETCH_TIMEOUT_MS", 10000), 30000);
+}
+
+function getSourceTimeoutMs() {
+  return Math.min(getPositiveIntegerEnv("SOURCE_FETCH_TIMEOUT_MS", 45000), 120000);
 }
 
 function getDefaultLookbackDays() {
@@ -1541,7 +1553,7 @@ function formatArticleDate(article) {
 }
 
 function logDateExcludedPublishableArticles(articles, dateRange, filterSentIds, skipTitleSet) {
-  if (!hasBackfillDateRange(dateRange)) {
+  if (!getBooleanEnv("DATE_EXCLUDED_AUDIT", false) || !hasBackfillDateRange(dateRange)) {
     return;
   }
 
@@ -1666,7 +1678,7 @@ function collectMissedNewsAudit(articles, filterSentIds, skipTitleSet) {
 }
 
 function logMissedNewsAudit(missedCandidates, limit = 20) {
-  if (!getBooleanEnv("MISSED_NEWS_AUDIT", true) || missedCandidates.length === 0) {
+  if (!getBooleanEnv("MISSED_NEWS_AUDIT", false) || missedCandidates.length === 0) {
     return;
   }
 
@@ -1704,7 +1716,7 @@ function articleReportKey(article) {
   return [article.cityCode || "", article.newsLink || "", normalizeTitle(article.title || "")].join("|");
 }
 
-function buildRunAnalytics(expandedArticles, readyArticles, postedArticles, skipTitleSet, sentIds) {
+function buildRunAnalytics(expandedArticles, readyArticles, postedArticles, skipTitleSet, sentIds, getReasons = null) {
   const readyKeys = new Set(readyArticles.map(articleReportKey));
   const postedKeys = new Set(postedArticles.map(articleReportKey));
   const byCity = new Map();
@@ -1732,9 +1744,11 @@ function buildRunAnalytics(expandedArticles, readyArticles, postedArticles, skip
       row.posted += 1;
     }
 
-    const reasons = shouldSkipTitle(article, skipTitleSet)
-      ? ["manual skip: title already reposted"]
-      : getRejectionReasons(article, sentIds);
+    const reasons = getReasons
+      ? getReasons(article)
+      : shouldSkipTitle(article, skipTitleSet)
+        ? ["manual skip: title already reposted"]
+        : getRejectionReasons(article, sentIds);
 
     if (reasons.length > 0) {
       row.rejected += 1;
@@ -1960,18 +1974,35 @@ async function mapWithConcurrency(items, limit, mapper) {
   return results;
 }
 
-async function fetchWithTimeout(url, options = {}, timeoutMs = 15000) {
+async function fetchWithTimeout(url, options = {}, timeoutMs = getFetchTimeoutMs()) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  const externalSignal = options.signal;
+  const signal = externalSignal && typeof AbortSignal !== "undefined" && AbortSignal.any
+    ? AbortSignal.any([controller.signal, externalSignal])
+    : controller.signal;
+
+  if (externalSignal && !AbortSignal.any) {
+    if (externalSignal.aborted) controller.abort();
+    else externalSignal.addEventListener("abort", () => controller.abort(), { once: true });
+  }
 
   try {
     return await fetch(url, {
       ...options,
-      signal: controller.signal
+      signal
     });
   } finally {
     clearTimeout(timeout);
   }
+}
+
+function formatDuration(ms) {
+  if (ms < 1000) {
+    return `${ms}ms`;
+  }
+
+  return `${(ms / 1000).toFixed(1)}s`;
 }
 
 function stableId(article) {
@@ -3321,8 +3352,22 @@ function hasOutsideRegionEvidence(article) {
   return hasWholeWordKeyword(getArticleSearchText(article), getDisqualifyingOutsideCityKeywords(article));
 }
 
+const cityDetectionCache = new Map();
+
+function getCityDetectionCacheKey(article) {
+  return [article.newsLink || article.url || "", normalizeTitle(article.title || ""), article.publishedAt || article.createdAt || ""].join("|");
+}
+
+function getCachedDetectedCityCodes(article) {
+  const key = getCityDetectionCacheKey(article);
+  if (!cityDetectionCache.has(key)) {
+    cityDetectionCache.set(key, detectCityCodes(article));
+  }
+  return cityDetectionCache.get(key);
+}
+
 function applyCityCode(article) {
-  const [detectedCityCode] = detectCityCodes(article);
+  const [detectedCityCode] = getCachedDetectedCityCodes(article);
 
   return {
     ...article,
@@ -3331,7 +3376,7 @@ function applyCityCode(article) {
 }
 
 function expandCityArticles(article) {
-  const cityCodes = detectCityCodes(article);
+  const cityCodes = getCachedDetectedCityCodes(article);
 
   if (cityCodes.length === 0) {
     return [article];
@@ -3710,6 +3755,26 @@ function getRejectionReasons(article, sentIds) {
   return reasons;
 }
 
+function getFastRejectionReasons(article, sentIds, skipTitleSet) {
+  if (shouldSkipTitle(article, skipTitleSet)) {
+    return ["manual skip: title already reposted"];
+  }
+
+  if (!article.title || !article.newsLink) {
+    return ["filter 0: missing title/link"];
+  }
+
+  if (!article.cityCode) {
+    return ["filter 5: no allowed city match"];
+  }
+
+  if (articleDedupeIds(article).some((id) => sentIds.has(id))) {
+    return ["filter 13: already sent"];
+  }
+
+  return getRejectionReasons(article, sentIds);
+}
+
 function isPublishableArticle(article, sentIds) {
   return getRejectionReasons(article, sentIds).length === 0;
 }
@@ -3761,15 +3826,15 @@ async function writeSentIds(sentIds) {
   );
 }
 
-async function fetchFeed(sourceUrl) {
+async function fetchFeed(sourceUrl, options = {}) {
   const feed = await parser.parseURL(sourceUrl);
   const source = feed.title || new URL(sourceUrl).hostname;
   const publisherLogo = pickFirst(getPublisherLogo(feed), getFallbackLogo(sourceUrl));
   const feedItems = feed.items.slice(0, getMaxItemsPerSource());
 
-  return Promise.all(feedItems.map(async (item) => {
+  return mapWithConcurrency(feedItems, getArticleMetadataConcurrency(), async (item) => {
     const newsLink = item.link || item.guid;
-    const metadata = newsLink ? await fetchArticleMetadata(newsLink) : {};
+    const metadata = newsLink ? await fetchArticleMetadata(newsLink, {}, options) : {};
     const rawArticle = {
       title: stripHtml(item.title),
       description: stripHtml(
@@ -3804,15 +3869,16 @@ async function fetchFeed(sourceUrl) {
       ...cityArticle,
       id: stableId(cityArticle)
     };
-  }));
+  });
 }
 
-async function fetchHtml(sourceUrl) {
+async function fetchHtml(sourceUrl, options = {}) {
   let lastError;
 
   for (let attempt = 1; attempt <= 2; attempt += 1) {
     try {
       const response = await fetchWithTimeout(sourceUrl, {
+        signal: options.signal,
         headers: {
           "User-Agent": userAgent,
           Accept: "text/html,*/*"
@@ -4135,9 +4201,9 @@ function extractMetadataImage($, fallback = {}) {
   );
 }
 
-async function fetchArticleMetadata(articleUrl, fallback = {}) {
+async function fetchArticleMetadata(articleUrl, fallback = {}, options = {}) {
   try {
-    const html = await fetchArticleHtml(articleUrl);
+    const html = await fetchArticleHtml(articleUrl, options);
     const $ = cheerio.load(html);
     const articleText = extractArticleText($);
 
@@ -4229,12 +4295,12 @@ function getArticleUrlVariants(articleUrl) {
   return [...new Set(variants)];
 }
 
-async function fetchArticleHtml(articleUrl) {
+async function fetchArticleHtml(articleUrl, options = {}) {
   let lastError;
 
   for (const variant of getArticleUrlVariants(articleUrl)) {
     try {
-      return await fetchHtml(variant);
+      return await fetchHtml(variant, options);
     } catch (error) {
       lastError = error;
     }
@@ -4245,7 +4311,8 @@ async function fetchArticleHtml(articleUrl) {
 
 async function fetchBinary(sourceUrl) {
   const response = await fetchWithTimeout(sourceUrl, {
-    headers: {
+        signal: options.signal,
+        headers: {
       "User-Agent": userAgent,
       Accept: "application/pdf,*/*"
     }
@@ -4701,6 +4768,7 @@ async function fetchSignatureGlobalMedia(sourceUrl) {
   for (let attempt = 1; attempt <= 3; attempt += 1) {
     try {
       const response = await fetchWithTimeout(sourceUrl, {
+        signal: options.signal,
         headers: {
           "User-Agent": userAgent,
           Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -4862,7 +4930,7 @@ async function fetchOfficialDeveloperMedia(sourceUrl) {
   return [];
 }
 
-async function fetchPage(sourceUrl) {
+async function fetchPage(sourceUrl, options = {}) {
   const pageUrls = getSourcePageUrls(sourceUrl);
   const seenLinks = new Set();
   const candidates = [];
@@ -4873,7 +4941,7 @@ async function fetchPage(sourceUrl) {
     let html = "";
 
     try {
-      html = await fetchHtml(pageUrl);
+      html = await fetchHtml(pageUrl, options);
     } catch (error) {
       if (pageIndex > 0) {
         if (isMissingPaginatedPageError(error)) {
@@ -4938,7 +5006,7 @@ async function fetchPage(sourceUrl) {
 
   const limitedCandidates = candidates.slice(0, getMaxItemsPerSource());
   const articles = await mapWithConcurrency(limitedCandidates, 8, async (candidate) => {
-    const metadata = await fetchArticleMetadata(candidate.newsLink, candidate);
+    const metadata = await fetchArticleMetadata(candidate.newsLink, candidate, options);
     const article = {
       ...candidate,
       ...metadata,
@@ -4959,7 +5027,25 @@ async function fetchPage(sourceUrl) {
   return articles;
 }
 
-async function fetchSource(sourceUrl) {
+async function fetchSourceWithTimeout(sourceUrl) {
+  const controller = new AbortController();
+  const timeoutMs = getSourceTimeoutMs();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+
+  try {
+    return await fetchSource(sourceUrl, { signal: controller.signal });
+  } catch (error) {
+    if (controller.signal.aborted) {
+      throw new Error(`source timed out after ${timeoutMs}ms`);
+    }
+
+    throw error;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+async function fetchSource(sourceUrl, options = {}) {
   if (isHsvpSource(sourceUrl)) {
     return fetchHsvpNotices(sourceUrl);
   }
@@ -4973,14 +5059,14 @@ async function fetchSource(sourceUrl) {
   }
 
   if (!isLikelyFeedUrl(sourceUrl)) {
-    return fetchPage(sourceUrl);
+    return fetchPage(sourceUrl, options);
   }
 
   try {
-    return await fetchFeed(sourceUrl);
+    return await fetchFeed(sourceUrl, options);
   } catch (error) {
     console.log(`Feed parse failed for ${sourceUrl}; trying page scrape. ${error.message}`);
-    return fetchPage(sourceUrl);
+    return fetchPage(sourceUrl, options);
   }
 }
 
@@ -5096,11 +5182,13 @@ async function main() {
     console.log(`Target city filter: ${[...targetCityCodeFilter].join(", ")}.`);
   }
 
+  const fetchStartedAt = Date.now();
   console.log(`Fetching ${selectedSources.length} sources with concurrency ${getSourceConcurrency()}.`);
   const sourceResults = await mapWithConcurrency(selectedSources, getSourceConcurrency(), async (source) => {
     try {
-      const articles = await fetchSource(source);
-      console.log(`Fetched ${articles.length} items from ${source}`);
+      const startedAt = Date.now();
+      const articles = await fetchSourceWithTimeout(source);
+      console.log(`Fetched ${articles.length} items from ${source} in ${formatDuration(Date.now() - startedAt)}`);
       return { source, articles };
     } catch (error) {
       console.error(`Failed to fetch ${source}: ${error.message}`);
@@ -5116,6 +5204,7 @@ async function main() {
     allArticles.push(...result.articles);
     fetchedSources.push({ source: result.source, count: result.articles.length });
   }
+  console.log(`Source fetch phase completed in ${formatDuration(Date.now() - fetchStartedAt)}.`);
   for (const articleUrl of extraArticleUrls) {
     try {
       const article = await fetchDirectArticle(articleUrl);
@@ -5128,19 +5217,37 @@ async function main() {
     }
   }
 
+  const filterStartedAt = Date.now();
   const expandedAllArticles = allArticles
     .flatMap(expandCityArticles)
     .filter((article) => targetCityCodeFilter.size === 0 || targetCityCodeFilter.has(article.cityCode));
+  console.log(`Expanded ${allArticles.length} fetched articles to ${expandedAllArticles.length} city articles in ${formatDuration(Date.now() - filterStartedAt)}.`);
   logDateExcludedPublishableArticles(expandedAllArticles, backfillDateRange, filterSentIds, skipTitleSet);
 
   const expandedArticles = expandedAllArticles.filter((article) =>
     isWithinBackfillDateRange(article, backfillDateRange)
   );
+  console.log(`Date window kept ${expandedArticles.length} articles in ${formatDuration(Date.now() - filterStartedAt)}.`);
+
+  const rejectionReasonCache = new Map();
+  const getCachedRejectionReasons = (article) => {
+    const key = articleReportKey(article);
+    if (!rejectionReasonCache.has(key)) {
+      rejectionReasonCache.set(
+        key,
+        getBooleanEnv("DETAILED_REJECTION_REASONS", false)
+          ? shouldSkipTitle(article, skipTitleSet)
+            ? ["manual skip: title already reposted"]
+            : getRejectionReasons(article, filterSentIds)
+          : getFastRejectionReasons(article, filterSentIds, skipTitleSet)
+      );
+    }
+    return rejectionReasonCache.get(key);
+  };
 
   const uniqueArticles = uniqueByDedupeIds(
     expandedArticles
-    .filter((article) => !shouldSkipTitle(article, skipTitleSet))
-    .filter((article) => isPublishableArticle(article, filterSentIds))
+    .filter((article) => getCachedRejectionReasons(article).length === 0)
     .sort((a, b) => {
       const priorityDifference = articlePriority(a) - articlePriority(b);
 
@@ -5163,32 +5270,32 @@ async function main() {
   const rejectionCounts = new Map();
 
   for (const article of expandedArticles) {
-    const reasons = shouldSkipTitle(article, skipTitleSet)
-      ? ["manual skip: title already reposted"]
-      : getRejectionReasons(article, filterSentIds);
+    const reasons = getCachedRejectionReasons(article);
 
     for (const reason of reasons) {
       rejectionCounts.set(reason, (rejectionCounts.get(reason) || 0) + 1);
     }
   }
 
-  const runAnalytics = buildRunAnalytics(expandedArticles, articlesToPush, postedArticles, skipTitleSet, filterSentIds);
+  const runAnalytics = buildRunAnalytics(expandedArticles, articlesToPush, postedArticles, skipTitleSet, filterSentIds, getCachedRejectionReasons);
 
+  console.log(`Filtering phase completed in ${formatDuration(Date.now() - filterStartedAt)}.`);
   console.log(`Found ${uniqueArticles.length} new articles.`);
   for (const [reason, count] of [...rejectionCounts.entries()].sort((a, b) => a[0].localeCompare(b[0]))) {
     console.log(`Skipped ${count} articles by ${reason}.`);
   }
-
-  const missedNewsCandidates = collectMissedNewsAudit(expandedArticles, filterSentIds, skipTitleSet);
+  const missedNewsCandidates = getBooleanEnv("MISSED_NEWS_AUDIT", false)
+    ? collectMissedNewsAudit(expandedArticles, filterSentIds, skipTitleSet)
+    : [];
   logMissedNewsAudit(missedNewsCandidates);
 
-  for (const article of expandedArticles.slice(0, 100)) {
-    const reasons = shouldSkipTitle(article, skipTitleSet)
-      ? ["manual skip: title already reposted"]
-      : getRejectionReasons(article, filterSentIds);
+  if (getBooleanEnv("DETAILED_SKIP_LOG", false)) {
+    for (const article of expandedArticles.slice(0, 100)) {
+      const reasons = getCachedRejectionReasons(article);
 
-    if (reasons.length > 0 && article.title) {
-      console.log(`Skipped ${article.title}: ${reasons.join("; ")}`);
+      if (reasons.length > 0 && article.title) {
+        console.log(`Skipped ${article.title}: ${reasons.join("; ")}`);
+      }
     }
   }
 

@@ -115,9 +115,12 @@ jobs:
           DISABLED_CITY_CODES: ${{ github.event.inputs.disabled_city_codes || '' }}
           SOURCE_OFFSET: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_offset || '0' }}
           SOURCE_LIMIT: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_limit || '0' }}
-          SOURCE_CONCURRENCY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_concurrency || '16' }}
+          SOURCE_CONCURRENCY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_concurrency || '18' }}
           AUTO_SOURCE_BATCH: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
           SOURCE_BATCH_COUNT: "3"
+          ARTICLE_METADATA_CONCURRENCY: "6"
+          FETCH_TIMEOUT_MS: "10000"
+          SOURCE_FETCH_TIMEOUT_MS: "45000"
           ENABLE_NOIDA_CITY: "true"
           ALLOW_NOIDA_API: "true"
           MAX_ITEMS_PER_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_items_per_run || '80' }}
