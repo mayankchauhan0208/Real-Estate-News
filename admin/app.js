@@ -121,14 +121,12 @@ function renderMetrics() {
 
 function renderCityOptions() {
   const enabledCities = getEnabledCities();
-  const cityOptions = enabledCities
-    .map((city) => `<option value="${escapeAttribute(city.code)}">${escapeHtml(city.name)}</option>`)
-    .join("");
-  elements.sourceCitySelect.innerHTML = cityOptions;
-  elements.backfillCitySelect.innerHTML = cityOptions;
+  const groupedCityOptions = renderCityOptionGroups(enabledCities);
+  elements.sourceCitySelect.innerHTML = groupedCityOptions;
+  elements.backfillCitySelect.innerHTML = groupedCityOptions;
 
   const currentState = elements.manualNewsState.value;
-  const states = [...new Set(enabledCities.map((city) => city.state).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+  const states = groupCitiesByState(enabledCities).map((group) => group.state);
   elements.manualNewsState.innerHTML = `<option value="">Select state</option>${states
     .map((stateName) => `<option value="${escapeAttribute(stateName)}">${escapeHtml(stateName)}</option>`)
     .join("")}`;
@@ -141,7 +139,6 @@ function renderCityOptions() {
   $("#backfillTo").value = lastBackfill.to || "";
   $("#resendBackfill").checked = lastBackfill.resendBackfill === true;
 }
-
 function renderNewsFilters() {
   const cityCodes = new Set();
   const sources = new Set();
@@ -276,15 +273,27 @@ function renderCities() {
     const haystack = `${city.name} ${city.state} ${city.code}`.toLowerCase();
     return !query || haystack.includes(query);
   });
-  elements.cityRows.innerHTML = cities.map((city) => `
-    <article class="city-row">
-      <label class="switch"><input type="checkbox" ${city.enabled ? "checked" : ""} data-city-toggle="${escapeAttribute(city.code)}"> ${city.enabled ? "Live" : "Off"}</label>
-      <b>${escapeHtml(city.name)}</b>
-      <span>${escapeHtml(city.state)}</span>
-      <span class="code-pill">${escapeHtml(city.code)}</span>
-      <span>${city.sourceCount || 0} sources</span>
-    </article>
-  `).join("");
+  const groups = groupCitiesByState(cities);
+  elements.cityRows.innerHTML = groups.map((group) => {
+    const liveCount = group.cities.filter((city) => city.enabled).length;
+    const sourceCount = group.cities.reduce((total, city) => total + Number(city.sourceCount || 0), 0);
+    return `
+      <section class="state-city-group">
+        <header class="state-city-head">
+          <div><b>${escapeHtml(group.state)}</b><span>${liveCount} of ${group.cities.length} cities live</span></div>
+          <small>${sourceCount} mapped sources</small>
+        </header>
+        ${group.cities.map((city) => `
+          <article class="city-row">
+            <label class="switch"><input type="checkbox" ${city.enabled ? "checked" : ""} data-city-toggle="${escapeAttribute(city.code)}"> ${city.enabled ? "Live" : "Off"}</label>
+            <b>${escapeHtml(city.name)}</b>
+            <span class="code-pill">${escapeHtml(city.code)}</span>
+            <span>${city.sourceCount || 0} sources</span>
+          </article>
+        `).join("")}
+      </section>
+    `;
+  }).join("") || `<div class="empty-state">No cities match this search.</div>`;
   elements.cityRows.querySelectorAll("[data-city-toggle]").forEach((input) => {
     input.addEventListener("change", async () => {
       if (!requireLiveAdmin("change cities")) { input.checked = !input.checked; return; }
@@ -297,7 +306,6 @@ function renderCities() {
     });
   });
 }
-
 function renderMasterControls() {
   const settings = state.settings;
   elements.masterControls.innerHTML = [
@@ -462,6 +470,28 @@ function getEnabledCities() {
     .sort((a, b) => `${a.state} ${a.name}`.localeCompare(`${b.state} ${b.name}`));
 }
 
+function groupCitiesByState(cities) {
+  const groups = new Map();
+  for (const city of cities || []) {
+    const stateName = city.state || "Other";
+    if (!groups.has(stateName)) groups.set(stateName, []);
+    groups.get(stateName).push(city);
+  }
+  return [...groups.entries()]
+    .map(([stateName, rows]) => ({
+      state: stateName,
+      cities: rows.sort((a, b) => a.name.localeCompare(b.name))
+    }))
+    .sort((a, b) => a.state.localeCompare(b.state));
+}
+
+function renderCityOptionGroups(cities) {
+  return groupCitiesByState(cities).map((group) => `
+    <optgroup label="${escapeAttribute(group.state)}">
+      ${group.cities.map((city) => `<option value="${escapeAttribute(city.code)}">${escapeHtml(city.name)}</option>`).join("")}
+    </optgroup>
+  `).join("");
+}
 function renderManualCityOptions() {
   const selectedState = elements.manualNewsState.value;
   const cities = getEnabledCities().filter((city) => city.state === selectedState);

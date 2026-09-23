@@ -389,12 +389,29 @@ input:focus, select:focus, textarea:focus { border-color: var(--blue); box-shado
 }
 .search-field.compact { margin: 16px; max-width: 480px; }
 .city-table { max-height: 560px; overflow: auto; border-top: 1px solid var(--line); }
-.city-row {
-  display: grid;
-  grid-template-columns: 120px 1fr 1fr 140px 90px;
+.state-city-group { border-bottom: 1px solid var(--line); background: #ffffff; }
+.state-city-head {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
   gap: 16px;
   align-items: center;
-  min-width: 850px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-soft);
+}
+.state-city-head b { display: block; font-size: 14px; }
+.state-city-head span, .state-city-head small { color: var(--muted); font-size: 12px; font-weight: 800; }
+.state-city-head span { display: block; margin-top: 3px; }
+.state-city-group .city-row:last-child { border-bottom: 0; }
+.city-row {
+  display: grid;
+  grid-template-columns: 120px minmax(180px, 1fr) 160px 110px;
+  gap: 16px;
+  align-items: center;
+  min-width: 680px;
   padding: 13px 18px;
   border-bottom: 1px solid var(--line);
 }
