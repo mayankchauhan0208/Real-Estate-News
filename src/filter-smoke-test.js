@@ -1189,6 +1189,41 @@ const faridabadPositiveMarketArticle = publishable({
 assert.deepEqual(detectCityCodes(faridabadPositiveMarketArticle), ["faridabad"]);
 assert.equal(isPublishableArticle(faridabadPositiveMarketArticle, sentIds), true);
 assert.equal(classifyArticle(faridabadPositiveMarketArticle), "positive_city_market");
+const faridabadRealEstateRiseArticle = publishable({
+  title: "Faridabad's Real Estate Rise: From Industrial Town to Modern Urban Hub",
+  description: "Faridabad real estate rise is being driven by infrastructure development and improving connectivity.",
+  articleText:
+    "The article highlights Faridabad's modern urban hub growth, attractive pricing and investor interest in the city market.",
+  newsLink: "https://www.bptp.com/media/faridabads-real-estate-rise-from-industrial-town-to-modern-urban-hub"
+});
+
+assert.deepEqual(detectCityCodes(faridabadRealEstateRiseArticle), ["faridabad"]);
+assert.equal(isPublishableArticle(faridabadRealEstateRiseArticle, sentIds), true);
+assert.equal(classifyArticle(faridabadRealEstateRiseArticle), "positive_city_market");
+
+const faridabadInfraRealtyHubArticle = publishable({
+  title: "Real Estate: How Infra Development Is Turning Faridabad Into an Emerging NCR Realty Hub",
+  description: "Infrastructure development, connectivity and buyer interest are improving Faridabad's real estate market.",
+  articleText:
+    "The city-focused market story explains how Faridabad is becoming an emerging realty hub with positive housing demand.",
+  newsLink: "https://www.bptp.com/media/how-infra-development-is-turning-faridabad-into-emerging-ncr-realty-hub"
+});
+
+assert.deepEqual(detectCityCodes(faridabadInfraRealtyHubArticle), ["faridabad"]);
+assert.equal(isPublishableArticle(faridabadInfraRealtyHubArticle, sentIds), true);
+assert.equal(classifyArticle(faridabadInfraRealtyHubArticle), "positive_city_market");
+
+const noidaPositiveMarketArticle = publishable({
+  title: "Noida infrastructure-led growth turns city into emerging real estate market",
+  description: "Noida housing demand and investor interest are rising with infrastructure development.",
+  articleText:
+    "The article is a positive city-market update about Noida real estate expansion, connectivity and investment potential.",
+  newsLink: "https://example.com/noida-infrastructure-led-growth-real-estate-market"
+});
+
+assert.deepEqual(detectCityCodes(noidaPositiveMarketArticle), ["noida"]);
+assert.equal(isPublishableArticle(noidaPositiveMarketArticle, sentIds), true);
+assert.equal(classifyArticle(noidaPositiveMarketArticle), "positive_city_market");
 
 assert.match(
   reasons({
