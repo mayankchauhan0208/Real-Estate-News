@@ -147,33 +147,43 @@ function renderCityOptions() {
   $("#resendBackfill").checked = lastBackfill.resendBackfill === true;
 }
 function renderNewsFilters() {
-  const cityCodes = new Set();
+  const cityCounts = new Map();
   const sources = new Set();
   for (const item of getNewsItems()) {
-    if (item.cityCode) cityCodes.add(item.cityCode);
+    if (item.cityCode) cityCounts.set(item.cityCode, (cityCounts.get(item.cityCode) || 0) + 1);
     if (item.postedBy) sources.add(item.postedBy);
   }
 
-  const newsCities = getEnabledCities().filter((city) => cityCodes.has(city.code));
-  const states = groupCitiesByState(newsCities).map((group) => group.state);
+  const newsCities = getEnabledCities().filter((city) => cityCounts.has(city.code));
+  const stateGroups = groupCitiesByState(newsCities);
   const currentState = elements.newsStateFilter.value || "all";
   const currentCity = elements.newsCityFilter.value || "all";
   const currentSource = elements.newsSourceFilter.value || "all";
-  const selectedState = states.includes(currentState) ? currentState : "all";
+  const selectedState = stateGroups.some((group) => group.state === currentState) ? currentState : "all";
   const visibleCities = selectedState === "all" ? newsCities : newsCities.filter((city) => city.state === selectedState);
 
-  elements.newsStateFilter.innerHTML = `<option value="all">All states</option>` +
-    states.map((stateName) => `<option value="${escapeAttribute(stateName)}">${escapeHtml(stateName)}</option>`).join("");
+  elements.newsStateFilter.innerHTML = `<option value="all">All states with news</option>` +
+    stateGroups.map((group) => {
+      const count = group.cities.reduce((total, city) => total + (cityCounts.get(city.code) || 0), 0);
+      return `<option value="${escapeAttribute(group.state)}">${escapeHtml(group.state)} (${count})</option>`;
+    }).join("");
   elements.newsStateFilter.value = selectedState;
 
-  elements.newsCityFilter.innerHTML = `<option value="all">${selectedState === "all" ? `All ${state.totals?.requestedCities || state.cities.length} cities` : `All ${selectedState} cities`}</option>` +
-    renderCityOptionGroups(visibleCities);
+  const cityLabelText = selectedState === "all" ? "All cities with news" : `All ${selectedState} cities with news`;
+  if (!visibleCities.length) {
+    elements.newsCityFilter.disabled = true;
+    elements.newsCityFilter.innerHTML = `<option value="all">No cities with news</option>`;
+  } else {
+    elements.newsCityFilter.disabled = false;
+    elements.newsCityFilter.innerHTML = `<option value="all">${escapeHtml(cityLabelText)}</option>` +
+      renderNewsCityOptions(visibleCities, cityCounts, selectedState === "all");
+  }
+
   elements.newsSourceFilter.innerHTML = `<option value="all">All sources</option>` +
     [...sources].sort().map((source) => `<option value="${escapeAttribute(source)}">${escapeHtml(source)}</option>`).join("");
   elements.newsCityFilter.value = [...elements.newsCityFilter.options].some((option) => option.value === currentCity) ? currentCity : "all";
   elements.newsSourceFilter.value = [...elements.newsSourceFilter.options].some((option) => option.value === currentSource) ? currentSource : "all";
 }
-
 function getNewsItems() {
   const posted = (state.postedNews || []).map((item) => ({ ...item, uiStatus: "Active", sourceKind: "posted" }));
   if (posted.length) return posted;
@@ -516,6 +526,15 @@ function renderCityOptionGroups(cities) {
   return groupCitiesByState(cities).map((group) => `
     <optgroup label="${escapeAttribute(group.state)}">
       ${group.cities.map((city) => `<option value="${escapeAttribute(city.code)}">${escapeHtml(city.name)}</option>`).join("")}
+    </optgroup>
+  `).join("");
+}
+function renderNewsCityOptions(cities, cityCounts, grouped) {
+  const optionForCity = (city) => `<option value="${escapeAttribute(city.code)}">${escapeHtml(city.name)} (${cityCounts.get(city.code) || 0})</option>`;
+  if (!grouped) return cities.map(optionForCity).join("");
+  return groupCitiesByState(cities).map((group) => `
+    <optgroup label="${escapeAttribute(group.state)}">
+      ${group.cities.map(optionForCity).join("")}
     </optgroup>
   `).join("");
 }
