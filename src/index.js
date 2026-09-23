@@ -3735,9 +3735,9 @@ function hasDisallowedLanguage(article) {
     .filter(Boolean)
     .join(" ");
 
-  const hasIndicScript = /[\u0900-\u097F]/u.test(text);
-  const hasSupportedRegionalSignal = hasIndicScript || /\bnews in hindi\b/i.test(text) || /amarujala\.com|livehindustan\.com|hindi\.business-standard\.com|hindi\.etnownews\.com/i.test(text);
-  return hasIndicScript && !hasSupportedRegionalSignal;
+  const hasDevanagariScript = /[\u0900-\u097F]/u.test(text);
+  const hasClearlyUnsupportedScript = /[\u0600-\u08FF\u0980-\u09FF\u0A00-\u0D7F\u0E00-\u0FFF\u1000-\u10FF\u3040-\u30FF\u4E00-\u9FFF]/u.test(text);
+  return hasClearlyUnsupportedScript && !hasDevanagariScript;
 }
 
 function isTargetProjectAwardArticle(article) {
@@ -3812,7 +3812,6 @@ function isBlockedArticle(article) {
     isAddressLikeHeadline(title) ||
     isMalformedCategoryHeadline(title) ||
     isWeakFoodRetailSource ||
-    /[\u0900-\u097F]/.test(primaryText) ||
     (!allowProjectAwardArticle && hasKeyword(primaryText, blockedTitleKeywords)) ||
     (!allowProjectAwardArticle && hasKeyword(newsLink, blockedUrlParts))
   );
@@ -3923,7 +3922,7 @@ function getRejectionReasons(article, sentIds) {
   }
 
   if (hasDisallowedLanguage(article)) {
-    reasons.push("filter 2: non-English/Hindi content");
+    reasons.push("filter 2: unsupported language/script");
   }
 
   if (isNegativeNews(article)) {

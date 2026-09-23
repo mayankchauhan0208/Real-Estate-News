@@ -1334,15 +1334,24 @@ assert.match(
   /^$/
 );
 
-assert.match(
-  reasons({
-    title: "फरीदाबाद में नई योजना के लाभार्थी",
-    description: "फरीदाबाद में 50 परिवारों को लाभ मिला",
-    postedBy: "Faridabad News In Hindi, Amarujala.com",
-    newsLink: "https://www.amarujala.com/haryana/faridabad/news"
-  }).join("; "),
-  /not positive target real-estate\/project news|target region missing|spam\/menu page/
-);
+const gurugramHindiPositiveArticle = publishable({
+  cityCode: "gurugram",
+  title: "गुरुग्राम में लग्जरी आवासीय परियोजना लॉन्च, रियल एस्टेट बाजार में निवेश बढ़ा",
+  description: "गुरुग्राम में नई आवासीय परियोजना और इंफ्रास्ट्रक्चर विकास से रियल एस्टेट बाजार को बढ़ावा मिला।",
+  articleText: "यह सकारात्मक खबर गुरुग्राम के हाउसिंग, निवेश और परियोजना विकास पर केंद्रित है।",
+  newsLink: "https://www.amarujala.com/haryana/gurugram/luxury-residential-project-launch-gurugram"
+});
+assert.deepEqual(detectCityCodes(gurugramHindiPositiveArticle), ["gurugram"]);
+assert.equal(isPublishableArticle(gurugramHindiPositiveArticle, sentIds), true);
+
+const hindiGenericReasons = reasons({
+  title: "फरीदाबाद में नई योजना के लाभार्थी",
+  description: "फरीदाबाद में 50 परिवारों को लाभ मिला",
+  postedBy: "Faridabad News In Hindi, Amarujala.com",
+  newsLink: "https://www.amarujala.com/haryana/faridabad/news"
+}).join("; ");
+assert.match(hindiGenericReasons, /not positive target real-estate\/project news|target region missing/);
+assert.doesNotMatch(hindiGenericReasons, /spam\/menu page|unsupported language\/script|non-English\/Hindi content/);
 
 assert.match(
   reasons({
