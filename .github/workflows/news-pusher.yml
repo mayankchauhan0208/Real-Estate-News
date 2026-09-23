@@ -2,7 +2,7 @@ name: News API Pusher
 
 on:
   schedule:
-    - cron: "10 * * * *"
+    - cron: "10,40 * * * *"
   workflow_dispatch:
     inputs:
       backfill_from:
@@ -117,7 +117,7 @@ jobs:
           SOURCE_LIMIT: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_limit || '0' }}
           SOURCE_CONCURRENCY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_concurrency || '18' }}
           BUILD_VERSION: "source-intelligence-v1"
-          SOURCE_STRATEGY: "full-source-coverage-hourly"
+          SOURCE_STRATEGY: "full-source-coverage-30min"
           AUTO_SOURCE_BATCH: "false"
           SOURCE_BATCH_COUNT: "1"
           ARTICLE_METADATA_CONCURRENCY: "6"

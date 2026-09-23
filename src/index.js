@@ -46,8 +46,7 @@ const defaultSources = [
   "https://realty.economictimes.indiatimes.com/news/industry",
   "https://realty.economictimes.indiatimes.com/rss/topstories",
   "https://www.moneycontrol.com/news/business/real-estate/",
-  "https://www.business-standard.com/rss/content/real-estate-22310.rss",
-  "https://www.business-standard.com/rss/latest.rss",
+  "https://www.business-standard.com/topic/real-estate",
   "https://www.constructionworld.in/latest-construction-news/real-estate-news",
   "https://www.outlookmoney.com/topic/real-estate",
   "https://www.tribuneindia.com/topic/real-estate",
@@ -4142,7 +4141,10 @@ async function fetchHtml(sourceUrl, options = {}) {
         signal: options.signal,
         headers: {
           "User-Agent": userAgent,
-          Accept: "text/html,*/*"
+          Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+          "Accept-Language": "en-IN,en;q=0.9,hi;q=0.8",
+          "Cache-Control": "no-cache",
+          Pragma: "no-cache"
         }
       });
 
@@ -4570,7 +4572,7 @@ async function fetchArticleHtml(articleUrl, options = {}) {
   throw lastError;
 }
 
-async function fetchBinary(sourceUrl) {
+async function fetchBinary(sourceUrl, options = {}) {
   const response = await fetchWithTimeout(sourceUrl, {
         signal: options.signal,
         headers: {
@@ -4714,8 +4716,8 @@ function buildHsvpFaridabadArticle({ sourceUrl, noticeUrl, cardTitle, pdfLatinTe
   };
 }
 
-async function fetchHsvpNotices(sourceUrl) {
-  const html = await fetchHtml(sourceUrl);
+async function fetchHsvpNotices(sourceUrl, options = {}) {
+  const html = await fetchHtml(sourceUrl, options);
   const $ = cheerio.load(html);
   const seenLinks = new Set();
   const noticeCandidates = [];
@@ -4737,7 +4739,7 @@ async function fetchHsvpNotices(sourceUrl) {
   const limitedCandidates = noticeCandidates.slice(0, getMaxItemsPerSource());
   const articles = await mapWithConcurrency(limitedCandidates, 4, async (candidate) => {
     try {
-      const pdfBuffer = await fetchBinary(candidate.noticeUrl);
+      const pdfBuffer = await fetchBinary(candidate.noticeUrl, options);
       const pdfLatinText = pdfBuffer.toString("latin1");
       return buildHsvpFaridabadArticle({
         sourceUrl,
@@ -4853,8 +4855,8 @@ function collectBptpMediaItems(pageProps = {}) {
   ];
 }
 
-async function fetchBptpMedia(sourceUrl) {
-  const html = await fetchHtml(sourceUrl);
+async function fetchBptpMedia(sourceUrl, options = {}) {
+  const html = await fetchHtml(sourceUrl, options);
   const $ = cheerio.load(html);
   const rawJson = $("#__NEXT_DATA__").first().text();
 
@@ -4932,8 +4934,8 @@ function uniqueOfficialMediaArticles(articles) {
   return uniqueByDedupeIds(articles.filter((article) => article.title && article.newsLink)).slice(0, getMaxItemsPerSource());
 }
 
-async function fetchDlfMedia(sourceUrl) {
-  const html = await fetchHtml(sourceUrl);
+async function fetchDlfMedia(sourceUrl, options = {}) {
+  const html = await fetchHtml(sourceUrl, options);
   const $ = cheerio.load(html);
   const articles = $(".news_box.media_news").map((_, element) => {
     const card = $(element);
@@ -4953,8 +4955,8 @@ async function fetchDlfMedia(sourceUrl) {
   return uniqueOfficialMediaArticles(articles);
 }
 
-async function fetchSmartworldMedia(sourceUrl) {
-  const html = await fetchHtml(sourceUrl);
+async function fetchSmartworldMedia(sourceUrl, options = {}) {
+  const html = await fetchHtml(sourceUrl, options);
   const $ = cheerio.load(html);
   const articles = $(".mediabox").map((_, element) => {
     const card = $(element);
@@ -4974,7 +4976,7 @@ async function fetchSmartworldMedia(sourceUrl) {
   return uniqueOfficialMediaArticles(articles);
 }
 
-async function fetchM3mMedia(sourceUrl) {
+async function fetchM3mMedia(sourceUrl, options = {}) {
   const tabNames = ["news", "press_release", "event"];
   const articles = [];
 
@@ -4982,6 +4984,7 @@ async function fetchM3mMedia(sourceUrl) {
     for (let page = 1; page <= getMaxPagesPerSource(); page += 1) {
       const apiUrl = `https://m3mindia.com/media-section-tab-data/${tabName}?page=${page}`;
       const response = await fetchWithTimeout(apiUrl, {
+        signal: options.signal,
         headers: {
           "User-Agent": userAgent,
           Accept: "application/json"
@@ -5021,7 +5024,7 @@ async function fetchM3mMedia(sourceUrl) {
   return uniqueOfficialMediaArticles(articles);
 }
 
-async function fetchSignatureGlobalMedia(sourceUrl) {
+async function fetchSignatureGlobalMedia(sourceUrl, options = {}) {
   let html = "";
   let lastError;
   let pageData;
@@ -5077,6 +5080,7 @@ async function fetchSignatureGlobalMedia(sourceUrl) {
     for (const fallbackUrl of fallbackUrls) {
       try {
         const response = await fetchWithTimeout(fallbackUrl, {
+          signal: options.signal,
           headers: {
             "User-Agent": userAgent,
             Accept: "application/json,*/*"
@@ -5121,8 +5125,9 @@ async function fetchSignatureGlobalMedia(sourceUrl) {
   return uniqueOfficialMediaArticles(articles);
 }
 
-async function fetchCentralParkMedia(sourceUrl) {
+async function fetchCentralParkMedia(sourceUrl, options = {}) {
   const response = await fetchWithTimeout("https://www.centralpark.in/pressreleases.php", {
+    signal: options.signal,
     method: "POST",
     headers: {
       "User-Agent": userAgent,
@@ -5165,27 +5170,27 @@ async function fetchCentralParkMedia(sourceUrl) {
   return uniqueOfficialMediaArticles(articles);
 }
 
-async function fetchOfficialDeveloperMedia(sourceUrl) {
+async function fetchOfficialDeveloperMedia(sourceUrl, options = {}) {
   const host = new URL(sourceUrl).hostname.replace(/^www\./, "");
 
   if (host === "dlf.in") {
-    return fetchDlfMedia(sourceUrl);
+    return fetchDlfMedia(sourceUrl, options);
   }
 
   if (host === "m3mindia.com") {
-    return fetchM3mMedia(sourceUrl);
+    return fetchM3mMedia(sourceUrl, options);
   }
 
   if (host === "smartworlddevelopers.com") {
-    return fetchSmartworldMedia(sourceUrl);
+    return fetchSmartworldMedia(sourceUrl, options);
   }
 
   if (host === "signatureglobal.in") {
-    return fetchSignatureGlobalMedia(sourceUrl);
+    return fetchSignatureGlobalMedia(sourceUrl, options);
   }
 
   if (host === "centralpark.in") {
-    return fetchCentralParkMedia(sourceUrl);
+    return fetchCentralParkMedia(sourceUrl, options);
   }
 
   return [];
@@ -5308,15 +5313,15 @@ async function fetchSourceWithTimeout(sourceUrl) {
 
 async function fetchSource(sourceUrl, options = {}) {
   if (isHsvpSource(sourceUrl)) {
-    return fetchHsvpNotices(sourceUrl);
+    return fetchHsvpNotices(sourceUrl, options);
   }
 
   if (isBptpMediaSource(sourceUrl)) {
-    return fetchBptpMedia(sourceUrl);
+    return fetchBptpMedia(sourceUrl, options);
   }
 
   if (isOfficialDeveloperMediaSource(sourceUrl)) {
-    return fetchOfficialDeveloperMedia(sourceUrl);
+    return fetchOfficialDeveloperMedia(sourceUrl, options);
   }
 
   if (!isLikelyFeedUrl(sourceUrl)) {
@@ -5677,33 +5682,4 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     process.exitCode = 1;
   });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

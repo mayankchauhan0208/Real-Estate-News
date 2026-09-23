@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T12:01:55.058Z",
+  "generatedAt": "2026-09-23T12:33:17.546Z",
   "settings": {
     "automationEnabled": true,
     "apiPushEnabled": true,
@@ -5195,8 +5195,8 @@
     "liveCities": 231,
     "requestedCities": 231,
     "moreRequestedCities": 0,
-    "sources": 533,
-    "enabledSources": 354,
+    "sources": 532,
+    "enabledSources": 353,
     "disabledSources": 179,
     "manualSources": 389,
     "reports": 16,
@@ -5226,7 +5226,7 @@
         "key": "source-quality",
         "label": "Sources cleaned",
         "ok": true,
-        "detail": "354 enabled, 179 disabled, 0 duplicate URL groups."
+        "detail": "353 enabled, 179 disabled, 0 duplicate URL groups."
       },
       {
         "key": "dry-run-history",
@@ -8925,16 +8925,8 @@
       "createdAt": "2026-09-23T07:10:59.990Z"
     },
     {
-      "id": "id-1997442905",
-      "url": "https://www.business-standard.com/rss/content/real-estate-22310.rss",
-      "label": "business-standard",
-      "cityCodes": [],
-      "enabled": true,
-      "category": "default"
-    },
-    {
-      "id": "id-1277074848",
-      "url": "https://www.business-standard.com/rss/latest.rss",
+      "id": "id-1417626659",
+      "url": "https://www.business-standard.com/topic/real-estate",
       "label": "business-standard",
       "cityCodes": [],
       "enabled": true,

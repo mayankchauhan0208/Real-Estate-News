@@ -83,7 +83,7 @@ assert.equal(isAllowedSource("https://www.moneycontrol.com/news/business/"), fal
 assert.equal(isAllowedSource("https://www.aninews.in/category/business/"), false);
 assert.equal(isAllowedSource("https://www.lokmattimes.com/business/"), false);
 assert.equal(isAllowedSource("https://www.business-standard.com/search?q=REAL%20ESTATE"), false);
-assert.equal(isAllowedSource("https://www.business-standard.com/topic/real-estate"), false);
+assert.equal(isAllowedSource("https://www.business-standard.com/topic/real-estate"), true);
 assert.equal(isAllowedSource("https://economictimes.indiatimes.com/industry/services/property-/-cstruction"), true);
 assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/"), false);
 assert.equal(isAllowedSource("https://economictimes.indiatimes.com/news/company/corporate-trends"), true);
@@ -143,8 +143,8 @@ assert.equal(isAllowedSource("https://indianexpress.com/section/cities/goa/"), t
 assert.equal(getFeedFallbackPageUrl("https://indianexpress.com/section/cities/delhi/feed/"), "https://indianexpress.com/section/cities/delhi/");
 assert.equal(getFeedFallbackPageUrl("https://example.com/rss.xml"), "https://example.com/");
 assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/rss/topstories"), true);
-assert.equal(isAllowedSource("https://www.business-standard.com/rss/content/real-estate-22310.rss"), true);
-assert.equal(isAllowedSource("https://www.business-standard.com/rss/latest.rss"), true);
+assert.equal(isAllowedSource("https://www.business-standard.com/rss/content/real-estate-22310.rss"), false);
+assert.equal(isAllowedSource("https://www.business-standard.com/rss/latest.rss"), false);
 assert.equal(isAllowedSource("https://swarajyamag.com/stories.rss"), true);
 assert.equal(isAllowedSource("https://realtynmore.com/feed/"), true);
 assert.equal(isAllowedSource("https://realtyquarter.com/feed/"), true);
@@ -1590,15 +1590,4 @@ assert.deepEqual(selectedCityModeCheck.indore, []);
 assert.equal(selectedCityModeCheck.sources > 0, true);
 
 console.log("Filter smoke tests passed.");
-
-
-
-
-
-
-
-
-
-
-
 
