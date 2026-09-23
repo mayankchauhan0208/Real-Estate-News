@@ -12,6 +12,7 @@ import {
   getRejectionReasons,
   getSourcePageUrls,
   getSourceUrls,
+  getFeedFallbackPageUrl,
   hasBackfillDateRange,
   isAllowedSource,
   isLikelyFeedUrl,
@@ -137,9 +138,10 @@ assert.equal(isAllowedSource("https://economictimes.indiatimes.com/topic/faridab
 assert.equal(isAllowedSource("https://www.hindustantimes.com/feeds/rss/real-estate/rssfeed.xml"), true);
 assert.equal(isAllowedSource("https://economictimes.indiatimes.com/rssfeeds/13357019.cms"), true);
 assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/rssfeeds/6547154.cms"), true);
-assert.equal(isAllowedSource("https://indianexpress.com/section/cities/delhi/feed/"), false);
-assert.equal(isAllowedSource("https://indianexpress.com/section/cities/goa/feed/"), false);
-assert.equal(isAllowedSource("https://indianexpress.com/section/business/feed"), false);
+assert.equal(isAllowedSource("https://indianexpress.com/section/cities/delhi/"), false);
+assert.equal(isAllowedSource("https://indianexpress.com/section/cities/goa/"), true);
+assert.equal(getFeedFallbackPageUrl("https://indianexpress.com/section/cities/delhi/feed/"), "https://indianexpress.com/section/cities/delhi/");
+assert.equal(getFeedFallbackPageUrl("https://example.com/rss.xml"), "https://example.com/");
 assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/rss/topstories"), true);
 assert.equal(isAllowedSource("https://www.business-standard.com/rss/content/real-estate-22310.rss"), true);
 assert.equal(isAllowedSource("https://www.business-standard.com/rss/latest.rss"), true);

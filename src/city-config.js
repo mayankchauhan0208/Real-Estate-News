@@ -1975,63 +1975,63 @@ export const citySourceRules = [
     "code": "new_delhi",
     "urls": [
       "https://www.hindustantimes.com/feeds/rss/cities/delhi-news/rssfeed.xml",
-      "https://indianexpress.com/section/cities/delhi/feed/"
+      "https://indianexpress.com/section/cities/delhi/"
     ]
   },
   {
     "code": "delhi_ncr",
     "urls": [
       "https://www.hindustantimes.com/feeds/rss/cities/delhi-news/rssfeed.xml",
-      "https://indianexpress.com/section/cities/delhi/feed/"
+      "https://indianexpress.com/section/cities/delhi/"
     ]
   },
   {
     "code": "chandigarh",
     "urls": [
       "https://www.hindustantimes.com/feeds/rss/cities/chandigarh-news/rssfeed.xml",
-      "https://indianexpress.com/section/cities/chandigarh/feed/"
+      "https://indianexpress.com/section/cities/chandigarh/"
     ]
   },
   {
     "code": "lucknow",
     "urls": [
       "https://www.hindustantimes.com/feeds/rss/cities/lucknow-news/rssfeed.xml",
-      "https://indianexpress.com/section/cities/lucknow/feed/"
+      "https://indianexpress.com/section/cities/lucknow/"
     ]
   },
   {
     "code": "kolkata",
     "urls": [
       "https://www.hindustantimes.com/feeds/rss/cities/kolkata-news/rssfeed.xml",
-      "https://indianexpress.com/section/cities/kolkata/feed/"
+      "https://indianexpress.com/section/cities/kolkata/"
     ]
   },
   {
     "code": "mumbai",
     "urls": [
       "https://www.hindustantimes.com/feeds/rss/cities/mumbai-news/rssfeed.xml",
-      "https://indianexpress.com/section/cities/mumbai/feed/"
+      "https://indianexpress.com/section/cities/mumbai/"
     ]
   },
   {
     "code": "pune",
     "urls": [
       "https://www.hindustantimes.com/feeds/rss/cities/pune-news/rssfeed.xml",
-      "https://indianexpress.com/section/cities/pune/feed/"
+      "https://indianexpress.com/section/cities/pune/"
     ]
   },
   {
     "code": "bangalore",
     "urls": [
       "https://www.hindustantimes.com/feeds/rss/cities/bengaluru-news/rssfeed.xml",
-      "https://indianexpress.com/section/cities/bangalore/feed/"
+      "https://indianexpress.com/section/cities/bangalore/"
     ]
   },
   {
     "code": "jaipur",
     "urls": [
       "https://www.hindustantimes.com/feeds/rss/cities/jaipur-news/rssfeed.xml",
-      "https://indianexpress.com/section/cities/jaipur/feed/"
+      "https://indianexpress.com/section/cities/jaipur/"
     ]
   },
   {
@@ -2049,97 +2049,97 @@ export const citySourceRules = [
   {
     "code": "ahmedabad",
     "urls": [
-      "https://indianexpress.com/section/cities/ahmedabad/feed/"
+      "https://indianexpress.com/section/cities/ahmedabad/"
     ]
   },
   {
     "code": "amritsar",
     "urls": [
-      "https://indianexpress.com/section/cities/amritsar/feed/"
+      "https://indianexpress.com/section/cities/amritsar/"
     ]
   },
   {
     "code": "vadodara",
     "urls": [
-      "https://indianexpress.com/section/cities/baroda/feed/"
+      "https://indianexpress.com/section/cities/baroda/"
     ]
   },
   {
     "code": "bhopal",
     "urls": [
-      "https://indianexpress.com/section/cities/bhopal/feed/"
+      "https://indianexpress.com/section/cities/bhopal/"
     ]
   },
   {
     "code": "bhubaneswar",
     "urls": [
-      "https://indianexpress.com/section/cities/bhubaneswar/feed/"
+      "https://indianexpress.com/section/cities/bhubaneswar/"
     ]
   },
   {
     "code": "chennai",
     "urls": [
-      "https://indianexpress.com/section/cities/chennai/feed/"
+      "https://indianexpress.com/section/cities/chennai/"
     ]
   },
   {
     "code": "goa",
     "urls": [
-      "https://indianexpress.com/section/cities/goa/feed/"
+      "https://indianexpress.com/section/cities/goa/"
     ]
   },
   {
     "code": "guwahati",
     "urls": [
-      "https://indianexpress.com/section/cities/guwahati/feed/"
+      "https://indianexpress.com/section/cities/guwahati/"
     ]
   },
   {
     "code": "hyderabad",
     "urls": [
-      "https://indianexpress.com/section/cities/hyderabad/feed/"
+      "https://indianexpress.com/section/cities/hyderabad/"
     ]
   },
   {
     "code": "jalandhar",
     "urls": [
-      "https://indianexpress.com/section/cities/jalandhar/feed/"
+      "https://indianexpress.com/section/cities/jalandhar/"
     ]
   },
   {
     "code": "ludhiana",
     "urls": [
-      "https://indianexpress.com/section/cities/ludhiana/feed/"
+      "https://indianexpress.com/section/cities/ludhiana/"
     ]
   },
   {
     "code": "mangalore",
     "urls": [
-      "https://indianexpress.com/section/cities/mangaluru/feed/"
+      "https://indianexpress.com/section/cities/mangaluru/"
     ]
   },
   {
     "code": "rajkot",
     "urls": [
-      "https://indianexpress.com/section/cities/rajkot/feed/"
+      "https://indianexpress.com/section/cities/rajkot/"
     ]
   },
   {
     "code": "mohali",
     "urls": [
-      "https://indianexpress.com/section/cities/sas-nagar-mohali/feed/"
+      "https://indianexpress.com/section/cities/sas-nagar-mohali/"
     ]
   },
   {
     "code": "shimla",
     "urls": [
-      "https://indianexpress.com/section/cities/shimla/feed/"
+      "https://indianexpress.com/section/cities/shimla/"
     ]
   },
   {
     "code": "surat",
     "urls": [
-      "https://indianexpress.com/section/cities/surat/feed/"
+      "https://indianexpress.com/section/cities/surat/"
     ]
   }
 ];

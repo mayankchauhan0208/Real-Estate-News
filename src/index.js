@@ -37,7 +37,7 @@ const defaultSources = [
   "https://www.cnbctv18.com/real-estate/",
   "https://timesofindia.indiatimes.com/real-estate/news",
   "https://timesofindia.indiatimes.com/rssfeeds/6547154.cms",
-  "https://indianexpress.com/section/cities/delhi/feed/",
+  "https://indianexpress.com/section/cities/delhi/",
   "https://realty.economictimes.indiatimes.com/tag/gurugram",
   "https://realty.economictimes.indiatimes.com/tag/faridabad",
   "https://realty.economictimes.indiatimes.com/news/residential",
@@ -1346,7 +1346,6 @@ const allLocationKeywords = [
   ...outsideCityKeywords
 ];
 const blockedSourceUrlParts = [
-  "indianexpress.com/section/",
   "aninews.in",
   "content.magicbricks.com",
   "financialexpress.com/about/real-estate",
@@ -1585,6 +1584,30 @@ function isLikelyFeedUrl(sourceUrl) {
     );
   } catch {
     return false;
+  }
+}
+
+function getFeedFallbackPageUrl(sourceUrl) {
+  try {
+    const url = new URL(sourceUrl);
+    const original = url.toString();
+    const pathName = url.pathname;
+    const cleanedPath = pathName
+      .replace(/\/(feed|feeds|rss|atom)\/?$/i, "/")
+      .replace(/\/rssfeed\.xml$/i, "/")
+      .replace(/\/(rss|atom)\.xml$/i, "/");
+
+    if (cleanedPath !== pathName) {
+      url.pathname = cleanedPath;
+      url.search = "";
+      url.hash = "";
+      const cleaned = url.toString();
+      return cleaned === original ? "" : cleaned;
+    }
+
+    return "";
+  } catch {
+    return "";
   }
 }
 
@@ -5303,6 +5326,12 @@ async function fetchSource(sourceUrl, options = {}) {
   try {
     return await fetchFeed(sourceUrl, options);
   } catch (error) {
+    const fallbackPageUrl = getFeedFallbackPageUrl(sourceUrl);
+    if (fallbackPageUrl) {
+      console.log(`Feed parse failed for ${sourceUrl}; trying cleaned page ${fallbackPageUrl}. ${error.message}`);
+      return fetchPage(fallbackPageUrl, options);
+    }
+
     console.log(`Feed parse failed for ${sourceUrl}; trying page scrape. ${error.message}`);
     return fetchPage(sourceUrl, options);
   }
@@ -5633,6 +5662,7 @@ export {
   hasDisallowedLanguage,
   hasBackfillDateRange,
   isLikelyFeedUrl,
+  getFeedFallbackPageUrl,
   shouldSkipTitle,
   articleDedupeIds,
   isAllowedSource,
