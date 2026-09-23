@@ -12,6 +12,8 @@ const elements = {
   pageSubtitle: $("#pageSubtitle"),
   postedRows: $("#postedRows"),
   newsCountLabel: $("#newsCountLabel"),
+  readonlyNotice: $("#readonlyNotice"),
+  newsStateFilter: $("#newsStateFilter"),
   newsCityFilter: $("#newsCityFilter"),
   newsSourceFilter: $("#newsSourceFilter"),
   newsStatusFilter: $("#newsStatusFilter"),
@@ -54,6 +56,11 @@ elements.manualNewsForm.addEventListener("submit", createManualArticleDraft);
 elements.manualNewsState.addEventListener("change", renderManualCityOptions);
 elements.manualNewsForm.querySelectorAll("[data-media-preview]").forEach((input) => input.addEventListener("input", updateMediaPreview));
 elements.sourceForm.addEventListener("submit", addSource);
+elements.newsStateFilter.addEventListener("change", () => {
+  elements.newsCityFilter.value = "all";
+  renderNewsFilters();
+  renderNews();
+});
 
 [elements.postedSearch, elements.newsCityFilter, elements.newsSourceFilter, elements.newsStatusFilter, elements.newsFromDate, elements.newsToDate]
   .forEach((el) => el.addEventListener("input", debounce(renderNews, 120)));
@@ -146,10 +153,21 @@ function renderNewsFilters() {
     if (item.cityCode) cityCodes.add(item.cityCode);
     if (item.postedBy) sources.add(item.postedBy);
   }
+
+  const newsCities = getEnabledCities().filter((city) => cityCodes.has(city.code));
+  const states = groupCitiesByState(newsCities).map((group) => group.state);
+  const currentState = elements.newsStateFilter.value || "all";
   const currentCity = elements.newsCityFilter.value || "all";
   const currentSource = elements.newsSourceFilter.value || "all";
-  elements.newsCityFilter.innerHTML = `<option value="all">All ${state.totals?.requestedCities || state.cities.length} cities</option>` +
-    [...cityCodes].sort().map((city) => `<option value="${escapeAttribute(city)}">${escapeHtml(cityLabel(city))}</option>`).join("");
+  const selectedState = states.includes(currentState) ? currentState : "all";
+  const visibleCities = selectedState === "all" ? newsCities : newsCities.filter((city) => city.state === selectedState);
+
+  elements.newsStateFilter.innerHTML = `<option value="all">All states</option>` +
+    states.map((stateName) => `<option value="${escapeAttribute(stateName)}">${escapeHtml(stateName)}</option>`).join("");
+  elements.newsStateFilter.value = selectedState;
+
+  elements.newsCityFilter.innerHTML = `<option value="all">${selectedState === "all" ? `All ${state.totals?.requestedCities || state.cities.length} cities` : `All ${selectedState} cities`}</option>` +
+    renderCityOptionGroups(visibleCities);
   elements.newsSourceFilter.innerHTML = `<option value="all">All sources</option>` +
     [...sources].sort().map((source) => `<option value="${escapeAttribute(source)}">${escapeHtml(source)}</option>`).join("");
   elements.newsCityFilter.value = [...elements.newsCityFilter.options].some((option) => option.value === currentCity) ? currentCity : "all";
@@ -164,6 +182,7 @@ function getNewsItems() {
 
 function renderNews() {
   const query = elements.postedSearch.value.trim().toLowerCase();
+  const selectedState = elements.newsStateFilter.value || "all";
   const city = elements.newsCityFilter.value || "all";
   const source = elements.newsSourceFilter.value || "all";
   const from = elements.newsFromDate.value ? new Date(`${elements.newsFromDate.value}T00:00:00`) : null;
@@ -174,6 +193,7 @@ function renderNews() {
     const date = item.publishedAt || item.createdAt || item.reportGeneratedAt;
     const parsed = date ? new Date(date) : null;
     return (!query || text.includes(query)) &&
+      (selectedState === "all" || cityState(item.cityCode) === selectedState) &&
       (city === "all" || item.cityCode === city) &&
       (source === "all" || item.postedBy === source) &&
       (!from || (parsed && parsed >= from)) &&
@@ -451,11 +471,18 @@ function createManualArticleDraft(event) {
 
 function requireLiveAdmin(action) {
   if (!staticMode) return true;
-  alert(`This GitHub Pages admin is read-only and cannot write to the repo. To ${action}, run npm run admin locally, use http://localhost:3000, then commit and push config/admin-settings.json.`);
+  showReadOnlyNotice(`GitHub Pages is preview-only. To ${action}, run local admin at http://localhost:3000, save changes there, then commit and push.`);
   return false;
+}
+
+function showReadOnlyNotice(message) {
+  if (!elements.readonlyNotice) return;
+  elements.readonlyNotice.textContent = message;
+  elements.readonlyNotice.hidden = false;
 }
 function clearNewsFilters() {
   elements.postedSearch.value = "";
+  elements.newsStateFilter.value = "all";
   elements.newsCityFilter.value = "all";
   elements.newsSourceFilter.value = "all";
   elements.newsStatusFilter.value = "active";
@@ -528,6 +555,11 @@ function getNewsSourceLogo(item) {
 function faviconUrl(host) {
   return host ? `https://www.google.com/s2/favicons?domain=${encodeURIComponent(host)}&sz=64` : "";
 }
+function cityState(code) {
+  const city = state?.cities?.find((item) => item.code === code);
+  return city?.state || "";
+}
+
 function cityLabel(code) {
   const city = state?.cities?.find((item) => item.code === code);
   return city ? city.name : String(code || "").replaceAll("_", " ");

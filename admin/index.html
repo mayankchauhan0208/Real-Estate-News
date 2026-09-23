@@ -32,6 +32,7 @@
             <p class="eyebrow">Brokket Live News</p>
             <h2 id="pageTitle">News management</h2>
             <p id="pageSubtitle">Review, edit and control every article shown in the Brokket app.</p>
+            <p id="readonlyNotice" class="readonly-notice" hidden></p>
           </div>
           <button id="addNewsBtn" type="button" class="primary add-news">+ Add news</button>
         </section>
@@ -48,6 +49,7 @@
           <section class="filter-card news-filters">
             <label class="search-field"><span>Search</span><input id="postedSearch" type="search" placeholder="Search title, city or author..."></label>
             <label><span>Status</span><select id="newsStatusFilter"><option value="active">Active</option><option value="all">All status</option></select></label>
+            <label><span>State</span><select id="newsStateFilter"><option value="all">All states</option></select></label>
             <label><span>City</span><select id="newsCityFilter"><option value="all">All cities</option></select></label>
             <label><span>Source</span><select id="newsSourceFilter"><option value="all">All sources</option></select></label>
             <label><span>From</span><input id="newsFromDate" type="date"></label>
