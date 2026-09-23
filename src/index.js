@@ -1346,6 +1346,7 @@ const allLocationKeywords = [
   ...outsideCityKeywords
 ];
 const blockedSourceUrlParts = [
+  "indianexpress.com/section/",
   "aninews.in",
   "content.magicbricks.com",
   "financialexpress.com/about/real-estate",
@@ -1557,13 +1558,13 @@ function isAllowedSource(source) {
     return false;
   }
 
-  if (allowedSourceUrlParts.includes(key)) {
-    return true;
-  }
-
   const normalized = source.toLowerCase();
   if (blockedSourceUrlParts.some((part) => normalized.includes(part))) {
     return false;
+  }
+
+  if (allowedSourceUrlParts.includes(key)) {
+    return true;
   }
 
   return false;

@@ -538,54 +538,60 @@
       "url": "https://indianexpress.com/section/business/aviation/feed",
       "label": "Indian Express — Aviation | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.030194Z"
+      "createdAt": "2026-09-19T07:15:38.030194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-921044605",
       "url": "https://indianexpress.com/section/business/banking-and-finance/feed",
       "label": "Indian Express — Banking & Finance | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.030194Z"
+      "createdAt": "2026-09-19T07:15:38.030194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-1212842779",
       "url": "https://indianexpress.com/section/business/companies/feed",
       "label": "Indian Express — Companies | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-1261397794",
       "url": "https://indianexpress.com/section/business/economy/feed",
       "label": "Indian Express — Economy | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-1546709233",
       "url": "https://indianexpress.com/section/business/feed",
       "label": "Indian Express — Business | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-1329590050",
       "url": "https://indianexpress.com/section/business/market/feed",
       "label": "Indian Express — Market | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-1967127544",
@@ -810,27 +816,30 @@
         "yamunanagar",
         "yavatmal"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-545364409",
       "url": "https://indianexpress.com/section/cities/jammu/feed",
       "label": "Indian Express — Jammu | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-597705586",
       "url": "https://indianexpress.com/section/cities/mysuru/feed",
       "label": "Indian Express — Mysuru | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-1889234634",
@@ -839,9 +848,10 @@
       "cityCodes": [
         "nagpur"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-1643476871",
@@ -850,9 +860,10 @@
       "cityCodes": [
         "nashik"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-1141757707",
@@ -862,9 +873,10 @@
         "mumbai",
         "navi_mumbai"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-948984906",
@@ -873,9 +885,10 @@
       "cityCodes": [
         "panchkula"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-56638727",
@@ -884,36 +897,40 @@
       "cityCodes": [
         "patiala"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-1004025503",
       "url": "https://indianexpress.com/section/cities/patna/feed",
       "label": "Indian Express — Patna | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-2122330984",
       "url": "https://indianexpress.com/section/cities/srinagar/feed",
       "label": "Indian Express — Srinagar | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-196500269",
       "url": "https://indianexpress.com/section/cities/thane/feed",
       "label": "Indian Express — Thane | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-1113094561",
@@ -927,27 +944,30 @@
         "thrissur",
         "trivandrum"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-1719410447",
       "url": "https://indianexpress.com/section/governance/feed",
       "label": "Indian Express — Governance | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-1348315246",
       "url": "https://indianexpress.com/section/india/feed",
       "label": "Indian Express — India | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-952943684",
@@ -965,18 +985,20 @@
         "tezpur",
         "tinsukia"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-1253336290",
       "url": "https://indianexpress.com/section/north-east-india/feed",
       "label": "Indian Express — North East India | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-1726327250",
@@ -985,9 +1007,10 @@
       "cityCodes": [
         "agartala"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
-      "createdAt": "2026-09-19T07:15:38.031194Z"
+      "createdAt": "2026-09-19T07:15:38.031194Z",
+      "disabledReason": "Disabled: Indian Express feed URL returns HTTP 403 / blocked feed endpoint"
     },
     {
       "id": "id-132891415",

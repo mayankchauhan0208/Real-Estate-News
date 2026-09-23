@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T11:43:47.506Z",
+  "generatedAt": "2026-09-23T11:50:09.734Z",
   "settings": {
     "automationEnabled": true,
     "apiPushEnabled": true,
@@ -540,7 +540,7 @@
         "url": "https://indianexpress.com/section/business/aviation/feed",
         "label": "Indian Express — Aviation | P2",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.030194Z"
       },
@@ -549,7 +549,7 @@
         "url": "https://indianexpress.com/section/business/banking-and-finance/feed",
         "label": "Indian Express — Banking & Finance | P2",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.030194Z"
       },
@@ -558,7 +558,7 @@
         "url": "https://indianexpress.com/section/business/companies/feed",
         "label": "Indian Express — Companies | P2",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -567,7 +567,7 @@
         "url": "https://indianexpress.com/section/business/economy/feed",
         "label": "Indian Express — Economy | P2",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -576,7 +576,7 @@
         "url": "https://indianexpress.com/section/business/feed",
         "label": "Indian Express — Business | P2",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -585,7 +585,7 @@
         "url": "https://indianexpress.com/section/business/market/feed",
         "label": "Indian Express — Market | P2",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -812,7 +812,7 @@
           "yamunanagar",
           "yavatmal"
         ],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -821,7 +821,7 @@
         "url": "https://indianexpress.com/section/cities/jammu/feed",
         "label": "Indian Express — Jammu | P2",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -830,7 +830,7 @@
         "url": "https://indianexpress.com/section/cities/mysuru/feed",
         "label": "Indian Express — Mysuru | P2",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -841,7 +841,7 @@
         "cityCodes": [
           "nagpur"
         ],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -852,7 +852,7 @@
         "cityCodes": [
           "nashik"
         ],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -864,7 +864,7 @@
           "mumbai",
           "navi_mumbai"
         ],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -875,7 +875,7 @@
         "cityCodes": [
           "panchkula"
         ],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -886,7 +886,7 @@
         "cityCodes": [
           "patiala"
         ],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -895,7 +895,7 @@
         "url": "https://indianexpress.com/section/cities/patna/feed",
         "label": "Indian Express — Patna | P2",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -904,7 +904,7 @@
         "url": "https://indianexpress.com/section/cities/srinagar/feed",
         "label": "Indian Express — Srinagar | P2",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -913,7 +913,7 @@
         "url": "https://indianexpress.com/section/cities/thane/feed",
         "label": "Indian Express — Thane | P2",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -929,7 +929,7 @@
           "thrissur",
           "trivandrum"
         ],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -938,7 +938,7 @@
         "url": "https://indianexpress.com/section/governance/feed",
         "label": "Indian Express — Governance | P2",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -947,7 +947,7 @@
         "url": "https://indianexpress.com/section/india/feed",
         "label": "Indian Express — India | P2",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -967,7 +967,7 @@
           "tezpur",
           "tinsukia"
         ],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -976,7 +976,7 @@
         "url": "https://indianexpress.com/section/north-east-india/feed",
         "label": "Indian Express — North East India | P2",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -987,7 +987,7 @@
         "cityCodes": [
           "agartala"
         ],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -5196,8 +5196,8 @@
     "requestedCities": 231,
     "moreRequestedCities": 0,
     "sources": 533,
-    "enabledSources": 354,
-    "disabledSources": 179,
+    "enabledSources": 331,
+    "disabledSources": 202,
     "manualSources": 389,
     "reports": 15,
     "postedNews": 0,
@@ -5226,7 +5226,7 @@
         "key": "source-quality",
         "label": "Sources cleaned",
         "ok": true,
-        "detail": "354 enabled, 179 disabled, 0 duplicate URL groups."
+        "detail": "331 enabled, 202 disabled, 0 duplicate URL groups."
       },
       {
         "key": "dry-run-history",
@@ -10724,7 +10724,7 @@
         "tezpur",
         "tinsukia"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -10733,7 +10733,7 @@
       "url": "https://indianexpress.com/section/business/aviation/feed",
       "label": "Indian Express — Aviation | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
@@ -10742,7 +10742,7 @@
       "url": "https://indianexpress.com/section/business/banking-and-finance/feed",
       "label": "Indian Express — Banking & Finance | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
@@ -10751,7 +10751,7 @@
       "url": "https://indianexpress.com/section/business/feed",
       "label": "Indian Express — Business | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -10978,7 +10978,7 @@
         "yamunanagar",
         "yavatmal"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -10987,7 +10987,7 @@
       "url": "https://indianexpress.com/section/business/companies/feed",
       "label": "Indian Express — Companies | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -10996,7 +10996,7 @@
       "url": "https://indianexpress.com/section/business/economy/feed",
       "label": "Indian Express — Economy | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11005,7 +11005,7 @@
       "url": "https://indianexpress.com/section/governance/feed",
       "label": "Indian Express — Governance | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11014,7 +11014,7 @@
       "url": "https://indianexpress.com/section/india/feed",
       "label": "Indian Express — India | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11023,7 +11023,7 @@
       "url": "https://indianexpress.com/section/cities/jammu/feed",
       "label": "Indian Express — Jammu | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11032,7 +11032,7 @@
       "url": "https://indianexpress.com/section/business/market/feed",
       "label": "Indian Express — Market | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11041,7 +11041,7 @@
       "url": "https://indianexpress.com/section/cities/mysuru/feed",
       "label": "Indian Express — Mysuru | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11052,7 +11052,7 @@
       "cityCodes": [
         "nagpur"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11063,7 +11063,7 @@
       "cityCodes": [
         "nashik"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11075,7 +11075,7 @@
         "mumbai",
         "navi_mumbai"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11084,7 +11084,7 @@
       "url": "https://indianexpress.com/section/north-east-india/feed",
       "label": "Indian Express — North East India | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11095,7 +11095,7 @@
       "cityCodes": [
         "panchkula"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11106,7 +11106,7 @@
       "cityCodes": [
         "patiala"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11115,7 +11115,7 @@
       "url": "https://indianexpress.com/section/cities/patna/feed",
       "label": "Indian Express — Patna | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11124,7 +11124,7 @@
       "url": "https://indianexpress.com/section/cities/srinagar/feed",
       "label": "Indian Express — Srinagar | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11133,7 +11133,7 @@
       "url": "https://indianexpress.com/section/cities/thane/feed",
       "label": "Indian Express — Thane | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11149,7 +11149,7 @@
         "thrissur",
         "trivandrum"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11160,7 +11160,7 @@
       "cityCodes": [
         "agartala"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
