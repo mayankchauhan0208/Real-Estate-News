@@ -1095,6 +1095,7 @@ const negativeNewsKeywords = [
   "violence",
   "weather",
   "yellow alert",
+  "yet to fully take shape",
   "worries",
   "worry"
 ];
@@ -1108,6 +1109,7 @@ const negativePhraseKeywords = [
   "बिल्डर ने आत्महत्या",
   "market crash",
   "buyers stranded",
+  "awaits buyers",
   "caqm pollution",
   "cheated homebuyers",
   "circle rates surge",
@@ -1187,6 +1189,7 @@ const negativePhraseKeywords = [
   "sales decline",
   "unchecked expansion",
   "needs focused planning",
+  "not a single plot",
   "sales drop",
   "strike hits",
   "sexual harassment",
@@ -1197,7 +1200,8 @@ const negativePhraseKeywords = [
   "traffic jam",
   "seven km detour",
   "water pipeline",
-  "yellow alert"
+  "yellow alert",
+  "yet to fully take shape"
 ];
 const severeBodyNegativeKeywords = [
   "accident",
@@ -1375,6 +1379,15 @@ function sourceControlId(value) {
   return `id-${Math.abs(hash)}`.toLowerCase();
 }
 
+function sourceAllowKey(source) {
+  try {
+    const url = new URL(source);
+    return `${url.hostname.replace(/^www\./, "")}${url.pathname.replace(/\/+$/, "")}`.toLowerCase();
+  } catch {
+    return "";
+  }
+}
+
 function getDisabledSourceIds() {
   return new Set([
     ...(Array.isArray(adminSettings.disabledSourceIds) ? adminSettings.disabledSourceIds : []),
@@ -1400,10 +1413,9 @@ const activeDefaultSources = [
   ...defaultSources,
   ...getActiveCitySources()
 ].filter((source) => !isSourceDisabledByAdmin(source));
-const allowedSourceUrlParts = activeDefaultSources.map((source) => {
-  const url = new URL(source);
-  return `${url.hostname.replace(/^www\./, "")}${url.pathname.replace(/\/+$/, "")}`.toLowerCase();
-});
+const allowedSourceUrlParts = [...activeDefaultSources, ...getSources()]
+  .map(sourceAllowKey)
+  .filter(Boolean);
 const monthNumbers = {
   jan: 0,
   january: 0,
@@ -1540,12 +1552,8 @@ function isAllowedSource(source) {
     return false;
   }
 
-  let key = "";
-
-  try {
-    const url = new URL(source);
-    key = `${url.hostname.replace(/^www\./, "")}${url.pathname.replace(/\/+$/, "")}`.toLowerCase();
-  } catch {
+  const key = sourceAllowKey(source);
+  if (!key) {
     return false;
   }
 

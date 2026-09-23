@@ -4905,6 +4905,40 @@
       "enabled": true,
       "category": "regional-hindi-rss",
       "createdAt": "2026-09-23T08:58:12.633Z"
+    },
+    {
+      "id": "id-525025910",
+      "url": "https://propnewstime.com/sub-category/location/Faridabad",
+      "label": "PropNewsTime — Faridabad Location | P1",
+      "cityCodes": [
+        "faridabad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-23T11:37:26.649Z"
+    },
+    {
+      "id": "id-1922466082",
+      "url": "https://bptpltd.com/updates/",
+      "label": "BPTP Limited — Updates | P1",
+      "cityCodes": [
+        "faridabad",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-23T11:37:26.649Z"
+    },
+    {
+      "id": "id-1266800645",
+      "url": "https://economictimes.indiatimes.com/topic/faridabad-realty",
+      "label": "Economic Times — Faridabad Realty Topic | P2",
+      "cityCodes": [
+        "faridabad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-23T11:37:26.649Z"
     }
   ],
   "lastBackfill": {

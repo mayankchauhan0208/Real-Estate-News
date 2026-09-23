@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T09:01:09.999Z",
+  "generatedAt": "2026-09-23T11:43:47.506Z",
   "settings": {
     "automationEnabled": true,
     "apiPushEnabled": true,
@@ -4907,6 +4907,40 @@
         "enabled": true,
         "category": "regional-hindi-rss",
         "createdAt": "2026-09-23T08:58:12.633Z"
+      },
+      {
+        "id": "id-525025910",
+        "url": "https://propnewstime.com/sub-category/location/Faridabad",
+        "label": "PropNewsTime — Faridabad Location | P1",
+        "cityCodes": [
+          "faridabad"
+        ],
+        "enabled": true,
+        "category": "manual",
+        "createdAt": "2026-09-23T11:37:26.649Z"
+      },
+      {
+        "id": "id-1922466082",
+        "url": "https://bptpltd.com/updates/",
+        "label": "BPTP Limited — Updates | P1",
+        "cityCodes": [
+          "faridabad",
+          "noida"
+        ],
+        "enabled": true,
+        "category": "manual",
+        "createdAt": "2026-09-23T11:37:26.649Z"
+      },
+      {
+        "id": "id-1266800645",
+        "url": "https://economictimes.indiatimes.com/topic/faridabad-realty",
+        "label": "Economic Times — Faridabad Realty Topic | P2",
+        "cityCodes": [
+          "faridabad"
+        ],
+        "enabled": true,
+        "category": "manual",
+        "createdAt": "2026-09-23T11:37:26.649Z"
       }
     ],
     "lastBackfill": {
@@ -5161,20 +5195,20 @@
     "liveCities": 231,
     "requestedCities": 231,
     "moreRequestedCities": 0,
-    "sources": 530,
-    "enabledSources": 351,
+    "sources": 533,
+    "enabledSources": 354,
     "disabledSources": 179,
-    "manualSources": 386,
-    "reports": 11,
+    "manualSources": 389,
+    "reports": 15,
     "postedNews": 0,
-    "candidateNews": 14
+    "candidateNews": 3
   },
   "readiness": {
     "readyForGit": true,
     "readyForApiPush": false,
     "duplicateSourceUrlGroups": 0,
     "disabledSourceUrls": 169,
-    "latestReportName": "news-run-2026-09-21T13-22-45-589Z.json",
+    "latestReportName": "news-run-2026-09-23T11-43-28-163Z.json",
     "checks": [
       {
         "key": "api-safe",
@@ -5192,7 +5226,7 @@
         "key": "source-quality",
         "label": "Sources cleaned",
         "ok": true,
-        "detail": "351 enabled, 179 disabled, 0 duplicate URL groups."
+        "detail": "354 enabled, 179 disabled, 0 duplicate URL groups."
       },
       {
         "key": "dry-run-history",
@@ -5939,7 +5973,7 @@
         "skynest towers"
       ],
       "enabled": true,
-      "sourceCount": 45
+      "sourceCount": 48
     },
     {
       "code": "gurugram",
@@ -8113,7 +8147,7 @@
         "noida international airport"
       ],
       "enabled": true,
-      "sourceCount": 94
+      "sourceCount": 95
     },
     {
       "code": "ghaziabad",
@@ -8822,6 +8856,18 @@
       "category": "default"
     },
     {
+      "id": "id-1922466082",
+      "url": "https://bptpltd.com/updates/",
+      "label": "BPTP Limited — Updates | P1",
+      "cityCodes": [
+        "faridabad",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-23T11:37:26.649Z"
+    },
+    {
       "id": "manual-v3-4e1fb6b4e4c4b6b2",
       "url": "https://www.brigadegroup.com/investor",
       "label": "Brigade Group — Investor Relations",
@@ -9326,6 +9372,17 @@
       "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1266800645",
+      "url": "https://economictimes.indiatimes.com/topic/faridabad-realty",
+      "label": "Economic Times — Faridabad Realty Topic | P2",
+      "cityCodes": [
+        "faridabad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-23T11:37:26.649Z"
     },
     {
       "id": "id-454990939",
@@ -12613,6 +12670,17 @@
       "category": "default"
     },
     {
+      "id": "id-525025910",
+      "url": "https://propnewstime.com/sub-category/location/Faridabad",
+      "label": "PropNewsTime — Faridabad Location | P1",
+      "cityCodes": [
+        "faridabad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-23T11:37:26.649Z"
+    },
+    {
       "id": "id-131109124",
       "url": "https://www.providenthousing.com/media",
       "label": "Provident Housing | P1",
@@ -14342,6 +14410,165 @@
   ],
   "reports": [
     {
+      "name": "news-run-2026-09-23T11-43-28-163Z.json",
+      "generatedAt": "2026-09-23T11:43:27.568Z",
+      "mode": "dry-run",
+      "dryRun": true,
+      "sourceCount": 3,
+      "fetchedArticleCount": 60,
+      "expandedArticleCount": 6,
+      "candidateCount": 3,
+      "postedCount": 0,
+      "rejectedArticleCount": 3,
+      "failureCount": 0,
+      "candidates": [
+        {
+          "title": "How Jewar Airport could trigger a Gurugram-like boom in Faridabad",
+          "cityCode": "faridabad",
+          "classification": "faridabad_jewar_catalyst",
+          "publishedAt": "2026-07-01T18:30:00.000Z",
+          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/how-jewar-airport-could-trigger-a-gurugram-like-boom-in-faridabad/articleshow/132137532.cms",
+          "postedBy": "The Economic Times"
+        },
+        {
+          "title": "BPTP begins allotment process for SkyNest Towers in Faridabad",
+          "cityCode": "faridabad",
+          "classification": "project_development",
+          "publishedAt": "2026-07-24T18:30:00.000Z",
+          "newsLink": "https://propnewstime.com/latestnewsstories/MzM0NTA=/bptp-begins-allotment-process-for-skynest-towers-in-faridabad",
+          "postedBy": "Prop News Time"
+        },
+        {
+          "title": "Bhumika Realty leases 24,000 sq ft retail space to Lifestyle in Faridabad",
+          "cityCode": "faridabad",
+          "classification": "project_development",
+          "publishedAt": "2026-09-17T18:30:00.000Z",
+          "newsLink": "https://economictimes.indiatimes.com/markets/digital-real-estate/realty-news/bhumika-realty-leases-24000-sq-ft-retail-space-to-lifestyle-in-faridabad/articleshow/134335383.cms",
+          "postedBy": "The Economic Times"
+        }
+      ],
+      "posted": [],
+      "rejectedArticles": [],
+      "cityBreakdown": [],
+      "skippedByReason": {
+        "filter 9: no specific project/development signal": 3
+      }
+    },
+    {
+      "name": "news-run-2026-09-23T11-40-36-098Z.json",
+      "generatedAt": "2026-09-23T11:40:23.907Z",
+      "mode": "dry-run",
+      "dryRun": true,
+      "sourceCount": 3,
+      "fetchedArticleCount": 60,
+      "expandedArticleCount": 8,
+      "candidateCount": 5,
+      "postedCount": 0,
+      "rejectedArticleCount": 3,
+      "failureCount": 0,
+      "candidates": [
+        {
+          "title": "Gurugram Global City awaits buyers as Haryana plans another in Faridabad",
+          "cityCode": "faridabad",
+          "classification": "project_development",
+          "publishedAt": "2026-09-03T18:30:00.000Z",
+          "newsLink": "https://propnewstime.com/latestnewsstories/MzU2NjU=/gurugram-global-city-awaits-buyers-as-haryana-plans-another-in-faridabad",
+          "postedBy": "Prop News Time"
+        },
+        {
+          "title": "How Jewar Airport could trigger a Gurugram-like boom in Faridabad",
+          "cityCode": "faridabad",
+          "classification": "faridabad_jewar_catalyst",
+          "publishedAt": "2026-07-01T18:30:00.000Z",
+          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/how-jewar-airport-could-trigger-a-gurugram-like-boom-in-faridabad/articleshow/132137532.cms",
+          "postedBy": "The Economic Times"
+        },
+        {
+          "title": "BPTP begins allotment process for SkyNest Towers in Faridabad",
+          "cityCode": "faridabad",
+          "classification": "project_development",
+          "publishedAt": "2026-07-24T18:30:00.000Z",
+          "newsLink": "https://propnewstime.com/latestnewsstories/MzM0NTA=/bptp-begins-allotment-process-for-skynest-towers-in-faridabad",
+          "postedBy": "Prop News Time"
+        },
+        {
+          "title": "UpdateAug 2026BPTP Skynest Bags 'Premium High-Rise Development of the Year' at Times Realty & Infrastructure...",
+          "cityCode": "faridabad",
+          "classification": "project_development",
+          "publishedAt": "2026-08-29T18:30:00.000Z",
+          "newsLink": "https://bptpltd.com/updates/bptp-skynest-bags-premium-high-rise-development-of-the-year-at-times-realty-infrastructure-conclave-2026/",
+          "postedBy": "BPTP Limited — Latest News & Updates"
+        },
+        {
+          "title": "Bhumika Realty leases 24,000 sq ft retail space to Lifestyle in Faridabad",
+          "cityCode": "faridabad",
+          "classification": "project_development",
+          "publishedAt": "2026-09-17T18:30:00.000Z",
+          "newsLink": "https://economictimes.indiatimes.com/markets/digital-real-estate/realty-news/bhumika-realty-leases-24000-sq-ft-retail-space-to-lifestyle-in-faridabad/articleshow/134335383.cms",
+          "postedBy": "The Economic Times"
+        }
+      ],
+      "posted": [],
+      "rejectedArticles": [],
+      "cityBreakdown": [],
+      "skippedByReason": {
+        "filter 9: no specific project/development signal": 3
+      }
+    },
+    {
+      "name": "news-run-2026-09-23T11-36-07-958Z.json",
+      "generatedAt": "2026-09-23T11:36:05.685Z",
+      "mode": "dry-run",
+      "dryRun": true,
+      "sourceCount": 9,
+      "fetchedArticleCount": 115,
+      "expandedArticleCount": 2,
+      "candidateCount": 2,
+      "postedCount": 0,
+      "rejectedArticleCount": 0,
+      "failureCount": 0,
+      "candidates": [
+        {
+          "title": "NCR office leasing dips 1% to 7.2 million sq ft in H1 2026: Report",
+          "cityCode": "faridabad",
+          "classification": "ncr_office_market",
+          "publishedAt": "2026-07-12T11:30:00.000Z",
+          "newsLink": "https://realty.economictimes.indiatimes.com/news/commercial/ncr-office-leasing-declines-slightly-to-72-million-sq-ft-in-h1-2026/132356292?utm_source=top_news&utm_medium=tagListing",
+          "postedBy": "ET Realty"
+        },
+        {
+          "title": "BPTP to invest ₹1,100 crore in Greater Faridabad housing project",
+          "cityCode": "faridabad",
+          "classification": "leadership_confidence",
+          "publishedAt": "2026-04-20T12:15:42.000Z",
+          "newsLink": "https://realty.economictimes.indiatimes.com/news/residential/bptp-invests-1100-crore-in-new-greater-faridabad-housing-project-skynest/130390807?utm_source=tagListing&utm_medium=tagListing",
+          "postedBy": "ET Realty"
+        }
+      ],
+      "posted": [],
+      "rejectedArticles": [],
+      "cityBreakdown": [],
+      "skippedByReason": {}
+    },
+    {
+      "name": "news-run-2026-09-23T11-33-57-430Z.json",
+      "generatedAt": "2026-09-23T11:33:57.430Z",
+      "mode": "dry-run",
+      "dryRun": true,
+      "sourceCount": 9,
+      "fetchedArticleCount": 115,
+      "expandedArticleCount": 0,
+      "candidateCount": 0,
+      "postedCount": 0,
+      "rejectedArticleCount": 0,
+      "failureCount": 0,
+      "candidates": [],
+      "posted": [],
+      "rejectedArticles": [],
+      "cityBreakdown": [],
+      "skippedByReason": {}
+    },
+    {
       "name": "news-run-2026-09-21T13-22-45-589Z.json",
       "generatedAt": "2026-09-21T13:22:39.834Z",
       "mode": "dry-run",
@@ -15374,11 +15601,11 @@
   ],
   "analytics": {
     "totals": {
-      "fetched": 4144,
-      "expanded": 1132,
-      "readyToPost": 92,
+      "fetched": 4494,
+      "expanded": 1148,
+      "readyToPost": 102,
       "posted": 0,
-      "rejected": 2336,
+      "rejected": 2342,
       "failedSources": 7
     },
     "byCity": [
@@ -15387,7 +15614,7 @@
         "expanded": 0,
         "readyToPost": 0,
         "posted": 0,
-        "rejected": 2336,
+        "rejected": 2342,
         "rejectionReasons": {}
       },
       {
@@ -15409,7 +15636,7 @@
       {
         "cityCode": "faridabad",
         "expanded": 0,
-        "readyToPost": 7,
+        "readyToPost": 17,
         "posted": 0,
         "rejected": 0,
         "rejectionReasons": {}
@@ -15490,7 +15717,7 @@
       },
       {
         "reason": "filter 9: no specific project/development signal",
-        "count": 300
+        "count": 306
       },
       {
         "reason": "filter 3: negative/crime/utility concern news",
@@ -15525,157 +15752,36 @@
   "postedNews": [],
   "candidateNews": [
     {
-      "title": "Greater Faridabad to Get 7-Km Elevated Road for Faster Gurugram Connectivity",
+      "title": "Bhumika Realty leases 24,000 sq ft retail space to Lifestyle in Faridabad",
       "cityCode": "faridabad",
-      "classification": "target_corridor",
-      "publishedAt": "2026-09-21T06:11:05.000Z",
-      "newsLink": "https://www.magicbricks.com/news/greater-faridabad-to-get-7-km-elevated-road-for-faster-gurugram-connectivity-pmmb/151683.html",
-      "postedBy": "Property News",
-      "reportName": "news-run-2026-09-21T13-22-45-589Z.json",
-      "reportGeneratedAt": "2026-09-21T13:22:39.834Z",
-      "dryRun": true
-    },
-    {
-      "title": "Greater Faridabad to Get 7-Km Elevated Road for Faster Gurugram Connectivity",
-      "cityCode": "gurugram",
-      "classification": "target_corridor",
-      "publishedAt": "2026-09-21T06:11:05.000Z",
-      "newsLink": "https://www.magicbricks.com/news/greater-faridabad-to-get-7-km-elevated-road-for-faster-gurugram-connectivity-pmmb/151683.html",
-      "postedBy": "Property News",
-      "reportName": "news-run-2026-09-21T13-22-45-589Z.json",
-      "reportGeneratedAt": "2026-09-21T13:22:39.834Z",
-      "dryRun": true
-    },
-    {
-      "title": "Gulshan group inks partnership with Ourika Estates to develop projects in Ghaziabad and Lucknow",
-      "cityCode": "ghaziabad",
       "classification": "project_development",
-      "publishedAt": "2026-09-20T18:30:00.000Z",
-      "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gulshan-group-inks-partnership-with-ourika-estates-to-develop-projects-in-ghaziabad-and-lucknow/articleshow/134386762.cms",
+      "publishedAt": "2026-09-17T18:30:00.000Z",
+      "newsLink": "https://economictimes.indiatimes.com/markets/digital-real-estate/realty-news/bhumika-realty-leases-24000-sq-ft-retail-space-to-lifestyle-in-faridabad/articleshow/134335383.cms",
       "postedBy": "The Economic Times",
-      "reportName": "news-run-2026-09-21T13-22-45-589Z.json",
-      "reportGeneratedAt": "2026-09-21T13:22:39.834Z",
+      "reportName": "news-run-2026-09-23T11-43-28-163Z.json",
+      "reportGeneratedAt": "2026-09-23T11:43:27.568Z",
       "dryRun": true
     },
     {
-      "title": "Gulshan group inks partnership with Ourika Estates to develop projects in Ghaziabad and Lucknow",
-      "cityCode": "lucknow",
-      "classification": "project_development",
-      "publishedAt": "2026-09-20T18:30:00.000Z",
-      "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gulshan-group-inks-partnership-with-ourika-estates-to-develop-projects-in-ghaziabad-and-lucknow/articleshow/134386762.cms",
-      "postedBy": "The Economic Times",
-      "reportName": "news-run-2026-09-21T13-22-45-589Z.json",
-      "reportGeneratedAt": "2026-09-21T13:22:39.834Z",
-      "dryRun": true
-    },
-    {
-      "title": "First Jewar Airport, now F1: Will its revival be the next real estate boost?",
-      "cityCode": "noida",
-      "classification": "connectivity_catalyst",
-      "publishedAt": "2026-09-19T00:19:00.000Z",
-      "newsLink": "https://www.hindustantimes.com/real-estate/first-jewar-airport-now-f1-will-formula-1-revival-be-the-next-real-estate-boost-for-yamuna-expressway-101789653634913.html",
-      "postedBy": "Hindustan Times",
-      "reportName": "news-run-2026-09-21T13-22-45-589Z.json",
-      "reportGeneratedAt": "2026-09-21T13:22:39.834Z",
-      "dryRun": true
-    },
-    {
-      "title": "Genpact leases 400,000 sq ft of office space at ASF Insignia, Gurugram",
-      "cityCode": "gurugram",
-      "classification": "positive_market_infrastructure",
-      "publishedAt": "2026-09-15T18:30:00.000Z",
-      "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/genpact-leases-400000-sq-ft-office-space-in-gurugram-boosting-ncrs-commercial-real-estate-market/articleshow/134281481.cms",
-      "postedBy": "The Economic Times",
-      "reportName": "news-run-2026-09-21T13-22-45-589Z.json",
-      "reportGeneratedAt": "2026-09-21T13:22:39.834Z",
-      "dryRun": true
-    },
-    {
-      "title": "Embassy Developments to invest Rs 2,000 cr in 85-acre Bengaluru project phase 1",
-      "cityCode": "bangalore",
-      "classification": "project_development",
-      "publishedAt": "2026-09-14T18:30:00.000Z",
-      "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/embassy-developments-to-invest-rs-2000-cr-in-85-acre-bengaluru-project-phase-1/articleshow/134263134.cms",
-      "postedBy": "The Economic Times",
-      "reportName": "news-run-2026-09-21T13-22-45-589Z.json",
-      "reportGeneratedAt": "2026-09-21T13:22:39.834Z",
-      "dryRun": true
-    },
-    {
-      "title": "UP RERA approves 13 realty projects worth ₹2,380 crore; Barabanki tops list",
-      "cityCode": "barabanki",
-      "classification": "project_development",
-      "publishedAt": "2026-09-11T23:56:00.000Z",
-      "newsLink": "https://www.hindustantimes.com/real-estate/up-rera-approves-13-realty-projects-worth-rs-2-380-crore-barabanki-tops-list-101789190302046.html",
-      "postedBy": "Hindustan Times",
-      "reportName": "news-run-2026-09-21T13-22-45-589Z.json",
-      "reportGeneratedAt": "2026-09-21T13:22:39.834Z",
-      "dryRun": true
-    },
-    {
-      "title": "Kotak Realty Fund to invest ₹800 crore in Gurugram residential projects",
-      "cityCode": "gurugram",
-      "classification": "positive_market_infrastructure",
-      "publishedAt": "2026-09-11T11:20:02.000Z",
-      "newsLink": "https://www.cnbctv18.com/alternative-investment-fund/kotak-realty-fund-to-invest-rs-800-crore-in-gurugram-residential-projects-19989504.htm",
-      "postedBy": "CNBC TV18",
-      "reportName": "news-run-2026-09-21T13-22-45-589Z.json",
-      "reportGeneratedAt": "2026-09-21T13:22:39.834Z",
-      "dryRun": true
-    },
-    {
-      "title": "Hiranandani Communities enters Goa property market through two partnerships",
-      "cityCode": "goa",
-      "classification": "connectivity_catalyst",
-      "publishedAt": "2026-09-09T18:30:00.000Z",
-      "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/hiranandani-communities-enters-goa-property-market-through-two-partnerships/articleshow/134007959.cms",
-      "postedBy": "The Economic Times",
-      "reportName": "news-run-2026-09-21T13-22-45-589Z.json",
-      "reportGeneratedAt": "2026-09-21T13:22:39.834Z",
-      "dryRun": true
-    },
-    {
-      "title": "County Group enters Gurugram with ₹4,500-crore ultra-luxury project",
-      "cityCode": "gurugram",
-      "classification": "project_development",
-      "publishedAt": "2026-09-09T05:58:00.000Z",
-      "newsLink": "https://www.hindustantimes.com/real-estate/county-group-enters-gurugram-with-4-500-crore-ultra-luxury-project-101788952204512.html",
-      "postedBy": "Hindustan Times",
-      "reportName": "news-run-2026-09-21T13-22-45-589Z.json",
-      "reportGeneratedAt": "2026-09-21T13:22:39.834Z",
-      "dryRun": true
-    },
-    {
-      "title": "Gurugram has jobs, Faridabad space: How connectivity and changing buyer needs are reshaping NCR housing",
+      "title": "BPTP begins allotment process for SkyNest Towers in Faridabad",
       "cityCode": "faridabad",
-      "classification": "positive_city_market",
-      "publishedAt": "2026-09-08T18:30:00.000Z",
-      "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gurugram-has-jobs-faridabad-space-how-connectivity-and-changing-buyer-needs-are-reshaping-ncr-housing/articleshow/133971952.cms",
-      "postedBy": "The Economic Times",
-      "reportName": "news-run-2026-09-21T13-22-45-589Z.json",
-      "reportGeneratedAt": "2026-09-21T13:22:39.834Z",
+      "classification": "project_development",
+      "publishedAt": "2026-07-24T18:30:00.000Z",
+      "newsLink": "https://propnewstime.com/latestnewsstories/MzM0NTA=/bptp-begins-allotment-process-for-skynest-towers-in-faridabad",
+      "postedBy": "Prop News Time",
+      "reportName": "news-run-2026-09-23T11-43-28-163Z.json",
+      "reportGeneratedAt": "2026-09-23T11:43:27.568Z",
       "dryRun": true
     },
     {
-      "title": "County Group targets GDV of Rs 4,500 crore from Gurugram project",
-      "cityCode": "gurugram",
-      "classification": "project_development",
-      "publishedAt": "2026-09-08T18:30:00.000Z",
-      "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/county-group-targets-gdv-of-rs-4500-crore-from-gurugram-project/articleshow/133957105.cms",
+      "title": "How Jewar Airport could trigger a Gurugram-like boom in Faridabad",
+      "cityCode": "faridabad",
+      "classification": "faridabad_jewar_catalyst",
+      "publishedAt": "2026-07-01T18:30:00.000Z",
+      "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/how-jewar-airport-could-trigger-a-gurugram-like-boom-in-faridabad/articleshow/132137532.cms",
       "postedBy": "The Economic Times",
-      "reportName": "news-run-2026-09-21T13-22-45-589Z.json",
-      "reportGeneratedAt": "2026-09-21T13:22:39.834Z",
-      "dryRun": true
-    },
-    {
-      "title": "Blackstone-backed ASK Property Fund invests ₹300 crore in Ghaziabad residential projects",
-      "cityCode": "ghaziabad",
-      "classification": "project_development",
-      "publishedAt": "2026-09-04T05:38:34.000Z",
-      "newsLink": "https://www.cnbctv18.com/real-estate/blackstone-ask-property-fund-invests-rs-300-crore-ghaziabad-projects-19984057.htm",
-      "postedBy": "CNBC TV18",
-      "reportName": "news-run-2026-09-21T13-22-45-589Z.json",
-      "reportGeneratedAt": "2026-09-21T13:22:39.834Z",
+      "reportName": "news-run-2026-09-23T11-43-28-163Z.json",
+      "reportGeneratedAt": "2026-09-23T11:43:27.568Z",
       "dryRun": true
     }
   ],

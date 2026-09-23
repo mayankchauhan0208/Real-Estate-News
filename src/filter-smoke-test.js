@@ -128,6 +128,12 @@ assert.equal(isAllowedSource("https://www.rpsgroupindia.com/"), false);
 assert.equal(isAllowedSource("https://www.magicbricks.com/news/feed"), true);
 assert.equal(isAllowedSource("https://www.hindustantimes.com/feeds/rss/cities/gurugram-news/rssfeed.xml"), true);
 assert.equal(isAllowedSource("https://www.hindustantimes.com/feeds/rss/cities/faridabad-news/rssfeed.xml"), true);
+assert.equal(isAllowedSource("https://www.amarujala.com/rss/faridabad.xml"), true);
+assert.equal(isAllowedSource("https://www.amarujala.com/rss/real-estate.xml"), true);
+assert.equal(isAllowedSource("https://faridabad.nic.in/department/faridabad-metropolitan-development-authority-fmda"), true);
+assert.equal(isAllowedSource("https://propnewstime.com/sub-category/location/Faridabad"), true);
+assert.equal(isAllowedSource("https://bptpltd.com/updates/"), true);
+assert.equal(isAllowedSource("https://economictimes.indiatimes.com/topic/faridabad-realty"), true);
 assert.equal(isAllowedSource("https://www.hindustantimes.com/feeds/rss/real-estate/rssfeed.xml"), true);
 assert.equal(isAllowedSource("https://economictimes.indiatimes.com/rssfeeds/13357019.cms"), true);
 assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/rssfeeds/6547154.cms"), true);
@@ -1381,6 +1387,16 @@ assert.match(
   /negative\/crime\/utility concern news/
 );
 
+
+assert.match(
+  reasons({
+    title: "Gurugram Global City awaits buyers as Haryana plans another in Faridabad",
+    description: "The earlier project is yet to fully take shape and not a single plot has been sold.",
+    articleText: "The report raises concern about demand before another Faridabad Global City project is planned.",
+    newsLink: "https://propnewstime.com/latestnewsstories/faridabad-global-city-awaits-buyers"
+  }).join("; "),
+  /negative\/crime\/utility concern news/
+);
 assert.match(
   reasons({
     title: "Yellow alert for thunderstorms in Haryana till June 24",
