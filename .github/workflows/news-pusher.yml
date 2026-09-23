@@ -74,7 +74,7 @@ concurrency:
 jobs:
   push-news:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
 
     steps:
       - name: Checkout
@@ -121,8 +121,8 @@ jobs:
           AUTO_SOURCE_BATCH: "false"
           SOURCE_BATCH_COUNT: "1"
           ARTICLE_METADATA_CONCURRENCY: "6"
-          FETCH_TIMEOUT_MS: "15000"
-          SOURCE_FETCH_TIMEOUT_MS: "120000"
+          FETCH_TIMEOUT_MS: "25000"
+          SOURCE_FETCH_TIMEOUT_MS: "180000"
           ENABLE_NOIDA_CITY: "true"
           ALLOW_NOIDA_API: "true"
           MAX_ITEMS_PER_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_items_per_run || '80' }}
