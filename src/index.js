@@ -1547,25 +1547,16 @@ function isAllowedExtraArticleUrl(articleUrl) {
 }
 
 function isAllowedSource(source) {
-  if (!source) {
+  if (!source || isSourceDisabledByAdmin(source)) {
     return false;
   }
 
-  const key = sourceAllowKey(source);
-  if (!key) {
+  try {
+    const url = new URL(source);
+    return ["http:", "https:"].includes(url.protocol);
+  } catch {
     return false;
   }
-
-  const normalized = source.toLowerCase();
-  if (blockedSourceUrlParts.some((part) => normalized.includes(part))) {
-    return false;
-  }
-
-  if (allowedSourceUrlParts.includes(key)) {
-    return true;
-  }
-
-  return false;
 }
 
 function isLikelyFeedUrl(sourceUrl) {

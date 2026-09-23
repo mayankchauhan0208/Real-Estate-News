@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T12:33:17.546Z",
+  "generatedAt": "2026-09-23T12:47:05.150Z",
   "settings": {
     "automationEnabled": true,
     "apiPushEnabled": true,
@@ -11,177 +11,7 @@
     ],
     "disabledCityCodes": [],
     "disabledSourceIds": [],
-    "disabledSourceUrls": [
-      "https://ahmedabadcity.gov.in/dc/tenders",
-      "https://aiforera.org",
-      "https://ajmera.com",
-      "https://apiic.in",
-      "https://auda.org.in",
-      "https://bbmp.gov.in",
-      "https://bda.gov.in",
-      "https://cidco.maharashtra.gov.in",
-      "https://cidco.maharashtra.gov.in/page?token=1c64f4f8470",
-      "https://cochinport.gov.in/tenders",
-      "https://corporate-old.mmrcl.com/en/content/press-releases",
-      "https://countygroup.in",
-      "https://cpc.parivesh.nic.in",
-      "https://cpc.parivesh.nic.in/onlinesearch_dashboard.aspx?pid=tornotissuedyet&status=na",
-      "https://crda.ap.gov.in",
-      "https://dda.gov.in",
-      "https://dfccil.com",
-      "https://english.bmrc.co.in",
-      "https://gccservices.chennaicorporation.gov.in",
-      "https://gcda.kerala.gov.in",
-      "https://gidc.gujarat.gov.in",
-      "https://gmada.gov.in",
-      "https://gmda.assam.gov.in",
-      "https://gmda.gov.in",
-      "https://gujrera.gujarat.gov.in",
-      "https://haryanarera.gov.in",
-      "https://hginfra.com/investors-presentation.php",
-      "https://hsiidc.etenders.in",
-      "https://hsiidc.org.in",
-      "https://hsvphry.org.in",
-      "https://ibbi.gov.in/orders/nclt",
-      "https://ibbi.gov.in/search/index/press-release",
-      "https://indiainvestmentgrid.gov.in/index.jsp",
-      "https://indianinfrastructure.com",
-      "https://indianrailways.gov.in",
-      "https://investor.clint.com.sg/newsroom.html",
-      "https://ipm.mospi.gov.in/home/index",
-      "https://ipm.mospi.gov.in/home/showpressrelease",
-      "https://jda.rajasthan.gov.in",
-      "https://jharera.jharkhand.gov.in",
-      "https://kmda.wb.gov.in",
-      "https://kochimetro.org",
-      "https://ltmetro.com/press",
-      "https://maharera.maharashtra.gov.in",
-      "https://maxestates.in/investors",
-      "https://mcg.gov.in",
-      "https://mchi.net",
-      "https://mddaonline.in",
-      "https://mmrda.maharashtra.gov.in/en",
-      "https://mmrda.maharashtra.gov.in/en/news-and-announcements/archive",
-      "https://mohua.gov.in",
-      "https://morth.nic.in",
-      "https://mpmetrorail.com",
-      "https://msrdc.in",
-      "https://navaraipuratalnagar.com",
-      "https://ncrpb.nic.in",
-      "https://ncrtc.in",
-      "https://news.railanalysis.com",
-      "https://nhai.gov.in",
-      "https://nhsrcl.in/en/media/press-release",
-      "https://nicdc.in",
-      "https://noidaauthorityonline.in",
-      "https://prera.py.gov.in",
-      "https://puda.punjab.gov.in",
-      "https://punemetrorail.org",
-      "https://rera.assam.gov.in",
-      "https://rera.cgstate.gov.in",
-      "https://rera.chbonline.in",
-      "https://rera.goa.gov.in",
-      "https://rera.karnataka.gov.in",
-      "https://rera.kerala.gov.in",
-      "https://rera.odisha.gov.in",
-      "https://rera.punjab.gov.in",
-      "https://rera.rajasthan.gov.in",
-      "https://rera.telangana.gov.in",
-      "https://rera.tn.gov.in",
-      "https://rera.tripura.gov.in",
-      "https://rera.wb.gov.in",
-      "https://residex.nhbonline.org.in",
-      "https://riico.rajasthan.gov.in",
-      "https://sipcotweb.tn.gov.in",
-      "https://sumadhuragroup.com",
-      "https://surajestate.com/investor-corner",
-      "https://surajestate.com/investor-relations",
-      "https://tcpharyana.gov.in",
-      "https://tgiic.telangana.gov.in",
-      "https://themetrorailguy.com",
-      "https://transport.rajasthan.gov.in/jmrc",
-      "https://uhuda.uk.gov.in",
-      "https://up-rera.in",
-      "https://urbantransportnews.com",
-      "https://vpt.shipping.gov.in",
-      "https://www.aai.aero",
-      "https://www.aba-corp.com",
-      "https://www.abacorp.in",
-      "https://www.acegroupindia.com",
-      "https://www.anantrajlimited.com/investors",
-      "https://www.assetzproperty.com/investors",
-      "https://www.bda.gov.in/circular",
-      "https://www.bda.org.in",
-      "https://www.bdabangalore.org",
-      "https://www.brigadegroup.com/investor",
-      "https://www.bseindia.com/corporates.html",
-      "https://www.bseindia.com/corporates/ann.html",
-      "https://www.casagrand.co.in/investor-relation",
-      "https://www.cmdachennai.gov.in",
-      "https://www.colliers.com/en-in/research",
-      "https://www.delhimetrorail.com",
-      "https://www.dlf.in/investor",
-      "https://www.gaursonsindia.com",
-      "https://www.giftgujarat.in",
-      "https://www.gmda.gov.in",
-      "https://www.greaternoidaauthority.in",
-      "https://www.grinfra.com/intimations-under-regulation-30",
-      "https://www.gujaratmetrorail.com",
-      "https://www.gulshangroup.com",
-      "https://www.hmda.gov.in/news",
-      "https://www.hprera.in",
-      "https://www.hsvphry.org.in",
-      "https://www.idaindore.org",
-      "https://www.kalpataru.com/investor-corner",
-      "https://www.kiadb.org",
-      "https://www.knrcl.com/investors_presentation.html",
-      "https://www.livemint.com/rss/airss",
-      "https://www.livemint.com/rss/budgetrss",
-      "https://www.livemint.com/rss/companiesrss",
-      "https://www.livemint.com/rss/industryrss",
-      "https://www.livemint.com/rss/insurancerss",
-      "https://www.livemint.com/rss/marketsrss",
-      "https://www.livemint.com/rss/moneyrss",
-      "https://www.livemint.com/rss/newsrss",
-      "https://www.livemint.com/rss/politicsrss",
-      "https://www.livemint.com/rss/technologyrss",
-      "https://www.lntrealty.com/news-blogs",
-      "https://www.mahametro.org",
-      "https://www.metrorailnews.in",
-      "https://www.mhada.gov.in",
-      "https://www.mumbaiport.gov.in/show_tenders.php?catid=3&depid=1&lang=1",
-      "https://www.nhsrcl.in",
-      "https://www.noidaauthority.in",
-      "https://www.nseindia.com/companies-listing/corporate-filings",
-      "https://www.omaxe.com",
-      "https://www.pib.gov.in",
-      "https://www.pib.gov.in/allrel.aspx",
-      "https://www.pppinindia.gov.in",
-      "https://www.puravankara.com/investors",
-      "https://www.puriconstructions.com",
-      "https://www.rera.ap.gov.in",
-      "https://www.rera.delhi.gov.in",
-      "https://www.rera.mp.gov.in",
-      "https://www.rpsgroupindia.com",
-      "https://www.savills.in/research.aspx",
-      "https://www.sayahomes.com",
-      "https://www.signatureglobal.in",
-      "https://www.signatureglobal.in/financials",
-      "https://www.sikka.in",
-      "https://www.sobha.com/investor-relations",
-      "https://www.sunteckindia.com/investor-relations",
-      "https://www.supertechlimited.com",
-      "https://www.tarc.in/dis-46-pt-2025-26",
-      "https://www.track2realty.track2media.com",
-      "https://www.ukrera.org.in",
-      "https://www.up-rera.in",
-      "https://www.vocport.gov.in",
-      "https://www.wbhidcoltd.com",
-      "https://www.whitelandcorp.com",
-      "https://www.whitelandcorporation.com",
-      "https://yamunaexpresswayauthority.com",
-      "https://www.constructionworld.in/latest-construction-news/real-estate-news"
-    ],
+    "disabledSourceUrls": [],
     "manualSources": [
       {
         "id": "id-730294178",
@@ -513,7 +343,7 @@
           "gurugram",
           "noida"
         ],
-        "enabled": false,
+        "enabled": true,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.030194Z"
       },
@@ -1149,7 +979,7 @@
         "url": "https://infra.economictimes.indiatimes.com/rss/videostories",
         "label": "ETInfra — Video Stories | P1",
         "cityCodes": [],
-        "enabled": false,
+        "enabled": true,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -1167,7 +997,7 @@
         "url": "https://infra.economictimes.indiatimes.com/rss/webstories",
         "label": "ETInfra — Web Stories | P1",
         "cityCodes": [],
-        "enabled": false,
+        "enabled": true,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -1883,7 +1713,7 @@
         "url": "https://realty.economictimes.indiatimes.com/rss/videostories",
         "label": "ETRealty — Video Stories | P1",
         "cityCodes": [],
-        "enabled": false,
+        "enabled": true,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.032194Z"
       },
@@ -1892,7 +1722,7 @@
         "url": "https://realty.economictimes.indiatimes.com/rss/webstories",
         "label": "ETRealty — Web Stories | P1",
         "cityCodes": [],
-        "enabled": false,
+        "enabled": true,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.032194Z"
       },
@@ -2682,7 +2512,7 @@
         "url": "https://www.cbre.co.in/insights",
         "label": "CBRE India — Insights | P2",
         "cityCodes": [],
-        "enabled": false,
+        "enabled": true,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.033194Z"
       },
@@ -3664,7 +3494,7 @@
         "url": "https://cci.gov.in/combination/green-channel-view",
         "label": "CCI — Green Channel Combinations",
         "cityCodes": [],
-        "enabled": false,
+        "enabled": true,
         "category": "manual",
         "createdAt": "2026-09-19T13:57:42.64579+05:30"
       },
@@ -4263,7 +4093,7 @@
         "url": "https://www.cci.gov.in/combination/orders-section31",
         "label": "CCI — Combination Orders",
         "cityCodes": [],
-        "enabled": false,
+        "enabled": true,
         "category": "manual",
         "createdAt": "2026-09-19T13:57:42.646793+05:30"
       },
@@ -4272,7 +4102,7 @@
         "url": "https://www.cci.gov.in/combination/press-release",
         "label": "CCI — Combination Press Releases",
         "cityCodes": [],
-        "enabled": false,
+        "enabled": true,
         "category": "manual",
         "createdAt": "2026-09-19T13:57:42.646793+05:30"
       },
@@ -4745,7 +4575,7 @@
         "cityCodes": [
           "mumbai"
         ],
-        "enabled": false,
+        "enabled": true,
         "category": "manual",
         "createdAt": "2026-09-19T13:57:42.646793+05:30"
       },
@@ -4886,7 +4716,7 @@
         "url": "https://hindi.etnownews.com/feeds/gns-etn-hindi-real-estate",
         "label": "ET Now Swadesh Real Estate Hindi RSS | P2",
         "cityCodes": [],
-        "enabled": false,
+        "enabled": true,
         "category": "regional-hindi-rss",
         "createdAt": "2026-09-23T07:10:59.990Z"
       },
@@ -5196,8 +5026,8 @@
     "requestedCities": 231,
     "moreRequestedCities": 0,
     "sources": 532,
-    "enabledSources": 353,
-    "disabledSources": 179,
+    "enabledSources": 532,
+    "disabledSources": 0,
     "manualSources": 389,
     "reports": 16,
     "postedNews": 0,
@@ -5207,7 +5037,7 @@
     "readyForGit": true,
     "readyForApiPush": false,
     "duplicateSourceUrlGroups": 0,
-    "disabledSourceUrls": 169,
+    "disabledSourceUrls": 0,
     "latestReportName": "news-run-2026-09-23T12-01-44-772Z.json",
     "checks": [
       {
@@ -5226,7 +5056,7 @@
         "key": "source-quality",
         "label": "Sources cleaned",
         "ok": true,
-        "detail": "353 enabled, 179 disabled, 0 duplicate URL groups."
+        "detail": "532 enabled, 0 disabled, 0 duplicate URL groups."
       },
       {
         "key": "dry-run-history",
@@ -8329,7 +8159,7 @@
       "cityCodes": [
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "city"
     },
     {
@@ -8339,7 +8169,7 @@
       "cityCodes": [
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "city"
     },
     {
@@ -8364,7 +8194,7 @@
       "cityCodes": [
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "city"
     },
     {
@@ -8405,7 +8235,7 @@
       "cityCodes": [
         "ahmedabad"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -8417,7 +8247,7 @@
         "ahmedabad",
         "gujarat"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
@@ -8444,7 +8274,7 @@
       "url": "https://aiforera.org",
       "label": "AIFORERA — State RERA Directory | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
@@ -8495,7 +8325,7 @@
       "url": "https://www.aai.aero",
       "label": "Airports Authority of India | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -8508,7 +8338,7 @@
         "bangalore",
         "mumbai"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
@@ -8549,7 +8379,7 @@
         "new_delhi",
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -8590,7 +8420,7 @@
         "vizianagaram",
         "west_godavari"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -8610,7 +8440,7 @@
       "url": "https://crda.ap.gov.in",
       "label": "APCRDA | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
@@ -8637,7 +8467,7 @@
       "url": "https://apiic.in",
       "label": "APIIC | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
@@ -8702,7 +8532,7 @@
         "tezpur",
         "tinsukia"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -8713,7 +8543,7 @@
       "cityCodes": [
         "bangalore"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -8726,7 +8556,7 @@
         "gurugram",
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
@@ -8747,7 +8577,7 @@
       "cityCodes": [
         "bangalore"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -8758,7 +8588,7 @@
       "cityCodes": [
         "bhopal"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -8769,7 +8599,7 @@
       "cityCodes": [
         "bhubaneswar"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -8802,7 +8632,7 @@
       "cityCodes": [
         "bhubaneswar"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
@@ -8843,7 +8673,7 @@
       "cityCodes": [
         "bangalore"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
@@ -8877,7 +8707,7 @@
         "hyderabad",
         "kochi"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -8902,7 +8732,7 @@
       "url": "https://www.bseindia.com/corporates/ann.html",
       "label": "BSE — Corporate Announcements | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -8911,7 +8741,7 @@
       "url": "https://www.bseindia.com/corporates.html",
       "label": "BSE — Corporate Filings | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -8951,7 +8781,7 @@
         "mumbai",
         "pune"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -8970,7 +8800,7 @@
         "noida",
         "pune"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -8979,7 +8809,7 @@
       "url": "https://www.cbre.co.in/insights",
       "label": "CBRE India — Insights | P2",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -8988,7 +8818,7 @@
       "url": "https://www.cci.gov.in/combination/orders-section31",
       "label": "CCI — Combination Orders",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -8997,7 +8827,7 @@
       "url": "https://www.cci.gov.in/combination/press-release",
       "label": "CCI — Combination Press Releases",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -9006,7 +8836,7 @@
       "url": "https://cci.gov.in/combination/green-channel-view",
       "label": "CCI — Green Channel Combinations",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -9025,7 +8855,7 @@
       "cityCodes": [
         "chandigarh"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -9047,7 +8877,7 @@
       "cityCodes": [
         "chennai"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -9065,7 +8895,7 @@
         "raipur",
         "rajnandgaon"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -9078,7 +8908,7 @@
         "navi_mumbai",
         "raigad"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -9091,7 +8921,7 @@
         "navi_mumbai",
         "raigad"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
@@ -9121,7 +8951,7 @@
       "cityCodes": [
         "kochi"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -9130,7 +8960,7 @@
       "url": "https://www.colliers.com/en-in/research",
       "label": "Colliers India — Research | P2",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -9155,7 +8985,7 @@
       "url": "https://www.constructionworld.in/latest-construction-news/real-estate-news",
       "label": "constructionworld",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -9165,7 +8995,7 @@
       "cityCodes": [
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "city"
     },
     {
@@ -9223,7 +9053,7 @@
       "cityCodes": [
         "mumbai"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -9280,7 +9110,7 @@
       "url": "https://dda.gov.in",
       "label": "dda.gov",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -9305,7 +9135,7 @@
         "new_delhi",
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -9314,7 +9144,7 @@
       "url": "https://www.delhimetrorail.com/",
       "label": "delhimetrorail",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -9322,7 +9152,7 @@
       "url": "https://dfccil.com",
       "label": "DFCCIL | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
@@ -9345,7 +9175,7 @@
         "new_delhi",
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -9497,7 +9327,7 @@
       "url": "https://hindi.etnownews.com/feeds/gns-etn-hindi-real-estate",
       "label": "ET Now Swadesh Real Estate Hindi RSS | P2",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "regional-hindi-rss",
       "createdAt": "2026-09-23T07:10:59.990Z"
     },
@@ -9650,7 +9480,7 @@
       "url": "https://infra.economictimes.indiatimes.com/rss/videostories",
       "label": "ETInfra — Video Stories | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -9668,7 +9498,7 @@
       "url": "https://infra.economictimes.indiatimes.com/rss/webstories",
       "label": "ETInfra — Web Stories | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -9857,7 +9687,7 @@
       "url": "https://realty.economictimes.indiatimes.com/rss/videostories",
       "label": "ETRealty — Video Stories | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -9866,7 +9696,7 @@
       "url": "https://realty.economictimes.indiatimes.com/rss/webstories",
       "label": "ETRealty — Web Stories | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -9920,7 +9750,7 @@
       "url": "https://www.grinfra.com/intimations-under-regulation-30/",
       "label": "G R Infraprojects — Regulation 30",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -9943,7 +9773,7 @@
       "cityCodes": [
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "city"
     },
     {
@@ -9953,7 +9783,7 @@
       "cityCodes": [
         "kochi"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
@@ -9999,7 +9829,7 @@
       "cityCodes": [
         "gujarat"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
@@ -10011,7 +9841,7 @@
         "gandhinagar",
         "gujarat"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -10023,7 +9853,7 @@
         "chandigarh",
         "mohali"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
@@ -10034,7 +9864,7 @@
       "cityCodes": [
         "gurugram"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -10043,7 +9873,7 @@
       "url": "https://gmda.gov.in",
       "label": "gmda.gov",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -10073,7 +9903,7 @@
       "cityCodes": [
         "goa"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -10092,7 +9922,7 @@
       "cityCodes": [
         "bangalore"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -10114,7 +9944,7 @@
       "cityCodes": [
         "chennai"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -10125,7 +9955,7 @@
       "cityCodes": [
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -10139,7 +9969,7 @@
         "gujarat",
         "surat"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -10172,7 +10002,7 @@
         "valsad",
         "vapi"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
@@ -10183,7 +10013,7 @@
       "cityCodes": [
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "city"
     },
     {
@@ -10193,7 +10023,7 @@
       "cityCodes": [
         "guwahati"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
@@ -10211,7 +10041,7 @@
       "url": "https://hginfra.com/investors-presentation.php",
       "label": "H.G. Infra — Investor Presentations",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -10220,7 +10050,7 @@
       "url": "https://haryanarera.gov.in",
       "label": "haryanarera.gov",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -10231,7 +10061,7 @@
         "shimla",
         "solan"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -10597,7 +10427,7 @@
       "cityCodes": [
         "hyderabad"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -10615,7 +10445,7 @@
       "url": "https://hsiidc.etenders.in",
       "label": "HSIIDC — E-Tender Portal",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -10624,7 +10454,7 @@
       "url": "https://hsiidc.org.in",
       "label": "HSIIDC | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
@@ -10642,7 +10472,7 @@
       "url": "https://www.hsvphry.org.in",
       "label": "HSVP | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -10651,7 +10481,7 @@
       "url": "https://hsvphry.org.in/",
       "label": "hsvphry.org",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -10661,7 +10491,7 @@
       "cityCodes": [
         "hyderabad"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -10670,7 +10500,7 @@
       "url": "https://ibbi.gov.in/orders/nclt",
       "label": "IBBI — NCLT Orders",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -10679,7 +10509,7 @@
       "url": "https://ibbi.gov.in/search/index/press-release",
       "label": "IBBI — Press Releases",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -10696,7 +10526,7 @@
       "url": "https://indiainvestmentgrid.gov.in/index.jsp",
       "label": "India Investment Grid",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -11161,7 +10991,7 @@
       "url": "https://indianrailways.gov.in",
       "label": "Indian Railways | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11431,7 +11261,7 @@
       "url": "https://indianinfrastructure.com/",
       "label": "indianinfrastructure",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -11441,7 +11271,7 @@
       "cityCodes": [
         "indore"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -11479,7 +11309,7 @@
       "cityCodes": [
         "jaipur"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11501,7 +11331,7 @@
       "cityCodes": [
         "jaipur"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -11514,7 +11344,7 @@
         "jamshedpur",
         "ranchi"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11564,7 +11394,7 @@
         "mumbai",
         "pune"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -11593,7 +11423,7 @@
         "mysore",
         "udupi"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -11609,7 +11439,7 @@
         "thrissur",
         "trivandrum"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -11618,7 +11448,7 @@
       "url": "https://www.kiadb.org",
       "label": "KIADB | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -11636,7 +11466,7 @@
       "url": "https://www.knrcl.com/investors_presentation.html",
       "label": "KNR Constructions — Investor Presentations",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -11647,7 +11477,7 @@
       "cityCodes": [
         "kochi"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11658,7 +11488,7 @@
       "cityCodes": [
         "kolkata"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11688,7 +11518,7 @@
         "mumbai",
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -11724,7 +11554,7 @@
       "url": "https://www.livemint.com/rss/AIRSS",
       "label": "Livemint — AI | P2",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -11733,7 +11563,7 @@
       "url": "https://www.livemint.com/rss/budgetRSS",
       "label": "Livemint — Budget | P2",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -11742,7 +11572,7 @@
       "url": "https://www.livemint.com/rss/companiesRSS",
       "label": "Livemint — Companies | P2",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -11751,7 +11581,7 @@
       "url": "https://www.livemint.com/rss/industryRSS",
       "label": "Livemint — Industry | P2",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -11760,7 +11590,7 @@
       "url": "https://www.livemint.com/rss/insuranceRSS",
       "label": "Livemint — Insurance | P2",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -11769,7 +11599,7 @@
       "url": "https://www.livemint.com/rss/marketsRSS",
       "label": "Livemint — Markets | P2",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -11778,7 +11608,7 @@
       "url": "https://www.livemint.com/rss/moneyRSS",
       "label": "Livemint — Money | P2",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -11787,7 +11617,7 @@
       "url": "https://www.livemint.com/rss/newsRSS",
       "label": "Livemint — News | P2",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -11796,7 +11626,7 @@
       "url": "https://www.livemint.com/rss/politicsRSS",
       "label": "Livemint — Politics | P2",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -11805,7 +11635,7 @@
       "url": "https://www.livemint.com/rss/technologyRSS",
       "label": "Livemint — Technology | P2",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -11853,7 +11683,7 @@
         "bhopal",
         "indore"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11883,7 +11713,7 @@
         "seoni",
         "ujjain"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -11903,7 +11733,7 @@
         "nagpur",
         "pune"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -11963,7 +11793,7 @@
         "wardha",
         "yavatmal"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -11996,7 +11826,7 @@
         "new_delhi",
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -12030,7 +11860,7 @@
       "cityCodes": [
         "dehradun"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -12039,7 +11869,7 @@
       "url": "https://www.metrorailnews.in/",
       "label": "metrorailnews",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -12056,7 +11886,7 @@
       "url": "https://www.mhada.gov.in",
       "label": "MHADA | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -12111,7 +11941,7 @@
       "url": "https://morth.nic.in",
       "label": "Ministry of Road Transport & Highways | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -12122,7 +11952,7 @@
       "cityCodes": [
         "mumbai"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -12133,7 +11963,7 @@
       "cityCodes": [
         "mumbai"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -12142,7 +11972,7 @@
       "url": "https://mohua.gov.in",
       "label": "mohua.gov",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -12158,7 +11988,7 @@
       "url": "https://ipm.mospi.gov.in/Home/Index",
       "label": "MoSPI PAIMANA — Infrastructure Project Monitoring",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -12167,7 +11997,7 @@
       "url": "https://ipm.mospi.gov.in/Home/ShowPressRelease",
       "label": "MoSPI PAIMANA — Press Releases",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -12176,7 +12006,7 @@
       "url": "https://msrdc.in",
       "label": "MSRDC | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -12198,7 +12028,7 @@
       "cityCodes": [
         "mumbai"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -12209,7 +12039,7 @@
       "cityCodes": [
         "gurugram"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -12247,7 +12077,7 @@
       "cityCodes": [
         "raipur"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -12271,7 +12101,7 @@
         "new_delhi",
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -12280,7 +12110,7 @@
       "url": "https://ncrtc.in/",
       "label": "ncrtc",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -12305,7 +12135,7 @@
       "url": "https://news.railanalysis.com/",
       "label": "news.railanalysis",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -12322,7 +12152,7 @@
       "url": "https://nhai.gov.in",
       "label": "nhai.gov",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -12330,7 +12160,7 @@
       "url": "https://residex.nhbonline.org.in/",
       "label": "NHB RESIDEX",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -12343,7 +12173,7 @@
         "gujarat",
         "mumbai"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -12354,7 +12184,7 @@
       "cityCodes": [
         "gujarat"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -12373,7 +12203,7 @@
       "url": "https://nicdc.in",
       "label": "NICDC | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -12384,7 +12214,7 @@
       "cityCodes": [
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -12395,7 +12225,7 @@
       "cityCodes": [
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "city"
     },
     {
@@ -12412,7 +12242,7 @@
       "url": "https://www.nseindia.com/companies-listing/corporate-filings",
       "label": "NSE — Corporate Filings | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -12429,7 +12259,7 @@
         "rourkela",
         "sambalpur"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -12438,7 +12268,7 @@
       "url": "https://www.omaxe.com/",
       "label": "omaxe",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -12508,7 +12338,7 @@
       "url": "https://cpc.parivesh.nic.in/",
       "label": "PARIVESH — Main Portal",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -12517,7 +12347,7 @@
       "url": "https://cpc.parivesh.nic.in/onlinesearch_dashboard.aspx?pid=tornotissuedyet&status=NA",
       "label": "PARIVESH — Project / Clearance Search",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -12526,7 +12356,7 @@
       "url": "https://www.pib.gov.in/Allrel.aspx",
       "label": "PIB — All Releases | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -12544,7 +12374,7 @@
       "url": "https://www.pib.gov.in",
       "label": "pib.gov",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -12603,7 +12433,7 @@
       "url": "https://www.pppinindia.gov.in/",
       "label": "PPP in India",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -12693,7 +12523,7 @@
       "url": "https://puda.punjab.gov.in",
       "label": "PUDA | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -12704,7 +12534,7 @@
       "cityCodes": [
         "pondicherry"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -12715,7 +12545,7 @@
       "cityCodes": [
         "pune"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -12733,7 +12563,7 @@
         "patiala",
         "sangrur"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -12752,7 +12582,7 @@
         "mumbai",
         "pune"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -12776,7 +12606,7 @@
       "url": "https://www.puriconstructions.com/",
       "label": "puriconstructions",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -12815,7 +12645,7 @@
         "tonk",
         "udaipur"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -13065,7 +12895,7 @@
       "url": "https://riico.rajasthan.gov.in",
       "label": "RIICO | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -13074,7 +12904,7 @@
       "url": "https://www.rpsgroupindia.com/",
       "label": "rpsgroupindia",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -13120,7 +12950,7 @@
       "url": "https://www.savills.in/research.aspx",
       "label": "Savills India — Research | P2",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -13131,7 +12961,7 @@
       "cityCodes": [
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "city"
     },
     {
@@ -13211,7 +13041,7 @@
         "new_delhi",
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -13235,7 +13065,7 @@
       "url": "https://www.signatureglobal.in/",
       "label": "signatureglobal",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -13245,7 +13075,7 @@
       "cityCodes": [
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "city"
     },
     {
@@ -13253,7 +13083,7 @@
       "url": "https://sipcotweb.tn.gov.in",
       "label": "SIPCOT | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -13270,7 +13100,7 @@
       "url": "https://www.sobha.com/investor-relations",
       "label": "SOBHA — Investor Relations | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -13301,7 +13131,7 @@
         "chennai",
         "hyderabad"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -13312,7 +13142,7 @@
       "cityCodes": [
         "mumbai"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -13323,7 +13153,7 @@
       "cityCodes": [
         "mumbai"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -13334,7 +13164,7 @@
       "cityCodes": [
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "city"
     },
     {
@@ -13344,7 +13174,7 @@
       "cityCodes": [
         "mumbai"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -13355,7 +13185,7 @@
       "cityCodes": [
         "mumbai"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -13426,7 +13256,7 @@
         "tiruvannamalai",
         "vellore"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -13441,7 +13271,7 @@
         "new_delhi",
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.647792+05:30"
     },
@@ -13467,7 +13297,7 @@
       "url": "https://tcpharyana.gov.in",
       "label": "tcpharyana.gov",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -13485,7 +13315,7 @@
         "suryapet",
         "warangal"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -13494,7 +13324,7 @@
       "url": "https://tgiic.telangana.gov.in",
       "label": "TGIIC | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -13750,7 +13580,7 @@
       "url": "https://themetrorailguy.com/",
       "label": "themetrorailguy",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -14138,7 +13968,7 @@
       "url": "https://www.track2realty.track2media.com/",
       "label": "track2realty.track2media",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -14156,7 +13986,7 @@
       "cityCodes": [
         "agartala"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -14205,7 +14035,7 @@
         "varanasi",
         "vrindavan"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -14216,7 +14046,7 @@
       "cityCodes": [
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "city"
     },
     {
@@ -14233,7 +14063,7 @@
       "url": "https://urbantransportnews.com/",
       "label": "urbantransportnews",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -14241,7 +14071,7 @@
       "url": "https://uhuda.uk.gov.in",
       "label": "Uttarakhand Housing & Urban Development Authority | P1",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -14256,7 +14086,7 @@
         "roorkee",
         "rudrapur"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -14267,7 +14097,7 @@
       "cityCodes": [
         "thoothukudi"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.647792+05:30"
     },
@@ -14293,7 +14123,7 @@
       "cityCodes": [
         "visakhapatnam"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -14304,7 +14134,7 @@
       "cityCodes": [
         "kolkata"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -14337,7 +14167,7 @@
         "kolkata",
         "siliguri"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -14346,7 +14176,7 @@
       "url": "https://www.whitelandcorp.com",
       "label": "whitelandcorp",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -14354,7 +14184,7 @@
       "url": "https://www.whitelandcorporation.com/",
       "label": "whitelandcorporation",
       "cityCodes": [],
-      "enabled": false,
+      "enabled": true,
       "category": "default"
     },
     {
@@ -14395,7 +14225,7 @@
       "cityCodes": [
         "noida"
       ],
-      "enabled": false,
+      "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     }
