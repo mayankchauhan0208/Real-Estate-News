@@ -50,8 +50,8 @@ function loadLocalEnv() {
 
 function getAdminAuthConfig() {
   const enabled = !["0", "false", "off", "no"].includes(String(process.env.ADMIN_AUTH || "true").trim().toLowerCase());
-  const username = String(process.env.ADMIN_USERNAME || "admin");
-  const password = String(process.env.ADMIN_PASSWORD || "brokket-admin");
+  const username = String(process.env.ADMIN_USERNAME || "9992713289");
+  const password = String(process.env.ADMIN_PASSWORD || "Brokket@12345");
   return {
     enabled,
     username,
@@ -865,4 +865,3 @@ function startAdminServer() {
 if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
   startAdminServer();
 }
-

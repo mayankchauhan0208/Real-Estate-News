@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
+    <section id="loginGate" class="login-gate" hidden>
+      <form id="loginForm" class="login-card">
+        <div class="brand-mark">b</div>
+        <p class="eyebrow">Brokket Live News</p>
+        <h2>Admin access</h2>
+        <p>Sign in to view the live admin panel.</p>
+        <label>ID <input id="adminLoginId" autocomplete="username" inputmode="numeric" required></label>
+        <label>Password <input id="adminLoginPassword" type="password" autocomplete="current-password" required></label>
+        <button class="primary" type="submit">Open admin</button>
+        <span id="loginMessage" class="login-message"></span>
+      </form>
+    </section>
     <div class="app-shell">
       <aside class="sidebar">
         <div class="brand-block">

@@ -1,6 +1,10 @@
 let state = null;
 let staticMode = false;
 let sourceVisibleLimit = 258;
+const staticAdminLogin = {
+  username: "9992713289",
+  passwordHash: "fd8c443bc86313672c1eb071a05a436101eae60ca7bdc6436bab43865332d12f"
+};
 
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
@@ -68,9 +72,44 @@ elements.newsStateFilter.addEventListener("change", () => {
   .forEach((el) => el.addEventListener("input", debounce(() => { sourceVisibleLimit = 258; renderSources(); }, 120)));
 elements.citySearch.addEventListener("input", debounce(renderCities, 120));
 
-loadState();
+initAdmin();
 setInterval(refreshDryRun, 4000);
 
+async function initAdmin() {
+  const isStaticHost = window.location.protocol === "file:" || /github\.io$/i.test(window.location.hostname);
+  const loginGate = $("#loginGate");
+  const appShell = $(".app-shell");
+  if (!isStaticHost || sessionStorage.getItem("brokketAdminAuthed") === "true") {
+    if (loginGate) loginGate.hidden = true;
+    if (appShell) appShell.hidden = false;
+    await loadState();
+    return;
+  }
+  if (appShell) appShell.hidden = true;
+  if (loginGate) loginGate.hidden = false;
+  const form = $("#loginForm");
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const username = $("#adminLoginId")?.value.trim() || "";
+    const password = $("#adminLoginPassword")?.value || "";
+    const message = $("#loginMessage");
+    const hash = await sha256(password);
+    if (username === staticAdminLogin.username && hash === staticAdminLogin.passwordHash) {
+      sessionStorage.setItem("brokketAdminAuthed", "true");
+      if (loginGate) loginGate.hidden = true;
+      if (appShell) appShell.hidden = false;
+      await loadState();
+      return;
+    }
+    if (message) message.textContent = "Wrong ID or password.";
+  });
+}
+
+async function sha256(value) {
+  const data = new TextEncoder().encode(value);
+  const digest = await crypto.subtle.digest("SHA-256", data);
+  return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
+}
 async function loadState() {
   const isStaticHost = window.location.protocol === "file:" || /github\.io$/i.test(window.location.hostname);
   try {
@@ -154,25 +193,25 @@ function renderNewsFilters() {
     if (item.postedBy) sources.add(item.postedBy);
   }
 
-  const newsCities = getEnabledCities().filter((city) => cityCounts.has(city.code));
-  const stateGroups = groupCitiesByState(newsCities);
+  const allCities = getEnabledCities();
+  const stateGroups = groupCitiesByState(allCities);
   const currentState = elements.newsStateFilter.value || "all";
   const currentCity = elements.newsCityFilter.value || "all";
   const currentSource = elements.newsSourceFilter.value || "all";
   const selectedState = stateGroups.some((group) => group.state === currentState) ? currentState : "all";
-  const visibleCities = selectedState === "all" ? newsCities : newsCities.filter((city) => city.state === selectedState);
+  const visibleCities = selectedState === "all" ? allCities : allCities.filter((city) => city.state === selectedState);
 
-  elements.newsStateFilter.innerHTML = `<option value="all">All states with news</option>` +
+  elements.newsStateFilter.innerHTML = `<option value="all">All states</option>` +
     stateGroups.map((group) => {
       const count = group.cities.reduce((total, city) => total + (cityCounts.get(city.code) || 0), 0);
       return `<option value="${escapeAttribute(group.state)}">${escapeHtml(group.state)} (${count})</option>`;
     }).join("");
   elements.newsStateFilter.value = selectedState;
 
-  const cityLabelText = selectedState === "all" ? "All cities with news" : `All ${selectedState} cities with news`;
+  const cityLabelText = selectedState === "all" ? "All cities" : `All ${selectedState} cities`;
   if (!visibleCities.length) {
     elements.newsCityFilter.disabled = true;
-    elements.newsCityFilter.innerHTML = `<option value="all">No cities with news</option>`;
+    elements.newsCityFilter.innerHTML = `<option value="all">No cities</option>`;
   } else {
     elements.newsCityFilter.disabled = false;
     elements.newsCityFilter.innerHTML = `<option value="all">${escapeHtml(cityLabelText)}</option>` +
@@ -498,6 +537,7 @@ function clearNewsFilters() {
   elements.newsStatusFilter.value = "active";
   elements.newsFromDate.value = "";
   elements.newsToDate.value = "";
+  renderNewsFilters();
   renderNews();
 }
 
