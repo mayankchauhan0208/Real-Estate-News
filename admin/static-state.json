@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T06:24:56.444Z",
+  "generatedAt": "2026-09-23T09:01:09.999Z",
   "settings": {
     "automationEnabled": true,
     "apiPushEnabled": true,
@@ -179,7 +179,8 @@
       "https://www.wbhidcoltd.com",
       "https://www.whitelandcorp.com",
       "https://www.whitelandcorporation.com",
-      "https://yamunaexpresswayauthority.com"
+      "https://yamunaexpresswayauthority.com",
+      "https://www.constructionworld.in/latest-construction-news/real-estate-news"
     ],
     "manualSources": [
       {
@@ -512,7 +513,7 @@
           "gurugram",
           "noida"
         ],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.030194Z"
       },
@@ -1148,7 +1149,7 @@
         "url": "https://infra.economictimes.indiatimes.com/rss/videostories",
         "label": "ETInfra — Video Stories | P1",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -1166,7 +1167,7 @@
         "url": "https://infra.economictimes.indiatimes.com/rss/webstories",
         "label": "ETInfra — Web Stories | P1",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.031194Z"
       },
@@ -1882,7 +1883,7 @@
         "url": "https://realty.economictimes.indiatimes.com/rss/videostories",
         "label": "ETRealty — Video Stories | P1",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.032194Z"
       },
@@ -1891,7 +1892,7 @@
         "url": "https://realty.economictimes.indiatimes.com/rss/webstories",
         "label": "ETRealty — Web Stories | P1",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.032194Z"
       },
@@ -2681,7 +2682,7 @@
         "url": "https://www.cbre.co.in/insights",
         "label": "CBRE India — Insights | P2",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T07:15:38.033194Z"
       },
@@ -3663,7 +3664,7 @@
         "url": "https://cci.gov.in/combination/green-channel-view",
         "label": "CCI — Green Channel Combinations",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T13:57:42.64579+05:30"
       },
@@ -4262,7 +4263,7 @@
         "url": "https://www.cci.gov.in/combination/orders-section31",
         "label": "CCI — Combination Orders",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T13:57:42.646793+05:30"
       },
@@ -4271,7 +4272,7 @@
         "url": "https://www.cci.gov.in/combination/press-release",
         "label": "CCI — Combination Press Releases",
         "cityCodes": [],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T13:57:42.646793+05:30"
       },
@@ -4744,7 +4745,7 @@
         "cityCodes": [
           "mumbai"
         ],
-        "enabled": true,
+        "enabled": false,
         "category": "manual",
         "createdAt": "2026-09-19T13:57:42.646793+05:30"
       },
@@ -4835,6 +4836,77 @@
         "enabled": true,
         "category": "manual",
         "createdAt": "2026-09-19T13:57:42.647792+05:30"
+      },
+      {
+        "id": "id-2083573143",
+        "url": "https://www.amarujala.com/rss/real-estate.xml",
+        "label": "Amar Ujala Real Estate Hindi RSS | P2",
+        "cityCodes": [
+          "delhi_ncr",
+          "faridabad",
+          "gurugram",
+          "new_delhi",
+          "noida"
+        ],
+        "enabled": true,
+        "category": "regional-hindi-rss",
+        "createdAt": "2026-09-23T07:10:59.990Z"
+      },
+      {
+        "id": "id-1056070980",
+        "url": "https://www.amarujala.com/rss/faridabad.xml",
+        "label": "Amar Ujala Faridabad Hindi RSS | P2",
+        "cityCodes": [
+          "faridabad"
+        ],
+        "enabled": true,
+        "category": "regional-hindi-rss",
+        "createdAt": "2026-09-23T07:10:59.990Z"
+      },
+      {
+        "id": "id-2095391114",
+        "url": "https://hindi.business-standard.com/rss/companies/real-estate.xml",
+        "label": "Business Standard Hindi Real Estate RSS | P2",
+        "cityCodes": [],
+        "enabled": true,
+        "category": "regional-hindi-rss",
+        "createdAt": "2026-09-23T07:10:59.990Z"
+      },
+      {
+        "id": "id-703546060",
+        "url": "https://api.livehindustan.com/feeds/rss/business/real-estate/rssfeed.xml",
+        "label": "Live Hindustan Real Estate Hindi RSS | P2",
+        "cityCodes": [],
+        "enabled": true,
+        "category": "regional-hindi-rss",
+        "createdAt": "2026-09-23T07:10:59.990Z"
+      },
+      {
+        "id": "id-921630998",
+        "url": "https://hindi.etnownews.com/feeds/gns-etn-hindi-real-estate",
+        "label": "ET Now Swadesh Real Estate Hindi RSS | P2",
+        "cityCodes": [],
+        "enabled": false,
+        "category": "regional-hindi-rss",
+        "createdAt": "2026-09-23T07:10:59.990Z"
+      },
+      {
+        "id": "id-1931669555",
+        "url": "https://www.hindustantimes.com/feeds/rss/real-estate/real-estate-guide/rssfeed.xml",
+        "label": "Hindustan Times Real Estate Guide RSS | P2",
+        "cityCodes": [],
+        "enabled": true,
+        "category": "manual",
+        "createdAt": "2026-09-23T08:55:33.361Z"
+      },
+      {
+        "id": "id-730453807",
+        "url": "https://api.livehindustan.com/feeds/rss/budget/real-estate/rssfeed.xml",
+        "label": "Live Hindustan Budget Real Estate Hindi RSS | P2",
+        "cityCodes": [],
+        "enabled": true,
+        "category": "regional-hindi-rss",
+        "createdAt": "2026-09-23T08:58:12.633Z"
       }
     ],
     "lastBackfill": {
@@ -5089,10 +5161,10 @@
     "liveCities": 231,
     "requestedCities": 231,
     "moreRequestedCities": 0,
-    "sources": 523,
-    "enabledSources": 356,
-    "disabledSources": 167,
-    "manualSources": 379,
+    "sources": 530,
+    "enabledSources": 351,
+    "disabledSources": 179,
+    "manualSources": 386,
     "reports": 11,
     "postedNews": 0,
     "candidateNews": 14
@@ -5101,7 +5173,7 @@
     "readyForGit": true,
     "readyForApiPush": false,
     "duplicateSourceUrlGroups": 0,
-    "disabledSourceUrls": 168,
+    "disabledSourceUrls": 169,
     "latestReportName": "news-run-2026-09-21T13-22-45-589Z.json",
     "checks": [
       {
@@ -5120,7 +5192,7 @@
         "key": "source-quality",
         "label": "Sources cleaned",
         "ok": true,
-        "detail": "356 enabled, 167 disabled, 0 duplicate URL groups."
+        "detail": "351 enabled, 179 disabled, 0 duplicate URL groups."
       },
       {
         "key": "dry-run-history",
@@ -5857,6 +5929,9 @@
       "name": "Faridabad",
       "keywords": [
         "faridabad",
+        "फरीदाबाद",
+        "ग्रेटर फरीदाबाद",
+        "नहरपार",
         "faridabads",
         "greater faridabad",
         "neharpar",
@@ -5864,7 +5939,7 @@
         "skynest towers"
       ],
       "enabled": true,
-      "sourceCount": 43
+      "sourceCount": 45
     },
     {
       "code": "gurugram",
@@ -5873,6 +5948,11 @@
       "keywords": [
         "gurgaon",
         "gurugram",
+        "गुरुग्राम",
+        "गुड़गांव",
+        "मानेसर",
+        "सोहना",
+        "पटौदी",
         "dwarka expressway",
         "downtown 66",
         "golf course road",
@@ -5888,7 +5968,7 @@
         "sohna road"
       ],
       "enabled": true,
-      "sourceCount": 47
+      "sourceCount": 48
     },
     {
       "code": "rohtak",
@@ -6571,7 +6651,7 @@
         "ncr"
       ],
       "enabled": true,
-      "sourceCount": 35
+      "sourceCount": 36
     },
     {
       "code": "new_delhi",
@@ -6582,7 +6662,7 @@
         "delhi"
       ],
       "enabled": true,
-      "sourceCount": 27
+      "sourceCount": 28
     },
     {
       "code": "goa",
@@ -8023,12 +8103,17 @@
         "yamuna expressway",
         "yeida",
         "noida",
+        "नोएडा",
+        "ग्रेटर नोएडा",
+        "नोएडा एक्सटेंशन",
+        "जेवर",
+        "यमुना एक्सप्रेसवे",
         "new noida",
         "noida airport",
         "noida international airport"
       ],
       "enabled": true,
-      "sourceCount": 93
+      "sourceCount": 94
     },
     {
       "code": "ghaziabad",
@@ -8394,6 +8479,32 @@
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
     {
+      "id": "id-1056070980",
+      "url": "https://www.amarujala.com/rss/faridabad.xml",
+      "label": "Amar Ujala Faridabad Hindi RSS | P2",
+      "cityCodes": [
+        "faridabad"
+      ],
+      "enabled": true,
+      "category": "regional-hindi-rss",
+      "createdAt": "2026-09-23T07:10:59.990Z"
+    },
+    {
+      "id": "id-2083573143",
+      "url": "https://www.amarujala.com/rss/real-estate.xml",
+      "label": "Amar Ujala Real Estate Hindi RSS | P2",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "enabled": true,
+      "category": "regional-hindi-rss",
+      "createdAt": "2026-09-23T07:10:59.990Z"
+    },
+    {
       "id": "manual-v3-e977ad2c5c4139a9",
       "url": "https://www.anantrajlimited.com/investors",
       "label": "Anant Raj — Investors",
@@ -8581,7 +8692,7 @@
         "gurugram",
         "noida"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.030194Z"
     },
@@ -8759,6 +8870,15 @@
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
     {
+      "id": "id-2095391114",
+      "url": "https://hindi.business-standard.com/rss/companies/real-estate.xml",
+      "label": "Business Standard Hindi Real Estate RSS | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "regional-hindi-rss",
+      "createdAt": "2026-09-23T07:10:59.990Z"
+    },
+    {
       "id": "id-1997442905",
       "url": "https://www.business-standard.com/rss/content/real-estate-22310.rss",
       "label": "business-standard",
@@ -8821,7 +8941,7 @@
       "url": "https://www.cbre.co.in/insights",
       "label": "CBRE India — Insights | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -8830,7 +8950,7 @@
       "url": "https://www.cci.gov.in/combination/orders-section31",
       "label": "CCI — Combination Orders",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -8839,7 +8959,7 @@
       "url": "https://www.cci.gov.in/combination/press-release",
       "label": "CCI — Combination Press Releases",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },
@@ -8848,7 +8968,7 @@
       "url": "https://cci.gov.in/combination/green-channel-view",
       "label": "CCI — Green Channel Combinations",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -8997,7 +9117,7 @@
       "url": "https://www.constructionworld.in/latest-construction-news/real-estate-news",
       "label": "constructionworld",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "default"
     },
     {
@@ -9324,6 +9444,15 @@
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
     {
+      "id": "id-921630998",
+      "url": "https://hindi.etnownews.com/feeds/gns-etn-hindi-real-estate",
+      "label": "ET Now Swadesh Real Estate Hindi RSS | P2",
+      "cityCodes": [],
+      "enabled": false,
+      "category": "regional-hindi-rss",
+      "createdAt": "2026-09-23T07:10:59.990Z"
+    },
+    {
       "id": "id-1609042975",
       "url": "https://infra.economictimes.indiatimes.com/rss/aviation",
       "label": "ETInfra — Aviation | P1",
@@ -9472,7 +9601,7 @@
       "url": "https://infra.economictimes.indiatimes.com/rss/videostories",
       "label": "ETInfra — Video Stories | P1",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -9490,7 +9619,7 @@
       "url": "https://infra.economictimes.indiatimes.com/rss/webstories",
       "label": "ETInfra — Web Stories | P1",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.031194Z"
     },
@@ -9679,7 +9808,7 @@
       "url": "https://realty.economictimes.indiatimes.com/rss/videostories",
       "label": "ETRealty — Video Stories | P1",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -9688,7 +9817,7 @@
       "url": "https://realty.economictimes.indiatimes.com/rss/webstories",
       "label": "ETRealty — Web Stories | P1",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
@@ -10154,6 +10283,15 @@
       "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
+    },
+    {
+      "id": "id-1931669555",
+      "url": "https://www.hindustantimes.com/feeds/rss/real-estate/real-estate-guide/rssfeed.xml",
+      "label": "Hindustan Times Real Estate Guide RSS | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-23T08:55:33.361Z"
     },
     {
       "id": "id-711401766",
@@ -11513,6 +11651,24 @@
       "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
+    },
+    {
+      "id": "id-730453807",
+      "url": "https://api.livehindustan.com/feeds/rss/budget/real-estate/rssfeed.xml",
+      "label": "Live Hindustan Budget Real Estate Hindi RSS | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "regional-hindi-rss",
+      "createdAt": "2026-09-23T08:58:12.633Z"
+    },
+    {
+      "id": "id-703546060",
+      "url": "https://api.livehindustan.com/feeds/rss/business/real-estate/rssfeed.xml",
+      "label": "Live Hindustan Real Estate Hindi RSS | P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "regional-hindi-rss",
+      "createdAt": "2026-09-23T07:10:59.990Z"
     },
     {
       "id": "id-1403152805",
@@ -13107,7 +13263,7 @@
       "cityCodes": [
         "mumbai"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.646793+05:30"
     },

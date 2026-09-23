@@ -93,7 +93,7 @@ assert.equal(isAllowedSource("https://realty.economictimes.indiatimes.com/news/i
 assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/real-estate"), false);
 assert.equal(isAllowedSource("https://timesofindia.indiatimes.com/real-estate/news"), true);
 assert.equal(isAllowedSource("https://www.constructionworld.in/"), false);
-assert.equal(isAllowedSource("https://www.constructionworld.in/latest-construction-news/real-estate-news"), true);
+assert.equal(isAllowedSource("https://www.constructionworld.in/latest-construction-news/real-estate-news"), false);
 assert.equal(isAllowedSource("https://www.businessoffood.in/category/food-service/"), true);
 assert.equal(isAllowedSource("https://indianinfrastructure.com/"), false);
 assert.equal(isAllowedSource("https://urbantransportnews.com/"), false);
@@ -1341,7 +1341,17 @@ assert.match(
     postedBy: "Faridabad News In Hindi, Amarujala.com",
     newsLink: "https://www.amarujala.com/haryana/faridabad/news"
   }).join("; "),
-  /non-English\/Hindi content/
+  /not positive target real-estate\/project news|target region missing|spam\/menu page/
+);
+
+assert.match(
+  reasons({
+    title: "नोएडा में प्रॉपर्टी विवाद में हत्या",
+    description: "नोएडा में प्रॉपर्टी विवाद में हत्या का मामला सामने आया।",
+    articleText: "पुलिस ने जमीन विवाद में हत्या की जांच शुरू की।",
+    newsLink: "https://www.amarujala.com/uttar-pradesh/noida/property-dispute-murder-noida"
+  }).join("; "),
+  /negative\/crime\/utility concern news/
 );
 
 assert.match(

@@ -6,6 +6,9 @@ export const workbookCityRules = [
     "name": "Faridabad",
     "keywords": [
       "faridabad",
+      "फरीदाबाद",
+      "ग्रेटर फरीदाबाद",
+      "नहरपार",
       "faridabads",
       "greater faridabad",
       "neharpar",
@@ -20,6 +23,11 @@ export const workbookCityRules = [
     "keywords": [
       "gurgaon",
       "gurugram",
+      "गुरुग्राम",
+      "गुड़गांव",
+      "मानेसर",
+      "सोहना",
+      "पटौदी",
       "dwarka expressway",
       "downtown 66",
       "golf course road",
@@ -1746,6 +1754,11 @@ export const workbookCityRules = [
       "yamuna expressway",
       "yeida",
       "noida",
+      "नोएडा",
+      "ग्रेटर नोएडा",
+      "नोएडा एक्सटेंशन",
+      "जेवर",
+      "यमुना एक्सप्रेसवे",
       "new noida",
       "noida airport",
       "noida international airport"
