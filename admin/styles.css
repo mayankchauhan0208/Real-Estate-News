@@ -544,3 +544,24 @@ fieldset label { margin-bottom: 14px; }
 .login-card input { min-height: 46px; border: 1px solid var(--line-strong); border-radius: var(--radius); padding: 0 12px; color: var(--ink); font-weight: 700; }
 .login-card button { min-height: 46px; }
 .login-message { min-height: 18px; color: var(--bad); font-weight: 800; font-size: 13px; }
+.head-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.head-actions > button:not(.primary) {
+  border: 1px solid #cbd6e6;
+  border-radius: 8px;
+  background: #fff;
+  color: #17335f;
+  padding: 11px 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.head-actions > button:disabled {
+  opacity: .65;
+  cursor: wait;
+}

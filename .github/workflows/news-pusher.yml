@@ -71,6 +71,9 @@ concurrency:
   group: news-api-pusher
   cancel-in-progress: false
 
+permissions:
+  contents: write
+
 jobs:
   push-news:
     runs-on: ubuntu-latest
@@ -141,6 +144,7 @@ jobs:
 
       - name: Refresh hosted admin snapshot
         if: success()
+        continue-on-error: true
         run: |
           npm run admin:export
           git config user.name "github-actions[bot]"

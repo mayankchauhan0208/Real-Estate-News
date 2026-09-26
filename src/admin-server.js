@@ -17,6 +17,11 @@ const indexPath = path.join(rootDir, "src", "index.js");
 
 loadLocalEnv();
 
+const brokketNewsListUrl = String(
+  process.env.BROKKET_NEWS_LIST_URL ||
+    "https://www.brokket.app/api/more-pages/news/list"
+).trim();
+
 const port = Number(process.env.ADMIN_PORT || 3000);
 const adminAuth = getAdminAuthConfig();
 
@@ -194,6 +199,60 @@ function sendJson(response, statusCode, payload) {
 function sendText(response, statusCode, text) {
   response.writeHead(statusCode, { "Content-Type": "text/plain; charset=utf-8" });
   response.end(text);
+}
+
+function getBrokketAccessToken() {
+  return String(
+    process.env.BROKKET_ACCESS_TOKEN || process.env.APP_API_KEY || ""
+  ).trim();
+}
+
+function normalizeLiveNewsItem(item = {}) {
+  return {
+    id: String(item.id || ""),
+    title: String(item.title || ""),
+    description: String(item.description || ""),
+    isActive: item.isActive === true,
+    uiStatus: item.isActive === true ? "Published" : "Inactive",
+    sourceKind: "live",
+    newsLink: String(item.newsLink || ""),
+    thumbnailImage: String(item.thumbnailImage || ""),
+    postedBy: String(item.postedBy || ""),
+    postedByLogo: String(item.postedByLogo || ""),
+    createdAt: item.createdAt || "",
+    cityCode: String(item.cityCode || "").trim().toLowerCase()
+  };
+}
+
+async function fetchLiveBrokketNews({ page = 0, size = 1000 } = {}) {
+  const accessToken = getBrokketAccessToken();
+
+  const safePage = Math.max(0, Number(page) || 0);
+  const safeSize = Math.min(1000, Math.max(1, Number(size) || 1000));
+  const headers = {
+    "Content-Type": "application/json",
+    Accept: "application/json"
+  };
+  if (accessToken) headers.ACCESS_TOKEN = accessToken;
+
+  const response = await fetch(brokketNewsListUrl, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({ page: safePage, size: safeSize })
+  });
+  if (!response.ok) throw new Error(`Brokket live-news request failed: HTTP ${response.status}`);
+  const payload = await response.json();
+  const pageData = payload?.data?.page;
+  if (!pageData || !Array.isArray(pageData.content)) {
+    throw new Error("Brokket live-news response did not contain data.page.content.");
+  }
+  return {
+    items: pageData.content.map(normalizeLiveNewsItem),
+    page: Number(pageData.page ?? safePage),
+    size: Number(pageData.size ?? safeSize),
+    totalElements: Number(pageData.totalElements || 0),
+    totalPages: Number(pageData.totalPages || 0)
+  };
 }
 
 async function serveStatic(response, pathname) {
@@ -842,6 +901,14 @@ async function routeApi(request, response, url) {
   try {
     if (request.method === "GET" && url.pathname === "/api/state") {
       sendJson(response, 200, await getDashboardState());
+      return;
+    }
+    if (request.method === "GET" && url.pathname === "/api/live-news") {
+      const result = await fetchLiveBrokketNews({
+        page: url.searchParams.get("page") || 0,
+        size: url.searchParams.get("size") || 1000
+      });
+      sendJson(response, 200, result);
       return;
     }
     if (request.method === "POST" && url.pathname === "/api/settings") {

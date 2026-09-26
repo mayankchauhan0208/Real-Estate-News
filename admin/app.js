@@ -42,7 +42,8 @@ const elements = {
   manualNewsForm: $("#manualNewsForm"),
   manualNewsState: $("#manualNewsState"),
   manualNewsCity: $("#manualNewsCity"),
-  manualNewsMessage: $("#manualNewsMessage")
+  manualNewsMessage: $("#manualNewsMessage"),
+  loadLiveNewsBtn: $("#loadLiveNewsBtn")
 };
 
 const titles = {
@@ -55,6 +56,7 @@ $$("[data-tab]").forEach((button) => button.addEventListener("click", () => acti
 $("#refreshBtn").addEventListener("click", loadState);
 $("#dryRunBtn").addEventListener("click", startDryRun);
 $("#addNewsBtn").addEventListener("click", openNewsModal);
+elements.loadLiveNewsBtn.addEventListener("click", loadLiveNews);
 $("#clearNewsFilters").addEventListener("click", clearNewsFilters);
 $$("[data-modal-close]").forEach((node) => node.addEventListener("click", closeNewsModal));
 elements.manualNewsForm.addEventListener("submit", createManualArticleDraft);
@@ -125,6 +127,7 @@ async function loadState() {
     const response = await fetch("/api/state", { cache: "no-store" });
     if (!response.ok) throw new Error(`API state failed: ${response.status}`);
     state = await response.json();
+    state.liveNews = state.liveNews || [];
     staticMode = false;
   } catch {
     const response = await fetch("./static-state.json", { cache: "no-store" });
@@ -161,7 +164,7 @@ function renderMetrics() {
   const postedCount = state.postedNews?.length || 0;
   const candidateCount = state.candidateNews?.length || 0;
   const reviewCount = state.needsReviewNews?.length || 0;
-  const totalResults = postedCount + candidateCount + reviewCount || state.analytics?.totals?.readyToPost || 0;
+  const totalResults = state.liveNews?.length || postedCount + candidateCount + reviewCount || state.analytics?.totals?.readyToPost || 0;
   const totalCities = state.totals?.requestedCities || state.cities.length;
   const monitoredSources = state.totals?.enabledSources || state.sources.filter((source) => source.enabled).length;
   elements.sourceTabCount.textContent = state.sources.length;
@@ -233,10 +236,11 @@ function renderNewsFilters() {
   elements.newsSourceFilter.value = [...elements.newsSourceFilter.options].some((option) => option.value === currentSource) ? currentSource : "all";
 }
 function getNewsItems() {
+  const live = (state.liveNews || []).map((item) => ({ ...item, sourceKind: "live", uiStatus: item.uiStatus || (item.isActive ? "Published" : "Inactive") }));
   const posted = (state.postedNews || []).map((item) => ({ ...item, uiStatus: item.uiStatus || "Published", sourceKind: "posted" }));
   const ready = (state.candidateNews || []).map((item) => ({ ...item, uiStatus: "Ready", sourceKind: "candidate" }));
   const review = (state.needsReviewNews || []).map((item) => ({ ...item, uiStatus: "Needs review", sourceKind: "review" }));
-  return [...posted, ...ready, ...review].sort((a, b) => new Date(b.publishedAt || b.reportGeneratedAt || 0) - new Date(a.publishedAt || a.reportGeneratedAt || 0));
+  return [...live, ...posted, ...ready, ...review].sort((a, b) => new Date(b.publishedAt || b.createdAt || b.reportGeneratedAt || 0) - new Date(a.publishedAt || a.createdAt || a.reportGeneratedAt || 0));
 }
 
 function renderNews() {
@@ -252,7 +256,7 @@ function renderNews() {
     const text = `${item.title || ""} ${item.cityCode || ""} ${item.postedBy || ""} ${item.newsLink || ""}`.toLowerCase();
     const date = item.publishedAt || item.createdAt || item.reportGeneratedAt;
     const parsed = date ? new Date(date) : null;
-    const statusMatch = status === "all" ||
+    const statusMatch = status === "live" ? item.sourceKind === "live" : status === "all" ||
       (status === "published" && item.uiStatus === "Published") ||
       (status === "ready" && item.uiStatus === "Ready") ||
       (status === "review" && item.uiStatus === "Needs review") ||
@@ -267,7 +271,7 @@ function renderNews() {
 
   elements.newsCountLabel.textContent = `${rows.length} matching items`;
   elements.postedRows.innerHTML = rows.slice(0, 80).map(renderNewsRow).join("") || `<div class="empty-state">No news found for these filters.</div>`;
-  elements.newsGroupTitle.textContent = status === "published" ? "Published news" : status === "all" ? "All news" : status === "ready" ? "Ready to post" : status === "review" ? "Needs review" : "Inactive news";
+  elements.newsGroupTitle.textContent = status === "live" ? "Live Brokket app news" : status === "published" ? "Published report news" : status === "all" ? "All local news" : status === "ready" ? "Ready to post" : status === "review" ? "Needs review" : "Inactive news";
   elements.postedRows.querySelectorAll("[data-news-key]").forEach((button) => {
     button.addEventListener("click", async () => {
       if (!requireLiveAdmin(button.dataset.newsEnabled === "true" ? "activate news" : "deactivate news")) return;
@@ -312,6 +316,32 @@ function renderNewsRow(item) {
       <span class="row-actions"><button type="button" title="Open article" onclick="window.open('${escapeJsAttribute(item.newsLink || "#")}', '_blank')">O</button>${canToggle ? `<button type="button" class="toggle-news" data-news-key="${escapeAttribute(key)}" data-news-enabled="${item.uiStatus === "Inactive" ? "true" : "false"}" title="${toggleLabel}">${item.uiStatus === "Inactive" ? "A" : "D"}</button>` : ""}</span>
     </article>
   `;
+}
+
+async function loadLiveNews() {
+  const isStaticHost = window.location.protocol === "file:" || /github\.io$/i.test(window.location.hostname);
+  if (staticMode || isStaticHost) {
+    showReadOnlyNotice("Live Brokket app data is available from the local admin only. Open http://localhost:3000 after starting npm run admin.");
+    alert("Open the admin at http://localhost:3000 to load live app news. A file:// page cannot call the local API.");
+    return;
+  }
+  elements.loadLiveNewsBtn.disabled = true;
+  elements.loadLiveNewsBtn.textContent = "Loading live app news...";
+  try {
+    const response = await fetch("/api/live-news?page=0&size=1000", { cache: "no-store" });
+    const body = await response.json();
+    if (!response.ok) throw new Error(body.error || "Could not load live app news");
+    state.liveNews = body.items || [];
+    elements.newsStatusFilter.value = "live";
+    renderMetrics();
+    renderNewsFilters();
+    renderNews();
+  } catch (error) {
+    alert(error.message || "Could not load live app news");
+  } finally {
+    elements.loadLiveNewsBtn.disabled = false;
+    elements.loadLiveNewsBtn.textContent = "Load live app news";
+  }
 }
 
 function newsKey(item = {}) {
