@@ -1722,7 +1722,7 @@ function applySourceBatch(sourceUrls) {
 }
 
 function getSourceConcurrency() {
-  return Math.min(getPositiveIntegerEnv("SOURCE_CONCURRENCY", 10), 10);
+  return Math.min(getPositiveIntegerEnv("SOURCE_CONCURRENCY", 20), 20);
 }
 
 function getArticleMetadataConcurrency() {

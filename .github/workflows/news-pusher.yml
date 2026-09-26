@@ -63,9 +63,9 @@ on:
         required: false
         default: "0"
       source_concurrency:
-        description: "How many sources to fetch in parallel. Default 10, max 10."
+        description: "How many sources to fetch in parallel. Default 20, max 20."
         required: false
-        default: "10"
+        default: "20"
 
 concurrency:
   group: news-api-pusher
@@ -118,7 +118,7 @@ jobs:
           DISABLED_CITY_CODES: ${{ github.event.inputs.disabled_city_codes || '' }}
           SOURCE_OFFSET: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_offset || '0' }}
           SOURCE_LIMIT: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_limit || '0' }}
-          SOURCE_CONCURRENCY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_concurrency || '10' }}
+          SOURCE_CONCURRENCY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_concurrency || '20' }}
           BUILD_VERSION: "source-intelligence-v1"
           SOURCE_STRATEGY: "full-source-coverage-30min"
           AUTO_SOURCE_BATCH: "false"
