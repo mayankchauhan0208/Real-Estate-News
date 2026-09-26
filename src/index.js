@@ -1736,6 +1736,18 @@ function getSourceTimeoutMs() {
   return Math.min(getPositiveIntegerEnv("SOURCE_FETCH_TIMEOUT_MS", 120000), 120000);
 }
 
+function getSourceRetryAttempts() {
+  return Math.min(getPositiveIntegerEnv("SOURCE_RETRY_ATTEMPTS", 2), 3);
+}
+
+function isRetryableSourceError(error) {
+  const message = String(error?.message || error || "").toLowerCase();
+  return (
+    /source timed out|fetch failed|econnreset|econnrefused|etimedout|socket hang up|network/i.test(message) ||
+    /\bhttp (408|425|429|500|502|503|504)\b/i.test(message)
+  );
+}
+
 function getDefaultLookbackDays() {
   return getPositiveIntegerEnv("DEFAULT_LOOKBACK_DAYS", 20);
 }
@@ -5765,6 +5777,28 @@ function shouldDryRun() {
   return getBooleanEnv("DRY_RUN") || adminSettings.apiPushEnabled !== true;
 }
 
+async function fetchSourceWithRetry(sourceUrl) {
+  const maxAttempts = getSourceRetryAttempts();
+  let lastError;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    try {
+      return { articles: await fetchSourceWithTimeout(sourceUrl), attempts: attempt };
+    } catch (error) {
+      lastError = error;
+      if (attempt >= maxAttempts || !isRetryableSourceError(error)) {
+        throw Object.assign(error, { sourceAttempts: attempt });
+      }
+
+      const delayMs = Math.min(attempt * 1500, 4000);
+      console.warn(`Retrying source ${sourceUrl} after attempt ${attempt}/${maxAttempts}: ${error.message}`);
+      await new Promise((resolve) => setTimeout(resolve, delayMs));
+    }
+  }
+
+  throw Object.assign(lastError || new Error("source fetch failed"), { sourceAttempts: maxAttempts });
+}
+
 async function pushArticle(article) {
   const apiUrl = env("APP_API_URL");
   const apiKey = env("APP_API_KEY");
@@ -5868,12 +5902,12 @@ async function main() {
   const sourceResults = await mapWithConcurrency(selectedSources, getSourceConcurrency(), async (source) => {
     try {
       const startedAt = Date.now();
-      const articles = await fetchSourceWithTimeout(source);
-      console.log(`Fetched ${articles.length} items from ${source} in ${formatDuration(Date.now() - startedAt)}`);
-      return { source, articles };
+      const result = await fetchSourceWithRetry(source);
+      console.log(`Fetched ${result.articles.length} items from ${source} in ${formatDuration(Date.now() - startedAt)} (attempts: ${result.attempts})`);
+      return { source, articles: result.articles, attempts: result.attempts };
     } catch (error) {
       console.error(`Failed to fetch ${source}: ${error.message}`);
-      return { source, error: error.message };
+      return { source, error: error.message, attempts: error.sourceAttempts || getSourceRetryAttempts() };
     }
   });
 
@@ -5881,16 +5915,17 @@ async function main() {
     source: result.source,
     status: result.error ? "failed" : "ok",
     count: result.error ? 0 : result.articles.length,
+    attempts: result.attempts || 1,
     error: result.error || ""
   }));
 
   for (const result of sourceResults) {
     if (result.error) {
-      failedSources.push({ source: result.source, error: result.error });
+      failedSources.push({ source: result.source, error: result.error, attempts: result.attempts || 1 });
       continue;
     }
     allArticles.push(...result.articles);
-    fetchedSources.push({ source: result.source, count: result.articles.length });
+    fetchedSources.push({ source: result.source, count: result.articles.length, attempts: result.attempts || 1 });
   }
   console.log(`Source fetch phase completed in ${formatDuration(Date.now() - fetchStartedAt)}.`);
   for (const articleUrl of extraArticleUrls) {

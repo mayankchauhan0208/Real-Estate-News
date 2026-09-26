@@ -123,6 +123,7 @@ jobs:
           ARTICLE_METADATA_CONCURRENCY: "6"
           FETCH_TIMEOUT_MS: "25000"
           SOURCE_FETCH_TIMEOUT_MS: "180000"
+          SOURCE_RETRY_ATTEMPTS: "2"
           ENABLE_NOIDA_CITY: "true"
           ALLOW_NOIDA_API: "true"
           MAX_ITEMS_PER_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_items_per_run || '80' }}
