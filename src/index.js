@@ -2900,7 +2900,16 @@ function detectExplicitTargetCityCodes(article) {
     .filter((rule) => hasStrongArticleCityMatch(article, rule))
     .map((rule) => rule.code);
 
-  return [...new Set(strongCityCodes)];
+  if (strongCityCodes.length > 0) {
+    return [...new Set(strongCityCodes)];
+  }
+
+  // City-specific feeds often omit the city from the article body. Their
+  // source path is still a reliable routing signal (for example /noida-news).
+  const sourceText = `${article.sourceUrl || ""} ${article.feedUrl || ""}`;
+  return [...new Set(cityRules
+    .filter((rule) => hasWholeWordKeyword(sourceText, rule.keywords))
+    .map((rule) => rule.code))];
 }
 function detectTargetCityCodesFromFullArticle(article) {
   return cityRules
@@ -3396,7 +3405,30 @@ function hasSpecificProjectOrDevelopmentSignal(article) {
   }
 
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
-  return hasKeyword(primaryAndUrl, specificProjectKeywords);
+  return hasKeyword(primaryAndUrl, [
+    ...specificProjectKeywords,
+    "approval",
+    "approved",
+    "authority",
+    "connectivity",
+    "corridor",
+    "development",
+    "housing",
+    "infrastructure",
+    "investment",
+    "invests",
+    "land parcel",
+    "launch",
+    "launched",
+    "metro",
+    "new township",
+    "project",
+    "residential",
+    "rera",
+    "road project",
+    "township",
+    "urban development"
+  ]);
 }
 
 function isBroadNonProjectUpdate(article) {
@@ -4455,6 +4487,7 @@ async function fetchFeed(sourceUrl, options = {}) {
       thumbnailImage: rawArticle.thumbnailImage,
       postedBy: rawArticle.postedBy,
       postedByLogo: rawArticle.postedByLogo,
+      sourceUrl,
       createdAt: rawArticle.publishedAt || "",
       publishedAt: rawArticle.publishedAt,
       fetchedAt: rawArticle.fetchedAt
