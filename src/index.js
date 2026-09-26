@@ -99,14 +99,20 @@ const legacyDefaultCityCodes = ["faridabad", "gurugram"];
 
 const CITY_ALIAS_OVERRIDES = {
   faridabad: ["फरीदाबाद", "ग्रेटर फरीदाबाद", "नहरपार", "greater faridabad", "neharpar"],
-  gurugram: ["gurgaon", "गुरुग्राम", "गुड़गांव", "manesar", "manasar", "मानेसर", "sohna", "सोहना", "pataudi", "patudi", "patodi", "पटौदी", "dwarka expressway", "golf course road", "golf course extension road", "southern peripheral road", "spr"],
-  noida: ["greater noida", "ग्रेटर नोएडा", "dadri", "दादरी", "jewar", "जेवर", "yamuna expressway", "yeida", "noida authority", "greater noida authority"],
-  palwal: ["palwal district", "पलवल", "prithla", "पृथला", "hathin", "हथीन", "hodal", "होडल"],
+  gurugram: ["gurgaon", "gurgaon district", "गुरुग्राम", "गुड़गांव", "millennium city", "cyber city", "manesar", "manasar", "मानेसर", "sohna", "सोहना", "pataudi", "patudi", "patodi", "पटौदी", "pataudi mandi", "dwarka expressway", "golf course road", "golf course extension road", "southern peripheral road", "spr", "badshahpur", "farrukh nagar", "farrukhnagar", "wazirabad", "kadipur", "harsaru"],
+  faridabad: ["फरीदाबाद", "ग्रेटर फरीदाबाद", "नहरपार", "greater faridabad", "neharpar", "ballabgarh", "बल्लभगढ़", "nit faridabad", "old faridabad"],
+  noida: ["greater noida", "ग्रेटर नोएडा", "gautam buddha nagar", "gautam budh nagar", "dadri", "दादरी", "jewar", "जेवर", "yamuna expressway", "yeida", "noida authority", "greater noida authority"],
+  palwal: ["palwal district", "पलवल", "prithla", "पृथला", "hathin", "हथीन", "hodal", "होडल", "badoli", "badoli block", "hassanpur", "hassanpur block"],
   rohtak: ["rohtak district", "sampla", "meham", "kalanaur"],
   panipat: ["panipat district", "samalkha", "israna", "madlauda"],
   karnal: ["karnal district", "assandh", "gharaunda", "indri", "nilokheri"],
   sonipat: ["sonipat district", "gohana", "kharkhoda", "rai", "murthal", "kundli"],
   rewari: ["rewari district", "dharuhera", "bawal", "kosli"],
+  hisar: ["hissar", "हिसार"],
+  mahendragarh: ["narnaul", "नारनौल"],
+  nuh: ["mewat", "मेवात"],
+  yamunanagar: ["yamuna nagar", "यमुनानगर"],
+  charkhi_dadri: ["charkhi dadri", "चरखी दादरी"],
   bangalore: ["bengaluru", "ಬೆಂಗಳೂರು"],
   mumbai: ["bombay", "मुंबई"],
   navi_mumbai: ["new mumbai"],
@@ -114,7 +120,7 @@ const CITY_ALIAS_OVERRIDES = {
   kolkata: ["calcutta", "कोलकाता"],
   kochi: ["cochin", "कोच्चि"],
   trivandrum: ["thiruvananthapuram", "तिरुवनंतपुरम"],
-  allahabad: ["prayagraj", "प्रयागराज"],
+  allahabad: ["prayagraj", "प्रयागराज", "इलाहाबाद"],
   varanasi: ["banaras", "काशी"],
   mysore: ["mysuru", "मैसूरु"]
 };

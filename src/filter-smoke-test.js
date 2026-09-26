@@ -1723,3 +1723,11 @@ const alternateCityNameArticle = publishable({
   newsLink: "https://example.com/bengaluru-residential-project"
 });
 assert.deepEqual(detectCityCodes(alternateCityNameArticle), ["bangalore"]);
+
+const gurgaonAliasArticle = publishable({
+  title: "Gurgaon office project receives development approval",
+  description: "A commercial real estate project is planned in Gurgaon.",
+  articleText: "The Gurgaon project includes office space, infrastructure and investment.",
+  newsLink: "https://example.com/gurgaon-office-project"
+});
+assert.deepEqual(detectCityCodes(gurgaonAliasArticle), ["gurugram"]);
