@@ -581,4 +581,15 @@ fieldset label { margin-bottom: 14px; }
 .audit-table { border: 1px solid #e0e7f0; border-radius: 8px; overflow: auto; }
 .audit-table-row { display: grid; grid-template-columns: minmax(150px, 1.5fr) repeat(4, minmax(80px, 1fr)); gap: 10px; padding: 9px 11px; border-bottom: 1px solid #edf1f6; font-size: 12px; }
 .audit-table-header { background: #f5f8fc; font-weight: 700; color: #637695; }
+.audit-rejected-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-top: 24px; }
+.audit-note { margin: 4px 0 0; color: #637695; font-size: 12px; }
+.audit-count { color: #637695; font-size: 12px; white-space: nowrap; }
+.audit-rejected-list { display: grid; gap: 8px; max-height: 560px; overflow: auto; margin-top: 10px; padding-right: 4px; }
+.rejected-audit-item { display: flex; justify-content: space-between; gap: 16px; padding: 12px 14px; border: 1px solid #dce5f1; background: #fff; }
+.rejected-audit-main { display: grid; gap: 4px; min-width: 0; }
+.rejected-audit-main strong { overflow-wrap: anywhere; }
+.rejected-audit-main span, .rejected-audit-main small { color: #637695; font-size: 12px; overflow-wrap: anywhere; }
+.rejected-audit-main small { color: #9b3c2d; }
+.rejected-audit-action { flex: 0 0 auto; align-self: center; }
+.rejected-audit-action a { color: #245fe7; font-size: 12px; font-weight: 700; white-space: nowrap; }
 @media (max-width: 900px) { .audit-metrics { grid-template-columns: repeat(3, 1fr); } .audit-columns { grid-template-columns: 1fr; } }

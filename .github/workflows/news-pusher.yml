@@ -133,6 +133,7 @@ jobs:
           MAX_ITEMS_PER_SOURCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_items_per_source || '8' }}
           MAX_PAGES_PER_SOURCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_pages_per_source || '1' }}
           DEFAULT_LOOKBACK_DAYS: "20"
+          REJECTION_AUDIT_LIMIT: "5000"
 
       - name: Upload run report
         if: always()

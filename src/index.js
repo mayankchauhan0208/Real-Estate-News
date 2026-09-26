@@ -1977,11 +1977,14 @@ function logMissedNewsAudit(missedCandidates, limit = 20) {
 function reportArticle(article) {
   return {
     title: article.title || "",
+    description: (article.description || "").slice(0, 500),
     cityCode: article.cityCode || "",
     classification: classifyArticle(article),
     publishedAt: article.publishedAt || "",
     newsLink: article.newsLink || "",
-    postedBy: article.postedBy || ""
+    postedBy: article.postedBy || "",
+    sourceName: article.sourceName || article.postedBy || "",
+    sourceUrl: article.sourceUrl || ""
   };
 }
 
@@ -1999,6 +2002,8 @@ function buildRunAnalytics(expandedArticles, readyArticles, postedArticles, skip
   const byCity = new Map();
   const rejectedArticles = [];
   const needsReviewArticles = [];
+  const rejectionAuditLimit = Math.max(0, Number(process.env.REJECTION_AUDIT_LIMIT || 5000));
+  let rejectedArticleTotal = 0;
 
   for (const article of expandedArticles) {
     const cityCode = article.cityCode || "unknown";
@@ -2030,6 +2035,7 @@ function buildRunAnalytics(expandedArticles, readyArticles, postedArticles, skip
 
     if (reasons.length > 0) {
       row.rejected += 1;
+      rejectedArticleTotal += 1;
       for (const reason of reasons) {
         row.rejectionReasons[reason] = (row.rejectionReasons[reason] || 0) + 1;
       }
@@ -2041,7 +2047,7 @@ function buildRunAnalytics(expandedArticles, readyArticles, postedArticles, skip
           decision: qualityDecision
         });
       }
-      if (rejectedArticles.length < 300) {
+      if (rejectedArticles.length < rejectionAuditLimit) {
         rejectedArticles.push({ article: reportArticle(article), reasons });
       }
     }
@@ -2055,7 +2061,7 @@ function buildRunAnalytics(expandedArticles, readyArticles, postedArticles, skip
 
   return {
     readyToPostCount: readyArticles.length,
-    rejectedArticleCount: rejectedArticles.length,
+    rejectedArticleCount: rejectedArticleTotal,
     needsReviewCount: needsReviewArticles.length,
     cityBreakdown,
     rejectedArticles,
@@ -6111,6 +6117,11 @@ async function main() {
     fetchedArticleCount: allArticles.length,
     expandedArticleCount: expandedArticles.length,
     skippedByReason: mapToObject(rejectionCounts),
+    rejectedArticleCount: runAnalytics.rejectedArticleCount,
+    needsReviewCount: runAnalytics.needsReviewCount,
+    rejectedArticles: runAnalytics.rejectedArticles,
+    needsReviewArticles: runAnalytics.needsReviewArticles,
+    cityBreakdown: runAnalytics.cityBreakdown,
     candidates: articlesToPush.map(reportArticle),
     posted: postedArticles,
     dryRunCandidates,

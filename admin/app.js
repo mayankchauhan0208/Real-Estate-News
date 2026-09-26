@@ -48,7 +48,9 @@ const elements = {
   auditMetrics: $("#auditMetrics"),
   rejectionRows: $("#rejectionRows"),
   sourceFailureRows: $("#sourceFailureRows"),
-  cityAuditRows: $("#cityAuditRows")
+  cityAuditRows: $("#cityAuditRows"),
+  rejectedAuditRows: $("#rejectedAuditRows"),
+  rejectedAuditCount: $("#rejectedAuditCount")
 };
 
 const titles = {
@@ -501,7 +503,8 @@ function renderAudit() {
   const totals = state.analytics?.totals || {};
   if (!latest) {
     elements.auditRunMeta.textContent = "No run report available yet.";
-    elements.auditMetrics.innerHTML = elements.rejectionRows.innerHTML = elements.sourceFailureRows.innerHTML = elements.cityAuditRows.innerHTML = "";
+    elements.auditMetrics.innerHTML = elements.rejectionRows.innerHTML = elements.sourceFailureRows.innerHTML = elements.cityAuditRows.innerHTML = elements.rejectedAuditRows.innerHTML = "";
+    elements.rejectedAuditCount.textContent = "";
     return;
   }
 
@@ -531,6 +534,20 @@ function renderAudit() {
     ? `<div class="audit-table-row audit-table-header"><span>City</span><span>Fetched/expanded</span><span>Ready</span><span>Posted</span><span>Rejected</span></div>` +
       cityRows.map((row) => `<div class="audit-table-row"><span>${escapeHtml(cityLabel(row.cityCode))}</span><span>${escapeHtml(row.expanded || 0)}</span><span>${escapeHtml(row.readyToPost || 0)}</span><span>${escapeHtml(row.posted || 0)}</span><span>${escapeHtml(row.rejected || 0)}</span></div>`).join("")
     : `<div class="empty-state">No city breakdown in this report.</div>`;
+
+  const rejectedArticles = latest.rejectedArticles || [];
+  const rejectedTotal = Number(latest.rejectedArticleCount || rejectedArticles.length);
+  elements.rejectedAuditCount.textContent = `${rejectedArticles.length} of ${rejectedTotal} retained`;
+  elements.rejectedAuditRows.innerHTML = rejectedArticles.length
+    ? rejectedArticles.map((item) => {
+        const article = item.article || item;
+        const reasons = (item.reasons || []).join("; ");
+        const link = article.newsLink
+          ? `<a href="${escapeHtml(article.newsLink)}" target="_blank" rel="noreferrer">Open article</a>`
+          : "";
+        return `<article class="rejected-audit-item"><div class="rejected-audit-main"><strong>${escapeHtml(article.title || "Untitled article")}</strong><span>${escapeHtml(cityLabel(article.cityCode || "unknown"))} · ${escapeHtml(article.sourceName || article.postedBy || "Unknown source")} · ${escapeHtml(article.publishedAt || "Unknown date")}</span><small>${escapeHtml(reasons || "No reason recorded")}</small></div><div class="rejected-audit-action">${link}</div></article>`;
+      }).join("")
+    : `<div class="empty-state">No individual rejected articles were retained in this report. Older reports created before this audit was added contain totals only.</div>`;
 }
 
 async function updateSettings(patch) {
