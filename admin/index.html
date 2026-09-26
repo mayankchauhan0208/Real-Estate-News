@@ -60,7 +60,7 @@
         <section class="tab-panel active" data-panel="news">
           <section class="filter-card news-filters">
             <label class="search-field"><span>Search</span><input id="postedSearch" type="search" placeholder="Search title, city or author..."></label>
-            <label><span>Status</span><select id="newsStatusFilter"><option value="active">Active</option><option value="all">All status</option></select></label>
+            <label><span>View</span><select id="newsStatusFilter"><option value="published">Published</option><option value="all">All news</option><option value="ready">Ready to post</option><option value="review">Needs review</option><option value="inactive">Inactive</option></select></label>
             <label><span>State</span><select id="newsStateFilter"><option value="all">All states</option></select></label>
             <label><span>City</span><select id="newsCityFilter"><option value="all">All cities</option></select></label>
             <label><span>Source</span><select id="newsSourceFilter"><option value="all">All sources</option></select></label>
@@ -70,7 +70,7 @@
           </section>
 
           <section class="data-card">
-            <div class="table-headline"><b id="newsGroupTitle">Latest feed news</b><span id="newsCountLabel"></span></div>
+            <div class="table-headline"><div><b id="newsGroupTitle">Published news</b><small class="table-subtitle">Complete history from saved run reports</small></div><span id="newsCountLabel"></span></div>
             <div class="news-table">
               <div class="news-row news-header">
                 <span>Image</span><span>Title</span><span>City</span><span>Source</span><span>Published</span><span>Status</span><span>Actions</span>

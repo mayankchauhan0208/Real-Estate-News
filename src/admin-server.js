@@ -114,6 +114,7 @@ function normalizeSettings(settings) {
     disabledCityCodes: normalizeCodeList(settings.disabledCityCodes, []),
     disabledSourceIds: normalizeCodeList(settings.disabledSourceIds, []),
     disabledSourceUrls: normalizeSourceUrlList(settings.disabledSourceUrls, []),
+    disabledNewsKeys: normalizeStringList(settings.disabledNewsKeys, []),
     manualSources: Array.isArray(settings.manualSources) ? settings.manualSources.map(normalizeManualSource) : [],
     lastBackfill: {
       cityCodes: normalizeCodeList(settings.lastBackfill?.cityCodes, []),
@@ -220,7 +221,7 @@ async function getDashboardState() {
   const cityRows = getCityRows(settings, sources);
   const reports = await getReportRows();
   const liveCities = cityRows.filter((city) => city.enabled);
-  const postedNews = collectPostedNews(reports);
+  const postedNews = collectPostedNews(reports, settings);
   const candidateNews = collectCandidateNews(reports);
   const needsReviewNews = collectNeedsReviewNews(reports);
 
@@ -240,7 +241,8 @@ async function getDashboardState() {
       reports: reports.length,
       postedNews: postedNews.length,
       candidateNews: candidateNews.length,
-      needsReviewNews: needsReviewNews.length
+      needsReviewNews: needsReviewNews.length,
+      inactiveNews: postedNews.filter((item) => item.uiStatus === "Inactive").length
     },
     readiness,
     requestedByState: groupStateCounts(cityRows),
@@ -562,17 +564,29 @@ function buildDashboardAnalytics(reports) {
   };
 }
 
-function collectPostedNews(reports) {
+function collectPostedNews(reports, settings = {}) {
+  const disabled = new Set(settings.disabledNewsKeys || []);
   return reports
     .flatMap((report) =>
       (report.posted || []).map((item) => ({
         ...item,
         reportName: report.name,
         reportGeneratedAt: report.generatedAt,
-        dryRun: report.dryRun
+        dryRun: report.dryRun,
+        uiStatus: disabled.has(newsKey(item)) ? "Inactive" : "Published",
+        sourceKind: "posted"
       }))
     )
     .sort((a, b) => new Date(b.publishedAt || b.reportGeneratedAt || 0) - new Date(a.publishedAt || a.reportGeneratedAt || 0));
+}
+
+function newsKey(item = {}) {
+  return [item.cityCode || "", normalizeSourceUrl(item.newsLink || item.url || "")].join("|");
+}
+
+function normalizeStringList(value, fallback = []) {
+  const source = Array.isArray(value) ? value : fallback;
+  return [...new Set(source.map((item) => String(item || "").trim()).filter(Boolean))];
 }
 
 function collectCandidateNews(reports) {
@@ -724,6 +738,18 @@ async function updateSource(id, patch) {
   return settings;
 }
 
+async function updateNewsStatus(payload = {}) {
+  const settings = await ensureSettings();
+  const key = String(payload.key || "").trim();
+  if (!key) throw new Error("News key is required.");
+  const disabled = new Set(settings.disabledNewsKeys);
+  if (payload.enabled === false) disabled.add(key);
+  else disabled.delete(key);
+  settings.disabledNewsKeys = [...disabled].sort();
+  await saveSettings(settings);
+  return settings;
+}
+
 async function startDryRun(payload = {}) {
   if (activeDryRun && !activeDryRun.done) throw new Error("A dry run is already running.");
   const settings = await ensureSettings();
@@ -838,6 +864,11 @@ async function routeApi(request, response, url) {
     if (request.method === "POST" && url.pathname.startsWith("/api/sources/")) {
       const id = decodeURIComponent(url.pathname.split("/").pop());
       await updateSource(id, await readJsonBody(request));
+      sendJson(response, 200, await getDashboardState());
+      return;
+    }
+    if (request.method === "POST" && url.pathname === "/api/news-status") {
+      await updateNewsStatus(await readJsonBody(request));
       sendJson(response, 200, await getDashboardState());
       return;
     }

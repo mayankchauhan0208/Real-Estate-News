@@ -262,6 +262,12 @@ input:focus, select:focus, textarea:focus { border-color: var(--blue); box-shado
   padding: 16px 18px;
   border-bottom: 1px solid var(--line);
 }
+.table-headline > div { display: grid; gap: 4px; }
+.table-subtitle { color: var(--faint); font-size: 12px; font-weight: 600; }
+.status-published { background: var(--good-soft); color: var(--good); }
+.status-ready { background: var(--blue-soft); color: var(--blue); }
+.status-needs-review { background: #fff7ed; color: #c2410c; }
+.status-inactive { background: #f1f5f9; color: #64748b; }
 .card-title { display: block; }
 .card-title h3 { font-size: 18px; }
 .card-title p { margin-top: 6px; color: var(--muted); font-size: 13px; }

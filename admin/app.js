@@ -16,6 +16,7 @@ const elements = {
   pageSubtitle: $("#pageSubtitle"),
   postedRows: $("#postedRows"),
   newsCountLabel: $("#newsCountLabel"),
+  newsGroupTitle: $("#newsGroupTitle"),
   readonlyNotice: $("#readonlyNotice"),
   newsStateFilter: $("#newsStateFilter"),
   newsCityFilter: $("#newsCityFilter"),
@@ -66,7 +67,14 @@ elements.newsStateFilter.addEventListener("change", () => {
   renderNews();
 });
 
-[elements.postedSearch, elements.newsCityFilter, elements.newsSourceFilter, elements.newsStatusFilter, elements.newsFromDate, elements.newsToDate]
+[
+  elements.postedSearch,
+  elements.newsCityFilter,
+  elements.newsSourceFilter,
+  elements.newsStatusFilter,
+  elements.newsFromDate,
+  elements.newsToDate
+]
   .forEach((el) => el.addEventListener("input", debounce(renderNews, 120)));
 [elements.sourceSearch, elements.sourceTypeFilter, elements.sourceStatusFilter]
   .forEach((el) => el.addEventListener("input", debounce(() => { sourceVisibleLimit = 258; renderSources(); }, 120)));
@@ -225,7 +233,7 @@ function renderNewsFilters() {
   elements.newsSourceFilter.value = [...elements.newsSourceFilter.options].some((option) => option.value === currentSource) ? currentSource : "all";
 }
 function getNewsItems() {
-  const posted = (state.postedNews || []).map((item) => ({ ...item, uiStatus: "Active", sourceKind: "posted" }));
+  const posted = (state.postedNews || []).map((item) => ({ ...item, uiStatus: item.uiStatus || "Published", sourceKind: "posted" }));
   const ready = (state.candidateNews || []).map((item) => ({ ...item, uiStatus: "Ready", sourceKind: "candidate" }));
   const review = (state.needsReviewNews || []).map((item) => ({ ...item, uiStatus: "Needs review", sourceKind: "review" }));
   return [...posted, ...ready, ...review].sort((a, b) => new Date(b.publishedAt || b.reportGeneratedAt || 0) - new Date(a.publishedAt || a.reportGeneratedAt || 0));
@@ -236,6 +244,7 @@ function renderNews() {
   const selectedState = elements.newsStateFilter.value || "all";
   const city = elements.newsCityFilter.value || "all";
   const source = elements.newsSourceFilter.value || "all";
+  const status = elements.newsStatusFilter.value || "published";
   const from = elements.newsFromDate.value ? new Date(`${elements.newsFromDate.value}T00:00:00`) : null;
   const to = elements.newsToDate.value ? new Date(`${elements.newsToDate.value}T23:59:59`) : null;
 
@@ -243,7 +252,12 @@ function renderNews() {
     const text = `${item.title || ""} ${item.cityCode || ""} ${item.postedBy || ""} ${item.newsLink || ""}`.toLowerCase();
     const date = item.publishedAt || item.createdAt || item.reportGeneratedAt;
     const parsed = date ? new Date(date) : null;
-    return (!query || text.includes(query)) &&
+    const statusMatch = status === "all" ||
+      (status === "published" && item.uiStatus === "Published") ||
+      (status === "ready" && item.uiStatus === "Ready") ||
+      (status === "review" && item.uiStatus === "Needs review") ||
+      (status === "inactive" && item.uiStatus === "Inactive");
+    return statusMatch && (!query || text.includes(query)) &&
       (selectedState === "all" || cityState(item.cityCode) === selectedState) &&
       (city === "all" || item.cityCode === city) &&
       (source === "all" || item.postedBy === source) &&
@@ -251,8 +265,26 @@ function renderNews() {
       (!to || (parsed && parsed <= to));
   });
 
-  elements.newsCountLabel.textContent = `${rows.length} news items on this page`;
+  elements.newsCountLabel.textContent = `${rows.length} matching items`;
   elements.postedRows.innerHTML = rows.slice(0, 80).map(renderNewsRow).join("") || `<div class="empty-state">No news found for these filters.</div>`;
+  elements.newsGroupTitle.textContent = status === "published" ? "Published news" : status === "all" ? "All news" : status === "ready" ? "Ready to post" : status === "review" ? "Needs review" : "Inactive news";
+  elements.postedRows.querySelectorAll("[data-news-key]").forEach((button) => {
+    button.addEventListener("click", async () => {
+      if (!requireLiveAdmin(button.dataset.newsEnabled === "true" ? "activate news" : "deactivate news")) return;
+      const enabled = button.dataset.newsEnabled === "true";
+      const response = await fetch("/api/news-status", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ key: button.dataset.newsKey, enabled })
+      });
+      if (!response.ok) {
+        alert((await response.json()).error || "Could not update news status");
+        return;
+      }
+      state = await response.json();
+      render();
+    });
+  });
 }
 
 function renderNewsRow(item) {
@@ -266,6 +298,9 @@ function renderNewsRow(item) {
     ? `<img class="publisher-logo" src="${escapeAttribute(logo)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'), { className: 'publisher-logo fallback', textContent: '${escapeJsAttribute(sourceInitials)}' }))">`
     : `<span class="publisher-logo fallback">${escapeHtml(sourceInitials)}</span>`;
 
+  const key = newsKey(item);
+  const canToggle = item.sourceKind === "posted";
+  const toggleLabel = item.uiStatus === "Inactive" ? "Activate in admin" : "Deactivate in admin";
   return `
     <article class="news-row">
       <span>${imageCell}</span>
@@ -273,10 +308,24 @@ function renderNewsRow(item) {
       <span>${escapeHtml(cityLabel(item.cityCode || "unknown"))}</span>
       <span class="source-identity">${logoCell}<span>${escapeHtml(item.postedBy || "Brokket News")}</span></span>
       <span>${formatDate(item.publishedAt || item.createdAt || item.reportGeneratedAt)}</span>
-      <span><span class="status-pill">${escapeHtml(item.uiStatus || "Active")}</span></span>
-      <span class="row-actions"><button type="button" title="Open article" onclick="window.open('${escapeJsAttribute(item.newsLink || "#")}', '_blank')">O</button><button type="button" class="danger" title="Delete requires app admin">D</button></span>
+      <span><span class="status-pill status-${escapeAttribute(String(item.uiStatus || "Published").toLowerCase().replaceAll(" ", "-"))}">${escapeHtml(item.uiStatus || "Published")}</span></span>
+      <span class="row-actions"><button type="button" title="Open article" onclick="window.open('${escapeJsAttribute(item.newsLink || "#")}', '_blank')">O</button>${canToggle ? `<button type="button" class="toggle-news" data-news-key="${escapeAttribute(key)}" data-news-enabled="${item.uiStatus === "Inactive" ? "true" : "false"}" title="${toggleLabel}">${item.uiStatus === "Inactive" ? "A" : "D"}</button>` : ""}</span>
     </article>
   `;
+}
+
+function newsKey(item = {}) {
+  return `${item.cityCode || ""}|${normalizeNewsUrl(item.newsLink || item.url || "")}`;
+}
+
+function normalizeNewsUrl(value) {
+  try {
+    const url = new URL(value);
+    url.hash = "";
+    return url.toString().replace(/\/+$/, "").toLowerCase();
+  } catch {
+    return String(value || "").trim().replace(/\/+$/, "").toLowerCase();
+  }
 }
 
 function renderSources() {
@@ -536,7 +585,7 @@ function clearNewsFilters() {
   elements.newsStateFilter.value = "all";
   elements.newsCityFilter.value = "all";
   elements.newsSourceFilter.value = "all";
-  elements.newsStatusFilter.value = "active";
+  elements.newsStatusFilter.value = "published";
   elements.newsFromDate.value = "";
   elements.newsToDate.value = "";
   renderNewsFilters();
