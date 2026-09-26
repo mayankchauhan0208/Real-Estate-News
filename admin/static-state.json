@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T09:24:17.464Z",
+  "generatedAt": "2026-09-26T09:32:49.705Z",
   "settings": {
     "automationEnabled": true,
     "apiPushEnabled": true,
@@ -3023,7 +3023,7 @@
       },
       {
         "id": "id-35448586",
-        "url": "https://www.nseindia.com/companies-listing/corporate-filings",
+        "url": "https://www.nseindia.com/companies-listing/corporate-filings-application?param=ROUTE",
         "label": "NSE — Corporate Filings | P1",
         "cityCodes": [],
         "enabled": true,
@@ -4712,8 +4712,8 @@
       },
       {
         "id": "id-921630998",
-        "url": "https://hindi.etnownews.com/feeds/gns-etn-hindi-real-estate",
-        "label": "ET Now Swadesh Real Estate Hindi RSS | P2",
+        "url": "https://hindi.etnownews.com/real-estate",
+        "label": "ET Now Swadesh Real Estate Hindi | P2",
         "cityCodes": [],
         "enabled": true,
         "category": "regional-hindi-rss",
@@ -9522,8 +9522,8 @@
     },
     {
       "id": "id-921630998",
-      "url": "https://hindi.etnownews.com/feeds/gns-etn-hindi-real-estate",
-      "label": "ET Now Swadesh Real Estate Hindi RSS | P2",
+      "url": "https://hindi.etnownews.com/real-estate",
+      "label": "ET Now Swadesh Real Estate Hindi | P2",
       "cityCodes": [],
       "enabled": true,
       "category": "regional-hindi-rss",
@@ -12515,7 +12515,7 @@
     },
     {
       "id": "id-35448586",
-      "url": "https://www.nseindia.com/companies-listing/corporate-filings",
+      "url": "https://www.nseindia.com/companies-listing/corporate-filings-application?param=ROUTE",
       "label": "NSE — Corporate Filings | P1",
       "cityCodes": [],
       "enabled": true,
