@@ -2805,14 +2805,30 @@ function getTargetRealEstateCorporateCompany(article) {
 }
 
 function detectExplicitTargetCityCodes(article) {
-  const primaryText = getArticlePrimaryText(article);
-  const cityCodes = cityRules
-    .filter((rule) => hasWholeWordKeyword(primaryText, rule.keywords) || hasStrongArticleCityMatch(article, rule))
+  const titleText = (article.title || "").toLowerCase();
+  const titleCityCodes = cityRules
+    .filter((rule) => hasWholeWordKeyword(titleText, rule.keywords))
     .map((rule) => rule.code);
 
-  return [...new Set(cityCodes)];
-}
+  if (titleCityCodes.length > 0) {
+    return [...new Set(titleCityCodes)];
+  }
 
+  const primaryText = getArticlePrimaryText(article);
+  const primaryCityCodes = cityRules
+    .filter((rule) => hasWholeWordKeyword(primaryText, rule.keywords))
+    .map((rule) => rule.code);
+
+  if (primaryCityCodes.length > 0) {
+    return [...new Set(primaryCityCodes)];
+  }
+
+  const strongCityCodes = cityRules
+    .filter((rule) => hasStrongArticleCityMatch(article, rule))
+    .map((rule) => rule.code);
+
+  return [...new Set(strongCityCodes)];
+}
 function detectTargetCityCodesFromFullArticle(article) {
   return cityRules
     .filter((rule) => countKeywordMentions(getArticleSearchText(article), rule.keywords) > 0)
@@ -2820,7 +2836,7 @@ function detectTargetCityCodesFromFullArticle(article) {
 }
 function detectDominantFullArticleCityCodes(article) {
   const fullText = getArticleSearchText(article);
-  const counts = allCityRules
+  const counts = cityRules
     .map((rule) => ({
       code: rule.code,
       count: countKeywordMentions(fullText, rule.keywords)
@@ -2834,12 +2850,11 @@ function detectDominantFullArticleCityCodes(article) {
   const total = counts.reduce((sum, entry) => sum + entry.count, 0);
   const maxCount = Math.max(...counts.map((entry) => entry.count));
   const dominantCodes = counts
-    .filter((entry) => entry.count === maxCount && entry.count >= 2 && entry.count / total >= 0.6)
+    .filter((entry) => entry.count === maxCount && entry.count >= 2 && entry.count / total >= 0.55)
     .map((entry) => entry.code);
 
-  return dominantCodes.length === 1 && ncrCityCodes.includes(dominantCodes[0]) ? dominantCodes : [];
+  return dominantCodes.length === 1 ? dominantCodes : [];
 }
-
 function detectConcreteNcrCityCodesFromFullArticle(article) {
   const fullText = getArticleSearchText(article);
   const counts = ncrCityCodes
@@ -2878,12 +2893,11 @@ function hasDisabledDominantFullArticleCity(article) {
   const total = counts.reduce((sum, entry) => sum + entry.count, 0);
   const maxCount = Math.max(...counts.map((entry) => entry.count));
   const dominantCodes = counts
-    .filter((entry) => entry.count === maxCount && entry.count >= 2 && entry.count / total >= 0.6)
+    .filter((entry) => entry.count === maxCount && entry.count >= 2 && entry.count / total >= 0.55)
     .map((entry) => entry.code);
 
-  return dominantCodes.length === 1 && !ncrCityCodes.includes(dominantCodes[0]);
+  return dominantCodes.length === 1 && !enabledCityCodeSet.has(dominantCodes[0]);
 }
-
 function getCorporateCompanyCityCodes(article, company = getTargetRealEstateCorporateCompany(article)) {
   if (!company) {
     return [];
@@ -3414,14 +3428,70 @@ function hasTargetRegionInTitleOrUrl(article) {
   return hasWholeWordKeyword(titleAndUrl, targetCityKeywords);
 }
 
+function hasDominantEnabledCityEvidence(article) {
+  return detectDominantFullArticleCityCodes(article).length > 0;
+}
+
+function isAllCityRealEstateDevelopmentArticle(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const explicitCityCodes = detectExplicitTargetCityCodes(article);
+  const dominantCityCodes = detectDominantFullArticleCityCodes(article);
+
+  return (
+    hasCleanPrimaryAndUrlText(article) &&
+    (explicitCityCodes.length > 0 || dominantCityCodes.length > 0) &&
+    hasKeyword(primaryAndUrl, [
+      "approval",
+      "approved",
+      "commercial real estate",
+      "connectivity",
+      "developer",
+      "development",
+      "expressway",
+      "housing",
+      "infrastructure",
+      "investment",
+      "launch",
+      "launched",
+      "launches",
+      "metro",
+      "office space",
+      "project",
+      "real estate",
+      "realty",
+      "residential",
+      "township"
+    ]) &&
+    hasKeyword(primaryAndUrl, [
+      "adds",
+      "approval",
+      "approved",
+      "boosts",
+      "develop",
+      "developing",
+      "development",
+      "expands",
+      "growth",
+      "inaugurate",
+      "invest",
+      "investment",
+      "launch",
+      "launched",
+      "launches",
+      "opens",
+      "project",
+      "projects",
+      "worth"
+    ])
+  );
+}
+
 function hasTargetRegionEvidence(article) {
   return (
     hasNcrMatch(article) ||
-    isNcrCommercialOfficeMarketArticle(article) ||
-    isFaridabadJewarGrowthArticle(article) ||
-    isTargetProjectAwardArticle(article) ||
-    isPositiveTargetBusinessOrDevelopmentArticle(article) ||
-    hasTargetRegionInTitleOrUrl(article)
+    hasTargetRegionInTitleOrUrl(article) ||
+    hasTargetRegionInPrimaryText(article) ||
+    hasDominantEnabledCityEvidence(article)
   );
 }
 
@@ -3617,7 +3687,8 @@ function getCachedDetectedCityCodes(article) {
 }
 
 function applyCityCode(article) {
-  const [detectedCityCode] = getCachedDetectedCityCodes(article);
+  const detectedCityCodes = getCachedDetectedCityCodes(article);
+  const detectedCityCode = detectedCityCodes.includes(article.cityCode) ? article.cityCode : detectedCityCodes[0];
 
   return {
     ...article,
@@ -3819,6 +3890,73 @@ function getDisqualifyingOutsideCityKeywords(article) {
   return outsideCityKeywords.filter((keyword) => !["delhi", "new delhi"].includes(keyword));
 }
 
+function isGenericLocalNonRealEstateNews(article) {
+  const primaryText = getArticlePrimaryText(article);
+  const titleAndUrl = `${article.title || ""} ${getArticleUrlText(article)}`.toLowerCase();
+
+  if (!hasKeyword(`${primaryText} ${titleAndUrl}`, [
+    "advocate",
+    "advocates",
+    "birders",
+    "birds return",
+    "clean-up",
+    "clean up",
+    "custody",
+    "father custody",
+    "highway blockade",
+    "judicial work",
+    "manas national park",
+    "mass leave",
+    "rhino",
+    "sarobar",
+    "shelter home",
+    "welfare shelter",
+    "wildlife",
+    "women’s shelter",
+    "womens shelter"
+  ])) {
+    return false;
+  }
+
+  return !hasKeyword(titleAndUrl, [
+    "affordable housing",
+    "commercial real estate",
+    "development authority",
+    "housing project",
+    "infrastructure project",
+    "land parcel",
+    "project launch",
+    "property market",
+    "real estate project",
+    "realty project",
+    "residential project",
+    "township"
+  ]);
+}
+function isGenericBroadMarketHeadline(article) {
+  const title = cleanText(article.title || "", 240).toLowerCase();
+  const titleHasCity = cityRules.some((rule) => hasWholeWordKeyword(title, rule.keywords));
+
+  if (titleHasCity) {
+    return false;
+  }
+
+  return hasKeyword(title, [
+    "airports, expressways, and gccs redefine",
+    "category ii aif",
+    "commercial real estate is entering a new growth cycle",
+    "demand to stay healthy",
+    "festive housing demand",
+    "growth likely to moderate",
+    "housing demand to stay",
+    "ageing population driving senior living",
+    "senior living arrangement demand",
+    "india's commercial real estate",
+    "india’s commercial real estate",
+    "new growth cycle",
+    "what will drive demand"
+  ]);
+}
 function isBlockedArticle(article) {
   const title = article.title || "";
   const description = article.description || "";
@@ -3833,6 +3971,8 @@ function isBlockedArticle(article) {
     blockedExactTitles.includes(normalizedTitle) ||
     isAddressLikeHeadline(title) ||
     isMalformedCategoryHeadline(title) ||
+    isGenericBroadMarketHeadline(article) ||
+    isGenericLocalNonRealEstateNews(article) ||
     isWeakFoodRetailSource ||
     (!allowProjectAwardArticle && hasKeyword(primaryText, blockedTitleKeywords)) ||
     (!allowProjectAwardArticle && hasKeyword(newsLink, blockedUrlParts))
@@ -3851,8 +3991,10 @@ function isAddressLikeHeadline(title = "") {
 
 function isMalformedCategoryHeadline(title = "") {
   const normalized = cleanText(title, 240).toLowerCase().replace(/\s+/g, " ");
+  const alphanumericLength = normalized.replace(/[^a-z0-9\u0900-\u097F]/gi, "").length;
 
   return (
+    alphanumericLength < 8 ||
     /\bproperty\s*\/\s*c['’]?struction\b/i.test(normalized) ||
     /\bauto\s*homeno\s*auto\b/i.test(normalized) ||
     /^realtynmore,\s*\d/.test(normalized)
@@ -3927,6 +4069,13 @@ function hasOutsideLocationDominance(article) {
   return outsideMentions > 0 && outsideMentions > targetMentions * 2;
 }
 
+function hasMappedCorporateCityEvidence(article) {
+  return Boolean(article.cityCode) && (
+    isTargetRealEstateCorporateUpdate(article) ||
+    isLeadershipBusinessConfidenceArticle(article) ||
+    isTargetProjectAwardArticle(article)
+  );
+}
 function getRejectionReasons(article, sentIds) {
   const reasons = [];
 
@@ -3971,7 +4120,7 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("filter 5: no allowed city match");
   }
 
-  if (article.cityCode && !hasTargetRegionEvidence(article)) {
+  if (article.cityCode && !hasTargetRegionEvidence(article) && !hasMappedCorporateCityEvidence(article)) {
     reasons.push("filter 6: target region missing or weak");
   }
 
@@ -5673,4 +5822,6 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     process.exitCode = 1;
   });
 }
+
+
 

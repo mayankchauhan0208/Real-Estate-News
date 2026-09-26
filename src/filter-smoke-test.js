@@ -1591,3 +1591,56 @@ assert.equal(selectedCityModeCheck.sources > 0, true);
 
 console.log("Filter smoke tests passed.");
 
+
+const bangaloreBodyDominantProjectArticle = publishable({
+  title: "Embassy Developments to invest Rs 2,000 cr in 85-acre residential project phase 1",
+  description: "The developer will invest in a large residential project with approved housing phases.",
+  articleText: "Bangalore is the focus of the project. The Bangalore residential real estate development includes new housing towers, investment and a project pipeline.",
+  newsLink: "https://example.com/embassy-developments-residential-project-phase-1"
+});
+assert.deepEqual(detectCityCodes(bangaloreBodyDominantProjectArticle), ["bangalore"]);
+assert.equal(isPublishableArticle(bangaloreBodyDominantProjectArticle, sentIds), true);
+
+for (const badArticle of [
+  {
+    title: "Advocates’ mass leave today",
+    description: "Kanpur Nagar advocates will abstain from judicial work.",
+    articleText: "The report is about lawyers and court work, not real estate development.",
+    newsLink: "https://timesofindia.indiatimes.com/city/kanpur/advocates-mass-leave-today/articleshow/134418300.cms"
+  },
+  {
+    title: "Rhino comeback in Manas: From 0 to over 50; community-led effort rebuilds herd",
+    description: "The wildlife report is about rhinos returning to Manas National Park.",
+    articleText: "Guwahati is mentioned in a city news page, but this is wildlife news, not property or infrastructure development.",
+    newsLink: "https://timesofindia.indiatimes.com/city/guwahati/all-starts-with-mainao-once-lost-to-poaching-rhinos-breeding-again-in-manas/articleshow/134418533.cms"
+  },
+  {
+    title: "HC frees Ghaziabad woman from father's custody to join Muslim husband",
+    description: "The high court allowed a woman to join her husband.",
+    articleText: "This is a legal custody and marriage story, not Ghaziabad real estate development.",
+    newsLink: "https://www.hindustantimes.com/india-news/allahabad-hc-frees-ghaziabad-woman-from-fathers-custody-to-join-muslim-husband-101790149509615.html"
+  },
+  {
+    title: "Birds return as KMDA stops Sarobar clean-up after alarm raised by birders",
+    description: "The civic body stopped clean-up after birders raised concern.",
+    articleText: "The Kolkata story is about birds and a water body, not a real estate or infrastructure project.",
+    newsLink: "https://timesofindia.indiatimes.com/city/kolkata/birds-return-as-kmda-stops-sarobar-clean-up-after-alarm-raised-by-birders/articleshow/134419464.cms"
+  },
+  {
+    title: "CM to open Rs8cr women’s shelter home in Gorakhpur today",
+    description: "The chief minister will inaugurate a women’s shelter home.",
+    articleText: "This is a welfare shelter home update, not housing market, real estate project or investor-focused development.",
+    newsLink: "https://timesofindia.indiatimes.com/city/varanasi/cm-to-open-rs8cr-womens-shelter-home-in-gorakhpur-today/articleshow/134419312.cms"
+  },
+  {
+    title: "Haryana: Charuni to block Delhi-Chandigarh highway in Kurukshetra today",
+    description: "The report is about a highway blockade and protest.",
+    articleText: "This Kurukshetra highway blockade is protest news, not real estate development or infrastructure launch.",
+    newsLink: "https://www.hindustantimes.com/cities/chandigarh-news/haryana-charuni-to-block-delhi-chandigarh-highway-in-kurukshetra-today-101790019883277.html"
+  }
+]) {
+  assert.match(
+    reasons(badArticle).join("; "),
+    /spam\/menu page|negative\/crime\/utility concern news|not positive target real-estate\/project news/
+  );
+}
