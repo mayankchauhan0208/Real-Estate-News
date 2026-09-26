@@ -497,6 +497,8 @@ async function getReportRows() {
             rejectedArticleCount: report.rejectedArticleCount ?? sumObjectValues(report.skippedByReason || {}),
             needsReviewCount: report.needsReviewCount ?? report.needsReviewArticles?.length ?? 0,
             failureCount: report.failures?.length || 0,
+            failures: report.failures || [],
+            sourceHealthSummary: report.sourceHealthSummary || {},
             candidates,
             posted: report.posted || [],
             rejectedArticles: report.rejectedArticles || [],

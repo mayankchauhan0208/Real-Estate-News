@@ -136,6 +136,18 @@
             <pre id="dryRunLog" class="console">No dry run started from admin yet.</pre>
           </section>
 
+          <section class="data-card audit-card">
+            <div class="card-title"><h3>Fetch and filter audit</h3><p>What the latest run fetched, published, rejected, and why.</p></div>
+            <div id="auditRunMeta" class="audit-meta"></div>
+            <div id="auditMetrics" class="audit-metrics"></div>
+            <div class="audit-columns">
+              <div><h4>Rejection reasons</h4><div id="rejectionRows" class="audit-list"></div></div>
+              <div><h4>Failed sources</h4><div id="sourceFailureRows" class="audit-list"></div></div>
+            </div>
+            <h4>City output</h4>
+            <div id="cityAuditRows" class="audit-table"></div>
+          </section>
+
           <section class="data-card">
             <div class="card-title"><h3>City control</h3><p>Enable or disable cities without touching code.</p></div>
             <label class="search-field compact"><span>Search</span><input id="citySearch" type="search" placeholder="Search city or state"></label>

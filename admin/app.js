@@ -43,7 +43,12 @@ const elements = {
   manualNewsState: $("#manualNewsState"),
   manualNewsCity: $("#manualNewsCity"),
   manualNewsMessage: $("#manualNewsMessage"),
-  loadLiveNewsBtn: $("#loadLiveNewsBtn")
+  loadLiveNewsBtn: $("#loadLiveNewsBtn"),
+  auditRunMeta: $("#auditRunMeta"),
+  auditMetrics: $("#auditMetrics"),
+  rejectionRows: $("#rejectionRows"),
+  sourceFailureRows: $("#sourceFailureRows"),
+  cityAuditRows: $("#cityAuditRows")
 };
 
 const titles = {
@@ -149,6 +154,7 @@ function render() {
   renderCities();
   renderMasterControls();
   renderControlSummary();
+  renderAudit();
   renderDryRun(state.dryRun);
 }
 
@@ -488,6 +494,43 @@ function renderControlSummary() {
     ["Latest ready news", latest ? latest.candidateCount : 0],
     ["Mode", state.settings.apiPushEnabled ? "API push enabled" : "Dry-run protected"]
   ].map(([label, value]) => `<div class="summary-item"><b>${escapeHtml(value)}</b><span>${escapeHtml(label)}</span></div>`).join("");
+}
+
+function renderAudit() {
+  const latest = state.reports?.[0];
+  const totals = state.analytics?.totals || {};
+  if (!latest) {
+    elements.auditRunMeta.textContent = "No run report available yet.";
+    elements.auditMetrics.innerHTML = elements.rejectionRows.innerHTML = elements.sourceFailureRows.innerHTML = elements.cityAuditRows.innerHTML = "";
+    return;
+  }
+
+  elements.auditRunMeta.textContent = `${latest.name} • ${latest.mode}${latest.dryRun ? " • dry run" : " • live push"}`;
+  elements.auditMetrics.innerHTML = [
+    ["Fetched", latest.fetchedArticleCount],
+    ["Expanded", latest.expandedArticleCount],
+    ["Ready", latest.candidateCount],
+    ["Posted", latest.postedCount],
+    ["Rejected", latest.rejectedArticleCount],
+    ["Source failures", latest.failureCount]
+  ].map(([label, value]) => `<div class="audit-metric"><b>${escapeHtml(value)}</b><span>${escapeHtml(label)}</span></div>`).join("");
+
+  const reasons = Object.entries(latest.skippedByReason || {})
+    .sort((a, b) => Number(b[1]) - Number(a[1]));
+  elements.rejectionRows.innerHTML = reasons.length
+    ? reasons.map(([reason, count]) => `<div class="audit-row"><b>${escapeHtml(count)}</b><span>${escapeHtml(reason)}</span></div>`).join("")
+    : `<div class="empty-state">No rejected articles in this run.</div>`;
+
+  const failures = latest.failures || [];
+  elements.sourceFailureRows.innerHTML = failures.length
+    ? failures.slice(0, 40).map((failure) => `<div class="audit-row failure"><b>${escapeHtml(failure.attempts || 1)}x</b><span>${escapeHtml(failure.source || failure.url || "Unknown source")}<small>${escapeHtml(failure.error || "Fetch failed")}</small></span></div>`).join("")
+    : `<div class="empty-state">No failed sources in this run.</div>`;
+
+  const cityRows = state.analytics?.byCity || [];
+  elements.cityAuditRows.innerHTML = cityRows.length
+    ? `<div class="audit-table-row audit-table-header"><span>City</span><span>Fetched/expanded</span><span>Ready</span><span>Posted</span><span>Rejected</span></div>` +
+      cityRows.map((row) => `<div class="audit-table-row"><span>${escapeHtml(cityLabel(row.cityCode))}</span><span>${escapeHtml(row.expanded || 0)}</span><span>${escapeHtml(row.readyToPost || 0)}</span><span>${escapeHtml(row.posted || 0)}</span><span>${escapeHtml(row.rejected || 0)}</span></div>`).join("")
+    : `<div class="empty-state">No city breakdown in this report.</div>`;
 }
 
 async function updateSettings(patch) {

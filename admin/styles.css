@@ -565,3 +565,20 @@ fieldset label { margin-bottom: 14px; }
   opacity: .65;
   cursor: wait;
 }
+
+.audit-card h4 { margin: 20px 0 10px; color: #17335f; }
+.audit-meta { color: #637695; font-size: 13px; margin-bottom: 14px; }
+.audit-metrics { display: grid; grid-template-columns: repeat(6, minmax(90px, 1fr)); gap: 10px; }
+.audit-metric { border: 1px solid #dce5f1; border-radius: 8px; padding: 12px; background: #f8fbff; }
+.audit-metric b { display: block; font-size: 20px; color: #132b52; }
+.audit-metric span { color: #6b7c99; font-size: 12px; }
+.audit-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.audit-list { max-height: 290px; overflow: auto; border: 1px solid #e0e7f0; border-radius: 8px; }
+.audit-row { display: flex; gap: 10px; padding: 9px 11px; border-bottom: 1px solid #edf1f6; font-size: 12px; }
+.audit-row b { min-width: 34px; color: #17335f; }
+.audit-row span { overflow-wrap: anywhere; }
+.audit-row small { display: block; color: #a05a35; margin-top: 3px; }
+.audit-table { border: 1px solid #e0e7f0; border-radius: 8px; overflow: auto; }
+.audit-table-row { display: grid; grid-template-columns: minmax(150px, 1.5fr) repeat(4, minmax(80px, 1fr)); gap: 10px; padding: 9px 11px; border-bottom: 1px solid #edf1f6; font-size: 12px; }
+.audit-table-header { background: #f5f8fc; font-weight: 700; color: #637695; }
+@media (max-width: 900px) { .audit-metrics { grid-template-columns: repeat(3, 1fr); } .audit-columns { grid-template-columns: 1fr; } }
