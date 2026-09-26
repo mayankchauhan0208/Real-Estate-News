@@ -152,12 +152,13 @@ function activateTab(name) {
 function renderMetrics() {
   const postedCount = state.postedNews?.length || 0;
   const candidateCount = state.candidateNews?.length || 0;
-  const totalResults = postedCount || candidateCount || state.analytics?.totals?.readyToPost || 0;
+  const reviewCount = state.needsReviewNews?.length || 0;
+  const totalResults = postedCount + candidateCount + reviewCount || state.analytics?.totals?.readyToPost || 0;
   const totalCities = state.totals?.requestedCities || state.cities.length;
   const monitoredSources = state.totals?.enabledSources || state.sources.filter((source) => source.enabled).length;
   elements.sourceTabCount.textContent = state.sources.length;
   elements.metrics.innerHTML = [
-    ["Total results", totalResults, postedCount ? "Posted news in reports" : "Latest ready candidates"],
+    ["Total results", totalResults, `${postedCount} posted, ${candidateCount} ready, ${reviewCount} review`],
     ["Configured cities", totalCities, `${state.totals?.liveCities || 0} currently live`],
     ["Monitored sources", monitoredSources, `${state.totals?.disabledSources || 0} disabled`]
   ].map(([label, value, hint]) => `
@@ -225,8 +226,9 @@ function renderNewsFilters() {
 }
 function getNewsItems() {
   const posted = (state.postedNews || []).map((item) => ({ ...item, uiStatus: "Active", sourceKind: "posted" }));
-  if (posted.length) return posted;
-  return (state.candidateNews || []).map((item) => ({ ...item, uiStatus: "Ready", sourceKind: "candidate" }));
+  const ready = (state.candidateNews || []).map((item) => ({ ...item, uiStatus: "Ready", sourceKind: "candidate" }));
+  const review = (state.needsReviewNews || []).map((item) => ({ ...item, uiStatus: "Needs review", sourceKind: "review" }));
+  return [...posted, ...ready, ...review].sort((a, b) => new Date(b.publishedAt || b.reportGeneratedAt || 0) - new Date(a.publishedAt || a.reportGeneratedAt || 0));
 }
 
 function renderNews() {

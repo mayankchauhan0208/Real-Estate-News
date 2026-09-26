@@ -222,6 +222,7 @@ async function getDashboardState() {
   const liveCities = cityRows.filter((city) => city.enabled);
   const postedNews = collectPostedNews(reports);
   const candidateNews = collectCandidateNews(reports);
+  const needsReviewNews = collectNeedsReviewNews(reports);
 
   const readiness = buildReadiness(settings, sources, cityRows, reports);
 
@@ -238,7 +239,8 @@ async function getDashboardState() {
       manualSources: settings.manualSources.length,
       reports: reports.length,
       postedNews: postedNews.length,
-      candidateNews: candidateNews.length
+      candidateNews: candidateNews.length,
+      needsReviewNews: needsReviewNews.length
     },
     readiness,
     requestedByState: groupStateCounts(cityRows),
@@ -248,6 +250,7 @@ async function getDashboardState() {
     analytics: buildDashboardAnalytics(reports),
     postedNews,
     candidateNews,
+    needsReviewNews,
     pushedByDate: summarizePushedByDate(reports),
     dryRun: getDryRunState()
   };
@@ -431,10 +434,12 @@ async function getReportRows() {
             candidateCount: candidates.length,
             postedCount: report.posted?.length || 0,
             rejectedArticleCount: report.rejectedArticleCount ?? sumObjectValues(report.skippedByReason || {}),
+            needsReviewCount: report.needsReviewCount ?? report.needsReviewArticles?.length ?? 0,
             failureCount: report.failures?.length || 0,
             candidates,
             posted: report.posted || [],
             rejectedArticles: report.rejectedArticles || [],
+            needsReviewArticles: report.needsReviewArticles || [],
             cityBreakdown: report.cityBreakdown || [],
             skippedByReason: report.skippedByReason || {}
           };
@@ -495,7 +500,8 @@ function buildDashboardAnalytics(reports) {
     readyToPost: 0,
     posted: 0,
     rejected: 0,
-    failedSources: 0
+    failedSources: 0,
+    needsReview: 0
   };
   const byCity = new Map();
   const rejectionReasons = new Map();
@@ -506,6 +512,7 @@ function buildDashboardAnalytics(reports) {
     totals.readyToPost += Number(report.candidateCount || 0);
     totals.posted += Number(report.postedCount || 0);
     totals.rejected += Number(report.rejectedArticleCount || 0);
+    totals.needsReview += Number(report.needsReviewCount || 0);
     totals.failedSources += Number(report.failureCount || 0);
 
     if (report.cityBreakdown?.length) {
@@ -579,6 +586,23 @@ function collectCandidateNews(reports) {
       reportGeneratedAt: latestReport.generatedAt,
       dryRun: latestReport.dryRun
     }))
+    .sort((a, b) => new Date(b.publishedAt || b.reportGeneratedAt || 0) - new Date(a.publishedAt || a.reportGeneratedAt || 0));
+}
+
+function collectNeedsReviewNews(reports) {
+  const latestReport = reports[0];
+  if (!latestReport) return [];
+  return (latestReport.needsReviewArticles || [])
+    .map((item) => ({
+      ...(item.article || {}),
+      reasons: item.reasons || [],
+      decision: item.decision || {},
+      reportName: latestReport.name,
+      reportGeneratedAt: latestReport.generatedAt,
+      dryRun: latestReport.dryRun,
+      status: "Needs review"
+    }))
+    .filter(isAdminVisibleCandidate)
     .sort((a, b) => new Date(b.publishedAt || b.reportGeneratedAt || 0) - new Date(a.publishedAt || a.reportGeneratedAt || 0));
 }
 

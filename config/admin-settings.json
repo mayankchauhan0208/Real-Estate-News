@@ -4769,6 +4769,183 @@
       "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-23T11:37:26.649Z"
+    },
+    {
+      "id": "id-1632214531",
+      "url": "https://maharashtratimes.com/business/real-estate-news/articlelist/2429626.cms",
+      "label": "Maharashtra Times Real Estate Marathi | Regional P2",
+      "cityCodes": [
+        "mumbai",
+        "pune",
+        "navi_mumbai",
+        "nagpur",
+        "nashik",
+        "aurangabad",
+        "kolhapur",
+        "solapur",
+        "ahmednagar",
+        "amravati",
+        "akola",
+        "jalgaon",
+        "nanded",
+        "latur",
+        "sangli",
+        "ratnagiri",
+        "chandrapur",
+        "wardha",
+        "dhule",
+        "jalna",
+        "yavatmal",
+        "beed",
+        "osmanabad",
+        "palghar",
+        "sindhudurg",
+        "raigad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-26T06:19:06.655Z"
+    },
+    {
+      "id": "id-157201313",
+      "url": "https://squarefeatindia.com/feed",
+      "label": "SquareFeat Maharashtra Real Estate Feed | Regional P2",
+      "cityCodes": [
+        "mumbai",
+        "navi_mumbai",
+        "pune",
+        "raigad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-26T06:19:06.655Z"
+    },
+    {
+      "id": "id-1069757476",
+      "url": "https://navimumbaihouses.com/blog/feed",
+      "label": "Navi Mumbai Houses Blog Feed | Regional P2",
+      "cityCodes": [
+        "navi_mumbai",
+        "mumbai",
+        "raigad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-26T06:19:06.655Z"
+    },
+    {
+      "id": "id-1295732438",
+      "url": "https://chennaiproperties.in/blog",
+      "label": "Chennai Properties Blog | Regional P2",
+      "cityCodes": [
+        "chennai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-26T06:19:06.655Z"
+    },
+    {
+      "id": "id-1111256282",
+      "url": "https://chennaidreamhomes.com/real-estate-blog",
+      "label": "Chennai Dream Homes Real Estate Blog | Regional P2",
+      "cityCodes": [
+        "chennai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-26T06:19:06.655Z"
+    },
+    {
+      "id": "id-1803129354",
+      "url": "https://www.unimarkgroup.com/blog",
+      "label": "Unimark Kolkata Real Estate Blog | Regional P2",
+      "cityCodes": [
+        "kolkata",
+        "howrah"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-26T06:19:06.655Z"
+    },
+    {
+      "id": "id-777403490",
+      "url": "https://hilifebuilders.in/feed",
+      "label": "Hi-Life Builders Kerala Feed | Regional P2",
+      "cityCodes": [
+        "thrissur",
+        "kochi",
+        "ernakulam"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-26T06:19:06.655Z"
+    },
+    {
+      "id": "id-1831708090",
+      "url": "https://proppuls.in/",
+      "label": "Proppuls Hyderabad Real Estate News | Regional P2",
+      "cityCodes": [
+        "hyderabad"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-26T06:22:47.206Z"
+    },
+    {
+      "id": "id-371711911",
+      "url": "https://www.drahomes.in/blog/feed/",
+      "label": "DRA Homes Chennai Blog | Regional P2",
+      "cityCodes": [
+        "chennai"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-26T06:22:47.206Z"
+    },
+    {
+      "id": "id-867194334",
+      "url": "https://www.jll.co.in/en/newsroom",
+      "label": "JLL India Property Newsroom | National Property P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-26T06:22:47.206Z"
+    },
+    {
+      "id": "id-1755963750",
+      "url": "https://thepropertytimes.in/feed/",
+      "label": "The Property Times Real Estate Feed | National Property P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-26T06:22:47.206Z"
+    },
+    {
+      "id": "id-1710371250",
+      "url": "https://updatesonproperty.com/rss/category/latest-news",
+      "label": "Updates On Property Latest News RSS | National Property P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-26T06:22:47.206Z"
+    },
+    {
+      "id": "id-1785816240",
+      "url": "https://savemax.in/blogs/feed",
+      "label": "Save Max Property Blog Feed | National Property P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-26T06:22:47.206Z"
+    },
+    {
+      "id": "id-1583688203",
+      "url": "https://www.indiapropertydekho.com/blog/feed/",
+      "label": "India Property Dekho Blog Feed | National Property P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-26T06:22:47.206Z"
     }
   ],
   "lastBackfill": {
@@ -5019,4 +5196,3 @@
     "notes": "Local admin controls are active for this checkout. Commit and deploy before expecting GitHub scheduled runs to use them."
   }
 }
-

@@ -10,6 +10,8 @@ import {
   extractMetadataImage,
   getExtraArticleUrls,
   getRejectionReasons,
+  localQualityJudge,
+  needsLocalQualityReview,
   getSourcePageUrls,
   getSourceUrls,
   getFeedFallbackPageUrl,
@@ -1069,7 +1071,34 @@ assert.match(
   /no allowed city match|outside-city conflict|outside region/
 );
 
+
 assert.equal(
+  extractMetadataImage(
+    cheerio.load(`
+      <html>
+        <body>
+          <article>
+            <div class="author profile"><img src="https://example.com/uploads/mayank-profile-photo.jpg" width="90" height="90" alt="Author profile" /></div>
+            <figure class="story lead"><img src="https://example.com/uploads/faridabad-project-site.jpg" width="640" height="360" alt="Faridabad project site" /></figure>
+          </article>
+        </body>
+      </html>
+    `)
+  ),
+  "https://example.com/uploads/faridabad-project-site.jpg"
+);
+
+assert.equal(
+  extractMetadataImage(
+    cheerio.load(`
+      <html>
+        <head><meta property="og:image" content="https://example.com/publisher-profile.jpg" /></head>
+        <body><main><figure><img src="https://example.com/news/real-estate-launch-640x360.jpg" alt="Project launch" /></figure></main></body>
+      </html>
+    `)
+  ),
+  "https://example.com/news/real-estate-launch-640x360.jpg"
+);assert.equal(
   isPublishableArticle(
     publishable({
       title: "Bengaluru's Future: Infrastructure-Led Growth Drives Real Estate Expansion",
@@ -1633,6 +1662,12 @@ for (const badArticle of [
     newsLink: "https://timesofindia.indiatimes.com/city/varanasi/cm-to-open-rs8cr-womens-shelter-home-in-gorakhpur-today/articleshow/134419312.cms"
   },
   {
+    title: "Faridabad News: आज से श्राद्धपक्ष शुरू, 15 दिन तक नहीं हो सकेंगे शुभ कार्य",
+    description: "Shraddh Paksha begins today; no auspicious activities can be performed for 15 days.",
+    articleText: "Faridabad local religious calendar update about Shraddh Paksha and auspicious activities.",
+    newsLink: "https://www.amarujala.com/delhi-ncr/faridabad/shraddh-paksha-begins-today-no-auspicious-ac"
+  },
+  {
     title: "Haryana: Charuni to block Delhi-Chandigarh highway in Kurukshetra today",
     description: "The report is about a highway blockade and protest.",
     articleText: "This Kurukshetra highway blockade is protest news, not real estate development or infrastructure launch.",
@@ -1644,3 +1679,31 @@ for (const badArticle of [
     /spam\/menu page|negative\/crime\/utility concern news|not positive target real-estate\/project news/
   );
 }
+
+
+const localJudgePositiveHindiArticle = publishable({
+  title: "गुरुग्राम में नया रियल एस्टेट प्रोजेक्ट लॉन्च, 500 करोड़ रुपये का निवेश",
+  description: "गुरुग्राम में आवासीय प्रोजेक्ट और इंफ्रास्ट्रक्चर विकास से रियल एस्टेट बाजार को बढ़ावा मिलेगा.",
+  articleText: "गुरुग्राम रियल एस्टेट परियोजना में निवेश, आवास, मेट्रो कनेक्टिविटी और विकास शामिल है.",
+  newsLink: "https://example.com/gurugram-hindi-real-estate-project"
+});
+assert.equal(isPublishableArticle(localJudgePositiveHindiArticle, sentIds), true);
+
+const localJudgeSpamArticle = publishable({
+  title: "Faridabad News: आज से श्राद्धपक्ष शुरू, 15 दिन तक नहीं हो सकेंगे शुभ कार्य",
+  description: "Shraddh Paksha begins today; no auspicious activities can be performed for 15 days.",
+  articleText: "Faridabad local religious calendar update about Shraddh Paksha and auspicious activities.",
+  newsLink: "https://www.amarujala.com/delhi-ncr/faridabad/shraddh-paksha-begins-today-no-auspicious-ac"
+});
+assert.match(getRejectionReasons(localJudgeSpamArticle, sentIds).join("; "), /filter 17: local quality judge rejected article|spam\/menu page/);
+
+const borderlineReviewArticle = publishable({
+  title: "Faridabad real estate sentiment improves among homebuyers",
+  description: "Brief Faridabad property update with limited details.",
+  articleText: "Faridabad real estate sentiment and property buyer interest are improving, but no concrete project launch is named.",
+  newsLink: "https://example.com/faridabad-real-estate-sentiment"
+});
+const borderlineDecision = localQualityJudge(borderlineReviewArticle);
+assert.equal(borderlineDecision.approved, true);
+assert.equal(needsLocalQualityReview(borderlineReviewArticle), true);
+assert.match(getRejectionReasons(borderlineReviewArticle, sentIds).join("; "), /filter 9: no specific project\/development signal/);

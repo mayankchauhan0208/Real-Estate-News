@@ -1045,6 +1045,11 @@ const negativeNewsKeywords = [
   "killed",
   "lawsuit",
   "legal",
+  "co-op court",
+  "cooperative court",
+  "sue",
+  "sues",
+  "suing",
   "litigation",
   "murder",
   "hatya",
@@ -1671,11 +1676,11 @@ function applySourceBatch(sourceUrls) {
 }
 
 function getSourceConcurrency() {
-  return Math.min(getPositiveIntegerEnv("SOURCE_CONCURRENCY", 8), 24);
+  return Math.min(getPositiveIntegerEnv("SOURCE_CONCURRENCY", 10), 10);
 }
 
 function getArticleMetadataConcurrency() {
-  return Math.min(getPositiveIntegerEnv("ARTICLE_METADATA_CONCURRENCY", 6), 16);
+  return Math.min(getPositiveIntegerEnv("ARTICLE_METADATA_CONCURRENCY", 10), 10);
 }
 
 function getFetchTimeoutMs() {
@@ -1683,7 +1688,7 @@ function getFetchTimeoutMs() {
 }
 
 function getSourceTimeoutMs() {
-  return Math.min(getPositiveIntegerEnv("SOURCE_FETCH_TIMEOUT_MS", 45000), 120000);
+  return Math.min(getPositiveIntegerEnv("SOURCE_FETCH_TIMEOUT_MS", 120000), 120000);
 }
 
 function getDefaultLookbackDays() {
@@ -1936,6 +1941,7 @@ function buildRunAnalytics(expandedArticles, readyArticles, postedArticles, skip
   const postedKeys = new Set(postedArticles.map(articleReportKey));
   const byCity = new Map();
   const rejectedArticles = [];
+  const needsReviewArticles = [];
 
   for (const article of expandedArticles) {
     const cityCode = article.cityCode || "unknown";
@@ -1970,6 +1976,14 @@ function buildRunAnalytics(expandedArticles, readyArticles, postedArticles, skip
       for (const reason of reasons) {
         row.rejectionReasons[reason] = (row.rejectionReasons[reason] || 0) + 1;
       }
+      const qualityDecision = localQualityJudge(article);
+      if (needsLocalQualityReview(article) && needsReviewArticles.length < 300) {
+        needsReviewArticles.push({
+          article: reportArticle(article),
+          reasons,
+          decision: qualityDecision
+        });
+      }
       if (rejectedArticles.length < 300) {
         rejectedArticles.push({ article: reportArticle(article), reasons });
       }
@@ -1985,8 +1999,10 @@ function buildRunAnalytics(expandedArticles, readyArticles, postedArticles, skip
   return {
     readyToPostCount: readyArticles.length,
     rejectedArticleCount: rejectedArticles.length,
+    needsReviewCount: needsReviewArticles.length,
     cityBreakdown,
-    rejectedArticles
+    rejectedArticles,
+    needsReviewArticles
   };
 }
 function safeReportFileName(date = new Date()) {
@@ -3890,6 +3906,49 @@ function getDisqualifyingOutsideCityKeywords(article) {
   return outsideCityKeywords.filter((keyword) => !["delhi", "new delhi"].includes(keyword));
 }
 
+function isGenericCultureReligionLocalNews(article) {
+  const primaryAndUrl = getArticlePrimaryText(article) + " " + getArticleUrlText(article);
+
+  if (!hasKeyword(primaryAndUrl, [
+    "auspicious activities",
+    "auspicious activity",
+    "festival",
+    "festivals",
+    "muhurat",
+    "muhurta",
+    "pitru paksha",
+    "pitrapaksha",
+    "puja",
+    "religious ritual",
+    "shrad",
+    "shradh",
+    "shraddh",
+    "shraddha",
+    "श्राद्ध",
+    "पितृ पक्ष",
+    "पूजा",
+    "मुहूर्त",
+    "शुभ कार्य",
+    "शुभ"
+  ])) {
+    return false;
+  }
+
+  return !hasKeyword(primaryAndUrl, [
+    "commercial real estate",
+    "development authority",
+    "housing project",
+    "infrastructure project",
+    "land parcel",
+    "metro project",
+    "project launch",
+    "property market",
+    "real estate",
+    "realty",
+    "residential project",
+    "township"
+  ]);
+}
 function isGenericLocalNonRealEstateNews(article) {
   const primaryText = getArticlePrimaryText(article);
   const titleAndUrl = `${article.title || ""} ${getArticleUrlText(article)}`.toLowerCase();
@@ -3972,6 +4031,7 @@ function isBlockedArticle(article) {
     isAddressLikeHeadline(title) ||
     isMalformedCategoryHeadline(title) ||
     isGenericBroadMarketHeadline(article) ||
+    isGenericCultureReligionLocalNews(article) ||
     isGenericLocalNonRealEstateNews(article) ||
     isWeakFoodRetailSource ||
     (!allowProjectAwardArticle && hasKeyword(primaryText, blockedTitleKeywords)) ||
@@ -4069,6 +4129,81 @@ function hasOutsideLocationDominance(article) {
   return outsideMentions > 0 && outsideMentions > targetMentions * 2;
 }
 
+
+const localJudgePositiveKeywords = [
+  "affordable housing", "airport", "approval", "approved", "authority", "builder", "commercial", "commercial project", "connectivity", "construction", "corridor", "developer", "development", "expressway", "flat", "flats", "flyover", "gdv", "highway", "housing", "housing project", "industrial plot", "infra", "infrastructure", "invest", "investment", "land acquisition", "land auction", "land parcel", "launch", "launched", "launches", "leasing", "luxury homes", "metro", "office space", "plot", "plots", "possession", "project", "projects", "property", "rera", "real estate", "realty", "redevelopment", "residential", "residential project", "road", "township", "warehouse", "warehousing",
+  "रियल एस्टेट", "रियल्टी", "प्रॉपर्टी", "संपत्ति", "आवास", "घर", "फ्लैट", "प्लॉट", "जमीन", "भूमि", "परियोजना", "प्रोजेक्ट", "निर्माण", "विकास", "निवेश", "मेट्रो", "एक्सप्रेसवे", "हाईवे", "रिंग रोड", "एयरपोर्ट", "मंजूरी", "लॉन्च", "மனை", "வீடு", "கட்டிடம்", "திட்டம்", "மெட்ரோ", "சாலை", "முதலீடு", "அனுமதி", "ఇల్లు", "భూమి", "ప్రాజెక్ట్", "మెట్రో", "రోడ్", "రియల్ ఎస్టేట్", "పెట్టుబడి", "అనుమతి", "ಮನೆ", "ಭೂಮಿ", "ಯೋಜನೆ", "ಮೆಟ್ರೋ", "ರಿಯಲ್ ಎಸ್ಟೇಟ್", "ಹೂಡಿಕೆ", "ಅನುಮತಿ", "বাড়ি", "জমি", "প্রকল্প", "মেট্রো", "রিয়েল এস্টেট", "বিনিয়োগ", "অনুমোদন", "મકાન", "જમીન", "પ્રોજેક્ટ", "મેટ્રો", "રિયલ એસ્ટેટ", "રોકાણ", "મંજૂરી", "घर", "जमीन", "प्रकल्प", "मेट्रो", "रिअल इस्टेट", "गुंतवणूक", "मंजुरी"
+];
+
+const localJudgeNegativeKeywords = [
+  "accident", "admission", "admissions", "actor", "actress", "auspicious", "bird", "birders", "calendar", "college", "court dispute", "crime", "custody", "death", "dies", "election", "entertainment", "festival", "food delivery", "funeral", "gold rate", "holiday", "hospital", "imd", "killed", "lawsuit", "murder", "ott", "police", "politics", "pollution", "protest", "puja", "rape", "religious", "school", "shraddh", "suicide", "traffic jam", "weather", "wedding", "wildlife", "श्राद्ध", "पितृ पक्ष", "शुभ कार्य", "शुभ", "पूजा", "त्योहार", "पर्व", "मौसम", "बारिश", "हत्या", "आत्महत्या", "पुलिस", "अपराध", "चुनाव", "स्कूल", "कॉलेज", "अस्पताल", "जाम", "प्रदूषण", "விழா", "கொலை", "காவல்", "மழை", "பள்ளி", "மருத்துவமனை", "పండుగ", "హత్య", "పోలీస్", "వర్షం", "స్కూల్", "ఆసుపత్రి", "ಹಬ್ಬ", "ಕೊಲೆ", "ಪೊಲೀಸ್", "ಮಳೆ", "ಶಾಲೆ", "ಆಸ್ಪತ್ರೆ", "উৎসব", "খুন", "পুলিশ", "বৃষ্টি", "স্কুল", "হাসপাতাল", "તહેવાર", "હત્યા", "પોલીસ", "વરસાદ", "શાળા", "હોસ્પિટલ", "सण", "हत्या", "पोलीस", "पाऊस", "शाळा", "रुग्णालय"
+];
+
+const localJudgeStrongNegativeKeywords = ["shraddh", "श्राद्ध", "पितृ पक्ष", "शुभ कार्य", "food delivery", "tea e-auction", "volunteers meet", "traffic jam", "weather alert", "murder", "suicide", "rape", "custody", "wildlife"];
+
+function localQualityJudge(article) {
+  const primaryAndUrl = getArticlePrimaryText(article) + " " + getArticleUrlText(article);
+  const fullText = getArticleSearchText(article);
+  const positiveScore = countKeywordMentions(fullText, localJudgePositiveKeywords);
+  const negativeScore = countKeywordMentions(fullText, localJudgeNegativeKeywords);
+  const strongNegativeScore = countKeywordMentions(fullText, localJudgeStrongNegativeKeywords);
+  const cityKeywords = article.cityCode ? (allCityRules.find((rule) => rule.code === article.cityCode)?.keywords || []) : [];
+  const cityScore = article.cityCode ? countKeywordMentions(fullText, cityKeywords) : 0;
+  const hasCoreTopic = hasKeyword(primaryAndUrl, ["real estate", "realty", "property", "housing", "infrastructure", "project", "metro", "expressway", "airport", "rera", "township", "land parcel", "construction", "builder", "developer", "residential", "commercial", "रियल एस्टेट", "रियल्टी", "प्रॉपर्टी", "परियोजना", "प्रोजेक्ट", "जमीन", "भूमि", "मेट्रो", "आवास", "निर्माण", "विकास"]);
+  const hasStrongProjectSignal = hasSpecificProjectOrDevelopmentSignal(article) || isPositiveTargetBusinessOrDevelopmentArticle(article) || isPositiveTargetProjectUpdate(article);
+  const hasCityEvidence = cityScore > 0 || hasNcrMatch(article) || hasMappedCorporateCityEvidence(article);
+  const score = positiveScore * 2 + (hasCoreTopic ? 4 : 0) + (hasStrongProjectSignal ? 4 : 0) + Math.min(cityScore, 3) - negativeScore * 3 - strongNegativeScore * 8;
+  const base = { score, positiveScore, negativeScore, strongNegativeScore, cityScore };
+
+  if (strongNegativeScore > 0 && !hasCoreTopic) {
+    return { ...base, approved: false, needsReview: false, status: "rejected", reason: "strong non-real-estate local topic" };
+  }
+
+  if (negativeScore > 0 && positiveScore < 2) {
+    return { ...base, approved: false, needsReview: false, status: "rejected", reason: "negative/local topic outweighs project signal" };
+  }
+
+  if (!hasCoreTopic && !hasStrongProjectSignal) {
+    return { ...base, approved: false, needsReview: false, status: "rejected", reason: "no core real-estate/infrastructure topic" };
+  }
+
+  if (!hasCityEvidence) {
+    return { ...base, approved: false, needsReview: false, status: "rejected", reason: "weak city evidence" };
+  }
+
+  if (score >= 4) {
+    return { ...base, approved: true, needsReview: false, status: "approved", reason: "approved by local quality judge" };
+  }
+
+  if (hasCoreTopic && hasCityEvidence && strongNegativeScore === 0 && negativeScore <= positiveScore) {
+    return { ...base, approved: false, needsReview: true, status: "review", reason: "borderline positive real-estate item needs review" };
+  }
+
+  return { ...base, approved: false, needsReview: false, status: "rejected", reason: "low local quality score" };
+}
+
+function isRejectedByLocalQualityJudge(article) {
+  return !localQualityJudge(article).approved;
+}
+
+function needsLocalQualityReview(article) {
+  const decision = localQualityJudge(article);
+
+  if (decision.needsReview === true) {
+    return true;
+  }
+
+  return (
+    decision.approved === true &&
+    Boolean(article.cityCode) &&
+    isRealEstateRelated(article) &&
+    !isBlockedArticle(article) &&
+    !isNegativeNews(article) &&
+    hasTargetRegionEvidence(article) &&
+    !hasSpecificProjectOrDevelopmentSignal(article)
+  );
+}
+
 function hasMappedCorporateCityEvidence(article) {
   return Boolean(article.cityCode) && (
     isTargetRealEstateCorporateUpdate(article) ||
@@ -4114,6 +4249,11 @@ function getRejectionReasons(article, sentIds) {
 
   if (isNoidaDeveloperBlogArticle(article) && !hasNoidaDeveloperBlogQualitySignal(article)) {
     reasons.push("filter 14: weak Noida developer blog signal");
+  }
+
+  if (isRejectedByLocalQualityJudge(article)) {
+    const decision = localQualityJudge(article);
+    reasons.push(`filter 17: local quality judge rejected article (${decision.reason}, score ${decision.score})`);
   }
 
   if (!article.cityCode) {
@@ -4550,14 +4690,69 @@ function getImageCandidate($, element) {
   );
 }
 
-function isRejectedImageCandidate(value = "") {
+function getImageContextText($, element) {
+  const image = $(element);
+  const parts = [
+    image.attr("alt"),
+    image.attr("title"),
+    image.attr("class"),
+    image.attr("id"),
+    image.attr("role"),
+    image.attr("itemprop")
+  ];
+
+  for (const ancestor of image.parents().slice(0, 4).toArray()) {
+    const node = $(ancestor);
+    parts.push(node.attr("class"), node.attr("id"), node.attr("role"), node.attr("itemprop"));
+  }
+
+  return parts.filter(Boolean).join(" ").toLowerCase();
+}
+
+function parseImageDimension(value = "") {
+  const match = String(value).match(/(?:^|[?&,/_-])(?:w|width|h|height)?[=/-]?(\d{2,4})(?:px)?(?:$|[?&,/_x.-])/i);
+  return match ? Number.parseInt(match[1], 10) : 0;
+}
+
+function getImageDimensions($, element, candidate = "") {
+  const image = $(element);
+  const width = Number.parseInt(image.attr("width") || image.attr("data-width") || "0", 10) || parseImageDimension(candidate.match(/(?:width|w)[=/-]\d{2,4}/i)?.[0] || "");
+  const height = Number.parseInt(image.attr("height") || image.attr("data-height") || "0", 10) || parseImageDimension(candidate.match(/(?:height|h)[=/-]\d{2,4}/i)?.[0] || "");
+  const pathSize = candidate.match(/(?:^|[/_-])(\d{2,4})x(\d{2,4})(?:[/_.-]|$)/i);
+
+  return {
+    width: width || (pathSize ? Number.parseInt(pathSize[1], 10) : 0),
+    height: height || (pathSize ? Number.parseInt(pathSize[2], 10) : 0)
+  };
+}
+
+function isRejectedImageCandidate(value = "", context = "") {
   if (!value || /^data:/i.test(value)) {
     return true;
   }
 
-  return /1x1|artshare|blank|placeholder|spacer|logo|icon|avatar|favicon|advertise|banner|copylink|flipcoin|youtube|ytimg|playstore|app store|social|facebook|instagram|whatsapp|linkedin|loader|buffering/i.test(
-    value
-  );
+  const haystack = `${value} ${context}`.toLowerCase();
+
+  if (/1x1|artshare|blank|placeholder|spacer|logo|icon|avatar|favicon|advertise|banner|copylink|flipcoin|youtube|ytimg|playstore|app store|social|facebook|instagram|whatsapp|linkedin|loader|buffering/i.test(haystack)) {
+    return true;
+  }
+
+  return /\b(author|profile|byline|publisher|journalist|reporter|columnist|user|headshot|photographer|team-member|staff|employee)\b/i.test(haystack);
+}
+
+function imageCandidateScore($, element, candidate, selectorRank) {
+  const context = getImageContextText($, element);
+  const { width, height } = getImageDimensions($, element, candidate);
+  let score = 100 - selectorRank * 4;
+
+  if (width >= 300) score += 18;
+  if (height >= 180) score += 12;
+  if (width > 0 && width < 160) score -= 45;
+  if (height > 0 && height < 90) score -= 35;
+  if (/article|story|content|figure|lead|hero|main|zoom|primary|featured/.test(context)) score += 20;
+  if (/author|profile|byline|publisher|logo|avatar|headshot|reporter|journalist|staff/.test(context)) score -= 90;
+
+  return score;
 }
 
 function extractPageImage($) {
@@ -4565,30 +4760,41 @@ function extractPageImage($) {
     "#zoom_class",
     "img[alt*='Story Image' i]",
     "img[class*='zoom' i]",
+    "article figure img",
+    "article picture img",
     "article img",
+    "main figure img",
+    "main picture img",
     "main img",
+    "[class*='article'] figure img",
+    "[class*='story'] figure img",
+    "[class*='content'] figure img",
     "[class*='article'] img",
     "[class*='story'] img",
     "[class*='content'] img",
     "figure img",
     "img"
   ];
+  const candidates = [];
 
-  for (const selector of selectors) {
+  selectors.forEach((selector, selectorRank) => {
     const images = $(selector).toArray();
 
     for (const image of images) {
       const candidate = getImageCandidate($, image);
+      const context = getImageContextText($, image);
 
-      if (candidate && !isRejectedImageCandidate(candidate)) {
-        return candidate;
+      if (candidate && !isRejectedImageCandidate(candidate, context)) {
+        candidates.push({
+          url: candidate,
+          score: imageCandidateScore($, image, candidate, selectorRank)
+        });
       }
     }
-  }
+  });
 
-  return "";
+  return candidates.sort((a, b) => b.score - a.score)[0]?.url || "";
 }
-
 function extractMetadataImage($, fallback = {}) {
   return pickFirst(
     extractPageImage($),
@@ -5436,12 +5642,22 @@ async function fetchPage(sourceUrl, options = {}) {
 async function fetchSourceWithTimeout(sourceUrl) {
   const controller = new AbortController();
   const timeoutMs = getSourceTimeoutMs();
-  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  let timeout;
+
+  const sourcePromise = fetchSource(sourceUrl, { signal: controller.signal });
+  sourcePromise.catch(() => {});
+
+  const timeoutPromise = new Promise((_, reject) => {
+    timeout = setTimeout(() => {
+      controller.abort();
+      reject(new Error(`source timed out after ${timeoutMs}ms`));
+    }, timeoutMs);
+  });
 
   try {
-    return await fetchSource(sourceUrl, { signal: controller.signal });
+    return await Promise.race([sourcePromise, timeoutPromise]);
   } catch (error) {
-    if (controller.signal.aborted) {
+    if (controller.signal.aborted && !/timed out/i.test(error.message || "")) {
       throw new Error(`source timed out after ${timeoutMs}ms`);
     }
 
@@ -5603,7 +5819,7 @@ async function main() {
   }
 
   const fetchStartedAt = Date.now();
-  console.log(`Fetching ${selectedSources.length} sources with concurrency ${getSourceConcurrency()}.`);
+  console.log(`Fetching ${selectedSources.length} sources with ${getSourceConcurrency()} parallel source workers and ${formatDuration(getSourceTimeoutMs())} max per source.`);
   const sourceResults = await mapWithConcurrency(selectedSources, getSourceConcurrency(), async (source) => {
     try {
       const startedAt = Date.now();
@@ -5803,6 +6019,8 @@ export {
   getSourcePageUrls,
   getSourceUrls,
   getRejectionReasons,
+  localQualityJudge,
+  needsLocalQualityReview,
   getExtraArticleUrls,
   hasDisallowedLanguage,
   hasBackfillDateRange,
