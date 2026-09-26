@@ -317,6 +317,7 @@ const requiredPayloadFields = [
 
 const ncrKeywords = ["delhi ncr"];
 const ncrCityCodes = isNoidaCityEnabled() ? ["gurugram", "faridabad", "noida"] : ["gurugram", "faridabad"];
+const ncrDelhiCityCodes = enabledCityCodeSet.has("new_delhi") ? ["new_delhi"] : [];
 const targetCityKeywords = [...cityRules.flatMap((rule) => rule.keywords), ...ncrKeywords];
 const reraKeywords = ["rera", "hrera", "h-rera", "real estate regulatory authority"];
 const courtKeywords = [
@@ -3470,8 +3471,11 @@ function detectCityCodes(article) {
   const primaryText = getArticlePrimaryText(article);
   const concreteNcrCityCodes = hasNcrMatch(article) ? detectConcreteNcrCityCodesFromFullArticle(article) : [];
   const matchedCodes = concreteNcrCityCodes.length > 0 ? concreteNcrCityCodes : detectMatchedCityCodes(article);
-  return matchedCodes.filter((code) =>
-    code !== "delhi_ncr" && (code !== "new_delhi" || /\\bnew delhi\\b|\\bcentral delhi\\b|\\bsouth delhi\\b|\\bnorth delhi\\b|\\beast delhi\\b|\\bwest delhi\\b/i.test(primaryText))
+  const hasPreviousNcrRoute = matchedCodes.some((code) => ncrCityCodes.includes(code));
+  const ncrDelhiRoute = hasNcrMatch(article) && hasPreviousNcrRoute ? ncrDelhiCityCodes : [];
+  const routedCodes = [...matchedCodes, ...ncrDelhiRoute];
+  return [...new Set(routedCodes)].filter((code) =>
+    code !== "delhi_ncr" && (code !== "new_delhi" || ncrDelhiRoute.includes("new_delhi") || /\bnew delhi\b|\bcentral delhi\b|\bsouth delhi\b|\bnorth delhi\b|\beast delhi\b|\bwest delhi\b/i.test(primaryText))
   );
 }
 

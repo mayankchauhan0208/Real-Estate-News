@@ -80,6 +80,15 @@ function reasons(overrides = {}) {
 assert.equal(publishable().cityCode, "gurugram");
 assert.equal(isPublishableArticle(publishable(), sentIds), true);
 
+const delhiNcrArticle = article({
+  title: "Delhi NCR office market grows as Gurugram demand strengthens",
+  description: "Delhi NCR commercial office development and real estate investment continue to grow in Gurugram.",
+  articleText: "The Delhi NCR office market is supported by Gurugram connectivity, commercial projects, infrastructure and real estate investment.",
+  newsLink: "https://example.com/delhi-ncr/gurugram-office-market-growth"
+});
+assert.ok(detectCityCodes(delhiNcrArticle).includes("gurugram"));
+assert.ok(detectCityCodes(delhiNcrArticle).includes("new_delhi"));
+
 assert.equal(isAllowedSource("https://www.moneycontrol.com/news/business/real-estate/"), true);
 assert.equal(isAllowedSource("https://www.moneycontrol.com/news/business/"), true);
 assert.equal(isAllowedSource("https://www.aninews.in/category/business/"), true);
@@ -774,7 +783,7 @@ const dlfDahliasTransactionArticle = publishable({
     "https://www.moneycontrol.com/news/business/real-estate/delhi-ncr-based-businessman-buys-four-apartments-in-dlf-s-the-dahlias-in-gurugram-for-rs-380-crore-13643229.html"
 });
 
-assert.deepEqual(detectCityCodes(dlfDahliasTransactionArticle), ["gurugram"]);
+assert.deepEqual(detectCityCodes(dlfDahliasTransactionArticle).sort(), ["gurugram", "new_delhi"]);
 assert.equal(isPublishableArticle(dlfDahliasTransactionArticle, sentIds), true);
 
 assert.equal(
@@ -822,7 +831,10 @@ const noidaDominantNcrArticle = publishable({
   newsLink: "https://example.com/delhi-ncr-developer-noida-extension-launches"
 });
 
-assert.deepEqual(detectCityCodes(noidaDominantNcrArticle), noidaCityEnabled ? ["noida"] : []);
+assert.deepEqual(
+  detectCityCodes(noidaDominantNcrArticle).sort(),
+  noidaCityEnabled ? ["new_delhi", "noida"] : []
+);
 assert.equal(isPublishableArticle(noidaDominantNcrArticle, sentIds), noidaCityEnabled);
 
 assert.equal(
@@ -1360,7 +1372,7 @@ assert.deepEqual(
       newsLink: "https://example.com/oberoi-realty-delhi-ncr-gurugram-project"
     })
   ),
-  ["gurugram"]
+  ["gurugram", "new_delhi"]
 );
 
 assert.match(
