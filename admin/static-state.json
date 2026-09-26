@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T09:32:49.705Z",
+  "generatedAt": "2026-09-26T12:07:14.147Z",
   "settings": {
     "automationEnabled": true,
     "apiPushEnabled": true,
@@ -5205,9 +5205,9 @@
     "enabledSources": 546,
     "disabledSources": 0,
     "manualSources": 403,
-    "reports": 25,
-    "postedNews": 0,
-    "candidateNews": 3,
+    "reports": 1,
+    "postedNews": 5,
+    "candidateNews": 5,
     "needsReviewNews": 0,
     "inactiveNews": 0
   },
@@ -5216,7 +5216,7 @@
     "readyForApiPush": false,
     "duplicateSourceUrlGroups": 0,
     "disabledSourceUrls": 0,
-    "latestReportName": "news-run-2026-09-26T06-24-59-124Z.json",
+    "latestReportName": "news-run-2026-09-26T12-07-12-787Z.json",
     "checks": [
       {
         "key": "api-safe",
@@ -5239,8 +5239,8 @@
       {
         "key": "dry-run-history",
         "label": "Dry-run review available",
-        "ok": true,
-        "detail": "At least one dry-run report exists."
+        "ok": false,
+        "detail": "Run a safe dry-run before enabling API push."
       },
       {
         "key": "all-cities-safe",
@@ -14572,1349 +14572,19 @@
   ],
   "reports": [
     {
-      "name": "news-run-2026-09-26T06-24-59-124Z.json",
-      "generatedAt": "2026-09-26T06:24:59.060Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 14,
-      "fetchedArticleCount": 97,
-      "expandedArticleCount": 36,
-      "candidateCount": 3,
-      "postedCount": 0,
-      "rejectedArticleCount": 39,
-      "needsReviewCount": 0,
-      "failureCount": 0,
-      "candidates": [
-        {
-          "title": "TERRAY REALTY LAUNCHES TO SET A NEW BENCHMARK IN REAL ESTATE MANDATES AND ADVISORY",
-          "cityCode": "bangalore",
-          "classification": "project_development",
-          "publishedAt": "2026-09-08T11:32:01.000Z",
-          "newsLink": "https://thepropertytimes.in/terray-realty-launches-to-set-a-new-benchmark-in-real-estate-mandates-and-advisory/",
-          "postedBy": "Real Estate News & Views Portal"
-        },
-        {
-          "title": "MRG Group Expands MRG Crown Clubhouse to 30,000 Sq. Ft., Launches Club Jewel",
-          "cityCode": "mumbai",
-          "classification": "project_development",
-          "publishedAt": "2026-09-11T09:36:42.000Z",
-          "newsLink": "https://thepropertytimes.in/mrg-group-expands-mrg-crown-clubhouse-to-30000-sq-ft-launches-club-jewel/",
-          "postedBy": "Real Estate News & Views Portal"
-        },
-        {
-          "title": "Ganpati Group to invest ₹2,000 Crore in Residential and Hospitality Expansion",
-          "cityCode": "mumbai",
-          "classification": "project_development",
-          "publishedAt": "2026-09-17T11:05:13.000Z",
-          "newsLink": "https://thepropertytimes.in/ganpati-group-to-invest-%e2%82%b92000-crore-in-residential-and-hospitality-expansion/",
-          "postedBy": "Real Estate News & Views Portal"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 5: no allowed city match": 30,
-        "filter 7: outside region in title/description": 3,
-        "filter 8: outside-city conflict": 3,
-        "filter 9: no specific project/development signal": 3
-      }
-    },
-    {
-      "name": "news-run-2026-09-26T06-23-32-538Z.json",
-      "generatedAt": "2026-09-26T06:23:32.460Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 14,
-      "fetchedArticleCount": 89,
-      "expandedArticleCount": 28,
-      "candidateCount": 4,
-      "postedCount": 0,
-      "rejectedArticleCount": 30,
-      "needsReviewCount": 0,
-      "failureCount": 0,
-      "candidates": [
-        {
-          "title": "TERRAY REALTY LAUNCHES TO SET A NEW BENCHMARK IN REAL ESTATE MANDATES AND ADVISORY",
-          "cityCode": "bangalore",
-          "classification": "project_development",
-          "publishedAt": "2026-09-08T11:32:01.000Z",
-          "newsLink": "https://thepropertytimes.in/terray-realty-launches-to-set-a-new-benchmark-in-real-estate-mandates-and-advisory/",
-          "postedBy": "Real Estate News & Views Portal"
-        },
-        {
-          "title": "MRG Group Expands MRG Crown Clubhouse to 30,000 Sq. Ft., Launches Club Jewel",
-          "cityCode": "mumbai",
-          "classification": "project_development",
-          "publishedAt": "2026-09-11T09:36:42.000Z",
-          "newsLink": "https://thepropertytimes.in/mrg-group-expands-mrg-crown-clubhouse-to-30000-sq-ft-launches-club-jewel/",
-          "postedBy": "Real Estate News & Views Portal"
-        },
-        {
-          "title": "Ganpati Group to invest ₹2,000 Crore in Residential and Hospitality Expansion",
-          "cityCode": "mumbai",
-          "classification": "project_development",
-          "publishedAt": "2026-09-17T11:05:13.000Z",
-          "newsLink": "https://thepropertytimes.in/ganpati-group-to-invest-%e2%82%b92000-crore-in-residential-and-hospitality-expansion/",
-          "postedBy": "Real Estate News & Views Portal"
-        },
-        {
-          "title": "Unhappy with allotted flats after redevelopment? Members can sue society in Co-op Court",
-          "cityCode": "mumbai",
-          "classification": "project_development",
-          "publishedAt": "2026-09-25T19:48:00.000Z",
-          "newsLink": "https://squarefeatindia.com/unhappy-with-allotted-flats-after-redevelopment-members-can-sue-society-in-co-op-court/",
-          "postedBy": "Square Feat India"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 5: no allowed city match": 21,
-        "filter 7: outside region in title/description": 3,
-        "filter 8: outside-city conflict": 3,
-        "filter 9: no specific project/development signal": 3
-      }
-    },
-    {
-      "name": "news-run-2026-09-26T06-20-06-630Z.json",
-      "generatedAt": "2026-09-26T06:20:06.519Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 23,
-      "fetchedArticleCount": 148,
-      "expandedArticleCount": 69,
-      "candidateCount": 4,
-      "postedCount": 0,
-      "rejectedArticleCount": 69,
-      "needsReviewCount": 0,
-      "failureCount": 0,
-      "candidates": [
-        {
-          "title": "Unhappy with allotted flats after redevelopment? Members can sue society in Co-op Court",
-          "cityCode": "mumbai",
-          "classification": "project_development",
-          "publishedAt": "2026-09-25T19:48:00.000Z",
-          "newsLink": "https://squarefeatindia.com/unhappy-with-allotted-flats-after-redevelopment-members-can-sue-society-in-co-op-court/",
-          "postedBy": "Square Feat India"
-        },
-        {
-          "title": "Dibrugarh launches Upper Assam’s first public tea e-auction platform",
-          "cityCode": "dibrugarh",
-          "classification": "project_development",
-          "publishedAt": "2026-09-26T03:10:19.000Z",
-          "newsLink": "https://assamtribune.com/assam/dibrugarh-launches-upper-assams-first-public-tea-e-auction-platform-1618517",
-          "postedBy": "The Assam Tribune"
-        },
-        {
-          "title": "Rapido’s ‘Ownly’ enters Hyderabad with zero-commission food delivery model",
-          "cityCode": "hyderabad",
-          "classification": "authority_pipeline",
-          "publishedAt": "2026-09-26T05:47:58.000Z",
-          "newsLink": "https://telanganatoday.com/rapidos-ownly-enters-hyderabad-with-zero-commission-food-delivery-model",
-          "postedBy": "Telangana Today"
-        },
-        {
-          "title": "CJP Leader Ashutosh Ranka Arrives in Guwahati to Attend Regional Volunteers’ Meet",
-          "cityCode": "guwahati",
-          "classification": "authority_pipeline",
-          "publishedAt": "2026-09-26T06:05:00.000Z",
-          "newsLink": "https://www.sentinelassam.com/breakingnews/cjp-leader-ashutosh-ranka-arrives-in-guwahati-to-attend-regional-volunteers-meet",
-          "postedBy": "sentinelassam-english"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 5: no allowed city match": 61,
-        "filter 7: outside region in title/description": 2,
-        "filter 8: outside-city conflict": 2,
-        "filter 9: no specific project/development signal": 4
-      }
-    },
-    {
-      "name": "news-run-2026-09-26T06-11-41-916Z.json",
-      "generatedAt": "2026-09-26T06:11:41.727Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 10,
-      "fetchedArticleCount": 40,
-      "expandedArticleCount": 19,
-      "candidateCount": 3,
-      "postedCount": 0,
-      "rejectedArticleCount": 16,
-      "needsReviewCount": 0,
-      "failureCount": 1,
-      "candidates": [
-        {
-          "title": "Max Estates to jointly develop 9.76-acre project in Ghaziabad",
-          "cityCode": "ghaziabad",
-          "classification": "project_development",
-          "publishedAt": "2026-09-23T14:07:00.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/max-estates-to-jointly-develop-9-76-acre-project-in-ghaziabad/134440223",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Uttar Pradesh CM Adityanath launches two mega housing projects in Lucknow",
-          "cityCode": "lucknow",
-          "classification": "project_development",
-          "publishedAt": "2026-09-23T18:30:00.000Z",
-          "newsLink": "https://www.business-standard.com/economy/uttar-pradesh/uttar-pradesh-cm-adityanath-launches-two-mega-housing-projects-in-lucknow-126092401268_1.html",
-          "postedBy": "Business Standard"
-        },
-        {
-          "title": "Bombay HC uphold builder's decision to terminate flat allotment",
-          "cityCode": "mumbai",
-          "classification": "project_development",
-          "publishedAt": "2026-09-25T04:04:24.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/regulatory/bombay-hc-uphold-builders-decision-to-terminate-allotment-as-buyer-fails-to-complete-stamp-duty-registration/134474637",
-          "postedBy": "ET Realty"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 5: no allowed city match": 13,
-        "filter 9: no specific project/development signal": 3
-      }
-    },
-    {
-      "name": "news-run-2026-09-26T05-48-38-158Z.json",
-      "generatedAt": "2026-09-26T05:48:37.996Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 7,
-      "fetchedArticleCount": 114,
-      "expandedArticleCount": 83,
-      "candidateCount": 10,
-      "postedCount": 0,
-      "rejectedArticleCount": 90,
-      "needsReviewCount": 0,
-      "failureCount": 1,
-      "candidates": [
-        {
-          "title": "Gulshan Group, Ourika Estates form JV to invest ₹750 cr in UP projects",
-          "cityCode": "ghaziabad",
-          "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://www.business-standard.com/companies/news/gulshan-group-ourika-estates-form-jv-to-invest-750-cr-in-up-projects-126092101022_1.html",
-          "postedBy": "Business Standard"
-        },
-        {
-          "title": "Gulshan Group, Ourika Estates form JV to invest ₹750 cr in UP projects",
-          "cityCode": "lucknow",
-          "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://www.business-standard.com/companies/news/gulshan-group-ourika-estates-form-jv-to-invest-750-cr-in-up-projects-126092101022_1.html",
-          "postedBy": "Business Standard"
-        },
-        {
-          "title": "Elevate Homes to develop 10.5-acre premium residential project in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "project_development",
-          "publishedAt": "2026-09-02T05:45:22.000Z",
-          "newsLink": "https://torbitrealty.com/elevate-homes-to-develop-10-5-acre-premium-residential-project-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "County Group to invest Rs 2,500 cr to develop luxury homes in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-10T05:51:28.000Z",
-          "newsLink": "https://torbitrealty.com/county-group-to-invest-rs-2500-cr-to-develop-luxury-homes-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "Smartworld, Kotak Realty Fund partner for ₹800 crore investment in Gurugram luxury projects",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-14T05:23:44.000Z",
-          "newsLink": "https://torbitrealty.com/smartworld-kotak-realty-fund-partner-for-%e2%82%b9800-crore-investment-in-gurugram-luxury-projects/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "ASF Group rents 4 lakh sq ft office space to Genpact in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-17T05:28:31.000Z",
-          "newsLink": "https://torbitrealty.com/asf-group-rents-4-lakh-sq-ft-office-space-to-genpact-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "Uttar Pradesh CM Adityanath launches two mega housing projects in Lucknow",
-          "cityCode": "lucknow",
-          "classification": "project_development",
-          "publishedAt": "2026-09-23T18:30:00.000Z",
-          "newsLink": "https://www.business-standard.com/economy/uttar-pradesh/uttar-pradesh-cm-adityanath-launches-two-mega-housing-projects-in-lucknow-126092401268_1.html",
-          "postedBy": "Business Standard"
-        },
-        {
-          "title": "UP RERA clears 12 new real estate projects worth ₹1,664 crore across six districts",
-          "cityCode": "lucknow",
-          "classification": "project_development",
-          "publishedAt": "2026-09-24T02:15:16.000Z",
-          "newsLink": "https://www.cnbctv18.com/real-estate/up-rera-clears-12-new-real-estate-projects-worth-rs-1664-crore-six-districts-19997140.htm",
-          "postedBy": "CNBC TV18"
-        },
-        {
-          "title": "UK Realty Launches Celestique Gardens in Goregaon East",
-          "cityCode": "mumbai",
-          "classification": "project_development",
-          "publishedAt": "2026-09-24T16:54:35.000Z",
-          "newsLink": "https://realtynmore.com/uk-realty-launches-celestique-gardens-in-goregaon/",
-          "postedBy": "RealtyNMore"
-        },
-        {
-          "title": "Prestige Estates launches ₹1,750 crore residential project in Bengaluru",
-          "cityCode": "bangalore",
-          "classification": "project_development",
-          "publishedAt": "2026-09-25T10:31:43.000Z",
-          "newsLink": "https://www.cnbctv18.com/real-estate/prestige-estates-share-price-launches-rs-1750-crore-residential-project-in-bengaluru-prestige-parklane-19998643.htm",
-          "postedBy": "CNBC TV18"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 5: no allowed city match": 56,
-        "filter 7: outside region in title/description": 9,
-        "filter 8: outside-city conflict": 9,
-        "filter 9: no specific project/development signal": 16
-      }
-    },
-    {
-      "name": "news-run-2026-09-26T05-47-44-260Z.json",
-      "generatedAt": "2026-09-26T05:47:41.446Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 7,
-      "fetchedArticleCount": 114,
-      "expandedArticleCount": 83,
-      "candidateCount": 11,
-      "postedCount": 0,
-      "rejectedArticleCount": 89,
-      "needsReviewCount": 0,
-      "failureCount": 1,
-      "candidates": [
-        {
-          "title": "Gulshan Group, Ourika Estates form JV to invest ₹750 cr in UP projects",
-          "cityCode": "ghaziabad",
-          "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://www.business-standard.com/companies/news/gulshan-group-ourika-estates-form-jv-to-invest-750-cr-in-up-projects-126092101022_1.html",
-          "postedBy": "Business Standard"
-        },
-        {
-          "title": "Gulshan Group, Ourika Estates form JV to invest ₹750 cr in UP projects",
-          "cityCode": "lucknow",
-          "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://www.business-standard.com/companies/news/gulshan-group-ourika-estates-form-jv-to-invest-750-cr-in-up-projects-126092101022_1.html",
-          "postedBy": "Business Standard"
-        },
-        {
-          "title": "Elevate Homes to develop 10.5-acre premium residential project in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "project_development",
-          "publishedAt": "2026-09-02T05:45:22.000Z",
-          "newsLink": "https://torbitrealty.com/elevate-homes-to-develop-10-5-acre-premium-residential-project-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "County Group to invest Rs 2,500 cr to develop luxury homes in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-10T05:51:28.000Z",
-          "newsLink": "https://torbitrealty.com/county-group-to-invest-rs-2500-cr-to-develop-luxury-homes-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "Smartworld, Kotak Realty Fund partner for ₹800 crore investment in Gurugram luxury projects",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-14T05:23:44.000Z",
-          "newsLink": "https://torbitrealty.com/smartworld-kotak-realty-fund-partner-for-%e2%82%b9800-crore-investment-in-gurugram-luxury-projects/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "ASF Group rents 4 lakh sq ft office space to Genpact in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-17T05:28:31.000Z",
-          "newsLink": "https://torbitrealty.com/asf-group-rents-4-lakh-sq-ft-office-space-to-genpact-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "Uttar Pradesh CM Adityanath launches two mega housing projects in Lucknow",
-          "cityCode": "lucknow",
-          "classification": "project_development",
-          "publishedAt": "2026-09-23T18:30:00.000Z",
-          "newsLink": "https://www.business-standard.com/economy/uttar-pradesh/uttar-pradesh-cm-adityanath-launches-two-mega-housing-projects-in-lucknow-126092401268_1.html",
-          "postedBy": "Business Standard"
-        },
-        {
-          "title": "UP RERA clears 12 new real estate projects worth ₹1,664 crore across six districts",
-          "cityCode": "lucknow",
-          "classification": "project_development",
-          "publishedAt": "2026-09-24T02:15:16.000Z",
-          "newsLink": "https://www.cnbctv18.com/real-estate/up-rera-clears-12-new-real-estate-projects-worth-rs-1664-crore-six-districts-19997140.htm",
-          "postedBy": "CNBC TV18"
-        },
-        {
-          "title": "UK Realty Launches Celestique Gardens in Goregaon East",
-          "cityCode": "mumbai",
-          "classification": "project_development",
-          "publishedAt": "2026-09-24T16:54:35.000Z",
-          "newsLink": "https://realtynmore.com/uk-realty-launches-celestique-gardens-in-goregaon/",
-          "postedBy": "RealtyNMore"
-        },
-        {
-          "title": "Loneliness, ageing population driving senior living arrangement demand",
-          "cityCode": "gurugram",
-          "classification": "project_development",
-          "publishedAt": "2026-09-24T18:30:00.000Z",
-          "newsLink": "https://www.business-standard.com/industry/news/loneliness-ageing-population-driving-senior-living-arrangement-demand-126092500469_1.html",
-          "postedBy": "Business Standard"
-        },
-        {
-          "title": "Prestige Estates launches ₹1,750 crore residential project in Bengaluru",
-          "cityCode": "bangalore",
-          "classification": "project_development",
-          "publishedAt": "2026-09-25T10:31:43.000Z",
-          "newsLink": "https://www.cnbctv18.com/real-estate/prestige-estates-share-price-launches-rs-1750-crore-residential-project-in-bengaluru-prestige-parklane-19998643.htm",
-          "postedBy": "CNBC TV18"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 5: no allowed city match": 55,
-        "filter 7: outside region in title/description": 9,
-        "filter 8: outside-city conflict": 9,
-        "filter 9: no specific project/development signal": 16
-      }
-    },
-    {
-      "name": "news-run-2026-09-23T14-39-18-695Z.json",
-      "generatedAt": "2026-09-23T14:39:17.663Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 7,
-      "fetchedArticleCount": 128,
-      "expandedArticleCount": 101,
-      "candidateCount": 16,
-      "postedCount": 0,
-      "rejectedArticleCount": 121,
-      "needsReviewCount": 0,
-      "failureCount": 0,
-      "candidates": [
-        {
-          "title": "Gulshan Group, Ourika Estates form JV to invest ₹750 cr in UP projects",
-          "cityCode": "ghaziabad",
-          "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://www.business-standard.com/companies/news/gulshan-group-ourika-estates-form-jv-to-invest-750-cr-in-up-projects-126092101022_1.html",
-          "postedBy": "Business Standard"
-        },
-        {
-          "title": "Gulshan Group, Ourika Estates form JV to invest ₹750 cr in UP projects",
-          "cityCode": "lucknow",
-          "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://www.business-standard.com/companies/news/gulshan-group-ourika-estates-form-jv-to-invest-750-cr-in-up-projects-126092101022_1.html",
-          "postedBy": "Business Standard"
-        },
-        {
-          "title": "Elan Group ropes in Marriott International to manage upcoming hotel, branded homes in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-08-25T04:57:14.000Z",
-          "newsLink": "https://torbitrealty.com/elan-group-ropes-in-marriott-to-manage-upcoming-hotel-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "Elevate Homes to develop 10.5-acre premium residential project in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "project_development",
-          "publishedAt": "2026-09-02T05:45:22.000Z",
-          "newsLink": "https://torbitrealty.com/elevate-homes-to-develop-10-5-acre-premium-residential-project-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "County Group to invest Rs 2,500 cr to develop luxury homes in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-10T05:51:28.000Z",
-          "newsLink": "https://torbitrealty.com/county-group-to-invest-rs-2500-cr-to-develop-luxury-homes-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "Smartworld, Kotak Realty Fund partner for ₹800 crore investment in Gurugram luxury projects",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-14T05:23:44.000Z",
-          "newsLink": "https://torbitrealty.com/smartworld-kotak-realty-fund-partner-for-%e2%82%b9800-crore-investment-in-gurugram-luxury-projects/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "ASF Group rents 4 lakh sq ft office space to Genpact in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-17T05:28:31.000Z",
-          "newsLink": "https://torbitrealty.com/asf-group-rents-4-lakh-sq-ft-office-space-to-genpact-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "Festive housing demand to stay healthy, but growth likely to moderate",
-          "cityCode": "gurugram",
-          "classification": "developer_corporate_positive",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://www.business-standard.com/industry/news/industry-news-festive-housing-demand-to-stay-healthy-but-growth-may-moderate-126092000348_1.html",
-          "postedBy": "Business Standard"
-        },
-        {
-          "title": "Puravankara enters Delhi NCR real estate market, secures Greater Noida land parcel with GDV of ₹5,200 croreSept 22,...",
-          "cityCode": "noida",
-          "classification": "positive_city_market",
-          "publishedAt": "2026-09-22T06:24:20.000Z",
-          "newsLink": "https://www.cnbctv18.com/market/puravankara-share-price-secures-greater-noida-land-parcel-gdv-rs-5200-crore-enters-delhi-ncr-19995540.htm",
-          "postedBy": "CNBC TV18"
-        },
-        {
-          "title": "The Wealth Company’s Category II AIF to deploy ₹75 crore in 3 housing projects",
-          "cityCode": "mumbai",
-          "classification": "project_development",
-          "publishedAt": "2026-09-23T05:38:30.000Z",
-          "newsLink": "https://www.cnbctv18.com/alternative-investment-fund/the-wealth-company-category-ii-aif-to-deploy-rs-75-crore-3-housing-projects-19996402.htm",
-          "postedBy": "CNBC TV18"
-        },
-        {
-          "title": "UP RERA Approves 12 Real Estate Projects Worth Rs 1,663.85 Cro...",
-          "cityCode": "lucknow",
-          "classification": "project_development",
-          "publishedAt": "2026-09-23T06:19:46.000Z",
-          "newsLink": "https://realtynmore.com/up-rera-approves-12-real-estate-projects-worth/",
-          "postedBy": "RealtyNMore"
-        },
-        {
-          "title": "Greater Noida Land Rates Hiked: ₹2.5 Crore Per Acre + 10 percent Residential Plot Benefit",
-          "cityCode": "noida",
-          "classification": "project_development",
-          "publishedAt": "2026-09-23T06:21:00.000Z",
-          "newsLink": "https://www.magicbricks.com/news/greater-noida-land-rates-hiked-25-crore-per-acre-10-percent-residential-plot-benefit-pmmb/151746.html",
-          "postedBy": "Property News"
-        },
-        {
-          "title": "India's Commercial Real Estate is Entering a New Growth Cycle: What Will Drive Demand?",
-          "cityCode": "noida",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-23T08:58:50.000Z",
-          "newsLink": "https://www.tribuneindia.com/news/business/indias-commercial-real-estate-is-entering-a-new-growth-cycle-what-will-drive-demand/",
-          "postedBy": "The Tribune"
-        },
-        {
-          "title": "Airports, Expressways, And GCCs Redefine Expressways Expansion...",
-          "cityCode": "noida",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-23T09:23:52.000Z",
-          "newsLink": "https://realtynmore.com/airports-expressways-and-gccs-redefine/",
-          "postedBy": "RealtyNMore"
-        },
-        {
-          "title": "Mangaluru Water Metro Current Status Out: 11 Stations Finalised and Feasibility Approved",
-          "cityCode": "mangalore",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-23T12:04:14.000Z",
-          "newsLink": "https://www.magicbricks.com/news/mangaluru-water-metro-current-status-out-11-stations-finalised-and-feasibility-approved-rgmb/151767.html",
-          "postedBy": "Property News"
-        },
-        {
-          "title": "Noida में बनेगा 29 KM का नया Expressway: 5 लाख लोगों को मिलेगी राहत, Airport पहुंचेंगे सिर्फ… मिनट में",
-          "cityCode": "noida",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-23T12:41:20.000Z",
-          "newsLink": "https://www.magicbricks.com/news/noida-29-km-new-expressway-route-airport-connectivity-asmb/151770.html",
-          "postedBy": "Property News"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 10: broad market/company update, not city project news": 3,
-        "filter 5: no allowed city match": 58,
-        "filter 7: outside region in title/description": 18,
-        "filter 8: outside-city conflict": 18,
-        "filter 9: no specific project/development signal": 24
-      }
-    },
-    {
-      "name": "news-run-2026-09-23T14-37-13-839Z.json",
-      "generatedAt": "2026-09-23T14:37:12.765Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 7,
-      "fetchedArticleCount": 128,
-      "expandedArticleCount": 104,
-      "candidateCount": 17,
-      "postedCount": 0,
-      "rejectedArticleCount": 124,
-      "needsReviewCount": 0,
-      "failureCount": 0,
-      "candidates": [
-        {
-          "title": "County Group to invest Rs 2,500 cr to develop luxury homes in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-10T05:51:28.000Z",
-          "newsLink": "https://torbitrealty.com/county-group-to-invest-rs-2500-cr-to-develop-luxury-homes-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "County Group to invest Rs 2,500 cr to develop luxury homes in Gurugram",
-          "cityCode": "noida",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-10T05:51:28.000Z",
-          "newsLink": "https://torbitrealty.com/county-group-to-invest-rs-2500-cr-to-develop-luxury-homes-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "Gulshan Group, Ourika Estates form JV to invest ₹750 cr in UP projects",
-          "cityCode": "ghaziabad",
-          "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://www.business-standard.com/companies/news/gulshan-group-ourika-estates-form-jv-to-invest-750-cr-in-up-projects-126092101022_1.html",
-          "postedBy": "Business Standard"
-        },
-        {
-          "title": "Gulshan Group, Ourika Estates form JV to invest ₹750 cr in UP projects",
-          "cityCode": "lucknow",
-          "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://www.business-standard.com/companies/news/gulshan-group-ourika-estates-form-jv-to-invest-750-cr-in-up-projects-126092101022_1.html",
-          "postedBy": "Business Standard"
-        },
-        {
-          "title": "Elan Group ropes in Marriott International to manage upcoming hotel, branded homes in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-08-25T04:57:14.000Z",
-          "newsLink": "https://torbitrealty.com/elan-group-ropes-in-marriott-to-manage-upcoming-hotel-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "Elevate Homes to develop 10.5-acre premium residential project in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "project_development",
-          "publishedAt": "2026-09-02T05:45:22.000Z",
-          "newsLink": "https://torbitrealty.com/elevate-homes-to-develop-10-5-acre-premium-residential-project-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "Smartworld, Kotak Realty Fund partner for ₹800 crore investment in Gurugram luxury projects",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-14T05:23:44.000Z",
-          "newsLink": "https://torbitrealty.com/smartworld-kotak-realty-fund-partner-for-%e2%82%b9800-crore-investment-in-gurugram-luxury-projects/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "ASF Group rents 4 lakh sq ft office space to Genpact in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-17T05:28:31.000Z",
-          "newsLink": "https://torbitrealty.com/asf-group-rents-4-lakh-sq-ft-office-space-to-genpact-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "Festive housing demand to stay healthy, but growth likely to moderate",
-          "cityCode": "gurugram",
-          "classification": "developer_corporate_positive",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://www.business-standard.com/industry/news/industry-news-festive-housing-demand-to-stay-healthy-but-growth-may-moderate-126092000348_1.html",
-          "postedBy": "Business Standard"
-        },
-        {
-          "title": "Puravankara enters Delhi NCR real estate market, secures Greater Noida land parcel with GDV of ₹5,200 croreSept 22,...",
-          "cityCode": "noida",
-          "classification": "positive_city_market",
-          "publishedAt": "2026-09-22T06:24:20.000Z",
-          "newsLink": "https://www.cnbctv18.com/market/puravankara-share-price-secures-greater-noida-land-parcel-gdv-rs-5200-crore-enters-delhi-ncr-19995540.htm",
-          "postedBy": "CNBC TV18"
-        },
-        {
-          "title": "The Wealth Company’s Category II AIF to deploy ₹75 crore in 3 housing projects",
-          "cityCode": "mumbai",
-          "classification": "project_development",
-          "publishedAt": "2026-09-23T05:38:30.000Z",
-          "newsLink": "https://www.cnbctv18.com/alternative-investment-fund/the-wealth-company-category-ii-aif-to-deploy-rs-75-crore-3-housing-projects-19996402.htm",
-          "postedBy": "CNBC TV18"
-        },
-        {
-          "title": "UP RERA Approves 12 Real Estate Projects Worth Rs 1,663.85 Cro...",
-          "cityCode": "lucknow",
-          "classification": "project_development",
-          "publishedAt": "2026-09-23T06:19:46.000Z",
-          "newsLink": "https://realtynmore.com/up-rera-approves-12-real-estate-projects-worth/",
-          "postedBy": "RealtyNMore"
-        },
-        {
-          "title": "Greater Noida Land Rates Hiked: ₹2.5 Crore Per Acre + 10 percent Residential Plot Benefit",
-          "cityCode": "noida",
-          "classification": "project_development",
-          "publishedAt": "2026-09-23T06:21:00.000Z",
-          "newsLink": "https://www.magicbricks.com/news/greater-noida-land-rates-hiked-25-crore-per-acre-10-percent-residential-plot-benefit-pmmb/151746.html",
-          "postedBy": "Property News"
-        },
-        {
-          "title": "India's Commercial Real Estate is Entering a New Growth Cycle: What Will Drive Demand?",
-          "cityCode": "noida",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-23T08:58:50.000Z",
-          "newsLink": "https://www.tribuneindia.com/news/business/indias-commercial-real-estate-is-entering-a-new-growth-cycle-what-will-drive-demand/",
-          "postedBy": "The Tribune"
-        },
-        {
-          "title": "Airports, Expressways, And GCCs Redefine Expressways Expansion...",
-          "cityCode": "noida",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-23T09:23:52.000Z",
-          "newsLink": "https://realtynmore.com/airports-expressways-and-gccs-redefine/",
-          "postedBy": "RealtyNMore"
-        },
-        {
-          "title": "Mangaluru Water Metro Current Status Out: 11 Stations Finalised and Feasibility Approved",
-          "cityCode": "mangalore",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-23T12:04:14.000Z",
-          "newsLink": "https://www.magicbricks.com/news/mangaluru-water-metro-current-status-out-11-stations-finalised-and-feasibility-approved-rgmb/151767.html",
-          "postedBy": "Property News"
-        },
-        {
-          "title": "Noida में बनेगा 29 KM का नया Expressway: 5 लाख लोगों को मिलेगी राहत, Airport पहुंचेंगे सिर्फ… मिनट में",
-          "cityCode": "noida",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-23T12:41:20.000Z",
-          "newsLink": "https://www.magicbricks.com/news/noida-29-km-new-expressway-route-airport-connectivity-asmb/151770.html",
-          "postedBy": "Property News"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 10: broad market/company update, not city project news": 3,
-        "filter 5: no allowed city match": 58,
-        "filter 7: outside region in title/description": 19,
-        "filter 8: outside-city conflict": 19,
-        "filter 9: no specific project/development signal": 25
-      }
-    },
-    {
-      "name": "news-run-2026-09-23T14-30-48-622Z.json",
-      "generatedAt": "2026-09-23T14:30:37.001Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 120,
-      "fetchedArticleCount": 1802,
-      "expandedArticleCount": 953,
-      "candidateCount": 57,
-      "postedCount": 0,
-      "rejectedArticleCount": 1094,
-      "needsReviewCount": 0,
-      "failureCount": 4,
-      "candidates": [
-        {
-          "title": "Gaurs Group targets over ₹5,500 crore sales bookings this fiscal",
-          "cityCode": "noida",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-08-27T14:58:31.000Z",
-          "newsLink": "https://www.hindustantimes.com/real-estate/gaurs-group-targets-5-500-crore-sales-bookings-bets-on-yamuna-expressway-noida-and-ghaziabad-for-new-projects-101787841337996.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "Gaurs Group targets over ₹5,500 crore sales bookings this fiscal",
-          "cityCode": "ghaziabad",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-08-27T14:58:31.000Z",
-          "newsLink": "https://www.hindustantimes.com/real-estate/gaurs-group-targets-5-500-crore-sales-bookings-bets-on-yamuna-expressway-noida-and-ghaziabad-for-new-projects-101787841337996.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "County Group to invest Rs 2,500 cr to develop luxury homes in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-10T05:51:28.000Z",
-          "newsLink": "https://torbitrealty.com/county-group-to-invest-rs-2500-cr-to-develop-luxury-homes-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "County Group to invest Rs 2,500 cr to develop luxury homes in Gurugram",
-          "cityCode": "noida",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-10T05:51:28.000Z",
-          "newsLink": "https://torbitrealty.com/county-group-to-invest-rs-2500-cr-to-develop-luxury-homes-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "Gulshan group inks partnership with Ourika Estates to develop projects in Ghaziabad and Lucknow",
-          "cityCode": "ghaziabad",
-          "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gulshan-group-inks-partnership-with-ourika-estates-to-develop-projects-in-ghaziabad-and-lucknow/articleshow/134386762.cms",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "Gulshan group inks partnership with Ourika Estates to develop projects in Ghaziabad and Lucknow",
-          "cityCode": "lucknow",
-          "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gulshan-group-inks-partnership-with-ourika-estates-to-develop-projects-in-ghaziabad-and-lucknow/articleshow/134386762.cms",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "Gulshan Group, Ourika Estates form JV to invest ₹750 cr in UP projects",
-          "cityCode": "ghaziabad",
-          "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://www.business-standard.com/companies/news/gulshan-group-ourika-estates-form-jv-to-invest-750-cr-in-up-projects-126092101022_1.html",
-          "postedBy": "Business Standard"
-        },
-        {
-          "title": "Gulshan Group, Ourika Estates form JV to invest ₹750 cr in UP projects",
-          "cityCode": "lucknow",
-          "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://www.business-standard.com/companies/news/gulshan-group-ourika-estates-form-jv-to-invest-750-cr-in-up-projects-126092101022_1.html",
-          "postedBy": "Business Standard"
-        },
-        {
-          "title": "Gulshan Group, Ourika Estates to invest over ₹750 crore in Ghaziabad, Lucknow housing projects",
-          "cityCode": "ghaziabad",
-          "classification": "project_development",
-          "publishedAt": "2026-09-21T10:27:26.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/gulshan-group-ourika-estates-to-invest-over-750-crore-in-ghaziabad-lucknow-housing-projects/134387040?utm_source=category_listing&utm_medium=sectionListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Gulshan Group, Ourika Estates to invest over ₹750 crore in Ghaziabad, Lucknow housing projects",
-          "cityCode": "lucknow",
-          "classification": "project_development",
-          "publishedAt": "2026-09-21T10:27:26.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/gulshan-group-ourika-estates-to-invest-over-750-crore-in-ghaziabad-lucknow-housing-projects/134387040?utm_source=category_listing&utm_medium=sectionListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Gulshan Group, Ourika Estates to invest ₹750 crore in premium housing projects in Ghaziabad and Lucknow",
-          "cityCode": "ghaziabad",
-          "classification": "project_development",
-          "publishedAt": "2026-09-21T15:02:01.000Z",
-          "newsLink": "https://www.hindustantimes.com/real-estate/gulshan-group-ourika-estates-to-invest-750-crore-in-premium-housing-projects-in-ghaziabad-and-lucknow-101790002262538.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "Gulshan Group, Ourika Estates to invest ₹750 crore in premium housing projects in Ghaziabad and Lucknow",
-          "cityCode": "lucknow",
-          "classification": "project_development",
-          "publishedAt": "2026-09-21T15:02:01.000Z",
-          "newsLink": "https://www.hindustantimes.com/real-estate/gulshan-group-ourika-estates-to-invest-750-crore-in-premium-housing-projects-in-ghaziabad-and-lucknow-101790002262538.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "Luxury Housing Project Takes Shape As Golf Course Extension Road Emerges As Key Gurugram Hub",
-          "cityCode": "gurugram",
-          "classification": "authority_pipeline",
-          "publishedAt": "2026-08-24T18:30:00.000Z",
-          "newsLink": "https://news.abplive.com/infotainment/luxury-housing-project-takes-shape-as-golf-course-extension-road-emerges-as-key-gurugram-hub-1863835",
-          "postedBy": "Smartworld Media"
-        },
-        {
-          "title": "Elan Group ropes in Marriott International to manage upcoming hotel, branded homes in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-08-25T04:57:14.000Z",
-          "newsLink": "https://torbitrealty.com/elan-group-ropes-in-marriott-to-manage-upcoming-hotel-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "Greater Noida authority raises farmers’ land aid by ₹2,200 per sq meter ahead of phase-II acquisition",
-          "cityCode": "noida",
-          "classification": "authority_pipeline",
-          "publishedAt": "2026-08-29T12:33:07.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/infrastructure/greater-noida-authority-raises-farmers-land-aid-by-2200-per-sq-meter-ahead-of-phase-ii-acquisition/133611937?utm_source=top_news&utm_medium=tagListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "2-3 locations put forward for new planned city near Hathras: Yeida",
-          "cityCode": "noida",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-08-31T02:36:10.000Z",
-          "newsLink": "https://www.hindustantimes.com/cities/noida-news/23-locations-put-forward-for-new-planned-city-near-hathras-yeida-101788112514605.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "Elevate Homes to develop 10.5-acre premium residential project in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "project_development",
-          "publishedAt": "2026-09-02T05:45:22.000Z",
-          "newsLink": "https://torbitrealty.com/elevate-homes-to-develop-10-5-acre-premium-residential-project-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "Greater Noida plot allottees again get two more years to complete construction",
-          "cityCode": "noida",
-          "classification": "project_development",
-          "publishedAt": "2026-09-05T03:59:55.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/residential/greater-noida-plot-allottees-again-get-two-more-years-to-complete-construction/133786978?utm_source=top_news&utm_medium=tagListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Gurugram luxury housing lines up Rs 1 lakh crore festive launch pipeline",
-          "cityCode": "gurugram",
-          "classification": "leadership_confidence",
-          "publishedAt": "2026-09-05T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gurugram-luxury-housing-lines-up-rs-1-lakh-crore-festive-launch-pipeline/articleshow/133842698.cms?from=mdr",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "Cabinet nod for Greater Noida West metro likely this month",
-          "cityCode": "noida",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-07T04:33:47.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/infrastructure/cabinet-nod-for-greater-noida-west-metro-likely-this-month/133863422?utm_source=tagListing&utm_medium=tagListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Eye on New Noida, land rates increased by 53%",
-          "cityCode": "noida",
-          "classification": "project_development",
-          "publishedAt": "2026-09-07T14:05:24.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/eye-on-new-noida-land-rates-increased-by-53/133884847?utm_source=tagListing&utm_medium=tagListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Yeida plans 14-acre Central Park in Sector 20 as airport region expands",
-          "cityCode": "noida",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-08T02:28:20.000Z",
-          "newsLink": "https://www.hindustantimes.com/cities/noida-news/yeida-plans-14-acre-central-park-in-sector-20-as-airport-region-expands-101788815964155.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "Noida authority fixes uniform rate of ₹86,000 per sq metre for IT/ITeS plots",
-          "cityCode": "noida",
-          "classification": "authority_pipeline",
-          "publishedAt": "2026-09-08T03:25:25.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/commercial/noida-authority-fixes-uniform-rate-of-86000-per-sq-metre-for-it/ites-plots/133905361?utm_source=category_listing&utm_medium=sectionListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "M3M emerges as highest bidder for prime Noida land parcels at ₹1,850 crore",
-          "cityCode": "noida",
-          "classification": "project_development",
-          "publishedAt": "2026-09-09T03:24:38.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/m3m-emerges-as-highest-bidder-for-prime-noida-land-parcels-at-1850-crore/133950829?utm_source=top_news&utm_medium=tagListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Dwarka Expressway Turning Into Delhi-NCR’s New Residential Power Corridor, Prices Up 135 Per Cent Since 2021, Says...",
-          "cityCode": "gurugram",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-09T11:00:34.000Z",
-          "newsLink": "https://www.outlookmoney.com/invest/dwarka-expressway-turning-into-delhi-ncrs-new-residential-power-corridor-prices-up-135-per-cent-since-2021-says-report",
-          "postedBy": "Outlook Money"
-        },
-        {
-          "title": "Civitech Group to invest ₹500 crore in Greater Noida West commercial project",
-          "cityCode": "noida",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-10T02:46:07.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/commercial/civitech-group-to-invest-500-crore-in-greater-noida-west-commercial-project/133991347?utm_source=category_listing&utm_medium=sectionListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Ghaziabad: GDA seeks public objections on Indirapuram extension, notifies 150 acres for acquisition",
-          "cityCode": "ghaziabad",
-          "classification": "authority_pipeline",
-          "publishedAt": "2026-09-12T03:15:08.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/infrastructure/ghaziabad-gda-seeks-public-objections-on-indirapuram-extension-notifies-150-acres-for-acquisition/134105472?utm_source=category_listing&utm_medium=sectionListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Smartworld, Kotak Realty Fund partner for ₹800 crore investment in Gurugram luxury projects",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-14T05:23:44.000Z",
-          "newsLink": "https://torbitrealty.com/smartworld-kotak-realty-fund-partner-for-%e2%82%b9800-crore-investment-in-gurugram-luxury-projects/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "County Group to Launch Ultra-Luxury Project...",
-          "cityCode": "gurugram",
-          "classification": "project_development",
-          "publishedAt": "2026-09-16T18:30:00.000Z",
-          "newsLink": "https://www.constructionworld.in/latest-construction-news/real-estate-news/county-group-to-launch-ultra-luxury-project-in-gurugram/97456",
-          "postedBy": "Latest News on Real Estate"
-        },
-        {
-          "title": "ASF Group rents 4 lakh sq ft office space to Genpact in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-17T05:28:31.000Z",
-          "newsLink": "https://torbitrealty.com/asf-group-rents-4-lakh-sq-ft-office-space-to-genpact-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "With a 3 crore budget, the Gurgaon home-buyer will no longer “compromise”",
-          "cityCode": "gurugram",
-          "classification": "positive_city_market",
-          "publishedAt": "2026-09-17T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/with-a-3-crore-budget-the-gurgaon-home-buyer-will-no-longer-compromise/articleshow/134327293.cms",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "First Jewar Airport, now F1: Will its revival be the next real estate boost?",
-          "cityCode": "noida",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-18T02:25:01.000Z",
-          "newsLink": "https://www.hindustantimes.com/real-estate/first-jewar-airport-now-f1-will-formula-1-revival-be-the-next-real-estate-boost-for-yamuna-expressway-101789653634913.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "Festive housing demand to stay healthy, but growth likely to moderate",
-          "cityCode": "gurugram",
-          "classification": "developer_corporate_positive",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://www.business-standard.com/industry/news/industry-news-festive-housing-demand-to-stay-healthy-but-growth-may-moderate-126092000348_1.html",
-          "postedBy": "Business Standard"
-        },
-        {
-          "title": "Uttar Pradesh cabinet clears Lucknow development body's plan to release 2,747 mortgaged Sushant Golf City plots",
-          "cityCode": "lucknow",
-          "classification": "authority_pipeline",
-          "publishedAt": "2026-09-21T03:45:43.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/uttar-pradesh-cabinet-clears-lucknow-development-bodys-plan-to-release-2747-mortgaged-sushant-golf-city-plots/134379239?utm_source=category_listing&utm_medium=sectionListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Puravankara enters NCR with Rs 340 crore Greater Noida land buy, eyes Rs 5,200 crore GDV",
-          "cityCode": "noida",
-          "classification": "project_development",
-          "publishedAt": "2026-09-21T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/puravankara-enters-ncr-with-rs-340-crore-greater-noida-land-buy-eyes-rs-5200-crore-gdv/articleshow/134408260.cms",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "Puravankara announces ₹5,200 crore township investment in Greater Noida, entering Delhi-NCR market",
-          "cityCode": "noida",
-          "classification": "positive_city_market",
-          "publishedAt": "2026-09-21T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/puravankara-announces-5200-crore-township-investment-in-greater-noida-entering-delhi-ncr-market/articleshow/134403355.cms",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "Haryana plans 107-acre land acquisition for Gurugram internal roads",
-          "cityCode": "gurugram",
-          "classification": "project_development",
-          "publishedAt": "2026-09-22T02:09:00.000Z",
-          "newsLink": "https://www.hindustantimes.com/cities/gurugram-news/haryana-plans-107-acre-land-acquisition-for-gurugram-internal-roads-101790014665761.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "Noida : Sector 51-52 skywalk boosts Aqua Line ridership by 20%",
-          "cityCode": "noida",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-22T02:40:30.000Z",
-          "newsLink": "https://www.hindustantimes.com/cities/noida-news/noida-sector-51-52-skywalk-boosts-aqua-line-ridership-by-20-101790024084190.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "Puravankara acquires 13.44-acre land parcel in Greater Noida for ₹340 crore",
-          "cityCode": "noida",
-          "classification": "positive_city_market",
-          "publishedAt": "2026-09-22T04:22:46.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/puravankara-acquires-13-44-acre-land-parcel-in-greater-noida-for-340-crore/134402153?utm_source=category_listing&utm_medium=sectionListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Puravankara forays into Delhi-NCR, secures 13.44-acre land parcel in Greater Noida with ₹5,200 crore GDV potential",
-          "cityCode": "noida",
-          "classification": "project_development",
-          "publishedAt": "2026-09-22T05:51:14.000Z",
-          "newsLink": "https://www.hindustantimes.com/real-estate/puravankara-forays-into-delhi-ncr-secures-13-44-acre-land-parcel-in-greater-noida-with-rs-5-200-crore-gdv-potential-101790055325642.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "Puravankara enters Delhi NCR real estate market, secures Greater Noida land parcel with GDV of ₹5,200 croreSept 22,...",
-          "cityCode": "noida",
-          "classification": "positive_city_market",
-          "publishedAt": "2026-09-22T06:24:20.000Z",
-          "newsLink": "https://www.cnbctv18.com/market/puravankara-share-price-secures-greater-noida-land-parcel-gdv-rs-5200-crore-enters-delhi-ncr-19995540.htm",
-          "postedBy": "CNBC TV18"
-        },
-        {
-          "title": "Uttar Pradesh CM to launch Lucknow development body's housing schemes on September 24",
-          "cityCode": "lucknow",
-          "classification": "authority_pipeline",
-          "publishedAt": "2026-09-22T08:00:31.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/residential/uttar-pradesh-cm-to-launch-lucknow-development-bodys-housing-schemes-on-september-24/134406606?utm_source=top_news&utm_medium=sectionListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Haryana plans land acquisition to plug gaps in road network",
-          "cityCode": "gurugram",
-          "classification": "project_development",
-          "publishedAt": "2026-09-22T18:30:00.000Z",
-          "newsLink": "https://timesofindia.indiatimes.com/city/gurgaon/haryana-plans-land-acquisition-to-plug-gaps-in-road-network/articleshow/134419305.cms",
-          "postedBy": "Times of India"
-        },
-        {
-          "title": "DM pushes for recovery of Rs 6-crore recovery challans issued to GDA",
-          "cityCode": "ghaziabad",
-          "classification": "authority_pipeline",
-          "publishedAt": "2026-09-22T18:30:00.000Z",
-          "newsLink": "https://timesofindia.indiatimes.com/city/noida/dm-pushes-for-recovery-of-rs-6-crore-recovery-challans-issued-to-gda/articleshow/134419892.cms",
-          "postedBy": "Times of India"
-        },
-        {
-          "title": "Konark to Nalanda: Sanskriti Darshan Park set to open in Oct",
-          "cityCode": "ghaziabad",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-22T18:30:00.000Z",
-          "newsLink": "https://timesofindia.indiatimes.com/city/noida/konark-to-nalanda-sanskriti-darshan-park-set-to-open-in-oct/articleshow/134419891.cms",
-          "postedBy": "Times of India"
-        },
-        {
-          "title": "GMCBL launches bus service on Dwarka Expressway, links IMT Manesar",
-          "cityCode": "gurugram",
-          "classification": "project_development",
-          "publishedAt": "2026-09-23T04:27:09.000Z",
-          "newsLink": "https://www.hindustantimes.com/cities/gurugram-news/gmcbl-launches-bus-service-on-dwarka-expressway-links-imt-manesar-101790137630207.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "Brookfield India’s REIT arm acquires four office units in Mumbai for ₹75 crore",
-          "cityCode": "mumbai",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-23T05:30:33.000Z",
-          "newsLink": "https://www.hindustantimes.com/real-estate/brookfield-india-s-reit-arm-acquires-four-office-units-in-mumbai-s-powai-for-75-crore-101790140992819.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "The Wealth Company’s Category II AIF to deploy ₹75 crore in 3 housing projects",
-          "cityCode": "mumbai",
-          "classification": "project_development",
-          "publishedAt": "2026-09-23T05:38:30.000Z",
-          "newsLink": "https://www.cnbctv18.com/alternative-investment-fund/the-wealth-company-category-ii-aif-to-deploy-rs-75-crore-3-housing-projects-19996402.htm",
-          "postedBy": "CNBC TV18"
-        },
-        {
-          "title": "UP RERA Approves 12 Real Estate Projects Worth Rs 1,663.85 Cro...",
-          "cityCode": "lucknow",
-          "classification": "project_development",
-          "publishedAt": "2026-09-23T06:19:46.000Z",
-          "newsLink": "https://realtynmore.com/up-rera-approves-12-real-estate-projects-worth/",
-          "postedBy": "RealtyNMore"
-        },
-        {
-          "title": "Greater Noida Land Rates Hiked: ₹2.5 Crore Per Acre + 10 percent Residential Plot Benefit",
-          "cityCode": "noida",
-          "classification": "project_development",
-          "publishedAt": "2026-09-23T06:21:00.000Z",
-          "newsLink": "https://www.magicbricks.com/news/greater-noida-land-rates-hiked-25-crore-per-acre-10-percent-residential-plot-benefit-pmmb/151746.html",
-          "postedBy": "Property News"
-        },
-        {
-          "title": "Maharashtra Clears Developed Plots for 198 Farmers Affected by Mogharpada Metro Depot",
-          "cityCode": "mumbai",
-          "classification": "project_development",
-          "publishedAt": "2026-09-23T06:48:53.000Z",
-          "newsLink": "https://realtyquarter.com/maharashtra-clears-developed-plots-for-198-farmers-affected-by-mogharpada-metro-depot/",
-          "postedBy": "realtyquarter.com"
-        },
-        {
-          "title": "[",
-          "cityCode": "nagpur",
-          "classification": "project_development",
-          "publishedAt": "2026-09-23T06:57:14.000Z",
-          "newsLink": "https://indianinfrastructure.com/2026/09/23/around-9-km-long-indora-dighori-flyover-worth-rs-9-97-billion-opens-in-nagpur/",
-          "postedBy": "Indian Infrastructure Magazine"
-        },
-        {
-          "title": "India's Commercial Real Estate is Entering a New Growth Cycle: What Will Drive Demand?",
-          "cityCode": "noida",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-23T08:58:50.000Z",
-          "newsLink": "https://www.tribuneindia.com/news/business/indias-commercial-real-estate-is-entering-a-new-growth-cycle-what-will-drive-demand/",
-          "postedBy": "The Tribune"
-        },
-        {
-          "title": "Airports, Expressways, And GCCs Redefine Expressways Expansion...",
-          "cityCode": "noida",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-23T09:23:52.000Z",
-          "newsLink": "https://realtynmore.com/airports-expressways-and-gccs-redefine/",
-          "postedBy": "RealtyNMore"
-        },
-        {
-          "title": "Mangaluru Water Metro Current Status Out: 11 Stations Finalised and Feasibility Approved",
-          "cityCode": "mangalore",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-23T12:04:14.000Z",
-          "newsLink": "https://www.magicbricks.com/news/mangaluru-water-metro-current-status-out-11-stations-finalised-and-feasibility-approved-rgmb/151767.html",
-          "postedBy": "Property News"
-        },
-        {
-          "title": "Noida में बनेगा 29 KM का नया Expressway: 5 लाख लोगों को मिलेगी राहत, Airport पहुंचेंगे सिर्फ… मिनट में",
-          "cityCode": "noida",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-23T12:41:20.000Z",
-          "newsLink": "https://www.magicbricks.com/news/noida-29-km-new-expressway-route-airport-connectivity-asmb/151770.html",
-          "postedBy": "Property News"
-        },
-        {
-          "title": "Max Estates to jointly develop 9.76-acre project in Ghaziabad",
-          "cityCode": "ghaziabad",
-          "classification": "project_development",
-          "publishedAt": "2026-09-23T14:07:00.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/max-estates-to-jointly-develop-9-76-acre-project-in-ghaziabad/134440223?utm_source=top_news&utm_medium=sectionListing",
-          "postedBy": "ET Realty"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 10: broad market/company update, not city project news": 4,
-        "filter 15: direct media/PDF link, not article page": 9,
-        "filter 16: source URL city mismatch": 1,
-        "filter 5: no allowed city match": 706,
-        "filter 7: outside region in title/description": 115,
-        "filter 8: outside-city conflict": 121,
-        "filter 9: no specific project/development signal": 138
-      }
-    },
-    {
-      "name": "news-run-2026-09-23T12-01-44-772Z.json",
-      "generatedAt": "2026-09-23T12:01:44.771Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 3,
-      "fetchedArticleCount": 15,
-      "expandedArticleCount": 15,
-      "candidateCount": 0,
-      "postedCount": 0,
-      "rejectedArticleCount": 15,
-      "needsReviewCount": 0,
-      "failureCount": 0,
-      "candidates": [],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 5: no allowed city match": 15
-      }
-    },
-    {
-      "name": "news-run-2026-09-23T11-43-28-163Z.json",
-      "generatedAt": "2026-09-23T11:43:27.568Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 3,
-      "fetchedArticleCount": 60,
-      "expandedArticleCount": 6,
-      "candidateCount": 3,
-      "postedCount": 0,
-      "rejectedArticleCount": 3,
-      "needsReviewCount": 0,
-      "failureCount": 0,
-      "candidates": [
-        {
-          "title": "How Jewar Airport could trigger a Gurugram-like boom in Faridabad",
-          "cityCode": "faridabad",
-          "classification": "faridabad_jewar_catalyst",
-          "publishedAt": "2026-07-01T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/how-jewar-airport-could-trigger-a-gurugram-like-boom-in-faridabad/articleshow/132137532.cms",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "BPTP begins allotment process for SkyNest Towers in Faridabad",
-          "cityCode": "faridabad",
-          "classification": "project_development",
-          "publishedAt": "2026-07-24T18:30:00.000Z",
-          "newsLink": "https://propnewstime.com/latestnewsstories/MzM0NTA=/bptp-begins-allotment-process-for-skynest-towers-in-faridabad",
-          "postedBy": "Prop News Time"
-        },
-        {
-          "title": "Bhumika Realty leases 24,000 sq ft retail space to Lifestyle in Faridabad",
-          "cityCode": "faridabad",
-          "classification": "project_development",
-          "publishedAt": "2026-09-17T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/markets/digital-real-estate/realty-news/bhumika-realty-leases-24000-sq-ft-retail-space-to-lifestyle-in-faridabad/articleshow/134335383.cms",
-          "postedBy": "The Economic Times"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 9: no specific project/development signal": 3
-      }
-    },
-    {
-      "name": "news-run-2026-09-23T11-40-36-098Z.json",
-      "generatedAt": "2026-09-23T11:40:23.907Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 3,
-      "fetchedArticleCount": 60,
-      "expandedArticleCount": 8,
+      "name": "news-run-2026-09-26T12-07-12-787Z.json",
+      "generatedAt": "2026-09-26T12:07:12.589Z",
+      "mode": "live",
+      "dryRun": false,
+      "sourceCount": 546,
+      "fetchedArticleCount": 6282,
+      "expandedArticleCount": 2414,
       "candidateCount": 5,
-      "postedCount": 0,
-      "rejectedArticleCount": 3,
+      "postedCount": 5,
+      "rejectedArticleCount": 2814,
       "needsReviewCount": 0,
-      "failureCount": 0,
+      "failureCount": 155,
       "candidates": [
-        {
-          "title": "Gurugram Global City awaits buyers as Haryana plans another in Faridabad",
-          "cityCode": "faridabad",
-          "classification": "project_development",
-          "publishedAt": "2026-09-03T18:30:00.000Z",
-          "newsLink": "https://propnewstime.com/latestnewsstories/MzU2NjU=/gurugram-global-city-awaits-buyers-as-haryana-plans-another-in-faridabad",
-          "postedBy": "Prop News Time"
-        },
-        {
-          "title": "How Jewar Airport could trigger a Gurugram-like boom in Faridabad",
-          "cityCode": "faridabad",
-          "classification": "faridabad_jewar_catalyst",
-          "publishedAt": "2026-07-01T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/how-jewar-airport-could-trigger-a-gurugram-like-boom-in-faridabad/articleshow/132137532.cms",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "BPTP begins allotment process for SkyNest Towers in Faridabad",
-          "cityCode": "faridabad",
-          "classification": "project_development",
-          "publishedAt": "2026-07-24T18:30:00.000Z",
-          "newsLink": "https://propnewstime.com/latestnewsstories/MzM0NTA=/bptp-begins-allotment-process-for-skynest-towers-in-faridabad",
-          "postedBy": "Prop News Time"
-        },
         {
           "title": "UpdateAug 2026BPTP Skynest Bags 'Premium High-Rise Development of the Year' at Times Realty & Infrastructure...",
           "cityCode": "faridabad",
@@ -15924,1140 +14594,137 @@
           "postedBy": "BPTP Limited — Latest News & Updates"
         },
         {
-          "title": "Bhumika Realty leases 24,000 sq ft retail space to Lifestyle in Faridabad",
-          "cityCode": "faridabad",
-          "classification": "project_development",
-          "publishedAt": "2026-09-17T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/markets/digital-real-estate/realty-news/bhumika-realty-leases-24000-sq-ft-retail-space-to-lifestyle-in-faridabad/articleshow/134335383.cms",
-          "postedBy": "The Economic Times"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 9: no specific project/development signal": 3
-      }
-    },
-    {
-      "name": "news-run-2026-09-23T11-36-07-958Z.json",
-      "generatedAt": "2026-09-23T11:36:05.685Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 9,
-      "fetchedArticleCount": 115,
-      "expandedArticleCount": 2,
-      "candidateCount": 2,
-      "postedCount": 0,
-      "rejectedArticleCount": 0,
-      "needsReviewCount": 0,
-      "failureCount": 0,
-      "candidates": [
-        {
-          "title": "NCR office leasing dips 1% to 7.2 million sq ft in H1 2026: Report",
-          "cityCode": "faridabad",
-          "classification": "ncr_office_market",
-          "publishedAt": "2026-07-12T11:30:00.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/commercial/ncr-office-leasing-declines-slightly-to-72-million-sq-ft-in-h1-2026/132356292?utm_source=top_news&utm_medium=tagListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "BPTP to invest ₹1,100 crore in Greater Faridabad housing project",
-          "cityCode": "faridabad",
-          "classification": "leadership_confidence",
-          "publishedAt": "2026-04-20T12:15:42.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/residential/bptp-invests-1100-crore-in-new-greater-faridabad-housing-project-skynest/130390807?utm_source=tagListing&utm_medium=tagListing",
-          "postedBy": "ET Realty"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {}
-    },
-    {
-      "name": "news-run-2026-09-23T11-33-57-430Z.json",
-      "generatedAt": "2026-09-23T11:33:57.430Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 9,
-      "fetchedArticleCount": 115,
-      "expandedArticleCount": 0,
-      "candidateCount": 0,
-      "postedCount": 0,
-      "rejectedArticleCount": 0,
-      "needsReviewCount": 0,
-      "failureCount": 0,
-      "candidates": [],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {}
-    },
-    {
-      "name": "news-run-2026-09-21T13-22-45-589Z.json",
-      "generatedAt": "2026-09-21T13:22:39.834Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 10,
-      "fetchedArticleCount": 938,
-      "expandedArticleCount": 311,
-      "candidateCount": 14,
-      "postedCount": 0,
-      "rejectedArticleCount": 344,
-      "needsReviewCount": 0,
-      "failureCount": 0,
-      "candidates": [
-        {
-          "title": "Gulshan group inks partnership with Ourika Estates to develop projects in Ghaziabad and Lucknow",
+          "title": "Blackstone-backed ASK Property Fund commits Rs 300 crore to Ghaziabad housing projects",
           "cityCode": "ghaziabad",
           "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gulshan-group-inks-partnership-with-ourika-estates-to-develop-projects-in-ghaziabad-and-lucknow/articleshow/134386762.cms",
+          "publishedAt": "2026-09-02T18:30:00.000Z",
+          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/blackstone-backed-ask-property-fund-commits-rs-300-crore-to-ghaziabad-housing-projects/articleshow/133727430.cms",
           "postedBy": "The Economic Times"
         },
         {
-          "title": "Gulshan group inks partnership with Ourika Estates to develop projects in Ghaziabad and Lucknow",
-          "cityCode": "lucknow",
+          "title": "Rajapushpa Aurelia Targets the Ultra-Luxury S...",
+          "cityCode": "hyderabad",
           "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gulshan-group-inks-partnership-with-ourika-estates-to-develop-projects-in-ghaziabad-and-lucknow/articleshow/134386762.cms",
-          "postedBy": "The Economic Times"
+          "publishedAt": "2026-09-16T13:58:19.000Z",
+          "newsLink": "https://proppuls.in/rajapushpa-aurelia-tellapur-luxury-3-4-bhk-corner-homes",
+          "postedBy": "Hyderabad Real Estate News, Projects & Property "
         },
         {
-          "title": "Greater Faridabad to Get 7-Km Elevated Road for Faster Gurugram Connectivity",
-          "cityCode": "faridabad",
-          "classification": "target_corridor",
-          "publishedAt": "2026-09-21T06:11:05.000Z",
-          "newsLink": "https://www.magicbricks.com/news/greater-faridabad-to-get-7-km-elevated-road-for-faster-gurugram-connectivity-pmmb/151683.html",
-          "postedBy": "Property News"
-        },
-        {
-          "title": "Greater Faridabad to Get 7-Km Elevated Road for Faster Gurugram Connectivity",
-          "cityCode": "gurugram",
-          "classification": "target_corridor",
-          "publishedAt": "2026-09-21T06:11:05.000Z",
-          "newsLink": "https://www.magicbricks.com/news/greater-faridabad-to-get-7-km-elevated-road-for-faster-gurugram-connectivity-pmmb/151683.html",
-          "postedBy": "Property News"
-        },
-        {
-          "title": "Blackstone-backed ASK Property Fund invests ₹300 crore in Ghaziabad residential projects",
-          "cityCode": "ghaziabad",
-          "classification": "project_development",
-          "publishedAt": "2026-09-04T05:38:34.000Z",
-          "newsLink": "https://www.cnbctv18.com/real-estate/blackstone-ask-property-fund-invests-rs-300-crore-ghaziabad-projects-19984057.htm",
-          "postedBy": "CNBC TV18"
-        },
-        {
-          "title": "Gurugram has jobs, Faridabad space: How connectivity and changing buyer needs are reshaping NCR housing",
-          "cityCode": "faridabad",
+          "title": "Puravankara enters Delhi NCR real estate market, secures Greater Noida land parcel with GDV of ₹5,200 croreSept 22,...",
+          "cityCode": "noida",
           "classification": "positive_city_market",
-          "publishedAt": "2026-09-08T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gurugram-has-jobs-faridabad-space-how-connectivity-and-changing-buyer-needs-are-reshaping-ncr-housing/articleshow/133971952.cms",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "County Group targets GDV of Rs 4,500 crore from Gurugram project",
-          "cityCode": "gurugram",
-          "classification": "project_development",
-          "publishedAt": "2026-09-08T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/county-group-targets-gdv-of-rs-4500-crore-from-gurugram-project/articleshow/133957105.cms",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "County Group enters Gurugram with ₹4,500-crore ultra-luxury project",
-          "cityCode": "gurugram",
-          "classification": "project_development",
-          "publishedAt": "2026-09-09T05:58:00.000Z",
-          "newsLink": "https://www.hindustantimes.com/real-estate/county-group-enters-gurugram-with-4-500-crore-ultra-luxury-project-101788952204512.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "Hiranandani Communities enters Goa property market through two partnerships",
-          "cityCode": "goa",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-09T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/hiranandani-communities-enters-goa-property-market-through-two-partnerships/articleshow/134007959.cms",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "Kotak Realty Fund to invest ₹800 crore in Gurugram residential projects",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-11T11:20:02.000Z",
-          "newsLink": "https://www.cnbctv18.com/alternative-investment-fund/kotak-realty-fund-to-invest-rs-800-crore-in-gurugram-residential-projects-19989504.htm",
+          "publishedAt": "2026-09-22T06:24:20.000Z",
+          "newsLink": "https://www.cnbctv18.com/market/puravankara-share-price-secures-greater-noida-land-parcel-gdv-rs-5200-crore-enters-delhi-ncr-19995540.htm",
           "postedBy": "CNBC TV18"
         },
         {
-          "title": "UP RERA approves 13 realty projects worth ₹2,380 crore; Barabanki tops list",
-          "cityCode": "barabanki",
+          "title": "Railways Approve ₹166.5 Cr Four-Lane RoB to Replace Vadodara’s Alkapuri Underpass",
+          "cityCode": "vadodara",
           "classification": "project_development",
-          "publishedAt": "2026-09-11T23:56:00.000Z",
-          "newsLink": "https://www.hindustantimes.com/real-estate/up-rera-approves-13-realty-projects-worth-rs-2-380-crore-barabanki-tops-list-101789190302046.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "Embassy Developments to invest Rs 2,000 cr in 85-acre Bengaluru project phase 1",
-          "cityCode": "bangalore",
-          "classification": "project_development",
-          "publishedAt": "2026-09-14T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/embassy-developments-to-invest-rs-2000-cr-in-85-acre-bengaluru-project-phase-1/articleshow/134263134.cms",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "Genpact leases 400,000 sq ft of office space at ASF Insignia, Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-15T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/genpact-leases-400000-sq-ft-office-space-in-gurugram-boosting-ncrs-commercial-real-estate-market/articleshow/134281481.cms",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "First Jewar Airport, now F1: Will its revival be the next real estate boost?",
-          "cityCode": "noida",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-19T00:19:00.000Z",
-          "newsLink": "https://www.hindustantimes.com/real-estate/first-jewar-airport-now-f1-will-formula-1-revival-be-the-next-real-estate-boost-for-yamuna-expressway-101789653634913.html",
-          "postedBy": "Hindustan Times"
+          "publishedAt": "2026-09-25T12:05:57.000Z",
+          "newsLink": "https://metrorailnews.in/vadodara-alkapuri-rob-166-crore-railways/",
+          "postedBy": "Metro, RRTS & High-Speed Rail Project Updates"
         }
       ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 10: broad market/company update, not city project news": 1,
-        "filter 2: non-English/Hindi content": 1,
-        "filter 5: no allowed city match": 246,
-        "filter 7: outside region in title/description": 31,
-        "filter 8: outside-city conflict": 31,
-        "filter 9: no specific project/development signal": 34
-      }
-    },
-    {
-      "name": "news-run-2026-09-21T12-48-11-232Z.json",
-      "generatedAt": "2026-09-21T12:48:07.610Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 15,
-      "fetchedArticleCount": 84,
-      "expandedArticleCount": 60,
-      "candidateCount": 3,
-      "postedCount": 0,
-      "rejectedArticleCount": 65,
-      "needsReviewCount": 0,
-      "failureCount": 0,
-      "candidates": [
+      "posted": [
         {
-          "title": "Gulshan group inks partnership with Ourika Estates to develop projects in Ghaziabad and Lucknow",
+          "title": "UpdateAug 2026BPTP Skynest Bags 'Premium High-Rise Development of the Year' at Times Realty & Infrastructure...",
+          "cityCode": "faridabad",
+          "classification": "project_development",
+          "publishedAt": "2026-08-29T18:30:00.000Z",
+          "newsLink": "https://bptpltd.com/updates/bptp-skynest-bags-premium-high-rise-development-of-the-year-at-times-realty-infrastructure-conclave-2026/",
+          "postedBy": "BPTP Limited — Latest News & Updates"
+        },
+        {
+          "title": "Blackstone-backed ASK Property Fund commits Rs 300 crore to Ghaziabad housing projects",
           "cityCode": "ghaziabad",
           "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gulshan-group-inks-partnership-with-ourika-estates-to-develop-projects-in-ghaziabad-and-lucknow/articleshow/134386762.cms",
+          "publishedAt": "2026-09-02T18:30:00.000Z",
+          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/blackstone-backed-ask-property-fund-commits-rs-300-crore-to-ghaziabad-housing-projects/articleshow/133727430.cms",
           "postedBy": "The Economic Times"
         },
         {
-          "title": "Gulshan group inks partnership with Ourika Estates to develop projects in Ghaziabad and Lucknow",
-          "cityCode": "lucknow",
+          "title": "Rajapushpa Aurelia Targets the Ultra-Luxury S...",
+          "cityCode": "hyderabad",
           "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gulshan-group-inks-partnership-with-ourika-estates-to-develop-projects-in-ghaziabad-and-lucknow/articleshow/134386762.cms",
-          "postedBy": "The Economic Times"
+          "publishedAt": "2026-09-16T13:58:19.000Z",
+          "newsLink": "https://proppuls.in/rajapushpa-aurelia-tellapur-luxury-3-4-bhk-corner-homes",
+          "postedBy": "Hyderabad Real Estate News, Projects & Property "
         },
         {
-          "title": "Rs 1,850 crore bid for 12.5 acres: Why Noida Sector 108 is in demand",
+          "title": "Puravankara enters Delhi NCR real estate market, secures Greater Noida land parcel with GDV of ₹5,200 croreSept 22,...",
           "cityCode": "noida",
+          "classification": "positive_city_market",
+          "publishedAt": "2026-09-22T06:24:20.000Z",
+          "newsLink": "https://www.cnbctv18.com/market/puravankara-share-price-secures-greater-noida-land-parcel-gdv-rs-5200-crore-enters-delhi-ncr-19995540.htm",
+          "postedBy": "CNBC TV18"
+        },
+        {
+          "title": "Railways Approve ₹166.5 Cr Four-Lane RoB to Replace Vadodara’s Alkapuri Underpass",
+          "cityCode": "vadodara",
           "classification": "project_development",
-          "publishedAt": "2026-09-21T04:46:26.000Z",
-          "newsLink": "https://indianexpress.com/article/cities/delhi/noida-sector-108-big-developers-10886908/",
-          "postedBy": "The Indian Express"
+          "publishedAt": "2026-09-25T12:05:57.000Z",
+          "newsLink": "https://metrorailnews.in/vadodara-alkapuri-rob-166-crore-railways/",
+          "postedBy": "Metro, RRTS & High-Speed Rail Project Updates"
         }
       ],
-      "posted": [],
       "rejectedArticles": [],
       "needsReviewArticles": [],
       "cityBreakdown": [],
       "skippedByReason": {
-        "filter 10: broad market/company update, not city project news": 1,
-        "filter 5: no allowed city match": 52,
-        "filter 7: outside region in title/description": 4,
-        "filter 8: outside-city conflict": 4,
-        "filter 9: no specific project/development signal": 4
-      }
-    },
-    {
-      "name": "news-run-2026-09-21T12-42-53-206Z.json",
-      "generatedAt": "2026-09-21T12:42:49.482Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 15,
-      "fetchedArticleCount": 84,
-      "expandedArticleCount": 60,
-      "candidateCount": 3,
-      "postedCount": 0,
-      "rejectedArticleCount": 65,
-      "needsReviewCount": 0,
-      "failureCount": 0,
-      "candidates": [
-        {
-          "title": "Gulshan group inks partnership with Ourika Estates to develop projects in Ghaziabad and Lucknow",
-          "cityCode": "ghaziabad",
-          "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gulshan-group-inks-partnership-with-ourika-estates-to-develop-projects-in-ghaziabad-and-lucknow/articleshow/134386762.cms",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "Gulshan group inks partnership with Ourika Estates to develop projects in Ghaziabad and Lucknow",
-          "cityCode": "lucknow",
-          "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gulshan-group-inks-partnership-with-ourika-estates-to-develop-projects-in-ghaziabad-and-lucknow/articleshow/134386762.cms",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "Rs 1,850 crore bid for 12.5 acres: Why Noida Sector 108 is in demand",
-          "cityCode": "noida",
-          "classification": "project_development",
-          "publishedAt": "2026-09-21T04:46:26.000Z",
-          "newsLink": "https://indianexpress.com/article/cities/delhi/noida-sector-108-big-developers-10886908/",
-          "postedBy": "The Indian Express"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 10: broad market/company update, not city project news": 1,
-        "filter 5: no allowed city match": 52,
-        "filter 7: outside region in title/description": 4,
-        "filter 8: outside-city conflict": 4,
-        "filter 9: no specific project/development signal": 4
-      }
-    },
-    {
-      "name": "news-run-2026-09-21T12-37-38-214Z.json",
-      "generatedAt": "2026-09-21T12:37:34.535Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 15,
-      "fetchedArticleCount": 84,
-      "expandedArticleCount": 60,
-      "candidateCount": 3,
-      "postedCount": 0,
-      "rejectedArticleCount": 180,
-      "needsReviewCount": 0,
-      "failureCount": 0,
-      "candidates": [
-        {
-          "title": "Gulshan group inks partnership with Ourika Estates to develop projects in Ghaziabad and Lucknow",
-          "cityCode": "ghaziabad",
-          "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gulshan-group-inks-partnership-with-ourika-estates-to-develop-projects-in-ghaziabad-and-lucknow/articleshow/134386762.cms",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "Gulshan group inks partnership with Ourika Estates to develop projects in Ghaziabad and Lucknow",
-          "cityCode": "lucknow",
-          "classification": "project_development",
-          "publishedAt": "2026-09-20T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gulshan-group-inks-partnership-with-ourika-estates-to-develop-projects-in-ghaziabad-and-lucknow/articleshow/134386762.cms",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "Rs 1,850 crore bid for 12.5 acres: Why Noida Sector 108 is in demand",
-          "cityCode": "noida",
-          "classification": "project_development",
-          "publishedAt": "2026-09-21T04:46:26.000Z",
-          "newsLink": "https://indianexpress.com/article/cities/delhi/noida-sector-108-big-developers-10886908/",
-          "postedBy": "The Indian Express"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 1: spam/menu page": 10,
-        "filter 10: broad market/company update, not city project news": 2,
-        "filter 2: non-English/Hindi content": 1,
-        "filter 3: negative/crime/utility concern news": 25,
-        "filter 4: not positive target real-estate/project news": 51,
-        "filter 5: no allowed city match": 52,
-        "filter 7: outside region in title/description": 15,
-        "filter 8: outside-city conflict": 17,
-        "filter 9: no specific project/development signal": 7
-      }
-    },
-    {
-      "name": "news-run-2026-09-19T12-43-33-595Z.json",
-      "generatedAt": "2026-09-19T12:43:05.360Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 111,
-      "fetchedArticleCount": 772,
-      "expandedArticleCount": 99,
-      "candidateCount": 12,
-      "postedCount": 0,
-      "rejectedArticleCount": 219,
-      "needsReviewCount": 0,
-      "failureCount": 2,
-      "candidates": [
-        {
-          "title": "Gurugram luxury housing lines up Rs 1 lakh crore festive launch pipeline",
-          "cityCode": "gurugram",
-          "classification": "leadership_confidence",
-          "publishedAt": "2026-09-05T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gurugram-luxury-housing-lines-up-rs-1-lakh-crore-festive-launch-pipeline/articleshow/133842698.cms?from=mdr",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "Eye on New Noida, land rates increased by 53%",
-          "cityCode": "noida",
-          "classification": "project_development",
-          "publishedAt": "2026-09-07T14:05:24.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/eye-on-new-noida-land-rates-increased-by-53/133884847?utm_source=top_news&utm_medium=tagListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Noida authority fixes uniform rate of ₹86,000 per sq metre for IT/ITeS plots",
-          "cityCode": "noida",
-          "classification": "authority_pipeline",
-          "publishedAt": "2026-09-08T03:25:25.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/commercial/noida-authority-fixes-uniform-rate-of-86000-per-sq-metre-for-it/ites-plots/133905361?utm_source=top_news&utm_medium=tagListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "M3M emerges as highest bidder for prime Noida land parcels at ₹1,850 crore",
-          "cityCode": "noida",
-          "classification": "project_development",
-          "publishedAt": "2026-09-09T03:24:38.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/m3m-emerges-as-highest-bidder-for-prime-noida-land-parcels-at-1850-crore/133950829?utm_source=top_news&utm_medium=tagListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Civitech Group to invest ₹500 crore in Greater Noida West commercial project",
-          "cityCode": "noida",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-10T02:46:07.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/commercial/civitech-group-to-invest-500-crore-in-greater-noida-west-commercial-project/133991347",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Smartworld, Kotak Realty Fund join forces to scale luxury living in NCR",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-13T18:30:00.000Z",
-          "newsLink": "https://www.constructionweekonline.in/projects-tenders/smart-developers-kotak-realty-join-forces-to-scale-luxury-living-in-ncr",
-          "postedBy": "Smartworld Media"
-        },
-        {
-          "title": "Embassy Developments to invest ₹2,000 crore in 85-acre Bengaluru housing project",
-          "cityCode": "bangalore",
-          "classification": "project_development",
-          "publishedAt": "2026-09-15T11:48:04.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/embassy-developments-to-invest-2000-crore-in-85-acre-bengaluru-housing-project/134261049",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "ASF Group rents 4 lakh sq ft office space to Genpact in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-17T05:28:31.000Z",
-          "newsLink": "https://torbitrealty.com/asf-group-rents-4-lakh-sq-ft-office-space-to-genpact-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "Puravankara to redevelop three projects in Mumbai; Paradigm Realty to invest ₹80 crore to redevelop Bandra project",
-          "cityCode": "mumbai",
-          "classification": "project_development",
-          "publishedAt": "2026-09-17T10:43:50.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/puravankara-to-redevelop-three-projects-in-mumbai-paradigm-realty-to-invest-80-crore-to-redevelop-bandra-project/134309084?utm_source=top_news&utm_medium=sectionListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "First Jewar Airport, now F1: Will Formula 1 revival be the next real estate boost for Yamuna Expressway?",
-          "cityCode": "noida",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-18T02:25:01.000Z",
-          "newsLink": "https://www.hindustantimes.com/real-estate/first-jewar-airport-now-f1-will-formula-1-revival-be-the-next-real-estate-boost-for-yamuna-expressway-101789653634913.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "Gurugram buyers seek bigger homes as 3BHK demand rises",
-          "cityCode": "gurugram",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-18T04:27:32.000Z",
-          "newsLink": "https://www.hindustantimes.com/real-estate/gurugram-buyers-seek-bigger-homes-as-3bhk-demand-rises-101789704895111.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "A day after residents flag dumping, MCG finds suspected industrial waste dumped on vacant land",
-          "cityCode": "gurugram",
-          "classification": "authority_pipeline",
-          "publishedAt": "2026-09-18T18:30:00.000Z",
-          "newsLink": "https://timesofindia.indiatimes.com/city/gurgaon/a-day-after-residents-flag-dumping-mcg-finds-suspected-industrial-waste-dumped-on-vacant-land/articleshow/134343423.cms",
-          "postedBy": "Times of India"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 10: broad market/company update, not city project news": 1,
-        "filter 15: direct media/PDF link, not article page": 3,
+        "filter 0: missing title/link": 1,
+        "filter 10: broad market/company update, not city project news": 19,
+        "filter 13: already sent": 101,
+        "filter 14: weak Noida developer blog signal": 7,
+        "filter 15: direct media/PDF link, not article page": 4,
         "filter 16: source URL city mismatch": 1,
-        "filter 2: non-English/Hindi content": 4,
-        "filter 3: negative/crime/utility concern news": 39,
-        "filter 7: outside region in title/description": 50,
-        "filter 8: outside-city conflict": 51,
-        "filter 9: no specific project/development signal": 70
-      }
-    },
-    {
-      "name": "news-run-2026-09-19T11-59-15-328Z.json",
-      "generatedAt": "2026-09-19T11:58:55.032Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 111,
-      "fetchedArticleCount": 771,
-      "expandedArticleCount": 109,
-      "candidateCount": 14,
-      "postedCount": 0,
-      "rejectedArticleCount": 245,
-      "needsReviewCount": 0,
-      "failureCount": 1,
-      "candidates": [
-        {
-          "title": "Smartworld, Kotak Realty Fund join forces to scale luxury living in NCR",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-13T18:30:00.000Z",
-          "newsLink": "https://www.constructionweekonline.in/projects-tenders/smart-developers-kotak-realty-join-forces-to-scale-luxury-living-in-ncr",
-          "postedBy": "Smartworld Media"
-        },
-        {
-          "title": "Gurugram luxury housing lines up Rs 1 lakh crore festive launch pipeline",
-          "cityCode": "gurugram",
-          "classification": "leadership_confidence",
-          "publishedAt": "2026-09-05T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gurugram-luxury-housing-lines-up-rs-1-lakh-crore-festive-launch-pipeline/articleshow/133842698.cms?from=mdr",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "Eye on New Noida, land rates increased by 53%",
-          "cityCode": "noida",
-          "classification": "project_development",
-          "publishedAt": "2026-09-07T14:05:24.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/eye-on-new-noida-land-rates-increased-by-53/133884847?utm_source=top_news&utm_medium=tagListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Noida authority fixes uniform rate of ₹86,000 per sq metre for IT/ITeS plots",
-          "cityCode": "noida",
-          "classification": "authority_pipeline",
-          "publishedAt": "2026-09-08T03:25:25.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/commercial/noida-authority-fixes-uniform-rate-of-86000-per-sq-metre-for-it/ites-plots/133905361?utm_source=top_news&utm_medium=tagListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "M3M emerges as highest bidder for prime Noida land parcels at ₹1,850 crore",
-          "cityCode": "noida",
-          "classification": "project_development",
-          "publishedAt": "2026-09-09T03:24:38.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/m3m-emerges-as-highest-bidder-for-prime-noida-land-parcels-at-1850-crore/133950829?utm_source=top_news&utm_medium=tagListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Civitech Group to invest ₹500 crore in Greater Noida West commercial project",
-          "cityCode": "noida",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-10T02:46:07.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/commercial/civitech-group-to-invest-500-crore-in-greater-noida-west-commercial-project/133991347",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Smartworld, Kotak Realty Fund Tie Up For Rs 800 Cr NCR Luxury Projects",
-          "cityCode": "delhi_ncr",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-10T18:30:00.000Z",
-          "newsLink": "https://www.businessworld.in/article/smartworld-kotak-realty-fund-tie-up-for-rs-800-cr-ncr-luxury-projects-623253",
-          "postedBy": "Smartworld Media"
-        },
-        {
-          "title": "Embassy Developments to invest ₹2,000 crore in 85-acre Bengaluru housing project",
-          "cityCode": "bangalore",
-          "classification": "project_development",
-          "publishedAt": "2026-09-15T11:48:04.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/embassy-developments-to-invest-2000-crore-in-85-acre-bengaluru-housing-project/134261049",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "ASF Group rents 4 lakh sq ft office space to Genpact in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-17T05:28:31.000Z",
-          "newsLink": "https://torbitrealty.com/asf-group-rents-4-lakh-sq-ft-office-space-to-genpact-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "Puravankara to redevelop three projects in Mumbai; Paradigm Realty to invest ₹80 crore to redevelop Bandra project",
-          "cityCode": "mumbai",
-          "classification": "project_development",
-          "publishedAt": "2026-09-17T10:43:50.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/puravankara-to-redevelop-three-projects-in-mumbai-paradigm-realty-to-invest-80-crore-to-redevelop-bandra-project/134309084?utm_source=top_news&utm_medium=sectionListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "First Jewar Airport, now F1: Will Formula 1 revival be the next real estate boost for Yamuna Expressway?",
-          "cityCode": "noida",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-18T02:25:01.000Z",
-          "newsLink": "https://www.hindustantimes.com/real-estate/first-jewar-airport-now-f1-will-formula-1-revival-be-the-next-real-estate-boost-for-yamuna-expressway-101789653634913.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "HC extends interim direction restraining allotments in Oberoi Realty's project in Gurugram till September 25",
-          "cityCode": "gurugram",
-          "classification": "project_development",
-          "publishedAt": "2026-09-18T02:25:57.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/regulatory/hc-extends-interim-direction-restraining-allotments-in-oberoi-realtys-project-in-gurugram-till-september-25/134324080?utm_source=top_news&utm_medium=tagListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Gurugram buyers seek bigger homes as 3BHK demand rises",
-          "cityCode": "gurugram",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-18T04:27:32.000Z",
-          "newsLink": "https://www.hindustantimes.com/real-estate/gurugram-buyers-seek-bigger-homes-as-3bhk-demand-rises-101789704895111.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "A day after residents flag dumping, MCG finds suspected industrial waste dumped on vacant land",
-          "cityCode": "gurugram",
-          "classification": "authority_pipeline",
-          "publishedAt": "2026-09-18T18:30:00.000Z",
-          "newsLink": "https://timesofindia.indiatimes.com/city/gurgaon/a-day-after-residents-flag-dumping-mcg-finds-suspected-industrial-waste-dumped-on-vacant-land/articleshow/134343423.cms",
-          "postedBy": "Times of India"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 10: broad market/company update, not city project news": 2,
-        "filter 15: direct media/PDF link, not article page": 3,
-        "filter 16: source URL city mismatch": 1,
-        "filter 2: non-English/Hindi content": 4,
-        "filter 3: negative/crime/utility concern news": 42,
-        "filter 7: outside region in title/description": 57,
-        "filter 8: outside-city conflict": 58,
-        "filter 9: no specific project/development signal": 78
-      }
-    },
-    {
-      "name": "news-run-2026-09-19T11-22-53-324Z.json",
-      "generatedAt": "2026-09-19T11:22:32.159Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 111,
-      "fetchedArticleCount": 811,
-      "expandedArticleCount": 120,
-      "candidateCount": 23,
-      "postedCount": 0,
-      "rejectedArticleCount": 254,
-      "needsReviewCount": 0,
-      "failureCount": 1,
-      "candidates": [
-        {
-          "title": "Smartworld, Kotak Realty Fund join forces to scale luxury living in NCR",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-13T18:30:00.000Z",
-          "newsLink": "https://www.constructionweekonline.in/projects-tenders/smart-developers-kotak-realty-join-forces-to-scale-luxury-living-in-ncr",
-          "postedBy": "Smartworld Media"
-        },
-        {
-          "title": "Smartworld, Kotak Realty Fund join forces to scale luxury living in NCR",
-          "cityCode": "delhi_ncr",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-13T18:30:00.000Z",
-          "newsLink": "https://www.constructionweekonline.in/projects-tenders/smart-developers-kotak-realty-join-forces-to-scale-luxury-living-in-ncr",
-          "postedBy": "Smartworld Media"
-        },
-        {
-          "title": "₹800 Crore Partnership: Smartworld Developers & Kotak Realty Fund Join Forces To Scale Luxury Living In NCR",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-13T18:30:00.000Z",
-          "newsLink": "https://www.pninews.com/%E2%82%B9800-crore-partnership-smartworld-developers-kotak-realty-fund-join-forces-to-scale-luxury-living-in-ncr/",
-          "postedBy": "Smartworld Media"
-        },
-        {
-          "title": "₹800 Crore Partnership: Smartworld Developers & Kotak Realty Fund Join Forces To Scale Luxury Living In NCR",
-          "cityCode": "delhi_ncr",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-13T18:30:00.000Z",
-          "newsLink": "https://www.pninews.com/%E2%82%B9800-crore-partnership-smartworld-developers-kotak-realty-fund-join-forces-to-scale-luxury-living-in-ncr/",
-          "postedBy": "Smartworld Media"
-        },
-        {
-          "title": "BPTP Skynest Bags ‘Premium High-Rise Development of the Year’ at Times Realty & Infrastructure Conclave 2026",
-          "cityCode": "faridabad",
-          "classification": "project_development",
-          "publishedAt": "2026-08-31T05:28:18.000Z",
-          "newsLink": "https://cms.bptp.com/wp-content/uploads/2026/09/BPTP-Skynest-Bags-Premium-High-Rise-Development-of-the-Year-at-Times-Realty-Infrastructure-Conclave-2026-scaled.jpg",
-          "postedBy": "BPTP Media"
-        },
-        {
-          "title": "Faridabad vs Gurugram: Can affordability make it NCR’s next big housing market?",
-          "cityCode": "faridabad",
-          "classification": "positive_city_market",
-          "publishedAt": "2026-09-03T05:47:53.000Z",
-          "newsLink": "https://cms.bptp.com/wp-content/uploads/2026/09/Faridabad-vs-Gurugram-Can-affordability-make-it-NCRs-next-big-housing-market-scaled.jpg",
-          "postedBy": "BPTP Media"
-        },
-        {
-          "title": "Eye on New Noida, land rates increased by 53%",
-          "cityCode": "noida",
-          "classification": "project_development",
-          "publishedAt": "2026-09-07T14:05:24.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/eye-on-new-noida-land-rates-increased-by-53/133884847?utm_source=top_news&utm_medium=tagListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Noida authority fixes uniform rate of ₹86,000 per sq metre for IT/ITeS plots",
-          "cityCode": "noida",
-          "classification": "authority_pipeline",
-          "publishedAt": "2026-09-08T03:25:25.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/commercial/noida-authority-fixes-uniform-rate-of-86000-per-sq-metre-for-it/ites-plots/133905361?utm_source=top_news&utm_medium=tagListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "M3M emerges as highest bidder for prime Noida land parcels at ₹1,850 crore",
-          "cityCode": "noida",
-          "classification": "project_development",
-          "publishedAt": "2026-09-09T03:24:38.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/m3m-emerges-as-highest-bidder-for-prime-noida-land-parcels-at-1850-crore/133950829?utm_source=top_news&utm_medium=tagListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Civitech Group to invest ₹500 crore in Greater Noida West commercial project",
-          "cityCode": "noida",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-10T02:46:07.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/commercial/civitech-group-to-invest-500-crore-in-greater-noida-west-commercial-project/133991347",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Smartworld, Kotak Realty Fund Tie Up For Rs 800 Cr NCR Luxury Projects",
-          "cityCode": "delhi_ncr",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-10T18:30:00.000Z",
-          "newsLink": "https://www.businessworld.in/article/smartworld-kotak-realty-fund-tie-up-for-rs-800-cr-ncr-luxury-projects-623253",
-          "postedBy": "Smartworld Media"
-        },
-        {
-          "title": "Kotak Realty Fund to invest ₹800 crore in Gurugram residential projects",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-10T18:30:00.000Z",
-          "newsLink": "https://www.cnbctv18.com/alternative-investment-fund/kotak-realty-fund-to-invest-rs-800-crore-in-gurugram-residential-projects-19989504.htm",
-          "postedBy": "CNBC TV18"
-        },
-        {
-          "title": "Smartworld, Kotak Realty Fund Tie Up for ₹800 Crore Investment in Gurugram Projects",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-13T18:30:00.000Z",
-          "newsLink": "https://realtyninfra.in/kotak-realty-fund-800-crore-smartworld-gurugram-investment/",
-          "postedBy": "Smartworld Media"
-        },
-        {
-          "title": "Kotak Realty Fund to Invest Rs 800 Crore in Smartworld Projects in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-13T18:30:00.000Z",
-          "newsLink": "https://www.nbmcw.com/news/real-estate/kotak-realty-fund-to-invest-rs-800-crore-in-smartworld-projects-in-gurugram.html",
-          "postedBy": "Smartworld Media"
-        },
-        {
-          "title": "Reach 3Roads Expands its Retail and F&B Mix with...",
-          "cityCode": "gurugram",
-          "classification": "commercial_retail_project",
-          "publishedAt": "2026-09-15T09:25:56.000Z",
-          "newsLink": "https://www.businessoffood.in/reach-3roads-expands-its-retail-and-fb-mix-with-sqr-and-cafe-by-soul/",
-          "postedBy": "Food Service News & Insights"
-        },
-        {
-          "title": "Embassy Developments to invest ₹2,000 crore in 85-acre Bengaluru housing project",
-          "cityCode": "bangalore",
-          "classification": "project_development",
-          "publishedAt": "2026-09-15T11:48:04.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/embassy-developments-to-invest-2000-crore-in-85-acre-bengaluru-housing-project/134261049",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "ASF Group rents 4 lakh sq ft office space to Genpact in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-17T05:28:31.000Z",
-          "newsLink": "https://torbitrealty.com/asf-group-rents-4-lakh-sq-ft-office-space-to-genpact-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "Puravankara to redevelop three projects in Mumbai; Paradigm Realty to invest ₹80 crore to redevelop Bandra project",
-          "cityCode": "mumbai",
-          "classification": "project_development",
-          "publishedAt": "2026-09-17T10:43:50.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/industry/puravankara-to-redevelop-three-projects-in-mumbai-paradigm-realty-to-invest-80-crore-to-redevelop-bandra-project/134309084?utm_source=top_news&utm_medium=sectionListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "First Jewar Airport, now F1: Will Formula 1 revival be the next real estate boost for Yamuna Expressway?",
-          "cityCode": "noida",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-18T02:25:01.000Z",
-          "newsLink": "https://www.hindustantimes.com/real-estate/first-jewar-airport-now-f1-will-formula-1-revival-be-the-next-real-estate-boost-for-yamuna-expressway-101789653634913.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "HC extends interim direction restraining allotments in Oberoi Realty's project in Gurugram till September 25",
-          "cityCode": "gurugram",
-          "classification": "project_development",
-          "publishedAt": "2026-09-18T02:25:57.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/regulatory/hc-extends-interim-direction-restraining-allotments-in-oberoi-realtys-project-in-gurugram-till-september-25/134324080?utm_source=top_news&utm_medium=tagListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Gurugram buyers seek bigger homes as 3BHK demand rises",
-          "cityCode": "gurugram",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-18T04:27:32.000Z",
-          "newsLink": "https://www.hindustantimes.com/real-estate/gurugram-buyers-seek-bigger-homes-as-3bhk-demand-rises-101789704895111.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "A day after residents flag dumping, MCG finds suspected industrial waste dumped on vacant land",
-          "cityCode": "gurugram",
-          "classification": "authority_pipeline",
-          "publishedAt": "2026-09-18T18:30:00.000Z",
-          "newsLink": "https://timesofindia.indiatimes.com/city/gurgaon/a-day-after-residents-flag-dumping-mcg-finds-suspected-industrial-waste-dumped-on-vacant-land/articleshow/134343423.cms",
-          "postedBy": "Times of India"
-        },
-        {
-          "title": "13 key roads in ciity to be reconstructed on priority: GMDA",
-          "cityCode": "gurugram",
-          "classification": "authority_pipeline",
-          "publishedAt": "2026-09-19T02:12:10.000Z",
-          "newsLink": "https://www.hindustantimes.com/cities/noida-news/13-key-roads-in-ciity-to-be-reconstructed-on-priority-gmda-101789755192028.html",
-          "postedBy": "Hindustan Times"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 10: broad market/company update, not city project news": 2,
-        "filter 2: non-English/Hindi content": 4,
-        "filter 3: negative/crime/utility concern news": 43,
-        "filter 7: outside region in title/description": 60,
-        "filter 8: outside-city conflict": 61,
-        "filter 9: no specific project/development signal": 84
-      }
-    },
-    {
-      "name": "news-run-2026-09-19T10-54-01-625Z.json",
-      "generatedAt": "2026-09-19T10:54:01.358Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 43,
-      "fetchedArticleCount": 442,
-      "expandedArticleCount": 273,
-      "candidateCount": 17,
-      "postedCount": 0,
-      "rejectedArticleCount": 851,
-      "needsReviewCount": 0,
-      "failureCount": 0,
-      "candidates": [
-        {
-          "title": "BPTP Skynest Bags ‘Premium High-Rise Development of the Year’ at Times Realty & Infrastructure Conclave 2026",
-          "cityCode": "faridabad",
-          "classification": "project_development",
-          "publishedAt": "2026-08-31T05:28:18.000Z",
-          "newsLink": "https://cms.bptp.com/wp-content/uploads/2026/09/BPTP-Skynest-Bags-Premium-High-Rise-Development-of-the-Year-at-Times-Realty-Infrastructure-Conclave-2026-scaled.jpg",
-          "postedBy": "BPTP Media"
-        },
-        {
-          "title": "Faridabad vs Gurugram: Can affordability make it NCR’s next big housing market?",
-          "cityCode": "faridabad",
-          "classification": "positive_city_market",
-          "publishedAt": "2026-09-03T05:47:53.000Z",
-          "newsLink": "https://cms.bptp.com/wp-content/uploads/2026/09/Faridabad-vs-Gurugram-Can-affordability-make-it-NCRs-next-big-housing-market-scaled.jpg",
-          "postedBy": "BPTP Media"
-        },
-        {
-          "title": "Dwarka Expressway Prices Surge Over Five Years",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-08T11:13:00.000Z",
-          "newsLink": "https://www.rprealtyplus.com/news-views/dwarka-expressway-prices-surge-135-in-5-years-now-gurugrams-luxury-hub-126754.html",
-          "postedBy": "M3M Media"
-        },
-        {
-          "title": "Dwarka Expressway Turning Into Delhi-NCR’s New Residential Power Corridor, Prices Up 135 Per Cent Since 2021, Says...",
-          "cityCode": "gurugram",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-09T11:00:34.000Z",
-          "newsLink": "https://www.outlookmoney.com/invest/dwarka-expressway-turning-into-delhi-ncrs-new-residential-power-corridor-prices-up-135-per-cent-since-2021-says-report",
-          "postedBy": "Outlook Money"
-        },
-        {
-          "title": "County Group to invest Rs 2,500 cr to develop luxury homes in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-10T05:51:28.000Z",
-          "newsLink": "https://torbitrealty.com/county-group-to-invest-rs-2500-cr-to-develop-luxury-homes-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "Kotak Realty Fund to invest ₹800 crore in Gurugram residential projects",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-10T18:30:00.000Z",
-          "newsLink": "https://www.cnbctv18.com/alternative-investment-fund/kotak-realty-fund-to-invest-rs-800-crore-in-gurugram-residential-projects-19989504.htm",
-          "postedBy": "CNBC TV18"
-        },
-        {
-          "title": "Smartworld Developers raises Rs 800 cr from Kotak Realty Fund for two projects in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "leadership_confidence",
-          "publishedAt": "2026-09-10T18:30:00.000Z",
-          "newsLink": "https://economictimes.indiatimes.com/markets/digital-real-estate/realty-news/smartworld-developers-raises-rs-800-cr-from-kotak-realty-fund-for-two-projects-in-gurugram/articleshow/134067399.cms?from=mdr",
-          "postedBy": "The Economic Times"
-        },
-        {
-          "title": "Kotak Realty Fund to invest over ₹800 crore in 2 Gurugram projects",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-10T18:30:00.000Z",
-          "newsLink": "https://www.business-standard.com/industry/news/kotak-realty-fund-to-invest-over-800-crore-in-2-gurugram-projects-126091101418_1.html",
-          "postedBy": "Business Standard"
-        },
-        {
-          "title": "Smartworld, Kotak Realty Fund Tie Up for ₹800 Crore Investment in Gurugram Projects",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-13T18:30:00.000Z",
-          "newsLink": "https://realtyninfra.in/kotak-realty-fund-800-crore-smartworld-gurugram-investment/",
-          "postedBy": "Smartworld Media"
-        },
-        {
-          "title": "Kotak Realty Fund to Invest Rs 800 Crore in Smartworld Projects in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-13T18:30:00.000Z",
-          "newsLink": "https://www.nbmcw.com/news/real-estate/kotak-realty-fund-to-invest-rs-800-crore-in-smartworld-projects-in-gurugram.html",
-          "postedBy": "Smartworld Media"
-        },
-        {
-          "title": "Smartworld, Kotak Realty Fund partner for ₹800 crore investment in Gurugram luxury projects",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-14T05:23:44.000Z",
-          "newsLink": "https://torbitrealty.com/smartworld-kotak-realty-fund-partner-for-%e2%82%b9800-crore-investment-in-gurugram-luxury-projects/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "Reach 3Roads Expands its Retail and F&B Mix with...",
-          "cityCode": "gurugram",
-          "classification": "commercial_retail_project",
-          "publishedAt": "2026-09-15T09:25:56.000Z",
-          "newsLink": "https://www.businessoffood.in/reach-3roads-expands-its-retail-and-fb-mix-with-sqr-and-cafe-by-soul/",
-          "postedBy": "Food Service News & Insights"
-        },
-        {
-          "title": "ASF Group rents 4 lakh sq ft office space to Genpact in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-17T05:28:31.000Z",
-          "newsLink": "https://torbitrealty.com/asf-group-rents-4-lakh-sq-ft-office-space-to-genpact-in-gurugram/",
-          "postedBy": "Torbit Realty"
-        },
-        {
-          "title": "HC extends interim direction restraining allotments in Oberoi Realty's project in Gurugram till September 25",
-          "cityCode": "gurugram",
-          "classification": "project_development",
-          "publishedAt": "2026-09-18T02:25:57.000Z",
-          "newsLink": "https://realty.economictimes.indiatimes.com/news/regulatory/hc-extends-interim-direction-restraining-allotments-in-oberoi-realtys-project-in-gurugram-till-september-25/134324080?utm_source=top_news&utm_medium=tagListing",
-          "postedBy": "ET Realty"
-        },
-        {
-          "title": "Gurugram buyers seek bigger homes as 3BHK demand rises",
-          "cityCode": "gurugram",
-          "classification": "connectivity_catalyst",
-          "publishedAt": "2026-09-18T04:27:32.000Z",
-          "newsLink": "https://www.hindustantimes.com/real-estate/gurugram-buyers-seek-bigger-homes-as-3bhk-demand-rises-101789704895111.html",
-          "postedBy": "Hindustan Times"
-        },
-        {
-          "title": "PVR INOX Opens Three-Screen Multiplex at DLF Summit Plaza in Gurugram",
-          "cityCode": "gurugram",
-          "classification": "authority_pipeline",
-          "publishedAt": "2026-09-18T08:48:31.000Z",
-          "newsLink": "https://realtynmore.com/pvr-inox-opens-three-screen-multiplex-at-dlf/",
-          "postedBy": "RealtyNMore"
-        },
-        {
-          "title": "A day after residents flag dumping, MCG finds suspected industrial waste dumped on vacant land",
-          "cityCode": "gurugram",
-          "classification": "authority_pipeline",
-          "publishedAt": "2026-09-18T18:30:00.000Z",
-          "newsLink": "https://timesofindia.indiatimes.com/city/gurgaon/a-day-after-residents-flag-dumping-mcg-finds-suspected-industrial-waste-dumped-on-vacant-land/articleshow/134343423.cms",
-          "postedBy": "Times of India"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 1: spam/menu page": 28,
-        "filter 10: broad market/company update, not city project news": 8,
-        "filter 2: non-English/Hindi content": 10,
-        "filter 3: negative/crime/utility concern news": 75,
-        "filter 4: not positive target real-estate/project news": 235,
-        "filter 5: no allowed city match": 236,
-        "filter 7: outside region in title/description": 95,
-        "filter 8: outside-city conflict": 146,
-        "filter 9: no specific project/development signal": 18
-      }
-    },
-    {
-      "name": "news-run-2026-09-16T07-45-39-755Z.json",
-      "generatedAt": "2026-09-16T07:45:39.736Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 1,
-      "fetchedArticleCount": 10,
-      "expandedArticleCount": 10,
-      "candidateCount": 1,
-      "postedCount": 0,
-      "rejectedArticleCount": 24,
-      "needsReviewCount": 0,
-      "failureCount": 0,
-      "candidates": [
-        {
-          "title": "Reach 3Roads Expands its Retail and F&B Mix with SQR and Café By Soul",
-          "cityCode": "gurugram",
-          "classification": "commercial_retail_project",
-          "publishedAt": "2026-09-15T09:25:56.000Z",
-          "newsLink": "https://www.businessoffood.in/reach-3roads-expands-its-retail-and-fb-mix-with-sqr-and-cafe-by-soul/",
-          "postedBy": "Food Service News & Insights"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 4: not positive target real-estate/project news": 9,
-        "filter 5: no allowed city match": 9,
-        "filter 7: outside region in title/description": 3,
-        "filter 8: outside-city conflict": 3
-      }
-    },
-    {
-      "name": "news-run-2026-09-16T07-40-33-391Z.json",
-      "generatedAt": "2026-09-16T07:40:33.381Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 79,
-      "fetchedArticleCount": 74,
-      "expandedArticleCount": 15,
-      "candidateCount": 2,
-      "postedCount": 0,
-      "rejectedArticleCount": 42,
-      "needsReviewCount": 0,
-      "failureCount": 1,
-      "candidates": [
-        {
-          "title": "Faridabad vs Gurugram: Can affordability make it NCR’s next big housing market?",
-          "cityCode": "faridabad",
-          "classification": "positive_city_market",
-          "publishedAt": "2026-09-03T05:47:53.000Z",
-          "newsLink": "https://cms.bptp.com/wp-content/uploads/2026/09/Faridabad-vs-Gurugram-Can-affordability-make-it-NCRs-next-big-housing-market-scaled.jpg",
-          "postedBy": "BPTP Media"
-        },
-        {
-          "title": "Dwarka Expressway Prices Surge Over Five Years",
-          "cityCode": "gurugram",
-          "classification": "positive_market_infrastructure",
-          "publishedAt": "2026-09-08T11:13:00.000Z",
-          "newsLink": "https://www.rprealtyplus.com/news-views/dwarka-expressway-prices-surge-135-in-5-years-now-gurugrams-luxury-hub-126754.html",
-          "postedBy": "M3M Media"
-        }
-      ],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 14: weak Noida developer blog signal": 1,
-        "filter 3: negative/crime/utility concern news": 2,
-        "filter 4: not positive target real-estate/project news": 13,
-        "filter 5: no allowed city match": 13,
-        "filter 7: outside region in title/description": 5,
-        "filter 8: outside-city conflict": 8
-      }
-    },
-    {
-      "name": "news-run-2026-08-29T07-16-36-315Z.json",
-      "generatedAt": "2026-08-29T07:16:36.312Z",
-      "mode": "dry-run",
-      "dryRun": true,
-      "sourceCount": 79,
-      "fetchedArticleCount": 74,
-      "expandedArticleCount": 15,
-      "candidateCount": 0,
-      "postedCount": 0,
-      "rejectedArticleCount": 47,
-      "needsReviewCount": 0,
-      "failureCount": 2,
-      "candidates": [],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "skippedByReason": {
-        "filter 1: spam/menu page": 2,
-        "filter 10: broad market/company update, not city project news": 1,
-        "filter 14: weak Noida developer blog signal": 1,
-        "filter 3: negative/crime/utility concern news": 4,
-        "filter 4: not positive target real-estate/project news": 14,
-        "filter 5: no allowed city match": 14,
-        "filter 7: outside region in title/description": 3,
-        "filter 8: outside-city conflict": 7,
-        "filter 9: no specific project/development signal": 1
+        "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score -22)": 6,
+        "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score 1)": 1,
+        "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score 2)": 1,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)": 3,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 11)": 3,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 121)": 1,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 127)": 1,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 13)": 3,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 15)": 2,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 19)": 1,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 20)": 1,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 21)": 1,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 23)": 1,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 25)": 2,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 26)": 1,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 27)": 1,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 3)": 3,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 31)": 3,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 33)": 1,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 4)": 1,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 41)": 2,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 43)": 1,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 44)": 2,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 49)": 3,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 5)": 4,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 51)": 1,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 53)": 1,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 6)": 2,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 7)": 3,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 8)": 1,
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 9)": 4,
+        "filter 17: local quality judge rejected article (strong non-real-estate local topic, score -20)": 1,
+        "filter 5: no allowed city match": 2020,
+        "filter 7: outside region in title/description": 165,
+        "filter 8: outside-city conflict": 176,
+        "filter 9: no specific project/development signal": 258
       }
     }
   ],
   "analytics": {
     "totals": {
-      "fetched": 7169,
-      "expanded": 2639,
-      "readyToPost": 227,
-      "posted": 0,
-      "rejected": 4029,
-      "failedSources": 14,
+      "fetched": 6282,
+      "expanded": 2414,
+      "readyToPost": 5,
+      "posted": 5,
+      "rejected": 2814,
+      "failedSources": 155,
       "needsReview": 0
     },
     "byCity": [
@@ -17066,86 +14733,22 @@
         "expanded": 0,
         "readyToPost": 0,
         "posted": 0,
-        "rejected": 4029,
+        "rejected": 2814,
         "rejectionReasons": {}
       },
       {
-        "cityCode": "gurugram",
+        "cityCode": "faridabad",
         "expanded": 0,
-        "readyToPost": 79,
-        "posted": 0,
-        "rejected": 0,
-        "rejectionReasons": {}
-      },
-      {
-        "cityCode": "noida",
-        "expanded": 0,
-        "readyToPost": 52,
-        "posted": 0,
-        "rejected": 0,
-        "rejectionReasons": {}
-      },
-      {
-        "cityCode": "lucknow",
-        "expanded": 0,
-        "readyToPost": 22,
-        "posted": 0,
+        "readyToPost": 1,
+        "posted": 1,
         "rejected": 0,
         "rejectionReasons": {}
       },
       {
         "cityCode": "ghaziabad",
         "expanded": 0,
-        "readyToPost": 19,
-        "posted": 0,
-        "rejected": 0,
-        "rejectionReasons": {}
-      },
-      {
-        "cityCode": "mumbai",
-        "expanded": 0,
-        "readyToPost": 17,
-        "posted": 0,
-        "rejected": 0,
-        "rejectionReasons": {}
-      },
-      {
-        "cityCode": "faridabad",
-        "expanded": 0,
-        "readyToPost": 17,
-        "posted": 0,
-        "rejected": 0,
-        "rejectionReasons": {}
-      },
-      {
-        "cityCode": "bangalore",
-        "expanded": 0,
-        "readyToPost": 8,
-        "posted": 0,
-        "rejected": 0,
-        "rejectionReasons": {}
-      },
-      {
-        "cityCode": "delhi_ncr",
-        "expanded": 0,
-        "readyToPost": 4,
-        "posted": 0,
-        "rejected": 0,
-        "rejectionReasons": {}
-      },
-      {
-        "cityCode": "mangalore",
-        "expanded": 0,
-        "readyToPost": 3,
-        "posted": 0,
-        "rejected": 0,
-        "rejectionReasons": {}
-      },
-      {
-        "cityCode": "dibrugarh",
-        "expanded": 0,
         "readyToPost": 1,
-        "posted": 0,
+        "posted": 1,
         "rejected": 0,
         "rejectionReasons": {}
       },
@@ -17153,39 +14756,23 @@
         "cityCode": "hyderabad",
         "expanded": 0,
         "readyToPost": 1,
-        "posted": 0,
+        "posted": 1,
         "rejected": 0,
         "rejectionReasons": {}
       },
       {
-        "cityCode": "guwahati",
+        "cityCode": "noida",
         "expanded": 0,
         "readyToPost": 1,
-        "posted": 0,
+        "posted": 1,
         "rejected": 0,
         "rejectionReasons": {}
       },
       {
-        "cityCode": "nagpur",
+        "cityCode": "vadodara",
         "expanded": 0,
         "readyToPost": 1,
-        "posted": 0,
-        "rejected": 0,
-        "rejectionReasons": {}
-      },
-      {
-        "cityCode": "goa",
-        "expanded": 0,
-        "readyToPost": 1,
-        "posted": 0,
-        "rejected": 0,
-        "rejectionReasons": {}
-      },
-      {
-        "cityCode": "barabanki",
-        "expanded": 0,
-        "readyToPost": 1,
-        "posted": 0,
+        "posted": 1,
         "rejected": 0,
         "rejectionReasons": {}
       }
@@ -17193,92 +14780,336 @@
     "rejectionReasons": [
       {
         "reason": "filter 5: no allowed city match",
-        "count": 1747
-      },
-      {
-        "reason": "filter 8: outside-city conflict",
-        "count": 574
+        "count": 2020
       },
       {
         "reason": "filter 9: no specific project/development signal",
-        "count": 538
+        "count": 258
+      },
+      {
+        "reason": "filter 8: outside-city conflict",
+        "count": 176
       },
       {
         "reason": "filter 7: outside region in title/description",
-        "count": 505
+        "count": 165
       },
       {
-        "reason": "filter 4: not positive target real-estate/project news",
-        "count": 322
-      },
-      {
-        "reason": "filter 3: negative/crime/utility concern news",
-        "count": 230
-      },
-      {
-        "reason": "filter 1: spam/menu page",
-        "count": 40
+        "reason": "filter 13: already sent",
+        "count": 101
       },
       {
         "reason": "filter 10: broad market/company update, not city project news",
-        "count": 29
-      },
-      {
-        "reason": "filter 2: non-English/Hindi content",
-        "count": 24
-      },
-      {
-        "reason": "filter 15: direct media/PDF link, not article page",
-        "count": 15
-      },
-      {
-        "reason": "filter 16: source URL city mismatch",
-        "count": 3
+        "count": 19
       },
       {
         "reason": "filter 14: weak Noida developer blog signal",
+        "count": 7
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score -22)",
+        "count": 6
+      },
+      {
+        "reason": "filter 15: direct media/PDF link, not article page",
+        "count": 4
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 5)",
+        "count": 4
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 9)",
+        "count": 4
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)",
+        "count": 3
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 11)",
+        "count": 3
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 13)",
+        "count": 3
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 3)",
+        "count": 3
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 31)",
+        "count": 3
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 49)",
+        "count": 3
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 7)",
+        "count": 3
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 15)",
         "count": 2
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 25)",
+        "count": 2
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 41)",
+        "count": 2
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 44)",
+        "count": 2
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 6)",
+        "count": 2
+      },
+      {
+        "reason": "filter 0: missing title/link",
+        "count": 1
+      },
+      {
+        "reason": "filter 16: source URL city mismatch",
+        "count": 1
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score 1)",
+        "count": 1
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score 2)",
+        "count": 1
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 121)",
+        "count": 1
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 127)",
+        "count": 1
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 19)",
+        "count": 1
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 20)",
+        "count": 1
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 21)",
+        "count": 1
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 23)",
+        "count": 1
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 26)",
+        "count": 1
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 27)",
+        "count": 1
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 33)",
+        "count": 1
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 4)",
+        "count": 1
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 43)",
+        "count": 1
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 51)",
+        "count": 1
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 53)",
+        "count": 1
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 8)",
+        "count": 1
+      },
+      {
+        "reason": "filter 17: local quality judge rejected article (strong non-real-estate local topic, score -20)",
+        "count": 1
       }
     ]
   },
-  "postedNews": [],
+  "postedNews": [
+    {
+      "title": "Railways Approve ₹166.5 Cr Four-Lane RoB to Replace Vadodara’s Alkapuri Underpass",
+      "cityCode": "vadodara",
+      "classification": "project_development",
+      "publishedAt": "2026-09-25T12:05:57.000Z",
+      "newsLink": "https://metrorailnews.in/vadodara-alkapuri-rob-166-crore-railways/",
+      "postedBy": "Metro, RRTS & High-Speed Rail Project Updates",
+      "reportName": "news-run-2026-09-26T12-07-12-787Z.json",
+      "reportGeneratedAt": "2026-09-26T12:07:12.589Z",
+      "dryRun": false,
+      "uiStatus": "Published",
+      "sourceKind": "posted"
+    },
+    {
+      "title": "Puravankara enters Delhi NCR real estate market, secures Greater Noida land parcel with GDV of ₹5,200 croreSept 22,...",
+      "cityCode": "noida",
+      "classification": "positive_city_market",
+      "publishedAt": "2026-09-22T06:24:20.000Z",
+      "newsLink": "https://www.cnbctv18.com/market/puravankara-share-price-secures-greater-noida-land-parcel-gdv-rs-5200-crore-enters-delhi-ncr-19995540.htm",
+      "postedBy": "CNBC TV18",
+      "reportName": "news-run-2026-09-26T12-07-12-787Z.json",
+      "reportGeneratedAt": "2026-09-26T12:07:12.589Z",
+      "dryRun": false,
+      "uiStatus": "Published",
+      "sourceKind": "posted"
+    },
+    {
+      "title": "Rajapushpa Aurelia Targets the Ultra-Luxury S...",
+      "cityCode": "hyderabad",
+      "classification": "project_development",
+      "publishedAt": "2026-09-16T13:58:19.000Z",
+      "newsLink": "https://proppuls.in/rajapushpa-aurelia-tellapur-luxury-3-4-bhk-corner-homes",
+      "postedBy": "Hyderabad Real Estate News, Projects & Property ",
+      "reportName": "news-run-2026-09-26T12-07-12-787Z.json",
+      "reportGeneratedAt": "2026-09-26T12:07:12.589Z",
+      "dryRun": false,
+      "uiStatus": "Published",
+      "sourceKind": "posted"
+    },
+    {
+      "title": "Blackstone-backed ASK Property Fund commits Rs 300 crore to Ghaziabad housing projects",
+      "cityCode": "ghaziabad",
+      "classification": "project_development",
+      "publishedAt": "2026-09-02T18:30:00.000Z",
+      "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/blackstone-backed-ask-property-fund-commits-rs-300-crore-to-ghaziabad-housing-projects/articleshow/133727430.cms",
+      "postedBy": "The Economic Times",
+      "reportName": "news-run-2026-09-26T12-07-12-787Z.json",
+      "reportGeneratedAt": "2026-09-26T12:07:12.589Z",
+      "dryRun": false,
+      "uiStatus": "Published",
+      "sourceKind": "posted"
+    },
+    {
+      "title": "UpdateAug 2026BPTP Skynest Bags 'Premium High-Rise Development of the Year' at Times Realty & Infrastructure...",
+      "cityCode": "faridabad",
+      "classification": "project_development",
+      "publishedAt": "2026-08-29T18:30:00.000Z",
+      "newsLink": "https://bptpltd.com/updates/bptp-skynest-bags-premium-high-rise-development-of-the-year-at-times-realty-infrastructure-conclave-2026/",
+      "postedBy": "BPTP Limited — Latest News & Updates",
+      "reportName": "news-run-2026-09-26T12-07-12-787Z.json",
+      "reportGeneratedAt": "2026-09-26T12:07:12.589Z",
+      "dryRun": false,
+      "uiStatus": "Published",
+      "sourceKind": "posted"
+    }
+  ],
   "candidateNews": [
     {
-      "title": "Ganpati Group to invest ₹2,000 Crore in Residential and Hospitality Expansion",
-      "cityCode": "mumbai",
+      "title": "Railways Approve ₹166.5 Cr Four-Lane RoB to Replace Vadodara’s Alkapuri Underpass",
+      "cityCode": "vadodara",
       "classification": "project_development",
-      "publishedAt": "2026-09-17T11:05:13.000Z",
-      "newsLink": "https://thepropertytimes.in/ganpati-group-to-invest-%e2%82%b92000-crore-in-residential-and-hospitality-expansion/",
-      "postedBy": "Real Estate News & Views Portal",
-      "reportName": "news-run-2026-09-26T06-24-59-124Z.json",
-      "reportGeneratedAt": "2026-09-26T06:24:59.060Z",
-      "dryRun": true
+      "publishedAt": "2026-09-25T12:05:57.000Z",
+      "newsLink": "https://metrorailnews.in/vadodara-alkapuri-rob-166-crore-railways/",
+      "postedBy": "Metro, RRTS & High-Speed Rail Project Updates",
+      "reportName": "news-run-2026-09-26T12-07-12-787Z.json",
+      "reportGeneratedAt": "2026-09-26T12:07:12.589Z",
+      "dryRun": false
     },
     {
-      "title": "MRG Group Expands MRG Crown Clubhouse to 30,000 Sq. Ft., Launches Club Jewel",
-      "cityCode": "mumbai",
-      "classification": "project_development",
-      "publishedAt": "2026-09-11T09:36:42.000Z",
-      "newsLink": "https://thepropertytimes.in/mrg-group-expands-mrg-crown-clubhouse-to-30000-sq-ft-launches-club-jewel/",
-      "postedBy": "Real Estate News & Views Portal",
-      "reportName": "news-run-2026-09-26T06-24-59-124Z.json",
-      "reportGeneratedAt": "2026-09-26T06:24:59.060Z",
-      "dryRun": true
+      "title": "Puravankara enters Delhi NCR real estate market, secures Greater Noida land parcel with GDV of ₹5,200 croreSept 22,...",
+      "cityCode": "noida",
+      "classification": "positive_city_market",
+      "publishedAt": "2026-09-22T06:24:20.000Z",
+      "newsLink": "https://www.cnbctv18.com/market/puravankara-share-price-secures-greater-noida-land-parcel-gdv-rs-5200-crore-enters-delhi-ncr-19995540.htm",
+      "postedBy": "CNBC TV18",
+      "reportName": "news-run-2026-09-26T12-07-12-787Z.json",
+      "reportGeneratedAt": "2026-09-26T12:07:12.589Z",
+      "dryRun": false
     },
     {
-      "title": "TERRAY REALTY LAUNCHES TO SET A NEW BENCHMARK IN REAL ESTATE MANDATES AND ADVISORY",
-      "cityCode": "bangalore",
+      "title": "Rajapushpa Aurelia Targets the Ultra-Luxury S...",
+      "cityCode": "hyderabad",
       "classification": "project_development",
-      "publishedAt": "2026-09-08T11:32:01.000Z",
-      "newsLink": "https://thepropertytimes.in/terray-realty-launches-to-set-a-new-benchmark-in-real-estate-mandates-and-advisory/",
-      "postedBy": "Real Estate News & Views Portal",
-      "reportName": "news-run-2026-09-26T06-24-59-124Z.json",
-      "reportGeneratedAt": "2026-09-26T06:24:59.060Z",
-      "dryRun": true
+      "publishedAt": "2026-09-16T13:58:19.000Z",
+      "newsLink": "https://proppuls.in/rajapushpa-aurelia-tellapur-luxury-3-4-bhk-corner-homes",
+      "postedBy": "Hyderabad Real Estate News, Projects & Property ",
+      "reportName": "news-run-2026-09-26T12-07-12-787Z.json",
+      "reportGeneratedAt": "2026-09-26T12:07:12.589Z",
+      "dryRun": false
+    },
+    {
+      "title": "Blackstone-backed ASK Property Fund commits Rs 300 crore to Ghaziabad housing projects",
+      "cityCode": "ghaziabad",
+      "classification": "project_development",
+      "publishedAt": "2026-09-02T18:30:00.000Z",
+      "newsLink": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/blackstone-backed-ask-property-fund-commits-rs-300-crore-to-ghaziabad-housing-projects/articleshow/133727430.cms",
+      "postedBy": "The Economic Times",
+      "reportName": "news-run-2026-09-26T12-07-12-787Z.json",
+      "reportGeneratedAt": "2026-09-26T12:07:12.589Z",
+      "dryRun": false
+    },
+    {
+      "title": "UpdateAug 2026BPTP Skynest Bags 'Premium High-Rise Development of the Year' at Times Realty & Infrastructure...",
+      "cityCode": "faridabad",
+      "classification": "project_development",
+      "publishedAt": "2026-08-29T18:30:00.000Z",
+      "newsLink": "https://bptpltd.com/updates/bptp-skynest-bags-premium-high-rise-development-of-the-year-at-times-realty-infrastructure-conclave-2026/",
+      "postedBy": "BPTP Limited — Latest News & Updates",
+      "reportName": "news-run-2026-09-26T12-07-12-787Z.json",
+      "reportGeneratedAt": "2026-09-26T12:07:12.589Z",
+      "dryRun": false
     }
   ],
   "needsReviewNews": [],
-  "pushedByDate": [],
+  "pushedByDate": [
+    {
+      "date": "2026-09-25",
+      "count": 1,
+      "cityCounts": {
+        "vadodara": 1
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "count": 1,
+      "cityCounts": {
+        "noida": 1
+      }
+    },
+    {
+      "date": "2026-09-16",
+      "count": 1,
+      "cityCounts": {
+        "hyderabad": 1
+      }
+    },
+    {
+      "date": "2026-09-02",
+      "count": 1,
+      "cityCounts": {
+        "ghaziabad": 1
+      }
+    },
+    {
+      "date": "2026-08-29",
+      "count": 1,
+      "cityCounts": {
+        "faridabad": 1
+      }
+    }
+  ],
   "dryRun": {
     "running": false,
     "log": []
