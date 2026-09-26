@@ -608,15 +608,6 @@ export const workbookCityRules = [
     ]
   },
   {
-    "code": "ahmadnagar",
-    "state": "Gujarat",
-    "name": "Ahmadnagar",
-    "keywords": [
-      "ahmadnagar",
-      "ahmednagar"
-    ]
-  },
-  {
     "code": "ahmedabad",
     "state": "Gujarat",
     "name": "Ahmedabad",

@@ -1,10 +1,10 @@
 # News API Pusher
 
-Fetches real estate and business news every 10 minutes with GitHub Actions, removes duplicates, and sends only new articles to your Brokket API.
+Fetches real estate and business news every 30 minutes with GitHub Actions, removes duplicates, and sends only new articles to your Brokket API.
 
 ## How it works
 
-- GitHub Actions runs `.github/workflows/news-pusher.yml` every 10 minutes.
+- GitHub Actions runs `.github/workflows/news-pusher.yml` every 30 minutes at minutes 10 and 40.
 - The script uses only the built-in strict source list. GitHub secrets cannot add broad/old source links.
 - RSS feeds are parsed directly.
 - Normal webpage/category pages are scraped for article links, then each article page is checked for description and thumbnail metadata.
@@ -79,10 +79,10 @@ Optional repository variable:
 - `TARGET_CITY_CODES`: Optional comma-separated city filter, e.g. `noida` for a Noida-only dry run.
 - `EXTRA_ARTICLE_URLS`: Optional exact article URLs, separated by comma, semicolon, or newline. Use only for manually found articles; each URL still has to pass the strict full-article filters.
 
-The workflow is already scheduled for every 10 minutes:
+The workflow is already scheduled for every 30 minutes:
 
 ```yaml
-- cron: "*/10 * * * *"
+- cron: "10,40 * * * *"
 ```
 
 Push-triggered runs are disabled. Manual runs are allowed. To rerun a date window without reposting already-sent articles, start the workflow manually and set:

@@ -26,7 +26,7 @@ The admin panel is designed for review and control. Its dry-run button forces sa
 - Use Start Safe Dry Run before enabling any new city or source batch.
 - Review Ready To Post and Rejected With Reasons before any live run.
 - Enable cities slowly. New cities should be dry-run reviewed city by city before being made live.
-- Generated reports and output files are ignored by Git and should stay local unless manually exported.
+- Generated reports stay in the workflow artifact and the latest successful report is copied into the hosted admin snapshot.
 
 ## Static Check Before Git Upload
 

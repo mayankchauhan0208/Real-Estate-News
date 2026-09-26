@@ -47,7 +47,7 @@ on:
         required: false
         default: ""
       enabled_city_codes:
-        description: "Cities to enable for source/filter rules. Use all, or comma list. Empty keeps current gurugram/faridabad/noida behavior."
+        description: "Cities to enable for source/filter rules. Use all, or comma list. Empty uses the committed admin city policy."
         required: false
         default: ""
       disabled_city_codes:
@@ -115,7 +115,7 @@ jobs:
           DISABLED_CITY_CODES: ${{ github.event.inputs.disabled_city_codes || '' }}
           SOURCE_OFFSET: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_offset || '0' }}
           SOURCE_LIMIT: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_limit || '0' }}
-          SOURCE_CONCURRENCY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_concurrency || '18' }}
+          SOURCE_CONCURRENCY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_concurrency || '10' }}
           BUILD_VERSION: "source-intelligence-v1"
           SOURCE_STRATEGY: "full-source-coverage-30min"
           AUTO_SOURCE_BATCH: "false"
