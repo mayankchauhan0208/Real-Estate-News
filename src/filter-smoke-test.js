@@ -1707,3 +1707,19 @@ const borderlineDecision = localQualityJudge(borderlineReviewArticle);
 assert.equal(borderlineDecision.approved, true);
 assert.equal(needsLocalQualityReview(borderlineReviewArticle), true);
 assert.match(getRejectionReasons(borderlineReviewArticle, sentIds).join("; "), /filter 9: no specific project\/development signal/);
+
+const palwalLocalityArticle = publishable({
+  title: "New logistics park approved near Prithla in Haryana",
+  description: "The Prithla development will add industrial and logistics infrastructure in Palwal district.",
+  articleText: "The project includes warehouses, roads and investment near Prithla and Hathin in Palwal district.",
+  newsLink: "https://example.com/prithla-palwal-logistics-park"
+});
+assert.deepEqual(detectCityCodes(palwalLocalityArticle), ["palwal"]);
+
+const alternateCityNameArticle = publishable({
+  title: "Bengaluru residential project receives launch approval",
+  description: "A new housing development is planned in Bengaluru.",
+  articleText: "The Bengaluru real estate project includes residential construction and infrastructure investment.",
+  newsLink: "https://example.com/bengaluru-residential-project"
+});
+assert.deepEqual(detectCityCodes(alternateCityNameArticle), ["bangalore"]);

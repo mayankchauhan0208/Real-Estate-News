@@ -96,7 +96,46 @@ function isLegacyNoidaCityEnabled() {
 }
 
 const legacyDefaultCityCodes = ["faridabad", "gurugram"];
-const allCityRules = workbookCityRules;
+
+const CITY_ALIAS_OVERRIDES = {
+  faridabad: ["फरीदाबाद", "ग्रेटर फरीदाबाद", "नहरपार", "greater faridabad", "neharpar"],
+  gurugram: ["gurgaon", "गुरुग्राम", "गुड़गांव", "manesar", "manasar", "मानेसर", "sohna", "सोहना", "pataudi", "patudi", "patodi", "पटौदी", "dwarka expressway", "golf course road", "golf course extension road", "southern peripheral road", "spr"],
+  noida: ["greater noida", "ग्रेटर नोएडा", "dadri", "दादरी", "jewar", "जेवर", "yamuna expressway", "yeida", "noida authority", "greater noida authority"],
+  palwal: ["palwal district", "पलवल", "prithla", "पृथला", "hathin", "हथीन", "hodal", "होडल"],
+  rohtak: ["rohtak district", "sampla", "meham", "kalanaur"],
+  panipat: ["panipat district", "samalkha", "israna", "madlauda"],
+  karnal: ["karnal district", "assandh", "gharaunda", "indri", "nilokheri"],
+  sonipat: ["sonipat district", "gohana", "kharkhoda", "rai", "murthal", "kundli"],
+  rewari: ["rewari district", "dharuhera", "bawal", "kosli"],
+  bangalore: ["bengaluru", "ಬೆಂಗಳೂರು"],
+  mumbai: ["bombay", "मुंबई"],
+  navi_mumbai: ["new mumbai"],
+  chennai: ["madras", "चेन्नई"],
+  kolkata: ["calcutta", "कोलकाता"],
+  kochi: ["cochin", "कोच्चि"],
+  trivandrum: ["thiruvananthapuram", "तिरुवनंतपुरम"],
+  allahabad: ["prayagraj", "प्रयागराज"],
+  varanasi: ["banaras", "काशी"],
+  mysore: ["mysuru", "मैसूरु"]
+};
+
+function enrichCityRuleAliases(rule) {
+  const codeAlias = String(rule.code || "").replaceAll("_", " ").trim().toLowerCase();
+  const nameAlias = String(rule.name || "").trim().toLowerCase();
+  const generatedAliases = [
+    codeAlias,
+    nameAlias,
+    nameAlias ? `${nameAlias} city` : "",
+    nameAlias ? `${nameAlias} district` : ""
+  ];
+  const aliases = CITY_ALIAS_OVERRIDES[rule.code] || [];
+  return {
+    ...rule,
+    keywords: [...new Set([...(rule.keywords || []), ...generatedAliases, ...aliases].map((value) => String(value || "").trim()).filter(Boolean))]
+  };
+}
+
+const allCityRules = workbookCityRules.map(enrichCityRuleAliases);
 const allCityCodeSet = new Set(allCityRules.map((rule) => rule.code));
 const enabledCityCodeSet = getEnabledCityCodeSet();
 const cityRules = allCityRules.filter((rule) => enabledCityCodeSet.has(rule.code));
