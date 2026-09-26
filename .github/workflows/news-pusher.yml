@@ -63,9 +63,9 @@ on:
         required: false
         default: "0"
       source_concurrency:
-        description: "How many sources to fetch in parallel. Default 16, max 16."
+        description: "How many sources to fetch in parallel. Default 10, max 10."
         required: false
-        default: "16"
+        default: "10"
 
 concurrency:
   group: news-api-pusher
