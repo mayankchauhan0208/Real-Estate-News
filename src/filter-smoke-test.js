@@ -20,6 +20,7 @@ import {
   isLikelyFeedUrl,
   isPublishableArticle,
   isWithinBackfillDateRange,
+  parseNewsDateValue,
   shouldSkipTitle,
   articleDedupeIds
 } from "./index.js";
@@ -30,6 +31,8 @@ const adminEnabledCityCodes = Array.isArray(adminSettings.enabledCityCodes) ? ad
 const noidaCityEnabled = adminSettings.allCitiesEnabled === true ||
   adminEnabledCityCodes.includes("noida") ||
   ["1", "true", "yes", "on"].includes((process.env.ENABLE_NOIDA_CITY || "").trim().toLowerCase());
+
+assert.equal(parseNewsDateValue("23-09-2026"), "2026-09-22T18:30:00.000Z");
 
 const reportedOffTopicArticles = [
   {

@@ -2807,7 +2807,7 @@
     },
     {
       "id": "id-2049308142",
-      "url": "https://www.koltepatil.com/news-media/press-releases",
+      "url": "https://www.koltepatil.com/news-media/media-coverage",
       "label": "Kolte-Patil Developers | P1",
       "cityCodes": [
         "bangalore",
@@ -3403,10 +3403,92 @@
       "id": "id-1076663598",
       "url": "https://www.up-rera.in/PressRelease",
       "label": "UP RERA — Press Releases | P1",
-      "cityCodes": [],
+      "cityCodes": [
+        "agra",
+        "aligarh",
+        "allahabad",
+        "barabanki",
+        "bareilly",
+        "firozabad",
+        "ghaziabad",
+        "gorakhpur",
+        "hapur",
+        "jhansi",
+        "kanpur",
+        "lucknow",
+        "mathura",
+        "meerut",
+        "moradabad",
+        "noida",
+        "varanasi",
+        "vrindavan"
+      ],
       "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1800000001",
+      "url": "https://jharera.jharkhand.gov.in/Home/Notice",
+      "label": "Jharkhand RERA — Notices | P1",
+      "cityCodes": ["dhanbad", "jamshedpur", "ranchi"],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-27T00:00:00.000Z"
+    },
+    {
+      "id": "id-1800000002",
+      "url": "https://rera.goa.gov.in/Notice",
+      "label": "Goa RERA — Notices | P1",
+      "cityCodes": ["goa"],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-27T00:00:00.000Z"
+    },
+    {
+      "id": "id-1800000003",
+      "url": "https://rera.kerala.gov.in/announcements",
+      "label": "Kerala RERA — Announcements | P1",
+      "cityCodes": ["calicut", "ernakulam", "kochi", "palakkad", "thrissur", "trivandrum"],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-27T00:00:00.000Z"
+    },
+    {
+      "id": "id-1800000004",
+      "url": "https://rera.punjab.gov.in/latest-news.html",
+      "label": "Punjab RERA — Latest News | P1",
+      "cityCodes": ["amritsar", "bhatinda", "hoshiarpur", "jalandhar", "ludhiana", "mohali", "patiala", "sangrur"],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-27T00:00:00.000Z"
+    },
+    {
+      "id": "id-1800000005",
+      "url": "https://rera.punjab.gov.in/circulars.html",
+      "label": "Punjab RERA — Circulars and Public Notices | P1",
+      "cityCodes": ["amritsar", "bhatinda", "hoshiarpur", "jalandhar", "ludhiana", "mohali", "patiala", "sangrur"],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-27T00:00:00.000Z"
+    },
+    {
+      "id": "id-1800000006",
+      "url": "https://rera.wb.gov.in/notice.php",
+      "label": "West Bengal RERA — Notices | P1",
+      "cityCodes": ["asansol", "durgapur", "howrah", "kolkata", "siliguri"],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-27T00:00:00.000Z"
+    },
+    {
+      "id": "id-1800000007",
+      "url": "https://rera.ap.gov.in/RERA/Views/index.html",
+      "label": "Andhra Pradesh RERA — News and Updates | P1",
+      "cityCodes": ["anantapur", "bhimavaram", "chittoor", "eluru", "kadapa", "kakinada", "krishna", "kurnool", "nellore", "rajahmundry", "srikakulam", "tirupati", "vijayawada", "visakhapatnam", "vizianagaram", "west_godavari"],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-27T00:00:00.000Z"
     },
     {
       "id": "id-545059815",

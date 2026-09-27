@@ -1,14 +1,17 @@
 import crypto from "node:crypto";
+import { execFile as execFileCallback } from "node:child_process";
 import { readFileSync } from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
+import { promisify } from "node:util";
 import * as cheerio from "cheerio";
 import Parser from "rss-parser";
 import { citySourceRules, workbookCityRules } from "./city-config.js";
 
 const userAgent =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
+const execFile = promisify(execFileCallback);
 
 const parser = new Parser({
   timeout: 10000,
@@ -1571,11 +1574,19 @@ const sourceRecoveryAliases = new Map([
 function getSourceRecoveryAliases(sourceUrl) {
   const normalized = normalizeSourceUrl(sourceUrl);
   const configuredAliases = sourceRecoveryAliases.get(normalized) || [];
+  const hostAliases = [];
 
   try {
     const url = new URL(sourceUrl);
     const host = url.hostname.replace(/^www\./, "");
     const pathName = url.pathname.replace(/\/+$/, "");
+
+    if (url.protocol === "https:" && host !== "localhost" && host.includes(".")) {
+      const alternateHost = url.hostname.startsWith("www.") ? host : `www.${host}`;
+      const alternateUrl = new URL(url.toString());
+      alternateUrl.hostname = alternateHost;
+      hostAliases.push(alternateUrl.toString());
+    }
 
     if (host === "indianexpress.com") {
       const cityMatch = pathName.match(/^\/section\/cities\/([^/]+)$/);
@@ -1588,6 +1599,7 @@ function getSourceRecoveryAliases(sourceUrl) {
         }[cityMatch[1]] || cityMatch[1];
         return [
           ...configuredAliases,
+          ...hostAliases,
           `https://www.hindustantimes.com/feeds/rss/cities/${citySlug}-news/rssfeed.xml`,
           "https://realty.economictimes.indiatimes.com/rss/topstories"
         ];
@@ -1595,6 +1607,7 @@ function getSourceRecoveryAliases(sourceUrl) {
 
       return [
         ...configuredAliases,
+        ...hostAliases,
         "https://realty.economictimes.indiatimes.com/rss/topstories",
         "https://infra.economictimes.indiatimes.com/rss/urban-infrastructure"
       ];
@@ -1603,7 +1616,7 @@ function getSourceRecoveryAliases(sourceUrl) {
     // The primary source URL is validated elsewhere; keep configured aliases for malformed inputs.
   }
 
-  return configuredAliases;
+  return [...configuredAliases, ...hostAliases];
 }
 
 function addConfiguredSourceCityCodes(sourceUrl, cityCodes = []) {
@@ -1950,7 +1963,7 @@ function getArticleMetadataConcurrency() {
 }
 
 function getFetchTimeoutMs() {
-  return Math.min(getPositiveIntegerEnv("FETCH_TIMEOUT_MS", 10000), 30000);
+  return Math.min(getPositiveIntegerEnv("FETCH_TIMEOUT_MS", 20000), 30000);
 }
 
 function getArticleMetadataTimeoutMs() {
@@ -1962,7 +1975,22 @@ function getSourceTimeoutMs() {
 }
 
 function getSourceRetryAttempts() {
-  return Math.min(getPositiveIntegerEnv("SOURCE_RETRY_ATTEMPTS", 2), 3);
+  return Math.min(getPositiveIntegerEnv("SOURCE_RETRY_ATTEMPTS", 3), 3);
+}
+
+function isGovernmentPortalUrl(sourceUrl = "") {
+  try {
+    const host = new URL(sourceUrl).hostname.replace(/^www\./, "");
+    return /(?:^|\.)gov\.in$/i.test(host) || /rera|jharera|hprera|ukrera/i.test(host);
+  } catch {
+    return false;
+  }
+}
+
+function getFetchTimeoutForUrl(sourceUrl = "") {
+  return isGovernmentPortalUrl(sourceUrl)
+    ? Math.min(Math.max(getFetchTimeoutMs(), 25000), 30000)
+    : getFetchTimeoutMs();
 }
 
 function isRetryableSourceError(error) {
@@ -2546,7 +2574,7 @@ async function fetchWithTimeout(url, options = {}, timeoutMs = getFetchTimeoutMs
 }
 
 async function readResponseBodyWithTimeout(response, mode = "text", options = {}) {
-  const timeoutMs = Math.min(getPositiveIntegerEnv("FETCH_TIMEOUT_MS", 10000), 30000);
+  const timeoutMs = Math.min(getPositiveIntegerEnv("FETCH_TIMEOUT_MS", 20000), 30000);
   const reader = response.body?.getReader();
   // Official authority and developer pages frequently exceed 1 MB because of
   // bundled scripts and embedded media metadata; keep a bounded but usable cap.
@@ -2974,6 +3002,19 @@ function parseNewsDateValue(value) {
     return directDate.toISOString();
   }
 
+  const numericDate = raw.match(/\b(\d{1,2})[-/](\d{1,2})[-/](\d{4})\b/);
+
+  if (numericDate) {
+    const day = Number.parseInt(numericDate[1], 10);
+    const month = Number.parseInt(numericDate[2], 10);
+    const year = Number.parseInt(numericDate[3], 10);
+    const date = new Date(Date.UTC(year, month - 1, day) - 330 * 60 * 1000);
+
+    if (month >= 1 && month <= 12 && day >= 1 && day <= 31 && !Number.isNaN(date.getTime())) {
+      return date.toISOString();
+    }
+  }
+
   const monthFirst = raw.match(
     new RegExp(
       `(${monthPattern})\\.?\\s+(\\d{1,2}),?\\s+(\\d{4})(?:\\s+(\\d{1,2}):(\\d{2})\\s*(AM|PM)?)?`,
@@ -3133,6 +3174,29 @@ function hasNewsArticlePageLink(article) {
   return isHttpUrl(article.newsLink || article.url || "") && !isDirectMediaUrl(article.newsLink || article.url || "");
 }
 
+function isReraDocumentSource(article) {
+  const sourceText = `${article.sourceUrl || ""} ${article.feedUrl || ""} ${article.newsLink || ""}`;
+  return isPressReleaseDocumentSource(sourceText);
+}
+
+function isUpReraPressReleaseSource(sourceUrl = "") {
+  return /(?:^|[/.])up-rera\.in\b/i.test(sourceUrl) && /pressrelease|press-release/i.test(sourceUrl);
+}
+
+function isPressReleaseDocumentSource(value = "") {
+  const sourceText = String(value || "");
+  return /rera/i.test(sourceText) && /press\s*[-_]?\s*release|pressrelease/i.test(sourceText);
+}
+
+function isPressReleaseListingSource(sourceUrl = "") {
+  try {
+    const url = new URL(sourceUrl);
+    return /press\s*[-_]?\s*release|pressrelease/i.test(`${url.pathname} ${url.search}`);
+  } catch {
+    return false;
+  }
+}
+
 function normalizeStoryText(value = "") {
   return normalizeTitle(value)
     .replace(/\b(rs|inr|crore|cr|lakh|mn|million|billion|sq|ft|for|the|and|with|from|over|into|to|of|in|at|by|on|its|their|project|projects|developers|developer|realty|fund|investment|invest|partner|partnership|join|joins|forces|tie|up|scale|living|luxury|ncr)\b/g, " ")
@@ -3183,6 +3247,24 @@ function isReraRelated(article) {
   return !isBlockedArticle(article) && hasKeyword(primaryAndUrl, reraKeywords);
 }
 
+function isAdverseReraArticle(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  return isReraRelated(article) && hasKeyword(primaryAndUrl, [
+    "complaint",
+    "complaints",
+    "recovery certificate",
+    "refund",
+    "penalty",
+    "violation",
+    "non-compliance",
+    "default",
+    "fraud",
+    "illegal",
+    "stalled",
+    "delayed"
+  ]);
+}
+
 function isCourtRealEstateRelated(article) {
   const haystack = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
   return (
@@ -3190,6 +3272,22 @@ function isCourtRealEstateRelated(article) {
     hasWholeWordKeyword(haystack, courtKeywords) &&
     hasRealEstateEvidence(article)
   );
+}
+
+function isAdverseCourtRealEstateArticle(article) {
+  const haystack = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  return isCourtRealEstateRelated(article) && hasKeyword(haystack, [
+    "barred",
+    "blocked",
+    "fraud",
+    "illegal",
+    "penalty",
+    "restrained",
+    "restraining",
+    "stayed",
+    "terminated",
+    "violation"
+  ]);
 }
 
 function isNationalRealEstateBusinessUpdate(article) {
@@ -4432,6 +4530,10 @@ function isGenericCultureReligionLocalNews(article) {
   ]);
 }
 function isGenericLocalNonRealEstateNews(article) {
+  if (isReraDocumentSource(article)) {
+    return false;
+  }
+
   const primaryText = getArticlePrimaryText(article);
   const titleAndUrl = `${article.title || ""} ${getArticleUrlText(article)}`.toLowerCase();
 
@@ -4589,7 +4691,7 @@ function isNegativeNews(article) {
 
   if (
     hasWholeWordKeyword(primaryAndUrl, courtKeywords) &&
-    (hasKeyword(primaryAndUrl, negativePhraseKeywords) || hasWholeWordKeyword(primaryAndUrl, ["restraining", "restrained", "interim", "litigation", "petition", "plea"]))
+    (hasKeyword(primaryAndUrl, negativePhraseKeywords) || hasWholeWordKeyword(primaryAndUrl, ["restraining", "restrained", "interim", "litigation"]))
   ) {
     return true;
   }
@@ -4609,8 +4711,8 @@ function isNegativeNews(article) {
     hasKeyword(urlText, negativePhraseKeywords) ||
     hasWholeWordKeyword(bodyText, severeBodyNegativeKeywords) ||
     hasKeyword(bodyText, severeBodyNegativePhrases) ||
-    isReraRelated(article) ||
-    isCourtRealEstateRelated(article)
+    isAdverseReraArticle(article) ||
+    isAdverseCourtRealEstateArticle(article)
   );
 }
 
@@ -4746,7 +4848,7 @@ function getRejectionReasons(article, sentIds) {
     return reasons;
   }
 
-  if (!hasNewsArticlePageLink(article)) {
+  if (!hasNewsArticlePageLink(article) && !isReraDocumentSource(article)) {
     reasons.push("filter 15: direct media/PDF link, not article page");
   }
 
@@ -5001,7 +5103,9 @@ async function fetchFeed(sourceUrl, options = {}) {
 async function fetchHtml(sourceUrl, options = {}) {
   let lastError;
 
-  for (let attempt = 1; attempt <= 2; attempt += 1) {
+  const attempts = isGovernmentPortalUrl(sourceUrl) ? 3 : 2;
+
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
     try {
       const response = await fetchWithTimeout(sourceUrl, {
         signal: options.signal,
@@ -5010,9 +5114,13 @@ async function fetchHtml(sourceUrl, options = {}) {
           Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
           "Accept-Language": "en-IN,en;q=0.9,hi;q=0.8",
           "Cache-Control": "no-cache",
-          Pragma: "no-cache"
+          Pragma: "no-cache",
+          "Sec-Fetch-Dest": "document",
+          "Sec-Fetch-Mode": "navigate",
+          "Sec-Fetch-Site": "none",
+          "Upgrade-Insecure-Requests": "1"
         }
-      });
+      }, getFetchTimeoutForUrl(sourceUrl));
 
       if (!response.ok) {
         throw new Error(`HTTP ${response.status}`);
@@ -5022,15 +5130,64 @@ async function fetchHtml(sourceUrl, options = {}) {
     } catch (error) {
       lastError = error;
 
-      if (options.signal?.aborted || isMissingPaginatedPageError(error) || attempt === 2) {
+      if (options.signal?.aborted || isMissingPaginatedPageError(error)) {
         throw error;
       }
 
-      await new Promise((resolve) => setTimeout(resolve, 750));
+      if (attempt === attempts && isGovernmentPortalUrl(sourceUrl) && isRetryableSourceError(error)) {
+        try {
+          return await fetchHtmlWithCurl(sourceUrl, options);
+        } catch (curlError) {
+          curlError.cause = error;
+          throw curlError;
+        }
+      }
+
+      if (attempt === attempts) {
+        throw error;
+      }
+
+      await new Promise((resolve) => setTimeout(resolve, Math.min(attempt * 1200, 3500)));
     }
   }
 
   throw lastError;
+}
+
+async function fetchHtmlWithCurl(sourceUrl, options = {}) {
+  const timeoutMs = getFetchTimeoutForUrl(sourceUrl);
+  const command = process.platform === "win32" ? "curl.exe" : "curl";
+  const seconds = Math.max(5, Math.ceil(timeoutMs / 1000));
+  const args = [
+    "-L",
+    "--compressed",
+    "--max-time",
+    String(seconds),
+    "-A",
+    userAgent,
+    "-H",
+    "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "-H",
+    "Accept-Language: en-IN,en;q=0.9,hi;q=0.8",
+    "-w",
+    "\n__NEWS_API_STATUS__:%{http_code}",
+    sourceUrl
+  ];
+  const result = await execFile(command, args, {
+    timeout: timeoutMs + 5000,
+    maxBuffer: 12 * 1024 * 1024,
+    windowsHide: true,
+    signal: options.signal
+  });
+  const marker = result.stdout.lastIndexOf("\n__NEWS_API_STATUS__:");
+  const status = marker >= 0 ? Number.parseInt(result.stdout.slice(marker).split(":")[1], 10) : 0;
+  const body = marker >= 0 ? result.stdout.slice(0, marker) : result.stdout;
+
+  if (!status || status < 200 || status >= 300) {
+    throw new Error(`HTTP ${status || "unknown"}`);
+  }
+
+  return body;
 }
 
 function isMissingPaginatedPageError(error) {
@@ -6168,6 +6325,142 @@ async function fetchOfficialDeveloperMedia(sourceUrl, options = {}) {
   return [];
 }
 
+async function fetchPressReleaseListings(sourceUrl, options = {}) {
+  const html = await fetchHtml(sourceUrl, options);
+  const $ = cheerio.load(html);
+  const publisher = getPublisherName(sourceUrl, $("title").text());
+  const publisherLogo = pickFirst(
+    absoluteUrl($("link[rel='shortcut icon']").attr("href"), sourceUrl),
+    absoluteUrl($("link[rel='icon']").attr("href"), sourceUrl),
+    absoluteUrl($("img[src*='logo' i]").first().attr("src"), sourceUrl),
+    getFallbackLogo(sourceUrl)
+  );
+  const candidates = [];
+  const seen = new Set();
+
+  $("table tr, article, li").each((_, element) => {
+    const row = $(element);
+    const rowText = stripHtml(row.text());
+    const links = row.find("a[href]");
+    const title = stripHtml(pickFirst(
+      row.find("h1, h2, h3, h4, .title, [class*='title' i]").first().text(),
+      links.first().text(),
+      row.find("td").eq(1).text()
+    ));
+    const publishedAt = extractPublishedAtFromText(rowText);
+    const linkElement = links.filter((__, link) => stripHtml($(link).text()).length >= 12).first();
+    const rawHref = linkElement.attr("href") || "";
+
+    if (!title || title.length < 18 || !publishedAt || isBlockedArticle({ title })) {
+      return;
+    }
+
+    const link = absoluteUrl(rawHref, sourceUrl);
+    let newsLink = link;
+    if (!newsLink || /^javascript:/i.test(rawHref)) {
+      newsLink = `${sourceUrl}#release-${encodeURIComponent(normalizeTitle(title)).slice(0, 160)}`;
+    }
+
+    if (seen.has(newsLink)) {
+      return;
+    }
+    seen.add(newsLink);
+    candidates.push({
+      title,
+      description: title,
+      articleText: link && !isDirectMediaUrl(link) ? "" : `${title}. This item is listed on the publisher's press-release register and requires document review before publication.`,
+      articleReadAttempted: Boolean(link),
+      fullArticleRead: false,
+      articleReadError: link ? "Press-release page requires article review" : "Press-release document requires portal review",
+      cityCode: "",
+      isActive: true,
+      newsLink,
+      sourceUrl,
+      thumbnailImage: publisherLogo,
+      postedBy: publisher,
+      postedByLogo: publisherLogo,
+      publishedAt,
+      createdAt: publishedAt,
+      fetchedAt: new Date().toISOString()
+    });
+  });
+
+  if (!candidates.length) {
+    return fetchPage(sourceUrl, options);
+  }
+
+  return mapWithConcurrency(candidates.slice(0, getMaxItemsPerSource()), 8, async (candidate) => {
+    if (!/^https?:/i.test(candidate.newsLink) || isDirectMediaUrl(candidate.newsLink)) {
+      return { ...candidate, id: stableId(candidate) };
+    }
+
+    const metadata = await fetchArticleMetadataWithTimeout(candidate.newsLink, candidate, options);
+    const article = cleanArticleFields({
+      ...candidate,
+      ...metadata,
+      sourceUrl,
+      description: stripHtml(metadata.description || candidate.description),
+      articleText: stripHtml(metadata.articleText || candidate.articleText || ""),
+      thumbnailImage: absoluteUrl(metadata.thumbnailImage || candidate.thumbnailImage, candidate.newsLink),
+      createdAt: metadata.publishedAt || candidate.publishedAt || ""
+    });
+    return { ...applyCityCode(article), id: stableId(article) };
+  });
+}
+
+async function fetchUpReraPressReleases(sourceUrl, options = {}) {
+  const html = await fetchHtml(sourceUrl, options);
+  const $ = cheerio.load(html);
+  const publisherLogo = pickFirst(
+    absoluteUrl($("link[rel='shortcut icon']").attr("href"), sourceUrl),
+    absoluteUrl($("link[rel='icon']").attr("href"), sourceUrl),
+    absoluteUrl($("img[src*='logo' i]").first().attr("src"), sourceUrl),
+    getFallbackLogo(sourceUrl)
+  );
+  const rows = $("table tr").map((_, element) => {
+    const row = $(element);
+    const cells = row.find("td");
+    const title = stripHtml(pickFirst(
+      row.find("span[id$='lblDescription']").first().text(),
+      cells.eq(1).text()
+    ));
+    const dateText = stripHtml(pickFirst(
+      row.find("span[id$='lbldate']").first().text(),
+      cells.eq(2).text()
+    ));
+    const publishedAt = parseNewsDateValue(dateText);
+    const viewLink = row.find("a[id$='lnkdocname'], a").last().attr("href") || "";
+
+    if (!title || !publishedAt || title.length < 18) {
+      return null;
+    }
+
+    const releaseAnchor = `${sourceUrl}#release-${encodeURIComponent(normalizeTitle(title)).slice(0, 160)}`;
+    const documentLink = /^https?:/i.test(viewLink) ? absoluteUrl(viewLink, sourceUrl) : releaseAnchor;
+
+    return {
+      title,
+      description: `${title} (UP RERA press release dated ${dateText})`,
+      articleText: `${title}. This item is listed in the UP RERA Press Releases register. The individual release is delivered through the portal's View File postback and requires document review before publication.`,
+      articleReadAttempted: true,
+      fullArticleRead: false,
+      articleReadError: "UP RERA release document requires portal postback review",
+      cityCode: "",
+      isActive: true,
+      newsLink: documentLink,
+      sourceUrl,
+      thumbnailImage: publisherLogo,
+      postedBy: "UP RERA",
+      postedByLogo: publisherLogo,
+      publishedAt,
+      createdAt: publishedAt,
+      fetchedAt: new Date().toISOString()
+    };
+  }).get();
+
+  return rows.slice(0, getMaxItemsPerSource());
+}
+
 async function fetchPage(sourceUrl, options = {}) {
   const pageUrls = getSourcePageUrls(sourceUrl);
   const seenLinks = new Set();
@@ -6269,9 +6562,9 @@ async function fetchPage(sourceUrl, options = {}) {
   return articles;
 }
 
-async function fetchSourceWithTimeout(sourceUrl) {
+async function fetchSourceWithTimeout(sourceUrl, timeoutMsOverride = getSourceTimeoutMs()) {
   const controller = new AbortController();
-  const timeoutMs = getSourceTimeoutMs();
+  const timeoutMs = Math.max(1, timeoutMsOverride);
   let timeout;
 
   const sourcePromise = fetchSource(sourceUrl, { signal: controller.signal });
@@ -6298,6 +6591,14 @@ async function fetchSourceWithTimeout(sourceUrl) {
 }
 
 async function fetchSource(sourceUrl, options = {}) {
+  if (isUpReraPressReleaseSource(sourceUrl)) {
+    return fetchUpReraPressReleases(sourceUrl, options);
+  }
+
+  if (isPressReleaseListingSource(sourceUrl)) {
+    return fetchPressReleaseListings(sourceUrl, options);
+  }
+
   if (isHsvpSource(sourceUrl)) {
     return fetchHsvpNotices(sourceUrl, options);
   }
@@ -6354,13 +6655,13 @@ function shouldDryRun() {
   return getBooleanEnv("DRY_RUN") || adminSettings.apiPushEnabled !== true;
 }
 
-async function fetchSourceWithRetry(sourceUrl) {
+async function fetchSourceWithRetry(sourceUrl, timeoutMsOverride = getSourceTimeoutMs()) {
   const maxAttempts = getSourceRetryAttempts();
   let lastError;
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     try {
-      return { articles: await fetchSourceWithTimeout(sourceUrl), attempts: attempt };
+      return { articles: await fetchSourceWithTimeout(sourceUrl, timeoutMsOverride), attempts: attempt };
     } catch (error) {
       lastError = error;
       if (attempt >= maxAttempts || !isRetryableSourceError(error)) {
@@ -6378,11 +6679,17 @@ async function fetchSourceWithRetry(sourceUrl) {
 
 async function fetchSourceWithRecovery(sourceUrl) {
   const candidates = [sourceUrl, ...getSourceRecoveryAliases(sourceUrl)];
+  const deadline = Date.now() + getSourceTimeoutMs();
   let lastError;
 
   for (const candidate of candidates) {
+    const remainingMs = deadline - Date.now();
+    if (remainingMs <= 0) {
+      break;
+    }
+
     try {
-      const result = await fetchSourceWithRetry(candidate);
+      const result = await fetchSourceWithRetry(candidate, remainingMs);
       return {
         ...result,
         requestedSource: sourceUrl,
@@ -6515,6 +6822,7 @@ async function main() {
       const sourceCityCodes = getConfiguredSourceCityCodes(source);
       const articles = result.articles.map((article) => ({
         ...article,
+        sourceUrl: article.sourceUrl || source,
         sourceCityCodes
       }));
       const recoveryLabel = result.recovered ? ` via ${result.fetchedSource}` : "";
@@ -6753,7 +7061,8 @@ export {
   isAllowedSource,
   isNegativeNews,
   isPublishableArticle,
-  isWithinBackfillDateRange
+  isWithinBackfillDateRange,
+  parseNewsDateValue
 };
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
