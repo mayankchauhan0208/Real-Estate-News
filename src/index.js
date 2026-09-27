@@ -1423,6 +1423,35 @@ function normalizeSourceUrl(value) {
   }
 }
 
+const configuredSourceCityCodes = new Map();
+
+function addConfiguredSourceCityCodes(sourceUrl, cityCodes = []) {
+  const key = normalizeSourceUrl(sourceUrl);
+  if (!key) {
+    return;
+  }
+
+  const existing = configuredSourceCityCodes.get(key) || [];
+  configuredSourceCityCodes.set(key, [...new Set([
+    ...existing,
+    ...cityCodes.map((code) => String(code || "").trim().toLowerCase()).filter((code) => enabledCityCodeSet.has(code))
+  ])]);
+}
+
+for (const rule of citySourceRules) {
+  for (const sourceUrl of rule.urls || []) {
+    addConfiguredSourceCityCodes(sourceUrl, [rule.code]);
+  }
+}
+
+for (const source of Array.isArray(adminSettings.manualSources) ? adminSettings.manualSources : []) {
+  addConfiguredSourceCityCodes(source.url, Array.isArray(source.cityCodes) ? source.cityCodes : []);
+}
+
+function getConfiguredSourceCityCodes(sourceUrl) {
+  return configuredSourceCityCodes.get(normalizeSourceUrl(sourceUrl)) || [];
+}
+
 function sourceControlId(value) {
   let hash = 0;
   for (const char of String(value || "")) hash = ((hash << 5) - hash + char.charCodeAt(0)) | 0;
@@ -3474,9 +3503,16 @@ function detectCityCodes(article) {
   const hasPreviousNcrRoute = matchedCodes.some((code) => ncrCityCodes.includes(code));
   const ncrDelhiRoute = hasNcrMatch(article) && hasPreviousNcrRoute ? ncrDelhiCityCodes : [];
   const routedCodes = [...matchedCodes, ...ncrDelhiRoute];
+  const sourceCityCodes = getArticleSourceCityCodes(article);
   return [...new Set(routedCodes)].filter((code) =>
-    code !== "delhi_ncr" && (code !== "new_delhi" || ncrDelhiRoute.includes("new_delhi") || /\bnew delhi\b|\bcentral delhi\b|\bsouth delhi\b|\bnorth delhi\b|\beast delhi\b|\bwest delhi\b/i.test(primaryText))
+    code !== "delhi_ncr" && (code !== "new_delhi" || ncrDelhiRoute.includes("new_delhi") || sourceCityCodes.includes("new_delhi") || /\bnew delhi\b|\bcentral delhi\b|\bsouth delhi\b|\bnorth delhi\b|\beast delhi\b|\bwest delhi\b/i.test(primaryText))
   );
+}
+
+function getArticleSourceCityCodes(article) {
+  return [...new Set((Array.isArray(article.sourceCityCodes) ? article.sourceCityCodes : [])
+    .map((code) => String(code || "").trim().toLowerCase())
+    .filter((code) => enabledCityCodeSet.has(code) && code !== "delhi_ncr"))];
 }
 
 function detectMatchedCityCodes(article) {
@@ -3528,6 +3564,11 @@ function detectMatchedCityCodes(article) {
 
   if (hasNcrMatch(article)) {
     return detectConcreteNcrCityCodesFromFullArticle(article);
+  }
+
+  const sourceCityCodes = getArticleSourceCityCodes(article);
+  if (sourceCityCodes.length > 0) {
+    return sourceCityCodes;
   }
 
   return [];
@@ -3606,7 +3647,8 @@ function hasTargetRegionEvidence(article) {
     hasNcrMatch(article) ||
     hasTargetRegionInTitleOrUrl(article) ||
     hasTargetRegionInPrimaryText(article) ||
-    hasDominantEnabledCityEvidence(article)
+    hasDominantEnabledCityEvidence(article) ||
+    getArticleSourceCityCodes(article).length > 0
   );
 }
 
@@ -5946,8 +5988,13 @@ async function main() {
     try {
       const startedAt = Date.now();
       const result = await fetchSourceWithRetry(source);
+      const sourceCityCodes = getConfiguredSourceCityCodes(source);
+      const articles = result.articles.map((article) => ({
+        ...article,
+        sourceCityCodes
+      }));
       console.log(`Fetched ${result.articles.length} items from ${source} in ${formatDuration(Date.now() - startedAt)} (attempts: ${result.attempts})`);
-      return { source, articles: result.articles, attempts: result.attempts };
+      return { source, articles, attempts: result.attempts };
     } catch (error) {
       console.error(`Failed to fetch ${source}: ${error.message}`);
       return { source, error: error.message, attempts: error.sourceAttempts || getSourceRetryAttempts() };

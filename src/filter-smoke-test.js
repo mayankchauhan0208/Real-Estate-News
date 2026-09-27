@@ -89,6 +89,15 @@ const delhiNcrArticle = article({
 assert.ok(detectCityCodes(delhiNcrArticle).includes("gurugram"));
 assert.ok(detectCityCodes(delhiNcrArticle).includes("new_delhi"));
 
+const sourceAssignedCityArticle = article({
+  title: "Residential project receives approval after strong investor demand",
+  description: "The residential project received authority approval and will add new housing supply.",
+  articleText: "The project includes residential development, infrastructure and new housing investment.",
+  sourceCityCodes: ["gurugram"],
+  newsLink: "https://example.com/gurugram/source-assigned-project"
+});
+assert.deepEqual(detectCityCodes(sourceAssignedCityArticle), ["gurugram"]);
+
 assert.equal(isAllowedSource("https://www.moneycontrol.com/news/business/real-estate/"), true);
 assert.equal(isAllowedSource("https://www.moneycontrol.com/news/business/"), true);
 assert.equal(isAllowedSource("https://www.aninews.in/category/business/"), true);
