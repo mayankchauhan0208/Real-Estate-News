@@ -278,7 +278,7 @@
     },
     {
       "id": "id-630269834",
-      "url": "https://gmada.gov.in",
+      "url": "https://www.gmada.gov.in/",
       "label": "GMADA | P1",
       "cityCodes": [
         "chandigarh",
@@ -355,7 +355,7 @@
     },
     {
       "id": "id-1931571388",
-      "url": "https://hsiidc.org.in",
+      "url": "https://www.hsiidc.org.in/",
       "label": "HSIIDC | P1",
       "cityCodes": [],
       "enabled": true,
@@ -819,7 +819,7 @@
     },
     {
       "id": "id-132891415",
-      "url": "https://indianrailways.gov.in",
+      "url": "https://indianrailways.gov.in/railwayboard/",
       "label": "Indian Railways | P1",
       "cityCodes": [],
       "enabled": true,
@@ -999,7 +999,7 @@
     },
     {
       "id": "id-1345103291",
-      "url": "https://jda.rajasthan.gov.in",
+      "url": "https://www.jda.rajasthan.gov.in/content/raj/udh/jda---jaipur/en/home.html",
       "label": "Jaipur Development Authority | P1",
       "cityCodes": [
         "jaipur"
@@ -1010,7 +1010,7 @@
     },
     {
       "id": "id-1881313952",
-      "url": "https://jharera.jharkhand.gov.in",
+      "url": "https://jharera.jharkhand.gov.in/home",
       "label": "Jharkhand RERA | P1",
       "cityCodes": [
         "dhanbad",
@@ -1023,7 +1023,7 @@
     },
     {
       "id": "id-154474040",
-      "url": "https://kmda.wb.gov.in",
+      "url": "https://www.kmda.wb.gov.in/",
       "label": "Kolkata Metropolitan Development Authority | P1",
       "cityCodes": [
         "kolkata"
@@ -1045,7 +1045,7 @@
     },
     {
       "id": "id-687462953",
-      "url": "https://ltmetro.com/press",
+      "url": "https://www.ltmetro.com/press/",
       "label": "Hyderabad Metro — Press | P1",
       "cityCodes": [
         "hyderabad"
@@ -1056,7 +1056,7 @@
     },
     {
       "id": "id-1300960561",
-      "url": "https://maharera.maharashtra.gov.in",
+      "url": "https://maharera.mahaonline.gov.in/",
       "label": "MahaRERA | P1",
       "cityCodes": [
         "ahmednagar",
@@ -1135,7 +1135,7 @@
     },
     {
       "id": "id-463953833",
-      "url": "https://mmrda.maharashtra.gov.in/en",
+      "url": "https://mmrda.maharashtra.gov.in/en/other-services/news-and-announcements",
       "label": "MMRDA | P1",
       "cityCodes": [
         "mumbai"
@@ -1166,7 +1166,7 @@
     },
     {
       "id": "id-2055728692",
-      "url": "https://mpmetrorail.com",
+      "url": "https://www.mpmetrorail.com/",
       "label": "Madhya Pradesh Metro Rail Corporation | P1",
       "cityCodes": [
         "bhopal",
@@ -1239,7 +1239,7 @@
     },
     {
       "id": "id-1392029627",
-      "url": "https://nicdc.in",
+      "url": "https://www.nicdc.in/",
       "label": "NICDC | P1",
       "cityCodes": [],
       "enabled": true,
@@ -1248,7 +1248,7 @@
     },
     {
       "id": "id-883370111",
-      "url": "https://prera.py.gov.in",
+      "url": "https://rera.py.gov.in/",
       "label": "Puducherry RERA | P1",
       "cityCodes": [
         "pondicherry"
@@ -4690,49 +4690,31 @@
       "createdAt": "2026-09-23T07:10:59.990Z"
     },
     {
-      "id": "id-2095391114",
-      "url": "https://hindi.business-standard.com/rss/companies/real-estate.xml",
-      "label": "Business Standard Hindi Real Estate RSS | P2",
-      "cityCodes": [],
-      "enabled": true,
-      "category": "regional-hindi-rss",
-      "createdAt": "2026-09-23T07:10:59.990Z"
-    },
-    {
       "id": "id-703546060",
-      "url": "https://api.livehindustan.com/feeds/rss/business/real-estate/rssfeed.xml",
-      "label": "Live Hindustan Real Estate Hindi RSS | P2",
-      "cityCodes": [],
+      "url": "https://www.livehindustan.com/ncr/gurugram",
+      "label": "Live Hindustan Gurugram Hindi News | Regional P2",
+      "cityCodes": ["gurugram"],
       "enabled": true,
       "category": "regional-hindi-rss",
       "createdAt": "2026-09-23T07:10:59.990Z"
     },
     {
       "id": "id-921630998",
-      "url": "https://hindi.etnownews.com/real-estate",
-      "label": "ET Now Swadesh Real Estate Hindi | P2",
-      "cityCodes": [],
+      "url": "https://www.livehindustan.com/ncr/faridabad",
+      "label": "Live Hindustan Faridabad Hindi News | Regional P2",
+      "cityCodes": ["faridabad"],
       "enabled": true,
       "category": "regional-hindi-rss",
       "createdAt": "2026-09-23T07:10:59.990Z"
     },
     {
       "id": "id-1931669555",
-      "url": "https://www.hindustantimes.com/feeds/rss/real-estate/real-estate-guide/rssfeed.xml",
-      "label": "Hindustan Times Real Estate Guide RSS | P2",
-      "cityCodes": [],
-      "enabled": true,
-      "category": "manual",
-      "createdAt": "2026-09-23T08:55:33.361Z"
-    },
-    {
-      "id": "id-730453807",
-      "url": "https://api.livehindustan.com/feeds/rss/budget/real-estate/rssfeed.xml",
-      "label": "Live Hindustan Budget Real Estate Hindi RSS | P2",
-      "cityCodes": [],
+      "url": "https://www.livehindustan.com/ncr/noida",
+      "label": "Live Hindustan Noida Hindi News | Regional P2",
+      "cityCodes": ["noida"],
       "enabled": true,
       "category": "regional-hindi-rss",
-      "createdAt": "2026-09-23T08:58:12.633Z"
+      "createdAt": "2026-09-23T08:55:33.361Z"
     },
     {
       "id": "id-525025910",

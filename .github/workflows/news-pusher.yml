@@ -66,6 +66,10 @@ on:
         description: "How many sources to fetch in parallel. Default 20, max 20."
         required: false
         default: "20"
+      source_category:
+        description: "Optional source set: regional to run only regional-language sources"
+        required: false
+        default: ""
 
 concurrency:
   group: news-api-pusher
@@ -107,33 +111,42 @@ jobs:
         env:
           APP_API_URL: ${{ secrets.APP_API_URL }}
           APP_API_KEY: ${{ secrets.APP_API_KEY }}
+          APP_LIST_API_URL: ${{ secrets.APP_LIST_API_URL }}
+          APP_LIST_API_KEY: ${{ secrets.APP_LIST_API_KEY || secrets.APP_API_KEY }}
           BACKFILL_FROM: ${{ github.event.inputs.backfill_from || '' }}
           BACKFILL_TO: ${{ github.event.inputs.backfill_to || '' }}
           RESEND_BACKFILL: ${{ github.event.inputs.resend_backfill || 'false' }}
           SKIP_TITLES: ${{ github.event.inputs.skip_titles || '' }}
           SOURCE_URLS: ${{ github.event.inputs.source_urls || '' }}
+          SOURCE_CATEGORY: ${{ github.event.inputs.source_category || '' }}
+          API_RECONCILE_PAGES: "25"
+          API_RECONCILE_PAGE_SIZE: "100"
           EXTRA_ARTICLE_URLS: ${{ github.event.inputs.extra_article_urls || '' }}
           TARGET_CITY_CODES: ${{ github.event.inputs.target_city_codes || '' }}
           ENABLED_CITY_CODES: ${{ github.event.inputs.enabled_city_codes || '' }}
           DISABLED_CITY_CODES: ${{ github.event.inputs.disabled_city_codes || '' }}
           SOURCE_OFFSET: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_offset || '0' }}
           SOURCE_LIMIT: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_limit || '0' }}
-          SOURCE_CONCURRENCY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_concurrency || '20' }}
+          SOURCE_CONCURRENCY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_concurrency || '12' }}
           BUILD_VERSION: "source-intelligence-v1"
           SOURCE_STRATEGY: "full-source-coverage-30min"
           AUTO_SOURCE_BATCH: "false"
           SOURCE_BATCH_COUNT: "1"
           ARTICLE_METADATA_CONCURRENCY: "6"
           FETCH_TIMEOUT_MS: "25000"
+          ARTICLE_METADATA_TIMEOUT_MS: "12000"
           SOURCE_FETCH_TIMEOUT_MS: "180000"
           SOURCE_RETRY_ATTEMPTS: "2"
           ENABLE_NOIDA_CITY: "true"
           ALLOW_NOIDA_API: "true"
           MAX_ITEMS_PER_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_items_per_run || '80' }}
           MAX_ITEMS_PER_SOURCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_items_per_source || '8' }}
+          MAX_PAGES_PER_SOURCE: "5"
           MAX_PAGES_PER_SOURCE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.max_pages_per_source || '1' }}
           DEFAULT_LOOKBACK_DAYS: "20"
           REJECTION_AUDIT_LIMIT: "5000"
+          DETAILED_REJECTION_REASONS: "true"
+          MISSED_NEWS_AUDIT: "true"
 
       - name: Upload run report
         if: always()
@@ -144,7 +157,7 @@ jobs:
           if-no-files-found: ignore
 
       - name: Refresh hosted admin snapshot
-        if: success()
+        if: always()
         continue-on-error: true
         run: |
           npm run admin:export

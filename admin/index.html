@@ -83,8 +83,9 @@
         <section class="tab-panel" data-panel="sources">
           <section class="filter-card source-filters">
             <label class="search-field"><span>Search</span><input id="sourceSearch" type="search" placeholder="Search source or domain..."></label>
-            <label><span>Type</span><select id="sourceTypeFilter"><option value="all">All source types</option><option value="manual">Manual</option><option value="rss">RSS</option><option value="developer">Developer</option><option value="government">Government</option></select></label>
-            <label><span>Status</span><select id="sourceStatusFilter"><option value="all">All statuses</option><option value="enabled">Enabled</option><option value="disabled">Disabled</option></select></label>
+            <label><span>Type</span><select id="sourceTypeFilter"><option value="all">All source types</option><option value="manual">Manual</option><option value="rss">RSS</option><option value="regional">Regional language</option><option value="developer">Developer</option><option value="government">Government</option></select></label>
+            <label><span>Status</span><select id="sourceStatusFilter"><option value="all">All statuses</option><option value="enabled">Enabled</option><option value="disabled">Disabled</option><option value="last-healthy">Healthy last run</option><option value="last-zero">Zero items last run</option><option value="last-failed">Failed last run</option></select></label>
+            <label><span>Tier</span><select id="sourceTierFilter"><option value="all">All tiers</option><option value="1">Tier 1: core</option><option value="2">Tier 2: regional</option><option value="3">Tier 3: specialist</option></select></label>
           </section>
 
           <section class="source-add-card">
@@ -127,6 +128,7 @@
               <label>Cities <select id="backfillCitySelect" multiple></select></label>
               <label>From <input id="backfillFrom" type="date"></label>
               <label>To <input id="backfillTo" type="date"></label>
+              <label>Source set <select id="backfillSourceCategory"><option value="">All sources</option><option value="regional">Regional language only</option></select></label>
               <label>Max/source <input id="maxItemsPerSource" type="number" min="1" max="50" value="8"></label>
               <label>Max/run <input id="maxItemsPerRun" type="number" min="1" max="200" value="80"></label>
               <label>Lookback days <input id="lookbackDays" type="number" min="1" max="90" value="20"></label>

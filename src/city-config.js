@@ -500,6 +500,15 @@ export const workbookCityRules = [
     ]
   },
   {
+    "code": "patna",
+    "state": "Bihar",
+    "name": "Patna",
+    "keywords": [
+      "patna",
+      "पटना"
+    ]
+  },
+  {
     "code": "chandigarh",
     "state": "Chandigarh",
     "name": "Chandigarh",
@@ -565,7 +574,7 @@ export const workbookCityRules = [
   },
   {
     "code": "daman_and_diu",
-    "state": "Daman And Diu",
+    "state": "Dadra and Nagar Haveli and Daman and Diu",
     "name": "Daman and Diu",
     "keywords": [
       "daman and diu",
@@ -575,7 +584,7 @@ export const workbookCityRules = [
   },
   {
     "code": "silvassa",
-    "state": "Daman And Diu",
+    "state": "Dadra and Nagar Haveli and Daman and Diu",
     "name": "Silvassa",
     "keywords": [
       "silvassa"
@@ -588,6 +597,16 @@ export const workbookCityRules = [
     "keywords": [
       "delhi ncr",
       "ncr"
+    ]
+  },
+  {
+    "code": "delhi",
+    "state": "Delhi",
+    "name": "Delhi",
+    "keywords": [
+      "delhi city",
+      "old delhi",
+      "दिल्ली शहर"
     ]
   },
   {
@@ -810,7 +829,7 @@ export const workbookCityRules = [
   {
     "code": "calicut",
     "state": "Kerala",
-    "name": "Calicut",
+    "name": "Kozhikode",
     "keywords": [
       "calicut",
       "kozhikode"
@@ -851,7 +870,7 @@ export const workbookCityRules = [
   {
     "code": "trivandrum",
     "state": "Kerala",
-    "name": "Trivandrum",
+    "name": "Thiruvananthapuram",
     "keywords": [
       "trivandrum"
     ]
@@ -859,7 +878,7 @@ export const workbookCityRules = [
   {
     "code": "bangalore",
     "state": "Karnataka",
-    "name": "Bangalore",
+    "name": "Bengaluru",
     "keywords": [
       "bangalore",
       "bengaluru"
@@ -876,7 +895,7 @@ export const workbookCityRules = [
   {
     "code": "hubli",
     "state": "Karnataka",
-    "name": "Hubli",
+    "name": "Hubballi-Dharwad",
     "keywords": [
       "hubli"
     ]
@@ -884,7 +903,7 @@ export const workbookCityRules = [
   {
     "code": "mangalore",
     "state": "Karnataka",
-    "name": "Mangalore",
+    "name": "Mangaluru",
     "keywords": [
       "mangalore",
       "mangaluru"
@@ -893,7 +912,7 @@ export const workbookCityRules = [
   {
     "code": "mysore",
     "state": "Karnataka",
-    "name": "Mysore",
+    "name": "Mysuru",
     "keywords": [
       "mysore"
     ]
@@ -1292,6 +1311,25 @@ export const workbookCityRules = [
     ]
   },
   {
+    "code": "thane",
+    "state": "Maharashtra",
+    "name": "Thane",
+    "keywords": [
+      "thane",
+      "ठाणे"
+    ]
+  },
+  {
+    "code": "kalyan_dombivli",
+    "state": "Maharashtra",
+    "name": "Kalyan-Dombivli",
+    "keywords": [
+      "kalyan dombivli",
+      "kalyan",
+      "dombivli"
+    ]
+  },
+  {
     "code": "nagpur",
     "state": "Maharashtra",
     "name": "Nagpur",
@@ -1574,7 +1612,7 @@ export const workbookCityRules = [
   {
     "code": "pondicherry",
     "state": "Puducherry",
-    "name": "Pondicherry",
+    "name": "Puducherry",
     "keywords": [
       "pondicherry",
       "puducherry"
@@ -1895,6 +1933,34 @@ export const workbookCityRules = [
 ];
 
 export const citySourceRules = [
+  {
+    "code": "thane",
+    "urls": [
+      "https://indianexpress.com/section/cities/mumbai/",
+      "https://www.hindustantimes.com/cities/mumbai-news"
+    ]
+  },
+  {
+    "code": "kalyan_dombivli",
+    "urls": [
+      "https://indianexpress.com/section/cities/mumbai/",
+      "https://www.hindustantimes.com/cities/mumbai-news"
+    ]
+  },
+  {
+    "code": "delhi",
+    "urls": [
+      "https://indianexpress.com/section/cities/delhi/",
+      "https://www.hindustantimes.com/cities/delhi-news"
+    ]
+  },
+  {
+    "code": "patna",
+    "urls": [
+      "https://indianexpress.com/section/cities/patna/",
+      "https://www.hindustantimes.com/cities/patna-news"
+    ]
+  },
   {
     "code": "gurugram",
     "urls": [

@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import { citySourceRules, workbookCityRules } from "./city-config.js";
+import { getSourceUrls, isAllowedSource } from "./index.js";
 
 const cityCodes = workbookCityRules.map((city) => city.code);
 const duplicateCodes = [...new Set(cityCodes.filter((code, index) => cityCodes.indexOf(code) !== index))];
@@ -42,11 +43,58 @@ for (const source of manualSources) {
 const duplicateManualUrls = [...manualUrlCounts.entries()]
   .filter(([, count]) => count > 1)
   .map(([url]) => url);
+const runtimeSources = getSourceUrls();
+const runtimeSourceKeys = runtimeSources.map(normalizeUrl);
+const duplicateRuntimeSources = [...new Set(runtimeSourceKeys.filter((url, index) => runtimeSourceKeys.indexOf(url) !== index))];
+const invalidRuntimeSources = runtimeSources.filter((url) => !isAllowedSource(url));
+const sourceCoverage = new Map(cityCodes.map((code) => [code, 0]));
 
-if (duplicateCodes.length || aliasCollisions.length || unknownSourceCities.length || unknownManualSourceCities.length || duplicateManualUrls.length) {
+for (const rule of citySourceRules) {
+  if (sourceCoverage.has(rule.code)) {
+    sourceCoverage.set(rule.code, sourceCoverage.get(rule.code) + (rule.urls || []).length);
+  }
+}
+
+for (const source of manualSources) {
+  if (source.enabled === false) continue;
+  for (const code of source.cityCodes || []) {
+    if (sourceCoverage.has(code)) {
+      sourceCoverage.set(code, sourceCoverage.get(code) + 1);
+    }
+  }
+}
+
+const citiesWithoutAssignedSources = [...sourceCoverage.entries()]
+  .filter(([, count]) => count === 0)
+  .map(([code]) => code);
+const citiesWithInsufficientSources = [...sourceCoverage.entries()]
+  .filter(([, count]) => count < 2)
+  .map(([code, count]) => ({ code, count }));
+
+if (
+  duplicateCodes.length ||
+  aliasCollisions.length ||
+  unknownSourceCities.length ||
+  unknownManualSourceCities.length ||
+  duplicateManualUrls.length ||
+  duplicateRuntimeSources.length ||
+  invalidRuntimeSources.length ||
+  citiesWithoutAssignedSources.length ||
+  citiesWithInsufficientSources.length
+) {
   console.error(
     JSON.stringify(
-      { duplicateCodes, aliasCollisions, unknownSourceCities, unknownManualSourceCities, duplicateManualUrls },
+      {
+        duplicateCodes,
+        aliasCollisions,
+        unknownSourceCities,
+        unknownManualSourceCities,
+        duplicateManualUrls,
+        duplicateRuntimeSources,
+        invalidRuntimeSources,
+        citiesWithoutAssignedSources,
+        citiesWithInsufficientSources
+      },
       null,
       2
     )
@@ -55,5 +103,5 @@ if (duplicateCodes.length || aliasCollisions.length || unknownSourceCities.lengt
 }
 
 console.log(
-  `City/source configuration audit passed: ${cityCodes.length} unique cities, ${citySourceRules.length} source rules, ${manualSources.length} unique manual sources.`
+  `City/source configuration audit passed: ${cityCodes.length} unique cities, ${citySourceRules.length} source rules, ${manualSources.length} manual sources, ${runtimeSources.length} valid runtime URLs, and at least 2 assigned sources for every city.`
 );

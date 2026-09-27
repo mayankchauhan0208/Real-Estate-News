@@ -31,6 +31,63 @@ const noidaCityEnabled = adminSettings.allCitiesEnabled === true ||
   adminEnabledCityCodes.includes("noida") ||
   ["1", "true", "yes", "on"].includes((process.env.ENABLE_NOIDA_CITY || "").trim().toLowerCase());
 
+const reportedOffTopicArticles = [
+  {
+    title: "28 rescued from 4-storey building in Katargam as staircase collapses",
+    description: "Residents were rescued after the staircase of a four-storey residential apartment collapsed.",
+    newsLink: "https://timesofindia.indiatimes.com/city/surat/28-rescued-from-4-storey-building-in-katargam-as-staircase-collapses/articleshow/134509777.cms",
+    cityCode: "surat"
+  },
+  {
+    title: "DMIHER gets nod to become Adani Institute of Higher Education and Research",
+    description: "DMIHER gets UGC approval to rename as Adani Institute of Higher Education and Research.",
+    newsLink: "https://timesofindia.indiatimes.com/city/nagpur/dmiher-gets-nod-to-become-adani-institute-of-higher-education-and-research/articleshow/134509401.cms",
+    cityCode: "nagpur"
+  },
+  {
+    title: "BHU kicks off Tourism Day celebrations with Heritage Walk",
+    description: "BHU launched World Tourism Day events with a heritage walk across campus landmarks.",
+    newsLink: "https://timesofindia.indiatimes.com/city/varanasi/bhu-kicks-off-tourism-day-celebrations-with-heritage-walk/articleshow/134509805.cms",
+    cityCode: "varanasi"
+  },
+  {
+    title: "City expands, but CDP 2040 notification stays in limbo",
+    description: "The development authority is preparing a comprehensive development plan, but the notification stays in limbo.",
+    newsLink: "https://timesofindia.indiatimes.com/city/bhubaneswar/city-expands-but-cdp-2040-notification-stays-in-limbo/articleshow/134509741.cms",
+    cityCode: "bhubaneswar"
+  },
+  {
+    title: "RITES Holds 52nd AGM, Shareholders Approve Final Dividend of R...",
+    description: "RITES Limited conducted its 52nd Annual General Meeting and approved a final dividend.",
+    newsLink: "https://realtynmore.com/rites-holds-52nd-agm-shareholders-approve-final/",
+    cityCode: "gurugram"
+  },
+  {
+    title: "PhysioVeda Academics Launches at AWP 2026 to Transform Continuous Learning for Professionals",
+    description: "PhysioVeda Academics launched a continuous learning initiative for professionals.",
+    newsLink: "https://example.com/physioveda-academics-launches-awp-2026",
+    cityCode: "gurugram"
+  }
+];
+
+for (const article of reportedOffTopicArticles) {
+  assert.equal(isPublishableArticle(article, sentIds), false, `reported off-topic article must remain rejected: ${article.title}`);
+  assert.ok(getRejectionReasons(article, sentIds).length > 0, `reported off-topic article needs an audit reason: ${article.title}`);
+}
+
+assert.match(
+  getRejectionReasons(reportedOffTopicArticles[1], sentIds)[0],
+  /filter 4: not positive target real-estate\/project news/
+);
+
+assert.equal(isPublishableArticle({
+  title: "New residential project approved near Noida airport",
+  description: "A developer received approval for a new residential project and will begin construction.",
+  newsLink: "https://example.com/noida-residential-project",
+  cityCode: "noida",
+  postedBy: "Example Realty"
+}, sentIds), true);
+
 function normalizeSmokeSourceUrl(value) {
   const raw = String(value || "").trim();
   try {
@@ -1752,3 +1809,93 @@ const gurgaonAliasArticle = publishable({
   newsLink: "https://example.com/gurgaon-office-project"
 });
 assert.deepEqual(detectCityCodes(gurgaonAliasArticle), ["gurugram"]);
+
+const gurugramWarehouseLeaseArticle = publishable({
+  title: "Innovist leases 2.6 lakh sq ft warehouse space in Gurugram",
+  description: "Innovist has leased warehouse space in Gurugram for a five-year commercial logistics operation.",
+  articleText: "The Gurugram warehouse lease covers 2.6 lakh sq ft and supports the city's commercial real estate market.",
+  newsLink: "https://example.com/innovist-gurugram-warehouse-lease"
+});
+assert.equal(isPublishableArticle(gurugramWarehouseLeaseArticle, sentIds), true);
+
+const kurnoolFlightAcademyArticle = publishable({
+  title: "Kurnool gets India's approval as Andhra Pradesh launches first DGCA-certified flight training facility",
+  description: "The aviation academy was inaugurated at Kurnool Airport for flight training.",
+  articleText: "The DGCA-certified flight training facility is an aviation academy, not a real-estate development.",
+  newsLink: "https://example.com/kurnool-flight-training-facility"
+});
+assert.equal(isPublishableArticle(kurnoolFlightAcademyArticle, sentIds), false);
+
+const pimpriWaterShortageArticle = publishable({
+  title: "Pimpri Chinchwad civic body officials to visit housing societies to fix water crunch",
+  description: "Officials will inspect housing societies after residents faced water shortages and tanker dependence.",
+  articleText: "The update concerns water supply and tanker shortages, not a property development project.",
+  newsLink: "https://example.com/pune-pimpri-water-crunch"
+});
+assert.equal(isPublishableArticle(pimpriWaterShortageArticle, sentIds), false);
+
+const housingFinanceStakeArticle = publishable({
+  cityCode: "puri",
+  title: "Carlyle-led investors invest Rs 2,027 crore in Nido Home Finance and acquire a 58.26% stake",
+  description: "The transaction concerns a housing finance company and an investor stake acquisition.",
+  articleText: "This is a financial services transaction, not a property development or infrastructure project.",
+  newsLink: "https://example.com/puri-home-finance-stake-acquisition"
+});
+assert.equal(isPublishableArticle(housingFinanceStakeArticle, sentIds), false);
+
+const methanolFacilityArticle = publishable({
+  cityCode: "gandhinagar",
+  title: "India to set up first port-based e-methanol facility at Kandla",
+  description: "The industrial energy facility will produce e-methanol at Kandla port.",
+  articleText: "This is a chemical manufacturing facility, not real-estate or urban infrastructure development.",
+  newsLink: "https://example.com/kandla-e-methanol-facility"
+});
+assert.equal(isPublishableArticle(methanolFacilityArticle, sentIds), false);
+
+const foreignProjectArticle = publishable({
+  cityCode: "gurugram",
+  title: "UAE developer Eagle Hills unveils $12 billion project in the Maldives",
+  description: "The developer announced a large property project in the Maldives.",
+  articleText: "The project is outside India and has no Gurugram development connection.",
+  newsLink: "https://example.com/maldives-property-project"
+});
+assert.equal(isPublishableArticle(foreignProjectArticle, sentIds), false);
+
+const unreadableRealEstateArticle = publishable({
+  title: "BPTP targets major real estate growth and rental income",
+  description: "BPTP plans a major real estate development and rental portfolio expansion.",
+  articleText: "",
+  articleReadAttempted: true,
+  fullArticleRead: false,
+  articleReadError: "article page timed out",
+  newsLink: "https://example.com/bptp-growth-plan"
+});
+assert.equal(isPublishableArticle(unreadableRealEstateArticle, sentIds), false);
+assert.ok(getRejectionReasons(unreadableRealEstateArticle, sentIds).includes("review: full article could not be read"));
+
+const busOperationsArticle = publishable({
+  cityCode: "gorakhpur",
+  title: "Double-decker electric bus service begins between Gorakhpur and Maharajganj",
+  description: "The new bus service will improve public transport connectivity between the two cities.",
+  articleText: "The announcement concerns bus operations and route timings, not a real-estate or property development project.",
+  newsLink: "https://example.com/gorakhpur-electric-bus-service"
+});
+assert.equal(isPublishableArticle(busOperationsArticle, sentIds), false);
+
+const railwayOperationsArticle = publishable({
+  cityCode: "gujarat",
+  title: "LNG train launched in Gujarat with railway projects",
+  description: "The railway programme includes a new LNG train and transport infrastructure investments.",
+  articleText: "The item concerns railway operations and transport projects, with no housing, land, property, or real-estate development.",
+  newsLink: "https://example.com/gujarat-lng-train"
+});
+assert.equal(isPublishableArticle(railwayOperationsArticle, sentIds), false);
+
+const waterMetroOperationsArticle = publishable({
+  cityCode: "goa",
+  title: "Goa forms SPV to implement water metro network",
+  description: "The special purpose vehicle will oversee implementation of a water metro network.",
+  articleText: "The announcement concerns public transport operations and does not identify a property or real-estate development.",
+  newsLink: "https://example.com/goa-water-metro-network"
+});
+assert.equal(isPublishableArticle(waterMetroOperationsArticle, sentIds), false);

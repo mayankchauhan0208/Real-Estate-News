@@ -29,6 +29,7 @@ const elements = {
   sourceSearch: $("#sourceSearch"),
   sourceTypeFilter: $("#sourceTypeFilter"),
   sourceStatusFilter: $("#sourceStatusFilter"),
+  sourceTierFilter: $("#sourceTierFilter"),
   sourceCountLabel: $("#sourceCountLabel"),
   sourceCitySelect: $("#sourceCitySelect"),
   sourceForm: $("#sourceForm"),
@@ -85,7 +86,7 @@ elements.newsStateFilter.addEventListener("change", () => {
   elements.newsToDate
 ]
   .forEach((el) => el.addEventListener("input", debounce(renderNews, 120)));
-[elements.sourceSearch, elements.sourceTypeFilter, elements.sourceStatusFilter]
+[elements.sourceSearch, elements.sourceTypeFilter, elements.sourceStatusFilter, elements.sourceTierFilter]
   .forEach((el) => el.addEventListener("input", debounce(() => { sourceVisibleLimit = 258; renderSources(); }, 120)));
 elements.citySearch.addEventListener("input", debounce(renderCities, 120));
 
@@ -203,6 +204,7 @@ function renderCityOptions() {
   for (const option of elements.backfillCitySelect.options) option.selected = (lastBackfill.cityCodes || []).includes(option.value);
   $("#backfillFrom").value = lastBackfill.from || "";
   $("#backfillTo").value = lastBackfill.to || "";
+  $("#backfillSourceCategory").value = lastBackfill.sourceCategory || "";
   $("#resendBackfill").checked = lastBackfill.resendBackfill === true;
 }
 function renderNewsFilters() {
@@ -370,11 +372,18 @@ function renderSources() {
   const query = elements.sourceSearch.value.trim().toLowerCase();
   const type = elements.sourceTypeFilter.value || "all";
   const status = elements.sourceStatusFilter.value || "all";
+  const tier = elements.sourceTierFilter.value || "all";
   const matched = state.sources.filter((source) => {
     const haystack = `${source.label || ""} ${source.url || ""} ${(source.cityCodes || []).join(" ")} ${source.category || ""}`.toLowerCase();
+    const isRegional = source.category?.startsWith("regional-") || /regional|hindi|marathi|gujarati|bengali|tamil|telugu|kannada|malayalam|punjabi|odia/i.test(source.label || "");
+    const lastRunMatches = status === "all" || status === "enabled" || status === "disabled"
+      ? status === "all" || (status === "enabled" ? source.enabled : !source.enabled)
+      : status === "last-failed" ? source.lastRunStatus === "failed"
+      : status === "last-zero" ? source.lastRunStatus === "ok" && source.lastRunCount === 0
+      : source.lastRunStatus === "ok" && source.lastRunCount > 0;
     return (!query || haystack.includes(query)) &&
-      (type === "all" || source.category === type) &&
-      (status === "all" || (status === "enabled" ? source.enabled : !source.enabled));
+      (type === "all" || (type === "regional" ? isRegional : source.category === type)) &&
+      lastRunMatches && (tier === "all" || String(source.tier || 3) === tier);
   });
   const visible = matched.slice(0, sourceVisibleLimit);
   elements.sourceCountLabel.textContent = `${visible.length} of ${matched.length} monitored sources`;
@@ -413,8 +422,8 @@ function renderSourceCard(source) {
       <span>
         <b>${escapeHtml(source.label || host || "Source")}</b>
         <small>${escapeHtml(host || source.url)}</small>
-        <span class="type-pill">${escapeHtml(source.category || "source")}</span>
-        <div class="source-meta">${source.enabled ? "Monitored every 30 minutes" : "Disabled"}</div>
+        <span class="type-pill">${escapeHtml(source.category || "source")} · Tier ${escapeHtml(source.tier || 3)}</span>
+        <div class="source-meta">${source.enabled ? "Monitored every 30 minutes" : "Disabled"}${source.lastRunStatus === "failed" ? ` · Last run failed` : source.lastRunStatus === "ok" ? ` · Last run ${source.lastRunCount} items` : " · Not run yet"}</div>
       </span>
       <span class="source-actions">
         <label class="switch"><input type="checkbox" ${source.enabled ? "checked" : ""} data-source-enabled="${escapeAttribute(source.id)}" data-source-url="${escapeAttribute(source.url)}"> ${source.enabled ? "On" : "Off"}</label>
@@ -515,7 +524,8 @@ function renderAudit() {
     ["Ready", latest.candidateCount],
     ["Posted", latest.postedCount],
     ["Rejected", latest.rejectedArticleCount],
-    ["Source failures", latest.failureCount]
+    ["Source failures", latest.failureCount],
+    ["Coverage alerts", (state.analytics?.coverageAlerts || []).length]
   ].map(([label, value]) => `<div class="audit-metric"><b>${escapeHtml(value)}</b><span>${escapeHtml(label)}</span></div>`).join("");
 
   const reasons = Object.entries(latest.skippedByReason || {})
@@ -530,10 +540,14 @@ function renderAudit() {
     : `<div class="empty-state">No failed sources in this run.</div>`;
 
   const cityRows = state.analytics?.byCity || [];
-  elements.cityAuditRows.innerHTML = cityRows.length
+  const alerts = state.analytics?.coverageAlerts || [];
+  const alertHtml = alerts.length
+    ? `<div class="audit-alert-list">${alerts.slice(0, 30).map((alert) => `<div class="audit-row ${alert.severity === "review" ? "failure" : ""}"><b>${escapeHtml(alert.cityCode)}</b><span>${escapeHtml(alert.reason)}<small>${escapeHtml(alert.runs || 1)} recent run(s)</small></span></div>`).join("")}</div>`
+    : "";
+  elements.cityAuditRows.innerHTML = alertHtml + (cityRows.length
     ? `<div class="audit-table-row audit-table-header"><span>City</span><span>Fetched/expanded</span><span>Ready</span><span>Posted</span><span>Rejected</span></div>` +
       cityRows.map((row) => `<div class="audit-table-row"><span>${escapeHtml(cityLabel(row.cityCode))}</span><span>${escapeHtml(row.expanded || 0)}</span><span>${escapeHtml(row.readyToPost || 0)}</span><span>${escapeHtml(row.posted || 0)}</span><span>${escapeHtml(row.rejected || 0)}</span></div>`).join("")
-    : `<div class="empty-state">No city breakdown in this report.</div>`;
+    : `<div class="empty-state">No city breakdown in this report.</div>`);
 
   const rejectedArticles = latest.rejectedArticles || [];
   const rejectedTotal = Number(latest.rejectedArticleCount || rejectedArticles.length);
@@ -596,7 +610,8 @@ async function startDryRun() {
     maxItemsPerSource: $("#maxItemsPerSource").value,
     maxItemsPerRun: $("#maxItemsPerRun").value,
     maxPagesPerSource: 1,
-    lookbackDays: $("#lookbackDays").value
+    lookbackDays: $("#lookbackDays").value,
+    sourceCategory: $("#backfillSourceCategory").value
   };
   const response = await fetch("/api/dry-run", {
     method: "POST",

@@ -127,7 +127,8 @@ function normalizeSettings(settings) {
       to: String(settings.lastBackfill?.to || ""),
       resendBackfill: settings.lastBackfill?.resendBackfill === true,
       maxItemsPerSource: Number(settings.lastBackfill?.maxItemsPerSource || 25),
-      maxItemsPerRun: Number(settings.lastBackfill?.maxItemsPerRun || 120)
+      maxItemsPerRun: Number(settings.lastBackfill?.maxItemsPerRun || 120),
+      sourceCategory: String(settings.lastBackfill?.sourceCategory || "")
     },
     filterProfile: {
       blockNegativeNews: settings.filterProfile?.blockNegativeNews !== false,
@@ -175,6 +176,13 @@ function normalizeManualSource(source, index = 0) {
     category: String(source?.category || "manual").trim() || "manual",
     createdAt: source?.createdAt || new Date().toISOString()
   };
+}
+
+function inferSourceTier(source = {}) {
+  const text = `${source.label || ""} ${source.category || ""}`;
+  if (/P1|tier\s*1|official|RERA|authority|government/i.test(text)) return 1;
+  if (/P2|regional|hindi|marathi|gujarati|bengali|tamil|telugu|kannada|malayalam|punjabi|odia/i.test(text)) return 2;
+  return 3;
 }
 
 async function saveSettings(settings) {
@@ -276,15 +284,27 @@ async function serveStatic(response, pathname) {
 
 async function getDashboardState() {
   const settings = await ensureSettings();
-  const sources = await getSourceRows(settings);
-  const cityRows = getCityRows(settings, sources);
   const reports = await getReportRows();
+  const sources = await getSourceRows(settings);
+  const latestSourceHealth = new Map((reports[0]?.sourceHealth || []).map((row) => [normalizeSourceUrl(row.source), row]));
+  const sourcesWithHealth = sources.map((source) => {
+    const health = latestSourceHealth.get(normalizeSourceUrl(source.url));
+    return {
+      ...source,
+      tier: inferSourceTier(source),
+      lastRunStatus: health?.status || "unknown",
+      lastRunCount: Number(health?.count || 0),
+      lastRunError: health?.error || "",
+      lastRunAttempts: Number(health?.attempts || 0)
+    };
+  });
+  const cityRows = getCityRows(settings, sourcesWithHealth);
   const liveCities = cityRows.filter((city) => city.enabled);
   const postedNews = collectPostedNews(reports, settings);
   const candidateNews = collectCandidateNews(reports);
   const needsReviewNews = collectNeedsReviewNews(reports);
 
-  const readiness = buildReadiness(settings, sources, cityRows, reports);
+  const readiness = buildReadiness(settings, sourcesWithHealth, cityRows, reports);
 
   return {
     generatedAt: new Date().toISOString(),
@@ -293,9 +313,9 @@ async function getDashboardState() {
       liveCities: liveCities.length,
       requestedCities: cityRows.length,
       moreRequestedCities: Math.max(0, cityRows.length - liveCities.length),
-      sources: sources.length,
-      enabledSources: sources.filter((source) => source.enabled).length,
-      disabledSources: sources.filter((source) => !source.enabled).length,
+      sources: sourcesWithHealth.length,
+      enabledSources: sourcesWithHealth.filter((source) => source.enabled).length,
+      disabledSources: sourcesWithHealth.filter((source) => !source.enabled).length,
       manualSources: settings.manualSources.length,
       reports: reports.length,
       postedNews: postedNews.length,
@@ -306,7 +326,7 @@ async function getDashboardState() {
     readiness,
     requestedByState: groupStateCounts(cityRows),
     cities: cityRows,
-    sources,
+    sources: sourcesWithHealth,
     reports,
     analytics: buildDashboardAnalytics(reports),
     postedNews,
@@ -498,12 +518,15 @@ async function getReportRows() {
             needsReviewCount: report.needsReviewCount ?? report.needsReviewArticles?.length ?? 0,
             failureCount: report.failures?.length || 0,
             failures: report.failures || [],
+            pushFailures: report.pushFailures || [],
             sourceHealthSummary: report.sourceHealthSummary || {},
+            sourceHealth: report.sourceHealth || [],
             candidates,
             posted: report.posted || [],
             rejectedArticles: report.rejectedArticles || [],
             needsReviewArticles: report.needsReviewArticles || [],
             cityBreakdown: report.cityBreakdown || [],
+            coverageAlerts: report.coverageAlerts || [],
             skippedByReason: report.skippedByReason || {}
           };
         })
@@ -568,6 +591,7 @@ function buildDashboardAnalytics(reports) {
   };
   const byCity = new Map();
   const rejectionReasons = new Map();
+  const coverageByCity = new Map();
 
   for (const report of reports) {
     totals.fetched += Number(report.fetchedArticleCount || 0);
@@ -590,6 +614,9 @@ function buildDashboardAnalytics(reports) {
           current.rejectionReasons[reason] = (current.rejectionReasons[reason] || 0) + Number(count || 0);
         }
         byCity.set(cityCode, current);
+        const history = coverageByCity.get(cityCode) || [];
+        history.push({ expanded: Number(row.expanded || 0), readyToPost: Number(row.readyToPost || 0), posted: Number(row.posted || 0), rejected: Number(row.rejected || 0) });
+        coverageByCity.set(cityCode, history);
       }
     } else {
       if (report.rejectedArticleCount > 0) {
@@ -621,7 +648,14 @@ function buildDashboardAnalytics(reports) {
     byCity: [...byCity.values()].sort((a, b) => (b.readyToPost + b.posted + b.rejected) - (a.readyToPost + a.posted + a.rejected)),
     rejectionReasons: [...rejectionReasons.entries()]
       .map(([reason, count]) => ({ reason, count }))
-      .sort((a, b) => b.count - a.count)
+      .sort((a, b) => b.count - a.count),
+    coverageAlerts: [...coverageByCity.entries()].flatMap(([cityCode, history]) => {
+      const recent = history.slice(0, 3);
+      if (recent.length < 2) return [];
+      const noData = recent.every((row) => row.expanded === 0);
+      const allRejected = recent.every((row) => row.expanded > 0 && row.readyToPost + row.posted === 0 && row.rejected > 0);
+      return noData || allRejected ? [{ cityCode, severity: noData ? "warning" : "review", reason: noData ? "no articles reached this city in recent runs" : "all recent city articles were rejected", runs: recent.length }] : [];
+    })
   };
 }
 
@@ -819,6 +853,7 @@ async function startDryRun(payload = {}) {
   const backfillTo = String(payload.backfillTo || "").trim();
   const targetCityCodes = normalizeCodeList(payload.targetCityCodes, []);
   const resendBackfill = payload.resendBackfill === true;
+  const sourceCategory = String(payload.sourceCategory || "").trim().toLowerCase();
 
   settings.lastBackfill = {
     cityCodes: targetCityCodes,
@@ -826,7 +861,8 @@ async function startDryRun(payload = {}) {
     to: backfillTo,
     resendBackfill,
     maxItemsPerSource: Number(payload.maxItemsPerSource || 12),
-    maxItemsPerRun: Number(payload.maxItemsPerRun || 80)
+    maxItemsPerRun: Number(payload.maxItemsPerRun || 80),
+    sourceCategory
   };
   await saveSettings(settings);
 
@@ -851,6 +887,7 @@ async function startDryRun(payload = {}) {
       BACKFILL_TO: backfillTo,
       TARGET_CITY_CODES: targetCityCodes.join(","),
       RESEND_BACKFILL: resendBackfill ? "true" : "false",
+      SOURCE_CATEGORY: sourceCategory,
       APP_API_URL: "",
       APP_API_KEY: ""
     }

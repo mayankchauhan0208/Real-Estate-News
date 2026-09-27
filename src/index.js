@@ -122,15 +122,61 @@ const CITY_ALIAS_OVERRIDES = {
   trivandrum: ["thiruvananthapuram", "तिरुवनंतपुरम"],
   allahabad: ["prayagraj", "प्रयागराज", "इलाहाबाद"],
   varanasi: ["banaras", "काशी"],
-  mysore: ["mysuru", "मैसूरु"]
+  mysore: ["mysuru", "मैसूरु"],
+  patna: ["पाटलिपुत्र", "patna city"],
+  delhi: ["old delhi", "delhi city", "पुरानी दिल्ली"],
+  visakhapatnam: ["vizag", "విశాఖపట్నం"],
+  vijayawada: ["bezawada", "विजयवाड़ा"],
+  rajahmundry: ["rajamahendravaram", "राजमहेंद्रवरम"],
+  tirupati: ["tirumala", "तिरुपति"],
+  anantapur: ["anantapuramu", "अनंतपुर"],
+  guwahati: ["dispur", "guwahati metropolitan"],
+  raipur: ["nava raipur", "naya raipur", "रायपुर"],
+  bhilai: ["bhilai nagar", "भिलाई"],
+  ahmedabad: ["amdavad", "ahmedabad metro", "अहमदाबाद"],
+  vadodara: ["baroda", "vadodara metro", "वडोदरा"],
+  gandhinagar: ["gift city", "gandhinagar capital region"],
+  dholera: ["dholera sir", "dholera smart city"],
+  vapi: ["vapi gidc"],
+  jamshedpur: ["tatanagar", "जमशेदपुर"],
+  ranchi: ["ranchi city", "रांची"],
+  indore: ["rau", "indore super corridor", "इंदौर"],
+  bhopal: ["new bhopal", "kolar road bhopal", "भोपाल"],
+  gwalior: ["lashkar", "ग्वालियर"],
+  jabalpur: ["जबलपुर"],
+  ujjain: ["ujjain city", "उज्जैन"],
+  mohali: ["sas nagar", "sahibzada ajit singh nagar", "मोहाली"],
+  ludhiana: ["लुधियाना"],
+  amritsar: ["अमृतसर"],
+  coimbatore: ["kovai", "कोयंबटूर"],
+  tiruchirappalli: ["trichy", "திருச்சிராப்பள்ளி"],
+  thoothukudi: ["tuticorin", "தூத்துக்குடி"],
+  hyderabad: ["cyberabad", "secunderabad", "హైదరాబాద్"],
+  warangal: ["hanamkonda", "వరంగల్"],
+  kolkata: ["calcutta", "new town kolkata", "कोलकाता"],
+  mumbai: ["bombay", "mumbai metropolitan region", "mmr", "मुंबई"],
+  pune: ["poona", "pimpri chinchwad", "hinjewadi", "wakad", "kharadi", "पुणे"],
+  navi_mumbai: ["new mumbai", "पनवेल"],
+  thane: ["thane west", "thane east", "ठाणे"],
+  kalyan_dombivli: ["kalyan", "dombivli", "kalyan dombivli"],
+  aurangabad: ["chhatrapati sambhajinagar", "छत्रपती संभाजीनगर"],
+  nagpur: ["orange city", "नागपुर"],
+  nashik: ["nasik", "नाशिक"],
+  jaipur: ["pink city", "जयपुर"],
+  bhiwadi: ["bhiwadi neemrana region"],
+  neemrana: ["neemrana japanese zone"],
+  dehradun: ["doon valley", "देहरादून"],
+  haridwar: ["हरिद्वार"],
+  pondicherry: ["puducherry", "पुडुचेरी"]
 };
 
 function enrichCityRuleAliases(rule) {
   const codeAlias = String(rule.code || "").replaceAll("_", " ").trim().toLowerCase();
   const nameAlias = String(rule.name || "").trim().toLowerCase();
+  const genericDelhiDisplayCity = rule.code === "delhi";
   const generatedAliases = [
-    codeAlias,
-    nameAlias,
+    genericDelhiDisplayCity ? "" : codeAlias,
+    genericDelhiDisplayCity ? "" : nameAlias,
     nameAlias ? `${nameAlias} city` : "",
     nameAlias ? `${nameAlias} district` : ""
   ];
@@ -352,6 +398,12 @@ const realEstateKeywords = [
   "carpet area",
   "commercial property",
   "commercial real estate",
+  "leased",
+  "leasing",
+  "warehouse",
+  "warehousing",
+  "logistics park",
+  "sq ft",
   "कमर्शियल रियल एस्टेट",
   "connectivity",
   "corridor",
@@ -433,6 +485,12 @@ const promotionalRealEstateKeywords = [
   "customer confidence",
   "commercial property",
   "commercial real estate",
+  "leased",
+  "leasing",
+  "warehouse",
+  "warehousing",
+  "logistics park",
+  "sq ft",
   "कमर्शियल रियल एस्टेट",
   "completion",
   "पूरा",
@@ -775,6 +833,15 @@ const specificProjectKeywords = [
   "भूमि",
   "land rates",
   "luxury project",
+  "lease",
+  "leases",
+  "leased",
+  "leasing",
+  "warehouse",
+  "warehousing",
+  "logistics park",
+  "office space",
+  "sq ft",
   "new benchmark",
   "hospitality living",
   "metro extension",
@@ -898,6 +965,9 @@ const blockedTitleKeywords = [
   "commodity rates",
   "gold price",
   "gold rate",
+  "e-methanol",
+  "methanol facility",
+  "chemical facility",
   "silver price",
   "silver rate",
   "spotify",
@@ -958,9 +1028,47 @@ const blockedTitleKeywords = [
   "videos",
   "virtual engagement",
   "water pipeline",
+  "water crunch",
+  "water shortage",
+  "water tanker",
+  "water tankers",
   "water supply",
   "waterbody",
+  "maldives",
   "webinar"
+];
+const nonProjectCorporateKeywords = [
+  "annual general meeting",
+  "agm",
+  "dividend",
+  "financial services",
+  "home finance",
+  "housing finance",
+  "nbfc",
+  "stake",
+  "stake acquisition",
+  "shareholders approve",
+  "shareholder approval",
+  "quarterly results"
+];
+const nonProjectLocalNewsKeywords = [
+  "academics",
+  "academic learning",
+  "celebrations",
+  "heritage walk",
+  "higher education",
+  "institute of",
+  "research institute",
+  "aviation academy",
+  "dgca",
+  "flight training",
+  "flight school",
+  "tourism day",
+  "tourism event",
+  "ugc",
+  "university",
+  "world tourism",
+  "workshop"
 ];
 const blockedExactTitles = [
   "bbd gurgaon",
@@ -1031,6 +1139,8 @@ const negativeNewsKeywords = [
   "cheating",
   "chased",
   "collapse",
+  "collapses",
+  "collapsed",
   "complaint",
   "शिकायत",
   "complaints",
@@ -1184,6 +1294,9 @@ const negativePhraseKeywords = [
   "homebuyer suicide",
   "housing project halted",
   "housing project suspended",
+  "in limbo",
+  "notification stays in limbo",
+  "notification pending",
   "imd data",
   "left in lurch",
   "lewd comments",
@@ -1425,6 +1538,74 @@ function normalizeSourceUrl(value) {
 
 const configuredSourceCityCodes = new Map();
 
+// A small set of verified official migrations/aliases. The original URL stays
+// the source identity, while the recovery URL keeps coverage alive when a
+// government portal changes hostnames or a site adds/removes www.
+const sourceRecoveryAliases = new Map([
+  ["https://jharera.jharkhand.gov.in", ["https://jharera.jharkhand.gov.in/home"]],
+  ["https://jharera.jharkhand.gov.in/home", ["https://jharera.jharkhand.gov.in"]],
+  ["https://jda.rajasthan.gov.in", ["https://www.jda.rajasthan.gov.in/content/raj/udh/jda---jaipur/en/home.html"]],
+  ["https://www.jda.rajasthan.gov.in/content/raj/udh/jda---jaipur/en/home.html", ["https://jda.rajasthan.gov.in"]],
+  ["https://maharera.maharashtra.gov.in", ["https://maharera.mahaonline.gov.in"]],
+  ["https://maharera.mahaonline.gov.in", ["https://maharera.maharashtra.gov.in"]],
+  ["https://mmrda.maharashtra.gov.in/en", ["https://mmrda.maharashtra.gov.in/en/other-services/news-and-announcements", "https://mmrda.maharashtra.gov.in/en/news-and-announcements"]],
+  ["https://mmrda.maharashtra.gov.in/en/news-and-announcements/archive", ["https://mmrda.maharashtra.gov.in/en/other-services/news-and-announcements", "https://mmrda.maharashtra.gov.in/en/news-and-announcements"]],
+  ["https://mpmetrorail.com", ["https://www.mpmetrorail.com"]],
+  ["https://www.mpmetrorail.com", ["https://mpmetrorail.com"]],
+  ["https://prera.py.gov.in", ["https://rera.py.gov.in"]],
+  ["https://rera.py.gov.in", ["https://prera.py.gov.in"]],
+  ["https://nicdc.in", ["https://www.nicdc.in"]],
+  ["https://www.nicdc.in", ["https://nicdc.in"]],
+  ["https://hsiidc.org.in", ["https://www.hsiidc.org.in"]],
+  ["https://www.hsiidc.org.in", ["https://hsiidc.org.in"]],
+  ["https://gmada.gov.in", ["https://www.gmada.gov.in"]],
+  ["https://www.gmada.gov.in", ["https://gmada.gov.in"]],
+  ["https://kmda.wb.gov.in", ["https://www.kmda.wb.gov.in"]],
+  ["https://www.kmda.wb.gov.in", ["https://kmda.wb.gov.in"]],
+  ["https://indianrailways.gov.in", ["https://indianrailways.gov.in/railwayboard"]],
+  ["https://indianrailways.gov.in/railwayboard", ["https://indianrailways.gov.in"]],
+  ["https://ltmetro.com/press", ["https://www.ltmetro.com/press/"]]
+  , ["https://www.ltmetro.com/press", ["https://ltmetro.com/press"]]
+]);
+
+function getSourceRecoveryAliases(sourceUrl) {
+  const normalized = normalizeSourceUrl(sourceUrl);
+  const configuredAliases = sourceRecoveryAliases.get(normalized) || [];
+
+  try {
+    const url = new URL(sourceUrl);
+    const host = url.hostname.replace(/^www\./, "");
+    const pathName = url.pathname.replace(/\/+$/, "");
+
+    if (host === "indianexpress.com") {
+      const cityMatch = pathName.match(/^\/section\/cities\/([^/]+)$/);
+      if (cityMatch) {
+        const citySlug = {
+          baroda: "vadodara",
+          bangalore: "bengaluru",
+          mangaluru: "mangalore",
+          "sas-nagar-mohali": "chandigarh"
+        }[cityMatch[1]] || cityMatch[1];
+        return [
+          ...configuredAliases,
+          `https://www.hindustantimes.com/feeds/rss/cities/${citySlug}-news/rssfeed.xml`,
+          "https://realty.economictimes.indiatimes.com/rss/topstories"
+        ];
+      }
+
+      return [
+        ...configuredAliases,
+        "https://realty.economictimes.indiatimes.com/rss/topstories",
+        "https://infra.economictimes.indiatimes.com/rss/urban-infrastructure"
+      ];
+    }
+  } catch {
+    // The primary source URL is validated elsewhere; keep configured aliases for malformed inputs.
+  }
+
+  return configuredAliases;
+}
+
 function addConfiguredSourceCityCodes(sourceUrl, cityCodes = []) {
   const key = normalizeSourceUrl(sourceUrl);
   if (!key) {
@@ -1561,9 +1742,17 @@ function readAdminSettings() {
 }
 
 function getSources() {
+  const requestedCategory = String(env("SOURCE_CATEGORY") || "").trim().toLowerCase();
   const manualSourceUrls = Array.isArray(adminSettings.manualSources)
     ? adminSettings.manualSources
       .filter((source) => source && source.enabled !== false)
+      .filter((source) => {
+        if (!requestedCategory) return true;
+        const category = String(source.category || "").toLowerCase();
+        const label = String(source.label || "").toLowerCase();
+        const regional = category.startsWith("regional-") || /regional|hindi|marathi|gujarati|bengali|tamil|telugu|kannada|malayalam|punjabi|odia/.test(label);
+        return requestedCategory === "regional" ? regional : category === requestedCategory;
+      })
       .filter((source) => {
         const cityCodes = Array.isArray(source.cityCodes)
           ? source.cityCodes.map((code) => String(code || "").trim().toLowerCase()).filter(Boolean)
@@ -1595,7 +1784,9 @@ function getSourceUrls() {
     return [...new Set(sourceUrls.filter((source) => !isSourceDisabledByAdmin(source)))];
   }
 
-  return [...new Set([...activeDefaultSources, ...getSources()])];
+  const requestedCategory = String(env("SOURCE_CATEGORY") || "").trim();
+  const defaults = requestedCategory ? [] : activeDefaultSources;
+  return [...new Set([...defaults, ...getSources()])];
 }
 
 function getExtraArticleUrls() {
@@ -1696,7 +1887,7 @@ function getMaxItemsPerSource() {
 }
 
 function getMaxPagesPerSource() {
-  return getPositiveIntegerEnv("MAX_PAGES_PER_SOURCE", 15);
+  return Math.min(getPositiveIntegerEnv("MAX_PAGES_PER_SOURCE", 5), 5);
 }
 
 function getMaxItemsPerRun() {
@@ -1760,6 +1951,10 @@ function getArticleMetadataConcurrency() {
 
 function getFetchTimeoutMs() {
   return Math.min(getPositiveIntegerEnv("FETCH_TIMEOUT_MS", 10000), 30000);
+}
+
+function getArticleMetadataTimeoutMs() {
+  return Math.min(getPositiveIntegerEnv("ARTICLE_METADATA_TIMEOUT_MS", 12000), 30000);
 }
 
 function getSourceTimeoutMs() {
@@ -2014,7 +2209,9 @@ function reportArticle(article) {
     newsLink: article.newsLink || "",
     postedBy: article.postedBy || "",
     sourceName: article.sourceName || article.postedBy || "",
-    sourceUrl: article.sourceUrl || ""
+    sourceUrl: article.sourceUrl || "",
+    fullArticleRead: article.fullArticleRead === true,
+    articleReadError: article.articleReadError || ""
   };
 }
 
@@ -2070,7 +2267,7 @@ function buildRunAnalytics(expandedArticles, readyArticles, postedArticles, skip
         row.rejectionReasons[reason] = (row.rejectionReasons[reason] || 0) + 1;
       }
       const qualityDecision = localQualityJudge(article);
-      if (needsLocalQualityReview(article) && needsReviewArticles.length < 300) {
+      if ((needsLocalQualityReview(article) || isFullArticleReviewRequired(article)) && needsReviewArticles.length < 300) {
         needsReviewArticles.push({
           article: reportArticle(article),
           reasons,
@@ -2089,11 +2286,26 @@ function buildRunAnalytics(expandedArticles, readyArticles, postedArticles, skip
     (b.readyToPost + b.posted + b.rejected + b.expanded) - (a.readyToPost + a.posted + a.rejected + a.expanded)
   );
 
+  const coverageRows = new Map(cityBreakdown.map((row) => [row.cityCode, row]));
+  const coverageAlerts = cityRules
+    .map((rule) => coverageRows.get(rule.code) || { cityCode: rule.code, expanded: 0, readyToPost: 0, posted: 0, rejected: 0 })
+    .filter((row) => row.expanded === 0 || (row.readyToPost + row.posted === 0 && row.rejected > 0))
+    .map((row) => ({
+      cityCode: row.cityCode,
+      severity: row.expanded === 0 ? "warning" : "review",
+      reason: row.expanded === 0 ? "no articles reached this city" : "all fetched articles were rejected",
+      expanded: row.expanded,
+      readyToPost: row.readyToPost,
+      posted: row.posted,
+      rejected: row.rejected
+    }));
+
   return {
     readyToPostCount: readyArticles.length,
     rejectedArticleCount: rejectedArticleTotal,
     needsReviewCount: needsReviewArticles.length,
     cityBreakdown,
+    coverageAlerts,
     rejectedArticles,
     needsReviewArticles
   };
@@ -2127,6 +2339,13 @@ async function writeRunReport(report) {
     "",
     "## Skipped By Reason",
     ...Object.entries(report.skippedByReason).map(([reason, count]) => `- ${reason}: ${count}`),
+    "",
+    "## Needs Full-Article Review",
+    ...(report.needsReviewArticles?.length
+      ? report.needsReviewArticles.map((item) =>
+          `- [${item.article.cityCode || "no-city"}] ${item.article.title} | ${item.reasons.join("; ")} | ${item.article.articleReadError || "manual review required"} | ${item.article.newsLink || ""}`
+        )
+      : ["- None"]),
     "",
     "## Failed Sources",
     ...(report.failures.length
@@ -2323,6 +2542,85 @@ async function fetchWithTimeout(url, options = {}, timeoutMs = getFetchTimeoutMs
     });
   } finally {
     clearTimeout(timeout);
+  }
+}
+
+async function readResponseBodyWithTimeout(response, mode = "text", options = {}) {
+  const timeoutMs = Math.min(getPositiveIntegerEnv("FETCH_TIMEOUT_MS", 10000), 30000);
+  const reader = response.body?.getReader();
+  // Official authority and developer pages frequently exceed 1 MB because of
+  // bundled scripts and embedded media metadata; keep a bounded but usable cap.
+  const maxBytes = mode === "arrayBuffer" ? 20 * 1024 * 1024 : 8 * 1024 * 1024;
+  const readBody = reader
+    ? (async () => {
+      const chunks = [];
+      let totalBytes = 0;
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        totalBytes += value.byteLength;
+        if (totalBytes > maxBytes) {
+          await reader.cancel();
+          throw new Error(`response body exceeded ${maxBytes} bytes`);
+        }
+        chunks.push(value);
+      }
+
+      const combined = new Uint8Array(totalBytes);
+      let offset = 0;
+      for (const chunk of chunks) {
+        combined.set(chunk, offset);
+        offset += chunk.byteLength;
+      }
+
+      return mode === "arrayBuffer" ? combined.buffer : new TextDecoder().decode(combined);
+    })()
+    : (mode === "arrayBuffer" ? response.arrayBuffer() : response.text());
+  let timeout;
+  let abortHandler;
+
+  const cancelBody = () => {
+    try {
+      const cancellation = reader?.cancel() || response.body?.cancel();
+      cancellation?.catch(() => {});
+      return cancellation;
+    } catch {
+      return undefined;
+    }
+  };
+
+  const timeoutPromise = new Promise((_, reject) => {
+    timeout = setTimeout(() => {
+      cancelBody();
+      reject(new Error(`response body timed out after ${timeoutMs}ms`));
+    }, timeoutMs);
+  });
+
+  let abortPromise;
+
+  if (options.signal) {
+    abortPromise = new Promise((_, reject) => {
+      abortHandler = () => {
+        cancelBody();
+        reject(new Error("response body aborted"));
+      };
+    });
+    if (options.signal.aborted) {
+      abortHandler();
+    } else {
+      options.signal.addEventListener("abort", abortHandler, { once: true });
+    }
+  }
+
+  try {
+    return await Promise.race([readBody, timeoutPromise, abortPromise].filter(Boolean));
+  } finally {
+    clearTimeout(timeout);
+    if (abortHandler) {
+      options.signal.removeEventListener("abort", abortHandler);
+    }
   }
 }
 
@@ -3200,6 +3498,45 @@ function isPositiveCityMarketArticle(article) {
   );
 }
 
+function isOperationalInfrastructureOnlyArticle(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const hasOperationalSignal = hasKeyword(primaryAndUrl, [
+    "bus service",
+    "electric bus",
+    "bus route",
+    "double-decker",
+    "lng train",
+    "railway projects",
+    "railway project",
+    "street lights",
+    "streetlight",
+    "water metro",
+    "metro network"
+  ]);
+  const hasPropertyOrDevelopmentSignal = hasKeyword(primaryAndUrl, [
+    "real estate",
+    "realty",
+    "property",
+    "housing",
+    "residential",
+    "commercial",
+    "office",
+    "land parcel",
+    "plot",
+    "mall",
+    "warehouse",
+    "township",
+    "apartment",
+    "builder",
+    "developer",
+    "rera",
+    "property development",
+    "real estate development"
+  ]);
+
+  return hasOperationalSignal && !hasPropertyOrDevelopmentSignal;
+}
+
 function isStrongPositiveMarketOrInfrastructureArticle(article) {
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
   const disqualifyingOutsideCities = getDisqualifyingOutsideCityKeywords(article).filter(
@@ -3412,6 +3749,10 @@ function classifyArticle(article) {
 
 function isRealEstateRelated(article) {
   if (isBlockedArticle(article)) {
+    return false;
+  }
+
+  if (isOperationalInfrastructureOnlyArticle(article)) {
     return false;
   }
 
@@ -4174,10 +4515,44 @@ function isBlockedArticle(article) {
     isGenericBroadMarketHeadline(article) ||
     isGenericCultureReligionLocalNews(article) ||
     isGenericLocalNonRealEstateNews(article) ||
+    isNonProjectCorporateUpdate(article) ||
+    isNonProjectEducationOrCultureArticle(article) ||
     isWeakFoodRetailSource ||
     (!allowProjectAwardArticle && hasKeyword(primaryText, blockedTitleKeywords)) ||
     (!allowProjectAwardArticle && hasKeyword(newsLink, blockedUrlParts))
   );
+}
+
+function isNonProjectCorporateUpdate(article) {
+  const primaryText = getArticlePrimaryText(article);
+  const hasCorporateSignal = hasKeyword(primaryText, nonProjectCorporateKeywords);
+  const hasFinanceOnlySignal = hasKeyword(primaryText, [
+    "financial services", "home finance", "housing finance", "nbfc", "stake acquisition"
+  ]);
+  const hasProjectSignal = hasKeyword(primaryText, [
+    "real estate", "realty", "property", "housing", "residential", "commercial project",
+    "land parcel", "township", "office space", "warehouse", "builder", "developer",
+    "infrastructure project", "industrial park", "investment project"
+  ]);
+  const hasConcreteProjectSignal = hasKeyword(primaryText, [
+    "project launch", "project launched", "project approved", "project approval",
+    "residential development", "commercial development", "property development",
+    "housing development", "new housing", "land development", "township development"
+  ]);
+
+  return hasCorporateSignal && (!hasProjectSignal || (hasFinanceOnlySignal && !hasConcreteProjectSignal));
+}
+
+function isNonProjectEducationOrCultureArticle(article) {
+  const primaryText = getArticlePrimaryText(article);
+  const hasLocalTopicSignal = hasKeyword(primaryText, nonProjectLocalNewsKeywords);
+  const hasProjectSignal = hasKeyword(primaryText, [
+    "real estate", "realty", "property", "housing", "residential", "commercial project",
+    "land parcel", "township", "office space", "warehouse", "builder", "developer",
+    "infrastructure project", "industrial park", "campus construction", "campus expansion"
+  ]);
+
+  return hasLocalTopicSignal && !hasProjectSignal;
 }
 
 function isAddressLikeHeadline(title = "") {
@@ -4352,16 +4727,23 @@ function hasMappedCorporateCityEvidence(article) {
     isTargetProjectAwardArticle(article)
   );
 }
+function isFullArticleReviewRequired(article) {
+  return (
+    article.articleReadAttempted === true &&
+    article.fullArticleRead !== true &&
+    isTargetLookingArticle(article) &&
+    !isOperationalInfrastructureOnlyArticle(article) &&
+    !isBlockedArticle(article) &&
+    !isNegativeNews(article)
+  );
+}
+
 function getRejectionReasons(article, sentIds) {
   const reasons = [];
 
   if (!article.title || !article.newsLink) {
     reasons.push("filter 0: missing title/link");
     return reasons;
-  }
-
-  if (isBlockedArticle(article)) {
-    reasons.push("filter 1: spam/menu page");
   }
 
   if (!hasNewsArticlePageLink(article)) {
@@ -4372,29 +4754,26 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("filter 2: unsupported language/script");
   }
 
-  if (isNegativeNews(article)) {
-    reasons.push("filter 3: negative/crime/utility concern news");
-  }
+  // Decision order is deliberate: relevance first, safety second, routing third.
+  // Generic words such as "approval" or "development" must never skip the
+  // real-estate relevance gate.
+  const realEstateRelated = isRealEstateRelated(article);
+  const negativeNews = isNegativeNews(article);
 
-  if (!isRealEstateRelated(article) || isBlockedArticle(article) || isNegativeNews(article)) {
+  if (!realEstateRelated) {
     reasons.push("filter 4: not positive target real-estate/project news");
   }
 
-  if (isRealEstateRelated(article) && !hasSpecificProjectOrDevelopmentSignal(article)) {
-    reasons.push("filter 9: no specific project/development signal");
+  if (isBlockedArticle(article)) {
+    reasons.push("filter 1: spam/menu page");
   }
 
-  if (isBroadNonProjectUpdate(article)) {
-    reasons.push("filter 10: broad market/company update, not city project news");
+  if (negativeNews) {
+    reasons.push("filter 3: negative/crime/utility concern news");
   }
 
-  if (isNoidaDeveloperBlogArticle(article) && !hasNoidaDeveloperBlogQualitySignal(article)) {
-    reasons.push("filter 14: weak Noida developer blog signal");
-  }
-
-  if (isRejectedByLocalQualityJudge(article)) {
-    const decision = localQualityJudge(article);
-    reasons.push(`filter 17: local quality judge rejected article (${decision.reason}, score ${decision.score})`);
+  if (isFullArticleReviewRequired(article)) {
+    reasons.push("review: full article could not be read");
   }
 
   if (!article.cityCode) {
@@ -4415,6 +4794,23 @@ function getRejectionReasons(article, sentIds) {
 
   if (hasSourceCityUrlMismatch(article)) {
     reasons.push("filter 16: source URL city mismatch");
+  }
+
+  if (realEstateRelated && !hasSpecificProjectOrDevelopmentSignal(article)) {
+    reasons.push("filter 9: no specific project/development signal");
+  }
+
+  if (isBroadNonProjectUpdate(article)) {
+    reasons.push("filter 10: broad market/company update, not city project news");
+  }
+
+  if (isNoidaDeveloperBlogArticle(article) && !hasNoidaDeveloperBlogQualitySignal(article)) {
+    reasons.push("filter 14: weak Noida developer blog signal");
+  }
+
+  if (isRejectedByLocalQualityJudge(article)) {
+    const decision = localQualityJudge(article);
+    reasons.push(`filter 17: local quality judge rejected article (${decision.reason}, score ${decision.score})`);
   }
 
   const missingFields = article.cityCode ? missingRequiredPayloadFields(article) : [];
@@ -4493,29 +4889,77 @@ async function readSentIds() {
 async function writeSentIds(sentIds) {
   await fs.mkdir(stateDir, { recursive: true });
   const latestIds = [...sentIds].slice(-10000);
-
-  await fs.writeFile(
-    sentNewsPath,
-    JSON.stringify(
-      {
-        updatedAt: new Date().toISOString(),
-        sentIds: latestIds
-      },
-      null,
-      2
-    )
+  const temporaryPath = `${sentNewsPath}.tmp`;
+  const payload = JSON.stringify(
+    {
+      updatedAt: new Date().toISOString(),
+      sentIds: latestIds
+    },
+    null,
+    2
   );
+
+  await fs.writeFile(temporaryPath, payload);
+  await fs.rename(temporaryPath, sentNewsPath);
+}
+
+async function reconcileRemoteSentIds() {
+  const listUrl = env("APP_LIST_API_URL");
+  if (!listUrl) return { enabled: false, fetched: 0, pages: 0 };
+
+  const apiKey = env("APP_LIST_API_KEY") || env("APP_API_KEY");
+  const pageSize = Math.min(1000, Math.max(20, Number(env("API_RECONCILE_PAGE_SIZE") || 100)));
+  const maxPages = Math.min(100, Math.max(1, Number(env("API_RECONCILE_PAGES") || 25)));
+  const ids = new Set();
+  let pages = 0;
+
+  for (let page = 0; page < maxPages; page += 1) {
+    const headers = { "Content-Type": "application/json" };
+    if (apiKey) headers.Authorization = `Bearer ${apiKey}`;
+    const response = await fetchWithTimeout(listUrl, {
+      method: "POST",
+      headers,
+      body: JSON.stringify({ page, size: pageSize })
+    }, Math.min(30000, getFetchTimeoutMs()));
+    const body = await readResponseBodyWithTimeout(response);
+    if (!response.ok) throw new Error(`API reconciliation failed with ${response.status}: ${body.slice(0, 240)}`);
+
+    let payload;
+    try { payload = JSON.parse(body); } catch { throw new Error("API reconciliation returned invalid JSON."); }
+    const pageData = payload?.data?.page || payload?.data || payload;
+    const items = Array.isArray(pageData?.content) ? pageData.content : Array.isArray(pageData) ? pageData : [];
+    for (const item of items) {
+      for (const id of articleDedupeIds({
+        cityCode: item.cityCode || item.city || "",
+        newsLink: item.newsLink || item.url || "",
+        title: item.title || ""
+      })) ids.add(id);
+    }
+    pages += 1;
+    const totalPages = Number(pageData?.totalPages || 0);
+    if (items.length === 0 || (totalPages && page + 1 >= totalPages) || items.length < pageSize) break;
+  }
+  return { enabled: true, fetched: ids.size, pages, ids };
 }
 
 async function fetchFeed(sourceUrl, options = {}) {
-  const feed = await parser.parseURL(sourceUrl);
+  const response = await fetchWithTimeout(sourceUrl, {
+    headers: {
+      "User-Agent": "news-api-pusher/1.0"
+    },
+    signal: options.signal
+  });
+  if (!response.ok) {
+    throw new Error(`feed request failed with HTTP ${response.status}`);
+  }
+  const feed = await parser.parseString(await readResponseBodyWithTimeout(response, "text", options));
   const source = feed.title || new URL(sourceUrl).hostname;
   const publisherLogo = pickFirst(getPublisherLogo(feed), getFallbackLogo(sourceUrl));
   const feedItems = feed.items.slice(0, getMaxItemsPerSource());
 
   return mapWithConcurrency(feedItems, getArticleMetadataConcurrency(), async (item) => {
     const newsLink = item.link || item.guid;
-    const metadata = newsLink ? await fetchArticleMetadata(newsLink, {}, options) : {};
+    const metadata = newsLink ? await fetchArticleMetadataWithTimeout(newsLink, {}, options) : {};
     const rawArticle = {
       title: stripHtml(item.title),
       description: stripHtml(
@@ -4574,11 +5018,11 @@ async function fetchHtml(sourceUrl, options = {}) {
         throw new Error(`HTTP ${response.status}`);
       }
 
-      return response.text();
+      return readResponseBodyWithTimeout(response, "text", options);
     } catch (error) {
       lastError = error;
 
-      if (isMissingPaginatedPageError(error) || attempt === 2) {
+      if (options.signal?.aborted || isMissingPaginatedPageError(error) || attempt === 2) {
         throw error;
       }
 
@@ -4975,10 +5419,40 @@ async function fetchArticleMetadata(articleUrl, fallback = {}, options = {}) {
         extractPagePublishedAt($, fallback),
         fallback.publishedAt
       ),
-      articleText
+      articleText,
+      articleReadAttempted: true,
+      fullArticleRead: articleText.trim().length >= 200,
+      articleReadError: articleText.trim().length >= 200 ? "" : "article page returned insufficient readable text"
     };
-  } catch {
-    return fallback;
+  } catch (error) {
+    return {
+      ...fallback,
+      articleReadAttempted: true,
+      fullArticleRead: false,
+      articleReadError: String(error?.message || error || "article page could not be read").slice(0, 240)
+    };
+  }
+}
+
+async function fetchArticleMetadataWithTimeout(articleUrl, fallback = {}, options = {}) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), getArticleMetadataTimeoutMs());
+  let signal = controller.signal;
+
+  if (options.signal) {
+    signal = typeof AbortSignal !== "undefined" && AbortSignal.any
+      ? AbortSignal.any([controller.signal, options.signal])
+      : controller.signal;
+    if (!AbortSignal.any) {
+      if (options.signal.aborted) controller.abort();
+      else options.signal.addEventListener("abort", () => controller.abort(), { once: true });
+    }
+  }
+
+  try {
+    return await fetchArticleMetadata(articleUrl, fallback, { ...options, signal });
+  } finally {
+    clearTimeout(timeout);
   }
 }
 
@@ -4992,6 +5466,7 @@ async function fetchDirectArticle(articleUrl) {
     absoluteUrl($('link[rel="shortcut icon"]').attr("href"), articleUrl),
     getFallbackLogo(articleUrl)
   );
+  const articleText = extractArticleText($);
   const article = {
     title,
     description: pickFirst(
@@ -5001,7 +5476,10 @@ async function fetchDirectArticle(articleUrl) {
       ),
       title
     ),
-    articleText: extractArticleText($),
+    articleText,
+    articleReadAttempted: true,
+    fullArticleRead: articleText.trim().length >= 200,
+    articleReadError: articleText.trim().length >= 200 ? "" : "article page returned insufficient readable text",
     cityCode: "",
     isActive: true,
     newsLink: articleUrl,
@@ -5054,6 +5532,9 @@ async function fetchArticleHtml(articleUrl, options = {}) {
       return await fetchHtml(variant, options);
     } catch (error) {
       lastError = error;
+      if (options.signal?.aborted) {
+        throw error;
+      }
     }
   }
 
@@ -5073,7 +5554,7 @@ async function fetchBinary(sourceUrl, options = {}) {
     throw new Error(`HTTP ${response.status}`);
   }
 
-  return Buffer.from(await response.arrayBuffer());
+  return Buffer.from(await readResponseBodyWithTimeout(response, "arrayBuffer", options));
 }
 
 function extractPdfLinksFromLatinText(value = "") {
@@ -5235,6 +5716,9 @@ async function fetchHsvpNotices(sourceUrl, options = {}) {
         pdfLatinText
       });
     } catch (error) {
+      if (options.signal?.aborted) {
+        throw error;
+      }
       console.log(`Skipped HSVP notice ${candidate.noticeUrl}: ${error.message}`);
       return null;
     }
@@ -5483,7 +5967,7 @@ async function fetchM3mMedia(sourceUrl, options = {}) {
         break;
       }
 
-      const result = await response.json();
+      const result = JSON.parse(await readResponseBodyWithTimeout(response, "text", options));
       const rows = Array.isArray(result.data) ? result.data : [];
 
       if (rows.length === 0) {
@@ -5534,7 +6018,7 @@ async function fetchSignatureGlobalMedia(sourceUrl, options = {}) {
         throw new Error(`HTTP ${response.status}`);
       }
 
-      html = await response.text();
+      html = await readResponseBodyWithTimeout(response, "text", options);
       break;
     } catch (error) {
       lastError = error;
@@ -5579,7 +6063,7 @@ async function fetchSignatureGlobalMedia(sourceUrl, options = {}) {
           throw new Error(`HTTP ${response.status}`);
         }
 
-        pageData = await response.json();
+        pageData = JSON.parse(await readResponseBodyWithTimeout(response, "text", options));
         break;
       } catch (error) {
         lastError = error;
@@ -5629,7 +6113,7 @@ async function fetchCentralParkMedia(sourceUrl, options = {}) {
     throw new Error(`HTTP ${response.status}`);
   }
 
-  const html = await response.text();
+  const html = await readResponseBodyWithTimeout(response, "text", options);
   const $ = cheerio.load(html);
   const articles = $(".board-thumb").map((_, element) => {
     const card = $(element);
@@ -5697,6 +6181,10 @@ async function fetchPage(sourceUrl, options = {}) {
     try {
       html = await fetchHtml(pageUrl, options);
     } catch (error) {
+      if (options.signal?.aborted) {
+        throw error;
+      }
+
       if (pageIndex > 0) {
         if (isMissingPaginatedPageError(error)) {
           console.log(`Reached end of paginated source ${sourceUrl} at ${pageUrl}.`);
@@ -5760,7 +6248,7 @@ async function fetchPage(sourceUrl, options = {}) {
 
   const limitedCandidates = candidates.slice(0, getMaxItemsPerSource());
   const articles = await mapWithConcurrency(limitedCandidates, 8, async (candidate) => {
-    const metadata = await fetchArticleMetadata(candidate.newsLink, candidate, options);
+    const metadata = await fetchArticleMetadataWithTimeout(candidate.newsLink, candidate, options);
     const article = {
       ...candidate,
       ...metadata,
@@ -5829,6 +6317,10 @@ async function fetchSource(sourceUrl, options = {}) {
   try {
     return await fetchFeed(sourceUrl, options);
   } catch (error) {
+    if (options.signal?.aborted) {
+      throw error;
+    }
+
     const fallbackPageUrl = getFeedFallbackPageUrl(sourceUrl);
     if (fallbackPageUrl) {
       console.log(`Feed parse failed for ${sourceUrl}; trying cleaned page ${fallbackPageUrl}. ${error.message}`);
@@ -5884,6 +6376,32 @@ async function fetchSourceWithRetry(sourceUrl) {
   throw Object.assign(lastError || new Error("source fetch failed"), { sourceAttempts: maxAttempts });
 }
 
+async function fetchSourceWithRecovery(sourceUrl) {
+  const candidates = [sourceUrl, ...getSourceRecoveryAliases(sourceUrl)];
+  let lastError;
+
+  for (const candidate of candidates) {
+    try {
+      const result = await fetchSourceWithRetry(candidate);
+      return {
+        ...result,
+        requestedSource: sourceUrl,
+        fetchedSource: candidate,
+        recovered: candidate !== sourceUrl
+      };
+    } catch (error) {
+      lastError = error;
+      if (candidate !== candidates[candidates.length - 1]) {
+        console.warn(`Source ${sourceUrl} failed at ${candidate}; trying official recovery URL.`);
+      }
+    }
+  }
+
+  throw Object.assign(lastError || new Error("source recovery failed"), {
+    sourceAttempts: lastError?.sourceAttempts || getSourceRetryAttempts()
+  });
+}
+
 async function pushArticle(article) {
   const apiUrl = env("APP_API_URL");
   const apiKey = env("APP_API_KEY");
@@ -5907,7 +6425,7 @@ async function pushArticle(article) {
     body: JSON.stringify(payload)
   }, 15000);
 
-  const body = await response.text();
+  const body = await readResponseBodyWithTimeout(response);
 
   if (!response.ok) {
     throw new Error(`API rejected "${article.title}" with ${response.status}: ${body}`);
@@ -5928,6 +6446,11 @@ async function main() {
   const maxItems = getMaxItemsPerRun();
   const backfillDateRange = getBackfillDateRange();
   const sentIds = await readSentIds();
+  const reconciliation = await reconcileRemoteSentIds();
+  if (reconciliation.ids) {
+    for (const id of reconciliation.ids) sentIds.add(id);
+    console.log(`Remote API reconciliation loaded ${reconciliation.fetched} existing article keys from ${reconciliation.pages} page(s).`);
+  }
   const resendBackfill = getBooleanEnv("RESEND_BACKFILL") && hasBackfillDateRange(backfillDateRange);
   const filterSentIds = resendBackfill ? new Set() : sentIds;
   const skipTitleSet = getSkipTitleSet();
@@ -5939,6 +6462,7 @@ async function main() {
   const fetchedSources = [];
   const failedSources = [];
   const postedArticles = [];
+  const pushFailures = [];
   const dryRunCandidates = [];
 
   if (isNoidaCityEnabled() && !getBooleanEnv("DRY_RUN") && !getBooleanEnv("ALLOW_NOIDA_API")) {
@@ -5987,14 +6511,15 @@ async function main() {
   const sourceResults = await mapWithConcurrency(selectedSources, getSourceConcurrency(), async (source) => {
     try {
       const startedAt = Date.now();
-      const result = await fetchSourceWithRetry(source);
+      const result = await fetchSourceWithRecovery(source);
       const sourceCityCodes = getConfiguredSourceCityCodes(source);
       const articles = result.articles.map((article) => ({
         ...article,
         sourceCityCodes
       }));
-      console.log(`Fetched ${result.articles.length} items from ${source} in ${formatDuration(Date.now() - startedAt)} (attempts: ${result.attempts})`);
-      return { source, articles, attempts: result.attempts };
+      const recoveryLabel = result.recovered ? ` via ${result.fetchedSource}` : "";
+      console.log(`Fetched ${result.articles.length} items from ${source}${recoveryLabel} in ${formatDuration(Date.now() - startedAt)} (attempts: ${result.attempts})`);
+      return { source, articles, attempts: result.attempts, fetchedSource: result.fetchedSource, recovered: result.recovered };
     } catch (error) {
       console.error(`Failed to fetch ${source}: ${error.message}`);
       return { source, error: error.message, attempts: error.sourceAttempts || getSourceRetryAttempts() };
@@ -6006,7 +6531,9 @@ async function main() {
     status: result.error ? "failed" : "ok",
     count: result.error ? 0 : result.articles.length,
     attempts: result.attempts || 1,
-    error: result.error || ""
+    error: result.error || "",
+    fetchedSource: result.fetchedSource || result.source,
+    recovered: result.recovered === true
   }));
 
   for (const result of sourceResults) {
@@ -6127,17 +6654,26 @@ async function main() {
       continue;
     }
 
-    const result = await pushArticle(article);
-    for (const id of articleDedupeIds(article)) {
-      sentIds.add(id);
+    try {
+      const result = await pushArticle(article);
+      for (const id of articleDedupeIds(article)) {
+        sentIds.add(id);
+      }
+      await writeSentIds(sentIds);
+      postedArticles.push(reportArticle(article));
+      console.log(
+        `Pushed (${result.status}, ${article.cityCode}): ${article.title} | API response: ${
+          result.body || "<empty>"
+        }`
+      );
+    } catch (error) {
+      const failure = {
+        article: reportArticle(article),
+        error: String(error?.message || error)
+      };
+      pushFailures.push(failure);
+      console.error(`Failed to push (${article.cityCode}): ${article.title} | ${failure.error}`);
     }
-    await writeSentIds(sentIds);
-    postedArticles.push(reportArticle(article));
-    console.log(
-      `Pushed (${result.status}, ${article.cityCode}): ${article.title} | API response: ${
-        result.body || "<empty>"
-      }`
-    );
   }
 
   await writeSentIds(sentIds);
@@ -6162,6 +6698,11 @@ async function main() {
       failed: sourceHealth.filter((source) => source.status === "failed").length,
       zeroItem: sourceHealth.filter((source) => source.status === "ok" && source.count === 0).length
     },
+    reconciliation: {
+      enabled: reconciliation.enabled,
+      fetched: reconciliation.fetched,
+      pages: reconciliation.pages
+    },
     sourceCount: selectedSources.length,
     sources: fetchedSources,
     failures: failedSources,
@@ -6173,14 +6714,20 @@ async function main() {
     rejectedArticles: runAnalytics.rejectedArticles,
     needsReviewArticles: runAnalytics.needsReviewArticles,
     cityBreakdown: runAnalytics.cityBreakdown,
+    coverageAlerts: runAnalytics.coverageAlerts,
     candidates: articlesToPush.map(reportArticle),
     posted: postedArticles,
+    pushFailures,
     dryRunCandidates,
     missedCandidates: missedNewsCandidates.slice(0, 50).map(({ article, reasons }) => ({
       article: reportArticle(article),
       reasons
     }))
   });
+
+  if (pushFailures.length > 0) {
+    throw new Error(`${pushFailures.length} article push(es) failed; see pushFailures in the run report.`);
+  }
 }
 
 export {
