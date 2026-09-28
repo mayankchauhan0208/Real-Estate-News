@@ -2007,11 +2007,11 @@ function getArticleMetadataTimeoutMs() {
 }
 
 function getSourceTimeoutMs() {
-  return Math.min(getPositiveIntegerEnv("SOURCE_FETCH_TIMEOUT_MS", 120000), 120000);
+  return Math.min(getPositiveIntegerEnv("SOURCE_FETCH_TIMEOUT_MS", 90000), 90000);
 }
 
 function getSourceRetryAttempts() {
-  return Math.min(getPositiveIntegerEnv("SOURCE_RETRY_ATTEMPTS", 3), 3);
+  return Math.min(getPositiveIntegerEnv("SOURCE_RETRY_ATTEMPTS", 4), 4);
 }
 
 function isGovernmentPortalUrl(sourceUrl = "") {
@@ -6772,7 +6772,7 @@ async function fetchSourceWithRetry(sourceUrl, timeoutMsOverride = getSourceTime
       return { articles: await fetchSourceWithTimeout(sourceUrl, timeoutMsOverride), attempts: attempt };
     } catch (error) {
       lastError = error;
-      if (attempt >= maxAttempts || !isRetryableSourceError(error)) {
+      if (attempt >= maxAttempts) {
         throw Object.assign(error, { sourceAttempts: attempt });
       }
 
@@ -6787,17 +6787,11 @@ async function fetchSourceWithRetry(sourceUrl, timeoutMsOverride = getSourceTime
 
 async function fetchSourceWithRecovery(sourceUrl) {
   const candidates = [sourceUrl, ...getSourceRecoveryAliases(sourceUrl)];
-  const deadline = Date.now() + getSourceTimeoutMs();
   let lastError;
 
   for (const candidate of candidates) {
-    const remainingMs = deadline - Date.now();
-    if (remainingMs <= 0) {
-      break;
-    }
-
     try {
-      const result = await fetchSourceWithRetry(candidate, remainingMs);
+      const result = await fetchSourceWithRetry(candidate, getSourceTimeoutMs());
       return {
         ...result,
         requestedSource: sourceUrl,
