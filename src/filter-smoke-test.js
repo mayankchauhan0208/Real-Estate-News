@@ -183,6 +183,30 @@ const hyderabadCorridorArticle = article({
 });
 assert.deepEqual(detectCityCodes(hyderabadCorridorArticle), ["hyderabad"]);
 
+const puneMetroCorridorArticle = article({
+  title: "Wagholi ring road corridor attracts new housing investment",
+  description: "The Pune metropolitan region is seeing residential development around Wagholi and the ring road.",
+  articleText: "New housing, infrastructure and investment activity is planned around Wagholi, Pune.",
+  newsLink: "https://example.com/pune/wagholi-ring-road"
+});
+assert.deepEqual(detectCityCodes(puneMetroCorridorArticle), ["pune"]);
+
+const noidaSectorArticle = article({
+  title: "Sector 62 housing project receives approval",
+  description: "The residential project will add new housing supply.",
+  articleText: "The project includes residential development and investment in the sector.",
+  newsLink: "https://example.com/sector-62-housing-project"
+});
+assert.deepEqual(detectCityCodes(noidaSectorArticle), []);
+
+const lucknowGrowthCorridorArticle = article({
+  title: "Gomti Nagar Extension gains new residential investment",
+  description: "The Lucknow growth corridor is seeing new housing and infrastructure activity.",
+  articleText: "Developers announced a positive residential project near Gomti Nagar Extension and Shaheed Path, Lucknow.",
+  newsLink: "https://example.com/lucknow/gomti-nagar-extension"
+});
+assert.deepEqual(detectCityCodes(lucknowGrowthCorridorArticle), ["lucknow"]);
+
 const officialReraRelease = article({
   title: "UP RERA orders recovery in a registered housing project",
   description: "The official UP RERA press release records an order concerning a housing project.",

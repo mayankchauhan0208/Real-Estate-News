@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 import { citySourceRules, workbookCityRules } from "./city-config.js";
-import { getSourceUrls, isAllowedSource } from "./index.js";
+import { getGeographicAliasAudit, getSourceUrls, isAllowedSource } from "./index.js";
 
 const cityCodes = workbookCityRules.map((city) => city.code);
 const duplicateCodes = [...new Set(cityCodes.filter((code, index) => cityCodes.indexOf(code) !== index))];
@@ -19,6 +19,7 @@ for (const city of workbookCityRules) {
 const aliasCollisions = [...aliasOwners.entries()]
   .map(([alias, owners]) => ({ alias, owners: [...new Set(owners)] }))
   .filter((item) => item.owners.length > 1);
+const geographicAliasCollisions = getGeographicAliasAudit();
 const knownCodes = new Set(cityCodes);
 const unknownSourceCities = [...new Set(citySourceRules.map((source) => source.code).filter((code) => !knownCodes.has(code)))];
 const adminSettings = JSON.parse(await fs.readFile(new URL("../config/admin-settings.json", import.meta.url), "utf8"));
@@ -74,6 +75,7 @@ const citiesWithInsufficientSources = [...sourceCoverage.entries()]
 if (
   duplicateCodes.length ||
   aliasCollisions.length ||
+  geographicAliasCollisions.length ||
   unknownSourceCities.length ||
   unknownManualSourceCities.length ||
   duplicateManualUrls.length ||
@@ -87,6 +89,7 @@ if (
       {
         duplicateCodes,
         aliasCollisions,
+        geographicAliasCollisions,
         unknownSourceCities,
         unknownManualSourceCities,
         duplicateManualUrls,
