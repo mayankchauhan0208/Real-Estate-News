@@ -167,6 +167,22 @@ const sourceAssignedCityArticle = article({
 });
 assert.deepEqual(detectCityCodes(sourceAssignedCityArticle), ["gurugram"]);
 
+const palwalLocalityRoutingArticle = article({
+  title: "Hodal housing project receives approval and adds new homes",
+  description: "The residential project in Hodal will add new housing supply in Palwal district.",
+  articleText: "The development includes housing, infrastructure and investment in Hodal and Palwal district.",
+  newsLink: "https://example.com/palwal/hodal-housing-project"
+});
+assert.deepEqual(detectCityCodes(palwalLocalityRoutingArticle), ["palwal"]);
+
+const hyderabadCorridorArticle = article({
+  title: "Kokapet development corridor attracts new residential investment",
+  description: "The Hyderabad project expands housing and infrastructure near Kokapet.",
+  articleText: "The project adds residential development, connectivity and investment in Kokapet, Hyderabad.",
+  newsLink: "https://example.com/hyderabad/kokapet-development"
+});
+assert.deepEqual(detectCityCodes(hyderabadCorridorArticle), ["hyderabad"]);
+
 const officialReraRelease = article({
   title: "UP RERA orders recovery in a registered housing project",
   description: "The official UP RERA press release records an order concerning a housing project.",
