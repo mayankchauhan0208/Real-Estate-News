@@ -33,7 +33,7 @@ on:
         type: boolean
 
 concurrency:
-  group: news-backfill-${{ github.ref }}
+  group: news-api-pusher
   cancel-in-progress: false
 
 permissions:
