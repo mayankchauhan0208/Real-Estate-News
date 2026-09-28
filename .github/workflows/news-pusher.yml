@@ -129,9 +129,9 @@ jobs:
           SOURCE_LIMIT: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_limit || '0' }}
           SOURCE_CONCURRENCY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_concurrency || '12' }}
           BUILD_VERSION: "source-intelligence-v1"
-          SOURCE_STRATEGY: "full-source-coverage-30min"
-          AUTO_SOURCE_BATCH: "false"
-          SOURCE_BATCH_COUNT: "1"
+          SOURCE_STRATEGY: "rotating-source-coverage"
+          AUTO_SOURCE_BATCH: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
+          SOURCE_BATCH_COUNT: ${{ github.event_name == 'schedule' && '6' || '1' }}
           ARTICLE_METADATA_CONCURRENCY: "6"
           FETCH_TIMEOUT_MS: "25000"
           ARTICLE_METADATA_TIMEOUT_MS: "12000"
