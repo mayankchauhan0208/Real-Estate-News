@@ -2,7 +2,7 @@ name: News API Pusher
 
 on:
   schedule:
-    - cron: "10,40 * * * *"
+    - cron: "10 * * * *"
   workflow_dispatch:
     inputs:
       backfill_from:
@@ -135,7 +135,7 @@ jobs:
           ARTICLE_METADATA_CONCURRENCY: "6"
           FETCH_TIMEOUT_MS: "25000"
           ARTICLE_METADATA_TIMEOUT_MS: "12000"
-          SOURCE_FETCH_TIMEOUT_MS: "180000"
+          SOURCE_FETCH_TIMEOUT_MS: "120000"
           SOURCE_RETRY_ATTEMPTS: "2"
           ENABLE_NOIDA_CITY: "true"
           ALLOW_NOIDA_API: "true"
