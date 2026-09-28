@@ -2656,6 +2656,15 @@
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
     {
+      "id": "id-1800000019",
+      "url": "https://www.dlf.in/media",
+      "label": "DLF — Media Centre | P1",
+      "cityCodes": ["faridabad", "goa", "gurugram", "mumbai", "new_delhi", "noida"],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-28T00:00:00.000Z"
+    },
+    {
       "id": "id-1398406557",
       "url": "https://www.financialexpress.com/business/infrastructure",
       "label": "Financial Express — Infrastructure | P2",
@@ -3441,6 +3450,24 @@
       "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
+    },
+    {
+      "id": "id-1800000020",
+      "url": "https://www.godrejproperties.com/media/press",
+      "label": "Godrej Properties — Press Releases | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-28T00:00:00.000Z"
+    },
+    {
+      "id": "id-1800000021",
+      "url": "https://birlaestatesltd.com/updates/",
+      "label": "Birla Estates — Updates | P1",
+      "cityCodes": ["bangalore", "mumbai", "pune"],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-28T00:00:00.000Z"
     },
     {
       "id": "id-1421348054",
