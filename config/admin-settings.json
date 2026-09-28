@@ -3490,6 +3490,42 @@
       "createdAt": "2026-09-27T00:00:00.000Z"
     },
     {
+      "id": "id-1800000008",
+      "url": "https://rera.bihar.gov.in/RERALATESTNEWS.aspx",
+      "label": "Bihar RERA — Latest News | P1",
+      "cityCodes": ["patna"],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-28T00:00:00.000Z"
+    },
+    {
+      "id": "id-1800000009",
+      "url": "https://rera.bihar.gov.in/Newsarticles.aspx",
+      "label": "Bihar RERA — News Articles | P1",
+      "cityCodes": ["patna"],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-28T00:00:00.000Z"
+    },
+    {
+      "id": "id-1800000010",
+      "url": "https://rera.bihar.gov.in/ProceedingOrder.aspx",
+      "label": "Bihar RERA — Proceedings | P1",
+      "cityCodes": ["patna"],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-28T00:00:00.000Z"
+    },
+    {
+      "id": "id-1800000011",
+      "url": "https://rera.bihar.gov.in/publicorder.aspx",
+      "label": "Bihar RERA — Orders and Judgments | P1",
+      "cityCodes": ["patna"],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-28T00:00:00.000Z"
+    },
+    {
       "id": "id-1800000003",
       "url": "https://rera.kerala.gov.in/announcements",
       "label": "Kerala RERA — Announcements | P1",
@@ -3533,6 +3569,15 @@
       "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-27T00:00:00.000Z"
+    },
+    {
+      "id": "id-1800000012",
+      "url": "https://api.livehindustan.com/feeds/rss/business/real-estate/rssfeed.xml",
+      "label": "Hindustan — Hindi Real Estate RSS | P1",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "regional-hindi",
+      "createdAt": "2026-09-28T00:00:00.000Z"
     },
     {
       "id": "id-545059815",
