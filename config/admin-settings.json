@@ -5052,6 +5052,33 @@
       "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-26T06:22:47.206Z"
+    },
+    {
+      "id": "id-196410002",
+      "url": "https://tv9gujarati.com/topic/real-estate",
+      "label": "TV9 Gujarati Real Estate | Regional P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "createdAt": "2026-09-28T12:00:00.000Z"
+    },
+    {
+      "id": "id-196410004",
+      "url": "https://vijaykarnataka.com/real-estate/articlelist/133644218.cms",
+      "label": "Vijaya Karnataka Kannada Real Estate | Regional P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "regional-kannada",
+      "createdAt": "2026-09-28T12:00:00.000Z"
+    },
+    {
+      "id": "id-196410005",
+      "url": "https://www.telanganatribune.com/category/realestate/",
+      "label": "Telangana Tribune Real Estate | Regional P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "regional-telangana",
+      "createdAt": "2026-09-28T12:00:00.000Z"
     }
   ],
   "lastBackfill": {
