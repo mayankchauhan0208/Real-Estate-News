@@ -10,6 +10,9 @@
   "disabledCityCodes": [],
   "disabledSourceIds": [],
   "disabledSourceUrls": [],
+  "disabledNewsKeys": [
+    "nagaon|https://timesofindia.indiatimes.com/city/guwahati/nda-banks-on-himantas-16-rallies-to-turn-the-tide-first-starts-today/articleshow/134524565.cms"
+  ],
   "manualSources": [
     {
       "id": "id-730294178",
@@ -1878,6 +1881,47 @@
       "enabled": true,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.032194Z"
+    },
+    {
+      "id": "id-1839027411",
+      "url": "https://haryanarera.gov.in/admincontrol/judgements/1",
+      "label": "HRERA Panchkula — Judgments | P1",
+      "cityCodes": [
+        "ambala",
+        "faridabad",
+        "gurugram",
+        "karnal",
+        "kurukshetra",
+        "palwal",
+        "panipat",
+        "panchkula",
+        "rewari",
+        "rohtak",
+        "sonipat",
+        "yamunanagar"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-28T00:00:00.000Z"
+    },
+    {
+      "id": "id-1839027412",
+      "url": "https://rera.telangana.gov.in/SUOMOTU-TG-RERA-15121976ORDERS",
+      "label": "Telangana RERA — Suo Motu Orders | P1",
+      "cityCodes": [
+        "hyderabad",
+        "karimnagar",
+        "khammam",
+        "mahabubnagar",
+        "mancherial",
+        "nalgonda",
+        "nizamabad",
+        "suryapet",
+        "warangal"
+      ],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-28T00:00:00.000Z"
     },
     {
       "id": "id-1804557915",

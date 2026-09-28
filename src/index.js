@@ -4576,6 +4576,26 @@ function isGenericLocalNonRealEstateNews(article) {
     "township"
   ]);
 }
+
+function isPoliticalCampaignArticle(article) {
+  const text = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const politicalSignals = [
+    "bypoll",
+    "by-election",
+    "campaign rally",
+    "campaigning",
+    "candidate",
+    "election campaign",
+    "election rally",
+    "political rally",
+    "rally",
+    "rallies",
+    "poll campaign",
+    "parliamentary constituency"
+  ];
+  return hasKeyword(text, politicalSignals);
+}
+
 function isGenericBroadMarketHeadline(article) {
   const title = cleanText(article.title || "", 240).toLowerCase();
   const titleHasCity = cityRules.some((rule) => hasWholeWordKeyword(title, rule.keywords));
@@ -4617,6 +4637,7 @@ function isBlockedArticle(article) {
     isGenericBroadMarketHeadline(article) ||
     isGenericCultureReligionLocalNews(article) ||
     isGenericLocalNonRealEstateNews(article) ||
+    isPoliticalCampaignArticle(article) ||
     isNonProjectCorporateUpdate(article) ||
     isNonProjectEducationOrCultureArticle(article) ||
     isWeakFoodRetailSource ||

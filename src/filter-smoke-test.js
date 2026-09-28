@@ -78,6 +78,15 @@ for (const article of reportedOffTopicArticles) {
   assert.ok(getRejectionReasons(article, sentIds).length > 0, `reported off-topic article needs an audit reason: ${article.title}`);
 }
 
+const politicalCampaignArticle = {
+  title: "NDA banks on Himanta's 16 rallies to turn the tide; first starts today",
+  description: "CM Himanta Biswa Sarma will begin campaigning for an NDA candidate in the Nagaon parliamentary constituency.",
+  newsLink: "https://timesofindia.indiatimes.com/city/guwahati/nda-banks-on-himantas-16-rallies-to-turn-the-tide-first-starts-today/articleshow/134524565.cms",
+  cityCode: "nagaon"
+};
+assert.equal(isPublishableArticle(politicalCampaignArticle, sentIds), false);
+assert.ok(getRejectionReasons(politicalCampaignArticle, sentIds).length > 0);
+
 assert.match(
   getRejectionReasons(reportedOffTopicArticles[1], sentIds)[0],
   /filter 4: not positive target real-estate\/project news/
