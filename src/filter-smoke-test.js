@@ -167,6 +167,28 @@ const sourceAssignedCityArticle = article({
 });
 assert.deepEqual(detectCityCodes(sourceAssignedCityArticle), ["gurugram"]);
 
+const officialReraRelease = article({
+  title: "UP RERA orders recovery in a registered housing project",
+  description: "The official UP RERA press release records an order concerning a housing project.",
+  articleText: "This is an official RERA press release and may describe an adverse regulatory action.",
+  cityCode: "palwal",
+  sourceCityCodes: ["palwal"],
+  sourceUrl: "https://up-rera.in/PressRelease",
+  newsLink: "https://up-rera.in/PressRelease#release-up-rera-order"
+});
+assert.equal(isPublishableArticle(officialReraRelease, sentIds), true);
+
+const marathiRealEstateArticle = article({
+  title: "मुंबईत नवीन गृहनिर्माण प्रकल्पाला मंजुरी",
+  description: "मुंबईतील नवीन प्रकल्पामुळे घरांची आणि गुंतवणुकीची संधी वाढणार आहे.",
+  articleText: "हा सकारात्मक गृहनिर्माण प्रकल्प, जमीन विकास आणि गुंतवणुकीशी संबंधित आहे.",
+  cityCode: "mumbai",
+  sourceCityCodes: ["mumbai"],
+  sourceUrl: "https://example.com/marathi-real-estate",
+  newsLink: "https://example.com/marathi-real-estate/article"
+});
+assert.equal(isPublishableArticle(marathiRealEstateArticle, sentIds), true);
+
 assert.equal(isAllowedSource("https://www.moneycontrol.com/news/business/real-estate/"), true);
 assert.equal(isAllowedSource("https://www.moneycontrol.com/news/business/"), true);
 assert.equal(isAllowedSource("https://www.aninews.in/category/business/"), true);

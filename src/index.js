@@ -173,6 +173,21 @@ const CITY_ALIAS_OVERRIDES = {
   pondicherry: ["puducherry", "पुडुचेरी"]
 };
 
+const regionalRealEstateKeywords = [
+  // Marathi, Gujarati, Bengali, Tamil, Telugu, Kannada, Malayalam, Punjabi, and Odia.
+  "गृहनिर्माण", "स्थावर मालमत्ता", "मालमत्ता", "प्रकल्प", "जमीन", "गुंतवणूक", "मंजुरी", "बांधकाम", "विकास",
+  "મિલકત", "આવાસ", "પ્રોજેક્ટ", "જમીન", "રોકાણ", "મંજૂરી", "બાંધકામ", "વિકાસ",
+  "আবাসন", "সম্পত্তি", "প্রকল্প", "জমি", "বিনিয়োগ", "অনুমোদন", "নির্মাণ", "উন্নয়ন",
+  "வீடு", "நிலம்", "சொத்து", "திட்டம்", "கட்டுமானம்", "முதலீடு", "அனுமதி", "வளர்ச்சி",
+  "ఇల్లు", "భూమి", "ఆస్తి", "ప్రాజెక్ట్", "నిర్మాణం", "పెట్టుబడి", "అనుమతి", "అభివృద్ధి",
+  "ಮನೆ", "ಜಮೀನು", "ಆಸ್ತಿ", "ಯೋಜನೆ", "ನಿರ್ಮಾಣ", "ಹೂಡಿಕೆ", "ಅನುಮತಿ", "ಅಭಿವೃದ್ಧಿ",
+  "വീട്", "ഭൂമി", "സ്വത്ത്", "പദ്ധതി", "നിർമ്മാണം", "നിക്ഷേപം", "അനുമതി", "വികസനം",
+  "ਘਰ", "ਜ਼ਮੀਨ", "ਜਾਇਦਾਦ", "ਪ੍ਰੋਜੈਕਟ", "ਨਿਰਮਾਣ", "ਨਿਵੇਸ਼", "ਮਨਜ਼ੂਰੀ", "ਵਿਕਾਸ",
+  "ଘର", "ଜମି", "ସମ୍ପତ୍ତି", "ପ୍ରକଳ୍ପ", "ନିର୍ମାଣ", "ନିବେଶ", "ଅନୁମୋଦନ", "ବିକାଶ"
+];
+
+const supportedIndianScriptPattern = /[\u0900-\u097F\u0980-\u09FF\u0A00-\u0A7F\u0A80-\u0AFF\u0B00-\u0B7F\u0B80-\u0BFF\u0C00-\u0C7F\u0C80-\u0CFF\u0D00-\u0D7F]/u;
+
 function enrichCityRuleAliases(rule) {
   const codeAlias = String(rule.code || "").replaceAll("_", " ").trim().toLowerCase();
   const nameAlias = String(rule.name || "").trim().toLowerCase();
@@ -3179,6 +3194,22 @@ function isReraDocumentSource(article) {
   return isPressReleaseDocumentSource(sourceText);
 }
 
+function isOfficialReraPressRelease(article) {
+  if (!isReraDocumentSource(article)) {
+    return false;
+  }
+
+  const sourceText = `${article.sourceUrl || ""} ${article.feedUrl || ""} ${article.newsLink || ""}`;
+  const host = getArticleHost(article);
+  const officialHost = host === "up-rera.in" ||
+    host.endsWith(".rera.gov.in") ||
+    host.endsWith(".rera.nic.in") ||
+    (host.includes("rera") && !/(economictimes|realty|timesofindia|hindustantimes)/i.test(host));
+  const pressReleasePath = /press\s*[-_]?release|pressrelease/i.test(sourceText);
+
+  return officialHost && pressReleasePath;
+}
+
 function isUpReraPressReleaseSource(sourceUrl = "") {
   return /(?:^|[/.])up-rera\.in\b/i.test(sourceUrl) && /pressrelease|press-release/i.test(sourceUrl);
 }
@@ -3846,6 +3877,10 @@ function classifyArticle(article) {
 }
 
 function isRealEstateRelated(article) {
+  if (isOfficialReraPressRelease(article)) {
+    return true;
+  }
+
   if (isBlockedArticle(article)) {
     return false;
   }
@@ -3902,7 +3937,8 @@ function hasSpecificProjectOrDevelopmentSignal(article) {
     "rera",
     "road project",
     "township",
-    "urban development"
+    "urban development",
+    ...regionalRealEstateKeywords
   ]);
 }
 
@@ -3932,7 +3968,7 @@ function shouldSendToBothCities(article) {
 }
 
 function detectCityCodes(article) {
-  if (!isRealEstateRelated(article) || isBlockedArticle(article) || isNegativeNews(article)) {
+  if (!isRealEstateRelated(article) || (isBlockedArticle(article) && !isOfficialReraPressRelease(article)) || (isNegativeNews(article) && !isOfficialReraPressRelease(article))) {
     return [];
   }
 
@@ -4400,7 +4436,7 @@ function hasRealEstateEvidence(article) {
     hasTargetRegionEvidence(article) &&
     hasPromotionalRealEstateSignal(article) &&
     (
-      hasKeyword(primaryAndUrl, realEstateKeywords) ||
+      hasKeyword(primaryAndUrl, [...realEstateKeywords, ...regionalRealEstateKeywords]) ||
       hasKeyword(primaryAndUrl, realEstateCompanyKeywords)
     )
   );
@@ -4410,7 +4446,7 @@ function hasPromotionalRealEstateSignal(article) {
   const primaryText = getArticlePrimaryText(article);
   const primaryAndUrl = `${primaryText} ${getArticleUrlText(article)}`;
 
-  return hasKeyword(primaryAndUrl, promotionalRealEstateKeywords);
+  return hasKeyword(primaryAndUrl, [...promotionalRealEstateKeywords, ...regionalRealEstateKeywords]);
 }
 
 function hasDisallowedLanguage(article) {
@@ -4425,8 +4461,8 @@ function hasDisallowedLanguage(article) {
     .join(" ");
 
   const hasDevanagariScript = /[\u0900-\u097F]/u.test(text);
-  const hasClearlyUnsupportedScript = /[\u0600-\u08FF\u0980-\u09FF\u0A00-\u0D7F\u0E00-\u0FFF\u1000-\u10FF\u3040-\u30FF\u4E00-\u9FFF]/u.test(text);
-  return hasClearlyUnsupportedScript && !hasDevanagariScript;
+  const hasClearlyUnsupportedScript = /[\u0600-\u08FF\u1000-\u10FF\u3040-\u30FF\u4E00-\u9FFF]/u.test(text);
+  return hasClearlyUnsupportedScript && !hasDevanagariScript && !supportedIndianScriptPattern.test(text);
 }
 
 function isTargetProjectAwardArticle(article) {
@@ -4701,6 +4737,10 @@ function isMalformedCategoryHeadline(title = "") {
 }
 
 function isNegativeNews(article) {
+  if (isOfficialReraPressRelease(article)) {
+    return false;
+  }
+
   const primaryText = getArticlePrimaryText(article);
   const urlText = getArticleUrlText(article);
   const bodyText = getArticleBodyText(article);
@@ -4783,12 +4823,14 @@ const localJudgeStrongNegativeKeywords = ["shraddh", "श्राद्ध", "�
 function localQualityJudge(article) {
   const primaryAndUrl = getArticlePrimaryText(article) + " " + getArticleUrlText(article);
   const fullText = getArticleSearchText(article);
-  const positiveScore = countKeywordMentions(fullText, localJudgePositiveKeywords);
+  const positiveScore = countKeywordMentions(fullText, [...localJudgePositiveKeywords, ...regionalRealEstateKeywords]);
   const negativeScore = countKeywordMentions(fullText, localJudgeNegativeKeywords);
   const strongNegativeScore = countKeywordMentions(fullText, localJudgeStrongNegativeKeywords);
   const cityKeywords = article.cityCode ? (allCityRules.find((rule) => rule.code === article.cityCode)?.keywords || []) : [];
-  const cityScore = article.cityCode ? countKeywordMentions(fullText, cityKeywords) : 0;
-  const hasCoreTopic = hasKeyword(primaryAndUrl, ["real estate", "realty", "property", "housing", "infrastructure", "project", "metro", "expressway", "airport", "rera", "township", "land parcel", "construction", "builder", "developer", "residential", "commercial", "रियल एस्टेट", "रियल्टी", "प्रॉपर्टी", "परियोजना", "प्रोजेक्ट", "जमीन", "भूमि", "मेट्रो", "आवास", "निर्माण", "विकास"]);
+  const cityScore = article.cityCode
+    ? Math.max(countKeywordMentions(fullText, cityKeywords), getArticleSourceCityCodes(article).includes(article.cityCode) ? 2 : 0)
+    : 0;
+  const hasCoreTopic = hasKeyword(primaryAndUrl, ["real estate", "realty", "property", "housing", "infrastructure", "project", "metro", "expressway", "airport", "rera", "township", "land parcel", "construction", "builder", "developer", "residential", "commercial", "रियल एस्टेट", "रियल्टी", "प्रॉपर्टी", "परियोजना", "प्रोजेक्ट", "जमीन", "भूमि", "मेट्रो", "आवास", "निर्माण", "विकास", ...regionalRealEstateKeywords]);
   const hasStrongProjectSignal = hasSpecificProjectOrDevelopmentSignal(article) || isPositiveTargetBusinessOrDevelopmentArticle(article) || isPositiveTargetProjectUpdate(article);
   const hasCityEvidence = cityScore > 0 || hasNcrMatch(article) || hasMappedCorporateCityEvidence(article);
   const score = positiveScore * 2 + (hasCoreTopic ? 4 : 0) + (hasStrongProjectSignal ? 4 : 0) + Math.min(cityScore, 3) - negativeScore * 3 - strongNegativeScore * 8;
@@ -4851,6 +4893,10 @@ function hasMappedCorporateCityEvidence(article) {
   );
 }
 function isFullArticleReviewRequired(article) {
+  if (isOfficialReraPressRelease(article)) {
+    return false;
+  }
+
   return (
     article.articleReadAttempted === true &&
     article.fullArticleRead !== true &&
@@ -4887,11 +4933,11 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("filter 4: not positive target real-estate/project news");
   }
 
-  if (isBlockedArticle(article)) {
+  if (isBlockedArticle(article) && !isOfficialReraPressRelease(article)) {
     reasons.push("filter 1: spam/menu page");
   }
 
-  if (negativeNews) {
+  if (negativeNews && !isOfficialReraPressRelease(article)) {
     reasons.push("filter 3: negative/crime/utility concern news");
   }
 
@@ -4919,11 +4965,11 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("filter 16: source URL city mismatch");
   }
 
-  if (realEstateRelated && !hasSpecificProjectOrDevelopmentSignal(article)) {
+  if (realEstateRelated && !isOfficialReraPressRelease(article) && !hasSpecificProjectOrDevelopmentSignal(article)) {
     reasons.push("filter 9: no specific project/development signal");
   }
 
-  if (isBroadNonProjectUpdate(article)) {
+  if (!isOfficialReraPressRelease(article) && isBroadNonProjectUpdate(article)) {
     reasons.push("filter 10: broad market/company update, not city project news");
   }
 
@@ -4931,7 +4977,7 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("filter 14: weak Noida developer blog signal");
   }
 
-  if (isRejectedByLocalQualityJudge(article)) {
+  if (!isOfficialReraPressRelease(article) && isRejectedByLocalQualityJudge(article)) {
     const decision = localQualityJudge(article);
     reasons.push(`filter 17: local quality judge rejected article (${decision.reason}, score ${decision.score})`);
   }
