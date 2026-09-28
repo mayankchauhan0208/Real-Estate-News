@@ -1943,6 +1943,60 @@
       "createdAt": "2026-09-19T07:15:38.032194Z"
     },
     {
+      "id": "id-1800000013",
+      "url": "https://rera.telangana.gov.in/AnnualReports-TG-RERA-15121976REAT_Orders",
+      "label": "Telangana RERA — REAT Orders | P1",
+      "cityCodes": ["hyderabad", "karimnagar", "khammam", "mahabubnagar", "mancherial", "nalgonda", "nizamabad", "suryapet", "warangal"],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-28T00:00:00.000Z"
+    },
+    {
+      "id": "id-1800000014",
+      "url": "https://rera.telangana.gov.in/247564irgjsdghfdgfd-TG-RERA-98498dsgdgyhdfjbhy43",
+      "label": "Telangana RERA — Orders | P1",
+      "cityCodes": ["hyderabad", "karimnagar", "khammam", "mahabubnagar", "mancherial", "nalgonda", "nizamabad", "suryapet", "warangal"],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-28T00:00:00.000Z"
+    },
+    {
+      "id": "id-1800000015",
+      "url": "https://rera.telangana.gov.in/586784u3y5dsgfg-TG-RERA-45678jklshihnfgsfdg",
+      "label": "Telangana RERA — Authority Orders | P1",
+      "cityCodes": ["hyderabad", "karimnagar", "khammam", "mahabubnagar", "mancherial", "nalgonda", "nizamabad", "suryapet", "warangal"],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-28T00:00:00.000Z"
+    },
+    {
+      "id": "id-1800000016",
+      "url": "https://rera.telangana.gov.in/384798wfybwev9fya62435-TG-RERA-skfjdgky483yunskljghfdgjh",
+      "label": "Telangana RERA — Adjudicating Officer Orders | P1",
+      "cityCodes": ["hyderabad", "karimnagar", "khammam", "mahabubnagar", "mancherial", "nalgonda", "nizamabad", "suryapet", "warangal"],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-28T00:00:00.000Z"
+    },
+    {
+      "id": "id-1800000017",
+      "url": "https://rera.telangana.gov.in/amavlnjoiu7532845972-TG-RERA-74698ijgsdfjgbi349529",
+      "label": "Telangana RERA — Circulars | P1",
+      "cityCodes": ["hyderabad", "karimnagar", "khammam", "mahabubnagar", "mancherial", "nalgonda", "nizamabad", "suryapet", "warangal"],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-28T00:00:00.000Z"
+    },
+    {
+      "id": "id-1800000018",
+      "url": "https://rera.telangana.gov.in/Home/ViewNews",
+      "label": "Telangana RERA — News Archive | P1",
+      "cityCodes": ["hyderabad", "karimnagar", "khammam", "mahabubnagar", "mancherial", "nalgonda", "nizamabad", "suryapet", "warangal"],
+      "enabled": true,
+      "category": "manual",
+      "createdAt": "2026-09-28T00:00:00.000Z"
+    },
+    {
       "id": "id-1027281340",
       "url": "https://rera.tn.gov.in",
       "label": "Tamil Nadu RERA | P1",
