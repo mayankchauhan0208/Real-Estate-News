@@ -4726,13 +4726,33 @@ function isNonProjectCorporateUpdate(article) {
 function isNonProjectEducationOrCultureArticle(article) {
   const primaryText = getArticlePrimaryText(article);
   const hasLocalTopicSignal = hasKeyword(primaryText, nonProjectLocalNewsKeywords);
+  const hasEducationOrAdmissionsSignal = hasKeyword(primaryText, [
+    "admission",
+    "admissions",
+    "academic programme",
+    "academic program",
+    "mba",
+    "programme",
+    "program",
+    "snap 2026",
+    "student",
+    "students",
+    "university",
+    "institute"
+  ]);
   const hasProjectSignal = hasKeyword(primaryText, [
     "real estate", "realty", "property", "housing", "residential", "commercial project",
     "land parcel", "township", "office space", "warehouse", "builder", "developer",
     "infrastructure project", "industrial park", "campus construction", "campus expansion"
   ]);
 
-  return hasLocalTopicSignal && !hasProjectSignal;
+  const hasConcretePropertySignal = hasKeyword(primaryText, [
+    "apartment", "builder", "commercial project", "developer", "housing project",
+    "land parcel", "property", "real estate", "realty", "residential project",
+    "township", "office space", "project launch", "project launched"
+  ]);
+
+  return (hasLocalTopicSignal || hasEducationOrAdmissionsSignal) && !hasConcretePropertySignal;
 }
 
 function isAddressLikeHeadline(title = "") {

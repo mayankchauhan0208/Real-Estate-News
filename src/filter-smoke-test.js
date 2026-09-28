@@ -207,6 +207,14 @@ const lucknowGrowthCorridorArticle = article({
 });
 assert.deepEqual(detectCityCodes(lucknowGrowthCorridorArticle), ["lucknow"]);
 
+const puneMbaAdmissionsArticle = article({
+  title: "SIBM Pune launches new MBA programme in HRM and integrated AI analytics",
+  description: "Applications are open through SNAP 2026 for the two-year residential programme.",
+  articleText: "The university institute announced admissions for students to the new academic programme.",
+  newsLink: "https://example.com/pune/sibm-mba-admissions"
+});
+assert.deepEqual(detectCityCodes(puneMbaAdmissionsArticle), []);
+
 const officialReraRelease = article({
   title: "UP RERA orders recovery in a registered housing project",
   description: "The official UP RERA press release records an order concerning a housing project.",
