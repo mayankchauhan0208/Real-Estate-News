@@ -1,0 +1,74 @@
+[
+  {
+    "id": "rera-up-2026-001",
+    "title": "UP RERA Approves 13 Real Estate Projects Worth Over ₹1,300 Crores Across Eight Districts",
+    "url": "https://www.up-rera.in/ViewDocument?Param=Press_Release_69297200thAuthoritymeetingPressreleaseenglish.pdf",
+    "expected": "VALID_RERA_OFFICIAL",
+    "classifier": "project_development",
+    "pass": true,
+    "geo": "STATE_ONLY"
+  },
+  {
+    "id": "rera-up-2026-002",
+    "title": "वर्ष 2025 में यूपी रेरा का रिकॉर्ड प्रदर्शन, 308 परियोजनाएं, 53.5% निवेश वृद्धि और प्रदेशव्यापी विस्तार",
+    "url": "https://www.up-rera.in/ViewDocument?Param=Press_Release_92132RERAachievementin2025hindirelease.pdf",
+    "expected": "VALID_RERA_OFFICIAL",
+    "classifier": "unclassified",
+    "pass": false,
+    "geo": "UNKNOWN_LOCALITY"
+  },
+  {
+    "id": "rera-goa-2025-001",
+    "title": "1 CHOGM official Goa RERA project registration",
+    "url": "https://rera.goa.gov.in/reraApp/viewProjectDetailPage?projectID=aNKGQpWVA90Joft9YFsulA%3D%3D",
+    "expected": "VALID_PROJECT_REGISTRATION",
+    "classifier": "project_development",
+    "pass": true,
+    "geo": "CITY_CORRECT"
+  },
+  {
+    "id": "rera-goa-2018-001",
+    "title": "Goa RERA order extends filing deadline for ongoing real estate project registration",
+    "url": "https://rera.goa.gov.in/reraApp/Commonimage?IMG_PATH=WCNzxYg+DTZMNAdLA3WOwA%3D%3D",
+    "expected": "VALID_ORDER",
+    "classifier": "reject_negative",
+    "pass": false,
+    "geo": "CITY_CORRECT"
+  },
+  {
+    "id": "authority-dda-2025-001",
+    "title": "DDA Karmayogi Awaas Yojana 2025 launches housing scheme in Narela",
+    "url": "https://dda.gov.in/sites/default/files/notice/karmayogi_circular.pdf",
+    "expected": "VALID_AUTHORITY_UPDATE",
+    "classifier": "reject_negative",
+    "pass": false,
+    "geo": "CITY_CORRECT"
+  },
+  {
+    "id": "authority-dda-2026-001",
+    "title": "Public Notice: DDA Nagrik Awaas Yojana 2026",
+    "url": "https://dda.gov.in/public-notice-dda-nagrik-awaas-yojana-2026-advertisement",
+    "expected": "VALID_AUTHORITY_UPDATE",
+    "classifier": "reject_negative",
+    "pass": false,
+    "geo": "CITY_CORRECT"
+  },
+  {
+    "id": "authority-dda-2026-002",
+    "title": "डीडीए नागरिक आवास योजना 2026",
+    "url": "https://dda.gov.in/sites/default/files/public-notice/hindi_dda_ad06032026.pdf",
+    "expected": "VALID_REAL_ESTATE",
+    "classifier": "reject_negative",
+    "pass": false,
+    "geo": "UNKNOWN_LOCALITY"
+  },
+  {
+    "id": "authority-dda-2026-003",
+    "title": "डीडीए नागरिक आवास योजना 2026 के शुभारंभ के लिए परिपत्र",
+    "url": "https://dda.gov.in/hi/circular-launch-dda-nagrik-awaas-yojana-2026-0",
+    "expected": "VALID_REAL_ESTATE",
+    "classifier": "unclassified",
+    "pass": false,
+    "geo": "UNKNOWN_LOCALITY"
+  }
+]

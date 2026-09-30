@@ -1,0 +1,131 @@
+{
+  "generatedAt": "2026-09-30T09:42:04.797Z",
+  "corpusVersion": "task7-v1",
+  "totalPositiveControls": 8,
+  "countsByType": {
+    "RERA": {
+      "total": 4,
+      "pass": 2,
+      "reject": 1,
+      "review": 1,
+      "falseNegative": 2,
+      "geoCorrect": 2,
+      "dateExtracted": 4,
+      "discoverable": 0,
+      "extractionSuccess": 4
+    },
+    "AUTHORITY": {
+      "total": 2,
+      "pass": 0,
+      "reject": 2,
+      "review": 0,
+      "falseNegative": 2,
+      "geoCorrect": 2,
+      "dateExtracted": 2,
+      "discoverable": 0,
+      "extractionSuccess": 2
+    },
+    "REGIONAL": {
+      "total": 2,
+      "pass": 0,
+      "reject": 1,
+      "review": 1,
+      "falseNegative": 2,
+      "geoCorrect": 0,
+      "dateExtracted": 2,
+      "discoverable": 0,
+      "extractionSuccess": 2
+    }
+  },
+  "countsByDomain": {
+    "ENGLISH": {
+      "total": 5,
+      "pass": 2,
+      "reject": 3,
+      "review": 0,
+      "falseNegative": 3,
+      "geoCorrect": 4,
+      "dateExtracted": 5,
+      "discoverable": 0,
+      "extractionSuccess": 5
+    },
+    "RERA": {
+      "total": 4,
+      "pass": 2,
+      "reject": 1,
+      "review": 1,
+      "falseNegative": 2,
+      "geoCorrect": 2,
+      "dateExtracted": 4,
+      "discoverable": 0,
+      "extractionSuccess": 4
+    },
+    "REGIONAL": {
+      "total": 2,
+      "pass": 0,
+      "reject": 1,
+      "review": 1,
+      "falseNegative": 2,
+      "geoCorrect": 0,
+      "dateExtracted": 2,
+      "discoverable": 0,
+      "extractionSuccess": 2
+    },
+    "INFRASTRUCTURE": {
+      "total": 2,
+      "pass": 2,
+      "reject": 0,
+      "review": 0,
+      "falseNegative": 0,
+      "geoCorrect": 1,
+      "dateExtracted": 2,
+      "discoverable": 0,
+      "extractionSuccess": 2
+    }
+  },
+  "endToEnd": {
+    "sourceAccessRecall": 1,
+    "discoveryRecall": 0,
+    "extractionRecall": 1,
+    "dateRecall": 1,
+    "classificationRecall": 0.25,
+    "geoRecall": 0.5,
+    "endToEndRecall": 0
+  },
+  "stageLoss": {
+    "listingOrDiscovery": 8,
+    "extraction": 0,
+    "classification": 6,
+    "geo": 4,
+    "sourceUnavailable": 0
+  },
+  "validControlsMissedAtListingStage": 8,
+  "validControlsMissedAtExtractionStage": 0,
+  "validControlsMissedAtClassificationStage": 6,
+  "validControlsMissedAtGeoStage": 4,
+  "sourceUnavailableAmongControls": 0,
+  "adaptersImplemented": [],
+  "recoveredByAdapters": 0,
+  "topSourceDebt": [
+    {
+      "source": "UP RERA PressRelease",
+      "reason": "Verified positive PDFs exist but listing → document links were missed by the current sample.",
+      "priority": "HIGH"
+    },
+    {
+      "source": "DDA whats-new / housing circulars",
+      "reason": "Verified English and Hindi housing documents exist behind listing/detail pages.",
+      "priority": "HIGH"
+    },
+    {
+      "source": "Goa RERA project and orders",
+      "reason": "Verified project-detail and order PDFs expose structured project/document metadata.",
+      "priority": "HIGH"
+    }
+  ],
+  "unknownGeoEntities": [
+    "UP RERA eight named districts are present in one statewide record but not individually routed by the current sample."
+  ],
+  "nextTask8": "C_EXTRACTION_ADAPTER_EXPANSION",
+  "note": "Controls are web-verified official records discovered through the existing configured authority sources. They are not production-published and do not prove that the current live run can discover them automatically."
+}
