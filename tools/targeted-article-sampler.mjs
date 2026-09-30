@@ -5,11 +5,13 @@ import Parser from "rss-parser";
 import * as cheerio from "cheerio";
 import { classifyArticle, isLikelyFeedUrl } from "../src/index.js";
 import { workbookCityRules } from "../src/city-config.js";
+import { extractDateHierarchy, extractJsonLd, extractionStrategySummary } from "./extraction-helpers.mjs";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const auditDir = path.join(rootDir, "reports", "source-audits");
 const targetDir = path.join(auditDir, "targeted");
 const batch = String(process.env.TARGETED_BATCH || "unsampled").toLowerCase();
+const runSuffix = String(process.env.TARGETED_RUN_SUFFIX || "").trim();
 const listingTimeoutMs = Number(process.env.TARGETED_LISTING_TIMEOUT_MS || 5000);
 const articleTimeoutMs = Number(process.env.TARGETED_ARTICLE_TIMEOUT_MS || 5000);
 const sourceRuntimeMs = Number(process.env.TARGETED_SOURCE_RUNTIME_MS || 15000);
@@ -136,8 +138,16 @@ function looksLikeFeed(probe) {
   return /xml|rss|atom/i.test(probe.contentType) || /^<\?xml/i.test(head) || /<(rss|feed)\b/i.test(head);
 }
 
+function sourceStrategy(source) {
+  const lower = source.toLowerCase();
+  if (/rera|naredco|nhsrcl/.test(lower)) return { key: "RERA_OR_OFFICIAL_DOCUMENT", dateOrder: "DMY" };
+  if (/livehindustan|amarujala|tv9|vijaykarnataka|telanganatribune|maharashtratimes/.test(lower)) return { key: "REGIONAL_PUBLISHER", dateOrder: "DMY" };
+  return { key: "GENERIC_INDIAN_PUBLISHER", dateOrder: "DMY" };
+}
+
 async function parseListing(source, probe) {
   if (probe.body.length > 300_000) return { method: "BOUNDED_SIZE_GUARD", links: [], dates: [], thumbnails: 0, error: "LISTING_TOO_LARGE" };
+  const strategy = sourceStrategy(source);
   if (looksLikeFeed(probe)) {
     try {
       const feed = await parser.parseString(probe.body);
@@ -146,10 +156,11 @@ async function parseListing(source, probe) {
         method: "RSS_OR_ATOM",
         links: [...new Set(items.map((item) => absoluteUrl(item.link || item.guid, source)).filter(Boolean))],
         dates: items.map((item) => parseDate(item.isoDate || item.pubDate || item.date)).filter(Boolean),
-        thumbnails: items.filter((item) => item.enclosure?.url || item.media?.content?.url || item.image?.url).length
+        thumbnails: items.filter((item) => item.enclosure?.url || item.media?.content?.url || item.image?.url).length,
+        strategies: extractionStrategySummary([{ strategy: "RSS/Atom", outcome: items.length ? "SUCCESS" : "FAILURE", items: items.length, reason: items.length ? "feed items parsed" : "no feed items" }])
       };
     } catch (error) {
-      return { method: "RSS_OR_ATOM", links: [], dates: [], thumbnails: 0, error: `LISTING_PARSE_FAILED: ${error.message}` };
+      return { method: "RSS_OR_ATOM", links: [], dates: [], thumbnails: 0, error: `LISTING_PARSE_FAILED: ${error.message}`, strategies: extractionStrategySummary([{ strategy: "RSS/Atom", outcome: "FAILURE", reason: error.message }]) };
     }
   }
   const $ = cheerio.load(probe.body);
@@ -163,15 +174,23 @@ async function parseListing(source, probe) {
   });
   const dates = $("time[datetime], meta[property='article:published_time'], meta[name='date'], meta[name='publish-date']")
     .map((_, el) => parseDate($(el).attr("datetime") || $(el).attr("content"))).get().filter(Boolean);
+  const jsonLd = extractJsonLd($, strategy.dateOrder);
+  const jsonLdLinks = jsonLd.links.map((link) => absoluteUrl(link, source)).filter(Boolean);
+  const anchorLinks = [...new Set(links)];
+  const allLinks = [...new Set([...anchorLinks, ...jsonLdLinks])];
   return {
     method: "HTML_GENERIC_EXTRACTOR",
-    links: [...new Set(links)],
+    links: allLinks,
     dates,
-    thumbnails: $("meta[property='og:image'], meta[name='twitter:image'], img[src]").length
+    thumbnails: $("meta[property='og:image'], meta[name='twitter:image'], img[src]").length,
+    strategies: extractionStrategySummary([
+      { strategy: "HTML anchors", outcome: anchorLinks.length ? "SUCCESS" : "FAILURE", items: anchorLinks.length, reason: anchorLinks.length ? "same-host anchors" : "no qualifying anchors" },
+      { strategy: "JSON-LD links", outcome: jsonLdLinks.length ? "SUCCESS" : "FAILURE", items: jsonLdLinks.length, reason: jsonLdLinks.length ? "structured metadata" : "no structured article links" }
+    ])
   };
 }
 
-function extractArticle(probe, link) {
+function extractArticle(probe, link, source) {
   if (!probe.ok) return { state: probe.error?.startsWith("timeout") ? "ARTICLE_TIMEOUT" : "ARTICLE_FETCH_FAILED", link };
   if (probe.body.length > 300_000) return { state: "ARTICLE_TOO_LARGE", link, textLength: 0, thumbnail: false };
   if (/pdf/i.test(probe.contentType) || /\.pdf(?:$|[?#])/i.test(link)) return { state: "DOCUMENT_SOURCE", link, date: "", textLength: 0, thumbnail: false };
@@ -182,8 +201,13 @@ function extractArticle(probe, link) {
     const date = $("meta[property='article:published_time'], meta[name='publish-date'], time[datetime]").map((_, el) => parseDate($(el).attr("content") || $(el).attr("datetime"))).get().find(Boolean) || "";
     const image = $("meta[property='og:image'], meta[name='twitter:image'], img[src]").first();
     const language = languageOf(text, String($("html").attr("lang") || ""));
+    const dateInfo = extractDateHierarchy($, { dateOrder: sourceStrategy(source).dateOrder });
     const readable = text.length >= 200;
-    return { state: readable ? "ARTICLE_OK" : "ARTICLE_READABILITY_FAILED", link, title, text, textLength: text.length, date, thumbnail: Boolean(image.attr("content") || image.attr("src")), language, truncated: probe.truncated };
+    return { state: readable ? "ARTICLE_OK" : "ARTICLE_READABILITY_FAILED", link, title, text, textLength: text.length, date: dateInfo.value || date, dateSource: dateInfo.source, dateConfidence: dateInfo.confidence, dateFormat: dateInfo.format, thumbnail: Boolean(image.attr("content") || image.attr("src")), language, truncated: probe.truncated, strategies: extractionStrategySummary([
+      { strategy: "JSON-LD articleBody/date", outcome: dateInfo.source.startsWith("json-ld") ? "SUCCESS" : "FAILURE", items: dateInfo.source.startsWith("json-ld") ? 1 : 0, reason: dateInfo.source.startsWith("json-ld") ? dateInfo.source : "not used" },
+      { strategy: "semantic HTML", outcome: readable ? "SUCCESS" : "FAILURE", items: readable ? 1 : 0, reason: readable ? "readable text" : "text too short" },
+      { strategy: "metadata/time date", outcome: dateInfo.value ? "SUCCESS" : "FAILURE", items: dateInfo.value ? 1 : 0, reason: dateInfo.source || "date missing" }
+    ]) };
   } catch (error) {
     return { state: "ARTICLE_PARSE_FAILED", link, error: error.message };
   }
@@ -239,7 +263,7 @@ async function sampleSource(row) {
   for (const link of recentLinks) {
     if (Date.now() - startedAt > sourceRuntimeMs) break;
     const articleProbe = await boundedFetch(link, articleTimeoutMs);
-    const article = extractArticle(articleProbe, link);
+    const article = extractArticle(articleProbe, link, row.url);
     const text = `${article.title || ""} ${article.text || ""}`;
     article.geo = geoEvidence(text);
     article.relevance = article.state === "ARTICLE_OK" ? classifyArticle({ title: article.title, description: article.text.slice(0, 500), articleText: article.text, newsLink: link, sourceUrl: row.url, publishedAt: article.date }) : "unreadable";
@@ -270,7 +294,7 @@ async function main() {
   const audit = await readJson(auditPath);
   const run = runSelection?.data || null;
   const targets = await selectTargets(audit, run);
-  const checkpointPath = path.join(targetDir, `${batch}.jsonl`);
+  const checkpointPath = path.join(targetDir, `${batch}${runSuffix ? `-${runSuffix}` : ""}.jsonl`);
   const completed = new Set();
   try {
     const checkpoint = await fs.readFile(checkpointPath, "utf8");
@@ -301,7 +325,7 @@ async function main() {
     p95SourceMs: results.length ? results.map((result) => result.durationMs || 0).sort((a, b) => a - b)[Math.min(results.length - 1, Math.ceil(results.length * 0.95) - 1)] : 0,
     auditInput: path.basename(auditPath), checkpoint: checkpointPath
   };
-  const summaryPath = path.join(targetDir, `${batch}-summary.json`);
+  const summaryPath = path.join(targetDir, `${batch}${runSuffix ? `-${runSuffix}` : ""}-summary.json`);
   await fs.writeFile(summaryPath, JSON.stringify(summary, null, 2));
   console.log(JSON.stringify(summary, null, 2));
 }
