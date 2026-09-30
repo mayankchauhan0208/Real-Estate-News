@@ -9,7 +9,8 @@ function commandPath(name) {
 }
 
 export function availableOcrTools() {
-  return { tesseract: commandPath('tesseract'), pdfinfo: commandPath('pdfinfo'), pdftoppm: commandPath('pdftoppm') };
+  const tesseract = commandPath('tesseract') || (process.platform === 'win32' && fs.existsSync('C:\\Program Files\\Tesseract-OCR\\tesseract.exe') ? 'C:\\Program Files\\Tesseract-OCR\\tesseract.exe' : '');
+  return { tesseract, pdfinfo: commandPath('pdfinfo'), pdftoppm: commandPath('pdftoppm') };
 }
 
 export function pdfHash(body) { return crypto.createHash('sha256').update(body).digest('hex'); }
