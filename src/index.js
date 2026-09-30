@@ -3921,6 +3921,10 @@ function classifyArticle(article) {
     return "reject_negative";
   }
 
+  if (isEducationOnlyAnnouncement(article)) {
+    return "reject_relevance";
+  }
+
   if (isNcrCommercialOfficeMarketArticle(article)) {
     return "ncr_office_market";
   }
@@ -3978,6 +3982,48 @@ function classifyArticle(article) {
   }
 
   return "unclassified";
+}
+
+function isEducationOnlyAnnouncement(article) {
+  const primaryText = getArticlePrimaryText(article);
+  const urlText = getArticleUrlText(article);
+  const text = `${primaryText} ${urlText}`;
+  const educationSignal = hasKeyword(text, [
+    "admission",
+    "admissions",
+    "academic programme",
+    "academic program",
+    "analytics",
+    "bachelor",
+    "campus placement",
+    "course",
+    "degree",
+    "entrance exam",
+    "faculty",
+    "institute",
+    "mba",
+    "phd",
+    "programme",
+    "program",
+    "snap",
+    "students",
+    "university"
+  ]);
+  const realEstateSignal = hasKeyword(text, [
+    "apartment",
+    "builder",
+    "commercial",
+    "developer",
+    "housing",
+    "land",
+    "plot",
+    "property",
+    "real estate",
+    "realty",
+    "township"
+  ]);
+
+  return educationSignal && !realEstateSignal;
 }
 
 function isRealEstateRelated(article) {
