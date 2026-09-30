@@ -1,0 +1,379 @@
+{
+  "generatedAt": "2026-09-30T10:27:26.790Z",
+  "baseline": {
+    "sourceCount": 571,
+    "runtimeUrls": 571,
+    "itemsDiscovered": 30960,
+    "validCandidates": 0,
+    "duplicateSourceRows": 0,
+    "sourceHealth": {
+      "generatedAt": "2026-09-30T08:05:40.522Z",
+      "total": 571,
+      "transportReachable": 506,
+      "contentHealthy": 0,
+      "listingOnly": 467,
+      "notSampled": 38,
+      "contentDegraded": 0,
+      "stale": 0,
+      "empty": 0,
+      "extractionFailed": 1,
+      "blocked": 2,
+      "brokenUrl": 12,
+      "transportFailed": 48,
+      "needsReview": 3,
+      "selectedInRuntime": 571,
+      "fallbackUsed": 2,
+      "duplicateRows": 0
+    }
+  },
+  "existingYield": {
+    "highValue": 0,
+    "mediumValue": 0,
+    "lowYieldReachable": 467,
+    "broken": 12,
+    "blocked": 2,
+    "unverified": 38,
+    "extractionFailed": 1,
+    "note": "The baseline audit produced no readable full-article rows, so no source can be honestly labeled HIGH_VALUE from this snapshot."
+  },
+  "coverageGaps": {
+    "matrixTotal": 234,
+    "healthyEvidence": 4,
+    "discoveryGaps": 29,
+    "insufficientEvidence": 201,
+    "prioritizedDemonstratedGaps": [
+      "Faridabad",
+      "Gurugram",
+      "Bengaluru",
+      "Chandigarh",
+      "Delhi NCR",
+      "Jaipur",
+      "Kalyan-Dombivli",
+      "Kolkata",
+      "Mumbai",
+      "New Delhi",
+      "Patna",
+      "Pune",
+      "Thane"
+    ]
+  },
+  "candidatesInvestigated": 5,
+  "candidatesPassingFullValidation": 0,
+  "candidates": [
+    {
+      "id": "mhada-press-release",
+      "name": "MHADA Press Release",
+      "url": "https://mhada.gov.in/en/press-release",
+      "authority": "Maharashtra Housing and Area Development Authority",
+      "category": "official_housing_authority",
+      "cityCodes": [
+        "mumbai",
+        "pune",
+        "nashik",
+        "thane",
+        "nagpur"
+      ],
+      "fallbackUrl": "https://www.mhada.gov.in/en/press-release",
+      "ownershipVerified": true,
+      "transport": {
+        "status": 200,
+        "ok": true,
+        "finalUrl": "https://mhada.gov.in/en/press-release",
+        "contentType": "text/html; charset=UTF-8",
+        "bytes": 200704,
+        "elapsedMs": 598
+      },
+      "listing": {
+        "itemsDiscovered": 30,
+        "detailLinks": 30,
+        "relevantItems": 5,
+        "datedItems": 1,
+        "validCandidates": 0,
+        "rejected": 25,
+        "uniqueUrls": 30
+      },
+      "detail": [
+        {
+          "url": "https://mhada.gov.in/en/press-release#",
+          "status": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "bytes": 200704,
+          "readable": true,
+          "date": false,
+          "classifier": "unclassified",
+          "textLength": 36134
+        },
+        {
+          "url": "https://mhada.gov.in/en/affordable-housing-mhada-icon",
+          "status": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "bytes": 189206,
+          "readable": true,
+          "date": false,
+          "classifier": "unclassified",
+          "textLength": 36136
+        },
+        {
+          "url": "https://mhada.gov.in/en/content/bdd-chawl-redevelopment-project",
+          "status": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "bytes": 190922,
+          "readable": true,
+          "date": false,
+          "classifier": "unclassified",
+          "textLength": 36556
+        }
+      ],
+      "positiveControls": [],
+      "status": "REACHABLE_LOW_YIELD"
+    },
+    {
+      "id": "cidco-media",
+      "name": "CIDCO Media / Press Release",
+      "url": "https://cidco.maharashtra.gov.in/home/Media",
+      "authority": "City and Industrial Development Corporation of Maharashtra Limited",
+      "category": "official_development_authority",
+      "cityCodes": [
+        "mumbai",
+        "navi_mumbai",
+        "thane",
+        "panvel"
+      ],
+      "fallbackUrl": "https://cidco.maharashtra.gov.in/Page?Token=1C64F4F8470",
+      "ownershipVerified": true,
+      "transport": {
+        "status": 200,
+        "ok": true,
+        "finalUrl": "https://cidco.maharashtra.gov.in/home/Media",
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 54068,
+        "elapsedMs": 160
+      },
+      "listing": {
+        "itemsDiscovered": 7,
+        "detailLinks": 7,
+        "relevantItems": 1,
+        "datedItems": 0,
+        "validCandidates": 0,
+        "rejected": 6,
+        "uniqueUrls": 7
+      },
+      "detail": [
+        {
+          "url": "https://cidco.maharashtra.gov.in/Page?Token=B5D5FB95118",
+          "status": 200,
+          "contentType": "text/html; charset=utf-8",
+          "bytes": 63864,
+          "readable": true,
+          "date": false,
+          "classifier": "unclassified",
+          "textLength": 20249
+        }
+      ],
+      "positiveControls": [],
+      "status": "REACHABLE_LOW_YIELD"
+    },
+    {
+      "id": "hsvphry-notices-2026",
+      "name": "HSVP Notices 2026",
+      "url": "https://hsvphry.org.in/Home/Notices?branch=HEWO&type=All&year=2026",
+      "authority": "Haryana Shehri Vikas Pradhikaran",
+      "category": "official_housing_authority",
+      "cityCodes": [
+        "faridabad",
+        "gurugram",
+        "sonipat"
+      ],
+      "fallbackUrl": "",
+      "ownershipVerified": true,
+      "transport": {
+        "status": 200,
+        "ok": true,
+        "finalUrl": "https://hsvphry.org.in/Home/Notices?branch=HEWO&type=All&year=2026",
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 61338,
+        "elapsedMs": 114
+      },
+      "listing": {
+        "itemsDiscovered": 12,
+        "detailLinks": 12,
+        "relevantItems": 4,
+        "datedItems": 4,
+        "validCandidates": 0,
+        "rejected": 8,
+        "uniqueUrls": 12
+      },
+      "detail": [
+        {
+          "url": "https://hsvphry.org.in/documents/notices/PUBLIC_NOTICE_202608201128_91b182e9.pdf",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 2242708,
+          "readable": true,
+          "date": true,
+          "classifier": "reject_negative",
+          "textLength": 1174895
+        },
+        {
+          "url": "https://hsvphry.org.in/documents/hewo/hewo_202604101504_639114302426525114.pdf",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 1066429,
+          "readable": true,
+          "date": true,
+          "classifier": "unclassified",
+          "textLength": 514018
+        },
+        {
+          "url": "https://hsvphry.org.in/documents/hewo/hewo_202603031549_639081497526550815.pdf",
+          "status": 200,
+          "contentType": "application/pdf",
+          "bytes": 928749,
+          "readable": true,
+          "date": true,
+          "classifier": "unclassified",
+          "textLength": 451059
+        }
+      ],
+      "positiveControls": [],
+      "status": "REACHABLE_LOW_YIELD"
+    },
+    {
+      "id": "pmay-urban-sanctions",
+      "name": "PMAY-U 2.0 Sanction and Release Orders",
+      "url": "https://pmay-urban.gov.in/sanction-and-releases-order-pmay-2",
+      "authority": "Ministry of Housing and Urban Affairs",
+      "category": "official_housing_program",
+      "cityCodes": [],
+      "fallbackUrl": "",
+      "ownershipVerified": true,
+      "transport": {
+        "failure": "TIMEOUT",
+        "error": "This operation was aborted"
+      },
+      "listing": {},
+      "detail": [],
+      "positiveControls": [],
+      "status": "TRANSPORT_FAILURE"
+    },
+    {
+      "id": "pib-all-releases",
+      "name": "PIB All Releases",
+      "url": "https://www.pib.gov.in/AllRelease.aspx",
+      "authority": "Press Information Bureau, Government of India",
+      "category": "official_government_publication",
+      "cityCodes": [],
+      "fallbackUrl": "",
+      "ownershipVerified": true,
+      "transport": {
+        "status": 200,
+        "ok": true,
+        "finalUrl": "https://www.pib.gov.in/AllRelease.aspx?reg=48&lang=2",
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 2477909,
+        "elapsedMs": 347
+      },
+      "listing": {
+        "itemsDiscovered": 30,
+        "detailLinks": 30,
+        "relevantItems": 0,
+        "datedItems": 22,
+        "validCandidates": 0,
+        "rejected": 30,
+        "uniqueUrls": 30
+      },
+      "detail": [],
+      "positiveControls": [],
+      "status": "REACHABLE_LOW_YIELD"
+    }
+  ],
+  "experimental": {
+    "sourceCount": 571,
+    "baselineSourceCount": 571,
+    "addedCandidates": [],
+    "itemsDiscovered": 0,
+    "validCandidates": 0,
+    "uniqueValidCandidates": 0,
+    "duplicatedContent": 0,
+    "note": "Experimental candidates are diagnostic-only and are not in runtime configuration."
+  },
+  "fallbacks": [
+    {
+      "source": "UP RERA",
+      "status": "OFFICIAL_FALLBACK_CANDIDATE",
+      "url": "https://www.up-rera.in/ViewDocument?Param=Press_Release_69297200thAuthoritymeetingPressreleaseenglish.pdf",
+      "result": "not counted as listing discovery"
+    },
+    {
+      "source": "MHADA",
+      "status": "REJECTED_BLOCKED_LOCALLY",
+      "url": "https://mhada.gov.in/en/press-release",
+      "result": "403 in local bounded fetch; official page exists but is not production-ready from this runtime"
+    }
+  ],
+  "brokenUrls": {
+    "total": 12,
+    "breakdown": {
+      "confirmedDeadOrHttp404": 12,
+      "moved": 0,
+      "temporary": 0,
+      "officialButInconsistent": 0,
+      "verifiedReplacementFound": 0,
+      "noReplacement": 12
+    },
+    "repairedLocally": 0
+  },
+  "transportFailures": {
+    "total": 48,
+    "classification": {
+      "timeoutOrconnectionLikely": 17,
+      "immediateConnectionOrDnsLikely": 29,
+      "unknown": 0
+    },
+    "highImpactExamples": [
+      "MahaRERA",
+      "Bihar RERA",
+      "Goa RERA Notices",
+      "Jharkhand RERA",
+      "West Bengal RERA",
+      "Delhi RERA"
+    ]
+  },
+  "blockedSources": [
+    {
+      "label": "CBRE India — Insights | P2",
+      "url": "https://www.cbre.co.in/insights",
+      "status": 403,
+      "alternative": "No automatic bypass; use official feed/page or permitted syndicated source."
+    },
+    {
+      "label": "Colliers India — Research | P2",
+      "url": "https://www.colliers.com/en-in/research",
+      "status": 403,
+      "alternative": "No automatic bypass; use official feed/page or permitted syndicated source."
+    }
+  ],
+  "positiveCorpus": {
+    "before": 8,
+    "after": 8,
+    "addedControls": 0
+  },
+  "negativeProtection": {
+    "before": "8/8",
+    "after": "8/8",
+    "classifierChanges": "none beyond Task 10 SIBM fix"
+  },
+  "quality": {
+    "productionFreshness": "UNVERIFIED",
+    "geoChanges": 0,
+    "classifierBroadChanges": 0,
+    "duplicateOverlap": "baseline URLs unique; candidate article overlap requires detail-level dedupe before integration"
+  },
+  "recommendations": [
+    "Keep baseline configuration unchanged.",
+    "Promote only candidates that pass listing, detail, date, relevance, geo, and overlap gates over repeated runs.",
+    "Prioritize CIDCO, HSVP, and PMAY-U if their local positive controls remain stable.",
+    "Keep MHADA blocked until a permitted accessible endpoint is verified.",
+    "Use a later task for classifier recall and geo expansion after the positive corpus is genuinely larger."
+  ]
+}
