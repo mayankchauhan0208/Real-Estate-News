@@ -1,0 +1,1835 @@
+{
+  "reportType": "read-only-source-debt-register",
+  "generatedAt": "2026-09-30T09:15:55.983Z",
+  "baselineAudit": {
+    "path": "reports\\source-audits\\source-audit-2026-09-30T08-05-40-524Z.json",
+    "generatedAt": "2026-09-30T08:05:40.522Z",
+    "summary": {
+      "generatedAt": "2026-09-30T08:05:40.522Z",
+      "total": 571,
+      "transportReachable": 506,
+      "contentHealthy": 0,
+      "listingOnly": 467,
+      "notSampled": 38,
+      "contentDegraded": 0,
+      "stale": 0,
+      "empty": 0,
+      "extractionFailed": 1,
+      "blocked": 2,
+      "brokenUrl": 12,
+      "transportFailed": 48,
+      "needsReview": 3,
+      "selectedInRuntime": 571,
+      "fallbackUsed": 2,
+      "duplicateRows": 0
+    }
+  },
+  "productionFreshness": "UNVERIFIED",
+  "productionFreshnessReason": "No read-only GitHub Actions/artifact inspection was available in this workspace; local reports stop at the latest file present.",
+  "rawCategoryCounts": {
+    "transportFailed": 48,
+    "brokenUrl": 12,
+    "blocked": 2,
+    "needsReview": 3,
+    "notSampled": 38
+  },
+  "uniqueAffectedSources": 103,
+  "unsampledReconciliation": {
+    "baselineRows": 38,
+    "interpretation": "The full audit labels 38 rows NOT_SAMPLED, while the targeted run attempted those selected sources: 2 sampled successfully, 33 produced zero links, and 3 were too large. Treat the full-audit label as stale until a future full run records article sampling in the same report."
+  },
+  "targetedDiagnostics": {
+    "unsampled-summary": {
+      "generatedAt": "2026-09-30T08:40:58.992Z",
+      "batch": "unsampled",
+      "sourceCount": 38,
+      "states": {
+        "SAMPLED_SUCCESSFULLY": 2,
+        "ZERO_LINKS": 33,
+        "LISTING_TOO_LARGE": 3
+      },
+      "linksFound": 97,
+      "linksSampled": 4,
+      "fetchSuccess": 4,
+      "fullTextSuccess": 4,
+      "dates": 0,
+      "thumbnails": 4,
+      "languages": 4,
+      "geoSuccess": 4,
+      "relevant": 0,
+      "averageSourceMs": 644,
+      "p95SourceMs": 3222,
+      "auditInput": "source-audit-2026-09-30T08-05-40-524Z.json",
+      "checkpoint": "C:\\Users\\pc\\Documents\\news-api-pusher\\reports\\source-audits\\targeted\\unsampled.jsonl"
+    },
+    "transport-summary": {
+      "generatedAt": "2026-09-30T08:40:09.870Z",
+      "batch": "transport",
+      "sourceCount": 48,
+      "states": {
+        "LISTING_FETCH_FAILED": 28,
+        "SAMPLED_SUCCESSFULLY": 4,
+        "LISTING_TIMEOUT": 14,
+        "LISTING_TOO_LARGE": 2
+      },
+      "linksFound": 160,
+      "linksSampled": 4,
+      "fetchSuccess": 4,
+      "fullTextSuccess": 4,
+      "dates": 0,
+      "thumbnails": 4,
+      "languages": 4,
+      "geoSuccess": 4,
+      "relevant": 0,
+      "averageSourceMs": 559,
+      "p95SourceMs": 1001,
+      "auditInput": "source-audit-2026-09-30T08-05-40-524Z.json",
+      "checkpoint": "C:\\Users\\pc\\Documents\\news-api-pusher\\reports\\source-audits\\targeted\\transport.jsonl"
+    },
+    "regional-date-v2-summary": {
+      "generatedAt": "2026-09-30T08:57:54.050Z",
+      "batch": "regional",
+      "sourceCount": 9,
+      "states": {
+        "SAMPLED_SUCCESSFULLY": 2,
+        "LISTING_TOO_LARGE": 5,
+        "PARTIAL_SAMPLE": 2
+      },
+      "linksFound": 130,
+      "linksSampled": 8,
+      "fetchSuccess": 4,
+      "fullTextSuccess": 4,
+      "dates": 4,
+      "thumbnails": 4,
+      "languages": 4,
+      "geoSuccess": 4,
+      "relevant": 0,
+      "averageSourceMs": 442,
+      "p95SourceMs": 1517,
+      "auditInput": "source-audit-2026-09-30T08-05-40-524Z.json",
+      "checkpoint": "C:\\Users\\pc\\Documents\\news-api-pusher\\reports\\source-audits\\targeted\\regional-date-v2.jsonl"
+    },
+    "rera-date-v2-summary": {
+      "generatedAt": "2026-09-30T08:59:40.911Z",
+      "batch": "rera",
+      "sourceCount": 53,
+      "states": {
+        "SAMPLED_SUCCESSFULLY": 28,
+        "LISTING_FETCH_FAILED": 13,
+        "LISTING_TIMEOUT": 7,
+        "PARTIAL_SAMPLE": 1,
+        "LISTING_TOO_LARGE": 2,
+        "ZERO_LINKS": 1,
+        "BROKEN_URL": 1
+      },
+      "linksFound": 741,
+      "linksSampled": 56,
+      "fetchSuccess": 50,
+      "fullTextSuccess": 49,
+      "dates": 20,
+      "thumbnails": 48,
+      "languages": 49,
+      "geoSuccess": 46,
+      "relevant": 0,
+      "averageSourceMs": 1255,
+      "p95SourceMs": 4723,
+      "auditInput": "source-audit-2026-09-30T08-05-40-524Z.json",
+      "checkpoint": "C:\\Users\\pc\\Documents\\news-api-pusher\\reports\\source-audits\\targeted\\rera-date-v2.jsonl"
+    },
+    "zero-item-summary": {
+      "generatedAt": "2026-09-30T08:38:41.323Z",
+      "batch": "zero-item",
+      "sourceCount": 180,
+      "selectionNote": "Most complete local dry-run report was used; the newest local report was an incomplete one-source run.",
+      "states": {
+        "LISTING_FETCH_FAILED": 23,
+        "LISTING_TIMEOUT": 15,
+        "SAMPLED_SUCCESSFULLY": 46,
+        "ZERO_LINKS": 44,
+        "PARTIAL_SAMPLE": 8,
+        "LISTING_TOO_LARGE": 30,
+        "ARTICLE_TIMEOUT": 1,
+        "BLOCKED": 2,
+        "BROKEN_URL": 11
+      },
+      "linksFound": 2104,
+      "linksSampled": 55,
+      "fetchSuccess": 49,
+      "fullTextSuccess": 46,
+      "dates": 5,
+      "thumbnails": 49,
+      "languages": 49,
+      "geoSuccess": 44,
+      "relevant": 6,
+      "averageSourceMs": 2164,
+      "p95SourceMs": 2496,
+      "auditInput": "source-audit-2026-09-30T08-05-40-524Z.json",
+      "checkpoint": "local checkpoint was interrupted after completion; summary retained from the completed batch"
+    },
+    "classification-evaluation-summary": {
+      "generatedAt": "2026-09-30T09:07:31.518Z",
+      "total": 64,
+      "rera": {
+        "sampleSize": 56,
+        "labels": {
+          "NAVIGATION_INDEX": 41,
+          "INSUFFICIENT_CONTENT": 7,
+          "NEGATIVE_REJECT": 7,
+          "UNCERTAIN": 1
+        },
+        "matrix": {
+          "validAndPass": 0,
+          "validAndReject": 0,
+          "invalidAndPass": 1,
+          "invalidAndReject": 55
+        },
+        "titlePass": 1,
+        "titleDescriptionPass": 1,
+        "fullTextPass": 1,
+        "recordTypes": {
+          "REAT": 21,
+          "ORDER": 10,
+          "OTHER": 25
+        }
+      },
+      "regional": {
+        "sampleSize": 8,
+        "labels": {
+          "IRRELEVANT": 2,
+          "INSUFFICIENT_CONTENT": 4,
+          "NEGATIVE_REJECT": 2
+        },
+        "matrix": {
+          "validAndPass": 0,
+          "validAndReject": 0,
+          "invalidAndPass": 0,
+          "invalidAndReject": 8
+        },
+        "titlePass": 0,
+        "titleDescriptionPass": 0,
+        "fullTextPass": 0,
+        "recordTypes": {}
+      },
+      "note": "Labels are conservative diagnostic triage and require human review before classifier changes."
+    }
+  },
+  "unresolved": [
+    {
+      "priority": "HIGH",
+      "url": "https://maharera.mahaonline.gov.in/",
+      "label": "MahaRERA | P1",
+      "host": "maharera.mahaonline.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "ahmednagar",
+        "akola",
+        "amravati",
+        "aurangabad",
+        "beed",
+        "chandrapur",
+        "daman_and_diu",
+        "dhule",
+        "jalgaon",
+        "jalna",
+        "kolhapur",
+        "latur",
+        "mumbai",
+        "nagpur",
+        "nanded",
+        "nashik",
+        "navi_mumbai",
+        "osmanabad",
+        "palghar",
+        "pune",
+        "raigad",
+        "ratnagiri",
+        "sangli",
+        "silvassa",
+        "sindhudurg",
+        "solapur",
+        "wardha",
+        "yavatmal"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "HIGH",
+      "url": "https://gujrera.gujarat.gov.in",
+      "label": "Gujarat RERA | P1",
+      "host": "gujrera.gujarat.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "ahmedabad",
+        "anand",
+        "banaskantha",
+        "bardoli",
+        "bharuch",
+        "bhavnagar",
+        "dholera",
+        "gandhinagar",
+        "gujarat",
+        "junagadh",
+        "kalol",
+        "kheda",
+        "kutch",
+        "navsari",
+        "patan",
+        "rajkot",
+        "sabarkantha",
+        "surat",
+        "surendranagar",
+        "vadodara",
+        "valsad",
+        "vapi"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "HIGH",
+      "url": "https://www.rera.ap.gov.in",
+      "label": "Andhra Pradesh RERA | P1",
+      "host": "rera.ap.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "anantapur",
+        "bhimavaram",
+        "chittoor",
+        "eluru",
+        "kadapa",
+        "kakinada",
+        "krishna",
+        "kurnool",
+        "nellore",
+        "rajahmundry",
+        "srikakulam",
+        "tirupati",
+        "vijayawada",
+        "visakhapatnam",
+        "vizianagaram",
+        "west_godavari"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "HIGH",
+      "url": "https://www.lntrealty.com/news-blogs/",
+      "label": "L&T Realty — News & Blogs",
+      "host": "lntrealty.com",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "mumbai",
+        "noida"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "HIGH",
+      "url": "https://rera.kerala.gov.in",
+      "label": "Kerala RERA | P1",
+      "host": "rera.kerala.gov.in",
+      "health": "NEEDS_REVIEW",
+      "status": 503,
+      "cityCodes": [
+        "calicut",
+        "ernakulam",
+        "kochi",
+        "palakkad",
+        "thrissur",
+        "trivandrum"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "HIGH_PRIORITY_RETRY",
+      "note": "Official Kerala RERA root returned 503; affects Calicut, Ernakulam, Kochi, Palakkad, Thrissur, and Trivandrum."
+    },
+    {
+      "priority": "HIGH",
+      "url": "https://rera.kerala.gov.in/announcements",
+      "label": "Kerala RERA — Announcements | P1",
+      "host": "rera.kerala.gov.in",
+      "health": "NEEDS_REVIEW",
+      "status": 503,
+      "cityCodes": [
+        "calicut",
+        "ernakulam",
+        "kochi",
+        "palakkad",
+        "thrissur",
+        "trivandrum"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "HIGH_PRIORITY_RETRY",
+      "note": "Official Kerala RERA announcements returned 503; affects Calicut, Ernakulam, Kochi, Palakkad, Thrissur, and Trivandrum."
+    },
+    {
+      "priority": "HIGH",
+      "url": "https://rera.wb.gov.in",
+      "label": "West Bengal RERA | P1",
+      "host": "rera.wb.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "asansol",
+        "durgapur",
+        "howrah",
+        "kolkata",
+        "siliguri"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "HIGH",
+      "url": "https://rera.wb.gov.in/notice.php",
+      "label": "West Bengal RERA — Notices | P1",
+      "host": "rera.wb.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "asansol",
+        "durgapur",
+        "howrah",
+        "kolkata",
+        "siliguri"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "HIGH",
+      "url": "https://www.rera.delhi.gov.in",
+      "label": "Delhi RERA | P1",
+      "host": "rera.delhi.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://rera.rajasthan.gov.in",
+      "label": "Rajasthan RERA | P1",
+      "host": "rera.rajasthan.gov.in",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "ajmer",
+        "alwar",
+        "barmer",
+        "bhilwara",
+        "bhiwadi",
+        "bikaner",
+        "hanumangarh",
+        "jaipur",
+        "jhalawar",
+        "jodhpur",
+        "kota",
+        "nagaur",
+        "neemrana",
+        "pali",
+        "sikar",
+        "sirohi",
+        "sri_ganganagar",
+        "tonk",
+        "udaipur"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://rera.odisha.gov.in",
+      "label": "Odisha RERA | P1",
+      "host": "rera.odisha.gov.in",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "balasore",
+        "berhampur",
+        "bhubaneswar",
+        "cuttack",
+        "puri",
+        "rourkela",
+        "sambalpur"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.brookfieldindiareit.in/stock-exchange-filings#Stock-Exchange-Filings",
+      "label": "Brookfield India REIT — Stock Exchange Filings",
+      "host": "brookfieldindiareit.in",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "kolkata",
+        "mumbai",
+        "noida"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://investor.clint.com.sg/newsroom.html",
+      "label": "CapitaLand India Trust — Announcements",
+      "host": "investor.clint.com.sg",
+      "health": "NOT_SAMPLED",
+      "status": 202,
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "hyderabad",
+        "mumbai",
+        "pune"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.eldecogroup.com/investor/eldeco-housing-industries-ltd/investor-relations",
+      "label": "Eldeco Group — Investor Relations",
+      "host": "eldecogroup.com",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "lucknow",
+        "noida"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.puriconstructions.com/media",
+      "label": "Puri Constructions — Media",
+      "host": "puriconstructions.com",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "noida",
+        "puri"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.ukrera.org.in",
+      "label": "Uttarakhand RERA | P1",
+      "host": "ukrera.org.in",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "dehradun",
+        "haridwar",
+        "rishikesh",
+        "roorkee",
+        "rudrapur"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://dda.gov.in/whats-new",
+      "label": "DDA — What's New | P1",
+      "host": "dda.gov.in",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://ajmera.com",
+      "label": "Ajmera Realty | P2",
+      "host": "ajmera.com",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "ahmedabad",
+        "bangalore",
+        "mumbai"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://jharera.jharkhand.gov.in/home",
+      "label": "Jharkhand RERA | P1",
+      "host": "jharera.jharkhand.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "dhanbad",
+        "jamshedpur",
+        "ranchi"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://jharera.jharkhand.gov.in/Home/Notice",
+      "label": "Jharkhand RERA — Notices | P1",
+      "host": "jharera.jharkhand.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "dhanbad",
+        "jamshedpur",
+        "ranchi"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.nhsrcl.in/en/media/press-release",
+      "label": "NHSRCL — Press Releases",
+      "host": "nhsrcl.in",
+      "health": "BROKEN_URL",
+      "status": 404,
+      "cityCodes": [
+        "ahmedabad",
+        "gujarat",
+        "mumbai"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "OFFICIAL_BUT_INCONSISTENT",
+      "note": "Official endpoint was observed as 404 in the audit; retain for bounded recheck because the official page is indexed elsewhere."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.gmada.gov.in/",
+      "label": "GMADA | P1",
+      "host": "gmada.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "chandigarh",
+        "mohali"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.hprera.in",
+      "label": "Himachal Pradesh RERA | P1",
+      "host": "hprera.in",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "shimla",
+        "solan"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://ahmedabadcity.gov.in/DC/Tenders/",
+      "label": "Ahmedabad Municipal Corporation — Tenders",
+      "host": "ahmedabadcity.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "ahmedabad"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://bbmp.gov.in/",
+      "label": "Greater Bengaluru Authority / BBMP",
+      "host": "bbmp.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "bangalore"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://cochinport.gov.in/tenders",
+      "label": "Cochin Port Authority — Tenders",
+      "host": "cochinport.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "kochi"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://gccservices.chennaicorporation.gov.in/",
+      "label": "Greater Chennai Corporation — What's New",
+      "host": "gccservices.chennaicorporation.gov.in",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "chennai"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://kochimetro.org",
+      "label": "Kochi Metro | P1",
+      "host": "kochimetro.org",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "kochi"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://mcg.gov.in/",
+      "label": "Municipal Corporation of Gurugram — Updates & Tenders",
+      "host": "mcg.gov.in",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "gurugram"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://mchi.net/",
+      "label": "CREDAI-MCHI",
+      "host": "mchi.net",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://mchi.net/newsletters/",
+      "label": "CREDAI-MCHI — Newsletters",
+      "host": "mchi.net",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://mmrda.maharashtra.gov.in/en/news-and-announcements/archive",
+      "label": "MMRDA — News Archive | P1",
+      "host": "mmrda.maharashtra.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://mmrda.maharashtra.gov.in/en/other-services/news-and-announcements",
+      "label": "MMRDA | P1",
+      "host": "mmrda.maharashtra.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://navaraipuratalnagar.com",
+      "label": "Nava Raipur Atal Nagar Vikas Pradhikaran | P1",
+      "host": "navaraipuratalnagar.com",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "raipur"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://noidaauthorityonline.in",
+      "label": "noida",
+      "host": "noidaauthorityonline.in",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "noida"
+      ],
+      "category": "city",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://rera.bihar.gov.in/Newsarticles.aspx",
+      "label": "Bihar RERA — News Articles | P1",
+      "host": "rera.bihar.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "patna"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://rera.bihar.gov.in/ProceedingOrder.aspx",
+      "label": "Bihar RERA — Proceedings | P1",
+      "host": "rera.bihar.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "patna"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://rera.bihar.gov.in/publicorder.aspx",
+      "label": "Bihar RERA — Orders and Judgments | P1",
+      "host": "rera.bihar.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "patna"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://rera.bihar.gov.in/RERALATESTNEWS.aspx",
+      "label": "Bihar RERA — Latest News | P1",
+      "host": "rera.bihar.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "patna"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://rera.chbonline.in",
+      "label": "Chandigarh RERA | P1",
+      "host": "rera.chbonline.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "chandigarh"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://rera.goa.gov.in/Notice",
+      "label": "Goa RERA — Notices | P1",
+      "host": "rera.goa.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "goa"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://rera.py.gov.in/",
+      "label": "Puducherry RERA | P1",
+      "host": "rera.py.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "pondicherry"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://runwalenterprises.com/load-news",
+      "label": "Runwal Enterprises — Newsroom",
+      "host": "runwalenterprises.com",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "mumbai"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://transport.rajasthan.gov.in/jmrc",
+      "label": "Jaipur Metro | P1",
+      "host": "transport.rajasthan.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "jaipur"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.bdabangalore.org",
+      "label": "Bangalore Development Authority | P1",
+      "host": "bdabangalore.org",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "bangalore"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.cial.aero/News-Updates/URL",
+      "label": "Cochin International Airport — Updates",
+      "host": "cial.aero",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "kochi"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.deendayalport.gov.in/tenders/e-tender",
+      "label": "Deendayal Port Authority — E-Tenders",
+      "host": "deendayalport.gov.in",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "gujarat"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.greaternoidaauthority.in",
+      "label": "Greater Noida Authority | P1",
+      "host": "greaternoidaauthority.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "noida"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/dehradun-news/rssfeed.xml",
+      "label": "dehradun",
+      "host": "hindustantimes.com",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "dehradun"
+      ],
+      "category": "city",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/faridabad-news/rssfeed.xml",
+      "label": "faridabad",
+      "host": "hindustantimes.com",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "faridabad"
+      ],
+      "category": "city",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/jaipur-news/rssfeed.xml",
+      "label": "jaipur",
+      "host": "hindustantimes.com",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "jaipur"
+      ],
+      "category": "city",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/kolkata-news/rssfeed.xml",
+      "label": "kolkata",
+      "host": "hindustantimes.com",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "kolkata"
+      ],
+      "category": "city",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.hmda.gov.in/news",
+      "label": "HMDA — News | P1",
+      "host": "hmda.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "hyderabad"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.jda.rajasthan.gov.in/content/raj/udh/jda---jaipur/en/home.html",
+      "label": "Jaipur Development Authority | P1",
+      "host": "jda.rajasthan.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "jaipur"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.kmda.wb.gov.in/",
+      "label": "Kolkata Metropolitan Development Authority | P1",
+      "host": "kmda.wb.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "kolkata"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.ltmetro.com/press/",
+      "label": "Hyderabad Metro — Press | P1",
+      "host": "ltmetro.com",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "hyderabad"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.mmrcl.com/en/content/press-releases",
+      "label": "Mumbai Metro Rail Corporation — Press Releases",
+      "host": "mmrcl.com",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "mumbai"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.mumbaiport.gov.in/show_tenders.php?catid=3&depid=1&lang=1",
+      "label": "Mumbai Port Authority — Civil Engineering Tenders",
+      "host": "mumbaiport.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.noidaauthority.in",
+      "label": "NOIDA Authority | P1",
+      "host": "noidaauthority.in",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "noida"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.supertechlimited.com",
+      "label": "noida",
+      "host": "supertechlimited.com",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "noida"
+      ],
+      "category": "city",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "MEDIUM",
+      "url": "https://www.vocport.gov.in/",
+      "label": "V.O. Chidambaranar Port Authority — What's New & Tenders",
+      "host": "vocport.gov.in",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [
+        "thoothukudi"
+      ],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://aiforera.org/publications/public_notice",
+      "label": "AIFORERA — Public Notices | P1",
+      "host": "aiforera.org",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://cpc.parivesh.nic.in/",
+      "label": "PARIVESH — Main Portal",
+      "host": "cpc.parivesh.nic.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://cpc.parivesh.nic.in/onlinesearch_dashboard.aspx?pid=tornotissuedyet&status=NA",
+      "label": "PARIVESH — Project / Clearance Search",
+      "host": "cpc.parivesh.nic.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://hsiidc.etenders.in",
+      "label": "HSIIDC — E-Tender Portal",
+      "host": "hsiidc.etenders.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://ibbi.gov.in/orders/nclt",
+      "label": "IBBI — NCLT Orders",
+      "host": "ibbi.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://indiainvestmentgrid.gov.in/index.jsp",
+      "label": "India Investment Grid",
+      "host": "indiainvestmentgrid.gov.in",
+      "health": "NEEDS_REVIEW",
+      "status": 503,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "RETRY_REVIEW",
+      "note": "Returned 503; retry with bounded backoff and retain as review-only until a stable listing is observed."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://infra.economictimes.indiatimes.com/rss/webstories",
+      "label": "ETInfra — Web Stories | P1",
+      "host": "infra.economictimes.indiatimes.com",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://ipm.mospi.gov.in/Home/Index",
+      "label": "MoSPI PAIMANA — Infrastructure Project Monitoring",
+      "host": "ipm.mospi.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://ipm.mospi.gov.in/Home/ShowPressRelease",
+      "label": "MoSPI PAIMANA — Press Releases",
+      "host": "ipm.mospi.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://mohua.gov.in",
+      "label": "mohua.gov.in",
+      "host": "mohua.gov.in",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [],
+      "category": "default",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://morth.nic.in",
+      "label": "Ministry of Road Transport & Highways | P1",
+      "host": "morth.nic.in",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://nhai.gov.in",
+      "label": "nhai.gov.in",
+      "host": "nhai.gov.in",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [],
+      "category": "default",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://puda.punjab.gov.in",
+      "label": "PUDA | P1",
+      "host": "puda.punjab.gov.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://realty.economictimes.indiatimes.com/rss/webstories",
+      "label": "ETRealty — Web Stories | P1",
+      "host": "realty.economictimes.indiatimes.com",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://realtynxt.com/",
+      "label": "realtynxt.com",
+      "host": "realtynxt.com",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [],
+      "category": "default",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.aai.aero",
+      "label": "Airports Authority of India | P1",
+      "host": "aai.aero",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.aai.aero/en/media/press-news-events_archive",
+      "label": "Airports Authority of India — Press Archive",
+      "host": "aai.aero",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.bseindia.com/corporates.html",
+      "label": "BSE — Corporate Filings | P1",
+      "host": "bseindia.com",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.bseindia.com/corporates/ann.html",
+      "label": "BSE — Corporate Announcements | P1",
+      "host": "bseindia.com",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.cbre.co.in/insights",
+      "label": "CBRE India — Insights | P2",
+      "host": "cbre.co.in",
+      "health": "BLOCKED",
+      "status": 403,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "BLOCKED_KEEP",
+      "note": "Official research page returned 403; do not bypass. Keep only if a public official feed or permitted page is verified."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.colliers.com/en-in/research",
+      "label": "Colliers India — Research | P2",
+      "host": "colliers.com",
+      "health": "BLOCKED",
+      "status": 403,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "BLOCKED_KEEP",
+      "note": "Official research page returned 403; do not bypass. Keep only if a public official feed or permitted page is verified."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.cushmanwakefield.com/en/india/insights",
+      "label": "Cushman & Wakefield India — Insights | P2",
+      "host": "cushmanwakefield.com",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.delhimetrorail.com/",
+      "label": "delhimetrorail.com",
+      "host": "delhimetrorail.com",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [],
+      "category": "default",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.indiapropertydekho.com/blog/feed/",
+      "label": "India Property Dekho Blog Feed | National Property P2",
+      "host": "indiapropertydekho.com",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.kiadb.org",
+      "label": "KIADB | P1",
+      "host": "kiadb.org",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.livemint.com/rss/AIRSS",
+      "label": "Livemint — AI | P2",
+      "host": "livemint.com",
+      "health": "BROKEN_URL",
+      "status": 404,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REPLACEMENT_UNVERIFIED",
+      "note": "Configured RSS path returned 404; verify a current official feed or HTML section before replacing."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.livemint.com/rss/budgetRSS",
+      "label": "Livemint — Budget | P2",
+      "host": "livemint.com",
+      "health": "BROKEN_URL",
+      "status": 404,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REPLACEMENT_UNVERIFIED",
+      "note": "Configured RSS path returned 404; verify a current official feed or HTML section before replacing."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.livemint.com/rss/companiesRSS",
+      "label": "Livemint — Companies | P2",
+      "host": "livemint.com",
+      "health": "BROKEN_URL",
+      "status": 404,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REPLACEMENT_UNVERIFIED",
+      "note": "Configured RSS path returned 404; verify a current official feed or HTML section before replacing."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.livemint.com/rss/industryRSS",
+      "label": "Livemint — Industry | P2",
+      "host": "livemint.com",
+      "health": "BROKEN_URL",
+      "status": 404,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REPLACEMENT_UNVERIFIED",
+      "note": "Configured RSS path returned 404; verify a current official feed or HTML section before replacing."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.livemint.com/rss/insuranceRSS",
+      "label": "Livemint — Insurance | P2",
+      "host": "livemint.com",
+      "health": "BROKEN_URL",
+      "status": 404,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REPLACEMENT_UNVERIFIED",
+      "note": "Configured RSS path returned 404; verify a current official feed or HTML section before replacing."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.livemint.com/rss/marketsRSS",
+      "label": "Livemint — Markets | P2",
+      "host": "livemint.com",
+      "health": "BROKEN_URL",
+      "status": 404,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REPLACEMENT_UNVERIFIED",
+      "note": "Configured RSS path returned 404; verify a current official feed or HTML section before replacing."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.livemint.com/rss/moneyRSS",
+      "label": "Livemint — Money | P2",
+      "host": "livemint.com",
+      "health": "BROKEN_URL",
+      "status": 404,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REPLACEMENT_UNVERIFIED",
+      "note": "Configured RSS path returned 404; verify a current official feed or HTML section before replacing."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.livemint.com/rss/newsRSS",
+      "label": "Livemint — News | P2",
+      "host": "livemint.com",
+      "health": "BROKEN_URL",
+      "status": 404,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REPLACEMENT_UNVERIFIED",
+      "note": "Configured RSS path returned 404; verify a current official feed or HTML section before replacing."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.livemint.com/rss/politicsRSS",
+      "label": "Livemint — Politics | P2",
+      "host": "livemint.com",
+      "health": "BROKEN_URL",
+      "status": 404,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REPLACEMENT_UNVERIFIED",
+      "note": "Configured RSS path returned 404; verify a current official feed or HTML section before replacing."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.livemint.com/rss/technologyRSS",
+      "label": "Livemint — Technology | P2",
+      "host": "livemint.com",
+      "health": "BROKEN_URL",
+      "status": 404,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REPLACEMENT_UNVERIFIED",
+      "note": "Configured RSS path returned 404; verify a current official feed or HTML section before replacing."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.nicdc.in/",
+      "label": "NICDC | P1",
+      "host": "nicdc.in",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.puriconstructions.com/",
+      "label": "puriconstructions.com",
+      "host": "puriconstructions.com",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [],
+      "category": "default",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.savills.in/research.aspx",
+      "label": "Savills India — Research | P2",
+      "host": "savills.in",
+      "health": "BROKEN_URL",
+      "status": 404,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REPLACEMENT_UNVERIFIED",
+      "note": "Configured research landing page returned 404; current research article paths need explicit verification."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-real-estate-investment-trusts-reits-_95232.html",
+      "label": "SEBI — 2025 REIT Master Circular",
+      "host": "sebi.gov.in",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.sobha.com/investor-relations",
+      "label": "SOBHA — Investor Relations | P1",
+      "host": "sobha.com",
+      "health": "TRANSPORT_FAILED",
+      "status": "",
+      "cityCodes": [],
+      "category": "manual",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.whitelandcorp.com",
+      "label": "whitelandcorp.com",
+      "host": "whitelandcorp.com",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [],
+      "category": "default",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    },
+    {
+      "priority": "LOW",
+      "url": "https://www.whitelandcorporation.com/",
+      "label": "whitelandcorporation.com",
+      "host": "whitelandcorporation.com",
+      "health": "NOT_SAMPLED",
+      "status": 200,
+      "cityCodes": [],
+      "category": "default",
+      "fallbackUsed": false,
+      "triage": "REQUIRES_RECHECK",
+      "note": "Run a bounded listing and article sample before changing configuration."
+    }
+  ],
+  "remediationOrder": [
+    "Verify production freshness and retrieve the latest run/source-audit artifacts read-only.",
+    "Recheck official RERA and authority endpoints with bounded retries; record redirects, robots behavior, and listing extraction separately.",
+    "Repair or retire confirmed 404 RSS paths only after a replacement endpoint is verified.",
+    "Improve article sampling/date extraction for sources that list successfully but have no content-health evidence.",
+    "Only then evaluate geographic/classification coverage; do not use classifier results to hide source-health loss."
+  ]
+}
