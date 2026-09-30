@@ -1,0 +1,46 @@
+{
+  "generatedAt": "2026-09-30T09:07:31.518Z",
+  "total": 64,
+  "rera": {
+    "sampleSize": 56,
+    "labels": {
+      "NAVIGATION_INDEX": 41,
+      "INSUFFICIENT_CONTENT": 7,
+      "NEGATIVE_REJECT": 7,
+      "UNCERTAIN": 1
+    },
+    "matrix": {
+      "validAndPass": 0,
+      "validAndReject": 0,
+      "invalidAndPass": 1,
+      "invalidAndReject": 55
+    },
+    "titlePass": 1,
+    "titleDescriptionPass": 1,
+    "fullTextPass": 1,
+    "recordTypes": {
+      "REAT": 21,
+      "ORDER": 10,
+      "OTHER": 25
+    }
+  },
+  "regional": {
+    "sampleSize": 8,
+    "labels": {
+      "IRRELEVANT": 2,
+      "INSUFFICIENT_CONTENT": 4,
+      "NEGATIVE_REJECT": 2
+    },
+    "matrix": {
+      "validAndPass": 0,
+      "validAndReject": 0,
+      "invalidAndPass": 0,
+      "invalidAndReject": 8
+    },
+    "titlePass": 0,
+    "titleDescriptionPass": 0,
+    "fullTextPass": 0,
+    "recordTypes": {}
+  },
+  "note": "Labels are conservative diagnostic triage and require human review before classifier changes."
+}
