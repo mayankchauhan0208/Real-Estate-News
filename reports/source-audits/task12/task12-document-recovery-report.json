@@ -1,0 +1,258 @@
+{
+  "generatedAt": "2026-09-30T10:54:31.147Z",
+  "limits": {
+    "timeoutMs": 8000,
+    "maxBytes": 4194304,
+    "maxDocumentsPerSource": 6
+  },
+  "baseline": {
+    "configuredSources": 571,
+    "cities": 234,
+    "rawLinks": 30960,
+    "positiveControls": 8,
+    "negativeProtection": "8/8",
+    "duplicateSourceRows": 0
+  },
+  "stages": {
+    "RAW_LINKS": 30960,
+    "CONTENT_LINKS": 10,
+    "DETAIL_LINKS": 10,
+    "DOCUMENT_LINKS": 10,
+    "FETCHED_DOCUMENTS": 3,
+    "READABLE_DOCUMENTS": 0,
+    "DATED_RECORDS": 4,
+    "VALID_CONTROLS": 0,
+    "CLASSIFIER_PASS": 0,
+    "GEO_PASS": 0
+  },
+  "sources": {
+    "HSVP": {
+      "source": "https://hsvphry.org.in/Home/Notices?branch=HEWO&type=All&year=2026",
+      "listingReachable": true,
+      "listingItems": 4,
+      "documents": [
+        {
+          "title": "Advertisement Flotation of surplus/surrendered/cancelled flats of HEWO Site GH-09 & GH-02, Sector-12, Sonepat. Uploaded on:20 August 2026 Revised on: 20 August 2026 ] HEWO",
+          "listingUrl": "https://hsvphry.org.in/Home/Notices?branch=HEWO&type=All&year=2026",
+          "documentUrl": "https://hsvphry.org.in/documents/notices/PUBLIC_NOTICE_202608201128_91b182e9.pdf",
+          "date": "20 August 2026",
+          "branch": "HEWO",
+          "year": "2026",
+          "location": "Sector-12; Sonepat",
+          "authority": "Haryana Shehri Vikas Pradhikaran",
+          "recordType": "OFFICIAL_NOTICE",
+          "identity": "haryana shehri vikas pradhikaran|https://hsvphry.org.in/documents/notices/PUBLIC_NOTICE_202608201128_91b182e9.pdf",
+          "telemetry": {
+            "documentUrl": "https://hsvphry.org.in/documents/notices/PUBLIC_NOTICE_202608201128_91b182e9.pdf",
+            "status": 200,
+            "finalUrl": "https://hsvphry.org.in/documents/notices/PUBLIC_NOTICE_202608201128_91b182e9.pdf",
+            "contentType": "application/pdf",
+            "bytes": 2242708,
+            "validation": "VALID_PDF",
+            "elapsedMs": 300,
+            "textExtraction": "IMAGE_ONLY_PDF",
+            "textLength": 0,
+            "failureReason": ""
+          },
+          "text": "",
+          "label": "PROCEDURAL_ONLY",
+          "classifier": "unclassified",
+          "classifierPass": false,
+          "geoEvidence": true,
+          "automaticallyRecovered": false
+        },
+        {
+          "title": "PUBLIC_NOTICE Floatation of balance constructed flat at Faridabad and Sonepat date extended Uploaded on:10 April 2026 ] HEWO",
+          "listingUrl": "https://hsvphry.org.in/Home/Notices?branch=HEWO&type=All&year=2026",
+          "documentUrl": "https://hsvphry.org.in/documents/hewo/hewo_202604101504_639114302426525114.pdf",
+          "date": "10 April 2026",
+          "branch": "HEWO",
+          "year": "2026",
+          "location": "Faridabad; Sonepat",
+          "authority": "Haryana Shehri Vikas Pradhikaran",
+          "recordType": "OFFICIAL_NOTICE",
+          "identity": "haryana shehri vikas pradhikaran|https://hsvphry.org.in/documents/hewo/hewo_202604101504_639114302426525114.pdf",
+          "telemetry": {
+            "documentUrl": "https://hsvphry.org.in/documents/hewo/hewo_202604101504_639114302426525114.pdf",
+            "status": 200,
+            "finalUrl": "https://hsvphry.org.in/documents/hewo/hewo_202604101504_639114302426525114.pdf",
+            "contentType": "application/pdf",
+            "bytes": 1066429,
+            "validation": "VALID_PDF",
+            "elapsedMs": 151,
+            "textExtraction": "IMAGE_ONLY_PDF",
+            "textLength": 0,
+            "failureReason": ""
+          },
+          "text": "",
+          "label": "VALID_HOUSING_AUTHORITY_UPDATE",
+          "classifier": "unclassified",
+          "classifierPass": false,
+          "geoEvidence": true,
+          "automaticallyRecovered": false
+        },
+        {
+          "title": "PUBLIC_NOTICE Floatation of balance flat at Faridabad and Sonepat Uploaded on:03 March 2026 ] HEWO",
+          "listingUrl": "https://hsvphry.org.in/Home/Notices?branch=HEWO&type=All&year=2026",
+          "documentUrl": "https://hsvphry.org.in/documents/hewo/hewo_202603031549_639081497526550815.pdf",
+          "date": "03 March 2026",
+          "branch": "HEWO",
+          "year": "2026",
+          "location": "Faridabad; Sonepat",
+          "authority": "Haryana Shehri Vikas Pradhikaran",
+          "recordType": "OFFICIAL_NOTICE",
+          "identity": "haryana shehri vikas pradhikaran|https://hsvphry.org.in/documents/hewo/hewo_202603031549_639081497526550815.pdf",
+          "telemetry": {
+            "documentUrl": "https://hsvphry.org.in/documents/hewo/hewo_202603031549_639081497526550815.pdf",
+            "status": 200,
+            "finalUrl": "https://hsvphry.org.in/documents/hewo/hewo_202603031549_639081497526550815.pdf",
+            "contentType": "application/pdf",
+            "bytes": 928749,
+            "validation": "VALID_PDF",
+            "elapsedMs": 130,
+            "textExtraction": "IMAGE_ONLY_PDF",
+            "textLength": 0,
+            "failureReason": ""
+          },
+          "text": "",
+          "label": "VALID_HOUSING_AUTHORITY_UPDATE",
+          "classifier": "unclassified",
+          "classifierPass": false,
+          "geoEvidence": true,
+          "automaticallyRecovered": false
+        },
+        {
+          "title": "PUBLIC_NOTICE Floatation of constructed flat at Faridabad and Sonepat Uploaded on:21 January 2026 ] HEWO",
+          "listingUrl": "https://hsvphry.org.in/Home/Notices?branch=HEWO&type=All&year=2026",
+          "documentUrl": "https://hsvphry.org.in/documents/hewo/hewo_202601211617_639046090248941560.pdf",
+          "date": "21 January 2026",
+          "branch": "HEWO",
+          "year": "2026",
+          "location": "Faridabad; Sonepat",
+          "authority": "Haryana Shehri Vikas Pradhikaran",
+          "recordType": "OFFICIAL_NOTICE",
+          "identity": "haryana shehri vikas pradhikaran|https://hsvphry.org.in/documents/hewo/hewo_202601211617_639046090248941560.pdf",
+          "telemetry": {
+            "documentUrl": "https://hsvphry.org.in/documents/hewo/hewo_202601211617_639046090248941560.pdf",
+            "status": 200,
+            "finalUrl": "https://hsvphry.org.in/documents/hewo/hewo_202601211617_639046090248941560.pdf",
+            "contentType": "application/pdf",
+            "bytes": 0,
+            "validation": "OTHER",
+            "elapsedMs": 20,
+            "textExtraction": "",
+            "textLength": 0,
+            "failureReason": "response-size-limit"
+          },
+          "text": "",
+          "label": "VALID_HOUSING_AUTHORITY_UPDATE",
+          "classifier": "unclassified",
+          "classifierPass": false,
+          "geoEvidence": true,
+          "automaticallyRecovered": false
+        }
+      ],
+      "elapsedMs": 727
+    },
+    "CIDCO": {
+      "source": "CIDCO",
+      "url": "https://cidco.maharashtra.gov.in/home/Media",
+      "listingStatus": 200,
+      "listingLinks": 3,
+      "documents": [
+        {
+          "title": "",
+          "url": "https://cidco.maharashtra.gov.in/home/Media#",
+          "validation": "HTML_ERROR_PAGE",
+          "textExtraction": "",
+          "textLength": 0,
+          "date": false,
+          "readable": false
+        },
+        {
+          "title": "",
+          "url": "https://cidco.maharashtra.gov.in/home/Media#",
+          "validation": "HTML_ERROR_PAGE",
+          "textExtraction": "",
+          "textLength": 0,
+          "date": false,
+          "readable": false
+        },
+        {
+          "title": "आमच्याबद्दल काय आहे सिडको स्थापना व उद्दिष्ट्ये ध्येय आणि भविष्यवेध व्यवस्थापन संरचना प्रशासकीय मांडणी विभाग आणि कार्ये मसुदा नियंत्रण आणि पुनरावलोकन सिडको विभागप्रमुखांचा संपर्क क्रमांक जन माहिती अधिकारी आणि अपिलीय अधिकारी यांची यादी",
+          "url": "https://cidco.maharashtra.gov.in/home/Media#",
+          "validation": "HTML_ERROR_PAGE",
+          "textExtraction": "",
+          "textLength": 0,
+          "date": false,
+          "readable": false
+        }
+      ],
+      "failureReason": ""
+    },
+    "PMAY-U": {
+      "source": "PMAY-U",
+      "url": "https://pmay-urban.gov.in/sanction-and-releases-order-pmay-2",
+      "listingStatus": 200,
+      "listingLinks": 3,
+      "documents": [
+        {
+          "title": "a.glow-1 { animation: blinkingText-1 0.8s infinite; } @keyframes blinkingText-1 { 0% { color: white; } 50% { color:white; } } Apply for PMAY-U 2.0 Angikaar 2026 Guidelines AHP-SOP (PMAY-U 2.0) PMAY-U Newsletters PMAY-U Dashboard",
+          "url": "https://pmay-urban.gov.in/uploads/Angikaar-2026-Guidelines.pdf",
+          "validation": "OTHER",
+          "textExtraction": "",
+          "textLength": 0,
+          "date": true,
+          "readable": false
+        },
+        {
+          "title": "a.glow-1 { animation: blinkingText-1 0.8s infinite; } @keyframes blinkingText-1 { 0% { color: white; } 50% { color:white; } } Apply for PMAY-U 2.0 Angikaar 2026 Guidelines AHP-SOP (PMAY-U 2.0) PMAY-U Newsletters PMAY-U Dashboard",
+          "url": "https://pmay-urban.gov.in/uploads/guidelines/AHP-SOP.pdf",
+          "validation": "OTHER",
+          "textExtraction": "",
+          "textLength": 0,
+          "date": true,
+          "readable": false
+        },
+        {
+          "title": "",
+          "url": "https://pmay-urban.gov.in/sanction-and-releases-order-pmay-2#",
+          "validation": "TIMEOUT",
+          "textExtraction": "",
+          "textLength": 0,
+          "date": false,
+          "readable": false
+        }
+      ],
+      "failureReason": ""
+    },
+    "Goa RERA": {
+      "source": "Goa RERA",
+      "status": "STRUCTURED_SEARCH_MISSING",
+      "detail": "Root/listing transport is available, but the known project requires a structured search/detail relationship not implemented in this bounded run."
+    },
+    "UP RERA": {
+      "source": "UP RERA",
+      "status": "BLOCKED_BY_PUBLIC_SITE_BEHAVIOR",
+      "detail": "Public listing postback returns the maintenance page; no further postback attempts made."
+    }
+  },
+  "validDocumentsRecoveredAutomatically": 0,
+  "positiveCorpus": {
+    "before": 8,
+    "after": 8,
+    "added": []
+  },
+  "confirmedClassifierFalseNegatives": [],
+  "confirmedGeoFailures": [],
+  "negativeBenchmark": "8/8",
+  "duplicateProtection": {
+    "sourceRows": 0,
+    "documentIdentityDuplicates": 0
+  },
+  "runtime": {
+    "totalMs": 727,
+    "bounded": true
+  },
+  "nextBottleneck": "DOCUMENT_DISCOVERY_AND_EXTRACTION"
+}
