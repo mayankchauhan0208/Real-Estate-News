@@ -15,6 +15,7 @@ const timeoutMs = Number(process.env.SOURCE_AUDIT_TIMEOUT_MS || 12000);
 const concurrency = Math.max(1, Math.min(Number(process.env.SOURCE_AUDIT_CONCURRENCY || 28), 40));
 const parser = new Parser();
 const articleSampleSize = Math.max(0, Math.min(Number(process.env.SOURCE_AUDIT_ARTICLE_SAMPLE || 3), 5));
+const maxBodyBytes = Math.max(250_000, Math.min(Number(process.env.SOURCE_AUDIT_MAX_BODY_BYTES || 1_000_000), 3_000_000));
 
 function normalizeSourceUrl(value = "") {
   try {
@@ -94,7 +95,7 @@ async function probeOnce(url) {
     const contentType = response.headers.get("content-type") || "";
     let body = "";
     try {
-      body = await readResponseBody(response, controller);
+      body = await readResponseBody(response, controller, maxBodyBytes);
     } catch {
       body = "";
     }
@@ -122,21 +123,21 @@ async function probeOnce(url) {
   }
 }
 
-async function readResponseBody(response, controller) {
-  if (!response.body) return (await response.text()).slice(0, 3_000_000);
+async function readResponseBody(response, controller, bodyLimit) {
+  if (!response.body) return (await response.text()).slice(0, bodyLimit);
   const reader = response.body.getReader();
   const decoder = new TextDecoder();
   const chunks = [];
   let size = 0;
   try {
-    while (size < 3_000_000) {
+    while (size < bodyLimit) {
       const result = await Promise.race([
         reader.read(),
         new Promise((_, reject) => setTimeout(() => reject(new Error(`body read timeout after ${timeoutMs}ms`)), timeoutMs))
       ]);
       if (result.done) break;
       const value = result.value || new Uint8Array();
-      const remaining = Math.max(0, 3_000_000 - size);
+      const remaining = Math.max(0, bodyLimit - size);
       const chunk = value.byteLength > remaining ? value.slice(0, remaining) : value;
       chunks.push(decoder.decode(chunk, { stream: true }));
       size += chunk.byteLength;
