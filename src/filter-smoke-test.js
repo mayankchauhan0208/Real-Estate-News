@@ -14,6 +14,8 @@ import {
   needsLocalQualityReview,
   getSourcePageUrls,
   getSourceUrls,
+  getArticleFinalState,
+  getArticleTrace,
   getFeedFallbackPageUrl,
   hasBackfillDateRange,
   isAllowedSource,
@@ -111,6 +113,25 @@ assert.equal(isPublishableArticle({
   cityCode: "noida",
   postedBy: "Example Realty"
 }, sentIds), true);
+
+assert.equal(getArticleFinalState({ articleReadAttempted: false }, ["filter 5: no allowed city match"]), "CITY_UNMAPPED");
+assert.equal(getArticleFinalState({ articleReadAttempted: false }, ["filter 4: not positive target real-estate/project news"]), "REJECTED_RELEVANCE");
+const traceFixture = getArticleTrace({
+  title: "Residential project approved in Gurugram",
+  description: "A new residential project was approved.",
+  articleText: "A readable article body with sufficient project detail.",
+  newsLink: "https://example.com/gurugram/project",
+  sourceUrl: "https://example.com/news",
+  cityCode: "gurugram",
+  publishedAt: "2026-09-30T00:00:00.000Z",
+  fetchedAt: "2026-09-30T00:00:00.000Z",
+  thumbnailImage: "https://example.com/image.jpg",
+  articleReadAttempted: true,
+  fullArticleRead: true
+}, [], { finalState: "CANDIDATE", candidate: true });
+assert.equal(traceFixture.finalState, "CANDIDATE");
+assert.equal(traceFixture.articleUrl, "https://example.com/gurugram/project");
+assert.equal(traceFixture.thumbnail, "found");
 
 function normalizeSmokeSourceUrl(value) {
   const raw = String(value || "").trim();

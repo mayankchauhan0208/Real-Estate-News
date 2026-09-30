@@ -124,7 +124,10 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: news-backfill-report-${{ github.run_id }}-${{ matrix.source_offset }}
-          path: reports/runs/
+          path: |
+            reports/runs/
+            reports/source-audits/
+          retention-days: 30
           if-no-files-found: ignore
 
       - name: Refresh hosted admin snapshot

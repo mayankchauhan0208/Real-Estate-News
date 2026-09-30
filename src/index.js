@@ -2263,7 +2263,84 @@ function logMissedNewsAudit(missedCandidates, limit = 20) {
   }
 }
 
-function reportArticle(article) {
+function getArticleFinalState(article, reasons = [], context = {}) {
+  if (context.finalState) return context.finalState;
+  if (context.publishError) return "PUBLISH_FAILED";
+  if (reasons.some((reason) => reason.startsWith("review:"))) return "REVIEW";
+  if (reasons.some((reason) => reason.includes("duplicate") || reason.includes("already reposted"))) return "DUPLICATE";
+  if (reasons.some((reason) => reason.includes("no allowed city"))) return "CITY_UNMAPPED";
+  if (reasons.some((reason) => reason.includes("outside-city"))) return "OUTSIDE_CITY";
+  if (reasons.some((reason) => reason.includes("outside region"))) return "OUTSIDE_REGION";
+  if (reasons.some((reason) => reason.includes("negative"))) return "REJECTED_NEGATIVE";
+  if (reasons.some((reason) => reason.includes("no specific project"))) return "REJECTED_NO_PROJECT_SIGNAL";
+  if (reasons.some((reason) => reason.includes("not positive"))) return "REJECTED_RELEVANCE";
+  if (article.articleReadAttempted && article.fullArticleRead !== true && article.articleReadError) return "ARTICLE_EXTRACTION_FAILED";
+  return context.candidate ? "CANDIDATE" : "REVIEW";
+}
+
+function getArticleTrace(article, reasons = [], context = {}) {
+  const sourceUrl = article.sourceUrl || "";
+  const articleUrl = article.newsLink || article.url || "";
+  const sourceTrace = article.sourceTrace || {};
+  const primaryText = `${article.title || ""} ${article.description || ""}`.trim();
+  const locationTerms = [...new Set((primaryText.match(/[A-Za-z][A-Za-z -]{2,40}/g) || [])
+    .filter((term) => /city|district|sector|road|highway|expressway|airport|metro|authority|township|corridor/i.test(term)))];
+
+  return {
+    sourceId: article.sourceId || stableId(sourceUrl || articleUrl),
+    sourceName: article.sourceName || article.postedBy || "",
+    sourceType: sourceTrace.sourceType || (isLikelyFeedUrl(sourceUrl) ? "RSS_OR_ATOM" : "HTML_OR_SPECIALIZED"),
+    configuredUrl: sourceTrace.configuredUrl || sourceUrl,
+    actualFetchedUrl: sourceTrace.actualFetchedUrl || sourceUrl,
+    listingUrl: article.listingUrl || sourceTrace.listingUrl || sourceUrl,
+    articleUrl,
+    canonicalUrl: article.canonicalUrl || articleUrl,
+    discoveryTimestamp: article.fetchedAt || "",
+    publicationDate: article.publishedAt || "",
+    publicationDateExtractionMethod: article.publicationDateExtractionMethod || "not-captured",
+    sourceFetchResult: sourceTrace.fetchResult || "success",
+    httpStatus: sourceTrace.httpStatus || "not-captured",
+    redirectChain: sourceTrace.redirectChain || [],
+    attemptNumber: sourceTrace.attempts || "not-captured",
+    fallbackUsed: sourceTrace.recovered === true,
+    fetchDurationMs: sourceTrace.fetchDurationMs || "not-captured",
+    articleLinkDiscoveryMethod: article.articleLinkDiscoveryMethod || (isLikelyFeedUrl(sourceUrl) ? "RSS_OR_ATOM" : "HTML_GENERIC_EXTRACTOR"),
+    listingExtraction: article.listingExtraction || "not-captured",
+    fullArticleFetch: article.articleReadAttempted ? (article.fullArticleRead ? "success" : "failed") : "not-attempted",
+    articleExtractionMethod: article.articleExtractionMethod || (article.articleReadAttempted ? "HTML_CONTENT_EXTRACTOR" : "not-captured"),
+    articleTextLength: (article.articleText || "").length,
+    readability: article.fullArticleRead === true ? "readable" : article.articleReadAttempted ? "insufficient-or-failed" : "not-attempted",
+    language: article.language || "not-captured",
+    thumbnail: article.thumbnailImage ? "found" : "not-found",
+    thumbnailExtractionMethod: article.thumbnailImage ? (article.thumbnailExtractionMethod || "metadata-or-fallback") : "not-captured",
+    relevance: context.relevance || (reasons.some((reason) => reason.includes("not positive")) ? "rejected" : "not-captured"),
+    relevanceReason: context.relevanceReason || "not-captured",
+    negativeContent: context.negativeContent || (reasons.some((reason) => reason.includes("negative")) ? "detected" : "not-captured"),
+    negativeEvidence: context.negativeEvidence || "not-captured",
+    projectSignal: context.projectSignal || "not-captured",
+    projectSignalEvidence: context.projectSignalEvidence || "not-captured",
+    locationsDetected: article.detectedLocations || locationTerms,
+    locationEvidence: article.locationEvidence || primaryText.slice(0, 500),
+    aliasMatched: article.aliasMatched || [],
+    districtMatched: article.districtMatched || [],
+    localityMatched: article.localityMatched || [],
+    sectorMatched: article.sectorMatched || [],
+    authorityMatched: article.authorityMatched || [],
+    corridorMatched: article.corridorMatched || [],
+    cityCodes: article.cityCode ? [article.cityCode] : [],
+    cityRoutingEvidence: article.cityRoutingEvidence || "not-captured",
+    cityConfidence: article.cityConfidence || (article.cityCode ? "mapped" : "unmapped"),
+    duplicateResult: context.duplicateResult || "not-captured",
+    duplicateEvidence: context.duplicateEvidence || "not-captured",
+    finalState: getArticleFinalState(article, reasons, context),
+    finalReason: context.finalReason || reasons.join("; ") || "candidate passed filters",
+    publishAttempt: context.publishAttempt || "not-attempted",
+    publishResult: context.publishResult || "not-attempted"
+  };
+}
+
+function reportArticle(article, context = {}) {
+  const reasons = context.reasons || [];
   return {
     title: article.title || "",
     description: (article.description || "").slice(0, 500),
@@ -2275,7 +2352,9 @@ function reportArticle(article) {
     sourceName: article.sourceName || article.postedBy || "",
     sourceUrl: article.sourceUrl || "",
     fullArticleRead: article.fullArticleRead === true,
-    articleReadError: article.articleReadError || ""
+    articleReadError: article.articleReadError || "",
+    articleTextExcerpt: (article.articleText || "").slice(0, 1200),
+    trace: getArticleTrace(article, reasons, context)
   };
 }
 
@@ -2333,13 +2412,13 @@ function buildRunAnalytics(expandedArticles, readyArticles, postedArticles, skip
       const qualityDecision = localQualityJudge(article);
       if ((needsLocalQualityReview(article) || isFullArticleReviewRequired(article)) && needsReviewArticles.length < 300) {
         needsReviewArticles.push({
-          article: reportArticle(article),
+          article: reportArticle(article, { reasons }),
           reasons,
           decision: qualityDecision
         });
       }
       if (rejectedArticles.length < rejectionAuditLimit) {
-        rejectedArticles.push({ article: reportArticle(article), reasons });
+        rejectedArticles.push({ article: reportArticle(article, { reasons }), reasons });
       }
     }
 
@@ -6938,7 +7017,17 @@ async function main() {
       const articles = result.articles.map((article) => ({
         ...article,
         sourceUrl: article.sourceUrl || source,
-        sourceCityCodes
+        sourceCityCodes,
+        sourceTrace: {
+          configuredUrl: source,
+          actualFetchedUrl: result.fetchedSource || source,
+          fetchedSource: result.fetchedSource || source,
+          attempts: result.attempts,
+          recovered: result.recovered === true,
+          fetchResult: "success",
+          fetchDurationMs: Date.now() - startedAt,
+          sourceType: isLikelyFeedUrl(source) ? "RSS_OR_ATOM" : "HTML_OR_SPECIALIZED"
+        }
       }));
       const recoveryLabel = result.recovered ? ` via ${result.fetchedSource}` : "";
       console.log(`Fetched ${result.articles.length} items from ${source}${recoveryLabel} in ${formatDuration(Date.now() - startedAt)} (attempts: ${result.attempts})`);
@@ -7073,7 +7162,7 @@ async function main() {
       console.log(
         `Dry run candidate (${article.cityCode}): ${article.title} | ${article.newsLink}`
       );
-      dryRunCandidates.push(reportArticle(article));
+      dryRunCandidates.push(reportArticle(article, { candidate: true, finalState: "CANDIDATE", publishAttempt: "not-attempted", publishResult: "dry-run" }));
       continue;
     }
 
@@ -7083,7 +7172,7 @@ async function main() {
         sentIds.add(id);
       }
       await writeSentIds(sentIds);
-      postedArticles.push(reportArticle(article));
+      postedArticles.push(reportArticle(article, { finalState: "PUBLISHED", publishAttempt: "attempted", publishResult: `HTTP_${result.status}` }));
       console.log(
         `Pushed (${result.status}, ${article.cityCode}): ${article.title} | API response: ${
           result.body || "<empty>"
@@ -7091,7 +7180,7 @@ async function main() {
       );
     } catch (error) {
       const failure = {
-        article: reportArticle(article),
+        article: reportArticle(article, { finalState: "PUBLISH_FAILED", publishAttempt: "attempted", publishResult: "failed", publishError: true }),
         error: String(error?.message || error)
       };
       pushFailures.push(failure);
@@ -7138,7 +7227,7 @@ async function main() {
     needsReviewArticles: runAnalytics.needsReviewArticles,
     cityBreakdown: runAnalytics.cityBreakdown,
     coverageAlerts: runAnalytics.coverageAlerts,
-    candidates: articlesToPush.map(reportArticle),
+    candidates: articlesToPush.map((article) => reportArticle(article, { candidate: true, finalState: "CANDIDATE" })),
     posted: postedArticles,
     pushFailures,
     dryRunCandidates,
@@ -7164,6 +7253,8 @@ export {
   getSourcePageUrls,
   getSourceUrls,
   getGeographicAliasAudit,
+  getArticleFinalState,
+  getArticleTrace,
   getRejectionReasons,
   localQualityJudge,
   needsLocalQualityReview,
