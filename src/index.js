@@ -3661,7 +3661,11 @@ function isOperationalInfrastructureOnlyArticle(article) {
     "street lights",
     "streetlight",
     "water metro",
-    "metro network"
+    "metro network",
+    "bus stand",
+    "bus station",
+    "luggage locker",
+    "luggage lockers"
   ]);
   const hasPropertyOrDevelopmentSignal = hasKeyword(primaryAndUrl, [
     "real estate",
@@ -4604,6 +4608,11 @@ function isGenericLocalNonRealEstateNews(article) {
     "custody",
     "father custody",
     "highway blockade",
+    "animal rescue",
+    "python rescued",
+    "snake rescue",
+    "wildlife rescue",
+    "rescued from car",
     "judicial work",
     "manas national park",
     "mass leave",
@@ -4613,7 +4622,11 @@ function isGenericLocalNonRealEstateNews(article) {
     "welfare shelter",
     "wildlife",
     "women’s shelter",
-    "womens shelter"
+    "womens shelter",
+    "bus stand",
+    "bus station",
+    "luggage locker",
+    "luggage lockers"
   ])) {
     return false;
   }

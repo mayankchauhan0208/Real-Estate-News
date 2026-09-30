@@ -70,6 +70,18 @@ const reportedOffTopicArticles = [
     description: "PhysioVeda Academics launched a continuous learning initiative for professionals.",
     newsLink: "https://example.com/physioveda-academics-launches-awp-2026",
     cityCode: "gurugram"
+  },
+  {
+    title: "Python rescued from car in Jalaun",
+    description: "A python was rescued from a car in Jalaun.",
+    newsLink: "https://timesofindia.indiatimes.com/city/kanpur/python-rescued-from-car-in-jalaun/articleshow/134000000.cms",
+    cityCode: "kanpur"
+  },
+  {
+    title: "NWKRTC launches digital luggage lockers at Hosur bus stand",
+    description: "Digital luggage lockers were launched at a bus stand for passenger convenience.",
+    newsLink: "https://example.com/hosur/digital-luggage-lockers-bus-stand",
+    cityCode: "hosur"
   }
 ];
 
