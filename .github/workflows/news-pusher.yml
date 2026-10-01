@@ -130,8 +130,14 @@ jobs:
           SOURCE_CONCURRENCY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.source_concurrency || '12' }}
           BUILD_VERSION: "source-intelligence-v1"
           SOURCE_STRATEGY: "rotating-source-coverage"
+          SOURCE_PRIORITY_URLS: "https://realty.economictimes.indiatimes.com/rss/commercial,https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority,https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida%2Bauthority,https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida,https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml,https://timesofindia.indiatimes.com/rssfeeds/8021716.cms"
+          SOURCE_BATCH_INTERVAL_MINUTES: "60"
           AUTO_SOURCE_BATCH: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
           SOURCE_BATCH_COUNT: ${{ github.event_name == 'schedule' && '6' || '1' }}
+          USE_RESUMABLE_SOURCE_SCHEDULER: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
+          SOURCE_SHARD_SIZE: "50"
+          SOURCE_RUNTIME_BUDGET_MS: "2700000"
+          SOURCE_MAX_SHARDS_PER_RUN: "12"
           ARTICLE_METADATA_CONCURRENCY: "6"
           FETCH_TIMEOUT_MS: "25000"
           ARTICLE_METADATA_TIMEOUT_MS: "12000"

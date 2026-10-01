@@ -8,6 +8,17 @@ import { promisify } from "node:util";
 import * as cheerio from "cheerio";
 import Parser from "rss-parser";
 import { citySourceRules, workbookCityRules } from "./city-config.js";
+import {
+  acquireSchedulerLock,
+  buildCycleSnapshot,
+  completeShard,
+  createSchedulerState,
+  readJson,
+  releaseSchedulerLock,
+  selectShard,
+  startOrResumeCycle,
+  writeJsonAtomic
+} from "./source-monitor-scheduler.js";
 
 const userAgent =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
@@ -1820,9 +1831,16 @@ function getSources() {
       .filter((source) => !isSourceDisabledByAdmin(source))
     : [];
 
-  return [
+  const sources = [
     ...manualSourceUrls,
     ...splitDelimitedValues(env("MANUAL_SOURCE_URLS")).filter((source) => !isSourceDisabledByAdmin(source))
+  ];
+  const priority = splitDelimitedValues(env("SOURCE_PRIORITY_URLS"));
+  if (!priority.length) return sources;
+  const prioritySet = new Set(priority.map((source) => normalizeSourceUrl(source)));
+  return [
+    ...priority.filter((source) => sources.some((candidate) => normalizeSourceUrl(candidate) === normalizeSourceUrl(source))),
+    ...sources.filter((source) => !prioritySet.has(normalizeSourceUrl(source)))
   ];
 }
 
@@ -1961,7 +1979,11 @@ function getCommitSha() {
 function getSourceStrategyName() {
   return env(
     "SOURCE_STRATEGY",
-    getBooleanEnv("AUTO_SOURCE_BATCH") ? "rotating-source-batch" : "full-source-coverage"
+    getBooleanEnv("USE_RESUMABLE_SOURCE_SCHEDULER")
+      ? "resumable-source-cycle"
+      : getBooleanEnv("AUTO_SOURCE_BATCH")
+        ? "rotating-source-batch"
+        : "full-source-coverage"
   );
 }
 
@@ -1984,7 +2006,7 @@ function applySourceBatch(sourceUrls) {
   }
 
   const explicitIndex = Number.parseInt(env("SOURCE_BATCH_INDEX", ""), 10);
-  const timeSlotIndex = Math.floor(Date.now() / (10 * 60 * 1000));
+  const timeSlotIndex = getAutomaticSourceBatchIndex(Date.now(), batchCount);
   const batchIndex = Number.isFinite(explicitIndex) && explicitIndex >= 0
     ? explicitIndex % batchCount
     : timeSlotIndex % batchCount;
@@ -1995,6 +2017,11 @@ function applySourceBatch(sourceUrls) {
   );
 
   return batchedSources;
+}
+
+function getAutomaticSourceBatchIndex(timestampMs = Date.now(), batchCount = 1) {
+  const intervalMinutes = Math.max(1, getPositiveIntegerEnv("SOURCE_BATCH_INTERVAL_MINUTES", 60));
+  return Math.floor(Number(timestampMs) / (intervalMinutes * 60 * 1000)) % Math.max(1, batchCount);
 }
 
 function getSourceConcurrency() {
@@ -6885,15 +6912,18 @@ async function fetchSourceWithTimeout(sourceUrl, timeoutMsOverride = getSourceTi
   const timeoutMs = Math.max(1, timeoutMsOverride);
   let timeout;
 
-  const sourcePromise = fetchSource(sourceUrl, { signal: controller.signal });
-  sourcePromise.catch(() => {});
-
+  // Start the deadline before entering any specialized adapter. Every adapter
+  // receives the same signal, and late failures are consumed so one abandoned
+  // branch cannot turn into an unhandled rejection after the shard advances.
   const timeoutPromise = new Promise((_, reject) => {
     timeout = setTimeout(() => {
       controller.abort();
       reject(new Error(`source timed out after ${timeoutMs}ms`));
     }, timeoutMs);
+    timeout.unref?.();
   });
+  const sourcePromise = Promise.resolve().then(() => fetchSource(sourceUrl, { signal: controller.signal }));
+  sourcePromise.catch(() => {});
 
   try {
     return await Promise.race([sourcePromise, timeoutPromise]);
@@ -7056,11 +7086,74 @@ async function pushArticle(article) {
   };
 }
 
+async function fetchSourceBatch(sourceList) {
+  return mapWithConcurrency(sourceList, getSourceConcurrency(), async (source) => {
+    try {
+      const startedAt = Date.now();
+      const result = await fetchSourceWithRecovery(source);
+      const sourceCityCodes = getConfiguredSourceCityCodes(source);
+      const articles = result.articles.map((article) => ({
+        ...article,
+        sourceUrl: article.sourceUrl || source,
+        sourceCityCodes,
+        sourceTrace: {
+          configuredUrl: source,
+          actualFetchedUrl: result.fetchedSource || source,
+          fetchedSource: result.fetchedSource || source,
+          attempts: result.attempts,
+          recovered: result.recovered === true,
+          fetchResult: "success",
+          fetchDurationMs: Date.now() - startedAt,
+          sourceType: isLikelyFeedUrl(source) ? "RSS_OR_ATOM" : "HTML_OR_SPECIALIZED"
+        }
+      }));
+      const recoveryLabel = result.recovered ? ` via ${result.fetchedSource}` : "";
+      console.log(`Fetched ${result.articles.length} items from ${source}${recoveryLabel} in ${formatDuration(Date.now() - startedAt)} (attempts: ${result.attempts})`);
+      return { source, articles, attempts: result.attempts, fetchedSource: result.fetchedSource, recovered: result.recovered };
+    } catch (error) {
+      console.error(`Failed to fetch ${source}: ${error.message}`);
+      return { source, error: error.message, attempts: error.sourceAttempts || getSourceRetryAttempts() };
+    }
+  });
+}
+
+async function prepareResumableSourceCycle(sourceUrls) {
+  const statePath = path.join(stateDir, "source-monitor-checkpoint.json");
+  const snapshotPath = path.join(stateDir, "source-monitor-cycle.json");
+  const cycleId = env("SOURCE_CYCLE_ID", `source-cycle-${new Date().toISOString().slice(0, 10)}`);
+  const shardSize = getPositiveIntegerEnv("SOURCE_SHARD_SIZE", 50);
+  const configuredSnapshot = buildCycleSnapshot(sourceUrls.map((url) => ({ url })), cycleId);
+  const savedSnapshot = await readJson(snapshotPath, null);
+  const sameUniverse = savedSnapshot?.sources?.length === configuredSnapshot.sources.length &&
+    savedSnapshot.sources.every((source, index) => source.sourceId === configuredSnapshot.sources[index]?.sourceId);
+  const snapshot = savedSnapshot && savedSnapshot.cycleId === cycleId && sameUniverse ? savedSnapshot : configuredSnapshot;
+  const state = startOrResumeCycle(await readJson(statePath, createSchedulerState()), snapshot);
+  state.shardSize = shardSize;
+  await writeJsonAtomic(snapshotPath, snapshot);
+  await writeJsonAtomic(statePath, state);
+  return { statePath, snapshotPath, snapshot, state, shardSize };
+}
+
+async function checkpointResumableSourceShard(context, shard, sourceResults) {
+  const outcomes = sourceResults.map((result) => ({
+    source: { url: result.source },
+    sourceId: shard.sources.find((source) => source.url === result.source)?.sourceId,
+    status: result.error ? (/timed?\s*out|timeout/i.test(result.error) ? "TIMEOUT" : "TRANSPORT_FAILURE") : result.articles.length ? "SUCCESS_NO_CANDIDATE" : "NO_DISCOVERY",
+    failureReason: result.error || ""
+  })).filter((outcome) => outcome.sourceId);
+  completeShard(context.state, shard, outcomes);
+  await writeJsonAtomic(context.statePath, context.state);
+  return outcomes;
+}
+
 async function main() {
   await loadDotEnv();
 
   const allSelectedSources = getSourceUrls().filter(isAllowedSource);
-  const selectedSources = applySourceBatch(allSelectedSources);
+  const useResumableScheduler = getBooleanEnv("USE_RESUMABLE_SOURCE_SCHEDULER");
+  let selectedSources = useResumableScheduler ? [] : applySourceBatch(allSelectedSources);
+  let resumableContext = null;
+  let schedulerLock = null;
   const extraArticleUrls = [...new Set(getExtraArticleUrls())].filter(isAllowedExtraArticleUrl);
   const maxItems = getMaxItemsPerRun();
   const backfillDateRange = getBackfillDateRange();
@@ -7126,35 +7219,32 @@ async function main() {
   }
 
   const fetchStartedAt = Date.now();
-  console.log(`Fetching ${selectedSources.length} sources with ${getSourceConcurrency()} parallel source workers and ${formatDuration(getSourceTimeoutMs())} max per source.`);
-  const sourceResults = await mapWithConcurrency(selectedSources, getSourceConcurrency(), async (source) => {
+  let sourceResults = [];
+  if (useResumableScheduler) {
+    schedulerLock = await acquireSchedulerLock(path.join(stateDir, "source-monitor.lock"), `${process.pid}-${Date.now()}`, 15 * 60 * 1000);
+    if (!schedulerLock.acquired) throw new Error("Resumable source scheduler is already owned by another ingestion worker.");
+    resumableContext = await prepareResumableSourceCycle(allSelectedSources);
+    const runtimeBudgetMs = getPositiveIntegerEnv("SOURCE_RUNTIME_BUDGET_MS", 45 * 60 * 1000);
+    const maxShards = getPositiveIntegerEnv("SOURCE_MAX_SHARDS_PER_RUN", 12);
+    console.log(`Resumable source scheduler enabled: shard size ${resumableContext.shardSize}, runtime budget ${formatDuration(runtimeBudgetMs)}.`);
     try {
-      const startedAt = Date.now();
-      const result = await fetchSourceWithRecovery(source);
-      const sourceCityCodes = getConfiguredSourceCityCodes(source);
-      const articles = result.articles.map((article) => ({
-        ...article,
-        sourceUrl: article.sourceUrl || source,
-        sourceCityCodes,
-        sourceTrace: {
-          configuredUrl: source,
-          actualFetchedUrl: result.fetchedSource || source,
-          fetchedSource: result.fetchedSource || source,
-          attempts: result.attempts,
-          recovered: result.recovered === true,
-          fetchResult: "success",
-          fetchDurationMs: Date.now() - startedAt,
-          sourceType: isLikelyFeedUrl(source) ? "RSS_OR_ATOM" : "HTML_OR_SPECIALIZED"
-        }
-      }));
-      const recoveryLabel = result.recovered ? ` via ${result.fetchedSource}` : "";
-      console.log(`Fetched ${result.articles.length} items from ${source}${recoveryLabel} in ${formatDuration(Date.now() - startedAt)} (attempts: ${result.attempts})`);
-      return { source, articles, attempts: result.attempts, fetchedSource: result.fetchedSource, recovered: result.recovered };
-    } catch (error) {
-      console.error(`Failed to fetch ${source}: ${error.message}`);
-      return { source, error: error.message, attempts: error.sourceAttempts || getSourceRetryAttempts() };
+      while (sourceResults.length < allSelectedSources.length && Date.now() - fetchStartedAt < runtimeBudgetMs) {
+        const shard = selectShard(resumableContext.state, resumableContext.snapshot, resumableContext.shardSize);
+        if (!shard || sourceResults.length >= maxShards * resumableContext.shardSize) break;
+        const batchSources = shard.sources.map((source) => source.url);
+        const batchResults = await fetchSourceBatch(batchSources);
+        await checkpointResumableSourceShard(resumableContext, shard, batchResults);
+        selectedSources.push(...batchSources);
+        sourceResults.push(...batchResults);
+      }
+    } finally {
+      await releaseSchedulerLock(path.join(stateDir, "source-monitor.lock"), schedulerLock.lock.owner);
+      schedulerLock = null;
     }
-  });
+  } else {
+    console.log(`Fetching ${selectedSources.length} sources with ${getSourceConcurrency()} parallel source workers and ${formatDuration(getSourceTimeoutMs())} max per source.`);
+    sourceResults = await fetchSourceBatch(selectedSources);
+  }
 
   const sourceHealth = sourceResults.map((result) => ({
     source: result.source,
@@ -7370,6 +7460,7 @@ export {
   expandCityArticles,
   extractMetadataImage,
   fetchSource,
+  fetchSourceWithTimeout,
   getSourcePageUrls,
   getSourceUrls,
   getGeographicAliasAudit,
@@ -7383,6 +7474,7 @@ export {
   hasBackfillDateRange,
   isLikelyFeedUrl,
   getFeedFallbackPageUrl,
+  getAutomaticSourceBatchIndex,
   shouldSkipTitle,
   articleDedupeIds,
   isAllowedSource,
