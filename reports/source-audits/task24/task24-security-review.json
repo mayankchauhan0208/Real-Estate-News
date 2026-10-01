@@ -1,0 +1,16 @@
+{
+  "concreteBlockers": [
+    "Remote/local branch divergence must be reconciled before deployment."
+  ],
+  "checks": {
+    "secretsInReports": false,
+    "authHeadersLogged": false,
+    "fetchedContentExecuted": false,
+    "responseBodyBounds": true,
+    "redirectPolicy": "follow with bounded fetch",
+    "htmlExecution": false,
+    "dangerousSchemesRejected": true,
+    "malformedFeedsIsolated": true
+  },
+  "status": "REVIEW_REQUIRED_FOR_DEPLOYMENT"
+}

@@ -1,0 +1,808 @@
+{
+  "baseline": "79400a3719ccee226d050ddaf6adeaab5b47be01",
+  "proposedLocal": "3e586d3062f76d08dd888b4aed32283973640344",
+  "commitCount": 25,
+  "changedFileCount": 197,
+  "changed": [
+    {
+      "status": "A",
+      "path": "reports/source-audits/source-audit-2026-09-30T12-58-19-897Z.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/source-debt-register-2026-09-30T09-15-55Z.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/source-debt-register-2026-09-30T09-15-55Z.md"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/targeted/classification-evaluation-summary.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/targeted/classification-evaluation.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/targeted/regional-date-v2-summary.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/targeted/regional-date-v2.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/targeted/regional-labeled-evaluation.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/targeted/regional-summary.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/targeted/regional.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/targeted/rera-date-v2-summary.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/targeted/rera-date-v2.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/targeted/rera-labeled-evaluation.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/targeted/rera-summary.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/targeted/rera.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/targeted/task6-classification-analysis.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/targeted/task6-classification-dataset.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/targeted/transport-summary.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/targeted/transport.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/targeted/unsampled-summary.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/targeted/unsampled.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/targeted/zero-item-summary.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task10/task10-discovery-recovery-report.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task11/task11-experimental-sources.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task11/task11-positive-controls.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task11/task11-source-expansion-report.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task12/task12-document-recovery-report.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task12/task12-positive-controls.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task13/task13-ocr-recovery-report.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task14-source-recovery/task14-source-recovery-debt-register.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task14-source-recovery/task14-source-recovery-report.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task14-targeted-recovery/checkpoint.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task14-targeted-recovery/task14-targeted-recovery-report.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task14/raw-ocr/9f0fb3c425f7c59d01eb587f489e0ec4cafeb05c452300d1e0b7a033c48ec2c9.txt"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task14/raw-ocr/c4df959b50bdbeeeba7e9ebe26ab1f643756f1297505fb419295bc743c92f1a4.txt"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task14/raw-ocr/d540707b667e15240aea2d1478545275372d965f063ae9e7141e44161be8f2a1.txt"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task14/raw-ocr/ff9264d46ae6425cb587d84ac06cbe3d06c778dad7aff3f716df633a4c091e0a.txt"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task14/task14-tesseract-recovery-report.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task15/task15-content-yield-report.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task15/task15-items.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task15/task15-manual-validation-sample.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task16/task16-ground-truth-report.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task16/task16-ocr-value-sample.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task16/task16-sampled-evidence.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task17/editorial-review.csv"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task17/editorial-review.html"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task17/task17-editorial-review-report.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task18/task18-ground-truth-analysis.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task18/task18-loss-attribution.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task18/task18-publish-traces.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task18/task18-record-analysis.csv"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task18/task18-source-yield.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task19/task19-before-after.csv"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task19/task19-evidence-recovery-report.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task19/task19-extraction-diagnostics.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task19/task19-generalization.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task19/task19-publish-traces.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task19/task19-runtime.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task19/task19-summary.html"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task20/task20-before-after.csv"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task20/task20-false-positives-after.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task20/task20-false-positives-before.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task20/task20-holdout.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task20/task20-negative-analysis.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task20/task20-offtopic-analysis.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task20/task20-precision-recovery-report.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task21/task21-city-coverage-before-after.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task21/task21-city-language-matrix.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task21/task21-cross-language-dedupe.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task21/task21-language-coverage.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task21/task21-multilingual-report.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task21/task21-native-geo.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task21/task21-negative-controls.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task21/task21-offtopic-controls.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task21/task21-positive-controls.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task21/task21-regional-only-events.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task21/task21-runtime.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task21/task21-source-benchmark.csv"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task21/task21-source-research.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task21/task21-translation-benchmark.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task21/task21-unseen-holdout.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task22/task22-city-results.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task22/task22-cross-language-dedupe.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task22/task22-language-results.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task22/task22-multilingual-editorial-review-audited.csv"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task22/task22-multilingual-editorial-review.csv"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task22/task22-multilingual-editorial-review.html"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task22/task22-native-geo-results.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task22/task22-negative-candidates.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task22/task22-offtopic-candidates.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task22/task22-positive-candidates.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task22/task22-provider-research.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task22/task22-real-articles.jsonl"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task22/task22-real-multilingual-report.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task22/task22-regional-only-events.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task22/task22-runtime.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task22/task22-source-productivity.csv"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task23/task23-baseline-confusion.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task23/task23-false-negatives.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task23/task23-false-positives.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task23/task23-final-confusion.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task23/task23-geo-audit.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task23/task23-human-ground-truth-report.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task23/task23-insufficient-audit.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task23/task23-language-audit.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task23/task23-negative-audit.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task23/task23-record-decisions.csv"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task23/task23-runtime.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task23/task23-translation-audit.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task23/task23-unseen-holdout.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-component-classification.csv"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-dependency-audit.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-deployment-manifest.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-failure-isolation.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-git-diff.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-live-baseline.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-multilingual-gate.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-noida-greater-noida-audit.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-post-deployment-plan.md"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-production-readiness.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-production-simulation.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-publish-contract.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-regressions.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-rollback-plan.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-runtime-bounds.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-secret-contract.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-security-review.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-sent-state-safety.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-source-reconciliation.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task24/task24-workflow-audit.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task7/positive-control-regression.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task7/positive-controls.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task7/task7-positive-control-report.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task8/task8-live-discovery-report.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task9/task9-city-coverage-matrix.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task9/task9-deployment-manifest.json"
+    },
+    {
+      "status": "A",
+      "path": "reports/source-audits/task9/task9-final-report.json"
+    },
+    {
+      "status": "M",
+      "path": "src/index.js"
+    },
+    {
+      "status": "A",
+      "path": "tools/article-body-extractor.mjs"
+    },
+    {
+      "status": "M",
+      "path": "tools/audit-source-health.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/build-classification-eval.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/build-source-debt-register.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/build-task11-source-expansion-report.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/build-task6-classification-dataset.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/build-task7-positive-controls.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/build-task9-final-report.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/classification-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/document-pipeline.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/extraction-helpers.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/extraction-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/fixtures/task8/dda-listing.html"
+    },
+    {
+      "status": "A",
+      "path": "tools/fixtures/task8/goa-listing.html"
+    },
+    {
+      "status": "A",
+      "path": "tools/fixtures/task8/sample-document.pdf"
+    },
+    {
+      "status": "A",
+      "path": "tools/fixtures/task8/up-rera-listing.html"
+    },
+    {
+      "status": "A",
+      "path": "tools/multilingual-intelligence.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/ocr-fallback.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/source-recovery-adapter-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/source-recovery-adapters.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/targeted-article-sampler.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task10-discovery-recovery.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task10-discovery-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task10-sibm-false-positive-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task11-source-expansion-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task12-document-recovery.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task12-document-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task13-ocr-recovery.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task13-ocr-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task14-source-recovery-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task14-source-recovery.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task14-targeted-recovery-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task14-targeted-recovery.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task14-tesseract-recovery.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task14-tesseract-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task15-content-yield-benchmark.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task15-content-yield-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task16-ground-truth-recovery.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task16-ground-truth-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task17-editorial-review-dataset.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task17-editorial-review-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task18-ground-truth-analysis.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task18-ground-truth-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task19-evidence-recovery.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task19-extraction-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task20-precision-recovery.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task20-precision-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task21-multilingual-benchmark.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task21-multilingual-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task22-real-multilingual-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task22-real-multilingual-validation.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task23-ground-truth-recovery.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task23-ground-truth-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task24-production-readiness-audit.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task7-positive-control-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task8-adapter-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task8-discovery-adapters.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task8-discovery-regression-test.mjs"
+    },
+    {
+      "status": "A",
+      "path": "tools/task9-final-report-regression-test.mjs"
+    }
+  ],
+  "categories": {
+    "productionSource": [
+      "src/index.js"
+    ],
+    "productionConfig": [
+      "config/admin-settings.json",
+      "src/city-config.js"
+    ],
+    "workflows": [],
+    "dependencies": [],
+    "diagnosticOrReport": 196
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "storage": [
+    "data/sent-news-seed.json",
+    ".state/sent-news.json"
+  ],
+  "identity": "canonical URL/title/date plus city-aware dedupe IDs",
+  "duplicateProtection": true,
+  "canonicalVariation": "covered by articleDedupeIds normalization",
+  "multiCity": "expanded city articles are deduped per city intentionally",
+  "dryRunWrites": false,
+  "failedPublishMarkedSent": false,
+  "backfillResend": "explicit RESEND_BACKFILL opt-in only",
+  "simulation": {
+    "writes": 0,
+    "apiCalls": 0
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "payloadFields": [
+    "title",
+    "description",
+    "cityCode",
+    "isActive",
+    "newsLink",
+    "thumbnailImage",
+    "postedBy",
+    "postedByLogo",
+    "createdAt",
+    "publishedAt"
+  ],
+  "auth": "Bearer APP_API_KEY when present",
+  "rejectedCannotPublish": true,
+  "dryRunPublish": false,
+  "noLiveCallMade": true
+}

@@ -7299,7 +7299,9 @@ async function main() {
     }
   }
 
-  await writeSentIds(sentIds);
+  if (!shouldDryRun()) {
+    await writeSentIds(sentIds);
+  }
   await writeRunReport({
     generatedAt: new Date().toISOString(),
     mode: shouldDryRun() ? "dry-run" : "live",

@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/mayankchauhan0208/Real-Estate-News.git",
+  "remoteDefaultBranch": "main",
+  "remoteDefaultSha": "5468b120200196a50c5b0e9254e8fe4ec264cc7d",
+  "liveDeploymentSha": "UNVERIFIED",
+  "localBranch": "main",
+  "localHead": "3e586d3062f76d08dd888b4aed32283973640344",
+  "mergeBase": "79400a3719ccee226d050ddaf6adeaab5b47be01",
+  "remoteAheadOfLocal": 3,
+  "localAheadOfRemote": 25,
+  "diverged": true,
+  "verification": "git ls-remote origin and local git merge-base/rev-list; deployment mapping unavailable"
+}

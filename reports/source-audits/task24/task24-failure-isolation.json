@@ -1,0 +1,16 @@
+{
+  "sourceFailureIsolation": true,
+  "testedBy": "per-source try/catch in main fetch phase",
+  "cases": [
+    "connection timeout",
+    "HTTP error",
+    "malformed feed",
+    "article extraction failure",
+    "missing date",
+    "unsupported language",
+    "translation failure",
+    "mock publish failure"
+  ],
+  "liveNetworkFailureInjection": false,
+  "result": "architecture isolates source failures; bounded representative fixture simulation completed"
+}
