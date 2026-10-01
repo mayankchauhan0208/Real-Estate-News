@@ -134,7 +134,7 @@ jobs:
           SOURCE_BATCH_INTERVAL_MINUTES: "60"
           AUTO_SOURCE_BATCH: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
           SOURCE_BATCH_COUNT: ${{ github.event_name == 'schedule' && '6' || '1' }}
-          USE_RESUMABLE_SOURCE_SCHEDULER: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
+          USE_RESUMABLE_SOURCE_SCHEDULER: "true"
           SOURCE_SHARD_SIZE: "50"
           SOURCE_RUNTIME_BUDGET_MS: "2700000"
           SOURCE_MAX_SHARDS_PER_RUN: "12"
