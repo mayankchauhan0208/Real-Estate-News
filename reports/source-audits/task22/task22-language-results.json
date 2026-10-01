@@ -1,0 +1,110 @@
+{
+  "reportType": "TASK22_LANGUAGE_RESULTS",
+  "generatedAt": "2026-10-01T09:18:20.480Z",
+  "rows": {
+    "Hindi": {
+      "realArticles": 7,
+      "readable": 3,
+      "current": 7,
+      "positive": 6,
+      "negative": 1,
+      "offtopic": 1,
+      "geoMatched": 4,
+      "cities": [
+        "delhi_ncr",
+        "delhi_ncr",
+        "delhi",
+        "faridabad"
+      ]
+    },
+    "Marathi": {
+      "realArticles": 6,
+      "readable": 0,
+      "current": 3,
+      "positive": 2,
+      "negative": 3,
+      "offtopic": 0,
+      "geoMatched": 4,
+      "cities": [
+        "pune",
+        "pune",
+        "mumbai",
+        "pune"
+      ]
+    },
+    "Malayalam": {
+      "realArticles": 1,
+      "readable": 0,
+      "current": 1,
+      "positive": 1,
+      "negative": 0,
+      "offtopic": 0,
+      "geoMatched": 1,
+      "cities": [
+        "kochi"
+      ]
+    },
+    "Telugu": {
+      "realArticles": 5,
+      "readable": 0,
+      "current": 0,
+      "positive": 5,
+      "negative": 0,
+      "offtopic": 0,
+      "geoMatched": 5,
+      "cities": [
+        "hyderabad",
+        "hyderabad",
+        "hyderabad",
+        "hyderabad",
+        "hyderabad"
+      ]
+    },
+    "Kannada": {
+      "realArticles": 3,
+      "readable": 0,
+      "current": 2,
+      "positive": 1,
+      "negative": 2,
+      "offtopic": 0,
+      "geoMatched": 0,
+      "cities": []
+    },
+    "Tamil": {
+      "realArticles": 1,
+      "readable": 0,
+      "current": 1,
+      "positive": 1,
+      "negative": 0,
+      "offtopic": 0,
+      "geoMatched": 0,
+      "cities": []
+    },
+    "Hindi/Marathi (unresolved)": {
+      "realArticles": 2,
+      "readable": 0,
+      "current": 2,
+      "positive": 2,
+      "negative": 0,
+      "offtopic": 0,
+      "geoMatched": 0,
+      "cities": []
+    }
+  },
+  "syntheticOnlyLanguages": [
+    "Gujarati",
+    "Punjabi",
+    "Odia",
+    "Assamese",
+    "Urdu"
+  ],
+  "realLanguages": [
+    "Hindi",
+    "Marathi",
+    "Malayalam",
+    "Telugu",
+    "Kannada",
+    "Tamil",
+    "Hindi/Marathi (unresolved)"
+  ]
+}

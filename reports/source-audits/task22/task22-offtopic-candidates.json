@@ -1,0 +1,67 @@
+{
+  "count": 1,
+  "records": [
+    {
+      "recordId": "task22-007",
+      "url": "https://www.amarujala.com/delhi/delhi-crime-news-11-year-old-girl-found-dead-after-abduction-in-delhi-accused-arrested-2026-06-25",
+      "canonical": "https://www.amarujala.com/delhi/delhi-crime-news-11-year-old-girl-found-dead-after-abduction-in-delhi-accused-arrested-2026-06-25",
+      "source": "Amar Ujala",
+      "expectedCity": "Delhi",
+      "language": "Hindi",
+      "languageCode": "hi",
+      "script": "Devanagari",
+      "date": "2026-06-25T09:19:52.000Z",
+      "current": true,
+      "ageDays": 97,
+      "titleOriginal": "अपहरण, दरिंदगी और कत्ल: दर्दभरी चीखें, बेबसी और रहम की गुहार, कार में हैवानियत, चिल्लाने पर मासूम का मर्डर",
+      "titleNormalized": "अपहरण, दरिंदगी और कत्ल: दर्दभरी चीखें, बेबसी और रहम की गुहार, कार में हैवानियत, चिल्लाने पर मासूम का मर्डर",
+      "descriptionOriginal": "दक्षिण दिल्ली के महरौली इलाके 11 साल की मासूम बच्ची के अपहरण, उसके साथ दरिंदगी और फिर बेरहमी से हत्या ने पूरे समाज को झकझोर कर रख दिया है।",
+      "snippet": "उसने बच्ची अपनी मां, तीन बहन-भाई के बाद पांचवें नंबर पर सोता देख उसे कैब में लिटा लिया और गाड़ी गुरुग्राम की ओर मोड़ दी। इस बीच बच्ची की नींद खुली और खिड़की से बाहर देख वह पापा...पापा .. चिल्लाने लगी। आरोपी ने उसे कहा कि वह घुमाकर परिवार के पास छोड़ देगा। एक पुलिस अधिकारी के मुताबिक बच्ची की आवाज सुनकर उसके पिता ने कार का पीछा भी किया और बदहवास हालात में जहां परिवार सो रहा था वहां आया और अपहरण की जगह पर सो रहे बुजुर्ग से कार चालक के बारे में पूछा लेकिन वह कुछ बता नहीं आए। इस पर पीड़ित परिवार ने करीब 5:30 बजे पुलिस को सूचना दी। महरौली थानाध्यक्ष रितेश शर्मा और इंस्पेक्टर लॉ एंड ऑर्डर अजय यादव ट",
+      "textLength": 3456,
+      "readable": false,
+      "extractionSource": "JSON_LD_ARTICLE_BODY",
+      "thumbnail": true,
+      "nativeGeoEvidence": [
+        {
+          "candidateCity": "faridabad",
+          "matchedText": "फरीदाबाद",
+          "normalizedPlace": "फरीदाबाद",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "gurugram",
+          "matchedText": "गुरुग्राम",
+          "normalizedPlace": "गुरुग्राम",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        }
+      ],
+      "normalizedCity": "faridabad",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "pipelineRelevance": "reject_negative",
+      "pipelineNegative": "REJECT_NEGATIVE",
+      "pipelineGeo": "faridabad",
+      "pipelineFinalState": "REJECT_NEGATIVE",
+      "machineReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 3: negative/crime/utility concern news",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score -1)"
+      ],
+      "duplicateStatus": "UNIQUE",
+      "category": "offtopic",
+      "provenance": "web-search verified article URL",
+      "transport": {
+        "status": 200,
+        "contentType": "text/html; charset=UTF-8",
+        "elapsedMs": 53,
+        "error": ""
+      }
+    }
+  ]
+}
