@@ -1,0 +1,32 @@
+{
+  "reportType": "TASK21_CROSS_LANGUAGE_DEDUPE",
+  "generatedAt": "2026-10-01T08:52:39.687Z",
+  "pairs": [
+    {
+      "left": "same-en",
+      "right": "same-hi",
+      "decision": "UNRESOLVED",
+      "score": 0.25
+    },
+    {
+      "left": "same-en",
+      "right": "same-mr",
+      "decision": "DISTINCT",
+      "score": 0
+    },
+    {
+      "left": "same-hi",
+      "right": "same-mr",
+      "decision": "DISTINCT",
+      "score": 0
+    },
+    {
+      "left": "same-en",
+      "right": "different-project",
+      "decision": "DISTINCT",
+      "score": 0
+    }
+  ],
+  "distinctCollapsed": 0,
+  "safe": true
+}

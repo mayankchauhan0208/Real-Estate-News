@@ -1,0 +1,203 @@
+{
+  "reportType": "TASK21_POSITIVE_CONTROLS",
+  "generatedAt": "2026-10-01T08:52:39.687Z",
+  "humanVerified": 0,
+  "controls": [
+    {
+      "fixture": "en-positive",
+      "language": "en",
+      "city": "Delhi",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "hi-positive",
+      "language": "hi",
+      "city": "Delhi",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "mr-positive",
+      "language": "mr",
+      "city": "Pune",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "bn-positive",
+      "language": "bn",
+      "city": "Kolkata",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "gu-positive",
+      "language": "gu",
+      "city": "Ahmedabad",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "pa-positive",
+      "language": "pa",
+      "city": "Chandigarh",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "ta-positive",
+      "language": "ta",
+      "city": "Chennai",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "te-positive",
+      "language": "te",
+      "city": "Hyderabad",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "kn-positive",
+      "language": "kn",
+      "city": "Bangalore",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "ml-positive",
+      "language": "ml",
+      "city": "Kochi",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "or-positive",
+      "language": "or",
+      "city": "Bhubaneswar",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "as-positive",
+      "language": "as",
+      "city": "Guwahati",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "ur-supported",
+      "language": "ur",
+      "city": "Delhi",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "mixed-hi-en",
+      "language": "hi",
+      "city": "Delhi",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "mixed-mr-en",
+      "language": "mr",
+      "city": "Pune",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "mixed-south-en",
+      "language": "en",
+      "city": "Chennai",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "native-city",
+      "language": "hi",
+      "city": "Faridabad",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "transliterated-city",
+      "language": "en",
+      "city": "Pune",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "legacy-city",
+      "language": "en",
+      "city": "Bangalore",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "native-locality",
+      "language": "hi",
+      "city": "Faridabad",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "native-authority",
+      "language": "hi",
+      "city": "Noida",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "malformed-unicode",
+      "language": "hi",
+      "city": "Delhi",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "native-numeral-date",
+      "language": "hi",
+      "city": "Pune",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "same-en",
+      "language": "en",
+      "city": "Delhi",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "same-hi",
+      "language": "hi",
+      "city": "Delhi",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "same-mr",
+      "language": "mr",
+      "city": "Pune",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "different-project",
+      "language": "en",
+      "city": "Pune",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "adverse-positive-vocab",
+      "language": "en",
+      "city": "Delhi",
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    }
+  ]
+}

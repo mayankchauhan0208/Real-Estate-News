@@ -1,0 +1,13 @@
+{
+  "reportType": "TASK21_CITY_COVERAGE_BEFORE_AFTER",
+  "generatedAt": "2026-10-01T08:52:39.687Z",
+  "before": {
+    "cities": 234,
+    "regionalSourceCities": 0
+  },
+  "after": {
+    "cities": 234,
+    "regionalSourceCities": 0
+  },
+  "productionSourceRegistryChanged": false
+}

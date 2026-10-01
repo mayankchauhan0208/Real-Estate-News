@@ -1,0 +1,7 @@
+{
+  "reportType": "TASK21_REGIONAL_ONLY_EVENTS",
+  "generatedAt": "2026-10-01T08:52:39.687Z",
+  "realValidatedEvents": 0,
+  "syntheticFixtureEvents": 30,
+  "note": "No unreviewed fixture is counted as a real event."
+}

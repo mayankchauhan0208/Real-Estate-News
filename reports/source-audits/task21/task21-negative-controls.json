@@ -1,0 +1,50 @@
+{
+  "reportType": "TASK21_NEGATIVE_CONTROLS",
+  "generatedAt": "2026-10-01T08:52:39.687Z",
+  "humanVerified": 0,
+  "controls": [
+    {
+      "fixture": "hi-negative",
+      "language": "hi",
+      "protected": true,
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "mr-negative",
+      "language": "mr",
+      "protected": true,
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "ta-negative",
+      "language": "ta",
+      "protected": true,
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "te-negative",
+      "language": "te",
+      "protected": true,
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "kn-negative",
+      "language": "kn",
+      "protected": true,
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    },
+    {
+      "fixture": "ml-negative",
+      "language": "ml",
+      "protected": true,
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    }
+  ],
+  "Task20Controls": "8/8"
+}

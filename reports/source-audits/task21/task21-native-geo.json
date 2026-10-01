@@ -1,0 +1,309 @@
+{
+  "reportType": "TASK21_NATIVE_GEO",
+  "generatedAt": "2026-10-01T08:52:39.687Z",
+  "provenance": "existing city-config keyword only",
+  "rows": [
+    {
+      "fixture": "en-positive",
+      "candidateCity": "delhi",
+      "matchedText": "delhi",
+      "normalizedPlace": "delhi",
+      "field": "title",
+      "type": "TITLE_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "en-positive",
+      "candidateCity": "new_delhi",
+      "matchedText": "delhi",
+      "normalizedPlace": "delhi",
+      "field": "title",
+      "type": "TITLE_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "en-positive",
+      "candidateCity": "delhi",
+      "matchedText": "delhi",
+      "normalizedPlace": "delhi",
+      "field": "description",
+      "type": "DESCRIPTION_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "en-positive",
+      "candidateCity": "new_delhi",
+      "matchedText": "delhi",
+      "normalizedPlace": "delhi",
+      "field": "description",
+      "type": "DESCRIPTION_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "mixed-hi-en",
+      "candidateCity": "delhi",
+      "matchedText": "delhi",
+      "normalizedPlace": "delhi",
+      "field": "title",
+      "type": "TITLE_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "mixed-hi-en",
+      "candidateCity": "new_delhi",
+      "matchedText": "delhi",
+      "normalizedPlace": "delhi",
+      "field": "title",
+      "type": "TITLE_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "mixed-hi-en",
+      "candidateCity": "delhi",
+      "matchedText": "delhi",
+      "normalizedPlace": "delhi",
+      "field": "description",
+      "type": "DESCRIPTION_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "mixed-hi-en",
+      "candidateCity": "new_delhi",
+      "matchedText": "delhi",
+      "normalizedPlace": "delhi",
+      "field": "description",
+      "type": "DESCRIPTION_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "mixed-mr-en",
+      "candidateCity": "pune",
+      "matchedText": "pune",
+      "normalizedPlace": "pune",
+      "field": "title",
+      "type": "TITLE_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "mixed-south-en",
+      "candidateCity": "chennai",
+      "matchedText": "chennai",
+      "normalizedPlace": "chennai",
+      "field": "title",
+      "type": "TITLE_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "native-city",
+      "candidateCity": "faridabad",
+      "matchedText": "फरीदाबाद",
+      "normalizedPlace": "फरीदाबाद",
+      "field": "title",
+      "type": "TITLE_NATIVE_CITY",
+      "confidence": "high",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "native-city",
+      "candidateCity": "faridabad",
+      "matchedText": "फरीदाबाद",
+      "normalizedPlace": "फरीदाबाद",
+      "field": "description",
+      "type": "DESCRIPTION_NATIVE_CITY",
+      "confidence": "high",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "transliterated-city",
+      "candidateCity": "pune",
+      "matchedText": "pune",
+      "normalizedPlace": "pune",
+      "field": "title",
+      "type": "TITLE_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "transliterated-city",
+      "candidateCity": "pune",
+      "matchedText": "pune",
+      "normalizedPlace": "pune",
+      "field": "description",
+      "type": "DESCRIPTION_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "legacy-city",
+      "candidateCity": "bangalore",
+      "matchedText": "bangalore",
+      "normalizedPlace": "bangalore",
+      "field": "title",
+      "type": "TITLE_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "legacy-city",
+      "candidateCity": "bangalore",
+      "matchedText": "bangalore",
+      "normalizedPlace": "bangalore",
+      "field": "description",
+      "type": "DESCRIPTION_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "native-locality",
+      "candidateCity": "faridabad",
+      "matchedText": "नहरपार",
+      "normalizedPlace": "नहरपार",
+      "field": "title",
+      "type": "TITLE_NATIVE_CITY",
+      "confidence": "high",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "native-locality",
+      "candidateCity": "faridabad",
+      "matchedText": "फरीदाबाद",
+      "normalizedPlace": "फरीदाबाद",
+      "field": "description",
+      "type": "DESCRIPTION_NATIVE_CITY",
+      "confidence": "high",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "native-locality",
+      "candidateCity": "faridabad",
+      "matchedText": "नहरपार",
+      "normalizedPlace": "नहरपार",
+      "field": "description",
+      "type": "DESCRIPTION_NATIVE_CITY",
+      "confidence": "high",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "native-authority",
+      "candidateCity": "noida",
+      "matchedText": "नोएडा",
+      "normalizedPlace": "नोएडा",
+      "field": "title",
+      "type": "TITLE_NATIVE_CITY",
+      "confidence": "high",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "same-en",
+      "candidateCity": "delhi",
+      "matchedText": "delhi",
+      "normalizedPlace": "delhi",
+      "field": "title",
+      "type": "TITLE_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "same-en",
+      "candidateCity": "new_delhi",
+      "matchedText": "delhi",
+      "normalizedPlace": "delhi",
+      "field": "title",
+      "type": "TITLE_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "same-en",
+      "candidateCity": "delhi",
+      "matchedText": "delhi",
+      "normalizedPlace": "delhi",
+      "field": "description",
+      "type": "DESCRIPTION_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "same-en",
+      "candidateCity": "new_delhi",
+      "matchedText": "delhi",
+      "normalizedPlace": "delhi",
+      "field": "description",
+      "type": "DESCRIPTION_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "same-hi",
+      "candidateCity": "delhi",
+      "matchedText": "delhi",
+      "normalizedPlace": "delhi",
+      "field": "description",
+      "type": "DESCRIPTION_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "same-hi",
+      "candidateCity": "new_delhi",
+      "matchedText": "delhi",
+      "normalizedPlace": "delhi",
+      "field": "description",
+      "type": "DESCRIPTION_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "different-project",
+      "candidateCity": "pune",
+      "matchedText": "pune",
+      "normalizedPlace": "pune",
+      "field": "title",
+      "type": "TITLE_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "adverse-positive-vocab",
+      "candidateCity": "delhi",
+      "matchedText": "delhi",
+      "normalizedPlace": "delhi",
+      "field": "title",
+      "type": "TITLE_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "adverse-positive-vocab",
+      "candidateCity": "new_delhi",
+      "matchedText": "delhi",
+      "normalizedPlace": "delhi",
+      "field": "title",
+      "type": "TITLE_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    },
+    {
+      "fixture": "mixed-unknown",
+      "candidateCity": "pune",
+      "matchedText": "pune",
+      "normalizedPlace": "pune",
+      "field": "title",
+      "type": "TITLE_CITY",
+      "confidence": "medium",
+      "provenance": "existing city-config keyword"
+    }
+  ],
+  "verifiedControls": 0,
+  "accuracy": "UNMEASURED"
+}

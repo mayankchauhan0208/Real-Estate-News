@@ -1,0 +1,17 @@
+{
+  "reportType": "TASK21_RUNTIME",
+  "generatedAt": "2026-10-01T08:52:39.687Z",
+  "localOnly": true,
+  "providerCalls": 0,
+  "paidApiCalls": 0,
+  "sourceProbeTimeoutMs": 3500,
+  "sourceProbeCount": 24,
+  "sourceProbeFailures": 0,
+  "cache": "none",
+  "terminalStates": [
+    "REVIEW_LANGUAGE",
+    "REVIEW_TRANSLATION_UNAVAILABLE",
+    "REJECT_TECHNICAL_FAILURE"
+  ],
+  "productionMutations": 0
+}
