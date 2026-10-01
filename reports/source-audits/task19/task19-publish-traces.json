@@ -1,0 +1,111 @@
+[
+  {
+    "recordId": "task17-001",
+    "title": "DDA launches digital map for areas planned under Master Plan for Delhi 2047",
+    "humanCity": "Delhi",
+    "url": "https://realty.economictimes.indiatimes.com/news/technology/dda-launches-digital-map-for-areas-planned-under-master-plan-for-delhi-2047/134577474",
+    "sourceFamily": "ET_REALTY",
+    "before": {
+      "extractionQuality": "JAVASCRIPT_CONTAMINATED",
+      "firstLoss": "GEO"
+    },
+    "after": {
+      "extractionSource": "JSON_LD_ARTICLE_BODY",
+      "qualityReasonCodes": [
+        "JSON_LD_USED"
+      ],
+      "geoEvidence": [
+        {
+          "type": "BODY_EXPLICIT_CITY",
+          "matchedText": "delhi",
+          "normalizedPlace": "delhi",
+          "candidateCity": "delhi",
+          "confidence": "high"
+        },
+        {
+          "type": "BODY_EXPLICIT_CITY",
+          "matchedText": "delhi",
+          "normalizedPlace": "delhi",
+          "candidateCity": "new_delhi",
+          "confidence": "medium"
+        }
+      ],
+      "routedCities": [
+        "delhi",
+        "new_delhi"
+      ],
+      "relevance": "authority_pipeline",
+      "negative": "PASS",
+      "wouldPublish": true,
+      "firstLoss": {
+        "primary": "NONE",
+        "reason": "Recovered chain would publish."
+      }
+    }
+  },
+  {
+    "recordId": "task17-059",
+    "title": "Yeida plans  ₹4.5cr landmark entry gate near Yamuna Expressway",
+    "humanCity": "Greater Noida",
+    "url": "https://www.hindustantimes.com/cities/noida-news/yeida-plans-4-5cr-landmark-entry-gate-near-yamuna-expressway-101790793601245.html",
+    "sourceFamily": "HINDUSTAN_TIMES",
+    "before": {
+      "extractionQuality": "JAVASCRIPT_CONTAMINATED",
+      "firstLoss": "EXTRACTION"
+    },
+    "after": {
+      "extractionSource": "JSON_LD_ARTICLE_BODY",
+      "qualityReasonCodes": [
+        "JSON_LD_USED"
+      ],
+      "geoEvidence": [
+        {
+          "type": "BODY_EXPLICIT_CITY",
+          "matchedText": "anand",
+          "normalizedPlace": "anand",
+          "candidateCity": "anand",
+          "confidence": "high"
+        },
+        {
+          "type": "BODY_EXPLICIT_CITY",
+          "matchedText": "noida",
+          "normalizedPlace": "noida",
+          "candidateCity": "noida",
+          "confidence": "medium"
+        },
+        {
+          "type": "CORRIDOR_RELATION",
+          "matchedText": "yamuna expressway",
+          "normalizedPlace": "yamuna expressway",
+          "candidateCity": "noida",
+          "confidence": "medium"
+        },
+        {
+          "type": "AUTHORITY_JURISDICTION",
+          "matchedText": "yeida",
+          "normalizedPlace": "yeida",
+          "candidateCity": "noida",
+          "confidence": "medium"
+        },
+        {
+          "type": "CORRIDOR_RELATION",
+          "matchedText": "noida international airport",
+          "normalizedPlace": "noida international airport",
+          "candidateCity": "noida",
+          "confidence": "medium"
+        }
+      ],
+      "routedCities": [
+        "anand",
+        "noida"
+      ],
+      "relevance": "project_development",
+      "negative": "PASS",
+      "wouldPublish": true,
+      "firstLoss": {
+        "primary": "NONE",
+        "reason": "Recovered chain would publish."
+      }
+    }
+  }
+]

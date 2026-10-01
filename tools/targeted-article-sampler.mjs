@@ -6,6 +6,7 @@ import * as cheerio from "cheerio";
 import { classifyArticle, isLikelyFeedUrl } from "../src/index.js";
 import { workbookCityRules } from "../src/city-config.js";
 import { extractDateHierarchy, extractJsonLd, extractionStrategySummary } from "./extraction-helpers.mjs";
+import { extractArticleEvidence } from "./article-body-extractor.mjs";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const auditDir = path.join(rootDir, "reports", "source-audits");
@@ -196,14 +197,16 @@ function extractArticle(probe, link, source) {
   if (/pdf/i.test(probe.contentType) || /\.pdf(?:$|[?#])/i.test(link)) return { state: "DOCUMENT_SOURCE", link, date: "", textLength: 0, thumbnail: false };
   try {
     const $ = cheerio.load(probe.body);
-    const text = $("article, main, [itemprop='articleBody'], .article-content, .story-content, body").first().text().replace(/\s+/g, " ").trim();
     const title = $("h1").first().text().replace(/\s+/g, " ").trim() || $("title").text().replace(/\s+/g, " ").trim();
+    const description = $("meta[name='description'], meta[property='og:description']").first().attr("content") || "";
+    const evidence = extractArticleEvidence(probe.body, { url: link, title, description, cityRules: workbookCityRules });
+    const text = evidence.text;
     const date = $("meta[property='article:published_time'], meta[name='publish-date'], time[datetime]").map((_, el) => parseDate($(el).attr("content") || $(el).attr("datetime"))).get().find(Boolean) || "";
     const image = $("meta[property='og:image'], meta[name='twitter:image'], img[src]").first();
     const language = languageOf(text, String($("html").attr("lang") || ""));
     const dateInfo = extractDateHierarchy($, { dateOrder: sourceStrategy(source).dateOrder });
-    const readable = text.length >= 200;
-    return { state: readable ? "ARTICLE_OK" : "ARTICLE_READABILITY_FAILED", link, title, text, textLength: text.length, date: dateInfo.value || date, dateSource: dateInfo.source, dateConfidence: dateInfo.confidence, dateFormat: dateInfo.format, thumbnail: Boolean(image.attr("content") || image.attr("src")), language, truncated: probe.truncated, strategies: extractionStrategySummary([
+    const readable = evidence.readable;
+    return { state: readable ? "ARTICLE_OK" : "ARTICLE_READABILITY_FAILED", link, title: evidence.title || title, text, textLength: text.length, date: dateInfo.value || date, dateSource: dateInfo.source, dateConfidence: dateInfo.confidence, dateFormat: dateInfo.format, thumbnail: evidence.thumbnail || Boolean(image.attr("content") || image.attr("src")), language, truncated: probe.truncated, qualityReasonCodes: evidence.qualityReasonCodes, extractionSource: evidence.extractionSource, selectedSelector: evidence.selectedSelector, geoEvidence: evidence.geoEvidence, strategies: extractionStrategySummary([
       { strategy: "JSON-LD articleBody/date", outcome: dateInfo.source.startsWith("json-ld") ? "SUCCESS" : "FAILURE", items: dateInfo.source.startsWith("json-ld") ? 1 : 0, reason: dateInfo.source.startsWith("json-ld") ? dateInfo.source : "not used" },
       { strategy: "semantic HTML", outcome: readable ? "SUCCESS" : "FAILURE", items: readable ? 1 : 0, reason: readable ? "readable text" : "text too short" },
       { strategy: "metadata/time date", outcome: dateInfo.value ? "SUCCESS" : "FAILURE", items: dateInfo.value ? 1 : 0, reason: dateInfo.source || "date missing" }
