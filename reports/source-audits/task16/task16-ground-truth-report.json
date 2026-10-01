@@ -1,0 +1,139 @@
+{
+  "reportType": "TASK16_GROUND_TRUTH_AND_HIGH_YIELD_RECOVERY",
+  "generatedAt": "2026-10-01T07:09:16.383Z",
+  "localOnly": true,
+  "sourceTask15": "reports\\source-audits\\task15\\task15-content-yield-report.json",
+  "evidenceRefresh": {
+    "targetRecords": 194,
+    "sampleRecords": 95,
+    "boundedTimeoutMs": 6000,
+    "articleBodyRetained": true,
+    "note": "Read-only evidence refresh. Labels are conservative triage; no record is treated as human truth unless the evidence is readable and the rule is explicit."
+  },
+  "manualValidation": {
+    "sampleSize": 95,
+    "trueValidPositives": 1,
+    "trueNegatives": 11,
+    "offTopic": 3,
+    "uncertain": 42,
+    "insufficientContent": 41,
+    "note": "This is not a substitute for a human editorial sign-off; uncertain and insufficient records remain unverified."
+  },
+  "negativeRejects": {
+    "total": 108,
+    "inspected": 95,
+    "categoryCounts": {
+      "OTHER": 69,
+      "ACCIDENT": 4,
+      "DISPUTE": 4,
+      "CRIME": 16,
+      "FRAUD": 4,
+      "POLITICS": 4,
+      "COURT": 5,
+      "DEMOLITION": 1,
+      "GENERAL_BUSINESS": 1
+    },
+    "confirmedFalseNegatives": 0,
+    "falseNegativeRecords": []
+  },
+  "reviewItems": {
+    "total": 84,
+    "inspected": 99,
+    "groups": {
+      "INSUFFICIENT_CONTENT": 54,
+      "GEO_UNCERTAIN": 19,
+      "DATE_UNCERTAIN": 25,
+      "OTHER": 1
+    },
+    "validPositivesHidingInReview": 1
+  },
+  "relevancePasses": {
+    "total": 33,
+    "inspected": 27,
+    "valid": 1,
+    "invalid": 1,
+    "uncertain": 25
+  },
+  "geo": {
+    "verifiedPositiveCorrect": 0,
+    "verifiedPositiveMissing": 1,
+    "verifiedPositiveIncorrect": 0,
+    "denominator": 1,
+    "note": "Geo correctness requires manual city confirmation; no unsafe source fallback was used."
+  },
+  "etRealty": {
+    "items": 22,
+    "readable": 22,
+    "dated": 21,
+    "current": 17,
+    "triagedTruePositives": 1,
+    "triagedNegatives": 8,
+    "review": 13,
+    "geoValid": 0,
+    "duplicates": 4,
+    "wouldPublish": 0
+  },
+  "ocr": {
+    "sampleSize": 20,
+    "labels": {
+      "LIKELY_IRRELEVANT": 16,
+      "UNKNOWN_WITHOUT_OCR": 4
+    },
+    "note": "No OCR was installed or run; metadata-only estimates are not ground truth."
+  },
+  "beforeAfter": {
+    "detailRecords": {
+      "before": 227,
+      "after": 227
+    },
+    "readable": {
+      "before": 163,
+      "after": 163
+    },
+    "inWindow": {
+      "before": 118,
+      "after": 118
+    },
+    "wouldPublish": {
+      "before": 0,
+      "after": 0
+    }
+  },
+  "goldenCorpus": {
+    "positiveBefore": 8,
+    "positiveAfter": 8,
+    "negativeBefore": 8,
+    "negativeAfter": 8,
+    "addedPositive": 0,
+    "addedNegative": 0
+  },
+  "confusionMatrix": {
+    "truePositive": 0,
+    "falsePositive": 0,
+    "trueNegative": 0,
+    "falseNegative": 0,
+    "precision": null,
+    "recall": null,
+    "note": "No human editorial labels were added."
+  },
+  "bottleneck": {
+    "verifiedRecoverable": {},
+    "observedTriageLosses": {
+      "discovery": 52,
+      "negativeFilter": 79,
+      "ocr": 36,
+      "date": 32,
+      "geo": 19,
+      "classifier": 9
+    },
+    "primaryVerifiedBottleneck": "UNVERIFIED",
+    "reason": "Ground truth is not strong enough to justify classifier, geo, or OCR changes."
+  },
+  "adapters": {
+    "implemented": [],
+    "reason": "No upstream adapter was justified by human-confirmed yield in this pass."
+  },
+  "task17": "MANUAL_EDITORIAL_LABELING_BEFORE_ANY_CLASSIFIER_OR_GEO_CHANGE",
+  "filesChanged": [],
+  "evidencePath": "reports\\source-audits\\task16\\task16-sampled-evidence.jsonl"
+}
