@@ -2364,6 +2364,9 @@ function getArticleTrace(article, reasons = [], context = {}) {
     cityCodes: article.cityCode ? [article.cityCode] : [],
     cityRoutingEvidence: article.cityRoutingEvidence || "not-captured",
     cityConfidence: article.cityConfidence || (article.cityCode ? "mapped" : "unmapped"),
+    evidenceReviewReason: getArticleEvidenceReviewReason(article),
+    multiCityValidation: article.multiCityValidation || "SINGLE_CITY",
+    suppressedCityCodes: article.suppressedCityCodes || [],
     duplicateResult: context.duplicateResult || "not-captured",
     duplicateEvidence: context.duplicateEvidence || "not-captured",
     finalState: getArticleFinalState(article, reasons, context),
@@ -2386,6 +2389,8 @@ function reportArticle(article, context = {}) {
     sourceName: article.sourceName || article.postedBy || "",
     sourceUrl: article.sourceUrl || "",
     fullArticleRead: article.fullArticleRead === true,
+    articleReadAttempted: article.articleReadAttempted === true,
+    authoritativeContent: article.authoritativeContent === true,
     articleReadError: article.articleReadError || "",
     articleTextExcerpt: (article.articleText || "").slice(0, 1200),
     trace: getArticleTrace(article, reasons, context)
@@ -3344,6 +3349,48 @@ function isOfficialReraPressRelease(article) {
   return officialHost && pressReleasePath;
 }
 
+function isOfficialContentSource(article) {
+  const sourceUrl = article.sourceUrl || article.feedUrl || "";
+
+  return (
+    isOfficialReraPressRelease(article) ||
+    isHsvpSource(sourceUrl) ||
+    isBptpMediaSource(sourceUrl) ||
+    isOfficialDeveloperMediaSource(sourceUrl)
+  );
+}
+
+function hasAuthoritativeContentEvidence(article) {
+  if (article.authoritativeContent !== true) {
+    return false;
+  }
+
+  return article.officialDocumentRead === true ||
+    article.fullArticleRead === true ||
+    getArticleBodyText(article).trim().length >= 200;
+}
+
+function getArticleEvidenceReviewReason(article) {
+  if (hasAuthoritativeContentEvidence(article) ||
+      article.fullArticleRead === true) {
+    return "";
+  }
+
+  if (isOfficialContentSource(article)) {
+    return "OFFICIAL_DOCUMENT_UNREADABLE";
+  }
+
+  if (article.articleReadAttempted !== true) {
+    return "FULL_ARTICLE_UNAVAILABLE";
+  }
+
+  if (article.fullArticleRead !== true) {
+    return article.articleReadError ? "FULL_ARTICLE_EXTRACTION_FAILED" : "INSUFFICIENT_ARTICLE_EVIDENCE";
+  }
+
+  return "INSUFFICIENT_ARTICLE_EVIDENCE";
+}
+
 function isUpReraPressReleaseSource(sourceUrl = "") {
   return /(?:^|[/.])up-rera\.in\b/i.test(sourceUrl) && /pressrelease|press-release/i.test(sourceUrl);
 }
@@ -3778,7 +3825,22 @@ function isOperationalInfrastructureOnlyArticle(article) {
     "bus stand",
     "bus station",
     "luggage locker",
-    "luggage lockers"
+    "luggage lockers",
+    "train service",
+    "train services",
+    "railway control",
+    "railway timetable",
+    "vande bharat",
+    "flight operations",
+    "airline service",
+    "passenger traffic",
+    "passenger numbers",
+    "road maintenance",
+    "road repair",
+    "traffic diversion",
+    "metro operations",
+    "metro service",
+    "metro timetable"
   ]);
   const hasPropertyOrDevelopmentSignal = hasKeyword(primaryAndUrl, [
     "real estate",
@@ -4550,6 +4612,33 @@ function applyCityCode(article) {
   };
 }
 
+function validateMultiCityCodes(article, cityCodes) {
+  if (cityCodes.length <= 1) {
+    return {
+      cityCodes,
+      suppressedCityCodes: [],
+      validation: "SINGLE_CITY"
+    };
+  }
+
+  const hasArticleEvidence = article.fullArticleRead === true || hasAuthoritativeContentEvidence(article);
+  const bodyText = getArticleBodyText(article);
+  const validatedCityCodes = hasArticleEvidence
+    ? cityCodes.filter((cityCode) => {
+      const rule = allCityRules.find((cityRule) => cityRule.code === cityCode);
+      return Boolean(rule && countKeywordMentions(bodyText, rule.keywords) > 0);
+    })
+    : [];
+  const effectiveCityCodes = validatedCityCodes.length > 0 ? validatedCityCodes : cityCodes.slice(0, 1);
+  const suppressedCityCodes = cityCodes.filter((cityCode) => !effectiveCityCodes.includes(cityCode));
+
+  return {
+    cityCodes: effectiveCityCodes,
+    suppressedCityCodes,
+    validation: suppressedCityCodes.length === 0 ? "MULTI_CITY_VALIDATED" : "EXTRA_CITY_REMOVED"
+  };
+}
+
 function expandCityArticles(article) {
   const cityCodes = getCachedDetectedCityCodes(article);
 
@@ -4557,11 +4646,15 @@ function expandCityArticles(article) {
     return [article];
   }
 
-  return cityCodes.map((cityCode) => {
+  const cityValidation = validateMultiCityCodes(article, cityCodes);
+
+  return cityValidation.cityCodes.map((cityCode) => {
     const cityArticle = {
       ...article,
       cityCode,
-      sharedCityArticle: cityCodes.length > 1
+      sharedCityArticle: cityValidation.cityCodes.length > 1,
+      multiCityValidation: cityValidation.validation,
+      suppressedCityCodes: cityValidation.suppressedCityCodes
     };
 
     return {
@@ -5171,14 +5264,13 @@ function hasMappedCorporateCityEvidence(article) {
   );
 }
 function isFullArticleReviewRequired(article) {
-  if (isOfficialReraPressRelease(article)) {
-    return false;
-  }
+  const potentiallyUseful = isOfficialContentSource(article)
+    ? isRealEstateRelated(article)
+    : isTargetLookingArticle(article);
 
-  return (
-    article.articleReadAttempted === true &&
-    article.fullArticleRead !== true &&
-    isTargetLookingArticle(article) &&
+  return Boolean(
+    getArticleEvidenceReviewReason(article) &&
+    potentiallyUseful &&
     !isOperationalInfrastructureOnlyArticle(article) &&
     !isBlockedArticle(article) &&
     !isNegativeNews(article)
@@ -5193,7 +5285,7 @@ function getRejectionReasons(article, sentIds) {
     return reasons;
   }
 
-  if (!hasNewsArticlePageLink(article) && !isReraDocumentSource(article)) {
+  if (!hasNewsArticlePageLink(article) && !isReraDocumentSource(article) && !hasAuthoritativeContentEvidence(article)) {
     reasons.push("filter 15: direct media/PDF link, not article page");
   }
 
@@ -5220,7 +5312,7 @@ function getRejectionReasons(article, sentIds) {
   }
 
   if (isFullArticleReviewRequired(article)) {
-    reasons.push("review: full article could not be read");
+    reasons.push(`review: ${getArticleEvidenceReviewReason(article)}`);
   }
 
   if (!article.cityCode) {
@@ -5425,6 +5517,9 @@ async function fetchFeed(sourceUrl, options = {}) {
       title: rawArticle.title,
       description: rawArticle.description || rawArticle.title,
       articleText: rawArticle.articleText,
+      articleReadAttempted: metadata.articleReadAttempted === true,
+      fullArticleRead: metadata.fullArticleRead === true,
+      articleReadError: metadata.articleReadError || "",
       isActive: true,
       newsLink: rawArticle.newsLink,
       thumbnailImage: rawArticle.thumbnailImage,
@@ -6170,6 +6265,8 @@ function buildHsvpFaridabadArticle({ sourceUrl, noticeUrl, cardTitle, pdfLatinTe
     title,
     description,
     articleText: `${description} Source notice: ${cardTitle}. Faridabad-linked plan references: ${details.faridabadLinks.length}.`,
+    authoritativeContent: true,
+    officialDocumentRead: Boolean(pdfLatinText && pdfLatinText.trim().length >= 200),
     isActive: true,
     newsLink: noticeUrl,
     thumbnailImage: getFallbackLogo(sourceUrl),
@@ -6387,6 +6484,7 @@ function buildOfficialDeveloperMediaArticle({
     title: cleanedTitle,
     description: cleanedDescription,
     articleText: stripHtml(`${articleText || cleanedDescription} ${publisher} official real estate media update.`),
+    authoritativeContent: true,
     isActive: true,
     newsLink: absoluteUrl(newsLink || sourceUrl, sourceUrl),
     thumbnailImage: absoluteUrl(thumbnailImage, sourceUrl) || getFallbackLogo(sourceUrl),

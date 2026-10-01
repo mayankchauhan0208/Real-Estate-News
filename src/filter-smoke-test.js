@@ -7,6 +7,7 @@ import {
   classifyArticle,
   cleanArticleFields,
   detectCityCodes,
+  expandCityArticles,
   extractMetadataImage,
   getExtraArticleUrls,
   getRejectionReasons,
@@ -106,13 +107,15 @@ assert.match(
   /filter 4: not positive target real-estate\/project news/
 );
 
-assert.equal(isPublishableArticle({
+const feedOnlyNoidaArticle = {
   title: "New residential project approved near Noida airport",
   description: "A developer received approval for a new residential project and will begin construction.",
   newsLink: "https://example.com/noida-residential-project",
   cityCode: "noida",
   postedBy: "Example Realty"
-}, sentIds), true);
+};
+assert.equal(isPublishableArticle(feedOnlyNoidaArticle, sentIds), false);
+assert.ok(getRejectionReasons(feedOnlyNoidaArticle, sentIds).includes("review: FULL_ARTICLE_UNAVAILABLE"));
 
 assert.equal(getArticleFinalState({ articleReadAttempted: false }, ["filter 5: no allowed city match"]), "CITY_UNMAPPED");
 assert.equal(getArticleFinalState({ articleReadAttempted: false }, ["filter 4: not positive target real-estate/project news"]), "REJECTED_RELEVANCE");
@@ -167,6 +170,8 @@ function article(overrides = {}) {
     createdAt: "2026-06-20T00:00:00.000Z",
     publishedAt: "2026-06-20T00:00:00.000Z",
     fetchedAt: "2026-06-20T00:00:00.000Z",
+    articleReadAttempted: true,
+    fullArticleRead: true,
     ...overrides
   });
 }
@@ -1986,7 +1991,29 @@ const unreadableRealEstateArticle = publishable({
   newsLink: "https://example.com/bptp-growth-plan"
 });
 assert.equal(isPublishableArticle(unreadableRealEstateArticle, sentIds), false);
-assert.ok(getRejectionReasons(unreadableRealEstateArticle, sentIds).includes("review: full article could not be read"));
+assert.ok(getRejectionReasons(unreadableRealEstateArticle, sentIds).includes("review: FULL_ARTICLE_EXTRACTION_FAILED"));
+
+const feedOnlyRealEstateArticle = publishable({
+  title: "New residential project announced in Gurugram",
+  description: "A developer announced a residential project and new housing investment in Gurugram.",
+  articleText: "",
+  articleReadAttempted: false,
+  fullArticleRead: false,
+  newsLink: "https://example.com/gurugram/residential-project"
+});
+assert.equal(isPublishableArticle(feedOnlyRealEstateArticle, sentIds), false);
+assert.ok(getRejectionReasons(feedOnlyRealEstateArticle, sentIds).includes("review: FULL_ARTICLE_UNAVAILABLE"));
+
+const genericTransportArticle = publishable({
+  cityCode: "surat",
+  title: "Surat-Udaipur Vande Bharat service begins next week",
+  description: "The new train service will operate six days a week with revised timings.",
+  articleText: "The article covers train operations, passenger service and timetable details with no property or development consequence.",
+  articleReadAttempted: true,
+  fullArticleRead: true,
+  newsLink: "https://example.com/surat/vande-bharat-service"
+});
+assert.equal(isPublishableArticle(genericTransportArticle, sentIds), false);
 
 const busOperationsArticle = publishable({
   cityCode: "gorakhpur",
@@ -2014,3 +2041,26 @@ const waterMetroOperationsArticle = publishable({
   newsLink: "https://example.com/goa-water-metro-network"
 });
 assert.equal(isPublishableArticle(waterMetroOperationsArticle, sentIds), false);
+
+const validatedMultiCityArticle = publishable({
+  title: "Residential development expands across Surat and Udaipur",
+  description: "The developer announced housing projects in Surat and Udaipur.",
+  articleText: "The Surat residential project adds new housing and commercial development. The Udaipur residential project adds new housing and investment in the city.",
+  newsLink: "https://example.com/surat-udaipur-residential-development"
+});
+const validatedMultiCityRows = expandCityArticles(validatedMultiCityArticle);
+assert.equal(validatedMultiCityRows.length, 2);
+assert.ok(validatedMultiCityRows.every((row) => row.multiCityValidation === "MULTI_CITY_VALIDATED"));
+
+const unverifiedMultiCityArticle = publishable({
+  title: "Residential development expands across Surat and Udaipur",
+  description: "The developer announced housing projects in Surat and Udaipur.",
+  articleText: "",
+  articleReadAttempted: false,
+  fullArticleRead: false,
+  newsLink: "https://example.com/surat-udaipur-residential-development-unverified"
+});
+const unverifiedMultiCityRows = expandCityArticles(unverifiedMultiCityArticle);
+assert.equal(unverifiedMultiCityRows.length, 1);
+assert.equal(unverifiedMultiCityRows[0].multiCityValidation, "EXTRA_CITY_REMOVED");
+assert.deepEqual(unverifiedMultiCityRows[0].suppressedCityCodes, ["udaipur"]);

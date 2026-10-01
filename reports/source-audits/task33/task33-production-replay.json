@@ -1,0 +1,165 @@
+{
+  "baselineRunId": "36879286109",
+  "generatedAt": "2026-10-01T16:44:12.207Z",
+  "previouslyPublished": 13,
+  "uniqueUrls": 11,
+  "fullArticleVerified": 3,
+  "feedOrListingOnly": 10,
+  "stillAutoPublish": 3,
+  "movedToReview": 6,
+  "wouldReject": 0,
+  "multiCityValidated": 0,
+  "extraCityRecordsSuppressed": 4,
+  "counts": {
+    "VALID_AUTO_PUBLISH": 3,
+    "SHOULD_REVIEW": 6,
+    "SHOULD_REJECT": 0,
+    "VALID_MULTI_CITY": 0,
+    "INVALID_EXTRA_CITY": 4
+  },
+  "rows": [
+    {
+      "url": "https://timesofindia.indiatimes.com/city/mangaluru/mangaluru-railway-control-shifts-to-mysuru-today/articleshow/134599807.cms",
+      "source": "Times of India",
+      "title": "Mangaluru railway control shifts to Mysuru today",
+      "city": "mangalore",
+      "fullArticleRead": "NO",
+      "bodyChars": 0,
+      "duplicateCities": "mangalore,mysore",
+      "category": "INVALID_EXTRA_CITY",
+      "patchedReasons": "filter 4: not positive target real-estate/project news"
+    },
+    {
+      "url": "https://timesofindia.indiatimes.com/city/mangaluru/mangaluru-railway-control-shifts-to-mysuru-today/articleshow/134599807.cms",
+      "source": "Times of India",
+      "title": "Mangaluru railway control shifts to Mysuru today",
+      "city": "mysore",
+      "fullArticleRead": "NO",
+      "bodyChars": 0,
+      "duplicateCities": "mangalore,mysore",
+      "category": "INVALID_EXTRA_CITY",
+      "patchedReasons": "filter 4: not positive target real-estate/project news"
+    },
+    {
+      "url": "https://timesofindia.indiatimes.com/city/surat/surat-udaipur-vande-bharat-from-oct-4/articleshow/134601509.cms",
+      "source": "Times of India",
+      "title": "Surat-Udaipur Vande Bharat from Oct 4",
+      "city": "surat",
+      "fullArticleRead": "NO",
+      "bodyChars": 0,
+      "duplicateCities": "surat,udaipur",
+      "category": "INVALID_EXTRA_CITY",
+      "patchedReasons": "filter 4: not positive target real-estate/project news"
+    },
+    {
+      "url": "https://timesofindia.indiatimes.com/city/surat/surat-udaipur-vande-bharat-from-oct-4/articleshow/134601509.cms",
+      "source": "Times of India",
+      "title": "Surat-Udaipur Vande Bharat from Oct 4",
+      "city": "udaipur",
+      "fullArticleRead": "NO",
+      "bodyChars": 0,
+      "duplicateCities": "surat,udaipur",
+      "category": "INVALID_EXTRA_CITY",
+      "patchedReasons": "filter 4: not positive target real-estate/project news"
+    },
+    {
+      "url": "https://realty.economictimes.indiatimes.com/news/infrastructure/yeida-approves-logistics-park-8000-hectares-industrial-hub-near-noida-international-airport/134577767?utm_source=top_news&utm_medium=sectionListing",
+      "source": "ET Realty",
+      "title": "YEIDA approves logistics park, 8,000 hectares industrial hub near Noida International airport",
+      "city": "noida",
+      "fullArticleRead": "YES",
+      "bodyChars": 1200,
+      "duplicateCities": "noida",
+      "category": "VALID_AUTO_PUBLISH",
+      "patchedReasons": ""
+    },
+    {
+      "url": "https://timesofindia.indiatimes.com/city/noida/yeida-plans-rs-4-5-crore-entry-gate-near-yamuna-expressway/articleshow/134601964.cms",
+      "source": "Times of India",
+      "title": "YEIDA plans Rs 4.5 crore entry gate near Yamuna expressway",
+      "city": "noida",
+      "fullArticleRead": "NO",
+      "bodyChars": 0,
+      "duplicateCities": "noida",
+      "category": "SHOULD_REVIEW",
+      "patchedReasons": "review: FULL_ARTICLE_UNAVAILABLE"
+    },
+    {
+      "url": "https://www.hindustantimes.com/cities/noida-news/yeida-plans-4-5cr-landmark-entry-gate-near-yamuna-expressway-101790793601245.html",
+      "source": "Hindustan Times",
+      "title": "Yeida plans ₹4.5cr landmark entry gate near Yamuna Expressway",
+      "city": "noida",
+      "fullArticleRead": "NO",
+      "bodyChars": 1200,
+      "duplicateCities": "noida",
+      "category": "SHOULD_REVIEW",
+      "patchedReasons": "review: FULL_ARTICLE_UNAVAILABLE"
+    },
+    {
+      "url": "https://realty.economictimes.indiatimes.com/news/commercial/property-owners-in-gurugram-seek-policy-for-commercial-conversion-of-housing-units/134607259?utm_source=top_news&utm_medium=tagListing",
+      "source": "ET Realty",
+      "title": "Property owners in Gurugram seek policy for commercial conversion of housing units",
+      "city": "gurugram",
+      "fullArticleRead": "YES",
+      "bodyChars": 1200,
+      "duplicateCities": "gurugram",
+      "category": "VALID_AUTO_PUBLISH",
+      "patchedReasons": ""
+    },
+    {
+      "url": "https://www.magicbricks.com/news/haryana-clears-rs-1662-crore-tender-for-gurugram-metro-phase-2-samb/151942.html",
+      "source": "Property News",
+      "title": "Haryana Clears Rs 1,662-Crore Tender for Gurugram Metro Phase 2",
+      "city": "gurugram",
+      "fullArticleRead": "NO",
+      "bodyChars": 1200,
+      "duplicateCities": "gurugram",
+      "category": "SHOULD_REVIEW",
+      "patchedReasons": "review: FULL_ARTICLE_UNAVAILABLE"
+    },
+    {
+      "url": "https://www.magicbricks.com/news/smoother-drive-to-manesar-new-gurgaon-flyover-set-to-decongest-key-junctions-near-dwarka-expressway-jkmb/151946.html",
+      "source": "Property News",
+      "title": "Smoother Drive to Manesar: New Gurgaon Flyover Set to Decongest Key Junctions Near Dwarka Expressway",
+      "city": "gurugram",
+      "fullArticleRead": "NO",
+      "bodyChars": 1200,
+      "duplicateCities": "gurugram",
+      "category": "SHOULD_REVIEW",
+      "patchedReasons": "review: FULL_ARTICLE_UNAVAILABLE"
+    },
+    {
+      "url": "https://www.magicbricks.com/news/assam-to-get-indias-first-underwater-road-cum-rail-tunnel-under-brahmaputra-pmmb/151947.html",
+      "source": "Property News",
+      "title": "Assam to Get India’s First Underwater Road-Cum-Rail Tunnel Under Brahmaputra",
+      "city": "tezpur",
+      "fullArticleRead": "NO",
+      "bodyChars": 1200,
+      "duplicateCities": "tezpur",
+      "category": "SHOULD_REVIEW",
+      "patchedReasons": "filter 4: not positive target real-estate/project news | filter 6: target region missing or weak | filter 17: local quality judge rejected article (weak city evidence, score 46)"
+    },
+    {
+      "url": "https://realtynmore.com/elevate-infracon-to-invest-rs-100-crore-in-ongoing/",
+      "source": "RealtyNMore",
+      "title": "ELEVATE Infracon to Invest Rs 100 Crore in Ongoing Projects Th...",
+      "city": "dehradun",
+      "fullArticleRead": "YES",
+      "bodyChars": 1200,
+      "duplicateCities": "dehradun",
+      "category": "VALID_AUTO_PUBLISH",
+      "patchedReasons": ""
+    },
+    {
+      "url": "https://www.hindustantimes.com/cities/chandigarh-news/centre-clears-rs-93-94-cr-project-to-rejuvenate-maharaja-ajj-sarovar-in-kharar-101790854510508.html",
+      "source": "Hindustan Times",
+      "title": "Centre clears ₹93.94-cr project to rejuvenate Maharaja Ajj Sarovar in Kharar",
+      "city": "chandigarh",
+      "fullArticleRead": "NO",
+      "bodyChars": 1200,
+      "duplicateCities": "chandigarh",
+      "category": "SHOULD_REVIEW",
+      "patchedReasons": "review: FULL_ARTICLE_UNAVAILABLE"
+    }
+  ]
+}
