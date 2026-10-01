@@ -1,0 +1,5203 @@
+{
+  "version": 1,
+  "baseline": "reports\\source-audits\\source-audit-2026-09-30T12-58-19-897Z.json",
+  "attemptsLimit": 2,
+  "timeoutMs": 8000,
+  "results": {
+    "id-258954098": {
+      "sourceId": "id-258954098",
+      "source": "https://gujrera.gujarat.gov.in",
+      "label": "Gujarat RERA | P1",
+      "cityCodes": [
+        "ahmedabad",
+        "anand",
+        "banaskantha",
+        "bardoli",
+        "bharuch",
+        "bhavnagar",
+        "dholera",
+        "gandhinagar",
+        "gujarat",
+        "junagadh",
+        "kalol",
+        "kheda",
+        "kutch",
+        "navsari",
+        "patan",
+        "rajkot",
+        "sabarkantha",
+        "surat",
+        "surendranagar",
+        "vadodara",
+        "valsad",
+        "vapi"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:19.368Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 998,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1881313952": {
+      "sourceId": "id-1881313952",
+      "source": "https://jharera.jharkhand.gov.in/home",
+      "label": "Jharkhand RERA | P1",
+      "cityCodes": [
+        "dhanbad",
+        "jamshedpur",
+        "ranchi"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:18.884Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 505,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1800000001": {
+      "sourceId": "id-1800000001",
+      "source": "https://jharera.jharkhand.gov.in/Home/Notice",
+      "label": "Jharkhand RERA — Notices | P1",
+      "cityCodes": [
+        "dhanbad",
+        "jamshedpur",
+        "ranchi"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:18.880Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 502,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1800000009": {
+      "sourceId": "id-1800000009",
+      "source": "https://rera.bihar.gov.in/Newsarticles.aspx",
+      "label": "Bihar RERA — News Articles | P1",
+      "cityCodes": [
+        "patna"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:18.983Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 602,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1800000010": {
+      "sourceId": "id-1800000010",
+      "source": "https://rera.bihar.gov.in/ProceedingOrder.aspx",
+      "label": "Bihar RERA — Proceedings | P1",
+      "cityCodes": [
+        "patna"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:19.505Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 621,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1800000011": {
+      "sourceId": "id-1800000011",
+      "source": "https://rera.bihar.gov.in/publicorder.aspx",
+      "label": "Bihar RERA — Orders and Judgments | P1",
+      "cityCodes": [
+        "patna"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:19.509Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 624,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1800000008": {
+      "sourceId": "id-1800000008",
+      "source": "https://rera.bihar.gov.in/RERALATESTNEWS.aspx",
+      "label": "Bihar RERA — Latest News | P1",
+      "cityCodes": [
+        "patna"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:19.598Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 613,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1444113792": {
+      "sourceId": "id-1444113792",
+      "source": "https://rera.chbonline.in",
+      "label": "Chandigarh RERA | P1",
+      "cityCodes": [
+        "chandigarh"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:25.344Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 5971,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1935673527": {
+      "sourceId": "id-1935673527",
+      "source": "https://rera.goa.gov.in",
+      "label": "Goa RERA | P1",
+      "cityCodes": [
+        "goa"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:19.720Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://rera.goa.gov.in/",
+      "contentType": "text/html;charset=ISO-8859-1",
+      "elapsedMs": 214,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 29,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 7,
+      "detailResults": [
+        {
+          "link": "https://rera.goa.gov.in/resources/staticpage/Real_Estate_Removal_of_Difficulties_Order_28_10_16.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://rera.goa.gov.in/resources/staticpage/USER%20GUIDE%20-%20RERA.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-1800000002": {
+      "sourceId": "id-1800000002",
+      "source": "https://rera.goa.gov.in/Notice",
+      "label": "Goa RERA — Notices | P1",
+      "cityCodes": [
+        "goa"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:19.706Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://rera.goa.gov.in/Notice",
+      "contentType": "text/html;charset=UTF-8",
+      "elapsedMs": 197,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 30,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 7,
+      "detailResults": [
+        {
+          "link": "https://rera.goa.gov.in/resources/staticpage/Real_Estate_Removal_of_Difficulties_Order_28_10_16.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://rera.goa.gov.in/resources/staticpage/USER%20GUIDE%20-%20RERA.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-324708418": {
+      "sourceId": "id-324708418",
+      "source": "https://rera.karnataka.gov.in",
+      "label": "Karnataka RERA | P1",
+      "cityCodes": [
+        "bangalore",
+        "belgaum",
+        "hubli",
+        "mangalore",
+        "mysore",
+        "udupi"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:20.080Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://rera.karnataka.gov.in/",
+      "contentType": "text/html;charset=UTF-8",
+      "elapsedMs": 481,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 166,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 8,
+      "detailResults": [
+        {
+          "link": "https://rera.karnataka.gov.in/resources/staticpage/FAQ.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://rera.karnataka.gov.in/resources/staticpage/FinalRERA_Rules-2017_kannada.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-124085752": {
+      "sourceId": "id-124085752",
+      "source": "https://rera.kerala.gov.in",
+      "label": "Kerala RERA | P1",
+      "cityCodes": [
+        "calicut",
+        "ernakulam",
+        "kochi",
+        "palakkad",
+        "thrissur",
+        "trivandrum"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:22.820Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 503,
+          "error": "503",
+          "failureCategory": "SERVER_5XX"
+        },
+        {
+          "attempt": 2,
+          "status": 503,
+          "error": "503",
+          "failureCategory": "SERVER_5XX"
+        }
+      ],
+      "status": 503,
+      "finalUrl": "https://rera.kerala.gov.in/",
+      "contentType": "text/html",
+      "elapsedMs": 1561,
+      "failureCategory": "SERVER_5XX",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": false,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1800000003": {
+      "sourceId": "id-1800000003",
+      "source": "https://rera.kerala.gov.in/announcements",
+      "label": "Kerala RERA — Announcements | P1",
+      "cityCodes": [
+        "calicut",
+        "ernakulam",
+        "kochi",
+        "palakkad",
+        "thrissur",
+        "trivandrum"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:22.200Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 503,
+          "error": "503",
+          "failureCategory": "SERVER_5XX"
+        },
+        {
+          "attempt": 2,
+          "status": 503,
+          "error": "503",
+          "failureCategory": "SERVER_5XX"
+        }
+      ],
+      "status": 503,
+      "finalUrl": "https://rera.kerala.gov.in/announcements",
+      "contentType": "text/html",
+      "elapsedMs": 636,
+      "failureCategory": "SERVER_5XX",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": false,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1506658814": {
+      "sourceId": "id-1506658814",
+      "source": "https://rera.odisha.gov.in",
+      "label": "Odisha RERA | P1",
+      "cityCodes": [
+        "balasore",
+        "berhampur",
+        "bhubaneswar",
+        "cuttack",
+        "puri",
+        "rourkela",
+        "sambalpur"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:21.839Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://rera.odisha.gov.in/",
+      "contentType": "text/html",
+      "elapsedMs": 183,
+      "failureCategory": "",
+      "recoveryAction": "Add source-specific discovery adapter only with evidence",
+      "afterStatus": "EXTRACTION_ADAPTER_NEEDED",
+      "externalBlocker": false,
+      "listingMethod": "HTML+JSON_LD",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1996583764": {
+      "sourceId": "id-1996583764",
+      "source": "https://rera.punjab.gov.in",
+      "label": "Punjab RERA | P1",
+      "cityCodes": [
+        "amritsar",
+        "bhatinda",
+        "hoshiarpur",
+        "jalandhar",
+        "ludhiana",
+        "mohali",
+        "patiala",
+        "sangrur"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:22.373Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://rera.punjab.gov.in/",
+      "contentType": "text/html",
+      "elapsedMs": 531,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 43,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 11,
+      "detailResults": [
+        {
+          "link": "https://rera.punjab.gov.in/pdf/latest-news/20230518LatestNews0fea4b8c-090e-4688-9e4e-c7303fddb331.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://rera.punjab.gov.in/pdf/latest-news/20230518LatestNewsf84e7df2-5032-4bd1-ad48-7f5d94175f39.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-1800000005": {
+      "sourceId": "id-1800000005",
+      "source": "https://rera.punjab.gov.in/circulars.html",
+      "label": "Punjab RERA — Circulars and Public Notices | P1",
+      "cityCodes": [
+        "amritsar",
+        "bhatinda",
+        "hoshiarpur",
+        "jalandhar",
+        "ludhiana",
+        "mohali",
+        "patiala",
+        "sangrur"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:22.618Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://rera.punjab.gov.in/circulars.html",
+      "contentType": "text/html",
+      "elapsedMs": 417,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 96,
+      "fullContentReadable": 1,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 69,
+      "detailResults": [
+        {
+          "link": "https://rera.punjab.gov.in/pdf/pending-projects/List_of_PendingFiles_Projects.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://rera.punjab.gov.in/list-status-notices-section59.html",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "amritsar",
+            "bhatinda",
+            "hoshiarpur",
+            "jalandhar",
+            "ludhiana",
+            "mohali",
+            "patiala",
+            "sangrur"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-1800000004": {
+      "sourceId": "id-1800000004",
+      "source": "https://rera.punjab.gov.in/latest-news.html",
+      "label": "Punjab RERA — Latest News | P1",
+      "cityCodes": [
+        "amritsar",
+        "bhatinda",
+        "hoshiarpur",
+        "jalandhar",
+        "ludhiana",
+        "mohali",
+        "patiala",
+        "sangrur"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:23.536Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://rera.punjab.gov.in/latest-news.html",
+      "contentType": "text/html",
+      "elapsedMs": 715,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 54,
+      "fullContentReadable": 1,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 26,
+      "detailResults": [
+        {
+          "link": "https://rera.punjab.gov.in/pdf/pending-projects/List_of_PendingFiles_Projects.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://rera.punjab.gov.in/list-status-notices-section59.html",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "amritsar",
+            "bhatinda",
+            "hoshiarpur",
+            "jalandhar",
+            "ludhiana",
+            "mohali",
+            "patiala",
+            "sangrur"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-883370111": {
+      "sourceId": "id-883370111",
+      "source": "https://rera.py.gov.in/",
+      "label": "Puducherry RERA | P1",
+      "cityCodes": [
+        "pondicherry"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:23.512Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 300,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1605406430": {
+      "sourceId": "id-1605406430",
+      "source": "https://rera.rajasthan.gov.in",
+      "label": "Rajasthan RERA | P1",
+      "cityCodes": [
+        "ajmer",
+        "alwar",
+        "barmer",
+        "bhilwara",
+        "bhiwadi",
+        "bikaner",
+        "hanumangarh",
+        "jaipur",
+        "jhalawar",
+        "jodhpur",
+        "kota",
+        "nagaur",
+        "neemrana",
+        "pali",
+        "sikar",
+        "sirohi",
+        "sri_ganganagar",
+        "tonk",
+        "udaipur"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:24.654Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://rera.rajasthan.gov.in/",
+      "contentType": "text/html",
+      "elapsedMs": 1142,
+      "failureCategory": "",
+      "recoveryAction": "Add source-specific discovery adapter only with evidence",
+      "afterStatus": "EXTRACTION_ADAPTER_NEEDED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1804557915": {
+      "sourceId": "id-1804557915",
+      "source": "https://rera.telangana.gov.in",
+      "label": "Telangana RERA | P1",
+      "cityCodes": [
+        "hyderabad",
+        "karimnagar",
+        "khammam",
+        "mahabubnagar",
+        "mancherial",
+        "nalgonda",
+        "nizamabad",
+        "suryapet",
+        "warangal"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:26.426Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://rera.telangana.gov.in/",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 2116,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 38,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 12,
+      "detailResults": [
+        {
+          "link": "https://rera.telangana.gov.in/Home/ShowPdf?pdffilename=BU_250226174616900.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://rera.telangana.gov.in/Home/ShowPdf?pdffilename=DUP_121125174208683.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-1800000014": {
+      "sourceId": "id-1800000014",
+      "source": "https://rera.telangana.gov.in/247564irgjsdghfdgfd-TG-RERA-98498dsgdgyhdfjbhy43",
+      "label": "Telangana RERA — Orders | P1",
+      "cityCodes": [
+        "hyderabad",
+        "karimnagar",
+        "khammam",
+        "mahabubnagar",
+        "mancherial",
+        "nalgonda",
+        "nizamabad",
+        "suryapet",
+        "warangal"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:34.042Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://rera.telangana.gov.in/247564irgjsdghfdgfd-TG-RERA-98498dsgdgyhdfjbhy43",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 285,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 34,
+      "fullContentReadable": 1,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 15,
+      "detailResults": [
+        {
+          "link": "https://rera.telangana.gov.in/Home/ShowPdf?pdffilename=BU_250226174616900.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://rera.telangana.gov.in/SUOMOTU-TG-RERA-15121976ORDERS",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "hyderabad",
+            "karimnagar",
+            "khammam",
+            "mahabubnagar",
+            "mancherial",
+            "nalgonda",
+            "nizamabad",
+            "suryapet",
+            "warangal"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-1800000016": {
+      "sourceId": "id-1800000016",
+      "source": "https://rera.telangana.gov.in/384798wfybwev9fya62435-TG-RERA-skfjdgky483yunskljghfdgjh",
+      "label": "Telangana RERA — Adjudicating Officer Orders | P1",
+      "cityCodes": [
+        "hyderabad",
+        "karimnagar",
+        "khammam",
+        "mahabubnagar",
+        "mancherial",
+        "nalgonda",
+        "nizamabad",
+        "suryapet",
+        "warangal"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:34.078Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://rera.telangana.gov.in/384798wfybwev9fya62435-TG-RERA-skfjdgky483yunskljghfdgjh",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 311,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 49,
+      "fullContentReadable": 1,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 30,
+      "detailResults": [
+        {
+          "link": "https://rera.telangana.gov.in/Home/ShowPdf?pdffilename=BU_250226174616900.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://rera.telangana.gov.in/SUOMOTU-TG-RERA-15121976ORDERS",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "hyderabad",
+            "karimnagar",
+            "khammam",
+            "mahabubnagar",
+            "mancherial",
+            "nalgonda",
+            "nizamabad",
+            "suryapet",
+            "warangal"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-1800000015": {
+      "sourceId": "id-1800000015",
+      "source": "https://rera.telangana.gov.in/586784u3y5dsgfg-TG-RERA-45678jklshihnfgsfdg",
+      "label": "Telangana RERA — Authority Orders | P1",
+      "cityCodes": [
+        "hyderabad",
+        "karimnagar",
+        "khammam",
+        "mahabubnagar",
+        "mancherial",
+        "nalgonda",
+        "nizamabad",
+        "suryapet",
+        "warangal"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:34.235Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://rera.telangana.gov.in/586784u3y5dsgfg-TG-RERA-45678jklshihnfgsfdg",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 467,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 1448,
+      "fullContentReadable": 1,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 1429,
+      "detailResults": [
+        {
+          "link": "https://rera.telangana.gov.in/Home/ShowPdf?pdffilename=BU_250226174616900.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://rera.telangana.gov.in/SUOMOTU-TG-RERA-15121976ORDERS",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "hyderabad",
+            "karimnagar",
+            "khammam",
+            "mahabubnagar",
+            "mancherial",
+            "nalgonda",
+            "nizamabad",
+            "suryapet",
+            "warangal"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-1800000017": {
+      "sourceId": "id-1800000017",
+      "source": "https://rera.telangana.gov.in/amavlnjoiu7532845972-TG-RERA-74698ijgsdfjgbi349529",
+      "label": "Telangana RERA — Circulars | P1",
+      "cityCodes": [
+        "hyderabad",
+        "karimnagar",
+        "khammam",
+        "mahabubnagar",
+        "mancherial",
+        "nalgonda",
+        "nizamabad",
+        "suryapet",
+        "warangal"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:34.065Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://rera.telangana.gov.in/amavlnjoiu7532845972-TG-RERA-74698ijgsdfjgbi349529",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 296,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 46,
+      "fullContentReadable": 1,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 26,
+      "detailResults": [
+        {
+          "link": "https://rera.telangana.gov.in/Home/ShowPdf?pdffilename=BU_250226174616900.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://rera.telangana.gov.in/SUOMOTU-TG-RERA-15121976ORDERS",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "hyderabad",
+            "karimnagar",
+            "khammam",
+            "mahabubnagar",
+            "mancherial",
+            "nalgonda",
+            "nizamabad",
+            "suryapet",
+            "warangal"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-1800000013": {
+      "sourceId": "id-1800000013",
+      "source": "https://rera.telangana.gov.in/AnnualReports-TG-RERA-15121976REAT_Orders",
+      "label": "Telangana RERA — REAT Orders | P1",
+      "cityCodes": [
+        "hyderabad",
+        "karimnagar",
+        "khammam",
+        "mahabubnagar",
+        "mancherial",
+        "nalgonda",
+        "nizamabad",
+        "suryapet",
+        "warangal"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:34.980Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://rera.telangana.gov.in/AnnualReports-TG-RERA-15121976REAT_Orders",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 138,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 73,
+      "fullContentReadable": 1,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 53,
+      "detailResults": [
+        {
+          "link": "https://rera.telangana.gov.in/Home/ShowPdf?pdffilename=BU_250226174616900.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://rera.telangana.gov.in/SUOMOTU-TG-RERA-15121976ORDERS",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "hyderabad",
+            "karimnagar",
+            "khammam",
+            "mahabubnagar",
+            "mancherial",
+            "nalgonda",
+            "nizamabad",
+            "suryapet",
+            "warangal"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-1027281340": {
+      "sourceId": "id-1027281340",
+      "source": "https://rera.tn.gov.in",
+      "label": "Tamil Nadu RERA | P1",
+      "cityCodes": [
+        "avadi",
+        "chennai",
+        "coimbatore",
+        "cuddalore",
+        "dindigul",
+        "erode",
+        "hosur",
+        "karur",
+        "madurai",
+        "namakkal",
+        "pudukkottai",
+        "salem",
+        "tambaram",
+        "thanjavur",
+        "thoothukudi",
+        "tiruchirappalli",
+        "tirunelveli",
+        "tiruppur",
+        "tiruvannamalai",
+        "vellore"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:45.356Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "TTFB_TIMEOUT",
+          "failureCategory": "TTFB_TIMEOUT"
+        },
+        {
+          "attempt": 2,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://rera.tn.gov.in/",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 10499,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 86,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 71,
+      "detailResults": [
+        {
+          "link": "https://rera.tn.gov.in/homePageFiles/TNRERA-Circular-3867-2024.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://rera.tn.gov.in/homePageFiles/TNRERA-Circular-4406-2024.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-460997707": {
+      "sourceId": "id-460997707",
+      "source": "https://rera.wb.gov.in",
+      "label": "West Bengal RERA | P1",
+      "cityCodes": [
+        "asansol",
+        "durgapur",
+        "howrah",
+        "kolkata",
+        "siliguri"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:42.342Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 7147,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1800000006": {
+      "sourceId": "id-1800000006",
+      "source": "https://rera.wb.gov.in/notice.php",
+      "label": "West Bengal RERA — Notices | P1",
+      "cityCodes": [
+        "asansol",
+        "durgapur",
+        "howrah",
+        "kolkata",
+        "siliguri"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:42.397Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 7107,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-276613859": {
+      "sourceId": "id-276613859",
+      "source": "https://www.hprera.in",
+      "label": "Himachal Pradesh RERA | P1",
+      "cityCodes": [
+        "shimla",
+        "solan"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:39.207Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://hprera.in/",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 3211,
+      "failureCategory": "",
+      "recoveryAction": "Readable detail found; date/relevance/geo still needs validation",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML+JSON_LD",
+      "linksDiscovered": 4,
+      "fullContentReadable": 1,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 0,
+      "detailResults": [
+        {
+          "link": "https://hprera.in/editorial-policy/",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "failureCategory": "BROKEN_URL",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 404,
+              "error": "404",
+              "failureCategory": "BROKEN_URL"
+            }
+          ]
+        },
+        {
+          "link": "https://hprera.in/",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "unclassified",
+          "cityCodes": [],
+          "expectedCities": [
+            "shimla",
+            "solan"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-10475550": {
+      "sourceId": "id-10475550",
+      "source": "https://www.rera.ap.gov.in",
+      "label": "Andhra Pradesh RERA | P1",
+      "cityCodes": [
+        "anantapur",
+        "bhimavaram",
+        "chittoor",
+        "eluru",
+        "kadapa",
+        "kakinada",
+        "krishna",
+        "kurnool",
+        "nellore",
+        "rajahmundry",
+        "srikakulam",
+        "tirupati",
+        "vijayawada",
+        "visakhapatnam",
+        "vizianagaram",
+        "west_godavari"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:42.522Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 784,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-706957101": {
+      "sourceId": "id-706957101",
+      "source": "https://www.rera.delhi.gov.in",
+      "label": "Delhi RERA | P1",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:58.604Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "TTFB_TIMEOUT",
+          "failureCategory": "TTFB_TIMEOUT"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "TTFB_TIMEOUT",
+          "failureCategory": "TTFB_TIMEOUT"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 16260,
+      "failureCategory": "TTFB_TIMEOUT",
+      "recoveryAction": "Bounded retry exhausted; recheck later from a different network context",
+      "afterStatus": "TIMEOUT",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1638221601": {
+      "sourceId": "id-1638221601",
+      "source": "https://www.ukrera.org.in",
+      "label": "Uttarakhand RERA | P1",
+      "cityCodes": [
+        "dehradun",
+        "haridwar",
+        "rishikesh",
+        "roorkee",
+        "rudrapur"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:44.459Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://inb.link/ukrera.org.in",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 2060,
+      "failureCategory": "",
+      "recoveryAction": "Keep as empty until a verified listing appears",
+      "afterStatus": "EMPTY_CONFIRMED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-28187397": {
+      "sourceId": "id-28187397",
+      "source": "https://www.up-rera.in",
+      "label": "UP RERA | P1",
+      "cityCodes": [
+        "agra",
+        "aligarh",
+        "allahabad",
+        "barabanki",
+        "bareilly",
+        "firozabad",
+        "ghaziabad",
+        "gorakhpur",
+        "hapur",
+        "jhansi",
+        "kanpur",
+        "lucknow",
+        "mathura",
+        "meerut",
+        "moradabad",
+        "noida",
+        "varanasi",
+        "vrindavan"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:44.678Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://www.up-rera.in/",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 2154,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 77,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 35,
+      "detailResults": [
+        {
+          "link": "https://www.up-rera.in/pdf/Order%20for%20CA,Architect,Engineer%20Certificate.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://www.up-rera.in/pdf/Portal_Editing_order.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-1076663598": {
+      "sourceId": "id-1076663598",
+      "source": "https://www.up-rera.in/PressRelease",
+      "label": "UP RERA — Press Releases | P1",
+      "cityCodes": [
+        "agra",
+        "aligarh",
+        "allahabad",
+        "barabanki",
+        "bareilly",
+        "firozabad",
+        "ghaziabad",
+        "gorakhpur",
+        "hapur",
+        "jhansi",
+        "kanpur",
+        "lucknow",
+        "mathura",
+        "meerut",
+        "moradabad",
+        "noida",
+        "varanasi",
+        "vrindavan"
+      ],
+      "priority": "P0A_RERA_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:46.338Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://www.up-rera.in/PressRelease",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 1877,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 48,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 15,
+      "detailResults": [
+        {
+          "link": "https://www.up-rera.in/pdf/Order%20for%20CA,Architect,Engineer%20Certificate.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://www.up-rera.in/pdf/Portal_Editing_order.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "manual-v3-5519534523356f7c": {
+      "sourceId": "manual-v3-5519534523356f7c",
+      "source": "https://ahmedabadcity.gov.in/DC/Tenders/",
+      "label": "Ahmedabad Municipal Corporation — Tenders",
+      "cityCodes": [
+        "ahmedabad"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:46.466Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 434,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "manual-v3-8e6bfbb88ea2c67c": {
+      "sourceId": "manual-v3-8e6bfbb88ea2c67c",
+      "source": "https://bbmp.gov.in/",
+      "label": "Greater Bengaluru Authority / BBMP",
+      "cityCodes": [
+        "bangalore"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:28:02.755Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "TTFB_TIMEOUT",
+          "failureCategory": "TTFB_TIMEOUT"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "TTFB_TIMEOUT",
+          "failureCategory": "TTFB_TIMEOUT"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 16287,
+      "failureCategory": "TTFB_TIMEOUT",
+      "recoveryAction": "Bounded retry exhausted; recheck later from a different network context",
+      "afterStatus": "TIMEOUT",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "manual-v3-f547f27a27a86896": {
+      "sourceId": "manual-v3-f547f27a27a86896",
+      "source": "https://cci.gov.in/combination/green-channel-view",
+      "label": "CCI — Green Channel Combinations",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:56.843Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://cci.gov.in/combination/green-channel-view",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 6392,
+      "failureCategory": "",
+      "recoveryAction": "Readable detail found; date/relevance/geo still needs validation",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 26,
+      "fullContentReadable": 2,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": [
+        {
+          "link": "https://cci.gov.in/combination/orders-section31",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "unclassified",
+          "cityCodes": [],
+          "expectedCities": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://cci.gov.in/combination/orders-section43a_44",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "unclassified",
+          "cityCodes": [],
+          "expectedCities": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-1464887574": {
+      "sourceId": "id-1464887574",
+      "source": "https://chennaimetrorail.org/press-release",
+      "label": "Chennai Metro — Press Releases | P1",
+      "cityCodes": [
+        "chennai"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:55.069Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://chennaimetrorail.org/press-release/",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 2089,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML+JSON_LD",
+      "linksDiscovered": 1362,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 1345,
+      "detailResults": [
+        {
+          "link": "https://chennaimetrorail.org/wp-content/uploads/2026/09/GESI-Newsletter-Issue-01-1.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://chennaimetrorail.org/wp-content/uploads/2025/03/Chennai-Metro-Rail-Carriage-and-Ticket-Rule-2014-and-Amendments.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "manual-v3-5974dbd4ac02b953": {
+      "sourceId": "manual-v3-5974dbd4ac02b953",
+      "source": "https://cpc.parivesh.nic.in/",
+      "label": "PARIVESH — Main Portal",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:28:02.657Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 6330,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-2133153935": {
+      "sourceId": "id-2133153935",
+      "source": "https://crda.ap.gov.in",
+      "label": "APCRDA | P1",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:27:58.807Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://crda.ap.gov.in/apcrdav2/views/home.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 1017,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 44,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 18,
+      "detailResults": [
+        {
+          "link": "https://crda.ap.gov.in/crda_norifications/NOT04100409/01~RAP-%20AGC%20Telugu%20Updated.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "failureCategory": "READ_TIMEOUT",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "READ_TIMEOUT",
+              "failureCategory": "READ_TIMEOUT"
+            },
+            {
+              "attempt": 2,
+              "status": 200,
+              "error": "READ_TIMEOUT",
+              "failureCategory": "READ_TIMEOUT"
+            }
+          ]
+        },
+        {
+          "link": "https://crda.ap.gov.in/crda_norifications/NOT04100410/01~RAP-%20Trunk%20Works%20Updated.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "failureCategory": "READ_TIMEOUT",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "READ_TIMEOUT",
+              "failureCategory": "READ_TIMEOUT"
+            },
+            {
+              "attempt": 2,
+              "status": 200,
+              "error": "READ_TIMEOUT",
+              "failureCategory": "READ_TIMEOUT"
+            }
+          ]
+        }
+      ]
+    },
+    "source-426810689": {
+      "sourceId": "source-426810689",
+      "source": "https://dda.gov.in",
+      "label": "dda.gov.in",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:28:44.239Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://dda.gov.in/",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 699,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML+EMBEDDED_ATTRIBUTES",
+      "linksDiscovered": 65,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 35,
+      "detailResults": [
+        {
+          "link": "https://dda.gov.in/sites/default/files/latest_jobs/dv_notice_for_mali.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://dda.gov.in/sites/default/files/notice/brochure_dda_janta_awaas_yojna_phase_ii_2026.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-1017717953": {
+      "sourceId": "id-1017717953",
+      "source": "https://dda.gov.in/dda-in-news",
+      "label": "DDA — In News | P1",
+      "cityCodes": [
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:28:44.107Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://dda.gov.in/dda-in-news",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 559,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 26,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 3,
+      "detailResults": [
+        {
+          "link": "https://dda.gov.in/sites/default/files/2025-07/pio_list_2025.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://dda.gov.in/sites/default/files/2026-08/dda_press_clippings_dt._21.08.2026.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "failureCategory": "READ_TIMEOUT",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "READ_TIMEOUT",
+              "failureCategory": "READ_TIMEOUT"
+            },
+            {
+              "attempt": 2,
+              "status": 200,
+              "error": "READ_TIMEOUT",
+              "failureCategory": "READ_TIMEOUT"
+            }
+          ]
+        }
+      ]
+    },
+    "id-310337100": {
+      "sourceId": "id-310337100",
+      "source": "https://dda.gov.in/whats-new",
+      "label": "DDA — What's New | P1",
+      "cityCodes": [
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:28:44.335Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://dda.gov.in/whats-new",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 785,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 36,
+      "fullContentReadable": 1,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 11,
+      "detailResults": [
+        {
+          "link": "https://dda.gov.in/sites/default/files/2025-07/pio_list_2025.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://dda.gov.in/",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "faridabad",
+            "gurugram",
+            "new_delhi",
+            "noida"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-305444630": {
+      "sourceId": "id-305444630",
+      "source": "https://faridabad.nic.in/department/faridabad-metropolitan-development-authority-fmda",
+      "label": "FMDA | P1",
+      "cityCodes": [
+        "faridabad"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:28:44.218Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://faridabad.nic.in/department/faridabad-metropolitan-development-authority-fmda/",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 668,
+      "failureCategory": "",
+      "recoveryAction": "Readable detail found; date/relevance/geo still needs validation",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 45,
+      "fullContentReadable": 2,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 0,
+      "detailResults": [
+        {
+          "link": "https://faridabad.nic.in/",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "faridabad"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://faridabad.nic.in/district-social-welfare-office/",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "faridabad"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "manual-v3-2db5943fc51b7fc8": {
+      "sourceId": "manual-v3-2db5943fc51b7fc8",
+      "source": "https://gccservices.chennaicorporation.gov.in/",
+      "label": "Greater Chennai Corporation — What's New",
+      "cityCodes": [
+        "chennai"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:28:44.832Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://gccservices.chennaicorporation.gov.in/",
+      "contentType": "text/html",
+      "elapsedMs": 319,
+      "failureCategory": "",
+      "recoveryAction": "Add source-specific discovery adapter only with evidence",
+      "afterStatus": "EXTRACTION_ADAPTER_NEEDED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1647128465": {
+      "sourceId": "id-1647128465",
+      "source": "https://gcda.kerala.gov.in",
+      "label": "GCDA | P1",
+      "cityCodes": [
+        "kochi"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:28:47.278Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://gcda.kerala.gov.in/",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 2442,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 38,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 7,
+      "detailResults": [
+        {
+          "link": "https://gcda.kerala.gov.in/storage/uploads/circulars/desktop_174358705572.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://gcda.kerala.gov.in/storage/uploads/circulars/desktop_177823281310.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "manual-v3-e8b21196335e6c3b": {
+      "sourceId": "manual-v3-e8b21196335e6c3b",
+      "source": "https://ghmc.gov.in/Tenderspage.aspx",
+      "label": "GHMC — Tenders",
+      "cityCodes": [
+        "hyderabad"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:28:45.664Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://ghmc.gov.in/Tenderspage.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 617,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 68,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 42,
+      "detailResults": [
+        {
+          "link": "https://ghmc.gov.in/Menu_Files/NCAP_Government%20Order.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://ghmc.gov.in/Menu_Files/MSU%20Recruitment%20Notification%202026.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-362771887": {
+      "sourceId": "id-362771887",
+      "source": "https://gidc.gujarat.gov.in",
+      "label": "GIDC | P1",
+      "cityCodes": [
+        "gujarat"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:28:47.426Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://gidc.gujarat.gov.in/",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 1500,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 17,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 2,
+      "detailResults": [
+        {
+          "link": "https://gidc.gujarat.gov.in/pdf/Circular/circular-25-11-16.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://gidc.gujarat.gov.in/pdf/Circular/saghanswachtaabhiyan.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "manual-v3-be76261203c366d3": {
+      "sourceId": "manual-v3-be76261203c366d3",
+      "source": "https://gidc.gujarat.gov.in/tender",
+      "label": "GIDC — Tenders",
+      "cityCodes": [
+        "gujarat"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:28:47.549Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://gidc.gujarat.gov.in/tender",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 855,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 849,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 837,
+      "detailResults": [
+        {
+          "link": "https://gidc.gujarat.gov.in/Document/LinkManagment/tenders/E-%20Tender%20Notice%20No.06%20of%202021-22%20of%20Surat%20Circle%20-%20Details.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://gidc.gujarat.gov.in/Document/LinkManagment/tenders/E-%20Tender%20Notice%20No.06%20of%202021-22%20of%20Surat%20Circle%20-%20Eng.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "source-669323995": {
+      "sourceId": "source-669323995",
+      "source": "https://gnida.up.gov.in/en/announcements",
+      "label": "noida",
+      "cityCodes": [
+        "noida"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:28:48.654Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://gnida.up.gov.in/frmErrorPage.aspx?aspxerrorpath=/en/rmHttpErrorPage.aspx",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 533,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 202,
+      "fullContentReadable": 2,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 1,
+      "detailResults": [
+        {
+          "link": "https://gnida.up.gov.in/en/en/feature/group-housing-public-notices-and-office-orders",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "noida"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://gnida.up.gov.in/en/en/feature/hrd-public-notices-and-office-orders",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "noida"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "manual-v3-407b196ddd04e9fa": {
+      "sourceId": "manual-v3-407b196ddd04e9fa",
+      "source": "https://hsiidc.etenders.in",
+      "label": "HSIIDC — E-Tender Portal",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:28:48.774Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 369,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "manual-v3-3af7be7f279b5052": {
+      "sourceId": "manual-v3-3af7be7f279b5052",
+      "source": "https://ibbi.gov.in/orders/nclt",
+      "label": "IBBI — NCLT Orders",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:28:56.529Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://ibbi.gov.in/orders/nclt",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 7753,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 55,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 22,
+      "detailResults": [
+        {
+          "link": "https://ibbi.gov.in/uploads/order/1f193f7f47c61c76db9e7f02dd52fd62.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://ibbi.gov.in/uploads/order/2026-09-25-114851-x9kr5-099bb28b50b17e30336d70e2fae36d3e.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "manual-v3-2e47260f883d792e": {
+      "sourceId": "manual-v3-2e47260f883d792e",
+      "source": "https://ipm.mospi.gov.in/Home/Index",
+      "label": "MoSPI PAIMANA — Infrastructure Project Monitoring",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:28:50.971Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 1613,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "manual-v3-e73629c6ede86e56": {
+      "sourceId": "manual-v3-e73629c6ede86e56",
+      "source": "https://ipm.mospi.gov.in/Home/ShowPressRelease",
+      "label": "MoSPI PAIMANA — Press Releases",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:28:51.642Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 669,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1300960561": {
+      "sourceId": "id-1300960561",
+      "source": "https://maharera.mahaonline.gov.in/",
+      "label": "MahaRERA | P1",
+      "cityCodes": [
+        "ahmednagar",
+        "akola",
+        "amravati",
+        "aurangabad",
+        "beed",
+        "chandrapur",
+        "daman_and_diu",
+        "dhule",
+        "jalgaon",
+        "jalna",
+        "kolhapur",
+        "latur",
+        "mumbai",
+        "nagpur",
+        "nanded",
+        "nashik",
+        "navi_mumbai",
+        "osmanabad",
+        "palghar",
+        "pune",
+        "raigad",
+        "ratnagiri",
+        "sangli",
+        "silvassa",
+        "sindhudurg",
+        "solapur",
+        "wardha",
+        "yavatmal"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:29:31.789Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "TTFB_TIMEOUT",
+          "failureCategory": "TTFB_TIMEOUT"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "TTFB_TIMEOUT",
+          "failureCategory": "TTFB_TIMEOUT"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 40146,
+      "failureCategory": "TTFB_TIMEOUT",
+      "recoveryAction": "Bounded retry exhausted; recheck later from a different network context",
+      "afterStatus": "TIMEOUT",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1045950731": {
+      "sourceId": "id-1045950731",
+      "source": "https://mmrda.maharashtra.gov.in/en/news-and-announcements/archive",
+      "label": "MMRDA — News Archive | P1",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:28:52.362Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 387,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-463953833": {
+      "sourceId": "id-463953833",
+      "source": "https://mmrda.maharashtra.gov.in/en/other-services/news-and-announcements",
+      "label": "MMRDA | P1",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:28:52.738Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 375,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "manual-v3-a52a4a88a58474da": {
+      "sourceId": "manual-v3-a52a4a88a58474da",
+      "source": "https://paradipport.gov.in/tenders/",
+      "label": "Paradip Port Authority — Tenders",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:29:01.508Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "TTFB_TIMEOUT",
+          "failureCategory": "TTFB_TIMEOUT"
+        },
+        {
+          "attempt": 2,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://paradipport.gov.in/tenders/",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 8768,
+      "failureCategory": "",
+      "recoveryAction": "Readable detail found; date/relevance/geo still needs validation",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 42,
+      "fullContentReadable": 2,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": [
+        {
+          "link": "https://paradipport.gov.in/",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://paradipport.gov.in/annual-reports/",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 0,
+              "error": "TTFB_TIMEOUT",
+              "failureCategory": "TTFB_TIMEOUT"
+            },
+            {
+              "attempt": 2,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "manual-v3-54f076d58b389c3a": {
+      "sourceId": "manual-v3-54f076d58b389c3a",
+      "source": "https://portal.mcgm.gov.in/irj/portal/anonymous/qletenders_new?guest_user=english",
+      "label": "BMC Mumbai — E-Tenders",
+      "cityCodes": [
+        "mumbai"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:28:57.340Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://portal.mcgm.gov.in/irj/portal/anonymous/qletenders_new?guest_user=english",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 414,
+      "failureCategory": "",
+      "recoveryAction": "Add source-specific discovery adapter only with evidence",
+      "afterStatus": "EXTRACTION_ADAPTER_NEEDED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1568576268": {
+      "sourceId": "id-1568576268",
+      "source": "https://puda.punjab.gov.in",
+      "label": "PUDA | P1",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:29:40.057Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "TTFB_TIMEOUT",
+          "failureCategory": "TTFB_TIMEOUT"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "TTFB_TIMEOUT",
+          "failureCategory": "TTFB_TIMEOUT"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 42713,
+      "failureCategory": "TTFB_TIMEOUT",
+      "recoveryAction": "Bounded retry exhausted; recheck later from a different network context",
+      "afterStatus": "TIMEOUT",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "id-1324126059": {
+      "sourceId": "id-1324126059",
+      "source": "https://sattvagroup.in/category/real-estate-development",
+      "label": "Sattva Group | P1",
+      "cityCodes": [
+        "bangalore",
+        "coimbatore",
+        "goa",
+        "hyderabad",
+        "kolkata",
+        "pune"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:29:51.165Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://sattvagroup.in/category/real-estate-development/",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 1207,
+      "failureCategory": "",
+      "recoveryAction": "Promote to targeted productive-health validation",
+      "afterStatus": "RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML+JSON_LD",
+      "linksDiscovered": 59,
+      "fullContentReadable": 2,
+      "dateAvailable": 1,
+      "relevant": 2,
+      "geoEvidence": 2,
+      "documents": 0,
+      "detailResults": [
+        {
+          "link": "https://sattvagroup.in/blog/plotted-for-prosperity-the-rise-of-plotted-developments-in-bengaluru/",
+          "readable": true,
+          "date": "2019-07-15T13:36:18.000Z",
+          "relevant": true,
+          "classification": "authority_pipeline",
+          "cityCodes": [
+            "bangalore"
+          ],
+          "expectedCities": [
+            "bangalore",
+            "coimbatore",
+            "goa",
+            "hyderabad",
+            "kolkata",
+            "pune"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://sattvagroup.in/media-centre/editorial/electronic-media/",
+          "readable": true,
+          "date": "",
+          "relevant": true,
+          "classification": "leadership_confidence",
+          "cityCodes": [
+            "bangalore"
+          ],
+          "expectedCities": [
+            "bangalore",
+            "coimbatore",
+            "goa",
+            "hyderabad",
+            "kolkata",
+            "pune"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-1727371390": {
+      "sourceId": "id-1727371390",
+      "source": "https://sipcotweb.tn.gov.in",
+      "label": "SIPCOT | P1",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:29:50.491Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://sipcotweb.tn.gov.in/",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 525,
+      "failureCategory": "",
+      "recoveryAction": "Readable detail found; date/relevance/geo still needs validation",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 34,
+      "fullContentReadable": 2,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": [
+        {
+          "link": "https://sipcotweb.tn.gov.in/Compendium_of_Circulars_and_Office_Orders",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "unclassified",
+          "cityCodes": [],
+          "expectedCities": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://sipcotweb.tn.gov.in/Sub_leasing",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "unclassified",
+          "cityCodes": [],
+          "expectedCities": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "source-974502929": {
+      "sourceId": "source-974502929",
+      "source": "https://tcpharyana.gov.in",
+      "label": "tcpharyana.gov.in",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:29:58.875Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://tcpharyana.gov.in/",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 8907,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 143,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 114,
+      "detailResults": [
+        {
+          "link": "https://tcpharyana.gov.in/Orders/Order%20dated%2005.08.2024.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 0,
+              "error": "TTFB_TIMEOUT",
+              "failureCategory": "TTFB_TIMEOUT"
+            },
+            {
+              "attempt": 2,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://tcpharyana.gov.in/Orders/Order%20dated%2016.04.2026.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "source-23850054": {
+      "sourceId": "source-23850054",
+      "source": "https://themetrorailguy.com/",
+      "label": "themetrorailguy.com",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:29:55.883Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://themetrorailguy.com/",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 5915,
+      "failureCategory": "",
+      "recoveryAction": "Readable detail found; date/relevance/geo still needs validation",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML+JSON_LD+EMBEDDED_ATTRIBUTES",
+      "linksDiscovered": 293,
+      "fullContentReadable": 2,
+      "dateAvailable": 0,
+      "relevant": 2,
+      "geoEvidence": 2,
+      "documents": 0,
+      "detailResults": [
+        {
+          "link": "https://themetrorailguy.com/bda-bangalore-peripheral-ring-road-route-map-status-update-tenders/",
+          "readable": true,
+          "date": "",
+          "relevant": true,
+          "classification": "reject_relevance",
+          "cityCodes": [
+            "bangalore"
+          ],
+          "expectedCities": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://themetrorailguy.com/gaimukh-fountain-hotel-tunnel-status-update-news-design/",
+          "readable": true,
+          "date": "",
+          "relevant": true,
+          "classification": "reject_relevance",
+          "cityCodes": [
+            "gurugram",
+            "bhopal",
+            "ahmedabad",
+            "bangalore",
+            "chennai",
+            "hyderabad",
+            "agra"
+          ],
+          "expectedCities": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "READ_TIMEOUT",
+              "failureCategory": "READ_TIMEOUT"
+            },
+            {
+              "attempt": 2,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-696274186": {
+      "sourceId": "id-696274186",
+      "source": "https://transport.rajasthan.gov.in/jmrc",
+      "label": "Jaipur Metro | P1",
+      "cityCodes": [
+        "jaipur"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:29:51.904Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://transport.rajasthan.gov.in/jmrc/",
+      "contentType": "text/html;charset=utf-8",
+      "elapsedMs": 297,
+      "failureCategory": "",
+      "recoveryAction": "Readable detail found; date/relevance/geo still needs validation",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 83,
+      "fullContentReadable": 2,
+      "dateAvailable": 0,
+      "relevant": 1,
+      "geoEvidence": 2,
+      "documents": 0,
+      "detailResults": [
+        {
+          "link": "https://transport.rajasthan.gov.in/content/dam/transport/metro/images/Recruitment.jpg",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "unclassified",
+          "cityCodes": [],
+          "expectedCities": [
+            "jaipur"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://transport.rajasthan.gov.in/content/transportportal/en/metro/business-with-us/jmrc-policy-for-permission-of-lpg-at-metro-stations.html",
+          "readable": true,
+          "date": "",
+          "relevant": true,
+          "classification": "project_development",
+          "cityCodes": [
+            "jaipur"
+          ],
+          "expectedCities": [
+            "jaipur"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-691704001": {
+      "sourceId": "id-691704001",
+      "source": "https://uhuda.uk.gov.in",
+      "label": "Uttarakhand Housing & Urban Development Authority | P1",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:29:56.168Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://uhuda.uk.gov.in/",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 288,
+      "failureCategory": "",
+      "recoveryAction": "Readable detail found; date/relevance/geo still needs validation",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 37,
+      "fullContentReadable": 2,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": [
+        {
+          "link": "https://uhuda.uk.gov.in/",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://uhuda.uk.gov.in/document/new-date-extension-of-invitations-for-land-proposals-from-owners-firms-companies-and-private-partners-for-affordable-housing-under-pmay-2-0-u-via-ppp-in-cities-of-uttarakhand-2/",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-1289383252": {
+      "sourceId": "id-1289383252",
+      "source": "https://www.aai.aero",
+      "label": "Airports Authority of India | P1",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:29:58.746Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://www.aai.aero/",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 2347,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 107,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 3,
+      "detailResults": [
+        {
+          "link": "https://www.aai.aero/sites/default/files/examdashboard_advertisement/advertisement%20AAI%20website%20CO_PILOT%2029-09-2026.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 0,
+              "error": "TTFB_TIMEOUT",
+              "failureCategory": "TTFB_TIMEOUT"
+            },
+            {
+              "attempt": 2,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://www.aai.aero/sites/default/files/examdashboard_advertisement/Advertisement%20NSOP%20FIU%20AAI%202026-QM%28CMM%29.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "manual-v3-fb96150672da854b": {
+      "sourceId": "manual-v3-fb96150672da854b",
+      "source": "https://www.aai.aero/en/media/latest-news",
+      "label": "Airports Authority of India — Latest News",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:33:55.044Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://www.aai.aero/en/media/latest-news",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 3896,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 105,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 26,
+      "detailResults": [
+        {
+          "link": "https://www.aai.aero/sites/default/files/pr_articles_clippings/Press%20Clippings%2009-09-2026.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://www.aai.aero/sites/default/files/pr_articles_clippings/Press%20Clippings%2006-09-2026.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "manual-v3-a09989aaf7ee8341": {
+      "sourceId": "manual-v3-a09989aaf7ee8341",
+      "source": "https://www.aai.aero/en/media/press-news-events_archive",
+      "label": "Airports Authority of India — Press Archive",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:33:58.072Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://www.aai.aero/en/media/press-news-events_archive",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 4947,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 621,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 535,
+      "detailResults": [
+        {
+          "link": "https://www.aai.aero/sites/default/files/85-Press_Release-Inauguration_of_NTB_at_Khajuraho_Airport.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://www.aai.aero/sites/default/files/Dividend_Press_Release.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "manual-v3-b2364c91c1213bdf": {
+      "sourceId": "manual-v3-b2364c91c1213bdf",
+      "source": "https://www.aai.aero/en/media/press-releases",
+      "label": "Airports Authority of India — Press Releases",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:33:55.211Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://www.aai.aero/en/media/press-releases",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 1591,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 100,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 21,
+      "detailResults": [
+        {
+          "link": "https://www.aai.aero/sites/default/files/press_release_news/AAI%20Reinforces%20Passenger%20Assistance%20and%20Smooth%20Security%20Facilitation.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://www.aai.aero/sites/default/files/press_release_news/AAI%20Strengthens%20Access%20to%20Potable%20Water%20and%20Essential%20Passenger%20Amenities.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-656124001": {
+      "sourceId": "id-656124001",
+      "source": "https://www.arvindsmartspaces.com/investors/financial-reports",
+      "label": "Arvind SmartSpaces — Financial Reports | P1",
+      "cityCodes": [
+        "ahmedabad",
+        "bangalore",
+        "gandhinagar",
+        "pune"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:33:56.482Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://www.arvindsmartspaces.com/investors/financial-reports/",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 1586,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML+JSON_LD+EMBEDDED_ATTRIBUTES",
+      "linksDiscovered": 290,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 234,
+      "detailResults": [
+        {
+          "link": "https://www.arvindsmartspaces.com/wp-content/uploads/2025/11/Information-Update.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://www.arvindsmartspaces.com/wp-content/uploads/2025/11/Media-Release.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-98238599": {
+      "sourceId": "id-98238599",
+      "source": "https://www.ashianahousing.com/media/media-release",
+      "label": "Ashiana Housing | P1",
+      "cityCodes": [
+        "bhiwadi",
+        "chennai",
+        "gurugram",
+        "jaipur",
+        "jamshedpur",
+        "pune"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:34:01.585Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://www.ashianahousing.com/media/media-release",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 2344,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 25,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 2,
+      "detailResults": [
+        {
+          "link": "https://www.ashianahousing.com/uploads/pdf/notice-no-46of-2010.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://www.ashianahousing.com//uploads/pdf/Wisdom-from-the-heart.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "manual-v3-0bdb801de540d94d": {
+      "sourceId": "manual-v3-0bdb801de540d94d",
+      "source": "https://www.bda.gov.in/archiveTender",
+      "label": "Bhubaneswar Development Authority — Tender Archive",
+      "cityCodes": [
+        "bhubaneswar"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:34:02.070Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://www.bda.gov.in/archiveTender",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 1570,
+      "failureCategory": "",
+      "recoveryAction": "Readable detail found; date/relevance/geo still needs validation",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 11,
+      "fullContentReadable": 2,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 0,
+      "detailResults": [
+        {
+          "link": "https://www.bda.gov.in/notifications/act-rules",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "bhubaneswar"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://www.bda.gov.in/bda/organization-structure",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "bhubaneswar"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "manual-v3-aec87feb1bb37ba1": {
+      "sourceId": "manual-v3-aec87feb1bb37ba1",
+      "source": "https://www.bda.gov.in/circular",
+      "label": "Bhubaneswar Development Authority — Circulars",
+      "cityCodes": [
+        "bhubaneswar"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:34:01.364Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://www.bda.gov.in/circular",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 425,
+      "failureCategory": "",
+      "recoveryAction": "Readable detail found; date/relevance/geo still needs validation",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 11,
+      "fullContentReadable": 2,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 0,
+      "detailResults": [
+        {
+          "link": "https://www.bda.gov.in/notifications/act-rules",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "bhubaneswar"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://www.bda.gov.in/bda/organization-structure",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "bhubaneswar"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-1290390093": {
+      "sourceId": "id-1290390093",
+      "source": "https://www.bda.gov.in/notice",
+      "label": "Bhubaneswar Development Authority — Notices | P1",
+      "cityCodes": [
+        "bhubaneswar"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:34:02.367Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://www.bda.gov.in/notice",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 399,
+      "failureCategory": "",
+      "recoveryAction": "Readable detail found; date/relevance/geo still needs validation",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 12,
+      "fullContentReadable": 2,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 0,
+      "detailResults": [
+        {
+          "link": "https://www.bda.gov.in/notifications/act-rules",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "bhubaneswar"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://www.bda.gov.in/archiveNotice",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "bhubaneswar"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-496593188": {
+      "sourceId": "id-496593188",
+      "source": "https://www.bdabangalore.org",
+      "label": "Bangalore Development Authority | P1",
+      "cityCodes": [
+        "bangalore"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:34:03.040Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        },
+        {
+          "attempt": 2,
+          "status": 0,
+          "error": "fetch failed",
+          "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE"
+        }
+      ],
+      "status": "",
+      "finalUrl": "",
+      "contentType": "",
+      "elapsedMs": 766,
+      "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+      "recoveryAction": "Remove from repeated retry loop; retain debt entry",
+      "afterStatus": "EXTERNAL_BLOCK",
+      "externalBlocker": true,
+      "listingMethod": "",
+      "linksDiscovered": 0,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": []
+    },
+    "manual-v3-109a427451649981": {
+      "sourceId": "manual-v3-109a427451649981",
+      "source": "https://www.cci.gov.in/combination/orders-section31",
+      "label": "CCI — Combination Orders",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:34:03.065Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://www.cci.gov.in/combination/orders-section31",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 350,
+      "failureCategory": "",
+      "recoveryAction": "Readable detail found; date/relevance/geo still needs validation",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 26,
+      "fullContentReadable": 2,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": [
+        {
+          "link": "https://www.cci.gov.in/combination/orders-section43a_44",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "unclassified",
+          "cityCodes": [],
+          "expectedCities": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://www.cci.gov.in/combination/cases-approved-with-modification",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "unclassified",
+          "cityCodes": [],
+          "expectedCities": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "manual-v3-11a9c2b745b1c178": {
+      "sourceId": "manual-v3-11a9c2b745b1c178",
+      "source": "https://www.cci.gov.in/combination/press-release",
+      "label": "CCI — Combination Press Releases",
+      "cityCodes": [],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:34:03.531Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://www.cci.gov.in/combination/press-release",
+      "contentType": "text/html; charset=UTF-8",
+      "elapsedMs": 490,
+      "failureCategory": "",
+      "recoveryAction": "Readable detail found; date/relevance/geo still needs validation",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 26,
+      "fullContentReadable": 2,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 0,
+      "documents": 0,
+      "detailResults": [
+        {
+          "link": "https://www.cci.gov.in/combination/orders-section31",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "unclassified",
+          "cityCodes": [],
+          "expectedCities": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://www.cci.gov.in/combination/orders-section43a_44",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "unclassified",
+          "cityCodes": [],
+          "expectedCities": [],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "manual-v3-d3a6ac11414f5116": {
+      "sourceId": "manual-v3-d3a6ac11414f5116",
+      "source": "https://www.cial.aero/News-Updates/URL",
+      "label": "Cochin International Airport — Updates",
+      "cityCodes": [
+        "kochi"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:34:03.534Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://www.cial.aero/News-Updates/URL",
+      "contentType": "text/html; charset=utf-8",
+      "elapsedMs": 458,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 94,
+      "fullContentReadable": 2,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 1,
+      "detailResults": [
+        {
+          "link": "https://www.cial.aero/news-Updates/0484aerolounge",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "kochi"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://www.cial.aero/news-Updates/10millionpassengersinthirdconsecutiveyear",
+          "readable": true,
+          "date": "",
+          "relevant": false,
+          "classification": "reject_negative",
+          "cityCodes": [],
+          "expectedCities": [
+            "kochi"
+          ],
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    },
+    "id-1625478632": {
+      "sourceId": "id-1625478632",
+      "source": "https://www.cmdachennai.gov.in",
+      "label": "Chennai Metropolitan Development Authority | P1",
+      "cityCodes": [
+        "chennai"
+      ],
+      "priority": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "attemptedAt": "2026-10-01T06:34:03.673Z",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "error": "",
+          "failureCategory": ""
+        }
+      ],
+      "status": 200,
+      "finalUrl": "https://www.cmdachennai.gov.in/index.html",
+      "contentType": "text/html",
+      "elapsedMs": 577,
+      "failureCategory": "",
+      "recoveryAction": "Document reached; keep review-only until extraction is validated",
+      "afterStatus": "PARTIALLY_RECOVERED",
+      "externalBlocker": false,
+      "listingMethod": "HTML",
+      "linksDiscovered": 33,
+      "fullContentReadable": 0,
+      "dateAvailable": 0,
+      "relevant": 0,
+      "geoEvidence": 2,
+      "documents": 11,
+      "detailResults": [
+        {
+          "link": "https://www.cmdachennai.gov.in/pdfs/AbandonedVehicles-KWMC-26-04-2024.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        },
+        {
+          "link": "https://www.cmdachennai.gov.in/pdfs/AlertMessage-FlatPlotBuyers-23-01-2024.pdf",
+          "readable": false,
+          "date": "",
+          "relevant": false,
+          "cityCodes": [],
+          "document": true,
+          "failureCategory": "PDF_REVIEW_REQUIRED",
+          "attempts": [
+            {
+              "attempt": 1,
+              "status": 200,
+              "error": "",
+              "failureCategory": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "batches": [
+    {
+      "batchId": "2026-10-01T06:27:28.767Z",
+      "size": 20,
+      "sources": [
+        "https://gujrera.gujarat.gov.in",
+        "https://jharera.jharkhand.gov.in/home",
+        "https://jharera.jharkhand.gov.in/Home/Notice",
+        "https://rera.bihar.gov.in/Newsarticles.aspx",
+        "https://rera.bihar.gov.in/ProceedingOrder.aspx",
+        "https://rera.bihar.gov.in/publicorder.aspx",
+        "https://rera.bihar.gov.in/RERALATESTNEWS.aspx",
+        "https://rera.chbonline.in",
+        "https://rera.goa.gov.in",
+        "https://rera.goa.gov.in/Notice",
+        "https://rera.karnataka.gov.in",
+        "https://rera.kerala.gov.in",
+        "https://rera.kerala.gov.in/announcements",
+        "https://rera.odisha.gov.in",
+        "https://rera.punjab.gov.in",
+        "https://rera.punjab.gov.in/circulars.html",
+        "https://rera.punjab.gov.in/latest-news.html",
+        "https://rera.py.gov.in/",
+        "https://rera.rajasthan.gov.in",
+        "https://rera.telangana.gov.in"
+      ],
+      "runtimeMs": 5971
+    },
+    {
+      "batchId": "2026-10-01T06:28:33.586Z",
+      "size": 20,
+      "sources": [
+        "https://rera.telangana.gov.in/247564irgjsdghfdgfd-TG-RERA-98498dsgdgyhdfjbhy43",
+        "https://rera.telangana.gov.in/384798wfybwev9fya62435-TG-RERA-skfjdgky483yunskljghfdgjh",
+        "https://rera.telangana.gov.in/586784u3y5dsgfg-TG-RERA-45678jklshihnfgsfdg",
+        "https://rera.telangana.gov.in/amavlnjoiu7532845972-TG-RERA-74698ijgsdfjgbi349529",
+        "https://rera.telangana.gov.in/AnnualReports-TG-RERA-15121976REAT_Orders",
+        "https://rera.tn.gov.in",
+        "https://rera.wb.gov.in",
+        "https://rera.wb.gov.in/notice.php",
+        "https://www.hprera.in",
+        "https://www.rera.ap.gov.in",
+        "https://www.rera.delhi.gov.in",
+        "https://www.ukrera.org.in",
+        "https://www.up-rera.in",
+        "https://www.up-rera.in/PressRelease",
+        "https://ahmedabadcity.gov.in/DC/Tenders/",
+        "https://bbmp.gov.in/",
+        "https://cci.gov.in/combination/green-channel-view",
+        "https://chennaimetrorail.org/press-release",
+        "https://cpc.parivesh.nic.in/",
+        "https://crda.ap.gov.in"
+      ],
+      "runtimeMs": 16287
+    },
+    {
+      "batchId": "2026-10-01T06:29:40.999Z",
+      "size": 20,
+      "sources": [
+        "https://dda.gov.in",
+        "https://dda.gov.in/dda-in-news",
+        "https://dda.gov.in/whats-new",
+        "https://faridabad.nic.in/department/faridabad-metropolitan-development-authority-fmda",
+        "https://gccservices.chennaicorporation.gov.in/",
+        "https://gcda.kerala.gov.in",
+        "https://ghmc.gov.in/Tenderspage.aspx",
+        "https://gidc.gujarat.gov.in",
+        "https://gidc.gujarat.gov.in/tender",
+        "https://gnida.up.gov.in/en/announcements",
+        "https://hsiidc.etenders.in",
+        "https://ibbi.gov.in/orders/nclt",
+        "https://ipm.mospi.gov.in/Home/Index",
+        "https://ipm.mospi.gov.in/Home/ShowPressRelease",
+        "https://maharera.mahaonline.gov.in/",
+        "https://mmrda.maharashtra.gov.in/en/news-and-announcements/archive",
+        "https://mmrda.maharashtra.gov.in/en/other-services/news-and-announcements",
+        "https://paradipport.gov.in/tenders/",
+        "https://portal.mcgm.gov.in/irj/portal/anonymous/qletenders_new?guest_user=english",
+        "https://puda.punjab.gov.in"
+      ],
+      "runtimeMs": 42713
+    },
+    {
+      "batchId": "2026-10-01T06:34:05.183Z",
+      "size": 20,
+      "sources": [
+        "https://sattvagroup.in/category/real-estate-development",
+        "https://sipcotweb.tn.gov.in",
+        "https://tcpharyana.gov.in",
+        "https://themetrorailguy.com/",
+        "https://transport.rajasthan.gov.in/jmrc",
+        "https://uhuda.uk.gov.in",
+        "https://www.aai.aero",
+        "https://www.aai.aero/en/media/latest-news",
+        "https://www.aai.aero/en/media/press-news-events_archive",
+        "https://www.aai.aero/en/media/press-releases",
+        "https://www.arvindsmartspaces.com/investors/financial-reports",
+        "https://www.ashianahousing.com/media/media-release",
+        "https://www.bda.gov.in/archiveTender",
+        "https://www.bda.gov.in/circular",
+        "https://www.bda.gov.in/notice",
+        "https://www.bdabangalore.org",
+        "https://www.cci.gov.in/combination/orders-section31",
+        "https://www.cci.gov.in/combination/press-release",
+        "https://www.cial.aero/News-Updates/URL",
+        "https://www.cmdachennai.gov.in"
+      ],
+      "runtimeMs": 8907
+    }
+  ]
+}

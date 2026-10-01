@@ -1,0 +1,4155 @@
+{
+  "reportType": "TASK14_TARGETED_RECOVERY",
+  "generatedAt": "2026-10-01T06:34:05.185Z",
+  "authoritativeBaseline": {
+    "path": "reports\\source-audits\\source-audit-2026-09-30T12-58-19-897Z.json",
+    "sources": 571,
+    "contentHealthy": 74,
+    "transportFailures": 226,
+    "extractionFailures": 80,
+    "empty": 78,
+    "duplicateRows": 0
+  },
+  "targetedSourcesAttempted": 80,
+  "currentBatch": {
+    "size": 20,
+    "sources": [
+      "https://sattvagroup.in/category/real-estate-development",
+      "https://sipcotweb.tn.gov.in",
+      "https://tcpharyana.gov.in",
+      "https://themetrorailguy.com/",
+      "https://transport.rajasthan.gov.in/jmrc",
+      "https://uhuda.uk.gov.in",
+      "https://www.aai.aero",
+      "https://www.aai.aero/en/media/latest-news",
+      "https://www.aai.aero/en/media/press-news-events_archive",
+      "https://www.aai.aero/en/media/press-releases",
+      "https://www.arvindsmartspaces.com/investors/financial-reports",
+      "https://www.ashianahousing.com/media/media-release",
+      "https://www.bda.gov.in/archiveTender",
+      "https://www.bda.gov.in/circular",
+      "https://www.bda.gov.in/notice",
+      "https://www.bdabangalore.org",
+      "https://www.cci.gov.in/combination/orders-section31",
+      "https://www.cci.gov.in/combination/press-release",
+      "https://www.cial.aero/News-Updates/URL",
+      "https://www.cmdachennai.gov.in"
+    ]
+  },
+  "counts": {
+    "RECOVERED": 1,
+    "PARTIALLY_RECOVERED": 48,
+    "EXTERNAL_BLOCK": 22,
+    "TIMEOUT": 4,
+    "BROKEN": 0,
+    "EXTRACTION_ADAPTER_NEEDED": 4,
+    "EMPTY_CONFIRMED": 1,
+    "UNRESOLVED": 0
+  },
+  "confirmed403": [],
+  "timeoutClasses": {
+    "TTFB_TIMEOUT": 4
+  },
+  "rera": {
+    "attempted": 35,
+    "recovered": 0,
+    "blockers": [
+      {
+        "source": "https://gujrera.gujarat.gov.in",
+        "status": "EXTERNAL_BLOCK",
+        "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+        "cities": [
+          "ahmedabad",
+          "anand",
+          "banaskantha",
+          "bardoli",
+          "bharuch",
+          "bhavnagar",
+          "dholera",
+          "gandhinagar",
+          "gujarat",
+          "junagadh",
+          "kalol",
+          "kheda",
+          "kutch",
+          "navsari",
+          "patan",
+          "rajkot",
+          "sabarkantha",
+          "surat",
+          "surendranagar",
+          "vadodara",
+          "valsad",
+          "vapi"
+        ]
+      },
+      {
+        "source": "https://jharera.jharkhand.gov.in/home",
+        "status": "EXTERNAL_BLOCK",
+        "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+        "cities": [
+          "dhanbad",
+          "jamshedpur",
+          "ranchi"
+        ]
+      },
+      {
+        "source": "https://jharera.jharkhand.gov.in/Home/Notice",
+        "status": "EXTERNAL_BLOCK",
+        "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+        "cities": [
+          "dhanbad",
+          "jamshedpur",
+          "ranchi"
+        ]
+      },
+      {
+        "source": "https://rera.bihar.gov.in/Newsarticles.aspx",
+        "status": "EXTERNAL_BLOCK",
+        "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+        "cities": [
+          "patna"
+        ]
+      },
+      {
+        "source": "https://rera.bihar.gov.in/ProceedingOrder.aspx",
+        "status": "EXTERNAL_BLOCK",
+        "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+        "cities": [
+          "patna"
+        ]
+      },
+      {
+        "source": "https://rera.bihar.gov.in/publicorder.aspx",
+        "status": "EXTERNAL_BLOCK",
+        "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+        "cities": [
+          "patna"
+        ]
+      },
+      {
+        "source": "https://rera.bihar.gov.in/RERALATESTNEWS.aspx",
+        "status": "EXTERNAL_BLOCK",
+        "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+        "cities": [
+          "patna"
+        ]
+      },
+      {
+        "source": "https://rera.chbonline.in",
+        "status": "EXTERNAL_BLOCK",
+        "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+        "cities": [
+          "chandigarh"
+        ]
+      },
+      {
+        "source": "https://rera.kerala.gov.in",
+        "status": "EXTERNAL_BLOCK",
+        "failureCategory": "SERVER_5XX",
+        "cities": [
+          "calicut",
+          "ernakulam",
+          "kochi",
+          "palakkad",
+          "thrissur",
+          "trivandrum"
+        ]
+      },
+      {
+        "source": "https://rera.kerala.gov.in/announcements",
+        "status": "EXTERNAL_BLOCK",
+        "failureCategory": "SERVER_5XX",
+        "cities": [
+          "calicut",
+          "ernakulam",
+          "kochi",
+          "palakkad",
+          "thrissur",
+          "trivandrum"
+        ]
+      },
+      {
+        "source": "https://rera.py.gov.in/",
+        "status": "EXTERNAL_BLOCK",
+        "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+        "cities": [
+          "pondicherry"
+        ]
+      },
+      {
+        "source": "https://rera.wb.gov.in",
+        "status": "EXTERNAL_BLOCK",
+        "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+        "cities": [
+          "asansol",
+          "durgapur",
+          "howrah",
+          "kolkata",
+          "siliguri"
+        ]
+      },
+      {
+        "source": "https://rera.wb.gov.in/notice.php",
+        "status": "EXTERNAL_BLOCK",
+        "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+        "cities": [
+          "asansol",
+          "durgapur",
+          "howrah",
+          "kolkata",
+          "siliguri"
+        ]
+      },
+      {
+        "source": "https://www.rera.ap.gov.in",
+        "status": "EXTERNAL_BLOCK",
+        "failureCategory": "ENVIRONMENT_SPECIFIC_FAILURE",
+        "cities": [
+          "anantapur",
+          "bhimavaram",
+          "chittoor",
+          "eluru",
+          "kadapa",
+          "kakinada",
+          "krishna",
+          "kurnool",
+          "nellore",
+          "rajahmundry",
+          "srikakulam",
+          "tirupati",
+          "vijayawada",
+          "visakhapatnam",
+          "vizianagaram",
+          "west_godavari"
+        ]
+      },
+      {
+        "source": "https://www.rera.delhi.gov.in",
+        "status": "TIMEOUT",
+        "failureCategory": "TTFB_TIMEOUT",
+        "cities": [
+          "delhi_ncr",
+          "faridabad",
+          "gurugram",
+          "new_delhi",
+          "noida"
+        ]
+      },
+      {
+        "source": "https://maharera.mahaonline.gov.in/",
+        "status": "TIMEOUT",
+        "failureCategory": "TTFB_TIMEOUT",
+        "cities": [
+          "ahmednagar",
+          "akola",
+          "amravati",
+          "aurangabad",
+          "beed",
+          "chandrapur",
+          "daman_and_diu",
+          "dhule",
+          "jalgaon",
+          "jalna",
+          "kolhapur",
+          "latur",
+          "mumbai",
+          "nagpur",
+          "nanded",
+          "nashik",
+          "navi_mumbai",
+          "osmanabad",
+          "palghar",
+          "pune",
+          "raigad",
+          "ratnagiri",
+          "sangli",
+          "silvassa",
+          "sindhudurg",
+          "solapur",
+          "wardha",
+          "yavatmal"
+        ]
+      }
+    ]
+  },
+  "productiveHealthEvidence": {
+    "demonstrated": 1,
+    "estimatedContentHealthy": 75,
+    "note": "Estimated only; counts confirmed only after a same-source validation run."
+  },
+  "checkpoint": "reports\\source-audits\\task14-targeted-recovery\\checkpoint.json",
+  "debtRemaining": [
+    {
+      "source": "https://www.deendayalport.gov.in/tenders/e-tender",
+      "label": "Deendayal Port Authority — E-Tenders",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "gujarat"
+      ]
+    },
+    {
+      "source": "https://www.delhimetrorail.com/",
+      "label": "delhimetrorail.com",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.gera.in/press-releases",
+      "label": "Gera Developments — Press Releases",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "goa",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.gmada.gov.in/",
+      "label": "GMADA | P1",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "chandigarh",
+        "mohali"
+      ]
+    },
+    {
+      "source": "https://www.gmda.gov.in",
+      "label": "GMDA | P1",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "gurugram"
+      ]
+    },
+    {
+      "source": "https://www.greaternoidaauthority.in",
+      "label": "Greater Noida Authority | P1",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.gujaratmetrorail.com",
+      "label": "Gujarat Metro Rail Corporation | P1",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "ahmedabad",
+        "gandhinagar",
+        "gujarat",
+        "surat"
+      ]
+    },
+    {
+      "source": "https://www.hmda.gov.in/news",
+      "label": "HMDA — News | P1",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "hyderabad"
+      ]
+    },
+    {
+      "source": "https://www.jda.rajasthan.gov.in/content/raj/udh/jda---jaipur/en/home.html",
+      "label": "Jaipur Development Authority | P1",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "jaipur"
+      ]
+    },
+    {
+      "source": "https://www.kmda.wb.gov.in/",
+      "label": "Kolkata Metropolitan Development Authority | P1",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "kolkata"
+      ]
+    },
+    {
+      "source": "https://www.ltmetro.com/press/",
+      "label": "Hyderabad Metro — Press | P1",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "hyderabad"
+      ]
+    },
+    {
+      "source": "https://www.metrorailnews.in/",
+      "label": "metrorailnews.in",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.mhada.gov.in",
+      "label": "MHADA | P1",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.mmrcl.com/en/content/press-releases",
+      "label": "Mumbai Metro Rail Corporation — Press Releases",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "mumbai"
+      ]
+    },
+    {
+      "source": "https://www.mpmetrorail.com/",
+      "label": "Madhya Pradesh Metro Rail Corporation | P1",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bhopal",
+        "indore"
+      ]
+    },
+    {
+      "source": "https://www.mumbaiport.gov.in/show_tenders.php?catid=3&depid=1&lang=1",
+      "label": "Mumbai Port Authority — Civil Engineering Tenders",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "mumbai"
+      ]
+    },
+    {
+      "source": "https://www.nhb.org.in/en/media-corner/media-press-releases/",
+      "label": "National Housing Bank — Media / Press Releases",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.niairport.in/en/company/news/overview/news-overview",
+      "label": "noida",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.pib.gov.in",
+      "label": "pib.gov.in",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.providenthousing.com/media",
+      "label": "Provident Housing | P1",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "coimbatore",
+        "hyderabad",
+        "kochi",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.suratmunicipal.gov.in/Information/pressreleases",
+      "label": "Surat Municipal Corporation — Press Releases",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "surat"
+      ]
+    },
+    {
+      "source": "https://www.suratmunicipal.gov.in/Information/Tender/Tenders",
+      "label": "Surat Municipal Corporation — Active Tenders",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "surat"
+      ]
+    },
+    {
+      "source": "https://www.yamunaexpresswayauthority.com/hi/tender/tender-archives",
+      "label": "YEIDA — Tender Archive",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.yamunaexpresswayauthority.com/web/",
+      "label": "noida",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.yamunaexpresswayauthority.com/web/announcement/",
+      "label": "noida",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://yamunaexpresswayauthority.com",
+      "label": "YEIDA | P1",
+      "queueClass": "P0A_AUTHORITY_TRANSPORT",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://aiforera.org",
+      "label": "AIFORERA — State RERA Directory | P1",
+      "queueClass": "P0B_RERA_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://rera.ap.gov.in/RERA/Views/index.html",
+      "label": "Andhra Pradesh RERA — News and Updates | P1",
+      "queueClass": "P0B_RERA_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "anantapur",
+        "bhimavaram",
+        "chittoor",
+        "eluru",
+        "kadapa",
+        "kakinada",
+        "krishna",
+        "kurnool",
+        "nellore",
+        "rajahmundry",
+        "srikakulam",
+        "tirupati",
+        "vijayawada",
+        "visakhapatnam",
+        "vizianagaram",
+        "west_godavari"
+      ]
+    },
+    {
+      "source": "https://rera.assam.gov.in",
+      "label": "Assam RERA | P1",
+      "queueClass": "P0B_RERA_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "dibrugarh",
+        "golaghat",
+        "guwahati",
+        "jorhat",
+        "kamrup",
+        "marigaon",
+        "nagaon",
+        "nalbari",
+        "silchar",
+        "tezpur",
+        "tinsukia"
+      ]
+    },
+    {
+      "source": "https://rera.cgstate.gov.in",
+      "label": "Chhattisgarh RERA | P1",
+      "queueClass": "P0B_RERA_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "bhilai",
+        "bilaspur",
+        "durg",
+        "korba",
+        "kota",
+        "kota_chhattisgarh",
+        "raipur",
+        "rajnandgaon"
+      ]
+    },
+    {
+      "source": "https://rera.telangana.gov.in/Home/ViewNews",
+      "label": "Telangana RERA — News Archive | P1",
+      "queueClass": "P0B_RERA_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "hyderabad",
+        "karimnagar",
+        "khammam",
+        "mahabubnagar",
+        "mancherial",
+        "nalgonda",
+        "nizamabad",
+        "suryapet",
+        "warangal"
+      ]
+    },
+    {
+      "source": "https://rera.telangana.gov.in/SUOMOTU-TG-RERA-15121976ORDERS",
+      "label": "Telangana RERA — Suo Motu Orders | P1",
+      "queueClass": "P0B_RERA_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "hyderabad",
+        "karimnagar",
+        "khammam",
+        "mahabubnagar",
+        "mancherial",
+        "nalgonda",
+        "nizamabad",
+        "suryapet",
+        "warangal"
+      ]
+    },
+    {
+      "source": "https://rera.tripura.gov.in",
+      "label": "Tripura RERA | P1",
+      "queueClass": "P0B_RERA_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "agartala"
+      ]
+    },
+    {
+      "source": "https://up-rera.in",
+      "label": "noida",
+      "queueClass": "P0B_RERA_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.rera.mp.gov.in",
+      "label": "Madhya Pradesh RERA | P1",
+      "queueClass": "P0B_RERA_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "betul",
+        "bhopal",
+        "burhanpur",
+        "chhindwara",
+        "damoh",
+        "dewas",
+        "gwalior",
+        "indore",
+        "jabalpur",
+        "khandwa",
+        "khargone",
+        "mandsaur",
+        "neemuch",
+        "ratlam",
+        "rewa",
+        "sagar",
+        "satna",
+        "sehore",
+        "seoni",
+        "ujjain"
+      ]
+    },
+    {
+      "source": "https://auda.org.in",
+      "label": "Ahmedabad Urban Development Authority | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "ahmedabad",
+        "gujarat"
+      ]
+    },
+    {
+      "source": "https://bda.gov.in",
+      "label": "Bhubaneswar Development Authority | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "bhubaneswar"
+      ]
+    },
+    {
+      "source": "https://chennaicorporation.gov.in/gcc/tender/",
+      "label": "Greater Chennai Corporation — Tender Bulletin",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "chennai"
+      ]
+    },
+    {
+      "source": "https://cidco.maharashtra.gov.in",
+      "label": "CIDCO | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "mumbai",
+        "navi_mumbai",
+        "raigad"
+      ]
+    },
+    {
+      "source": "https://cidco.maharashtra.gov.in/Page?Token=1C64F4F8470",
+      "label": "CIDCO — Press Releases",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "mumbai",
+        "navi_mumbai",
+        "raigad"
+      ]
+    },
+    {
+      "source": "https://cochinport.gov.in/tenders",
+      "label": "Cochin Port Authority — Tenders",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "kochi"
+      ]
+    },
+    {
+      "source": "https://crmapp.mcgm.gov.in/irj/portal/anonymous/qlpressrelease",
+      "label": "BMC Mumbai — Press Releases",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "mumbai"
+      ]
+    },
+    {
+      "source": "https://gmda.assam.gov.in",
+      "label": "Guwahati Metropolitan Development Authority | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "guwahati"
+      ]
+    },
+    {
+      "source": "https://gmda.gov.in",
+      "label": "gmda.gov.in",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://gnida.up.gov.in/en/news",
+      "label": "noida",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://haryanarera.gov.in",
+      "label": "haryanarera.gov.in",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://haryanarera.gov.in/admincontrol/judgements/1",
+      "label": "HRERA Panchkula — Judgments | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "ambala",
+        "faridabad",
+        "gurugram",
+        "karnal",
+        "kurukshetra",
+        "palwal",
+        "panchkula",
+        "panipat",
+        "rewari",
+        "rohtak",
+        "sonipat",
+        "yamunanagar"
+      ]
+    },
+    {
+      "source": "https://hsvphry.org.in/",
+      "label": "hsvphry.org.in",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://hsvphry.org.in/Home/Tenders",
+      "label": "HSVP — Active Tenders",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://indiainvestmentgrid.gov.in/index.jsp",
+      "label": "India Investment Grid",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://indianexpress.com/about/greater-noida-authority/",
+      "label": "noida",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/about/noida-authority/",
+      "label": "noida",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://indianrailways.gov.in/railwayboard/",
+      "label": "Indian Railways | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://kochimetro.org",
+      "label": "Kochi Metro | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "kochi"
+      ]
+    },
+    {
+      "source": "https://mcg.gov.in/",
+      "label": "Municipal Corporation of Gurugram — Updates & Tenders",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "gurugram"
+      ]
+    },
+    {
+      "source": "https://mohua.gov.in",
+      "label": "mohua.gov.in",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://morth.nic.in",
+      "label": "Ministry of Road Transport & Highways | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://nhai.gov.in",
+      "label": "nhai.gov.in",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://noidaauthorityonline.in",
+      "label": "noida",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://punemetrorail.org/",
+      "label": "Pune Metro — Latest News",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "pune"
+      ]
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida%2Bauthority",
+      "label": "noida",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/tag/noida%2Bairport",
+      "label": "noida",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority",
+      "label": "noida",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://riico.rajasthan.gov.in",
+      "label": "RIICO | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://riico.rajasthan.gov.in/Tender.aspx",
+      "label": "RIICO — Tenders",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://shipmin.gov.in/en/highlights",
+      "label": "Ministry of Ports — Highlights",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://shipmin.gov.in/publication/trw-publication",
+      "label": "Ministry of Ports — Transport Research Publications",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://tgiic.telangana.gov.in",
+      "label": "TGIIC | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://transport.rajasthan.gov.in/content/transportportal/en/metro/News/past-news.html",
+      "label": "Jaipur Metro — Past News",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "jaipur"
+      ]
+    },
+    {
+      "source": "https://upeida.up.gov.in/en/news",
+      "label": "UPEIDA — News | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://urbantransportnews.com/",
+      "label": "urbantransportnews.com",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://vpt.shipping.gov.in/",
+      "label": "Visakhapatnam Port Authority — News & Tenders",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "visakhapatnam"
+      ]
+    },
+    {
+      "source": "https://www.adaniairports.com/media-centre",
+      "label": "Adani Airports — Media Centre",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "ahmedabad",
+        "guwahati",
+        "jaipur",
+        "lucknow",
+        "mangalore",
+        "mumbai"
+      ]
+    },
+    {
+      "source": "https://www.bda.org.in",
+      "label": "Bhopal Development Authority | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "bhopal"
+      ]
+    },
+    {
+      "source": "https://www.eldecogroup.com/investor/eldeco-housing-industries-ltd/investor-relations",
+      "label": "Eldeco Group — Investor Relations",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "lucknow",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.hindustantimes.com/topic/greater-noida-authority/news",
+      "label": "noida",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.hindustantimes.com/topic/jewar-airport/news",
+      "label": "noida",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.hindustantimes.com/topic/noida-authority/news",
+      "label": "noida",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.hsvphry.org.in",
+      "label": "HSVP | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.idaindore.org",
+      "label": "Indore Development Authority | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "indore"
+      ]
+    },
+    {
+      "source": "https://www.jnport.gov.in/page/press-release/NGE5SGlDdCtpOEdnRWphM1JlWGJLQT09/?media_id=1",
+      "label": "JNPA — Press Releases",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "mumbai",
+        "navi_mumbai",
+        "raigad"
+      ]
+    },
+    {
+      "source": "https://www.mahametro.org",
+      "label": "Maha Metro | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "nagpur",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.noidaauthority.in",
+      "label": "NOIDA Authority | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.pib.gov.in/Allrel.aspx",
+      "label": "PIB — All Releases | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.pib.gov.in/ViewRss.aspx?lang=1&reg=1",
+      "label": "PIB — RSS | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.pmrda.gov.in/en/pmrda-news",
+      "label": "PMRDA — News | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.pmrda.gov.in/en/press-release",
+      "label": "PMRDA — Press Releases | P1",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.pmrda.gov.in/en/tender-notice/",
+      "label": "PMRDA — Tender Notice",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.pppinindia.gov.in/",
+      "label": "PPP in India",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.pppinindia.gov.in/goverment_infrastructure_projects_ppp",
+      "label": "PPP India — Government Infrastructure Projects",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.pppinindia.gov.in/pppac-statewises/pppac-projects-list_Across-India",
+      "label": "PPP India — PPPAC Projects List",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-real-estate-investment-trusts-reits-_95232.html",
+      "label": "SEBI — 2025 REIT Master Circular",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=1&ssid=6",
+      "label": "SEBI — REIT/InvIT Master Circulars",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.suratmunicipal.gov.in/Information/News",
+      "label": "Surat Municipal Corporation — News & Updates",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "surat"
+      ]
+    },
+    {
+      "source": "https://www.vocport.gov.in/",
+      "label": "V.O. Chidambaranar Port Authority — What's New & Tenders",
+      "queueClass": "P0B_AUTHORITY_EXTRACTION",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "thoothukudi"
+      ]
+    },
+    {
+      "source": "https://ajmera.com",
+      "label": "Ajmera Realty | P2",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "ahmedabad",
+        "bangalore",
+        "mumbai"
+      ]
+    },
+    {
+      "source": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction",
+      "label": "economictimes.indiatimes.com",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://economictimes.indiatimes.com/topic/faridabad-realty",
+      "label": "Economic Times — Faridabad Realty Topic | P2",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "faridabad"
+      ]
+    },
+    {
+      "source": "https://hginfra.com/announcements.php",
+      "label": "H.G. Infra — Announcements",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://hginfra.com/investors-presentation.php",
+      "label": "H.G. Infra — Investor Presentations",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://hilifebuilders.in/feed",
+      "label": "Hi-Life Builders Kerala Feed | Regional P2",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "ernakulam",
+        "kochi",
+        "thrissur"
+      ]
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/videostories",
+      "label": "ETInfra — Video Stories | P1",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/webstories",
+      "label": "ETInfra — Web Stories | P1",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/amp/tag/greater%2Bnoida",
+      "label": "noida",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/commercial",
+      "label": "noida",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/lateststories",
+      "label": "ETRealty — Latest Stories | P1",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/lighting",
+      "label": "ETRealty — Lighting | P1",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/lighting/commercial-lighting",
+      "label": "ETRealty — Commercial Lighting | P1",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/lighting/consumer-lighting",
+      "label": "ETRealty — Consumer Lighting | P1",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/lighting/indoor-lighting",
+      "label": "ETRealty — Indoor Lighting | P1",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/videostories",
+      "label": "ETRealty — Video Stories | P1",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/webstories",
+      "label": "ETRealty — Web Stories | P1",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/tag/faridabad",
+      "label": "faridabad",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "faridabad"
+      ]
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/tag/jewar",
+      "label": "noida",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/tag/yamuna%2Bexpressway",
+      "label": "noida",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/tag/yeida",
+      "label": "noida",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://realtynmore.com/latest-news/",
+      "label": "realtynmore.com",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://realtynxt.com/",
+      "label": "realtynxt.com",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://realtyquarter.com/feed/",
+      "label": "realtyquarter.com",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://savemax.in/blogs/feed",
+      "label": "Save Max Property Blog Feed | National Property P2",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://smartworlddevelopers.com/media",
+      "label": "smartworlddevelopers.com",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://surajestate.com/investor-corner/",
+      "label": "Suraj Estate Developers — Investor Corner",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "mumbai"
+      ]
+    },
+    {
+      "source": "https://surajestate.com/investor-relations/",
+      "label": "Suraj Estate Developers — Investor Relations",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "mumbai"
+      ]
+    },
+    {
+      "source": "https://tatarealty.in/newsroom",
+      "label": "Tata Realty — Newsroom",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "mumbai",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://thepropertytimes.in/feed/",
+      "label": "The Property Times Real Estate Feed | National Property P2",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://torbitrealty.com/category/news/city-updates/gurugram/",
+      "label": "gurugram",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "gurugram"
+      ]
+    },
+    {
+      "source": "https://updatesonproperty.com/rss/category/latest-news",
+      "label": "Updates On Property Latest News RSS | National Property P2",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.adanirealty.com/news-and-media",
+      "label": "Adani Realty | P1",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "ahmedabad",
+        "gandhinagar",
+        "gurugram",
+        "mumbai",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.aparnaconstructions.com/aparna-news",
+      "label": "Aparna Constructions | P1",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "hyderabad"
+      ]
+    },
+    {
+      "source": "https://www.assetzproperty.com/investors",
+      "label": "Assetz Property — Investors",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bangalore"
+      ]
+    },
+    {
+      "source": "https://www.constructionworld.in/latest-construction-news/real-estate-news",
+      "label": "constructionworld.in",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.experion.co/media",
+      "label": "Experion Developers — Media",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "amritsar",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "lucknow",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.financialexpress.com/business/infrastructure",
+      "label": "Financial Express — Infrastructure | P2",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.grinfra.com/intimations-under-regulation-30/",
+      "label": "G R Infraprojects — Regulation 30",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.grinfra.com/media-coverage/",
+      "label": "G R Infraprojects — Media Coverage",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.indiapropertydekho.com/blog/feed/",
+      "label": "India Property Dekho Blog Feed | National Property P2",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.irb.co.in/home/disclosurescorp-announcements/",
+      "label": "IRB Infrastructure — Corporate Announcements",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.irb.co.in/home/press-release/",
+      "label": "IRB Infrastructure — Press Releases",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.jll.co.in/en/newsroom",
+      "label": "JLL India Property Newsroom | National Property P2",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.knrcl.com/investors_presentation.html",
+      "label": "KNR Constructions — Investor Presentations",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.koltepatil.com/news-media/media-coverage",
+      "label": "Kolte-Patil Developers | P1",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "bangalore",
+        "mumbai",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.lntrealty.com/news-blogs/",
+      "label": "L&T Realty — News & Blogs",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "mumbai",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.panchshil.com/media",
+      "label": "Panchshil Realty — Media",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.pncinfratech.com/notice.html",
+      "label": "PNC Infratech — Notices & Intimations",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.pncinfratech.com/press-releases.html",
+      "label": "PNC Infratech — Press Releases",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.prestigeconstructions.com/news",
+      "label": "Prestige Group — News | P1",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "hyderabad",
+        "mumbai",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.puriconstructions.com/",
+      "label": "puriconstructions.com",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.puriconstructions.com/media",
+      "label": "Puri Constructions — Media",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "noida",
+        "puri"
+      ]
+    },
+    {
+      "source": "https://www.sunteckindia.com/investor-relations",
+      "label": "Sunteck Realty — Investor Relations",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "mumbai"
+      ]
+    },
+    {
+      "source": "https://www.sunteckindia.com/media",
+      "label": "Sunteck Realty — Media",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "mumbai"
+      ]
+    },
+    {
+      "source": "https://www.track2realty.track2media.com/",
+      "label": "track2realty.track2media.com",
+      "queueClass": "P1_HIGH_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://aiforera.org/publications",
+      "label": "AIFORERA — Publications | P1",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://aiforera.org/publications/public_notice",
+      "label": "AIFORERA — Public Notices | P1",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://bptpltd.com/updates/",
+      "label": "BPTP Limited — Updates | P1",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "faridabad",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://credai.org/media/press-release",
+      "label": "CREDAI — Press Releases | P1",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://in.emaar.com/en/media/",
+      "label": "in.emaar.com",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://indianexpress.com/section/business/aviation/",
+      "label": "Indian Express — Aviation | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://indianexpress.com/section/business/market/",
+      "label": "Indian Express — Market | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/",
+      "label": "Indian Express — Cities | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "agartala",
+        "agra",
+        "ahmednagar",
+        "ajmer",
+        "akola",
+        "aligarh",
+        "allahabad",
+        "alwar",
+        "ambala",
+        "amravati",
+        "amritsar",
+        "anand",
+        "anantapur",
+        "asansol",
+        "aurangabad",
+        "avadi",
+        "balasore",
+        "banaskantha",
+        "barabanki",
+        "bardoli",
+        "bareilly",
+        "barmer",
+        "beed",
+        "belgaum",
+        "berhampur",
+        "betul",
+        "bharuch",
+        "bhatinda",
+        "bhavnagar",
+        "bhilai",
+        "bhilwara",
+        "bhimavaram",
+        "bhiwadi",
+        "bikaner",
+        "bilaspur",
+        "burhanpur",
+        "calicut",
+        "chandrapur",
+        "chhindwara",
+        "chittoor",
+        "coimbatore",
+        "cuddalore",
+        "cuttack",
+        "daman_and_diu",
+        "damoh",
+        "delhi_ncr",
+        "dewas",
+        "dhanbad",
+        "dholera",
+        "dhule",
+        "dibrugarh",
+        "dindigul",
+        "durg",
+        "durgapur",
+        "eluru",
+        "ernakulam",
+        "erode",
+        "faridabad",
+        "firozabad",
+        "gandhinagar",
+        "ghaziabad",
+        "goa",
+        "golaghat",
+        "gorakhpur",
+        "gujarat",
+        "gurugram",
+        "guwahati",
+        "gwalior",
+        "hanumangarh",
+        "hapur",
+        "haridwar",
+        "hoshiarpur",
+        "hosur",
+        "howrah",
+        "hubli",
+        "jabalpur",
+        "jalandhar",
+        "jalgaon",
+        "jalna",
+        "jamshedpur",
+        "jhalawar",
+        "jhansi",
+        "jodhpur",
+        "jorhat",
+        "junagadh",
+        "kadapa",
+        "kakinada",
+        "kalol",
+        "kamrup",
+        "kanpur",
+        "karimnagar",
+        "karnal",
+        "karur",
+        "khammam",
+        "khandwa",
+        "khargone",
+        "kheda",
+        "kochi",
+        "kolhapur",
+        "korba",
+        "kota",
+        "kota_chhattisgarh",
+        "krishna",
+        "kurnool",
+        "kurukshetra",
+        "kutch",
+        "latur",
+        "ludhiana",
+        "madurai",
+        "mahabubnagar",
+        "mancherial",
+        "mandsaur",
+        "mangalore",
+        "marigaon",
+        "mathura",
+        "meerut",
+        "moradabad",
+        "mumbai",
+        "mysore",
+        "nagaon",
+        "nagaur",
+        "nagpur",
+        "nalbari",
+        "nalgonda",
+        "namakkal",
+        "nanded",
+        "nashik",
+        "navi_mumbai",
+        "navsari",
+        "neemrana",
+        "neemuch",
+        "nellore",
+        "new_delhi",
+        "nizamabad",
+        "noida",
+        "osmanabad",
+        "palakkad",
+        "palghar",
+        "pali",
+        "palwal",
+        "panchkula",
+        "panipat",
+        "patan",
+        "patiala",
+        "pondicherry",
+        "pudukkottai",
+        "puri",
+        "raigad",
+        "raipur",
+        "rajahmundry",
+        "rajkot",
+        "rajnandgaon",
+        "ranchi",
+        "ratlam",
+        "ratnagiri",
+        "rewa",
+        "rewari",
+        "rishikesh",
+        "rohtak",
+        "roorkee",
+        "rourkela",
+        "rudrapur",
+        "sabarkantha",
+        "sagar",
+        "salem",
+        "sambalpur",
+        "sangli",
+        "sangrur",
+        "satna",
+        "sehore",
+        "seoni",
+        "shimla",
+        "sikar",
+        "silchar",
+        "siliguri",
+        "silvassa",
+        "sindhudurg",
+        "sirohi",
+        "solan",
+        "solapur",
+        "sonipat",
+        "sri_ganganagar",
+        "srikakulam",
+        "surat",
+        "surendranagar",
+        "suryapet",
+        "tambaram",
+        "tezpur",
+        "thanjavur",
+        "thoothukudi",
+        "thrissur",
+        "tinsukia",
+        "tiruchirappalli",
+        "tirunelveli",
+        "tirupati",
+        "tiruppur",
+        "tiruvannamalai",
+        "tonk",
+        "trivandrum",
+        "udaipur",
+        "udupi",
+        "ujjain",
+        "vadodara",
+        "valsad",
+        "vapi",
+        "varanasi",
+        "vellore",
+        "vijayawada",
+        "visakhapatnam",
+        "vizianagaram",
+        "vrindavan",
+        "warangal",
+        "wardha",
+        "west_godavari",
+        "yamunanagar",
+        "yavatmal"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/bangalore/",
+      "label": "bangalore",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "bangalore"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/baroda/",
+      "label": "vadodara",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "vadodara"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/bhopal/",
+      "label": "bhopal",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "bhopal"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/bhubaneswar/",
+      "label": "bhubaneswar",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "bhubaneswar"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/chandigarh/",
+      "label": "chandigarh",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "chandigarh"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/chennai/",
+      "label": "chennai",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "chennai"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/delhi/",
+      "label": "delhi, new_delhi, delhi_ncr",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "delhi",
+        "delhi_ncr",
+        "new_delhi"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/goa/",
+      "label": "goa",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "goa"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/guwahati/",
+      "label": "guwahati",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "guwahati"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/hyderabad/",
+      "label": "hyderabad",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "hyderabad"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/jaipur/",
+      "label": "jaipur",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "jaipur"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/jalandhar/",
+      "label": "jalandhar",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "jalandhar"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/jammu/",
+      "label": "Indian Express — Jammu | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/kolkata/",
+      "label": "kolkata",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "kolkata"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/lucknow/",
+      "label": "lucknow",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "lucknow"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/ludhiana/",
+      "label": "ludhiana",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "ludhiana"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/mangaluru/",
+      "label": "mangalore",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "mangalore"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/mumbai/",
+      "label": "thane, kalyan_dombivli, mumbai",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "kalyan_dombivli",
+        "mumbai",
+        "thane"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/mysuru/",
+      "label": "Indian Express — Mysuru | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/nagpur/",
+      "label": "Indian Express — Nagpur | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "nagpur"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/nashik/",
+      "label": "Indian Express — Nashik | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "nashik"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/navi-mumbai/",
+      "label": "Indian Express — Navi Mumbai | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "mumbai",
+        "navi_mumbai"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/panchkula/",
+      "label": "Indian Express — Panchkula | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "panchkula"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/patiala/",
+      "label": "Indian Express — Patiala | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "patiala"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/patna/",
+      "label": "Indian Express — Patna | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "patna"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/pune/",
+      "label": "pune",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "pune"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/rajkot/",
+      "label": "rajkot",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "rajkot"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/sas-nagar-mohali/",
+      "label": "mohali",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "mohali"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/shimla/",
+      "label": "shimla",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "shimla"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/srinagar/",
+      "label": "Indian Express — Srinagar | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/surat/",
+      "label": "surat",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "surat"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/thane/",
+      "label": "Indian Express — Thane | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://indianexpress.com/section/india/",
+      "label": "Indian Express — India | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://indianexpress.com/section/north-east-india/",
+      "label": "Indian Express — North East India | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://indianexpress.com/section/north-east-india/assam/",
+      "label": "Indian Express — Assam | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "dibrugarh",
+        "golaghat",
+        "jorhat",
+        "kamrup",
+        "marigaon",
+        "nagaon",
+        "nalbari",
+        "silchar",
+        "tezpur",
+        "tinsukia"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/north-east-india/tripura/",
+      "label": "Indian Express — Tripura | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "agartala"
+      ]
+    },
+    {
+      "source": "https://investor.clint.com.sg/newsroom.html",
+      "label": "CapitaLand India Trust — Announcements",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "hyderabad",
+        "mumbai",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://investors.larsentoubro.com/news.aspx",
+      "label": "Larsen & Toubro — Exchange Announcements",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://m3mindia.com/media",
+      "label": "m3mindia.com",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://maharashtratimes.com/business/real-estate-news/articlelist/2429626.cms",
+      "label": "Maharashtra Times Real Estate Marathi | Regional P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "ahmednagar",
+        "akola",
+        "amravati",
+        "aurangabad",
+        "beed",
+        "chandrapur",
+        "dhule",
+        "jalgaon",
+        "jalna",
+        "kolhapur",
+        "latur",
+        "mumbai",
+        "nagpur",
+        "nanded",
+        "nashik",
+        "navi_mumbai",
+        "osmanabad",
+        "palghar",
+        "pune",
+        "raigad",
+        "ratnagiri",
+        "sangli",
+        "sindhudurg",
+        "solapur",
+        "wardha",
+        "yavatmal"
+      ]
+    },
+    {
+      "source": "https://maxestates.in/investors",
+      "label": "Max Estates — Investors | P1",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://mchi.net/newsletters/",
+      "label": "CREDAI-MCHI — Newsletters",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "mumbai"
+      ]
+    },
+    {
+      "source": "https://msrdc.in",
+      "label": "MSRDC | P1",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://navaraipuratalnagar.com",
+      "label": "Nava Raipur Atal Nagar Vikas Pradhikaran | P1",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "raipur"
+      ]
+    },
+    {
+      "source": "https://ncrpb.nic.in",
+      "label": "NCR Planning Board | P1",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://ncrtc.in/",
+      "label": "ncrtc.in",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://residex.nhbonline.org.in/",
+      "label": "NHB RESIDEX",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://runwalenterprises.com/load-news",
+      "label": "Runwal Enterprises — Newsroom",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "mumbai"
+      ]
+    },
+    {
+      "source": "https://sumadhuragroup.com",
+      "label": "Sumadhura Group | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "hyderabad"
+      ]
+    },
+    {
+      "source": "https://swarajyamag.com/stories.rss",
+      "label": "swarajyamag.com",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/city/noida",
+      "label": "noida",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://vijaykarnataka.com/real-estate/articlelist/133644218.cms",
+      "label": "Vijaya Karnataka Kannada Real Estate | Regional P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.abacorp.in",
+      "label": "noida",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.business-standard.com/topic/real-estate",
+      "label": "business-standard.com",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.centralpark.in/media.php",
+      "label": "centralpark.in",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.hindustantimes.com/cities/delhi-news",
+      "label": "delhi",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "delhi"
+      ]
+    },
+    {
+      "source": "https://www.hindustantimes.com/cities/mumbai-news",
+      "label": "thane, kalyan_dombivli",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "kalyan_dombivli",
+        "thane"
+      ]
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/dehradun-news/rssfeed.xml",
+      "label": "dehradun",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "dehradun"
+      ]
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/faridabad-news/rssfeed.xml",
+      "label": "faridabad",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "faridabad"
+      ]
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/jaipur-news/rssfeed.xml",
+      "label": "jaipur",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "jaipur"
+      ]
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/kolkata-news/rssfeed.xml",
+      "label": "kolkata",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "kolkata"
+      ]
+    },
+    {
+      "source": "https://www.hindustantimes.com/real-estate",
+      "label": "hindustantimes.com",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.hindustantimes.com/topic/faridabad/news",
+      "label": "faridabad",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "faridabad"
+      ]
+    },
+    {
+      "source": "https://www.hindustantimes.com/topic/greater-noida/news",
+      "label": "noida",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.hindustantimes.com/topic/noida/news",
+      "label": "noida",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.hindustantimes.com/topic/yamuna-expressway/news",
+      "label": "noida",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.hiranandani.com/media-press-release.aspx",
+      "label": "Hiranandani Group | P1",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "mumbai"
+      ]
+    },
+    {
+      "source": "https://www.indospace.in/indospace-news/",
+      "label": "IndoSpace — Latest News",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.jll.co.in/en/trends-and-insights/research",
+      "label": "JLL India — Research | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.kalpataru.com/investor-corner",
+      "label": "Kalpataru — Investor Corner",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "hyderabad",
+        "mumbai",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.kalpataru.com/press",
+      "label": "Kalpataru — Press",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "hyderabad",
+        "mumbai",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.kiadb.org",
+      "label": "KIADB | P1",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.naredco.in/industry-news",
+      "label": "NAREDCO — Industry News | P2",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.nexusselecttrust.com/regulatory-filings",
+      "label": "Nexus Select Trust — Regulatory Filings",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.nhsrcl.in",
+      "label": "NHSRCL | P1",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "gujarat"
+      ]
+    },
+    {
+      "source": "https://www.puravankara.com/investors",
+      "label": "Puravankara — Investors | P1",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "coimbatore",
+        "goa",
+        "hyderabad",
+        "kochi",
+        "mangalore",
+        "mumbai",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.rustomjee.com/newsroom",
+      "label": "Rustomjee | P1",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "mumbai"
+      ]
+    },
+    {
+      "source": "https://www.signatureglobal.in/",
+      "label": "signatureglobal.in",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.signatureglobal.in/financials",
+      "label": "Signature Global — Financials | P1",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.signatureglobal.in/mediacoverage/page/1",
+      "label": "Signature Global — Media | P1",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "EMPTY",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.tarc.in/dis-46-pt-2025-26",
+      "label": "TARC — Regulation 30 Disclosures",
+      "queueClass": "P2_REVIEW_EMPTY",
+      "beforeState": "NEEDS_REVIEW",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://acegroupindia.com/media-presence.php",
+      "label": "ACE Group | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://aipl.com/media-coverage",
+      "label": "AIPL | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://apiic.in",
+      "label": "APIIC | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://apiic.in/downloads-tenders/",
+      "label": "APIIC — Downloads & Tenders",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://apiic.in/old-tenders/",
+      "label": "APIIC — Old Tenders",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://birlaestatesltd.com/updates/",
+      "label": "Birla Estates — Updates | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "mumbai",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://chennaidreamhomes.com/real-estate-blog",
+      "label": "Chennai Dream Homes Real Estate Blog | Regional P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "chennai"
+      ]
+    },
+    {
+      "source": "https://chennaiproperties.in/blog",
+      "label": "Chennai Properties Blog | Regional P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "chennai"
+      ]
+    },
+    {
+      "source": "https://conscient.in/news-and-awards",
+      "label": "Conscient | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "goa",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://countygroup.in/",
+      "label": "noida",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://cpc.parivesh.nic.in/onlinesearch_dashboard.aspx?pid=tornotissuedyet&status=NA",
+      "label": "PARIVESH — Project / Clearance Search",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://credai.org/media/news-updates",
+      "label": "CREDAI — News Updates | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://dfccil.com",
+      "label": "DFCCIL | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://economictimes.indiatimes.com/news/company/corporate-trends",
+      "label": "economictimes.indiatimes.com",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://economictimes.indiatimes.com/rssfeeds/13357019.cms",
+      "label": "economictimes.indiatimes.com",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://embassygroup.com/news-media",
+      "label": "Embassy Group | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "hyderabad",
+        "mumbai",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://english.bmrc.co.in",
+      "label": "BMRCL | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bangalore"
+      ]
+    },
+    {
+      "source": "https://homekraft.in/media",
+      "label": "ATS HomeKraft | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "ghaziabad",
+        "gurugram",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://in.esr.com/newsroom",
+      "label": "ESR India — Newsroom",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://in.esr.com/newsroom/news",
+      "label": "ESR India — News",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "hyderabad",
+        "mumbai",
+        "noida",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/business/",
+      "label": "Indian Express — Business | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://indianexpress.com/section/business/banking-and-finance/",
+      "label": "Indian Express — Banking & Finance | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://indianexpress.com/section/business/companies/",
+      "label": "Indian Express — Companies | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://indianexpress.com/section/business/economy/",
+      "label": "Indian Express — Economy | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/ahmedabad/",
+      "label": "ahmedabad",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "ahmedabad"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/amritsar/",
+      "label": "amritsar",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "amritsar"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/cities/thiruvananthapuram/",
+      "label": "Indian Express — Thiruvananthapuram | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "calicut",
+        "ernakulam",
+        "kochi",
+        "palakkad",
+        "thrissur",
+        "trivandrum"
+      ]
+    },
+    {
+      "source": "https://indianexpress.com/section/governance/",
+      "label": "Indian Express — Governance | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://maxestates.in/news_and_media",
+      "label": "maxestates.in",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://maxestates.in/news-and-media",
+      "label": "Max Estates — News & Media | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://mchi.net/",
+      "label": "CREDAI-MCHI",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "mumbai"
+      ]
+    },
+    {
+      "source": "https://mddaonline.in",
+      "label": "MDDA | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "dehradun"
+      ]
+    },
+    {
+      "source": "https://naredco.in/naredco-news",
+      "label": "NAREDCO — In News | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://navimumbaihouses.com/blog/feed",
+      "label": "Navi Mumbai Houses Blog Feed | Regional P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "mumbai",
+        "navi_mumbai",
+        "raigad"
+      ]
+    },
+    {
+      "source": "https://ncrtc.in/ncrtc-updates",
+      "label": "NCRTC — Updates | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "ghaziabad",
+        "gurugram",
+        "meerut",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://news.railanalysis.com/",
+      "label": "news.railanalysis.com",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://propnewstime.com/",
+      "label": "propnewstime.com",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://propnewstime.com/sub-category/location/Faridabad",
+      "label": "PropNewsTime — Faridabad Location | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "faridabad"
+      ]
+    },
+    {
+      "source": "https://proppuls.in/",
+      "label": "Proppuls Hyderabad Real Estate News | Regional P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "hyderabad"
+      ]
+    },
+    {
+      "source": "https://publish.tribuneindia.com/city/amritsar/feed",
+      "label": "The Tribune — Amritsar | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "amritsar"
+      ]
+    },
+    {
+      "source": "https://publish.tribuneindia.com/city/bathinda/feed",
+      "label": "The Tribune — Bathinda | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bhatinda"
+      ]
+    },
+    {
+      "source": "https://publish.tribuneindia.com/city/chandigarh/feed",
+      "label": "The Tribune — Chandigarh | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "chandigarh",
+        "mohali"
+      ]
+    },
+    {
+      "source": "https://publish.tribuneindia.com/city/delhi/feed",
+      "label": "The Tribune — Delhi | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://publish.tribuneindia.com/city/jalandhar/feed",
+      "label": "The Tribune — Jalandhar | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "jalandhar"
+      ]
+    },
+    {
+      "source": "https://publish.tribuneindia.com/city/ludhiana/feed",
+      "label": "The Tribune — Ludhiana | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "ludhiana"
+      ]
+    },
+    {
+      "source": "https://publish.tribuneindia.com/city/patiala/feed",
+      "label": "The Tribune — Patiala | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "patiala"
+      ]
+    },
+    {
+      "source": "https://publish.tribuneindia.com/newscategory/business/feed",
+      "label": "The Tribune — Business | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://publish.tribuneindia.com/state/chhattisgarh/feed",
+      "label": "The Tribune — Chhattisgarh | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "bhilai",
+        "bilaspur",
+        "durg",
+        "korba",
+        "kota",
+        "kota_chhattisgarh",
+        "raipur",
+        "rajnandgaon"
+      ]
+    },
+    {
+      "source": "https://publish.tribuneindia.com/state/haryana/feed",
+      "label": "The Tribune — Haryana | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "ambala",
+        "faridabad",
+        "karnal",
+        "kurukshetra",
+        "palwal",
+        "panipat",
+        "rewari",
+        "rohtak",
+        "sonipat",
+        "yamunanagar"
+      ]
+    },
+    {
+      "source": "https://publish.tribuneindia.com/state/himachal/feed",
+      "label": "The Tribune — Himachal Pradesh | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "solan"
+      ]
+    },
+    {
+      "source": "https://publish.tribuneindia.com/state/madhya-pradesh/feed",
+      "label": "The Tribune — Madhya Pradesh | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "betul",
+        "burhanpur",
+        "chhindwara",
+        "damoh",
+        "dewas",
+        "gwalior",
+        "indore",
+        "jabalpur",
+        "khandwa",
+        "khargone",
+        "mandsaur",
+        "neemuch",
+        "ratlam",
+        "rewa",
+        "sagar",
+        "satna",
+        "sehore",
+        "seoni",
+        "ujjain"
+      ]
+    },
+    {
+      "source": "https://publish.tribuneindia.com/state/punjab/feed",
+      "label": "The Tribune — Punjab | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "bhatinda",
+        "hoshiarpur",
+        "sangrur"
+      ]
+    },
+    {
+      "source": "https://publish.tribuneindia.com/state/rajasthan/feed",
+      "label": "The Tribune — Rajasthan | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "ajmer",
+        "alwar",
+        "barmer",
+        "bhilwara",
+        "bhiwadi",
+        "bikaner",
+        "hanumangarh",
+        "jhalawar",
+        "jodhpur",
+        "kota",
+        "nagaur",
+        "neemrana",
+        "pali",
+        "sikar",
+        "sirohi",
+        "sri_ganganagar",
+        "tonk",
+        "udaipur"
+      ]
+    },
+    {
+      "source": "https://publish.tribuneindia.com/state/uttar-pradesh/feed",
+      "label": "The Tribune — Uttar Pradesh | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "agra",
+        "aligarh",
+        "barabanki",
+        "bareilly",
+        "firozabad",
+        "ghaziabad",
+        "gorakhpur",
+        "hapur",
+        "jhansi",
+        "mathura",
+        "meerut",
+        "moradabad",
+        "vrindavan"
+      ]
+    },
+    {
+      "source": "https://publish.tribuneindia.com/state/uttarakhand/feed",
+      "label": "The Tribune — Uttarakhand | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "dehradun",
+        "haridwar",
+        "rishikesh",
+        "roorkee",
+        "rudrapur"
+      ]
+    },
+    {
+      "source": "https://rajapushpa.in/news",
+      "label": "Rajapushpa Properties | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "hyderabad"
+      ]
+    },
+    {
+      "source": "https://squarefeatindia.com/feed",
+      "label": "SquareFeat Maharashtra Real Estate Feed | Regional P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "mumbai",
+        "navi_mumbai",
+        "pune",
+        "raigad"
+      ]
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/real-estate/news",
+      "label": "timesofindia.indiatimes.com",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/-2128816011.cms",
+      "label": "Times of India — Hyderabad | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "hyderabad"
+      ]
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/-2128816762.cms",
+      "label": "Times of India — Chandigarh | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "chandigarh"
+      ]
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/-2128819658.cms",
+      "label": "Times of India — Lucknow | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "lucknow"
+      ]
+    },
+    {
+      "source": "https://tv9gujarati.com/topic/real-estate",
+      "label": "TV9 Gujarati Real Estate | Regional P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.aba-corp.com/",
+      "label": "noida",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.acegroupindia.com",
+      "label": "noida",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.amarujala.com/rss/faridabad.xml",
+      "label": "Amar Ujala Faridabad Hindi RSS | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "faridabad"
+      ]
+    },
+    {
+      "source": "https://www.amarujala.com/rss/real-estate.xml",
+      "label": "Amar Ujala Real Estate Hindi RSS | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.anantrajlimited.com/investors",
+      "label": "Anant Raj — Investors",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.anantrajlimited.com/media-center",
+      "label": "Anant Raj — Media Center",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.arvindsmartspaces.com/investors/compliances",
+      "label": "Arvind SmartSpaces — Compliances | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "ahmedabad",
+        "bangalore",
+        "gandhinagar",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.birlaestates.com/media-centre.aspx",
+      "label": "birlaestates.com",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.bptp.com/media",
+      "label": "bptp.com",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.brigadegroup.com/investor",
+      "label": "Brigade Group — Investor Relations",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "hyderabad",
+        "kochi"
+      ]
+    },
+    {
+      "source": "https://www.brookfieldindiareit.in/stock-exchange-filings#Stock-Exchange-Filings",
+      "label": "Brookfield India REIT — Stock Exchange Filings",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "kolkata",
+        "mumbai",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.bseindia.com/corporates.html",
+      "label": "BSE — Corporate Filings | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.bseindia.com/corporates/ann.html",
+      "label": "BSE — Corporate Announcements | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.businessoffood.in/category/food-service/",
+      "label": "businessoffood.in",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.casagrand.co.in/investor-relation/",
+      "label": "Casagrand — Investor Relations",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "coimbatore",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "hyderabad",
+        "noida",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.cbre.co.in/insights",
+      "label": "CBRE India — Insights | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "BLOCKED",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.cnbctv18.com/real-estate/",
+      "label": "cnbctv18.com",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.colliers.com/en-in/research",
+      "label": "Colliers India — Research | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "BLOCKED",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.credaincr.org/news",
+      "label": "CREDAI NCR — News",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.credaincr.org/press_release",
+      "label": "CREDAI NCR — Press Releases",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.cushmanwakefield.com/en/india/insights",
+      "label": "Cushman & Wakefield India — Insights | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.dlf.in/investor",
+      "label": "DLF — Investor Zone",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.dlf.in/media",
+      "label": "DLF — Media Centre | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "faridabad",
+        "goa",
+        "gurugram",
+        "mumbai",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.dlf.in/press-releases",
+      "label": "DLF — Press Releases | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "faridabad",
+        "goa",
+        "gurugram",
+        "mumbai",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.drahomes.in/blog/feed/",
+      "label": "DRA Homes Chennai Blog | Regional P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "chennai"
+      ]
+    },
+    {
+      "source": "https://www.embassyofficeparks.com/investors/regulatory-filings/",
+      "label": "Embassy Office Parks REIT — Regulatory Filings",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "mumbai",
+        "noida",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.embassyofficeparks.com/newsroom/press/",
+      "label": "Embassy Office Parks REIT — Press Releases",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "mumbai",
+        "noida",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.gaursonsindia.com",
+      "label": "noida",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.gaursonsindia.com/media-centre.php",
+      "label": "Gaurs Group | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "ghaziabad",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.giftgujarat.in",
+      "label": "GIFT City | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "gandhinagar",
+        "gujarat"
+      ]
+    },
+    {
+      "source": "https://www.godrejproperties.com/media/press",
+      "label": "Godrej Properties — Press Releases | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.gulshangroup.com/",
+      "label": "noida",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.hindustantimes.com/cities/noida-news",
+      "label": "noida",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.hindustantimes.com/cities/patna-news",
+      "label": "patna",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "patna"
+      ]
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/business/rssfeed.xml",
+      "label": "Hindustan Times — Business | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/chandigarh-news/rssfeed.xml",
+      "label": "chandigarh",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "chandigarh"
+      ]
+    },
+    {
+      "source": "https://www.hindustantimes.com/topic/yeida/news",
+      "label": "noida",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.hsiidc.org.in/",
+      "label": "HSIIDC | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.knightfrank.co.in/research",
+      "label": "Knight Frank India — Research | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.krahejacorp.com/newsroom",
+      "label": "K Raheja Corp — Newsroom",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "goa",
+        "hyderabad",
+        "mumbai",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.livehindustan.com/ncr/faridabad",
+      "label": "Live Hindustan Faridabad Hindi News | Regional P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "faridabad"
+      ]
+    },
+    {
+      "source": "https://www.livehindustan.com/ncr/gurugram",
+      "label": "Live Hindustan Gurugram Hindi News | Regional P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "gurugram"
+      ]
+    },
+    {
+      "source": "https://www.livehindustan.com/ncr/noida",
+      "label": "Live Hindustan Noida Hindi News | Regional P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.livemint.com/rss/AIRSS",
+      "label": "Livemint — AI | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.livemint.com/rss/budgetRSS",
+      "label": "Livemint — Budget | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.livemint.com/rss/companiesRSS",
+      "label": "Livemint — Companies | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.livemint.com/rss/industryRSS",
+      "label": "Livemint — Industry | P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.lodhagroup.in/investor-relations/shareholder-information",
+      "label": "Lodha — Investor Relations | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "mumbai",
+        "navi_mumbai",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.lodhagroup.in/newsroom",
+      "label": "Lodha — Newsroom | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "mumbai",
+        "navi_mumbai",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.mahagunindia.com/media",
+      "label": "noida",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.mahagunindia.com/media/press-coverage",
+      "label": "Mahagun Group | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "ghaziabad",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.mahindralifespaces.com/newsroom/media-resources",
+      "label": "Mahindra Lifespaces | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "mumbai",
+        "noida",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.mindspacereit.com/investor-relations/stock-exchange-filings",
+      "label": "Mindspace Business Parks REIT — Stock Exchange Filings",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "chennai",
+        "hyderabad",
+        "mumbai",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.mindspacereit.com/newsroom",
+      "label": "Mindspace Business Parks REIT — Newsroom",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "chennai",
+        "hyderabad",
+        "mumbai",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.moneycontrol.com/news/business/real-estate/",
+      "label": "moneycontrol.com",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.nbccindia.in/webEnglish/announcementNotices/timeline/webEnglish/orderBook",
+      "label": "NBCC — Announcements & Notices",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.nicdc.in/",
+      "label": "NICDC | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.nseindia.com/companies-listing/corporate-filings-announcements",
+      "label": "NSE — Corporate Announcements | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.nseindia.com/companies-listing/corporate-filings-application?param=ROUTE",
+      "label": "NSE — Corporate Filings | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.omaxe.com/",
+      "label": "omaxe.com",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.omaxe.com/investor/other-disclosures",
+      "label": "Omaxe — Other Disclosures | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "indore",
+        "lucknow",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.omaxe.com/media/press-releases",
+      "label": "Omaxe — Press Releases | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "indore",
+        "lucknow",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.outlookmoney.com/topic/real-estate",
+      "label": "outlookmoney.com",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.prateekgroup.com/blog",
+      "label": "noida",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.rpsgroupindia.com/",
+      "label": "rpsgroupindia.com",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.sayahomes.com",
+      "label": "noida",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.shapoorjipallonji.com/Media/Press-Releases",
+      "label": "Shapoorji Pallonji | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "hyderabad",
+        "mumbai",
+        "noida",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.shriramproperties.com/company-announcements",
+      "label": "Shriram Properties — Company Announcements",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "coimbatore",
+        "kolkata",
+        "visakhapatnam"
+      ]
+    },
+    {
+      "source": "https://www.shriramproperties.com/press-release",
+      "label": "Shriram Properties | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "coimbatore",
+        "kolkata",
+        "visakhapatnam"
+      ]
+    },
+    {
+      "source": "https://www.sikka.in",
+      "label": "noida",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.sobha.com/investor-relations",
+      "label": "SOBHA — Investor Relations | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.sobha.com/media-centre/press-release",
+      "label": "SOBHA — Press Releases | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "chennai",
+        "gurugram",
+        "hyderabad",
+        "kochi",
+        "mumbai",
+        "noida",
+        "pune"
+      ]
+    },
+    {
+      "source": "https://www.supertechlimited.com",
+      "label": "noida",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.telanganatribune.com/category/realestate/",
+      "label": "Telangana Tribune Real Estate | Regional P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.tribuneindia.com/topic/real-estate",
+      "label": "tribuneindia.com",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.tvsemerald.com/news",
+      "label": "TVS Emerald | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "bangalore",
+        "chennai"
+      ]
+    },
+    {
+      "source": "https://www.unimarkgroup.com/blog",
+      "label": "Unimark Kolkata Real Estate Blog | Regional P2",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "howrah",
+        "kolkata"
+      ]
+    },
+    {
+      "source": "https://www.vatikacollections.com/public-notice",
+      "label": "Vatika Group | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ]
+    },
+    {
+      "source": "https://www.wbhidcoltd.com",
+      "label": "WBHIDCO | P1",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "EXTRACTION_FAILURE",
+      "cityCodes": [
+        "kolkata"
+      ]
+    },
+    {
+      "source": "https://www.welspunone.com/news-insights/news-articles",
+      "label": "Welspun One — News Articles",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.welspunone.com/news-insights/press-release",
+      "label": "Welspun One — Press Releases",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.whitelandcorp.com",
+      "label": "whitelandcorp.com",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    },
+    {
+      "source": "https://www.whitelandcorporation.com/",
+      "label": "whitelandcorporation.com",
+      "queueClass": "P3_LOW_VALUE",
+      "beforeState": "TRANSPORT_FAILURE",
+      "cityCodes": []
+    }
+  ]
+}
