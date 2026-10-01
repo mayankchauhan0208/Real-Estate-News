@@ -1,0 +1,43 @@
+{
+  "task20": {
+    "TP": 2,
+    "FP": 0,
+    "TN": 67,
+    "FN": 0,
+    "negatives": "15/15",
+    "offtopic": "29/29",
+    "insufficient": "23/23",
+    "negativeControls": "8/8",
+    "dda": true,
+    "yeida": true
+  },
+  "task21": {
+    "unknownLanguageAutoPublish": false,
+    "translationFailureAutoPublish": false,
+    "unicodePreserved": true,
+    "nativeScriptPreserved": true,
+    "mixedLanguageConservative": true,
+    "nativeNumeralsPreserved": true,
+    "crossLanguageDedupeConservative": true,
+    "unsafeSourceGeoFallback": false
+  },
+  "task23": {
+    "TP": 4,
+    "FP": 0,
+    "TN": 14,
+    "FN": 7,
+    "protectedNonPublish": 14,
+    "negatives": "6/6",
+    "offtopic": "2/2",
+    "insufficient": "6/6"
+  },
+  "configuration": {
+    "cities": 234,
+    "sourceRules": 34,
+    "manualSources": 427,
+    "duplicateSourceRows": 0
+  },
+  "dryRunFix": {
+    "sentStateWriteGuard": true
+  }
+}

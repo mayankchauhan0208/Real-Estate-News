@@ -1,0 +1,48 @@
+{
+  "base": "79400a3719ccee226d050ddaf6adeaab5b47be01",
+  "commits": [
+    {
+      "sha": "b3c403f8791983b635ec732675ba475ec8ac8033",
+      "author": "github-actions[bot]",
+      "date": "2026-09-30T12:50:26Z",
+      "subject": "Update hosted admin snapshot [skip ci]",
+      "files": [
+        "admin/static-state.json"
+      ],
+      "purpose": "generated hosted admin snapshot",
+      "classification": "GENERATED_ONLY",
+      "localEquivalent": "No functional source/runtime equivalent; snapshot preserved from remote history.",
+      "conflict": false,
+      "preserve": true
+    },
+    {
+      "sha": "fa756793d9e2d867ee86159e4979fadfb153a5b2",
+      "author": "github-actions[bot]",
+      "date": "2026-09-30T18:52:30Z",
+      "subject": "Update hosted admin snapshot [skip ci]",
+      "files": [
+        "admin/static-state.json"
+      ],
+      "purpose": "generated hosted admin snapshot",
+      "classification": "GENERATED_ONLY",
+      "localEquivalent": "No functional source/runtime equivalent; superseded by the latest remote snapshot.",
+      "conflict": false,
+      "preserve": true
+    },
+    {
+      "sha": "5468b120200196a50c5b0e9254e8fe4ec264cc7d",
+      "author": "github-actions[bot]",
+      "date": "2026-10-01T02:59:32Z",
+      "subject": "Update hosted admin snapshot [skip ci]",
+      "files": [
+        "admin/static-state.json"
+      ],
+      "purpose": "latest generated hosted admin snapshot",
+      "classification": "PRESERVE",
+      "localEquivalent": "No local functional equivalent; latest remote snapshot retained as reconciliation base.",
+      "conflict": false,
+      "preserve": true
+    }
+  ],
+  "allRemoteOnlyChangesPreserved": true
+}

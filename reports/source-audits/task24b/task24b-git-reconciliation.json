@@ -1,0 +1,10 @@
+{
+  "originalCheckpoint": "919ca74",
+  "remoteMain": "5468b120200196a50c5b0e9254e8fe4ec264cc7d",
+  "commonBaseline": "79400a3719ccee226d050ddaf6adeaab5b47be01",
+  "strategy": "created task24b-reconciled from origin/main, merged 919ca74 with --no-ff --no-commit, retained remote admin/static-state.json, then added only Task24B gate/lock/test changes",
+  "finalReconciledSha": "CHECKPOINT_SHA_REPORTED_AFTER_COMMIT",
+  "conflicts": [],
+  "unresolvedDivergence": false,
+  "remoteChangesPreserved": true
+}

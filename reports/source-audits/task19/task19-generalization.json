@@ -1,0 +1,105 @@
+{
+  "method": "Deterministic non-positive holdout: every seventh audited non-positive record, capped at 12; no positive row or URL-specific rule used to design extraction.",
+  "holdout": [
+    {
+      "recordId": "task17-002",
+      "family": "ET_REALTY",
+      "humanLabel": "REJECT_OFF_TOPIC",
+      "title": "Cement capacity set to outpace demand through FY29",
+      "readable": true,
+      "wouldPublish": false,
+      "firstLoss": "RELEVANCE"
+    },
+    {
+      "recordId": "task17-009",
+      "family": "ET_REALTY",
+      "humanLabel": "REJECT_OFF_TOPIC",
+      "title": "Branded residences must deliver long-term value beyond the brand name: Industry leaders",
+      "readable": true,
+      "wouldPublish": false,
+      "firstLoss": "RELEVANCE"
+    },
+    {
+      "recordId": "task17-016",
+      "family": "ET_INFRA",
+      "humanLabel": "REJECT_NEGATIVE",
+      "title": "L&T extends Hyderabad Metro stake sale timeline to December 31",
+      "readable": true,
+      "wouldPublish": true,
+      "firstLoss": "NONE"
+    },
+    {
+      "recordId": "task17-023",
+      "family": "ET_INFRA",
+      "humanLabel": "REJECT_NEGATIVE",
+      "title": "Four-year-old Jal Jeevan Mission water project in Hosanagara set for revival after minister’s intervention",
+      "readable": true,
+      "wouldPublish": false,
+      "firstLoss": "RELEVANCE"
+    },
+    {
+      "recordId": "task17-030",
+      "family": "ET_REALTY",
+      "humanLabel": "REJECT_NEGATIVE",
+      "title": "ED arrests two promoters of Gurugram-based Vatika Group in homebuyers 'fraud' case",
+      "readable": true,
+      "wouldPublish": false,
+      "firstLoss": "RELEVANCE"
+    },
+    {
+      "recordId": "task17-037",
+      "family": "gnida.up.gov.in",
+      "humanLabel": "REJECT_INSUFFICIENT",
+      "title": "Error Page",
+      "readable": false,
+      "wouldPublish": false,
+      "firstLoss": "EXTRACTION"
+    },
+    {
+      "recordId": "task17-044",
+      "family": "cci.gov.in",
+      "humanLabel": "REJECT_INSUFFICIENT",
+      "title": "Competition Commission of India, Government of India",
+      "readable": false,
+      "wouldPublish": false,
+      "firstLoss": "EXTRACTION"
+    },
+    {
+      "recordId": "task17-051",
+      "family": "timesofindia.indiatimes.com",
+      "humanLabel": "REJECT_NEGATIVE",
+      "title": "Why Bengaluru residents are pushing back against Airbnb-style stays in residential neighbourhoods",
+      "readable": true,
+      "wouldPublish": true,
+      "firstLoss": "NONE"
+    },
+    {
+      "recordId": "task17-058",
+      "family": "HINDUSTAN_TIMES",
+      "humanLabel": "REJECT_OFF_TOPIC",
+      "title": "Stray dog menace on PGI campus despite apex court directions",
+      "readable": true,
+      "wouldPublish": false,
+      "firstLoss": "RELEVANCE"
+    },
+    {
+      "recordId": "task17-066",
+      "family": "HINDUSTAN_TIMES",
+      "humanLabel": "REJECT_OFF_TOPIC",
+      "title": "Rajya Sabha polls in UP: How predictable numbers game acquired spicy political flavour",
+      "readable": true,
+      "wouldPublish": false,
+      "firstLoss": "RELEVANCE"
+    }
+  ],
+  "sourceFamilies": [
+    "ET_REALTY",
+    "ET_INFRA",
+    "gnida.up.gov.in",
+    "cci.gov.in",
+    "timesofindia.indiatimes.com",
+    "HINDUSTAN_TIMES"
+  ],
+  "falsePositives": 2,
+  "allNonPositiveFalsePositives": 7
+}

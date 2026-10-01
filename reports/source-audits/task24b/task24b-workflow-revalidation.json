@@ -1,0 +1,21 @@
+{
+  "hourlyCron": "10 * * * *",
+  "backfill": "workflow_dispatch only",
+  "node": "24",
+  "actions": [
+    "checkout@v7",
+    "setup-node@v6",
+    "cache@v6",
+    "upload-artifact@v6"
+  ],
+  "timeoutMinutes": 360,
+  "installCommand": "npm ci",
+  "secrets": [
+    "APP_API_URL",
+    "APP_API_KEY",
+    "APP_LIST_API_URL",
+    "APP_LIST_API_KEY"
+  ],
+  "sourceBatch": "scheduled six rotating batches; backfill six sequential matrix batches",
+  "dryRun": "DRY_RUN=true prevents publishing and sent-state persistence"
+}

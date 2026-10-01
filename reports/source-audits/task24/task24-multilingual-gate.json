@@ -1,0 +1,10 @@
+{
+  "enabledForDiscoveryAndReview": true,
+  "autoPublish": false,
+  "unknownLanguageAutoPublish": false,
+  "translationFailureAutoPublish": false,
+  "provider": "none",
+  "experimentalSources": 18,
+  "experimentalSourceProductionGate": "REQUIRED",
+  "decision": "KEEP_REVIEW_ONLY"
+}

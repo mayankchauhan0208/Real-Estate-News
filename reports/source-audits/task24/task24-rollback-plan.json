@@ -1,0 +1,9 @@
+{
+  "rollbackTarget": "5468b120200196a50c5b0e9254e8fe4ec264cc7d",
+  "proposedTarget": "Task24 local checkpoint after audit",
+  "codeOnly": true,
+  "stateMigration": false,
+  "sentStateFormatChanged": false,
+  "configFormatChanged": false,
+  "strategy": "reconcile branch, deploy approved commit, revert to verified remote baseline if post-deploy checks fail; do not alter sent state"
+}

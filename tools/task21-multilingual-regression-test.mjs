@@ -1,0 +1,20 @@
+import fs from 'node:fs/promises';
+import { crossLanguageDedupe, identifyLanguage, normalizeNativeNumerals, translationDecision } from './multilingual-intelligence.mjs';
+import { workbookCityRules } from '../src/city-config.js';
+
+const report = JSON.parse(await fs.readFile('reports/source-audits/task21/task21-multilingual-report.json', 'utf8'));
+const matrix = JSON.parse(await fs.readFile('reports/source-audits/task21/task21-city-language-matrix.json', 'utf8'));
+if (report.task20Gate.exact.TP !== 2 || report.task20Gate.exact.FP !== 0 || report.task20Gate.exact.TN !== 67 || report.task20Gate.exact.FN !== 0 || report.task20Gate.negativeControls !== '8/8') throw new Error('Task 20 exact gate drifted');
+if (report.architecture.supportedCities !== 234 || matrix.cities.length !== 234) throw new Error('supported city coverage drifted');
+if (report.fixtureCorpus.total < 40) throw new Error('multilingual fixture corpus is too small');
+if (identifyLanguage('पुण्यात नवीन गृहनिर्माण प्रकल्प').code !== 'mr') throw new Error('Marathi identification failed');
+if (identifyLanguage('दिल्ली में आवास परियोजना').code !== 'hi') throw new Error('Hindi identification failed');
+if (normalizeNativeNumerals('₹१२ करोड़, તારીખ ૦૫').includes('१२')) throw new Error('native numeral normalization failed');
+if (translationDecision({ language: 'ta', hasNativeGeo: true }).publishAllowed) throw new Error('translation failure must not publish');
+if (identifyLanguage('⟟⟒⟟').code !== 'unknown') throw new Error('unknown language must be observable');
+const same = crossLanguageDedupe({ title: 'DDA approves Delhi housing project', cityCode: 'delhi' }, { title: 'दिल्ली आवास परियोजना को डीडीए की मंजूरी', cityCode: 'delhi' });
+if (same.decision === 'SAME_EVENT_HIGH_CONFIDENCE') throw new Error('untranslated cross-script match was over-deduped');
+const different = crossLanguageDedupe({ title: 'Same developer launches different Pune tower', cityCode: 'pune' }, { title: 'Pune housing project approved', cityCode: 'pune' });
+if (different.decision === 'SAME_EVENT_HIGH_CONFIDENCE') throw new Error('distinct project was collapsed');
+if (new Set(workbookCityRules.map((row) => row.code)).size !== 234) throw new Error('city code uniqueness drifted');
+console.log(JSON.stringify({ passed: true, cities: 234, fixtures: report.fixtureCorpus.total, task20: report.task20Gate.exact, translationFailurePublish: false, unknownLanguagePublish: false }));

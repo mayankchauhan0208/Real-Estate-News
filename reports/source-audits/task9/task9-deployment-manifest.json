@@ -1,0 +1,61 @@
+{
+  "manifest": [
+    {
+      "commit": "edf0852",
+      "purpose": "targeted article coverage sampler",
+      "deployment": "diagnostic-only",
+      "risk": "none until explicitly integrated",
+      "tests": "local sampler reports"
+    },
+    {
+      "commit": "36a622b",
+      "purpose": "source-specific date recovery diagnostics",
+      "deployment": "diagnostic-only",
+      "risk": "none until explicitly integrated",
+      "tests": "date recovery reports"
+    },
+    {
+      "commit": "b909fb9",
+      "purpose": "read-only source debt register",
+      "deployment": "diagnostic-only",
+      "risk": "none",
+      "tests": "register generation"
+    },
+    {
+      "commit": "83de45b",
+      "purpose": "Task 6 labeled classification diagnostics",
+      "deployment": "diagnostic-only",
+      "risk": "none",
+      "tests": "classification regression"
+    },
+    {
+      "commit": "6d193fd",
+      "purpose": "Task 7 positive controls",
+      "deployment": "diagnostic-only",
+      "risk": "none",
+      "tests": "positive-control regression"
+    },
+    {
+      "commit": "5cfc7ee",
+      "purpose": "Task 8 bounded discovery harness and fixtures",
+      "deployment": "review before deployment",
+      "risk": "live adapter behavior not production-integrated",
+      "tests": "Task 8 fixtures and bounded live report"
+    },
+    {
+      "commit": "TASK9",
+      "purpose": "final local benchmark and readiness report",
+      "deployment": "diagnostic-only",
+      "risk": "none",
+      "tests": "report generation and existing suite"
+    }
+  ],
+  "rollback": {
+    "beforeDeployment": "Do not deploy until the blockers are closed.",
+    "adapters": "Disable Task 8 adapter entry points and revert the adapter integration commit; preserve reports.",
+    "classifier": "No classifier changes in Tasks 8–9; retain current classifier.",
+    "geo": "No geo mappings changed; retain current mapping files.",
+    "sourceBehavior": "Restore prior source handling by reverting only the adapter integration commit.",
+    "sentState": "No sent state mutation occurred."
+  }
+}

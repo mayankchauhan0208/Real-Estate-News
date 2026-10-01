@@ -1,0 +1,29 @@
+{
+  "base": "5468b120200196a50c5b0e9254e8fe4ec264cc7d",
+  "proposed": "CHECKPOINT_SHA_REPORTED_AFTER_COMMIT",
+  "commitTopology": "reconciled branch based on remote main plus local development merge and Task24B checkpoint",
+  "productionRuntimeFiles": [
+    "src/index.js",
+    "src/city-config.js",
+    "config/admin-settings.json"
+  ],
+  "workflows": [
+    ".github/workflows/news-pusher.yml",
+    ".github/workflows/news-backfill.yml"
+  ],
+  "dependencies": [
+    "package-lock.json"
+  ],
+  "configChanges": [
+    "experimental regional sources default-off; explicit ENABLE_EXPERIMENTAL_SOURCES opt-in"
+  ],
+  "diagnostics": [
+    "reports/source-audits/task24b/**",
+    "tools/task24b-*.mjs"
+  ],
+  "featureGates": {
+    "experimentalSources": false,
+    "multilingualAutoPublish": false,
+    "dryRunPublishing": false
+  }
+}

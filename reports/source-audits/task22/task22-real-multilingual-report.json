@@ -1,0 +1,112 @@
+{
+  "reportType": "TASK22_REAL_MULTILINGUAL_VALIDATION",
+  "generatedAt": "2026-10-01T09:18:20.484Z",
+  "localOnly": true,
+  "exactTask21ReviewEndpoints": 24,
+  "additionalSourceEndpointsResearched": 12,
+  "corpus": {
+    "realRegionalArticles": 25,
+    "readable": 3,
+    "current": 16,
+    "languages": [
+      "Hindi",
+      "Marathi",
+      "Malayalam",
+      "Telugu",
+      "Kannada",
+      "Tamil",
+      "Hindi/Marathi (unresolved)"
+    ],
+    "positives": 18,
+    "negatives": 6,
+    "offtopic": 1,
+    "editorialReviewRows": 25
+  },
+  "sources": {
+    "promote": 0,
+    "review": 19,
+    "reject": 5,
+    "note": "Decisions are recommendations only; production source registry unchanged."
+  },
+  "coverage": {
+    "verifiedRegionalEvidenceCities": 11,
+    "productiveRegionalCities": 3,
+    "cities": 234
+  },
+  "task20": {
+    "TP": 2,
+    "FP": 0,
+    "TN": 67,
+    "FN": 0,
+    "unresolved": 0,
+    "precision": 1,
+    "recall": 1,
+    "specificity": 1,
+    "falsePositiveRate": 0,
+    "falseNegativeRate": 0
+  },
+  "task21Safety": {
+    "unknownLanguageAutoPublish": false,
+    "translationFailureAutoPublish": false,
+    "unicodePreserved": true,
+    "unsafeSourceGeoFallback": false
+  },
+  "provider": {
+    "reportType": "TASK22_PROVIDER_RESEARCH",
+    "localOnly": true,
+    "credentialsUsed": false,
+    "candidates": [
+      {
+        "approach": "Existing local normalization and native geo",
+        "coverage": "all observed scripts",
+        "cost": "none",
+        "latency": "low",
+        "quality": "machine-observable only",
+        "status": "VIABLE_FOR_PREPROCESSING"
+      },
+      {
+        "approach": "Google Cloud Translation",
+        "coverage": "broad Indian language support",
+        "cost": "paid usage",
+        "latency": "network dependent",
+        "quality": "UNVERIFIED_WITH_THIS_CORPUS",
+        "status": "RESEARCH_ONLY"
+      },
+      {
+        "approach": "Microsoft Translator",
+        "coverage": "broad Indian language support",
+        "cost": "paid usage",
+        "latency": "network dependent",
+        "quality": "UNVERIFIED_WITH_THIS_CORPUS",
+        "status": "RESEARCH_ONLY"
+      },
+      {
+        "approach": "IndicTrans2/local open model",
+        "coverage": "Indian languages",
+        "cost": "compute/model operations",
+        "latency": "local GPU/CPU dependent",
+        "quality": "UNVERIFIED_WITH_THIS_CORPUS",
+        "status": "RESEARCH_ONLY"
+      }
+    ],
+    "decision": "NO_PROVIDER_SELECTED_OR_CREDENTIALS_ADDED"
+  },
+  "reports": [
+    "task22-language-results.json",
+    "task22-city-results.json",
+    "task22-positive-candidates.json",
+    "task22-negative-candidates.json",
+    "task22-offtopic-candidates.json",
+    "task22-native-geo-results.json",
+    "task22-provider-research.json",
+    "task22-regional-only-events.json",
+    "task22-cross-language-dedupe.json",
+    "task22-runtime.json"
+  ],
+  "decision": "REAL_CORPUS_READY_FOR_HUMAN_EDITORIAL_LABELING_NO_PRODUCTION_ACTIVATION",
+  "limitations": [
+    "Regional-only events remain unverified.",
+    "Native geo and translation accuracy remain unmeasured until human labels exist.",
+    "Search-verified article evidence does not by itself prove source production readiness."
+  ]
+}

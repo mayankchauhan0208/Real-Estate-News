@@ -1,0 +1,2325 @@
+{
+  "mode": "dry-run",
+  "exitCode": 0,
+  "requests": [
+    {
+      "method": "GET",
+      "url": "/feed.xml"
+    },
+    {
+      "method": "GET",
+      "url": "/article/1"
+    }
+  ],
+  "productionApiCalls": 0,
+  "sentStateWrites": 0,
+  "report": {
+    "generatedAt": "2026-10-01T11:04:40.814Z",
+    "mode": "dry-run",
+    "dryRun": true,
+    "noidaEnabled": true,
+    "targetCityCodes": [],
+    "window": {
+      "from": "2026-09-11T11:04:40.713Z",
+      "to": "2026-10-01T11:04:40.713Z"
+    },
+    "buildVersion": "local-dev",
+    "commitSha": "",
+    "sourceStrategy": "full-source-coverage",
+    "allSelectedSourceCount": 1,
+    "selectedSourceCount": 1,
+    "sourceHealth": [
+      {
+        "source": "http://127.0.0.1:54153/feed.xml",
+        "status": "ok",
+        "count": 1,
+        "attempts": 1,
+        "error": "",
+        "fetchedSource": "http://127.0.0.1:54153/feed.xml",
+        "recovered": false
+      }
+    ],
+    "sourceHealthSummary": {
+      "ok": 1,
+      "failed": 0,
+      "zeroItem": 0
+    },
+    "reconciliation": {
+      "enabled": false,
+      "fetched": 0,
+      "pages": 0
+    },
+    "sourceCount": 1,
+    "sources": [
+      {
+        "source": "http://127.0.0.1:54153/feed.xml",
+        "count": 1,
+        "attempts": 1
+      }
+    ],
+    "failures": [],
+    "fetchedArticleCount": 1,
+    "expandedArticleCount": 1,
+    "skippedByReason": {},
+    "rejectedArticleCount": 0,
+    "needsReviewCount": 0,
+    "rejectedArticles": [],
+    "needsReviewArticles": [],
+    "cityBreakdown": [
+      {
+        "cityCode": "faridabad",
+        "expanded": 1,
+        "readyToPost": 1,
+        "posted": 0,
+        "rejected": 0,
+        "rejectionReasons": {}
+      }
+    ],
+    "coverageAlerts": [
+      {
+        "cityCode": "gurugram",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "rohtak",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "panipat",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "karnal",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "sonipat",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "yamunanagar",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "panchkula",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "ambala",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "kurukshetra",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "rewari",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "palwal",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "indore",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "bhopal",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "gwalior",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "jabalpur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "ujjain",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "sagar",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "dewas",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "satna",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "ratlam",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "rewa",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "burhanpur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "khandwa",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "chhindwara",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "mandsaur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "damoh",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "neemuch",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "khargone",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "sehore",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "betul",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "seoni",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "anantapur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "bhimavaram",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "chittoor",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "eluru",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "kadapa",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "kakinada",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "krishna",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "kurnool",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "nellore",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "rajahmundry",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "srikakulam",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "tirupati",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "vijayawada",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "visakhapatnam",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "vizianagaram",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "west_godavari",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "dibrugarh",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "golaghat",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "guwahati",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "jorhat",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "kamrup",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "marigaon",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "nagaon",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "nalbari",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "silchar",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "tezpur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "tinsukia",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "patna",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "chandigarh",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "bhilai",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "bilaspur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "durg",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "korba",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "kota_chhattisgarh",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "raipur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "rajnandgaon",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "daman_and_diu",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "silvassa",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "delhi_ncr",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "delhi",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "new_delhi",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "goa",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "ahmedabad",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "anand",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "banaskantha",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "bardoli",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "bharuch",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "bhavnagar",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "dholera",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "gandhinagar",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "junagadh",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "kalol",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "kheda",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "kutch",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "navsari",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "patan",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "rajkot",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "sabarkantha",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "surat",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "surendranagar",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "gujarat",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "vadodara",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "valsad",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "vapi",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "jamshedpur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "ranchi",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "dhanbad",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "calicut",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "ernakulam",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "kochi",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "palakkad",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "thrissur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "trivandrum",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "bangalore",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "belgaum",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "hubli",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "mangalore",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "mysore",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "udupi",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "shimla",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "solan",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "mohali",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "ludhiana",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "amritsar",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "jalandhar",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "patiala",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "hoshiarpur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "bhatinda",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "sangrur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "chennai",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "madurai",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "coimbatore",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "tiruchirappalli",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "salem",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "tirunelveli",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "vellore",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "tiruppur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "erode",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "thoothukudi",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "thanjavur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "dindigul",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "hosur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "avadi",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "cuddalore",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "karur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "tambaram",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "namakkal",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "pudukkottai",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "tiruvannamalai",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "hyderabad",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "warangal",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "nizamabad",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "karimnagar",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "khammam",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "mahabubnagar",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "mancherial",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "nalgonda",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "suryapet",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "kolkata",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "howrah",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "asansol",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "durgapur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "siliguri",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "agartala",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "mumbai",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "pune",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "navi_mumbai",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "thane",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "kalyan_dombivli",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "nagpur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "nashik",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "aurangabad",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "kolhapur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "solapur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "ahmednagar",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "amravati",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "akola",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "jalgaon",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "nanded",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "latur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "sangli",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "ratnagiri",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "chandrapur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "wardha",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "dhule",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "jalna",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "yavatmal",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "beed",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "osmanabad",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "palghar",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "sindhudurg",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "raigad",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "bhubaneswar",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "cuttack",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "puri",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "rourkela",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "sambalpur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "berhampur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "balasore",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "dehradun",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "haridwar",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "roorkee",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "rudrapur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "rishikesh",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "pondicherry",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "jaipur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "bhiwadi",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "kota",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "udaipur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "jodhpur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "ajmer",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "sikar",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "alwar",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "neemrana",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "bikaner",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "bhilwara",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "pali",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "sri_ganganagar",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "sirohi",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "tonk",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "hanumangarh",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "nagaur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "barmer",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "jhalawar",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "noida",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "ghaziabad",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "lucknow",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "kanpur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "varanasi",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "agra",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "meerut",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "vrindavan",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "allahabad",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "mathura",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "gorakhpur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "bareilly",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "aligarh",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "jhansi",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "moradabad",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "hapur",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "barabanki",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      },
+      {
+        "cityCode": "firozabad",
+        "severity": "warning",
+        "reason": "no articles reached this city",
+        "expanded": 0,
+        "readyToPost": 0,
+        "posted": 0,
+        "rejected": 0
+      }
+    ],
+    "candidates": [
+      {
+        "title": "Faridabad approves new residential project with 240 homes",
+        "description": "Faridabad development authority approved a new residential project with new housing infrastructure.",
+        "cityCode": "faridabad",
+        "classification": "authority_pipeline",
+        "publishedAt": "2026-09-30T10:00:00.000Z",
+        "newsLink": "http://127.0.0.1:54153/article/1",
+        "postedBy": "127.0.0.1",
+        "sourceName": "127.0.0.1",
+        "sourceUrl": "http://127.0.0.1:54153/feed.xml",
+        "fullArticleRead": false,
+        "articleReadError": "",
+        "articleTextExcerpt": "Faridabad development authority approved a new residential project with 240 homes and supporting infrastructure.The approved housing project includes roads, utilities and a defined delivery plan.The announcement is a positive development update for the Faridabad market.",
+        "trace": {
+          "sourceId": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "sourceName": "127.0.0.1",
+          "sourceType": "RSS_OR_ATOM",
+          "configuredUrl": "http://127.0.0.1:54153/feed.xml",
+          "actualFetchedUrl": "http://127.0.0.1:54153/feed.xml",
+          "listingUrl": "http://127.0.0.1:54153/feed.xml",
+          "articleUrl": "http://127.0.0.1:54153/article/1",
+          "canonicalUrl": "http://127.0.0.1:54153/article/1",
+          "discoveryTimestamp": "2026-10-01T11:04:40.748Z",
+          "publicationDate": "2026-09-30T10:00:00.000Z",
+          "publicationDateExtractionMethod": "not-captured",
+          "sourceFetchResult": "success",
+          "httpStatus": "not-captured",
+          "redirectChain": [],
+          "attemptNumber": 1,
+          "fallbackUsed": false,
+          "fetchDurationMs": 64,
+          "articleLinkDiscoveryMethod": "RSS_OR_ATOM",
+          "listingExtraction": "not-captured",
+          "fullArticleFetch": "not-attempted",
+          "articleExtractionMethod": "not-captured",
+          "articleTextLength": 270,
+          "readability": "not-attempted",
+          "language": "not-captured",
+          "thumbnail": "found",
+          "thumbnailExtractionMethod": "metadata-or-fallback",
+          "relevance": "not-captured",
+          "relevanceReason": "not-captured",
+          "negativeContent": "not-captured",
+          "negativeEvidence": "not-captured",
+          "projectSignal": "not-captured",
+          "projectSignalEvidence": "not-captured",
+          "locationsDetected": [
+            "homes Faridabad development authority app"
+          ],
+          "locationEvidence": "Faridabad approves new residential project with 240 homes Faridabad development authority approved a new residential project with new housing infrastructure.",
+          "aliasMatched": [],
+          "districtMatched": [],
+          "localityMatched": [],
+          "sectorMatched": [],
+          "authorityMatched": [],
+          "corridorMatched": [],
+          "cityCodes": [
+            "faridabad"
+          ],
+          "cityRoutingEvidence": "not-captured",
+          "cityConfidence": "mapped",
+          "duplicateResult": "not-captured",
+          "duplicateEvidence": "not-captured",
+          "finalState": "CANDIDATE",
+          "finalReason": "candidate passed filters",
+          "publishAttempt": "not-attempted",
+          "publishResult": "not-attempted"
+        }
+      }
+    ],
+    "posted": [],
+    "pushFailures": [],
+    "dryRunCandidates": [
+      {
+        "title": "Faridabad approves new residential project with 240 homes",
+        "description": "Faridabad development authority approved a new residential project with new housing infrastructure.",
+        "cityCode": "faridabad",
+        "classification": "authority_pipeline",
+        "publishedAt": "2026-09-30T10:00:00.000Z",
+        "newsLink": "http://127.0.0.1:54153/article/1",
+        "postedBy": "127.0.0.1",
+        "sourceName": "127.0.0.1",
+        "sourceUrl": "http://127.0.0.1:54153/feed.xml",
+        "fullArticleRead": false,
+        "articleReadError": "",
+        "articleTextExcerpt": "Faridabad development authority approved a new residential project with 240 homes and supporting infrastructure.The approved housing project includes roads, utilities and a defined delivery plan.The announcement is a positive development update for the Faridabad market.",
+        "trace": {
+          "sourceId": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "sourceName": "127.0.0.1",
+          "sourceType": "RSS_OR_ATOM",
+          "configuredUrl": "http://127.0.0.1:54153/feed.xml",
+          "actualFetchedUrl": "http://127.0.0.1:54153/feed.xml",
+          "listingUrl": "http://127.0.0.1:54153/feed.xml",
+          "articleUrl": "http://127.0.0.1:54153/article/1",
+          "canonicalUrl": "http://127.0.0.1:54153/article/1",
+          "discoveryTimestamp": "2026-10-01T11:04:40.748Z",
+          "publicationDate": "2026-09-30T10:00:00.000Z",
+          "publicationDateExtractionMethod": "not-captured",
+          "sourceFetchResult": "success",
+          "httpStatus": "not-captured",
+          "redirectChain": [],
+          "attemptNumber": 1,
+          "fallbackUsed": false,
+          "fetchDurationMs": 64,
+          "articleLinkDiscoveryMethod": "RSS_OR_ATOM",
+          "listingExtraction": "not-captured",
+          "fullArticleFetch": "not-attempted",
+          "articleExtractionMethod": "not-captured",
+          "articleTextLength": 270,
+          "readability": "not-attempted",
+          "language": "not-captured",
+          "thumbnail": "found",
+          "thumbnailExtractionMethod": "metadata-or-fallback",
+          "relevance": "not-captured",
+          "relevanceReason": "not-captured",
+          "negativeContent": "not-captured",
+          "negativeEvidence": "not-captured",
+          "projectSignal": "not-captured",
+          "projectSignalEvidence": "not-captured",
+          "locationsDetected": [
+            "homes Faridabad development authority app"
+          ],
+          "locationEvidence": "Faridabad approves new residential project with 240 homes Faridabad development authority approved a new residential project with new housing infrastructure.",
+          "aliasMatched": [],
+          "districtMatched": [],
+          "localityMatched": [],
+          "sectorMatched": [],
+          "authorityMatched": [],
+          "corridorMatched": [],
+          "cityCodes": [
+            "faridabad"
+          ],
+          "cityRoutingEvidence": "not-captured",
+          "cityConfidence": "mapped",
+          "duplicateResult": "not-captured",
+          "duplicateEvidence": "not-captured",
+          "finalState": "CANDIDATE",
+          "finalReason": "candidate passed filters",
+          "publishAttempt": "not-attempted",
+          "publishResult": "dry-run"
+        }
+      }
+    ],
+    "missedCandidates": []
+  },
+  "stdoutTail": "Noida city mode enabled: using Uttar Pradesh - Noida filters and opt-in sources.\nBuild version: local-dev.\nSource strategy: full-source-coverage. Processing 1/1 allowed sources.\nBackfill date window: 2026-09-11T11:04:40.713Z to 2026-10-01T11:04:40.713Z\nFetching 1 sources with 1 parallel source workers and 10.0s max per source.\nFetched 1 items from http://127.0.0.1:54153/feed.xml in 64ms (attempts: 1)\nSource fetch phase completed in 64ms.\nExpanded 1 fetched articles to 1 city articles in 0ms.\nDate window kept 1 articles in 1ms.\nFiltering phase completed in 27ms.\nFound 1 new articles.\nPush order: 0 shared-city articles first, then 1 city-specific articles.\nDry run candidate (faridabad): Faridabad approves new residential project with 240 homes | http://127.0.0.1:54153/article/1\nRun report written: C:\\Users\\pc\\Documents\\news-api-pusher\\reports\\runs\\news-run-2026-10-01T11-04-40-820Z.json\nRun report written: C:\\Users\\pc\\Documents\\news-api-pusher\\reports\\runs\\news-run-2026-10-01T11-04-40-820Z.md\n",
+  "stderrTail": ""
+}

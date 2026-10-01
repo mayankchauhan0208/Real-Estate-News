@@ -1,0 +1,42 @@
+{
+  "verifiedBaselineSha": "5468b120200196a50c5b0e9254e8fe4ec264cc7d",
+  "proposedSha": "3e586d3062f76d08dd888b4aed32283973640344",
+  "commitRange": "79400a3719ccee226d050ddaf6adeaab5b47be01..HEAD",
+  "productionRequiredFiles": [
+    "src/index.js",
+    "src/city-config.js",
+    "config/admin-settings.json",
+    ".github/workflows/news-pusher.yml",
+    ".github/workflows/news-backfill.yml",
+    "package.json"
+  ],
+  "workflowChanges": [],
+  "dependencyChanges": [],
+  "featureGates": {
+    "multilingualAutoPublish": false,
+    "experimentalSources": false,
+    "dryRunPublishing": false
+  },
+  "requiredSecretNames": [
+    "APP_API_URL",
+    "APP_API_KEY",
+    "APP_LIST_API_URL",
+    "APP_LIST_API_KEY"
+  ],
+  "migrationRequirements": "none",
+  "rollbackSha": "5468b120200196a50c5b0e9254e8fe4ec264cc7d",
+  "preDeployTests": [
+    "npm run check",
+    "npm test",
+    "Task20 regression",
+    "Task21 regression",
+    "Task23 regression",
+    "configuration audit"
+  ],
+  "postDeployChecks": [
+    "controlled dry-run",
+    "source batch",
+    "zero API/state side effects",
+    "dedupe and geo verification"
+  ]
+}

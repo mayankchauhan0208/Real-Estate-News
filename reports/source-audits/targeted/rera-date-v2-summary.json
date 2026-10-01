@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-09-30T08:59:40.911Z",
+  "batch": "rera",
+  "sourceCount": 53,
+  "states": {
+    "SAMPLED_SUCCESSFULLY": 28,
+    "LISTING_FETCH_FAILED": 13,
+    "LISTING_TIMEOUT": 7,
+    "PARTIAL_SAMPLE": 1,
+    "LISTING_TOO_LARGE": 2,
+    "ZERO_LINKS": 1,
+    "BROKEN_URL": 1
+  },
+  "linksFound": 741,
+  "linksSampled": 56,
+  "fetchSuccess": 50,
+  "fullTextSuccess": 49,
+  "dates": 20,
+  "thumbnails": 48,
+  "languages": 49,
+  "geoSuccess": 46,
+  "relevant": 0,
+  "averageSourceMs": 1255,
+  "p95SourceMs": 4723,
+  "auditInput": "source-audit-2026-09-30T08-05-40-524Z.json",
+  "checkpoint": "C:\\Users\\pc\\Documents\\news-api-pusher\\reports\\source-audits\\targeted\\rera-date-v2.jsonl"
+}

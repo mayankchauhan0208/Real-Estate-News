@@ -1,0 +1,2955 @@
+{
+  "generatedAt": "2026-09-30T13:03:35.669Z",
+  "baselineAudit": "reports\\source-audits\\source-audit-2026-09-30T12-09-23-692Z.json",
+  "unresolved": [
+    {
+      "source": "https://ahmedabadcity.gov.in/DC/Tenders/",
+      "coverage": [
+        "ahmedabad"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://aiforera.org",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://aiforera.org/publications",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://aiforera.org/publications/public_notice",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://ajmera.com",
+      "coverage": [
+        "ahmedabad",
+        "bangalore",
+        "mumbai"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://auda.org.in",
+      "coverage": [
+        "ahmedabad",
+        "gujarat"
+      ],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://bbmp.gov.in/",
+      "coverage": [
+        "bangalore"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://bda.gov.in",
+      "coverage": [
+        "bhubaneswar"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://cci.gov.in/combination/green-channel-view",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://chennaicorporation.gov.in/gcc/tender/",
+      "coverage": [
+        "chennai"
+      ],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://chennaimetrorail.org/press-release",
+      "coverage": [
+        "chennai"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://cidco.maharashtra.gov.in",
+      "coverage": [
+        "mumbai",
+        "navi_mumbai",
+        "raigad"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://cidco.maharashtra.gov.in/Page?Token=1C64F4F8470",
+      "coverage": [
+        "mumbai",
+        "navi_mumbai",
+        "raigad"
+      ],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://cochinport.gov.in/tenders",
+      "coverage": [
+        "kochi"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: AUTHORITY_NOTICE_TABLE",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://cpc.parivesh.nic.in/",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://crda.ap.gov.in",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://dda.gov.in",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://dda.gov.in/dda-in-news",
+      "coverage": [
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://dda.gov.in/whats-new",
+      "coverage": [
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://economictimes.indiatimes.com/topic/faridabad-realty",
+      "coverage": [
+        "faridabad"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://faridabad.nic.in/department/faridabad-metropolitan-development-authority-fmda",
+      "coverage": [
+        "faridabad"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://gccservices.chennaicorporation.gov.in/",
+      "coverage": [
+        "chennai"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://gcda.kerala.gov.in",
+      "coverage": [
+        "kochi"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://ghmc.gov.in/Tenderspage.aspx",
+      "coverage": [
+        "hyderabad"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://gidc.gujarat.gov.in",
+      "coverage": [
+        "gujarat"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://gidc.gujarat.gov.in/tender",
+      "coverage": [
+        "gujarat"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://gmda.assam.gov.in",
+      "coverage": [
+        "guwahati"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://gmda.gov.in",
+      "coverage": [],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://gnida.up.gov.in/en/announcements",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://gujrera.gujarat.gov.in",
+      "coverage": [
+        "ahmedabad",
+        "anand",
+        "banaskantha",
+        "bardoli",
+        "bharuch",
+        "bhavnagar",
+        "dholera",
+        "gandhinagar",
+        "gujarat",
+        "junagadh",
+        "kalol",
+        "kheda",
+        "kutch",
+        "navsari",
+        "patan",
+        "rajkot",
+        "sabarkantha",
+        "surat",
+        "surendranagar",
+        "vadodara",
+        "valsad",
+        "vapi"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://haryanarera.gov.in",
+      "coverage": [],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://hginfra.com/announcements.php",
+      "coverage": [],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://hginfra.com/investors-presentation.php",
+      "coverage": [],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://hilifebuilders.in/feed",
+      "coverage": [
+        "ernakulam",
+        "kochi",
+        "thrissur"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://housing.com/news/category/news",
+      "coverage": [],
+      "failure": "STALE",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://hsiidc.etenders.in",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://hsvphry.org.in/",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://hsvphry.org.in/Home/Tenders",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://ibbi.gov.in/orders/nclt",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://ibbi.gov.in/search/index/press-release",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://indiainvestmentgrid.gov.in/index.jsp",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://indianinfrastructure.com/",
+      "coverage": [],
+      "failure": "STALE",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://indianrailways.gov.in/railwayboard/",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/economy",
+      "coverage": [],
+      "failure": "STALE",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/telecom",
+      "coverage": [],
+      "failure": "STALE",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/videostories",
+      "coverage": [],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Apply shared adapter: DETAIL_LINK",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/webstories",
+      "coverage": [],
+      "failure": "EMPTY",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://ipm.mospi.gov.in/Home/Index",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://ipm.mospi.gov.in/Home/ShowPressRelease",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://jharera.jharkhand.gov.in/home",
+      "coverage": [
+        "dhanbad",
+        "jamshedpur",
+        "ranchi"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://jharera.jharkhand.gov.in/Home/Notice",
+      "coverage": [
+        "dhanbad",
+        "jamshedpur",
+        "ranchi"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://maharera.mahaonline.gov.in/",
+      "coverage": [
+        "ahmednagar",
+        "akola",
+        "amravati",
+        "aurangabad",
+        "beed",
+        "chandrapur",
+        "daman_and_diu",
+        "dhule",
+        "jalgaon",
+        "jalna",
+        "kolhapur",
+        "latur",
+        "mumbai",
+        "nagpur",
+        "nanded",
+        "nashik",
+        "navi_mumbai",
+        "osmanabad",
+        "palghar",
+        "pune",
+        "raigad",
+        "ratnagiri",
+        "sangli",
+        "silvassa",
+        "sindhudurg",
+        "solapur",
+        "wardha",
+        "yavatmal"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://mhada.gov.in/en/latest-news",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://mmrda.maharashtra.gov.in/en/news-and-announcements/archive",
+      "coverage": [
+        "mumbai"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://mmrda.maharashtra.gov.in/en/other-services/news-and-announcements",
+      "coverage": [
+        "mumbai"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://paradipport.gov.in/tenders/",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://portal.mcgm.gov.in/irj/portal/anonymous/qletenders_new?guest_user=english",
+      "coverage": [
+        "mumbai"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://puda.punjab.gov.in",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://punemetrorail.org/",
+      "coverage": [
+        "pune"
+      ],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/amp/tag/greater%2Bnoida",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/news/commercial",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/news/industry",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/news/infrastructure",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/allied-industries",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/commercial",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Apply shared adapter: DETAIL_LINK",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/housing-finance",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/infrastructure",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/lateststories",
+      "coverage": [],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/lighting",
+      "coverage": [],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/lighting/commercial-lighting",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/lighting/consumer-lighting",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/lighting/indoor-lighting",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/paints",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/rera",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/retail",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/startups",
+      "coverage": [],
+      "failure": "STALE",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/videostories",
+      "coverage": [],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Apply shared adapter: DETAIL_LINK",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/webstories",
+      "coverage": [],
+      "failure": "EMPTY",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/tag/faridabad",
+      "coverage": [
+        "faridabad"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida%2Bauthority",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/tag/gurugram",
+      "coverage": [
+        "gurugram"
+      ],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/tag/jewar",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/tag/noida",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/tag/noida%2Bairport",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/tag/yamuna%2Bexpressway",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "EMPTY",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/tag/yeida",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realtynmore.com/feed/",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realtynmore.com/latest-news/",
+      "coverage": [],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realtynxt.com/",
+      "coverage": [],
+      "failure": "EMPTY",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://realtyquarter.com/feed/",
+      "coverage": [],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.ap.gov.in/RERA/Views/index.html",
+      "coverage": [
+        "anantapur",
+        "bhimavaram",
+        "chittoor",
+        "eluru",
+        "kadapa",
+        "kakinada",
+        "krishna",
+        "kurnool",
+        "nellore",
+        "rajahmundry",
+        "srikakulam",
+        "tirupati",
+        "vijayawada",
+        "visakhapatnam",
+        "vizianagaram",
+        "west_godavari"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.assam.gov.in",
+      "coverage": [
+        "dibrugarh",
+        "golaghat",
+        "guwahati",
+        "jorhat",
+        "kamrup",
+        "marigaon",
+        "nagaon",
+        "nalbari",
+        "silchar",
+        "tezpur",
+        "tinsukia"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.bihar.gov.in/Newsarticles.aspx",
+      "coverage": [
+        "patna"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.bihar.gov.in/ProceedingOrder.aspx",
+      "coverage": [
+        "patna"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.bihar.gov.in/publicorder.aspx",
+      "coverage": [
+        "patna"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.bihar.gov.in/RERALATESTNEWS.aspx",
+      "coverage": [
+        "patna"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.cgstate.gov.in",
+      "coverage": [
+        "bhilai",
+        "bilaspur",
+        "durg",
+        "korba",
+        "kota",
+        "kota_chhattisgarh",
+        "raipur",
+        "rajnandgaon"
+      ],
+      "failure": "EMPTY",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.chbonline.in",
+      "coverage": [
+        "chandigarh"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.goa.gov.in",
+      "coverage": [
+        "goa"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.goa.gov.in/Notice",
+      "coverage": [
+        "goa"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.karnataka.gov.in",
+      "coverage": [
+        "bangalore",
+        "belgaum",
+        "hubli",
+        "mangalore",
+        "mysore",
+        "udupi"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.kerala.gov.in",
+      "coverage": [
+        "calicut",
+        "ernakulam",
+        "kochi",
+        "palakkad",
+        "thrissur",
+        "trivandrum"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.kerala.gov.in/announcements",
+      "coverage": [
+        "calicut",
+        "ernakulam",
+        "kochi",
+        "palakkad",
+        "thrissur",
+        "trivandrum"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.odisha.gov.in",
+      "coverage": [
+        "balasore",
+        "berhampur",
+        "bhubaneswar",
+        "cuttack",
+        "puri",
+        "rourkela",
+        "sambalpur"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.punjab.gov.in",
+      "coverage": [
+        "amritsar",
+        "bhatinda",
+        "hoshiarpur",
+        "jalandhar",
+        "ludhiana",
+        "mohali",
+        "patiala",
+        "sangrur"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.punjab.gov.in/circulars.html",
+      "coverage": [
+        "amritsar",
+        "bhatinda",
+        "hoshiarpur",
+        "jalandhar",
+        "ludhiana",
+        "mohali",
+        "patiala",
+        "sangrur"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.punjab.gov.in/latest-news.html",
+      "coverage": [
+        "amritsar",
+        "bhatinda",
+        "hoshiarpur",
+        "jalandhar",
+        "ludhiana",
+        "mohali",
+        "patiala",
+        "sangrur"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.py.gov.in/",
+      "coverage": [
+        "pondicherry"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.rajasthan.gov.in",
+      "coverage": [
+        "ajmer",
+        "alwar",
+        "barmer",
+        "bhilwara",
+        "bhiwadi",
+        "bikaner",
+        "hanumangarh",
+        "jaipur",
+        "jhalawar",
+        "jodhpur",
+        "kota",
+        "nagaur",
+        "neemrana",
+        "pali",
+        "sikar",
+        "sirohi",
+        "sri_ganganagar",
+        "tonk",
+        "udaipur"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.telangana.gov.in",
+      "coverage": [
+        "hyderabad",
+        "karimnagar",
+        "khammam",
+        "mahabubnagar",
+        "mancherial",
+        "nalgonda",
+        "nizamabad",
+        "suryapet",
+        "warangal"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.telangana.gov.in/247564irgjsdghfdgfd-TG-RERA-98498dsgdgyhdfjbhy43",
+      "coverage": [
+        "hyderabad",
+        "karimnagar",
+        "khammam",
+        "mahabubnagar",
+        "mancherial",
+        "nalgonda",
+        "nizamabad",
+        "suryapet",
+        "warangal"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.telangana.gov.in/384798wfybwev9fya62435-TG-RERA-skfjdgky483yunskljghfdgjh",
+      "coverage": [
+        "hyderabad",
+        "karimnagar",
+        "khammam",
+        "mahabubnagar",
+        "mancherial",
+        "nalgonda",
+        "nizamabad",
+        "suryapet",
+        "warangal"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.telangana.gov.in/586784u3y5dsgfg-TG-RERA-45678jklshihnfgsfdg",
+      "coverage": [
+        "hyderabad",
+        "karimnagar",
+        "khammam",
+        "mahabubnagar",
+        "mancherial",
+        "nalgonda",
+        "nizamabad",
+        "suryapet",
+        "warangal"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.telangana.gov.in/amavlnjoiu7532845972-TG-RERA-74698ijgsdfjgbi349529",
+      "coverage": [
+        "hyderabad",
+        "karimnagar",
+        "khammam",
+        "mahabubnagar",
+        "mancherial",
+        "nalgonda",
+        "nizamabad",
+        "suryapet",
+        "warangal"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.telangana.gov.in/AnnualReports-TG-RERA-15121976REAT_Orders",
+      "coverage": [
+        "hyderabad",
+        "karimnagar",
+        "khammam",
+        "mahabubnagar",
+        "mancherial",
+        "nalgonda",
+        "nizamabad",
+        "suryapet",
+        "warangal"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.telangana.gov.in/Home/ViewNews",
+      "coverage": [
+        "hyderabad",
+        "karimnagar",
+        "khammam",
+        "mahabubnagar",
+        "mancherial",
+        "nalgonda",
+        "nizamabad",
+        "suryapet",
+        "warangal"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.telangana.gov.in/SUOMOTU-TG-RERA-15121976ORDERS",
+      "coverage": [
+        "hyderabad",
+        "karimnagar",
+        "khammam",
+        "mahabubnagar",
+        "mancherial",
+        "nalgonda",
+        "nizamabad",
+        "suryapet",
+        "warangal"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: AUTHORITY_NOTICE_TABLE",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.tn.gov.in",
+      "coverage": [
+        "avadi",
+        "chennai",
+        "coimbatore",
+        "cuddalore",
+        "dindigul",
+        "erode",
+        "hosur",
+        "karur",
+        "madurai",
+        "namakkal",
+        "pudukkottai",
+        "salem",
+        "tambaram",
+        "thanjavur",
+        "thoothukudi",
+        "tiruchirappalli",
+        "tirunelveli",
+        "tiruppur",
+        "tiruvannamalai",
+        "vellore"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.tripura.gov.in",
+      "coverage": [
+        "agartala"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.wb.gov.in",
+      "coverage": [
+        "asansol",
+        "durgapur",
+        "howrah",
+        "kolkata",
+        "siliguri"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://rera.wb.gov.in/notice.php",
+      "coverage": [
+        "asansol",
+        "durgapur",
+        "howrah",
+        "kolkata",
+        "siliguri"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://riico.rajasthan.gov.in",
+      "coverage": [],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://riico.rajasthan.gov.in/Tender.aspx",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://sattvagroup.in/category/real-estate-development",
+      "coverage": [
+        "bangalore",
+        "coimbatore",
+        "goa",
+        "hyderabad",
+        "kolkata",
+        "pune"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://savemax.in/blogs/feed",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://shipmin.gov.in/en/highlights",
+      "coverage": [],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://shipmin.gov.in/publication/trw-publication",
+      "coverage": [],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: AUTHORITY_NOTICE_TABLE",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://sipcotweb.tn.gov.in",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://smartworlddevelopers.com/media",
+      "coverage": [],
+      "failure": "EMPTY",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://surajestate.com/investor-corner/",
+      "coverage": [
+        "mumbai"
+      ],
+      "failure": "EMPTY",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://surajestate.com/investor-relations/",
+      "coverage": [
+        "mumbai"
+      ],
+      "failure": "EMPTY",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://tatarealty.in/newsroom",
+      "coverage": [
+        "bangalore",
+        "chennai",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "mumbai",
+        "noida"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://tcpharyana.gov.in",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://themetrorailguy.com/",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://thepropertytimes.in/feed/",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://torbitrealty.com/category/news/city-updates/gurugram/",
+      "coverage": [
+        "gurugram"
+      ],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://transport.rajasthan.gov.in/jmrc",
+      "coverage": [
+        "jaipur"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://uhuda.uk.gov.in",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://up-rera.in",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "EMPTY",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://updatesonproperty.com/rss/category/latest-news",
+      "coverage": [],
+      "failure": "EMPTY",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://upeida.up.gov.in/en/news",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://urbantransportnews.com/",
+      "coverage": [],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.aai.aero",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.aai.aero/en/media/latest-news",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.aai.aero/en/media/press-news-events_archive",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.aai.aero/en/media/press-releases",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.adanirealty.com/news-and-media",
+      "coverage": [
+        "ahmedabad",
+        "gandhinagar",
+        "gurugram",
+        "mumbai",
+        "pune"
+      ],
+      "failure": "EMPTY",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.aparnaconstructions.com/aparna-news",
+      "coverage": [
+        "hyderabad"
+      ],
+      "failure": "EMPTY",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.arvindsmartspaces.com/investors/financial-reports",
+      "coverage": [
+        "ahmedabad",
+        "bangalore",
+        "gandhinagar",
+        "pune"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.ashianahousing.com/media/media-release",
+      "coverage": [
+        "bhiwadi",
+        "chennai",
+        "gurugram",
+        "jaipur",
+        "jamshedpur",
+        "pune"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.assetzproperty.com/investors",
+      "coverage": [
+        "bangalore"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.bda.gov.in/archiveTender",
+      "coverage": [
+        "bhubaneswar"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.bda.gov.in/circular",
+      "coverage": [
+        "bhubaneswar"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.bda.gov.in/notice",
+      "coverage": [
+        "bhubaneswar"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.bdabangalore.org",
+      "coverage": [
+        "bangalore"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.cci.gov.in/combination/orders-section31",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.cci.gov.in/combination/press-release",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.cial.aero/News-Updates/URL",
+      "coverage": [
+        "kochi"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.cmdachennai.gov.in",
+      "coverage": [
+        "chennai"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.constructionworld.in/latest-construction-news/real-estate-news",
+      "coverage": [],
+      "failure": "EMPTY",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.deendayalport.gov.in/tenders/e-tender",
+      "coverage": [
+        "gujarat"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.delhimetrorail.com/",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.eldecogroup.com/investor/eldeco-housing-industries-ltd/investor-relations",
+      "coverage": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "lucknow",
+        "noida"
+      ],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.experion.co/media",
+      "coverage": [
+        "amritsar",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "lucknow",
+        "noida"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.financialexpress.com/business/infrastructure",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.gera.in/press-releases",
+      "coverage": [
+        "bangalore",
+        "goa",
+        "pune"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.gmada.gov.in/",
+      "coverage": [
+        "chandigarh",
+        "mohali"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.gmda.gov.in",
+      "coverage": [
+        "gurugram"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.greaternoidaauthority.in",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.grinfra.com/intimations-under-regulation-30/",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.grinfra.com/media-coverage/",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.gujaratmetrorail.com",
+      "coverage": [
+        "ahmedabad",
+        "gandhinagar",
+        "gujarat",
+        "surat"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.hindustantimes.com/topic/greater-noida-authority/news",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.hindustantimes.com/topic/jewar-airport/news",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.hindustantimes.com/topic/noida-authority/news",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.hmda.gov.in/news",
+      "coverage": [
+        "hyderabad"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.hprera.in",
+      "coverage": [
+        "shimla",
+        "solan"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.hsiidc.org.in/",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.hsvphry.org.in",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.idaindore.org",
+      "coverage": [
+        "indore"
+      ],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.indiapropertydekho.com/blog/feed/",
+      "coverage": [],
+      "failure": "EMPTY",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.irb.co.in/home/disclosurescorp-announcements/",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.irb.co.in/home/press-release/",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.jda.rajasthan.gov.in/content/raj/udh/jda---jaipur/en/home.html",
+      "coverage": [
+        "jaipur"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.jll.co.in/en/newsroom",
+      "coverage": [],
+      "failure": "EMPTY",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.kmda.wb.gov.in/",
+      "coverage": [
+        "kolkata"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.knrcl.com/investors_presentation.html",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.koltepatil.com/news-media/media-coverage",
+      "coverage": [
+        "bangalore",
+        "mumbai",
+        "pune"
+      ],
+      "failure": "EMPTY",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.lntrealty.com/news-blogs/",
+      "coverage": [
+        "bangalore",
+        "chennai",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "mumbai",
+        "noida"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.ltmetro.com/press/",
+      "coverage": [
+        "hyderabad"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.mahametro.org",
+      "coverage": [
+        "nagpur",
+        "pune"
+      ],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.metrorailnews.in/",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.mhada.gov.in",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.mmrcl.com/en/content/press-releases",
+      "coverage": [
+        "mumbai"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.mpmetrorail.com/",
+      "coverage": [
+        "bhopal",
+        "indore"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.mumbaiport.gov.in/show_tenders.php?catid=3&depid=1&lang=1",
+      "coverage": [
+        "mumbai"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.nhb.org.in/en/media-corner/media-press-releases/",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.niairport.in/en/company/news/overview/news-overview",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.panchshil.com/media",
+      "coverage": [
+        "pune"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.pib.gov.in",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.pib.gov.in/ViewRss.aspx?lang=1&reg=1",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.pncinfratech.com/notice.html",
+      "coverage": [],
+      "failure": "EMPTY",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.pncinfratech.com/press-releases.html",
+      "coverage": [],
+      "failure": "EMPTY",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.pppinindia.gov.in/",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.pppinindia.gov.in/goverment_infrastructure_projects_ppp",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.pppinindia.gov.in/pppac-statewises/pppac-projects-list_Across-India",
+      "coverage": [],
+      "failure": "NEEDS_REVIEW",
+      "priority": "P0",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.prestigeconstructions.com/news",
+      "coverage": [
+        "bangalore",
+        "chennai",
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "hyderabad",
+        "mumbai",
+        "noida"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.providenthousing.com/media",
+      "coverage": [
+        "bangalore",
+        "chennai",
+        "coimbatore",
+        "hyderabad",
+        "kochi",
+        "pune"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.puriconstructions.com/",
+      "coverage": [],
+      "failure": "EMPTY",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.puriconstructions.com/media",
+      "coverage": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "noida",
+        "puri"
+      ],
+      "failure": "EMPTY",
+      "priority": "P1",
+      "recommendedFix": "Targeted recheck with source-specific evidence",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.rera.ap.gov.in",
+      "coverage": [
+        "anantapur",
+        "bhimavaram",
+        "chittoor",
+        "eluru",
+        "kadapa",
+        "kakinada",
+        "krishna",
+        "kurnool",
+        "nellore",
+        "rajahmundry",
+        "srikakulam",
+        "tirupati",
+        "vijayawada",
+        "visakhapatnam",
+        "vizianagaram",
+        "west_godavari"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.rera.delhi.gov.in",
+      "coverage": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.rera.mp.gov.in",
+      "coverage": [
+        "betul",
+        "bhopal",
+        "burhanpur",
+        "chhindwara",
+        "damoh",
+        "dewas",
+        "gwalior",
+        "indore",
+        "jabalpur",
+        "khandwa",
+        "khargone",
+        "mandsaur",
+        "neemuch",
+        "ratlam",
+        "rewa",
+        "sagar",
+        "satna",
+        "sehore",
+        "seoni",
+        "ujjain"
+      ],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=1&ssid=6",
+      "coverage": [],
+      "failure": "EXTRACTION_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Apply shared adapter: HTML_SELECTOR",
+      "externalDependency": false,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.sunteckindia.com/investor-relations",
+      "coverage": [
+        "mumbai"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.sunteckindia.com/media",
+      "coverage": [
+        "mumbai"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.suratmunicipal.gov.in/Information/pressreleases",
+      "coverage": [
+        "surat"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.suratmunicipal.gov.in/Information/Tender/Tenders",
+      "coverage": [
+        "surat"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.track2realty.track2media.com/",
+      "coverage": [],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P1",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.ukrera.org.in",
+      "coverage": [
+        "dehradun",
+        "haridwar",
+        "rishikesh",
+        "roorkee",
+        "rudrapur"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.up-rera.in",
+      "coverage": [
+        "agra",
+        "aligarh",
+        "allahabad",
+        "barabanki",
+        "bareilly",
+        "firozabad",
+        "ghaziabad",
+        "gorakhpur",
+        "hapur",
+        "jhansi",
+        "kanpur",
+        "lucknow",
+        "mathura",
+        "meerut",
+        "moradabad",
+        "noida",
+        "varanasi",
+        "vrindavan"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.up-rera.in/PressRelease",
+      "coverage": [
+        "agra",
+        "aligarh",
+        "allahabad",
+        "barabanki",
+        "bareilly",
+        "firozabad",
+        "ghaziabad",
+        "gorakhpur",
+        "hapur",
+        "jhansi",
+        "kanpur",
+        "lucknow",
+        "mathura",
+        "meerut",
+        "moradabad",
+        "noida",
+        "varanasi",
+        "vrindavan"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.yamunaexpresswayauthority.com/hi/tender/tender-archives",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.yamunaexpresswayauthority.com/web/",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://www.yamunaexpresswayauthority.com/web/announcement/",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    },
+    {
+      "source": "https://yamunaexpresswayauthority.com",
+      "coverage": [
+        "noida"
+      ],
+      "failure": "TRANSPORT_FAILURE",
+      "priority": "P0",
+      "recommendedFix": "Bounded retry and independent endpoint verification",
+      "externalDependency": true,
+      "lastVerified": "2026-09-30T12:58:19.862Z",
+      "status": "OPEN"
+    }
+  ]
+}

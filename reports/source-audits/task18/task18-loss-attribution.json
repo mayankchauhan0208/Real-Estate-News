@@ -1,0 +1,365 @@
+{
+  "editorialFalseNegativeLoss": [
+    {
+      "recordId": "task17-001",
+      "title": "DDA launches digital map for areas planned under Master Plan for Delhi 2047",
+      "primaryLossStage": "GEO",
+      "reason": "No article-level city evidence reached routing.",
+      "secondaryFactors": [
+        "NAVIGATION_CONTAMINATED",
+        "STATE_OR_CITY_ALIAS_NOT_EXTRACTED"
+      ]
+    },
+    {
+      "recordId": "task17-059",
+      "title": "Yeida plans  ₹4.5cr landmark entry gate near Yamuna Expressway",
+      "primaryLossStage": "EXTRACTION",
+      "reason": "Article body was not usable for downstream stages.",
+      "secondaryFactors": [
+        "ARTICLE_BODY_EXTRACTION",
+        "GEO_NOT_REACHED"
+      ]
+    }
+  ],
+  "correctConservativeRejection": [
+    {
+      "recordId": "task17-002",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "NO_GEO"
+    },
+    {
+      "recordId": "task17-003",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "NO_GEO"
+    },
+    {
+      "recordId": "task17-004",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_GEO"
+    },
+    {
+      "recordId": "task17-005",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_GEO"
+    },
+    {
+      "recordId": "task17-006",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "NO_GEO"
+    },
+    {
+      "recordId": "task17-007",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "NO_GEO"
+    },
+    {
+      "recordId": "task17-008",
+      "label": "REJECT_NEGATIVE",
+      "currentState": "NO_GEO"
+    },
+    {
+      "recordId": "task17-009",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "NO_GEO"
+    },
+    {
+      "recordId": "task17-010",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_GEO"
+    },
+    {
+      "recordId": "task17-011",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "NO_GEO"
+    },
+    {
+      "recordId": "task17-012",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "NO_GEO"
+    },
+    {
+      "recordId": "task17-013",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "NO_GEO"
+    },
+    {
+      "recordId": "task17-014",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_GEO"
+    },
+    {
+      "recordId": "task17-015",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "NO_GEO"
+    },
+    {
+      "recordId": "task17-016",
+      "label": "REJECT_NEGATIVE",
+      "currentState": "NO_GEO"
+    },
+    {
+      "recordId": "task17-017",
+      "label": "REJECT_NEGATIVE",
+      "currentState": "NO_GEO"
+    },
+    {
+      "recordId": "task17-018",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "DUPLICATE"
+    },
+    {
+      "recordId": "task17-019",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-020",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-021",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-022",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "DUPLICATE"
+    },
+    {
+      "recordId": "task17-023",
+      "label": "REJECT_NEGATIVE",
+      "currentState": "STALE"
+    },
+    {
+      "recordId": "task17-024",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "DUPLICATE"
+    },
+    {
+      "recordId": "task17-025",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "DUPLICATE"
+    },
+    {
+      "recordId": "task17-026",
+      "label": "REJECT_NEGATIVE",
+      "currentState": "STALE"
+    },
+    {
+      "recordId": "task17-027",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "STALE"
+    },
+    {
+      "recordId": "task17-028",
+      "label": "REJECT_NEGATIVE",
+      "currentState": "NEGATIVE"
+    },
+    {
+      "recordId": "task17-029",
+      "label": "REJECT_NEGATIVE",
+      "currentState": "NEGATIVE"
+    },
+    {
+      "recordId": "task17-030",
+      "label": "REJECT_NEGATIVE",
+      "currentState": "NEGATIVE"
+    },
+    {
+      "recordId": "task17-031",
+      "label": "REJECT_NEGATIVE",
+      "currentState": "NEGATIVE"
+    },
+    {
+      "recordId": "task17-032",
+      "label": "REJECT_NEGATIVE",
+      "currentState": "NEGATIVE"
+    },
+    {
+      "recordId": "task17-033",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "DUPLICATE"
+    },
+    {
+      "recordId": "task17-034",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-035",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-036",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-037",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-038",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-039",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-040",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-041",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-042",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-043",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-044",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-045",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-046",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "QUALITY"
+    },
+    {
+      "recordId": "task17-047",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "QUALITY"
+    },
+    {
+      "recordId": "task17-048",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "QUALITY"
+    },
+    {
+      "recordId": "task17-049",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-050",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-051",
+      "label": "REJECT_NEGATIVE",
+      "currentState": "QUALITY"
+    },
+    {
+      "recordId": "task17-052",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "QUALITY"
+    },
+    {
+      "recordId": "task17-053",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "QUALITY"
+    },
+    {
+      "recordId": "task17-054",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "QUALITY"
+    },
+    {
+      "recordId": "task17-055",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-056",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-057",
+      "label": "REJECT_INSUFFICIENT",
+      "currentState": "NO_DATE"
+    },
+    {
+      "recordId": "task17-058",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "QUALITY"
+    },
+    {
+      "recordId": "task17-060",
+      "label": "REJECT_NEGATIVE",
+      "currentState": "QUALITY"
+    },
+    {
+      "recordId": "task17-061",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "DUPLICATE"
+    },
+    {
+      "recordId": "task17-062",
+      "label": "REJECT_NEGATIVE",
+      "currentState": "NEGATIVE"
+    },
+    {
+      "recordId": "task17-063",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "DUPLICATE"
+    },
+    {
+      "recordId": "task17-064",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "NEGATIVE"
+    },
+    {
+      "recordId": "task17-065",
+      "label": "REJECT_NEGATIVE",
+      "currentState": "NEGATIVE"
+    },
+    {
+      "recordId": "task17-066",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "NEGATIVE"
+    },
+    {
+      "recordId": "task17-067",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "NEGATIVE"
+    },
+    {
+      "recordId": "task17-068",
+      "label": "REJECT_OFF_TOPIC",
+      "currentState": "NEGATIVE"
+    },
+    {
+      "recordId": "task17-069",
+      "label": "REJECT_NEGATIVE",
+      "currentState": "DUPLICATE"
+    }
+  ],
+  "observedLosses": {
+    "GEO": 1,
+    "EXTRACTION": 1
+  }
+}

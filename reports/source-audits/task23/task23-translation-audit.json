@@ -1,0 +1,279 @@
+{
+  "records": [
+    {
+      "recordId": "task22-005",
+      "originalLanguage": "Hindi",
+      "detectedLanguage": "hi",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "PRESENT"
+    },
+    {
+      "recordId": "task22-006",
+      "originalLanguage": "Hindi",
+      "detectedLanguage": "hi",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "PRESENT"
+    },
+    {
+      "recordId": "task22-004",
+      "originalLanguage": "Hindi",
+      "detectedLanguage": "hi",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "UNRESOLVED"
+    },
+    {
+      "recordId": "task22-003",
+      "originalLanguage": "Hindi",
+      "detectedLanguage": "hi",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "PRESENT"
+    },
+    {
+      "recordId": "task22-009",
+      "originalLanguage": "Marathi",
+      "detectedLanguage": "mr",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "PRESENT"
+    },
+    {
+      "recordId": "task22-007",
+      "originalLanguage": "Hindi",
+      "detectedLanguage": "hi",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "PRESENT"
+    },
+    {
+      "recordId": "task22-019",
+      "originalLanguage": "Telugu",
+      "detectedLanguage": "te",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "PRESENT"
+    },
+    {
+      "recordId": "task22-022",
+      "originalLanguage": "Telugu",
+      "detectedLanguage": "te",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "PRESENT"
+    },
+    {
+      "recordId": "task22-008",
+      "originalLanguage": "Marathi",
+      "detectedLanguage": "mr",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "PRESENT"
+    },
+    {
+      "recordId": "task22-012",
+      "originalLanguage": "Marathi",
+      "detectedLanguage": "mr",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "PRESENT"
+    },
+    {
+      "recordId": "task22-013",
+      "originalLanguage": "Marathi",
+      "detectedLanguage": "mr",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "PRESENT"
+    },
+    {
+      "recordId": "task22-014",
+      "originalLanguage": "Malayalam",
+      "detectedLanguage": "ml",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "UNRESOLVED"
+    },
+    {
+      "recordId": "task22-020",
+      "originalLanguage": "Telugu",
+      "detectedLanguage": "te",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "UNRESOLVED"
+    },
+    {
+      "recordId": "task22-021",
+      "originalLanguage": "Telugu",
+      "detectedLanguage": "te",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "UNRESOLVED"
+    },
+    {
+      "recordId": "task22-027",
+      "originalLanguage": "Telugu",
+      "detectedLanguage": "te",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "UNRESOLVED"
+    },
+    {
+      "recordId": "task22-001",
+      "originalLanguage": "Hindi",
+      "detectedLanguage": "hi",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "NONE",
+      "locationPreservation": "UNRESOLVED"
+    },
+    {
+      "recordId": "task22-002",
+      "originalLanguage": "Hindi",
+      "detectedLanguage": "hi",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "UNRESOLVED"
+    },
+    {
+      "recordId": "task22-010",
+      "originalLanguage": "Marathi",
+      "detectedLanguage": "mr",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "NONE",
+      "locationPreservation": "UNRESOLVED"
+    },
+    {
+      "recordId": "task22-011",
+      "originalLanguage": "Marathi",
+      "detectedLanguage": "mr",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "UNRESOLVED"
+    },
+    {
+      "recordId": "task22-023",
+      "originalLanguage": "Kannada",
+      "detectedLanguage": "kn",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "NONE",
+      "locationPreservation": "UNRESOLVED"
+    },
+    {
+      "recordId": "task22-024",
+      "originalLanguage": "Kannada",
+      "detectedLanguage": "kn",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "UNRESOLVED"
+    },
+    {
+      "recordId": "task22-025",
+      "originalLanguage": "Kannada",
+      "detectedLanguage": "kn",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "UNRESOLVED"
+    },
+    {
+      "recordId": "task22-026",
+      "originalLanguage": "Tamil",
+      "detectedLanguage": "ta",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "UNRESOLVED"
+    },
+    {
+      "recordId": "task22-056",
+      "originalLanguage": "Hindi/Marathi (unresolved)",
+      "detectedLanguage": "bn",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "PRESENT_IN_ORIGINAL",
+      "locationPreservation": "UNRESOLVED"
+    },
+    {
+      "recordId": "task22-057",
+      "originalLanguage": "Hindi/Marathi (unresolved)",
+      "detectedLanguage": "bn",
+      "normalization": "NFC + native numeral normalization; original text retained",
+      "provider": "none",
+      "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
+      "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
+      "numberPreservation": "NONE",
+      "locationPreservation": "UNRESOLVED"
+    }
+  ]
+}

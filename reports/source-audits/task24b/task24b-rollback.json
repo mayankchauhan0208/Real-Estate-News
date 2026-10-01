@@ -1,0 +1,9 @@
+{
+  "target": "5468b120200196a50c5b0e9254e8fe4ec264cc7d",
+  "viable": true,
+  "stateMigration": false,
+  "sentStateFormatChanged": false,
+  "configMigration": false,
+  "strategy": "restore code/workflows to verified remote main; leave sent-state untouched",
+  "irreversibleChanges": false
+}

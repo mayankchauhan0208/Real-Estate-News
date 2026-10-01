@@ -1,0 +1,170 @@
+[
+  {
+    "recordId": "task17-001",
+    "title": "DDA launches digital map for areas planned under Master Plan for Delhi 2047",
+    "humanCity": "Delhi",
+    "url": "https://realty.economictimes.indiatimes.com/news/technology/dda-launches-digital-map-for-areas-planned-under-master-plan-for-delhi-2047/134577474",
+    "stages": [
+      {
+        "stage": "SOURCE",
+        "status": "PASS",
+        "evidence": "https://realty.economictimes.indiatimes.com/rss/technology"
+      },
+      {
+        "stage": "LISTING_DISCOVERY",
+        "status": "PASS",
+        "evidence": "Task 15 record contains a concrete article URL."
+      },
+      {
+        "stage": "DETAIL_DISCOVERY",
+        "status": "PASS",
+        "evidence": "Concrete detail URL is present in audited record."
+      },
+      {
+        "stage": "ARTICLE_FETCH",
+        "status": "PASS",
+        "evidence": "Audited record has readable public evidence."
+      },
+      {
+        "stage": "ARTICLE_BODY_EXTRACTION",
+        "status": "FAIL",
+        "evidence": "JAVASCRIPT_CONTAMINATED"
+      },
+      {
+        "stage": "DATE_EXTRACTION",
+        "status": "PASS",
+        "evidence": "Date present in audited record."
+      },
+      {
+        "stage": "FRESHNESS",
+        "status": "PASS",
+        "evidence": "NO_GEO"
+      },
+      {
+        "stage": "RELEVANCE",
+        "status": "PASS",
+        "evidence": "PASS"
+      },
+      {
+        "stage": "NEGATIVE_FILTER",
+        "status": "PASS",
+        "evidence": "PASS"
+      },
+      {
+        "stage": "GEO_EVIDENCE",
+        "status": "FAIL",
+        "evidence": "NO_GEO"
+      },
+      {
+        "stage": "CITY_ROUTING",
+        "status": "FAIL",
+        "evidence": "No routed city."
+      },
+      {
+        "stage": "DEDUPE",
+        "status": "PASS",
+        "evidence": "NO_GEO"
+      },
+      {
+        "stage": "FINAL_STATE",
+        "status": "FAIL",
+        "evidence": "NO_GEO"
+      },
+      {
+        "stage": "WOULD_PUBLISH",
+        "status": "FAIL",
+        "evidence": "Current chain did not publish; first loss GEO."
+      }
+    ],
+    "firstLoss": {
+      "primary": "GEO",
+      "reason": "No article-level city evidence reached routing."
+    },
+    "diagnosticSnippet": "Login Get App News RegulatoryCommercialCementTechnologyIndustryResidentialInfrastructureRERAHousing FinanceAllied IndustriesView all News Exclusives Leaders Speak Events Awards Webinars Brand Solutions More Newsletters MasterClasses About Us Contact Us Advertise With Us Search Regulatory Industry RERA Commercial Residential ETRealty TV Housing Finance Cities",
+    "humanEvidenceSummary": "Delhi land-use/planning update with direct property relevance."
+  },
+  {
+    "recordId": "task17-059",
+    "title": "Yeida plans  ₹4.5cr landmark entry gate near Yamuna Expressway",
+    "humanCity": "Greater Noida",
+    "url": "https://www.hindustantimes.com/cities/noida-news/yeida-plans-4-5cr-landmark-entry-gate-near-yamuna-expressway-101790793601245.html",
+    "stages": [
+      {
+        "stage": "SOURCE",
+        "status": "PASS",
+        "evidence": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml"
+      },
+      {
+        "stage": "LISTING_DISCOVERY",
+        "status": "PASS",
+        "evidence": "Task 15 record contains a concrete article URL."
+      },
+      {
+        "stage": "DETAIL_DISCOVERY",
+        "status": "PASS",
+        "evidence": "Concrete detail URL is present in audited record."
+      },
+      {
+        "stage": "ARTICLE_FETCH",
+        "status": "PASS",
+        "evidence": "Audited record has readable public evidence."
+      },
+      {
+        "stage": "ARTICLE_BODY_EXTRACTION",
+        "status": "FAIL",
+        "evidence": "JAVASCRIPT_CONTAMINATED"
+      },
+      {
+        "stage": "DATE_EXTRACTION",
+        "status": "PASS",
+        "evidence": "Date present in audited record."
+      },
+      {
+        "stage": "FRESHNESS",
+        "status": "PASS",
+        "evidence": "QUALITY"
+      },
+      {
+        "stage": "RELEVANCE",
+        "status": "FAIL",
+        "evidence": "FAIL"
+      },
+      {
+        "stage": "NEGATIVE_FILTER",
+        "status": "PASS",
+        "evidence": "PASS"
+      },
+      {
+        "stage": "GEO_EVIDENCE",
+        "status": "FAIL",
+        "evidence": "NO_GEO"
+      },
+      {
+        "stage": "CITY_ROUTING",
+        "status": "FAIL",
+        "evidence": "No routed city."
+      },
+      {
+        "stage": "DEDUPE",
+        "status": "PASS",
+        "evidence": "QUALITY"
+      },
+      {
+        "stage": "FINAL_STATE",
+        "status": "FAIL",
+        "evidence": "QUALITY"
+      },
+      {
+        "stage": "WOULD_PUBLISH",
+        "status": "FAIL",
+        "evidence": "Current chain did not publish; first loss EXTRACTION."
+      }
+    ],
+    "firstLoss": {
+      "primary": "EXTRACTION",
+      "reason": "Article body was not usable for downstream stages."
+    },
+    "diagnosticSnippet": "(function () { var guardedLinkSelector = 'a[target=\"_blank\"], a[target=\"_parent\"], a[target=\"_top\"], .author-name a'; // Scope the listener to the article body so clicks on the header, // nav, footer, sidebar and ads never hit this handler at all. var root = document.querySelector('.storyBody') || document.body; function stopOutboundLinkPropagation(event) { ",
+    "humanEvidenceSummary": "Current YEIDA development in Sector 27/Yamuna Expressway with explicit industrial plot, park and airport-led development context."
+  }
+]

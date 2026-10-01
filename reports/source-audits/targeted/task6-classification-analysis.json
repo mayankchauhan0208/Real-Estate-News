@@ -1,0 +1,352 @@
+{
+  "reportType": "task6-classification-analysis",
+  "generatedAt": "2026-09-30T09:33:29.414Z",
+  "inputs": [
+    "reports/source-audits/targeted/classification-evaluation.jsonl",
+    "reports/source-audits/targeted/rera-date-v2.jsonl",
+    "reports/source-audits/targeted/regional-date-v2.jsonl"
+  ],
+  "rera": {
+    "labeledSampleSize": 56,
+    "labels": {
+      "INSUFFICIENT_CONTENT": 7,
+      "NAVIGATION_INDEX": 41,
+      "UNCERTAIN": 8
+    },
+    "officialPrimaryCandidates": 48,
+    "thirdPartyCandidates": 8,
+    "falseNegativeGates": {},
+    "confirmedLegitimateRejected": 0,
+    "note": "No sampled official RERA record was confirmed as a valid publishable record. The Goa third-party report is a real RERA-related article but is negative and correctly remains outside positive-only admission."
+  },
+  "datedRera": {
+    "total": 20,
+    "exactBreakdown": {
+      "IRRELEVANT": 1,
+      "NAVIGATION_INDEX": 18,
+      "UNCERTAIN": 1
+    },
+    "records": [
+      {
+        "url": "https://aiforera.org/#main-content",
+        "title": "Home : All India Forum of Real Estate Regulatory Authorities",
+        "date": "2026-09-28T12:00:00.000Z",
+        "classification": "NAVIGATION_INDEX",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "UNKNOWN_LOCALITY",
+        "currentClassifier": "reject_negative",
+        "currentRejectionReason": "navigation/index language dominates"
+      },
+      {
+        "url": "https://aiforera.org/about/org_structure",
+        "title": "Organization Structure : All India Forum of Real Estate Regulatory Authorities",
+        "date": "2026-09-28T12:00:00.000Z",
+        "classification": "NAVIGATION_INDEX",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "UNKNOWN_LOCALITY",
+        "currentClassifier": "reject_negative",
+        "currentRejectionReason": "navigation/index language dominates"
+      },
+      {
+        "url": "https://aiforera.org/about/org_structure",
+        "title": "Organization Structure : All India Forum of Real Estate Regulatory Authorities",
+        "date": "2026-09-28T12:00:00.000Z",
+        "classification": "NAVIGATION_INDEX",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "UNKNOWN_LOCALITY",
+        "currentClassifier": "reject_negative",
+        "currentRejectionReason": "navigation/index language dominates"
+      },
+      {
+        "url": "https://aiforera.org/about/org_structure",
+        "title": "Organization Structure : All India Forum of Real Estate Regulatory Authorities",
+        "date": "2026-09-28T12:00:00.000Z",
+        "classification": "NAVIGATION_INDEX",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "UNKNOWN_LOCALITY",
+        "currentClassifier": "reject_negative",
+        "currentRejectionReason": "navigation/index language dominates"
+      },
+      {
+        "url": "https://realty.economictimes.indiatimes.com/news/rera/goa-rera-seeks-courts-intervention-to-complete-stalled-housing-project/134531053",
+        "title": "Goa RERA seeks court's intervention to complete stalled housing project",
+        "date": "2026-09-28T03:42:25.000Z",
+        "classification": "UNCERTAIN",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "CITY_OR_STATE_SIGNAL",
+        "currentClassifier": "reject_negative",
+        "currentRejectionReason": "third-party RERA report with negative signal"
+      },
+      {
+        "url": "https://rera.ap.gov.in/RERA/Views/index.html#",
+        "title": "Greater accountability",
+        "date": "2017-03-28T12:00:00.000Z",
+        "classification": "NAVIGATION_INDEX",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "UNKNOWN_LOCALITY",
+        "currentClassifier": "reject_negative",
+        "currentRejectionReason": "navigation/index language dominates"
+      },
+      {
+        "url": "https://rera.goa.gov.in/functionsAndServicesPage",
+        "title": "Functions and Services",
+        "date": "2017-05-01T12:00:00.000Z",
+        "classification": "NAVIGATION_INDEX",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "CITY_OR_STATE_SIGNAL",
+        "currentClassifier": "reject_negative",
+        "currentRejectionReason": "navigation/index language dominates"
+      },
+      {
+        "url": "https://rera.goa.gov.in/#",
+        "title": "Welcome To RERA",
+        "date": "2023-01-18T12:00:00.000Z",
+        "classification": "NAVIGATION_INDEX",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "CITY_OR_STATE_SIGNAL",
+        "currentClassifier": "reject_negative",
+        "currentRejectionReason": "navigation/index language dominates"
+      },
+      {
+        "url": "https://rera.goa.gov.in/functionsAndServicesPage",
+        "title": "Functions and Services",
+        "date": "2017-05-01T12:00:00.000Z",
+        "classification": "NAVIGATION_INDEX",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "CITY_OR_STATE_SIGNAL",
+        "currentClassifier": "reject_negative",
+        "currentRejectionReason": "navigation/index language dominates"
+      },
+      {
+        "url": "https://rera.goa.gov.in/Notice#",
+        "title": "Real Estate Notice",
+        "date": "2023-01-18T12:00:00.000Z",
+        "classification": "NAVIGATION_INDEX",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "CITY_OR_STATE_SIGNAL",
+        "currentClassifier": "reject_negative",
+        "currentRejectionReason": "third-party RERA report with negative signal"
+      },
+      {
+        "url": "https://rera.punjab.gov.in/RERA-acts-rules-regulations.html",
+        "title": "Real Estate Regulatory Authority",
+        "date": "2022-01-20T12:00:00.000Z",
+        "classification": "NAVIGATION_INDEX",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "UNKNOWN_LOCALITY",
+        "currentClassifier": "reject_negative",
+        "currentRejectionReason": "navigation/index language dominates"
+      },
+      {
+        "url": "https://rera.punjab.gov.in/RERA-acts-rules-regulations.html",
+        "title": "Real Estate Regulatory Authority",
+        "date": "2022-01-20T12:00:00.000Z",
+        "classification": "NAVIGATION_INDEX",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "UNKNOWN_LOCALITY",
+        "currentClassifier": "reject_negative",
+        "currentRejectionReason": "navigation/index language dominates"
+      },
+      {
+        "url": "https://rera.punjab.gov.in/RERA-acts-rules-regulations.html",
+        "title": "Real Estate Regulatory Authority",
+        "date": "2022-01-20T12:00:00.000Z",
+        "classification": "NAVIGATION_INDEX",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "UNKNOWN_LOCALITY",
+        "currentClassifier": "reject_negative",
+        "currentRejectionReason": "navigation/index language dominates"
+      },
+      {
+        "url": "https://rera.tripura.gov.in/screen-reader-access",
+        "title": "Screen Reader Access | rera",
+        "date": "2025-02-17T12:00:00.000Z",
+        "classification": "NAVIGATION_INDEX",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "UNKNOWN_LOCALITY",
+        "currentClassifier": "unclassified",
+        "currentRejectionReason": "navigation/index language dominates"
+      },
+      {
+        "url": "https://rera.tripura.gov.in/#mainpagedescription",
+        "title": "Home | rera",
+        "date": "2016-05-01T12:00:00.000Z",
+        "classification": "NAVIGATION_INDEX",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "UNKNOWN_LOCALITY",
+        "currentClassifier": "unclassified",
+        "currentRejectionReason": "navigation/index language dominates"
+      },
+      {
+        "url": "https://up-rera.in/frm_Rera_Anual_Report.aspx",
+        "title": "UP RERA : Uttar Pradesh Real Estate Regulatory Authority",
+        "date": "2016-05-01T12:00:00.000Z",
+        "classification": "NAVIGATION_INDEX",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "CITY_OR_STATE_SIGNAL",
+        "currentClassifier": "unclassified",
+        "currentRejectionReason": "third-party RERA report with negative signal"
+      },
+      {
+        "url": "https://www.nhsrcl.in/#mainContent",
+        "title": "NHSRCL",
+        "date": "2026-10-14T12:00:00.000Z",
+        "classification": "IRRELEVANT",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "CITY_OR_STATE_SIGNAL",
+        "currentClassifier": "unclassified",
+        "currentRejectionReason": "navigation/index language dominates"
+      },
+      {
+        "url": "https://www.rera.mp.gov.in/#skip_main_content",
+        "title": "भू-संपदा विनियामक प्राधिकरण",
+        "date": "2021-06-18T12:00:00.000Z",
+        "classification": "NAVIGATION_INDEX",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "UNKNOWN_LOCALITY",
+        "currentClassifier": "unclassified",
+        "currentRejectionReason": "third-party RERA report with negative signal"
+      },
+      {
+        "url": "https://www.up-rera.in/frm_Rera_Anual_Report.aspx",
+        "title": "UP RERA : Uttar Pradesh Real Estate Regulatory Authority",
+        "date": "2016-05-01T12:00:00.000Z",
+        "classification": "NAVIGATION_INDEX",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "CITY_OR_STATE_SIGNAL",
+        "currentClassifier": "unclassified",
+        "currentRejectionReason": "third-party RERA report with negative signal"
+      },
+      {
+        "url": "https://www.up-rera.in/frm_Rera_Anual_Report.aspx",
+        "title": "UP RERA : Uttar Pradesh Real Estate Regulatory Authority",
+        "date": "2016-05-01T12:00:00.000Z",
+        "classification": "NAVIGATION_INDEX",
+        "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+        "scope": "CITY_OR_STATE_SIGNAL",
+        "currentClassifier": "unclassified",
+        "currentRejectionReason": "third-party RERA report with negative signal"
+      }
+    ],
+    "legitimateOfficialRecord": 0,
+    "navigationIndex": 18,
+    "irrelevant": 1,
+    "proceduralLegitimateOfficial": 0,
+    "projectSpecific": 0,
+    "statewide": 0,
+    "citySpecific": 0,
+    "uncertain": 1
+  },
+  "regional": {
+    "labeledSampleSize": 8,
+    "labels": {
+      "INSUFFICIENT": 4,
+      "IRRELEVANT": 2,
+      "NEGATIVE_REJECT": 2
+    },
+    "falseNegativeReasons": {},
+    "confirmedLegitimateRejected": 0
+  },
+  "benchmark": {
+    "rera": {
+      "before": {
+        "validSampleSize": 0,
+        "invalidSampleSize": 56,
+        "truePositives": 0,
+        "falseNegatives": 0,
+        "falsePositives": 1,
+        "trueNegatives": 55,
+        "precision": 0,
+        "recall": null,
+        "titleOnlyPass": 1,
+        "titleDescriptionPass": 1,
+        "fullContextPass": 1
+      },
+      "after": {
+        "validSampleSize": 0,
+        "invalidSampleSize": 56,
+        "truePositives": 0,
+        "falseNegatives": 0,
+        "falsePositives": 1,
+        "trueNegatives": 55,
+        "precision": 0,
+        "recall": null,
+        "titleOnlyPass": 1,
+        "titleDescriptionPass": 1,
+        "fullContextPass": 1
+      }
+    },
+    "regional": {
+      "before": {
+        "validSampleSize": 0,
+        "invalidSampleSize": 8,
+        "truePositives": 0,
+        "falseNegatives": 0,
+        "falsePositives": 0,
+        "trueNegatives": 8,
+        "precision": null,
+        "recall": null,
+        "titleOnlyPass": 0,
+        "titleDescriptionPass": 0,
+        "fullContextPass": 0
+      },
+      "after": {
+        "validSampleSize": 0,
+        "invalidSampleSize": 8,
+        "truePositives": 0,
+        "falseNegatives": 0,
+        "falsePositives": 0,
+        "trueNegatives": 8,
+        "precision": null,
+        "recall": null,
+        "titleOnlyPass": 0,
+        "titleDescriptionPass": 0,
+        "fullContextPass": 0
+      }
+    },
+    "note": "Valid recall is not statistically meaningful here because this diagnostic set contains zero confirmed valid RERA or regional records under conservative human-review rules.",
+    "before": "Current classifier output from the same records.",
+    "after": "Same as before; no classifier rule changed because the labeled evidence does not support a safe production classifier change."
+  },
+  "structuredSignals": {
+    "officialSourceType": "Useful for routing to review, not an allow bypass.",
+    "reraRecordType": "Useful only when a readable record/document type is present.",
+    "projectDeveloperAuthorityLocation": "No measured valid sample supports new unconditional terms.",
+    "result": "No local classifier changes justified."
+  },
+  "validArticlesRecovered": 0,
+  "invalidArticlesAdmitted": 0,
+  "geoPreparation": {
+    "validArticlesFailingGeo": 0,
+    "unknownEntities": [],
+    "note": "No confirmed valid article exists in this sample, so no broad geo alias change is justified."
+  },
+  "bottleneck": {
+    "ranking": [
+      "SOURCE_AVAILABILITY_LOSS",
+      "EXTRACTION_LOSS",
+      "CLASSIFICATION_LOSS",
+      "GEO_ROUTING_LOSS"
+    ],
+    "currentLargest": "SOURCE_AVAILABILITY_LOSS",
+    "evidence": "The sample contains 0 confirmed valid RERA/regional articles; source and extraction quality must improve before classifier recall can be measured."
+  },
+  "nextTask": "TASK_7 should begin with source/article extraction and geo evidence on a verified positive control set, not broad classifier weakening.",
+  "adapterPriority": [
+    {
+      "priority": 1,
+      "adapter": "Official RERA HTML/PDF record extraction",
+      "reason": "Highest regulatory value; current samples are mostly navigation or unreadable documents."
+    },
+    {
+      "priority": 2,
+      "adapter": "UP RERA PressRelease page/document extraction",
+      "reason": "High state coverage and known listing/article-link mismatch."
+    },
+    {
+      "priority": 3,
+      "adapter": "Regional-language authority pages with visible date/body selectors",
+      "reason": "Needed to produce valid controls before multilingual classifier changes."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "bounded": true,
+  "timeoutMs": 7000,
+  "maxBodyBytes": 750000,
+  "concurrency": 6,
+  "totalElapsedMs": 20906,
+  "requests": 69,
+  "articleFetches": 69,
+  "fallbacks": 0,
+  "jsonLdUses": 46,
+  "semanticHtmlUses": 14,
+  "averageElapsedMs": 258,
+  "p95ElapsedMs": 1055,
+  "maxObservedBodyBytes": 446628,
+  "cache": "none; deterministic one-pass replay",
+  "failures": 0
+}

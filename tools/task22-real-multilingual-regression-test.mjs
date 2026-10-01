@@ -1,0 +1,17 @@
+import fs from 'node:fs/promises';
+const root = 'reports/source-audits/task22';
+const report = JSON.parse(await fs.readFile(`${root}/task22-real-multilingual-report.json`, 'utf8'));
+const review = await fs.readFile(`${root}/task22-multilingual-editorial-review.csv`, 'utf8');
+const articleLines = (await fs.readFile(`${root}/task22-real-articles.jsonl`, 'utf8')).trim().split(/\r?\n/).filter(Boolean).map(JSON.parse);
+const task20 = JSON.parse(await fs.readFile('reports/source-audits/task20/task20-precision-recovery-report.json', 'utf8'));
+const task21 = JSON.parse(await fs.readFile('reports/source-audits/task21/task21-multilingual-report.json', 'utf8'));
+if (report.exactTask21ReviewEndpoints !== 24) throw new Error('Task 21 review endpoint count drifted');
+if (report.coverage.cities !== 234) throw new Error('city coverage drifted');
+if (report.corpus.realRegionalArticles !== articleLines.length || articleLines.length < 20) throw new Error('real corpus missing or too small');
+if (!review.includes('HUMAN_LABEL') || !review.match(/,HUMAN_CITY,HUMAN_REASON,HUMAN_NOTES/)) throw new Error('editorial fields missing');
+if (review.split(/\r?\n/).slice(1).filter(Boolean).some((line) => !line.endsWith(',,,,'))) throw new Error('human fields were prefilled');
+if (task20.after.metrics.TP !== 2 || task20.after.metrics.FP !== 0 || task20.after.metrics.TN !== 67 || task20.after.metrics.FN !== 0 || task20.after.negativeControls !== '8/8') throw new Error('Task 20 regression');
+if (task21.architecture.supportedCities !== 234 || task21.task20Gate.negativeControls !== '8/8') throw new Error('Task 21 regression');
+if (report.task21Safety.unknownLanguageAutoPublish || report.task21Safety.translationFailureAutoPublish || report.task21Safety.unsafeSourceGeoFallback) throw new Error('multilingual safety regression');
+if (report.sources.promote < 0 || report.sources.review < 0 || report.sources.reject < 0) throw new Error('invalid source decision counts');
+console.log(JSON.stringify({ passed: true, realArticles: articleLines.length, languages: report.corpus.languages, task20: task20.after.metrics, humanLabelsPrefilled: false }));

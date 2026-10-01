@@ -1,0 +1,100 @@
+{
+  "total": 69,
+  "transport": {
+    "attempted": 69,
+    "ok": 69,
+    "failed": 0,
+    "timeouts": 0,
+    "statuses": {
+      "200": 69
+    }
+  },
+  "mechanisms": {
+    "JSON_LD_NOT_USED": {
+      "count": 40,
+      "labels": {
+        "PUBLISH": 2,
+        "REJECT_OFF_TOPIC": 20,
+        "REJECT_INSUFFICIENT": 7,
+        "REJECT_NEGATIVE": 11
+      },
+      "recoveryPossible": 40,
+      "sourceFamilies": [
+        "ET_REALTY",
+        "ET_INFRA",
+        "HINDUSTAN_TIMES"
+      ]
+    },
+    "SCRIPT_TEXT_INCLUDED": {
+      "count": 5,
+      "labels": {
+        "REJECT_NEGATIVE": 2,
+        "REJECT_OFF_TOPIC": 1,
+        "REJECT_INSUFFICIENT": 2
+      },
+      "recoveryPossible": 3,
+      "sourceFamilies": [
+        "ET_REALTY",
+        "transport.rajasthan.gov.in",
+        "www.bda.gov.in",
+        "HINDUSTAN_TIMES"
+      ]
+    },
+    "SITE_SHELL_SELECTED": {
+      "count": 2,
+      "labels": {
+        "REJECT_INSUFFICIENT": 2
+      },
+      "recoveryPossible": 0,
+      "sourceFamilies": [
+        "themetrorailguy.com"
+      ]
+    },
+    "CLEAN_ARTICLE": {
+      "count": 19,
+      "labels": {
+        "REJECT_INSUFFICIENT": 10,
+        "REJECT_OFF_TOPIC": 8,
+        "REJECT_NEGATIVE": 1
+      },
+      "recoveryPossible": 8,
+      "sourceFamilies": [
+        "dda.gov.in",
+        "faridabad.nic.in",
+        "gnida.up.gov.in",
+        "www.cial.aero",
+        "cci.gov.in",
+        "hprera.in",
+        "timesofindia.indiatimes.com",
+        "www.cci.gov.in"
+      ]
+    },
+    "ERROR_PAGE": {
+      "count": 3,
+      "labels": {
+        "REJECT_INSUFFICIENT": 2,
+        "REJECT_NEGATIVE": 1
+      },
+      "recoveryPossible": 1,
+      "sourceFamilies": [
+        "sipcotweb.tn.gov.in",
+        "rera.punjab.gov.in"
+      ]
+    }
+  },
+  "extractionSources": {
+    "JSON_LD_ARTICLE_BODY": 46,
+    "SEMANTIC_HTML": 14,
+    "NONE": 9
+  },
+  "reasonCodes": {
+    "JSON_LD_USED": 46,
+    "QUALITY_GATE_PASS": 1,
+    "ARTICLE_SELECTOR_MISSING": 9,
+    "MAIN_FALLBACK": 7,
+    "SHELL_DENSITY_HIGH": 1,
+    "QUALITY_GATE_FAILED": 8,
+    "TITLE_OVERLAP_MISSING": 7,
+    "BODY_PRESENT_BUT_LOW_SIGNAL": 1
+  }
+}

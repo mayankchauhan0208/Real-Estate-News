@@ -1,0 +1,384 @@
+{
+  "generatedAt": "2026-09-30T10:01:30.162Z",
+  "configuration": {
+    "cities": 234,
+    "runtimeUrls": 571,
+    "duplicateSourceRows": 0
+  },
+  "upRera": {
+    "trace": {
+      "getListing": {
+        "status": 200,
+        "cookiesEstablished": true,
+        "hiddenFieldsCaptured": 5,
+        "visibleItemSelected": true
+      },
+      "post": {
+        "target": "ctl00$ContentPlaceHolder1$grdphotos$ctl32$lnkdocname",
+        "status": 302,
+        "redirect": "/servermaintenance.aspx?aspxerrorpath=/PressRelease",
+        "contentType": "text/html; charset=utf-8",
+        "maintenanceDetected": true,
+        "result": "UNRECOVERABLE_WITH_CURRENT_SAFE_METHODS"
+      },
+      "conclusion": "Session continuity, referer, user-agent, hidden fields, event target and event argument were supplied; the public server still returned its maintenance page. No bypass or guessed document URL was attempted."
+    },
+    "result": "0_CONTROLS_RECOVERED",
+    "visibleItems": 46
+  },
+  "dda": {
+    "english": {
+      "result": "0_CONTROLS_RECOVERED",
+      "failure": "FAILED_fetch failed",
+      "telemetry": {
+        "source": "https://dda.gov.in/whats-new",
+        "listingFetch": "NOT_RUN",
+        "itemsFound": 0,
+        "itemsClassified": 0,
+        "detailRequests": 0,
+        "documentRequests": 0,
+        "detailSuccess": 0,
+        "documentSuccess": 0,
+        "textSuccess": 0,
+        "dateSuccess": 0,
+        "duplicates": 0,
+        "failures": 1,
+        "timeouts": 0,
+        "totalRuntime": 10630
+      }
+    },
+    "hindi": {
+      "result": "0_CONTROLS_RECOVERED",
+      "failure": "FAILED_fetch failed",
+      "telemetry": {
+        "source": "https://dda.gov.in/hi/whats-new",
+        "listingFetch": "NOT_RUN",
+        "itemsFound": 0,
+        "itemsClassified": 0,
+        "detailRequests": 0,
+        "documentRequests": 0,
+        "detailSuccess": 0,
+        "documentSuccess": 0,
+        "textSuccess": 0,
+        "dateSuccess": 0,
+        "duplicates": 0,
+        "failures": 1,
+        "timeouts": 0,
+        "totalRuntime": 10640
+      }
+    }
+  },
+  "goaRera": {
+    "result": "0_KNOWN_CONTROLS_MATCHED",
+    "linksFound": 48,
+    "pdfsReached": 7,
+    "htmlReached": 12,
+    "duplicates": 8,
+    "diagnosis": "Root traversal reaches generic orders/circulars/PDFs but not the known project ID; the verified project requires a structured project-search/detail branch."
+  },
+  "controls": {
+    "before": 8,
+    "after": 8,
+    "automaticallyDiscovered": 0,
+    "discoveryRecallBefore": 0,
+    "discoveryRecallAfter": 0,
+    "extractionRecall": 1,
+    "dateRecall": 1,
+    "classifierRecallBefore": 0.25,
+    "classifierRecallAfter": 0.25,
+    "geoCorrectBefore": 0.5,
+    "geoCorrectAfter": 0.5,
+    "endToEndBefore": 0,
+    "endToEndAfter": 0
+  },
+  "negativeGuardrail": {
+    "total": 8,
+    "rejected": 7,
+    "accepted": 1,
+    "falsePositiveCount": 1,
+    "results": [
+      {
+        "id": "negative-crime",
+        "title": "Python rescued from car in Jalaun",
+        "result": "reject_negative",
+        "rejected": true
+      },
+      {
+        "id": "negative-fraud",
+        "title": "Builder fraud complaint filed by homebuyers",
+        "result": "reject_negative",
+        "rejected": true
+      },
+      {
+        "id": "negative-court",
+        "title": "Court dispute delays stalled housing project",
+        "result": "reject_negative",
+        "rejected": true
+      },
+      {
+        "id": "negative-demolition",
+        "title": "Demolition notice issued to illegal construction",
+        "result": "reject_negative",
+        "rejected": true
+      },
+      {
+        "id": "negative-transport",
+        "title": "New bus service begins on city route",
+        "result": "unclassified",
+        "rejected": true
+      },
+      {
+        "id": "negative-politics",
+        "title": "Minister addresses party workers in city",
+        "result": "unclassified",
+        "rejected": true
+      },
+      {
+        "id": "negative-business",
+        "title": "SIBM Pune launches new MBA programme",
+        "result": "project_development",
+        "rejected": false
+      },
+      {
+        "id": "negative-navigation",
+        "title": "Home | Real Estate Regulatory Authority",
+        "result": "unclassified",
+        "rejected": true
+      }
+    ]
+  },
+  "quality": {
+    "validControlsAccepted": 2,
+    "invalidControlsAccepted": 1,
+    "falseNegatives": 6,
+    "note": "No classifier rules were changed; this is measurement only."
+  },
+  "sourceHealthSnapshot": {
+    "generatedAt": "2026-09-30T08:05:40.522Z",
+    "total": 571,
+    "transportReachable": 506,
+    "contentHealthy": 0,
+    "listingOnly": 467,
+    "notSampled": 38,
+    "contentDegraded": 0,
+    "stale": 0,
+    "empty": 0,
+    "extractionFailed": 1,
+    "blocked": 2,
+    "brokenUrl": 12,
+    "transportFailed": 48,
+    "needsReview": 3,
+    "selectedInRuntime": 571,
+    "fallbackUsed": 2,
+    "duplicateRows": 0
+  },
+  "cityMatrixSummary": {
+    "total": 234,
+    "byClassification": {
+      "DISCOVERY_GAP": 29,
+      "HEALTHY_EVIDENCE": 4,
+      "INSUFFICIENT_EVIDENCE": 201
+    }
+  },
+  "highestPriorityUndercoveredCities": [
+    {
+      "cityCode": "faridabad",
+      "city": "Faridabad",
+      "state": "Haryana",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 3,
+      "auditRowsMatched": 3
+    },
+    {
+      "cityCode": "gurugram",
+      "city": "Gurgaon",
+      "state": "Haryana",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 3,
+      "auditRowsMatched": 3
+    },
+    {
+      "cityCode": "bangalore",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 2,
+      "auditRowsMatched": 2
+    },
+    {
+      "cityCode": "chandigarh",
+      "city": "Chandigarh",
+      "state": "Chandigarh",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 2,
+      "auditRowsMatched": 2
+    },
+    {
+      "cityCode": "delhi_ncr",
+      "city": "Delhi NCR",
+      "state": "Delhi",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 2,
+      "auditRowsMatched": 2
+    },
+    {
+      "cityCode": "jaipur",
+      "city": "Jaipur",
+      "state": "Rajasthan",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 2,
+      "auditRowsMatched": 2
+    },
+    {
+      "cityCode": "kalyan_dombivli",
+      "city": "Kalyan-Dombivli",
+      "state": "Maharashtra",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 2,
+      "auditRowsMatched": 2
+    },
+    {
+      "cityCode": "kolkata",
+      "city": "Kolkata",
+      "state": "West Bengal",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 2,
+      "auditRowsMatched": 2
+    },
+    {
+      "cityCode": "mumbai",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 2,
+      "auditRowsMatched": 2
+    },
+    {
+      "cityCode": "new_delhi",
+      "city": "New Delhi",
+      "state": "Delhi",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 2,
+      "auditRowsMatched": 2
+    },
+    {
+      "cityCode": "patna",
+      "city": "Patna",
+      "state": "Bihar",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 2,
+      "auditRowsMatched": 2
+    },
+    {
+      "cityCode": "pune",
+      "city": "Pune",
+      "state": "Maharashtra",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 2,
+      "auditRowsMatched": 2
+    },
+    {
+      "cityCode": "thane",
+      "city": "Thane",
+      "state": "Maharashtra",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 2,
+      "auditRowsMatched": 2
+    },
+    {
+      "cityCode": "ahmedabad",
+      "city": "Ahmedabad",
+      "state": "Gujarat",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 1,
+      "auditRowsMatched": 1
+    },
+    {
+      "cityCode": "amritsar",
+      "city": "Amritsar",
+      "state": "Punjab",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 1,
+      "auditRowsMatched": 1
+    },
+    {
+      "cityCode": "bhopal",
+      "city": "Bhopal",
+      "state": "Madhya Pradesh",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 1,
+      "auditRowsMatched": 1
+    },
+    {
+      "cityCode": "bhubaneswar",
+      "city": "Bhubaneswar",
+      "state": "Odisha",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 1,
+      "auditRowsMatched": 1
+    },
+    {
+      "cityCode": "chennai",
+      "city": "Chennai",
+      "state": "Tamil Nadu",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 1,
+      "auditRowsMatched": 1
+    },
+    {
+      "cityCode": "guwahati",
+      "city": "Guwahati",
+      "state": "Assam",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 1,
+      "auditRowsMatched": 1
+    },
+    {
+      "cityCode": "hyderabad",
+      "city": "Hyderabad",
+      "state": "Telangana",
+      "classification": "DISCOVERY_GAP",
+      "configuredSourceCount": 1,
+      "auditRowsMatched": 1
+    }
+  ],
+  "runtime": {
+    "adapterRuns": [
+      "upRera",
+      "ddaEnglish",
+      "ddaHindi",
+      "goaRera"
+    ],
+    "observedMs": {
+      "upRera": 4819,
+      "ddaEnglish": 10630,
+      "ddaHindi": 10640,
+      "goaRera": 7298
+    },
+    "overlapRisk": "UNVERIFIED_FOR_HOURLY_PRODUCTION",
+    "reason": "Live adapter probes are bounded but DDA failures and UP postback failure prevent a complete hourly simulation."
+  },
+  "deploymentReadiness": {
+    "sourceFetching": "READY_WITH_CAUTION",
+    "listingDiscovery": "NOT_READY",
+    "documentDiscovery": "NOT_READY",
+    "articleExtraction": "READY_WITH_CAUTION",
+    "dateExtraction": "READY_WITH_CAUTION",
+    "classification": "NOT_READY",
+    "negativeProtection": "NOT_READY",
+    "geoRouting": "NOT_READY",
+    "dedupe": "READY_WITH_CAUTION",
+    "runtime": "UNVERIFIED",
+    "githubActionsCompatibility": "UNVERIFIED",
+    "productionFreshness": "UNVERIFIED",
+    "reporting": "READY_WITH_CAUTION"
+  },
+  "productionFreshness": "UNVERIFIED",
+  "remainingBlockers": [
+    "UP RERA public postback returns maintenance page.",
+    "DDA English/Hindi listing fetches failed in the bounded run.",
+    "Goa structured project-search/detail branch is still missing.",
+    "Negative-control suite has false positives and classifier recall is not deployment-ready.",
+    "Production freshness requires separate read-only remote artifact verification."
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "reportType": "TASK23_MULTILINGUAL_HUMAN_GROUND_TRUTH",
+  "generatedAt": "2026-10-01T09:49:27.782Z",
+  "localOnly": true,
+  "input": "reports/source-audits/task22/task22-multilingual-editorial-review-audited.csv",
+  "humanLabels": {
+    "PUBLISH": 11,
+    "REJECT_NEGATIVE": 6,
+    "REJECT_OFF_TOPIC": 2,
+    "REJECT_INSUFFICIENT": 6,
+    "REVIEW_UNCERTAIN": 0
+  },
+  "baseline": {
+    "TP": 0,
+    "FP": 0,
+    "TN": 14,
+    "FN": 11,
+    "precision": null,
+    "recall": 0
+  },
+  "final": {
+    "TP": 4,
+    "FP": 0,
+    "TN": 14,
+    "FN": 7,
+    "precision": 1,
+    "recall": 0.36363636363636365
+  },
+  "protection": {
+    "negative": 6,
+    "offtopic": 2,
+    "insufficient": 6
+  },
+  "language": {
+    "realRecords": 25,
+    "realLanguages": [
+      "hi",
+      "mr",
+      "te",
+      "ml",
+      "kn",
+      "ta",
+      "bn"
+    ],
+    "corrections": 25,
+    "bengaliCorrected": true
+  },
+  "geo": {
+    "nativeEvidenceRecords": 10,
+    "correctCityMatches": 7,
+    "unsafeDefaultsIntroduced": 0,
+    "yeidaSpecificRoute": [
+      "noida"
+    ],
+    "statewideProtectionPreserved": true
+  },
+  "translation": {
+    "provider": "none",
+    "providerRequired": true,
+    "failuresRemainReviewOnly": true
+  },
+  "holdout": {
+    "reportType": "TASK23_UNSEEN_MULTILINGUAL_HOLDOUT",
+    "records": [],
+    "evaluated": 0,
+    "humanLabels": 0,
+    "note": "No additional real multilingual records outside the 25-row authoritative audit were available locally without reusing audit evidence; no unlabeled record was manufactured."
+  },
+  "task20": {
+    "TP": 2,
+    "FP": 0,
+    "TN": 67,
+    "FN": 0,
+    "negativeControls": "8/8",
+    "dda": true,
+    "yeida": true
+  },
+  "task21Safety": {
+    "unknownLanguageAutoPublish": false,
+    "translationFailureAutoPublish": false,
+    "unicodePreserved": true,
+    "mixedScriptPreserved": true,
+    "nativeNumeralsSafe": true,
+    "unsafeSourceGeoFallback": false
+  },
+  "changes": [
+    "Native script takes precedence over contradictory source language hints.",
+    "Evidence-backed Delhi Hindi aliases and Bengali Kolkata alias added.",
+    "Specific Sector 22D/Yamuna/YEIDA project evidence prefers existing noida (Greater Noida) route.",
+    "Contextual native-language adverse and promotional-expo guards added."
+  ],
+  "antiOverfitting": [
+    "Bengali script fixture versus Hindi/Marathi Devanagari.",
+    "Generic Yamuna mention does not satisfy specific Sector 22D project predicate.",
+    "Native Delhi aliases are exact/locality terms, not source-level defaults.",
+    "Promotional property expo without a concrete development event remains off-topic.",
+    "Native adverse terms remain blocked while positive approval vocabulary remains eligible."
+  ],
+  "reports": [
+    "task23-human-ground-truth-report.json",
+    "task23-baseline-confusion.json",
+    "task23-final-confusion.json",
+    "task23-record-decisions.csv",
+    "task23-false-negatives.json",
+    "task23-false-positives.json",
+    "task23-language-audit.json",
+    "task23-geo-audit.json",
+    "task23-negative-audit.json",
+    "task23-insufficient-audit.json",
+    "task23-translation-audit.json",
+    "task23-unseen-holdout.json",
+    "task23-runtime.json"
+  ],
+  "decision": "DETERMINISTIC_RECOVERY_COMPLETE_HUMAN_REVIEW_AND_TRANSLATION_PROVIDER_STILL_REQUIRED"
+}

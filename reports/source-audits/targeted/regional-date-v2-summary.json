@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-09-30T08:57:54.050Z",
+  "batch": "regional",
+  "sourceCount": 9,
+  "states": {
+    "SAMPLED_SUCCESSFULLY": 2,
+    "LISTING_TOO_LARGE": 5,
+    "PARTIAL_SAMPLE": 2
+  },
+  "linksFound": 130,
+  "linksSampled": 8,
+  "fetchSuccess": 4,
+  "fullTextSuccess": 4,
+  "dates": 4,
+  "thumbnails": 4,
+  "languages": 4,
+  "geoSuccess": 4,
+  "relevant": 0,
+  "averageSourceMs": 442,
+  "p95SourceMs": 1517,
+  "auditInput": "source-audit-2026-09-30T08-05-40-524Z.json",
+  "checkpoint": "C:\\Users\\pc\\Documents\\news-api-pusher\\reports\\source-audits\\targeted\\regional-date-v2.jsonl"
+}

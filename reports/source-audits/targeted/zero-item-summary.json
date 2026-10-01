@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-09-30T08:38:41.323Z",
+  "batch": "zero-item",
+  "sourceCount": 180,
+  "selectionNote": "Most complete local dry-run report was used; the newest local report was an incomplete one-source run.",
+  "states": {
+    "LISTING_FETCH_FAILED": 23,
+    "LISTING_TIMEOUT": 15,
+    "SAMPLED_SUCCESSFULLY": 46,
+    "ZERO_LINKS": 44,
+    "PARTIAL_SAMPLE": 8,
+    "LISTING_TOO_LARGE": 30,
+    "ARTICLE_TIMEOUT": 1,
+    "BLOCKED": 2,
+    "BROKEN_URL": 11
+  },
+  "linksFound": 2104,
+  "linksSampled": 55,
+  "fetchSuccess": 49,
+  "fullTextSuccess": 46,
+  "dates": 5,
+  "thumbnails": 49,
+  "languages": 49,
+  "geoSuccess": 44,
+  "relevant": 6,
+  "averageSourceMs": 2164,
+  "p95SourceMs": 2496,
+  "auditInput": "source-audit-2026-09-30T08-05-40-524Z.json",
+  "checkpoint": "local checkpoint was interrupted after completion; summary retained from the completed batch"
+}

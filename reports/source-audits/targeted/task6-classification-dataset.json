@@ -1,0 +1,3312 @@
+{
+  "report": {
+    "reportType": "task6-classification-analysis",
+    "generatedAt": "2026-09-30T09:33:29.414Z",
+    "inputs": [
+      "reports/source-audits/targeted/classification-evaluation.jsonl",
+      "reports/source-audits/targeted/rera-date-v2.jsonl",
+      "reports/source-audits/targeted/regional-date-v2.jsonl"
+    ],
+    "rera": {
+      "labeledSampleSize": 56,
+      "labels": {
+        "INSUFFICIENT_CONTENT": 7,
+        "NAVIGATION_INDEX": 41,
+        "UNCERTAIN": 8
+      },
+      "officialPrimaryCandidates": 48,
+      "thirdPartyCandidates": 8,
+      "falseNegativeGates": {},
+      "confirmedLegitimateRejected": 0,
+      "note": "No sampled official RERA record was confirmed as a valid publishable record. The Goa third-party report is a real RERA-related article but is negative and correctly remains outside positive-only admission."
+    },
+    "datedRera": {
+      "total": 20,
+      "exactBreakdown": {
+        "IRRELEVANT": 1,
+        "NAVIGATION_INDEX": 18,
+        "UNCERTAIN": 1
+      },
+      "records": [
+        {
+          "url": "https://aiforera.org/#main-content",
+          "title": "Home : All India Forum of Real Estate Regulatory Authorities",
+          "date": "2026-09-28T12:00:00.000Z",
+          "classification": "NAVIGATION_INDEX",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "UNKNOWN_LOCALITY",
+          "currentClassifier": "reject_negative",
+          "currentRejectionReason": "navigation/index language dominates"
+        },
+        {
+          "url": "https://aiforera.org/about/org_structure",
+          "title": "Organization Structure : All India Forum of Real Estate Regulatory Authorities",
+          "date": "2026-09-28T12:00:00.000Z",
+          "classification": "NAVIGATION_INDEX",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "UNKNOWN_LOCALITY",
+          "currentClassifier": "reject_negative",
+          "currentRejectionReason": "navigation/index language dominates"
+        },
+        {
+          "url": "https://aiforera.org/about/org_structure",
+          "title": "Organization Structure : All India Forum of Real Estate Regulatory Authorities",
+          "date": "2026-09-28T12:00:00.000Z",
+          "classification": "NAVIGATION_INDEX",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "UNKNOWN_LOCALITY",
+          "currentClassifier": "reject_negative",
+          "currentRejectionReason": "navigation/index language dominates"
+        },
+        {
+          "url": "https://aiforera.org/about/org_structure",
+          "title": "Organization Structure : All India Forum of Real Estate Regulatory Authorities",
+          "date": "2026-09-28T12:00:00.000Z",
+          "classification": "NAVIGATION_INDEX",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "UNKNOWN_LOCALITY",
+          "currentClassifier": "reject_negative",
+          "currentRejectionReason": "navigation/index language dominates"
+        },
+        {
+          "url": "https://realty.economictimes.indiatimes.com/news/rera/goa-rera-seeks-courts-intervention-to-complete-stalled-housing-project/134531053",
+          "title": "Goa RERA seeks court's intervention to complete stalled housing project",
+          "date": "2026-09-28T03:42:25.000Z",
+          "classification": "UNCERTAIN",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "CITY_OR_STATE_SIGNAL",
+          "currentClassifier": "reject_negative",
+          "currentRejectionReason": "third-party RERA report with negative signal"
+        },
+        {
+          "url": "https://rera.ap.gov.in/RERA/Views/index.html#",
+          "title": "Greater accountability",
+          "date": "2017-03-28T12:00:00.000Z",
+          "classification": "NAVIGATION_INDEX",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "UNKNOWN_LOCALITY",
+          "currentClassifier": "reject_negative",
+          "currentRejectionReason": "navigation/index language dominates"
+        },
+        {
+          "url": "https://rera.goa.gov.in/functionsAndServicesPage",
+          "title": "Functions and Services",
+          "date": "2017-05-01T12:00:00.000Z",
+          "classification": "NAVIGATION_INDEX",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "CITY_OR_STATE_SIGNAL",
+          "currentClassifier": "reject_negative",
+          "currentRejectionReason": "navigation/index language dominates"
+        },
+        {
+          "url": "https://rera.goa.gov.in/#",
+          "title": "Welcome To RERA",
+          "date": "2023-01-18T12:00:00.000Z",
+          "classification": "NAVIGATION_INDEX",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "CITY_OR_STATE_SIGNAL",
+          "currentClassifier": "reject_negative",
+          "currentRejectionReason": "navigation/index language dominates"
+        },
+        {
+          "url": "https://rera.goa.gov.in/functionsAndServicesPage",
+          "title": "Functions and Services",
+          "date": "2017-05-01T12:00:00.000Z",
+          "classification": "NAVIGATION_INDEX",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "CITY_OR_STATE_SIGNAL",
+          "currentClassifier": "reject_negative",
+          "currentRejectionReason": "navigation/index language dominates"
+        },
+        {
+          "url": "https://rera.goa.gov.in/Notice#",
+          "title": "Real Estate Notice",
+          "date": "2023-01-18T12:00:00.000Z",
+          "classification": "NAVIGATION_INDEX",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "CITY_OR_STATE_SIGNAL",
+          "currentClassifier": "reject_negative",
+          "currentRejectionReason": "third-party RERA report with negative signal"
+        },
+        {
+          "url": "https://rera.punjab.gov.in/RERA-acts-rules-regulations.html",
+          "title": "Real Estate Regulatory Authority",
+          "date": "2022-01-20T12:00:00.000Z",
+          "classification": "NAVIGATION_INDEX",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "UNKNOWN_LOCALITY",
+          "currentClassifier": "reject_negative",
+          "currentRejectionReason": "navigation/index language dominates"
+        },
+        {
+          "url": "https://rera.punjab.gov.in/RERA-acts-rules-regulations.html",
+          "title": "Real Estate Regulatory Authority",
+          "date": "2022-01-20T12:00:00.000Z",
+          "classification": "NAVIGATION_INDEX",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "UNKNOWN_LOCALITY",
+          "currentClassifier": "reject_negative",
+          "currentRejectionReason": "navigation/index language dominates"
+        },
+        {
+          "url": "https://rera.punjab.gov.in/RERA-acts-rules-regulations.html",
+          "title": "Real Estate Regulatory Authority",
+          "date": "2022-01-20T12:00:00.000Z",
+          "classification": "NAVIGATION_INDEX",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "UNKNOWN_LOCALITY",
+          "currentClassifier": "reject_negative",
+          "currentRejectionReason": "navigation/index language dominates"
+        },
+        {
+          "url": "https://rera.tripura.gov.in/screen-reader-access",
+          "title": "Screen Reader Access | rera",
+          "date": "2025-02-17T12:00:00.000Z",
+          "classification": "NAVIGATION_INDEX",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "UNKNOWN_LOCALITY",
+          "currentClassifier": "unclassified",
+          "currentRejectionReason": "navigation/index language dominates"
+        },
+        {
+          "url": "https://rera.tripura.gov.in/#mainpagedescription",
+          "title": "Home | rera",
+          "date": "2016-05-01T12:00:00.000Z",
+          "classification": "NAVIGATION_INDEX",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "UNKNOWN_LOCALITY",
+          "currentClassifier": "unclassified",
+          "currentRejectionReason": "navigation/index language dominates"
+        },
+        {
+          "url": "https://up-rera.in/frm_Rera_Anual_Report.aspx",
+          "title": "UP RERA : Uttar Pradesh Real Estate Regulatory Authority",
+          "date": "2016-05-01T12:00:00.000Z",
+          "classification": "NAVIGATION_INDEX",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "CITY_OR_STATE_SIGNAL",
+          "currentClassifier": "unclassified",
+          "currentRejectionReason": "third-party RERA report with negative signal"
+        },
+        {
+          "url": "https://www.nhsrcl.in/#mainContent",
+          "title": "NHSRCL",
+          "date": "2026-10-14T12:00:00.000Z",
+          "classification": "IRRELEVANT",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "CITY_OR_STATE_SIGNAL",
+          "currentClassifier": "unclassified",
+          "currentRejectionReason": "navigation/index language dominates"
+        },
+        {
+          "url": "https://www.rera.mp.gov.in/#skip_main_content",
+          "title": "भू-संपदा विनियामक प्राधिकरण",
+          "date": "2021-06-18T12:00:00.000Z",
+          "classification": "NAVIGATION_INDEX",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "UNKNOWN_LOCALITY",
+          "currentClassifier": "unclassified",
+          "currentRejectionReason": "third-party RERA report with negative signal"
+        },
+        {
+          "url": "https://www.up-rera.in/frm_Rera_Anual_Report.aspx",
+          "title": "UP RERA : Uttar Pradesh Real Estate Regulatory Authority",
+          "date": "2016-05-01T12:00:00.000Z",
+          "classification": "NAVIGATION_INDEX",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "CITY_OR_STATE_SIGNAL",
+          "currentClassifier": "unclassified",
+          "currentRejectionReason": "third-party RERA report with negative signal"
+        },
+        {
+          "url": "https://www.up-rera.in/frm_Rera_Anual_Report.aspx",
+          "title": "UP RERA : Uttar Pradesh Real Estate Regulatory Authority",
+          "date": "2016-05-01T12:00:00.000Z",
+          "classification": "NAVIGATION_INDEX",
+          "proceduralLegitimacy": "NO_CONFIRMED_OFFICIAL_RECORD",
+          "scope": "CITY_OR_STATE_SIGNAL",
+          "currentClassifier": "unclassified",
+          "currentRejectionReason": "third-party RERA report with negative signal"
+        }
+      ],
+      "legitimateOfficialRecord": 0,
+      "navigationIndex": 18,
+      "irrelevant": 1,
+      "proceduralLegitimateOfficial": 0,
+      "projectSpecific": 0,
+      "statewide": 0,
+      "citySpecific": 0,
+      "uncertain": 1
+    },
+    "regional": {
+      "labeledSampleSize": 8,
+      "labels": {
+        "INSUFFICIENT": 4,
+        "IRRELEVANT": 2,
+        "NEGATIVE_REJECT": 2
+      },
+      "falseNegativeReasons": {},
+      "confirmedLegitimateRejected": 0
+    },
+    "benchmark": {
+      "rera": {
+        "before": {
+          "validSampleSize": 0,
+          "invalidSampleSize": 56,
+          "truePositives": 0,
+          "falseNegatives": 0,
+          "falsePositives": 1,
+          "trueNegatives": 55,
+          "precision": 0,
+          "recall": null,
+          "titleOnlyPass": 1,
+          "titleDescriptionPass": 1,
+          "fullContextPass": 1
+        },
+        "after": {
+          "validSampleSize": 0,
+          "invalidSampleSize": 56,
+          "truePositives": 0,
+          "falseNegatives": 0,
+          "falsePositives": 1,
+          "trueNegatives": 55,
+          "precision": 0,
+          "recall": null,
+          "titleOnlyPass": 1,
+          "titleDescriptionPass": 1,
+          "fullContextPass": 1
+        }
+      },
+      "regional": {
+        "before": {
+          "validSampleSize": 0,
+          "invalidSampleSize": 8,
+          "truePositives": 0,
+          "falseNegatives": 0,
+          "falsePositives": 0,
+          "trueNegatives": 8,
+          "precision": null,
+          "recall": null,
+          "titleOnlyPass": 0,
+          "titleDescriptionPass": 0,
+          "fullContextPass": 0
+        },
+        "after": {
+          "validSampleSize": 0,
+          "invalidSampleSize": 8,
+          "truePositives": 0,
+          "falseNegatives": 0,
+          "falsePositives": 0,
+          "trueNegatives": 8,
+          "precision": null,
+          "recall": null,
+          "titleOnlyPass": 0,
+          "titleDescriptionPass": 0,
+          "fullContextPass": 0
+        }
+      },
+      "note": "Valid recall is not statistically meaningful here because this diagnostic set contains zero confirmed valid RERA or regional records under conservative human-review rules.",
+      "before": "Current classifier output from the same records.",
+      "after": "Same as before; no classifier rule changed because the labeled evidence does not support a safe production classifier change."
+    },
+    "structuredSignals": {
+      "officialSourceType": "Useful for routing to review, not an allow bypass.",
+      "reraRecordType": "Useful only when a readable record/document type is present.",
+      "projectDeveloperAuthorityLocation": "No measured valid sample supports new unconditional terms.",
+      "result": "No local classifier changes justified."
+    },
+    "validArticlesRecovered": 0,
+    "invalidArticlesAdmitted": 0,
+    "geoPreparation": {
+      "validArticlesFailingGeo": 0,
+      "unknownEntities": [],
+      "note": "No confirmed valid article exists in this sample, so no broad geo alias change is justified."
+    },
+    "bottleneck": {
+      "ranking": [
+        "SOURCE_AVAILABILITY_LOSS",
+        "EXTRACTION_LOSS",
+        "CLASSIFICATION_LOSS",
+        "GEO_ROUTING_LOSS"
+      ],
+      "currentLargest": "SOURCE_AVAILABILITY_LOSS",
+      "evidence": "The sample contains 0 confirmed valid RERA/regional articles; source and extraction quality must improve before classifier recall can be measured."
+    },
+    "nextTask": "TASK_7 should begin with source/article extraction and geo evidence on a verified positive control set, not broad classifier weakening.",
+    "adapterPriority": [
+      {
+        "priority": 1,
+        "adapter": "Official RERA HTML/PDF record extraction",
+        "reason": "Highest regulatory value; current samples are mostly navigation or unreadable documents."
+      },
+      {
+        "priority": 2,
+        "adapter": "UP RERA PressRelease page/document extraction",
+        "reason": "High state coverage and known listing/article-link mismatch."
+      },
+      {
+        "priority": 3,
+        "adapter": "Regional-language authority pages with visible date/body selectors",
+        "reason": "Needed to produce valid controls before multilingual classifier changes."
+      }
+    ]
+  },
+  "rera": [
+    {
+      "source": "https://aiforera.org",
+      "state": "gurugram",
+      "url": "https://aiforera.org/#main-content",
+      "title": "Home : All India Forum of Real Estate Regulatory Authorities",
+      "date": "2026-09-28T12:00:00.000Z",
+      "recordDocumentType": "VALID_NOTICE",
+      "contentExcerpt": "x a i f o r e r a Council Government Complaints A- A A+ A Read Stop Skip to Main Content Home About Introduction Organisation Structure Our Leadership Ex-Leadership Our History Publications Journals Annual Reports New Initiatives News Public Notice Important Order Resources Statewise RERA Website Statewise RERA Link for Updation Andaman & Nicobar RERA Andhra Pradesh RERA Arunachal Pradesh RERA Assam RERA Bihar RERA Chandigarh RERA Chhattisgarh RERA Dadra and Nagar Haveli & Daman and Diu RERA Delhi RERA Goa RERA Gujrat RERA Haryana (Gurugram) RERA Haryana (Panchkula) RERA Himachal Pradesh RERA Jammu and Kashmir RERA Jharkhand RERA Karnataka RERA Kerala RERA Ladakh RERA Lakshadweep RERA Madhya Pradesh RERA Maharashtra RERA Manipur RERA Meghalaya RERA Mizoram RERA Nagaland RERA Odisha RERA Puducherry RERA Punjab RERA Rajasthan RERA Sikkim RERA Tamil Nadu RERA Telangana RERA Tripura RERA Uttarakhand RERA Uttar Pradesh RERA West Bengal RERA Acts & Rules Downloads FAQ's Gallery Photo Video Contact Us Report an Issues ABOUT AIFORERA The All-India Forum of Real Estate Regulatory Authorities (AIFORERA) is a collaborative platform of Real Estate Regulatory Authorities (RERAs) across India, e",
+      "geoEvidence": [
+        {
+          "cityCode": "gurugram",
+          "terms": [
+            "gurugram"
+          ]
+        },
+        {
+          "cityCode": "panchkula",
+          "terms": [
+            "Panchkula",
+            "panchkula"
+          ]
+        },
+        {
+          "cityCode": "chandigarh",
+          "terms": [
+            "Chandigarh",
+            "chandigarh"
+          ]
+        },
+        {
+          "cityCode": "daman_and_diu",
+          "terms": [
+            "Daman and Diu",
+            "daman and diu",
+            "daman",
+            "diu"
+          ]
+        },
+        {
+          "cityCode": "delhi_ncr",
+          "terms": [
+            "ncr"
+          ]
+        },
+        {
+          "cityCode": "delhi",
+          "terms": [
+            "Delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "new_delhi",
+          "terms": [
+            "New Delhi",
+            "new delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "goa",
+          "terms": [
+            "Goa",
+            "goa"
+          ]
+        },
+        {
+          "cityCode": "gujarat",
+          "terms": [
+            "Gujarat",
+            "gujarat"
+          ]
+        },
+        {
+          "cityCode": "pondicherry",
+          "terms": [
+            "Puducherry",
+            "puducherry"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://aiforera.org",
+      "state": "gurugram",
+      "url": "https://aiforera.org/about/org_structure",
+      "title": "Organization Structure : All India Forum of Real Estate Regulatory Authorities",
+      "date": "2026-09-28T12:00:00.000Z",
+      "recordDocumentType": "VALID_NOTICE",
+      "contentExcerpt": "x a i f o r e r a Council Government Complaints A- A A+ A Read Stop Skip to Main Content Home About Introduction Organisation Structure Our Leadership Ex-Leadership Our History Publications Journals Annual Reports New Initiatives News Public Notice Important Order Resources Statewise RERA Website Statewise RERA Link for Updation Andaman & Nicobar RERA Andhra Pradesh RERA Arunachal Pradesh RERA Assam RERA Bihar RERA Chandigarh RERA Chhattisgarh RERA Dadra and Nagar Haveli & Daman and Diu RERA Delhi RERA Goa RERA Gujrat RERA Haryana (Gurugram) RERA Haryana (Panchkula) RERA Himachal Pradesh RERA Jammu and Kashmir RERA Jharkhand RERA Karnataka RERA Kerala RERA Ladakh RERA Lakshadweep RERA Madhya Pradesh RERA Maharashtra RERA Manipur RERA Meghalaya RERA Mizoram RERA Nagaland RERA Odisha RERA Puducherry RERA Punjab RERA Rajasthan RERA Sikkim RERA Tamil Nadu RERA Telangana RERA Tripura RERA Uttarakhand RERA Uttar Pradesh RERA West Bengal RERA Acts & Rules Downloads FAQ's Gallery Photo Video Contact Us Report an Issues .services-page { padding: 60px 0px 90px !important; } /* Responsive Adjustments */ /* Custom Additions for Diagram Structural Connectors */ @media (min-width: 1200px) { .org",
+      "geoEvidence": [
+        {
+          "cityCode": "gurugram",
+          "terms": [
+            "gurugram"
+          ]
+        },
+        {
+          "cityCode": "panchkula",
+          "terms": [
+            "Panchkula",
+            "panchkula"
+          ]
+        },
+        {
+          "cityCode": "chandigarh",
+          "terms": [
+            "Chandigarh",
+            "chandigarh"
+          ]
+        },
+        {
+          "cityCode": "daman_and_diu",
+          "terms": [
+            "Daman and Diu",
+            "daman and diu",
+            "daman",
+            "diu"
+          ]
+        },
+        {
+          "cityCode": "delhi_ncr",
+          "terms": [
+            "ncr"
+          ]
+        },
+        {
+          "cityCode": "delhi",
+          "terms": [
+            "Delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "new_delhi",
+          "terms": [
+            "New Delhi",
+            "new delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "goa",
+          "terms": [
+            "Goa",
+            "goa"
+          ]
+        },
+        {
+          "cityCode": "pondicherry",
+          "terms": [
+            "Puducherry",
+            "puducherry"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://aiforera.org/publications",
+      "state": "gurugram",
+      "url": "https://aiforera.org/publications#main-content",
+      "title": "Publications : All India Forum of Real Estate Regulatory Authorities",
+      "date": "",
+      "recordDocumentType": "VALID_JUDGMENT",
+      "contentExcerpt": "x a i f o r e r a Council Government Complaints A- A A+ A Read Stop Skip to Main Content Home About Introduction Organisation Structure Our Leadership Ex-Leadership Our History Publications Journals Annual Reports New Initiatives News Public Notice Important Order Resources Statewise RERA Website Statewise RERA Link for Updation Andaman & Nicobar RERA Andhra Pradesh RERA Arunachal Pradesh RERA Assam RERA Bihar RERA Chandigarh RERA Chhattisgarh RERA Dadra and Nagar Haveli & Daman and Diu RERA Delhi RERA Goa RERA Gujrat RERA Haryana (Gurugram) RERA Haryana (Panchkula) RERA Himachal Pradesh RERA Jammu and Kashmir RERA Jharkhand RERA Karnataka RERA Kerala RERA Ladakh RERA Lakshadweep RERA Madhya Pradesh RERA Maharashtra RERA Manipur RERA Meghalaya RERA Mizoram RERA Nagaland RERA Odisha RERA Puducherry RERA Punjab RERA Rajasthan RERA Sikkim RERA Tamil Nadu RERA Telangana RERA Tripura RERA Uttarakhand RERA Uttar Pradesh RERA West Bengal RERA Acts & Rules Downloads FAQ's Gallery Photo Video Contact Us Report an Issues Home Publications Publications SR No Date Category Title Attachment 1 2026-09-28 Public Notice CG-RERA Circular: Safeguards for Senior Citizens & Homebuyers View 2 2026-09-2",
+      "geoEvidence": [
+        {
+          "cityCode": "gurugram",
+          "terms": [
+            "gurugram",
+            "spr"
+          ]
+        },
+        {
+          "cityCode": "panchkula",
+          "terms": [
+            "Panchkula",
+            "panchkula"
+          ]
+        },
+        {
+          "cityCode": "guwahati",
+          "terms": [
+            "Guwahati",
+            "guwahati"
+          ]
+        },
+        {
+          "cityCode": "kamrup",
+          "terms": [
+            "Kamrup",
+            "kamrup"
+          ]
+        },
+        {
+          "cityCode": "nagaon",
+          "terms": [
+            "Nagaon",
+            "nagaon"
+          ]
+        },
+        {
+          "cityCode": "chandigarh",
+          "terms": [
+            "Chandigarh",
+            "chandigarh"
+          ]
+        },
+        {
+          "cityCode": "daman_and_diu",
+          "terms": [
+            "Daman and Diu",
+            "daman and diu",
+            "daman",
+            "diu"
+          ]
+        },
+        {
+          "cityCode": "delhi_ncr",
+          "terms": [
+            "ncr"
+          ]
+        },
+        {
+          "cityCode": "delhi",
+          "terms": [
+            "Delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "new_delhi",
+          "terms": [
+            "New Delhi",
+            "new delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "goa",
+          "terms": [
+            "Goa",
+            "goa"
+          ]
+        },
+        {
+          "cityCode": "rourkela",
+          "terms": [
+            "Rourkela",
+            "rourkela"
+          ]
+        },
+        {
+          "cityCode": "pondicherry",
+          "terms": [
+            "Puducherry",
+            "puducherry"
+          ]
+        },
+        {
+          "cityCode": "jaipur",
+          "terms": [
+            "Jaipur",
+            "jaipur"
+          ]
+        },
+        {
+          "cityCode": "sirohi",
+          "terms": [
+            "Sirohi",
+            "sirohi"
+          ]
+        },
+        {
+          "cityCode": "tonk",
+          "terms": [
+            "Tonk",
+            "tonk"
+          ]
+        },
+        {
+          "cityCode": "hanumangarh",
+          "terms": [
+            "Hanumangarh",
+            "hanumangarh"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://aiforera.org/publications",
+      "state": "gurugram",
+      "url": "https://aiforera.org/about/org_structure",
+      "title": "Organization Structure : All India Forum of Real Estate Regulatory Authorities",
+      "date": "2026-09-28T12:00:00.000Z",
+      "recordDocumentType": "VALID_NOTICE",
+      "contentExcerpt": "x a i f o r e r a Council Government Complaints A- A A+ A Read Stop Skip to Main Content Home About Introduction Organisation Structure Our Leadership Ex-Leadership Our History Publications Journals Annual Reports New Initiatives News Public Notice Important Order Resources Statewise RERA Website Statewise RERA Link for Updation Andaman & Nicobar RERA Andhra Pradesh RERA Arunachal Pradesh RERA Assam RERA Bihar RERA Chandigarh RERA Chhattisgarh RERA Dadra and Nagar Haveli & Daman and Diu RERA Delhi RERA Goa RERA Gujrat RERA Haryana (Gurugram) RERA Haryana (Panchkula) RERA Himachal Pradesh RERA Jammu and Kashmir RERA Jharkhand RERA Karnataka RERA Kerala RERA Ladakh RERA Lakshadweep RERA Madhya Pradesh RERA Maharashtra RERA Manipur RERA Meghalaya RERA Mizoram RERA Nagaland RERA Odisha RERA Puducherry RERA Punjab RERA Rajasthan RERA Sikkim RERA Tamil Nadu RERA Telangana RERA Tripura RERA Uttarakhand RERA Uttar Pradesh RERA West Bengal RERA Acts & Rules Downloads FAQ's Gallery Photo Video Contact Us Report an Issues .services-page { padding: 60px 0px 90px !important; } /* Responsive Adjustments */ /* Custom Additions for Diagram Structural Connectors */ @media (min-width: 1200px) { .org",
+      "geoEvidence": [
+        {
+          "cityCode": "gurugram",
+          "terms": [
+            "gurugram"
+          ]
+        },
+        {
+          "cityCode": "panchkula",
+          "terms": [
+            "Panchkula",
+            "panchkula"
+          ]
+        },
+        {
+          "cityCode": "chandigarh",
+          "terms": [
+            "Chandigarh",
+            "chandigarh"
+          ]
+        },
+        {
+          "cityCode": "daman_and_diu",
+          "terms": [
+            "Daman and Diu",
+            "daman and diu",
+            "daman",
+            "diu"
+          ]
+        },
+        {
+          "cityCode": "delhi_ncr",
+          "terms": [
+            "ncr"
+          ]
+        },
+        {
+          "cityCode": "delhi",
+          "terms": [
+            "Delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "new_delhi",
+          "terms": [
+            "New Delhi",
+            "new delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "goa",
+          "terms": [
+            "Goa",
+            "goa"
+          ]
+        },
+        {
+          "cityCode": "pondicherry",
+          "terms": [
+            "Puducherry",
+            "puducherry"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://aiforera.org/publications/public_notice",
+      "state": "gurugram",
+      "url": "https://aiforera.org/publications/public_notice#main-content",
+      "title": ".. : All India Forum of Real Estate Regulatory Authorities",
+      "date": "",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "x a i f o r e r a Council Government Complaints A- A A+ A Read Stop Skip to Main Content Home About Introduction Organisation Structure Our Leadership Ex-Leadership Our History Publications Journals Annual Reports New Initiatives News Public Notice Important Order Resources Statewise RERA Website Statewise RERA Link for Updation Andaman & Nicobar RERA Andhra Pradesh RERA Arunachal Pradesh RERA Assam RERA Bihar RERA Chandigarh RERA Chhattisgarh RERA Dadra and Nagar Haveli & Daman and Diu RERA Delhi RERA Goa RERA Gujrat RERA Haryana (Gurugram) RERA Haryana (Panchkula) RERA Himachal Pradesh RERA Jammu and Kashmir RERA Jharkhand RERA Karnataka RERA Kerala RERA Ladakh RERA Lakshadweep RERA Madhya Pradesh RERA Maharashtra RERA Manipur RERA Meghalaya RERA Mizoram RERA Nagaland RERA Odisha RERA Puducherry RERA Punjab RERA Rajasthan RERA Sikkim RERA Tamil Nadu RERA Telangana RERA Tripura RERA Uttarakhand RERA Uttar Pradesh RERA West Bengal RERA Acts & Rules Downloads FAQ's Gallery Photo Video Contact Us Report an Issues Home Publications .. SR No Date Category Title Attachment 1 2026-09-28 Public Notice CG-RERA Circular: Safeguards for Senior Citizens & Homebuyers View 2 2026-09-28 Public N",
+      "geoEvidence": [
+        {
+          "cityCode": "gurugram",
+          "terms": [
+            "gurugram"
+          ]
+        },
+        {
+          "cityCode": "panchkula",
+          "terms": [
+            "Panchkula",
+            "panchkula"
+          ]
+        },
+        {
+          "cityCode": "nagaon",
+          "terms": [
+            "Nagaon",
+            "nagaon"
+          ]
+        },
+        {
+          "cityCode": "chandigarh",
+          "terms": [
+            "Chandigarh",
+            "chandigarh"
+          ]
+        },
+        {
+          "cityCode": "daman_and_diu",
+          "terms": [
+            "Daman and Diu",
+            "daman and diu",
+            "daman",
+            "diu"
+          ]
+        },
+        {
+          "cityCode": "delhi_ncr",
+          "terms": [
+            "ncr"
+          ]
+        },
+        {
+          "cityCode": "delhi",
+          "terms": [
+            "Delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "new_delhi",
+          "terms": [
+            "New Delhi",
+            "new delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "goa",
+          "terms": [
+            "Goa",
+            "goa"
+          ]
+        },
+        {
+          "cityCode": "pondicherry",
+          "terms": [
+            "Puducherry",
+            "puducherry"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://aiforera.org/publications/public_notice",
+      "state": "gurugram",
+      "url": "https://aiforera.org/about/org_structure",
+      "title": "Organization Structure : All India Forum of Real Estate Regulatory Authorities",
+      "date": "2026-09-28T12:00:00.000Z",
+      "recordDocumentType": "VALID_NOTICE",
+      "contentExcerpt": "x a i f o r e r a Council Government Complaints A- A A+ A Read Stop Skip to Main Content Home About Introduction Organisation Structure Our Leadership Ex-Leadership Our History Publications Journals Annual Reports New Initiatives News Public Notice Important Order Resources Statewise RERA Website Statewise RERA Link for Updation Andaman & Nicobar RERA Andhra Pradesh RERA Arunachal Pradesh RERA Assam RERA Bihar RERA Chandigarh RERA Chhattisgarh RERA Dadra and Nagar Haveli & Daman and Diu RERA Delhi RERA Goa RERA Gujrat RERA Haryana (Gurugram) RERA Haryana (Panchkula) RERA Himachal Pradesh RERA Jammu and Kashmir RERA Jharkhand RERA Karnataka RERA Kerala RERA Ladakh RERA Lakshadweep RERA Madhya Pradesh RERA Maharashtra RERA Manipur RERA Meghalaya RERA Mizoram RERA Nagaland RERA Odisha RERA Puducherry RERA Punjab RERA Rajasthan RERA Sikkim RERA Tamil Nadu RERA Telangana RERA Tripura RERA Uttarakhand RERA Uttar Pradesh RERA West Bengal RERA Acts & Rules Downloads FAQ's Gallery Photo Video Contact Us Report an Issues .services-page { padding: 60px 0px 90px !important; } /* Responsive Adjustments */ /* Custom Additions for Diagram Structural Connectors */ @media (min-width: 1200px) { .org",
+      "geoEvidence": [
+        {
+          "cityCode": "gurugram",
+          "terms": [
+            "gurugram"
+          ]
+        },
+        {
+          "cityCode": "panchkula",
+          "terms": [
+            "Panchkula",
+            "panchkula"
+          ]
+        },
+        {
+          "cityCode": "chandigarh",
+          "terms": [
+            "Chandigarh",
+            "chandigarh"
+          ]
+        },
+        {
+          "cityCode": "daman_and_diu",
+          "terms": [
+            "Daman and Diu",
+            "daman and diu",
+            "daman",
+            "diu"
+          ]
+        },
+        {
+          "cityCode": "delhi_ncr",
+          "terms": [
+            "ncr"
+          ]
+        },
+        {
+          "cityCode": "delhi",
+          "terms": [
+            "Delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "new_delhi",
+          "terms": [
+            "New Delhi",
+            "new delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "goa",
+          "terms": [
+            "Goa",
+            "goa"
+          ]
+        },
+        {
+          "cityCode": "pondicherry",
+          "terms": [
+            "Puducherry",
+            "puducherry"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://naredco.in/naredco-news",
+      "state": "delhi_ncr",
+      "url": "https://naredco.in/naredco-news#main-content",
+      "title": "Naredco in News | NAREDCO",
+      "date": "",
+      "recordDocumentType": "OTHER",
+      "contentExcerpt": "Skip to main content naredco@naredco.in +A -A Search Main navigation Home About NAREDCO National Real Estate Development Council (NAREDCO) was established as an autonomous self-regulatory body in 1998 under the aegis of Ministry of Housing and Urban Affairs, Govt. of India. Governance The Minister of Housing and Urban Affairs, Govt. of India, is Ex-officio Chief Patron of the Council. Day-to-Day affairs of the council are managed by a Governing Council (GC) comprising members elected from various categories of memberships Members NAREDCO counts some of the most well-known names in the real estate sector from the public as well as the private sector as members. State Chapters NAREDCO deals with and represents all matters related to real estate development by both private and public sector, including planning and layout of colonies, construction of residential, commercial NAREDCO Secretariat NAREDCO is led by esteemed industry veterans like Dr Niranjan Hiranandani and Shri Parveen Jain. Our Partners Find the official Partner of NAREDCO. Activities Events NAREDCO organizes a wide range of events relating to the Indian real estate sector with regular participation from Industry stalwar",
+      "geoEvidence": [
+        {
+          "cityCode": "delhi_ncr",
+          "terms": [
+            "ncr"
+          ]
+        },
+        {
+          "cityCode": "delhi",
+          "terms": [
+            "Delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "new_delhi",
+          "terms": [
+            "New Delhi",
+            "new delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "anand",
+          "terms": [
+            "Anand",
+            "anand"
+          ]
+        },
+        {
+          "cityCode": "chennai",
+          "terms": [
+            "Chennai",
+            "chennai"
+          ]
+        },
+        {
+          "cityCode": "alwar",
+          "terms": [
+            "Alwar",
+            "alwar"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "unclassified",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "THIRD_PARTY_RERA_NEWS",
+      "falseNegativeGate": "UNCLASSIFIED",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://naredco.in/naredco-news",
+      "state": "delhi",
+      "url": "https://naredco.in/index.php/about-us",
+      "title": "About Us | NAREDCO",
+      "date": "",
+      "recordDocumentType": "OTHER",
+      "contentExcerpt": "Skip to main content naredco@naredco.in +A -A Search Main navigation Home About NAREDCO National Real Estate Development Council (NAREDCO) was established as an autonomous self-regulatory body in 1998 under the aegis of Ministry of Housing and Urban Affairs, Govt. of India. Governance The Minister of Housing and Urban Affairs, Govt. of India, is Ex-officio Chief Patron of the Council. Day-to-Day affairs of the council are managed by a Governing Council (GC) comprising members elected from various categories of memberships Members NAREDCO counts some of the most well-known names in the real estate sector from the public as well as the private sector as members. State Chapters NAREDCO deals with and represents all matters related to real estate development by both private and public sector, including planning and layout of colonies, construction of residential, commercial NAREDCO Secretariat NAREDCO is led by esteemed industry veterans like Dr Niranjan Hiranandani and Shri Parveen Jain. Our Partners Find the official Partner of NAREDCO. Activities Events NAREDCO organizes a wide range of events relating to the Indian real estate sector with regular participation from Industry stalwar",
+      "geoEvidence": [
+        {
+          "cityCode": "delhi",
+          "terms": [
+            "Delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "new_delhi",
+          "terms": [
+            "New Delhi",
+            "new delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "anand",
+          "terms": [
+            "Anand",
+            "anand"
+          ]
+        },
+        {
+          "cityCode": "alwar",
+          "terms": [
+            "Alwar",
+            "alwar"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "unclassified",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "THIRD_PARTY_RERA_NEWS",
+      "falseNegativeGate": "UNCLASSIFIED",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/rera",
+      "state": "UNKNOWN_STATE",
+      "url": "https://realty.economictimes.indiatimes.com/news/rera/haryana-rera-upholds-fully-paid-buyers-right-to-transfer-property-in-gurugram/134555573",
+      "title": "",
+      "date": "",
+      "recordDocumentType": "OTHER",
+      "contentExcerpt": "",
+      "geoEvidence": [],
+      "currentRelevanceResult": "unreadable",
+      "currentRejectionReason": "article not fully readable",
+      "diagnosticLabel": "INSUFFICIENT_CONTENT",
+      "sourceClass": "THIRD_PARTY_RERA_NEWS",
+      "falseNegativeGate": "CONTENT_LENGTH",
+      "titleOnly": "project_development",
+      "titleDescription": "project_development",
+      "fullContext": "project_development"
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/rera",
+      "state": "gurugram",
+      "url": "https://realty.economictimes.indiatimes.com/news/rera/goa-rera-seeks-courts-intervention-to-complete-stalled-housing-project/134531053",
+      "title": "Goa RERA seeks court's intervention to complete stalled housing project",
+      "date": "2026-09-28T03:42:25.000Z",
+      "recordDocumentType": "VALID_ORDER",
+      "contentExcerpt": "Login Get App News RegulatoryCommercialCementTechnologyIndustryResidentialInfrastructureRERAHousing FinanceAllied IndustriesView all News Exclusives Leaders Speak Events Awards Webinars Brand Solutions More Newsletters MasterClasses About Us Contact Us Advertise With Us Search Regulatory Industry RERA Commercial Residential ETRealty TV Housing Finance Cities Mumbai Delhi-NCR Bengaluru Chennai Hyderabad Pune Kolkata Gurugram Noida Ahmedabad Navi Mumbai Thane Chandigarh Lucknow Nagpur Nashik Jaipur Coimbatore Indore Thiruvananthapuram Visakhapatnam Ludhiana Bhubaneswar More CementInfrastructureRetailHospitalityInternationalTechnologySmart CityStartupsPaintsLighting Integrated Campaigns Bespoke Events Advertorial Virtual Engagement Videos Digital Branding & Awareness More More var defaultImgUrl = ''; var productPages = ''; var layer2 = document.querySelectorAll('.top-secondary-nav a, .top-secondary-nav span'); let moreElm = document.querySelector('.nav-more-options .nav_column'); layer2ElmWid = 0; if (moreElm && !productPages) { layer2.forEach((curr) => { try { layer2ElmWid += curr.offsetWidth; if (layer2ElmWid >= 750) { moreElm?.append(curr); } } catch (e) {} }); } var portalThemeCol",
+      "geoEvidence": [
+        {
+          "cityCode": "gurugram",
+          "terms": [
+            "gurugram",
+            "spr"
+          ]
+        },
+        {
+          "cityCode": "indore",
+          "terms": [
+            "Indore",
+            "indore"
+          ]
+        },
+        {
+          "cityCode": "visakhapatnam",
+          "terms": [
+            "Visakhapatnam",
+            "visakhapatnam"
+          ]
+        },
+        {
+          "cityCode": "patna",
+          "terms": [
+            "Patna",
+            "patna"
+          ]
+        },
+        {
+          "cityCode": "chandigarh",
+          "terms": [
+            "Chandigarh",
+            "chandigarh"
+          ]
+        },
+        {
+          "cityCode": "daman_and_diu",
+          "terms": [
+            "diu"
+          ]
+        },
+        {
+          "cityCode": "delhi_ncr",
+          "terms": [
+            "ncr"
+          ]
+        },
+        {
+          "cityCode": "delhi",
+          "terms": [
+            "Delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "new_delhi",
+          "terms": [
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "goa",
+          "terms": [
+            "Goa",
+            "goa"
+          ]
+        },
+        {
+          "cityCode": "ahmedabad",
+          "terms": [
+            "Ahmedabad",
+            "ahmedabad"
+          ]
+        },
+        {
+          "cityCode": "trivandrum",
+          "terms": [
+            "Thiruvananthapuram"
+          ]
+        },
+        {
+          "cityCode": "bangalore",
+          "terms": [
+            "Bengaluru",
+            "bengaluru"
+          ]
+        },
+        {
+          "cityCode": "ludhiana",
+          "terms": [
+            "Ludhiana",
+            "ludhiana"
+          ]
+        },
+        {
+          "cityCode": "chennai",
+          "terms": [
+            "Chennai",
+            "chennai"
+          ]
+        },
+        {
+          "cityCode": "coimbatore",
+          "terms": [
+            "Coimbatore",
+            "coimbatore"
+          ]
+        },
+        {
+          "cityCode": "hyderabad",
+          "terms": [
+            "Hyderabad",
+            "hyderabad"
+          ]
+        },
+        {
+          "cityCode": "kolkata",
+          "terms": [
+            "Kolkata",
+            "kolkata"
+          ]
+        },
+        {
+          "cityCode": "mumbai",
+          "terms": [
+            "Mumbai",
+            "mumbai"
+          ]
+        },
+        {
+          "cityCode": "pune",
+          "terms": [
+            "Pune",
+            "pune"
+          ]
+        },
+        {
+          "cityCode": "navi_mumbai",
+          "terms": [
+            "Navi Mumbai",
+            "navi mumbai"
+          ]
+        },
+        {
+          "cityCode": "thane",
+          "terms": [
+            "Thane",
+            "thane"
+          ]
+        },
+        {
+          "cityCode": "nagpur",
+          "terms": [
+            "Nagpur",
+            "nagpur"
+          ]
+        },
+        {
+          "cityCode": "nashik",
+          "terms": [
+            "Nashik",
+            "nashik"
+          ]
+        },
+        {
+          "cityCode": "bhubaneswar",
+          "terms": [
+            "Bhubaneswar",
+            "bhubaneswar"
+          ]
+        },
+        {
+          "cityCode": "jaipur",
+          "terms": [
+            "Jaipur",
+            "jaipur"
+          ]
+        },
+        {
+          "cityCode": "noida",
+          "terms": [
+            "noida"
+          ]
+        },
+        {
+          "cityCode": "ghaziabad",
+          "terms": [
+            "Ghaziabad",
+            "ghaziabad"
+          ]
+        },
+        {
+          "cityCode": "lucknow",
+          "terms": [
+            "Lucknow",
+            "lucknow"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        },
+        {
+          "cityCode": "hapur",
+          "terms": [
+            "Hapur",
+            "hapur"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "third-party RERA report with negative signal",
+      "diagnosticLabel": "UNCERTAIN",
+      "sourceClass": "THIRD_PARTY_RERA_NEWS",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "reject_negative",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.ap.gov.in/RERA/Views/index.html",
+      "state": "vijayawada",
+      "url": "https://rera.ap.gov.in/RERA/Views/index.html#",
+      "title": "Greater accountability",
+      "date": "2017-03-28T12:00:00.000Z",
+      "recordDocumentType": "VALID_PROJECT_REGISTRATION",
+      "contentExcerpt": "A- A A+ A A Authority Login Dashboard Contact Skip to Main Content Screen Reader Toggle navigation Home About Us What is AP RERA CM Message Notifications GOI Notifications GOAP Notifications Online Registration Project Registration Agent Registration Complaint Registration Registraion status Projects Approved Inprogress Rejected Agent Approved Inprogress Rejected Complaints Redressed Inprogress Not Relavent MIS reports Fee Calculator Media Press Releases News & Updates Help User Manual Video Tutorial Forms Download FAQs Login Project Login Authority Login Agent Login Greater accountability Protection of interests of Consumer. ensuring quality of construction Reduction Litigations Increased FDI Appellate Tribunal AP RERA is under progress for letting developers and promoters register their projects by uploading applications. see more GIS Reports AP RERA is under progress for letting developers and promoters register their projects by uploading applications. see more MIS Reports AP RERA is under progress for letting developers and promoters register their projects by uploading applications. see more News & Updates AP RERA is under progress for letting developers and promoters registe",
+      "geoEvidence": [
+        {
+          "cityCode": "vijayawada",
+          "terms": [
+            "Vijayawada",
+            "vijayawada"
+          ]
+        },
+        {
+          "cityCode": "delhi_ncr",
+          "terms": [
+            "ncr"
+          ]
+        },
+        {
+          "cityCode": "goa",
+          "terms": [
+            "Goa",
+            "goa"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.ap.gov.in/RERA/Views/index.html",
+      "state": "UNKNOWN_STATE",
+      "url": "https://rera.ap.gov.in/RERA/Views/APGO's.html",
+      "title": "",
+      "date": "",
+      "recordDocumentType": "OTHER",
+      "contentExcerpt": "",
+      "geoEvidence": [],
+      "currentRelevanceResult": "unreadable",
+      "currentRejectionReason": "article not fully readable",
+      "diagnosticLabel": "INSUFFICIENT_CONTENT",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "CONTENT_LENGTH",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://rera.assam.gov.in",
+      "state": "UNKNOWN_STATE",
+      "url": "https://rera.assam.gov.in/images/extension.pdf",
+      "title": "",
+      "date": "",
+      "recordDocumentType": "OTHER",
+      "contentExcerpt": "",
+      "geoEvidence": [],
+      "currentRelevanceResult": "unreadable",
+      "currentRejectionReason": "article not fully readable",
+      "diagnosticLabel": "INSUFFICIENT_CONTENT",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "CONTENT_LENGTH",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://rera.assam.gov.in",
+      "state": "UNKNOWN_STATE",
+      "url": "https://rera.assam.gov.in/images/notice-s.pdf",
+      "title": "",
+      "date": "",
+      "recordDocumentType": "OTHER",
+      "contentExcerpt": "",
+      "geoEvidence": [],
+      "currentRelevanceResult": "unreadable",
+      "currentRejectionReason": "article not fully readable",
+      "diagnosticLabel": "INSUFFICIENT_CONTENT",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "CONTENT_LENGTH",
+      "titleOnly": "reject_negative",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.goa.gov.in",
+      "state": "goa",
+      "url": "https://rera.goa.gov.in/functionsAndServicesPage",
+      "title": "Functions and Services",
+      "date": "2017-05-01T12:00:00.000Z",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "A+ A A- A Toggle navigation Home About Us What is RERA? Functions And Services Contact Us Citizen Charter Acts, Regulations & Rules Real Estate Act, 2016 Regulations Real Estate Rules Removal of Difficulties Order, 2016 RTI Links Formats Goa RERA Appellate Tribunal Orders of High court of Bombay at Goa RERA Rulings Notifications Circulars Other Circulars Orders Notices SOP User guide for registered Projects/Agents FAQ FAQ 1 FAQ 2 (18.01.2023) Defaulters List Of Agents List Of Projects List Of Complaints Other Links View Registration Track File Status MIS Report Projects / Agents Withdrawal Projects WithDrawn Projects Cancelled Projects Rejected Agents WithDrawn Agents Cancelled Agents Rejected Login Login as Authority Login as Agent/Promoter Home / Functions and Services Functions and Services The key components of Real Estate (Regulation and Development) Act, 2016 are as follows: Real Estate Regulatory Authority and Appellate Tribunal Central Government is the appropriate Government under the Act for the State of Goa in terms of clause (g) of Section 2 of this Act. Exercising the power conferred by the third proviso to sub-section 91) of section 20 and first proviso to sub section",
+      "geoEvidence": [
+        {
+          "cityCode": "goa",
+          "terms": [
+            "Goa",
+            "goa"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.goa.gov.in",
+      "state": "goa",
+      "url": "https://rera.goa.gov.in/#",
+      "title": "Welcome To RERA",
+      "date": "2023-01-18T12:00:00.000Z",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "A+ A A- A Toggle navigation Home About Us What is RERA? Functions And Services Contact Us Citizen Charter Acts, Regulations & Rules Real Estate Act, 2016 Regulations Real Estate Rules Removal of Difficulties Order, 2016 RTI Links Formats Goa RERA Appellate Tribunal Orders of High court of Bombay at Goa RERA Rulings Notifications Circulars Other Circulars Orders Notices SOP User guide for registered Projects/Agents FAQ FAQ 1 FAQ 2 (18.01.2023) Defaulters List Of Agents List Of Projects List Of Complaints Other Links View Registration Track File Status MIS Report Projects / Agents Withdrawal Projects WithDrawn Projects Cancelled Projects Rejected Agents WithDrawn Agents Cancelled Agents Rejected Login Login as Authority Login as Agent/Promoter // Redirect to the main application page window.location = \"https://rera.goa.gov.in/reraApp\"; Important Links Disclaimer Terms And Conditions Contact Us Visitor Number: 17299304 �2024 Directorate of Municipal Administration, Goa. All Rights Reserved. Maintained by Goa Electronics Limited",
+      "geoEvidence": [
+        {
+          "cityCode": "goa",
+          "terms": [
+            "Goa",
+            "goa"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.goa.gov.in/Notice",
+      "state": "goa",
+      "url": "https://rera.goa.gov.in/functionsAndServicesPage",
+      "title": "Functions and Services",
+      "date": "2017-05-01T12:00:00.000Z",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "A+ A A- A Toggle navigation Home About Us What is RERA? Functions And Services Contact Us Citizen Charter Acts, Regulations & Rules Real Estate Act, 2016 Regulations Real Estate Rules Removal of Difficulties Order, 2016 RTI Links Formats Goa RERA Appellate Tribunal Orders of High court of Bombay at Goa RERA Rulings Notifications Circulars Other Circulars Orders Notices SOP User guide for registered Projects/Agents FAQ FAQ 1 FAQ 2 (18.01.2023) Defaulters List Of Agents List Of Projects List Of Complaints Other Links View Registration Track File Status MIS Report Projects / Agents Withdrawal Projects WithDrawn Projects Cancelled Projects Rejected Agents WithDrawn Agents Cancelled Agents Rejected Login Login as Authority Login as Agent/Promoter Home / Functions and Services Functions and Services The key components of Real Estate (Regulation and Development) Act, 2016 are as follows: Real Estate Regulatory Authority and Appellate Tribunal Central Government is the appropriate Government under the Act for the State of Goa in terms of clause (g) of Section 2 of this Act. Exercising the power conferred by the third proviso to sub-section 91) of section 20 and first proviso to sub section",
+      "geoEvidence": [
+        {
+          "cityCode": "goa",
+          "terms": [
+            "Goa",
+            "goa"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.goa.gov.in/Notice",
+      "state": "goa",
+      "url": "https://rera.goa.gov.in/Notice#",
+      "title": "Real Estate Notice",
+      "date": "2023-01-18T12:00:00.000Z",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "A+ A A- A Toggle navigation Home About Us What is RERA? Functions And Services Contact Us Citizen Charter Acts, Regulations & Rules Real Estate Act, 2016 Regulations Real Estate Rules Removal of Difficulties Order, 2016 RTI Links Formats Goa RERA Appellate Tribunal Orders of High court of Bombay at Goa RERA Rulings Notifications Circulars Other Circulars Orders Notices SOP User guide for registered Projects/Agents FAQ FAQ 1 FAQ 2 (18.01.2023) Defaulters List Of Agents List Of Projects List Of Complaints Other Links View Registration Track File Status MIS Report Projects / Agents Withdrawal Projects WithDrawn Projects Cancelled Projects Rejected Agents WithDrawn Agents Cancelled Agents Rejected Login Login as Authority Login as Agent/Promoter Home / Real Estate Notice .space { margin-top: 15px; } Real Estate Notice Notice regarding hearing of the Goa RERA Authority in view of COVID-19 NOTE Important Links Disclaimer Terms And Conditions Contact Us Visitor Number: 17299307 ©2022 Directorate of Municipal Administration, Goa. All Rights Reserved. Maintained by Goa Electronics Limited",
+      "geoEvidence": [
+        {
+          "cityCode": "goa",
+          "terms": [
+            "Goa",
+            "goa"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "third-party RERA report with negative signal",
+      "diagnosticLabel": "UNCERTAIN",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "reject_negative",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.karnataka.gov.in",
+      "state": "daman_and_diu",
+      "url": "https://rera.karnataka.gov.in/aboutKREAT",
+      "title": "About K-REAT",
+      "date": "",
+      "recordDocumentType": "VALID_ORDER",
+      "contentExcerpt": "ಕರ್ನಾಟಕ ರಿಯಲ್ ಎಸ್ಟೇಟ್ ನಿಯಂತ್ರಣ ಪ್ರಾಧಿಕಾರದ ಅಧಿಕೃತ ಜಾಲತಾಣ ಆ+ ಆ ಆ- ಆ English ಮುಖಪುಟ ರೇರ ವಿವರಗಳು ರೇರ ವಿವರಗಳು ಸಂಸ್ಥೆಯ ಫಲಕ ರೇರ ಚಿತ್ರಗಳು ಕೆ-ಆರ್‌ಇಎಟಿ ಕೆ-ಆರ್‌ಇಎಟಿ ವಿವರಗಳು ಉದ್ದೇಶಗಳು ಸಂಸ್ಥೆಯ ಫಲಕ ಮೇಲ್ಮನವಿಯನ್ನು ಸಲ್ಲಿಸು ನ್ಯಾಯ ಮಂಡಳಿಯ ಜಾರಿ ನಿಯಮಗಳು ಕೆಲಸದ ಸಮಯ ಸಂಪರ್ಕಿಸಿ ದೈನಂದಿನ ಕಾರಣ ಪಟ್ಟಿ ದೈನಂದಿನ ಆದೇಶಗಳು ತೀರ್ಪುಗಳು ಸಾರ್ವಜನಿಕ ಪ್ರಕಟಣೆ ಕೆ-ಆರ್‌ಇಎಟಿ ಶುಲ್ಕ ನೋಂದಣಿ ಯೋಜನೆಯ ನೋಂದಣಿ ಏಜೆಂಟ್ ನೋಂದಣಿ ದೂರು ನೋಂದಣಿ ಯೋಜನೆಯ ವಿಸ್ತರಣೆಗೆ ಅರ್ಜಿ ಸಲ್ಲಿಸಿ ಬದಲಾವಣೆ ವಿನಂತಿಗಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಸಿ Apply for Agent Change Request ಪೋಸ್ಟ್ ನೋಂದಣಿ ಮತ್ತು ತ್ರೈಮಾಸಿಕ ನವೀಕರಣ ಹಕ್ಕುಗಳ ವರ್ಗಾವಣೆ ಯೋಜನೆಯ ಮಾರ್ಪಾಡುಗಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಸಿ ಯೋಜನೆ ಪೂರ್ಣಗೊಳಿಸುವಿಕೆಗೆ ಅರ್ಜಿ ಸಲ್ಲಿಸಿ ಏಜೆಂಟ್ ನವೀಕರಣಕ್ಕಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಸಿ ವಾರ್ಷಿಕ ಲೆಕ್ಕಪರಿಶೋಧನೆ ವರದಿಯನ್ನು ಸಲ್ಲಿಸಿ ಸೇವೆಗಳು ಯೋಜನೆಯ ಸ್ಥಿತಿ ಏಜೆಂಟ್ ಸ್ಥಿತಿ ದೂರು ಸ್ಥಿತಿ Complaints Under Process Search Orders ಮಧ್ಯಂತರ ಆದೇಶಗಳು ಪ್ರಾಧಿಕಾರದ ಆದೇಶಗಳು Orders of Adjudicating Officer ಲೋಕ ಅದಾಲತ್ ಆದೇಶಗಳು ಯೋಜನೆಯ ವಿಸ್ತರಣೆ ಸ್ಥಿತಿ ಆನ್‌ಲೈನ್ ಪಾವತಿ ಸ್ಥಿತಿ ದೃಢೀಕೃತ ಪ್ರತಿಯನ್ನು ಪಡೆಯಲು ಮನವಿ ಭೂಕಂದಾಯ ವಸೂಲಾತಿ ಪ್ರಮಾಣ ಪತ್ರ ಪಟ್ಟಿ ಮಾಹಿತಿ ಹಕ್ಕು ಕಾಯ್ದೆ ಯೋಜನೆಯ ದೈನಂದಿನ ಕಾರಣ ಪಟ್ಟಿ ಏಜೆಂಟ್ ದೈನಂದಿನ ಕಾರಣ ಪಟ್ಟಿ ದೂರುಗಳು ದೈನಂದಿನ ಕಾರಣ ಪಟ್ಟಿ ( ನ್ಯಾಯ ನಿರ್ಣಯಾಧಿಕಾರಿ ) ದೈನಂದಿನ ಆದೇಶಗಳು ( ನ್ಯಾಯ ನಿರ್ಣಯಾಧಿಕಾರಿ ) ದೈನಂದಿನ ಕಾರಣ ಪಟ್ಟಿ ( ಪ್ರಾಧಿಕಾರ ) ದೈನಂದಿನ ಆದೇಶಗಳು ( ಪ್ರಾಧಿಕಾರ ) ಪ್ರವರ್ತಕವಾರು ದೂ",
+      "geoEvidence": [
+        {
+          "cityCode": "daman_and_diu",
+          "terms": [
+            "diu"
+          ]
+        },
+        {
+          "cityCode": "bangalore",
+          "terms": [
+            "Bengaluru",
+            "bengaluru"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.karnataka.gov.in",
+      "state": "daman_and_diu",
+      "url": "https://rera.karnataka.gov.in/filingAppeal",
+      "title": "The Form and Manner of Filling Appeals",
+      "date": "",
+      "recordDocumentType": "VALID_ORDER",
+      "contentExcerpt": "ಕರ್ನಾಟಕ ರಿಯಲ್ ಎಸ್ಟೇಟ್ ನಿಯಂತ್ರಣ ಪ್ರಾಧಿಕಾರದ ಅಧಿಕೃತ ಜಾಲತಾಣ ಆ+ ಆ ಆ- ಆ English ಮುಖಪುಟ ರೇರ ವಿವರಗಳು ರೇರ ವಿವರಗಳು ಸಂಸ್ಥೆಯ ಫಲಕ ರೇರ ಚಿತ್ರಗಳು ಕೆ-ಆರ್‌ಇಎಟಿ ಕೆ-ಆರ್‌ಇಎಟಿ ವಿವರಗಳು ಉದ್ದೇಶಗಳು ಸಂಸ್ಥೆಯ ಫಲಕ ಮೇಲ್ಮನವಿಯನ್ನು ಸಲ್ಲಿಸು ನ್ಯಾಯ ಮಂಡಳಿಯ ಜಾರಿ ನಿಯಮಗಳು ಕೆಲಸದ ಸಮಯ ಸಂಪರ್ಕಿಸಿ ದೈನಂದಿನ ಕಾರಣ ಪಟ್ಟಿ ದೈನಂದಿನ ಆದೇಶಗಳು ತೀರ್ಪುಗಳು ಸಾರ್ವಜನಿಕ ಪ್ರಕಟಣೆ ಕೆ-ಆರ್‌ಇಎಟಿ ಶುಲ್ಕ ನೋಂದಣಿ ಯೋಜನೆಯ ನೋಂದಣಿ ಏಜೆಂಟ್ ನೋಂದಣಿ ದೂರು ನೋಂದಣಿ ಯೋಜನೆಯ ವಿಸ್ತರಣೆಗೆ ಅರ್ಜಿ ಸಲ್ಲಿಸಿ ಬದಲಾವಣೆ ವಿನಂತಿಗಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಸಿ Apply for Agent Change Request ಪೋಸ್ಟ್ ನೋಂದಣಿ ಮತ್ತು ತ್ರೈಮಾಸಿಕ ನವೀಕರಣ ಹಕ್ಕುಗಳ ವರ್ಗಾವಣೆ ಯೋಜನೆಯ ಮಾರ್ಪಾಡುಗಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಸಿ ಯೋಜನೆ ಪೂರ್ಣಗೊಳಿಸುವಿಕೆಗೆ ಅರ್ಜಿ ಸಲ್ಲಿಸಿ ಏಜೆಂಟ್ ನವೀಕರಣಕ್ಕಾಗಿ ಅರ್ಜಿ ಸಲ್ಲಿಸಿ ವಾರ್ಷಿಕ ಲೆಕ್ಕಪರಿಶೋಧನೆ ವರದಿಯನ್ನು ಸಲ್ಲಿಸಿ ಸೇವೆಗಳು ಯೋಜನೆಯ ಸ್ಥಿತಿ ಏಜೆಂಟ್ ಸ್ಥಿತಿ ದೂರು ಸ್ಥಿತಿ Complaints Under Process Search Orders ಮಧ್ಯಂತರ ಆದೇಶಗಳು ಪ್ರಾಧಿಕಾರದ ಆದೇಶಗಳು Orders of Adjudicating Officer ಲೋಕ ಅದಾಲತ್ ಆದೇಶಗಳು ಯೋಜನೆಯ ವಿಸ್ತರಣೆ ಸ್ಥಿತಿ ಆನ್‌ಲೈನ್ ಪಾವತಿ ಸ್ಥಿತಿ ದೃಢೀಕೃತ ಪ್ರತಿಯನ್ನು ಪಡೆಯಲು ಮನವಿ ಭೂಕಂದಾಯ ವಸೂಲಾತಿ ಪ್ರಮಾಣ ಪತ್ರ ಪಟ್ಟಿ ಮಾಹಿತಿ ಹಕ್ಕು ಕಾಯ್ದೆ ಯೋಜನೆಯ ದೈನಂದಿನ ಕಾರಣ ಪಟ್ಟಿ ಏಜೆಂಟ್ ದೈನಂದಿನ ಕಾರಣ ಪಟ್ಟಿ ದೂರುಗಳು ದೈನಂದಿನ ಕಾರಣ ಪಟ್ಟಿ ( ನ್ಯಾಯ ನಿರ್ಣಯಾಧಿಕಾರಿ ) ದೈನಂದಿನ ಆದೇಶಗಳು ( ನ್ಯಾಯ ನಿರ್ಣಯಾಧಿಕಾರಿ ) ದೈನಂದಿನ ಕಾರಣ ಪಟ್ಟಿ ( ಪ್ರಾಧಿಕಾರ ) ದೈನಂದಿನ ಆದೇಶಗಳು ( ಪ್ರಾಧಿಕಾರ ) ಪ್ರವರ್ತಕವಾರು ದೂ",
+      "geoEvidence": [
+        {
+          "cityCode": "daman_and_diu",
+          "terms": [
+            "diu"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "unclassified",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "UNCLASSIFIED",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://rera.odisha.gov.in",
+      "state": "bhubaneswar",
+      "url": "https://rera.odisha.gov.in/",
+      "title": "ORERA",
+      "date": "",
+      "recordDocumentType": "OTHER",
+      "contentExcerpt": "Copy Paste let devUnlocked=false; /* ============================== ALT + X → Toggle Dev Mode ============================== */ document.addEventListener(\"keydown\",function(e){ if(e.altKey && e.code===\"KeyX\"){ devUnlocked=!devUnlocked; if(devUnlocked){ // showNotification(\"Developer mode unlocked\"); }else{ // showNotification(\"Developer mode locked\"); } } }); /* ============================== Block DevTools Shortcuts ============================== */ document.addEventListener(\"keydown\",function(e){ if(!devUnlocked){ if(e.ctrlKey && e.key.toLowerCase()==='u'){ e.preventDefault(); } if(e.ctrlKey && e.shiftKey && e.key.toLowerCase()==='i'){ e.preventDefault(); } if(e.ctrlKey && e.shiftKey && e.key.toLowerCase()==='c'){ e.preventDefault(); } if(e.keyCode===123){ e.preventDefault(); } } }); /* ============================== Detect DevTools Open ============================== */ let devtoolsOpen=false; setInterval(function(){ const threshold=160; const opened= window.outerWidth-window.innerWidth>threshold || window.outerHeight-window.innerHeight>threshold; if(devtoolsOpen && !opened){ devUnlocked=false; showNotification(\"Developer mode locked\"); } devtoolsOpen=opened; },500); /* ========",
+      "geoEvidence": [
+        {
+          "cityCode": "bhubaneswar",
+          "terms": [
+            "Bhubaneswar",
+            "bhubaneswar"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "unclassified",
+      "currentRejectionReason": "third-party RERA reporting",
+      "diagnosticLabel": "UNCERTAIN",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "UNCLASSIFIED",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://rera.punjab.gov.in",
+      "state": "chandigarh",
+      "url": "https://rera.punjab.gov.in/rera-punjab-office.html",
+      "title": "Real Estate Regulatory Authority",
+      "date": "",
+      "recordDocumentType": "VALID_JUDGMENT",
+      "contentExcerpt": "A+ A A- A A ਪੰਜਾਬੀ REAL ESTATE REGULATORY AUTHORITY PUNJAB Home (current) About Us About RERA Punjab Services Who's Who RERA Punjab Office Documents RERA Acts, Rules and Regulations Annual Reports Forms and Templates Check Lists - Registrations General Instructions - Online Registration Registrations Search Registered Projects Search Registered Agents List of Registered Projects List of Pending Applications (Project Registrations) List of Registered Real Estate Agents Fee Calculator Complaint Download Complaint Forms File Complaint Search Case Status Notices under Section 59 (Chapter 8 of the Act) Orders/ Judgements Orders/ Judgements by Adjudicating Officer Orders/ Judgements in Execution Orders/ Judgements in Execution by Adjudicating Officer Public Notices Report Unregistered Projects Appellate Tribunal FAQ's RERA Act FAQs Punjab State RERA Rules FAQs FAQs for Web Portal User Manual Contact Us You are here : Home About Us RERA Punjab Office RERA Punjab Office Address of RERA Office for Physical Submission of Application Real Estate Regulatory Authority First Floor, Block-B, Plot No.-3, Sector-18A,(Near Govt. Press UT), Madhya Marg,Chandigarh - 160018 About Us About RERA Punjab S",
+      "geoEvidence": [
+        {
+          "cityCode": "chandigarh",
+          "terms": [
+            "Chandigarh",
+            "chandigarh"
+          ]
+        },
+        {
+          "cityCode": "delhi_ncr",
+          "terms": [
+            "ncr"
+          ]
+        },
+        {
+          "cityCode": "mohali",
+          "terms": [
+            "Mohali",
+            "mohali"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.punjab.gov.in",
+      "state": "delhi_ncr",
+      "url": "https://rera.punjab.gov.in/RERA-acts-rules-regulations.html",
+      "title": "Real Estate Regulatory Authority",
+      "date": "2022-01-20T12:00:00.000Z",
+      "recordDocumentType": "VALID_JUDGMENT",
+      "contentExcerpt": "A+ A A- A A ਪੰਜਾਬੀ REAL ESTATE REGULATORY AUTHORITY PUNJAB Home (current) About Us About RERA Punjab Services Who's Who RERA Punjab Office Documents RERA Acts, Rules and Regulations Annual Reports Forms and Templates Check Lists - Registrations General Instructions - Online Registration Registrations Search Registered Projects Search Registered Agents List of Registered Projects List of Pending Applications (Project Registrations) List of Registered Real Estate Agents Fee Calculator Complaint Download Complaint Forms File Complaint Search Case Status Notices under Section 59 (Chapter 8 of the Act) Orders/ Judgements Orders/ Judgements by Adjudicating Officer Orders/ Judgements in Execution Orders/ Judgements in Execution by Adjudicating Officer Public Notices Report Unregistered Projects Appellate Tribunal FAQ's RERA Act FAQs Punjab State RERA Rules FAQs FAQs for Web Portal User Manual Contact Us You are here Home Documents RERA Acts, Rules and Regulations RERA Acts, Rules and Regulations Sr. No Document Name/ Description Document 1. Real Estate (Regulation and Development) Act, 2016 2. Real Estate (Regulation and Development) Rules, Punjab 3. Punjab State Real Estate (Regulation a",
+      "geoEvidence": [
+        {
+          "cityCode": "delhi_ncr",
+          "terms": [
+            "ncr"
+          ]
+        },
+        {
+          "cityCode": "mohali",
+          "terms": [
+            "Mohali",
+            "mohali"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.punjab.gov.in/circulars.html",
+      "state": "chandigarh",
+      "url": "https://rera.punjab.gov.in/rera-punjab-office.html",
+      "title": "Real Estate Regulatory Authority",
+      "date": "",
+      "recordDocumentType": "VALID_JUDGMENT",
+      "contentExcerpt": "A+ A A- A A ਪੰਜਾਬੀ REAL ESTATE REGULATORY AUTHORITY PUNJAB Home (current) About Us About RERA Punjab Services Who's Who RERA Punjab Office Documents RERA Acts, Rules and Regulations Annual Reports Forms and Templates Check Lists - Registrations General Instructions - Online Registration Registrations Search Registered Projects Search Registered Agents List of Registered Projects List of Pending Applications (Project Registrations) List of Registered Real Estate Agents Fee Calculator Complaint Download Complaint Forms File Complaint Search Case Status Notices under Section 59 (Chapter 8 of the Act) Orders/ Judgements Orders/ Judgements by Adjudicating Officer Orders/ Judgements in Execution Orders/ Judgements in Execution by Adjudicating Officer Public Notices Report Unregistered Projects Appellate Tribunal FAQ's RERA Act FAQs Punjab State RERA Rules FAQs FAQs for Web Portal User Manual Contact Us You are here : Home About Us RERA Punjab Office RERA Punjab Office Address of RERA Office for Physical Submission of Application Real Estate Regulatory Authority First Floor, Block-B, Plot No.-3, Sector-18A,(Near Govt. Press UT), Madhya Marg,Chandigarh - 160018 About Us About RERA Punjab S",
+      "geoEvidence": [
+        {
+          "cityCode": "chandigarh",
+          "terms": [
+            "Chandigarh",
+            "chandigarh"
+          ]
+        },
+        {
+          "cityCode": "delhi_ncr",
+          "terms": [
+            "ncr"
+          ]
+        },
+        {
+          "cityCode": "mohali",
+          "terms": [
+            "Mohali",
+            "mohali"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.punjab.gov.in/circulars.html",
+      "state": "delhi_ncr",
+      "url": "https://rera.punjab.gov.in/RERA-acts-rules-regulations.html",
+      "title": "Real Estate Regulatory Authority",
+      "date": "2022-01-20T12:00:00.000Z",
+      "recordDocumentType": "VALID_JUDGMENT",
+      "contentExcerpt": "A+ A A- A A ਪੰਜਾਬੀ REAL ESTATE REGULATORY AUTHORITY PUNJAB Home (current) About Us About RERA Punjab Services Who's Who RERA Punjab Office Documents RERA Acts, Rules and Regulations Annual Reports Forms and Templates Check Lists - Registrations General Instructions - Online Registration Registrations Search Registered Projects Search Registered Agents List of Registered Projects List of Pending Applications (Project Registrations) List of Registered Real Estate Agents Fee Calculator Complaint Download Complaint Forms File Complaint Search Case Status Notices under Section 59 (Chapter 8 of the Act) Orders/ Judgements Orders/ Judgements by Adjudicating Officer Orders/ Judgements in Execution Orders/ Judgements in Execution by Adjudicating Officer Public Notices Report Unregistered Projects Appellate Tribunal FAQ's RERA Act FAQs Punjab State RERA Rules FAQs FAQs for Web Portal User Manual Contact Us You are here Home Documents RERA Acts, Rules and Regulations RERA Acts, Rules and Regulations Sr. No Document Name/ Description Document 1. Real Estate (Regulation and Development) Act, 2016 2. Real Estate (Regulation and Development) Rules, Punjab 3. Punjab State Real Estate (Regulation a",
+      "geoEvidence": [
+        {
+          "cityCode": "delhi_ncr",
+          "terms": [
+            "ncr"
+          ]
+        },
+        {
+          "cityCode": "mohali",
+          "terms": [
+            "Mohali",
+            "mohali"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.punjab.gov.in/latest-news.html",
+      "state": "chandigarh",
+      "url": "https://rera.punjab.gov.in/rera-punjab-office.html",
+      "title": "Real Estate Regulatory Authority",
+      "date": "",
+      "recordDocumentType": "VALID_JUDGMENT",
+      "contentExcerpt": "A+ A A- A A ਪੰਜਾਬੀ REAL ESTATE REGULATORY AUTHORITY PUNJAB Home (current) About Us About RERA Punjab Services Who's Who RERA Punjab Office Documents RERA Acts, Rules and Regulations Annual Reports Forms and Templates Check Lists - Registrations General Instructions - Online Registration Registrations Search Registered Projects Search Registered Agents List of Registered Projects List of Pending Applications (Project Registrations) List of Registered Real Estate Agents Fee Calculator Complaint Download Complaint Forms File Complaint Search Case Status Notices under Section 59 (Chapter 8 of the Act) Orders/ Judgements Orders/ Judgements by Adjudicating Officer Orders/ Judgements in Execution Orders/ Judgements in Execution by Adjudicating Officer Public Notices Report Unregistered Projects Appellate Tribunal FAQ's RERA Act FAQs Punjab State RERA Rules FAQs FAQs for Web Portal User Manual Contact Us You are here : Home About Us RERA Punjab Office RERA Punjab Office Address of RERA Office for Physical Submission of Application Real Estate Regulatory Authority First Floor, Block-B, Plot No.-3, Sector-18A,(Near Govt. Press UT), Madhya Marg,Chandigarh - 160018 About Us About RERA Punjab S",
+      "geoEvidence": [
+        {
+          "cityCode": "chandigarh",
+          "terms": [
+            "Chandigarh",
+            "chandigarh"
+          ]
+        },
+        {
+          "cityCode": "delhi_ncr",
+          "terms": [
+            "ncr"
+          ]
+        },
+        {
+          "cityCode": "mohali",
+          "terms": [
+            "Mohali",
+            "mohali"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.punjab.gov.in/latest-news.html",
+      "state": "delhi_ncr",
+      "url": "https://rera.punjab.gov.in/RERA-acts-rules-regulations.html",
+      "title": "Real Estate Regulatory Authority",
+      "date": "2022-01-20T12:00:00.000Z",
+      "recordDocumentType": "VALID_JUDGMENT",
+      "contentExcerpt": "A+ A A- A A ਪੰਜਾਬੀ REAL ESTATE REGULATORY AUTHORITY PUNJAB Home (current) About Us About RERA Punjab Services Who's Who RERA Punjab Office Documents RERA Acts, Rules and Regulations Annual Reports Forms and Templates Check Lists - Registrations General Instructions - Online Registration Registrations Search Registered Projects Search Registered Agents List of Registered Projects List of Pending Applications (Project Registrations) List of Registered Real Estate Agents Fee Calculator Complaint Download Complaint Forms File Complaint Search Case Status Notices under Section 59 (Chapter 8 of the Act) Orders/ Judgements Orders/ Judgements by Adjudicating Officer Orders/ Judgements in Execution Orders/ Judgements in Execution by Adjudicating Officer Public Notices Report Unregistered Projects Appellate Tribunal FAQ's RERA Act FAQs Punjab State RERA Rules FAQs FAQs for Web Portal User Manual Contact Us You are here Home Documents RERA Acts, Rules and Regulations RERA Acts, Rules and Regulations Sr. No Document Name/ Description Document 1. Real Estate (Regulation and Development) Act, 2016 2. Real Estate (Regulation and Development) Rules, Punjab 3. Punjab State Real Estate (Regulation a",
+      "geoEvidence": [
+        {
+          "cityCode": "delhi_ncr",
+          "terms": [
+            "ncr"
+          ]
+        },
+        {
+          "cityCode": "mohali",
+          "terms": [
+            "Mohali",
+            "mohali"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.telangana.gov.in",
+      "state": "hyderabad",
+      "url": "https://rera.telangana.gov.in/47358436tujhfkdhg-TG-RERA-4572uthkdsjgh4457835",
+      "title": "Telangana Real Estate Regulatory Authority",
+      "date": "",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element'); //remove the layout } //body_1.style.top = \"40px\"; Telugu Hindi Urdu English A- A A+ Telangana Real Estate Regulatory Authority Toggle main menu visibility Home About Us Introduction Organisation Structure Our Leadership Services Real Estate Project Registration Real Estate Agent Registration Register Complaint Downloads RE(R&D) Act 2016 Rules and Regulations Circulars Forms Download Orders by TGRERA Proceedings Gallery News Clippings Cause List and Orders Cause list of Authority Orders of Authority Cause List of Adjudicating Officer Orders of Adjudicating Officer Orders in SUO MOTO Cases by Authority REAT Orders Daily Proceedings of the Authority Contact Us Search Registered Projects and Agents Events/Awareness Feedback FAQ RTI Public Notice Annual Report Project Completed by Association under Section 8 Organisation Structure Authority - TGRERA Total Visitors Today's Count Telangana Real Estate Regulatory Authority DTCP Building, Ground Floor, 640, A.C.Guads, Masab Tank, Opp. PTI Building, Hyderabad – 500004. Phone No.: 040-29394973",
+      "geoEvidence": [
+        {
+          "cityCode": "hyderabad",
+          "terms": [
+            "Hyderabad",
+            "hyderabad"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.telangana.gov.in",
+      "state": "hyderabad",
+      "url": "https://rera.telangana.gov.in/sfjkdghryttihrwughdk-TG-RERA-54670erogjfiodgurn0ewgjdsh",
+      "title": "Telangana Real Estate Regulatory Authority",
+      "date": "",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element'); //remove the layout } //body_1.style.top = \"40px\"; Telugu Hindi Urdu English A- A A+ Telangana Real Estate Regulatory Authority Toggle main menu visibility Home About Us Introduction Organisation Structure Our Leadership Services Real Estate Project Registration Real Estate Agent Registration Register Complaint Downloads RE(R&D) Act 2016 Rules and Regulations Circulars Forms Download Orders by TGRERA Proceedings Gallery News Clippings Cause List and Orders Cause list of Authority Orders of Authority Cause List of Adjudicating Officer Orders of Adjudicating Officer Orders in SUO MOTO Cases by Authority REAT Orders Daily Proceedings of the Authority Contact Us Search Registered Projects and Agents Events/Awareness Feedback FAQ RTI Public Notice Annual Report Project Completed by Association under Section 8 .table th { /* background-color:blue !important;*/ color: white !important; font-weight: bold; text-align: center; } .table a { color: white !important; font-weight: bold; } Rules and Regulations Sr.No Subject Date View Document 1 G.",
+      "geoEvidence": [
+        {
+          "cityCode": "hyderabad",
+          "terms": [
+            "Hyderabad",
+            "hyderabad"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.telangana.gov.in/247564irgjsdghfdgfd-TG-RERA-98498dsgdgyhdfjbhy43",
+      "state": "hyderabad",
+      "url": "https://rera.telangana.gov.in/47358436tujhfkdhg-TG-RERA-4572uthkdsjgh4457835",
+      "title": "Telangana Real Estate Regulatory Authority",
+      "date": "",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element'); //remove the layout } //body_1.style.top = \"40px\"; Telugu Hindi Urdu English A- A A+ Telangana Real Estate Regulatory Authority Toggle main menu visibility Home About Us Introduction Organisation Structure Our Leadership Services Real Estate Project Registration Real Estate Agent Registration Register Complaint Downloads RE(R&D) Act 2016 Rules and Regulations Circulars Forms Download Orders by TGRERA Proceedings Gallery News Clippings Cause List and Orders Cause list of Authority Orders of Authority Cause List of Adjudicating Officer Orders of Adjudicating Officer Orders in SUO MOTO Cases by Authority REAT Orders Daily Proceedings of the Authority Contact Us Search Registered Projects and Agents Events/Awareness Feedback FAQ RTI Public Notice Annual Report Project Completed by Association under Section 8 Organisation Structure Authority - TGRERA Total Visitors Today's Count Telangana Real Estate Regulatory Authority DTCP Building, Ground Floor, 640, A.C.Guads, Masab Tank, Opp. PTI Building, Hyderabad – 500004. Phone No.: 040-29394973",
+      "geoEvidence": [
+        {
+          "cityCode": "hyderabad",
+          "terms": [
+            "Hyderabad",
+            "hyderabad"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.telangana.gov.in/247564irgjsdghfdgfd-TG-RERA-98498dsgdgyhdfjbhy43",
+      "state": "hyderabad",
+      "url": "https://rera.telangana.gov.in/sfjkdghryttihrwughdk-TG-RERA-54670erogjfiodgurn0ewgjdsh",
+      "title": "Telangana Real Estate Regulatory Authority",
+      "date": "",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element'); //remove the layout } //body_1.style.top = \"40px\"; Telugu Hindi Urdu English A- A A+ Telangana Real Estate Regulatory Authority Toggle main menu visibility Home About Us Introduction Organisation Structure Our Leadership Services Real Estate Project Registration Real Estate Agent Registration Register Complaint Downloads RE(R&D) Act 2016 Rules and Regulations Circulars Forms Download Orders by TGRERA Proceedings Gallery News Clippings Cause List and Orders Cause list of Authority Orders of Authority Cause List of Adjudicating Officer Orders of Adjudicating Officer Orders in SUO MOTO Cases by Authority REAT Orders Daily Proceedings of the Authority Contact Us Search Registered Projects and Agents Events/Awareness Feedback FAQ RTI Public Notice Annual Report Project Completed by Association under Section 8 .table th { /* background-color:blue !important;*/ color: white !important; font-weight: bold; text-align: center; } .table a { color: white !important; font-weight: bold; } Rules and Regulations Sr.No Subject Date View Document 1 G.",
+      "geoEvidence": [
+        {
+          "cityCode": "hyderabad",
+          "terms": [
+            "Hyderabad",
+            "hyderabad"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.telangana.gov.in/384798wfybwev9fya62435-TG-RERA-skfjdgky483yunskljghfdgjh",
+      "state": "hyderabad",
+      "url": "https://rera.telangana.gov.in/47358436tujhfkdhg-TG-RERA-4572uthkdsjgh4457835",
+      "title": "Telangana Real Estate Regulatory Authority",
+      "date": "",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element'); //remove the layout } //body_1.style.top = \"40px\"; Telugu Hindi Urdu English A- A A+ Telangana Real Estate Regulatory Authority Toggle main menu visibility Home About Us Introduction Organisation Structure Our Leadership Services Real Estate Project Registration Real Estate Agent Registration Register Complaint Downloads RE(R&D) Act 2016 Rules and Regulations Circulars Forms Download Orders by TGRERA Proceedings Gallery News Clippings Cause List and Orders Cause list of Authority Orders of Authority Cause List of Adjudicating Officer Orders of Adjudicating Officer Orders in SUO MOTO Cases by Authority REAT Orders Daily Proceedings of the Authority Contact Us Search Registered Projects and Agents Events/Awareness Feedback FAQ RTI Public Notice Annual Report Project Completed by Association under Section 8 Organisation Structure Authority - TGRERA Total Visitors Today's Count Telangana Real Estate Regulatory Authority DTCP Building, Ground Floor, 640, A.C.Guads, Masab Tank, Opp. PTI Building, Hyderabad – 500004. Phone No.: 040-29394973",
+      "geoEvidence": [
+        {
+          "cityCode": "hyderabad",
+          "terms": [
+            "Hyderabad",
+            "hyderabad"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.telangana.gov.in/384798wfybwev9fya62435-TG-RERA-skfjdgky483yunskljghfdgjh",
+      "state": "hyderabad",
+      "url": "https://rera.telangana.gov.in/sfjkdghryttihrwughdk-TG-RERA-54670erogjfiodgurn0ewgjdsh",
+      "title": "Telangana Real Estate Regulatory Authority",
+      "date": "",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element'); //remove the layout } //body_1.style.top = \"40px\"; Telugu Hindi Urdu English A- A A+ Telangana Real Estate Regulatory Authority Toggle main menu visibility Home About Us Introduction Organisation Structure Our Leadership Services Real Estate Project Registration Real Estate Agent Registration Register Complaint Downloads RE(R&D) Act 2016 Rules and Regulations Circulars Forms Download Orders by TGRERA Proceedings Gallery News Clippings Cause List and Orders Cause list of Authority Orders of Authority Cause List of Adjudicating Officer Orders of Adjudicating Officer Orders in SUO MOTO Cases by Authority REAT Orders Daily Proceedings of the Authority Contact Us Search Registered Projects and Agents Events/Awareness Feedback FAQ RTI Public Notice Annual Report Project Completed by Association under Section 8 .table th { /* background-color:blue !important;*/ color: white !important; font-weight: bold; text-align: center; } .table a { color: white !important; font-weight: bold; } Rules and Regulations Sr.No Subject Date View Document 1 G.",
+      "geoEvidence": [
+        {
+          "cityCode": "hyderabad",
+          "terms": [
+            "Hyderabad",
+            "hyderabad"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.telangana.gov.in/amavlnjoiu7532845972-TG-RERA-74698ijgsdfjgbi349529",
+      "state": "hyderabad",
+      "url": "https://rera.telangana.gov.in/47358436tujhfkdhg-TG-RERA-4572uthkdsjgh4457835",
+      "title": "Telangana Real Estate Regulatory Authority",
+      "date": "",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element'); //remove the layout } //body_1.style.top = \"40px\"; Telugu Hindi Urdu English A- A A+ Telangana Real Estate Regulatory Authority Toggle main menu visibility Home About Us Introduction Organisation Structure Our Leadership Services Real Estate Project Registration Real Estate Agent Registration Register Complaint Downloads RE(R&D) Act 2016 Rules and Regulations Circulars Forms Download Orders by TGRERA Proceedings Gallery News Clippings Cause List and Orders Cause list of Authority Orders of Authority Cause List of Adjudicating Officer Orders of Adjudicating Officer Orders in SUO MOTO Cases by Authority REAT Orders Daily Proceedings of the Authority Contact Us Search Registered Projects and Agents Events/Awareness Feedback FAQ RTI Public Notice Annual Report Project Completed by Association under Section 8 Organisation Structure Authority - TGRERA Total Visitors Today's Count Telangana Real Estate Regulatory Authority DTCP Building, Ground Floor, 640, A.C.Guads, Masab Tank, Opp. PTI Building, Hyderabad – 500004. Phone No.: 040-29394973",
+      "geoEvidence": [
+        {
+          "cityCode": "hyderabad",
+          "terms": [
+            "Hyderabad",
+            "hyderabad"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.telangana.gov.in/amavlnjoiu7532845972-TG-RERA-74698ijgsdfjgbi349529",
+      "state": "hyderabad",
+      "url": "https://rera.telangana.gov.in/sfjkdghryttihrwughdk-TG-RERA-54670erogjfiodgurn0ewgjdsh",
+      "title": "Telangana Real Estate Regulatory Authority",
+      "date": "",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element'); //remove the layout } //body_1.style.top = \"40px\"; Telugu Hindi Urdu English A- A A+ Telangana Real Estate Regulatory Authority Toggle main menu visibility Home About Us Introduction Organisation Structure Our Leadership Services Real Estate Project Registration Real Estate Agent Registration Register Complaint Downloads RE(R&D) Act 2016 Rules and Regulations Circulars Forms Download Orders by TGRERA Proceedings Gallery News Clippings Cause List and Orders Cause list of Authority Orders of Authority Cause List of Adjudicating Officer Orders of Adjudicating Officer Orders in SUO MOTO Cases by Authority REAT Orders Daily Proceedings of the Authority Contact Us Search Registered Projects and Agents Events/Awareness Feedback FAQ RTI Public Notice Annual Report Project Completed by Association under Section 8 .table th { /* background-color:blue !important;*/ color: white !important; font-weight: bold; text-align: center; } .table a { color: white !important; font-weight: bold; } Rules and Regulations Sr.No Subject Date View Document 1 G.",
+      "geoEvidence": [
+        {
+          "cityCode": "hyderabad",
+          "terms": [
+            "Hyderabad",
+            "hyderabad"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.telangana.gov.in/AnnualReports-TG-RERA-15121976REAT_Orders",
+      "state": "hyderabad",
+      "url": "https://rera.telangana.gov.in/47358436tujhfkdhg-TG-RERA-4572uthkdsjgh4457835",
+      "title": "Telangana Real Estate Regulatory Authority",
+      "date": "",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element'); //remove the layout } //body_1.style.top = \"40px\"; Telugu Hindi Urdu English A- A A+ Telangana Real Estate Regulatory Authority Toggle main menu visibility Home About Us Introduction Organisation Structure Our Leadership Services Real Estate Project Registration Real Estate Agent Registration Register Complaint Downloads RE(R&D) Act 2016 Rules and Regulations Circulars Forms Download Orders by TGRERA Proceedings Gallery News Clippings Cause List and Orders Cause list of Authority Orders of Authority Cause List of Adjudicating Officer Orders of Adjudicating Officer Orders in SUO MOTO Cases by Authority REAT Orders Daily Proceedings of the Authority Contact Us Search Registered Projects and Agents Events/Awareness Feedback FAQ RTI Public Notice Annual Report Project Completed by Association under Section 8 Organisation Structure Authority - TGRERA Total Visitors Today's Count Telangana Real Estate Regulatory Authority DTCP Building, Ground Floor, 640, A.C.Guads, Masab Tank, Opp. PTI Building, Hyderabad – 500004. Phone No.: 040-29394973",
+      "geoEvidence": [
+        {
+          "cityCode": "hyderabad",
+          "terms": [
+            "Hyderabad",
+            "hyderabad"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.telangana.gov.in/AnnualReports-TG-RERA-15121976REAT_Orders",
+      "state": "hyderabad",
+      "url": "https://rera.telangana.gov.in/sfjkdghryttihrwughdk-TG-RERA-54670erogjfiodgurn0ewgjdsh",
+      "title": "Telangana Real Estate Regulatory Authority",
+      "date": "",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element'); //remove the layout } //body_1.style.top = \"40px\"; Telugu Hindi Urdu English A- A A+ Telangana Real Estate Regulatory Authority Toggle main menu visibility Home About Us Introduction Organisation Structure Our Leadership Services Real Estate Project Registration Real Estate Agent Registration Register Complaint Downloads RE(R&D) Act 2016 Rules and Regulations Circulars Forms Download Orders by TGRERA Proceedings Gallery News Clippings Cause List and Orders Cause list of Authority Orders of Authority Cause List of Adjudicating Officer Orders of Adjudicating Officer Orders in SUO MOTO Cases by Authority REAT Orders Daily Proceedings of the Authority Contact Us Search Registered Projects and Agents Events/Awareness Feedback FAQ RTI Public Notice Annual Report Project Completed by Association under Section 8 .table th { /* background-color:blue !important;*/ color: white !important; font-weight: bold; text-align: center; } .table a { color: white !important; font-weight: bold; } Rules and Regulations Sr.No Subject Date View Document 1 G.",
+      "geoEvidence": [
+        {
+          "cityCode": "hyderabad",
+          "terms": [
+            "Hyderabad",
+            "hyderabad"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.telangana.gov.in/Home/ViewNews",
+      "state": "hyderabad",
+      "url": "https://rera.telangana.gov.in/47358436tujhfkdhg-TG-RERA-4572uthkdsjgh4457835",
+      "title": "Telangana Real Estate Regulatory Authority",
+      "date": "",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element'); //remove the layout } //body_1.style.top = \"40px\"; Telugu Hindi Urdu English A- A A+ Telangana Real Estate Regulatory Authority Toggle main menu visibility Home About Us Introduction Organisation Structure Our Leadership Services Real Estate Project Registration Real Estate Agent Registration Register Complaint Downloads RE(R&D) Act 2016 Rules and Regulations Circulars Forms Download Orders by TGRERA Proceedings Gallery News Clippings Cause List and Orders Cause list of Authority Orders of Authority Cause List of Adjudicating Officer Orders of Adjudicating Officer Orders in SUO MOTO Cases by Authority REAT Orders Daily Proceedings of the Authority Contact Us Search Registered Projects and Agents Events/Awareness Feedback FAQ RTI Public Notice Annual Report Project Completed by Association under Section 8 Organisation Structure Authority - TGRERA Total Visitors Today's Count Telangana Real Estate Regulatory Authority DTCP Building, Ground Floor, 640, A.C.Guads, Masab Tank, Opp. PTI Building, Hyderabad – 500004. Phone No.: 040-29394973",
+      "geoEvidence": [
+        {
+          "cityCode": "hyderabad",
+          "terms": [
+            "Hyderabad",
+            "hyderabad"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.telangana.gov.in/Home/ViewNews",
+      "state": "hyderabad",
+      "url": "https://rera.telangana.gov.in/sfjkdghryttihrwughdk-TG-RERA-54670erogjfiodgurn0ewgjdsh",
+      "title": "Telangana Real Estate Regulatory Authority",
+      "date": "",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element'); //remove the layout } //body_1.style.top = \"40px\"; Telugu Hindi Urdu English A- A A+ Telangana Real Estate Regulatory Authority Toggle main menu visibility Home About Us Introduction Organisation Structure Our Leadership Services Real Estate Project Registration Real Estate Agent Registration Register Complaint Downloads RE(R&D) Act 2016 Rules and Regulations Circulars Forms Download Orders by TGRERA Proceedings Gallery News Clippings Cause List and Orders Cause list of Authority Orders of Authority Cause List of Adjudicating Officer Orders of Adjudicating Officer Orders in SUO MOTO Cases by Authority REAT Orders Daily Proceedings of the Authority Contact Us Search Registered Projects and Agents Events/Awareness Feedback FAQ RTI Public Notice Annual Report Project Completed by Association under Section 8 .table th { /* background-color:blue !important;*/ color: white !important; font-weight: bold; text-align: center; } .table a { color: white !important; font-weight: bold; } Rules and Regulations Sr.No Subject Date View Document 1 G.",
+      "geoEvidence": [
+        {
+          "cityCode": "hyderabad",
+          "terms": [
+            "Hyderabad",
+            "hyderabad"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.telangana.gov.in/SUOMOTU-TG-RERA-15121976ORDERS",
+      "state": "hyderabad",
+      "url": "https://rera.telangana.gov.in/47358436tujhfkdhg-TG-RERA-4572uthkdsjgh4457835",
+      "title": "Telangana Real Estate Regulatory Authority",
+      "date": "",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element'); //remove the layout } //body_1.style.top = \"40px\"; Telugu Hindi Urdu English A- A A+ Telangana Real Estate Regulatory Authority Toggle main menu visibility Home About Us Introduction Organisation Structure Our Leadership Services Real Estate Project Registration Real Estate Agent Registration Register Complaint Downloads RE(R&D) Act 2016 Rules and Regulations Circulars Forms Download Orders by TGRERA Proceedings Gallery News Clippings Cause List and Orders Cause list of Authority Orders of Authority Cause List of Adjudicating Officer Orders of Adjudicating Officer Orders in SUO MOTO Cases by Authority REAT Orders Daily Proceedings of the Authority Contact Us Search Registered Projects and Agents Events/Awareness Feedback FAQ RTI Public Notice Annual Report Project Completed by Association under Section 8 Organisation Structure Authority - TGRERA Total Visitors Today's Count Telangana Real Estate Regulatory Authority DTCP Building, Ground Floor, 640, A.C.Guads, Masab Tank, Opp. PTI Building, Hyderabad – 500004. Phone No.: 040-29394973",
+      "geoEvidence": [
+        {
+          "cityCode": "hyderabad",
+          "terms": [
+            "Hyderabad",
+            "hyderabad"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.telangana.gov.in/SUOMOTU-TG-RERA-15121976ORDERS",
+      "state": "hyderabad",
+      "url": "https://rera.telangana.gov.in/sfjkdghryttihrwughdk-TG-RERA-54670erogjfiodgurn0ewgjdsh",
+      "title": "Telangana Real Estate Regulatory Authority",
+      "date": "",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "function googleTranslateElementInit() { new google.translate.TranslateElement({ pageLanguage: 'en', autoDisplay: false }, 'google_translate_element'); //remove the layout } //body_1.style.top = \"40px\"; Telugu Hindi Urdu English A- A A+ Telangana Real Estate Regulatory Authority Toggle main menu visibility Home About Us Introduction Organisation Structure Our Leadership Services Real Estate Project Registration Real Estate Agent Registration Register Complaint Downloads RE(R&D) Act 2016 Rules and Regulations Circulars Forms Download Orders by TGRERA Proceedings Gallery News Clippings Cause List and Orders Cause list of Authority Orders of Authority Cause List of Adjudicating Officer Orders of Adjudicating Officer Orders in SUO MOTO Cases by Authority REAT Orders Daily Proceedings of the Authority Contact Us Search Registered Projects and Agents Events/Awareness Feedback FAQ RTI Public Notice Annual Report Project Completed by Association under Section 8 .table th { /* background-color:blue !important;*/ color: white !important; font-weight: bold; text-align: center; } .table a { color: white !important; font-weight: bold; } Rules and Regulations Sr.No Subject Date View Document 1 G.",
+      "geoEvidence": [
+        {
+          "cityCode": "hyderabad",
+          "terms": [
+            "Hyderabad",
+            "hyderabad"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "reject_negative",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "NEGATIVE_FILTER",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative"
+    },
+    {
+      "source": "https://rera.tripura.gov.in",
+      "state": "UNKNOWN_STATE",
+      "url": "https://rera.tripura.gov.in/screen-reader-access",
+      "title": "Screen Reader Access | rera",
+      "date": "2025-02-17T12:00:00.000Z",
+      "recordDocumentType": "OTHER",
+      "contentExcerpt": "Screen Reader Access Skip to Main Content Colour Themes AAAA Text Size A+ A A- eval(unescape(\"eval%28function%28p%2Ca%2Cc%2Ck%2Ce%2Cr%29%7Be%3Dfunction%28c%29%7Breturn%28c%3Ca%3F%27%27%3Ae%28parseInt%28c/a%29%29%29+%28%28c%3Dc%25a%29%3E35%3FString.fromCharCode%28c+29%29%3Ac.toString%2836%29%29%7D%3Bif%28%21%27%27.replace%28/%5E/%2CString%29%29%7Bwhile%28c--%29r%5Be%28c%29%5D%3Dk%5Bc%5D%7C%7Ce%28c%29%3Bk%3D%5Bfunction%28e%29%7Breturn%20r%5Be%5D%7D%5D%3Be%3Dfunction%28%29%7Breturn%27%5C%5Cw+%27%7D%3Bc%3D1%7D%3Bwhile%28c--%29if%28k%5Bc%5D%29p%3Dp.replace%28new%20RegExp%28%27%5C%5Cb%27+e%28c%29+%27%5C%5Cb%27%2C%27g%27%29%2Ck%5Bc%5D%29%3Breturn%20p%7D%28%276%207%28a%2Cb%29%7Bn%7B4%282.9%29%7B3%20c%3D2.9%28%22o%22%29%3Bc.p%28b%2Cf%2Cf%29%3Ba.q%28c%29%7Dg%7B3%20c%3D2.r%28%29%3Ba.s%28%5C%27t%5C%27+b%2Cc%29%7D%7Du%28e%29%7B%7D%7D6%20h%28a%29%7B4%28a.8%29a%3Da.8%3B4%28a%3D%3D%5C%27%5C%27%29v%3B3%20b%3Da.w%28%5C%27%7C%5C%27%29%5B1%5D%3B3%20c%3B3%20d%3D2.x%28%5C%27y%5C%27%29%3Bz%283%20i%3D0%3Bi%3Cd.5%3Bi++%294%28d%5Bi%5D.A%3D%3D%5C%27B-C-D%5C%27%29c%3Dd%5Bi%5D%3B4%282.j%28%5C%27k%5C%27%29%3D%3DE%7C%7C2.j%28%5C%27k%5C%27%29.l.5%3D%3D0%7C%7Cc.5%3D%3D0%7C%7Cc.l.5%3D%3D0%29%7BF%286%28%29%7Bh%28a%2",
+      "geoEvidence": [],
+      "currentRelevanceResult": "unclassified",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "UNCLASSIFIED",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://rera.tripura.gov.in",
+      "state": "UNKNOWN_STATE",
+      "url": "https://rera.tripura.gov.in/#mainpagedescription",
+      "title": "Home | rera",
+      "date": "2016-05-01T12:00:00.000Z",
+      "recordDocumentType": "OTHER",
+      "contentExcerpt": "Screen Reader Access Skip to Main Content Colour Themes AAAA Text Size A+ A A- eval(unescape(\"eval%28function%28p%2Ca%2Cc%2Ck%2Ce%2Cr%29%7Be%3Dfunction%28c%29%7Breturn%28c%3Ca%3F%27%27%3Ae%28parseInt%28c/a%29%29%29+%28%28c%3Dc%25a%29%3E35%3FString.fromCharCode%28c+29%29%3Ac.toString%2836%29%29%7D%3Bif%28%21%27%27.replace%28/%5E/%2CString%29%29%7Bwhile%28c--%29r%5Be%28c%29%5D%3Dk%5Bc%5D%7C%7Ce%28c%29%3Bk%3D%5Bfunction%28e%29%7Breturn%20r%5Be%5D%7D%5D%3Be%3Dfunction%28%29%7Breturn%27%5C%5Cw+%27%7D%3Bc%3D1%7D%3Bwhile%28c--%29if%28k%5Bc%5D%29p%3Dp.replace%28new%20RegExp%28%27%5C%5Cb%27+e%28c%29+%27%5C%5Cb%27%2C%27g%27%29%2Ck%5Bc%5D%29%3Breturn%20p%7D%28%276%207%28a%2Cb%29%7Bn%7B4%282.9%29%7B3%20c%3D2.9%28%22o%22%29%3Bc.p%28b%2Cf%2Cf%29%3Ba.q%28c%29%7Dg%7B3%20c%3D2.r%28%29%3Ba.s%28%5C%27t%5C%27+b%2Cc%29%7D%7Du%28e%29%7B%7D%7D6%20h%28a%29%7B4%28a.8%29a%3Da.8%3B4%28a%3D%3D%5C%27%5C%27%29v%3B3%20b%3Da.w%28%5C%27%7C%5C%27%29%5B1%5D%3B3%20c%3B3%20d%3D2.x%28%5C%27y%5C%27%29%3Bz%283%20i%3D0%3Bi%3Cd.5%3Bi++%294%28d%5Bi%5D.A%3D%3D%5C%27B-C-D%5C%27%29c%3Dd%5Bi%5D%3B4%282.j%28%5C%27k%5C%27%29%3D%3DE%7C%7C2.j%28%5C%27k%5C%27%29.l.5%3D%3D0%7C%7Cc.5%3D%3D0%7C%7Cc.l.5%3D%3D0%29%7BF%286%28%29%7Bh%28a%2",
+      "geoEvidence": [],
+      "currentRelevanceResult": "unclassified",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "UNCLASSIFIED",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://up-rera.in",
+      "state": "gurugram",
+      "url": "https://up-rera.in/frm_Rera_Anual_Report.aspx",
+      "title": "UP RERA : Uttar Pradesh Real Estate Regulatory Authority",
+      "date": "2016-05-01T12:00:00.000Z",
+      "recordDocumentType": "VALID_ORDER",
+      "contentExcerpt": "//<![CDATA[ var theForm = document.forms['aspnetForm']; if (!theForm) { theForm = document.aspnetForm; } function __doPostBack(eventTarget, eventArgument) { if (!theForm.onsubmit || (theForm.onsubmit() != false)) { theForm.__EVENTTARGET.value = eventTarget; theForm.__EVENTARGUMENT.value = eventArgument; theForm.submit(); } } //]]> //<![CDATA[ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', [], [], [], 90, 'ctl00'); //]]> | +A | A | -A var d = new Date() var weekday = new Array(\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\") var monthname = new Array(\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\") document.write(weekday[d.getDay()] + \", \") document.write(d.getDate() + \" \") document.write(monthname[d.getMonth()] + \", \") document.write(d.getFullYear()) | function renderTime() { var currentTime = new Date(); var diem = \"AM\"; var h = currentTime.getHours(); var m = currentTime.getMinutes(); var s = currentTime.getSeconds(); setTimeout('renderTime()', 1000); if (h == 0) { h = 12; } else if (h > 12) { h = h - 12; diem = \"PM\"; } if (h < 10) { h = \"0\" + h; } if (m < 10) { m = \"0\" + m; } if (s",
+      "geoEvidence": [
+        {
+          "cityCode": "gurugram",
+          "terms": [
+            "spr"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "unclassified",
+      "currentRejectionReason": "third-party RERA report with negative signal",
+      "diagnosticLabel": "UNCERTAIN",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "UNCLASSIFIED",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://up-rera.in",
+      "state": "UNKNOWN_STATE",
+      "url": "https://up-rera.in/pdf/Best_Practices_by_UP-RERA.pdf",
+      "title": "",
+      "date": "",
+      "recordDocumentType": "OTHER",
+      "contentExcerpt": "",
+      "geoEvidence": [],
+      "currentRelevanceResult": "unreadable",
+      "currentRejectionReason": "article not fully readable",
+      "diagnosticLabel": "INSUFFICIENT_CONTENT",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "CONTENT_LENGTH",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://www.hprera.in",
+      "state": "UNKNOWN_STATE",
+      "url": "https://hprera.in/",
+      "title": "HP RERA News",
+      "date": "",
+      "recordDocumentType": "OTHER",
+      "contentExcerpt": "Skip to content Independent Property, Housing & Policy Publication About Editorial Policy Contact HP RERA News Menu Menu Sample Page Independent This publication is not affiliated with HP RERA, the Government of Himachal Pradesh, or any government department. Uncategorized Hello world! Welcome to WordPress. This is your first post. Edit or delete it, then start writing! August 2, 2026Gurmeet Latest Updates Real Estate News Publish posts in the “Real Estate News” category to populate this section. RERA & Buyer Rights Publish posts in the “RERA & Buyer Rights” category to populate this section. Housing Schemes Publish posts in the “Housing Schemes” category to populate this section. Property Documents & Taxes Publish posts in the “Property Documents & Taxes” category to populate this section. Home Loans & Finance View all → Publish posts in the “Home Loans & Finance” category to populate this section. Property Markets Publish posts in the “Property Markets” category to populate this section. Property updates without the noise. A concise weekly briefing on housing rules, buyer rights, documentation and finance. Email address Connect newsletter © 2026 HPRERA Journal. Independent public",
+      "geoEvidence": [],
+      "currentRelevanceResult": "unclassified",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "UNCLASSIFIED",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://www.naredco.in/industry-news",
+      "state": "indore",
+      "url": "https://www.naredco.in/industry-news#main-content",
+      "title": "Industry News | NAREDCO",
+      "date": "",
+      "recordDocumentType": "OTHER",
+      "contentExcerpt": "Skip to main content naredco@naredco.in +A -A Search Main navigation Home About NAREDCO National Real Estate Development Council (NAREDCO) was established as an autonomous self-regulatory body in 1998 under the aegis of Ministry of Housing and Urban Affairs, Govt. of India. Governance The Minister of Housing and Urban Affairs, Govt. of India, is Ex-officio Chief Patron of the Council. Day-to-Day affairs of the council are managed by a Governing Council (GC) comprising members elected from various categories of memberships Members NAREDCO counts some of the most well-known names in the real estate sector from the public as well as the private sector as members. State Chapters NAREDCO deals with and represents all matters related to real estate development by both private and public sector, including planning and layout of colonies, construction of residential, commercial NAREDCO Secretariat NAREDCO is led by esteemed industry veterans like Dr Niranjan Hiranandani and Shri Parveen Jain. Our Partners Find the official Partner of NAREDCO. Activities Events NAREDCO organizes a wide range of events relating to the Indian real estate sector with regular participation from Industry stalwar",
+      "geoEvidence": [
+        {
+          "cityCode": "indore",
+          "terms": [
+            "Indore",
+            "indore"
+          ]
+        },
+        {
+          "cityCode": "delhi_ncr",
+          "terms": [
+            "ncr"
+          ]
+        },
+        {
+          "cityCode": "delhi",
+          "terms": [
+            "Delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "new_delhi",
+          "terms": [
+            "New Delhi",
+            "new delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "anand",
+          "terms": [
+            "Anand",
+            "anand"
+          ]
+        },
+        {
+          "cityCode": "bangalore",
+          "terms": [
+            "Bengaluru",
+            "bengaluru"
+          ]
+        },
+        {
+          "cityCode": "mumbai",
+          "terms": [
+            "Mumbai",
+            "mumbai"
+          ]
+        },
+        {
+          "cityCode": "jaipur",
+          "terms": [
+            "Jaipur",
+            "jaipur"
+          ]
+        },
+        {
+          "cityCode": "alwar",
+          "terms": [
+            "Alwar",
+            "alwar"
+          ]
+        },
+        {
+          "cityCode": "lucknow",
+          "terms": [
+            "Lucknow",
+            "lucknow"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "unclassified",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "THIRD_PARTY_RERA_NEWS",
+      "falseNegativeGate": "UNCLASSIFIED",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://www.naredco.in/industry-news",
+      "state": "delhi",
+      "url": "https://www.naredco.in/about-us",
+      "title": "About Us | NAREDCO",
+      "date": "",
+      "recordDocumentType": "OTHER",
+      "contentExcerpt": "Skip to main content naredco@naredco.in +A -A Search Main navigation Home About NAREDCO National Real Estate Development Council (NAREDCO) was established as an autonomous self-regulatory body in 1998 under the aegis of Ministry of Housing and Urban Affairs, Govt. of India. Governance The Minister of Housing and Urban Affairs, Govt. of India, is Ex-officio Chief Patron of the Council. Day-to-Day affairs of the council are managed by a Governing Council (GC) comprising members elected from various categories of memberships Members NAREDCO counts some of the most well-known names in the real estate sector from the public as well as the private sector as members. State Chapters NAREDCO deals with and represents all matters related to real estate development by both private and public sector, including planning and layout of colonies, construction of residential, commercial NAREDCO Secretariat NAREDCO is led by esteemed industry veterans like Dr Niranjan Hiranandani and Shri Parveen Jain. Our Partners Find the official Partner of NAREDCO. Activities Events NAREDCO organizes a wide range of events relating to the Indian real estate sector with regular participation from Industry stalwar",
+      "geoEvidence": [
+        {
+          "cityCode": "delhi",
+          "terms": [
+            "Delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "new_delhi",
+          "terms": [
+            "New Delhi",
+            "new delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "anand",
+          "terms": [
+            "Anand",
+            "anand"
+          ]
+        },
+        {
+          "cityCode": "alwar",
+          "terms": [
+            "Alwar",
+            "alwar"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "unclassified",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "THIRD_PARTY_RERA_NEWS",
+      "falseNegativeGate": "UNCLASSIFIED",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://www.nhsrcl.in",
+      "state": "daman_and_diu",
+      "url": "https://www.nhsrcl.in/#mainContent",
+      "title": "NHSRCL",
+      "date": "2026-10-14T12:00:00.000Z",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "//<![CDATA[ var theForm = document.forms['ctl01']; if (!theForm) { theForm = document.ctl01; } function __doPostBack(eventTarget, eventArgument) { if (!theForm.onsubmit || (theForm.onsubmit() != false)) { theForm.__EVENTTARGET.value = eventTarget; theForm.__EVENTARGUMENT.value = eventArgument; theForm.submit(); } } //]]> Site Map Skip to Main Content EN English English Hindi Gujarati Marathi Japanese NATIONAL HIGH SPEED RAIL CORPORATION LIMITED नेशनल हाई स्पीड रेल कॉर्पोरेशन लिमिटेड ABOUT US ABOUT NHSRCL VISION & MISSION BOARD OF DIRECTORS ANNUAL REPORT DIRECTORY SKILL DEVELOPMENT MAKE IN INDIA HONORS & AWARDS IRP, SOCIAL INITIATIVES & CSR INNOVATION PROJECT PROJECT OVERVIEW BULLET TRAIN STATIONS SAFETY FEATURES MAINTENANCE TECHNICAL DETAILS SABARMATI HUB ABOUT HUB WALK THROUGH VIDEO FEASIBILITY STUDY REPORT GRIEVANCE REDRESSAL COMMITTEE SIA/RAP AND IPP REPORTS SUPPLEMENTAL ENVIRONMENTAL IMPACT ASSESSMENT REPORT APPLICATION FOR WAY LEAVE & NOC CASES PROCEDURE ORDER FOR NOC/WAY LEAVE APPLICATION STATUS OF NOC APPLICATON STATUS OF WAY LEAVE APPLICATION LIST OF NODAL OFFICERS APPLY ONLINE TENDER ACTIVE TENDER/NOTICE AWARDED TENDERS ARCHIVED TENDERS TENDER RELATED INFORMATION NHSRCL ON",
+      "geoEvidence": [
+        {
+          "cityCode": "daman_and_diu",
+          "terms": [
+            "diu"
+          ]
+        },
+        {
+          "cityCode": "delhi",
+          "terms": [
+            "Delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "new_delhi",
+          "terms": [
+            "New Delhi",
+            "new delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "ahmedabad",
+          "terms": [
+            "Ahmedabad",
+            "ahmedabad"
+          ]
+        },
+        {
+          "cityCode": "anand",
+          "terms": [
+            "Anand",
+            "anand"
+          ]
+        },
+        {
+          "cityCode": "bharuch",
+          "terms": [
+            "Bharuch",
+            "bharuch"
+          ]
+        },
+        {
+          "cityCode": "surat",
+          "terms": [
+            "Surat",
+            "surat"
+          ]
+        },
+        {
+          "cityCode": "gujarat",
+          "terms": [
+            "Gujarat",
+            "gujarat"
+          ]
+        },
+        {
+          "cityCode": "vadodara",
+          "terms": [
+            "Vadodara",
+            "vadodara"
+          ]
+        },
+        {
+          "cityCode": "vapi",
+          "terms": [
+            "Vapi",
+            "vapi"
+          ]
+        },
+        {
+          "cityCode": "bangalore",
+          "terms": [
+            "Bengaluru",
+            "bengaluru"
+          ]
+        },
+        {
+          "cityCode": "chennai",
+          "terms": [
+            "Chennai",
+            "chennai"
+          ]
+        },
+        {
+          "cityCode": "mumbai",
+          "terms": [
+            "Mumbai",
+            "mumbai"
+          ]
+        },
+        {
+          "cityCode": "thane",
+          "terms": [
+            "Thane",
+            "thane"
+          ]
+        },
+        {
+          "cityCode": "nashik",
+          "terms": [
+            "Nashik",
+            "nashik"
+          ]
+        },
+        {
+          "cityCode": "pali",
+          "terms": [
+            "Pali",
+            "pali"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "unclassified",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "THIRD_PARTY_RERA_NEWS",
+      "falseNegativeGate": "UNCLASSIFIED",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://www.nhsrcl.in",
+      "state": "delhi",
+      "url": "https://www.nhsrcl.in/list-of-directors.aspx",
+      "title": "Board Of Directors | NHSRCL",
+      "date": "",
+      "recordDocumentType": "VALID_CIRCULAR",
+      "contentExcerpt": "//<![CDATA[ var theForm = document.forms['ctl01']; if (!theForm) { theForm = document.ctl01; } function __doPostBack(eventTarget, eventArgument) { if (!theForm.onsubmit || (theForm.onsubmit() != false)) { theForm.__EVENTTARGET.value = eventTarget; theForm.__EVENTARGUMENT.value = eventArgument; theForm.submit(); } } //]]> Site Map Skip to Main Content EN English English Hindi Gujarati Marathi Japanese NATIONAL HIGH SPEED RAIL CORPORATION LIMITED नेशनल हाई स्पीड रेल कॉर्पोरेशन लिमिटेड ABOUT US ABOUT NHSRCL VISION & MISSION BOARD OF DIRECTORS ANNUAL REPORT DIRECTORY SKILL DEVELOPMENT MAKE IN INDIA HONORS & AWARDS IRP, SOCIAL INITIATIVES & CSR INNOVATION PROJECT PROJECT OVERVIEW BULLET TRAIN STATIONS SAFETY FEATURES MAINTENANCE TECHNICAL DETAILS SABARMATI HUB ABOUT HUB WALK THROUGH VIDEO FEASIBILITY STUDY REPORT GRIEVANCE REDRESSAL COMMITTEE SIA/RAP AND IPP REPORTS SUPPLEMENTAL ENVIRONMENTAL IMPACT ASSESSMENT REPORT APPLICATION FOR WAY LEAVE & NOC CASES PROCEDURE ORDER FOR NOC/WAY LEAVE APPLICATION STATUS OF NOC APPLICATON STATUS OF WAY LEAVE APPLICATION LIST OF NODAL OFFICERS APPLY ONLINE TENDER ACTIVE TENDER/NOTICE AWARDED TENDERS ARCHIVED TENDERS TENDER RELATED INFORMATION NHSRCL ON",
+      "geoEvidence": [
+        {
+          "cityCode": "delhi",
+          "terms": [
+            "Delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "new_delhi",
+          "terms": [
+            "New Delhi",
+            "new delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "gujarat",
+          "terms": [
+            "Gujarat",
+            "gujarat"
+          ]
+        },
+        {
+          "cityCode": "pali",
+          "terms": [
+            "Pali",
+            "pali"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "unclassified",
+      "currentRejectionReason": "navigation/index language dominates",
+      "diagnosticLabel": "NAVIGATION_INDEX",
+      "sourceClass": "THIRD_PARTY_RERA_NEWS",
+      "falseNegativeGate": "UNCLASSIFIED",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://www.rera.mp.gov.in",
+      "state": "daman_and_diu",
+      "url": "https://www.rera.mp.gov.in/#skip_main_content",
+      "title": "भू-संपदा विनियामक प्राधिकरण",
+      "date": "2021-06-18T12:00:00.000Z",
+      "recordDocumentType": "VALID_NOTICE",
+      "contentExcerpt": "Error! A problem has been occurred while JavaScript is disabled. To enable it follow this स्क्रीन रीडर मुख्य कंटेंट की ओर नेविगेशन की ओर लॉगिन अ- अ अ+ English भू-संपदा विनियामक प्राधिकरण मध्यप्रदेश मुख्य पृष्ठ प्राधिकरण के बारे में वार्षिक प्रतिवेदन प्राधिकरण के बारे में अघिनियम नियम कौन क्या है डाउनलोड आरटीआई आवेदन शिकायत शिकायत दर्ज करें (एम/ एन/ धारा-40) आदेश (एम / एन) प्राधिकरण द्वारा निराकरण अंतिम निराकरण न्यायनिर्णायक अधिकारी को हस्तांतरण न्यायनिर्णायक अधिकारी द्वारा अंतिम निराकरण कतिपय अंतरिम आदेश आदेश (विविध प्रकरण) प्राधिकरण द्वारा अंतिम निराकरण सेक्शन 40 एम आर सी न्यायनिर्णायक अधिकारी द्वारा अंतिम निराकरण (0) सेक्शन 40 निराकरण(0) एम आर सी निराकरण(0) विविध कतिपय अंतरिम आदेश सेक्शन 40 अंतरिम आदेश एम आर सी अंतरिम आदेश परियोजना समस्त परियोजनाएँ पंजीकृत परियोजनाएँ पूर्ण परियोजनाएँ प्रचलित परियोजनाएँ विस्तारित परियोजनाएँ प्रत्याहृत परियोजनाएँ पंजीकरण निलंबित पंजीकरण रद्द पंजीकरण कालातीत प्रक्रियाधीन परियोजनाएँ नए आवेदन प्रगतिशील आवेदन व्यतिक्रमी अस्वीकृत आवेदन अप्रयुक्त आवेदन प्रतिबंधात्मक आदेश प्रोमोटर्स एजेंट्स स्वीकृत एजेंट्स अस्वीकृत एजेंट्स रजिस्ट्रेशन प्रोजेक्ट रजिस्ट्रेशन एजेंट रजिस्ट्रेशन स्थिति प्रोजेक्ट रजिस्ट्रेशन स्थिति एजेंट रजिस्ट्रेशन स्थिति शिकायत स्थिति .pdf_mo",
+      "geoEvidence": [
+        {
+          "cityCode": "daman_and_diu",
+          "terms": [
+            "diu"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "unclassified",
+      "currentRejectionReason": "third-party RERA report with negative signal",
+      "diagnosticLabel": "UNCERTAIN",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "UNCLASSIFIED",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://www.rera.mp.gov.in",
+      "state": "daman_and_diu",
+      "url": "https://www.rera.mp.gov.in/page/about-us",
+      "title": "भू-संपदा विनियामक प्राधिकरण",
+      "date": "",
+      "recordDocumentType": "VALID_ORDER",
+      "contentExcerpt": "Error! A problem has been occurred while JavaScript is disabled. To enable it follow this स्क्रीन रीडर मुख्य कंटेंट की ओर नेविगेशन की ओर लॉगिन अ- अ अ+ English भू-संपदा विनियामक प्राधिकरण मध्यप्रदेश मुख्य पृष्ठ प्राधिकरण के बारे में वार्षिक प्रतिवेदन प्राधिकरण के बारे में अघिनियम नियम कौन क्या है डाउनलोड आरटीआई आवेदन शिकायत शिकायत दर्ज करें (एम/ एन/ धारा-40) आदेश (एम / एन) प्राधिकरण द्वारा निराकरण अंतिम निराकरण न्यायनिर्णायक अधिकारी को हस्तांतरण न्यायनिर्णायक अधिकारी द्वारा अंतिम निराकरण कतिपय अंतरिम आदेश आदेश (विविध प्रकरण) प्राधिकरण द्वारा अंतिम निराकरण सेक्शन 40 एम आर सी न्यायनिर्णायक अधिकारी द्वारा अंतिम निराकरण (0) सेक्शन 40 निराकरण(0) एम आर सी निराकरण(0) विविध कतिपय अंतरिम आदेश सेक्शन 40 अंतरिम आदेश एम आर सी अंतरिम आदेश परियोजना समस्त परियोजनाएँ पंजीकृत परियोजनाएँ पूर्ण परियोजनाएँ प्रचलित परियोजनाएँ विस्तारित परियोजनाएँ प्रत्याहृत परियोजनाएँ पंजीकरण निलंबित पंजीकरण रद्द पंजीकरण कालातीत प्रक्रियाधीन परियोजनाएँ नए आवेदन प्रगतिशील आवेदन व्यतिक्रमी अस्वीकृत आवेदन अप्रयुक्त आवेदन प्रतिबंधात्मक आदेश प्रोमोटर्स एजेंट्स स्वीकृत एजेंट्स अस्वीकृत एजेंट्स रजिस्ट्रेशन प्रोजेक्ट रजिस्ट्रेशन एजेंट रजिस्ट्रेशन स्थिति प्रोजेक्ट रजिस्ट्रेशन स्थिति एजेंट रजिस्ट्रेशन स्थिति शिकायत स्थिति प्राधिक",
+      "geoEvidence": [
+        {
+          "cityCode": "daman_and_diu",
+          "terms": [
+            "diu"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "unclassified",
+      "currentRejectionReason": "third-party RERA report with negative signal",
+      "diagnosticLabel": "UNCERTAIN",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "UNCLASSIFIED",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://www.up-rera.in",
+      "state": "gurugram",
+      "url": "https://www.up-rera.in/frm_Rera_Anual_Report.aspx",
+      "title": "UP RERA : Uttar Pradesh Real Estate Regulatory Authority",
+      "date": "2016-05-01T12:00:00.000Z",
+      "recordDocumentType": "VALID_ORDER",
+      "contentExcerpt": "//<![CDATA[ var theForm = document.forms['aspnetForm']; if (!theForm) { theForm = document.aspnetForm; } function __doPostBack(eventTarget, eventArgument) { if (!theForm.onsubmit || (theForm.onsubmit() != false)) { theForm.__EVENTTARGET.value = eventTarget; theForm.__EVENTARGUMENT.value = eventArgument; theForm.submit(); } } //]]> //<![CDATA[ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', [], [], [], 90, 'ctl00'); //]]> | +A | A | -A var d = new Date() var weekday = new Array(\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\") var monthname = new Array(\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\") document.write(weekday[d.getDay()] + \", \") document.write(d.getDate() + \" \") document.write(monthname[d.getMonth()] + \", \") document.write(d.getFullYear()) | function renderTime() { var currentTime = new Date(); var diem = \"AM\"; var h = currentTime.getHours(); var m = currentTime.getMinutes(); var s = currentTime.getSeconds(); setTimeout('renderTime()', 1000); if (h == 0) { h = 12; } else if (h > 12) { h = h - 12; diem = \"PM\"; } if (h < 10) { h = \"0\" + h; } if (m < 10) { m = \"0\" + m; } if (s",
+      "geoEvidence": [
+        {
+          "cityCode": "gurugram",
+          "terms": [
+            "spr"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "unclassified",
+      "currentRejectionReason": "third-party RERA report with negative signal",
+      "diagnosticLabel": "UNCERTAIN",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "UNCLASSIFIED",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://www.up-rera.in",
+      "state": "UNKNOWN_STATE",
+      "url": "https://www.up-rera.in/pdf/Best_Practices_by_UP-RERA.pdf",
+      "title": "",
+      "date": "",
+      "recordDocumentType": "OTHER",
+      "contentExcerpt": "",
+      "geoEvidence": [],
+      "currentRelevanceResult": "unreadable",
+      "currentRejectionReason": "article not fully readable",
+      "diagnosticLabel": "INSUFFICIENT_CONTENT",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "CONTENT_LENGTH",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://www.up-rera.in/PressRelease",
+      "state": "gurugram",
+      "url": "https://www.up-rera.in/frm_Rera_Anual_Report.aspx",
+      "title": "UP RERA : Uttar Pradesh Real Estate Regulatory Authority",
+      "date": "2016-05-01T12:00:00.000Z",
+      "recordDocumentType": "VALID_ORDER",
+      "contentExcerpt": "//<![CDATA[ var theForm = document.forms['aspnetForm']; if (!theForm) { theForm = document.aspnetForm; } function __doPostBack(eventTarget, eventArgument) { if (!theForm.onsubmit || (theForm.onsubmit() != false)) { theForm.__EVENTTARGET.value = eventTarget; theForm.__EVENTARGUMENT.value = eventArgument; theForm.submit(); } } //]]> //<![CDATA[ Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', [], [], [], 90, 'ctl00'); //]]> | +A | A | -A var d = new Date() var weekday = new Array(\"Sunday\", \"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\") var monthname = new Array(\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\") document.write(weekday[d.getDay()] + \", \") document.write(d.getDate() + \" \") document.write(monthname[d.getMonth()] + \", \") document.write(d.getFullYear()) | function renderTime() { var currentTime = new Date(); var diem = \"AM\"; var h = currentTime.getHours(); var m = currentTime.getMinutes(); var s = currentTime.getSeconds(); setTimeout('renderTime()', 1000); if (h == 0) { h = 12; } else if (h > 12) { h = h - 12; diem = \"PM\"; } if (h < 10) { h = \"0\" + h; } if (m < 10) { m = \"0\" + m; } if (s",
+      "geoEvidence": [
+        {
+          "cityCode": "gurugram",
+          "terms": [
+            "spr"
+          ]
+        }
+      ],
+      "currentRelevanceResult": "unclassified",
+      "currentRejectionReason": "third-party RERA report with negative signal",
+      "diagnosticLabel": "UNCERTAIN",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "UNCLASSIFIED",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    },
+    {
+      "source": "https://www.up-rera.in/PressRelease",
+      "state": "UNKNOWN_STATE",
+      "url": "https://www.up-rera.in/pdf/Best_Practices_by_UP-RERA.pdf",
+      "title": "",
+      "date": "",
+      "recordDocumentType": "OTHER",
+      "contentExcerpt": "",
+      "geoEvidence": [],
+      "currentRelevanceResult": "unreadable",
+      "currentRejectionReason": "article not fully readable",
+      "diagnosticLabel": "INSUFFICIENT_CONTENT",
+      "sourceClass": "OFFICIAL_RERA_PRIMARY_RECORD_CANDIDATE",
+      "falseNegativeGate": "CONTENT_LENGTH",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified"
+    }
+  ],
+  "regional": [
+    {
+      "source": "https://api.livehindustan.com/feeds/rss/business/real-estate/rssfeed.xml",
+      "url": "https://www.livehindustan.com/business/cement-set-to-get-costlier-prices-may-rise-by-rs-5-to-20-in-october-had-also-increased-by-rs-11-in-september-201790672571053.html",
+      "title": "सीमेंट महंगा करने की तैयारी: अक्टूबर में ₹5-20 तक बढ़ सकते दाम, सितंबर में ₹11 तक बढ़े थे",
+      "description": "(function () { if (window.__LH_INP_EVENT_GUARD__) { return; } window.__LH_INP_EVENT_GUARD__ = true; var outboundClickSelectors = [ 'a[target=\"_blank\"]', 'a[target=\"_parent\"]', 'a[target=\"_top\"]', '.astroSliderGroup a', '.author-name a' ]; var clickGuardSelectors = [ '.stryHdg', '.headStry', '.headStry .subHdg', '.astrAiInptWrp', '.kyPntsWrp', '.stryShreWrap', '.storyArticle .topImgBlk:not(.topImgBlk--interactiveMedia)', '.story-content-paragraph--guarded', ]; var pointerBlockSelectors = [ '.wrap",
+      "body": "(function () { if (window.__LH_INP_EVENT_GUARD__) { return; } window.__LH_INP_EVENT_GUARD__ = true; var outboundClickSelectors = [ 'a[target=\"_blank\"]', 'a[target=\"_parent\"]', 'a[target=\"_top\"]', '.astroSliderGroup a', '.author-name a' ]; var clickGuardSelectors = [ '.stryHdg', '.headStry', '.headStry .subHdg', '.astrAiInptWrp', '.kyPntsWrp', '.stryShreWrap', '.storyArticle .topImgBlk:not(.topImgBlk--interactiveMedia)', '.story-content-paragraph--guarded', ]; var pointerBlockSelectors = [ '.wrap', '.hdrWrp', '.hdrWrp .logoImgCnt', '.hdrWrp .topHdrWrp', '.astrAiInptWrp', '.stryHdg', '.kyPntsWrp', '.stryShreWrap', '.story-content-paragraph--guarded', '.storyArticle .stryCnt p', '.storyArticle .topImgBlk', '#story-content', '#story-content .story-content-paragraph', '#story-content .inlineArtclWrp a', '#parentSidestickyopenapp img', '.slideStoryImg', '.photo-article img', '.lvHd span', '.pgHdng', '.pgShrtHdng', '.firstCnt', '.lvBlgWrp h1', '.lvBlgWrp h2', '.lvBlgWrp p', '.lvBlgWrp .blgImgWrp', '.lvBlgWrp .blgImgWrp img', '.blgUpdates p', '.blgUpdates h2', '.blgImgWrp', '.blgImgWrp img' ]; var interactiveSelector = 'a, button, input, textarea, select, label, [role=\"button\"], .wrpShr, .shareKreinTxt, .echoShrWidget'; // These handlers run on every pointerdown and pointerup on every page. // Walking the selector arrays one at a time meant up to 30 sequential // closest() calls — each a full walk to the document root — per event, // three times over (pointerdown, pointerup, click). Pre-joining into a // single selector list makes it one closest() call per check. The result // is used as a boolean in every call site, and every entry in // outboundClickSelectors resolves to an anchor, so collapsing the lists // does not change behaviour. var outboundClickSelector = outboundClickSelectors.join(','); var clickGuardSelector = clickGuardSelectors.join(','); var pointerBlockSelector = pointerBlockSelectors.join(','); var bypassSelector = '.affiliate-pl-eligible, .affiliateEligibilityBtn, .affiliate-header, .productListBox, #ECHO_LH_POPUP, #appSheet, .app-sheet'; function getEventTarget(event) { var target = event.target; if (target && target.nodeType === 3) { target = target.parentElement; } if (!target || target.nodeType !== 1 || !target.closest) { return null; } return target; } function closestMatch(target, selector) { try { return target.closest(selector); } catch (e) { return null; } } function isStoryArticleSurface(target) { return ( target.id === 'story-content' || (target.classList && target.classList.contains('storyArticle')) ); } function stopPropagation(event, immediate) { if (immediate && event.stopImmediatePropagation) { event.stopImmediatePropagation(); return; } event.stopPropagation(); } function stopOutboundLinkPropagation(event) { var target = getEventTarget(event); var link; var clickGuardTarget; var storyArticleSurfaceTarget; if (!target) { return; } if (closestMatch(target, bypassSelector)) { return; } link = closestMatch(target, outboundC",
+      "language": "hi",
+      "script": "Latin/unknown",
+      "date": "2026-09-29T09:16:19.000Z",
+      "geoEvidence": [
+        {
+          "cityCode": "faridabad",
+          "terms": [
+            "Faridabad",
+            "faridabad"
+          ]
+        },
+        {
+          "cityCode": "gurugram",
+          "terms": [
+            "Gurgaon",
+            "gurgaon"
+          ]
+        },
+        {
+          "cityCode": "indore",
+          "terms": [
+            "Indore",
+            "indore"
+          ]
+        },
+        {
+          "cityCode": "bhopal",
+          "terms": [
+            "Bhopal",
+            "bhopal"
+          ]
+        },
+        {
+          "cityCode": "rewa",
+          "terms": [
+            "Rewa",
+            "rewa"
+          ]
+        },
+        {
+          "cityCode": "patna",
+          "terms": [
+            "Patna",
+            "patna"
+          ]
+        },
+        {
+          "cityCode": "daman_and_diu",
+          "terms": [
+            "diu"
+          ]
+        },
+        {
+          "cityCode": "delhi_ncr",
+          "terms": [
+            "ncr"
+          ]
+        },
+        {
+          "cityCode": "delhi",
+          "terms": [
+            "Delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "new_delhi",
+          "terms": [
+            "New Delhi",
+            "new delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "ahmedabad",
+          "terms": [
+            "Ahmedabad",
+            "ahmedabad"
+          ]
+        },
+        {
+          "cityCode": "jamshedpur",
+          "terms": [
+            "Jamshedpur",
+            "jamshedpur"
+          ]
+        },
+        {
+          "cityCode": "ranchi",
+          "terms": [
+            "Ranchi",
+            "ranchi"
+          ]
+        },
+        {
+          "cityCode": "kolkata",
+          "terms": [
+            "Kolkata",
+            "kolkata"
+          ]
+        },
+        {
+          "cityCode": "nagpur",
+          "terms": [
+            "Nagpur",
+            "nagpur"
+          ]
+        },
+        {
+          "cityCode": "jaipur",
+          "terms": [
+            "Jaipur",
+            "jaipur"
+          ]
+        },
+        {
+          "cityCode": "noida",
+          "terms": [
+            "noida"
+          ]
+        },
+        {
+          "cityCode": "ghaziabad",
+          "terms": [
+            "Ghaziabad",
+            "ghaziabad"
+          ]
+        },
+        {
+          "cityCode": "lucknow",
+          "terms": [
+            "Lucknow",
+            "lucknow"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        },
+        {
+          "cityCode": "allahabad",
+          "terms": [
+            "prayagraj"
+          ]
+        },
+        {
+          "cityCode": "gorakhpur",
+          "terms": [
+            "Gorakhpur",
+            "gorakhpur"
+          ]
+        }
+      ],
+      "currentClassifier": "reject_negative",
+      "currentRejectionReason": "no supported real-estate signal",
+      "diagnosticLabel": "IRRELEVANT",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "reject_negative",
+      "failureReason": "OTHER"
+    },
+    {
+      "source": "https://api.livehindustan.com/feeds/rss/business/real-estate/rssfeed.xml",
+      "url": "https://www.livehindustan.com/business/who-is-dinesh-thakkar-the-man-who-bought-a-rs-711-crore-home-in-mumbai-juhu-journey-from-a-rented-house-to-a-dream-home-201790058991352.html",
+      "title": "कौन हैं दिनेश ठक्कर, जो मुंबई के जुहू में खरीद लिए ₹711 करोड़ का घर! किराए के मकान से ड्रीम होम तक की दास्तान",
+      "description": "(function () { if (window.__LH_INP_EVENT_GUARD__) { return; } window.__LH_INP_EVENT_GUARD__ = true; var outboundClickSelectors = [ 'a[target=\"_blank\"]', 'a[target=\"_parent\"]', 'a[target=\"_top\"]', '.astroSliderGroup a', '.author-name a' ]; var clickGuardSelectors = [ '.stryHdg', '.headStry', '.headStry .subHdg', '.astrAiInptWrp', '.kyPntsWrp', '.stryShreWrap', '.storyArticle .topImgBlk:not(.topImgBlk--interactiveMedia)', '.story-content-paragraph--guarded', ]; var pointerBlockSelectors = [ '.wrap",
+      "body": "(function () { if (window.__LH_INP_EVENT_GUARD__) { return; } window.__LH_INP_EVENT_GUARD__ = true; var outboundClickSelectors = [ 'a[target=\"_blank\"]', 'a[target=\"_parent\"]', 'a[target=\"_top\"]', '.astroSliderGroup a', '.author-name a' ]; var clickGuardSelectors = [ '.stryHdg', '.headStry', '.headStry .subHdg', '.astrAiInptWrp', '.kyPntsWrp', '.stryShreWrap', '.storyArticle .topImgBlk:not(.topImgBlk--interactiveMedia)', '.story-content-paragraph--guarded', ]; var pointerBlockSelectors = [ '.wrap', '.hdrWrp', '.hdrWrp .logoImgCnt', '.hdrWrp .topHdrWrp', '.astrAiInptWrp', '.stryHdg', '.kyPntsWrp', '.stryShreWrap', '.story-content-paragraph--guarded', '.storyArticle .stryCnt p', '.storyArticle .topImgBlk', '#story-content', '#story-content .story-content-paragraph', '#story-content .inlineArtclWrp a', '#parentSidestickyopenapp img', '.slideStoryImg', '.photo-article img', '.lvHd span', '.pgHdng', '.pgShrtHdng', '.firstCnt', '.lvBlgWrp h1', '.lvBlgWrp h2', '.lvBlgWrp p', '.lvBlgWrp .blgImgWrp', '.lvBlgWrp .blgImgWrp img', '.blgUpdates p', '.blgUpdates h2', '.blgImgWrp', '.blgImgWrp img' ]; var interactiveSelector = 'a, button, input, textarea, select, label, [role=\"button\"], .wrpShr, .shareKreinTxt, .echoShrWidget'; // These handlers run on every pointerdown and pointerup on every page. // Walking the selector arrays one at a time meant up to 30 sequential // closest() calls — each a full walk to the document root — per event, // three times over (pointerdown, pointerup, click). Pre-joining into a // single selector list makes it one closest() call per check. The result // is used as a boolean in every call site, and every entry in // outboundClickSelectors resolves to an anchor, so collapsing the lists // does not change behaviour. var outboundClickSelector = outboundClickSelectors.join(','); var clickGuardSelector = clickGuardSelectors.join(','); var pointerBlockSelector = pointerBlockSelectors.join(','); var bypassSelector = '.affiliate-pl-eligible, .affiliateEligibilityBtn, .affiliate-header, .productListBox, #ECHO_LH_POPUP, #appSheet, .app-sheet'; function getEventTarget(event) { var target = event.target; if (target && target.nodeType === 3) { target = target.parentElement; } if (!target || target.nodeType !== 1 || !target.closest) { return null; } return target; } function closestMatch(target, selector) { try { return target.closest(selector); } catch (e) { return null; } } function isStoryArticleSurface(target) { return ( target.id === 'story-content' || (target.classList && target.classList.contains('storyArticle')) ); } function stopPropagation(event, immediate) { if (immediate && event.stopImmediatePropagation) { event.stopImmediatePropagation(); return; } event.stopPropagation(); } function stopOutboundLinkPropagation(event) { var target = getEventTarget(event); var link; var clickGuardTarget; var storyArticleSurfaceTarget; if (!target) { return; } if (closestMatch(target, bypassSelector)) { return; } link = closestMatch(target, outboundC",
+      "language": "hi",
+      "script": "Latin/unknown",
+      "date": "2026-09-22T06:54:02.000Z",
+      "geoEvidence": [
+        {
+          "cityCode": "faridabad",
+          "terms": [
+            "Faridabad",
+            "faridabad"
+          ]
+        },
+        {
+          "cityCode": "gurugram",
+          "terms": [
+            "Gurgaon",
+            "gurugram",
+            "gurgaon",
+            "spr"
+          ]
+        },
+        {
+          "cityCode": "indore",
+          "terms": [
+            "Indore",
+            "indore"
+          ]
+        },
+        {
+          "cityCode": "bhopal",
+          "terms": [
+            "Bhopal",
+            "bhopal"
+          ]
+        },
+        {
+          "cityCode": "rewa",
+          "terms": [
+            "Rewa",
+            "rewa"
+          ]
+        },
+        {
+          "cityCode": "patna",
+          "terms": [
+            "Patna",
+            "patna"
+          ]
+        },
+        {
+          "cityCode": "durg",
+          "terms": [
+            "Durg",
+            "durg"
+          ]
+        },
+        {
+          "cityCode": "daman_and_diu",
+          "terms": [
+            "diu"
+          ]
+        },
+        {
+          "cityCode": "delhi_ncr",
+          "terms": [
+            "ncr"
+          ]
+        },
+        {
+          "cityCode": "delhi",
+          "terms": [
+            "Delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "new_delhi",
+          "terms": [
+            "New Delhi",
+            "new delhi",
+            "delhi"
+          ]
+        },
+        {
+          "cityCode": "ahmedabad",
+          "terms": [
+            "Ahmedabad",
+            "ahmedabad"
+          ]
+        },
+        {
+          "cityCode": "ranchi",
+          "terms": [
+            "Ranchi",
+            "ranchi"
+          ]
+        },
+        {
+          "cityCode": "kolkata",
+          "terms": [
+            "Kolkata",
+            "kolkata"
+          ]
+        },
+        {
+          "cityCode": "mumbai",
+          "terms": [
+            "Mumbai",
+            "mumbai"
+          ]
+        },
+        {
+          "cityCode": "nagpur",
+          "terms": [
+            "Nagpur",
+            "nagpur"
+          ]
+        },
+        {
+          "cityCode": "jaipur",
+          "terms": [
+            "Jaipur",
+            "jaipur"
+          ]
+        },
+        {
+          "cityCode": "noida",
+          "terms": [
+            "noida"
+          ]
+        },
+        {
+          "cityCode": "ghaziabad",
+          "terms": [
+            "Ghaziabad",
+            "ghaziabad"
+          ]
+        },
+        {
+          "cityCode": "lucknow",
+          "terms": [
+            "Lucknow",
+            "lucknow"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        }
+      ],
+      "currentClassifier": "reject_negative",
+      "currentRejectionReason": "no supported real-estate signal",
+      "diagnosticLabel": "IRRELEVANT",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "reject_negative",
+      "failureReason": "OTHER"
+    },
+    {
+      "source": "https://www.amarujala.com/rss/faridabad.xml",
+      "url": "https://www.amarujala.com/video/delhi-ncr/faridabad/video-mother-brutally-beat-her-two-young-children-after-scratch-appeared-on-mobile-phone-screen-2026-09-30",
+      "title": "",
+      "description": "",
+      "body": "",
+      "language": "unknown",
+      "script": "Latin/unknown",
+      "date": "",
+      "geoEvidence": [],
+      "currentClassifier": "unreadable",
+      "currentRejectionReason": "article not fully readable",
+      "diagnosticLabel": "INSUFFICIENT",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified",
+      "failureReason": "INSUFFICIENT_CONTEXT"
+    },
+    {
+      "source": "https://www.amarujala.com/rss/faridabad.xml",
+      "url": "https://www.amarujala.com/delhi-ncr/faridabad/mother-slapped-children-12-times-in-19-second-in-faridabad-after-scratch-on-mobile-screen-cctv-video-2026-09-30",
+      "title": "",
+      "description": "",
+      "body": "",
+      "language": "unknown",
+      "script": "Latin/unknown",
+      "date": "",
+      "geoEvidence": [],
+      "currentClassifier": "unreadable",
+      "currentRejectionReason": "article not fully readable",
+      "diagnosticLabel": "INSUFFICIENT",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified",
+      "failureReason": "INSUFFICIENT_CONTEXT"
+    },
+    {
+      "source": "https://www.amarujala.com/rss/real-estate.xml",
+      "url": "https://www.amarujala.com/video/real-estate/video-solan-students-of-vivekananda-shiksha-kunj-took-out-an-awareness-rally-on-environment-day-2026-06-05",
+      "title": "",
+      "description": "",
+      "body": "",
+      "language": "unknown",
+      "script": "Latin/unknown",
+      "date": "",
+      "geoEvidence": [],
+      "currentClassifier": "unreadable",
+      "currentRejectionReason": "article not fully readable",
+      "diagnosticLabel": "INSUFFICIENT",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified",
+      "failureReason": "INSUFFICIENT_CONTEXT"
+    },
+    {
+      "source": "https://www.amarujala.com/rss/real-estate.xml",
+      "url": "https://www.amarujala.com/video/real-estate/video-kullu-neemu-devi-traditional-business-is-suffering-under-the-glare-of-modernity-demand-has-declined-due-to-plastic-items-2026-02-11",
+      "title": "",
+      "description": "",
+      "body": "",
+      "language": "unknown",
+      "script": "Latin/unknown",
+      "date": "",
+      "geoEvidence": [],
+      "currentClassifier": "unreadable",
+      "currentRejectionReason": "article not fully readable",
+      "diagnosticLabel": "INSUFFICIENT",
+      "titleOnly": "unclassified",
+      "titleDescription": "unclassified",
+      "fullContext": "unclassified",
+      "failureReason": "INSUFFICIENT_CONTEXT"
+    },
+    {
+      "source": "https://www.telanganatribune.com/category/realestate/",
+      "url": "https://www.telanganatribune.com/tv-5-live/",
+      "title": "TV 5 Telugu News Live",
+      "description": "Skip to content Wednesday, September 30, 2026 Login/Register Home Telangana Hyderabad Andhra Pradesh Real Estate Finance Others Business World Education Top 10 Sports Lifestyle Interviews Gold Rate Today Weather Report Live TV TV 5 Telugu News Live TV9 Telugu News Live V6 News Telugu Live Hyderabad29°C Search (function() { document.addEventListener('DOMContentLoaded', function() { var searchBar = document.getElementById('searchBar'); var searchBarClose = document.getElementById('searchBarClose')",
+      "body": "Skip to content Wednesday, September 30, 2026 Login/Register Home Telangana Hyderabad Andhra Pradesh Real Estate Finance Others Business World Education Top 10 Sports Lifestyle Interviews Gold Rate Today Weather Report Live TV TV 5 Telugu News Live TV9 Telugu News Live V6 News Telugu Live Hyderabad29°C Search (function() { document.addEventListener('DOMContentLoaded', function() { var searchBar = document.getElementById('searchBar'); var searchBarClose = document.getElementById('searchBarClose'); var searchToggle = document.getElementById('searchToggle'); var mobileSearchToggle = document.getElementById('mobileSearchToggle'); function toggleSearch() { if (searchBar.style.display === 'block') { searchBar.style.display = 'none'; } else { searchBar.style.display = 'block'; searchBar.querySelector('.search-field').focus(); } } if (searchToggle) searchToggle.addEventListener('click', toggleSearch); if (mobileSearchToggle) mobileSearchToggle.addEventListener('click', toggleSearch); if (searchBarClose) searchBarClose.addEventListener('click', function() { searchBar.style.display = 'none'; }); }); })(); Our Menu Home Telangana Hyderabad National Andhra Pradesh Finance Sports Business World Real Estate Education Metro Train Timings Gold & Silver Rate in Hyderabad Hyderabad Weather Today Live TV TV 5 Telugu News Live TV9 Telugu News Live V6 News Telugu Live Hyderabad 29°C Sunny Login / Register Download Our Apps Download on App Store Get it on Google Play { \"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"@id\": \"https://www.telanganatribune.com/tv-5-live/#breadcrumb\", \"itemListElement\": [ { \"@type\": \"ListItem\", \"position\": 1, \"item\": { \"@type\": \"Thing\", \"@id\": \"https://www.telanganatribune.com/\", \"name\": \"Telangana Tribune\" } }, { \"@type\": \"ListItem\", \"position\": 2, \"item\": { \"@type\": \"Thing\", \"@id\": \"https://www.telanganatribune.com/tv-5-live/\", \"name\": \"TV 5 Telugu News Live\" } } ] } TV 5 Telugu News Live Home > TV 5 Telugu News Live Welcome to TV5 News Live, where you can now enjoy our Telugu news coverage on your phone or desktop screens! Experience the convenience of watching live Telugu news online, providing you with instant access to the latest updates and developments as they happen. With TV5 News Live, you no longer have to wait for scheduled news broadcasts or rely on traditional television sets. Whether you’re on the go or at home, our live TV streaming service brings the news directly to your mobile device or desktop computer, ensuring that you never miss a beat. Advertisement (adsbygoogle = window.adsbygoogle || []).push({}); Citizen JournalismTo contribute an article to Telangana Tribune or enquire about a press release, please write to [email protected]Follow UsFacebookX (Twitter)InstagramYouTubeLatest Stories Sama Rammohan Reddy, Ramreddy Sarvotham Reddy named Congress candidates for Telangana graduates’ council polls September 30, 2026 Centre To Amend It Rules After Sc Push To Bar Under-18 Social Media Accounts September 29, ",
+      "language": "en-US",
+      "script": "Latin/unknown",
+      "date": "2021-07-21T14:22:21.000Z",
+      "geoEvidence": [
+        {
+          "cityCode": "hyderabad",
+          "terms": [
+            "Hyderabad",
+            "hyderabad"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        },
+        {
+          "cityCode": "hapur",
+          "terms": [
+            "Hapur",
+            "hapur"
+          ]
+        }
+      ],
+      "currentClassifier": "reject_negative",
+      "currentRejectionReason": "negative signal",
+      "diagnosticLabel": "NEGATIVE_REJECT",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative",
+      "failureReason": "NEGATIVE_FILTER"
+    },
+    {
+      "source": "https://www.telanganatribune.com/category/realestate/",
+      "url": "https://www.telanganatribune.com/tv9-telugu-live/",
+      "title": "TV9 Telugu News Live",
+      "description": "Skip to content Wednesday, September 30, 2026 Login/Register Home Telangana Hyderabad Andhra Pradesh Real Estate Finance Others Business World Education Top 10 Sports Lifestyle Interviews Gold Rate Today Weather Report Live TV TV 5 Telugu News Live TV9 Telugu News Live V6 News Telugu Live Hyderabad29°C Search (function() { document.addEventListener('DOMContentLoaded', function() { var searchBar = document.getElementById('searchBar'); var searchBarClose = document.getElementById('searchBarClose')",
+      "body": "Skip to content Wednesday, September 30, 2026 Login/Register Home Telangana Hyderabad Andhra Pradesh Real Estate Finance Others Business World Education Top 10 Sports Lifestyle Interviews Gold Rate Today Weather Report Live TV TV 5 Telugu News Live TV9 Telugu News Live V6 News Telugu Live Hyderabad29°C Search (function() { document.addEventListener('DOMContentLoaded', function() { var searchBar = document.getElementById('searchBar'); var searchBarClose = document.getElementById('searchBarClose'); var searchToggle = document.getElementById('searchToggle'); var mobileSearchToggle = document.getElementById('mobileSearchToggle'); function toggleSearch() { if (searchBar.style.display === 'block') { searchBar.style.display = 'none'; } else { searchBar.style.display = 'block'; searchBar.querySelector('.search-field').focus(); } } if (searchToggle) searchToggle.addEventListener('click', toggleSearch); if (mobileSearchToggle) mobileSearchToggle.addEventListener('click', toggleSearch); if (searchBarClose) searchBarClose.addEventListener('click', function() { searchBar.style.display = 'none'; }); }); })(); Our Menu Home Telangana Hyderabad National Andhra Pradesh Finance Sports Business World Real Estate Education Metro Train Timings Gold & Silver Rate in Hyderabad Hyderabad Weather Today Live TV TV 5 Telugu News Live TV9 Telugu News Live V6 News Telugu Live Hyderabad 29°C Sunny Login / Register Download Our Apps Download on App Store Get it on Google Play { \"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"@id\": \"https://www.telanganatribune.com/tv9-telugu-live/#breadcrumb\", \"itemListElement\": [ { \"@type\": \"ListItem\", \"position\": 1, \"item\": { \"@type\": \"Thing\", \"@id\": \"https://www.telanganatribune.com/\", \"name\": \"Telangana Tribune\" } }, { \"@type\": \"ListItem\", \"position\": 2, \"item\": { \"@type\": \"Thing\", \"@id\": \"https://www.telanganatribune.com/tv9-telugu-live/\", \"name\": \"TV9 Telugu News Live\" } } ] } TV9 Telugu News Live Home > TV9 Telugu News Live Welcome to TV9 Telugu News Live, where you can stay connected to the latest happenings in the Telugu-speaking regions, right on your phone or desktop screens! Experience the convenience of watching live Telugu news online instantly, bringing the power of real-time information to your fingertips. With TV9 Telugu News Live, you no longer have to wait for the evening news or rely solely on print media to stay updated. Whether you’re on the go, at work, or relaxing at home, our live streaming service ensures that you can access the news whenever and wherever you want. Advertisement (adsbygoogle = window.adsbygoogle || []).push({}); Citizen JournalismTo contribute an article to Telangana Tribune or enquire about a press release, please write to [email protected]Follow UsFacebookX (Twitter)InstagramYouTubeLatest Stories Sama Rammohan Reddy, Ramreddy Sarvotham Reddy named Congress candidates for Telangana graduates’ council polls September 30, 2026 Centre To Amend It Rules After Sc Push To Bar Under-18 Social ",
+      "language": "en-US",
+      "script": "Latin/unknown",
+      "date": "2021-07-21T14:27:31.000Z",
+      "geoEvidence": [
+        {
+          "cityCode": "hyderabad",
+          "terms": [
+            "Hyderabad",
+            "hyderabad"
+          ]
+        },
+        {
+          "cityCode": "agra",
+          "terms": [
+            "Agra",
+            "agra"
+          ]
+        },
+        {
+          "cityCode": "hapur",
+          "terms": [
+            "Hapur",
+            "hapur"
+          ]
+        }
+      ],
+      "currentClassifier": "reject_negative",
+      "currentRejectionReason": "negative signal",
+      "diagnosticLabel": "NEGATIVE_REJECT",
+      "titleOnly": "unclassified",
+      "titleDescription": "reject_negative",
+      "fullContext": "reject_negative",
+      "failureReason": "NEGATIVE_FILTER"
+    }
+  ]
+}

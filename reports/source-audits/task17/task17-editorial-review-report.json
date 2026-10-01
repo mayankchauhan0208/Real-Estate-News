@@ -1,0 +1,35 @@
+{
+  "reportType": "TASK17_EDITORIAL_REVIEW_DATASET",
+  "generatedAt": "2026-10-01T07:22:16.731Z",
+  "localOnly": true,
+  "input": "reports\\source-audits\\task16\\task16-sampled-evidence.jsonl",
+  "selectedRecords": 69,
+  "readableEvidenceRecords": 151,
+  "selectionReasons": {
+    "RELEVANCE_PASS": 27,
+    "ET_REALTY_CURRENT": 6,
+    "NEGATIVE_DISPUTE": 2,
+    "NEGATIVE_CRIME": 2,
+    "NEGATIVE_OTHER": 2,
+    "REVIEW_PATTERN": 21,
+    "NEGATIVE_COURT": 2,
+    "NEGATIVE_DELAY": 1,
+    "NEGATIVE_OFF_TOPIC": 2,
+    "NEGATIVE_DEMOLITION": 1,
+    "NEGATIVE_POLITICS": 2,
+    "NEGATIVE_GENERAL_BUSINESS": 1
+  },
+  "allowedHumanLabels": [
+    "PUBLISH",
+    "REJECT_NEGATIVE",
+    "REJECT_OFF_TOPIC",
+    "REJECT_INSUFFICIENT",
+    "REVIEW_UNCERTAIN"
+  ],
+  "publishRequiresHumanCity": true,
+  "humanLabelsAssigned": 0,
+  "files": {
+    "csv": "reports\\source-audits\\task17\\editorial-review.csv",
+    "html": "reports\\source-audits\\task17\\editorial-review.html"
+  }
+}

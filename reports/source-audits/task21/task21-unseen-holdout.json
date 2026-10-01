@@ -1,0 +1,74 @@
+{
+  "reportType": "TASK21_UNSEEN_HOLDOUT",
+  "generatedAt": "2026-10-01T08:52:39.687Z",
+  "humanVerified": 0,
+  "size": 13,
+  "records": [
+    {
+      "fixture": "native-authority",
+      "language": "hi",
+      "expected": "REVIEW_OR_PUBLISH_AFTER_HUMAN_LABEL"
+    },
+    {
+      "fixture": "statewide",
+      "language": "en",
+      "expected": "REVIEW_OR_REJECT_AFTER_HUMAN_LABEL"
+    },
+    {
+      "fixture": "unsupported-geo",
+      "language": "en",
+      "expected": "REVIEW_OR_REJECT_AFTER_HUMAN_LABEL"
+    },
+    {
+      "fixture": "unknown-language",
+      "language": "en",
+      "expected": "REVIEW_OR_REJECT_AFTER_HUMAN_LABEL"
+    },
+    {
+      "fixture": "translation-failure",
+      "language": "ta",
+      "expected": "REVIEW_OR_REJECT_AFTER_HUMAN_LABEL"
+    },
+    {
+      "fixture": "malformed-unicode",
+      "language": "hi",
+      "expected": "REVIEW_OR_PUBLISH_AFTER_HUMAN_LABEL"
+    },
+    {
+      "fixture": "native-numeral-date",
+      "language": "hi",
+      "expected": "REVIEW_OR_PUBLISH_AFTER_HUMAN_LABEL"
+    },
+    {
+      "fixture": "same-en",
+      "language": "en",
+      "expected": "REVIEW_OR_PUBLISH_AFTER_HUMAN_LABEL"
+    },
+    {
+      "fixture": "same-hi",
+      "language": "hi",
+      "expected": "REVIEW_OR_PUBLISH_AFTER_HUMAN_LABEL"
+    },
+    {
+      "fixture": "same-mr",
+      "language": "mr",
+      "expected": "REVIEW_OR_PUBLISH_AFTER_HUMAN_LABEL"
+    },
+    {
+      "fixture": "different-project",
+      "language": "en",
+      "expected": "REVIEW_OR_PUBLISH_AFTER_HUMAN_LABEL"
+    },
+    {
+      "fixture": "adverse-positive-vocab",
+      "language": "en",
+      "expected": "REVIEW_OR_PUBLISH_AFTER_HUMAN_LABEL"
+    },
+    {
+      "fixture": "mixed-unknown",
+      "language": "hi-or-mr",
+      "expected": "REVIEW_OR_REJECT_AFTER_HUMAN_LABEL"
+    }
+  ],
+  "note": "Fresh unseen offline holdout; not an editorial truth set."
+}

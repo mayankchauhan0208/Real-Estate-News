@@ -1,0 +1,272 @@
+{
+  "generatedAt": "2026-09-30T10:12:59.617Z",
+  "limits": {
+    "timeoutMs": 12000,
+    "maxBytes": 4194304,
+    "maxDepth": 2,
+    "maxLinks": 40
+  },
+  "before": {
+    "automaticDiscovery": "0/8"
+  },
+  "after": {
+    "automaticDiscovery": "0/8",
+    "recoveredIds": []
+  },
+  "upRera": {
+    "status": "CURRENTLY_UNRECOVERABLE_SAFE",
+    "failure": "MAINTENANCE",
+    "controlsRecovered": 0,
+    "evidence": {
+      "telemetry": {
+        "source": "https://www.up-rera.in/PressRelease",
+        "listingFetch": 200,
+        "itemsFound": 46,
+        "itemsClassified": 46,
+        "detailRequests": 0,
+        "documentRequests": 1,
+        "detailSuccess": 0,
+        "documentSuccess": 0,
+        "textSuccess": 0,
+        "dateSuccess": 0,
+        "duplicates": 0,
+        "failures": 1,
+        "timeouts": 0,
+        "totalRuntime": 4819
+      },
+      "records": [],
+      "result": "POSTBACK_ERROR_PAGE"
+    },
+    "fallbackCandidate": {
+      "status": "OFFICIAL_FALLBACK_CANDIDATE",
+      "url": "https://www.up-rera.in/ViewDocument?Param=Press_Release_69297200thAuthoritymeetingPressreleaseenglish.pdf",
+      "reason": "Verified official public document URL exists, but it is not counted as discovered because the listing postback did not yield it."
+    }
+  },
+  "dda": {
+    "english": {
+      "source": "https://dda.gov.in/whats-new",
+      "language": "en",
+      "transport": {
+        "url": "https://dda.gov.in/whats-new",
+        "dns": {
+          "status": "OK",
+          "addresses": [
+            "164.100.219.139"
+          ],
+          "family": [
+            4
+          ]
+        },
+        "request": {
+          "status": 200,
+          "ok": true,
+          "finalUrl": "https://dda.gov.in/whats-new",
+          "contentType": "text/html; charset=UTF-8",
+          "contentEncoding": "",
+          "responseBytes": 53820,
+          "declaredBytes": 53820,
+          "location": "",
+          "headers": {
+            "server": "",
+            "cache-control": "must-revalidate, no-cache, private",
+            "etag": "",
+            "last-modified": ""
+          }
+        },
+        "elapsedMs": 699
+      },
+      "listingLinks": 101,
+      "matchedListingLinks": 0,
+      "children": [],
+      "result": "LISTING_ITEM_NOT_FOUND"
+    },
+    "hindi": {
+      "source": "https://dda.gov.in/hi/whats-new",
+      "language": "hi",
+      "transport": {
+        "url": "https://dda.gov.in/hi/whats-new",
+        "dns": {
+          "status": "OK",
+          "addresses": [
+            "164.100.219.139"
+          ],
+          "family": [
+            4
+          ]
+        },
+        "request": {
+          "status": 200,
+          "ok": true,
+          "finalUrl": "https://dda.gov.in/hi/whats-new",
+          "contentType": "text/html; charset=UTF-8",
+          "contentEncoding": "",
+          "responseBytes": 41499,
+          "declaredBytes": 41499,
+          "location": "",
+          "headers": {
+            "server": "",
+            "cache-control": "must-revalidate, no-cache, private",
+            "etag": "",
+            "last-modified": ""
+          }
+        },
+        "elapsedMs": 393
+      },
+      "listingLinks": 86,
+      "matchedListingLinks": 0,
+      "children": [],
+      "result": "LISTING_ITEM_NOT_FOUND"
+    }
+  },
+  "goa": {
+    "source": "https://rera.goa.gov.in/",
+    "root": {
+      "url": "https://rera.goa.gov.in/",
+      "dns": {
+        "status": "OK",
+        "addresses": [
+          "164.100.63.44"
+        ],
+        "family": [
+          4
+        ]
+      },
+      "request": {
+        "status": 200,
+        "ok": true,
+        "finalUrl": "https://rera.goa.gov.in/",
+        "contentType": "text/html;charset=ISO-8859-1",
+        "contentEncoding": "gzip",
+        "responseBytes": 12084,
+        "declaredBytes": 0,
+        "location": "",
+        "headers": {
+          "server": "",
+          "cache-control": "max-age=62964161;public;must-revalidate;",
+          "etag": "",
+          "last-modified": ""
+        }
+      },
+      "elapsedMs": 317
+    },
+    "linksFound": 57,
+    "searchForms": 2,
+    "structuredCandidates": 7,
+    "children": [
+      {
+        "link": {
+          "href": "https://rera.goa.gov.in/resources/staticpage/USER%20GUIDE%20-%20RERA.pdf",
+          "text": "User guide for registered Projects/Agents"
+        },
+        "status": 200,
+        "finalUrl": "https://rera.goa.gov.in/resources/staticpage/USER%20GUIDE%20-%20RERA.pdf",
+        "contentType": "application/pdf",
+        "responseBytes": 942863
+      },
+      {
+        "link": {
+          "href": "https://rera.goa.gov.in/viewDefaulterProjects",
+          "text": "List Of Projects"
+        },
+        "status": 200,
+        "finalUrl": "https://rera.goa.gov.in/viewDefaulterProjects",
+        "contentType": "text/html;charset=UTF-8",
+        "responseBytes": 12919
+      },
+      {
+        "link": {
+          "href": "https://rera.goa.gov.in/ViewRegOTP",
+          "text": "View Registration"
+        },
+        "status": 200,
+        "finalUrl": "https://rera.goa.gov.in/ViewRegOTP",
+        "contentType": "text/html;charset=UTF-8",
+        "responseBytes": 17101
+      },
+      {
+        "link": {
+          "href": "https://rera.goa.gov.in/WithdrawalOTP",
+          "text": "Projects / Agents Withdrawal"
+        },
+        "status": 200,
+        "finalUrl": "https://rera.goa.gov.in/WithdrawalOTP",
+        "contentType": "text/html;charset=UTF-8",
+        "responseBytes": 17097
+      },
+      {
+        "link": {
+          "href": "https://rera.goa.gov.in/projectsWithdrawn",
+          "text": "Projects WithDrawn"
+        },
+        "status": 200,
+        "finalUrl": "https://rera.goa.gov.in/projectsWithdrawn",
+        "contentType": "text/html;charset=UTF-8",
+        "responseBytes": 37482
+      },
+      {
+        "link": {
+          "href": "https://rera.goa.gov.in/cancelledproject",
+          "text": "Projects Cancelled"
+        },
+        "status": 200,
+        "finalUrl": "https://rera.goa.gov.in/cancelledproject",
+        "contentType": "text/html;charset=UTF-8",
+        "responseBytes": 19965
+      },
+      {
+        "link": {
+          "href": "https://rera.goa.gov.in/rejectedProjects",
+          "text": "Projects Rejected"
+        },
+        "status": 200,
+        "finalUrl": "https://rera.goa.gov.in/rejectedProjects",
+        "contentType": "text/html;charset=UTF-8",
+        "responseBytes": 28472
+      }
+    ],
+    "result": "STRUCTURED_SEARCH_MISSING"
+  },
+  "remainingControlReasons": [
+    {
+      "id": "rera-up-2026-001",
+      "reason": "MAINTENANCE"
+    },
+    {
+      "id": "rera-up-2026-002",
+      "reason": "MAINTENANCE"
+    },
+    {
+      "id": "rera-goa-2025-001",
+      "reason": "STRUCTURED_SEARCH_MISSING"
+    },
+    {
+      "id": "rera-goa-2018-001",
+      "reason": "STRUCTURED_SEARCH_MISSING"
+    },
+    {
+      "id": "authority-dda-2025-001",
+      "reason": "LISTING_ITEM_NOT_FOUND"
+    },
+    {
+      "id": "authority-dda-2026-001",
+      "reason": "LISTING_ITEM_NOT_FOUND"
+    },
+    {
+      "id": "authority-dda-2026-002",
+      "reason": "LISTING_ITEM_NOT_FOUND"
+    },
+    {
+      "id": "authority-dda-2026-003",
+      "reason": "LISTING_ITEM_NOT_FOUND"
+    }
+  ],
+  "negativeControlRegression": {
+    "beforeRejected": 7,
+    "afterRejected": 8,
+    "falsePositive": "SIBM Pune MBA",
+    "falsePositiveAfter": "reject_relevance",
+    "pendingTask10Regression": false
+  },
+  "safeScope": "No hidden-id enumeration, captcha bypass, auth bypass, site-wide crawl, source configuration, sent-state mutation, or production request was performed."
+}

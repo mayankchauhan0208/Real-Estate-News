@@ -1,0 +1,13 @@
+{
+  "existingSentUrlDuplicate": true,
+  "canonicalVariationDuplicate": true,
+  "titleSourceCityIdentityCompatible": true,
+  "sameCityBlocked": true,
+  "legitimateMultiCityPreserved": true,
+  "dryRunWrites": 0,
+  "failedPublishWrites": 0,
+  "regularResend": false,
+  "explicitBackfillResendOnly": true,
+  "migrationRequired": false,
+  "regression": "task24b-sent-state-regression-test passed"
+}

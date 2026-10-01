@@ -1,0 +1,155 @@
+{
+  "allHumanNegativeRecords": [
+    {
+      "recordId": "task17-008",
+      "title": "Ahmedabad: Seven illegally constructed residential units in Fatehwadi razed",
+      "category": "DEMOLITION",
+      "protectedAfter": true
+    },
+    {
+      "recordId": "task17-016",
+      "title": "L&T extends Hyderabad Metro stake sale timeline to December 31",
+      "category": "STALLED_PROJECT",
+      "protectedAfter": true
+    },
+    {
+      "recordId": "task17-017",
+      "title": "Kaleshwaram rehabilitation may include end-to-end diaphragm wall at Medigadda barrage",
+      "category": "INVESTIGATION",
+      "protectedAfter": true
+    },
+    {
+      "recordId": "task17-023",
+      "title": "Four-year-old Jal Jeevan Mission water project in Hosanagara set for revival after minister’s intervention",
+      "category": "STALLED_PROJECT",
+      "protectedAfter": true
+    },
+    {
+      "recordId": "task17-026",
+      "title": "SPVs set up under smart cities mission in Tamil Nadu reduced to funding conduits: CAG report",
+      "category": "INVESTIGATION",
+      "protectedAfter": true
+    },
+    {
+      "recordId": "task17-028",
+      "title": "Homestays in Hampi must secure legal tag by September 30",
+      "category": "RERA_ENFORCEMENT",
+      "protectedAfter": true
+    },
+    {
+      "recordId": "task17-029",
+      "title": "Spain aims to ban evictions until 2030 amid housing protests",
+      "category": "PROTEST",
+      "protectedAfter": true
+    },
+    {
+      "recordId": "task17-030",
+      "title": "ED arrests two promoters of Gurugram-based Vatika Group in homebuyers 'fraud' case",
+      "category": "FRAUD",
+      "protectedAfter": true
+    },
+    {
+      "recordId": "task17-031",
+      "title": "Enforcement directorate search at TDI’s Mohali office ends after 53 hours",
+      "category": "RERA_ENFORCEMENT",
+      "protectedAfter": true
+    },
+    {
+      "recordId": "task17-032",
+      "title": "Gurugram admin acts against 71 builders for failing to refund amounts ordered by Haryana RERA",
+      "category": "BUYER_DISTRESS",
+      "protectedAfter": true
+    },
+    {
+      "recordId": "task17-051",
+      "title": "Why Bengaluru residents are pushing back against Airbnb-style stays in residential neighbourhoods",
+      "category": "DISPUTE",
+      "protectedAfter": true
+    },
+    {
+      "recordId": "task17-060",
+      "title": "Bihar: Gandak river embankments breach at two places amid heavy water discharge from barrages",
+      "category": "CIVIC_DISTRESS",
+      "protectedAfter": true
+    },
+    {
+      "recordId": "task17-062",
+      "title": "Delhi invokes ESMA for six months amid DTC contractual drivers’ strike",
+      "category": "OTHER",
+      "protectedAfter": true
+    },
+    {
+      "recordId": "task17-065",
+      "title": "Kingdom of Dreams: Men seen removing steel from HSVP-sealed complex",
+      "category": "DEMOLITION",
+      "protectedAfter": true
+    },
+    {
+      "recordId": "task17-069",
+      "title": "Real Estate Regulatory Authority",
+      "category": "RERA_ENFORCEMENT",
+      "protectedAfter": true
+    }
+  ],
+  "matrix": {
+    "DEMOLITION": 2,
+    "STALLED_PROJECT": 2,
+    "INVESTIGATION": 2,
+    "RERA_ENFORCEMENT": 3,
+    "PROTEST": 1,
+    "FRAUD": 1,
+    "BUYER_DISTRESS": 1,
+    "DISPUTE": 1,
+    "CIVIC_DISTRESS": 1,
+    "OTHER": 1
+  },
+  "historicalLeaksBefore": [
+    {
+      "recordId": "task17-008",
+      "source": "https://realty.economictimes.indiatimes.com/rss/recentstories",
+      "title": "Ahmedabad: Seven illegally constructed residential units in Fatehwadi razed",
+      "humanLabel": "REJECT_NEGATIVE",
+      "humanReason": "Demolition/razing of illegal residential units.",
+      "extractedCleanEvidence": "Representative AI imageAHMEDABAD: In a decisive enforcement action on Wednesday, the estate department of the Ahmedabad Municipal Corporation (AMC) successfully carried out the full demolition of seven illegally constructed row house-type residential structures situated within the densely populated Fatehwadi area of Sarkhej ward.Prior to this major crackdown, the estate department of AMC’s South West Zone had duly issued a formal notice regarding the unauthorised construction in Fatehwadi, strictly directing the owners that it be removed immediately to avoid legal consequences.Initially, the premises were officially sealed by civic authorities to prevent any further usage or public occupancy. However, instead of voluntarily removing the illegal structures as instructed, the defiant builder audaciously broke the seal and illegally resumed operations at the site. Advt Consequently, to effectively restrain the continued use of this unauthorised development, the estate department swiftly undertook demolition proceedings on Wednesday. In total, 7,101 sq ft of illegal construction, primarily comprising seven unauthorised residential row houses, was demolished and cleared from the land. TNN Published On Oct 1, 2026 at 12:00 PM IST See more on: Ahmedabad Municipal Corporation, AMC estate department, Fatehwadi, Sarkhej ward, Ahmedabad, South West Zone, unauthorised row houses Comments What are your thoughts? Comment Now Read Comment (1) All Comments By commenting, you agree to the Prohibited Content Policy Post By commenting, you agree to the Prohibited Content Policy Post Find this Comment Offensive? Choose your reason below and click on the submit button. This will alert our moderators to take actions REASONS FOR REPORTING Foul Language Defamatory Inciting hatred against a certain community Out of Context / Spam Others Report Join the community of 2M+ industry professionals. Subscribe to Newsletter to get latest insights & analysis in your inbox. All about ETRealty industry right on your smartphone! Download the ETRealty App and get the Realtime updates and Save your favourite articles. HomeNewsResidentialAhmedabad: Seven illegally constructed residential units in Fatehwadi razed",
+      "currentRelevance": "project_development",
+      "currentNegative": "PASS",
+      "geoResult": "ahmedabad",
+      "routedCity": "ahmedabad",
+      "finalPipeline": "WOULD_PUBLISH",
+      "whyCurrentLogicAllowed": "Task 19 evidence recovery left no rejection reason for this record.",
+      "primaryCause": "NEGATIVE_DEMOLITION"
+    },
+    {
+      "recordId": "task17-016",
+      "source": "https://infra.economictimes.indiatimes.com/rss/urban-transportation",
+      "title": "L&T extends Hyderabad Metro stake sale timeline to December 31",
+      "humanLabel": "REJECT_NEGATIVE",
+      "humanReason": "Metro stake sale repeatedly delayed amid financial/regulatory challenges.",
+      "extractedCleanEvidence": "",
+      "currentRelevance": "project_development",
+      "currentNegative": "PASS",
+      "geoResult": "hyderabad",
+      "routedCity": "hyderabad",
+      "finalPipeline": "WOULD_PUBLISH",
+      "whyCurrentLogicAllowed": "Task 19 evidence recovery left no rejection reason for this record.",
+      "primaryCause": "NEGATIVE_DELAY"
+    },
+    {
+      "recordId": "task17-051",
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/-2128833038.cms",
+      "title": "Why Bengaluru residents are pushing back against Airbnb-style stays in residential neighbourhoods",
+      "humanLabel": "REJECT_NEGATIVE",
+      "humanReason": "Resident pushback against Airbnb-style stays; complaints/negative neighbourhood impact.",
+      "extractedCleanEvidence": "BENGALURU: Residents of HRBR Layout are pushing back against the proposed opening of a homestay-cum-café in their residential neighbourhood, raising concerns over noise, pollution, parking and the impact of increased commercial activity on the area.Residents of 5th A Main Road, including young and elderly residents, took to the streets with banners and slogans to oppose Blossomly House, a proposed commercial homestay-cum-cafeteria.They argued that homestay-cum-café and similar commercial facilities should not be introduced in what they described as a peaceful residential layout.The residents have also raised concerns over an alleged encroachment of a rajakaluve beside the property and the proposed installation of a commercial exhaust system.They fear the exhaust could result in considerable noise, smoke, odour and air pollution for people living in the surrounding area.Why residents are opposing the homestayResidents said the proposed homestay-cum-café could bring a steady flow of visitors into the neighbourhood, increasing noise and disturbance in an area primarily meant for residential use.“If 20–30 or more people gather and smoke at the premises, it could create significant health and nuisance concerns for neighbouring residents. Along with that, with a large number of customers entering and leaving, talking, gathering and moving around, there is a possibility of increased noise disturbance in what is otherwise a residential area,” said resident KR Prabhakar.Parking is another concern for residents, particularly those who have lived in the neighbourhood for several years. They said neighbouring roads were already experiencing commercial activity and parking pressure, and feared that the proposed establishment could further reduce parking spaces available to locals.Gomathy Venkatesan, an elderly resident, alleged that the café management did not take her objections into consideration when she initially raised them.“I have been staying here for 35 years, but when we told the owner our disagreements, he asked us to bear all the issues and stay or vacate, adding that the road will soon become a commercial hub,” she told TOI.A former leader of opposition of the erstwhile Bruhat Bengaluru Mahanagara Palike (BBMP), who joined the protest, said the area was purely residential and that no commercial development would be allowed under any circumstances.Residents seek clarity on permissionsThe residents have also questioned whether the proposed establishment has all the permissions required to operate in the area. They have written to Bengaluru North City Corporation (BNCC), seeking verification of permissions related to zoning, land-use compliance and rajakaluve clearance.Their concerns come as the proposed property combines a homestay with a café, bringing together accommodation and a customer-facing commercial activity within the residential layout.I wanted to do this for the Gen-Z: Property owner Sachin Jain, who owns the upcoming property, said the café was intended to “give back something to the society”. He rejected the suggestion that the project was “very commercial” and said the aim was not to cause inconvenience to residents.“I wanted to do this for the Gen-Z; this is nothing like a traditional cafe and this place will strictly be a no-smoking zone. I am also planning to incorporate a library within the place along with a homestay so that youngsters can read and take in the ambience,” Sachin said.While residents have raised concerns about the nature and impact of Airbnb-style stays and commercial activity in their neighbourhood, the property owner has maintained that the proposed facility is intended to offer a different kind of space and would not be aimed at causing inconvenience to those living nearby.You Can Also Check: Gold Rate in Bengaluru | Silver Rate in Bengaluru | Bank Holidays in Bengaluru | Public Holidays in Bengaluru | Bengaluru AQI | Weather in Bengaluru | Petrol Price in Bengaluru | Diesel Price in Bengalur",
+      "currentRelevance": "project_development",
+      "currentNegative": "PASS",
+      "geoResult": "bangalore",
+      "routedCity": "bangalore",
+      "finalPipeline": "WOULD_PUBLISH",
+      "whyCurrentLogicAllowed": "Task 19 evidence recovery left no rejection reason for this record.",
+      "primaryCause": "NEGATIVE_DISPUTE"
+    }
+  ],
+  "protected": 15,
+  "controls": "8/8"
+}

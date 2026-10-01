@@ -80,7 +80,7 @@ jobs:
             news-state-
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build and verify filters
         run: npm run build

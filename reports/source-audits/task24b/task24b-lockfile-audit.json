@@ -1,0 +1,23 @@
+{
+  "packageManager": "npm",
+  "packageManagerField": null,
+  "lockfile": "package-lock.json",
+  "packageJsonChanged": false,
+  "declaredDependencies": {
+    "cheerio": "^1.0.0",
+    "rss-parser": "^3.13.0"
+  },
+  "cleanInstall": {
+    "command": "npm ci --ignore-scripts --legacy-peer-deps",
+    "result": "PASSED",
+    "environment": "fresh temporary directory",
+    "warnings": [
+      "whatwg-encoding deprecated warning"
+    ]
+  },
+  "workspaceInstallNote": "npm 11 failed in the existing pnpm-style node_modules workspace with an Arborist isDescendantOf error; clean temporary installation succeeded.",
+  "nativeDependencies": [],
+  "externalBinaries": [],
+  "ocrRequired": false,
+  "translationRequiredForCore": false
+}

@@ -1,0 +1,97 @@
+{
+  "reportType": "TASK21_LANGUAGE_COVERAGE",
+  "generatedAt": "2026-10-01T08:52:39.687Z",
+  "rows": [
+    {
+      "language": "en",
+      "encounteredInFixtures": 10,
+      "configuredSourceEvidence": 0,
+      "realValidatedArticles": 0,
+      "status": "OFFLINE_FIXTURE_ONLY"
+    },
+    {
+      "language": "hi",
+      "encounteredInFixtures": 10,
+      "configuredSourceEvidence": 0,
+      "realValidatedArticles": 0,
+      "status": "OFFLINE_FIXTURE_ONLY"
+    },
+    {
+      "language": "mr",
+      "encounteredInFixtures": 4,
+      "configuredSourceEvidence": 0,
+      "realValidatedArticles": 0,
+      "status": "OFFLINE_FIXTURE_ONLY"
+    },
+    {
+      "language": "bn",
+      "encounteredInFixtures": 1,
+      "configuredSourceEvidence": 0,
+      "realValidatedArticles": 0,
+      "status": "OFFLINE_FIXTURE_ONLY"
+    },
+    {
+      "language": "gu",
+      "encounteredInFixtures": 1,
+      "configuredSourceEvidence": 0,
+      "realValidatedArticles": 0,
+      "status": "OFFLINE_FIXTURE_ONLY"
+    },
+    {
+      "language": "pa",
+      "encounteredInFixtures": 1,
+      "configuredSourceEvidence": 0,
+      "realValidatedArticles": 0,
+      "status": "OFFLINE_FIXTURE_ONLY"
+    },
+    {
+      "language": "ta",
+      "encounteredInFixtures": 3,
+      "configuredSourceEvidence": 0,
+      "realValidatedArticles": 0,
+      "status": "OFFLINE_FIXTURE_ONLY"
+    },
+    {
+      "language": "te",
+      "encounteredInFixtures": 2,
+      "configuredSourceEvidence": 0,
+      "realValidatedArticles": 0,
+      "status": "OFFLINE_FIXTURE_ONLY"
+    },
+    {
+      "language": "kn",
+      "encounteredInFixtures": 2,
+      "configuredSourceEvidence": 0,
+      "realValidatedArticles": 0,
+      "status": "OFFLINE_FIXTURE_ONLY"
+    },
+    {
+      "language": "ml",
+      "encounteredInFixtures": 2,
+      "configuredSourceEvidence": 0,
+      "realValidatedArticles": 0,
+      "status": "OFFLINE_FIXTURE_ONLY"
+    },
+    {
+      "language": "or",
+      "encounteredInFixtures": 1,
+      "configuredSourceEvidence": 0,
+      "realValidatedArticles": 0,
+      "status": "OFFLINE_FIXTURE_ONLY"
+    },
+    {
+      "language": "as",
+      "encounteredInFixtures": 1,
+      "configuredSourceEvidence": 0,
+      "realValidatedArticles": 0,
+      "status": "OFFLINE_FIXTURE_ONLY"
+    },
+    {
+      "language": "ur",
+      "encounteredInFixtures": 1,
+      "configuredSourceEvidence": 0,
+      "realValidatedArticles": 0,
+      "status": "OFFLINE_FIXTURE_ONLY"
+    }
+  ]
+}

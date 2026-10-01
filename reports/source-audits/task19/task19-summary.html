@@ -1,0 +1,15 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Task 19 Evidence Recovery</title>
+<h1>Task 19 Evidence Recovery</h1>
+<p>Local-only replay of the frozen 69-record Task 17 editorial dataset. No production API or sent-news state was used.</p>
+<h2>Measured result</h2>
+<ul>
+<li>Before: TP 0, FP 0, TN 67, FN 2.</li>
+<li>After extraction recovery: TP 2, FP 7, TN 60, FN 0.</li>
+<li>Recovered positives: DDA Delhi map and YEIDA Greater Noida entry gate.</li>
+<li>Negative-label records incorrectly admitted by unchanged policy in this sample: 3 of 15.</li>
+<li>Off-topic records incorrectly admitted by unchanged policy in this sample: 4 of 29.</li>
+<li>Article replay: 69 requests, 0 transport failures, 7-second bounded timeout, 750000-byte cap.</li>
+</ul>
+<p><strong>Decision:</strong> extraction and geo recovery are demonstrated locally, but the unchanged classifier/negative policy still requires targeted review before production use. No broad policy tuning was made.</p>

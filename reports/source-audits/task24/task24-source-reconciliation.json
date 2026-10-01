@@ -1,0 +1,23 @@
+{
+  "remoteBaseline": {
+    "cities": 234,
+    "sourceRules": 34,
+    "manualSources": 427,
+    "historicalValidRuntimeUrls": 571
+  },
+  "localTarget": {
+    "cities": 234,
+    "sourceRules": 34,
+    "cityRuleUrlRows": 96,
+    "cityRuleUniqueUrls": 90,
+    "duplicateCityRuleUrls": 6,
+    "manualSources": 427,
+    "enabledManualSources": 427,
+    "duplicateManualUrls": 0,
+    "configuredUniqueUrls": 516,
+    "crossRegistryUrlOverlaps": 5,
+    "experimentalSources": 18,
+    "reraSources": 47
+  },
+  "explanation": "571 was the validated runtime total in the prior configuration audit; the local raw config contains 90 unique city-rule URLs plus 427 unique manual URLs before runtime/default-source expansion. Cross-registry overlaps are reported separately from duplicate source rows."
+}

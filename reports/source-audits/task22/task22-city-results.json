@@ -1,0 +1,1880 @@
+{
+  "reportType": "TASK22_CITY_RESULTS",
+  "generatedAt": "2026-10-01T09:18:20.480Z",
+  "rows": [
+    {
+      "city": "faridabad",
+      "state": "Haryana",
+      "regionalArticles": 1,
+      "readable": 0,
+      "productive": false,
+      "status": "VERIFIED_SOURCE_NO_CURRENT_VALID_STORY"
+    },
+    {
+      "city": "gurugram",
+      "state": "Haryana",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "rohtak",
+      "state": "Haryana",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "panipat",
+      "state": "Haryana",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "karnal",
+      "state": "Haryana",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "sonipat",
+      "state": "Haryana",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "yamunanagar",
+      "state": "Haryana",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "panchkula",
+      "state": "Haryana",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "ambala",
+      "state": "Haryana",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "kurukshetra",
+      "state": "Haryana",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "rewari",
+      "state": "Haryana",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "palwal",
+      "state": "Haryana",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "indore",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "bhopal",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "gwalior",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "jabalpur",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "ujjain",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "sagar",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "dewas",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "satna",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "ratlam",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "rewa",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "burhanpur",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "khandwa",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "chhindwara",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "mandsaur",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "damoh",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "neemuch",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "khargone",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "sehore",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "betul",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "seoni",
+      "state": "Madhya Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "anantapur",
+      "state": "Andhra Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "bhimavaram",
+      "state": "Andhra Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "chittoor",
+      "state": "Andhra Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "eluru",
+      "state": "Andhra Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "kadapa",
+      "state": "Andhra Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "kakinada",
+      "state": "Andhra Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "krishna",
+      "state": "Andhra Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "kurnool",
+      "state": "Andhra Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "nellore",
+      "state": "Andhra Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "rajahmundry",
+      "state": "Andhra Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "srikakulam",
+      "state": "Andhra Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "tirupati",
+      "state": "Andhra Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "vijayawada",
+      "state": "Andhra Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "visakhapatnam",
+      "state": "Andhra Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "vizianagaram",
+      "state": "Andhra Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "west_godavari",
+      "state": "Andhra Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "dibrugarh",
+      "state": "Assam",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "golaghat",
+      "state": "Assam",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "guwahati",
+      "state": "Assam",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "jorhat",
+      "state": "Assam",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "kamrup",
+      "state": "Assam",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "marigaon",
+      "state": "Assam",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "nagaon",
+      "state": "Assam",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "nalbari",
+      "state": "Assam",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "silchar",
+      "state": "Assam",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "tezpur",
+      "state": "Assam",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "tinsukia",
+      "state": "Assam",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "patna",
+      "state": "Bihar",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "chandigarh",
+      "state": "Chandigarh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "bhilai",
+      "state": "Chhattisgarh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "bilaspur",
+      "state": "Chhattisgarh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "durg",
+      "state": "Chhattisgarh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "korba",
+      "state": "Chhattisgarh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "kota_chhattisgarh",
+      "state": "Chhattisgarh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "raipur",
+      "state": "Chhattisgarh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "rajnandgaon",
+      "state": "Chhattisgarh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "daman_and_diu",
+      "state": "Dadra and Nagar Haveli and Daman and Diu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "silvassa",
+      "state": "Dadra and Nagar Haveli and Daman and Diu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "delhi_ncr",
+      "state": "Delhi",
+      "regionalArticles": 2,
+      "readable": 1,
+      "productive": true,
+      "status": "VERIFIED_PRODUCTIVE_REGIONAL"
+    },
+    {
+      "city": "delhi",
+      "state": "Delhi",
+      "regionalArticles": 6,
+      "readable": 2,
+      "productive": true,
+      "status": "VERIFIED_PRODUCTIVE_REGIONAL"
+    },
+    {
+      "city": "new_delhi",
+      "state": "Delhi",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "goa",
+      "state": "Goa",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "ahmedabad",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "anand",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "banaskantha",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "bardoli",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "bharuch",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "bhavnagar",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "dholera",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "gandhinagar",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "junagadh",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "kalol",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "kheda",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "kutch",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "navsari",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "patan",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "rajkot",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "sabarkantha",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "surat",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "surendranagar",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "gujarat",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "vadodara",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "valsad",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "vapi",
+      "state": "Gujarat",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "jamshedpur",
+      "state": "Jharkhand",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "ranchi",
+      "state": "Jharkhand",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "dhanbad",
+      "state": "Jharkhand",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "calicut",
+      "state": "Kerala",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "ernakulam",
+      "state": "Kerala",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "kochi",
+      "state": "Kerala",
+      "regionalArticles": 1,
+      "readable": 0,
+      "productive": false,
+      "status": "VERIFIED_SOURCE_NO_CURRENT_VALID_STORY"
+    },
+    {
+      "city": "palakkad",
+      "state": "Kerala",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "thrissur",
+      "state": "Kerala",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "trivandrum",
+      "state": "Kerala",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "bangalore",
+      "state": "Karnataka",
+      "regionalArticles": 4,
+      "readable": 0,
+      "productive": false,
+      "status": "VERIFIED_SOURCE_NO_CURRENT_VALID_STORY"
+    },
+    {
+      "city": "belgaum",
+      "state": "Karnataka",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "hubli",
+      "state": "Karnataka",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "mangalore",
+      "state": "Karnataka",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "mysore",
+      "state": "Karnataka",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "udupi",
+      "state": "Karnataka",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "shimla",
+      "state": "Himachal Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "solan",
+      "state": "Himachal Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "mohali",
+      "state": "Punjab",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "ludhiana",
+      "state": "Punjab",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "amritsar",
+      "state": "Punjab",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "jalandhar",
+      "state": "Punjab",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "patiala",
+      "state": "Punjab",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "hoshiarpur",
+      "state": "Punjab",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "bhatinda",
+      "state": "Punjab",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "sangrur",
+      "state": "Punjab",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "chennai",
+      "state": "Tamil Nadu",
+      "regionalArticles": 1,
+      "readable": 0,
+      "productive": false,
+      "status": "VERIFIED_SOURCE_NO_CURRENT_VALID_STORY"
+    },
+    {
+      "city": "madurai",
+      "state": "Tamil Nadu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "coimbatore",
+      "state": "Tamil Nadu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "tiruchirappalli",
+      "state": "Tamil Nadu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "salem",
+      "state": "Tamil Nadu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "tirunelveli",
+      "state": "Tamil Nadu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "vellore",
+      "state": "Tamil Nadu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "tiruppur",
+      "state": "Tamil Nadu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "erode",
+      "state": "Tamil Nadu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "thoothukudi",
+      "state": "Tamil Nadu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "thanjavur",
+      "state": "Tamil Nadu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "dindigul",
+      "state": "Tamil Nadu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "hosur",
+      "state": "Tamil Nadu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "avadi",
+      "state": "Tamil Nadu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "cuddalore",
+      "state": "Tamil Nadu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "karur",
+      "state": "Tamil Nadu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "tambaram",
+      "state": "Tamil Nadu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "namakkal",
+      "state": "Tamil Nadu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "pudukkottai",
+      "state": "Tamil Nadu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "tiruvannamalai",
+      "state": "Tamil Nadu",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "hyderabad",
+      "state": "Telangana",
+      "regionalArticles": 5,
+      "readable": 0,
+      "productive": false,
+      "status": "VERIFIED_SOURCE_NO_CURRENT_VALID_STORY"
+    },
+    {
+      "city": "warangal",
+      "state": "Telangana",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "nizamabad",
+      "state": "Telangana",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "karimnagar",
+      "state": "Telangana",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "khammam",
+      "state": "Telangana",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "mahabubnagar",
+      "state": "Telangana",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "mancherial",
+      "state": "Telangana",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "nalgonda",
+      "state": "Telangana",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "suryapet",
+      "state": "Telangana",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "kolkata",
+      "state": "West Bengal",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "howrah",
+      "state": "West Bengal",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "asansol",
+      "state": "West Bengal",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "durgapur",
+      "state": "West Bengal",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "siliguri",
+      "state": "West Bengal",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "agartala",
+      "state": "Tripura",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "mumbai",
+      "state": "Maharashtra",
+      "regionalArticles": 1,
+      "readable": 0,
+      "productive": false,
+      "status": "VERIFIED_SOURCE_NO_CURRENT_VALID_STORY"
+    },
+    {
+      "city": "pune",
+      "state": "Maharashtra",
+      "regionalArticles": 3,
+      "readable": 0,
+      "productive": false,
+      "status": "VERIFIED_SOURCE_NO_CURRENT_VALID_STORY"
+    },
+    {
+      "city": "navi_mumbai",
+      "state": "Maharashtra",
+      "regionalArticles": 1,
+      "readable": 0,
+      "productive": false,
+      "status": "VERIFIED_SOURCE_NO_CURRENT_VALID_STORY"
+    },
+    {
+      "city": "thane",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "kalyan_dombivli",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "nagpur",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "nashik",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "aurangabad",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "kolhapur",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "solapur",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "ahmednagar",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "amravati",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "akola",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "jalgaon",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "nanded",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "latur",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "sangli",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "ratnagiri",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "chandrapur",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "wardha",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "dhule",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "jalna",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "yavatmal",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "beed",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "osmanabad",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "palghar",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "sindhudurg",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "raigad",
+      "state": "Maharashtra",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "bhubaneswar",
+      "state": "Odisha",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "cuttack",
+      "state": "Odisha",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "puri",
+      "state": "Odisha",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "rourkela",
+      "state": "Odisha",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "sambalpur",
+      "state": "Odisha",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "berhampur",
+      "state": "Odisha",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "balasore",
+      "state": "Odisha",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "dehradun",
+      "state": "Uttarakhand",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "haridwar",
+      "state": "Uttarakhand",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "roorkee",
+      "state": "Uttarakhand",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "rudrapur",
+      "state": "Uttarakhand",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "rishikesh",
+      "state": "Uttarakhand",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "pondicherry",
+      "state": "Puducherry",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "jaipur",
+      "state": "Rajasthan",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "bhiwadi",
+      "state": "Rajasthan",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "kota",
+      "state": "Rajasthan",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "udaipur",
+      "state": "Rajasthan",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "jodhpur",
+      "state": "Rajasthan",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "ajmer",
+      "state": "Rajasthan",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "sikar",
+      "state": "Rajasthan",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "alwar",
+      "state": "Rajasthan",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "neemrana",
+      "state": "Rajasthan",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "bikaner",
+      "state": "Rajasthan",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "bhilwara",
+      "state": "Rajasthan",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "pali",
+      "state": "Rajasthan",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "sri_ganganagar",
+      "state": "Rajasthan",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "sirohi",
+      "state": "Rajasthan",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "tonk",
+      "state": "Rajasthan",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "hanumangarh",
+      "state": "Rajasthan",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "nagaur",
+      "state": "Rajasthan",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "barmer",
+      "state": "Rajasthan",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "jhalawar",
+      "state": "Rajasthan",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "noida",
+      "state": "Uttar Pradesh",
+      "regionalArticles": 1,
+      "readable": 1,
+      "productive": true,
+      "status": "VERIFIED_PRODUCTIVE_REGIONAL"
+    },
+    {
+      "city": "ghaziabad",
+      "state": "Uttar Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "lucknow",
+      "state": "Uttar Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "kanpur",
+      "state": "Uttar Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "varanasi",
+      "state": "Uttar Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "agra",
+      "state": "Uttar Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "meerut",
+      "state": "Uttar Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "vrindavan",
+      "state": "Uttar Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "allahabad",
+      "state": "Uttar Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "mathura",
+      "state": "Uttar Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "gorakhpur",
+      "state": "Uttar Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "bareilly",
+      "state": "Uttar Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "aligarh",
+      "state": "Uttar Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "jhansi",
+      "state": "Uttar Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "moradabad",
+      "state": "Uttar Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "hapur",
+      "state": "Uttar Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "barabanki",
+      "state": "Uttar Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    },
+    {
+      "city": "firozabad",
+      "state": "Uttar Pradesh",
+      "regionalArticles": 0,
+      "readable": 0,
+      "productive": false,
+      "status": "SOURCE_GAP"
+    }
+  ],
+  "verifiedRegionalEvidenceCities": 11,
+  "productiveRegionalCities": 3
+}

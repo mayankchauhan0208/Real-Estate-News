@@ -1,0 +1,1289 @@
+{
+  "reportType": "TASK19_EVIDENCE_RECOVERY",
+  "generatedAt": "2026-10-01T08:04:23.958Z",
+  "localOnly": true,
+  "input": "reports\\source-audits\\task17\\editorial-review-audited-v2.csv",
+  "freeze": {
+    "records": 69,
+    "labelCounts": {
+      "PUBLISH": 2,
+      "REJECT_OFF_TOPIC": 29,
+      "REJECT_INSUFFICIENT": 23,
+      "REJECT_NEGATIVE": 15,
+      "REVIEW_UNCERTAIN": 0
+    },
+    "noProductionMutation": true
+  },
+  "before": {
+    "currentPipelineWouldPublish": 0,
+    "TP": 0,
+    "FP": 0,
+    "TN": 67,
+    "FN": 2,
+    "extractionContaminated": 47
+  },
+  "after": {
+    "confusion": {
+      "TP": 2,
+      "FP": 7,
+      "TN": 60,
+      "FN": 0,
+      "unresolved": 0,
+      "precision": 0.2222222222222222,
+      "recall": 1,
+      "specificity": 0.8955223880597015
+    },
+    "labelProtection": {
+      "negativeTotal": 15,
+      "negativeWouldPublish": 3,
+      "offTopicWouldPublish": 4,
+      "insufficientWouldPublish": 0
+    },
+    "recoveredPublishRecords": [
+      "task17-001",
+      "task17-059"
+    ],
+    "firstLossCounts": {
+      "NONE": 9,
+      "RELEVANCE": 43,
+      "EXTRACTION": 17
+    }
+  },
+  "diagnostics": "task19-extraction-diagnostics.json",
+  "geoEvidence": {
+    "types": [
+      "BODY_EXPLICIT_CITY",
+      "CORRIDOR_RELATION",
+      "AUTHORITY_JURISDICTION"
+    ],
+    "matchedRows": [
+      {
+        "recordId": "task17-001",
+        "humanLabel": "PUBLISH",
+        "title": "DDA launches digital map for areas planned under Master Plan for Delhi 2047",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-001",
+        "humanLabel": "PUBLISH",
+        "title": "DDA launches digital map for areas planned under Master Plan for Delhi 2047",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-003",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "JSW Cement approves merger of Shiva Cement; sets 5:41 share-swap ratio",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-003",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "JSW Cement approves merger of Shiva Cement; sets 5:41 share-swap ratio",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "new delhi",
+        "normalizedPlace": "new delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-003",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "JSW Cement approves merger of Shiva Cement; sets 5:41 share-swap ratio",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-004",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "CPP Investments to invest ₹3,000 crore in Prestige Hospitality Ventures for 27% stake",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-004",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "CPP Investments to invest ₹3,000 crore in Prestige Hospitality Ventures for 27% stake",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-004",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "CPP Investments to invest ₹3,000 crore in Prestige Hospitality Ventures for 27% stake",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "goa",
+        "normalizedPlace": "goa",
+        "candidateCity": "goa",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-004",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "CPP Investments to invest ₹3,000 crore in Prestige Hospitality Ventures for 27% stake",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "bengaluru",
+        "normalizedPlace": "bengaluru",
+        "candidateCity": "bangalore",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-004",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "CPP Investments to invest ₹3,000 crore in Prestige Hospitality Ventures for 27% stake",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "chennai",
+        "normalizedPlace": "chennai",
+        "candidateCity": "chennai",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-004",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "CPP Investments to invest ₹3,000 crore in Prestige Hospitality Ventures for 27% stake",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "hyderabad",
+        "normalizedPlace": "hyderabad",
+        "candidateCity": "hyderabad",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-004",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "CPP Investments to invest ₹3,000 crore in Prestige Hospitality Ventures for 27% stake",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "mumbai",
+        "normalizedPlace": "mumbai",
+        "candidateCity": "mumbai",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-005",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Complete redevelopment in two years from plinth stage: Maharashtra government",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "mumbai",
+        "normalizedPlace": "mumbai",
+        "candidateCity": "mumbai",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-006",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Indian design must absorb global influences without losing cultural identity: Sunita Kohli",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "gurugram",
+        "normalizedPlace": "gurugram",
+        "candidateCity": "gurugram",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-006",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Indian design must absorb global influences without losing cultural identity: Sunita Kohli",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "gwalior",
+        "normalizedPlace": "gwalior",
+        "candidateCity": "gwalior",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-006",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Indian design must absorb global influences without losing cultural identity: Sunita Kohli",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-006",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Indian design must absorb global influences without losing cultural identity: Sunita Kohli",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-006",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Indian design must absorb global influences without losing cultural identity: Sunita Kohli",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "mohali",
+        "normalizedPlace": "mohali",
+        "candidateCity": "mohali",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-006",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Indian design must absorb global influences without losing cultural identity: Sunita Kohli",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "hyderabad",
+        "normalizedPlace": "hyderabad",
+        "candidateCity": "hyderabad",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-006",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Indian design must absorb global influences without losing cultural identity: Sunita Kohli",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "mumbai",
+        "normalizedPlace": "mumbai",
+        "candidateCity": "mumbai",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-007",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "UK first-time buyer scheme lifts housebuilders, but success hinges on design",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "bengaluru",
+        "normalizedPlace": "bengaluru",
+        "candidateCity": "bangalore",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-008",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "Ahmedabad: Seven illegally constructed residential units in Fatehwadi razed",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "ahmedabad",
+        "normalizedPlace": "ahmedabad",
+        "candidateCity": "ahmedabad",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-009",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Branded residences must deliver long-term value beyond the brand name: Industry leaders",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-009",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Branded residences must deliver long-term value beyond the brand name: Industry leaders",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "new delhi",
+        "normalizedPlace": "new delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-009",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Branded residences must deliver long-term value beyond the brand name: Industry leaders",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-010",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Telecom Regulatory Authority of India launches digital connectivity rating platform for properties",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-010",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Telecom Regulatory Authority of India launches digital connectivity rating platform for properties",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-011",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "BEML unveils indigenously developed 60-ton electric dump truck",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "Mysuru",
+        "normalizedPlace": "mysuru",
+        "candidateCity": "mysore",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-012",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Tata Trusts vice chairman Vijay Singh flags SDTT 'meddling' in Tata Sons",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "mumbai",
+        "normalizedPlace": "mumbai",
+        "candidateCity": "mumbai",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-013",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Darjeeling 'Toy Train' chugs into top 50 global destinations in 2027",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "gujarat",
+        "normalizedPlace": "gujarat",
+        "candidateCity": "gujarat",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-013",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Darjeeling 'Toy Train' chugs into top 50 global destinations in 2027",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "kolkata",
+        "normalizedPlace": "kolkata",
+        "candidateCity": "kolkata",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-014",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "NHAI to conduct special quality checks on 17 highway projects with low bids",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "gujarat",
+        "normalizedPlace": "gujarat",
+        "candidateCity": "gujarat",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-015",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "UP’s Project GANGA gets 3,000 DSP applications since its launch in June",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "lucknow",
+        "normalizedPlace": "lucknow",
+        "candidateCity": "lucknow",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-016",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "L&T extends Hyderabad Metro stake sale timeline to December 31",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "hyderabad",
+        "normalizedPlace": "hyderabad",
+        "candidateCity": "hyderabad",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-018",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Maharashtra housing redevelopment gets stricter: Three bids, registered rehab agreements and two-year deadline",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "mumbai",
+        "normalizedPlace": "mumbai",
+        "candidateCity": "mumbai",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-019",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Bengaluru Business Corridor: Route Map & Status Update [2024]",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "bhopal",
+        "normalizedPlace": "bhopal",
+        "candidateCity": "bhopal",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-019",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Bengaluru Business Corridor: Route Map & Status Update [2024]",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "ahmedabad",
+        "normalizedPlace": "ahmedabad",
+        "candidateCity": "ahmedabad",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-019",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Bengaluru Business Corridor: Route Map & Status Update [2024]",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "bengaluru",
+        "normalizedPlace": "bengaluru",
+        "candidateCity": "bangalore",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-019",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Bengaluru Business Corridor: Route Map & Status Update [2024]",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "bangalore",
+        "normalizedPlace": "bangalore",
+        "candidateCity": "bangalore",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-019",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Bengaluru Business Corridor: Route Map & Status Update [2024]",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "chennai",
+        "normalizedPlace": "chennai",
+        "candidateCity": "chennai",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-019",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Bengaluru Business Corridor: Route Map & Status Update [2024]",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "agra",
+        "normalizedPlace": "agra",
+        "candidateCity": "agra",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-020",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Gaimukh - Fountain Hotel Tunnel: Map, Status Update & Design [2025]",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "bhopal",
+        "normalizedPlace": "bhopal",
+        "candidateCity": "bhopal",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-020",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Gaimukh - Fountain Hotel Tunnel: Map, Status Update & Design [2025]",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "ahmedabad",
+        "normalizedPlace": "ahmedabad",
+        "candidateCity": "ahmedabad",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-020",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Gaimukh - Fountain Hotel Tunnel: Map, Status Update & Design [2025]",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "bangalore",
+        "normalizedPlace": "bangalore",
+        "candidateCity": "bangalore",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-020",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Gaimukh - Fountain Hotel Tunnel: Map, Status Update & Design [2025]",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "chennai",
+        "normalizedPlace": "chennai",
+        "candidateCity": "chennai",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-020",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Gaimukh - Fountain Hotel Tunnel: Map, Status Update & Design [2025]",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "agra",
+        "normalizedPlace": "agra",
+        "candidateCity": "agra",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-022",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Highway Infrastructure bags ₹245 crore toll contracts in UP, Tamil Nadu",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "gorakhpur",
+        "normalizedPlace": "gorakhpur",
+        "candidateCity": "gorakhpur",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-024",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Ranchi civic body to install 5,300 LED street lights across city",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "ranchi",
+        "normalizedPlace": "ranchi",
+        "candidateCity": "ranchi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-025",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Repair, maintain all street lights in Patna civic body's area: Bihar CM",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "patna",
+        "normalizedPlace": "patna",
+        "candidateCity": "patna",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-026",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "SPVs set up under smart cities mission in Tamil Nadu reduced to funding conduits: CAG report",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "madurai",
+        "normalizedPlace": "madurai",
+        "candidateCity": "madurai",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-026",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "SPVs set up under smart cities mission in Tamil Nadu reduced to funding conduits: CAG report",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "salem",
+        "normalizedPlace": "salem",
+        "candidateCity": "salem",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-026",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "SPVs set up under smart cities mission in Tamil Nadu reduced to funding conduits: CAG report",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "tirunelveli",
+        "normalizedPlace": "tirunelveli",
+        "candidateCity": "tirunelveli",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-027",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Zahirabad Industrial Smart City to attract ₹15,000 crore investment, project completion by 2028: Telangana IT minister",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-027",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Zahirabad Industrial Smart City to attract ₹15,000 crore investment, project completion by 2028: Telangana IT minister",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "new delhi",
+        "normalizedPlace": "new delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-027",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Zahirabad Industrial Smart City to attract ₹15,000 crore investment, project completion by 2028: Telangana IT minister",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-030",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "ED arrests two promoters of Gurugram-based Vatika Group in homebuyers 'fraud' case",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "gurugram",
+        "normalizedPlace": "gurugram",
+        "candidateCity": "gurugram",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-030",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "ED arrests two promoters of Gurugram-based Vatika Group in homebuyers 'fraud' case",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-030",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "ED arrests two promoters of Gurugram-based Vatika Group in homebuyers 'fraud' case",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "new delhi",
+        "normalizedPlace": "new delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-030",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "ED arrests two promoters of Gurugram-based Vatika Group in homebuyers 'fraud' case",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-031",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "Enforcement directorate search at TDI’s Mohali office ends after 53 hours",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "mohali",
+        "normalizedPlace": "mohali",
+        "candidateCity": "mohali",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-032",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "Gurugram admin acts against 71 builders for failing to refund amounts ordered by Haryana RERA",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "gurugram",
+        "normalizedPlace": "gurugram",
+        "candidateCity": "gurugram",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-034",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Home page | Delhi Development Authority (DDA)",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-034",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "Home page | Delhi Development Authority (DDA)",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-035",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "District Faridabad",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "faridabad",
+        "normalizedPlace": "faridabad",
+        "candidateCity": "faridabad",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-039",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "News",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "gurugram",
+        "normalizedPlace": "gurugram",
+        "candidateCity": "gurugram",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-039",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "News",
+        "type": "CORRIDOR_RELATION",
+        "matchedText": "golf course road",
+        "normalizedPlace": "golf course road",
+        "candidateCity": "gurugram",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-039",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "News",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-039",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "News",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-039",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "News",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "ahmedabad",
+        "normalizedPlace": "ahmedabad",
+        "candidateCity": "ahmedabad",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-039",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "News",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "mohali",
+        "normalizedPlace": "mohali",
+        "candidateCity": "mohali",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-039",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "News",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "hyderabad",
+        "normalizedPlace": "hyderabad",
+        "candidateCity": "hyderabad",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-039",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "News",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "mumbai",
+        "normalizedPlace": "mumbai",
+        "candidateCity": "mumbai",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-039",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "News",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "greater noida",
+        "normalizedPlace": "greater noida",
+        "candidateCity": "noida",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-039",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "News",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "noida",
+        "normalizedPlace": "noida",
+        "candidateCity": "noida",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-039",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "News",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "ghaziabad",
+        "normalizedPlace": "ghaziabad",
+        "candidateCity": "ghaziabad",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-039",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "News",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "lucknow",
+        "normalizedPlace": "lucknow",
+        "candidateCity": "lucknow",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-039",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "News",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "kanpur",
+        "normalizedPlace": "kanpur",
+        "candidateCity": "kanpur",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-039",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "News",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "varanasi",
+        "normalizedPlace": "varanasi",
+        "candidateCity": "varanasi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-040",
+        "humanLabel": "REJECT_INSUFFICIENT",
+        "title": "BDA :: Bhubaneswar Development Authority",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "bhubaneswar",
+        "normalizedPlace": "bhubaneswar",
+        "candidateCity": "bhubaneswar",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-046",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "SAIL flies in Mongolian coking coal as it seeks new supplies, sources say",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-046",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "SAIL flies in Mongolian coking coal as it seeks new supplies, sources say",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "new delhi",
+        "normalizedPlace": "new delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-046",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "SAIL flies in Mongolian coking coal as it seeks new supplies, sources say",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-047",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Tata Trusts seeks hearing on Venu Srinivasan&#039;s complaint before charity commissioner",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "mumbai",
+        "normalizedPlace": "mumbai",
+        "candidateCity": "mumbai",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-051",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "Why Bengaluru residents are pushing back against Airbnb-style stays in residential neighbourhoods",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "bengaluru",
+        "normalizedPlace": "bengaluru",
+        "candidateCity": "bangalore",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-052",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Weather tomorrow: Heavy rain likely in TN, Kerala, Karnataka; gusty winds to hit Andhra, Odisha",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "ncr",
+        "normalizedPlace": "ncr",
+        "candidateCity": "delhi_ncr",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-052",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Weather tomorrow: Heavy rain likely in TN, Kerala, Karnataka; gusty winds to hit Andhra, Odisha",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-052",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Weather tomorrow: Heavy rain likely in TN, Kerala, Karnataka; gusty winds to hit Andhra, Odisha",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "new delhi",
+        "normalizedPlace": "new delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-052",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Weather tomorrow: Heavy rain likely in TN, Kerala, Karnataka; gusty winds to hit Andhra, Odisha",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-052",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Weather tomorrow: Heavy rain likely in TN, Kerala, Karnataka; gusty winds to hit Andhra, Odisha",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "goa",
+        "normalizedPlace": "goa",
+        "candidateCity": "goa",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-052",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Weather tomorrow: Heavy rain likely in TN, Kerala, Karnataka; gusty winds to hit Andhra, Odisha",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "kutch",
+        "normalizedPlace": "kutch",
+        "candidateCity": "kutch",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-052",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Weather tomorrow: Heavy rain likely in TN, Kerala, Karnataka; gusty winds to hit Andhra, Odisha",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "gujarat",
+        "normalizedPlace": "gujarat",
+        "candidateCity": "gujarat",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-052",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Weather tomorrow: Heavy rain likely in TN, Kerala, Karnataka; gusty winds to hit Andhra, Odisha",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "puducherry",
+        "normalizedPlace": "puducherry",
+        "candidateCity": "pondicherry",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-053",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "SIR tribunal judges refuse to log into new portal with Aadhaar, flag tweak in docu norm",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "kolkata",
+        "normalizedPlace": "kolkata",
+        "candidateCity": "kolkata",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-054",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "‘Voices against electoral 'capture' getting louder': Congress targets EC over SIR",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-054",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "‘Voices against electoral 'capture' getting louder': Congress targets EC over SIR",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "new delhi",
+        "normalizedPlace": "new delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-054",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "‘Voices against electoral 'capture' getting louder': Congress targets EC over SIR",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-058",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Stray dog menace on PGI campus despite apex court directions",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "lucknow",
+        "normalizedPlace": "lucknow",
+        "candidateCity": "lucknow",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-059",
+        "humanLabel": "PUBLISH",
+        "title": "Yeida plans  ₹4.5cr landmark entry gate near Yamuna Expressway",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "anand",
+        "normalizedPlace": "anand",
+        "candidateCity": "anand",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-059",
+        "humanLabel": "PUBLISH",
+        "title": "Yeida plans  ₹4.5cr landmark entry gate near Yamuna Expressway",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "noida",
+        "normalizedPlace": "noida",
+        "candidateCity": "noida",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-059",
+        "humanLabel": "PUBLISH",
+        "title": "Yeida plans  ₹4.5cr landmark entry gate near Yamuna Expressway",
+        "type": "CORRIDOR_RELATION",
+        "matchedText": "yamuna expressway",
+        "normalizedPlace": "yamuna expressway",
+        "candidateCity": "noida",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-059",
+        "humanLabel": "PUBLISH",
+        "title": "Yeida plans  ₹4.5cr landmark entry gate near Yamuna Expressway",
+        "type": "AUTHORITY_JURISDICTION",
+        "matchedText": "yeida",
+        "normalizedPlace": "yeida",
+        "candidateCity": "noida",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-059",
+        "humanLabel": "PUBLISH",
+        "title": "Yeida plans  ₹4.5cr landmark entry gate near Yamuna Expressway",
+        "type": "CORRIDOR_RELATION",
+        "matchedText": "noida international airport",
+        "normalizedPlace": "noida international airport",
+        "candidateCity": "noida",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-060",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "Bihar: Gandak river embankments breach at two places amid heavy water discharge from barrages",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "patna",
+        "normalizedPlace": "patna",
+        "candidateCity": "patna",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-062",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "Delhi invokes ESMA for six months amid DTC contractual drivers’ strike",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-062",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "Delhi invokes ESMA for six months amid DTC contractual drivers’ strike",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-063",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Indian oil refiners change strategy to get cheaper oil; hire ships & tankers to sail through Strait of Hormuz",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-063",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Indian oil refiners change strategy to get cheaper oil; hire ships & tankers to sail through Strait of Hormuz",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "new delhi",
+        "normalizedPlace": "new delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-063",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Indian oil refiners change strategy to get cheaper oil; hire ships & tankers to sail through Strait of Hormuz",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-064",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Arappor alleges irregularities in affiliation granted to 74 private colleges of education",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "chennai",
+        "normalizedPlace": "chennai",
+        "candidateCity": "chennai",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-065",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "Kingdom of Dreams: Men seen removing steel from HSVP-sealed complex",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "gurugram",
+        "normalizedPlace": "gurugram",
+        "candidateCity": "gurugram",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-065",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "Kingdom of Dreams: Men seen removing steel from HSVP-sealed complex",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "kurukshetra",
+        "normalizedPlace": "kurukshetra",
+        "candidateCity": "kurukshetra",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-065",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "Kingdom of Dreams: Men seen removing steel from HSVP-sealed complex",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-065",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "Kingdom of Dreams: Men seen removing steel from HSVP-sealed complex",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-065",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "Kingdom of Dreams: Men seen removing steel from HSVP-sealed complex",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "bengaluru",
+        "normalizedPlace": "bengaluru",
+        "candidateCity": "bangalore",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-065",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "Kingdom of Dreams: Men seen removing steel from HSVP-sealed complex",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "hyderabad",
+        "normalizedPlace": "hyderabad",
+        "candidateCity": "hyderabad",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-065",
+        "humanLabel": "REJECT_NEGATIVE",
+        "title": "Kingdom of Dreams: Men seen removing steel from HSVP-sealed complex",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "mumbai",
+        "normalizedPlace": "mumbai",
+        "candidateCity": "mumbai",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-066",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Rajya Sabha polls in UP: How predictable numbers game acquired spicy political flavour",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "delhi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-066",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Rajya Sabha polls in UP: How predictable numbers game acquired spicy political flavour",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "delhi",
+        "normalizedPlace": "delhi",
+        "candidateCity": "new_delhi",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-066",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Rajya Sabha polls in UP: How predictable numbers game acquired spicy political flavour",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "gujarat",
+        "normalizedPlace": "gujarat",
+        "candidateCity": "gujarat",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-067",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Nitin Nabin likely to attend closing event of ‘Seva Sankalp’ rally on October 7",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "varanasi",
+        "normalizedPlace": "varanasi",
+        "candidateCity": "varanasi",
+        "confidence": "high"
+      },
+      {
+        "recordId": "task17-068",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Anarock Property Consultants Limited files DRHP for ₹1,000 crore IPO; AI, tech investments among key plans",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "ncr",
+        "normalizedPlace": "ncr",
+        "candidateCity": "delhi_ncr",
+        "confidence": "medium"
+      },
+      {
+        "recordId": "task17-068",
+        "humanLabel": "REJECT_OFF_TOPIC",
+        "title": "Anarock Property Consultants Limited files DRHP for ₹1,000 crore IPO; AI, tech investments among key plans",
+        "type": "BODY_EXPLICIT_CITY",
+        "matchedText": "mumbai",
+        "normalizedPlace": "mumbai",
+        "candidateCity": "mumbai",
+        "confidence": "high"
+      }
+    ]
+  },
+  "generalization": "task19-generalization.json",
+  "runtime": "task19-runtime.json",
+  "reports": {
+    "beforeAfter": "task19-before-after.csv",
+    "publishTraces": "task19-publish-traces.json"
+  },
+  "decision": "LOCAL_RECOVERY_REQUIRES_FURTHER_TARGETED_WORK"
+}

@@ -1,0 +1,235 @@
+{
+  "count": 18,
+  "sources": [
+    {
+      "url": "https://api.livehindustan.com/feeds/rss/business/real-estate/rssfeed.xml",
+      "label": "Hindustan — Hindi Real Estate RSS | P1",
+      "category": "regional-hindi",
+      "cityCodes": [],
+      "configuredEnabled": true,
+      "productionDefault": false,
+      "activation": "ENABLE_EXPERIMENTAL_SOURCES=true or explicit SOURCE_URLS"
+    },
+    {
+      "url": "https://www.amarujala.com/rss/real-estate.xml",
+      "label": "Amar Ujala Real Estate Hindi RSS | P2",
+      "category": "regional-hindi-rss",
+      "cityCodes": [
+        "delhi_ncr",
+        "faridabad",
+        "gurugram",
+        "new_delhi",
+        "noida"
+      ],
+      "configuredEnabled": true,
+      "productionDefault": false,
+      "activation": "ENABLE_EXPERIMENTAL_SOURCES=true or explicit SOURCE_URLS"
+    },
+    {
+      "url": "https://www.amarujala.com/rss/faridabad.xml",
+      "label": "Amar Ujala Faridabad Hindi RSS | P2",
+      "category": "regional-hindi-rss",
+      "cityCodes": [
+        "faridabad"
+      ],
+      "configuredEnabled": true,
+      "productionDefault": false,
+      "activation": "ENABLE_EXPERIMENTAL_SOURCES=true or explicit SOURCE_URLS"
+    },
+    {
+      "url": "https://www.livehindustan.com/ncr/gurugram",
+      "label": "Live Hindustan Gurugram Hindi News | Regional P2",
+      "category": "regional-hindi-rss",
+      "cityCodes": [
+        "gurugram"
+      ],
+      "configuredEnabled": true,
+      "productionDefault": false,
+      "activation": "ENABLE_EXPERIMENTAL_SOURCES=true or explicit SOURCE_URLS"
+    },
+    {
+      "url": "https://www.livehindustan.com/ncr/faridabad",
+      "label": "Live Hindustan Faridabad Hindi News | Regional P2",
+      "category": "regional-hindi-rss",
+      "cityCodes": [
+        "faridabad"
+      ],
+      "configuredEnabled": true,
+      "productionDefault": false,
+      "activation": "ENABLE_EXPERIMENTAL_SOURCES=true or explicit SOURCE_URLS"
+    },
+    {
+      "url": "https://www.livehindustan.com/ncr/noida",
+      "label": "Live Hindustan Noida Hindi News | Regional P2",
+      "category": "regional-hindi-rss",
+      "cityCodes": [
+        "noida"
+      ],
+      "configuredEnabled": true,
+      "productionDefault": false,
+      "activation": "ENABLE_EXPERIMENTAL_SOURCES=true or explicit SOURCE_URLS"
+    },
+    {
+      "url": "https://maharashtratimes.com/business/real-estate-news/articlelist/2429626.cms",
+      "label": "Maharashtra Times Real Estate Marathi | Regional P2",
+      "category": "manual",
+      "cityCodes": [
+        "mumbai",
+        "pune",
+        "navi_mumbai",
+        "nagpur",
+        "nashik",
+        "aurangabad",
+        "kolhapur",
+        "solapur",
+        "ahmednagar",
+        "amravati",
+        "akola",
+        "jalgaon",
+        "nanded",
+        "latur",
+        "sangli",
+        "ratnagiri",
+        "chandrapur",
+        "wardha",
+        "dhule",
+        "jalna",
+        "yavatmal",
+        "beed",
+        "osmanabad",
+        "palghar",
+        "sindhudurg",
+        "raigad"
+      ],
+      "configuredEnabled": true,
+      "productionDefault": false,
+      "activation": "ENABLE_EXPERIMENTAL_SOURCES=true or explicit SOURCE_URLS"
+    },
+    {
+      "url": "https://squarefeatindia.com/feed",
+      "label": "SquareFeat Maharashtra Real Estate Feed | Regional P2",
+      "category": "manual",
+      "cityCodes": [
+        "mumbai",
+        "navi_mumbai",
+        "pune",
+        "raigad"
+      ],
+      "configuredEnabled": true,
+      "productionDefault": false,
+      "activation": "ENABLE_EXPERIMENTAL_SOURCES=true or explicit SOURCE_URLS"
+    },
+    {
+      "url": "https://navimumbaihouses.com/blog/feed",
+      "label": "Navi Mumbai Houses Blog Feed | Regional P2",
+      "category": "manual",
+      "cityCodes": [
+        "navi_mumbai",
+        "mumbai",
+        "raigad"
+      ],
+      "configuredEnabled": true,
+      "productionDefault": false,
+      "activation": "ENABLE_EXPERIMENTAL_SOURCES=true or explicit SOURCE_URLS"
+    },
+    {
+      "url": "https://chennaiproperties.in/blog",
+      "label": "Chennai Properties Blog | Regional P2",
+      "category": "manual",
+      "cityCodes": [
+        "chennai"
+      ],
+      "configuredEnabled": true,
+      "productionDefault": false,
+      "activation": "ENABLE_EXPERIMENTAL_SOURCES=true or explicit SOURCE_URLS"
+    },
+    {
+      "url": "https://chennaidreamhomes.com/real-estate-blog",
+      "label": "Chennai Dream Homes Real Estate Blog | Regional P2",
+      "category": "manual",
+      "cityCodes": [
+        "chennai"
+      ],
+      "configuredEnabled": true,
+      "productionDefault": false,
+      "activation": "ENABLE_EXPERIMENTAL_SOURCES=true or explicit SOURCE_URLS"
+    },
+    {
+      "url": "https://www.unimarkgroup.com/blog",
+      "label": "Unimark Kolkata Real Estate Blog | Regional P2",
+      "category": "manual",
+      "cityCodes": [
+        "kolkata",
+        "howrah"
+      ],
+      "configuredEnabled": true,
+      "productionDefault": false,
+      "activation": "ENABLE_EXPERIMENTAL_SOURCES=true or explicit SOURCE_URLS"
+    },
+    {
+      "url": "https://hilifebuilders.in/feed",
+      "label": "Hi-Life Builders Kerala Feed | Regional P2",
+      "category": "manual",
+      "cityCodes": [
+        "thrissur",
+        "kochi",
+        "ernakulam"
+      ],
+      "configuredEnabled": true,
+      "productionDefault": false,
+      "activation": "ENABLE_EXPERIMENTAL_SOURCES=true or explicit SOURCE_URLS"
+    },
+    {
+      "url": "https://proppuls.in/",
+      "label": "Proppuls Hyderabad Real Estate News | Regional P2",
+      "category": "manual",
+      "cityCodes": [
+        "hyderabad"
+      ],
+      "configuredEnabled": true,
+      "productionDefault": false,
+      "activation": "ENABLE_EXPERIMENTAL_SOURCES=true or explicit SOURCE_URLS"
+    },
+    {
+      "url": "https://www.drahomes.in/blog/feed/",
+      "label": "DRA Homes Chennai Blog | Regional P2",
+      "category": "manual",
+      "cityCodes": [
+        "chennai"
+      ],
+      "configuredEnabled": true,
+      "productionDefault": false,
+      "activation": "ENABLE_EXPERIMENTAL_SOURCES=true or explicit SOURCE_URLS"
+    },
+    {
+      "url": "https://tv9gujarati.com/topic/real-estate",
+      "label": "TV9 Gujarati Real Estate | Regional P2",
+      "category": "regional-gujarati",
+      "cityCodes": [],
+      "configuredEnabled": true,
+      "productionDefault": false,
+      "activation": "ENABLE_EXPERIMENTAL_SOURCES=true or explicit SOURCE_URLS"
+    },
+    {
+      "url": "https://vijaykarnataka.com/real-estate/articlelist/133644218.cms",
+      "label": "Vijaya Karnataka Kannada Real Estate | Regional P2",
+      "category": "regional-kannada",
+      "cityCodes": [],
+      "configuredEnabled": true,
+      "productionDefault": false,
+      "activation": "ENABLE_EXPERIMENTAL_SOURCES=true or explicit SOURCE_URLS"
+    },
+    {
+      "url": "https://www.telanganatribune.com/category/realestate/",
+      "label": "Telangana Tribune Real Estate | Regional P2",
+      "category": "regional-telangana",
+      "cityCodes": [],
+      "configuredEnabled": true,
+      "productionDefault": false,
+      "activation": "ENABLE_EXPERIMENTAL_SOURCES=true or explicit SOURCE_URLS"
+    }
+  ],
+  "defaultLeakCount": 0,
+  "explicitOptInCount": 18,
+  "status": "PASSED"
+}

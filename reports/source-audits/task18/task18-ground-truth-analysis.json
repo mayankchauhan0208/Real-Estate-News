@@ -1,0 +1,458 @@
+{
+  "reportType": "TASK18_EDITORIAL_GROUND_TRUTH_ANALYSIS",
+  "generatedAt": "2026-10-01T07:47:08.694Z",
+  "localOnly": true,
+  "input": "reports\\source-audits\\task17\\editorial-review-audited-v2.csv",
+  "validation": {
+    "total": 69,
+    "labelCounts": {
+      "PUBLISH": 2,
+      "REJECT_NEGATIVE": 15,
+      "REJECT_OFF_TOPIC": 29,
+      "REJECT_INSUFFICIENT": 23,
+      "REVIEW_UNCERTAIN": 0
+    },
+    "expected": {
+      "PUBLISH": 2,
+      "REJECT_NEGATIVE": 15,
+      "REJECT_OFF_TOPIC": 29,
+      "REJECT_INSUFFICIENT": 23,
+      "REVIEW_UNCERTAIN": 0
+    },
+    "uniqueRecordIds": true,
+    "duplicateUrls": 0,
+    "publishCities": [
+      "Delhi",
+      "Greater Noida"
+    ],
+    "supportedPublishCities": true
+  },
+  "confusionMatrix": {
+    "TP": 0,
+    "FP": 0,
+    "TN": 67,
+    "FN": 2,
+    "unresolved": 0,
+    "precision": null,
+    "recall": 0,
+    "specificity": 1,
+    "falsePositiveRate": 0,
+    "falseNegativeRate": 1,
+    "note": "Only two editorial positives exist; recall and false-negative rate have a very small denominator."
+  },
+  "publishTraces": [
+    {
+      "recordId": "task17-001",
+      "title": "DDA launches digital map for areas planned under Master Plan for Delhi 2047",
+      "firstLoss": {
+        "primary": "GEO",
+        "reason": "No article-level city evidence reached routing."
+      }
+    },
+    {
+      "recordId": "task17-059",
+      "title": "Yeida plans  ₹4.5cr landmark entry gate near Yamuna Expressway",
+      "firstLoss": {
+        "primary": "EXTRACTION",
+        "reason": "Article body was not usable for downstream stages."
+      }
+    }
+  ],
+  "extractionQuality": {
+    "JAVASCRIPT_CONTAMINATED": {
+      "count": 45,
+      "sources": [
+        "https://realty.economictimes.indiatimes.com/rss/technology",
+        "https://realty.economictimes.indiatimes.com/rss/cement",
+        "https://realty.economictimes.indiatimes.com/rss/hospitality",
+        "https://realty.economictimes.indiatimes.com/rss/industry",
+        "https://realty.economictimes.indiatimes.com/rss/recentstories",
+        "https://realty.economictimes.indiatimes.com/rss/international",
+        "https://realty.economictimes.indiatimes.com/rss/residential",
+        "https://infra.economictimes.indiatimes.com/rss/construction",
+        "https://infra.economictimes.indiatimes.com/rss/corporate",
+        "https://infra.economictimes.indiatimes.com/rss/railways",
+        "https://infra.economictimes.indiatimes.com/rss/roads-highways",
+        "https://infra.economictimes.indiatimes.com/rss/urban-infrastructure",
+        "https://infra.economictimes.indiatimes.com/rss/urban-transportation",
+        "https://infra.economictimes.indiatimes.com/rss/water",
+        "https://realty.economictimes.indiatimes.com/rss/topstories",
+        "https://transport.rajasthan.gov.in/jmrc",
+        "https://infra.economictimes.indiatimes.com/rss/recentstories",
+        "https://infra.economictimes.indiatimes.com/rss/rural-infrastructure",
+        "https://realty.economictimes.indiatimes.com/rss/lighting/smart-lighting",
+        "https://realty.economictimes.indiatimes.com/rss/smart-city",
+        "https://realty.economictimes.indiatimes.com/rss/regulatory",
+        "https://realty.economictimes.indiatimes.com/news/residential",
+        "https://www.bda.gov.in/notice",
+        "https://infra.economictimes.indiatimes.com/rss/energy",
+        "https://www.hindustantimes.com/feeds/rss/cities/lucknow-news/rssfeed.xml",
+        "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+        "https://www.hindustantimes.com/feeds/rss/cities/patna-news/rssfeed.xml",
+        "https://infra.economictimes.indiatimes.com/rss/topstories",
+        "https://www.hindustantimes.com/feeds/rss/cities/gurugram-news/rssfeed.xml",
+        "https://www.hindustantimes.com/feeds/rss/cities/others/rssfeed.xml",
+        "https://www.hindustantimes.com/feeds/rss/real-estate/rssfeed.xml"
+      ],
+      "labels": {
+        "PUBLISH": 2,
+        "REJECT_OFF_TOPIC": 21,
+        "REJECT_INSUFFICIENT": 9,
+        "REJECT_NEGATIVE": 13
+      },
+      "publishAffected": 2,
+      "contaminationChangedClassification": true
+    },
+    "NAVIGATION_CONTAMINATED": {
+      "count": 2,
+      "sources": [
+        "https://themetrorailguy.com/"
+      ],
+      "labels": {
+        "REJECT_INSUFFICIENT": 2
+      },
+      "publishAffected": 0,
+      "contaminationChangedClassification": true
+    },
+    "INDEX_PAGE": {
+      "count": 1,
+      "sources": [
+        "https://dda.gov.in/whats-new"
+      ],
+      "labels": {
+        "REJECT_INSUFFICIENT": 1
+      },
+      "publishAffected": 0,
+      "contaminationChangedClassification": false
+    },
+    "CLEAN_ARTICLE": {
+      "count": 18,
+      "sources": [
+        "https://faridabad.nic.in/department/faridabad-metropolitan-development-authority-fmda",
+        "https://gnida.up.gov.in/en/announcements",
+        "https://www.cial.aero/News-Updates/URL",
+        "https://cci.gov.in/combination/green-channel-view",
+        "https://www.hprera.in",
+        "https://timesofindia.indiatimes.com/rssfeeds/-2128833038.cms",
+        "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+        "https://timesofindia.indiatimes.com/rssfeeds/-2128830821.cms",
+        "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms",
+        "https://www.cci.gov.in/combination/orders-section31",
+        "https://www.cci.gov.in/combination/press-release",
+        "https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
+        "https://timesofindia.indiatimes.com/rssfeeds/2950623.cms"
+      ],
+      "labels": {
+        "REJECT_INSUFFICIENT": 9,
+        "REJECT_OFF_TOPIC": 8,
+        "REJECT_NEGATIVE": 1
+      },
+      "publishAffected": 0,
+      "contaminationChangedClassification": false
+    },
+    "ERROR_PAGE": {
+      "count": 3,
+      "sources": [
+        "https://sipcotweb.tn.gov.in",
+        "https://rera.punjab.gov.in/latest-news.html"
+      ],
+      "labels": {
+        "REJECT_INSUFFICIENT": 2,
+        "REJECT_NEGATIVE": 1
+      },
+      "publishAffected": 0,
+      "contaminationChangedClassification": false
+    }
+  },
+  "negativeAnalysis": {
+    "total": 15,
+    "protectedCorrectly": 15,
+    "protectedByNegativeFilter": 8,
+    "incorrectlyPassedRelevance": 5,
+    "incorrectlyPassedNegativeFilter": 7,
+    "reachedGeo": 0,
+    "wouldPublish": 0,
+    "unresolved": 0,
+    "categories": {
+      "COURT": 2,
+      "DELAY": 2,
+      "OTHER": 2,
+      "PROTEST": 2,
+      "FRAUD": 1,
+      "ENFORCEMENT": 1,
+      "BUYER_DISTRESS": 1,
+      "DISPUTE": 2,
+      "CIVIC_DISTRESS": 1,
+      "PENALTY": 1
+    }
+  },
+  "offTopicAnalysis": {
+    "total": 29,
+    "categories": {
+      "other": 10,
+      "finance-only": 3,
+      "design/commentary": 1,
+      "transport-service-only": 4,
+      "aviation": 3,
+      "energy": 2,
+      "civic": 1,
+      "politics": 4,
+      "education": 1
+    },
+    "likelyContamination": "BROAD_FEED_CATEGORY_OR_SOURCE_DISCOVERY",
+    "note": "This is measured from human labels and source/category patterns; no relevance rule was changed."
+  },
+  "insufficientAnalysis": {
+    "total": 23,
+    "categories": {
+      "A_GENUINE_RE_BUT_NOT_SAFE_CITY": 1,
+      "B_STATEWIDE_NATIONAL": 6,
+      "F_STALE_NONCURRENT": 1,
+      "C_OUTSIDE_SUPPORTED_GEOGRAPHY": 1,
+      "D_HOMEPAGE_INDEX_ARCHIVE_SEARCH": 12,
+      "E_ERROR_MAINTENANCE_PAGE": 2
+    },
+    "genuineReStories": 7,
+    "indexErrorMaintenance": 14
+  },
+  "geoAnalysis": {
+    "inspectedRecords": 14,
+    "publishCities": [
+      "Delhi",
+      "Greater Noida"
+    ],
+    "publishGeoCurrent": [
+      {
+        "recordId": "task17-001",
+        "current": "NO_GEO",
+        "human": "Delhi"
+      },
+      {
+        "recordId": "task17-059",
+        "current": "NO_GEO",
+        "human": "Greater Noida"
+      }
+    ],
+    "genuineReInsufficient": 7,
+    "note": "No aliases or source-level fallback were added."
+  },
+  "sourceYield": {
+    "sourcesRepresented": 48,
+    "strongestByPublish": [
+      {
+        "source": "https://realty.economictimes.indiatimes.com/rss/technology",
+        "sampled": 2,
+        "PUBLISH": 1,
+        "REJECT_NEGATIVE": 0,
+        "REJECT_OFF_TOPIC": 0,
+        "REJECT_INSUFFICIENT": 1,
+        "REVIEW_UNCERTAIN": 0,
+        "extractionFailures": 2,
+        "indexErrorPages": 0,
+        "usefulReSignal": 2,
+        "editorialPublishYield": 0.5,
+        "usefulReSignalRate": 1
+      },
+      {
+        "source": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+        "sampled": 1,
+        "PUBLISH": 1,
+        "REJECT_NEGATIVE": 0,
+        "REJECT_OFF_TOPIC": 0,
+        "REJECT_INSUFFICIENT": 0,
+        "REVIEW_UNCERTAIN": 0,
+        "extractionFailures": 1,
+        "indexErrorPages": 0,
+        "usefulReSignal": 1,
+        "editorialPublishYield": 1,
+        "usefulReSignalRate": 1
+      }
+    ],
+    "strongestByUsefulSignal": [
+      {
+        "source": "https://realty.economictimes.indiatimes.com/rss/technology",
+        "sampled": 2,
+        "PUBLISH": 1,
+        "REJECT_NEGATIVE": 0,
+        "REJECT_OFF_TOPIC": 0,
+        "REJECT_INSUFFICIENT": 1,
+        "REVIEW_UNCERTAIN": 0,
+        "extractionFailures": 2,
+        "indexErrorPages": 0,
+        "usefulReSignal": 2,
+        "editorialPublishYield": 0.5,
+        "usefulReSignalRate": 1
+      },
+      {
+        "source": "https://realty.economictimes.indiatimes.com/rss/industry",
+        "sampled": 1,
+        "PUBLISH": 0,
+        "REJECT_NEGATIVE": 0,
+        "REJECT_OFF_TOPIC": 0,
+        "REJECT_INSUFFICIENT": 1,
+        "REVIEW_UNCERTAIN": 0,
+        "extractionFailures": 1,
+        "indexErrorPages": 0,
+        "usefulReSignal": 1,
+        "editorialPublishYield": 0,
+        "usefulReSignalRate": 1
+      },
+      {
+        "source": "https://infra.economictimes.indiatimes.com/rss/roads-highways",
+        "sampled": 1,
+        "PUBLISH": 0,
+        "REJECT_NEGATIVE": 0,
+        "REJECT_OFF_TOPIC": 0,
+        "REJECT_INSUFFICIENT": 1,
+        "REVIEW_UNCERTAIN": 0,
+        "extractionFailures": 1,
+        "indexErrorPages": 0,
+        "usefulReSignal": 1,
+        "editorialPublishYield": 0,
+        "usefulReSignalRate": 1
+      },
+      {
+        "source": "https://themetrorailguy.com/",
+        "sampled": 2,
+        "PUBLISH": 0,
+        "REJECT_NEGATIVE": 0,
+        "REJECT_OFF_TOPIC": 0,
+        "REJECT_INSUFFICIENT": 2,
+        "REVIEW_UNCERTAIN": 0,
+        "extractionFailures": 2,
+        "indexErrorPages": 0,
+        "usefulReSignal": 2,
+        "editorialPublishYield": 0,
+        "usefulReSignalRate": 1
+      },
+      {
+        "source": "https://dda.gov.in/whats-new",
+        "sampled": 1,
+        "PUBLISH": 0,
+        "REJECT_NEGATIVE": 0,
+        "REJECT_OFF_TOPIC": 0,
+        "REJECT_INSUFFICIENT": 1,
+        "REVIEW_UNCERTAIN": 0,
+        "extractionFailures": 0,
+        "indexErrorPages": 1,
+        "usefulReSignal": 1,
+        "editorialPublishYield": 0,
+        "usefulReSignalRate": 1
+      },
+      {
+        "source": "https://www.bda.gov.in/notice",
+        "sampled": 1,
+        "PUBLISH": 0,
+        "REJECT_NEGATIVE": 0,
+        "REJECT_OFF_TOPIC": 0,
+        "REJECT_INSUFFICIENT": 1,
+        "REVIEW_UNCERTAIN": 0,
+        "extractionFailures": 1,
+        "indexErrorPages": 0,
+        "usefulReSignal": 1,
+        "editorialPublishYield": 0,
+        "usefulReSignalRate": 1
+      },
+      {
+        "source": "https://www.hprera.in",
+        "sampled": 1,
+        "PUBLISH": 0,
+        "REJECT_NEGATIVE": 0,
+        "REJECT_OFF_TOPIC": 0,
+        "REJECT_INSUFFICIENT": 1,
+        "REVIEW_UNCERTAIN": 0,
+        "extractionFailures": 0,
+        "indexErrorPages": 0,
+        "usefulReSignal": 1,
+        "editorialPublishYield": 0,
+        "usefulReSignalRate": 1
+      },
+      {
+        "source": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+        "sampled": 1,
+        "PUBLISH": 1,
+        "REJECT_NEGATIVE": 0,
+        "REJECT_OFF_TOPIC": 0,
+        "REJECT_INSUFFICIENT": 0,
+        "REVIEW_UNCERTAIN": 0,
+        "extractionFailures": 1,
+        "indexErrorPages": 0,
+        "usefulReSignal": 1,
+        "editorialPublishYield": 1,
+        "usefulReSignalRate": 1
+      },
+      {
+        "source": "https://realty.economictimes.indiatimes.com/rss/hospitality",
+        "sampled": 2,
+        "PUBLISH": 0,
+        "REJECT_NEGATIVE": 1,
+        "REJECT_OFF_TOPIC": 0,
+        "REJECT_INSUFFICIENT": 1,
+        "REVIEW_UNCERTAIN": 0,
+        "extractionFailures": 2,
+        "indexErrorPages": 0,
+        "usefulReSignal": 1,
+        "editorialPublishYield": 0,
+        "usefulReSignalRate": 0.5
+      },
+      {
+        "source": "https://realty.economictimes.indiatimes.com/rss/residential",
+        "sampled": 2,
+        "PUBLISH": 0,
+        "REJECT_NEGATIVE": 0,
+        "REJECT_OFF_TOPIC": 1,
+        "REJECT_INSUFFICIENT": 1,
+        "REVIEW_UNCERTAIN": 0,
+        "extractionFailures": 2,
+        "indexErrorPages": 0,
+        "usefulReSignal": 1,
+        "editorialPublishYield": 0,
+        "usefulReSignalRate": 0.5
+      }
+    ]
+  },
+  "lossAttribution": {
+    "editorialFalseNegativeLoss": [
+      {
+        "recordId": "task17-001",
+        "title": "DDA launches digital map for areas planned under Master Plan for Delhi 2047",
+        "primaryLossStage": "GEO",
+        "reason": "No article-level city evidence reached routing.",
+        "secondaryFactors": [
+          "NAVIGATION_CONTAMINATED",
+          "STATE_OR_CITY_ALIAS_NOT_EXTRACTED"
+        ]
+      },
+      {
+        "recordId": "task17-059",
+        "title": "Yeida plans  ₹4.5cr landmark entry gate near Yamuna Expressway",
+        "primaryLossStage": "EXTRACTION",
+        "reason": "Article body was not usable for downstream stages.",
+        "secondaryFactors": [
+          "ARTICLE_BODY_EXTRACTION",
+          "GEO_NOT_REACHED"
+        ]
+      }
+    ],
+    "correctConservativeRejectionCount": 67,
+    "observedLosses": {
+      "GEO": 1,
+      "EXTRACTION": 1
+    }
+  },
+  "currentPipelineWouldPublish": 0,
+  "negativeControls": "8/8",
+  "configuration": {
+    "cities": 234,
+    "runtimeUrls": 571,
+    "duplicateSourceRows": 0
+  },
+  "reports": {
+    "recordAnalysis": "reports\\source-audits\\task18\\task18-record-analysis.csv",
+    "publishTraces": "reports\\source-audits\\task18\\task18-publish-traces.json",
+    "lossAttribution": "reports\\source-audits\\task18\\task18-loss-attribution.json",
+    "sourceYield": "reports\\source-audits\\task18\\task18-source-yield.json"
+  },
+  "task19Recommendation": "EXTRACTION_AND_GEO_DIAGNOSTIC_ONLY",
+  "task19Decision": "Do not tune thresholds yet; fix article-body extraction and preserve article-level geo evidence before any classifier or geo policy change."
+}

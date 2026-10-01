@@ -1,0 +1,3399 @@
+{
+  "reportType": "TASK15_CONTENT_YIELD_BENCHMARK",
+  "generatedAt": "2026-10-01T06:57:03.718Z",
+  "localOnly": true,
+  "benchmarkWindow": {
+    "start": "2026-09-24T00:00:00.000Z",
+    "end": "2026-10-01T23:59:59.999Z",
+    "days": 8,
+    "note": "Bounded recent window; source pages were sampled, not historically crawled."
+  },
+  "frozenBaseline": {
+    "path": "reports\\source-audits\\source-audit-2026-09-30T12-58-19-897Z.json",
+    "sources": 571,
+    "cities": 234,
+    "contentHealthy": 74,
+    "transportFailures": 226,
+    "extractionFailures": 80,
+    "empty": 78,
+    "duplicateSourceRows": 0
+  },
+  "cohorts": {
+    "cohortA": {
+      "size": 74,
+      "definition": "contentHealth HEALTHY",
+      "results": 74
+    },
+    "cohortB": {
+      "size": 48,
+      "definition": "Task 14 partial with discovered links or documents",
+      "results": 48
+    }
+  },
+  "counters": {
+    "SOURCES_ATTEMPTED": 122,
+    "SOURCES_PRODUCTIVE": 0,
+    "RAW_LINKS": 7365,
+    "CONTENT_LINKS": 227,
+    "DETAILS_FETCHED": 227,
+    "READABLE_ITEMS": 163,
+    "DATED_ITEMS": 142,
+    "IN_WINDOW_ITEMS": 118,
+    "RELEVANCE_PASS": 33,
+    "RELEVANCE_FAIL": 194,
+    "NEGATIVE_REJECT": 108,
+    "REVIEW": 84,
+    "GEO_PASS": 2,
+    "GEO_FAIL": 225,
+    "DUPLICATES": 33,
+    "WOULD_PUBLISH": 0
+  },
+  "rejectionReasons": {
+    "NEGATIVE": 86,
+    "STALE": 11,
+    "QUALITY": 19,
+    "NO_GEO": 21,
+    "NO_REAL_ESTATE_SIGNAL": 11,
+    "NO_DATE": 34,
+    "OCR_REQUIRED": 44,
+    "OTHER": 1
+  },
+  "wouldPublishItems": [],
+  "manualValidationSample": {
+    "accepted": 0,
+    "rejected": 30,
+    "review": 73,
+    "labels": {
+      "TRUE_VALID": 0,
+      "TRUE_INVALID": 0,
+      "UNCERTAIN": 103
+    },
+    "note": "No item was counted as human-verified without independent manual confirmation."
+  },
+  "classifierMeasurement": {
+    "truePositive": 0,
+    "falsePositive": 0,
+    "trueNegative": 0,
+    "falseNegative": 0,
+    "precision": null,
+    "recall": null,
+    "note": "Benchmark sample is machine-produced and manually unverified; existing 8-control corpus remains the measured control set."
+  },
+  "positiveCorpus": {
+    "before": 8,
+    "after": 8,
+    "added": 0,
+    "note": "No unverified benchmark item was promoted into the positive corpus."
+  },
+  "negativeProtection": {
+    "existingControls": "8/8",
+    "additionalConfirmedNegatives": 0,
+    "note": "No classifier changes made."
+  },
+  "geoMeasurement": {
+    "correct": 0,
+    "falseNegative": 0,
+    "falsePositive": 0,
+    "ambiguous": 225,
+    "note": "Human verification is required before geo accuracy is claimed."
+  },
+  "dedupe": {
+    "exactDuplicates": 0,
+    "canonicalDuplicates": 33,
+    "titleNearDuplicates": 41,
+    "crossSourceSameStoryCandidates": 26
+  },
+  "rera": {
+    "sourcesAttempted": 16,
+    "readableRecords": 8,
+    "validPositives": 0,
+    "wouldPublish": 0,
+    "technicalFailures": 1
+  },
+  "ocr": {
+    "ocrRequiredPromisingRecords": 36,
+    "engineInstalled": false,
+    "note": "Scanned documents remain review-only; Tesseract was not installed."
+  },
+  "sourceYield": [
+    {
+      "source": "https://api.livehindustan.com/feeds/rss/business/real-estate/rssfeed.xml",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/aviation",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/construction",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/corporate",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/energy",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/logistics",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/ports-shipping",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/railways",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/recentstories",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/roads-highways",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/rural-infrastructure",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/topstories",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/urban-infrastructure",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/urban-transportation",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://infra.economictimes.indiatimes.com/rss/water",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/news/residential",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/cement",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/hospitality",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/industry",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/international",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/lighting/led-technology",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/lighting/outdoor-lighting",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/lighting/smart-lighting",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/recentstories",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/regulatory",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/residential",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/smart-city",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/technology",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://realty.economictimes.indiatimes.com/rss/topstories",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/-2128821153.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/-2128821991.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/-2128830821.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/-2128833038.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/-2128838597.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 0,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/1898055.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/2647163.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/2950623.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/3012535.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/3942660.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/3942666.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/3942693.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/3947051.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/3947060.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/3947067.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/3947071.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/4118215.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/4118235.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/4118245.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/442002.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/6547154.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/7503091.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/8021716.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/878156304.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/delhi-news/rssfeed.xml",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/gurugram-news/rssfeed.xml",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/indore-news/rssfeed.xml",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 1,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/lucknow-news/rssfeed.xml",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/mumbai-news/rssfeed.xml",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/others/rssfeed.xml",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/patna-news/rssfeed.xml",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 1,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/pune-news/rssfeed.xml",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 1,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/rssfeed.xml",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/latest/rssfeed.xml",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.hindustantimes.com/feeds/rss/real-estate/rssfeed.xml",
+      "cohort": "A_CONTENT_HEALTHY",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://cci.gov.in/combination/green-channel-view",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://chennaimetrorail.org/press-release",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 0,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://crda.ap.gov.in",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://dda.gov.in",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://dda.gov.in/dda-in-news",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://dda.gov.in/whats-new",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://faridabad.nic.in/department/faridabad-metropolitan-development-authority-fmda",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://gcda.kerala.gov.in",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://ghmc.gov.in/Tenderspage.aspx",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://gidc.gujarat.gov.in",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://gidc.gujarat.gov.in/tender",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://gnida.up.gov.in/en/announcements",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://ibbi.gov.in/orders/nclt",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 0,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://paradipport.gov.in/tenders/",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 0,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://rera.goa.gov.in",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://rera.goa.gov.in/Notice",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 0,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://rera.karnataka.gov.in",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://rera.punjab.gov.in",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://rera.punjab.gov.in/circulars.html",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://rera.punjab.gov.in/latest-news.html",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://rera.telangana.gov.in",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://rera.telangana.gov.in/247564irgjsdghfdgfd-TG-RERA-98498dsgdgyhdfjbhy43",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://rera.telangana.gov.in/384798wfybwev9fya62435-TG-RERA-skfjdgky483yunskljghfdgjh",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://rera.telangana.gov.in/586784u3y5dsgfg-TG-RERA-45678jklshihnfgsfdg",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://rera.telangana.gov.in/amavlnjoiu7532845972-TG-RERA-74698ijgsdfjgbi349529",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://rera.telangana.gov.in/AnnualReports-TG-RERA-15121976REAT_Orders",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://rera.tn.gov.in",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://sipcotweb.tn.gov.in",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://tcpharyana.gov.in",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 0,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://themetrorailguy.com/",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://transport.rajasthan.gov.in/jmrc",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://uhuda.uk.gov.in",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 0,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.aai.aero",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.aai.aero/en/media/latest-news",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.aai.aero/en/media/press-news-events_archive",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.aai.aero/en/media/press-releases",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.arvindsmartspaces.com/investors/financial-reports",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.ashianahousing.com/media/media-release",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.bda.gov.in/archiveTender",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.bda.gov.in/circular",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.bda.gov.in/notice",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.cci.gov.in/combination/orders-section31",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.cci.gov.in/combination/press-release",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.cial.aero/News-Updates/URL",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.cmdachennai.gov.in",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.hprera.in",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.up-rera.in",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    },
+    {
+      "source": "https://www.up-rera.in/PressRelease",
+      "cohort": "B_HIGH_CONFIDENCE_PARTIAL",
+      "contentItems": 2,
+      "validPositives": 0,
+      "wouldPublish": 0,
+      "uniqueValid": 0
+    }
+  ],
+  "cityYield": [
+    {
+      "city": "faridabad",
+      "configuredSources": 4,
+      "benchmarkSources": 4,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "gurugram",
+      "configuredSources": 5,
+      "benchmarkSources": 5,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": false
+    },
+    {
+      "city": "rohtak",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "panipat",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "karnal",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "sonipat",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "yamunanagar",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "panchkula",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "ambala",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "kurukshetra",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "rewari",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "palwal",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "indore",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "bhopal",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": false
+    },
+    {
+      "city": "gwalior",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "jabalpur",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "ujjain",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "sagar",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "dewas",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "satna",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "ratlam",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "rewa",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "burhanpur",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "khandwa",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "chhindwara",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "mandsaur",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "damoh",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "neemuch",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "khargone",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "sehore",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "betul",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "seoni",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "anantapur",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "bhimavaram",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "chittoor",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "eluru",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "kadapa",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "kakinada",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "krishna",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "kurnool",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "nellore",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "rajahmundry",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "srikakulam",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "tirupati",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "vijayawada",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "visakhapatnam",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "vizianagaram",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "west_godavari",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "dibrugarh",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "golaghat",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "guwahati",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "jorhat",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "kamrup",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "marigaon",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "nagaon",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "nalbari",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "silchar",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "tezpur",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "tinsukia",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "patna",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "chandigarh",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "bhilai",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "bilaspur",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "durg",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "korba",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "kota_chhattisgarh",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "raipur",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "rajnandgaon",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "daman_and_diu",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "silvassa",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "delhi_ncr",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "delhi",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "new_delhi",
+      "configuredSources": 4,
+      "benchmarkSources": 4,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "goa",
+      "configuredSources": 3,
+      "benchmarkSources": 3,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "ahmedabad",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": false
+    },
+    {
+      "city": "anand",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "banaskantha",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "bardoli",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "bharuch",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "bhavnagar",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "dholera",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "gandhinagar",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "junagadh",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "kalol",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "kheda",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "kutch",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "navsari",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "patan",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "rajkot",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "sabarkantha",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "surat",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "surendranagar",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "gujarat",
+      "configuredSources": 4,
+      "benchmarkSources": 4,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "vadodara",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "valsad",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "vapi",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "jamshedpur",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "ranchi",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "dhanbad",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "calicut",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "ernakulam",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "kochi",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "palakkad",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "thrissur",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "trivandrum",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "bangalore",
+      "configuredSources": 3,
+      "benchmarkSources": 3,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": false
+    },
+    {
+      "city": "belgaum",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "hubli",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "mangalore",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "mysore",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "udupi",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "shimla",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "solan",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "mohali",
+      "configuredSources": 3,
+      "benchmarkSources": 3,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "ludhiana",
+      "configuredSources": 4,
+      "benchmarkSources": 4,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "amritsar",
+      "configuredSources": 3,
+      "benchmarkSources": 3,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "jalandhar",
+      "configuredSources": 3,
+      "benchmarkSources": 3,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "patiala",
+      "configuredSources": 3,
+      "benchmarkSources": 3,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "hoshiarpur",
+      "configuredSources": 3,
+      "benchmarkSources": 3,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "bhatinda",
+      "configuredSources": 3,
+      "benchmarkSources": 3,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "sangrur",
+      "configuredSources": 3,
+      "benchmarkSources": 3,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "chennai",
+      "configuredSources": 5,
+      "benchmarkSources": 5,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": false
+    },
+    {
+      "city": "madurai",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "coimbatore",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "tiruchirappalli",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "salem",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "tirunelveli",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "vellore",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "tiruppur",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "erode",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "thoothukudi",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "thanjavur",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "dindigul",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "hosur",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "avadi",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "cuddalore",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "karur",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "tambaram",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "namakkal",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "pudukkottai",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "tiruvannamalai",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "hyderabad",
+      "configuredSources": 7,
+      "benchmarkSources": 7,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": false
+    },
+    {
+      "city": "warangal",
+      "configuredSources": 6,
+      "benchmarkSources": 6,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "nizamabad",
+      "configuredSources": 6,
+      "benchmarkSources": 6,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "karimnagar",
+      "configuredSources": 6,
+      "benchmarkSources": 6,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "khammam",
+      "configuredSources": 6,
+      "benchmarkSources": 6,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "mahabubnagar",
+      "configuredSources": 6,
+      "benchmarkSources": 6,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "mancherial",
+      "configuredSources": 6,
+      "benchmarkSources": 6,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "nalgonda",
+      "configuredSources": 6,
+      "benchmarkSources": 6,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "suryapet",
+      "configuredSources": 6,
+      "benchmarkSources": 6,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "kolkata",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "howrah",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "asansol",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "durgapur",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "siliguri",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "agartala",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "mumbai",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "pune",
+      "configuredSources": 4,
+      "benchmarkSources": 4,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "navi_mumbai",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "thane",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "kalyan_dombivli",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "nagpur",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "nashik",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "aurangabad",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "kolhapur",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "solapur",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "ahmednagar",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "amravati",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "akola",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "jalgaon",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "nanded",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "latur",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "sangli",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "ratnagiri",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "chandrapur",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "wardha",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "dhule",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "jalna",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "yavatmal",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "beed",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "osmanabad",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "palghar",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "sindhudurg",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "raigad",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "bhubaneswar",
+      "configuredSources": 4,
+      "benchmarkSources": 4,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "cuttack",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "puri",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "rourkela",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "sambalpur",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "berhampur",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "balasore",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "dehradun",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "haridwar",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "roorkee",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "rudrapur",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "rishikesh",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "pondicherry",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "jaipur",
+      "configuredSources": 3,
+      "benchmarkSources": 3,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": false
+    },
+    {
+      "city": "bhiwadi",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "kota",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "udaipur",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "jodhpur",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "ajmer",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "sikar",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "alwar",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "neemrana",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "bikaner",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "bhilwara",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "pali",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "sri_ganganagar",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "sirohi",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "tonk",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "hanumangarh",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "nagaur",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "barmer",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "jhalawar",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "noida",
+      "configuredSources": 11,
+      "benchmarkSources": 11,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "ghaziabad",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "lucknow",
+      "configuredSources": 3,
+      "benchmarkSources": 3,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "kanpur",
+      "configuredSources": 3,
+      "benchmarkSources": 3,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "varanasi",
+      "configuredSources": 3,
+      "benchmarkSources": 3,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "agra",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": false
+    },
+    {
+      "city": "meerut",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "vrindavan",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "allahabad",
+      "configuredSources": 3,
+      "benchmarkSources": 3,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "mathura",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "gorakhpur",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "bareilly",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "aligarh",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "jhansi",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "moradabad",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "hapur",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "barabanki",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "firozabad",
+      "configuredSources": 2,
+      "benchmarkSources": 2,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    }
+  ],
+  "top20CityCoverageGaps": [
+    {
+      "city": "faridabad",
+      "configuredSources": 4,
+      "benchmarkSources": 4,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "rohtak",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "panipat",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "karnal",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "sonipat",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "yamunanagar",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "panchkula",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "ambala",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "kurukshetra",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "rewari",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "palwal",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "indore",
+      "configuredSources": 1,
+      "benchmarkSources": 1,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": false,
+      "contentGap": true
+    },
+    {
+      "city": "gwalior",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "jabalpur",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "ujjain",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "sagar",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "dewas",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "satna",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "ratlam",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    },
+    {
+      "city": "rewa",
+      "configuredSources": 0,
+      "benchmarkSources": 0,
+      "validPositiveItems": 0,
+      "wouldPublish": 0,
+      "technicalSourceGap": true,
+      "contentGap": true
+    }
+  ],
+  "bottleneckAttribution": {
+    "NEGATIVE_FILTER": 79,
+    "DATE": 32,
+    "DISCOVERY": 52,
+    "GEO": 19,
+    "CLASSIFIER": 9,
+    "OCR": 36
+  },
+  "manualSamplePath": "reports\\source-audits\\task15\\task15-manual-validation-sample.json",
+  "itemPath": "reports\\source-audits\\task15\\task15-items.jsonl",
+  "filesChanged": [],
+  "nextTask16": "MANUAL_VALIDATION_AND_TARGETED_ADAPTERS",
+  "recommendation": "Do not tune classifier yet. Manually label the deterministic sample, then target the largest measured loss stage."
+}

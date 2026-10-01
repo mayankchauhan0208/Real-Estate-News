@@ -1,0 +1,2117 @@
+{
+  "reportType": "TASK21_CITY_LANGUAGE_MATRIX",
+  "generatedAt": "2026-10-01T08:52:39.687Z",
+  "cities": [
+    {
+      "city": "faridabad",
+      "state": "Haryana",
+      "configuredSourceRules": 1,
+      "configuredUrls": 3,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 3
+    },
+    {
+      "city": "gurugram",
+      "state": "Haryana",
+      "configuredSourceRules": 1,
+      "configuredUrls": 3,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 5
+    },
+    {
+      "city": "rohtak",
+      "state": "Haryana",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "panipat",
+      "state": "Haryana",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "karnal",
+      "state": "Haryana",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "sonipat",
+      "state": "Haryana",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "yamunanagar",
+      "state": "Haryana",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "panchkula",
+      "state": "Haryana",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "ambala",
+      "state": "Haryana",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "kurukshetra",
+      "state": "Haryana",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "rewari",
+      "state": "Haryana",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "palwal",
+      "state": "Haryana",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "indore",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "bhopal",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 1,
+      "configuredUrls": 1,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "gwalior",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "jabalpur",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "ujjain",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "sagar",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "dewas",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "satna",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "ratlam",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "rewa",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "burhanpur",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "khandwa",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "chhindwara",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "mandsaur",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "damoh",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "neemuch",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "khargone",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "sehore",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "betul",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "seoni",
+      "state": "Madhya Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "anantapur",
+      "state": "Andhra Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "bhimavaram",
+      "state": "Andhra Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "chittoor",
+      "state": "Andhra Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "eluru",
+      "state": "Andhra Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "kadapa",
+      "state": "Andhra Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "kakinada",
+      "state": "Andhra Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "krishna",
+      "state": "Andhra Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "kurnool",
+      "state": "Andhra Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "nellore",
+      "state": "Andhra Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "rajahmundry",
+      "state": "Andhra Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "srikakulam",
+      "state": "Andhra Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "tirupati",
+      "state": "Andhra Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "vijayawada",
+      "state": "Andhra Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "visakhapatnam",
+      "state": "Andhra Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "vizianagaram",
+      "state": "Andhra Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "west_godavari",
+      "state": "Andhra Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "dibrugarh",
+      "state": "Assam",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "golaghat",
+      "state": "Assam",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "guwahati",
+      "state": "Assam",
+      "configuredSourceRules": 1,
+      "configuredUrls": 1,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "jorhat",
+      "state": "Assam",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "kamrup",
+      "state": "Assam",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "marigaon",
+      "state": "Assam",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "nagaon",
+      "state": "Assam",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "nalbari",
+      "state": "Assam",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "silchar",
+      "state": "Assam",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "tezpur",
+      "state": "Assam",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "tinsukia",
+      "state": "Assam",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "patna",
+      "state": "Bihar",
+      "configuredSourceRules": 1,
+      "configuredUrls": 2,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 1
+    },
+    {
+      "city": "chandigarh",
+      "state": "Chandigarh",
+      "configuredSourceRules": 1,
+      "configuredUrls": 2,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "bhilai",
+      "state": "Chhattisgarh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "bilaspur",
+      "state": "Chhattisgarh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "durg",
+      "state": "Chhattisgarh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "korba",
+      "state": "Chhattisgarh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "kota_chhattisgarh",
+      "state": "Chhattisgarh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "raipur",
+      "state": "Chhattisgarh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "rajnandgaon",
+      "state": "Chhattisgarh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "daman_and_diu",
+      "state": "Dadra and Nagar Haveli and Daman and Diu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "silvassa",
+      "state": "Dadra and Nagar Haveli and Daman and Diu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "delhi_ncr",
+      "state": "Delhi",
+      "configuredSourceRules": 1,
+      "configuredUrls": 2,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "delhi",
+      "state": "Delhi",
+      "configuredSourceRules": 1,
+      "configuredUrls": 2,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 1
+    },
+    {
+      "city": "new_delhi",
+      "state": "Delhi",
+      "configuredSourceRules": 1,
+      "configuredUrls": 2,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "goa",
+      "state": "Goa",
+      "configuredSourceRules": 1,
+      "configuredUrls": 1,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "ahmedabad",
+      "state": "Gujarat",
+      "configuredSourceRules": 1,
+      "configuredUrls": 1,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "anand",
+      "state": "Gujarat",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "banaskantha",
+      "state": "Gujarat",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "bardoli",
+      "state": "Gujarat",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "bharuch",
+      "state": "Gujarat",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "bhavnagar",
+      "state": "Gujarat",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "dholera",
+      "state": "Gujarat",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "gandhinagar",
+      "state": "Gujarat",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "junagadh",
+      "state": "Gujarat",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "kalol",
+      "state": "Gujarat",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "kheda",
+      "state": "Gujarat",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "kutch",
+      "state": "Gujarat",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "navsari",
+      "state": "Gujarat",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "patan",
+      "state": "Gujarat",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "rajkot",
+      "state": "Gujarat",
+      "configuredSourceRules": 1,
+      "configuredUrls": 1,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "sabarkantha",
+      "state": "Gujarat",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "surat",
+      "state": "Gujarat",
+      "configuredSourceRules": 1,
+      "configuredUrls": 1,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "surendranagar",
+      "state": "Gujarat",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "gujarat",
+      "state": "Gujarat",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "vadodara",
+      "state": "Gujarat",
+      "configuredSourceRules": 1,
+      "configuredUrls": 1,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "valsad",
+      "state": "Gujarat",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "vapi",
+      "state": "Gujarat",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "jamshedpur",
+      "state": "Jharkhand",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "ranchi",
+      "state": "Jharkhand",
+      "configuredSourceRules": 1,
+      "configuredUrls": 1,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "dhanbad",
+      "state": "Jharkhand",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "calicut",
+      "state": "Kerala",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "ernakulam",
+      "state": "Kerala",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "kochi",
+      "state": "Kerala",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "palakkad",
+      "state": "Kerala",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "thrissur",
+      "state": "Kerala",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "trivandrum",
+      "state": "Kerala",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "bangalore",
+      "state": "Karnataka",
+      "configuredSourceRules": 1,
+      "configuredUrls": 2,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "belgaum",
+      "state": "Karnataka",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "hubli",
+      "state": "Karnataka",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "mangalore",
+      "state": "Karnataka",
+      "configuredSourceRules": 1,
+      "configuredUrls": 1,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "mysore",
+      "state": "Karnataka",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "udupi",
+      "state": "Karnataka",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "shimla",
+      "state": "Himachal Pradesh",
+      "configuredSourceRules": 1,
+      "configuredUrls": 1,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "solan",
+      "state": "Himachal Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "mohali",
+      "state": "Punjab",
+      "configuredSourceRules": 1,
+      "configuredUrls": 1,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "ludhiana",
+      "state": "Punjab",
+      "configuredSourceRules": 1,
+      "configuredUrls": 1,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "amritsar",
+      "state": "Punjab",
+      "configuredSourceRules": 1,
+      "configuredUrls": 1,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "jalandhar",
+      "state": "Punjab",
+      "configuredSourceRules": 1,
+      "configuredUrls": 1,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "patiala",
+      "state": "Punjab",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "hoshiarpur",
+      "state": "Punjab",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "bhatinda",
+      "state": "Punjab",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "sangrur",
+      "state": "Punjab",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "chennai",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 1,
+      "configuredUrls": 1,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "madurai",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "coimbatore",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "tiruchirappalli",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "salem",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "tirunelveli",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "vellore",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "tiruppur",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "erode",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "thoothukudi",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "thanjavur",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "dindigul",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "hosur",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "avadi",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "cuddalore",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "karur",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "tambaram",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "namakkal",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "pudukkottai",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "tiruvannamalai",
+      "state": "Tamil Nadu",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "hyderabad",
+      "state": "Telangana",
+      "configuredSourceRules": 1,
+      "configuredUrls": 1,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "warangal",
+      "state": "Telangana",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "nizamabad",
+      "state": "Telangana",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "karimnagar",
+      "state": "Telangana",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "khammam",
+      "state": "Telangana",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "mahabubnagar",
+      "state": "Telangana",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "mancherial",
+      "state": "Telangana",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "nalgonda",
+      "state": "Telangana",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "suryapet",
+      "state": "Telangana",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "kolkata",
+      "state": "West Bengal",
+      "configuredSourceRules": 1,
+      "configuredUrls": 2,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "howrah",
+      "state": "West Bengal",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "asansol",
+      "state": "West Bengal",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "durgapur",
+      "state": "West Bengal",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "siliguri",
+      "state": "West Bengal",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "agartala",
+      "state": "Tripura",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "mumbai",
+      "state": "Maharashtra",
+      "configuredSourceRules": 1,
+      "configuredUrls": 2,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "pune",
+      "state": "Maharashtra",
+      "configuredSourceRules": 1,
+      "configuredUrls": 2,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "navi_mumbai",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "thane",
+      "state": "Maharashtra",
+      "configuredSourceRules": 1,
+      "configuredUrls": 2,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 1
+    },
+    {
+      "city": "kalyan_dombivli",
+      "state": "Maharashtra",
+      "configuredSourceRules": 1,
+      "configuredUrls": 2,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "nagpur",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "nashik",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "aurangabad",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "kolhapur",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "solapur",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "ahmednagar",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "amravati",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "akola",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "jalgaon",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "nanded",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "latur",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "sangli",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "ratnagiri",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "chandrapur",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "wardha",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "dhule",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "jalna",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "yavatmal",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "beed",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "osmanabad",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "palghar",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "sindhudurg",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "raigad",
+      "state": "Maharashtra",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "bhubaneswar",
+      "state": "Odisha",
+      "configuredSourceRules": 1,
+      "configuredUrls": 1,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "cuttack",
+      "state": "Odisha",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "puri",
+      "state": "Odisha",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "rourkela",
+      "state": "Odisha",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "sambalpur",
+      "state": "Odisha",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "berhampur",
+      "state": "Odisha",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "balasore",
+      "state": "Odisha",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "dehradun",
+      "state": "Uttarakhand",
+      "configuredSourceRules": 1,
+      "configuredUrls": 1,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "haridwar",
+      "state": "Uttarakhand",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "roorkee",
+      "state": "Uttarakhand",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "rudrapur",
+      "state": "Uttarakhand",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "rishikesh",
+      "state": "Uttarakhand",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "pondicherry",
+      "state": "Puducherry",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "jaipur",
+      "state": "Rajasthan",
+      "configuredSourceRules": 1,
+      "configuredUrls": 2,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "bhiwadi",
+      "state": "Rajasthan",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "kota",
+      "state": "Rajasthan",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "udaipur",
+      "state": "Rajasthan",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "jodhpur",
+      "state": "Rajasthan",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "ajmer",
+      "state": "Rajasthan",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "sikar",
+      "state": "Rajasthan",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "alwar",
+      "state": "Rajasthan",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "neemrana",
+      "state": "Rajasthan",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "bikaner",
+      "state": "Rajasthan",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "bhilwara",
+      "state": "Rajasthan",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "pali",
+      "state": "Rajasthan",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "sri_ganganagar",
+      "state": "Rajasthan",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "sirohi",
+      "state": "Rajasthan",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "tonk",
+      "state": "Rajasthan",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "hanumangarh",
+      "state": "Rajasthan",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "nagaur",
+      "state": "Rajasthan",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "barmer",
+      "state": "Rajasthan",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "jhalawar",
+      "state": "Rajasthan",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "noida",
+      "state": "Uttar Pradesh",
+      "configuredSourceRules": 1,
+      "configuredUrls": 46,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 5
+    },
+    {
+      "city": "ghaziabad",
+      "state": "Uttar Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "lucknow",
+      "state": "Uttar Pradesh",
+      "configuredSourceRules": 1,
+      "configuredUrls": 2,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "kanpur",
+      "state": "Uttar Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "varanasi",
+      "state": "Uttar Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "agra",
+      "state": "Uttar Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "meerut",
+      "state": "Uttar Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "vrindavan",
+      "state": "Uttar Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "allahabad",
+      "state": "Uttar Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "mathura",
+      "state": "Uttar Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "gorakhpur",
+      "state": "Uttar Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "bareilly",
+      "state": "Uttar Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "aligarh",
+      "state": "Uttar Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "jhansi",
+      "state": "Uttar Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "moradabad",
+      "state": "Uttar Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "hapur",
+      "state": "Uttar Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "barabanki",
+      "state": "Uttar Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    },
+    {
+      "city": "firozabad",
+      "state": "Uttar Pradesh",
+      "configuredSourceRules": 0,
+      "configuredUrls": 0,
+      "regionalSourceCandidates": 0,
+      "regionalSourceStatus": "NO_VERIFIED_REGIONAL_SOURCE_IN_CONFIG",
+      "nativeAliasCount": 0
+    }
+  ],
+  "totals": {
+    "cities": 234,
+    "citiesWithRegionalSourceCandidate": 0,
+    "citiesWithNativeAliases": 6
+  }
+}

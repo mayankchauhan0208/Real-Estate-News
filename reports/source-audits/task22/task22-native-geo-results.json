@@ -1,0 +1,492 @@
+{
+  "reportType": "TASK22_NATIVE_GEO_RESULTS",
+  "records": [
+    {
+      "recordId": "task22-003",
+      "language": "Hindi",
+      "city": "delhi_ncr",
+      "evidence": [
+        {
+          "candidateCity": "delhi_ncr",
+          "matchedText": "ncr",
+          "normalizedPlace": "ncr",
+          "field": "description",
+          "type": "DESCRIPTION_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "faridabad",
+          "matchedText": "faridabad",
+          "normalizedPlace": "faridabad",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "gurugram",
+          "matchedText": "gurgaon",
+          "normalizedPlace": "gurgaon",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "krishna",
+          "matchedText": "krishna",
+          "normalizedPlace": "krishna",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "delhi_ncr",
+          "matchedText": "ncr",
+          "normalizedPlace": "ncr",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "delhi",
+          "matchedText": "delhi",
+          "normalizedPlace": "delhi",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "new_delhi",
+          "matchedText": "delhi",
+          "normalizedPlace": "delhi",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "noida",
+          "matchedText": "noida",
+          "normalizedPlace": "noida",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "ghaziabad",
+          "matchedText": "ghaziabad",
+          "normalizedPlace": "ghaziabad",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        }
+      ]
+    },
+    {
+      "recordId": "task22-005",
+      "language": "Hindi",
+      "city": "delhi_ncr",
+      "evidence": [
+        {
+          "candidateCity": "delhi_ncr",
+          "matchedText": "ncr",
+          "normalizedPlace": "ncr",
+          "field": "title",
+          "type": "TITLE_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "delhi_ncr",
+          "matchedText": "ncr",
+          "normalizedPlace": "ncr",
+          "field": "description",
+          "type": "DESCRIPTION_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "noida",
+          "matchedText": "यमुना एक्सप्रेसवे",
+          "normalizedPlace": "यमुना एक्सप्रेसवे",
+          "field": "description",
+          "type": "DESCRIPTION_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "faridabad",
+          "matchedText": "faridabad",
+          "normalizedPlace": "faridabad",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "gurugram",
+          "matchedText": "gurgaon",
+          "normalizedPlace": "gurgaon",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "delhi_ncr",
+          "matchedText": "ncr",
+          "normalizedPlace": "ncr",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "delhi",
+          "matchedText": "delhi",
+          "normalizedPlace": "delhi",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "new_delhi",
+          "matchedText": "delhi",
+          "normalizedPlace": "delhi",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "noida",
+          "matchedText": "noida",
+          "normalizedPlace": "noida",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "noida",
+          "matchedText": "नोएडा",
+          "normalizedPlace": "नोएडा",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "noida",
+          "matchedText": "ग्रेटर नोएडा",
+          "normalizedPlace": "ग्रेटर नोएडा",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "noida",
+          "matchedText": "जेवर",
+          "normalizedPlace": "जेवर",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "noida",
+          "matchedText": "यमुना एक्सप्रेसवे",
+          "normalizedPlace": "यमुना एक्सप्रेसवे",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "ghaziabad",
+          "matchedText": "ghaziabad",
+          "normalizedPlace": "ghaziabad",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        }
+      ]
+    },
+    {
+      "recordId": "task22-006",
+      "language": "Hindi",
+      "city": "delhi",
+      "evidence": [
+        {
+          "candidateCity": "delhi",
+          "matchedText": "delhi",
+          "normalizedPlace": "delhi",
+          "field": "title",
+          "type": "TITLE_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "new_delhi",
+          "matchedText": "delhi",
+          "normalizedPlace": "delhi",
+          "field": "title",
+          "type": "TITLE_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "delhi",
+          "matchedText": "delhi",
+          "normalizedPlace": "delhi",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "new_delhi",
+          "matchedText": "delhi",
+          "normalizedPlace": "delhi",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        }
+      ]
+    },
+    {
+      "recordId": "task22-007",
+      "language": "Hindi",
+      "city": "faridabad",
+      "evidence": [
+        {
+          "candidateCity": "faridabad",
+          "matchedText": "फरीदाबाद",
+          "normalizedPlace": "फरीदाबाद",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "gurugram",
+          "matchedText": "गुरुग्राम",
+          "normalizedPlace": "गुरुग्राम",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        }
+      ]
+    },
+    {
+      "recordId": "task22-008",
+      "language": "Marathi",
+      "city": "pune",
+      "evidence": [
+        {
+          "candidateCity": "pune",
+          "matchedText": "pune",
+          "normalizedPlace": "pune",
+          "field": "description",
+          "type": "DESCRIPTION_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        }
+      ]
+    },
+    {
+      "recordId": "task22-009",
+      "language": "Marathi",
+      "city": "pune",
+      "evidence": [
+        {
+          "candidateCity": "pune",
+          "matchedText": "pune",
+          "normalizedPlace": "pune",
+          "field": "description",
+          "type": "DESCRIPTION_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "mumbai",
+          "matchedText": "mumbai",
+          "normalizedPlace": "mumbai",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "pune",
+          "matchedText": "pune",
+          "normalizedPlace": "pune",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        }
+      ]
+    },
+    {
+      "recordId": "task22-012",
+      "language": "Marathi",
+      "city": "mumbai",
+      "evidence": [
+        {
+          "candidateCity": "mumbai",
+          "matchedText": "mumbai",
+          "normalizedPlace": "mumbai",
+          "field": "title",
+          "type": "TITLE_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        }
+      ]
+    },
+    {
+      "recordId": "task22-013",
+      "language": "Marathi",
+      "city": "pune",
+      "evidence": [
+        {
+          "candidateCity": "pune",
+          "matchedText": "pune",
+          "normalizedPlace": "pune",
+          "field": "description",
+          "type": "DESCRIPTION_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        }
+      ]
+    },
+    {
+      "recordId": "task22-014",
+      "language": "Malayalam",
+      "city": "kochi",
+      "evidence": [
+        {
+          "candidateCity": "kochi",
+          "matchedText": "kochi",
+          "normalizedPlace": "kochi",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        }
+      ]
+    },
+    {
+      "recordId": "task22-019",
+      "language": "Telugu",
+      "city": "hyderabad",
+      "evidence": [
+        {
+          "candidateCity": "hyderabad",
+          "matchedText": "hyderabad",
+          "normalizedPlace": "hyderabad",
+          "field": "description",
+          "type": "DESCRIPTION_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "hyderabad",
+          "matchedText": "hyderabad",
+          "normalizedPlace": "hyderabad",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        }
+      ]
+    },
+    {
+      "recordId": "task22-020",
+      "language": "Telugu",
+      "city": "hyderabad",
+      "evidence": [
+        {
+          "candidateCity": "hyderabad",
+          "matchedText": "hyderabad",
+          "normalizedPlace": "hyderabad",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        }
+      ]
+    },
+    {
+      "recordId": "task22-021",
+      "language": "Telugu",
+      "city": "hyderabad",
+      "evidence": [
+        {
+          "candidateCity": "hyderabad",
+          "matchedText": "hyderabad",
+          "normalizedPlace": "hyderabad",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        }
+      ]
+    },
+    {
+      "recordId": "task22-022",
+      "language": "Telugu",
+      "city": "hyderabad",
+      "evidence": [
+        {
+          "candidateCity": "hyderabad",
+          "matchedText": "hyderabad",
+          "normalizedPlace": "hyderabad",
+          "field": "description",
+          "type": "DESCRIPTION_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "hyderabad",
+          "matchedText": "hyderabad",
+          "normalizedPlace": "hyderabad",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        }
+      ]
+    },
+    {
+      "recordId": "task22-027",
+      "language": "Telugu",
+      "city": "hyderabad",
+      "evidence": [
+        {
+          "candidateCity": "hyderabad",
+          "matchedText": "hyderabad",
+          "normalizedPlace": "hyderabad",
+          "field": "body",
+          "type": "BODY_CITY",
+          "confidence": "medium",
+          "provenance": "existing city-config keyword"
+        }
+      ]
+    }
+  ],
+  "newAliasesAdded": [],
+  "accuracy": "UNMEASURED_WITHOUT_HUMAN_LABELS"
+}

@@ -1,0 +1,40 @@
+{
+  "reportType": "TASK22_PROVIDER_RESEARCH",
+  "localOnly": true,
+  "credentialsUsed": false,
+  "candidates": [
+    {
+      "approach": "Existing local normalization and native geo",
+      "coverage": "all observed scripts",
+      "cost": "none",
+      "latency": "low",
+      "quality": "machine-observable only",
+      "status": "VIABLE_FOR_PREPROCESSING"
+    },
+    {
+      "approach": "Google Cloud Translation",
+      "coverage": "broad Indian language support",
+      "cost": "paid usage",
+      "latency": "network dependent",
+      "quality": "UNVERIFIED_WITH_THIS_CORPUS",
+      "status": "RESEARCH_ONLY"
+    },
+    {
+      "approach": "Microsoft Translator",
+      "coverage": "broad Indian language support",
+      "cost": "paid usage",
+      "latency": "network dependent",
+      "quality": "UNVERIFIED_WITH_THIS_CORPUS",
+      "status": "RESEARCH_ONLY"
+    },
+    {
+      "approach": "IndicTrans2/local open model",
+      "coverage": "Indian languages",
+      "cost": "compute/model operations",
+      "latency": "local GPU/CPU dependent",
+      "quality": "UNVERIFIED_WITH_THIS_CORPUS",
+      "status": "RESEARCH_ONLY"
+    }
+  ],
+  "decision": "NO_PROVIDER_SELECTED_OR_CREDENTIALS_ADDED"
+}

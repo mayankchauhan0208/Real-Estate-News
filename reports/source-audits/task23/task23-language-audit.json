@@ -1,0 +1,229 @@
+{
+  "records": [
+    {
+      "recordId": "task22-005",
+      "sourceLanguage": "Hindi",
+      "detectedLanguage": "hi",
+      "normalizedLanguage": "hi",
+      "scripts": "devanagari|latin",
+      "source": "Live Hindustan",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-006",
+      "sourceLanguage": "Hindi",
+      "detectedLanguage": "hi",
+      "normalizedLanguage": "hi",
+      "scripts": "devanagari|latin",
+      "source": "Amar Ujala",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-004",
+      "sourceLanguage": "Hindi",
+      "detectedLanguage": "hi",
+      "normalizedLanguage": "hi",
+      "scripts": "devanagari|latin",
+      "source": "Amar Ujala",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-003",
+      "sourceLanguage": "Hindi",
+      "detectedLanguage": "hi",
+      "normalizedLanguage": "hi",
+      "scripts": "devanagari|latin",
+      "source": "Live Hindustan",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-009",
+      "sourceLanguage": "Marathi",
+      "detectedLanguage": "mr",
+      "normalizedLanguage": "mr",
+      "scripts": "devanagari|latin",
+      "source": "Maharashtra Times",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-007",
+      "sourceLanguage": "Hindi",
+      "detectedLanguage": "hi",
+      "normalizedLanguage": "hi",
+      "scripts": "devanagari",
+      "source": "Amar Ujala",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-019",
+      "sourceLanguage": "Telugu",
+      "detectedLanguage": "te",
+      "normalizedLanguage": "te",
+      "scripts": "telugu|latin",
+      "source": "Sakshi",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-022",
+      "sourceLanguage": "Telugu",
+      "detectedLanguage": "te",
+      "normalizedLanguage": "te",
+      "scripts": "telugu|latin",
+      "source": "Sakshi",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-008",
+      "sourceLanguage": "Marathi",
+      "detectedLanguage": "mr",
+      "normalizedLanguage": "mr",
+      "scripts": "devanagari|latin",
+      "source": "Loksatta",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-012",
+      "sourceLanguage": "Marathi",
+      "detectedLanguage": "mr",
+      "normalizedLanguage": "mr",
+      "scripts": "devanagari|latin",
+      "source": "Maharashtra Times",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-013",
+      "sourceLanguage": "Marathi",
+      "detectedLanguage": "mr",
+      "normalizedLanguage": "mr",
+      "scripts": "devanagari|latin",
+      "source": "Loksatta",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-014",
+      "sourceLanguage": "Malayalam",
+      "detectedLanguage": "ml",
+      "normalizedLanguage": "ml",
+      "scripts": "malayalam|latin",
+      "source": "Manorama Online",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-020",
+      "sourceLanguage": "Telugu",
+      "detectedLanguage": "te",
+      "normalizedLanguage": "te",
+      "scripts": "telugu|latin",
+      "source": "Sakshi",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-021",
+      "sourceLanguage": "Telugu",
+      "detectedLanguage": "te",
+      "normalizedLanguage": "te",
+      "scripts": "telugu|latin",
+      "source": "Sakshi",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-027",
+      "sourceLanguage": "Telugu",
+      "detectedLanguage": "te",
+      "normalizedLanguage": "te",
+      "scripts": "telugu|latin",
+      "source": "Sakshi",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-001",
+      "sourceLanguage": "Hindi",
+      "detectedLanguage": "hi",
+      "normalizedLanguage": "hi",
+      "scripts": "devanagari|latin",
+      "source": "Amar Ujala",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-002",
+      "sourceLanguage": "Hindi",
+      "detectedLanguage": "hi",
+      "normalizedLanguage": "hi",
+      "scripts": "devanagari",
+      "source": "Live Hindustan",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-010",
+      "sourceLanguage": "Marathi",
+      "detectedLanguage": "mr",
+      "normalizedLanguage": "mr",
+      "scripts": "devanagari|latin",
+      "source": "Maharashtra Times",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-011",
+      "sourceLanguage": "Marathi",
+      "detectedLanguage": "mr",
+      "normalizedLanguage": "mr",
+      "scripts": "devanagari|latin",
+      "source": "Maharashtra Times",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-023",
+      "sourceLanguage": "Kannada",
+      "detectedLanguage": "kn",
+      "normalizedLanguage": "kn",
+      "scripts": "kannada",
+      "source": "Vijaya Karnataka",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-024",
+      "sourceLanguage": "Kannada",
+      "detectedLanguage": "kn",
+      "normalizedLanguage": "kn",
+      "scripts": "kannada|latin",
+      "source": "Vijaya Karnataka",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-025",
+      "sourceLanguage": "Kannada",
+      "detectedLanguage": "kn",
+      "normalizedLanguage": "kn",
+      "scripts": "kannada|latin",
+      "source": "Vijaya Karnataka",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-026",
+      "sourceLanguage": "Tamil",
+      "detectedLanguage": "ta",
+      "normalizedLanguage": "ta",
+      "scripts": "tamil|latin",
+      "source": "Dinamalar",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-056",
+      "sourceLanguage": "Hindi/Marathi (unresolved)",
+      "detectedLanguage": "bn",
+      "normalizedLanguage": "bn",
+      "scripts": "devanagari|bengali",
+      "source": "www.anandabazar.com",
+      "languageCorrected": true
+    },
+    {
+      "recordId": "task22-057",
+      "sourceLanguage": "Hindi/Marathi (unresolved)",
+      "detectedLanguage": "bn",
+      "normalizedLanguage": "bn",
+      "scripts": "devanagari|bengali",
+      "source": "www.anandabazar.com",
+      "languageCorrected": true
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "reportType": "TASK22_RUNTIME",
+  "localOnly": true,
+  "timeoutMs": 6000,
+  "currentWindowDays": 120,
+  "listingEndpoints": 26,
+  "articleCandidates": 57,
+  "uniqueReadable": 12,
+  "productionMutations": 0,
+  "paidProviderCalls": 0
+}

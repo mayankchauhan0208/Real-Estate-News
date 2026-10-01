@@ -1,0 +1,125 @@
+{
+  "overall": "NOT_READY_FOR_DEPLOYMENT",
+  "coreDeploymentReady": "NO",
+  "multilingualAutoPublishReady": "NO",
+  "blockers": [
+    "Remote default branch diverges from local line: remote is 3 commits ahead and local is 24 commits ahead of common baseline.",
+    "Actual live deployment SHA cannot be mapped conclusively from repository evidence; LIVE_DEPLOYMENT_SHA=UNVERIFIED.",
+    "No lockfile is present, so npm install is not a deterministic dependency installation contract.",
+    "A full representative 571-URL production-like runtime bound was not established by the bounded fixture simulation.",
+    "The local admin configuration contains 18 enabled regional/experimental source entries; they require an explicit production gate before deployment."
+  ],
+  "simulationSideEffects": {
+    "productionApiCalls": 0,
+    "sentStateWrites": 0,
+    "workflowTriggers": 0,
+    "productionConfigMutations": 0,
+    "productionSecretsMutations": 0
+  },
+  "decision": "Do not push or deploy until branch reconciliation, live deployment mapping, deterministic install policy, representative runtime evidence, and experimental-source gating are resolved.",
+  "liveBaseline": {
+    "repository": "https://github.com/mayankchauhan0208/Real-Estate-News.git",
+    "remoteDefaultBranch": "main",
+    "remoteDefaultSha": "5468b120200196a50c5b0e9254e8fe4ec264cc7d",
+    "liveDeploymentSha": "UNVERIFIED",
+    "localBranch": "main",
+    "localHead": "3e586d3062f76d08dd888b4aed32283973640344",
+    "mergeBase": "79400a3719ccee226d050ddaf6adeaab5b47be01",
+    "remoteAheadOfLocal": 3,
+    "localAheadOfRemote": 25,
+    "diverged": true,
+    "verification": "git ls-remote origin and local git merge-base/rev-list; deployment mapping unavailable"
+  },
+  "diffSummary": {
+    "commits": 25,
+    "changedFiles": 197
+  },
+  "noidaAudit": {
+    "internalCode": "noida",
+    "userFacingName": "Greater Noida",
+    "separateGreaterNoidaCode": false,
+    "projectEvidence": "Gaurs Alaris, Sector 22D, Yamuna Expressway, YEIDA evidence identifies Greater Noida jurisdiction.",
+    "expectedCode": "noida",
+    "apiCityValue": "noida",
+    "genericYamunaRequiresContext": true,
+    "note": "The workbook has one internal noida code whose user-facing name is Greater Noida; no separate greater_noida code exists."
+  },
+  "sourceReconciliation": {
+    "remoteBaseline": {
+      "cities": 234,
+      "sourceRules": 34,
+      "manualSources": 427,
+      "historicalValidRuntimeUrls": 571
+    },
+    "localTarget": {
+      "cities": 234,
+      "sourceRules": 34,
+      "cityRuleUrlRows": 96,
+      "cityRuleUniqueUrls": 90,
+      "duplicateCityRuleUrls": 6,
+      "manualSources": 427,
+      "enabledManualSources": 427,
+      "duplicateManualUrls": 0,
+      "configuredUniqueUrls": 516,
+      "crossRegistryUrlOverlaps": 5,
+      "experimentalSources": 18,
+      "reraSources": 47
+    },
+    "explanation": "571 was the validated runtime total in the prior configuration audit; the local raw config contains 90 unique city-rule URLs plus 427 unique manual URLs before runtime/default-source expansion. Cross-registry overlaps are reported separately from duplicate source rows."
+  },
+  "workflows": {
+    "workflows": [
+      {
+        "file": ".github/workflows/news-pusher.yml",
+        "name": "News API Pusher",
+        "schedule": "10 * * * *",
+        "manual": true,
+        "timeoutMinutes": 360,
+        "node": "24",
+        "actions": [
+          "actions/checkout@v7",
+          "actions/setup-node@v6",
+          "actions/cache@v6",
+          "actions/upload-artifact@v6"
+        ],
+        "apiPublishing": true,
+        "sentStateCache": true,
+        "sourceBatch": "scheduled AUTO_SOURCE_BATCH=true, SOURCE_BATCH_COUNT=6; manual defaults to full"
+      },
+      {
+        "file": ".github/workflows/news-backfill.yml",
+        "name": "News Backfill",
+        "schedule": null,
+        "manual": true,
+        "timeoutMinutes": 360,
+        "node": "24",
+        "actions": [
+          "actions/checkout@v7",
+          "actions/setup-node@v6",
+          "actions/cache@v6",
+          "actions/upload-artifact@v6"
+        ],
+        "apiPublishing": true,
+        "sentStateCache": true,
+        "sourceBatch": "six sequential matrix batches, max-parallel 1"
+      }
+    ],
+    "concurrency": "news-api-pusher; cancel-in-progress=false",
+    "permissions": "contents: write",
+    "compatibility": "Current action versions are present; verify availability in the deployment environment before push. No local upgrade was made."
+  },
+  "simulation": {
+    "selectedSources": 1,
+    "failures": 0,
+    "wouldPublish": 1,
+    "apiCalls": 0,
+    "sentStateWrites": 0
+  },
+  "unresolved": [
+    "Remote default branch diverges from local line: remote is 3 commits ahead and local is 24 commits ahead of common baseline.",
+    "Actual live deployment SHA cannot be mapped conclusively from repository evidence; LIVE_DEPLOYMENT_SHA=UNVERIFIED.",
+    "No lockfile is present, so npm install is not a deterministic dependency installation contract.",
+    "A full representative 571-URL production-like runtime bound was not established by the bounded fixture simulation.",
+    "The local admin configuration contains 18 enabled regional/experimental source entries; they require an explicit production gate before deployment."
+  ]
+}

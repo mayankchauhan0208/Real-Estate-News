@@ -1,0 +1,14 @@
+{
+  "reportType": "TASK21_OFFTOPIC_CONTROLS",
+  "generatedAt": "2026-10-01T08:52:39.687Z",
+  "humanVerified": 0,
+  "controls": [
+    {
+      "fixture": "hi-offtopic",
+      "language": "hi",
+      "protected": true,
+      "humanVerified": false,
+      "status": "SYNTHETIC_REGRESSION_FIXTURE_NOT_HUMAN_CONTROL"
+    }
+  ]
+}

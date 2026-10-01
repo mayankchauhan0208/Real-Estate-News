@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-09-30T08:40:58.992Z",
+  "batch": "unsampled",
+  "sourceCount": 38,
+  "states": {
+    "SAMPLED_SUCCESSFULLY": 2,
+    "ZERO_LINKS": 33,
+    "LISTING_TOO_LARGE": 3
+  },
+  "linksFound": 97,
+  "linksSampled": 4,
+  "fetchSuccess": 4,
+  "fullTextSuccess": 4,
+  "dates": 0,
+  "thumbnails": 4,
+  "languages": 4,
+  "geoSuccess": 4,
+  "relevant": 0,
+  "averageSourceMs": 644,
+  "p95SourceMs": 3222,
+  "auditInput": "source-audit-2026-09-30T08-05-40-524Z.json",
+  "checkpoint": "C:\\Users\\pc\\Documents\\news-api-pusher\\reports\\source-audits\\targeted\\unsampled.jsonl"
+}

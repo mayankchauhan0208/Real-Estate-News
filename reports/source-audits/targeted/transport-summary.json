@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-09-30T08:40:09.870Z",
+  "batch": "transport",
+  "sourceCount": 48,
+  "states": {
+    "LISTING_FETCH_FAILED": 28,
+    "SAMPLED_SUCCESSFULLY": 4,
+    "LISTING_TIMEOUT": 14,
+    "LISTING_TOO_LARGE": 2
+  },
+  "linksFound": 160,
+  "linksSampled": 4,
+  "fetchSuccess": 4,
+  "fullTextSuccess": 4,
+  "dates": 0,
+  "thumbnails": 4,
+  "languages": 4,
+  "geoSuccess": 4,
+  "relevant": 0,
+  "averageSourceMs": 559,
+  "p95SourceMs": 1001,
+  "auditInput": "source-audit-2026-09-30T08-05-40-524Z.json",
+  "checkpoint": "C:\\Users\\pc\\Documents\\news-api-pusher\\reports\\source-audits\\targeted\\transport.jsonl"
+}

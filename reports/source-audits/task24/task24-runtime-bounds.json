@@ -1,0 +1,20 @@
+{
+  "configuredWorkflowTimeoutMinutes": 360,
+  "sourceTimeoutMs": 90000,
+  "articleTimeoutMs": 12000,
+  "fetchTimeoutMs": 25000,
+  "retries": 4,
+  "scheduledBatchCount": 6,
+  "concurrency": {
+    "sources": 12,
+    "articles": 6
+  },
+  "simulation": {
+    "selectedSources": 1,
+    "failedSources": 0,
+    "fetchedArticles": 1,
+    "wouldPublish": 1,
+    "runtimeObservedMs": null
+  },
+  "assessment": "Bounded per-source and per-article timeouts exist, but a full 571-URL worst-case cannot be certified from one local fixture run; retain deployment caution until a representative production-like batch is observed."
+}

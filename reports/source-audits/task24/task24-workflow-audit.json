@@ -1,0 +1,41 @@
+{
+  "workflows": [
+    {
+      "file": ".github/workflows/news-pusher.yml",
+      "name": "News API Pusher",
+      "schedule": "10 * * * *",
+      "manual": true,
+      "timeoutMinutes": 360,
+      "node": "24",
+      "actions": [
+        "actions/checkout@v7",
+        "actions/setup-node@v6",
+        "actions/cache@v6",
+        "actions/upload-artifact@v6"
+      ],
+      "apiPublishing": true,
+      "sentStateCache": true,
+      "sourceBatch": "scheduled AUTO_SOURCE_BATCH=true, SOURCE_BATCH_COUNT=6; manual defaults to full"
+    },
+    {
+      "file": ".github/workflows/news-backfill.yml",
+      "name": "News Backfill",
+      "schedule": null,
+      "manual": true,
+      "timeoutMinutes": 360,
+      "node": "24",
+      "actions": [
+        "actions/checkout@v7",
+        "actions/setup-node@v6",
+        "actions/cache@v6",
+        "actions/upload-artifact@v6"
+      ],
+      "apiPublishing": true,
+      "sentStateCache": true,
+      "sourceBatch": "six sequential matrix batches, max-parallel 1"
+    }
+  ],
+  "concurrency": "news-api-pusher; cancel-in-progress=false",
+  "permissions": "contents: write",
+  "compatibility": "Current action versions are present; verify availability in the deployment environment before push. No local upgrade was made."
+}

@@ -5,6 +5,7 @@ import Parser from "rss-parser";
 import * as cheerio from "cheerio";
 import { classifyArticle, getSourceUrls, isAllowedSource, isLikelyFeedUrl, getFeedFallbackPageUrl } from "../src/index.js";
 import { citySourceRules } from "../src/city-config.js";
+import { extractStructuredListing, rankArticleLinks } from "./source-recovery-adapters.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const rootDir = path.resolve(path.dirname(__filename), "..");
@@ -184,23 +185,28 @@ async function extractListingContent(sourceUrl, probe) {
 
   const $ = cheerio.load(body);
   const sourceHost = hostOf(sourceUrl);
-  const links = [];
+  const genericCandidates = [];
   $("a[href]").each((_, element) => {
     const link = absoluteUrl($(element).attr("href"), sourceUrl);
     const title = $(element).text().replace(/\s+/g, " ").trim();
-    if (!link || title.length < 18 || hostOf(link) !== sourceHost || normalizeSourceUrl(link) === normalizeSourceUrl(sourceUrl)) return;
-    links.push(link);
+    const isDocument = /\.pdf(?:$|\?)/i.test(link || "");
+    if (!link || (!isDocument && title.length < 18) || hostOf(link) !== sourceHost || normalizeSourceUrl(link) === normalizeSourceUrl(sourceUrl)) return;
+    genericCandidates.push({ link, title });
   });
+  const structured = extractStructuredListing($, sourceUrl);
+  const links = rankArticleLinks([...genericCandidates, ...structured.links], sourceUrl).map((candidate) => candidate.link);
   const dates = $("time[datetime], meta[property='article:published_time'], meta[name='publish-date'], meta[name='date']")
     .map((_, element) => parseDateValue($(element).attr("datetime") || $(element).attr("content"))).get().filter(Boolean).sort().reverse();
-  return { method: "HTML_GENERIC_EXTRACTOR", links: [...new Set(links)], latestArticleDate: dates[0] || "", dateCount: dates.length, thumbnailCount: $("meta[property='og:image'], meta[name='twitter:image'], img[src]").length, parseError: "" };
+  const allDates = [...new Set([...dates, ...structured.dates])].sort().reverse();
+  return { method: ["HTML_GENERIC_EXTRACTOR", structured.method].filter(Boolean).join("+") , links: [...new Set(links)], latestArticleDate: allDates[0] || "", dateCount: allDates.length, thumbnailCount: $("meta[property='og:image'], meta[name='twitter:image'], img[src]").length + structured.thumbnailCount, parseError: "" };
 }
 
 function extractArticleContent(probe) {
   if (!probe.ok || !probe.body) return { readable: false, date: "", thumbnail: false, language: "", textLength: 0, error: probe.error || probe.statusText || "article fetch failed" };
   const $ = cheerio.load(probe.body);
   const text = $("article, main, [itemprop='articleBody'], .article-content, .story-content, body").first().text().replace(/\s+/g, " ").trim();
-  const date = $("meta[property='article:published_time'], meta[name='publish-date'], time[datetime]").map((_, element) => parseDateValue($(element).attr("content") || $(element).attr("datetime"))).get().find(Boolean) || "";
+  const structured = extractStructuredListing($, probe.finalUrl || probe.checkedUrl || "");
+  const date = $("meta[property='article:published_time'], meta[name='publish-date'], time[datetime]").map((_, element) => parseDateValue($(element).attr("content") || $(element).attr("datetime"))).get().find(Boolean) || structured.dates[0] || "";
   const image = $("meta[property='og:image'], meta[name='twitter:image'], img[src]").first();
   const thumbnail = Boolean(image.attr("content") || image.attr("src"));
   const language = String($("html").attr("lang") || "").trim();

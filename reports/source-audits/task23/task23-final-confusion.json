@@ -1,0 +1,24 @@
+{
+  "final": {
+    "TP": 4,
+    "FP": 0,
+    "TN": 14,
+    "FN": 7,
+    "precision": 1,
+    "recall": 0.36363636363636365
+  },
+  "protection": {
+    "negative": 6,
+    "offtopic": 2,
+    "insufficient": 6
+  },
+  "editorialReadyDefinition": "No negative/off-topic classification, sufficient evidence, supported-city geo, and recognized language; non-English remains human-review-only.",
+  "autoPublishConfusion": {
+    "TP": 0,
+    "FP": 0,
+    "TN": 14,
+    "FN": 11,
+    "precision": null,
+    "recall": 0
+  }
+}

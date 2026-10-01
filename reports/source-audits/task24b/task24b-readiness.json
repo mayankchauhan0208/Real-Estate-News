@@ -1,0 +1,68 @@
+{
+  "overall": "READY_FOR_CONTROLLED_DEPLOYMENT",
+  "coreDeploymentReady": "YES",
+  "multilingualAutoPublishReady": "NO",
+  "reconciledBase": "5468b120200196a50c5b0e9254e8fe4ec264cc7d",
+  "originalTask24Checkpoint": "919ca74",
+  "liveDeploymentSha": "UNVERIFIED",
+  "blockers": [
+    "Live deployment SHA remains unverified; remote main is the verified rollback/pre-deployment code baseline."
+  ],
+  "rationale": "The branch is reconciled from remote main, remote snapshot commits are preserved, experimental sources are default-off, npm ci is reproducible in a clean directory, dry-run sent-state writes are blocked, representative simulation had zero side effects, and safety regressions pass. Multilingual auto-publishing remains closed.",
+  "simulation": {
+    "sources": 24,
+    "successes": 24,
+    "failures": 0,
+    "wouldPublish": 7,
+    "productionApiCalls": 0,
+    "sentStateWrites": 0,
+    "runtimeMs": 64764
+  },
+  "lockfile": "package-lock.json",
+  "experimentalSources": 18,
+  "regressions": {
+    "task20": {
+      "TP": 2,
+      "FP": 0,
+      "TN": 67,
+      "FN": 0,
+      "negativeProtection": "15/15",
+      "offtopicProtection": "29/29",
+      "insufficientProtection": "23/23",
+      "negativeControls": "8/8",
+      "dda": true,
+      "yeida": true
+    },
+    "task21": {
+      "unknownLanguageAutoPublish": false,
+      "translationFailureAutoPublish": false,
+      "unicodePreserved": true,
+      "mixedLanguageConservative": true,
+      "nativeNumeralsPreserved": true,
+      "unsafeSourceGeoFallback": false
+    },
+    "task23": {
+      "TP": 4,
+      "FP": 0,
+      "TN": 14,
+      "FN": 7,
+      "nonPublishProtected": 14,
+      "negativeProtection": "6/6",
+      "offtopicProtection": "2/2",
+      "insufficientProtection": "6/6"
+    },
+    "config": {
+      "cities": 234,
+      "sourceRules": 34,
+      "manualSources": 427,
+      "historicalRuntimeUrls": 571,
+      "safeDefaultRuntimeUrls": 553,
+      "experimentalExcludedByDefault": 18
+    },
+    "task24b": {
+      "experimentalGate": "PASSED",
+      "sentState": "PASSED",
+      "expandedSimulation": "PASSED"
+    }
+  }
+}

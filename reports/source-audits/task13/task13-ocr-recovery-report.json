@@ -1,0 +1,191 @@
+{
+  "generatedAt": "2026-09-30T11:04:20.406Z",
+  "baseline": {
+    "cities": 234,
+    "runtimeUrls": 571,
+    "duplicateSourceRows": 0,
+    "positiveControls": 8,
+    "automaticValidRecords": 0,
+    "negativeProtection": "8/8"
+  },
+  "engineEvaluation": {
+    "localTools": {
+      "tesseract": "",
+      "pdfinfo": "C:\\Users\\pc\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdfinfo.exe",
+      "pdftoppm": "C:\\Users\\pc\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdftoppm.exe"
+    },
+    "selectedApproach": "bounded local OCR fallback gate; execution remains disabled until a local OCR engine/language pack is available",
+    "status": "OCR_UNSUPPORTED",
+    "compatibility": "NOT_PRODUCTION_PRACTICAL",
+    "english": "UNVERIFIED",
+    "hindi": "UNVERIFIED",
+    "cloudDependency": false
+  },
+  "limits": {
+    "maxPages": 3,
+    "maxPixels": 25000000,
+    "maxDocumentMs": 15000,
+    "maxBytes": 4194304
+  },
+  "hsvp": {
+    "pdfsAttempted": 3,
+    "pdfs": [
+      {
+        "documentUrl": "https://hsvphry.org.in/documents/notices/PUBLIC_NOTICE_202608201128_91b182e9.pdf",
+        "bytes": 2242708,
+        "fetch": {
+          "documentUrl": "https://hsvphry.org.in/documents/notices/PUBLIC_NOTICE_202608201128_91b182e9.pdf",
+          "status": 200,
+          "finalUrl": "https://hsvphry.org.in/documents/notices/PUBLIC_NOTICE_202608201128_91b182e9.pdf",
+          "contentType": "application/pdf",
+          "bytes": 2242708,
+          "validation": "VALID_PDF",
+          "elapsedMs": 361,
+          "textExtraction": "IMAGE_ONLY_PDF",
+          "textLength": 0,
+          "failureReason": ""
+        },
+        "pages": 5,
+        "render": {
+          "status": "NOT_RUN",
+          "elapsedMs": 0,
+          "bytes": 0
+        },
+        "eligibility": "OCR_TOO_MANY_PAGES",
+        "ocr": {
+          "status": "OCR_TOO_MANY_PAGES",
+          "reason": "Eligibility gate did not permit OCR."
+        },
+        "quality": {
+          "status": "OCR_EMPTY",
+          "text": "",
+          "chars": 0,
+          "words": 0,
+          "alphaRatio": 0,
+          "garbled": 0
+        },
+        "cacheKey": "0c1d129bab224c003ed05137cd2418f06ebcaf6aaf9779cd1c48832673590156"
+      },
+      {
+        "documentUrl": "https://hsvphry.org.in/documents/hewo/hewo_202604101504_639114302426525114.pdf",
+        "bytes": 1066429,
+        "fetch": {
+          "documentUrl": "https://hsvphry.org.in/documents/hewo/hewo_202604101504_639114302426525114.pdf",
+          "status": 200,
+          "finalUrl": "https://hsvphry.org.in/documents/hewo/hewo_202604101504_639114302426525114.pdf",
+          "contentType": "application/pdf",
+          "bytes": 1066429,
+          "validation": "VALID_PDF",
+          "elapsedMs": 150,
+          "textExtraction": "IMAGE_ONLY_PDF",
+          "textLength": 0,
+          "failureReason": ""
+        },
+        "pages": 1,
+        "render": {
+          "status": "RENDERED",
+          "elapsedMs": 2753,
+          "bytes": 1054524
+        },
+        "eligibility": "OCR_ELIGIBLE",
+        "ocr": {
+          "status": "OCR_UNSUPPORTED",
+          "tools": {
+            "tesseract": "",
+            "pdfinfo": "C:\\Users\\pc\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdfinfo.exe",
+            "pdftoppm": "C:\\Users\\pc\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdftoppm.exe"
+          },
+          "reason": "Tesseract and/or PDF renderer is unavailable locally."
+        },
+        "quality": {
+          "status": "OCR_EMPTY",
+          "text": "",
+          "chars": 0,
+          "words": 0,
+          "alphaRatio": 0,
+          "garbled": 0
+        },
+        "cacheKey": "04ab77dec86041edd98fcf4231d7dd4911cf5bc1087ab888c65dfcb772430aa7"
+      },
+      {
+        "documentUrl": "https://hsvphry.org.in/documents/hewo/hewo_202603031549_639081497526550815.pdf",
+        "bytes": 928749,
+        "fetch": {
+          "documentUrl": "https://hsvphry.org.in/documents/hewo/hewo_202603031549_639081497526550815.pdf",
+          "status": 200,
+          "finalUrl": "https://hsvphry.org.in/documents/hewo/hewo_202603031549_639081497526550815.pdf",
+          "contentType": "application/pdf",
+          "bytes": 928749,
+          "validation": "VALID_PDF",
+          "elapsedMs": 138,
+          "textExtraction": "IMAGE_ONLY_PDF",
+          "textLength": 0,
+          "failureReason": ""
+        },
+        "pages": 1,
+        "render": {
+          "status": "RENDERED",
+          "elapsedMs": 867,
+          "bytes": 557329
+        },
+        "eligibility": "OCR_ELIGIBLE",
+        "ocr": {
+          "status": "OCR_UNSUPPORTED",
+          "tools": {
+            "tesseract": "",
+            "pdfinfo": "C:\\Users\\pc\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdfinfo.exe",
+            "pdftoppm": "C:\\Users\\pc\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdftoppm.exe"
+          },
+          "reason": "Tesseract and/or PDF renderer is unavailable locally."
+        },
+        "quality": {
+          "status": "OCR_EMPTY",
+          "text": "",
+          "chars": 0,
+          "words": 0,
+          "alphaRatio": 0,
+          "garbled": 0
+        },
+        "cacheKey": "4e14f7cc3cb8a572352c10f60015a91ba9dd1ea75a7482593960bcd2078dacbe"
+      }
+    ],
+    "ocrEligible": 2,
+    "ocrUsable": 0,
+    "validRecords": 0,
+    "automaticallyRecoveredValidRecords": 0
+  },
+  "fourthDocument": {
+    "documentUrl": "https://hsvphry.org.in/documents/hewo/hewo_202601211617_639046090248941560.pdf",
+    "result": "OCR_TOO_LARGE",
+    "reason": "Retained global 4 MB limit; no global increase made. A source-specific streaming ceiling remains future work."
+  },
+  "metadataFusion": {
+    "listingMetadataPreserved": true,
+    "ocrMetadata": false,
+    "inventedFields": 0,
+    "provenance": [
+      "LISTING_METADATA",
+      "PDF_METADATA",
+      "OCR_TEXT"
+    ]
+  },
+  "cache": {
+    "keysGenerated": 3,
+    "duplicateCacheOperations": 0,
+    "contentHashDedupe": "no duplicates in HSVP set"
+  },
+  "automaticRecovery": {
+    "before": 0,
+    "after": 0,
+    "classifierFalseNegatives": [],
+    "geoFalseNegatives": []
+  },
+  "performance": {
+    "renderablePages": 2,
+    "totalRenderMs": 3620,
+    "ocrMsPerPage": "UNVERIFIED_NO_ENGINE",
+    "ocrMsPerDocument": "UNVERIFIED_NO_ENGINE",
+    "failureIsolation": true
+  },
+  "nextBottleneck": "OCR_ENGINE_AVAILABILITY_AND_SCANNED_TEXT_QUALITY"
+}

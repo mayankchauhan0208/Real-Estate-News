@@ -1,0 +1,130 @@
+{
+  "localOnly": true,
+  "entryPoint": "src/index.js",
+  "publishingDisabled": true,
+  "sentStateWritesDisabled": true,
+  "selectedSources": [
+    {
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/gurugram-news/rssfeed.xml",
+      "experimental": false
+    },
+    {
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/faridabad-news/rssfeed.xml",
+      "experimental": false
+    },
+    {
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/8021716.cms",
+      "experimental": false
+    },
+    {
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+      "experimental": false
+    },
+    {
+      "url": "https://realty.economictimes.indiatimes.com/rss/residential",
+      "experimental": false
+    },
+    {
+      "url": "https://realty.economictimes.indiatimes.com/rss/commercial",
+      "experimental": false
+    },
+    {
+      "url": "https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority",
+      "experimental": false
+    },
+    {
+      "url": "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida%2Bauthority",
+      "experimental": false
+    },
+    {
+      "url": "https://www.hindustantimes.com/topic/noida-authority/news",
+      "experimental": false
+    },
+    {
+      "url": "https://www.hindustantimes.com/topic/greater-noida-authority/news",
+      "experimental": false
+    },
+    {
+      "url": "https://www.yamunaexpresswayauthority.com/web/",
+      "experimental": false
+    },
+    {
+      "url": "https://www.yamunaexpresswayauthority.com/web/announcement/",
+      "experimental": false
+    },
+    {
+      "url": "https://www.hindustantimes.com/cities/mumbai-news",
+      "experimental": false
+    },
+    {
+      "url": "https://www.hindustantimes.com/cities/delhi-news",
+      "experimental": false
+    },
+    {
+      "url": "https://www.hindustantimes.com/cities/patna-news",
+      "experimental": false
+    },
+    {
+      "url": "https://www.hindustantimes.com/topic/faridabad/news",
+      "experimental": false
+    },
+    {
+      "url": "https://www.hindustantimes.com/cities/noida-news",
+      "experimental": false
+    },
+    {
+      "url": "https://www.hindustantimes.com/topic/noida/news",
+      "experimental": false
+    },
+    {
+      "url": "https://realty.economictimes.indiatimes.com/tag/gurugram",
+      "experimental": false
+    },
+    {
+      "url": "https://torbitrealty.com/category/news/city-updates/gurugram/",
+      "experimental": false
+    },
+    {
+      "url": "https://realty.economictimes.indiatimes.com/tag/faridabad",
+      "experimental": false
+    },
+    {
+      "url": "https://realty.economictimes.indiatimes.com/tag/noida",
+      "experimental": false
+    },
+    {
+      "url": "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida",
+      "experimental": false
+    },
+    {
+      "url": "https://realty.economictimes.indiatimes.com/amp/tag/greater%2Bnoida",
+      "experimental": false
+    }
+  ],
+  "sourceCount": 24,
+  "sourceSuccesses": 24,
+  "sourceFailures": 0,
+  "attempts": 24,
+  "discoveredUrls": 46,
+  "detailFetches": 46,
+  "readable": 46,
+  "current": 18,
+  "relevancePass": 7,
+  "negativeRejects": 8,
+  "offTopicInsufficientReview": 10,
+  "geoPass": 7,
+  "duplicates": 0,
+  "wouldPublish": 7,
+  "runtimeMs": 64764,
+  "p50SourceLatencyMs": null,
+  "p95SourceLatencyMs": null,
+  "exitCode": 0,
+  "productionApiCalls": 0,
+  "sentStateWrites": 0,
+  "workflowTriggers": 0,
+  "productionConfigMutations": 0,
+  "productionSecretMutations": 0,
+  "failuresAreSourceScoped": true,
+  "stdoutTail": "st-unauthorised-constructions/134555515?utm_source=top_news&utm_medium=tagListing\nDry run candidate (noida): Noida: Logix, 3C & ATS submit revised layouts for Sports City | https://realty.economictimes.indiatimes.com/news/industry/noida-logix-3c-ats-submit-revised-layouts-for-sports-city/134577686?utm_source=top_news&utm_medium=tagListing\nDry run candidate (noida): YEIDA approves logistics park, 8,000 hectares industrial hub near Noida International airport | https://realty.economictimes.indiatimes.com/news/infrastructure/yeida-approves-logistics-park-8000-hectares-industrial-hub-near-noida-international-airport/134577767?utm_source=top_news&utm_medium=tagListing\nDry run candidate (noida): YEIDA plans Rs 4.5 crore entry gate near Yamuna expressway | https://timesofindia.indiatimes.com/city/noida/yeida-plans-rs-4-5-crore-entry-gate-near-yamuna-expressway/articleshow/134601964.cms\nDry run candidate (noida): Yeida plans ₹4.5cr landmark entry gate near Yamuna Expressway | https://www.hindustantimes.com/cities/noida-news/yeida-plans-4-5cr-landmark-entry-gate-near-yamuna-expressway-101790793601245.html\nDry run candidate (gurugram): Property owners in Gurugram seek policy for commercial conversion of housing units | https://realty.economictimes.indiatimes.com/news/commercial/property-owners-in-gurugram-seek-policy-for-commercial-conversion-of-housing-units/134607259\nRun report written: C:\\Users\\pc\\Documents\\news-api-pusher\\reports\\runs\\news-run-2026-10-01T11-18-58-390Z.json\nRun report written: C:\\Users\\pc\\Documents\\news-api-pusher\\reports\\runs\\news-run-2026-10-01T11-18-58-390Z.md\n",
+  "stderrTail": ""
+}
