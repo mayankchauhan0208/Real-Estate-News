@@ -1,0 +1,35 @@
+{
+  "humanNegatives": [
+    {
+      "recordId": "task22-008",
+      "protected": true,
+      "negative": "REJECT_NEGATIVE"
+    },
+    {
+      "recordId": "task22-013",
+      "protected": true,
+      "negative": "REJECT_NEGATIVE"
+    },
+    {
+      "recordId": "task22-010",
+      "protected": true,
+      "negative": "REJECT_NEGATIVE"
+    },
+    {
+      "recordId": "task22-011",
+      "protected": true,
+      "negative": "REJECT_NEGATIVE"
+    },
+    {
+      "recordId": "task22-025",
+      "protected": true,
+      "negative": "REJECT_NEGATIVE"
+    },
+    {
+      "recordId": "task22-056",
+      "protected": true,
+      "negative": "REJECT_NEGATIVE"
+    }
+  ],
+  "protected": 6
+}

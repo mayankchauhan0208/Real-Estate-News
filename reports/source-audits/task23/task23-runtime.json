@@ -1,0 +1,8 @@
+{
+  "localOnly": true,
+  "records": 25,
+  "providerCalls": 0,
+  "productionMutations": 0,
+  "sourceConfigMutations": 0,
+  "unsafeFallback": false
+}

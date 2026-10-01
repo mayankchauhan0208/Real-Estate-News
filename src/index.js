@@ -104,7 +104,7 @@ const CITY_ALIAS_OVERRIDES = {
   faridabad: ["फरीदाबाद", "ग्रेटर फरीदाबाद", "नहरपार", "greater faridabad", "neharpar"],
   gurugram: ["gurgaon", "gurgaon district", "गुरुग्राम", "गुड़गांव", "millennium city", "cyber city", "manesar", "manasar", "मानेसर", "sohna", "सोहना", "pataudi", "patudi", "patodi", "पटौदी", "pataudi mandi", "dwarka expressway", "golf course road", "golf course extension road", "southern peripheral road", "spr", "badshahpur", "farrukh nagar", "farrukhnagar", "wazirabad", "kadipur", "harsaru"],
   faridabad: ["फरीदाबाद", "ग्रेटर फरीदाबाद", "नहरपार", "greater faridabad", "neharpar", "ballabgarh", "बल्लभगढ़", "nit faridabad", "old faridabad", "imt faridabad", "faridabad bypass", "sector 75 faridabad", "sector 80 faridabad", "sector 85 faridabad", "sector 88 faridabad", "sector 89 faridabad", "sector 97 faridabad", "sector 98 faridabad"],
-  noida: ["greater noida", "ग्रेटर नोएडा", "gautam buddha nagar", "gautam budh nagar", "dadri", "दादरी", "jewar", "जेवर", "yamuna expressway", "yeida", "noida authority", "greater noida authority", "noida expressway", "noida greater noida expressway", "sector 62 noida", "sector 150 noida", "film city noida", "knowledge park greater noida", "logix noida", "techzone greater noida", "pari chowk", "noida airport", "greater noida west", "noida international airport"],
+  noida: ["greater noida", "ग्रेटर नोएडा", "gautam buddha nagar", "gautam budh nagar", "dadri", "दादरी", "jewar", "जेवर", "yamuna expressway", "यमुना एक्सप्रेसवे", "yeida", "noida authority", "greater noida authority", "noida expressway", "noida greater noida expressway", "sector 62 noida", "sector 150 noida", "film city noida", "knowledge park greater noida", "logix noida", "techzone greater noida", "pari chowk", "noida airport", "greater noida west", "noida international airport"],
   ghaziabad: ["indirapuram", "raj nagar extension", "nh 24 ghaziabad", "wave city ghaziabad", "crossings republik", "eastern peripheral expressway ghaziabad", "वासुंधरा गाजियाबाद"],
   lucknow: ["gomti nagar extension", "sushant golf city", "shaheed path lucknow", "amar shaheed path", "lucknow outer ring road", "sultanpur road lucknow", "chinhat", "लखनऊ"],
   kanpur: ["kanpur nagar", "panki", "kalyanpur kanpur", "kanpur outer ring road", "जीटी रोड कानपुर"],
@@ -132,7 +132,7 @@ const CITY_ALIAS_OVERRIDES = {
   varanasi: ["banaras", "काशी"],
   mysore: ["mysuru", "hebbal industrial area mysuru", "koorgalli", "mysuru bengaluru highway", "मैसूरु"],
   patna: ["पाटलिपुत्र", "patna city", "danapur", "bihta", "patna bypass", "patna ring road"],
-  delhi: ["old delhi", "delhi city", "पुरानी दिल्ली"],
+  delhi: ["old delhi", "delhi city", "पुरानी दिल्ली", "दिल्ली", "नई दिल्ली", "नरेला", "भलस्वा", "जखीरा"],
   visakhapatnam: ["vizag", "విశాఖపట్నం"],
   vijayawada: ["bezawada", "विजयवाड़ा"],
   rajahmundry: ["rajamahendravaram", "राजमहेंद्रवरम"],
@@ -161,7 +161,7 @@ const CITY_ALIAS_OVERRIDES = {
   thoothukudi: ["tuticorin", "தூத்துக்குடி"],
   hyderabad: ["cyberabad", "secunderabad", "హైదరాబాద్", "kokapet", "gachibowli", "kondapur", "raidurg", "neopolis", "shamshabad", "hyderabad regional ring road", "narsingi", "tellapur", "financial district hyderabad", "adibatla", "bachupally", "medchal hyderabad region"],
   warangal: ["hanamkonda", "వరంగల్"],
-  kolkata: ["calcutta", "new town kolkata", "कोलकाता", "rajarhat", "salt lake", "action area new town", "kolkata east west metro"],
+  kolkata: ["calcutta", "new town kolkata", "कोलकाता", "কলকাতা", "rajarhat", "salt lake", "action area new town", "kolkata east west metro"],
   mumbai: ["bombay", "mumbai metropolitan region", "mmr", "मुंबई", "bkc", "bandra kurla complex", "powai", "lower parel", "andheri east", "goregaon east", "malad west"],
   pune: ["poona", "pimpri chinchwad", "hinjewadi", "wakad", "kharadi", "पुणे", "wagholi", "pune ring road", "magarpatta", "baner", "balewadi", "ravet", "tathawade", "chakan pune region", "lohegaon", "hadapsar", "aundh", "pashan"],
   navi_mumbai: ["new mumbai", "पनवेल", "ulwe", "kharghar", "taloja", "airoli", "vashi", "navi mumbai airport"],
@@ -4045,6 +4045,8 @@ function isClearlyOffTopicNonDevelopmentArticle(article) {
   if (hasKeyword(title, ["street lights", "streetlight", "luggage locker", "luggage lockers"]) && hasKeyword(title, ["repair", "maintain", "maintenance", "install"])) return true;
   if (hasKeyword(title, ["private college", "private colleges", "college affiliation", "education affiliation", "university affiliation"])) return true;
   if (hasKeyword(title, ["ipo", "drhp", "share-swap", "share swap", "equity stake", "stake sale"]) && !hasKeyword(title, ["land", "plot", "housing", "project", "township"])) return true;
+  const promotionalExpo = /(?:property|real estate|housing|പ്രോപ്പർട്ടി|റിയൽ എസ്റ്റേറ്റ്|ആവാസ).{0,50}(?:expo|exhibition|എക്സ്പോ|പ്രദർശനം)/iu.test(`${title} ${text}`);
+  if (promotionalExpo && !hasKeyword(title, ["project launch", "project approved", "land acquisition", "construction project", "township"])) return true;
   return false;
 }
 
@@ -4143,6 +4145,13 @@ function shouldSendToBothCities(article) {
   return detectMatchedCityCodes(article).length === ncrCityCodes.length;
 }
 
+function hasSpecificYeidaProjectEvidence(article) {
+  const text = getArticlePrimaryText(article).toLowerCase();
+  const hasCorridor = /yamuna\s+expressway|yeida|sector\s*22\s*d|greater\s+noida|जेवर|यमुना\s+एक्सप्रेसवे/u.test(text);
+  const hasProject = /gaur(?:s|\s+group)?|residential\s+project|housing\s+project|flats?|आवासीय\s+परियोजना|फ्लैट/u.test(text);
+  return hasCorridor && hasProject && /sector\s*22\s*d|gaur(?:s|\s+group)?|yeida|greater\s+noida/u.test(text);
+}
+
 function detectCityCodes(article) {
   if (!isRealEstateRelated(article) || (isBlockedArticle(article) && !isOfficialReraPressRelease(article)) || (isNegativeNews(article) && !isOfficialReraPressRelease(article))) {
     return [];
@@ -4151,6 +4160,9 @@ function detectCityCodes(article) {
   const primaryText = getArticlePrimaryText(article);
   const concreteNcrCityCodes = hasNcrMatch(article) ? detectConcreteNcrCityCodesFromFullArticle(article) : [];
   const matchedCodes = concreteNcrCityCodes.length > 0 ? concreteNcrCityCodes : detectMatchedCityCodes(article);
+  if (hasSpecificYeidaProjectEvidence(article)) {
+    return ["noida"];
+  }
   const hasPreviousNcrRoute = matchedCodes.some((code) => ncrCityCodes.includes(code));
   const ncrDelhiRoute = hasNcrMatch(article) && hasPreviousNcrRoute ? ncrDelhiCityCodes : [];
   const routedCodes = [...matchedCodes, ...ncrDelhiRoute];
@@ -4571,6 +4583,10 @@ function countKeywordMentions(value, keywords) {
   const normalized = value.toLowerCase();
 
   return keywords.reduce((count, keyword) => {
+    if (/[^\u0000-\u007f]/u.test(keyword)) {
+      const nativeKeyword = keyword.toLowerCase();
+      return count + (normalized.split(nativeKeyword).length - 1);
+    }
     const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     const matches = normalized.match(new RegExp(`\\b${escaped}\\b`, "gi"));
 
@@ -4582,6 +4598,9 @@ function hasWholeWordKeyword(value, keywords) {
   const normalized = value.toLowerCase();
 
   return keywords.some((keyword) => {
+    if (/[^\u0000-\u007f]/u.test(keyword)) {
+      return normalized.includes(keyword.toLowerCase());
+    }
     const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     return new RegExp(`\\b${escaped}\\b`, "i").test(normalized);
   });
@@ -4991,11 +5010,14 @@ function hasContextualAdverseEvent(article) {
   const text = getArticleSearchText(article);
   const adverseAction = /\b(?:razed|demolished|demolition|sealed|evicted|attached|arrested|investigated|protested|protest|pushing back|pushback|failed to refund|refund ordered|stalled|cancelled|canceled|delayed)\b/i;
   const propertyObject = /\b(?:property|properties|residential|residences|housing|homebuyers?|homes?|units?|project|promoters?|developer|builder|metro|stake sale|sale timeline|neighbou?rhood|neighbourhood)\b/i;
+  const nativeAdverse = /(?:रखड|विलंब|उशीर|स्थगित|न्यायालय|कोर्ट|तक्रार|विरोध|थांब|പൂട്ടി|താമസം|വൈകി|പരാതി|തടഞ്ഞ|నిలిచిపో|ఆలస్యం|ఫిర్యాదు|ವಿಳಂಬ|ವಿರುದ್ಧ|ದೂರು|পতন|কমছে|বিতর্ক)/u;
+  const nativeProperty = /(?:गृहनिर्माण|घर|फ्लॅट|प्रकल्प|मालमत्ता|सोसायटी|ആവാസ|വീട്|ഫ്ലാറ്റ്|പദ്ധതി|റിയൽ എസ്റ്റേറ്റ്|ఇల్లు|ఫ్లాట్|ప్రాజెక్టు|రియల్ ఎస్టేట్|ಮನೆ|ವಸತಿ|ರಿಯಲ್ ಎಸ್ಟೇಟ್|আবাসন|বাড়ি|ফ্ল্যাট|রিয়েল এস্টেট)/u;
 
   if (/\b(?:razed|demolished|demolition|sealed)\b/i.test(primary) && propertyObject.test(`${primary} ${text}`)) return true;
   if (/\b(?:pushing back|pushback|protest(?:ed|ing)?|residents? complain(?:ed|ts?)?|residents? oppose)\b/i.test(`${primary} ${text}`) && /\b(?:property|residential|residences|housing|home|neighbou?rhood|stay|rental)\b/i.test(`${primary} ${text}`)) return true;
   if (/\b(?:stake sale|sale timeline)\b/i.test(`${primary} ${text}`) && /\b(?:extend(?:s|ed)?|delay(?:ed|s)?|timeline|financial|regulatory challenge)\b/i.test(`${primary} ${text}`)) return true;
   if (adverseAction.test(primary) && propertyObject.test(`${primary} ${text}`) && !/\b(?:reduces?|removes?|resolves?|address(?:es|ed)?|avoids?)\s+(?:approval\s+)?(?:delay|delays|delayed)\b/i.test(primary)) return true;
+  if (nativeAdverse.test(`${primary} ${text}`) && nativeProperty.test(`${primary} ${text}`)) return true;
   return false;
 }
 

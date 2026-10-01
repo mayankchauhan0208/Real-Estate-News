@@ -1,0 +1,187 @@
+{
+  "baseline": {
+    "TP": 0,
+    "FP": 0,
+    "TN": 14,
+    "FN": 11,
+    "precision": null,
+    "recall": 0
+  },
+  "records": [
+    {
+      "recordId": "task22-005",
+      "label": "PUBLISH",
+      "accepted": false,
+      "firstLoss": "TRANSLATION",
+      "reasons": "REVIEW_TRANSLATION_OR_EDITORIAL | delhi_ncr | PASS"
+    },
+    {
+      "recordId": "task22-006",
+      "label": "REJECT_INSUFFICIENT",
+      "accepted": false,
+      "firstLoss": "",
+      "reasons": "REVIEW_TRANSLATION_OR_EDITORIAL | delhi | PASS"
+    },
+    {
+      "recordId": "task22-004",
+      "label": "PUBLISH",
+      "accepted": false,
+      "firstLoss": "GEO",
+      "reasons": "REVIEW_INSUFFICIENT | NO_SUPPORTED_CITY_EVIDENCE | PASS"
+    },
+    {
+      "recordId": "task22-003",
+      "label": "PUBLISH",
+      "accepted": false,
+      "firstLoss": "TRANSLATION",
+      "reasons": "REVIEW_INSUFFICIENT | delhi_ncr | PASS"
+    },
+    {
+      "recordId": "task22-009",
+      "label": "PUBLISH",
+      "accepted": false,
+      "firstLoss": "TRANSLATION",
+      "reasons": "REVIEW_INSUFFICIENT | pune | PASS"
+    },
+    {
+      "recordId": "task22-007",
+      "label": "REJECT_OFF_TOPIC",
+      "accepted": false,
+      "firstLoss": "",
+      "reasons": "REJECT_NEGATIVE | faridabad | REJECT_NEGATIVE"
+    },
+    {
+      "recordId": "task22-019",
+      "label": "PUBLISH",
+      "accepted": false,
+      "firstLoss": "TRANSLATION",
+      "reasons": "REVIEW_INSUFFICIENT | hyderabad | PASS"
+    },
+    {
+      "recordId": "task22-022",
+      "label": "PUBLISH",
+      "accepted": false,
+      "firstLoss": "TRANSLATION",
+      "reasons": "REVIEW_INSUFFICIENT | hyderabad | PASS"
+    },
+    {
+      "recordId": "task22-008",
+      "label": "REJECT_NEGATIVE",
+      "accepted": false,
+      "firstLoss": "",
+      "reasons": "REJECT_NEGATIVE | pune | REJECT_NEGATIVE"
+    },
+    {
+      "recordId": "task22-012",
+      "label": "REJECT_INSUFFICIENT",
+      "accepted": false,
+      "firstLoss": "",
+      "reasons": "REVIEW_INSUFFICIENT | mumbai | PASS"
+    },
+    {
+      "recordId": "task22-013",
+      "label": "REJECT_NEGATIVE",
+      "accepted": false,
+      "firstLoss": "",
+      "reasons": "REJECT_NEGATIVE | pune | REJECT_NEGATIVE"
+    },
+    {
+      "recordId": "task22-014",
+      "label": "REJECT_OFF_TOPIC",
+      "accepted": false,
+      "firstLoss": "",
+      "reasons": "REVIEW_INSUFFICIENT | kochi | PASS"
+    },
+    {
+      "recordId": "task22-020",
+      "label": "PUBLISH",
+      "accepted": false,
+      "firstLoss": "TRANSLATION",
+      "reasons": "REVIEW_INSUFFICIENT | hyderabad | PASS"
+    },
+    {
+      "recordId": "task22-021",
+      "label": "PUBLISH",
+      "accepted": false,
+      "firstLoss": "TRANSLATION",
+      "reasons": "REVIEW_INSUFFICIENT | hyderabad | PASS"
+    },
+    {
+      "recordId": "task22-027",
+      "label": "REJECT_INSUFFICIENT",
+      "accepted": false,
+      "firstLoss": "",
+      "reasons": "REVIEW_INSUFFICIENT | hyderabad | PASS"
+    },
+    {
+      "recordId": "task22-001",
+      "label": "PUBLISH",
+      "accepted": false,
+      "firstLoss": "GEO",
+      "reasons": "REVIEW_INSUFFICIENT | NO_SUPPORTED_CITY_EVIDENCE | PASS"
+    },
+    {
+      "recordId": "task22-002",
+      "label": "PUBLISH",
+      "accepted": false,
+      "firstLoss": "GEO",
+      "reasons": "REVIEW_INSUFFICIENT | NO_SUPPORTED_CITY_EVIDENCE | PASS"
+    },
+    {
+      "recordId": "task22-010",
+      "label": "REJECT_NEGATIVE",
+      "accepted": false,
+      "firstLoss": "",
+      "reasons": "REVIEW_INSUFFICIENT | NO_SUPPORTED_CITY_EVIDENCE | PASS"
+    },
+    {
+      "recordId": "task22-011",
+      "label": "REJECT_NEGATIVE",
+      "accepted": false,
+      "firstLoss": "",
+      "reasons": "REVIEW_INSUFFICIENT | NO_SUPPORTED_CITY_EVIDENCE | PASS"
+    },
+    {
+      "recordId": "task22-023",
+      "label": "REJECT_INSUFFICIENT",
+      "accepted": false,
+      "firstLoss": "",
+      "reasons": "REVIEW_INSUFFICIENT | NO_SUPPORTED_CITY_EVIDENCE | PASS"
+    },
+    {
+      "recordId": "task22-024",
+      "label": "PUBLISH",
+      "accepted": false,
+      "firstLoss": "GEO",
+      "reasons": "REVIEW_INSUFFICIENT | NO_SUPPORTED_CITY_EVIDENCE | PASS"
+    },
+    {
+      "recordId": "task22-025",
+      "label": "REJECT_NEGATIVE",
+      "accepted": false,
+      "firstLoss": "",
+      "reasons": "REVIEW_INSUFFICIENT | NO_SUPPORTED_CITY_EVIDENCE | PASS"
+    },
+    {
+      "recordId": "task22-026",
+      "label": "REJECT_INSUFFICIENT",
+      "accepted": false,
+      "firstLoss": "",
+      "reasons": "REVIEW_INSUFFICIENT | NO_SUPPORTED_CITY_EVIDENCE | PASS"
+    },
+    {
+      "recordId": "task22-056",
+      "label": "REJECT_NEGATIVE",
+      "accepted": false,
+      "firstLoss": "",
+      "reasons": "REVIEW_INSUFFICIENT | NO_SUPPORTED_CITY_EVIDENCE | PASS"
+    },
+    {
+      "recordId": "task22-057",
+      "label": "REJECT_INSUFFICIENT",
+      "accepted": false,
+      "firstLoss": "",
+      "reasons": "REVIEW_INSUFFICIENT | NO_SUPPORTED_CITY_EVIDENCE | PASS"
+    }
+  ]
+}

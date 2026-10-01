@@ -1,0 +1,7 @@
+{
+  "reportType": "TASK23_UNSEEN_MULTILINGUAL_HOLDOUT",
+  "records": [],
+  "evaluated": 0,
+  "humanLabels": 0,
+  "note": "No additional real multilingual records outside the 25-row authoritative audit were available locally without reusing audit evidence; no unlabeled record was manufactured."
+}

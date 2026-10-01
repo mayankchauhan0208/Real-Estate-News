@@ -36,14 +36,16 @@ export function detectScripts(value) {
 }
 export function identifyLanguage(value, declared = '') {
   const input = normalizeUnicode(value).trim(); const declaredCode = text(declared).toLowerCase().split('-')[0];
-  if (declaredCode && LANGUAGE_NAMES[declaredCode]) return { code: declaredCode, name: LANGUAGE_NAMES[declaredCode], confidence: 'declared', scripts: detectScripts(input) };
   const scripts = detectScripts(input); const nonLatin = scripts.filter((script) => script !== 'latin');
+  // A source-declared language is only a hint. Script evidence takes precedence
+  // when it contradicts that hint, which prevents Bengali from becoming Hindi.
+  if (scripts.includes('bengali')) return /অসমীয়া|অসমীয়া/.test(input) ? { code: 'as', name: 'Assamese', confidence: 'lexical', scripts } : { code: 'bn', name: 'Bengali', confidence: 'script', scripts };
+  if (declaredCode && LANGUAGE_NAMES[declaredCode] && nonLatin.length === 0) return { code: declaredCode, name: LANGUAGE_NAMES[declaredCode], confidence: 'declared', scripts };
   if (scripts.includes('devanagari')) {
     if (DEVANAGARI_MARATHI.test(input) && !DEVANAGARI_HINDI.test(input)) return { code: 'mr', name: 'Marathi', confidence: 'lexical', scripts };
     if (DEVANAGARI_HINDI.test(input)) return { code: 'hi', name: 'Hindi', confidence: 'lexical', scripts };
     return { code: 'hi-or-mr', name: 'Hindi/Marathi (unresolved)', confidence: 'script-only', scripts };
   }
-  if (scripts.includes('bengali') && /অসমীয়া|অসমীয়া/.test(input)) return { code: 'as', name: 'Assamese', confidence: 'lexical', scripts };
   if (nonLatin.length === 1 && SCRIPT_LANGUAGE[nonLatin[0]]) return { code: SCRIPT_LANGUAGE[nonLatin[0]], name: LANGUAGE_NAMES[SCRIPT_LANGUAGE[nonLatin[0]]], confidence: 'script', scripts };
   if (scripts.includes('latin')) return { code: 'en', name: 'English or transliterated', confidence: 'script', scripts };
   return { code: 'unknown', name: 'Unknown', confidence: 'unknown', scripts };
