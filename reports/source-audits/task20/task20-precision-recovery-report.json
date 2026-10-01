@@ -1,0 +1,72 @@
+{
+  "reportType": "TASK20_PRECISION_RECOVERY",
+  "generatedAt": "2026-10-01T08:39:41.605Z",
+  "localOnly": true,
+  "baseline": {
+    "source": "Task19 authoritative report",
+    "TP": 2,
+    "FP": 7,
+    "TN": 60,
+    "FN": 0,
+    "negativeLeaks": 3,
+    "offTopicLeaks": 4,
+    "insufficientLeaks": 0
+  },
+  "after": {
+    "metrics": {
+      "TP": 2,
+      "FP": 0,
+      "TN": 67,
+      "FN": 0,
+      "unresolved": 0,
+      "precision": 1,
+      "recall": 1,
+      "specificity": 1,
+      "falsePositiveRate": 0,
+      "falseNegativeRate": 0
+    },
+    "recoveredPositives": [
+      "task17-001",
+      "task17-059"
+    ],
+    "labelProtection": {
+      "humanNegatives": 15,
+      "offTopic": 29,
+      "insufficient": 23
+    },
+    "negativeControls": "8/8",
+    "task19ExtractionRecoveryActive": 53,
+    "holdout": {
+      "preChangeFP": 2,
+      "postChangeFP": 0
+    }
+  },
+  "changes": {
+    "negative": [
+      "Contextual demolition/sealing/protest/refund/delay/stake-sale adverse-event detection tied to property objects."
+    ],
+    "relevance": [
+      "Reject title-led toll-service, civic-maintenance, education-affiliation, and finance-only IPO/equity events unless concrete development evidence is present."
+    ],
+    "reasonCodes": [
+      "NEGATIVE_DEMOLITION",
+      "NEGATIVE_DELAY",
+      "NEGATIVE_DISPUTE",
+      "OFFTOPIC_TRANSPORT_SERVICE",
+      "OFFTOPIC_CIVIC",
+      "OFFTOPIC_EDUCATION",
+      "OFFTOPIC_CORPORATE_TRANSACTION"
+    ]
+  },
+  "falsePositivesBefore": 7,
+  "falsePositivesAfter": 0,
+  "reports": {
+    "falsePositivesBefore": "task20-false-positives-before.json",
+    "falsePositivesAfter": "task20-false-positives-after.json",
+    "negative": "task20-negative-analysis.json",
+    "offtopic": "task20-offtopic-analysis.json",
+    "beforeAfter": "task20-before-after.csv",
+    "holdout": "task20-holdout.json"
+  },
+  "decision": "BENCHMARK_PRECISION_TARGET_MET_LOCAL_ONLY"
+}

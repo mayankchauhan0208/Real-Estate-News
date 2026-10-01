@@ -1,0 +1,66 @@
+{
+  "leaksBefore": [
+    {
+      "recordId": "task17-022",
+      "source": "https://infra.economictimes.indiatimes.com/rss/recentstories",
+      "title": "Highway Infrastructure bags ₹245 crore toll contracts in UP, Tamil Nadu",
+      "humanLabel": "REJECT_OFF_TOPIC",
+      "humanReason": "Toll contract award across UP/Tamil Nadu; transport-service/business contract without specific real-estate/city catalyst.",
+      "extractedCleanEvidence": "The company said the latest wins are part of its strategy to expand across infrastructure opportunities and leverage its expertise in toll collection, plaza management and highway operations.Highway Infrastructure (HIL) on Thursday said it has secured new toll operations contracts in Uttar Pradesh and Tamil Nadu worth a combined &#8377;245.12 crore, strengthening its presence in the toll management and highway operations segment, the company said on October 1.According to the official press release, HIL has executed a work order from the Uttar Pradesh Expressways Industrial Development Authority (UPEIDA) for toll collection and plaza management services on the Gorakhpur Link Expressway. The two-year contract is valued at &#8377;220.66 crore, including &#8377;105.08 crore in the first year, with a 10 per cent escalation applicable in the second year.Separately, the company received a Letter of Acceptance from the National Highways Authority of India (NHAI) on September 30 for operations at the Velanchettiyur Fee Plaza on NH-7 in Tamil Nadu. The contract is valued at &#8377;24.46 crore.With these contracts, along with its existing tolling operations, HIL expects its tolling vertical to generate more than &#8377;400 crore in revenue over the next two years.&ldquo;The Gorakhpur Link Expressway and Velanchettiyur Fee Plaza contracts reflect the trust placed in HIL&rsquo;s operational capabilities and execution expertise. These additions provide greater visibility to our tolling business and reinforce our strategy of building a scalable and sustainable infrastructure platform,&rdquo; said Arun Kumar Jain, Managing Director, Highway Infrastructure.The company said the latest wins are part of its strategy to expand across infrastructure opportunities and leverage its expertise in toll collection, plaza management and highway operations. HIL said it is also pursuing opportunities aimed at strengthening its recurring revenue base and presence across key geographies.",
+      "currentRelevance": "project_development",
+      "currentNegative": "PASS",
+      "geoResult": "gorakhpur",
+      "routedCity": "",
+      "finalPipeline": "WOULD_PUBLISH",
+      "whyCurrentLogicAllowed": "Task 19 evidence recovery left no rejection reason for this record.",
+      "primaryCause": "OFFTOPIC_TRANSPORT_SERVICE"
+    },
+    {
+      "recordId": "task17-025",
+      "source": "https://realty.economictimes.indiatimes.com/rss/lighting/smart-lighting",
+      "title": "Repair, maintain all street lights in Patna civic body's area: Bihar CM",
+      "humanLabel": "REJECT_OFF_TOPIC",
+      "humanReason": "Street-light repair/maintenance is civic utility work.",
+      "extractedCleanEvidence": "Representative AI imagePATNA: Chief minister Samrat Choudhary on Sunday directed officials to ensure that all street lights installed within the Patna Municipal Corporation (PMC) area remain fully functional, stressing immediate maintenance and regular upkeep of lighting infrastructure.Choudhary issued the instructions while chairing a review meeting of the PMC street light programme at the Sankalp auditorium at Lok Sevak Awas. He asked officials of the urban development and housing department (UDHD) to send a formal letter to all agencies associated with the road construction department, directing them to improve routine maintenance and monitoring of street lights.The CM said all street lights installed in the PMC area should be repaired, maintained and brought into operational condition soon. He directed that new street lights be installed on a solar-based system. The solar plate, battery and light, he said, should be integrated into an inbuilt unit to ease operation and maintenance.The meeting discussed in detail the availability of street lights in the municipal area, existing maintenance challenges, and plans for the supply, installation and automation of new lights. Choudhary also ordered a study to assess possible savings in electricity consumption and other expenditure if all street lights in the PMC area are converted to solar power. He directed the department concerned to prepare and submit a detailed report based on the study.Emphasising urban appearance, the CM said Patna should look orderly and clean and that work should proceed under a stronger action plan. He said areas around Gandhi Maidan should be organised systematically so that the ground&rsquo;s natural form appears better.Chief minister&rsquo;s principal secretary Deepak Kumar, UDHD principal secretary Vinay Kumar, chief minister&rsquo;s secretaries Lokesh Kumar Singh and Sanjay Kumar Singh, UDHD secretary Animesh Parasar, Patna municipal commissioner Yashpal Meena and other senior officials attended the meeting.",
+      "currentRelevance": "project_development",
+      "currentNegative": "PASS",
+      "geoResult": "patna",
+      "routedCity": "patna",
+      "finalPipeline": "WOULD_PUBLISH",
+      "whyCurrentLogicAllowed": "Task 19 evidence recovery left no rejection reason for this record.",
+      "primaryCause": "OFFTOPIC_CIVIC"
+    },
+    {
+      "recordId": "task17-064",
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/2950623.cms",
+      "title": "Arappor alleges irregularities in affiliation granted to 74 private colleges of education",
+      "humanLabel": "REJECT_OFF_TOPIC",
+      "humanReason": "Private-college affiliation irregularities; education/governance, unrelated.",
+      "extractedCleanEvidence": "CHENNAI: Arappor Iyakkam has alleged irregularities in the grant of affiliation approvals to 74 private colleges of education by Tamil Nadu Teachers Education University between 2023 and 2025.In a complaint submitted to Governor Viswanath Arlekar, Chief Minister Joseph Vijay and higher education minister P Viswanathan on Thursday, the anti-corruption organisation questioned the manner in which inspection committees assessed the colleges.Arappor Iyakkam said university records showed that an inspection committee had physically visited five colleges located between Tiruvallur and Tuticorin on a single day — March 29, 2023. The organisation claimed that the colleges were located in three districts and that the committee had travelled nearly 560 km on the day.“While an inspection team requires a full day to verify faculty credentials, admissions and infrastructure facilities, how was it possible to inspect five colleges in three districts by travelling 560 km in a single day?” N Radhakrishnan of Arappor Iyakkam asked in the complaint.The organisation said its scrutiny of documents obtained under the Right to Information Act had revealed further discrepancies. According to Arappor, five principals were shown as working simultaneously at two colleges.It also alleged that 37 faculty members bearing the same names were listed against 222 vacancies across the state. The organisation urged the government to verify whether the faculty members existed and whether their credentials had been used to secure university affiliation.Arappor Iyakkam demanded a government inquiry into the alleged irregularities and sought action against colleges found to have submitted forged or misleading documents to obtain affiliation. It also called for action against university officials if tYou Can Also Check: Gold Rate in Chennai | Silver Rate in Chennai | Bank Holidays in Chennai | Public Holidays in Chennai | Chennai AQI | Weather in Chennai | Petrol Price in Chennai | Diesel Price in Chennai | CNG Price in Chennai | LPG Price in ChennaiStay updated with the latest Chennai news. Download the TOI App.",
+      "currentRelevance": "project_development",
+      "currentNegative": "PASS",
+      "geoResult": "chennai",
+      "routedCity": "chennai",
+      "finalPipeline": "WOULD_PUBLISH",
+      "whyCurrentLogicAllowed": "Task 19 evidence recovery left no rejection reason for this record.",
+      "primaryCause": "OFFTOPIC_EDUCATION"
+    },
+    {
+      "recordId": "task17-068",
+      "source": "https://www.hindustantimes.com/feeds/rss/real-estate/rssfeed.xml",
+      "title": "Anarock Property Consultants Limited files DRHP for ₹1,000 crore IPO; AI, tech investments among key plans",
+      "humanLabel": "REJECT_OFF_TOPIC",
+      "humanReason": "Real-estate consultancy IPO/financing story; finance-only/general business, not city development.",
+      "extractedCleanEvidence": "Mumbai-based Anarock Property Consultants Limited has filed its Draft Red Herring Prospectus (DRHP) with the capital markets regulator Securities and Exchange Board of India (SEBI) for an initial public offering (IPO) to raise ₹1,000 crore. The company plans to use the proceeds to fund business expansion, acquisitions, and investment in Artificial Intelligence augmentation and technology across certain business lines.The proposed IPO comprises a fresh issue of equity shares aggregating up to ₹550 crore and an Offer For Sale (OFS) of up to ₹450 crore, according to the Draft Red Herring Prospectus (DRHP) filed on Oct 1.Under the OFS, promoter selling shareholders Peter Properties Ltd and Khushi Trust, along with investors including various funds managed by 360 ONE, Om Sai Trust and Colared Consultants and Traders LLP, will offload shares.The company may also consider a pre-IPO placement of up to ₹110 crore. If such a placement is completed, the size of the fresh issue will be reduced accordingly, it said.To deploy the proceeds towards investments in AI augmentation and technologyThe company said it plans to deploy the proceeds from the fresh issue towards organic and inorganic growth, including investments in artificial intelligence (AI) augmentation and technology. Anarock proposes to invest ₹80 crore in AI augmentation and technology for its transaction advisory business, ₹25 crore in technology solutions through ACP, and ₹15 crore in technology solutions through Anacity, its subsidiary.Another ₹89.5 crore will be used to strengthen existing businesses and add new specialised services through talent augmentation.The company has earmarked ₹148 crore to fund the DSP Acquisition, while the remaining proceeds will be used for unidentified acquisitions, strategic initiatives, and general corporate purposes.The Offer is being made through the book-building process, wherein not more than 50% of the net offer is allocated to qualified institutional buyers, and not less than 15% and 35% of the net offer is assigned to non-institutional bidders and retail individual bidders, respectively, it said.Also Read: Construction costs in top seven Indian cities rise 34% and housing prices increase by 59% in the last five years: ReportICICI Securities, IIFL Capital Services and 360 ONE WAM are the book-running lead managers to the issue, while KFin Technologies is the registrar to the offer.The equity shares proposed to be offered through the IPO are proposed to be listed on the BSE and NSE.Incorporated in 2011, the company is an independent real estate advisory and services firm that combines institutional real estate market expertise, proprietary market knowledge and artificial intelligence-powered insights to deliver comprehensive real estate solutions to a diversified range of clients, including real estate developers, corporate occupiers, retail brands, government bodies, financial institutions, private equity funds, sovereign funds and other institutional investors.Its capabilities span the full real estate lifecycle, enabling it to serve clients and capture opportunities across different stages of the real estate value chain. Its services are broadly categorised into four business segments: Transaction Advisory, Leasing and Investment Advisory, Management Services, and Technology Solutions.In 2024, Anarock raised ₹200 crore from 360 One Asset Management Ltd to fund its overall business growth, both organically and inorganically. The group currently has around 2,300 employees operating across key tier-1 and 2 markets in India and the Middle East.As of March 31, 2026, March 31, 2025 and March 31, 2024, the company had no outstanding borrowings.Also Read: MMR leads Q3 housing sales as top 7 cities clock over 1 lakh units; NCR tops price growth at 12%",
+      "currentRelevance": "project_development",
+      "currentNegative": "PASS",
+      "geoResult": "delhi_ncr|mumbai",
+      "routedCity": "mumbai",
+      "finalPipeline": "WOULD_PUBLISH",
+      "whyCurrentLogicAllowed": "Task 19 evidence recovery left no rejection reason for this record.",
+      "primaryCause": "OFFTOPIC_CORPORATE_TRANSACTION"
+    }
+  ],
+  "leaksAfter": [],
+  "protected": 29
+}

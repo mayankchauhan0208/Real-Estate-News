@@ -3921,6 +3921,10 @@ function classifyArticle(article) {
     return "reject_negative";
   }
 
+  if (isClearlyOffTopicNonDevelopmentArticle(article)) {
+    return "reject_relevance";
+  }
+
   if (isEducationOnlyAnnouncement(article)) {
     return "reject_relevance";
   }
@@ -4026,12 +4030,34 @@ function isEducationOnlyAnnouncement(article) {
   return educationSignal && !realEstateSignal;
 }
 
+function isClearlyOffTopicNonDevelopmentArticle(article) {
+  const title = getArticlePrimaryText(article);
+  const text = getArticleSearchText(article);
+  const hasConcreteDevelopment = hasKeyword(title, [
+    "land acquisition", "land parcel", "land purchase", "plot", "housing project", "residential project",
+    "commercial project", "township", "real estate development", "property development", "construction project",
+    "project approval", "project approved", "project launch", "developer", "builder", "office space", "warehouse"
+  ]);
+
+  if (hasConcreteDevelopment) return false;
+
+  if (hasKeyword(title, ["toll contract", "toll contracts", "toll collection contract"])) return true;
+  if (hasKeyword(title, ["street lights", "streetlight", "luggage locker", "luggage lockers"]) && hasKeyword(title, ["repair", "maintain", "maintenance", "install"])) return true;
+  if (hasKeyword(title, ["private college", "private colleges", "college affiliation", "education affiliation", "university affiliation"])) return true;
+  if (hasKeyword(title, ["ipo", "drhp", "share-swap", "share swap", "equity stake", "stake sale"]) && !hasKeyword(title, ["land", "plot", "housing", "project", "township"])) return true;
+  return false;
+}
+
 function isRealEstateRelated(article) {
   if (isOfficialReraPressRelease(article)) {
     return true;
   }
 
   if (isBlockedArticle(article)) {
+    return false;
+  }
+
+  if (isClearlyOffTopicNonDevelopmentArticle(article)) {
     return false;
   }
 
@@ -4788,7 +4814,7 @@ function isPoliticalCampaignArticle(article) {
     "poll campaign",
     "parliamentary constituency"
   ];
-  return hasKeyword(text, politicalSignals);
+  return hasWholeWordKeyword(text, politicalSignals);
 }
 
 function isGenericBroadMarketHeadline(article) {
@@ -4944,16 +4970,33 @@ function isNegativeNews(article) {
     return false;
   }
 
+  if (hasContextualAdverseEvent(article)) {
+    return true;
+  }
+
+  const resolvedApprovalDelay = /\b(?:reduces?|removes?|resolves?|address(?:es|ed)?|avoids?)\s+(?:approval\s+)?(?:delay|delays|delayed)\b/i.test(primaryText);
   return (
-    hasWholeWordKeyword(primaryText, negativeNewsKeywords) ||
-    hasKeyword(primaryText, negativePhraseKeywords) ||
-    hasWholeWordKeyword(urlText, negativeNewsKeywords) ||
+    ((hasWholeWordKeyword(primaryText, negativeNewsKeywords) || hasKeyword(primaryText, negativePhraseKeywords)) && !resolvedApprovalDelay) ||
+    (hasWholeWordKeyword(urlText, negativeNewsKeywords) && !resolvedApprovalDelay) ||
     hasKeyword(urlText, negativePhraseKeywords) ||
     hasWholeWordKeyword(bodyText, severeBodyNegativeKeywords) ||
     hasKeyword(bodyText, severeBodyNegativePhrases) ||
     isAdverseReraArticle(article) ||
     isAdverseCourtRealEstateArticle(article)
   );
+}
+
+function hasContextualAdverseEvent(article) {
+  const primary = getArticlePrimaryText(article);
+  const text = getArticleSearchText(article);
+  const adverseAction = /\b(?:razed|demolished|demolition|sealed|evicted|attached|arrested|investigated|protested|protest|pushing back|pushback|failed to refund|refund ordered|stalled|cancelled|canceled|delayed)\b/i;
+  const propertyObject = /\b(?:property|properties|residential|residences|housing|homebuyers?|homes?|units?|project|promoters?|developer|builder|metro|stake sale|sale timeline|neighbou?rhood|neighbourhood)\b/i;
+
+  if (/\b(?:razed|demolished|demolition|sealed)\b/i.test(primary) && propertyObject.test(`${primary} ${text}`)) return true;
+  if (/\b(?:pushing back|pushback|protest(?:ed|ing)?|residents? complain(?:ed|ts?)?|residents? oppose)\b/i.test(`${primary} ${text}`) && /\b(?:property|residential|residences|housing|home|neighbou?rhood|stay|rental)\b/i.test(`${primary} ${text}`)) return true;
+  if (/\b(?:stake sale|sale timeline)\b/i.test(`${primary} ${text}`) && /\b(?:extend(?:s|ed)?|delay(?:ed|s)?|timeline|financial|regulatory challenge)\b/i.test(`${primary} ${text}`)) return true;
+  if (adverseAction.test(primary) && propertyObject.test(`${primary} ${text}`) && !/\b(?:reduces?|removes?|resolves?|address(?:es|ed)?|avoids?)\s+(?:approval\s+)?(?:delay|delays|delayed)\b/i.test(primary)) return true;
+  return false;
 }
 
 function hasOutsideCityConflict(article) {
@@ -7300,8 +7343,8 @@ export {
   getSourceUrls,
   getGeographicAliasAudit,
   getArticleFinalState,
-  getArticleTrace,
   getRejectionReasons,
+  getArticleTrace,
   localQualityJudge,
   needsLocalQualityReview,
   getExtraArticleUrls,
