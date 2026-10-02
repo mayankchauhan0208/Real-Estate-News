@@ -1816,7 +1816,9 @@ function getSources() {
       .filter((source) => {
         const mode = getRegionalSourceMode(source.url);
         if (mode === "OFF") return false;
-        return getBooleanEnv("ENABLE_EXPERIMENTAL_SOURCES") || !isExperimentalManualSource(source) || mode === "ACTIVE_FOR_REVIEW";
+        // A source that has passed the measured promotion gate must remain
+        // selectable even when the broader experimental pool is disabled.
+        return getBooleanEnv("ENABLE_EXPERIMENTAL_SOURCES") || !isExperimentalManualSource(source) || mode !== "OFF";
       })
       .filter((source) => {
         if (!requestedCategory) return true;
