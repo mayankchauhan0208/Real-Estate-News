@@ -1,7 +1,7 @@
 {
   "cycleId": "source-cycle-2026-10-02",
-  "createdAt": "2026-10-02T04:40:46.079Z",
-  "universeFingerprint": "63ec259303992b9b8d1c86078b26602654a46805ba05588446f3b113256c92c2",
+  "createdAt": "2026-10-02T10:21:27.466Z",
+  "universeFingerprint": "6a85fe366cb661a952de548a26f248c41da09686b26ed0ff9f3a5c7235b338f4",
   "sources": [
     {
       "sourceId": "source-00a0c32b225feb2f",
@@ -1658,10 +1658,6 @@
     {
       "sourceId": "source-bafe11bb39571bdf",
       "url": "https://infra.economictimes.indiatimes.com/rss/construction"
-    },
-    {
-      "sourceId": "source-bb66beab33995794",
-      "url": "https://www.amarujala.com/rss/faridabad.xml"
     },
     {
       "sourceId": "source-bcc812dd104e763d",
