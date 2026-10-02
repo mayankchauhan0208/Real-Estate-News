@@ -1448,6 +1448,31 @@ const faridabadInfraRealtyHubArticle = publishable({
 
 assert.deepEqual(detectCityCodes(faridabadInfraRealtyHubArticle), ["faridabad"]);
 assert.equal(isPublishableArticle(faridabadInfraRealtyHubArticle, sentIds), true);
+
+// Permanent boundary regression: positive civic infrastructure is not
+// real-estate news unless the full article establishes a property/land/project
+// consequence. This is the production Amar Ujala false-positive pattern.
+const faridabadElectricityOnlyArticle = publishable({
+  title: "Faridabad infrastructure will be expanded to improve electricity supply in industrial areas",
+  description: "Substations, transformers and electricity connections will improve power reliability.",
+  articleText:
+    "The electricity distribution network will be strengthened with substations, transformers and improved voltage and load management in Faridabad industrial areas. The work concerns power supply reliability.",
+  newsLink: "https://example.com/faridabad/electricity-infrastructure-industrial-areas"
+});
+assert.equal(isPublishableArticle(faridabadElectricityOnlyArticle, sentIds), false);
+assert.match(
+  reasons(faridabadElectricityOnlyArticle).join("; "),
+  /POSITIVE_INFRASTRUCTURE_WITHOUT_SUFFICIENT_REAL_ESTATE_NEXUS/
+);
+
+const faridabadPropertyLinkedInfrastructureArticle = publishable({
+  title: "New expressway interchange to unlock plotted development near Faridabad",
+  description: "The interchange will connect a named residential plots project and new sector development.",
+  articleText:
+    "The expressway interchange will provide access to the named residential plots project and the authority's new sector development. The developer is preparing the land parcel and plotted township connected to the corridor.",
+  newsLink: "https://example.com/faridabad/expressway-plotted-development"
+});
+assert.equal(isPublishableArticle(faridabadPropertyLinkedInfrastructureArticle, sentIds), true);
 assert.equal(classifyArticle(faridabadInfraRealtyHubArticle), "positive_city_market");
 
 const noidaPositiveMarketArticle = publishable({

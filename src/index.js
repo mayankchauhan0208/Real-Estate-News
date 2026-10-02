@@ -32,7 +32,9 @@ const parser = new Parser({
   }
 });
 
-const stateDir = path.resolve(".state");
+// Historical backfills use an isolated state directory so they cannot reset
+// or overwrite the normal current-news scheduler checkpoint.
+const stateDir = path.resolve(process.env.NEWS_STATE_DIR || ".state");
 const sentNewsPath = path.join(stateDir, "sent-news.json");
 const sentNewsSeedPath = path.resolve("data", "sent-news-seed.json");
 const runReportsDir = path.resolve("reports", "runs");
@@ -1964,14 +1966,25 @@ function getNonNegativeIntegerEnv(name, fallback = 0) {
 }
 
 function getMaxItemsPerSource() {
+  if (getBooleanEnv("BACKFILL_EXHAUSTIVE") && hasBackfillDateRange(getBackfillDateRange())) {
+    return Number.MAX_SAFE_INTEGER;
+  }
   return getPositiveIntegerEnv("MAX_ITEMS_PER_SOURCE", 300);
 }
 
 function getMaxPagesPerSource() {
+  if (getBooleanEnv("BACKFILL_EXHAUSTIVE") && hasBackfillDateRange(getBackfillDateRange())) {
+    // Zero means discover pagination until the source stops yielding new links.
+    // The normal scheduler keeps its conservative five-page ceiling below.
+    return 0;
+  }
   return Math.min(getPositiveIntegerEnv("MAX_PAGES_PER_SOURCE", 5), 5);
 }
 
 function getMaxItemsPerRun() {
+  if (getBooleanEnv("BACKFILL_EXHAUSTIVE") && hasBackfillDateRange(getBackfillDateRange())) {
+    return Number.MAX_SAFE_INTEGER;
+  }
   return getPositiveIntegerEnv("MAX_ITEMS_PER_RUN", 30);
 }
 
@@ -2737,6 +2750,49 @@ function getSourcePageUrls(sourceUrl) {
   }
 
   return [sourceUrl];
+}
+
+function getPaginatedSourcePageUrl(sourceUrl, pageIndex) {
+  if (pageIndex <= 0) return sourceUrl;
+
+  try {
+    const url = new URL(sourceUrl);
+    const normalizedPath = url.pathname.replace(/\/+$/, "");
+    const pageNumber = pageIndex + 1;
+
+    if (url.hostname === "realty.economictimes.indiatimes.com" && normalizedPath.startsWith("/tag/")) {
+      url.pathname = `${normalizedPath}/${pageNumber}`;
+      return url.toString();
+    }
+
+    if (url.hostname === "www.hindustantimes.com" &&
+      (["/real-estate", "/cities/noida-news"].includes(normalizedPath) || normalizedPath.startsWith("/topic/"))) {
+      url.pathname = `${normalizedPath}/page-${pageNumber}`;
+      return url.toString();
+    }
+
+    if (url.hostname === "indianexpress.com" && normalizedPath.startsWith("/about/")) {
+      url.pathname = `${normalizedPath}/page/${pageNumber}/`.replace(/\/{2,}/g, "/");
+      return url.toString();
+    }
+
+    const wordpressPagedHosts = new Set([
+      "torbitrealty.com",
+      "realtynmore.com",
+      "realtynxt.com",
+      "www.track2realty.track2media.com",
+      "propnewstime.com"
+    ]);
+
+    if (wordpressPagedHosts.has(url.hostname)) {
+      url.pathname = `${normalizedPath || ""}/page/${pageNumber}/`.replace(/\/{2,}/g, "/");
+      return url.toString();
+    }
+  } catch {
+    return null;
+  }
+
+  return null;
 }
 
 function isHsvpSource(sourceUrl) {
@@ -4019,6 +4075,75 @@ function isOperationalInfrastructureOnlyArticle(article) {
   return hasOperationalSignal && !hasPropertyOrDevelopmentSignal;
 }
 
+function hasMeaningfulPropertyNexus(article) {
+  const text = getArticleSearchText(article);
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const propertyTerms = [
+    "real estate", "realty", "property", "properties", "housing", "residential", "commercial",
+    "plot", "plots", "land parcel", "land acquisition", "land allotment", "township", "apartment",
+    "builder", "developer", "project", "sector development", "housing scheme", "property market",
+    "site", "sites", "auction", "allotment", "demarcation", "development benefits", "development zone", "new sectors",
+    "warehouse", "warehousing", "logistics park", "industrial park",
+    "रियल एस्टेट", "प्रॉपर्टी", "आवास", "जमीन", "भूमि", "प्लॉट", "परियोजना", "प्रोजेक्ट", "निर्माण"
+  ];
+  const infrastructureTerms = [
+    "infrastructure", "power supply", "electricity", "transformer", "substation", "sub-station",
+    "water supply", "water pipeline", "sewer", "sewage", "drainage", "street light", "streetlight",
+    "road repair", "road maintenance", "traffic", "broadband", "telecom", "bus service", "railway service",
+    "metro", "expressway", "airport", "connectivity", "industrial corridor"
+  ];
+  const hasPropertyTerm = hasKeyword(text, propertyTerms);
+  const hasInfrastructureTerm = hasKeyword(text, infrastructureTerms);
+
+  if (!hasInfrastructureTerm || !hasPropertyTerm) {
+    return false;
+  }
+
+  if (hasKeyword(primaryAndUrl, [
+    "logistics park", "industrial park", "warehouse", "warehousing", "residential project",
+    "commercial project", "housing project", "plotted development", "township development"
+  ])) {
+    return true;
+  }
+
+  // A property word somewhere in a long article is not enough. Require the
+  // clean article context to connect the infrastructure event to a property,
+  // land, project, sector, or development consequence.
+  const contextualNexus = [
+    /\b(?:infrastructure|connectivity|expressway|metro|airport|road|power|water)\b[^.!?]{0,140}\b(?:real estate|realty|property|housing|residential|commercial|plots?|land|township|project|sectors?|development benefits|development zones?|new sectors)\b/i,
+    /\b(?:real estate|realty|property|housing|residential|commercial|plots?|land|township|project|sectors?|development benefits|development zones?|new sectors)\b[^.!?]{0,140}\b(?:infrastructure|connectivity|expressway|metro|airport|road|power|water)\b/i,
+    /\b(?:unlocks?|supports?|enables?|opens?|connects?|serves?|cataly[sz]es?|drives?)\b[^.!?]{0,100}\b(?:new\s+)?(?:sectors?|townships?|housing|residential|commercial|industrial\s+plots?|land\s+parcels?|real\s+estate|property)\b/i,
+    /\b(?:authority|development authority|hsvp|huda|dda|gnida|noida|yeida|gmda)\b[^.!?]{0,120}\b(?:land|plot|plots|housing|property|scheme|auction|allotment|sector|township|project)\b/i
+  ];
+
+  return contextualNexus.some((pattern) => pattern.test(text)) ||
+    contextualNexus.some((pattern) => pattern.test(primaryAndUrl));
+}
+
+function isPositiveInfrastructureWithoutPropertyNexus(article) {
+  if (
+    isTargetDominantInfrastructureCorridor(article) ||
+    isConnectivityCatalystArticle(article) ||
+    isFaridabadJewarGrowthArticle(article) ||
+    isFaridabadNcrGrowthComparisonArticle(article) ||
+    isNcrCommercialOfficeMarketArticle(article) ||
+    isAuthorityPipelineArticle(article)
+  ) {
+    return false;
+  }
+
+  const text = getArticleSearchText(article);
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const infrastructureOnly = hasKeyword(primaryAndUrl, [
+    "infrastructure", "power supply", "electricity", "transformer", "substation", "sub-station",
+    "water supply", "water pipeline", "sewer", "sewage", "drainage", "street light", "streetlight",
+    "road repair", "road maintenance", "traffic management", "broadband", "telecom", "bus service",
+    "railway service", "generic infrastructure", "utility upgrade", "industrial utility"
+  ]);
+
+  return infrastructureOnly && !hasMeaningfulPropertyNexus(article) && !isOperationalInfrastructureOnlyArticle(article);
+}
+
 function isStrongPositiveMarketOrInfrastructureArticle(article) {
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
   const disqualifyingOutsideCities = getDisqualifyingOutsideCityKeywords(article).filter(
@@ -4313,6 +4438,10 @@ function isRealEstateRelated(article) {
   }
 
   if (isOperationalInfrastructureOnlyArticle(article)) {
+    return false;
+  }
+
+  if (isPositiveInfrastructureWithoutPropertyNexus(article)) {
     return false;
   }
 
@@ -5470,7 +5599,11 @@ function getRejectionReasons(article, sentIds) {
   const negativeNews = isNegativeNews(article);
 
   if (!realEstateRelated) {
-    reasons.push("filter 4: not positive target real-estate/project news");
+    reasons.push(
+      isPositiveInfrastructureWithoutPropertyNexus(article)
+        ? "POSITIVE_INFRASTRUCTURE_WITHOUT_SUFFICIENT_REAL_ESTATE_NEXUS"
+        : "filter 4: not positive target real-estate/project news"
+    );
   }
 
   if (isBlockedArticle(article) && !isOfficialReraPressRelease(article)) {
@@ -7100,7 +7233,16 @@ async function fetchPage(sourceUrl, options = {}) {
   let publisher = "";
   let publisherLogo = "";
 
-  for (const [pageIndex, pageUrl] of pageUrls.entries()) {
+  const exhaustivePagination = getMaxPagesPerSource() === 0;
+  const pageCount = exhaustivePagination ? Number.MAX_SAFE_INTEGER : pageUrls.length;
+
+  for (let pageIndex = 0; pageIndex < pageCount; pageIndex += 1) {
+    const pageUrl = exhaustivePagination
+      ? getPaginatedSourcePageUrl(sourceUrl, pageIndex)
+      : pageUrls[pageIndex];
+    if (!pageUrl) break;
+
+    const candidatesBeforePage = candidates.length;
     let html = "";
 
     try {
@@ -7114,6 +7256,10 @@ async function fetchPage(sourceUrl, options = {}) {
         if (isMissingPaginatedPageError(error)) {
           console.log(`Reached end of paginated source ${sourceUrl} at ${pageUrl}.`);
           break;
+        }
+
+        if (exhaustivePagination) {
+          throw error;
         }
 
         console.log(`Skipped paginated source page ${pageUrl}: ${error.message}`);
@@ -7169,6 +7315,11 @@ async function fetchPage(sourceUrl, options = {}) {
         fetchedAt: new Date().toISOString()
       });
     });
+
+    if (exhaustivePagination && pageIndex > 0 && candidates.length === candidatesBeforePage) {
+      console.log(`Reached end of paginated source ${sourceUrl} after ${pageIndex} page(s) with no new article links.`);
+      break;
+    }
   }
 
   const limitedCandidates = candidates.slice(0, getMaxItemsPerSource());
@@ -7915,6 +8066,7 @@ export {
   getArticleFinalState,
   getRejectionReasons,
   getArticleTrace,
+  hasMeaningfulPropertyNexus,
   localQualityJudge,
   needsLocalQualityReview,
   getExtraArticleUrls,

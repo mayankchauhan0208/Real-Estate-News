@@ -1,43 +1,35 @@
-name: News Backfill
+name: News 45-Day Backfill
 
 on:
   workflow_dispatch:
     inputs:
       backfill_from:
-        description: "Only consider articles published on or after this date"
+        description: "Required inclusive start date (YYYY-MM-DD)"
         required: true
         type: string
       backfill_to:
-        description: "Only consider articles published on or before this date"
+        description: "Required inclusive end date (YYYY-MM-DD)"
         required: true
         type: string
-      max_items_per_source:
-        description: "How many links to inspect from each source"
-        required: false
-        default: "8"
+      mode:
+        description: "DRY_RUN must pass before a separate PRODUCTION request"
+        required: true
+        type: choice
+        options:
+          - DRY_RUN
+          - PRODUCTION
+        default: DRY_RUN
+      backfill_id:
+        description: "Stable ID used to resume the same backfill state"
+        required: true
         type: string
-      max_pages_per_source:
-        description: "How many paginated source pages to inspect"
-        required: false
-        default: "1"
-        type: string
-      max_items_per_run:
-        description: "Maximum publish count per batch"
-        required: false
-        default: "80"
-        type: string
-      resend_backfill:
-        description: "Ignore dedupe for this backfill"
-        required: false
-        default: false
-        type: boolean
 
 concurrency:
-  group: news-api-pusher
+  group: news-45-day-backfill-${{ inputs.backfill_id }}
   cancel-in-progress: false
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   backfill:
@@ -62,6 +54,19 @@ jobs:
             source_limit: 0
 
     steps:
+      - name: Validate explicit date window
+        run: |
+          python - <<'PY'
+          from datetime import date
+          start = date.fromisoformat("${{ inputs.backfill_from }}")
+          end = date.fromisoformat("${{ inputs.backfill_to }}")
+          if end < start:
+              raise SystemExit("backfill_to must be on or after backfill_from")
+          days = (end - start).days + 1
+          if days != 45:
+              raise SystemExit(f"Task 41 requires exactly 45 calendar days; received {days}")
+          PY
+
       - name: Checkout
         uses: actions/checkout@v7
 
@@ -70,14 +75,13 @@ jobs:
         with:
           node-version: 24
 
-      - name: Restore dedupe state
+      - name: Restore isolated backfill state
         uses: actions/cache@v6
         with:
-          path: .state
-          key: news-state-backfill-${{ github.run_id }}-${{ matrix.source_offset }}
+          path: .state/task41-backfill/${{ inputs.backfill_id }}
+          key: task41-backfill-${{ inputs.backfill_id }}-${{ matrix.source_offset }}
           restore-keys: |
-            news-state-backfill-
-            news-state-
+            task41-backfill-${{ inputs.backfill_id }}-
 
       - name: Install dependencies
         run: npm ci
@@ -85,7 +89,7 @@ jobs:
       - name: Build and verify filters
         run: npm run build
 
-      - name: Fetch and push news batch
+      - name: Fetch and evaluate historical batch
         run: npm start
         env:
           APP_API_URL: ${{ secrets.APP_API_URL }}
@@ -94,16 +98,19 @@ jobs:
           APP_LIST_API_KEY: ${{ secrets.APP_LIST_API_KEY || secrets.APP_API_KEY }}
           BACKFILL_FROM: ${{ inputs.backfill_from }}
           BACKFILL_TO: ${{ inputs.backfill_to }}
-          RESEND_BACKFILL: ${{ inputs.resend_backfill }}
-          API_RECONCILE_PAGES: "25"
-          API_RECONCILE_PAGE_SIZE: "100"
+          BACKFILL_EXHAUSTIVE: "true"
+          DRY_RUN: ${{ inputs.mode == 'DRY_RUN' && 'true' || 'false' }}
+          RESEND_BACKFILL: "false"
+          NEWS_STATE_DIR: .state/task41-backfill/${{ inputs.backfill_id }}
+          API_RECONCILE_PAGES: "100"
+          API_RECONCILE_PAGE_SIZE: "1000"
           SOURCE_OFFSET: ${{ matrix.source_offset }}
           SOURCE_LIMIT: ${{ matrix.source_limit }}
           SOURCE_CONCURRENCY: "12"
-          BUILD_VERSION: "source-intelligence-v1"
-          SOURCE_STRATEGY: "sequential-backfill-batch"
+          BUILD_VERSION: "task41-quality-hardened-backfill"
+          SOURCE_STRATEGY: "task41-resumable-backfill"
           AUTO_SOURCE_BATCH: "false"
-          SOURCE_BATCH_COUNT: "1"
+          USE_RESUMABLE_SOURCE_SCHEDULER: "false"
           ARTICLE_METADATA_CONCURRENCY: "6"
           FETCH_TIMEOUT_MS: "25000"
           ARTICLE_METADATA_TIMEOUT_MS: "12000"
@@ -111,31 +118,53 @@ jobs:
           SOURCE_RETRY_ATTEMPTS: "4"
           ENABLE_NOIDA_CITY: "true"
           ALLOW_NOIDA_API: "true"
-          MAX_ITEMS_PER_RUN: ${{ inputs.max_items_per_run }}
-          MAX_ITEMS_PER_SOURCE: ${{ inputs.max_items_per_source }}
-          MAX_PAGES_PER_SOURCE: ${{ inputs.max_pages_per_source }}
-          DEFAULT_LOOKBACK_DAYS: "20"
-          REJECTION_AUDIT_LIMIT: "5000"
+          DEFAULT_LOOKBACK_DAYS: "45"
+          REJECTION_AUDIT_LIMIT: "50000"
           DETAILED_REJECTION_REASONS: "true"
           MISSED_NEWS_AUDIT: "true"
 
-      - name: Upload run report
+      - name: Upload historical batch report
         if: always()
         uses: actions/upload-artifact@v6
         with:
-          name: news-backfill-report-${{ github.run_id }}-${{ matrix.source_offset }}
+          name: task41-backfill-report-${{ inputs.backfill_id }}-${{ matrix.source_offset }}
           path: |
             reports/runs/
             reports/source-audits/
-          retention-days: 30
+            .state/task41-backfill/${{ inputs.backfill_id }}/
+          retention-days: 90
           if-no-files-found: ignore
 
-      - name: Refresh hosted admin snapshot
-        if: ${{ always() && matrix.source_offset == 500 }}
+  aggregate:
+    if: always()
+    needs: backfill
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Download batch artifacts
+        uses: actions/download-artifact@v6
+        with:
+          pattern: task41-backfill-report-${{ inputs.backfill_id }}-*
+          path: .task41-artifacts
+          merge-multiple: false
         continue-on-error: true
+
+      - name: Aggregate and gate batch reports
         run: |
-          npm run admin:export
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add admin/static-state.json
-          git diff --cached --quiet || (git commit -m "Update hosted admin snapshot [skip ci]" && git push)
+          node tools/task41-aggregate-backfill.mjs .task41-artifacts reports/source-audits/task41/backfill-summary.json
+
+      - name: Upload aggregate report
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: task41-backfill-summary-${{ inputs.backfill_id }}
+          path: reports/source-audits/task41/backfill-summary.json
+          retention-days: 90
+          if-no-files-found: ignore
