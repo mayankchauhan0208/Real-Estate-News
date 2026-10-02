@@ -1,11 +1,11 @@
 {
   "final": {
-    "TP": 7,
+    "TP": 11,
     "FP": 0,
     "TN": 14,
-    "FN": 4,
+    "FN": 0,
     "precision": 1,
-    "recall": 0.6363636363636364
+    "recall": 1
   },
   "protection": {
     "negative": 6,

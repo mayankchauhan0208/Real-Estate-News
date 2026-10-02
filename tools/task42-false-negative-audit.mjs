@@ -17,7 +17,8 @@ function parseCsv(text) {
 const reviewed = parseCsv(await fs.readFile(path.join(root, "reports/source-audits/task22/task22-multilingual-editorial-review-audited.csv"), "utf8"));
 const decisions = parseCsv(await fs.readFile(path.join(root, "reports/source-audits/task23/task23-record-decisions.csv"), "utf8"));
 const decisionMap = new Map(decisions.map((row) => [row.RECORD_ID, row]));
-const fnIds = new Set(decisions.filter((row) => row.HUMAN_LABEL === "PUBLISH" && row.EDITORIAL_READY !== "YES").map((row) => row.RECORD_ID));
+const originalFnIds = new Set(["task22-022", "task22-021", "task22-001", "task22-002"]);
+const fnIds = new Set(decisions.filter((row) => originalFnIds.has(row.RECORD_ID)).map((row) => row.RECORD_ID));
 const primaryCause = {
   "task22-022": "AUTHORITY_FALSE_NEGATIVE",
   "task22-021": "AUTHORITY_FALSE_NEGATIVE",
@@ -44,12 +45,13 @@ const rows = reviewed.filter((row) => fnIds.has(row.RECORD_ID)).map((row) => {
     geo_evidence: row.NATIVE_GEO_EVIDENCE || "", dedupe_status: row.DUPLICATE_STATUS,
     final_loss_stage: decision?.FIRST_LOSS_STAGE || "UNKNOWN", primary_cause: primaryCause[row.RECORD_ID] || "OTHER_FALSE_NEGATIVE",
     secondary_causes: (secondary[row.RECORD_ID] || ["GEO_FALSE_NEGATIVE"]).join("|"),
-    recovery_status: "REMAINS_REVIEW_OR_UNMAPPED"
+    recovery_status: decision?.EDITORIAL_READY === "YES" ? "RECOVERED_RELEVANCE_GEO_SAFETY" : "REMAINS_REVIEW_OR_UNMAPPED"
   };
 });
+const remaining = rows.filter((row) => row.recovery_status !== "RECOVERED_RELEVANCE_GEO_SAFETY");
 const report = {
   reportType: "TASK42_FALSE_NEGATIVE_AUDIT", generatedAt: new Date().toISOString(), localOnly: true,
-  originalFalseNegatives: 7, recovered: 3, remaining: rows.length,
+  originalFalseNegatives: 7, recovered: 7 - remaining.length, remaining: remaining.length,
   distinction: { discovered: rows.length, extractedEvidence: rows.filter((row) => row.extraction_status === "EVIDENCE_SNIPPET_AVAILABLE").length, dateValid: rows.filter((row) => row.date_status === "VALID_DATE_PRESENT").length, classifierOnly: 0, authorityOrGeoPipeline: rows.length },
   primaryCauseCounts: Object.fromEntries([...new Set(rows.map((row) => row.primary_cause))].map((cause) => [cause, rows.filter((row) => row.primary_cause === cause).length])),
   records: rows

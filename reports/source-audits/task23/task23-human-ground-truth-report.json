@@ -1,6 +1,6 @@
 {
   "reportType": "TASK23_MULTILINGUAL_HUMAN_GROUND_TRUTH",
-  "generatedAt": "2026-10-02T17:26:10.268Z",
+  "generatedAt": "2026-10-02T17:45:27.632Z",
   "localOnly": true,
   "input": "reports/source-audits/task22/task22-multilingual-editorial-review-audited.csv",
   "humanLabels": {
@@ -19,12 +19,12 @@
     "recall": 0
   },
   "final": {
-    "TP": 7,
+    "TP": 11,
     "FP": 0,
     "TN": 14,
-    "FN": 4,
+    "FN": 0,
     "precision": 1,
-    "recall": 0.6363636363636364
+    "recall": 1
   },
   "protection": {
     "negative": 6,

@@ -1,6 +1,6 @@
 {
   "reportType": "TASK42_REAL_WORLD_PRECISION_BENCHMARK",
-  "generatedAt": "2026-10-02T17:27:33.022Z",
+  "generatedAt": "2026-10-02T17:45:27.755Z",
   "localOnly": true,
   "productionMutations": 0,
   "provenance": [
@@ -18,14 +18,14 @@
     "REVIEW_UNCERTAIN": 0
   },
   "confusion": {
-    "TP": 9,
+    "TP": 13,
     "FP": 0,
     "TN": 81,
-    "FN": 4,
+    "FN": 0,
     "precision": 1,
-    "recall": 0.6923076923076923,
+    "recall": 1,
     "falsePositiveRate": 0,
-    "falseNegativeRate": 0.3076923076923077
+    "falseNegativeRate": 0
   },
   "hardGates": {
     "falsePositive": true,
@@ -1052,7 +1052,7 @@
       "currentOutcome": "PUBLISH",
       "relevance": "project_development",
       "negative": "PASS",
-      "geo": "delhi",
+      "geo": "new_delhi",
       "duplicate": "UNIQUE",
       "evidenceStatus": "HUMAN_AUDITED"
     },
@@ -1066,9 +1066,9 @@
       "city": "Delhi",
       "humanLabel": "PUBLISH",
       "currentOutcome": "PUBLISH",
-      "relevance": "unclassified",
+      "relevance": "project_development",
       "negative": "PASS",
-      "geo": "delhi",
+      "geo": "new_delhi",
       "duplicate": "UNIQUE",
       "evidenceStatus": "HUMAN_AUDITED"
     },
@@ -1084,7 +1084,7 @@
       "currentOutcome": "PUBLISH",
       "relevance": "project_development",
       "negative": "PASS",
-      "geo": "mumbai|pune",
+      "geo": "pune",
       "duplicate": "UNIQUE",
       "evidenceStatus": "HUMAN_AUDITED"
     },
@@ -1129,7 +1129,7 @@
       "language": "Telugu",
       "city": "Hyderabad",
       "humanLabel": "PUBLISH",
-      "currentOutcome": "REVIEW_OR_REJECT",
+      "currentOutcome": "PUBLISH",
       "relevance": "authority_pipeline",
       "negative": "PASS",
       "geo": "hyderabad",
@@ -1225,7 +1225,7 @@
       "language": "Telugu",
       "city": "Hyderabad",
       "humanLabel": "PUBLISH",
-      "currentOutcome": "REVIEW_OR_REJECT",
+      "currentOutcome": "PUBLISH",
       "relevance": "project_development",
       "negative": "PASS",
       "geo": "hyderabad",
@@ -1257,10 +1257,10 @@
       "language": "Hindi",
       "city": "Delhi",
       "humanLabel": "PUBLISH",
-      "currentOutcome": "REVIEW_OR_REJECT",
+      "currentOutcome": "PUBLISH",
       "relevance": "unclassified",
       "negative": "PASS",
-      "geo": "NO_SUPPORTED_CITY_EVIDENCE",
+      "geo": "new_delhi",
       "duplicate": "UNIQUE",
       "evidenceStatus": "HUMAN_AUDITED"
     },
@@ -1273,10 +1273,10 @@
       "language": "Hindi",
       "city": "Delhi",
       "humanLabel": "PUBLISH",
-      "currentOutcome": "REVIEW_OR_REJECT",
+      "currentOutcome": "PUBLISH",
       "relevance": "project_development",
       "negative": "PASS",
-      "geo": "NO_SUPPORTED_CITY_EVIDENCE",
+      "geo": "new_delhi",
       "duplicate": "UNIQUE",
       "evidenceStatus": "HUMAN_AUDITED"
     },

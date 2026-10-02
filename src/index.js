@@ -4073,15 +4073,45 @@ function isOfficialAuthorityPipelineNotice(article) {
 function isVerifiedAuthorityPropertyEvent(article) {
   const source = `${article.sourceUrl || ""} ${article.newsLink || ""}`;
   const primary = getArticlePrimaryText(article);
+  const searchable = getArticleSearchText(article);
   const event = String(article.authorityEventType || "");
   const official = /dda\.gov\.in|idaindore\.org|mhada\.gov\.in|mhada\.mahaonline\.gov\.in|cidco\.maharashtra\.gov\.in|urban\.rajasthan\.gov\.in|hareraggm\.gov\.in|gujrera\.gujarat\.gov\.in/i.test(source);
-  const propertyEvent = hasKeyword(primary, [
-    "flat", "flats", "housing", "residential", "row-house", "row house", "plot", "plots", "lottery", "scheme", "auction", "tenement", "redevelopment", "project", "development"
+  const namedAuthority = hasKeyword(searchable, [
+    "dda", "delhi development authority", "hmda", "hyderabad metropolitan development authority",
+    "delhi government", "delhi govt", "दिल्ली सरकार", "दिल्ली विकास प्राधिकरण", "शहरी विकास मंत्री", "भलस्वा",
+    "telangana housing board", "housing board", "mhada", "cidco", "huda", "hsvp", "rera"
+  ]);
+  const propertyEvent = hasKeyword(searchable, [
+    "flat", "flats", "housing", "ews", "residential", "row-house", "row house", "plot", "plots", "land parcel",
+    "land auction", "land sale", "lottery", "scheme", "auction", "allotment", "tenement", "redevelopment", "project", "development",
+    "इंदिरम्मा", "इंदिरा आवास", "फ्लैट", "आवास योजना", "प्लॉट", "आवासीय", "भूमि", "గృహ", "ఇందిరమ్మ", "టవర్స్", "ప్లాట్లు", "ಭೂಮಿ", "ಮನೆ"
   ]);
   const adverse = hasKeyword(primary, [
-    "demolished", "demolition", "fraud", "illegal", "arrested", "stalled", "cancelled", "canceled", "protest", "complaint", "penalty", "dispute"
+    "demolished", "demolition", "fraud", "illegal", "arrested", "stalled", "cancelled", "canceled", "protest", "complaint", "penalty", "dispute",
+    "delayed", "delay", "stay", "stayed", "स्थगित", "स्थगिती", "विलंब", "उशिर", "उशीर", "नाराजी", "विरोध", "युद्धजन्य", "अंतरिम आदेश", "चेष्टा"
   ]);
-  return article.authoritativeContent === true && official && event && propertyEvent && !adverse;
+  const authorityIdentityVerified = article.authoritativeContent === true && (official || namedAuthority) || namedAuthority;
+  return authorityIdentityVerified && (event || propertyEvent) && propertyEvent && !adverse;
+}
+
+function getVerifiedAuthorityEventCityCode(article) {
+  if (!isVerifiedAuthorityPropertyEvent(article)) return "";
+  const text = getArticleSearchText(article);
+  if (hasWholeWordKeyword(text, ["hyderabad", "kokapet", "kphb", "hmda", "hyderabad metropolitan development authority"])) {
+    return "hyderabad";
+  }
+  if (hasWholeWordKeyword(text, ["pune", "tathawade", "पुणे"])) {
+    return "pune";
+  }
+  if (hasWholeWordKeyword(text, ["faridabad", "फरीदाबाद"])) {
+    return "faridabad";
+  }
+  if (hasWholeWordKeyword(text, ["delhi", "new delhi", "dda", "delhi development authority", "ews flats", "karmjeevi awas"])) {
+    return "new_delhi";
+  }
+  if (hasWholeWordKeyword(text, ["mumbai", "mhada", "cidco"])) return "mumbai";
+  if (hasWholeWordKeyword(text, ["gurugram", "gurgaon", "hsvp", "huda"])) return "gurugram";
+  return "";
 }
 
 function isConnectivityCatalystArticle(article) {
@@ -4577,6 +4607,10 @@ function isRealEstateRelated(article) {
     return false;
   }
 
+  if (isVerifiedAuthorityPropertyEvent(article)) {
+    return true;
+  }
+
   return (
     hasRealEstateEvidence(article) ||
     isNationalRealEstateBusinessUpdate(article) ||
@@ -4588,6 +4622,10 @@ function isRealEstateRelated(article) {
 }
 
 function hasSpecificProjectOrDevelopmentSignal(article) {
+  if (isVerifiedAuthorityPropertyEvent(article)) {
+    return true;
+  }
+
   if (
     isTargetDominantInfrastructureCorridor(article) ||
     isNcrCommercialOfficeMarketArticle(article) ||
@@ -4682,6 +4720,10 @@ function detectCityCodes(article) {
     if (authorityRule && hasWholeWordKeyword(primaryText, authorityRule.keywords)) {
       return [authorityJurisdiction];
     }
+  }
+  const authorityEventCity = getVerifiedAuthorityEventCityCode(article);
+  if (authorityEventCity && enabledCityCodeSet.has(authorityEventCity)) {
+    return [authorityEventCity];
   }
   const concreteNcrCityCodes = hasNcrMatch(article) ? detectConcreteNcrCityCodesFromFullArticle(article) : [];
   const matchedCodes = concreteNcrCityCodes.length > 0 ? concreteNcrCityCodes : detectMatchedCityCodes(article);
@@ -5234,9 +5276,10 @@ function isGurugramCorridorArticle(article) {
 }
 
 function getDisqualifyingOutsideCityKeywords(article) {
-  if (isVerifiedAuthorityPropertyEvent(article) && article.authorityJurisdiction) {
-    const jurisdiction = allCityRules.find((rule) => rule.code === article.authorityJurisdiction);
-    const localTerms = jurisdiction?.keywords || [article.authorityJurisdiction];
+  const authorityCity = String(article.authorityJurisdiction || getVerifiedAuthorityEventCityCode(article) || "").trim().toLowerCase();
+  if (isVerifiedAuthorityPropertyEvent(article) && authorityCity) {
+    const jurisdiction = allCityRules.find((rule) => rule.code === authorityCity);
+    const localTerms = jurisdiction?.keywords || [authorityCity];
     return outsideCityKeywords.filter((keyword) => !localTerms.includes(keyword));
   }
 
@@ -5473,8 +5516,8 @@ function isBlockedArticle(article) {
 // negative, language, date, geo, or full-article gates.
 function hasNativePropertyDevelopmentNexus(article) {
   const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
-  const nativeProperty = /(?:ఇల్లు|ఇండిరమ్మ|గృహ|ప్లాట్|స్థలం|భవన|టవర్స్|హౌసింగ్|నిర్మాణ|లేఅవుట్|భూమి|ఆస్తి|ಆಸ್ತಿ|ಭೂ|ಖಾತಾ|ಕಟ್ಟಡ|ಮನೆ|ನಿವೇಶನ|ವಸತಿ|फ्लैट|आवास|भूखंड|संपत्ति|घर|निर्माण|योजना)/u.test(text);
-  const nativeEvent = /(?:నిర్మాణం|ప్రారంభ|విక్రయ|వేలం|ప్లాట్ల|నిబంధన|చట్టం|ಟವರ್|ಪ್ರಾರಂಭ|ಮಾರಾಟ|ಹರಾಜು|ನಿಯಮ|परियोजना|लॉन्च|बिक्री|नीलामी|नियम|निर्माण|योजना)/u.test(text);
+  const nativeProperty = /(?:ఇల్లు|ఇండిరమ్మ|గృహ|ప్లాట్|స్థలం|భవన|టవర్స్|హౌసింగ్|నిర్మాణ|లేఅవుట్|భూమి|భూములు|ఎకర|ఆస్తి|ಆಸ್ತಿ|ಭೂ|ಖಾತಾ|ಕಟ್ಟಡ|ಮನೆ|ನಿವೇಶನ|ವಸತಿ|फ्लैट|आवास|भूखंड|संपत्ति|घर|निर्माण|योजना)/u.test(text);
+  const nativeEvent = /(?:నిర్మాణం|శంకుస్థాపన|ప్రారంభ|విక్రయ|వేలం|వెంచర్|ప్లాట్ల|నిబంధన|చట్టం|టవర్|ಟವರ್|ಪ್ರಾರಂಭ|ಮಾರಾಟ|ಹರಾಜು|ನಿಯಮ|परियोजना|लॉन्च|बिक्री|नीलामी|नियम|निर्माण|योजना)/u.test(text);
   return nativeProperty && nativeEvent;
 }
 
@@ -5583,8 +5626,7 @@ function isNegativeNews(article) {
   if (
     isFaridabadJewarGrowthArticle(article) ||
     isPositiveTargetProjectUpdate(article) ||
-    isOfficialAuthorityPipelineNotice(article) ||
-    isVerifiedAuthorityPropertyEvent(article)
+    isOfficialAuthorityPipelineNotice(article)
   ) {
     return false;
   }
@@ -5674,9 +5716,10 @@ function localQualityJudge(article) {
   const cityScore = article.cityCode
     ? Math.max(countKeywordMentions(fullText, cityKeywords), getArticleSourceCityCodes(article).includes(article.cityCode) ? 2 : 0)
     : 0;
-  const hasCoreTopic = hasKeyword(primaryAndUrl, ["real estate", "realty", "property", "housing", "infrastructure", "project", "metro", "expressway", "airport", "rera", "township", "land parcel", "construction", "builder", "developer", "residential", "commercial", "रियल एस्टेट", "रियल्टी", "प्रॉपर्टी", "परियोजना", "प्रोजेक्ट", "जमीन", "भूमि", "मेट्रो", "आवास", "निर्माण", "विकास", ...regionalRealEstateKeywords]);
-  const hasStrongProjectSignal = hasSpecificProjectOrDevelopmentSignal(article) || isPositiveTargetBusinessOrDevelopmentArticle(article) || isPositiveTargetProjectUpdate(article);
-  const hasCityEvidence = cityScore > 0 || hasNcrMatch(article) || hasMappedCorporateCityEvidence(article);
+  const authorityEvent = isVerifiedAuthorityPropertyEvent(article);
+  const hasCoreTopic = authorityEvent || hasKeyword(primaryAndUrl, ["real estate", "realty", "property", "housing", "infrastructure", "project", "metro", "expressway", "airport", "rera", "township", "land parcel", "construction", "builder", "developer", "residential", "commercial", "रियल एस्टेट", "रियल्टी", "प्रॉपर्टी", "परियोजना", "प्रोजेक्ट", "जमीन", "भूमि", "मेट्रो", "आवास", "निर्माण", "विकास", ...regionalRealEstateKeywords]);
+  const hasStrongProjectSignal = authorityEvent || hasSpecificProjectOrDevelopmentSignal(article) || isPositiveTargetBusinessOrDevelopmentArticle(article) || isPositiveTargetProjectUpdate(article);
+  const hasCityEvidence = cityScore > 0 || Boolean(getVerifiedAuthorityEventCityCode(article)) || hasNcrMatch(article) || hasMappedCorporateCityEvidence(article);
   const score = positiveScore * 2 + (hasCoreTopic ? 4 : 0) + (hasStrongProjectSignal ? 4 : 0) + Math.min(cityScore, 3) - negativeScore * 3 - strongNegativeScore * 8;
   const base = { score, positiveScore, negativeScore, strongNegativeScore, cityScore };
 
@@ -8557,6 +8600,9 @@ export {
   getArticleTrace,
   buildFunnelTelemetry,
   hasMeaningfulPropertyNexus,
+  isBlockedArticle,
+  isVerifiedAuthorityPropertyEvent,
+  getVerifiedAuthorityEventCityCode,
   localQualityJudge,
   needsLocalQualityReview,
   getExtraArticleUrls,

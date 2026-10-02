@@ -119,10 +119,10 @@
       "humanCity": "Delhi",
       "humanCityCode": "delhi",
       "detectedCodes": [
-        "delhi"
+        "new_delhi"
       ],
       "nativeEvidence": [],
-      "cityMatch": true,
+      "cityMatch": false,
       "provenance": []
     },
     {
@@ -130,7 +130,7 @@
       "humanCity": "Delhi",
       "humanCityCode": "delhi",
       "detectedCodes": [
-        "delhi"
+        "new_delhi"
       ],
       "nativeEvidence": [
         {
@@ -152,7 +152,7 @@
           "provenance": "existing city-config keyword"
         }
       ],
-      "cityMatch": true,
+      "cityMatch": false,
       "provenance": [
         "existing city-config keyword",
         "existing city-config keyword"
@@ -163,7 +163,6 @@
       "humanCity": "Pune",
       "humanCityCode": "pune",
       "detectedCodes": [
-        "mumbai",
         "pune"
       ],
       "nativeEvidence": [
@@ -310,7 +309,9 @@
       "recordId": "task22-022",
       "humanCity": "Hyderabad",
       "humanCityCode": "hyderabad",
-      "detectedCodes": [],
+      "detectedCodes": [
+        "hyderabad"
+      ],
       "nativeEvidence": [
         {
           "candidateCity": "hyderabad",
@@ -331,7 +332,7 @@
           "provenance": "existing city-config keyword"
         }
       ],
-      "cityMatch": false,
+      "cityMatch": true,
       "provenance": [
         "existing city-config keyword",
         "existing city-config keyword"
@@ -486,7 +487,9 @@
       "recordId": "task22-021",
       "humanCity": "Hyderabad",
       "humanCityCode": "hyderabad",
-      "detectedCodes": [],
+      "detectedCodes": [
+        "hyderabad"
+      ],
       "nativeEvidence": [
         {
           "candidateCity": "hyderabad",
@@ -498,7 +501,7 @@
           "provenance": "existing city-config keyword"
         }
       ],
-      "cityMatch": false,
+      "cityMatch": true,
       "provenance": [
         "existing city-config keyword"
       ]
@@ -528,7 +531,9 @@
       "recordId": "task22-001",
       "humanCity": "Delhi",
       "humanCityCode": "delhi",
-      "detectedCodes": [],
+      "detectedCodes": [
+        "new_delhi"
+      ],
       "nativeEvidence": [],
       "cityMatch": false,
       "provenance": []
@@ -537,7 +542,9 @@
       "recordId": "task22-002",
       "humanCity": "Delhi",
       "humanCityCode": "delhi",
-      "detectedCodes": [],
+      "detectedCodes": [
+        "new_delhi"
+      ],
       "nativeEvidence": [],
       "cityMatch": false,
       "provenance": []
