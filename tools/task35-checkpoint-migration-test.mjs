@@ -68,6 +68,18 @@ const pendingIds = (state, snapshot) => new Set(selectShard(state, snapshot, sna
   assert.equal([...pending].some((id) => completed.includes(id)), false);
 }
 
+// F: current production checkpoint restores 507 completed and selects only 64 pending.
+{
+  const snapshot = buildCycleSnapshot(Array.from({ length: 571 }, (_, index) => source(`current-${index}`)), "task35-current");
+  const completed = ids(snapshot).slice(0, 507);
+  const state = stateWithCompleted(snapshot, completed);
+  const restored = startOrResumeCycle(state, snapshot);
+  const pending = pendingIds(restored, snapshot);
+  assert.equal(restored.activeCycle.completedSourceIds.length, 507);
+  assert.equal(pending.size, 64);
+  assert.equal([...pending].some((id) => completed.includes(id)), false);
+}
+
 console.log(JSON.stringify({
   passed: true,
   addSource: "PASS",
@@ -75,5 +87,6 @@ console.log(JSON.stringify({
   reorder: "PASS",
   regionalExpansion: "PASS",
   productionRestore: "PASS",
+  currentCheckpoint: "PASS",
   repeatedCompletedIds: 0
 }));

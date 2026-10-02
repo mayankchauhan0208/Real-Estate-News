@@ -2057,6 +2057,52 @@ function getSourceCleanupReserveMs() {
   return Math.max(30_000, getPositiveIntegerEnv("SOURCE_CLEANUP_RESERVE_MS", 180_000));
 }
 
+function getSourceMinimumSafeStartWindowMs() {
+  return Math.max(250, getPositiveIntegerEnv("SOURCE_MINIMUM_SAFE_START_WINDOW_MS", 1_000));
+}
+
+function createBudgetExhaustedError(message = "source budget exhausted") {
+  return Object.assign(new Error(message), { sourceStatus: "BUDGET_EXHAUSTED" });
+}
+
+function isBudgetAborted(signal) {
+  return Boolean(signal?.aborted);
+}
+
+function throwIfSourceBudgetExhausted(options = {}) {
+  if (isBudgetAborted(options.signal)) {
+    throw createBudgetExhaustedError("global source budget exhausted");
+  }
+
+  if (options.deadlineAt && options.deadlineAt - Date.now() <= getSourceMinimumSafeStartWindowMs()) {
+    throw createBudgetExhaustedError("source budget exhausted before operation");
+  }
+}
+
+async function waitForSourceRetry(delayMs, signal) {
+  if (signal?.aborted) {
+    throw createBudgetExhaustedError("global source budget exhausted during retry delay");
+  }
+
+  await new Promise((resolve, reject) => {
+    let timer;
+    const abortHandler = () => {
+      clearTimeout(timer);
+      signal?.removeEventListener("abort", abortHandler);
+      reject(createBudgetExhaustedError("global source budget exhausted during retry delay"));
+    };
+
+    const finish = () => {
+      signal?.removeEventListener("abort", abortHandler);
+      resolve();
+    };
+
+    timer = setTimeout(finish, delayMs);
+    timer.unref?.();
+    signal?.addEventListener("abort", abortHandler, { once: true });
+  });
+}
+
 function getRegionalSourceMode(sourceUrl) {
   const source = (Array.isArray(adminSettings.manualSources) ? adminSettings.manualSources : [])
     .find((item) => normalizeSourceUrl(item?.url) === normalizeSourceUrl(sourceUrl));
@@ -2755,8 +2801,14 @@ async function mapWithConcurrency(items, limit, mapper) {
 }
 
 async function fetchWithTimeout(url, options = {}, timeoutMs = getFetchTimeoutMs()) {
+  throwIfSourceBudgetExhausted(options);
+  const remainingMs = options.deadlineAt ? options.deadlineAt - Date.now() : timeoutMs;
+  const effectiveTimeoutMs = Math.min(timeoutMs, remainingMs);
+  if (effectiveTimeoutMs <= getSourceMinimumSafeStartWindowMs()) {
+    throw createBudgetExhaustedError("source budget exhausted before network request");
+  }
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  const timeout = setTimeout(() => controller.abort(), effectiveTimeoutMs);
   const externalSignal = options.signal;
   const signal = externalSignal && typeof AbortSignal !== "undefined" && AbortSignal.any
     ? AbortSignal.any([controller.signal, externalSignal])
@@ -2778,7 +2830,13 @@ async function fetchWithTimeout(url, options = {}, timeoutMs = getFetchTimeoutMs
 }
 
 async function readResponseBodyWithTimeout(response, mode = "text", options = {}) {
-  const timeoutMs = Math.min(getPositiveIntegerEnv("FETCH_TIMEOUT_MS", 20000), 30000);
+  throwIfSourceBudgetExhausted(options);
+  const configuredTimeoutMs = Math.min(getPositiveIntegerEnv("FETCH_TIMEOUT_MS", 20000), 30000);
+  const remainingMs = options.deadlineAt ? options.deadlineAt - Date.now() : configuredTimeoutMs;
+  const timeoutMs = Math.min(configuredTimeoutMs, remainingMs);
+  if (timeoutMs <= getSourceMinimumSafeStartWindowMs()) {
+    throw createBudgetExhaustedError("source budget exhausted before response body read");
+  }
   const reader = response.body?.getReader();
   // Official authority and developer pages frequently exceed 1 MB because of
   // bundled scripts and embedded media metadata; keep a bounded but usable cap.
@@ -5601,6 +5659,7 @@ async function fetchHtml(sourceUrl, options = {}) {
 
   for (let attempt = 1; attempt <= attempts; attempt += 1) {
     try {
+      throwIfSourceBudgetExhausted(options);
       const response = await fetchWithTimeout(sourceUrl, {
         signal: options.signal,
         headers: {
@@ -5641,7 +5700,7 @@ async function fetchHtml(sourceUrl, options = {}) {
         throw error;
       }
 
-      await new Promise((resolve) => setTimeout(resolve, Math.min(attempt * 1200, 3500)));
+      await waitForSourceRetry(Math.min(attempt * 1200, 3500), options.signal);
     }
   }
 
@@ -5649,9 +5708,18 @@ async function fetchHtml(sourceUrl, options = {}) {
 }
 
 async function fetchHtmlWithCurl(sourceUrl, options = {}) {
-  const timeoutMs = getFetchTimeoutForUrl(sourceUrl);
+  throwIfSourceBudgetExhausted(options);
+  const timeoutMs = Math.min(
+    getFetchTimeoutForUrl(sourceUrl),
+    options.deadlineAt ? options.deadlineAt - Date.now() : getFetchTimeoutForUrl(sourceUrl)
+  );
+  if (timeoutMs <= getSourceMinimumSafeStartWindowMs()) {
+    throw createBudgetExhaustedError("source budget exhausted before curl request");
+  }
   const command = process.platform === "win32" ? "curl.exe" : "curl";
-  const seconds = Math.max(5, Math.ceil(timeoutMs / 1000));
+  const seconds = options.deadlineAt
+    ? Math.max(1, Math.ceil(timeoutMs / 1000))
+    : Math.max(5, Math.ceil(timeoutMs / 1000));
   const args = [
     "-L",
     "--compressed",
@@ -5668,7 +5736,7 @@ async function fetchHtmlWithCurl(sourceUrl, options = {}) {
     sourceUrl
   ];
   const result = await execFile(command, args, {
-    timeout: timeoutMs + 5000,
+    timeout: timeoutMs + (options.deadlineAt ? 500 : 5000),
     maxBuffer: 12 * 1024 * 1024,
     windowsHide: true,
     signal: options.signal
@@ -6657,6 +6725,7 @@ async function fetchSignatureGlobalMedia(sourceUrl, options = {}) {
 
   for (let attempt = 1; attempt <= 3; attempt += 1) {
     try {
+      throwIfSourceBudgetExhausted(options);
       const response = await fetchWithTimeout(sourceUrl, {
         signal: options.signal,
         headers: {
@@ -6681,7 +6750,7 @@ async function fetchSignatureGlobalMedia(sourceUrl, options = {}) {
         throw error;
       }
 
-      await new Promise((resolve) => setTimeout(resolve, attempt * 1500));
+      await waitForSourceRetry(attempt * 1500, options.signal);
     }
   }
 
@@ -6705,6 +6774,7 @@ async function fetchSignatureGlobalMedia(sourceUrl, options = {}) {
 
     for (const fallbackUrl of fallbackUrls) {
       try {
+        throwIfSourceBudgetExhausted(options);
         const response = await fetchWithTimeout(fallbackUrl, {
           signal: options.signal,
           headers: {
@@ -7063,6 +7133,32 @@ async function fetchSourceWithTimeout(sourceUrl, timeoutMsOverride = getSourceTi
   const controller = new AbortController();
   const timeoutMs = Math.max(1, timeoutMsOverride);
   let timeout;
+  let externalAbortHandler;
+  let budgetAbortHandler;
+
+  throwIfSourceBudgetExhausted(options);
+
+  const externalSignal = options.signal;
+  let signal = controller.signal;
+  const budgetPromise = externalSignal
+    ? new Promise((_, reject) => {
+      budgetAbortHandler = () => reject(createBudgetExhaustedError("global source budget exhausted during source operation"));
+      if (externalSignal.aborted) budgetAbortHandler();
+      else externalSignal.addEventListener("abort", budgetAbortHandler, { once: true });
+    })
+    : null;
+
+  if (externalSignal) {
+    signal = typeof AbortSignal !== "undefined" && AbortSignal.any
+      ? AbortSignal.any([controller.signal, externalSignal])
+      : controller.signal;
+
+    if (!AbortSignal.any) {
+      externalAbortHandler = () => controller.abort();
+      if (externalSignal.aborted) externalAbortHandler();
+      else externalSignal.addEventListener("abort", externalAbortHandler, { once: true });
+    }
+  }
 
   // Start the deadline before entering any specialized adapter. Every adapter
   // receives the same signal, and late failures are consumed so one abandoned
@@ -7074,19 +7170,34 @@ async function fetchSourceWithTimeout(sourceUrl, timeoutMsOverride = getSourceTi
     }, timeoutMs);
     timeout.unref?.();
   });
-  const sourcePromise = Promise.resolve().then(() => fetchSource(sourceUrl, { ...options, signal: controller.signal }));
+  const sourcePromise = Promise.resolve().then(() => fetchSource(sourceUrl, { ...options, signal }));
   sourcePromise.catch(() => {});
+  const waitForSourceStop = () => Promise.race([
+    sourcePromise.then(() => undefined, () => undefined),
+    new Promise((resolve) => {
+      const graceTimer = setTimeout(resolve, 250);
+      graceTimer.unref?.();
+    })
+  ]);
 
   try {
-    return await Promise.race([sourcePromise, timeoutPromise]);
+    return await Promise.race([sourcePromise, timeoutPromise, budgetPromise].filter(Boolean));
   } catch (error) {
+    if (externalSignal?.aborted) {
+      await waitForSourceStop();
+      throw createBudgetExhaustedError("global source budget exhausted during source operation");
+    }
+
     if (controller.signal.aborted && !/timed out/i.test(error.message || "")) {
+      await waitForSourceStop();
       throw new Error(`source timed out after ${timeoutMs}ms`);
     }
 
     throw error;
   } finally {
     clearTimeout(timeout);
+    if (externalAbortHandler) externalSignal?.removeEventListener("abort", externalAbortHandler);
+    if (budgetAbortHandler) externalSignal?.removeEventListener("abort", budgetAbortHandler);
   }
 }
 
@@ -7161,11 +7272,12 @@ async function fetchSourceWithRetry(sourceUrl, timeoutMsOverride = getSourceTime
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     try {
+      throwIfSourceBudgetExhausted(options);
       const remainingMs = options.deadlineAt
-        ? options.deadlineAt - Date.now() - getSourceCleanupReserveMs()
+        ? options.deadlineAt - Date.now()
         : timeoutMsOverride;
-      if (remainingMs <= 0) {
-        throw Object.assign(new Error("source budget exhausted before attempt"), { sourceStatus: "BUDGET_EXHAUSTED" });
+      if (remainingMs <= getSourceMinimumSafeStartWindowMs()) {
+        throw createBudgetExhaustedError("source budget exhausted before attempt");
       }
       return { articles: await fetchSourceWithTimeout(sourceUrl, Math.min(timeoutMsOverride, remainingMs), options), attempts: attempt };
     } catch (error) {
@@ -7180,7 +7292,7 @@ async function fetchSourceWithRetry(sourceUrl, timeoutMsOverride = getSourceTime
 
       const delayMs = Math.min(attempt * 1500, 4000);
       console.warn(`Retrying source ${sourceUrl} after attempt ${attempt}/${maxAttempts}: ${error.message}`);
-      await new Promise((resolve) => setTimeout(resolve, delayMs));
+      await waitForSourceRetry(delayMs, options.signal);
     }
   }
 
@@ -7193,11 +7305,12 @@ async function fetchSourceWithRecovery(sourceUrl, options = {}) {
 
   for (const candidate of candidates) {
     try {
+      throwIfSourceBudgetExhausted(options);
       const remainingMs = options.deadlineAt
-        ? options.deadlineAt - Date.now() - getSourceCleanupReserveMs()
+        ? options.deadlineAt - Date.now()
         : getSourceTimeoutMs();
-      if (remainingMs <= 0) {
-        throw Object.assign(new Error("source budget exhausted before attempt"), { sourceStatus: "BUDGET_EXHAUSTED" });
+      if (remainingMs <= getSourceMinimumSafeStartWindowMs()) {
+        throw createBudgetExhaustedError("source budget exhausted before recovery attempt");
       }
       const result = await fetchSourceWithRetry(candidate, Math.min(getSourceTimeoutMs(), remainingMs), options);
       return {
@@ -7257,10 +7370,16 @@ async function pushArticle(article) {
 
 async function fetchSourceBatch(sourceList, options = {}) {
   return mapWithConcurrency(sourceList, getSourceConcurrency(), async (source) => {
+    try {
+      throwIfSourceBudgetExhausted(options);
+    } catch (error) {
+      return { source, status: "BUDGET_EXHAUSTED", error: error.message, attempts: 0 };
+    }
+
     const remainingMs = options.deadlineAt
-      ? options.deadlineAt - Date.now() - getSourceCleanupReserveMs()
+      ? options.deadlineAt - Date.now()
       : getSourceTimeoutMs();
-    if (remainingMs <= 0) {
+    if (remainingMs <= getSourceMinimumSafeStartWindowMs()) {
       return { source, status: "BUDGET_EXHAUSTED", error: "source budget exhausted before attempt", attempts: 0 };
     }
     try {
@@ -7416,14 +7535,26 @@ async function main() {
     const maxShards = getPositiveIntegerEnv("SOURCE_MAX_SHARDS_PER_RUN", 12);
     const cleanupReserveMs = getSourceCleanupReserveMs();
     const fetchDeadlineAt = fetchStartedAt + runtimeBudgetMs;
+    const globalBudgetController = new AbortController();
+    const globalBudgetTimer = setTimeout(() => {
+      globalBudgetController.abort();
+    }, Math.max(0, fetchDeadlineAt - Date.now()));
+    globalBudgetTimer.unref?.();
     let budgetStopped = false;
     console.log(`Resumable source scheduler enabled: shard size ${resumableContext.shardSize}, runtime budget ${formatDuration(runtimeBudgetMs)}, cleanup reserve ${formatDuration(cleanupReserveMs)}.`);
     try {
-      while (sourceResults.length < allSelectedSources.length && Date.now() < fetchDeadlineAt - cleanupReserveMs) {
+      while (sourceResults.length < allSelectedSources.length && !globalBudgetController.signal.aborted) {
         const shard = selectShard(resumableContext.state, resumableContext.snapshot, resumableContext.shardSize);
         if (!shard || sourceResults.length >= maxShards * resumableContext.shardSize) break;
+        if (fetchDeadlineAt - Date.now() <= getSourceMinimumSafeStartWindowMs()) {
+          budgetStopped = true;
+          break;
+        }
         const batchSources = shard.sources.map((source) => source.url);
-        const batchResults = await fetchSourceBatch(batchSources, { deadlineAt: fetchDeadlineAt });
+        const batchResults = await fetchSourceBatch(batchSources, {
+          deadlineAt: fetchDeadlineAt,
+          signal: globalBudgetController.signal
+        });
         const startedResults = batchResults.filter((result) => result.status !== "BUDGET_EXHAUSTED");
         await checkpointResumableSourceShard(resumableContext, shard, startedResults);
         selectedSources.push(...startedResults.map((result) => result.source));
@@ -7437,6 +7568,7 @@ async function main() {
       if (resumableContext?.state) {
         await writeJsonAtomic(resumableContext.statePath, resumableContext.state);
       }
+      clearTimeout(globalBudgetTimer);
       await releaseSchedulerLock(path.join(stateDir, "source-monitor.lock"), schedulerLock.lock.owner);
       schedulerLock = null;
     }
@@ -7688,6 +7820,9 @@ export {
   expandCityArticles,
   extractMetadataImage,
   fetchSource,
+  fetchSourceBatch,
+  fetchSourceWithRecovery,
+  fetchSourceWithRetry,
   fetchSourceWithTimeout,
   getSourcePageUrls,
   getSourceUrls,
