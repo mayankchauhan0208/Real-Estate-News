@@ -1814,7 +1814,7 @@ function getSources() {
     ? adminSettings.manualSources
       .filter((source) => source && source.enabled !== false)
       .filter((source) => {
-        const mode = String(source.sourceMode || "").trim().toUpperCase();
+        const mode = getRegionalSourceMode(source.url);
         if (mode === "OFF") return false;
         return getBooleanEnv("ENABLE_EXPERIMENTAL_SOURCES") || !isExperimentalManualSource(source) || mode === "ACTIVE_FOR_REVIEW";
       })
