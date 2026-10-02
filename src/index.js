@@ -8103,7 +8103,7 @@ async function pushArticle(article) {
 }
 
 async function fetchSourceBatch(sourceList, options = {}) {
-  return mapWithConcurrency(sourceList, getSourceConcurrency(), async (source) => {
+  const batchPromise = mapWithConcurrency(sourceList, getSourceConcurrency(), async (source) => {
     try {
       throwIfSourceBudgetExhausted(options);
     } catch (error) {
@@ -8154,6 +8154,33 @@ async function fetchSourceBatch(sourceList, options = {}) {
       return { source, status: error.sourceStatus || (/timed?\s*out|timeout/i.test(error.message) ? "TIMEOUT" : "TRANSPORT_FAILURE"), error: error.message, attempts: error.sourceAttempts || getSourceRetryAttempts() };
     }
   });
+
+  // A source adapter can fail to settle even after its network signal is
+  // aborted (for example, a third-party parser or child process). Keep the
+  // scheduler itself bounded as well as each individual source. Pending
+  // adapter work is deliberately left without article/push side effects; the
+  // caller records these sources as budget-exhausted and resumes from the
+  // persisted shard checkpoint.
+  if (!options.deadlineAt) return batchPromise;
+  const remainingMs = options.deadlineAt - Date.now();
+  if (remainingMs <= 0) {
+    return sourceList.map((source) => ({ source, status: "BUDGET_EXHAUSTED", error: "source batch deadline exhausted", attempts: 0 }));
+  }
+  let deadlineTimer;
+  const deadlinePromise = new Promise((resolve) => {
+    deadlineTimer = setTimeout(() => resolve(sourceList.map((source) => ({
+      source,
+      status: "BUDGET_EXHAUSTED",
+      error: "source batch deadline exhausted",
+      attempts: 0
+    }))), remainingMs);
+  });
+  batchPromise.catch(() => {});
+  try {
+    return await Promise.race([batchPromise, deadlinePromise]);
+  } finally {
+    clearTimeout(deadlineTimer);
+  }
 }
 
 async function prepareResumableSourceCycle(sourceUrls) {
