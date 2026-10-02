@@ -2606,6 +2606,123 @@ function buildRegionalMetrics(expandedArticles, getReasons) {
     published: 0
   };
 }
+
+function incrementFunnelCounter(row, key, amount = 1) {
+  row[key] = (row[key] || 0) + amount;
+}
+
+function createFunnelRow(key) {
+  return {
+    key,
+    sourceSelected: 0,
+    attempted: 0,
+    success: 0,
+    linksDiscovered: 0,
+    articleFetchAttempted: 0,
+    articleFetchSuccess: 0,
+    fullArticleReadable: 0,
+    reliableDate: 0,
+    fresh: 0,
+    relevance: 0,
+    negative: 0,
+    offTopic: 0,
+    insufficient: 0,
+    genericInfrastructure: 0,
+    geoValid: 0,
+    geoUncertain: 0,
+    review: 0,
+    duplicate: 0,
+    candidate: 0,
+    published: 0
+  };
+}
+
+function funnelDimensionKey(article, dimension) {
+  if (dimension === "city") return article.cityCode || "unknown";
+  if (dimension === "source") return article.sourceUrl || article.sourceName || "unknown";
+  if (dimension === "language") return article.language || "not-captured";
+  if (dimension === "contentType") return article.sourceTrace?.sourceType || (isLikelyFeedUrl(article.sourceUrl || "") ? "RSS_OR_ATOM" : "HTML_OR_SPECIALIZED");
+  return "unknown";
+}
+
+function applyArticleFunnelOutcome(row, article, reasons, readyKeys, postedKeys, includeDiscovery = true) {
+  if (includeDiscovery) {
+    incrementFunnelCounter(row, "linksDiscovered");
+    if (article.articleReadAttempted) incrementFunnelCounter(row, "articleFetchAttempted");
+    if (article.fullArticleRead === true) incrementFunnelCounter(row, "articleFetchSuccess");
+  }
+  if (article.fullArticleRead === true && (article.articleText || "").length > 0) incrementFunnelCounter(row, "fullArticleReadable");
+  if (article.publishedAt) incrementFunnelCounter(row, "reliableDate");
+  if (article.publishedAt) incrementFunnelCounter(row, "fresh");
+  if (article.cityCode) incrementFunnelCounter(row, "geoValid");
+  else incrementFunnelCounter(row, "geoUncertain");
+  if (reasons.length === 0) incrementFunnelCounter(row, "relevance");
+  if (reasons.some((reason) => /negative/i.test(reason))) incrementFunnelCounter(row, "negative");
+  if (reasons.some((reason) => /not positive|off-topic|outside-region/i.test(reason))) incrementFunnelCounter(row, "offTopic");
+  if (reasons.some((reason) => /insufficient|article|content|no specific project/i.test(reason))) incrementFunnelCounter(row, "insufficient");
+  if (reasons.some((reason) => /infrastructure/i.test(reason))) incrementFunnelCounter(row, "genericInfrastructure");
+  if (reasons.some((reason) => /^review:/.test(reason))) incrementFunnelCounter(row, "review");
+  if (reasons.some((reason) => /duplicate|already sent|already reposted/i.test(reason))) incrementFunnelCounter(row, "duplicate");
+  if (readyKeys.has(articleReportKey(article))) incrementFunnelCounter(row, "candidate");
+  if (postedKeys.has(articleReportKey(article))) incrementFunnelCounter(row, "published");
+}
+
+function buildFunnelTelemetry({ allSelectedSources, selectedSources, sourceResults, failedSources, expandedArticles, readyArticles, postedArticles, getReasons }) {
+  const readyKeys = new Set(readyArticles.map(articleReportKey));
+  const postedKeys = new Set(postedArticles.map(articleReportKey));
+  const dimensions = { city: new Map(), source: new Map(), language: new Map(), contentType: new Map() };
+  const ensure = (dimension, key) => {
+    if (!dimensions[dimension].has(key)) dimensions[dimension].set(key, createFunnelRow(key));
+    return dimensions[dimension].get(key);
+  };
+
+  for (const source of allSelectedSources || []) {
+    const row = ensure("source", source);
+    incrementFunnelCounter(row, "sourceSelected");
+    if ((selectedSources || []).includes(source)) incrementFunnelCounter(row, "attempted");
+  }
+
+  for (const result of sourceResults || []) {
+    const row = ensure("source", result.source);
+    if (!result.error) incrementFunnelCounter(row, "success");
+    if (result.articles?.length) incrementFunnelCounter(row, "linksDiscovered", result.articles.length);
+    if (result.articles?.some((article) => article.articleReadAttempted)) incrementFunnelCounter(row, "articleFetchAttempted", result.articles.filter((article) => article.articleReadAttempted).length);
+    if (result.articles?.some((article) => article.fullArticleRead === true)) incrementFunnelCounter(row, "articleFetchSuccess", result.articles.filter((article) => article.fullArticleRead === true).length);
+  }
+
+  for (const failed of failedSources || []) {
+    const row = ensure("source", failed.source);
+    row.failure = row.failure || {};
+    incrementFunnelCounter(row.failure, failed.status || "failed");
+  }
+
+  for (const article of expandedArticles || []) {
+    const reasons = getReasons(article);
+    for (const dimension of Object.keys(dimensions)) {
+      applyArticleFunnelOutcome(ensure(dimension, funnelDimensionKey(article, dimension)), article, reasons, readyKeys, postedKeys, dimension !== "source");
+    }
+  }
+
+  const sameEventGroups = new Map();
+  for (const article of expandedArticles || []) {
+    const normalized = normalizeTitle(article.title || "");
+    if (!article.cityCode || normalized.length < 24) continue;
+    const key = `${article.cityCode}|${normalized}`;
+    const group = sameEventGroups.get(key) || [];
+    group.push({ cityCode: article.cityCode, title: article.title || "", newsLink: article.newsLink || "", sourceUrl: article.sourceUrl || "" });
+    sameEventGroups.set(key, group);
+  }
+
+  return {
+    version: 1,
+    semantics: "Counts are current-run observations. Possible same-event groups are telemetry only and never suppress publication.",
+    dimensions: Object.fromEntries(Object.entries(dimensions).map(([name, rows]) => [name, [...rows.values()].sort((a, b) => a.key.localeCompare(b.key))])),
+    possibleSameEventGroups: [...sameEventGroups.entries()]
+      .filter(([, group]) => group.length > 1)
+      .slice(0, 500)
+      .map(([key, articles]) => ({ key, count: articles.length, articles }))
+  };
+}
 function safeReportFileName(date = new Date()) {
   return `news-run-${date.toISOString().replace(/[:.]/g, "-")}`;
 }
@@ -7910,6 +8027,16 @@ async function main() {
     .filter((result) => isRegionalSource(result.source))
     .reduce((sum, result) => sum + (result.articles?.length || 0), 0);
   regionalMetrics.published = postedArticles.filter((article) => article.trace?.regionalSource === true).length;
+  const funnelTelemetry = buildFunnelTelemetry({
+    allSelectedSources,
+    selectedSources,
+    sourceResults,
+    failedSources,
+    expandedArticles,
+    readyArticles: articlesToPush,
+    postedArticles,
+    getReasons: getCachedRejectionReasons
+  });
 
   console.log(`Filtering phase completed in ${formatDuration(Date.now() - filterStartedAt)}.`);
   console.log(`Found ${uniqueArticles.length} new articles.`);
@@ -8030,6 +8157,7 @@ async function main() {
     needsReviewCount: runAnalytics.needsReviewCount,
     rejectedArticles: runAnalytics.rejectedArticles,
     needsReviewArticles: runAnalytics.needsReviewArticles,
+    funnelTelemetry,
     regionalMetrics,
     cityBreakdown: runAnalytics.cityBreakdown,
     coverageAlerts: runAnalytics.coverageAlerts,
@@ -8066,6 +8194,7 @@ export {
   getArticleFinalState,
   getRejectionReasons,
   getArticleTrace,
+  buildFunnelTelemetry,
   hasMeaningfulPropertyNexus,
   localQualityJudge,
   needsLocalQualityReview,
