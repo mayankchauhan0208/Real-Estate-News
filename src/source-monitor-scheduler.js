@@ -51,6 +51,19 @@ export function startOrResumeCycle(state, snapshot) {
       cyclePositionStart: 0,
       lastCheckpointAt: null
     };
+  } else {
+    const previousCompleted = new Set(next.activeCycle.completedSourceIds || []);
+    const newSourceIds = new Set(snapshot.sources.map((source) => source.sourceId));
+    const migratedCompleted = [...previousCompleted].filter((sourceId) => newSourceIds.has(sourceId)).sort();
+    const universeChanged = next.activeCycle.universeFingerprint !== snapshot.universeFingerprint ||
+      (next.activeCycle.sourceIds || []).length !== snapshot.sources.length ||
+      (next.activeCycle.sourceIds || []).some((sourceId, index) => sourceId !== snapshot.sources[index]?.sourceId);
+    next.activeCycle.sourceIds = snapshot.sources.map((source) => source.sourceId);
+    next.activeCycle.completedSourceIds = migratedCompleted;
+    if (universeChanged) {
+      next.activeCycle.completedShardIds = (next.activeCycle.completedShardIds || []).filter(Boolean);
+      next.activeCycle.cyclePositionStart = migratedCompleted.length;
+    }
   }
   next.activeCycle.universeFingerprint = snapshot.universeFingerprint;
   for (const source of snapshot.sources) {
@@ -68,6 +81,7 @@ export function startOrResumeCycle(state, snapshot) {
       lastProductiveAt: null
     };
   }
+  next.activeCycle.cyclePositionStart = next.activeCycle.completedSourceIds?.length || 0;
   return next;
 }
 
