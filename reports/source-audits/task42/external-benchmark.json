@@ -32,9 +32,9 @@
       "sourceEvidence": "Official DDA circular register lists the 24-09-2026 Phase II launch and current housing circulars.",
       "verified": true,
       "previouslyCaptured": false,
-      "outcome": "AUTHORITY_DISCOVERY_GAP",
-      "primaryMiss": "Authority page is configured through broader DDA surfaces, but this dated circular/register event was not present in the production evidence baseline.",
-      "requiredFix": "Treat official DDA housing circular/public-notice registers as first-class paginated authority listings; follow document links and extract the circular date before classification."
+      "outcome": "FOUND_REVIEW",
+      "primaryMiss": "The local authority adapter now discovers and routes the dated register row, but the linked PDF is not text-readable in the current runtime.",
+      "requiredFix": "Keep the row as an evidence-backed review candidate; add a bounded local PDF text/OCR capability only after a separate quality proof."
     },
     {
       "id": "indore-ida-scheme-sales-september-2026",
@@ -47,9 +47,9 @@
       "sourceEvidence": "Official IDA sale register lists dated residential flats, row-houses, residential plots and lottery notices.",
       "verified": true,
       "previouslyCaptured": false,
-      "outcome": "AUTHORITY_DISCOVERY_GAP",
-      "primaryMiss": "The authority register is a table with document/detail links and mixed Hindi-English titles; broad homepage fetching is insufficient.",
-      "requiredFix": "Add an authority-table adapter with detail/document traversal, bilingual title retention, and event-date extraction."
+      "outcome": "FOUND_REVIEW",
+      "primaryMiss": "The local authority-table adapter now discovers, dates, routes and retains the bilingual rows, but the linked PDF is not text-readable in the current runtime.",
+      "requiredFix": "Keep the rows as evidence-backed review candidates; add a bounded local PDF text/OCR capability only after a separate quality proof."
     },
     {
       "id": "nashik-mhada-lottery-september-2026",
@@ -62,9 +62,9 @@
       "sourceEvidence": "Official MHADA Nashik Board page lists the September 2026 advertisement, booklet and results.",
       "verified": true,
       "previouslyCaptured": false,
-      "outcome": "AUTHORITY_DISCOVERY_GAP",
-      "primaryMiss": "The board page exposes document-backed notices whose material event is in linked PDF/detail pages.",
-      "requiredFix": "Follow MHADA board notice links, retain Marathi/English title text, and require readable document evidence before a publish candidate."
+      "outcome": "FOUND_REVIEW",
+      "primaryMiss": "The local board adapter now discovers, deduplicates, dates and routes the Nashik notices; two records still lack readable detail evidence.",
+      "requiredFix": "Keep readable records in review until the final article evidence gate passes; preserve the Marathi/English title text."
     },
     {
       "id": "kota-udh-authority-auction-surfaces",
@@ -77,9 +77,9 @@
       "sourceEvidence": "Official Rajasthan UDH/UIT Kota page exposes e-auction services and Kota authority contact/surface links.",
       "verified": true,
       "previouslyCaptured": false,
-      "outcome": "AUTHORITY_DISCOVERY_GAP",
-      "primaryMiss": "Authority services are linked from a government portal and do not behave like a normal RSS/news feed.",
-      "requiredFix": "Add Kota authority notice/e-auction surfaces and classify only dated residential/commercial scheme events with document evidence."
+      "outcome": "CORRECTLY_REJECTED",
+      "primaryMiss": "The local adapter reached the verified Kota authority archive, but the current proof returned no current-window qualifying event.",
+      "requiredFix": "Continue bounded monitoring of the verified auction/notice surface; do not manufacture a current story from old archive rows."
     },
     {
       "id": "up-rera-press-release-register",
@@ -93,8 +93,8 @@
       "verified": true,
       "previouslyCaptured": true,
       "outcome": "EXTRACTION_GAP",
-      "primaryMiss": "The register uses portal/postback document delivery; a row can be discovered while the full release remains unreadable, preventing safe city routing.",
-      "requiredFix": "Capture document href/postback metadata, fetch the document through a bounded adapter, extract district/project evidence, and route only evidence-backed cities."
+      "primaryMiss": "The register rows and postback attempts are now captured, but the portal returned servermaintenance.aspx/error HTML with HTTP 200 for each View File request; no release was treated as readable.",
+      "requiredFix": "Keep bounded postback retries and add a verified document endpoint/detail traversal only when the portal exposes one; route only explicit district/project evidence."
     },
     {
       "id": "gujarat-rera-public-search",
@@ -137,8 +137,8 @@
       "sourceEvidence": "Official CIDCO portal is configured and reachable as an authority surface; the supplied 1567-society example was not independently verified as one exact current page here.",
       "verified": true,
       "previouslyCaptured": false,
-      "outcome": "AUTHORITY_DISCOVERY_GAP",
-      "primaryMiss": "The authority homepage is not equivalent to the relevant notice/category/archive surface.",
+      "outcome": "DISCOVERY_GAP",
+      "primaryMiss": "The authority homepage is verified, but no exact current notice/category/archive record was independently proven in this read-only run.",
       "requiredFix": "Discover and monitor CIDCO notice/category/archive links, retaining Marathi titles and explicit Navi Mumbai/sector evidence."
     },
     {

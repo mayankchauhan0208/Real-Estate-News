@@ -1,0 +1,73 @@
+{
+  "task": "42-continuation",
+  "generatedAt": "2026-10-02T00:00:00.000Z",
+  "mode": "read-only-local-source-proof",
+  "productionPosting": false,
+  "historicalBackfill": false,
+  "scope": "Verified authority/RERA listing adapters only; no production state or API mutation.",
+  "results": [
+    {
+      "source": "DDA housing circulars",
+      "url": "https://dda.gov.in/housing/housing-circulars",
+      "status": "DISCOVERED_AND_ROUTED",
+      "itemsDiscovered": 10,
+      "datedItems": 10,
+      "cityCounts": { "new_delhi": 10 },
+      "fullArticleRead": 0,
+      "officialDocumentRead": 0,
+      "notes": "Official dated rows and direct PDF links are captured. PDF text extraction remains unavailable in this runtime, so items stay evidence-backed review candidates rather than automatic publish candidates."
+    },
+    {
+      "source": "IDA scheme register",
+      "url": "https://www.idaindore.org/frmSchemes.aspx",
+      "status": "DISCOVERED_AND_ROUTED",
+      "itemsDiscovered": 5,
+      "datedItems": 5,
+      "cityCounts": { "indore": 5 },
+      "fullArticleRead": 0,
+      "officialDocumentRead": 0,
+      "notes": "Bilingual residential flats, row-house, plot and lottery rows are captured with direct document links and Indore routing. PDF text extraction remains unavailable in this runtime."
+    },
+    {
+      "source": "MHADA Nashik board",
+      "url": "https://mhada.gov.in/en/nashik",
+      "status": "DISCOVERED_ROUTED_AND_DEDUPED",
+      "itemsDiscovered": 13,
+      "datedItems": 13,
+      "cityCounts": { "nashik": 13 },
+      "fullArticleRead": 11,
+      "officialDocumentRead": 0,
+      "notes": "Board page is canonicalized to the official Nashik board surface; duplicate document/listing rows collapse by canonical detail URL."
+    },
+    {
+      "source": "UP RERA press-release register",
+      "url": "https://www.up-rera.in/PressRelease",
+      "status": "LISTING_DISCOVERED_POSTBACK_BLOCKED",
+      "itemsDiscovered": 46,
+      "datedItems": 46,
+      "cityCounts": { "noida": 1, "lucknow": 6, "no-city": 39 },
+      "fullArticleRead": 0,
+      "officialDocumentRead": 0,
+      "postbackAttempts": 46,
+      "postbackFailure": "Portal returned servermaintenance.aspx/error HTML with HTTP 200; adapter now rejects this as unreadable instead of counting it as full article content.",
+      "notes": "Statewide releases without explicit supported-city evidence remain un-routed and are not published automatically."
+    },
+    {
+      "source": "Kota UDH/UIT authority auction surface",
+      "url": "https://lsg.urban.rajasthan.gov.in/content/raj/udh/en/UDH/uits/uitkota/e-services/udh-online-services.html",
+      "status": "SURFACE_VERIFIED_NO_CURRENT_QUALIFYING_EVENT",
+      "itemsDiscovered": 22,
+      "datedItems": 22,
+      "cityCounts": { "kota": 22 },
+      "currentQualifyingEvents": 0,
+      "notes": "The verified archive surface returned older authority records; no current-window publish candidate was claimed."
+    }
+  ],
+  "qualityGates": {
+    "noProductionPosts": true,
+    "noHistoricalPosts": true,
+    "noFalseSuccessForUpReraErrorPage": true,
+    "noSourceLevelCityFallback": true,
+    "duplicateListingRowsCollapsed": true
+  }
+}

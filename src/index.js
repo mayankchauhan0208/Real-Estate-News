@@ -4069,6 +4069,20 @@ function isOfficialAuthorityPipelineNotice(article) {
   );
 }
 
+function isVerifiedAuthorityPropertyEvent(article) {
+  const source = `${article.sourceUrl || ""} ${article.newsLink || ""}`;
+  const primary = getArticlePrimaryText(article);
+  const event = String(article.authorityEventType || "");
+  const official = /dda\.gov\.in|idaindore\.org|mhada\.gov\.in|mhada\.mahaonline\.gov\.in|cidco\.maharashtra\.gov\.in|urban\.rajasthan\.gov\.in|hareraggm\.gov\.in|gujrera\.gujarat\.gov\.in/i.test(source);
+  const propertyEvent = hasKeyword(primary, [
+    "flat", "flats", "housing", "residential", "row-house", "row house", "plot", "plots", "lottery", "scheme", "auction", "tenement", "redevelopment", "project", "development"
+  ]);
+  const adverse = hasKeyword(primary, [
+    "demolished", "demolition", "fraud", "illegal", "arrested", "stalled", "cancelled", "canceled", "protest", "complaint", "penalty", "dispute"
+  ]);
+  return article.authoritativeContent === true && official && event && propertyEvent && !adverse;
+}
+
 function isConnectivityCatalystArticle(article) {
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
 
@@ -4653,6 +4667,13 @@ function detectCityCodes(article) {
   }
 
   const primaryText = getArticlePrimaryText(article);
+  const authorityJurisdiction = String(article.authorityJurisdiction || "").trim().toLowerCase();
+  if (article.authoritativeContent === true && authorityJurisdiction) {
+    const authorityRule = cityRules.find((rule) => rule.code === authorityJurisdiction);
+    if (authorityRule && hasWholeWordKeyword(primaryText, authorityRule.keywords)) {
+      return [authorityJurisdiction];
+    }
+  }
   const concreteNcrCityCodes = hasNcrMatch(article) ? detectConcreteNcrCityCodesFromFullArticle(article) : [];
   const matchedCodes = concreteNcrCityCodes.length > 0 ? concreteNcrCityCodes : detectMatchedCityCodes(article);
   if (hasSpecificYeidaProjectEvidence(article)) {
@@ -5204,6 +5225,12 @@ function isGurugramCorridorArticle(article) {
 }
 
 function getDisqualifyingOutsideCityKeywords(article) {
+  if (isVerifiedAuthorityPropertyEvent(article) && article.authorityJurisdiction) {
+    const jurisdiction = allCityRules.find((rule) => rule.code === article.authorityJurisdiction);
+    const localTerms = jurisdiction?.keywords || [article.authorityJurisdiction];
+    return outsideCityKeywords.filter((keyword) => !localTerms.includes(keyword));
+  }
+
   // Observed Hyderabad project articles can name Musi/Medchal localities
   // and Telangana, while a generic city token such as "Sagar" can appear
   // inside "Osman Sagar". Apply this narrow exception only when the article
@@ -5527,7 +5554,8 @@ function isNegativeNews(article) {
   if (
     isFaridabadJewarGrowthArticle(article) ||
     isPositiveTargetProjectUpdate(article) ||
-    isOfficialAuthorityPipelineNotice(article)
+    isOfficialAuthorityPipelineNotice(article) ||
+    isVerifiedAuthorityPropertyEvent(article)
   ) {
     return false;
   }
@@ -7290,8 +7318,229 @@ async function fetchPressReleaseListings(sourceUrl, options = {}) {
   });
 }
 
+function authorityListingProfile(sourceUrl) {
+  const value = String(sourceUrl || "").toLowerCase();
+  if (/dda\.gov\.in\/housing\/(housing-circulars|housing-notices|housing-scheme)/i.test(value)) {
+    return { publisher: "Delhi Development Authority", evidence: "Delhi Development Authority Delhi", cityCode: "new_delhi", contentType: "AUTHORITY_HOUSING" };
+  }
+  if (/idaindore\.org\/frmschemes/i.test(value)) {
+    return { publisher: "Indore Development Authority", evidence: "Indore Development Authority Indore", cityCode: "indore", contentType: "AUTHORITY_SCHEME_SALE" };
+  }
+  if (/mhada\.gov\.in\/en\/(nashik|project-boards\/nashik|latest-news|lottery)|mhada\.mahaonline\.gov\.in/i.test(value)) {
+    const board = /nashik/i.test(value) ? " Nashik" : "";
+    return { publisher: `MHADA${board}`, evidence: `Maharashtra Housing and Area Development Authority${board}`, cityCode: board ? "nashik" : "", contentType: "HOUSING_BOARD" };
+  }
+  if (/cidco\.maharashtra\.gov\.in/i.test(value)) {
+    return { publisher: "CIDCO", evidence: "CIDCO Navi Mumbai Maharashtra", cityCode: "navi_mumbai", contentType: "AUTHORITY_DEVELOPMENT" };
+  }
+  if (/lsg\.urban\.rajasthan\.gov\.in\/content\/raj\/udh\/.*uitkota/i.test(value) || /kda\.rajasthan\.gov\.in/i.test(value)) {
+    return { publisher: "Kota Development Authority", evidence: "Kota Development Authority Kota Rajasthan", cityCode: "kota", contentType: "AUTHORITY_AUCTION" };
+  }
+  if (/hareraggm\.gov\.in\/en\/search-project|haryanarera\.gov\.in/i.test(value)) {
+    return { publisher: "Haryana Real Estate Regulatory Authority", evidence: "Haryana Real Estate Regulatory Authority", contentType: "RERA_PROJECT_EVENT" };
+  }
+  if (/gujrera\.gujarat\.gov\.in/i.test(value)) {
+    return { publisher: "GujRERA", evidence: "Gujarat Real Estate Regulatory Authority Gujarat", contentType: "RERA_PROJECT_EVENT" };
+  }
+  return null;
+}
+
+function authorityListingTarget(sourceUrl) {
+  const value = String(sourceUrl || "").toLowerCase();
+  if (/dda\.gov\.in/i.test(value) && !/\/housing\/(housing-circulars|housing-notices|housing-scheme)/i.test(value)) {
+    return "https://dda.gov.in/housing/housing-circulars";
+  }
+  if (/idaindore\.org/i.test(value) && !/frmschemes/i.test(value)) {
+    return "https://www.idaindore.org/frmSchemes.aspx";
+  }
+  if (/(?:www\.)?mhada\.gov\.in$/i.test(value) || /mhada\.gov\.in\/en\/latest-news/i.test(value)) {
+    return "https://mhada.gov.in/en/latest-news";
+  }
+  if (/mhada\.gov\.in\/en\/nashik(?:$|[/?#])/i.test(value)) {
+    return "https://mhada.gov.in/en/project-boards/nashik-housing-and-area-development-board-nhadb";
+  }
+  if (/lsg\.urban\.rajasthan\.gov\.in\/content\/raj\/udh\/.*uitkota\/e-services\/udh-online-services/i.test(value)) {
+    return "https://lsg.urban.rajasthan.gov.in/content/raj/udh/en/UDH/uits/uitkota/notice-board/auctions.html";
+  }
+  return sourceUrl;
+}
+
+function isAuthorityListingSource(sourceUrl) {
+  const profile = authorityListingProfile(sourceUrl);
+  if (!profile) return false;
+  const value = String(sourceUrl || "").toLowerCase();
+  return authorityListingTarget(sourceUrl) !== sourceUrl || /housing-circulars|housing-notices|housing-scheme|frmschemes|\/en\/nashik|\/en\/latest-news|\/en\/lottery|cidco|uitkota|kda\.rajasthan|search-project|gujrera/i.test(value);
+}
+
+function authorityRowTitle($, row) {
+  const cells = row.find("th, td");
+  const cellTitle = cells
+    .map((_, element) => stripHtml($(element).text()))
+    .get()
+    .find((value) => value.length >= 18 && !/^(download|view|read more|details?)$/i.test(value));
+  return stripHtml(pickFirst(
+    row.find("h1, h2, h3, h4, .title, [class*='title' i]").first().text(),
+    cellTitle,
+    row.find("a[href]").map((_, element) => stripHtml($(element).text())).get().find((value) => value.length >= 18)
+  ));
+}
+
+const authorityMonthNumbers = new Map([
+  ["january", 1], ["february", 2], ["march", 3], ["april", 4], ["may", 5], ["june", 6],
+  ["july", 7], ["august", 8], ["september", 9], ["october", 10], ["november", 11], ["december", 12]
+]);
+
+function authorityRowDate($, row) {
+  const rowText = stripHtml(row.text());
+  const explicit = row.find("time[datetime], [data-date], [class*='date' i]").map((_, element) => $(element).attr("datetime") || $(element).attr("data-date") || $(element).text()).get();
+  for (const value of [...explicit, rowText]) {
+    const shortYear = String(value || "").match(/\b(\d{1,2})[-\s]([A-Za-z]+)[-\s](\d{2})\b/);
+    if (shortYear) {
+      const month = authorityMonthNumbers.get(shortYear[2].toLowerCase());
+      if (month) {
+        const parsed = new Date(Date.UTC(2000 + Number(shortYear[3]), month - 1, Number(shortYear[1]), 12));
+        if (!Number.isNaN(parsed.getTime())) return parsed.toISOString();
+      }
+    }
+    const dmy = String(value || "").match(/(\d{1,2})[\/.\-](\d{1,2})[\/.\-](\d{2,4})/);
+    if (dmy) {
+      const year = dmy[3].length === 2 ? 2000 + Number(dmy[3]) : Number(dmy[3]);
+      const parsed = new Date(Date.UTC(year, Number(dmy[2]) - 1, Number(dmy[1]), 12));
+      if (!Number.isNaN(parsed.getTime()) && parsed.getUTCDate() === Number(dmy[1]) && parsed.getUTCMonth() === Number(dmy[2]) - 1) return parsed.toISOString();
+    }
+    const parsed = parseNewsDateValue(value);
+    if (parsed) return parsed;
+  }
+  return "";
+}
+
+function authorityRowLink($, row, sourceUrl) {
+  const links = row.find("a[href], [data-href], [data-url]").map((_, element) => ({
+    href: $(element).attr("href") || $(element).attr("data-href") || $(element).attr("data-url") || "",
+    text: stripHtml($(element).text())
+  })).get();
+  const ranked = links
+    .map((link) => ({ ...link, url: absoluteUrl(link.href, sourceUrl) }))
+    .filter((link) => link.url && !/^javascript:/i.test(link.href))
+    .sort((left, right) => {
+      const score = (value) => (isDirectMediaUrl(value.url) ? 30 : 0) + (/view|detail|document|download|notice|release|scheme|lottery/i.test(`${value.text} ${value.url}`) ? 15 : 0);
+      return score(right) - score(left);
+    });
+  return ranked[0]?.url || "";
+}
+
+function cleanAuthorityDocumentText(value = "") {
+  const text = String(value || "").replace(/[^\x20-\x7E\u0900-\u097F\u0A80-\u0AFF\u0B80-\u0BFF\u0C00-\u0C7F\u0C80-\u0CFF\u0D00-\u0D7F\s]/g, " ").replace(/\s+/g, " ").trim();
+  const alphaCount = (text.match(/[A-Za-z\u0900-\u097F\u0A80-\u0AFF\u0B80-\u0BFF\u0C00-\u0C7F\u0C80-\u0CFF\u0D00-\u0D7F]/g) || []).length;
+  if (/%PDF|JFIF|endobj|xref/i.test(text.slice(0, 1200)) || alphaCount < Math.max(40, text.length * 0.12)) return "";
+  return text;
+}
+
+async function fetchAuthorityListings(sourceUrl, options = {}) {
+  const listingUrl = authorityListingTarget(sourceUrl);
+  const profile = authorityListingProfile(listingUrl) || authorityListingProfile(sourceUrl);
+  const html = await fetchHtml(listingUrl, options);
+  const $ = cheerio.load(html);
+  const publisherLogo = pickFirst(
+    absoluteUrl($("link[rel='shortcut icon']").attr("href"), sourceUrl),
+    absoluteUrl($("link[rel='icon']").attr("href"), sourceUrl),
+    absoluteUrl($("img[src*='logo' i]").first().attr("src"), sourceUrl),
+    getFallbackLogo(sourceUrl)
+  );
+  const candidates = [];
+  const seen = new Set();
+  const rows = $("table tr, article, li, .card, [class*='notice' i], [class*='scheme' i], [class*='listing' i]");
+
+  rows.each((_, element) => {
+    const row = $(element);
+    const title = authorityRowTitle($, row);
+    const publishedAt = authorityRowDate($, row);
+    const link = authorityRowLink($, row, listingUrl);
+    const rowText = stripHtml(row.text());
+    if (!title || title.length < 18 || !publishedAt || isBlockedArticle({ title }) || !link) return;
+    // Board pages often render the same document twice as “View” and “Read
+    // more” cards. The canonical document/detail URL is the authoritative
+    // identity for this listing, so collapse those rows before fetching.
+    const dedupeKey = normalizeArticleUrlForDedupe(link);
+    if (seen.has(dedupeKey)) return;
+    seen.add(dedupeKey);
+    candidates.push({ title, publishedAt, link, rowText });
+  });
+
+  const eventSignals = /flat|flats|housing|residential|plot|plots|lottery|tenement|auction|redevelopment|scheme|project|development|रहने|आवास|सदनिका|फ्लॅट|भूखंड/iu;
+  candidates.sort((left, right) => {
+    const leftScore = eventSignals.test(`${left.title} ${left.rowText}`) ? 1 : 0;
+    const rightScore = eventSignals.test(`${right.title} ${right.rowText}`) ? 1 : 0;
+    return rightScore - leftScore || new Date(right.publishedAt) - new Date(left.publishedAt);
+  });
+  const limited = candidates.slice(0, getMaxItemsPerSource());
+  return mapWithConcurrency(limited, 4, async (candidate) => {
+    let articleText = `${profile.evidence}. ${candidate.title}. ${candidate.rowText}`.slice(0, 5000);
+    let fullArticleRead = false;
+    let officialDocumentRead = false;
+    let detail = {};
+    try {
+      if (isDirectMediaUrl(candidate.link)) {
+        const buffer = await fetchBinary(candidate.link, options);
+        const extracted = cleanAuthorityDocumentText(buffer.toString("latin1"));
+        if (extracted.length >= 200) {
+          articleText = `${articleText} ${extracted}`.slice(0, 12000);
+          officialDocumentRead = true;
+          fullArticleRead = true;
+        }
+      } else {
+        detail = await fetchArticleMetadataWithTimeout(candidate.link, {}, options);
+        const extracted = stripHtml(detail.articleText || detail.description || "");
+        if (extracted.length >= 200) {
+          articleText = `${articleText} ${extracted}`.slice(0, 12000);
+          fullArticleRead = detail.fullArticleRead === true;
+        }
+      }
+    } catch (error) {
+      if (options.signal?.aborted) throw error;
+      detail = { articleReadError: error.message };
+    }
+
+    const article = cleanArticleFields({
+      title: candidate.title,
+      description: `${profile.evidence}. ${candidate.title}. ${candidate.rowText}`.slice(0, 1200),
+      articleText,
+      authoritativeContent: true,
+      officialDocumentRead,
+      articleReadAttempted: true,
+      fullArticleRead,
+      articleReadError: detail.articleReadError || "",
+      isActive: true,
+      newsLink: candidate.link,
+      thumbnailImage: absoluteUrl(detail.thumbnailImage || publisherLogo, candidate.link),
+      postedBy: profile.publisher,
+      postedByLogo: publisherLogo,
+      sourceUrl,
+      listingUrl,
+      publishedAt: detail.publishedAt || candidate.publishedAt,
+      createdAt: detail.publishedAt || candidate.publishedAt,
+      fetchedAt: new Date().toISOString(),
+      authorityEventType: profile.contentType,
+      authorityJurisdiction: profile.cityCode || "",
+      articleLinkDiscoveryMethod: "AUTHORITY_TABLE_OR_LIST",
+      listingExtraction: "ROW_TITLE_DATE_DOCUMENT_LINK"
+    });
+    const routed = applyCityCode(article);
+    return { ...routed, id: stableId(routed) };
+  });
+}
+
 async function fetchUpReraPressReleases(sourceUrl, options = {}) {
-  const html = await fetchHtml(sourceUrl, options);
+  const pageResponse = await fetchWithTimeout(sourceUrl, {
+    signal: options.signal,
+    headers: {
+      "User-Agent": userAgent,
+      Accept: "text/html,application/xhtml+xml"
+    }
+  }, getFetchTimeoutForUrl(sourceUrl));
+  if (!pageResponse.ok) throw new Error(`UP RERA press-release request failed with HTTP ${pageResponse.status}`);
+  const html = await readResponseBodyWithTimeout(pageResponse, "text", options);
+  const sessionCookie = pageResponse.headers.get("set-cookie") || "";
   const $ = cheerio.load(html);
   const publisherLogo = pickFirst(
     absoluteUrl($("link[rel='shortcut icon']").attr("href"), sourceUrl),
@@ -7311,7 +7560,9 @@ async function fetchUpReraPressReleases(sourceUrl, options = {}) {
       cells.eq(2).text()
     ));
     const publishedAt = parseNewsDateValue(dateText);
-    const viewLink = row.find("a[id$='lnkdocname'], a").last().attr("href") || "";
+    const viewLinkElement = row.find("a[id$='lnkdocname'], a").last();
+    const viewLink = viewLinkElement.attr("href") || "";
+    const postbackMatch = viewLink.match(/__doPostBack\(['"]([^'"]+)['"]/i);
 
     if (!title || !publishedAt || title.length < 18) {
       return null;
@@ -7336,11 +7587,76 @@ async function fetchUpReraPressReleases(sourceUrl, options = {}) {
       postedByLogo: publisherLogo,
       publishedAt,
       createdAt: publishedAt,
-      fetchedAt: new Date().toISOString()
+      fetchedAt: new Date().toISOString(),
+      postbackEventTarget: postbackMatch?.[1] || ""
     };
   }).get();
 
-  return rows.slice(0, getMaxItemsPerSource());
+  return mapWithConcurrency(rows.slice(0, getMaxItemsPerSource()), 3, async (candidate) => {
+    if (!candidate.postbackEventTarget) return { ...candidate, id: stableId(candidate) };
+
+    try {
+      const form = $("form").first();
+      const action = absoluteUrl(form.attr("action") || sourceUrl, sourceUrl);
+      const fields = new URLSearchParams();
+      form.find("input[type='hidden'][name]").each((_, input) => {
+        fields.set($(input).attr("name"), $(input).attr("value") || "");
+      });
+      fields.set("__EVENTTARGET", candidate.postbackEventTarget);
+      fields.set("__EVENTARGUMENT", "");
+      const response = await fetchWithTimeout(action, {
+        method: "POST",
+        signal: options.signal,
+        headers: {
+          "User-Agent": userAgent,
+          Accept: "application/pdf,text/html,application/xhtml+xml",
+          "Content-Type": "application/x-www-form-urlencoded",
+          ...(sessionCookie ? { Cookie: sessionCookie } : {})
+        },
+        body: fields.toString()
+      }, getFetchTimeoutForUrl(sourceUrl));
+      if (!response.ok) throw new Error(`UP RERA View File returned HTTP ${response.status}`);
+      const contentType = response.headers.get("content-type") || "";
+      const responseBody = await readResponseBodyWithTimeout(response, "arrayBuffer", options);
+      const responseText = Buffer.from(responseBody).toString("utf8");
+      if (/servermaintenance\.aspx|maintenance page|service unavailable|application error/i.test(`${response.url} ${responseText.slice(0, 12000)}`)) {
+        throw new Error("UP RERA View File returned a portal maintenance/error page");
+      }
+      const body = Buffer.from(responseBody);
+      const isPdf = /pdf/i.test(contentType) || body.subarray(0, 4).toString() === "%PDF";
+      let articleText = candidate.articleText;
+      let officialDocumentRead = false;
+      let fullArticleRead = false;
+      if (isPdf) {
+        const extracted = cleanAuthorityDocumentText(body.toString("latin1"));
+        if (extracted) {
+          articleText = `${candidate.title}. ${extracted}`.slice(0, 12000);
+          officialDocumentRead = true;
+          fullArticleRead = true;
+        }
+      } else {
+        const detail$ = cheerio.load(responseText);
+        const extracted = stripHtml(detail$("article, main, .content, body").first().text()).replace(/\s+/g, " ").trim();
+        if (extracted.length >= 200) {
+          articleText = `${candidate.title}. ${extracted}`.slice(0, 12000);
+          fullArticleRead = true;
+        }
+      }
+      const article = cleanArticleFields({
+        ...candidate,
+        articleText,
+        authoritativeContent: true,
+        officialDocumentRead,
+        fullArticleRead,
+        articleReadError: fullArticleRead ? "" : "UP RERA View File returned unreadable document content",
+        postbackEventTarget: undefined
+      });
+      return { ...applyCityCode(article), id: stableId(article) };
+    } catch (error) {
+      if (options.signal?.aborted) throw error;
+      return { ...candidate, articleReadError: error.message, postbackEventTarget: undefined, id: stableId(candidate) };
+    }
+  });
 }
 
 async function fetchPage(sourceUrl, options = {}) {
@@ -7537,6 +7853,10 @@ async function fetchSourceWithTimeout(sourceUrl, timeoutMsOverride = getSourceTi
 async function fetchSource(sourceUrl, options = {}) {
   if (isUpReraPressReleaseSource(sourceUrl)) {
     return fetchUpReraPressReleases(sourceUrl, options);
+  }
+
+  if (isAuthorityListingSource(sourceUrl)) {
+    return fetchAuthorityListings(sourceUrl, options);
   }
 
   if (isPressReleaseListingSource(sourceUrl)) {
