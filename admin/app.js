@@ -315,10 +315,15 @@ function renderNewsRow(item) {
   const key = newsKey(item);
   const canToggle = item.sourceKind === "posted";
   const toggleLabel = item.uiStatus === "Inactive" ? "Activate in admin" : "Deactivate in admin";
+  const trace = item.trace || {};
+  const isReview = item.uiStatus === "Needs review";
+  const reviewDetails = isReview
+    ? `<span class="news-review-details"><span>${escapeHtml(item.description || "No description")}</span><span>Language: ${escapeHtml(item.language || trace.language || "not-captured")} · Geo: ${escapeHtml(trace.locationEvidence || item.locationEvidence || "not-captured")}</span><span>Reason: ${escapeHtml((item.reasons || []).join("; ") || "Editorial review required")}</span></span>`
+    : "";
   return `
     <article class="news-row">
       <span>${imageCell}</span>
-      <span class="news-title"><b>${escapeHtml(item.title || "Untitled")}</b><a href="${escapeAttribute(item.newsLink || "#")}" target="_blank" rel="noreferrer">${escapeHtml(item.newsLink || "No link")}</a></span>
+      <span class="news-title"><b>${escapeHtml(item.title || "Untitled")}</b><a href="${escapeAttribute(item.newsLink || "#")}" target="_blank" rel="noreferrer">${escapeHtml(item.newsLink || "No link")}</a>${reviewDetails}</span>
       <span>${escapeHtml(cityLabel(item.cityCode || "unknown"))}</span>
       <span class="source-identity">${logoCell}<span>${escapeHtml(item.postedBy || "Brokket News")}</span></span>
       <span>${formatDate(item.publishedAt || item.createdAt || item.reportGeneratedAt)}</span>

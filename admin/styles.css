@@ -302,6 +302,8 @@ input:focus, select:focus, textarea:focus { border-color: var(--blue); box-shado
 }
 .news-title b { display: block; color: var(--ink); line-height: 1.35; }
 .news-title a { display: block; max-width: 560px; margin-top: 5px; overflow: hidden; color: #697a93; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.news-review-details { display: grid; gap: 3px; margin-top: 7px; color: #52647e; font-size: 11px; line-height: 1.35; }
+.news-review-details span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .status-pill, .type-pill {
   display: inline-flex;
   align-items: center;
