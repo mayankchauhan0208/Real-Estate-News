@@ -2415,6 +2415,9 @@ function getArticleTrace(article, reasons = [], context = {}) {
     articleTextLength: (article.articleText || "").length,
     readability: article.fullArticleRead === true ? "readable" : article.articleReadAttempted ? "insufficient-or-failed" : "not-attempted",
     language: article.language || "not-captured",
+    languageScript: article.languageScript || "not-captured",
+    languageConfidence: Number(article.languageConfidence || 0),
+    languageDetectionMethod: article.languageDetectionMethod || "not-captured",
     thumbnail: article.thumbnailImage ? "found" : "not-found",
     thumbnailExtractionMethod: article.thumbnailImage ? (article.thumbnailExtractionMethod || "metadata-or-fallback") : "not-captured",
     relevance: context.relevance || (reasons.some((reason) => reason.includes("not positive")) ? "rejected" : "not-captured"),
@@ -2940,11 +2943,59 @@ function stableId(article) {
 
 function normalizeTitle(value = "") {
   return value
+    .normalize("NFKC")
     .toLowerCase()
     .replace(/&/g, " and ")
-    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function normalizeArticleUrlForDedupe(rawUrl = "") {
+  if (!rawUrl) return "";
+
+  try {
+    const url = new URL(rawUrl);
+    url.protocol = "https:";
+    url.hostname = url.hostname.toLowerCase().replace(/^www\./, "").replace(/^m\./, "");
+    url.hash = "";
+    for (const key of [...url.searchParams.keys()]) {
+      if (/^(utm_|fbclid$|gclid$|ocid$|ved$|ref$|source$)/i.test(key)) url.searchParams.delete(key);
+    }
+    const sortedParams = [...url.searchParams.entries()].sort(([a], [b]) => a.localeCompare(b));
+    url.search = "";
+    for (const [key, value] of sortedParams) url.searchParams.append(key, value);
+    url.pathname = url.pathname
+      .replace(/\/amp(?:\/?|$)/i, "/")
+      .replace(/\/+/g, "/")
+      .replace(/\/$/, "");
+    return url.toString().toLowerCase();
+  } catch {
+    return String(rawUrl).trim().toLowerCase().replace(/[?#].*$/, "").replace(/\/$/, "");
+  }
+}
+
+function detectArticleLanguage(article = {}) {
+  const text = `${article.title || ""} ${article.description || ""} ${article.articleText || ""}`.normalize("NFKC");
+  const scripts = [
+    ["Devanagari", /[\u0900-\u097F]/g, "hi"],
+    ["Gujarati", /[\u0A80-\u0AFF]/g, "gu"],
+    ["Gurmukhi", /[\u0A00-\u0A7F]/g, "pa"],
+    ["Bengali", /[\u0980-\u09FF]/g, "bn"],
+    ["Kannada", /[\u0C80-\u0CFF]/g, "kn"],
+    ["Telugu", /[\u0C00-\u0C7F]/g, "te"],
+    ["Tamil", /[\u0B80-\u0BFF]/g, "ta"],
+    ["Malayalam", /[\u0D00-\u0D7F]/g, "ml"],
+    ["Odia", /[\u0B00-\u0B7F]/g, "or"]
+  ];
+  const counts = scripts.map(([script, pattern, language]) => [script, language, (text.match(pattern) || []).length]);
+  const [script, defaultLanguage, count] = counts.sort((a, b) => b[2] - a[2])[0] || ["", "", 0];
+  const latinCount = (text.match(/[A-Za-z]/g) || []).length;
+  if (!count && !latinCount) return { language: "not-captured", script: "not-captured", confidence: 0, method: "no-script-evidence" };
+  if (!count || latinCount > count * 2) return { language: "en", script: "Latin", confidence: latinCount ? 1 : 0, method: "unicode-script-ratio" };
+  const sourceHint = `${article.sourceName || ""} ${article.postedBy || ""} ${article.sourceUrl || ""}`.toLowerCase();
+  const language = defaultLanguage === "hi" && /marathi|maharashtra|मराठी|महाराष्ट्र/.test(sourceHint) ? "mr" : defaultLanguage;
+  return { language, script, confidence: Math.min(1, count / Math.max(1, count + latinCount)), method: "unicode-script-ratio" };
 }
 
 function titleCityId(article) {
@@ -2961,11 +3012,7 @@ function canonicalUrlId(article) {
   }
 
   try {
-    const url = new URL(rawUrl);
-    url.hash = "";
-    url.search = "";
-
-    return crypto.createHash("sha256").update(url.toString().toLowerCase()).digest("hex");
+    return crypto.createHash("sha256").update(normalizeArticleUrlForDedupe(rawUrl)).digest("hex");
   } catch {
     return crypto.createHash("sha256").update(rawUrl.toLowerCase()).digest("hex");
   }
@@ -2979,13 +3026,9 @@ function canonicalUrlCityId(article) {
   }
 
   try {
-    const url = new URL(rawUrl);
-    url.hash = "";
-    url.search = "";
-
     return crypto
       .createHash("sha256")
-      .update(`${url.toString().toLowerCase()}|${article.cityCode}`)
+      .update(`${normalizeArticleUrlForDedupe(rawUrl)}|${article.cityCode}`)
       .digest("hex");
   } catch {
     return crypto.createHash("sha256").update(`${rawUrl.toLowerCase()}|${article.cityCode}`).digest("hex");
@@ -5559,14 +5602,17 @@ async function reconcileRemoteSentIds() {
   if (!listUrl) return { enabled: false, fetched: 0, pages: 0 };
 
   const apiKey = env("APP_LIST_API_KEY") || env("APP_API_KEY");
-  const pageSize = Math.min(1000, Math.max(20, Number(env("API_RECONCILE_PAGE_SIZE") || 100)));
+  const pageSize = Math.min(1000, Math.max(20, Number(env("API_RECONCILE_PAGE_SIZE") || 1000)));
   const maxPages = Math.min(100, Math.max(1, Number(env("API_RECONCILE_PAGES") || 25)));
   const ids = new Set();
   let pages = 0;
 
   for (let page = 0; page < maxPages; page += 1) {
     const headers = { "Content-Type": "application/json" };
-    if (apiKey) headers.Authorization = `Bearer ${apiKey}`;
+    if (apiKey) {
+      headers.Authorization = `Bearer ${apiKey}`;
+      headers.ACCESS_TOKEN = apiKey;
+    }
     const response = await fetchWithTimeout(listUrl, {
       method: "POST",
       headers,
@@ -7392,6 +7438,15 @@ async function fetchSourceBatch(sourceList, options = {}) {
         sourceCityCodes,
         sourceMode: getRegionalSourceMode(source),
         regionalSource: isRegionalSource(source),
+        ...(() => {
+          const detected = detectArticleLanguage({ ...article, sourceUrl: article.sourceUrl || source });
+          return {
+            language: detected.language,
+            languageScript: detected.script,
+            languageConfidence: detected.confidence,
+            languageDetectionMethod: detected.method
+          };
+        })(),
         sourceTrace: {
           configuredUrl: source,
           actualFetchedUrl: result.fetchedSource || source,
@@ -7722,6 +7777,17 @@ async function main() {
     }
 
     try {
+      const latestReconciliation = await reconcileRemoteSentIds();
+      if (latestReconciliation.enabled) {
+        for (const id of latestReconciliation.ids) sentIds.add(id);
+        const alreadySent = getRejectionReasons(article, sentIds).some((reason) => reason === "filter 13: already sent");
+        if (alreadySent) {
+          const reasons = ["filter 13: already sent (live pre-POST check)"];
+          missedNewsCandidates.push({ article, reasons });
+          console.log(`Skipped live duplicate (${article.cityCode}): ${article.title} | ${article.newsLink}`);
+          continue;
+        }
+      }
       const result = await pushArticle(article);
       for (const id of articleDedupeIds(article)) {
         sentIds.add(id);
@@ -7840,6 +7906,8 @@ export {
   getAutomaticSourceBatchIndex,
   shouldSkipTitle,
   articleDedupeIds,
+  normalizeArticleUrlForDedupe,
+  detectArticleLanguage,
   isAllowedSource,
   isNegativeNews,
   isPublishableArticle,
