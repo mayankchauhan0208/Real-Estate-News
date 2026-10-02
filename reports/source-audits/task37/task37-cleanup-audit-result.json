@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T09:34:52.717Z",
+  "generatedAt": "2026-10-02T09:57:13.723Z",
   "readOnlySource": "https://www.brokket.app/api/more-pages/news/list",
   "pages": 2,
   "liveRecordsBefore": 1915,
@@ -7818,7 +7818,7 @@
   "deletionEndpoint": "not documented; no mutation attempted",
   "backupLocation": "C:\\Users\\pc\\AppData\\Local\\Temp\\task37-production-cleanup-20261002\\duplicate-records-backup.json",
   "backupRecords": 435,
-  "backupChecksum": "f4f59405e5e38a294ec1f1ff17477923b1093096c1abdf9552dd8c5db74ad2ca",
+  "backupChecksum": "c81365413aad5113cdb300c625214926bf69a522f5d25862beb0533434947c4c",
   "backupReadable": true,
   "backupCountMatchesRemovalCount": true
 }

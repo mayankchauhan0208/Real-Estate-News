@@ -881,7 +881,8 @@ export const workbookCityRules = [
     "name": "Bengaluru",
     "keywords": [
       "bangalore",
-      "bengaluru"
+      "bengaluru",
+      "ಬೆಂಗಳೂರು"
     ]
   },
   {
@@ -1011,7 +1012,8 @@ export const workbookCityRules = [
     "state": "Tamil Nadu",
     "name": "Chennai",
     "keywords": [
-      "chennai"
+      "chennai",
+      "சென்னை"
     ]
   },
   {
@@ -1171,7 +1173,8 @@ export const workbookCityRules = [
     "state": "Telangana",
     "name": "Hyderabad",
     "keywords": [
-      "hyderabad"
+      "hyderabad",
+      "హైదరాబాద్"
     ]
   },
   {
@@ -1243,7 +1246,8 @@ export const workbookCityRules = [
     "state": "West Bengal",
     "name": "Kolkata",
     "keywords": [
-      "kolkata"
+      "kolkata",
+      "কলকাতা"
     ]
   },
   {
@@ -1291,7 +1295,8 @@ export const workbookCityRules = [
     "state": "Maharashtra",
     "name": "Mumbai",
     "keywords": [
-      "mumbai"
+      "mumbai",
+      "मुंबई"
     ]
   },
   {
@@ -1299,7 +1304,8 @@ export const workbookCityRules = [
     "state": "Maharashtra",
     "name": "Pune",
     "keywords": [
-      "pune"
+      "pune",
+      "पुणे"
     ]
   },
   {

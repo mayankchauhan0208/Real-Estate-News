@@ -1,0 +1,854 @@
+{
+  "generatedAt": "2026-10-02T09:57:16.020Z",
+  "localOnly": true,
+  "historicalFunnel": {
+    "records": 37,
+    "languageDetected": 0,
+    "current": 37,
+    "relevantSafe": 17,
+    "geoValid": 4,
+    "geoUncertain": 33,
+    "review": 5,
+    "safeAutoPublish": 0,
+    "hardReject": 34
+  },
+  "surfacedDecisionRows": 29,
+  "replay": {
+    "languageDetected": 29,
+    "languages": [
+      "hi",
+      "en",
+      "gu"
+    ],
+    "scripts": [
+      "Devanagari",
+      "Latin",
+      "Gujarati"
+    ],
+    "geoValid": 3,
+    "geoUncertain": 26,
+    "safeAutoPublish": 0,
+    "review": 2,
+    "hardReject": 27
+  },
+  "aliasesAdded": [
+    "ಬೆಂಗಳೂರು",
+    "சென்னை",
+    "హైదరాబాద్",
+    "কলকাতা",
+    "मुंबई",
+    "पुणे"
+  ],
+  "forcedMappings": 0,
+  "articles": [
+    {
+      "title": "दिल्ली मेट्रो के इन 11 स्टेशनों पर आज एंट्री-एग्जिट रहेगा बंद, देखें पूरी लिस्ट",
+      "description": "Delhi Metro Stations Entry-Exit Closed : डीएमआरसी ने जंतर-मंतर पर विरोध-प्रदर्शन आह्वान को देखते हुए आज दिल्ली के राजीव चौक और सेंट्रल सेक्रेटेरिएट समेत 11 मेट्रो स्टेशनों के...",
+      "language": "hi",
+      "script": "Devanagari",
+      "languageConfidence": 0.8374384236453202,
+      "source": "NCR News Today in Hindi, NCR Ki news, NCR news H",
+      "url": "https://www.livehindustan.com/ncr/delhi-metro-many-stations-entry-exit-closed-due-to-jantar-mantar-protest-see-full-list-201790910221029.html",
+      "publishedAt": "2026-10-02T03:21:06.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": true,
+      "negative": true,
+      "historicalReasons": [
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 7: outside region in title/description",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (weak city evidence, score 34)"
+      ],
+      "replayReasons": [
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 7: outside region in title/description",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (weak city evidence, score 17)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "काम की बात:फरीदाबाद के कई सेक्टरों सहित इन इलाकों में 2 दिन नहीं होगी पानी की सप्लाई",
+      "description": "पाइपलाइन कनेक्शन जोड़ने के काम की वजह से फरीदाबाद के कई सेक्टरों और कुछ इलाकों में 2 दिन पानी की सप्लाई ठप रहेगा। फरीदाबाद महानगर विकास प्राधिकरण ने संबंधित इलाकों के लोगों से...",
+      "language": "hi",
+      "script": "Devanagari",
+      "languageConfidence": 1,
+      "source": "NCR News Today in Hindi, NCR Ki news, NCR news H",
+      "url": "https://www.livehindustan.com/ncr/faridabad-news-water-supply-affected-in-some-areas-for-two-days-201790906327878.html",
+      "publishedAt": "2026-10-02T02:09:56.000Z",
+      "explicitCityBefore": "faridabad",
+      "detectedCityCodes": [
+        "faridabad"
+      ],
+      "replayCity": "faridabad",
+      "fullArticleRead": true,
+      "negative": false,
+      "historicalReasons": [
+        "review: regional source active for editorial review"
+      ],
+      "replayReasons": [],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "दिल्ली पुलिस कॉन्स्टेबल ने किया सुसाइड, कमरे के अंदर फंदे से लटका मिला शव",
+      "description": "गाजियाबाद के एक गांव में रहने वाले दिल्ली पुलिस के एक कॉन्स्टेबल ने गुरुवार रात अपने घर पर खुदकुशी कर ली। मृतक कॉन्स्टेबल मोहित शर्मा 28 साल के थे। परिजनों को उनका शव कमरे के...",
+      "language": "hi",
+      "script": "Devanagari",
+      "languageConfidence": 1,
+      "source": "NCR News Today in Hindi, NCR Ki news, NCR news H",
+      "url": "https://www.livehindustan.com/ncr/delhi-police-constable-mohit-sharma-commits-suicide-by-hang-self-at-home-201790904373048.html",
+      "publishedAt": "2026-10-02T01:42:44.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": true,
+      "negative": true,
+      "historicalReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (strong non-real-estate local topic, score -66)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (strong non-real-estate local topic, score -16)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "महर्षि आश्रम जमीन घोटाले की गोपनीय रिपोर्ट में कई नेताओं के नाम होने का दावा",
+      "description": "Noida Maharishi Ashram land scam : नोएडा के महर्षि आश्रम जमीन घोटाला मामले में जांच की आंच अब तेज हो गई है। ईडी का शिंकजा कसने के बाद अब पुलिस और प्रशासन से लेकर प्राधिकरण तक...",
+      "language": "hi",
+      "script": "Devanagari",
+      "languageConfidence": 0.86,
+      "source": "NCR News Today in Hindi, NCR Ki news, NCR news H",
+      "url": "https://www.livehindustan.com/ncr/maharishi-ashram-land-scam-noida-many-politicians-name-in-confidential-report-claims-201790901190221.html",
+      "publishedAt": "2026-10-02T01:13:15.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": true,
+      "negative": true,
+      "historicalReasons": [
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (weak city evidence, score 95)"
+      ],
+      "replayReasons": [
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (weak city evidence, score 17)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "काम की बात:दिल्ली से गुरुग्राम आना-जाना होगा आसान, एलिवेटेड सड़क बनाएगी NHAI",
+      "description": "दिल्ली से गुरुग्राम का सफर आसान होने वाला है। अंधेरिया मोड़ से लेकर दिल्ली-गुरुग्राम बॉर्डर तक करीब साढ़े आठ किलोमीटर लंबी सड़क बनाई जाएगी। इसमें दिल्ली के हिस्से में आने वाली...",
+      "language": "hi",
+      "script": "Devanagari",
+      "languageConfidence": 0.9805825242718447,
+      "source": "NCR News Today in Hindi, NCR Ki news, NCR news H",
+      "url": "https://www.livehindustan.com/ncr/traveling-between-delhi-and-gurugram-to-become-easier-nhai-to-build-an-elevated-road-201790900073854.html",
+      "publishedAt": "2026-10-02T00:23:00.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": true,
+      "negative": false,
+      "historicalReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 35)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 2)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "सड़क पर छू रहे, मेट्रो में छेड़ रहे; डर के मारे बेटियों ने जाने का टाइम तक बदला",
+      "description": "दिल्ली में सड़क से लेकर मेट्रो और बसों तक में महिलाएं यौन उत्पीड़न झेल रही हैं। शाम के समय यह घटनाएं सबसे अधिक होती हैं। यह बात एक शोध में सामने आई है। 300 से ज्यादा महिलाओं पर...",
+      "language": "hi",
+      "script": "Devanagari",
+      "languageConfidence": 1,
+      "source": "NCR News Today in Hindi, NCR Ki news, NCR news H",
+      "url": "https://www.livehindustan.com/ncr/women-in-delhi-are-changing-their-routes-and-modes-of-transport-due-to-fear-of-sexual-harassment-study-reveals-201790898866277.html",
+      "publishedAt": "2026-10-02T00:21:09.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": true,
+      "negative": true,
+      "historicalReasons": [
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 8: outside-city conflict",
+        "filter 9: no specific project/development signal",
+        "filter 17: local quality judge rejected article (weak city evidence, score 29)"
+      ],
+      "replayReasons": [
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 8: outside-city conflict",
+        "filter 9: no specific project/development signal",
+        "filter 17: local quality judge rejected article (weak city evidence, score 12)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "LIVE: जंतर-मंतर का रण होगा भीषण? दिल्ली पुलिस ने 8-9 जोन में बांटा इलाका",
+      "description": "Jantar Mantar AAP Protest Live: आम आदमी पार्टी ने लोगों से अपील की कि वे मुख्य निर्वाचन आयुक्त (सीईसी) ज्ञानेश कुमार के खिलाफ प्रदर्शन में शामिल होने के लिए गांधी जयंती के अवसर...",
+      "language": "hi",
+      "script": "Devanagari",
+      "languageConfidence": 0.845360824742268,
+      "source": "NCR News Today in Hindi, NCR Ki news, NCR news H",
+      "url": "https://www.livehindustan.com/ncr/jantar-mantar-aap-protest-live-update-cec-gyanesh-kumar-removal-demand-delhi-police-section-163-traffic-advisory-201790905762870.html",
+      "publishedAt": "2026-10-02T02:10:27.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": true,
+      "negative": true,
+      "historicalReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score -71)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score -12)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "मैं 30000 के जूते पहनता हूं, अभिजीत दीपके ने अपनी फंडिंग के बारे में बताया",
+      "description": "कॉकरोच जनता पार्टी ने शुक्रवार 2 अक्टूबर से मुंबई में विरोध प्रदर्शन शुरू करने का ऐलान किया है। हालांकि, उन्हें पुलिस से अनुमति नहीं मिली है और ऐसे में उन्होंने जेल भरो आंदोलन...",
+      "language": "hi",
+      "script": "Devanagari",
+      "languageConfidence": 1,
+      "source": "NCR News Today in Hindi, NCR Ki news, NCR news H",
+      "url": "https://www.livehindustan.com/ncr/where-is-abhijeet-dipke-getting-funding-from-cjp-protest-today-shivaji-park-201790902462615.html",
+      "publishedAt": "2026-10-02T00:58:47.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": true,
+      "negative": true,
+      "historicalReasons": [
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score -42)"
+      ],
+      "replayReasons": [
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score -2)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "Musi land pooling: Owners to get 1,400 sq yd ...",
+      "description": "Musi land pooling: Owners to get 1,400 sq yd ...",
+      "language": "en",
+      "script": "Latin",
+      "languageConfidence": 1,
+      "source": "Hyderabad Real Estate News, Projects & Property ",
+      "url": "https://proppuls.in/musi-land-pooling-1400-sq-yd-per-acre",
+      "publishedAt": "2026-09-30T18:30:00.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": false,
+      "negative": false,
+      "historicalReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "CREDAI NATCON to map real estate’s next growt...",
+      "description": "CREDAI NATCON to map real estate’s next growt...",
+      "language": "en",
+      "script": "Latin",
+      "languageConfidence": 1,
+      "source": "Hyderabad Real Estate News, Projects & Property ",
+      "url": "https://proppuls.in/credai-natcon-2026-real-estate-growth-kolkata",
+      "publishedAt": "2026-10-01T00:00:00.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": false,
+      "negative": false,
+      "historicalReasons": [
+        "review: FULL_ARTICLE_EXTRACTION_FAILED",
+        "filter 5: no allowed city match",
+        "filter 8: outside-city conflict",
+        "filter 9: no specific project/development signal",
+        "filter 17: local quality judge rejected article (weak city evidence, score 8)"
+      ],
+      "replayReasons": [
+        "review: FULL_ARTICLE_EXTRACTION_FAILED",
+        "filter 5: no allowed city match",
+        "filter 8: outside-city conflict",
+        "filter 9: no specific project/development signal",
+        "filter 17: local quality judge rejected article (weak city evidence, score 8)"
+      ],
+      "disposition": "REVIEW"
+    },
+    {
+      "title": "My Home Vyoma brings 12 towers to Nanakramguda",
+      "description": "My Home Vyoma brings 12 towers to Nanakramguda",
+      "language": "en",
+      "script": "Latin",
+      "languageConfidence": 1,
+      "source": "Hyderabad Real Estate News, Projects & Property ",
+      "url": "https://proppuls.in/my-home-vyoma-12-towers-nanakramguda-hyderabad",
+      "publishedAt": "2026-09-30T18:30:00.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": false,
+      "negative": false,
+      "historicalReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "MMC Removes 166 Encroachments, Steps Up Actio...",
+      "description": "MMC Removes 166 Encroachments, Steps Up Actio...",
+      "language": "en",
+      "script": "Latin",
+      "languageConfidence": 1,
+      "source": "Hyderabad Real Estate News, Projects & Property ",
+      "url": "https://proppuls.in/mmc-removes-166-encroachments-steps-up-action-on-illegal-constructions",
+      "publishedAt": "2026-09-29T18:30:00.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": false,
+      "negative": true,
+      "historicalReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (weak city evidence, score 4)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (weak city evidence, score 4)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "CMC Joins Hands with T-Works to Develop Tech ...",
+      "description": "CMC Joins Hands with T-Works to Develop Tech ...",
+      "language": "en",
+      "script": "Latin",
+      "languageConfidence": 1,
+      "source": "Hyderabad Real Estate News, Projects & Property ",
+      "url": "https://proppuls.in/cmc-joins-hands-with-t-works-to-develop-tech-solutions-for-urban-challenges",
+      "publishedAt": "2026-09-30T00:00:00.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": false,
+      "negative": false,
+      "historicalReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "Didn’t Challenge AGM Resolution: Malad Member Loses Stay on ₹21 Lakh Penalty",
+      "description": "A Malad (West) flat owner who was billed more than ₹21 lakh… The post Didn’t Challenge AGM Resolution: Malad Member Loses Stay on ₹21 Lakh Penalty appeared first on Square Feat...",
+      "language": "en",
+      "script": "Latin",
+      "languageConfidence": 1,
+      "source": "Square Feat India",
+      "url": "https://squarefeatindia.com/didnt-challenge-agm-resolution-malad-member-loses-stay-on-%e2%82%b921-lakh-penalty/",
+      "publishedAt": "2026-10-01T19:44:00.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": false,
+      "negative": true,
+      "historicalReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 2)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 2)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "New Rules For Redevelopment: Builder Must Finish Society Redevelopment In 2 Years From Plinth",
+      "description": "The Maharashtra government has rewritten the rulebook for redevelopment of cooperative housing… The post New Rules For Redevelopment: Builder Must Finish Society Redevelopment...",
+      "language": "en",
+      "script": "Latin",
+      "languageConfidence": 1,
+      "source": "Square Feat India",
+      "url": "https://squarefeatindia.com/new-rules-for-redevelopment-builder-must-finish-society-redevelopment-in-2-years-from-plinth/",
+      "publishedAt": "2026-10-01T05:20:00.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": false,
+      "negative": false,
+      "historicalReasons": [
+        "filter 5: no allowed city match",
+        "filter 7: outside region in title/description",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (weak city evidence, score 30)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 7: outside region in title/description",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (weak city evidence, score 30)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "Realty Stocks Open Carefully as Traders Brace for Three-Day Break After a Punishing Quarter",
+      "description": "Thursday October 1 is the first trading day of Q3 FY27 —… The post Realty Stocks Open Carefully as Traders Brace for Three-Day Break After a Punishing Quarter appeared first on...",
+      "language": "en",
+      "script": "Latin",
+      "languageConfidence": 1,
+      "source": "Square Feat India",
+      "url": "https://squarefeatindia.com/realty-stocks-open-carefully-as-traders-brace-for-three-day-break-after-a-punishing-quarter/",
+      "publishedAt": "2026-10-01T04:13:15.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": false,
+      "negative": false,
+      "historicalReasons": [
+        "filter 5: no allowed city match",
+        "filter 9: no specific project/development signal",
+        "filter 10: broad market/company update, not city project news",
+        "filter 17: local quality judge rejected article (weak city evidence, score 10)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 10: broad market/company update, not city project news",
+        "filter 17: local quality judge rejected article (weak city evidence, score 10)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "Housing Sales Rise 3% in Q3 2026 as New Launches Jump 18%",
+      "description": "India’s residential real estate market regained momentum in the third quarter of… The post Housing Sales Rise 3% in Q3 2026 as New Launches Jump 18% appeared first on Square...",
+      "language": "en",
+      "script": "Latin",
+      "languageConfidence": 1,
+      "source": "Square Feat India",
+      "url": "https://squarefeatindia.com/housing-sales-rise-3-in-q3-2026-as-new-launches-jump-18/",
+      "publishedAt": "2026-10-01T03:31:55.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": false,
+      "negative": false,
+      "historicalReasons": [
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (weak city evidence, score 24)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (weak city evidence, score 24)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "HC Calls Santacruz Case Bizarre: Chairman Left Flatless, Contractor Relatives Get 4",
+      "description": "The Bombay High Court has described a 27-year dispute in a Santacruz… The post HC Calls Santacruz Case Bizarre: Chairman Left Flatless, Contractor Relatives Get 4 appeared...",
+      "language": "en",
+      "script": "Latin",
+      "languageConfidence": 1,
+      "source": "Square Feat India",
+      "url": "https://squarefeatindia.com/hc-calls-santacruz-case-bizarre-chairman-left-flatless-contractor-relatives-get-4/",
+      "publishedAt": "2026-09-30T19:36:00.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": false,
+      "negative": true,
+      "historicalReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 7: outside region in title/description",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 7: outside region in title/description",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "More Mumbai Deals in Sept 2026, Less Stamp Duty: Cheaper Homes Driving Sales",
+      "description": "More Mumbai Property Registrations in September 2026, Lower Stamp Duty: What the… The post More Mumbai Deals in Sept 2026, Less Stamp Duty: Cheaper Homes Driving Sales appeared...",
+      "language": "en",
+      "script": "Latin",
+      "languageConfidence": 1,
+      "source": "Square Feat India",
+      "url": "https://squarefeatindia.com/more-mumbai-deals-in-sept-2026-less-stamp-duty-cheaper-homes-driving-sales/",
+      "publishedAt": "2026-09-30T10:48:47.000Z",
+      "explicitCityBefore": "mumbai",
+      "detectedCityCodes": [
+        "mumbai"
+      ],
+      "replayCity": "mumbai",
+      "fullArticleRead": false,
+      "negative": false,
+      "historicalReasons": [
+        "review: FULL_ARTICLE_EXTRACTION_FAILED",
+        "filter 7: outside region in title/description",
+        "filter 8: outside-city conflict",
+        "filter 9: no specific project/development signal"
+      ],
+      "replayReasons": [
+        "review: FULL_ARTICLE_EXTRACTION_FAILED",
+        "filter 7: outside region in title/description",
+        "filter 8: outside-city conflict",
+        "filter 9: no specific project/development signal"
+      ],
+      "disposition": "REVIEW"
+    },
+    {
+      "title": "Realty Stocks End a Volatile Quarter as October Brings Festive Demand",
+      "description": "Realty stocks close Q2 FY27 at six-month lows September 30 as crude eases on Saudi supply and bank strike ends. October's festive demand season begins tomorrow.",
+      "language": "en",
+      "script": "Latin",
+      "languageConfidence": 1,
+      "source": "Square Feat India",
+      "url": "https://squarefeatindia.com/realty-stocks-end-a-volatile-quarter-as-october-brings-festive-demand/",
+      "publishedAt": "2026-09-30T04:10:21.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": false,
+      "negative": true,
+      "historicalReasons": [
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 9: no specific project/development signal",
+        "filter 10: broad market/company update, not city project news",
+        "filter 17: local quality judge rejected article (weak city evidence, score 10)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 10: broad market/company update, not city project news",
+        "filter 17: local quality judge rejected article (weak city evidence, score 10)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "Maharashtra Clears ₹240 Crore Stamp Duty Surcharge for 28 Civic Bodies",
+      "description": "Maharashtra will distribute ₹240 crore from 1% stamp duty surcharge to 28 municipal corporations in 2026-27 after key deductions.",
+      "language": "en",
+      "script": "Latin",
+      "languageConfidence": 1,
+      "source": "Square Feat India",
+      "url": "https://squarefeatindia.com/maharashtra-clears-%e2%82%b9240-crore-stamp-duty-surcharge-for-28-civic-bodies/",
+      "publishedAt": "2026-09-30T03:29:08.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": false,
+      "negative": false,
+      "historicalReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 7: outside region in title/description",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 7: outside region in title/description",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "Breaking News : કુમકુમ અને ધીરજએ સિલ્વર મેડલ જીતીને ઇતિહાસ રચ્યો",
+      "description": "ભારત પાસે હવે તીરંદાજી (archery )માં ગોલ્ડ પછી એક સિલ્વર મેડલ (silver medal ) છે. કુમકુમ મોહોડ અને ધીરજ બોમ્મદેવરાની જોડી રિકર્વ મિક્સ્ડ ટીમ ફાઇનલમાં ચીની જોડી સામે 3-5થી હારી...",
+      "language": "gu",
+      "script": "Gujarati",
+      "languageConfidence": 0.8429319371727748,
+      "source": "રિયલ એસ્ટેટ Trending Topics by Articles, Videos,",
+      "url": "https://tv9gujarati.com/sports/breaking-newsasian-games-2026-indian-archery-team-wins-silver-medal-in-recurve-mixed-team-event-1525585.html",
+      "publishedAt": "2026-10-02T04:14:43.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": true,
+      "negative": false,
+      "historicalReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score -12)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "सीमेंट महंगा करने की तैयारी: अक्टूबर में ₹5-20 तक बढ़ सकते दाम, सितंबर में ₹11 तक बढ़े थे",
+      "description": "अक्टूबर में देश के ज्यादातर बाजारों में सीमेंट 5 से 20 रुपये प्रति बोरी तक महंगा होने की खबर आ रही है। अक्टूबर में कीमत बढ़ाने की कोशिशें कितनी कामयाब होंगी, यह इस बात पर...",
+      "language": "hi",
+      "script": "Devanagari",
+      "languageConfidence": 1,
+      "source": "Latest real-estate news today in Hindi",
+      "url": "https://www.livehindustan.com/business/cement-set-to-get-costlier-prices-may-rise-by-rs-5-to-20-in-october-had-also-increased-by-rs-11-in-september-201790672571053.html",
+      "publishedAt": "2026-09-29T09:16:19.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": true,
+      "negative": false,
+      "historicalReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score -1)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "कौन हैं दिनेश ठक्कर, जो मुंबई के जुहू में खरीद लिए ₹711 करोड़ का घर! किराए के मकान से ड्रीम होम तक की दास्तान",
+      "description": "Success Story: दिनेश ठक्कर के लिए यह डील एक बड़ी निजी उपलब्धि भी है। 1996 में स्टॉक ब्रोकिंग से शुरुआत, डॉट-कॉम क्रैश में बड़ा नुकसान, फिर एंजेल वन को डिजिटल फाइनेंशियल...",
+      "language": "hi",
+      "script": "Devanagari",
+      "languageConfidence": 0.9428571428571428,
+      "source": "Latest real-estate news today in Hindi",
+      "url": "https://www.livehindustan.com/business/who-is-dinesh-thakkar-the-man-who-bought-a-rs-711-crore-home-in-mumbai-juhu-journey-from-a-rented-house-to-a-dream-home-201790058991352.html",
+      "publishedAt": "2026-09-22T06:54:02.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": true,
+      "negative": false,
+      "historicalReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 69)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 4)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "जिला स्तरीय ताइक्वांडो प्रतियोगिता में फरीदाबाद के खिलाड़ियों ने जीते 5 पदक",
+      "description": "जिला स्तरीय ताइक्वांडो प्रतियोगिता में फरीदाबाद के खिलाड़ियों ने जीते 5 पदक",
+      "language": "hi",
+      "script": "Devanagari",
+      "languageConfidence": 1,
+      "source": "- Amar Ujala",
+      "url": "https://www.amarujala.com/video/delhi-ncr/faridabad/video-faridabad-players-won-5-medals-at-the-district-level-taekwondo-competition-2026-10-02",
+      "publishedAt": "2026-10-02T06:13:00.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": false,
+      "negative": false,
+      "historicalReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "फरीदाबाद: नवयुगम के आयोजन पर खर्च होंगे 1.25 करोड़, 9 अक्तूबर तक आवेदन",
+      "description": "फरीदाबाद: नवयुगम के आयोजन पर खर्च होंगे 1.25 करोड़, 9 अक्तूबर तक आवेदन",
+      "language": "hi",
+      "script": "Devanagari",
+      "languageConfidence": 1,
+      "source": "- Amar Ujala",
+      "url": "https://www.amarujala.com/video/delhi-ncr/faridabad/video-rs125-crore-to-be-spent-on-organizing-navyugam-applications-open-until-october-9-2026-10-02",
+      "publishedAt": "2026-10-02T06:10:20.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": false,
+      "negative": false,
+      "historicalReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "Faridabad News: पांच माह में सात गुना बढ़ा कंटेनर का किराया, निर्यात महंगा",
+      "description": "Container freight rates increased sevenfold in five months; exports become costlier.",
+      "language": "hi",
+      "script": "Devanagari",
+      "languageConfidence": 0.3560606060606061,
+      "source": "- Amar Ujala",
+      "url": "https://www.amarujala.com/delhi-ncr/faridabad/container-freight-rates-increased-sevenfold-in-five-months-exports-become-costlier-faridabad-news-c-26-1-fbd1023-81571-2026-10-02",
+      "publishedAt": "2026-10-02T06:32:40.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": false,
+      "negative": false,
+      "historicalReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "Faridabad News: औद्योगिक क्षेत्रों में बिजली व्यवस्था सुधारने के लिए बढ़ेगा ढांचा",
+      "description": "Infrastructure will be expanded to improve the power supply system in industrial areas.",
+      "language": "hi",
+      "script": "Devanagari",
+      "languageConfidence": 0.3916083916083916,
+      "source": "- Amar Ujala",
+      "url": "https://www.amarujala.com/delhi-ncr/faridabad/infrastructure-will-be-expanded-to-improve-the-power-supply-system-in-industrial-areas-faridabad-news-c-26-1-fbd1023-81583-2026-10-01",
+      "publishedAt": "2026-10-01T17:42:00.000Z",
+      "explicitCityBefore": "faridabad",
+      "detectedCityCodes": [
+        "faridabad",
+        "new_delhi"
+      ],
+      "replayCity": "faridabad",
+      "fullArticleRead": true,
+      "negative": false,
+      "historicalReasons": [
+        "review: regional source active for editorial review"
+      ],
+      "replayReasons": [],
+      "disposition": "HARD_REJECT"
+    },
+    {
+      "title": "Faridabad News: सितंबर में 302 घरों में लगे सोलर कनेक्शन",
+      "description": "Solar connections installed in 302 homes in September",
+      "language": "hi",
+      "script": "Devanagari",
+      "languageConfidence": 0.3488372093023256,
+      "source": "- Amar Ujala",
+      "url": "https://www.amarujala.com/delhi-ncr/faridabad/solar-connections-installed-in-302-homes-in-september-faridabad-news-c-26-1-fbd1023-81560-2026-10-01",
+      "publishedAt": "2026-10-01T05:39:31.000Z",
+      "explicitCityBefore": "",
+      "detectedCityCodes": [],
+      "replayCity": "",
+      "fullArticleRead": false,
+      "negative": false,
+      "historicalReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 4)"
+      ],
+      "replayReasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 4)"
+      ],
+      "disposition": "HARD_REJECT"
+    }
+  ]
+}
