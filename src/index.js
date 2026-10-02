@@ -8,6 +8,7 @@ import { promisify } from "node:util";
 import * as cheerio from "cheerio";
 import Parser from "rss-parser";
 import { citySourceRules, workbookCityRules } from "./city-config.js";
+import { fetchDocument, extractPdfText } from "../tools/document-pipeline.mjs";
 import {
   acquireSchedulerLock,
   buildCycleSnapshot,
@@ -7481,12 +7482,16 @@ async function fetchAuthorityListings(sourceUrl, options = {}) {
     let detail = {};
     try {
       if (isDirectMediaUrl(candidate.link)) {
-        const buffer = await fetchBinary(candidate.link, options);
-        const extracted = cleanAuthorityDocumentText(buffer.toString("latin1"));
-        if (extracted.length >= 200) {
-          articleText = `${articleText} ${extracted}`.slice(0, 12000);
+        const document = await fetchDocument(candidate.link, {
+          timeoutMs: getFetchTimeoutForUrl(candidate.link),
+          maxBytes: 4 * 1024 * 1024
+        });
+        if (document.telemetry.validation === "VALID_PDF" && document.text.length >= 200) {
+          articleText = `${articleText} ${document.text}`.slice(0, 12000);
           officialDocumentRead = true;
           fullArticleRead = true;
+        } else if (document.telemetry.failureReason) {
+          detail = { articleReadError: document.telemetry.failureReason };
         }
       } else {
         detail = await fetchArticleMetadataWithTimeout(candidate.link, {}, options);
@@ -7627,12 +7632,15 @@ async function fetchUpReraPressReleases(sourceUrl, options = {}) {
       let articleText = candidate.articleText;
       let officialDocumentRead = false;
       let fullArticleRead = false;
+      let articleReadError = "";
       if (isPdf) {
-        const extracted = cleanAuthorityDocumentText(body.toString("latin1"));
-        if (extracted) {
+        const extracted = extractPdfText(body).text;
+        if (extracted.length >= 200) {
           articleText = `${candidate.title}. ${extracted}`.slice(0, 12000);
           officialDocumentRead = true;
           fullArticleRead = true;
+        } else {
+          articleReadError = "UP RERA document has no readable embedded text";
         }
       } else {
         const detail$ = cheerio.load(responseText);
@@ -7640,6 +7648,8 @@ async function fetchUpReraPressReleases(sourceUrl, options = {}) {
         if (extracted.length >= 200) {
           articleText = `${candidate.title}. ${extracted}`.slice(0, 12000);
           fullArticleRead = true;
+        } else {
+          articleReadError = "UP RERA View File returned insufficient readable HTML";
         }
       }
       const article = cleanArticleFields({
@@ -7648,7 +7658,7 @@ async function fetchUpReraPressReleases(sourceUrl, options = {}) {
         authoritativeContent: true,
         officialDocumentRead,
         fullArticleRead,
-        articleReadError: fullArticleRead ? "" : "UP RERA View File returned unreadable document content",
+        articleReadError: fullArticleRead ? "" : articleReadError || "UP RERA View File returned unreadable document content",
         postbackEventTarget: undefined
       });
       return { ...applyCityCode(article), id: stableId(article) };

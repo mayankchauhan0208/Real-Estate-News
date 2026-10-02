@@ -13,9 +13,9 @@
       "itemsDiscovered": 10,
       "datedItems": 10,
       "cityCounts": { "new_delhi": 10 },
-      "fullArticleRead": 0,
-      "officialDocumentRead": 0,
-      "notes": "Official dated rows and direct PDF links are captured. PDF text extraction remains unavailable in this runtime, so items stay evidence-backed review candidates rather than automatic publish candidates."
+      "fullArticleRead": 1,
+      "officialDocumentRead": 1,
+      "notes": "Official dated rows and direct PDF links are captured. One embedded-text PDF was extracted through the bounded document pipeline; remaining documents stay review-only when text is unavailable."
     },
     {
       "source": "IDA scheme register",
@@ -26,7 +26,7 @@
       "cityCounts": { "indore": 5 },
       "fullArticleRead": 0,
       "officialDocumentRead": 0,
-      "notes": "Bilingual residential flats, row-house, plot and lottery rows are captured with direct document links and Indore routing. PDF text extraction remains unavailable in this runtime."
+      "notes": "Bilingual residential flats, row-house, plot and lottery rows are captured with direct document links and Indore routing. The linked documents in this proof did not yield readable embedded text and remain review-only."
     },
     {
       "source": "MHADA Nashik board",

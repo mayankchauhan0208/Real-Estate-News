@@ -404,30 +404,72 @@ const audited = await mapWithConcurrency(rows, concurrency, async (row, index) =
   return auditedRow;
 });
 
+function classifySourceHealth(row) {
+  if (!row.enabledInAdmin) return "UNSUITABLE_SOURCE";
+  if (!row.allowedByRuntime) return "INVALID_SOURCE";
+  const status = Number(row.status || row.httpStatus || 0);
+  const failure = String(row.error || row.originalError || "").toLowerCase();
+  if (status === 403 || status === 406) return "BLOCKED_403";
+  if (status === 401 || status === 429) return "BLOCKED_OTHER";
+  if (status === 404) return "HTTP_404";
+  if (status >= 500 && status <= 599) return "HTTP_5XX";
+  if (/timeout|timed out|abort/.test(failure)) return "TIMEOUT";
+  if (/dns|enotfound|getaddrinfo|name resolution/.test(failure)) return "DNS_FAILURE";
+  if (/tls|certificate|ssl|secure connection/.test(failure)) return "TLS_FAILURE";
+  if (!row.ok) return "UNKNOWN";
+  if (row.contentHealth === "STALE") return "STALE";
+  if (row.contentHealth === "EMPTY") return row.bodyBytes === 0 ? "EMPTY_RESPONSE" : "HEALTHY_NO_CURRENT_STORY";
+  if (row.contentHealth === "EXTRACTION_FAILED") return "EXTRACTION_BROKEN";
+  if (row.contentHealth === "DEGRADED" && !row.publicationDatesExtracted) return "DATE_BROKEN";
+  if (row.contentHealth === "DEGRADED") return "EXTRACTION_BROKEN";
+  if (row.contentHealth === "HEALTHY" && Number(row.relevantArticles || 0) > 0) return "HEALTHY_PRODUCTIVE";
+  if (["HEALTHY", "LISTING_ONLY", "NOT_SAMPLED"].includes(row.contentHealth)) return "HEALTHY_LOW_YIELD";
+  if (row.contentHealth === "NEEDS_REVIEW") return "UNKNOWN";
+  return "UNKNOWN";
+}
+
+const inventory = audited.map((row) => ({
+  ...row,
+  sourceId: row.id,
+  sourceName: row.label,
+  type: row.category,
+  language: row.language || "unknown",
+  cityStateScope: row.cityCodes || [],
+  latestStatus: row.contentHealth || row.health || "UNKNOWN",
+  latestHttpResult: row.status || row.httpStatus || 0,
+  redirect: row.finalUrl && normalizeSourceUrl(row.finalUrl) !== normalizeSourceUrl(row.url) ? row.finalUrl : "",
+  failureReason: row.error || row.originalError || "",
+  lastSuccessfulFetch: row.ok ? row.generatedAt || new Date().toISOString() : "",
+  lastUsableDiscovery: row.articleLinksDiscovered > 0 ? row.generatedAt || new Date().toISOString() : "",
+  lastUsableArticle: row.fullArticlesReadable > 0 ? row.generatedAt || new Date().toISOString() : "",
+  currentClassification: classifySourceHealth(row)
+}));
+
 const summary = {
   generatedAt: new Date().toISOString(),
-  total: audited.length,
-  transportReachable: audited.filter((row) => row.ok === true).length,
-  contentHealthy: audited.filter((row) => row.contentHealth === "HEALTHY").length,
-  listingOnly: audited.filter((row) => row.contentHealth === "LISTING_ONLY").length,
-  notSampled: audited.filter((row) => row.contentHealth === "NOT_SAMPLED").length,
-  contentDegraded: audited.filter((row) => row.contentHealth === "DEGRADED").length,
-  stale: audited.filter((row) => row.contentHealth === "STALE").length,
-  empty: audited.filter((row) => row.contentHealth === "EMPTY").length,
-  extractionFailed: audited.filter((row) => row.contentHealth === "EXTRACTION_FAILED").length,
-  blocked: audited.filter((row) => row.contentHealth === "BLOCKED").length,
-  brokenUrl: audited.filter((row) => row.contentHealth === "BROKEN_URL").length,
-  transportFailed: audited.filter((row) => row.contentHealth === "TRANSPORT_FAILED").length,
-  needsReview: audited.filter((row) => row.contentHealth === "NEEDS_REVIEW").length,
-  selectedInRuntime: audited.filter((row) => row.selectedInRuntime).length,
-  fallbackUsed: audited.filter((row) => row.fallbackUsed).length,
-  duplicateRows: audited.filter((row) => row.duplicateCount > 1).length
+  total: inventory.length,
+  transportReachable: inventory.filter((row) => row.ok === true).length,
+  contentHealthy: inventory.filter((row) => row.contentHealth === "HEALTHY").length,
+  listingOnly: inventory.filter((row) => row.contentHealth === "LISTING_ONLY").length,
+  notSampled: inventory.filter((row) => row.contentHealth === "NOT_SAMPLED").length,
+  contentDegraded: inventory.filter((row) => row.contentHealth === "DEGRADED").length,
+  stale: inventory.filter((row) => row.contentHealth === "STALE").length,
+  empty: inventory.filter((row) => row.contentHealth === "EMPTY").length,
+  extractionFailed: inventory.filter((row) => row.contentHealth === "EXTRACTION_FAILED").length,
+  blocked: inventory.filter((row) => row.contentHealth === "BLOCKED").length,
+  brokenUrl: inventory.filter((row) => row.contentHealth === "BROKEN_URL").length,
+  transportFailed: inventory.filter((row) => row.contentHealth === "TRANSPORT_FAILED").length,
+  needsReview: inventory.filter((row) => row.contentHealth === "NEEDS_REVIEW").length,
+  selectedInRuntime: inventory.filter((row) => row.selectedInRuntime).length,
+  fallbackUsed: inventory.filter((row) => row.fallbackUsed).length,
+  duplicateRows: inventory.filter((row) => row.duplicateCount > 1).length,
+  classifications: Object.fromEntries([...new Set(inventory.map((row) => row.currentClassification))].sort().map((key) => [key, inventory.filter((row) => row.currentClassification === key).length]))
 };
 
 await fs.mkdir(outputDir, { recursive: true });
 const stamp = new Date().toISOString().replace(/[:.]/g, "-");
 const jsonPath = path.join(outputDir, `source-audit-${stamp}.json`);
-await fs.writeFile(jsonPath, JSON.stringify({ summary, rows: audited }, null, 2));
+await fs.writeFile(jsonPath, JSON.stringify({ summary, rows: inventory }, null, 2));
 console.log(`Source audit JSON written: ${jsonPath}`);
 console.log(JSON.stringify(summary, null, 2));
 
