@@ -1,0 +1,88 @@
+{
+  "task": "42",
+  "batch": "A",
+  "readOnly": true,
+  "productionPosting": false,
+  "records": [
+    {
+      "cityCode": "new_delhi",
+      "city": "New Delhi",
+      "result": "VERIFIED_RELEVANT",
+      "language": "English",
+      "source": "DDA",
+      "url": "https://dda.gov.in/housing/housing-circulars",
+      "evidence": "Dated housing circulars and direct official documents; recent 1-BHK, Janta Awaas and scheme-extension rows.",
+      "expectedPipelineOutcome": "REVIEW_OR_PUBLISH_AFTER_DOCUMENT_GATE"
+    },
+    {
+      "cityCode": "indore",
+      "city": "Indore",
+      "result": "VERIFIED_RELEVANT",
+      "language": "English-Hindi",
+      "source": "Indore Development Authority",
+      "url": "https://www.idaindore.org/frmSchemes.aspx",
+      "evidence": "Dated residential flats, row-house, residential plot and lottery scheme rows.",
+      "expectedPipelineOutcome": "REVIEW_OR_PUBLISH_AFTER_DOCUMENT_GATE"
+    },
+    {
+      "cityCode": "nashik",
+      "city": "Nashik",
+      "result": "VERIFIED_RELEVANT",
+      "language": "English-Marathi",
+      "source": "MHADA Nashik Board",
+      "url": "https://mhada.gov.in/en/nashik",
+      "evidence": "September 2026 Nashik Board lottery results, booklet and advertisement records.",
+      "expectedPipelineOutcome": "REVIEW_OR_PUBLISH_AFTER_DOCUMENT_GATE"
+    },
+    {
+      "cityCode": "kota",
+      "city": "Kota",
+      "result": "NO_QUALIFYING_STORY_FOUND_IN_DEFINED_SEARCH",
+      "language": "English-Hindi",
+      "source": "Rajasthan UDH/UIT Kota",
+      "url": "https://lsg.urban.rajasthan.gov.in/content/raj/udh/en/UDH/uits/uitkota/e-services/udh-online-services.html",
+      "evidence": "Verified authority auction/archive surface inspected; current-window qualifying property event not proven.",
+      "expectedPipelineOutcome": "NO_AUTOMATIC_PUBLISH"
+    },
+    {
+      "cityCode": "warangal",
+      "city": "Warangal",
+      "result": "VERIFIED_RELEVANT",
+      "language": "English-Telugu",
+      "source": "Telangana Housing Board",
+      "url": "https://www.tghbecollect.com/",
+      "evidence": "Official surface lists Warangal LIG-flat allotment results and Telangana housing/plot events.",
+      "expectedPipelineOutcome": "AUTHORITY_DETAIL_AND_CITY_EVIDENCE_REQUIRED"
+    },
+    {
+      "cityCode": "coimbatore",
+      "city": "Coimbatore",
+      "result": "VERIFIED_RELEVANT",
+      "language": "Tamil",
+      "source": "Dinamalar",
+      "url": "https://l-www.dinamalar.com/news/tamil-nadu-district-news-coimbatore/property-expoat-codicia-campus/4307635",
+      "evidence": "Regional Tamil report about a Coimbatore property expo; requires the normal full-article and positive-content gates.",
+      "expectedPipelineOutcome": "REVIEW_UNTIL_FULL_ARTICLE_PROOF"
+    },
+    {
+      "cityCode": "jabalpur",
+      "city": "Jabalpur",
+      "result": "VERIFIED_RELEVANT_REJECT_NEGATIVE",
+      "language": "Hindi",
+      "source": "Bhaskar Hindi",
+      "url": "https://www.bhaskarhindi.com/city/jabalpur/jabalpur-news-the-builder-usurped-the-plots-1312615",
+      "evidence": "Real-estate/plot story involving alleged builder misconduct; relevant but adverse and excluded by positive-only policy.",
+      "expectedPipelineOutcome": "REJECT_NEGATIVE"
+    },
+    {
+      "cityCode": "rajkot",
+      "city": "Rajkot",
+      "result": "VERIFIED_RELEVANT_REJECT_NEGATIVE",
+      "language": "English",
+      "source": "Times of India",
+      "url": "https://timesofindia.indiatimes.com/city/rajkot/liquidity-crunch-grips-rajkot-real-estate/articleshow/129662686.cms",
+      "evidence": "Rajkot real-estate liquidity-crisis report; relevant but adverse and excluded by positive-only policy.",
+      "expectedPipelineOutcome": "REJECT_NEGATIVE"
+    }
+  ]
+}
