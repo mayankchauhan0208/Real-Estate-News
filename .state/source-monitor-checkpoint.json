@@ -1100,7 +1100,7 @@
     ],
     "nextShardNumber": 12,
     "universeFingerprint": "63ec259303992b9b8d1c86078b26602654a46805ba05588446f3b113256c92c2",
-    "cyclePositionStart": 413,
+    "cyclePositionStart": 507,
     "lastCheckpointAt": "2026-10-02T07:39:29.704Z",
     "cyclePositionEnd": 507
   },
