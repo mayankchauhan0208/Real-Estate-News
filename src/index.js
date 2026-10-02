@@ -171,7 +171,7 @@ const CITY_ALIAS_OVERRIDES = {
   coimbatore: ["kovai", "saravanampatti", "neelambur", "coimbatore bypass", "tidel park coimbatore", "कोयंबटूर"],
   tiruchirappalli: ["trichy", "திருச்சிராப்பள்ளி"],
   thoothukudi: ["tuticorin", "தூத்துக்குடி"],
-  hyderabad: ["cyberabad", "secunderabad", "హైదరాబాద్", "kokapet", "gachibowli", "kondapur", "raidurg", "neopolis", "shamshabad", "hyderabad regional ring road", "narsingi", "tellapur", "financial district hyderabad", "adibatla", "bachupally", "medchal hyderabad region"],
+  hyderabad: ["cyberabad", "secunderabad", "హైదరాబాద్", "kokapet", "gachibowli", "kondapur", "raidurg", "neopolis", "shamshabad", "hyderabad regional ring road", "narsingi", "tellapur", "financial district hyderabad", "adibatla", "bachupally", "medchal hyderabad region", "musi", "musi riverfront", "uppal", "medipally", "ghatkesar", "medchal-malkajgiri", "osman sagar", "himayat sagar", "gandhi sarovar", "bapughat", "nanakramguda"],
   warangal: ["hanamkonda", "వరంగల్"],
   kolkata: ["calcutta", "new town kolkata", "कोलकाता", "কলকাতা", "rajarhat", "salt lake", "action area new town", "kolkata east west metro"],
   mumbai: ["bombay", "mumbai metropolitan region", "mmr", "मुंबई", "bkc", "bandra kurla complex", "powai", "lower parel", "andheri east", "goregaon east", "malad west"],
@@ -4956,6 +4956,23 @@ function isGurugramCorridorArticle(article) {
 }
 
 function getDisqualifyingOutsideCityKeywords(article) {
+  // Observed Hyderabad project articles can name Musi/Medchal localities
+  // and Telangana, while a generic city token such as "Sagar" can appear
+  // inside "Osman Sagar". Apply this narrow exception only when the article
+  // contains deterministic locality evidence and a real-estate signal.
+  const hyderabadLocalityEvidence = article.cityCode === "hyderabad" &&
+    hasWholeWordKeyword(getArticleSearchText(article), [
+      "musi", "musi riverfront", "uppal", "medipally", "ghatkesar", "medchal-malkajgiri",
+      "osman sagar", "himayat sagar", "gandhi sarovar", "bapughat", "nanakramguda"
+    ]) &&
+    hasKeyword(getArticleSearchText(article), [
+      "land pooling", "housing", "property", "real estate", "developed plots", "residential", "project", "development"
+    ]);
+
+  if (hyderabadLocalityEvidence) {
+    return outsideCityKeywords.filter((keyword) => !["hyderabad", "telangana"].includes(keyword));
+  }
+
   if (isFngConnectivityCatalystArticle(article)) {
     return outsideCityKeywords.filter((keyword) => !["delhi", "new delhi", "ghaziabad", "noida", "uttar pradesh"].includes(keyword));
   }

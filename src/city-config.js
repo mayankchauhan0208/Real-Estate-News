@@ -1174,7 +1174,18 @@ export const workbookCityRules = [
     "name": "Hyderabad",
     "keywords": [
       "hyderabad",
-      "హైదరాబాద్"
+      "హైదరాబాద్",
+      "musi",
+      "musi riverfront",
+      "uppal",
+      "medipally",
+      "ghatkesar",
+      "medchal-malkajgiri",
+      "osman sagar",
+      "himayat sagar",
+      "gandhi sarovar",
+      "bapughat",
+      "nanakramguda"
     ]
   },
   {
