@@ -7786,7 +7786,10 @@ async function prepareResumableSourceCycle(sourceUrls) {
 async function checkpointResumableSourceShard(context, shard, sourceResults) {
   const outcomes = sourceResults.map((result) => ({
     source: { url: result.source },
-    sourceId: shard.sources.find((source) => source.url === result.source)?.sourceId,
+    // Fetch adapters may normalize a trailing slash or URL casing. Resolve the
+    // checkpoint identity by normalized URL so a completed source can never
+    // create a state.sources.undefined record.
+    sourceId: shard.sources.find((source) => normalizeSourceUrl(source.url) === normalizeSourceUrl(result.source))?.sourceId,
     status: result.status || (result.error ? (/timed?\s*out|timeout/i.test(result.error) ? "TIMEOUT" : "TRANSPORT_FAILURE") : result.articles.length ? "SUCCESS_NO_CANDIDATE" : "NO_DISCOVERY"),
     failureReason: result.error || ""
   })).filter((outcome) => outcome.sourceId);
