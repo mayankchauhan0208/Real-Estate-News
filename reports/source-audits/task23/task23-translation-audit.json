@@ -141,7 +141,7 @@
       "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
       "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
       "numberPreservation": "PRESENT_IN_ORIGINAL",
-      "locationPreservation": "UNRESOLVED"
+      "locationPreservation": "PRESENT"
     },
     {
       "recordId": "task22-021",
@@ -152,7 +152,7 @@
       "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
       "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
       "numberPreservation": "PRESENT_IN_ORIGINAL",
-      "locationPreservation": "UNRESOLVED"
+      "locationPreservation": "PRESENT"
     },
     {
       "recordId": "task22-027",
@@ -163,7 +163,7 @@
       "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
       "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
       "numberPreservation": "PRESENT_IN_ORIGINAL",
-      "locationPreservation": "UNRESOLVED"
+      "locationPreservation": "PRESENT"
     },
     {
       "recordId": "task22-001",
@@ -207,7 +207,7 @@
       "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
       "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
       "numberPreservation": "PRESENT_IN_ORIGINAL",
-      "locationPreservation": "UNRESOLVED"
+      "locationPreservation": "PRESENT"
     },
     {
       "recordId": "task22-023",
@@ -218,7 +218,7 @@
       "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
       "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
       "numberPreservation": "NONE",
-      "locationPreservation": "UNRESOLVED"
+      "locationPreservation": "PRESENT"
     },
     {
       "recordId": "task22-024",
@@ -229,7 +229,7 @@
       "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
       "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
       "numberPreservation": "PRESENT_IN_ORIGINAL",
-      "locationPreservation": "UNRESOLVED"
+      "locationPreservation": "PRESENT"
     },
     {
       "recordId": "task22-025",
@@ -240,7 +240,7 @@
       "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
       "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
       "numberPreservation": "PRESENT_IN_ORIGINAL",
-      "locationPreservation": "UNRESOLVED"
+      "locationPreservation": "PRESENT"
     },
     {
       "recordId": "task22-026",
@@ -251,7 +251,7 @@
       "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
       "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
       "numberPreservation": "PRESENT_IN_ORIGINAL",
-      "locationPreservation": "UNRESOLVED"
+      "locationPreservation": "PRESENT"
     },
     {
       "recordId": "task22-056",
@@ -262,7 +262,7 @@
       "translationStatus": "REVIEW_TRANSLATION_UNAVAILABLE",
       "entityPreservation": "MACHINE_PRESERVED_ORIGINAL_TEXT",
       "numberPreservation": "PRESENT_IN_ORIGINAL",
-      "locationPreservation": "UNRESOLVED"
+      "locationPreservation": "PRESENT"
     },
     {
       "recordId": "task22-057",

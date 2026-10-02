@@ -1,6 +1,6 @@
 {
   "reportType": "TASK20_PRECISION_RECOVERY",
-  "generatedAt": "2026-10-01T08:39:41.605Z",
+  "generatedAt": "2026-10-02T17:27:13.983Z",
   "localOnly": true,
   "baseline": {
     "source": "Task19 authoritative report",
@@ -35,7 +35,7 @@
       "insufficient": 23
     },
     "negativeControls": "8/8",
-    "task19ExtractionRecoveryActive": 53,
+    "task19ExtractionRecoveryActive": 54,
     "holdout": {
       "preChangeFP": 2,
       "postChangeFP": 0

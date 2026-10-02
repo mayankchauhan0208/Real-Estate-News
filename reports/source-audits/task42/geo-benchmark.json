@@ -1,0 +1,866 @@
+{
+  "reportType": "TASK42_FORMAL_GEO_BENCHMARK",
+  "generatedAt": "2026-10-02T17:27:33.155Z",
+  "localOnly": true,
+  "cases": 94,
+  "counts": {
+    "correctCity": 17,
+    "correctMultiCity": 6,
+    "correctReview": 41,
+    "missed": 26,
+    "wrong": 1,
+    "overRouted": 3
+  },
+  "geoRecall": 0.46,
+  "wrongCityGate": false,
+  "overRoutedGate": false,
+  "note": "Real human-audited records only; this corpus is 94 cases, below the requested 100-case target.",
+  "records": [
+    {
+      "benchmark_id": "task17-001",
+      "expected": "CITY:delhi",
+      "actual": "MULTI_CITY:delhi|new_delhi",
+      "human_label": "PUBLISH",
+      "city_evidence": "Delhi",
+      "source": "https://realty.economictimes.indiatimes.com/rss/technology",
+      "outcome": "CORRECT_MULTI_CITY"
+    },
+    {
+      "benchmark_id": "task17-002",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "",
+      "source": "https://realty.economictimes.indiatimes.com/rss/cement",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-003",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "",
+      "source": "https://realty.economictimes.indiatimes.com/rss/cement",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-004",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "",
+      "source": "https://realty.economictimes.indiatimes.com/rss/hospitality",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-005",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "",
+      "source": "https://realty.economictimes.indiatimes.com/rss/industry",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-006",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "",
+      "source": "https://realty.economictimes.indiatimes.com/rss/recentstories",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-007",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "",
+      "source": "https://realty.economictimes.indiatimes.com/rss/international",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-008",
+      "expected": "CITY:ahmedabad",
+      "actual": "CITY:ahmedabad",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "Ahmedabad",
+      "source": "https://realty.economictimes.indiatimes.com/rss/recentstories",
+      "outcome": "CORRECT_CITY"
+    },
+    {
+      "benchmark_id": "task17-009",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "",
+      "source": "https://realty.economictimes.indiatimes.com/rss/residential",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-010",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "",
+      "source": "https://realty.economictimes.indiatimes.com/rss/technology",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-011",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "",
+      "source": "https://infra.economictimes.indiatimes.com/rss/construction",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-012",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "",
+      "source": "https://infra.economictimes.indiatimes.com/rss/corporate",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-013",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "",
+      "source": "https://infra.economictimes.indiatimes.com/rss/railways",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-014",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "",
+      "source": "https://infra.economictimes.indiatimes.com/rss/roads-highways",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-015",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "",
+      "source": "https://infra.economictimes.indiatimes.com/rss/urban-infrastructure",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-016",
+      "expected": "CITY:hyderabad",
+      "actual": "CITY:hyderabad",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "Hyderabad",
+      "source": "https://infra.economictimes.indiatimes.com/rss/urban-transportation",
+      "outcome": "CORRECT_CITY"
+    },
+    {
+      "benchmark_id": "task17-017",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "",
+      "source": "https://infra.economictimes.indiatimes.com/rss/water",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-018",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "",
+      "source": "https://realty.economictimes.indiatimes.com/rss/topstories",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-019",
+      "expected": "CITY:bangalore",
+      "actual": "MULTI_CITY:bhopal|ahmedabad|bangalore|chennai|agra",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "Bengaluru",
+      "source": "https://themetrorailguy.com/",
+      "outcome": "CORRECT_MULTI_CITY"
+    },
+    {
+      "benchmark_id": "task17-020",
+      "expected": "CITY:thane",
+      "actual": "MULTI_CITY:bhopal|ahmedabad|bangalore|chennai|agra",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "Thane",
+      "source": "https://themetrorailguy.com/",
+      "outcome": "WRONG_CITY"
+    },
+    {
+      "benchmark_id": "task17-021",
+      "expected": "CITY:jaipur",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "Jaipur",
+      "source": "https://transport.rajasthan.gov.in/jmrc",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task17-022",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "",
+      "source": "https://infra.economictimes.indiatimes.com/rss/recentstories",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-023",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "",
+      "source": "https://infra.economictimes.indiatimes.com/rss/rural-infrastructure",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-024",
+      "expected": "CITY:ranchi",
+      "actual": "CITY:ranchi",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "Ranchi",
+      "source": "https://realty.economictimes.indiatimes.com/rss/lighting/smart-lighting",
+      "outcome": "CORRECT_CITY"
+    },
+    {
+      "benchmark_id": "task17-025",
+      "expected": "CITY:patna",
+      "actual": "CITY:patna",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "Patna",
+      "source": "https://realty.economictimes.indiatimes.com/rss/lighting/smart-lighting",
+      "outcome": "CORRECT_CITY"
+    },
+    {
+      "benchmark_id": "task17-026",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "",
+      "source": "https://realty.economictimes.indiatimes.com/rss/smart-city",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-027",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "",
+      "source": "https://realty.economictimes.indiatimes.com/rss/smart-city",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-028",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "",
+      "source": "https://realty.economictimes.indiatimes.com/rss/hospitality",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-029",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "",
+      "source": "https://realty.economictimes.indiatimes.com/rss/international",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-030",
+      "expected": "CITY:gurugram",
+      "actual": "MULTI_CITY:gurugram|delhi|new_delhi",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "Gurugram",
+      "source": "https://realty.economictimes.indiatimes.com/rss/topstories",
+      "outcome": "CORRECT_MULTI_CITY"
+    },
+    {
+      "benchmark_id": "task17-031",
+      "expected": "CITY:mohali",
+      "actual": "CITY:mohali",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "Mohali",
+      "source": "https://realty.economictimes.indiatimes.com/rss/regulatory",
+      "outcome": "CORRECT_CITY"
+    },
+    {
+      "benchmark_id": "task17-032",
+      "expected": "CITY:gurugram",
+      "actual": "CITY:gurugram",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "Gurugram",
+      "source": "https://realty.economictimes.indiatimes.com/rss/regulatory",
+      "outcome": "CORRECT_CITY"
+    },
+    {
+      "benchmark_id": "task17-033",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "",
+      "source": "https://realty.economictimes.indiatimes.com/rss/residential",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-034",
+      "expected": "CITY:delhi",
+      "actual": "MULTI_CITY:delhi|new_delhi",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "Delhi",
+      "source": "https://dda.gov.in/whats-new",
+      "outcome": "CORRECT_MULTI_CITY"
+    },
+    {
+      "benchmark_id": "task17-035",
+      "expected": "CITY:faridabad",
+      "actual": "CITY:faridabad",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "Faridabad",
+      "source": "https://faridabad.nic.in/department/faridabad-metropolitan-development-authority-fmda",
+      "outcome": "CORRECT_CITY"
+    },
+    {
+      "benchmark_id": "task17-036",
+      "expected": "CITY:faridabad",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "Faridabad",
+      "source": "https://faridabad.nic.in/department/faridabad-metropolitan-development-authority-fmda",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task17-037",
+      "expected": "CITY:noida",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "Greater Noida",
+      "source": "https://gnida.up.gov.in/en/announcements",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task17-038",
+      "expected": "CITY:noida",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "Greater Noida",
+      "source": "https://gnida.up.gov.in/en/announcements",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task17-039",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "",
+      "source": "https://realty.economictimes.indiatimes.com/news/residential",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-040",
+      "expected": "CITY:bhubaneswar",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "Bhubaneswar",
+      "source": "https://www.bda.gov.in/notice",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task17-041",
+      "expected": "CITY:kochi",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "Kochi",
+      "source": "https://www.cial.aero/News-Updates/URL",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task17-042",
+      "expected": "CITY:kochi",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "Kochi",
+      "source": "https://www.cial.aero/News-Updates/URL",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task17-043",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "",
+      "source": "https://cci.gov.in/combination/green-channel-view",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-044",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "",
+      "source": "https://cci.gov.in/combination/green-channel-view",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-045",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "",
+      "source": "https://www.hprera.in",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-046",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "",
+      "source": "https://infra.economictimes.indiatimes.com/rss/construction",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-047",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "",
+      "source": "https://infra.economictimes.indiatimes.com/rss/corporate",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-048",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "",
+      "source": "https://infra.economictimes.indiatimes.com/rss/energy",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-049",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "",
+      "source": "https://sipcotweb.tn.gov.in",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-050",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "",
+      "source": "https://sipcotweb.tn.gov.in",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-051",
+      "expected": "CITY:bangalore",
+      "actual": "CITY:bangalore",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "Bengaluru",
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/-2128833038.cms",
+      "outcome": "CORRECT_CITY"
+    },
+    {
+      "benchmark_id": "task17-052",
+      "expected": "REVIEW_GEO",
+      "actual": "MULTI_CITY:delhi|new_delhi",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "",
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+      "outcome": "OVER_ROUTED_CITY"
+    },
+    {
+      "benchmark_id": "task17-053",
+      "expected": "CITY:kolkata",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "Kolkata",
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/-2128830821.cms",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task17-054",
+      "expected": "REVIEW_GEO",
+      "actual": "MULTI_CITY:delhi|new_delhi",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "",
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms",
+      "outcome": "OVER_ROUTED_CITY"
+    },
+    {
+      "benchmark_id": "task17-055",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "",
+      "source": "https://www.cci.gov.in/combination/orders-section31",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-056",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "",
+      "source": "https://www.cci.gov.in/combination/press-release",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-057",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "",
+      "source": "https://www.cci.gov.in/combination/orders-section31",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-058",
+      "expected": "CITY:lucknow",
+      "actual": "CITY:lucknow",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "Lucknow",
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/lucknow-news/rssfeed.xml",
+      "outcome": "CORRECT_CITY"
+    },
+    {
+      "benchmark_id": "task17-059",
+      "expected": "CITY:noida",
+      "actual": "CITY:noida",
+      "human_label": "PUBLISH",
+      "city_evidence": "Greater Noida",
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+      "outcome": "CORRECT_CITY"
+    },
+    {
+      "benchmark_id": "task17-060",
+      "expected": "CITY:patna",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "Patna",
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/patna-news/rssfeed.xml",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task17-061",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "",
+      "source": "https://infra.economictimes.indiatimes.com/rss/topstories",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-062",
+      "expected": "CITY:delhi",
+      "actual": "MULTI_CITY:delhi|new_delhi",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "Delhi",
+      "source": "https://infra.economictimes.indiatimes.com/rss/urban-transportation",
+      "outcome": "CORRECT_MULTI_CITY"
+    },
+    {
+      "benchmark_id": "task17-063",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "",
+      "source": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-064",
+      "expected": "CITY:chennai",
+      "actual": "CITY:chennai",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "Chennai",
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/2950623.cms",
+      "outcome": "CORRECT_CITY"
+    },
+    {
+      "benchmark_id": "task17-065",
+      "expected": "CITY:gurugram",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "Gurugram",
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/gurugram-news/rssfeed.xml",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task17-066",
+      "expected": "CITY:lucknow",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "Lucknow",
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/lucknow-news/rssfeed.xml",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task17-067",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "",
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/others/rssfeed.xml",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task17-068",
+      "expected": "REVIEW_GEO",
+      "actual": "CITY:mumbai",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "",
+      "source": "https://www.hindustantimes.com/feeds/rss/real-estate/rssfeed.xml",
+      "outcome": "OVER_ROUTED_CITY"
+    },
+    {
+      "benchmark_id": "task17-069",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "",
+      "source": "https://rera.punjab.gov.in/latest-news.html",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task22-005",
+      "expected": "CITY:noida",
+      "actual": "CITY:noida",
+      "human_label": "PUBLISH",
+      "city_evidence": "Greater Noida",
+      "source": "Live Hindustan",
+      "outcome": "CORRECT_CITY"
+    },
+    {
+      "benchmark_id": "task22-006",
+      "expected": "CITY:delhi",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "Delhi",
+      "source": "Amar Ujala",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task22-004",
+      "expected": "CITY:delhi",
+      "actual": "CITY:delhi",
+      "human_label": "PUBLISH",
+      "city_evidence": "Delhi",
+      "source": "Amar Ujala",
+      "outcome": "CORRECT_CITY"
+    },
+    {
+      "benchmark_id": "task22-003",
+      "expected": "CITY:delhi",
+      "actual": "CITY:delhi",
+      "human_label": "PUBLISH",
+      "city_evidence": "Delhi",
+      "source": "Live Hindustan",
+      "outcome": "CORRECT_CITY"
+    },
+    {
+      "benchmark_id": "task22-009",
+      "expected": "CITY:pune",
+      "actual": "MULTI_CITY:mumbai|pune",
+      "human_label": "PUBLISH",
+      "city_evidence": "Pune",
+      "source": "Maharashtra Times",
+      "outcome": "CORRECT_MULTI_CITY"
+    },
+    {
+      "benchmark_id": "task22-007",
+      "expected": "CITY:delhi",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "Delhi",
+      "source": "Amar Ujala",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task22-019",
+      "expected": "CITY:hyderabad",
+      "actual": "CITY:hyderabad",
+      "human_label": "PUBLISH",
+      "city_evidence": "Hyderabad",
+      "source": "Sakshi",
+      "outcome": "CORRECT_CITY"
+    },
+    {
+      "benchmark_id": "task22-022",
+      "expected": "CITY:hyderabad",
+      "actual": "NO_CITY",
+      "human_label": "PUBLISH",
+      "city_evidence": "Hyderabad",
+      "source": "Sakshi",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task22-008",
+      "expected": "CITY:pune",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "Pune",
+      "source": "Loksatta",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task22-012",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "",
+      "source": "Maharashtra Times",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task22-013",
+      "expected": "CITY:pune",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "Pune",
+      "source": "Loksatta",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task22-014",
+      "expected": "CITY:kochi",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_OFF_TOPIC",
+      "city_evidence": "Kochi",
+      "source": "Manorama Online",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task22-020",
+      "expected": "CITY:hyderabad",
+      "actual": "CITY:hyderabad",
+      "human_label": "PUBLISH",
+      "city_evidence": "Hyderabad",
+      "source": "Sakshi",
+      "outcome": "CORRECT_CITY"
+    },
+    {
+      "benchmark_id": "task22-021",
+      "expected": "CITY:hyderabad",
+      "actual": "NO_CITY",
+      "human_label": "PUBLISH",
+      "city_evidence": "Hyderabad",
+      "source": "Sakshi",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task22-027",
+      "expected": "CITY:hyderabad",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "Hyderabad",
+      "source": "Sakshi",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task22-001",
+      "expected": "CITY:delhi",
+      "actual": "NO_CITY",
+      "human_label": "PUBLISH",
+      "city_evidence": "Delhi",
+      "source": "Amar Ujala",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task22-002",
+      "expected": "CITY:delhi",
+      "actual": "NO_CITY",
+      "human_label": "PUBLISH",
+      "city_evidence": "Delhi",
+      "source": "Live Hindustan",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task22-010",
+      "expected": "CITY:bangalore",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "Bengaluru",
+      "source": "Maharashtra Times",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task22-011",
+      "expected": "CITY:navi_mumbai",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "Navi Mumbai",
+      "source": "Maharashtra Times",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task22-023",
+      "expected": "CITY:bangalore",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "Bengaluru",
+      "source": "Vijaya Karnataka",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task22-024",
+      "expected": "CITY:bangalore",
+      "actual": "CITY:bangalore",
+      "human_label": "PUBLISH",
+      "city_evidence": "Bengaluru",
+      "source": "Vijaya Karnataka",
+      "outcome": "CORRECT_CITY"
+    },
+    {
+      "benchmark_id": "task22-025",
+      "expected": "CITY:bangalore",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "Bengaluru",
+      "source": "Vijaya Karnataka",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task22-026",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "",
+      "source": "Dinamalar",
+      "outcome": "CORRECT_REVIEW"
+    },
+    {
+      "benchmark_id": "task22-056",
+      "expected": "CITY:kolkata",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_NEGATIVE",
+      "city_evidence": "Kolkata",
+      "source": "www.anandabazar.com",
+      "outcome": "MISSED_CITY"
+    },
+    {
+      "benchmark_id": "task22-057",
+      "expected": "REVIEW_GEO",
+      "actual": "NO_CITY",
+      "human_label": "REJECT_INSUFFICIENT",
+      "city_evidence": "",
+      "source": "www.anandabazar.com",
+      "outcome": "CORRECT_REVIEW"
+    }
+  ]
+}

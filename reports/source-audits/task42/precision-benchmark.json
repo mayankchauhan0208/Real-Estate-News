@@ -1,6 +1,6 @@
 {
   "reportType": "TASK42_REAL_WORLD_PRECISION_BENCHMARK",
-  "generatedAt": "2026-10-02T17:02:48.737Z",
+  "generatedAt": "2026-10-02T17:27:33.022Z",
   "localOnly": true,
   "productionMutations": 0,
   "provenance": [
@@ -18,14 +18,14 @@
     "REVIEW_UNCERTAIN": 0
   },
   "confusion": {
-    "TP": 6,
+    "TP": 9,
     "FP": 0,
     "TN": 81,
-    "FN": 7,
+    "FN": 4,
     "precision": 1,
-    "recall": 0.46153846153846156,
+    "recall": 0.6923076923076923,
     "falsePositiveRate": 0,
-    "falseNegativeRate": 0.5384615384615384
+    "falseNegativeRate": 0.3076923076923077
   },
   "hardGates": {
     "falsePositive": true,
@@ -190,8 +190,8 @@
       "language": "English/unknown",
       "humanLabel": "REJECT_OFF_TOPIC",
       "currentOutcome": "REVIEW_OR_REJECT",
-      "relevance": "reject_negative",
-      "negative": "REJECT_NEGATIVE",
+      "relevance": "unclassified",
+      "negative": "PASS",
       "geo": "",
       "duplicate": "UNIQUE_IN_AUDITED_SET",
       "evidenceStatus": "HUMAN_AUDITED"
@@ -204,8 +204,8 @@
       "language": "English/unknown",
       "humanLabel": "REJECT_OFF_TOPIC",
       "currentOutcome": "REVIEW_OR_REJECT",
-      "relevance": "reject_negative",
-      "negative": "REJECT_NEGATIVE",
+      "relevance": "unclassified",
+      "negative": "PASS",
       "geo": "",
       "duplicate": "UNIQUE_IN_AUDITED_SET",
       "evidenceStatus": "HUMAN_AUDITED"
@@ -262,7 +262,7 @@
       "currentOutcome": "REVIEW_OR_REJECT",
       "relevance": "reject_negative",
       "negative": "REJECT_NEGATIVE",
-      "geo": "",
+      "geo": "hyderabad",
       "duplicate": "UNIQUE_IN_AUDITED_SET",
       "evidenceStatus": "HUMAN_AUDITED"
     },
@@ -498,8 +498,8 @@
       "language": "English/unknown",
       "humanLabel": "REJECT_INSUFFICIENT",
       "currentOutcome": "REVIEW_OR_REJECT",
-      "relevance": "reject_negative",
-      "negative": "REJECT_NEGATIVE",
+      "relevance": "unclassified",
+      "negative": "PASS",
       "geo": "",
       "duplicate": "UNIQUE_IN_AUDITED_SET",
       "evidenceStatus": "HUMAN_AUDITED"
@@ -1113,7 +1113,7 @@
       "language": "Telugu",
       "city": "Hyderabad",
       "humanLabel": "PUBLISH",
-      "currentOutcome": "REVIEW_OR_REJECT",
+      "currentOutcome": "PUBLISH",
       "relevance": "project_development",
       "negative": "PASS",
       "geo": "hyderabad",
@@ -1209,7 +1209,7 @@
       "language": "Telugu",
       "city": "Hyderabad",
       "humanLabel": "PUBLISH",
-      "currentOutcome": "REVIEW_OR_REJECT",
+      "currentOutcome": "PUBLISH",
       "relevance": "project_development",
       "negative": "PASS",
       "geo": "hyderabad",
@@ -1337,10 +1337,10 @@
       "language": "Kannada",
       "city": "Bengaluru",
       "humanLabel": "PUBLISH",
-      "currentOutcome": "REVIEW_OR_REJECT",
+      "currentOutcome": "PUBLISH",
       "relevance": "project_development",
       "negative": "PASS",
-      "geo": "NO_SUPPORTED_CITY_EVIDENCE",
+      "geo": "bangalore",
       "duplicate": "UNIQUE",
       "evidenceStatus": "HUMAN_AUDITED"
     },
@@ -1370,7 +1370,7 @@
       "city": "",
       "humanLabel": "REJECT_INSUFFICIENT",
       "currentOutcome": "REVIEW_OR_REJECT",
-      "relevance": "unclassified",
+      "relevance": "project_development",
       "negative": "PASS",
       "geo": "NO_SUPPORTED_CITY_EVIDENCE",
       "duplicate": "UNIQUE",

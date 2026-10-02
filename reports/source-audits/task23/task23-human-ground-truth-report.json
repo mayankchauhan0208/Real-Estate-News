@@ -1,6 +1,6 @@
 {
   "reportType": "TASK23_MULTILINGUAL_HUMAN_GROUND_TRUTH",
-  "generatedAt": "2026-10-01T09:49:27.782Z",
+  "generatedAt": "2026-10-02T17:26:10.268Z",
   "localOnly": true,
   "input": "reports/source-audits/task22/task22-multilingual-editorial-review-audited.csv",
   "humanLabels": {
@@ -19,12 +19,12 @@
     "recall": 0
   },
   "final": {
-    "TP": 4,
+    "TP": 7,
     "FP": 0,
     "TN": 14,
-    "FN": 7,
+    "FN": 4,
     "precision": 1,
-    "recall": 0.36363636363636365
+    "recall": 0.6363636363636364
   },
   "protection": {
     "negative": 6,
@@ -46,8 +46,8 @@
     "bengaliCorrected": true
   },
   "geo": {
-    "nativeEvidenceRecords": 10,
-    "correctCityMatches": 7,
+    "nativeEvidenceRecords": 19,
+    "correctCityMatches": 10,
     "unsafeDefaultsIntroduced": 0,
     "yeidaSpecificRoute": [
       "noida"

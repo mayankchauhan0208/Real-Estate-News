@@ -168,6 +168,24 @@
       ],
       "nativeEvidence": [
         {
+          "candidateCity": "mumbai",
+          "matchedText": "मुंबई",
+          "normalizedPlace": "मुंबई",
+          "field": "title",
+          "type": "TITLE_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "pune",
+          "matchedText": "पुणे",
+          "normalizedPlace": "पुणे",
+          "field": "title",
+          "type": "TITLE_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
+        {
           "candidateCity": "pune",
           "matchedText": "pune",
           "normalizedPlace": "pune",
@@ -178,16 +196,48 @@
         },
         {
           "candidateCity": "pune",
+          "matchedText": "पुणे",
+          "normalizedPlace": "पुणे",
+          "field": "description",
+          "type": "DESCRIPTION_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "mumbai",
+          "matchedText": "मुंबई",
+          "normalizedPlace": "मुंबई",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "pune",
           "matchedText": "pune",
           "normalizedPlace": "pune",
           "field": "body",
           "type": "BODY_CITY",
           "confidence": "medium",
           "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "pune",
+          "matchedText": "पुणे",
+          "normalizedPlace": "पुणे",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
         }
       ],
       "cityMatch": true,
       "provenance": [
+        "existing city-config keyword",
+        "existing city-config keyword",
+        "existing city-config keyword",
+        "existing city-config keyword",
+        "existing city-config keyword",
         "existing city-config keyword",
         "existing city-config keyword"
       ]
@@ -217,8 +267,19 @@
       "recordId": "task22-019",
       "humanCity": "Hyderabad",
       "humanCityCode": "hyderabad",
-      "detectedCodes": [],
+      "detectedCodes": [
+        "hyderabad"
+      ],
       "nativeEvidence": [
+        {
+          "candidateCity": "hyderabad",
+          "matchedText": "హైదరాబాద్",
+          "normalizedPlace": "హైదరాబాద్",
+          "field": "title",
+          "type": "TITLE_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
         {
           "candidateCity": "hyderabad",
           "matchedText": "hyderabad",
@@ -227,10 +288,21 @@
           "type": "DESCRIPTION_CITY",
           "confidence": "medium",
           "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "hyderabad",
+          "matchedText": "హైదరాబాద్",
+          "normalizedPlace": "హైదరాబాద్",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
         }
       ],
-      "cityMatch": false,
+      "cityMatch": true,
       "provenance": [
+        "existing city-config keyword",
+        "existing city-config keyword",
         "existing city-config keyword"
       ]
     },
@@ -248,10 +320,20 @@
           "type": "DESCRIPTION_CITY",
           "confidence": "medium",
           "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "hyderabad",
+          "matchedText": "హైదరాబాద్",
+          "normalizedPlace": "హైదరాబాద్",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
         }
       ],
       "cityMatch": false,
       "provenance": [
+        "existing city-config keyword",
         "existing city-config keyword"
       ]
     },
@@ -269,10 +351,20 @@
           "type": "DESCRIPTION_CITY",
           "confidence": "medium",
           "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "pune",
+          "matchedText": "पुणे",
+          "normalizedPlace": "पुणे",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
         }
       ],
       "cityMatch": false,
       "provenance": [
+        "existing city-config keyword",
         "existing city-config keyword"
       ]
     },
@@ -290,10 +382,30 @@
           "type": "TITLE_CITY",
           "confidence": "medium",
           "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "mumbai",
+          "matchedText": "मुंबई",
+          "normalizedPlace": "मुंबई",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "pune",
+          "matchedText": "पुणे",
+          "normalizedPlace": "पुणे",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
         }
       ],
       "cityMatch": true,
       "provenance": [
+        "existing city-config keyword",
+        "existing city-config keyword",
         "existing city-config keyword"
       ]
     },
@@ -311,10 +423,20 @@
           "type": "DESCRIPTION_CITY",
           "confidence": "medium",
           "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "pune",
+          "matchedText": "पुणे",
+          "normalizedPlace": "पुणे",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
         }
       ],
       "cityMatch": false,
       "provenance": [
+        "existing city-config keyword",
         "existing city-config keyword"
       ]
     },
@@ -331,28 +453,76 @@
       "recordId": "task22-020",
       "humanCity": "Hyderabad",
       "humanCityCode": "hyderabad",
-      "detectedCodes": [],
-      "nativeEvidence": [],
-      "cityMatch": false,
-      "provenance": []
+      "detectedCodes": [
+        "hyderabad"
+      ],
+      "nativeEvidence": [
+        {
+          "candidateCity": "hyderabad",
+          "matchedText": "హైదరాబాద్",
+          "normalizedPlace": "హైదరాబాద్",
+          "field": "description",
+          "type": "DESCRIPTION_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "hyderabad",
+          "matchedText": "హైదరాబాద్",
+          "normalizedPlace": "హైదరాబాద్",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        }
+      ],
+      "cityMatch": true,
+      "provenance": [
+        "existing city-config keyword",
+        "existing city-config keyword"
+      ]
     },
     {
       "recordId": "task22-021",
       "humanCity": "Hyderabad",
       "humanCityCode": "hyderabad",
       "detectedCodes": [],
-      "nativeEvidence": [],
+      "nativeEvidence": [
+        {
+          "candidateCity": "hyderabad",
+          "matchedText": "హైదరాబాద్",
+          "normalizedPlace": "హైదరాబాద్",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        }
+      ],
       "cityMatch": false,
-      "provenance": []
+      "provenance": [
+        "existing city-config keyword"
+      ]
     },
     {
       "recordId": "task22-027",
       "humanCity": "Hyderabad",
       "humanCityCode": "hyderabad",
       "detectedCodes": [],
-      "nativeEvidence": [],
+      "nativeEvidence": [
+        {
+          "candidateCity": "hyderabad",
+          "matchedText": "హైదరాబాద్",
+          "normalizedPlace": "హైదరాబాద్",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        }
+      ],
       "cityMatch": false,
-      "provenance": []
+      "provenance": [
+        "existing city-config keyword"
+      ]
     },
     {
       "recordId": "task22-001",
@@ -386,54 +556,188 @@
       "humanCity": "Navi Mumbai",
       "humanCityCode": "navi_mumbai",
       "detectedCodes": [],
-      "nativeEvidence": [],
+      "nativeEvidence": [
+        {
+          "candidateCity": "mumbai",
+          "matchedText": "मुंबई",
+          "normalizedPlace": "मुंबई",
+          "field": "title",
+          "type": "TITLE_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "mumbai",
+          "matchedText": "मुंबई",
+          "normalizedPlace": "मुंबई",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        }
+      ],
       "cityMatch": false,
-      "provenance": []
+      "provenance": [
+        "existing city-config keyword",
+        "existing city-config keyword"
+      ]
     },
     {
       "recordId": "task22-023",
       "humanCity": "Bengaluru",
       "humanCityCode": "bangalore",
       "detectedCodes": [],
-      "nativeEvidence": [],
+      "nativeEvidence": [
+        {
+          "candidateCity": "bangalore",
+          "matchedText": "ಬೆಂಗಳೂರು",
+          "normalizedPlace": "ಬೆಂಗಳೂರು",
+          "field": "description",
+          "type": "DESCRIPTION_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "bangalore",
+          "matchedText": "ಬೆಂಗಳೂರು",
+          "normalizedPlace": "ಬೆಂಗಳೂರು",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        }
+      ],
       "cityMatch": false,
-      "provenance": []
+      "provenance": [
+        "existing city-config keyword",
+        "existing city-config keyword"
+      ]
     },
     {
       "recordId": "task22-024",
       "humanCity": "Bengaluru",
       "humanCityCode": "bangalore",
-      "detectedCodes": [],
-      "nativeEvidence": [],
-      "cityMatch": false,
-      "provenance": []
+      "detectedCodes": [
+        "bangalore"
+      ],
+      "nativeEvidence": [
+        {
+          "candidateCity": "bangalore",
+          "matchedText": "ಬೆಂಗಳೂರು",
+          "normalizedPlace": "ಬೆಂಗಳೂರು",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        }
+      ],
+      "cityMatch": true,
+      "provenance": [
+        "existing city-config keyword"
+      ]
     },
     {
       "recordId": "task22-025",
       "humanCity": "Bengaluru",
       "humanCityCode": "bangalore",
       "detectedCodes": [],
-      "nativeEvidence": [],
+      "nativeEvidence": [
+        {
+          "candidateCity": "bangalore",
+          "matchedText": "ಬೆಂಗಳೂರು",
+          "normalizedPlace": "ಬೆಂಗಳೂರು",
+          "field": "title",
+          "type": "TITLE_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "bangalore",
+          "matchedText": "ಬೆಂಗಳೂರು",
+          "normalizedPlace": "ಬೆಂಗಳೂರು",
+          "field": "description",
+          "type": "DESCRIPTION_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "bangalore",
+          "matchedText": "ಬೆಂಗಳೂರು",
+          "normalizedPlace": "ಬೆಂಗಳೂರು",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        }
+      ],
       "cityMatch": false,
-      "provenance": []
+      "provenance": [
+        "existing city-config keyword",
+        "existing city-config keyword",
+        "existing city-config keyword"
+      ]
     },
     {
       "recordId": "task22-026",
       "humanCity": "",
       "humanCityCode": "",
       "detectedCodes": [],
-      "nativeEvidence": [],
+      "nativeEvidence": [
+        {
+          "candidateCity": "chennai",
+          "matchedText": "சென்னை",
+          "normalizedPlace": "சென்னை",
+          "field": "description",
+          "type": "DESCRIPTION_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "chennai",
+          "matchedText": "சென்னை",
+          "normalizedPlace": "சென்னை",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        }
+      ],
       "cityMatch": true,
-      "provenance": []
+      "provenance": [
+        "existing city-config keyword",
+        "existing city-config keyword"
+      ]
     },
     {
       "recordId": "task22-056",
       "humanCity": "Kolkata",
       "humanCityCode": "kolkata",
       "detectedCodes": [],
-      "nativeEvidence": [],
+      "nativeEvidence": [
+        {
+          "candidateCity": "kolkata",
+          "matchedText": "কলকাতা",
+          "normalizedPlace": "কলকাতা",
+          "field": "title",
+          "type": "TITLE_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        },
+        {
+          "candidateCity": "kolkata",
+          "matchedText": "কলকাতা",
+          "normalizedPlace": "কলকাতা",
+          "field": "body",
+          "type": "BODY_NATIVE_CITY",
+          "confidence": "high",
+          "provenance": "existing city-config keyword"
+        }
+      ],
       "cityMatch": false,
-      "provenance": []
+      "provenance": [
+        "existing city-config keyword",
+        "existing city-config keyword"
+      ]
     },
     {
       "recordId": "task22-057",

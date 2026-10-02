@@ -4667,6 +4667,14 @@ function detectCityCodes(article) {
     return [];
   }
 
+  // Transport/tunnel/rail pages can contain navigation menus for many
+  // cities. Do not convert those menu names into real-estate geo routes
+  // unless the article has an actual property/development nexus.
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  if (hasKeyword(primaryAndUrl, ["tunnel", "metro", "railway", "rail line"]) && !hasMeaningfulPropertyNexus(article)) {
+    return [];
+  }
+
   const primaryText = getArticlePrimaryText(article);
   const authorityJurisdiction = String(article.authorityJurisdiction || "").trim().toLowerCase();
   if (article.authoritativeContent === true && authorityJurisdiction) {
@@ -5438,23 +5446,36 @@ function isBlockedArticle(article) {
   const normalizedTitle = title.trim().toLowerCase();
   const primaryText = `${title} ${description}`;
   const allowProjectAwardArticle = isTargetProjectAwardArticle(article);
+  const allowNativePropertyDevelopmentArticle = hasNativePropertyDevelopmentNexus(article);
   const articleHost = getArticleHost(article);
   const isWeakFoodRetailSource = articleHost === "businessoffood.in" && !hasKeyword(`${title} ${description} ${newsLink}`.toLowerCase(), ["real estate", "realty", "developer", "residential", "commercial project", "retail destination", "tenant mix", "open-air retail", "sector 70", "office space", "leased", "rents", "sq ft"]);
 
   return (
     blockedExactTitles.includes(normalizedTitle) ||
     isAddressLikeHeadline(title) ||
-    isMalformedCategoryHeadline(title) ||
+    isMalformedCategoryHeadline(title, article) ||
     isGenericBroadMarketHeadline(article) ||
-    isGenericCultureReligionLocalNews(article) ||
-    isGenericLocalNonRealEstateNews(article) ||
+    (isGenericCultureReligionLocalNews(article) && !allowNativePropertyDevelopmentArticle) ||
+    (isGenericLocalNonRealEstateNews(article) && !allowNativePropertyDevelopmentArticle) ||
     isPoliticalCampaignArticle(article) ||
     isNonProjectCorporateUpdate(article) ||
     isNonProjectEducationOrCultureArticle(article) ||
     isWeakFoodRetailSource ||
-    (!allowProjectAwardArticle && hasKeyword(primaryText, blockedTitleKeywords)) ||
-    (!allowProjectAwardArticle && hasKeyword(newsLink, blockedUrlParts))
+    (!allowProjectAwardArticle && !allowNativePropertyDevelopmentArticle && hasKeyword(primaryText, blockedTitleKeywords)) ||
+    (!allowProjectAwardArticle && !allowNativePropertyDevelopmentArticle && hasKeyword(newsLink, blockedUrlParts))
   );
+}
+
+// Native-language authority and housing stories often use short headlines
+// whose property meaning is carried by the body. Permit those pages through
+// the generic-local guard only when both a native property object and a
+// concrete development/transaction event are present. This does not bypass
+// negative, language, date, geo, or full-article gates.
+function hasNativePropertyDevelopmentNexus(article) {
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  const nativeProperty = /(?:ఇల్లు|ఇండిరమ్మ|గృహ|ప్లాట్|స్థలం|భవన|టవర్స్|హౌసింగ్|నిర్మాణ|లేఅవుట్|భూమి|ఆస్తి|ಆಸ್ತಿ|ಭೂ|ಖಾತಾ|ಕಟ್ಟಡ|ಮನೆ|ನಿವೇಶನ|ವಸತಿ|फ्लैट|आवास|भूखंड|संपत्ति|घर|निर्माण|योजना)/u.test(text);
+  const nativeEvent = /(?:నిర్మాణం|ప్రారంభ|విక్రయ|వేలం|ప్లాట్ల|నిబంధన|చట్టం|ಟವರ್|ಪ್ರಾರಂಭ|ಮಾರಾಟ|ಹರಾಜು|ನಿಯಮ|परियोजना|लॉन्च|बिक्री|नीलामी|नियम|निर्माण|योजना)/u.test(text);
+  return nativeProperty && nativeEvent;
 }
 
 function isNonProjectCorporateUpdate(article) {
@@ -5519,9 +5540,16 @@ function isAddressLikeHeadline(title = "") {
   );
 }
 
-function isMalformedCategoryHeadline(title = "") {
+function isMalformedCategoryHeadline(title = "", article = {}) {
   const normalized = cleanText(title, 240).toLowerCase().replace(/\s+/g, " ");
-  const alphanumericLength = normalized.replace(/[^a-z0-9\u0900-\u097F]/gi, "").length;
+  // Count letters and numbers from every supported script only when the
+  // native headline also carries a concrete property/development event. This
+  // recovers short Telugu/Kannada/etc. project headlines without admitting
+  // broad investment commentary or generic market explainers.
+  const nativeStructuredHeadline = hasNativePropertyDevelopmentNexus(article);
+  const alphanumericLength = nativeStructuredHeadline
+    ? normalized.replace(/[^\p{L}\p{N}]/gu, "").length
+    : normalized.replace(/[^a-z0-9\u0900-\u097F]/gi, "").length;
 
   return (
     alphanumericLength < 8 ||

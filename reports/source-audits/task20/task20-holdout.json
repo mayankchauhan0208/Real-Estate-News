@@ -12,7 +12,7 @@
   "postChangeFP": 0,
   "newFN": 0,
   "negativeProtection": 4,
-  "extractionQuality": 47,
+  "extractionQuality": 46,
   "records": [
     {
       "recordId": "task17-002",
@@ -123,7 +123,7 @@
       "postReasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
-        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 2)"
       ]
     },
     {
