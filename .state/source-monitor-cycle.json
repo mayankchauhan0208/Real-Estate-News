@@ -1,0 +1,2219 @@
+{
+  "cycleId": "source-cycle-2026-10-02",
+  "createdAt": "2026-10-02T03:17:54.799Z",
+  "universeFingerprint": "354ab7704e2116ac1eb8804cb1d5f0e140340fd4e20c895ef9cfeafc70d16c9a",
+  "sources": [
+    {
+      "sourceId": "source-00a0c32b225feb2f",
+      "url": "https://ncrtc.in/ncrtc-updates"
+    },
+    {
+      "sourceId": "source-0130f0c2db03fc06",
+      "url": "https://mchi.net/newsletters"
+    },
+    {
+      "sourceId": "source-014b78b07c631018",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms"
+    },
+    {
+      "sourceId": "source-023ac8c6548a4037",
+      "url": "https://www.vocport.gov.in"
+    },
+    {
+      "sourceId": "source-0259585e62afaa8e",
+      "url": "https://dfccil.com"
+    },
+    {
+      "sourceId": "source-033f6cbd20977a39",
+      "url": "https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority"
+    },
+    {
+      "sourceId": "source-0380b98e303d7b9c",
+      "url": "https://www.moneycontrol.com/news/business/real-estate"
+    },
+    {
+      "sourceId": "source-03b62007309e7e21",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms"
+    },
+    {
+      "sourceId": "source-03f4889297241635",
+      "url": "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida"
+    },
+    {
+      "sourceId": "source-044d938a79daeb9c",
+      "url": "https://www.gera.in/press-releases"
+    },
+    {
+      "sourceId": "source-0458e87ca76a664b",
+      "url": "https://www.mindspacereit.com/newsroom"
+    },
+    {
+      "sourceId": "source-04f50c87ef06ab34",
+      "url": "https://publish.tribuneindia.com/city/patiala/feed"
+    },
+    {
+      "sourceId": "source-051264dfa5f73030",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-05b635a5599004a4",
+      "url": "https://rera.assam.gov.in"
+    },
+    {
+      "sourceId": "source-0606a31cae709f4a",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms"
+    },
+    {
+      "sourceId": "source-061655f616d9d01e",
+      "url": "https://www.signatureglobal.in/mediacoverage/page/1"
+    },
+    {
+      "sourceId": "source-062843489f03f77f",
+      "url": "https://indianexpress.com/section/cities/hyderabad"
+    },
+    {
+      "sourceId": "source-071ed0189f8d3eee",
+      "url": "https://www.mahindralifespaces.com/newsroom/media-resources"
+    },
+    {
+      "sourceId": "source-07a58c03bb4ef845",
+      "url": "https://www.grinfra.com/media-coverage"
+    },
+    {
+      "sourceId": "source-0819a5254e8497cb",
+      "url": "https://mddaonline.in"
+    },
+    {
+      "sourceId": "source-0846cdd749ccc109",
+      "url": "https://www.krahejacorp.com/newsroom"
+    },
+    {
+      "sourceId": "source-09167bfaf6032267",
+      "url": "https://www.kmda.wb.gov.in"
+    },
+    {
+      "sourceId": "source-09610d7e1eed3066",
+      "url": "https://www.aba-corp.com"
+    },
+    {
+      "sourceId": "source-09d97774cfba4e8b",
+      "url": "https://www.jll.co.in/en/newsroom"
+    },
+    {
+      "sourceId": "source-0a79146a6576633b",
+      "url": "https://rera.kerala.gov.in"
+    },
+    {
+      "sourceId": "source-0ac442b7d9dda24b",
+      "url": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-real-estate-investment-trusts-reits-_95232.html"
+    },
+    {
+      "sourceId": "source-0acf872e4a50e670",
+      "url": "https://maxestates.in/news-and-media"
+    },
+    {
+      "sourceId": "source-0bb8db938cd1fa9a",
+      "url": "https://rera.goa.gov.in"
+    },
+    {
+      "sourceId": "source-0c41be471d1fab90",
+      "url": "https://infra.economictimes.indiatimes.com/rss/lateststories"
+    },
+    {
+      "sourceId": "source-0c5cf4d813513ac4",
+      "url": "https://realty.economictimes.indiatimes.com/rss/international"
+    },
+    {
+      "sourceId": "source-0d98ea0a5402ecad",
+      "url": "https://in.esr.com/newsroom"
+    },
+    {
+      "sourceId": "source-0e0aa16addae84d7",
+      "url": "https://english.bmrc.co.in"
+    },
+    {
+      "sourceId": "source-0e2222bd1272ab4e",
+      "url": "https://indianexpress.com/section/cities/pune"
+    },
+    {
+      "sourceId": "source-0f22334df40bb729",
+      "url": "https://rera.ap.gov.in/RERA/Views/index.html"
+    },
+    {
+      "sourceId": "source-0f25af3d5fce200f",
+      "url": "https://www.aai.aero/en/media/press-releases"
+    },
+    {
+      "sourceId": "source-0f956f2811b0501c",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-0fb6755d243a0a3e",
+      "url": "https://www.brigadegroup.com/investor"
+    },
+    {
+      "sourceId": "source-0fe593d4189e47db",
+      "url": "https://mmrda.maharashtra.gov.in/en/other-services/news-and-announcements"
+    },
+    {
+      "sourceId": "source-107cf71f6fddc1f6",
+      "url": "https://apiic.in/old-tenders"
+    },
+    {
+      "sourceId": "source-10b1e33195222996",
+      "url": "https://realty.economictimes.indiatimes.com/rss/technology"
+    },
+    {
+      "sourceId": "source-11bbdda355af99d8",
+      "url": "https://uhuda.uk.gov.in"
+    },
+    {
+      "sourceId": "source-120d7d25396e8ee5",
+      "url": "https://realty.economictimes.indiatimes.com/news/industry"
+    },
+    {
+      "sourceId": "source-12a685aa6773d5f8",
+      "url": "https://www.pmrda.gov.in/en/pmrda-news"
+    },
+    {
+      "sourceId": "source-12d4322ce5cb8f54",
+      "url": "https://publish.tribuneindia.com/state/uttarakhand/feed"
+    },
+    {
+      "sourceId": "source-12f596f55c4324ec",
+      "url": "https://www.welspunone.com/news-insights/press-release"
+    },
+    {
+      "sourceId": "source-13ccdfb5df2a59d2",
+      "url": "https://realty.economictimes.indiatimes.com/rss/webstories"
+    },
+    {
+      "sourceId": "source-14894528d7a649f2",
+      "url": "https://aiforera.org/publications/public_notice"
+    },
+    {
+      "sourceId": "source-154017a3c81eec01",
+      "url": "https://www.hindustantimes.com/cities/mumbai-news"
+    },
+    {
+      "sourceId": "source-1555b0977c7708b9",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms"
+    },
+    {
+      "sourceId": "source-15b34f9c5b96b6b9",
+      "url": "https://www.idaindore.org"
+    },
+    {
+      "sourceId": "source-167d625366457a17",
+      "url": "https://sattvagroup.in/category/real-estate-development"
+    },
+    {
+      "sourceId": "source-172f4d53bfc7056b",
+      "url": "https://rera.wb.gov.in/notice.php"
+    },
+    {
+      "sourceId": "source-175863df115f6513",
+      "url": "https://realty.economictimes.indiatimes.com/rss/lighting/smart-lighting"
+    },
+    {
+      "sourceId": "source-17d506eae1c7a8b0",
+      "url": "https://publish.tribuneindia.com/state/chhattisgarh/feed"
+    },
+    {
+      "sourceId": "source-18040f76e52be56f",
+      "url": "https://www.indospace.in/indospace-news"
+    },
+    {
+      "sourceId": "source-193bc6b30b3bcfc1",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-19f479d653cb797d",
+      "url": "https://cpc.parivesh.nic.in"
+    },
+    {
+      "sourceId": "source-19fa28d629595752",
+      "url": "https://indianexpress.com/section/cities/shimla"
+    },
+    {
+      "sourceId": "source-1a44fb9908043bb9",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3942660.cms"
+    },
+    {
+      "sourceId": "source-1b281faf5afe2761",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/6547154.cms"
+    },
+    {
+      "sourceId": "source-1b98c129a2a3b2ce",
+      "url": "https://indianexpress.com/section/cities/mumbai"
+    },
+    {
+      "sourceId": "source-1c12f9f3e8732169",
+      "url": "https://indianexpress.com/section/cities/bhopal"
+    },
+    {
+      "sourceId": "source-1c8c74befd7053bf",
+      "url": "https://indianexpress.com/section/business/economy"
+    },
+    {
+      "sourceId": "source-1cc9d1b6488417dd",
+      "url": "https://www.tarc.in/dis-46-pt-2025-26"
+    },
+    {
+      "sourceId": "source-1d3c7c01db970463",
+      "url": "https://maxestates.in/news_and_media"
+    },
+    {
+      "sourceId": "source-1da3fb558a3a0753",
+      "url": "https://www.hindustantimes.com/feeds/rss/business/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-1dc41e0b6e4be45b",
+      "url": "https://gccservices.chennaicorporation.gov.in"
+    },
+    {
+      "sourceId": "source-1e42206d4d0c5429",
+      "url": "https://www.livemint.com/rss/industryRSS"
+    },
+    {
+      "sourceId": "source-1f371087ef5be22e",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/4118235.cms"
+    },
+    {
+      "sourceId": "source-1f40ab6ce3a8b47c",
+      "url": "https://www.godrejproperties.com/media/press"
+    },
+    {
+      "sourceId": "source-1f7062fde7f73686",
+      "url": "https://indianexpress.com/section/cities/jaipur"
+    },
+    {
+      "sourceId": "source-1f75fc2f681bebb9",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3947067.cms"
+    },
+    {
+      "sourceId": "source-1fc6b43083fda78b",
+      "url": "https://www.rustomjee.com/newsroom"
+    },
+    {
+      "sourceId": "source-1ffa16e21f7f2326",
+      "url": "https://www.irb.co.in/home/disclosurescorp-announcements"
+    },
+    {
+      "sourceId": "source-201198236e76b0c3",
+      "url": "https://www.lodhagroup.in/newsroom"
+    },
+    {
+      "sourceId": "source-204365e5a2a6d436",
+      "url": "https://www.hindustantimes.com/topic/greater-noida/news"
+    },
+    {
+      "sourceId": "source-2117ebe9a65bdc8e",
+      "url": "https://rera.chbonline.in"
+    },
+    {
+      "sourceId": "source-215b5ca6900594b8",
+      "url": "https://indianexpress.com/section/cities/sas-nagar-mohali"
+    },
+    {
+      "sourceId": "source-2160d3897ff99004",
+      "url": "https://chennaicorporation.gov.in/gcc/tender"
+    },
+    {
+      "sourceId": "source-21a6bea728420287",
+      "url": "https://economictimes.indiatimes.com/rssfeeds/13357019.cms"
+    },
+    {
+      "sourceId": "source-21e4c880a3c5f853",
+      "url": "https://www.hindustantimes.com/cities/delhi-news"
+    },
+    {
+      "sourceId": "source-22b9ff55e5fb8f9c",
+      "url": "https://www.pmrda.gov.in/en/press-release"
+    },
+    {
+      "sourceId": "source-22f79431d71fc301",
+      "url": "https://infra.economictimes.indiatimes.com/rss/water"
+    },
+    {
+      "sourceId": "source-236589761b79318b",
+      "url": "https://realty.economictimes.indiatimes.com/rss/retail"
+    },
+    {
+      "sourceId": "source-23cec5799e0f22d1",
+      "url": "https://www.mindspacereit.com/investor-relations/stock-exchange-filings"
+    },
+    {
+      "sourceId": "source-23ec49baee60696c",
+      "url": "https://hginfra.com/announcements.php"
+    },
+    {
+      "sourceId": "source-243c77a78b236d97",
+      "url": "https://indianexpress.com/section/cities/nagpur"
+    },
+    {
+      "sourceId": "source-2549633e92f5c129",
+      "url": "https://riico.rajasthan.gov.in"
+    },
+    {
+      "sourceId": "source-255baeed8fbe5975",
+      "url": "https://cidco.maharashtra.gov.in"
+    },
+    {
+      "sourceId": "source-25706ccbba6883db",
+      "url": "https://www.metrorailnews.in"
+    },
+    {
+      "sourceId": "source-258d4347c9bd8781",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128816011.cms"
+    },
+    {
+      "sourceId": "source-25a0b96e463ce444",
+      "url": "https://www.pppinindia.gov.in/pppac-statewises/pppac-projects-list_Across-India"
+    },
+    {
+      "sourceId": "source-25ae8d474a30c038",
+      "url": "https://indianexpress.com/section/cities/jammu"
+    },
+    {
+      "sourceId": "source-25bd9a58d4aa96ef",
+      "url": "https://ibbi.gov.in/search/index/press-release"
+    },
+    {
+      "sourceId": "source-262d25752cd16496",
+      "url": "https://www.mpmetrorail.com"
+    },
+    {
+      "sourceId": "source-26481ee1ecb73b32",
+      "url": "https://www.pib.gov.in/ViewRss.aspx?lang=1&reg=1"
+    },
+    {
+      "sourceId": "source-265ac4a34af0f343",
+      "url": "https://hginfra.com/investors-presentation.php"
+    },
+    {
+      "sourceId": "source-265f530f6cbad37c",
+      "url": "https://infra.economictimes.indiatimes.com/rss/roads-highways"
+    },
+    {
+      "sourceId": "source-26d89c6eef6024e7",
+      "url": "https://www.hindustantimes.com/feeds/rss/real-estate/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-271ee36b0f5ede3a",
+      "url": "https://bbmp.gov.in"
+    },
+    {
+      "sourceId": "source-272358582e6097b9",
+      "url": "https://www.embassyofficeparks.com/newsroom/press"
+    },
+    {
+      "sourceId": "source-27251c440a37dab9",
+      "url": "https://www.colliers.com/en-in/research"
+    },
+    {
+      "sourceId": "source-2753ab8e06dbcf34",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/mumbai-news/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-280e2c532da36bad",
+      "url": "https://apiic.in"
+    },
+    {
+      "sourceId": "source-296ab336726884ea",
+      "url": "https://rera.odisha.gov.in"
+    },
+    {
+      "sourceId": "source-2a29396ae744e01d",
+      "url": "https://ajmera.com"
+    },
+    {
+      "sourceId": "source-2a2d1aa6d0f13b79",
+      "url": "https://realty.economictimes.indiatimes.com/tag/yamuna%2Bexpressway"
+    },
+    {
+      "sourceId": "source-2a7871a61a94282c",
+      "url": "https://auda.org.in"
+    },
+    {
+      "sourceId": "source-2afb8a1b7a1a4a3a",
+      "url": "https://rera.bihar.gov.in/publicorder.aspx"
+    },
+    {
+      "sourceId": "source-2b4186596134aebd",
+      "url": "https://ghmc.gov.in/Tenderspage.aspx"
+    },
+    {
+      "sourceId": "source-2b87a8303badbf54",
+      "url": "https://realty.economictimes.indiatimes.com/rss/lighting/led-technology"
+    },
+    {
+      "sourceId": "source-2c49fe09a08d8b82",
+      "url": "https://gmda.assam.gov.in"
+    },
+    {
+      "sourceId": "source-2c4c07ec9c25464b",
+      "url": "https://indianexpress.com/section/cities/mangaluru"
+    },
+    {
+      "sourceId": "source-2c8ca0c011d59c7b",
+      "url": "https://infra.economictimes.indiatimes.com/rss/aviation"
+    },
+    {
+      "sourceId": "source-2ccbfebe1e183ad5",
+      "url": "https://www.puriconstructions.com/media"
+    },
+    {
+      "sourceId": "source-2d2b662f3dbe2280",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/delhi-news/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-2d8cc21e5b9c4d91",
+      "url": "https://apiic.in/downloads-tenders"
+    },
+    {
+      "sourceId": "source-2e86e7b84c6a38ec",
+      "url": "https://www.hindustantimes.com/topic/faridabad/news"
+    },
+    {
+      "sourceId": "source-2eac717952b3fae9",
+      "url": "https://indiainvestmentgrid.gov.in/index.jsp"
+    },
+    {
+      "sourceId": "source-2f6c85ca35ce2928",
+      "url": "https://www.giftgujarat.in"
+    },
+    {
+      "sourceId": "source-2fbe9fa552614ea3",
+      "url": "https://www.omaxe.com"
+    },
+    {
+      "sourceId": "source-3160c525a501e44e",
+      "url": "https://rajapushpa.in/news"
+    },
+    {
+      "sourceId": "source-31932cee1ac3c62f",
+      "url": "https://themetrorailguy.com"
+    },
+    {
+      "sourceId": "source-327c3687413993e0",
+      "url": "https://realty.economictimes.indiatimes.com/rss/lighting/outdoor-lighting"
+    },
+    {
+      "sourceId": "source-32d3872ecdbd8684",
+      "url": "https://www.gmda.gov.in"
+    },
+    {
+      "sourceId": "source-331339091a7d2e9b",
+      "url": "https://www.arvindsmartspaces.com/investors/compliances"
+    },
+    {
+      "sourceId": "source-33cfeeae5d31cba2",
+      "url": "https://www.rera.ap.gov.in"
+    },
+    {
+      "sourceId": "source-34704139d625c21a",
+      "url": "https://realty.economictimes.indiatimes.com/amp/tag/greater%2Bnoida"
+    },
+    {
+      "sourceId": "source-349ba798a2c6913e",
+      "url": "https://gidc.gujarat.gov.in"
+    },
+    {
+      "sourceId": "source-34a6ba90754779b1",
+      "url": "https://mmrda.maharashtra.gov.in/en/news-and-announcements/archive"
+    },
+    {
+      "sourceId": "source-34ad2477e8df1f54",
+      "url": "https://www.knightfrank.co.in/research"
+    },
+    {
+      "sourceId": "source-34cc168a56d333f7",
+      "url": "https://indianexpress.com/section/cities/thane"
+    },
+    {
+      "sourceId": "source-35fe2dd716f730f7",
+      "url": "https://www.lodhagroup.in/investor-relations/shareholder-information"
+    },
+    {
+      "sourceId": "source-374aa8ba8eb4e239",
+      "url": "https://www.anantrajlimited.com/investors"
+    },
+    {
+      "sourceId": "source-3a3549f385068b82",
+      "url": "https://indianexpress.com/about/noida-authority"
+    },
+    {
+      "sourceId": "source-3a4be8bc23ff1bae",
+      "url": "https://conscient.in/news-and-awards"
+    },
+    {
+      "sourceId": "source-3ab41e23b89c23d0",
+      "url": "https://in.emaar.com/en/media"
+    },
+    {
+      "sourceId": "source-3b7c264aafb7af71",
+      "url": "https://www.cushmanwakefield.com/en/india/insights"
+    },
+    {
+      "sourceId": "source-3ca9f29a38310908",
+      "url": "https://www.dlf.in/press-releases"
+    },
+    {
+      "sourceId": "source-3d8f6d19c94a6e73",
+      "url": "https://www.hsiidc.org.in"
+    },
+    {
+      "sourceId": "source-3db207469c43046f",
+      "url": "https://www.pncinfratech.com/notice.html"
+    },
+    {
+      "sourceId": "source-3dd4fbdb6a6ce163",
+      "url": "https://www.shapoorjipallonji.com/Media/Press-Releases"
+    },
+    {
+      "sourceId": "source-3e610af64aebd1ca",
+      "url": "https://credai.org/media/press-release"
+    },
+    {
+      "sourceId": "source-3efe511fed1434ff",
+      "url": "https://naredco.in/naredco-news"
+    },
+    {
+      "sourceId": "source-3fb7fe244cc495a2",
+      "url": "https://www.casagrand.co.in/investor-relation"
+    },
+    {
+      "sourceId": "source-401e2184b2f55a8d",
+      "url": "https://realty.economictimes.indiatimes.com/news/infrastructure"
+    },
+    {
+      "sourceId": "source-408d5eacf331960f",
+      "url": "https://chennaimetrorail.org/press-release"
+    },
+    {
+      "sourceId": "source-4090a1311b9a7332",
+      "url": "https://infra.economictimes.indiatimes.com/rss/videostories"
+    },
+    {
+      "sourceId": "source-41891c94be6ce7ff",
+      "url": "https://housing.com/news/category/news"
+    },
+    {
+      "sourceId": "source-418e0b922a85e1de",
+      "url": "https://www.jda.rajasthan.gov.in/content/raj/udh/jda---jaipur/en/home.html"
+    },
+    {
+      "sourceId": "source-419cf990045f4785",
+      "url": "https://realty.economictimes.indiatimes.com/rss/infrastructure"
+    },
+    {
+      "sourceId": "source-4252d6257f7223b2",
+      "url": "https://dda.gov.in/dda-in-news"
+    },
+    {
+      "sourceId": "source-42908317bdf1a134",
+      "url": "https://rera.tn.gov.in"
+    },
+    {
+      "sourceId": "source-42abceb9ddbdab85",
+      "url": "https://www.aai.aero"
+    },
+    {
+      "sourceId": "source-42f8fd8b43349c29",
+      "url": "https://rera.kerala.gov.in/announcements"
+    },
+    {
+      "sourceId": "source-43c8db33b88841f5",
+      "url": "https://realty.economictimes.indiatimes.com/rss/cement"
+    },
+    {
+      "sourceId": "source-449750cb33b4e476",
+      "url": "https://indianexpress.com/section/cities/goa"
+    },
+    {
+      "sourceId": "source-44aaa7aa932d1072",
+      "url": "https://www.nhsrcl.in"
+    },
+    {
+      "sourceId": "source-44bb61a1d082b23d",
+      "url": "https://rera.telangana.gov.in/247564irgjsdghfdgfd-TG-RERA-98498dsgdgyhdfjbhy43"
+    },
+    {
+      "sourceId": "source-450873e093e7ff71",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/2647163.cms"
+    },
+    {
+      "sourceId": "source-457f481f467af155",
+      "url": "https://www.yamunaexpresswayauthority.com/hi/tender/tender-archives"
+    },
+    {
+      "sourceId": "source-465704a9a4070ec7",
+      "url": "https://indianexpress.com/section/cities/chandigarh"
+    },
+    {
+      "sourceId": "source-47574d8208910fc2",
+      "url": "https://indianexpress.com/section/cities/ludhiana"
+    },
+    {
+      "sourceId": "source-477e13371685bf38",
+      "url": "https://www.bda.gov.in/notice"
+    },
+    {
+      "sourceId": "source-4787eeb288428dca",
+      "url": "https://realty.economictimes.indiatimes.com/tag/gurugram"
+    },
+    {
+      "sourceId": "source-480c37be27cd61ca",
+      "url": "https://www.shriramproperties.com/company-announcements"
+    },
+    {
+      "sourceId": "source-4826ed71b43d2a06",
+      "url": "https://swarajyamag.com/stories.rss"
+    },
+    {
+      "sourceId": "source-4849066ca3dca9c4",
+      "url": "https://sipcotweb.tn.gov.in"
+    },
+    {
+      "sourceId": "source-4a12329b56e358c8",
+      "url": "https://www.yamunaexpresswayauthority.com/web"
+    },
+    {
+      "sourceId": "source-4a45757a76970f26",
+      "url": "https://www.delhimetrorail.com"
+    },
+    {
+      "sourceId": "source-4b199c81f9f5bbf6",
+      "url": "https://indianexpress.com/section/north-east-india"
+    },
+    {
+      "sourceId": "source-4b42fb41349d4d89",
+      "url": "https://up-rera.in"
+    },
+    {
+      "sourceId": "source-4b94c1b6c39ae618",
+      "url": "https://www.businessoffood.in/category/food-service"
+    },
+    {
+      "sourceId": "source-4d8cfb22a43865b4",
+      "url": "https://indianexpress.com/section/cities/bangalore"
+    },
+    {
+      "sourceId": "source-4da79cf5ca59bbc3",
+      "url": "https://www.up-rera.in/PressRelease"
+    },
+    {
+      "sourceId": "source-4dc9fa3ace634eae",
+      "url": "https://realty.economictimes.indiatimes.com/rss/lighting"
+    },
+    {
+      "sourceId": "source-4e1e23280070fd54",
+      "url": "https://publish.tribuneindia.com/state/himachal/feed"
+    },
+    {
+      "sourceId": "source-4e349bc2ca05f75e",
+      "url": "https://www.prestigeconstructions.com/news"
+    },
+    {
+      "sourceId": "source-4e6edae40d489963",
+      "url": "https://www.providenthousing.com/media"
+    },
+    {
+      "sourceId": "source-4e9ac5f4317b177d",
+      "url": "https://indianexpress.com/section/cities/lucknow"
+    },
+    {
+      "sourceId": "source-4f09a8d11fdd5847",
+      "url": "https://www.pppinindia.gov.in/goverment_infrastructure_projects_ppp"
+    },
+    {
+      "sourceId": "source-4f4c673a1ff30653",
+      "url": "https://riico.rajasthan.gov.in/Tender.aspx"
+    },
+    {
+      "sourceId": "source-501a019f328c1e87",
+      "url": "https://hsvphry.org.in"
+    },
+    {
+      "sourceId": "source-5098e6f649b40092",
+      "url": "https://www.livemint.com/rss/insuranceRSS"
+    },
+    {
+      "sourceId": "source-50efebf0421f40a2",
+      "url": "https://bptpltd.com/updates"
+    },
+    {
+      "sourceId": "source-519b21c6952ec640",
+      "url": "https://www.whitelandcorporation.com"
+    },
+    {
+      "sourceId": "source-52460f6ad0b0218d",
+      "url": "https://noidaauthorityonline.in"
+    },
+    {
+      "sourceId": "source-527300cb717e7532",
+      "url": "https://publish.tribuneindia.com/city/ludhiana/feed"
+    },
+    {
+      "sourceId": "source-529eaeb9864fe9b0",
+      "url": "https://indianexpress.com/section/cities/jalandhar"
+    },
+    {
+      "sourceId": "source-53cb703dfede1cac",
+      "url": "https://indianexpress.com/section/cities"
+    },
+    {
+      "sourceId": "source-54f054f2236da115",
+      "url": "https://indianexpress.com/section/governance"
+    },
+    {
+      "sourceId": "source-557494b3831243e1",
+      "url": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction"
+    },
+    {
+      "sourceId": "source-5594edf4dd116cdf",
+      "url": "https://www.nseindia.com/companies-listing/corporate-filings-announcements"
+    },
+    {
+      "sourceId": "source-55cfce9ded0b9141",
+      "url": "https://www.panchshil.com/media"
+    },
+    {
+      "sourceId": "source-55f8dbd2da210d48",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128819658.cms"
+    },
+    {
+      "sourceId": "source-5695f66616e82477",
+      "url": "https://infra.economictimes.indiatimes.com/rss/telecom"
+    },
+    {
+      "sourceId": "source-56a9c55a80da95c2",
+      "url": "https://cochinport.gov.in/tenders"
+    },
+    {
+      "sourceId": "source-57d81e5677269b74",
+      "url": "https://www.jnport.gov.in/page/press-release/NGE5SGlDdCtpOEdnRWphM1JlWGJLQT09/?media_id=1"
+    },
+    {
+      "sourceId": "source-580eefe0e4b98f4c",
+      "url": "https://rera.rajasthan.gov.in"
+    },
+    {
+      "sourceId": "source-5989f08d3ef07e0c",
+      "url": "https://gujrera.gujarat.gov.in"
+    },
+    {
+      "sourceId": "source-5a88846be889b681",
+      "url": "https://acegroupindia.com/media-presence.php"
+    },
+    {
+      "sourceId": "source-5aa2160a42048369",
+      "url": "https://www.hprera.in"
+    },
+    {
+      "sourceId": "source-5af7d7873ad68c05",
+      "url": "https://www.livemint.com/rss/marketsRSS"
+    },
+    {
+      "sourceId": "source-5b52c28898c93fea",
+      "url": "https://www.sobha.com/media-centre/press-release"
+    },
+    {
+      "sourceId": "source-5cadb9100c30969e",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/gurugram-news/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-5cdb054c7c8c16a0",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/bhopal-news/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-5e7d958ae056d0d7",
+      "url": "https://runwalenterprises.com/load-news"
+    },
+    {
+      "sourceId": "source-5f22c7ce25a46e7d",
+      "url": "https://www.hindustantimes.com/topic/yeida/news"
+    },
+    {
+      "sourceId": "source-5f517e663d64648c",
+      "url": "https://www.bseindia.com/corporates/ann.html"
+    },
+    {
+      "sourceId": "source-5fc341fd742dd054",
+      "url": "https://vpt.shipping.gov.in"
+    },
+    {
+      "sourceId": "source-6063a9b82f4590c5",
+      "url": "https://propnewstime.com/sub-category/location/Faridabad"
+    },
+    {
+      "sourceId": "source-611d18da1f35753a",
+      "url": "https://shipmin.gov.in/publication/trw-publication"
+    },
+    {
+      "sourceId": "source-6129663941dec153",
+      "url": "https://indianexpress.com/section/india"
+    },
+    {
+      "sourceId": "source-61a6ad713d4e6854",
+      "url": "https://savemax.in/blogs/feed"
+    },
+    {
+      "sourceId": "source-61f87f7399435712",
+      "url": "https://www.suratmunicipal.gov.in/Information/News"
+    },
+    {
+      "sourceId": "source-621f019afd3d4668",
+      "url": "https://credai.org/media/news-updates"
+    },
+    {
+      "sourceId": "source-62c2659291f91fa7",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/8021716.cms"
+    },
+    {
+      "sourceId": "source-6322957eff4596bd",
+      "url": "https://www.up-rera.in"
+    },
+    {
+      "sourceId": "source-638a1ff5a17ea5d5",
+      "url": "https://kochimetro.org"
+    },
+    {
+      "sourceId": "source-63c29e1197d6aec5",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/kolkata-news/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-63e81cf4de256b7a",
+      "url": "https://indianexpress.com/section/cities/panchkula"
+    },
+    {
+      "sourceId": "source-6419eeed7d23786a",
+      "url": "https://realty.economictimes.indiatimes.com/rss/lighting/consumer-lighting"
+    },
+    {
+      "sourceId": "source-641d850968595efb",
+      "url": "https://www.livemint.com/rss/newsRSS"
+    },
+    {
+      "sourceId": "source-645a1e6b3106d9c5",
+      "url": "https://www.outlookmoney.com/topic/real-estate"
+    },
+    {
+      "sourceId": "source-64b1faf7d22f8202",
+      "url": "https://www.bptp.com/media"
+    },
+    {
+      "sourceId": "source-659fb5dbb24d0b2f",
+      "url": "https://upeida.up.gov.in/en/news"
+    },
+    {
+      "sourceId": "source-65aa7c5f9f6b79ff",
+      "url": "https://realtyquarter.com/feed"
+    },
+    {
+      "sourceId": "source-669175dcaef3eae7",
+      "url": "https://cpc.parivesh.nic.in/onlinesearch_dashboard.aspx?pid=tornotissuedyet&status=NA"
+    },
+    {
+      "sourceId": "source-66fbfad45dde6e58",
+      "url": "https://rera.karnataka.gov.in"
+    },
+    {
+      "sourceId": "source-67847f25f6f7f555",
+      "url": "https://infra.economictimes.indiatimes.com/rss/energy"
+    },
+    {
+      "sourceId": "source-67a4dd975c267e1a",
+      "url": "https://shipmin.gov.in/en/highlights"
+    },
+    {
+      "sourceId": "source-67b6f09ff673941b",
+      "url": "https://www.credaincr.org/news"
+    },
+    {
+      "sourceId": "source-67e06880cc2c55fc",
+      "url": "https://publish.tribuneindia.com/city/amritsar/feed"
+    },
+    {
+      "sourceId": "source-682aa38907aa24e2",
+      "url": "https://gmda.gov.in"
+    },
+    {
+      "sourceId": "source-6846479179af5fbc",
+      "url": "https://realty.economictimes.indiatimes.com/rss/rera"
+    },
+    {
+      "sourceId": "source-690ab1e85d382239",
+      "url": "https://www.pppinindia.gov.in"
+    },
+    {
+      "sourceId": "source-69e4706f64a27681",
+      "url": "https://realtynmore.com/latest-news"
+    },
+    {
+      "sourceId": "source-6a9470173354bd17",
+      "url": "https://www.cci.gov.in/combination/press-release"
+    },
+    {
+      "sourceId": "source-6acbdd7c8dcb2f25",
+      "url": "https://indianexpress.com/about/greater-noida-authority"
+    },
+    {
+      "sourceId": "source-6ae3f0672d608dd5",
+      "url": "https://publish.tribuneindia.com/city/delhi/feed"
+    },
+    {
+      "sourceId": "source-6b7d95f4d7b0b6c0",
+      "url": "https://www.magicbricks.com/news/feed"
+    },
+    {
+      "sourceId": "source-6bafc575e7f52163",
+      "url": "https://www.livemint.com/rss/AIRSS"
+    },
+    {
+      "sourceId": "source-6bbc7f6e68be1ac7",
+      "url": "https://realty.economictimes.indiatimes.com/tag/yeida"
+    },
+    {
+      "sourceId": "source-6bf1c2769f627deb",
+      "url": "https://indianinfrastructure.com"
+    },
+    {
+      "sourceId": "source-6c6ccc25cbc50751",
+      "url": "https://www.mahagunindia.com/media/press-coverage"
+    },
+    {
+      "sourceId": "source-6cdf4e7d41d93248",
+      "url": "https://puda.punjab.gov.in"
+    },
+    {
+      "sourceId": "source-6ec41eab75151214",
+      "url": "https://nhai.gov.in"
+    },
+    {
+      "sourceId": "source-6ed3fc2a2d9085c8",
+      "url": "https://economictimes.indiatimes.com/news/company/corporate-trends"
+    },
+    {
+      "sourceId": "source-6eddd99031a97f20",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128816762.cms"
+    },
+    {
+      "sourceId": "source-6ef09167f9f10208",
+      "url": "https://www.bda.org.in"
+    },
+    {
+      "sourceId": "source-6ff9305fcaa38d0b",
+      "url": "https://indianexpress.com/section/cities/ahmedabad"
+    },
+    {
+      "sourceId": "source-7015c820c3715197",
+      "url": "https://www.bda.gov.in/circular"
+    },
+    {
+      "sourceId": "source-707a9ed921155562",
+      "url": "https://crda.ap.gov.in"
+    },
+    {
+      "sourceId": "source-70bd04a352f0a38e",
+      "url": "https://www.hindustantimes.com/topic/noida-authority/news"
+    },
+    {
+      "sourceId": "source-70da3ea3cd461afe",
+      "url": "https://www.track2realty.track2media.com"
+    },
+    {
+      "sourceId": "source-712d151a248c655b",
+      "url": "https://www.indiapropertydekho.com/blog/feed"
+    },
+    {
+      "sourceId": "source-714f3f2ae96d455e",
+      "url": "https://realty.economictimes.indiatimes.com/rss/hospitality"
+    },
+    {
+      "sourceId": "source-726f7b30ce17bd43",
+      "url": "https://rera.telangana.gov.in/384798wfybwev9fya62435-TG-RERA-skfjdgky483yunskljghfdgjh"
+    },
+    {
+      "sourceId": "source-7330dd3bf8577c7d",
+      "url": "https://mcg.gov.in"
+    },
+    {
+      "sourceId": "source-745e30fa57c1cd2c",
+      "url": "https://www.adaniairports.com/media-centre"
+    },
+    {
+      "sourceId": "source-747372172a9028cf",
+      "url": "https://www.savills.in/research.aspx"
+    },
+    {
+      "sourceId": "source-7571ca84763a2e61",
+      "url": "https://www.hindustantimes.com/topic/jewar-airport/news"
+    },
+    {
+      "sourceId": "source-75acb205b06dcbf0",
+      "url": "https://gnida.up.gov.in/en/announcements"
+    },
+    {
+      "sourceId": "source-75bf7db466fcc3ba",
+      "url": "https://ipm.mospi.gov.in/Home/Index"
+    },
+    {
+      "sourceId": "source-765f2e5d4f948dbd",
+      "url": "https://investors.larsentoubro.com/news.aspx"
+    },
+    {
+      "sourceId": "source-76b26d0ebd2b1a8b",
+      "url": "https://www.arvindsmartspaces.com/investors/financial-reports"
+    },
+    {
+      "sourceId": "source-76f96ac06216689d",
+      "url": "https://www.aparnaconstructions.com/aparna-news"
+    },
+    {
+      "sourceId": "source-784a4ba12faa7bd5",
+      "url": "https://transport.rajasthan.gov.in/content/transportportal/en/metro/News/past-news.html"
+    },
+    {
+      "sourceId": "source-78c9b455d052048e",
+      "url": "https://www.sunteckindia.com/media"
+    },
+    {
+      "sourceId": "source-78d7415b8cf47a6c",
+      "url": "https://www.eldecogroup.com/investor/eldeco-housing-industries-ltd/investor-relations"
+    },
+    {
+      "sourceId": "source-79862cecb9e2f603",
+      "url": "https://realtynmore.com/feed"
+    },
+    {
+      "sourceId": "source-79e53b6274844e75",
+      "url": "https://www.wbhidcoltd.com"
+    },
+    {
+      "sourceId": "source-7a8d77c28455dee7",
+      "url": "https://rera.cgstate.gov.in"
+    },
+    {
+      "sourceId": "source-7bcf4f7b6c386c4a",
+      "url": "https://countygroup.in"
+    },
+    {
+      "sourceId": "source-7daead6749fa998a",
+      "url": "https://www.ltmetro.com/press"
+    },
+    {
+      "sourceId": "source-7db4ddbea6aefaf5",
+      "url": "https://rera.goa.gov.in/Notice"
+    },
+    {
+      "sourceId": "source-7dd9abe3f095807b",
+      "url": "https://www.sikka.in"
+    },
+    {
+      "sourceId": "source-7e60cc66e9aa0868",
+      "url": "https://realty.economictimes.indiatimes.com/news/commercial"
+    },
+    {
+      "sourceId": "source-7f7ff3a4bb8e6cb7",
+      "url": "https://propnewstime.com"
+    },
+    {
+      "sourceId": "source-7fba4aa962537494",
+      "url": "https://www.whitelandcorp.com"
+    },
+    {
+      "sourceId": "source-7fdd03302b4d8833",
+      "url": "https://indianexpress.com/section/cities/rajkot"
+    },
+    {
+      "sourceId": "source-80a5961145a5ac5b",
+      "url": "https://www.bseindia.com/corporates.html"
+    },
+    {
+      "sourceId": "source-80adfe4a4f64ea66",
+      "url": "https://hsvphry.org.in/Home/Tenders"
+    },
+    {
+      "sourceId": "source-80ea1c2c607fc1c3",
+      "url": "https://www.puriconstructions.com"
+    },
+    {
+      "sourceId": "source-8292fc73be637076",
+      "url": "https://www.welspunone.com/news-insights/news-articles"
+    },
+    {
+      "sourceId": "source-831611f37b7257df",
+      "url": "https://www.bdabangalore.org"
+    },
+    {
+      "sourceId": "source-8476fd3c74f90fa9",
+      "url": "https://www.assetzproperty.com/investors"
+    },
+    {
+      "sourceId": "source-857850c64f20b24b",
+      "url": "https://indianexpress.com/section/business"
+    },
+    {
+      "sourceId": "source-85ca864253e4195d",
+      "url": "https://www.livemint.com/rss/companiesRSS"
+    },
+    {
+      "sourceId": "source-85d9d107bb4c46a9",
+      "url": "https://realty.economictimes.indiatimes.com/rss/lighting/indoor-lighting"
+    },
+    {
+      "sourceId": "source-87fa9409d4efe6db",
+      "url": "https://www.hindustantimes.com/cities/noida-news"
+    },
+    {
+      "sourceId": "source-889e66179c4fc28b",
+      "url": "https://infra.economictimes.indiatimes.com/rss/urban-transportation"
+    },
+    {
+      "sourceId": "source-88d2edd1136b174e",
+      "url": "https://www.vatikacollections.com/public-notice"
+    },
+    {
+      "sourceId": "source-89520bc31ae3b442",
+      "url": "https://realty.economictimes.indiatimes.com/rss/videostories"
+    },
+    {
+      "sourceId": "source-89b86951d920c706",
+      "url": "https://realtynxt.com"
+    },
+    {
+      "sourceId": "source-89e78f3a5bb26c4e",
+      "url": "https://infra.economictimes.indiatimes.com/rss/topstories"
+    },
+    {
+      "sourceId": "source-8a0f235c3c79f16f",
+      "url": "https://realty.economictimes.indiatimes.com/tag/noida%2Bairport"
+    },
+    {
+      "sourceId": "source-8b1bb5757705707e",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3012535.cms"
+    },
+    {
+      "sourceId": "source-8b6ef04146ead417",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/878156304.cms"
+    },
+    {
+      "sourceId": "source-8beb88e5d6252fdf",
+      "url": "https://www.embassyofficeparks.com/investors/regulatory-filings"
+    },
+    {
+      "sourceId": "source-8c2e0212416e65f9",
+      "url": "https://infra.economictimes.indiatimes.com/rss/webstories"
+    },
+    {
+      "sourceId": "source-8c5aa89af391d581",
+      "url": "https://rera.tripura.gov.in"
+    },
+    {
+      "sourceId": "source-8ceac557d3e13cc9",
+      "url": "https://cci.gov.in/combination/green-channel-view"
+    },
+    {
+      "sourceId": "source-8d475aa5bc6c7f0e",
+      "url": "https://publish.tribuneindia.com/state/uttar-pradesh/feed"
+    },
+    {
+      "sourceId": "source-8d98e3529b4e7bdb",
+      "url": "https://www.kalpataru.com/press"
+    },
+    {
+      "sourceId": "source-8db919d0f4ab2ecf",
+      "url": "https://urbantransportnews.com"
+    },
+    {
+      "sourceId": "source-8ebf9536a5789035",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3947071.cms"
+    },
+    {
+      "sourceId": "source-8fe0cb811a983048",
+      "url": "https://rera.telangana.gov.in/Home/ViewNews"
+    },
+    {
+      "sourceId": "source-902194dbe9c1546a",
+      "url": "https://timesofindia.indiatimes.com/city/noida"
+    },
+    {
+      "sourceId": "source-90bef5062715a53a",
+      "url": "https://www.pncinfratech.com/press-releases.html"
+    },
+    {
+      "sourceId": "source-914e5b77bc2fa8a5",
+      "url": "https://www.hindustantimes.com/feeds/rss/latest/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-91728a7f7f903a29",
+      "url": "https://crmapp.mcgm.gov.in/irj/portal/anonymous/qlpressrelease"
+    },
+    {
+      "sourceId": "source-91a7b79887e438cd",
+      "url": "https://infra.economictimes.indiatimes.com/rss/corporate"
+    },
+    {
+      "sourceId": "source-91dff2082f79197d",
+      "url": "https://www.rpsgroupindia.com"
+    },
+    {
+      "sourceId": "source-928ad63b89117b8a",
+      "url": "https://aiforera.org/publications"
+    },
+    {
+      "sourceId": "source-92d8e90830f43ff4",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/jaipur-news/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-92d9cf3f0f9e49da",
+      "url": "https://infra.economictimes.indiatimes.com/rss/rural-infrastructure"
+    },
+    {
+      "sourceId": "source-93bb100bce9f9f17",
+      "url": "https://tatarealty.in/newsroom"
+    },
+    {
+      "sourceId": "source-950e16b9fa32c53b",
+      "url": "https://birlaestatesltd.com/updates"
+    },
+    {
+      "sourceId": "source-95fa6f6c84cac5e5",
+      "url": "https://www.greaternoidaauthority.in"
+    },
+    {
+      "sourceId": "source-9616b50d650f503d",
+      "url": "https://surajestate.com/investor-relations"
+    },
+    {
+      "sourceId": "source-96998838b62fff7a",
+      "url": "https://thepropertytimes.in/feed"
+    },
+    {
+      "sourceId": "source-96ce671dd78db954",
+      "url": "https://www.nbccindia.in/webEnglish/announcementNotices/timeline/webEnglish/orderBook"
+    },
+    {
+      "sourceId": "source-96e39a1bbdb595a4",
+      "url": "https://ncrtc.in"
+    },
+    {
+      "sourceId": "source-9880fcf17f9691c5",
+      "url": "https://publish.tribuneindia.com/state/madhya-pradesh/feed"
+    },
+    {
+      "sourceId": "source-98dc1aefb7d87956",
+      "url": "https://dda.gov.in"
+    },
+    {
+      "sourceId": "source-9925437dab841c59",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128838597.cms"
+    },
+    {
+      "sourceId": "source-993c8e811fc151be",
+      "url": "https://www.hmda.gov.in/news"
+    },
+    {
+      "sourceId": "source-99b7f42a81c5986f",
+      "url": "https://rera.telangana.gov.in/586784u3y5dsgfg-TG-RERA-45678jklshihnfgsfdg"
+    },
+    {
+      "sourceId": "source-9b42deb272c79327",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128833038.cms"
+    },
+    {
+      "sourceId": "source-9b8ebc11976d6bc2",
+      "url": "https://www.aai.aero/en/media/press-news-events_archive"
+    },
+    {
+      "sourceId": "source-9bdc37942da7ce88",
+      "url": "https://www.sayahomes.com"
+    },
+    {
+      "sourceId": "source-9bf1f5821888ecf7",
+      "url": "https://www.hindustantimes.com/topic/yamuna-expressway/news"
+    },
+    {
+      "sourceId": "source-9ca12fdc56acd06a",
+      "url": "https://ahmedabadcity.gov.in/DC/Tenders"
+    },
+    {
+      "sourceId": "source-9cedc47590319ed7",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/indore-news/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-9d2dc9b122285ce6",
+      "url": "https://rera.py.gov.in"
+    },
+    {
+      "sourceId": "source-9d4d0179e54a5614",
+      "url": "https://www.sobha.com/investor-relations"
+    },
+    {
+      "sourceId": "source-9df44fb03db85a0e",
+      "url": "https://www.naredco.in/industry-news"
+    },
+    {
+      "sourceId": "source-9e279c31d1d37cbe",
+      "url": "https://haryanarera.gov.in"
+    },
+    {
+      "sourceId": "source-9e732710a24a5620",
+      "url": "https://www.birlaestates.com/media-centre.aspx"
+    },
+    {
+      "sourceId": "source-9e81485d1cdd1875",
+      "url": "https://tcpharyana.gov.in"
+    },
+    {
+      "sourceId": "source-9ef970e1bde8da45",
+      "url": "https://realty.economictimes.indiatimes.com/rss/smart-city"
+    },
+    {
+      "sourceId": "source-9f06350791f34b52",
+      "url": "https://www.deendayalport.gov.in/tenders/e-tender"
+    },
+    {
+      "sourceId": "source-9f3b2ef2e896b9cb",
+      "url": "https://indianexpress.com/section/cities/delhi"
+    },
+    {
+      "sourceId": "source-a074a782eca0b33b",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/7503091.cms"
+    },
+    {
+      "sourceId": "source-a1168f8a7328393a",
+      "url": "https://rera.wb.gov.in"
+    },
+    {
+      "sourceId": "source-a23360f23f9940a2",
+      "url": "https://www.livemint.com/rss/technologyRSS"
+    },
+    {
+      "sourceId": "source-a2461eaab66d77b1",
+      "url": "https://www.livemint.com/rss/politicsRSS"
+    },
+    {
+      "sourceId": "source-a2d7032cb47838ea",
+      "url": "https://www.noidaauthority.in"
+    },
+    {
+      "sourceId": "source-a2fa17fe411ac065",
+      "url": "https://infra.economictimes.indiatimes.com/rss/railways"
+    },
+    {
+      "sourceId": "source-a36eae1f22951043",
+      "url": "https://gcda.kerala.gov.in"
+    },
+    {
+      "sourceId": "source-a396d591e4b2803f",
+      "url": "https://indianexpress.com/section/cities/chennai"
+    },
+    {
+      "sourceId": "source-a39ca9a845bd33e3",
+      "url": "https://infra.economictimes.indiatimes.com/rss/economy"
+    },
+    {
+      "sourceId": "source-a4fbd86de821babe",
+      "url": "https://www.cial.aero/News-Updates/URL"
+    },
+    {
+      "sourceId": "source-a50ed28d8cf031f6",
+      "url": "https://www.gaursonsindia.com"
+    },
+    {
+      "sourceId": "source-a52d575407484c4d",
+      "url": "https://mchi.net"
+    },
+    {
+      "sourceId": "source-a52fa4eba191a174",
+      "url": "https://www.atsgreens.com/blog"
+    },
+    {
+      "sourceId": "source-a533c562e5b7253c",
+      "url": "https://www.sunteckindia.com/investor-relations"
+    },
+    {
+      "sourceId": "source-a58a70a7a9e8419e",
+      "url": "https://rera.bihar.gov.in/RERALATESTNEWS.aspx"
+    },
+    {
+      "sourceId": "source-a5c14bb2ba09a74e",
+      "url": "https://infra.economictimes.indiatimes.com/rss/recentstories"
+    },
+    {
+      "sourceId": "source-a5fc6e50f7c44d08",
+      "url": "https://realty.economictimes.indiatimes.com/rss/lateststories"
+    },
+    {
+      "sourceId": "source-a666553e888c987b",
+      "url": "https://cidco.maharashtra.gov.in/Page?Token=1C64F4F8470"
+    },
+    {
+      "sourceId": "source-a7273bbd867bfd15",
+      "url": "https://jharera.jharkhand.gov.in/Home/Notice"
+    },
+    {
+      "sourceId": "source-a7f3f34b6cccf4b6",
+      "url": "https://www.rera.delhi.gov.in"
+    },
+    {
+      "sourceId": "source-a8119226a73d3518",
+      "url": "https://indianexpress.com/section/business/aviation"
+    },
+    {
+      "sourceId": "source-a827f7ee37beaf5a",
+      "url": "https://paradipport.gov.in/tenders"
+    },
+    {
+      "sourceId": "source-a8bec2fe1e56ac44",
+      "url": "https://www.cci.gov.in/combination/orders-section31"
+    },
+    {
+      "sourceId": "source-aa175ac937b2ad17",
+      "url": "https://publish.tribuneindia.com/newscategory/business/feed"
+    },
+    {
+      "sourceId": "source-aa6bc3617d6701fd",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128821991.cms"
+    },
+    {
+      "sourceId": "source-aa8b66ed065cb21d",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/4118215.cms"
+    },
+    {
+      "sourceId": "source-aaaaa2052ac39f26",
+      "url": "https://hsiidc.etenders.in"
+    },
+    {
+      "sourceId": "source-ab1441c2d0aab790",
+      "url": "https://www.mahametro.org"
+    },
+    {
+      "sourceId": "source-ab4ce58fde97dfa1",
+      "url": "https://www.hindustantimes.com/topic/noida/news"
+    },
+    {
+      "sourceId": "source-ab5ef2d25ad42fb8",
+      "url": "https://realty.economictimes.indiatimes.com/rss/lighting/commercial-lighting"
+    },
+    {
+      "sourceId": "source-aba9a5ecde1da7fd",
+      "url": "https://jharera.jharkhand.gov.in/home"
+    },
+    {
+      "sourceId": "source-ac51a47a6f327ae5",
+      "url": "https://www.hsvphry.org.in"
+    },
+    {
+      "sourceId": "source-ac7aa7710ca196e1",
+      "url": "https://www.tvsemerald.com/news"
+    },
+    {
+      "sourceId": "source-acd62d55a693a400",
+      "url": "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida%2Bauthority"
+    },
+    {
+      "sourceId": "source-ad39aeec46b44ddf",
+      "url": "https://www.niairport.in/en/company/news/overview/news-overview"
+    },
+    {
+      "sourceId": "source-ad45fa78363d17a4",
+      "url": "https://realty.economictimes.indiatimes.com/rss/recentstories"
+    },
+    {
+      "sourceId": "source-ad570e3b76c1d0f9",
+      "url": "https://infra.economictimes.indiatimes.com/rss/logistics"
+    },
+    {
+      "sourceId": "source-af1c4cb6008abeb0",
+      "url": "https://homekraft.in/media"
+    },
+    {
+      "sourceId": "source-af4b01f419d81146",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128821153.cms"
+    },
+    {
+      "sourceId": "source-af504fa53038d359",
+      "url": "https://www.bda.gov.in/archiveTender"
+    },
+    {
+      "sourceId": "source-b069d46ed5de0b0a",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/lucknow-news/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-b0e2c9b980800fdb",
+      "url": "https://indianexpress.com/section/cities/bhubaneswar"
+    },
+    {
+      "sourceId": "source-b10738f3a9084141",
+      "url": "https://www.abacorp.in"
+    },
+    {
+      "sourceId": "source-b1453969ace75992",
+      "url": "https://rera.telangana.gov.in/SUOMOTU-TG-RERA-15121976ORDERS"
+    },
+    {
+      "sourceId": "source-b30e3231ec8a99e5",
+      "url": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms"
+    },
+    {
+      "sourceId": "source-b3c79afc453c5d0e",
+      "url": "https://www.pmrda.gov.in/en/tender-notice"
+    },
+    {
+      "sourceId": "source-b42f43c46525805c",
+      "url": "https://ncrpb.nic.in"
+    },
+    {
+      "sourceId": "source-b495bf84fdea3d0b",
+      "url": "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-b52cf3a49a48daa0",
+      "url": "https://surajestate.com/investor-corner"
+    },
+    {
+      "sourceId": "source-b644d26be825e9b5",
+      "url": "https://realty.economictimes.indiatimes.com/tag/jewar"
+    },
+    {
+      "sourceId": "source-b67ba6da49d4485f",
+      "url": "https://indianexpress.com/section/cities/amritsar"
+    },
+    {
+      "sourceId": "source-b68ddd41c136b47d",
+      "url": "https://yamunaexpresswayauthority.com"
+    },
+    {
+      "sourceId": "source-b6e3fcc3c1fcdb5e",
+      "url": "https://embassygroup.com/news-media"
+    },
+    {
+      "sourceId": "source-b746e76e35ffe15c",
+      "url": "https://realty.economictimes.indiatimes.com/rss/regulatory"
+    },
+    {
+      "sourceId": "source-b80e7c4a794e0b06",
+      "url": "https://www.dlf.in/investor"
+    },
+    {
+      "sourceId": "source-b93f644fcac0e5d9",
+      "url": "https://www.koltepatil.com/news-media/media-coverage"
+    },
+    {
+      "sourceId": "source-b9bc9278d35194fa",
+      "url": "https://torbitrealty.com/category/news/city-updates/gurugram"
+    },
+    {
+      "sourceId": "source-bafe11bb39571bdf",
+      "url": "https://infra.economictimes.indiatimes.com/rss/construction"
+    },
+    {
+      "sourceId": "source-bcc812dd104e763d",
+      "url": "https://timesofindia.indiatimes.com/real-estate/news"
+    },
+    {
+      "sourceId": "source-bd00246cdf2d5624",
+      "url": "https://www.jll.co.in/en/trends-and-insights/research"
+    },
+    {
+      "sourceId": "source-bd0a633edbdcf97f",
+      "url": "https://rera.telangana.gov.in/amavlnjoiu7532845972-TG-RERA-74698ijgsdfjgbi349529"
+    },
+    {
+      "sourceId": "source-bd7674d2df65d10a",
+      "url": "https://www.nhb.org.in/en/media-corner/media-press-releases"
+    },
+    {
+      "sourceId": "source-bdf4d479ca741760",
+      "url": "https://www.hindustantimes.com/real-estate"
+    },
+    {
+      "sourceId": "source-be0e692b27ebcdc8",
+      "url": "https://indianexpress.com/section/cities/guwahati"
+    },
+    {
+      "sourceId": "source-be82a9f394893307",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/1898055.cms"
+    },
+    {
+      "sourceId": "source-beb35f945c93ca51",
+      "url": "https://realty.economictimes.indiatimes.com/news/residential"
+    },
+    {
+      "sourceId": "source-bf9ef90157bd7226",
+      "url": "https://rera.telangana.gov.in/AnnualReports-TG-RERA-15121976REAT_Orders"
+    },
+    {
+      "sourceId": "source-bfa91ccf4fc18259",
+      "url": "https://www.pib.gov.in"
+    },
+    {
+      "sourceId": "source-c040c0d950d87bd1",
+      "url": "https://maxestates.in/investors"
+    },
+    {
+      "sourceId": "source-c0d72f16b7a04fe9",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3947051.cms"
+    },
+    {
+      "sourceId": "source-c130d02807694179",
+      "url": "https://sumadhuragroup.com"
+    },
+    {
+      "sourceId": "source-c164fc55a73a56e3",
+      "url": "https://indianexpress.com/section/cities/nashik"
+    },
+    {
+      "sourceId": "source-c29bded819119079",
+      "url": "https://faridabad.nic.in/department/faridabad-metropolitan-development-authority-fmda"
+    },
+    {
+      "sourceId": "source-c29e43a96129297e",
+      "url": "https://publish.tribuneindia.com/city/chandigarh/feed"
+    },
+    {
+      "sourceId": "source-c321d9d6ff68625a",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3947060.cms"
+    },
+    {
+      "sourceId": "source-c3268fc16e38147a",
+      "url": "https://www.shriramproperties.com/press-release"
+    },
+    {
+      "sourceId": "source-c3cd401e73261f98",
+      "url": "https://rera.punjab.gov.in"
+    },
+    {
+      "sourceId": "source-c46ed4a26936fc7d",
+      "url": "https://www.signatureglobal.in"
+    },
+    {
+      "sourceId": "source-c4dcb6cbc3773b97",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/dehradun-news/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-c665e245638011af",
+      "url": "https://publish.tribuneindia.com/state/haryana/feed"
+    },
+    {
+      "sourceId": "source-c70d152914837e28",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/442002.cms"
+    },
+    {
+      "sourceId": "source-c7d973a10c046b5f",
+      "url": "https://ibbi.gov.in/orders/nclt"
+    },
+    {
+      "sourceId": "source-c8cacb58fafc474e",
+      "url": "https://publish.tribuneindia.com/state/rajasthan/feed"
+    },
+    {
+      "sourceId": "source-c8d91725a49deadb",
+      "url": "https://www.hindustantimes.com/cities/patna-news"
+    },
+    {
+      "sourceId": "source-c9dcf8704d206fd1",
+      "url": "https://www.nhsrcl.in/en/media/press-release"
+    },
+    {
+      "sourceId": "source-caea3d6da5eeabbf",
+      "url": "https://realty.economictimes.indiatimes.com/tag/noida"
+    },
+    {
+      "sourceId": "source-cb103a881f232dfb",
+      "url": "https://www.lntrealty.com/news-blogs"
+    },
+    {
+      "sourceId": "source-cb563f53caf3d22e",
+      "url": "https://www.experion.co/media"
+    },
+    {
+      "sourceId": "source-cbcf42dafc4d2b59",
+      "url": "https://indianexpress.com/section/cities/surat"
+    },
+    {
+      "sourceId": "source-cbdf4aa4b1a4151c",
+      "url": "https://bda.gov.in"
+    },
+    {
+      "sourceId": "source-cbe804d0a087c728",
+      "url": "https://realty.economictimes.indiatimes.com/rss/allied-industries"
+    },
+    {
+      "sourceId": "source-cc033b147e66c77d",
+      "url": "https://gnida.up.gov.in/en/news"
+    },
+    {
+      "sourceId": "source-cd407e0375a45a80",
+      "url": "https://www.cmdachennai.gov.in"
+    },
+    {
+      "sourceId": "source-cdd24800c900633c",
+      "url": "https://www.dlf.in/media"
+    },
+    {
+      "sourceId": "source-ce1128afcbc6a427",
+      "url": "https://portal.mcgm.gov.in/irj/portal/anonymous/qletenders_new?guest_user=english"
+    },
+    {
+      "sourceId": "source-ce6f7bcb55489e92",
+      "url": "https://indianexpress.com/section/cities/kolkata"
+    },
+    {
+      "sourceId": "source-ce98a94a9ae77b74",
+      "url": "https://realty.economictimes.indiatimes.com/rss/housing-finance"
+    },
+    {
+      "sourceId": "source-cf6dabfce0318e4a",
+      "url": "https://www.centralpark.in/media.php"
+    },
+    {
+      "sourceId": "source-cfcea730d6287e6b",
+      "url": "https://www.financialexpress.com/business/infrastructure"
+    },
+    {
+      "sourceId": "source-cfda0bd45046a738",
+      "url": "https://publish.tribuneindia.com/city/bathinda/feed"
+    },
+    {
+      "sourceId": "source-d18acc08a374f4b3",
+      "url": "https://www.mmrcl.com/en/content/press-releases"
+    },
+    {
+      "sourceId": "source-d1e51d39322f8813",
+      "url": "https://punemetrorail.org"
+    },
+    {
+      "sourceId": "source-d236cdc9759fa298",
+      "url": "https://realty.economictimes.indiatimes.com/rss/topstories"
+    },
+    {
+      "sourceId": "source-d27b544b2f5501e0",
+      "url": "https://www.nicdc.in"
+    },
+    {
+      "sourceId": "source-d3d4e6c68539caec",
+      "url": "https://www.suratmunicipal.gov.in/Information/Tender/Tenders"
+    },
+    {
+      "sourceId": "source-d4761eb1e38f7d95",
+      "url": "https://realty.economictimes.indiatimes.com/tag/faridabad"
+    },
+    {
+      "sourceId": "source-d63ad7294e83aed6",
+      "url": "https://morth.nic.in"
+    },
+    {
+      "sourceId": "source-d6a26cbc52173b94",
+      "url": "https://www.omaxe.com/media/press-releases"
+    },
+    {
+      "sourceId": "source-d6c567d73e4641cc",
+      "url": "https://rera.punjab.gov.in/latest-news.html"
+    },
+    {
+      "sourceId": "source-d6caa0b7d23fa3c3",
+      "url": "https://www.anantrajlimited.com/media-center"
+    },
+    {
+      "sourceId": "source-d6cd21322f99cad3",
+      "url": "https://www.gmada.gov.in"
+    },
+    {
+      "sourceId": "source-d6fb59d125a0bb96",
+      "url": "https://www.gujaratmetrorail.com"
+    },
+    {
+      "sourceId": "source-d77c0f79dda6df31",
+      "url": "https://indianexpress.com/section/cities/thiruvananthapuram"
+    },
+    {
+      "sourceId": "source-d8886d6e04a3f7b6",
+      "url": "https://residex.nhbonline.org.in"
+    },
+    {
+      "sourceId": "source-d8f7108ad68612a0",
+      "url": "https://www.livemint.com/rss/moneyRSS"
+    },
+    {
+      "sourceId": "source-d9410a97c5623b95",
+      "url": "https://in.esr.com/newsroom/news"
+    },
+    {
+      "sourceId": "source-d973eaed1ffbcba2",
+      "url": "https://indianexpress.com/section/cities/patna"
+    },
+    {
+      "sourceId": "source-d97c1b23a5f5de0b",
+      "url": "https://www.brookfieldindiareit.in/stock-exchange-filings#Stock-Exchange-Filings"
+    },
+    {
+      "sourceId": "source-da2344216a7a54af",
+      "url": "https://news.railanalysis.com"
+    },
+    {
+      "sourceId": "source-da370182bc650626",
+      "url": "https://www.kalpataru.com/investor-corner"
+    },
+    {
+      "sourceId": "source-da5fbde60162ee8a",
+      "url": "https://updatesonproperty.com/rss/category/latest-news"
+    },
+    {
+      "sourceId": "source-da956410caeb9a19",
+      "url": "https://www.adanirealty.com/news-and-media"
+    },
+    {
+      "sourceId": "source-daadcf789eee5774",
+      "url": "https://economictimes.indiatimes.com/topic/faridabad-realty"
+    },
+    {
+      "sourceId": "source-daaf3bcb3788ebf3",
+      "url": "https://www.knrcl.com/investors_presentation.html"
+    },
+    {
+      "sourceId": "source-db24e0e4b0ee9629",
+      "url": "https://smartworlddevelopers.com/media"
+    },
+    {
+      "sourceId": "source-db6a6a08fdee39ec",
+      "url": "https://realty.economictimes.indiatimes.com/rss/residential"
+    },
+    {
+      "sourceId": "source-db7b3ed534eb58a5",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128830821.cms"
+    },
+    {
+      "sourceId": "source-dbb1433a0878639f",
+      "url": "https://www.omaxe.com/investor/other-disclosures"
+    },
+    {
+      "sourceId": "source-dbccf470ef598275",
+      "url": "https://www.rera.mp.gov.in"
+    },
+    {
+      "sourceId": "source-dc839578664fa032",
+      "url": "https://indianexpress.com/section/cities/patiala"
+    },
+    {
+      "sourceId": "source-dcacb8e2c1293080",
+      "url": "https://www.pib.gov.in/Allrel.aspx"
+    },
+    {
+      "sourceId": "source-dd0d7e7448d391ea",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms"
+    },
+    {
+      "sourceId": "source-dea0d23e852b1feb",
+      "url": "https://realty.economictimes.indiatimes.com/rss/industry"
+    },
+    {
+      "sourceId": "source-deff7d2998156a14",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/patna-news/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-df081b558eb114ea",
+      "url": "https://indianexpress.com/section/cities/baroda"
+    },
+    {
+      "sourceId": "source-e05617a306e169b9",
+      "url": "https://indianexpress.com/section/cities/navi-mumbai"
+    },
+    {
+      "sourceId": "source-e0bc2624ee49e873",
+      "url": "https://gidc.gujarat.gov.in/tender"
+    },
+    {
+      "sourceId": "source-e0bf8b4d314a26ea",
+      "url": "https://indianexpress.com/section/business/companies"
+    },
+    {
+      "sourceId": "source-e0cb60d35f60526b",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/4118245.cms"
+    },
+    {
+      "sourceId": "source-e158653ac8a1cd96",
+      "url": "https://www.nexusselecttrust.com/regulatory-filings"
+    },
+    {
+      "sourceId": "source-e15e4823ba0c865f",
+      "url": "https://indianrailways.gov.in/railwayboard"
+    },
+    {
+      "sourceId": "source-e1a85071abd2efe6",
+      "url": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=1&ssid=6"
+    },
+    {
+      "sourceId": "source-e2cb4955db02bfc6",
+      "url": "https://www.livemint.com/rss/budgetRSS"
+    },
+    {
+      "sourceId": "source-e2f213fc742989a3",
+      "url": "https://www.constructionworld.in/latest-construction-news/real-estate-news"
+    },
+    {
+      "sourceId": "source-e367d7627d12b4c0",
+      "url": "https://realty.economictimes.indiatimes.com/rss/startups"
+    },
+    {
+      "sourceId": "source-e3a1245db2eef2a2",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/2950623.cms"
+    },
+    {
+      "sourceId": "source-e3dd159121bb9bf8",
+      "url": "https://www.tribuneindia.com/topic/real-estate"
+    },
+    {
+      "sourceId": "source-e3ec1f4d33f11530",
+      "url": "https://indianexpress.com/section/business/banking-and-finance"
+    },
+    {
+      "sourceId": "source-e4cff614bad560a8",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/others/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-e54bd0e4bcff5c38",
+      "url": "https://msrdc.in"
+    },
+    {
+      "sourceId": "source-e674bbc50a233d17",
+      "url": "https://haryanarera.gov.in/admincontrol/judgements/1"
+    },
+    {
+      "sourceId": "source-e688f5c60e8080be",
+      "url": "https://indianexpress.com/section/north-east-india/assam"
+    },
+    {
+      "sourceId": "source-e82bc3f2658867db",
+      "url": "https://aiforera.org"
+    },
+    {
+      "sourceId": "source-e83a3474083401df",
+      "url": "https://indianexpress.com/section/cities/srinagar"
+    },
+    {
+      "sourceId": "source-e915cafa7411e9a8",
+      "url": "https://indianexpress.com/section/cities/mysuru"
+    },
+    {
+      "sourceId": "source-e982c7ab738bc657",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/pune-news/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-e98560d779777b14",
+      "url": "https://www.puravankara.com/investors"
+    },
+    {
+      "sourceId": "source-e9b160058f56f989",
+      "url": "https://aipl.com/media-coverage"
+    },
+    {
+      "sourceId": "source-e9bbb699c960c32d",
+      "url": "https://publish.tribuneindia.com/state/punjab/feed"
+    },
+    {
+      "sourceId": "source-ea35725836002212",
+      "url": "https://www.grinfra.com/intimations-under-regulation-30"
+    },
+    {
+      "sourceId": "source-ea7427c046ceb95c",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/bengaluru-news/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-eab128bb5eb95142",
+      "url": "https://www.hindustantimes.com/topic/greater-noida-authority/news"
+    },
+    {
+      "sourceId": "source-eae9c86eac355f47",
+      "url": "https://rera.bihar.gov.in/ProceedingOrder.aspx"
+    },
+    {
+      "sourceId": "source-eafca1900043dab5",
+      "url": "https://realty.economictimes.indiatimes.com/rss/paints"
+    },
+    {
+      "sourceId": "source-eb4f29dec3d55e73",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/faridabad-news/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-eb5d59896a6b7313",
+      "url": "https://www.irb.co.in/home/press-release"
+    },
+    {
+      "sourceId": "source-ebe1ab1a6fc4b4d7",
+      "url": "https://m3mindia.com/media"
+    },
+    {
+      "sourceId": "source-ec14ea8472dd8c5c",
+      "url": "https://www.aai.aero/en/media/latest-news"
+    },
+    {
+      "sourceId": "source-ecec6904b8979a75",
+      "url": "https://www.prateekgroup.com/blog"
+    },
+    {
+      "sourceId": "source-ede1b5b075841df9",
+      "url": "https://tgiic.telangana.gov.in"
+    },
+    {
+      "sourceId": "source-eeb9e2ebd538871e",
+      "url": "https://dda.gov.in/whats-new"
+    },
+    {
+      "sourceId": "source-ef0a7c410dbe96c4",
+      "url": "https://transport.rajasthan.gov.in/jmrc"
+    },
+    {
+      "sourceId": "source-ef18ba443f8a88b6",
+      "url": "https://www.gulshangroup.com"
+    },
+    {
+      "sourceId": "source-efa0fe6953108a55",
+      "url": "https://www.hiranandani.com/media-press-release.aspx"
+    },
+    {
+      "sourceId": "source-f09bba862442085f",
+      "url": "https://www.mhada.gov.in"
+    },
+    {
+      "sourceId": "source-f13d4757d32076c7",
+      "url": "https://indianexpress.com/section/north-east-india/tripura"
+    },
+    {
+      "sourceId": "source-f1de2f18f5a9e3a6",
+      "url": "https://investor.clint.com.sg/newsroom.html"
+    },
+    {
+      "sourceId": "source-f1f8aae88fb99f4c",
+      "url": "https://www.business-standard.com/topic/real-estate"
+    },
+    {
+      "sourceId": "source-f23d1d86a2bea3a4",
+      "url": "https://www.supertechlimited.com"
+    },
+    {
+      "sourceId": "source-f263853a95ba5245",
+      "url": "https://www.cbre.co.in/insights"
+    },
+    {
+      "sourceId": "source-f29a97e5ce13ff4d",
+      "url": "https://infra.economictimes.indiatimes.com/rss/ports-shipping"
+    },
+    {
+      "sourceId": "source-f314b62178552313",
+      "url": "https://maharera.mahaonline.gov.in"
+    },
+    {
+      "sourceId": "source-f3857c0b92c8e467",
+      "url": "https://www.acegroupindia.com"
+    },
+    {
+      "sourceId": "source-f3a63a06dd3ebf6f",
+      "url": "https://realty.economictimes.indiatimes.com/rss/commercial"
+    },
+    {
+      "sourceId": "source-f3f91d9edfc6c0b1",
+      "url": "https://mohua.gov.in"
+    },
+    {
+      "sourceId": "source-f4ed8accfa4e4369",
+      "url": "https://www.mahagunindia.com/media"
+    },
+    {
+      "sourceId": "source-f535177838dc3512",
+      "url": "https://rera.bihar.gov.in/Newsarticles.aspx"
+    },
+    {
+      "sourceId": "source-f5493878540a29b2",
+      "url": "https://ipm.mospi.gov.in/Home/ShowPressRelease"
+    },
+    {
+      "sourceId": "source-f6011326085b45d2",
+      "url": "https://www.signatureglobal.in/financials"
+    },
+    {
+      "sourceId": "source-f61cb144fd03126e",
+      "url": "https://www.nseindia.com/companies-listing/corporate-filings-application?param=ROUTE"
+    },
+    {
+      "sourceId": "source-f75d5b54452cd00f",
+      "url": "https://mhada.gov.in/en/latest-news"
+    },
+    {
+      "sourceId": "source-f7a0a38850b759e5",
+      "url": "https://www.ashianahousing.com/media/media-release"
+    },
+    {
+      "sourceId": "source-f92f012650116bc1",
+      "url": "https://navaraipuratalnagar.com"
+    },
+    {
+      "sourceId": "source-f9a6a1da8e3e3e31",
+      "url": "https://www.credaincr.org/press_release"
+    },
+    {
+      "sourceId": "source-fa23d95e3b36da47",
+      "url": "https://publish.tribuneindia.com/city/jalandhar/feed"
+    },
+    {
+      "sourceId": "source-fa48df844c480197",
+      "url": "https://www.suratmunicipal.gov.in/Information/pressreleases"
+    },
+    {
+      "sourceId": "source-fa6e17f833a2e8ff",
+      "url": "https://www.cnbctv18.com/real-estate"
+    },
+    {
+      "sourceId": "source-fb982d98fa934475",
+      "url": "https://www.kiadb.org"
+    },
+    {
+      "sourceId": "source-fba88c26756dd0ad",
+      "url": "https://indianexpress.com/section/business/market"
+    },
+    {
+      "sourceId": "source-fba8d879c7965679",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3942666.cms"
+    },
+    {
+      "sourceId": "source-fc1560ffc29e9ec1",
+      "url": "https://rera.punjab.gov.in/circulars.html"
+    },
+    {
+      "sourceId": "source-fc72e4c6176af6fc",
+      "url": "https://www.yamunaexpresswayauthority.com/web/announcement"
+    },
+    {
+      "sourceId": "source-fd27f2f9304859da",
+      "url": "https://infra.economictimes.indiatimes.com/rss/urban-infrastructure"
+    },
+    {
+      "sourceId": "source-fe633b7375aeafc3",
+      "url": "https://rera.telangana.gov.in"
+    },
+    {
+      "sourceId": "source-fea77e18cf344620",
+      "url": "https://www.mumbaiport.gov.in/show_tenders.php?catid=3&depid=1&lang=1"
+    },
+    {
+      "sourceId": "source-feeab52e5c2230a7",
+      "url": "https://www.hindustantimes.com/feeds/rss/cities/chandigarh-news/rssfeed.xml"
+    },
+    {
+      "sourceId": "source-ff0e7eb8a6d81954",
+      "url": "https://www.ukrera.org.in"
+    },
+    {
+      "sourceId": "source-ff7f75827ae117e2",
+      "url": "https://timesofindia.indiatimes.com/rssfeeds/3942693.cms"
+    },
+    {
+      "sourceId": "source-fff5e97e132c1bf9",
+      "url": "https://www.gaursonsindia.com/media-centre.php"
+    }
+  ]
+}
