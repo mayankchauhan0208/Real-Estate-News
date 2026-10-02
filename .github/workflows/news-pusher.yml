@@ -95,7 +95,7 @@ jobs:
       - name: Restore dedupe state
         uses: actions/cache@v6
         with:
-          path: .state
+          path: .state/sent-news.json
           key: news-state-${{ github.run_id }}
           restore-keys: |
             news-state-
@@ -136,7 +136,8 @@ jobs:
           SOURCE_BATCH_COUNT: ${{ github.event_name == 'schedule' && '6' || '1' }}
           USE_RESUMABLE_SOURCE_SCHEDULER: "true"
           SOURCE_SHARD_SIZE: "50"
-          SOURCE_RUNTIME_BUDGET_MS: "2700000"
+          SOURCE_RUNTIME_BUDGET_MS: "2520000"
+          SOURCE_CLEANUP_RESERVE_MS: "180000"
           SOURCE_MAX_SHARDS_PER_RUN: "12"
           ARTICLE_METADATA_CONCURRENCY: "6"
           FETCH_TIMEOUT_MS: "25000"
@@ -152,6 +153,15 @@ jobs:
           REJECTION_AUDIT_LIMIT: "5000"
           DETAILED_REJECTION_REASONS: "true"
           MISSED_NEWS_AUDIT: "true"
+
+      - name: Persist scheduler checkpoint
+        if: always()
+        continue-on-error: true
+        run: |
+          if [ -f .state/source-monitor-checkpoint.json ] && [ -f .state/source-monitor-cycle.json ]; then
+            git add -f .state/source-monitor-checkpoint.json .state/source-monitor-cycle.json
+            git diff --cached --quiet || (git commit -m "Persist source scheduler checkpoint [skip ci]" && git push)
+          fi
 
       - name: Upload run report
         if: always()

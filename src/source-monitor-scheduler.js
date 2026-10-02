@@ -21,10 +21,15 @@ export function buildCycleSnapshot(activeSources, cycleId, createdAt = new Date(
     const sourceId = stableSourceId(source);
     if (!byId.has(sourceId)) byId.set(sourceId, { sourceId, url, ...source });
   }
+  const sources = [...byId.values()].sort((a, b) => a.sourceId.localeCompare(b.sourceId));
+  const universeFingerprint = crypto.createHash("sha256")
+    .update(sources.map((source) => source.sourceId).join("\n"))
+    .digest("hex");
   return {
     cycleId,
     createdAt,
-    sources: [...byId.values()].sort((a, b) => a.sourceId.localeCompare(b.sourceId))
+    universeFingerprint,
+    sources
   };
 }
 
@@ -41,9 +46,13 @@ export function startOrResumeCycle(state, snapshot) {
       sourceIds: snapshot.sources.map((source) => source.sourceId),
       completedSourceIds: [],
       completedShardIds: [],
-      nextShardNumber: 1
+      nextShardNumber: 1,
+      universeFingerprint: snapshot.universeFingerprint,
+      cyclePositionStart: 0,
+      lastCheckpointAt: null
     };
   }
+  next.activeCycle.universeFingerprint = snapshot.universeFingerprint;
   for (const source of snapshot.sources) {
     next.sources[source.sourceId] ||= {
       sourceId: source.sourceId,
@@ -114,6 +123,8 @@ export function completeShard(state, shard, outcomes, completedAt = new Date().t
   state.activeCycle.completedSourceIds = [...completedIds].sort();
   state.activeCycle.completedShardIds = [...new Set([...(state.activeCycle.completedShardIds || []), shard.shardId])].sort();
   state.activeCycle.nextShardNumber = Math.max(state.activeCycle.nextShardNumber || 1, shard.shardNumber + 1);
+  state.activeCycle.lastCheckpointAt = completedAt;
+  state.activeCycle.cyclePositionEnd = state.activeCycle.completedSourceIds.length;
   return { accounted: accounted.length, expected: shard.sourceIds.length, complete: accounted.length === shard.sourceIds.length };
 }
 

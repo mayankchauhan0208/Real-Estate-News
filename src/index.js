@@ -13,6 +13,7 @@ import {
   buildCycleSnapshot,
   completeShard,
   createSchedulerState,
+  cycleProgress,
   readJson,
   releaseSchedulerLock,
   selectShard,
@@ -1812,7 +1813,11 @@ function getSources() {
   const manualSourceUrls = Array.isArray(adminSettings.manualSources)
     ? adminSettings.manualSources
       .filter((source) => source && source.enabled !== false)
-      .filter((source) => getBooleanEnv("ENABLE_EXPERIMENTAL_SOURCES") || !isExperimentalManualSource(source))
+      .filter((source) => {
+        const mode = String(source.sourceMode || "").trim().toUpperCase();
+        if (mode === "OFF") return false;
+        return getBooleanEnv("ENABLE_EXPERIMENTAL_SOURCES") || !isExperimentalManualSource(source) || mode === "ACTIVE_FOR_REVIEW";
+      })
       .filter((source) => {
         if (!requestedCategory) return true;
         const category = String(source.category || "").toLowerCase();
@@ -2048,6 +2053,24 @@ function getSourceRetryAttempts() {
   return Math.min(getPositiveIntegerEnv("SOURCE_RETRY_ATTEMPTS", 4), 4);
 }
 
+function getSourceCleanupReserveMs() {
+  return Math.max(30_000, getPositiveIntegerEnv("SOURCE_CLEANUP_RESERVE_MS", 180_000));
+}
+
+function getRegionalSourceMode(sourceUrl) {
+  const source = (Array.isArray(adminSettings.manualSources) ? adminSettings.manualSources : [])
+    .find((item) => normalizeSourceUrl(item?.url) === normalizeSourceUrl(sourceUrl));
+  const configured = String(source?.sourceMode || "").trim().toUpperCase();
+  if (["AUTO_PUBLISH", "ACTIVE_FOR_REVIEW", "OFF"].includes(configured)) return configured;
+  return isExperimentalManualSource(source || {}) ? "ACTIVE_FOR_REVIEW" : "AUTO_PUBLISH";
+}
+
+function isRegionalSource(sourceUrl) {
+  const source = (Array.isArray(adminSettings.manualSources) ? adminSettings.manualSources : [])
+    .find((item) => normalizeSourceUrl(item?.url) === normalizeSourceUrl(sourceUrl));
+  return isExperimentalManualSource(source || {});
+}
+
 function isGovernmentPortalUrl(sourceUrl = "") {
   try {
     const host = new URL(sourceUrl).hostname.replace(/^www\./, "");
@@ -2064,11 +2087,10 @@ function getFetchTimeoutForUrl(sourceUrl = "") {
 }
 
 function isRetryableSourceError(error) {
-  const message = String(error?.message || error || "").toLowerCase();
-  return (
-    /source timed out|fetch failed|econnreset|econnrefused|etimedout|socket hang up|network/i.test(message) ||
-    /\bhttp (408|425|429|500|502|503|504)\b/i.test(message)
-  );
+  const message = String(error?.message || error || "");
+  if (/\bHTTP\s+(400|401|404|405|406|410|415|422)\b/i.test(message)) return false;
+  if (/unsupported|malformed|invalid\s+(url|endpoint)|permanent/i.test(message)) return false;
+  return /\bHTTP\s+(408|425|429|5\d\d)\b|timeout|timed?\s*out|fetch failed|network|reset|econn|tls|socket|aborted/i.test(message);
 }
 
 function getDefaultLookbackDays() {
@@ -2323,6 +2345,8 @@ function getArticleTrace(article, reasons = [], context = {}) {
   return {
     sourceId: article.sourceId || stableId(sourceUrl || articleUrl),
     sourceName: article.sourceName || article.postedBy || "",
+    sourceMode: article.sourceMode || "AUTO_PUBLISH",
+    regionalSource: article.regionalSource === true,
     sourceType: sourceTrace.sourceType || (isLikelyFeedUrl(sourceUrl) ? "RSS_OR_ATOM" : "HTML_OR_SPECIALIZED"),
     configuredUrl: sourceTrace.configuredUrl || sourceUrl,
     actualFetchedUrl: sourceTrace.actualFetchedUrl || sourceUrl,
@@ -2449,7 +2473,7 @@ function buildRunAnalytics(expandedArticles, readyArticles, postedArticles, skip
         row.rejectionReasons[reason] = (row.rejectionReasons[reason] || 0) + 1;
       }
       const qualityDecision = localQualityJudge(article);
-      if ((needsLocalQualityReview(article) || isFullArticleReviewRequired(article)) && needsReviewArticles.length < 300) {
+      if ((article.sourceMode === "ACTIVE_FOR_REVIEW" || needsLocalQualityReview(article) || isFullArticleReviewRequired(article)) && needsReviewArticles.length < 300) {
         needsReviewArticles.push({
           article: reportArticle(article, { reasons }),
           reasons,
@@ -2490,6 +2514,32 @@ function buildRunAnalytics(expandedArticles, readyArticles, postedArticles, skip
     coverageAlerts,
     rejectedArticles,
     needsReviewArticles
+  };
+}
+
+function buildRegionalMetrics(expandedArticles, getReasons) {
+  const regional = expandedArticles.filter((article) => article.regionalSource === true);
+  const modeCounts = { AUTO_PUBLISH: 0, ACTIVE_FOR_REVIEW: 0, OFF: 0 };
+  for (const article of regional) modeCounts[article.sourceMode || "AUTO_PUBLISH"] = (modeCounts[article.sourceMode || "AUTO_PUBLISH"] || 0) + 1;
+  const languages = [...new Set(regional.map((article) => String(article.language || "").trim()).filter(Boolean))];
+  const rows = regional.map((article) => ({ article, reasons: getReasons(article) }));
+  const hardReject = rows.filter(({ reasons }) => reasons.some((reason) => reason.startsWith("filter "))).length;
+  const review = rows.filter(({ reasons }) => reasons.some((reason) => reason.startsWith("review:"))).length;
+  const wouldAutoPublish = rows.filter(({ article, reasons }) => article.sourceMode === "AUTO_PUBLISH" && reasons.length === 0).length;
+  return {
+    configured: modeCounts,
+    attempted: 0,
+    linksDiscovered: 0,
+    articlesExtracted: regional.length,
+    languagesObserved: languages,
+    current: regional.length,
+    relevantSafe: rows.filter(({ reasons }) => !reasons.some((reason) => reason.includes("filter 4"))).length,
+    hardRejected: hardReject,
+    geoValid: regional.filter((article) => Boolean(article.cityCode)).length,
+    geoUncertain: regional.filter((article) => !article.cityCode || article.cityConfidence === "uncertain").length,
+    review,
+    wouldAutoPublish,
+    published: 0
   };
 }
 function safeReportFileName(date = new Date()) {
@@ -5368,6 +5418,10 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("filter 13: already sent");
   }
 
+  if (article.sourceMode === "ACTIVE_FOR_REVIEW" && !reasons.some((reason) => reason.startsWith("filter "))) {
+    reasons.push("review: regional source active for editorial review");
+  }
+
   return reasons;
 }
 
@@ -7005,7 +7059,7 @@ async function fetchPage(sourceUrl, options = {}) {
   return articles;
 }
 
-async function fetchSourceWithTimeout(sourceUrl, timeoutMsOverride = getSourceTimeoutMs()) {
+async function fetchSourceWithTimeout(sourceUrl, timeoutMsOverride = getSourceTimeoutMs(), options = {}) {
   const controller = new AbortController();
   const timeoutMs = Math.max(1, timeoutMsOverride);
   let timeout;
@@ -7020,7 +7074,7 @@ async function fetchSourceWithTimeout(sourceUrl, timeoutMsOverride = getSourceTi
     }, timeoutMs);
     timeout.unref?.();
   });
-  const sourcePromise = Promise.resolve().then(() => fetchSource(sourceUrl, { signal: controller.signal }));
+  const sourcePromise = Promise.resolve().then(() => fetchSource(sourceUrl, { ...options, signal: controller.signal }));
   sourcePromise.catch(() => {});
 
   try {
@@ -7101,15 +7155,25 @@ function shouldDryRun() {
   return getBooleanEnv("DRY_RUN") || adminSettings.apiPushEnabled !== true;
 }
 
-async function fetchSourceWithRetry(sourceUrl, timeoutMsOverride = getSourceTimeoutMs()) {
+async function fetchSourceWithRetry(sourceUrl, timeoutMsOverride = getSourceTimeoutMs(), options = {}) {
   const maxAttempts = getSourceRetryAttempts();
   let lastError;
 
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     try {
-      return { articles: await fetchSourceWithTimeout(sourceUrl, timeoutMsOverride), attempts: attempt };
+      const remainingMs = options.deadlineAt
+        ? options.deadlineAt - Date.now() - getSourceCleanupReserveMs()
+        : timeoutMsOverride;
+      if (remainingMs <= 0) {
+        throw Object.assign(new Error("source budget exhausted before attempt"), { sourceStatus: "BUDGET_EXHAUSTED" });
+      }
+      return { articles: await fetchSourceWithTimeout(sourceUrl, Math.min(timeoutMsOverride, remainingMs), options), attempts: attempt };
     } catch (error) {
       lastError = error;
+      if (error?.sourceStatus === "BUDGET_EXHAUSTED") throw error;
+      if (!isRetryableSourceError(error)) {
+        throw Object.assign(error, { sourceAttempts: attempt });
+      }
       if (attempt >= maxAttempts) {
         throw Object.assign(error, { sourceAttempts: attempt });
       }
@@ -7123,13 +7187,19 @@ async function fetchSourceWithRetry(sourceUrl, timeoutMsOverride = getSourceTime
   throw Object.assign(lastError || new Error("source fetch failed"), { sourceAttempts: maxAttempts });
 }
 
-async function fetchSourceWithRecovery(sourceUrl) {
+async function fetchSourceWithRecovery(sourceUrl, options = {}) {
   const candidates = [sourceUrl, ...getSourceRecoveryAliases(sourceUrl)];
   let lastError;
 
   for (const candidate of candidates) {
     try {
-      const result = await fetchSourceWithRetry(candidate, getSourceTimeoutMs());
+      const remainingMs = options.deadlineAt
+        ? options.deadlineAt - Date.now() - getSourceCleanupReserveMs()
+        : getSourceTimeoutMs();
+      if (remainingMs <= 0) {
+        throw Object.assign(new Error("source budget exhausted before attempt"), { sourceStatus: "BUDGET_EXHAUSTED" });
+      }
+      const result = await fetchSourceWithRetry(candidate, Math.min(getSourceTimeoutMs(), remainingMs), options);
       return {
         ...result,
         requestedSource: sourceUrl,
@@ -7138,6 +7208,7 @@ async function fetchSourceWithRecovery(sourceUrl) {
       };
     } catch (error) {
       lastError = error;
+      if (error?.sourceStatus === "BUDGET_EXHAUSTED") break;
       if (candidate !== candidates[candidates.length - 1]) {
         console.warn(`Source ${sourceUrl} failed at ${candidate}; trying official recovery URL.`);
       }
@@ -7184,16 +7255,24 @@ async function pushArticle(article) {
   };
 }
 
-async function fetchSourceBatch(sourceList) {
+async function fetchSourceBatch(sourceList, options = {}) {
   return mapWithConcurrency(sourceList, getSourceConcurrency(), async (source) => {
+    const remainingMs = options.deadlineAt
+      ? options.deadlineAt - Date.now() - getSourceCleanupReserveMs()
+      : getSourceTimeoutMs();
+    if (remainingMs <= 0) {
+      return { source, status: "BUDGET_EXHAUSTED", error: "source budget exhausted before attempt", attempts: 0 };
+    }
     try {
       const startedAt = Date.now();
-      const result = await fetchSourceWithRecovery(source);
+      const result = await fetchSourceWithRecovery(source, options);
       const sourceCityCodes = getConfiguredSourceCityCodes(source);
       const articles = result.articles.map((article) => ({
         ...article,
         sourceUrl: article.sourceUrl || source,
         sourceCityCodes,
+        sourceMode: getRegionalSourceMode(source),
+        regionalSource: isRegionalSource(source),
         sourceTrace: {
           configuredUrl: source,
           actualFetchedUrl: result.fetchedSource || source,
@@ -7207,10 +7286,10 @@ async function fetchSourceBatch(sourceList) {
       }));
       const recoveryLabel = result.recovered ? ` via ${result.fetchedSource}` : "";
       console.log(`Fetched ${result.articles.length} items from ${source}${recoveryLabel} in ${formatDuration(Date.now() - startedAt)} (attempts: ${result.attempts})`);
-      return { source, articles, attempts: result.attempts, fetchedSource: result.fetchedSource, recovered: result.recovered };
+      return { source, status: articles.length ? "SUCCESS_PRODUCTIVE" : "SUCCESS_NO_CANDIDATE", articles, attempts: result.attempts, fetchedSource: result.fetchedSource, recovered: result.recovered };
     } catch (error) {
       console.error(`Failed to fetch ${source}: ${error.message}`);
-      return { source, error: error.message, attempts: error.sourceAttempts || getSourceRetryAttempts() };
+      return { source, status: error.sourceStatus || (/timed?\s*out|timeout/i.test(error.message) ? "TIMEOUT" : "TRANSPORT_FAILURE"), error: error.message, attempts: error.sourceAttempts || getSourceRetryAttempts() };
     }
   });
 }
@@ -7222,10 +7301,21 @@ async function prepareResumableSourceCycle(sourceUrls) {
   const shardSize = getPositiveIntegerEnv("SOURCE_SHARD_SIZE", 50);
   const configuredSnapshot = buildCycleSnapshot(sourceUrls.map((url) => ({ url })), cycleId);
   const savedSnapshot = await readJson(snapshotPath, null);
-  const sameUniverse = savedSnapshot?.sources?.length === configuredSnapshot.sources.length &&
+  const sameUniverse = savedSnapshot?.universeFingerprint === configuredSnapshot.universeFingerprint &&
+    savedSnapshot?.sources?.length === configuredSnapshot.sources.length &&
     savedSnapshot.sources.every((source, index) => source.sourceId === configuredSnapshot.sources[index]?.sourceId);
-  const snapshot = savedSnapshot && savedSnapshot.cycleId === cycleId && sameUniverse ? savedSnapshot : configuredSnapshot;
-  const state = startOrResumeCycle(await readJson(statePath, createSchedulerState()), snapshot);
+  let snapshot = savedSnapshot && savedSnapshot.cycleId === cycleId && sameUniverse ? savedSnapshot : configuredSnapshot;
+  let state = startOrResumeCycle(await readJson(statePath, createSchedulerState()), snapshot);
+  if (state.activeCycle?.completedSourceIds?.length >= snapshot.sources.length && snapshot.sources.length > 0) {
+    const completedCycles = [...(state.completedCycles || []), {
+      cycleId: state.activeCycle.cycleId,
+      completedAt: state.activeCycle.lastCheckpointAt || new Date().toISOString(),
+      sources: state.activeCycle.completedSourceIds.length
+    }].slice(-12);
+    const nextCycleId = `${cycleId}-${completedCycles.length + 1}`;
+    snapshot = { ...configuredSnapshot, cycleId: nextCycleId, createdAt: new Date().toISOString() };
+    state = startOrResumeCycle({ ...state, completedCycles }, snapshot);
+  }
   state.shardSize = shardSize;
   await writeJsonAtomic(snapshotPath, snapshot);
   await writeJsonAtomic(statePath, state);
@@ -7236,7 +7326,7 @@ async function checkpointResumableSourceShard(context, shard, sourceResults) {
   const outcomes = sourceResults.map((result) => ({
     source: { url: result.source },
     sourceId: shard.sources.find((source) => source.url === result.source)?.sourceId,
-    status: result.error ? (/timed?\s*out|timeout/i.test(result.error) ? "TIMEOUT" : "TRANSPORT_FAILURE") : result.articles.length ? "SUCCESS_NO_CANDIDATE" : "NO_DISCOVERY",
+    status: result.status || (result.error ? (/timed?\s*out|timeout/i.test(result.error) ? "TIMEOUT" : "TRANSPORT_FAILURE") : result.articles.length ? "SUCCESS_NO_CANDIDATE" : "NO_DISCOVERY"),
     failureReason: result.error || ""
   })).filter((outcome) => outcome.sourceId);
   completeShard(context.state, shard, outcomes);
@@ -7322,23 +7412,35 @@ async function main() {
     schedulerLock = await acquireSchedulerLock(path.join(stateDir, "source-monitor.lock"), `${process.pid}-${Date.now()}`, 15 * 60 * 1000);
     if (!schedulerLock.acquired) throw new Error("Resumable source scheduler is already owned by another ingestion worker.");
     resumableContext = await prepareResumableSourceCycle(allSelectedSources);
-    const runtimeBudgetMs = getPositiveIntegerEnv("SOURCE_RUNTIME_BUDGET_MS", 45 * 60 * 1000);
+    const runtimeBudgetMs = getPositiveIntegerEnv("SOURCE_RUNTIME_BUDGET_MS", 42 * 60 * 1000);
     const maxShards = getPositiveIntegerEnv("SOURCE_MAX_SHARDS_PER_RUN", 12);
-    console.log(`Resumable source scheduler enabled: shard size ${resumableContext.shardSize}, runtime budget ${formatDuration(runtimeBudgetMs)}.`);
+    const cleanupReserveMs = getSourceCleanupReserveMs();
+    const fetchDeadlineAt = fetchStartedAt + runtimeBudgetMs;
+    let budgetStopped = false;
+    console.log(`Resumable source scheduler enabled: shard size ${resumableContext.shardSize}, runtime budget ${formatDuration(runtimeBudgetMs)}, cleanup reserve ${formatDuration(cleanupReserveMs)}.`);
     try {
-      while (sourceResults.length < allSelectedSources.length && Date.now() - fetchStartedAt < runtimeBudgetMs) {
+      while (sourceResults.length < allSelectedSources.length && Date.now() < fetchDeadlineAt - cleanupReserveMs) {
         const shard = selectShard(resumableContext.state, resumableContext.snapshot, resumableContext.shardSize);
         if (!shard || sourceResults.length >= maxShards * resumableContext.shardSize) break;
         const batchSources = shard.sources.map((source) => source.url);
-        const batchResults = await fetchSourceBatch(batchSources);
-        await checkpointResumableSourceShard(resumableContext, shard, batchResults);
-        selectedSources.push(...batchSources);
-        sourceResults.push(...batchResults);
+        const batchResults = await fetchSourceBatch(batchSources, { deadlineAt: fetchDeadlineAt });
+        const startedResults = batchResults.filter((result) => result.status !== "BUDGET_EXHAUSTED");
+        await checkpointResumableSourceShard(resumableContext, shard, startedResults);
+        selectedSources.push(...startedResults.map((result) => result.source));
+        sourceResults.push(...startedResults);
+        if (startedResults.length < batchResults.length || Date.now() >= fetchDeadlineAt - cleanupReserveMs) {
+          budgetStopped = true;
+          break;
+        }
       }
     } finally {
+      if (resumableContext?.state) {
+        await writeJsonAtomic(resumableContext.statePath, resumableContext.state);
+      }
       await releaseSchedulerLock(path.join(stateDir, "source-monitor.lock"), schedulerLock.lock.owner);
       schedulerLock = null;
     }
+    if (budgetStopped) console.log("Source scheduler stopped at the hard deadline; checkpoint is resumable.");
   } else {
     console.log(`Fetching ${selectedSources.length} sources with ${getSourceConcurrency()} parallel source workers and ${formatDuration(getSourceTimeoutMs())} max per source.`);
     sourceResults = await fetchSourceBatch(selectedSources);
@@ -7347,9 +7449,11 @@ async function main() {
   const sourceHealth = sourceResults.map((result) => ({
     source: result.source,
     status: result.error ? "failed" : "ok",
+    terminalStatus: result.status || (result.error ? "TRANSPORT_FAILURE" : "SUCCESS_NO_CANDIDATE"),
     count: result.error ? 0 : result.articles.length,
     attempts: result.attempts || 1,
     error: result.error || "",
+    failureClass: result.error ? (result.status || "TRANSPORT_FAILURE") : "",
     fetchedSource: result.fetchedSource || result.source,
     recovered: result.recovered === true
   }));
@@ -7436,6 +7540,19 @@ async function main() {
   }
 
   const runAnalytics = buildRunAnalytics(expandedArticles, articlesToPush, postedArticles, skipTitleSet, filterSentIds, getCachedRejectionReasons);
+  const regionalMetrics = buildRegionalMetrics(expandedArticles, getCachedRejectionReasons);
+  regionalMetrics.configured = allSelectedSources
+    .filter(isRegionalSource)
+    .reduce((counts, source) => {
+      const mode = getRegionalSourceMode(source);
+      counts[mode] = (counts[mode] || 0) + 1;
+      return counts;
+    }, { AUTO_PUBLISH: 0, ACTIVE_FOR_REVIEW: 0, OFF: 0 });
+  regionalMetrics.attempted = sourceResults.filter((result) => isRegionalSource(result.source)).length;
+  regionalMetrics.linksDiscovered = sourceResults
+    .filter((result) => isRegionalSource(result.source))
+    .reduce((sum, result) => sum + (result.articles?.length || 0), 0);
+  regionalMetrics.published = postedArticles.filter((article) => article.trace?.regionalSource === true).length;
 
   console.log(`Filtering phase completed in ${formatDuration(Date.now() - filterStartedAt)}.`);
   console.log(`Found ${uniqueArticles.length} new articles.`);
@@ -7524,6 +7641,18 @@ async function main() {
       pages: reconciliation.pages
     },
     sourceCount: selectedSources.length,
+    scheduler: resumableContext
+      ? {
+          cycleId: resumableContext.state.activeCycle?.cycleId || "",
+          universeFingerprint: resumableContext.snapshot.universeFingerprint,
+          startPosition: resumableContext.state.activeCycle?.cyclePositionStart || 0,
+          endPosition: resumableContext.state.activeCycle?.cyclePositionEnd || resumableContext.state.activeCycle?.completedSourceIds?.length || 0,
+          sourcesAccounted: resumableContext.state.activeCycle?.completedSourceIds?.length || 0,
+          sourcesRemaining: cycleProgress(resumableContext.state, resumableContext.snapshot).remainingThisCycle,
+          cycleCompleted: cycleProgress(resumableContext.state, resumableContext.snapshot).remainingThisCycle === 0,
+          lastCheckpointAt: resumableContext.state.activeCycle?.lastCheckpointAt || null
+        }
+      : null,
     sources: fetchedSources,
     failures: failedSources,
     fetchedArticleCount: allArticles.length,
@@ -7533,6 +7662,7 @@ async function main() {
     needsReviewCount: runAnalytics.needsReviewCount,
     rejectedArticles: runAnalytics.rejectedArticles,
     needsReviewArticles: runAnalytics.needsReviewArticles,
+    regionalMetrics,
     cityBreakdown: runAnalytics.cityBreakdown,
     coverageAlerts: runAnalytics.coverageAlerts,
     candidates: articlesToPush.map((article) => reportArticle(article, { candidate: true, finalState: "CANDIDATE" })),
