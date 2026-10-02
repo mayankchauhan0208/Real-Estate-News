@@ -5,6 +5,56 @@
   "productionPosting": false,
   "records": [
     {
+      "cityCode": "palwal",
+      "city": "Palwal",
+      "result": "KNOWN_SUPPLY_CAPTURED",
+      "language": "English",
+      "source": "HRERA",
+      "url": "https://haryanarera.gov.in/view_project/searchprojectDetail/4136",
+      "evidence": "Official project detail for Pinewood City, Village Prithla Sector 6 Prithla, Palwal; HRERA-PKL-PWL-923-2026; approved 25-Jun-2026 with certificate uploaded.",
+      "expectedPipelineOutcome": "AUTHORITY_DETAIL_AND_CITY_EVIDENCE_REQUIRED"
+    },
+    {
+      "cityCode": "patna",
+      "city": "Patna",
+      "result": "KNOWN_SUPPLY_CAPTURED",
+      "language": "English",
+      "source": "Patna Metropolitan Area Authority",
+      "url": "https://pmaa.bihar.gov.in/",
+      "evidence": "Official current notices for Bihar Building Bylaws 2026 and Patliputra Greenfield Satellite Township special-area property sale/notification.",
+      "expectedPipelineOutcome": "AUTHORITY_DETAIL_AND_CITY_EVIDENCE_REQUIRED"
+    },
+    {
+      "cityCode": "navi_mumbai",
+      "city": "Navi Mumbai",
+      "result": "KNOWN_SUPPLY_CAPTURED",
+      "language": "English",
+      "source": "CIDCO",
+      "url": "https://drs.cidcoindia.com/Account/Login",
+      "evidence": "Official 2026 Demand Registration Scheme instructions for 473 apartments at CBD Belapur, Navi Mumbai.",
+      "expectedPipelineOutcome": "AUTHORITY_DETAIL_AND_CITY_EVIDENCE_REQUIRED"
+    },
+    {
+      "cityCode": "ujjain",
+      "city": "Ujjain",
+      "result": "REVIEW_UNCERTAIN",
+      "language": "English",
+      "source": "Ujjain District Administration",
+      "url": "https://ujjain.nic.in/en/notice/ujjain-property-guideline-2026-27/",
+      "evidence": "Official 2026-27 property guideline notice; property relevance is verified but positive qualifying-news status requires document review.",
+      "expectedPipelineOutcome": "REVIEW_UNTIL_FULL_DOCUMENT_PROOF"
+    },
+    {
+      "cityCode": "ambala",
+      "city": "Ambala",
+      "result": "NO_QUALIFYING_STORY_FOUND_IN_DEFINED_SEARCH",
+      "language": "English",
+      "source": "Haryana Housing Board",
+      "url": "https://hbh.gov.in/Estates/Ambala",
+      "evidence": "Official Ambala surface inspected; accessible inventory is old/static and no current qualifying positive event was verified.",
+      "expectedPipelineOutcome": "NO_AUTOMATIC_PUBLISH"
+    },
+    {
       "cityCode": "new_delhi",
       "city": "New Delhi",
       "result": "VERIFIED_RELEVANT",

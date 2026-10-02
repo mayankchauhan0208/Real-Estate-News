@@ -423,7 +423,12 @@ function classifySourceHealth(row) {
   if (row.contentHealth === "DEGRADED" && !row.publicationDatesExtracted) return "DATE_BROKEN";
   if (row.contentHealth === "DEGRADED") return "EXTRACTION_BROKEN";
   if (row.contentHealth === "HEALTHY" && Number(row.relevantArticles || 0) > 0) return "HEALTHY_PRODUCTIVE";
-  if (["HEALTHY", "LISTING_ONLY", "NOT_SAMPLED"].includes(row.contentHealth)) return "HEALTHY_LOW_YIELD";
+  // A listing-only audit proves transport and page structure, not article
+  // readability. Keep unsampled rows out of the healthy bucket so a 200
+  // response cannot masquerade as a productive discovery surface.
+  if (row.contentHealth === "LISTING_ONLY" && Number(process.env.SOURCE_AUDIT_ARTICLE_SAMPLE || 0) === 0) return "UNKNOWN";
+  if (row.contentHealth === "NOT_SAMPLED") return "UNKNOWN";
+  if (["HEALTHY", "LISTING_ONLY"].includes(row.contentHealth)) return "HEALTHY_LOW_YIELD";
   if (row.contentHealth === "NEEDS_REVIEW") return "UNKNOWN";
   return "UNKNOWN";
 }

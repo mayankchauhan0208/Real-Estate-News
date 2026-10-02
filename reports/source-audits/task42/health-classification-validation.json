@@ -1,0 +1,40 @@
+{
+  "reportType": "TASK42_HEALTH_CLASSIFICATION_VALIDATION",
+  "generatedAt": "2026-10-02T17:03:17.932Z",
+  "localOnly": true,
+  "articleSampling": 0,
+  "oldClassification": {
+    "healthyProductive": 0,
+    "healthyLowYield": 494,
+    "healthyNoCurrent": 0,
+    "stale": 0,
+    "blocked": 2,
+    "timeout": 33,
+    "http404": 12,
+    "http5xx": 3,
+    "extractionBroken": 1,
+    "unknown": 26
+  },
+  "newClassification": {
+    "BLOCKED_403": 2,
+    "EXTRACTION_BROKEN": 1,
+    "HTTP_404": 12,
+    "HTTP_5XX": 3,
+    "TIMEOUT": 31,
+    "UNKNOWN": 522
+  },
+  "evidence": {
+    "transportReachable": 498,
+    "listingOnly": 465,
+    "notSampled": 32,
+    "articleReadableSampled": 0,
+    "duplicateRows": 0
+  },
+  "reclassification": "Old 494 HEALTHY_LOW_YIELD -> new UNKNOWN: listing-only/unsampled responses prove reachability and structure only; they do not prove article readability, valid dates, or usable discovery.",
+  "http200NotHealthy": true,
+  "notes": [
+    "No source was treated as productive from HTTP 200 alone.",
+    "This remains a listing-only inventory; article-level health is still unmeasured for unsampled rows.",
+    "No source configuration or production state was changed."
+  ]
+}

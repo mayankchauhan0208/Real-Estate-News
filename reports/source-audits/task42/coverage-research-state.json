@@ -1,23 +1,18 @@
 {
   "task": "42",
-  "generatedAt": "2026-10-02T16:49:05.378Z",
+  "generatedAt": "2026-10-02T17:02:48.800Z",
   "readOnlyResearchOnly": true,
   "schedulerStateUntouched": true,
   "totals": {
     "cities": 234,
     "zeroCities": 163,
     "lowCoverageCities": 40,
-    "benchmarked": 8,
-    "remaining": 226
+    "benchmarked": 13,
+    "remaining": 221
   },
   "activeBatch": [
     "delhi_ncr",
     "rohtak",
-    "ambala",
-    "palwal",
-    "ujjain",
-    "patna",
-    "navi_mumbai",
     "raigad",
     "jamshedpur",
     "dhanbad",
@@ -28,7 +23,12 @@
     "ajmer",
     "akola",
     "aligarh",
-    "allahabad"
+    "allahabad",
+    "alwar",
+    "amravati",
+    "amritsar",
+    "anand",
+    "anantapur"
   ],
   "cities": [
     {
@@ -144,9 +144,12 @@
       "configuredSources": 3,
       "nativeSources": 0,
       "reraAuthoritySources": 1,
-      "researchStatus": "NOT_BENCHMARKED",
-      "evidence": [],
-      "lastResearchedAt": ""
+      "researchStatus": "BENCHMARKED",
+      "evidence": [
+        "Haryana Housing Board Ambala surface inspected; accessible inventory is old/static and no current qualifying positive event was verified."
+      ],
+      "lastResearchedAt": "2026-10-02T17:01:55.271Z",
+      "researchResult": "NO_QUALIFYING_STORY_FOUND_IN_DEFINED_SEARCH"
     },
     {
       "cityCode": "kurukshetra",
@@ -183,9 +186,12 @@
       "configuredSources": 3,
       "nativeSources": 0,
       "reraAuthoritySources": 1,
-      "researchStatus": "NOT_BENCHMARKED",
-      "evidence": [],
-      "lastResearchedAt": ""
+      "researchStatus": "BENCHMARKED",
+      "evidence": [
+        "HRERA official project detail: Pinewood City, Village Prithla Sector 6 Prithla, Palwal; HRERA-PKL-PWL-923-2026; approved 25-Jun-2026 with certificate uploaded."
+      ],
+      "lastResearchedAt": "2026-10-02T17:01:55.272Z",
+      "researchResult": "KNOWN_SUPPLY_CAPTURED"
     },
     {
       "cityCode": "indore",
@@ -254,9 +260,12 @@
       "configuredSources": 3,
       "nativeSources": 0,
       "reraAuthoritySources": 1,
-      "researchStatus": "NOT_BENCHMARKED",
-      "evidence": [],
-      "lastResearchedAt": ""
+      "researchStatus": "BENCHMARKED",
+      "evidence": [
+        "Official Ujjain district property guideline 2026-27 located; property/valuation relevance is verified, but qualifying positive news status requires document review."
+      ],
+      "lastResearchedAt": "2026-10-02T17:01:55.272Z",
+      "researchResult": "REVIEW_UNCERTAIN"
     },
     {
       "cityCode": "sagar",
@@ -813,9 +822,12 @@
       "configuredSources": 6,
       "nativeSources": 0,
       "reraAuthoritySources": 4,
-      "researchStatus": "NOT_BENCHMARKED",
-      "evidence": [],
-      "lastResearchedAt": ""
+      "researchStatus": "BENCHMARKED",
+      "evidence": [
+        "Official Patna Metropolitan Area Authority notices: Bihar Building Bylaws 2026 draft and Patliputra Greenfield Satellite Township special-area property-sale notification, published 30-Sep-2026."
+      ],
+      "lastResearchedAt": "2026-10-02T17:01:55.272Z",
+      "researchResult": "KNOWN_SUPPLY_CAPTURED"
     },
     {
       "cityCode": "chandigarh",
@@ -2112,9 +2124,12 @@
       "configuredSources": 8,
       "nativeSources": 3,
       "reraAuthoritySources": 4,
-      "researchStatus": "NOT_BENCHMARKED",
-      "evidence": [],
-      "lastResearchedAt": ""
+      "researchStatus": "BENCHMARKED",
+      "evidence": [
+        "CIDCO official 2026 Demand Registration Scheme: 473 apartments at CBD Belapur, Navi Mumbai; official registration/instruction surface inspected."
+      ],
+      "lastResearchedAt": "2026-10-02T17:01:55.272Z",
+      "researchResult": "KNOWN_SUPPLY_CAPTURED"
     },
     {
       "cityCode": "thane",

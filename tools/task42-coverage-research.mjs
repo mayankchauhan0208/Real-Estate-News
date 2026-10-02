@@ -15,9 +15,14 @@ const verifiedProof = new Map([
   ["nashik", { status: "BENCHMARKED", result: "VERIFIED_RELEVANT", evidence: "MHADA Nashik Board lottery/booklet/advertisement surface" }],
   ["kota", { status: "BENCHMARKED", result: "NO_QUALIFYING_STORY_FOUND_IN_DEFINED_SEARCH", evidence: "Official Kota UDH/UIT auction archive inspected; no current qualifying event" }],
   ["warangal", { status: "BENCHMARKED", result: "VERIFIED_RELEVANT", evidence: "Official Telangana Housing Board surface lists Warangal LIG-flat allotment results and Telangana plot/flat events" }],
-  ["coimbatore", { status: "BENCHMARKED", result: "VERIFIED_RELEVANT", evidence: "Dinamalar Tamil regional report for the Coimbatore property expo at Codissia campus" }],
+  ["coimbatore", { status: "BENCHMARKED", result: "REVIEW_UNCERTAIN", evidence: "Dinamalar Tamil property-expo report was located, but a generic expo promotion is not sufficient qualifying development evidence; retained as review-only." }],
   ["jabalpur", { status: "BENCHMARKED", result: "VERIFIED_RELEVANT_REJECT_NEGATIVE", evidence: "Hindi local report about alleged illegal plot allocation/developer misconduct; relevant but adverse" }],
-  ["rajkot", { status: "BENCHMARKED", result: "VERIFIED_RELEVANT_REJECT_NEGATIVE", evidence: "Rajkot real-estate liquidity-crisis report; relevant but adverse and not positive-only publishable" }]
+  ["rajkot", { status: "BENCHMARKED", result: "VERIFIED_RELEVANT_REJECT_NEGATIVE", evidence: "Rajkot real-estate liquidity-crisis report; relevant but adverse and not positive-only publishable" }],
+  ["palwal", { status: "BENCHMARKED", result: "KNOWN_SUPPLY_CAPTURED", evidence: "HRERA official project detail: Pinewood City, Village Prithla Sector 6 Prithla, Palwal; HRERA-PKL-PWL-923-2026; approved 25-Jun-2026 with certificate uploaded." }],
+  ["patna", { status: "BENCHMARKED", result: "KNOWN_SUPPLY_CAPTURED", evidence: "Official Patna Metropolitan Area Authority notices: Bihar Building Bylaws 2026 draft and Patliputra Greenfield Satellite Township special-area property-sale notification, published 30-Sep-2026." }],
+  ["navi_mumbai", { status: "BENCHMARKED", result: "KNOWN_SUPPLY_CAPTURED", evidence: "CIDCO official 2026 Demand Registration Scheme: 473 apartments at CBD Belapur, Navi Mumbai; official registration/instruction surface inspected." }],
+  ["ujjain", { status: "BENCHMARKED", result: "REVIEW_UNCERTAIN", evidence: "Official Ujjain district property guideline 2026-27 located; property/valuation relevance is verified, but qualifying positive news status requires document review." }],
+  ["ambala", { status: "BENCHMARKED", result: "NO_QUALIFYING_STORY_FOUND_IN_DEFINED_SEARCH", evidence: "Haryana Housing Board Ambala surface inspected; accessible inventory is old/static and no current qualifying positive event was verified." }]
 ]);
 
 const inventory = JSON.parse(await fs.readFile(inventoryPath, "utf8"));
