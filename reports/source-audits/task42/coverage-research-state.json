@@ -1,34 +1,34 @@
 {
   "task": "42",
-  "generatedAt": "2026-10-02T16:45:46.637Z",
+  "generatedAt": "2026-10-02T16:49:05.378Z",
   "readOnlyResearchOnly": true,
   "schedulerStateUntouched": true,
   "totals": {
     "cities": 234,
     "zeroCities": 163,
     "lowCoverageCities": 40,
-    "benchmarked": 4,
-    "remaining": 230
+    "benchmarked": 8,
+    "remaining": 226
   },
   "activeBatch": [
     "delhi_ncr",
     "rohtak",
     "ambala",
     "palwal",
-    "jabalpur",
     "ujjain",
     "patna",
     "navi_mumbai",
-    "coimbatore",
-    "warangal",
-    "rajkot",
     "raigad",
     "jamshedpur",
     "dhanbad",
     "agartala",
     "agra",
     "ahmedabad",
-    "ahmednagar"
+    "ahmednagar",
+    "ajmer",
+    "akola",
+    "aligarh",
+    "allahabad"
   ],
   "cities": [
     {
@@ -238,9 +238,12 @@
       "configuredSources": 3,
       "nativeSources": 0,
       "reraAuthoritySources": 1,
-      "researchStatus": "NOT_BENCHMARKED",
-      "evidence": [],
-      "lastResearchedAt": ""
+      "researchStatus": "BENCHMARKED",
+      "evidence": [
+        "Hindi local report about alleged illegal plot allocation/developer misconduct; relevant but adverse"
+      ],
+      "lastResearchedAt": "2026-10-02T16:49:05.370Z",
+      "researchResult": "VERIFIED_RELEVANT_REJECT_NEGATIVE"
     },
     {
       "cityCode": "ujjain",
@@ -1190,9 +1193,12 @@
       "configuredSources": 4,
       "nativeSources": 0,
       "reraAuthoritySources": 1,
-      "researchStatus": "NOT_BENCHMARKED",
-      "evidence": [],
-      "lastResearchedAt": ""
+      "researchStatus": "BENCHMARKED",
+      "evidence": [
+        "Rajkot real-estate liquidity-crisis report; relevant but adverse and not positive-only publishable"
+      ],
+      "lastResearchedAt": "2026-10-02T16:49:05.371Z",
+      "researchResult": "VERIFIED_RELEVANT_REJECT_NEGATIVE"
     },
     {
       "cityCode": "sabarkantha",
@@ -1645,9 +1651,12 @@
       "configuredSources": 9,
       "nativeSources": 1,
       "reraAuthoritySources": 1,
-      "researchStatus": "NOT_BENCHMARKED",
-      "evidence": [],
-      "lastResearchedAt": ""
+      "researchStatus": "BENCHMARKED",
+      "evidence": [
+        "Dinamalar Tamil regional report for the Coimbatore property expo at Codissia campus"
+      ],
+      "lastResearchedAt": "2026-10-02T16:49:05.371Z",
+      "researchResult": "VERIFIED_RELEVANT"
     },
     {
       "cityCode": "tiruchirappalli",
@@ -1892,9 +1901,12 @@
       "configuredSources": 9,
       "nativeSources": 0,
       "reraAuthoritySources": 8,
-      "researchStatus": "NOT_BENCHMARKED",
-      "evidence": [],
-      "lastResearchedAt": ""
+      "researchStatus": "BENCHMARKED",
+      "evidence": [
+        "Official Telangana Housing Board surface lists Warangal LIG-flat allotment results and Telangana plot/flat events"
+      ],
+      "lastResearchedAt": "2026-10-02T16:49:05.371Z",
+      "researchResult": "VERIFIED_RELEVANT"
     },
     {
       "cityCode": "nizamabad",

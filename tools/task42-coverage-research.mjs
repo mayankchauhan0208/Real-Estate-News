@@ -13,7 +13,11 @@ const verifiedProof = new Map([
   ["new_delhi", { status: "BENCHMARKED", result: "VERIFIED_RELEVANT", evidence: "DDA housing circular register and direct official document proof" }],
   ["indore", { status: "BENCHMARKED", result: "VERIFIED_RELEVANT", evidence: "IDA scheme register with dated bilingual residential property rows" }],
   ["nashik", { status: "BENCHMARKED", result: "VERIFIED_RELEVANT", evidence: "MHADA Nashik Board lottery/booklet/advertisement surface" }],
-  ["kota", { status: "BENCHMARKED", result: "NO_QUALIFYING_STORY_FOUND_IN_DEFINED_SEARCH", evidence: "Official Kota UDH/UIT auction archive inspected; no current qualifying event" }]
+  ["kota", { status: "BENCHMARKED", result: "NO_QUALIFYING_STORY_FOUND_IN_DEFINED_SEARCH", evidence: "Official Kota UDH/UIT auction archive inspected; no current qualifying event" }],
+  ["warangal", { status: "BENCHMARKED", result: "VERIFIED_RELEVANT", evidence: "Official Telangana Housing Board surface lists Warangal LIG-flat allotment results and Telangana plot/flat events" }],
+  ["coimbatore", { status: "BENCHMARKED", result: "VERIFIED_RELEVANT", evidence: "Dinamalar Tamil regional report for the Coimbatore property expo at Codissia campus" }],
+  ["jabalpur", { status: "BENCHMARKED", result: "VERIFIED_RELEVANT_REJECT_NEGATIVE", evidence: "Hindi local report about alleged illegal plot allocation/developer misconduct; relevant but adverse" }],
+  ["rajkot", { status: "BENCHMARKED", result: "VERIFIED_RELEVANT_REJECT_NEGATIVE", evidence: "Rajkot real-estate liquidity-crisis report; relevant but adverse and not positive-only publishable" }]
 ]);
 
 const inventory = JSON.parse(await fs.readFile(inventoryPath, "utf8"));
