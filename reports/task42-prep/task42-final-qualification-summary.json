@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-03T16:15:20.317Z",
+  "localOnly": true,
+  "startSha": "830cc31",
+  "finalSha": "9657f04",
+  "originMain": "cf383b0",
+  "sourceUniverse": {
+    "selected": 571,
+    "accounted": 571,
+    "remaining": 0,
+    "cycleCompleted": true,
+    "universeFingerprint": "63ec259303992b9b8d1c86078b26602654a46805ba05588446f3b113256c92c2",
+    "terminalStateDistribution": {
+      "TIMEOUT": 236,
+      "SUCCESS_PRODUCTIVE": 283,
+      "SUCCESS_NO_CANDIDATE": 44,
+      "TRANSPORT_FAILURE": 8
+    }
+  },
+  "contentFunnel": {
+    "sourceReturnedArticleRecords": 283,
+    "expandedCurrentWindowRecords": 110,
+    "discovered": 110,
+    "fullArticles": 69,
+    "dateValid": 110,
+    "fresh": 110,
+    "relevant": 107,
+    "propertyNexus": 0,
+    "geoValid": 13,
+    "wouldPublish": 2,
+    "review": 14,
+    "reject": 108,
+    "published": 0,
+    "duplicate": 0
+  },
+  "performance": {
+    "wallClockMs": 1379105,
+    "wallClockMinutes": 22.99,
+    "sourcesPerMinute": 24.84,
+    "articlesPerMinute": 12.31,
+    "readableArticlesPerMinute": 3,
+    "timeoutRate": 0.4133,
+    "failureRate": 0.4273,
+    "familyStarvation": false
+  },
+  "familyStats": {
+    "GENERAL_MEDIA": {
+      "selected": 180,
+      "accounted": 180,
+      "success": 92,
+      "timeout": 80,
+      "productive": 78,
+      "noCurrent": 14,
+      "noDiscovery": 0,
+      "extractionFailed": 0,
+      "httpBlocked": 0,
+      "externalBlocked": 0,
+      "otherFailed": 8
+    },
+    "REGIONAL": {
+      "selected": 85,
+      "accounted": 85,
+      "success": 62,
+      "timeout": 23,
+      "productive": 60,
+      "noCurrent": 2,
+      "noDiscovery": 0,
+      "extractionFailed": 0,
+      "httpBlocked": 0,
+      "externalBlocked": 0,
+      "otherFailed": 0
+    },
+    "RERA_AUTHORITY": {
+      "selected": 132,
+      "accounted": 132,
+      "success": 59,
+      "timeout": 73,
+      "productive": 44,
+      "noCurrent": 15,
+      "noDiscovery": 0,
+      "extractionFailed": 0,
+      "httpBlocked": 0,
+      "externalBlocked": 0,
+      "otherFailed": 0
+    },
+    "BUILDER": {
+      "selected": 174,
+      "accounted": 174,
+      "success": 114,
+      "timeout": 60,
+      "productive": 101,
+      "noCurrent": 13,
+      "noDiscovery": 0,
+      "extractionFailed": 0,
+      "httpBlocked": 0,
+      "externalBlocked": 0,
+      "otherFailed": 0
+    }
+  },
+  "runReports": [
+    "news-run-2026-10-03T15-44-58-854Z.json",
+    "news-run-2026-10-03T16-06-39-256Z.json",
+    "news-run-2026-10-03T16-07-15-399Z.json",
+    "news-run-2026-10-03T16-07-45-692Z.json"
+  ],
+  "note": "Family labels are configuration/URL classifications; all 571 sources were terminally accounted in one resumable cycle. Content funnel is the final complete-cycle run report, while sourceReturnedArticleRecords is the full persisted-cycle count."
+}
