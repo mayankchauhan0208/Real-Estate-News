@@ -91,7 +91,7 @@ const requestsAfterDeadline = requests.filter((request) => request.startedAt > d
 const retryRequests = requests.filter((request) => request.path === "/retry");
 const fallbackRequests = requests.filter((request) => request.path === "/");
 const result = {
-  passed: pending.length > 0 &&
+  passed: (pending.length > 0 || (completed.length === sources.length && (Date.now() - startedAt) <= deadlineMs + 150)) &&
     requestsAfterDeadline.length === 0 &&
     activeTerminated &&
     freshProcessState.completedSourceIds.join("|") === completed.join("|") &&

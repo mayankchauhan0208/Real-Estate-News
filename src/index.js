@@ -8303,8 +8303,20 @@ async function fetchSourceBatch(sourceList, options = {}) {
       });
       return recordResult(source, { source, status: "BUDGET_EXHAUSTED", error: "source budget exhausted before attempt", attempts: 0 });
     }
+    // Bound the entire recovery/retry chain, not just each individual
+    // network attempt. A source with several aliases must not consume the
+    // runtime budget through repeated 90-second attempts.
+    const sourceDeadlineAt = Math.min(
+      options.deadlineAt || Number.POSITIVE_INFINITY,
+      sourceStartedAt + getSourceTimeoutMs()
+    );
     try {
-      const result = await fetchSourceWithRecovery(source, { ...options, sourceUrl: source });
+      const sourceOptions = {
+        ...options,
+        sourceUrl: source,
+        deadlineAt: sourceDeadlineAt
+      };
+      const result = await fetchSourceWithRecovery(source, sourceOptions);
       const sourceCityCodes = getConfiguredSourceCityCodes(source);
       const articles = result.articles.map((article) => ({
         ...article,
@@ -8351,7 +8363,9 @@ async function fetchSourceBatch(sourceList, options = {}) {
       return recordResult(source, { source, status: articles.length ? "SUCCESS_PRODUCTIVE" : "SUCCESS_NO_CANDIDATE", articles, attempts: result.attempts, fetchedSource: result.fetchedSource, recovered: result.recovered });
     } catch (error) {
       const elapsedMs = Date.now() - sourceStartedAt;
-      const timeout = error?.sourceStatus === "BUDGET_EXHAUSTED" || /timed?\s*out|timeout|deadline|aborted/i.test(error.message || "");
+      const sourceDeadlineExpired = sourceDeadlineAt <= Date.now() &&
+        (!options.deadlineAt || sourceDeadlineAt < options.deadlineAt);
+      const timeout = error?.sourceStatus === "BUDGET_EXHAUSTED" || sourceDeadlineExpired || /timed?\s*out|timeout|deadline|aborted/i.test(error.message || "");
       await telemetry?.emit(timeout ? "SOURCE_TIMEOUT" : "SOURCE_FAIL", {
         sourceId,
         sourceUrl: source,
@@ -8359,12 +8373,19 @@ async function fetchSourceBatch(sourceList, options = {}) {
         status: timeout ? "TIMEOUT_ACCOUNTED" : "FAILED_ACCOUNTED",
         stage: "fetch",
         elapsedMs,
-        timeoutType: timeout ? (error?.sourceStatus === "BUDGET_EXHAUSTED" ? "batch-deadline" : "source-timeout") : undefined,
+        timeoutType: timeout ? (options.signal?.aborted || (options.deadlineAt && sourceDeadlineAt >= options.deadlineAt)
+          ? "batch-deadline"
+          : "source-timeout") : undefined,
         error: error.message,
         failureClass: error.sourceStatus || "TRANSPORT_FAILURE"
       });
       console.error(`Failed to fetch ${source}: ${error.message}`);
-      return recordResult(source, { source, status: error.sourceStatus || (/timed?\s*out|timeout/i.test(error.message) ? "TIMEOUT" : "TRANSPORT_FAILURE"), error: error.message, attempts: error.sourceAttempts || getSourceRetryAttempts() });
+      return recordResult(source, {
+        source,
+        status: timeout ? "TIMEOUT" : (error.sourceStatus || "TRANSPORT_FAILURE"),
+        error: error.message,
+        attempts: error.sourceAttempts || getSourceRetryAttempts()
+      });
     }
   });
 
