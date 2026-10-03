@@ -2542,7 +2542,6 @@ function logMissedNewsAudit(missedCandidates, limit = 20) {
 function getArticleFinalState(article, reasons = [], context = {}) {
   if (context.finalState) return context.finalState;
   if (context.publishError) return "PUBLISH_FAILED";
-  if (reasons.some((reason) => reason.startsWith("review:"))) return "REVIEW";
   if (reasons.some((reason) => reason.includes("duplicate") || reason.includes("already reposted"))) return "DUPLICATE";
   if (reasons.some((reason) => reason.includes("no allowed city"))) return "CITY_UNMAPPED";
   if (reasons.some((reason) => reason.includes("outside-city"))) return "OUTSIDE_CITY";
@@ -2551,6 +2550,8 @@ function getArticleFinalState(article, reasons = [], context = {}) {
   if (reasons.some((reason) => reason.includes("no specific project"))) return "REJECTED_NO_PROJECT_SIGNAL";
   if (reasons.some((reason) => reason.includes("not positive"))) return "REJECTED_RELEVANCE";
   if (article.articleReadAttempted && article.fullArticleRead !== true && article.articleReadError) return "ARTICLE_EXTRACTION_FAILED";
+  if (reasons.some((reason) => reason.startsWith("filter "))) return "REJECTED";
+  if (reasons.some((reason) => reason.startsWith("review:"))) return "REVIEW";
   return context.candidate ? "CANDIDATE" : "REVIEW";
 }
 

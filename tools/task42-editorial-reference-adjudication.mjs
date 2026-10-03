@@ -1,9 +1,11 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { execFileSync } from "node:child_process";
 
 const root = process.cwd();
 const evaluation = JSON.parse(await readFile(path.join(root, "reports/task42-prep/task42-recovered-canonical-evaluation.json"), "utf8"));
 const ledger = JSON.parse(await readFile(path.join(root, "reports/task42-prep/task42-acquisition-ledger.json"), "utf8"));
+const frozenReference = JSON.parse(execFileSync("git", ["show", "d77b779:reports/task42-prep/task42-editorial-reference/editorial-reference.json"], { encoding: "utf8" }));
 const articleByKey = new Map();
 for (const source of ledger.records || []) {
   for (const article of source.articles || []) {
@@ -45,37 +47,37 @@ function adjudicate(record, article) {
 }
 
 const rows = (evaluation.records || [])
-  .filter((record) => record.decision === "WOULD_PUBLISH" || record.decision === "REVIEW")
-  .sort((a, b) => `${a.source_id}|${a.title}|${a.newsLink}`.localeCompare(`${b.source_id}|${b.title}|${b.newsLink}`))
-  .map((record, index) => {
+  .sort((a, b) => `${a.source_id}|${a.title}|${a.newsLink}`.localeCompare(`${b.source_id}|${b.title}|${b.newsLink}`));
+const currentByKey = new Map(rows.map((record) => [`${record.source_id}|${record.title || ""}|${record.newsLink || ""}`, record]));
+const currentByTitleUrl = new Map(rows.map((record) => [`${record.title || ""}|${record.newsLink || ""}`, record]));
+const referenceRows = frozenReference.rows.map((reference, index) => {
+    const record = currentByKey.get(`${reference.source_id || ""}|${reference.title || ""}|${reference.url || reference.newsLink || ""}`) || currentByTitleUrl.get(`${reference.title || ""}|${reference.url || reference.newsLink || ""}`) || {};
     const match = articleByKey.get(`${record.source_id}|${record.title || ""}|${record.newsLink || ""}`) || {};
     const article = match.article || {};
-    const adjudication = adjudicate(record, article);
     return {
-      record_id: `task42-ref-${String(index + 1).padStart(4, "0")}`,
-      source: match.source?.source_url || record.source_url || "",
-      title: record.title || "",
-      url: record.newsLink || "",
-      published_date: record.publishedAt || article.publishedAt || "",
-      original_engine_decision: record.decision,
-      post_fix_engine_decision: record.decision,
-      editorial_reference_decision: adjudication.decision,
-      editorial_reference_city: record.cityCode || "",
-      editorial_reference_event_class: eventClass(textOf(article)),
-      editorial_reference_property_nexus: record.propertyNexus ? "YES" : "NO",
-      editorial_reference_reason: adjudication.reason,
-      editorial_reference_confidence: adjudication.confidence,
-      original_reasons: (record.reasons || []).join("; ")
+      ...reference,
+      record_id: reference.record_id || `task42-ref-${String(index + 1).padStart(4, "0")}`,
+      original_engine_decision: reference.original_engine_decision || reference.CURRENT_FINAL_STATE || "REVIEW",
+      post_fix_engine_decision: record.decision || "UNKNOWN",
+      post_fix_reasons: (record.reasons || []).join("; "),
+      source: reference.source || match.source?.source_url || record.source_url || "",
+      title: reference.title || record.title || "",
+      url: reference.url || record.newsLink || "",
+      published_date: reference.published_date || record.publishedAt || article.publishedAt || "",
+      editorial_reference_city: reference.editorial_reference_city || record.cityCode || "",
+      editorial_reference_event_class: reference.editorial_reference_event_class || eventClass(textOf(article)),
+      editorial_reference_property_nexus: reference.editorial_reference_property_nexus || (record.propertyNexus ? "YES" : "NO")
     };
   });
 
-const distribution = rows.reduce((counts, row) => { counts[row.editorial_reference_decision] = (counts[row.editorial_reference_decision] || 0) + 1; return counts; }, {});
-const originalReviewBreakdown = rows.filter((row) => row.original_engine_decision === "REVIEW").reduce((counts, row) => { const key = row.editorial_reference_decision === "PUBLISH" ? "SHOULD_PUBLISH" : row.editorial_reference_decision === "REJECT_NEGATIVE" ? "SHOULD_REJECT_NEGATIVE" : row.editorial_reference_decision === "REJECT_OFFTOPIC" ? "SHOULD_REJECT_OFFTOPIC" : row.editorial_reference_decision === "REJECT_INSUFFICIENT" ? "SHOULD_REJECT_INSUFFICIENT" : "CORRECT_REVIEW"; counts[key] = (counts[key] || 0) + 1; return counts; }, {});
-const report = { generatedAt: new Date().toISOString(), corpus: rows.length, distribution, originalReviewBreakdown, note: "Codex editorial-reference adjudication only. These are not independent human labels and must not be used as measured precision or recall." };
+const distribution = referenceRows.reduce((counts, row) => { counts[row.editorial_reference_decision] = (counts[row.editorial_reference_decision] || 0) + 1; return counts; }, {});
+const originalReviewBreakdown = referenceRows.filter((row) => row.original_engine_decision === "REVIEW").reduce((counts, row) => { const key = row.editorial_reference_decision === "PUBLISH" ? "SHOULD_PUBLISH" : row.editorial_reference_decision === "REJECT_NEGATIVE" ? "SHOULD_REJECT_NEGATIVE" : row.editorial_reference_decision === "REJECT_OFFTOPIC" ? "SHOULD_REJECT_OFFTOPIC" : row.editorial_reference_decision === "REJECT_INSUFFICIENT" ? "SHOULD_REJECT_INSUFFICIENT" : "CORRECT_REVIEW"; counts[key] = (counts[key] || 0) + 1; return counts; }, {});
+const postFixDistribution = referenceRows.reduce((counts, row) => { counts[row.post_fix_engine_decision] = (counts[row.post_fix_engine_decision] || 0) + 1; return counts; }, {});
+const report = { generatedAt: new Date().toISOString(), corpus: referenceRows.length, distribution, originalReviewBreakdown, postFixDistribution, note: "Frozen Codex editorial-reference adjudication compared with the corrected canonical engine. These are not independent human labels and must not be used as measured precision or recall." };
 const outDir = path.join(root, "reports/task42-prep/task42-editorial-reference");
 await mkdir(outDir, { recursive: true });
-await writeFile(path.join(outDir, "editorial-reference.json"), `${JSON.stringify({ report, rows }, null, 2)}\n`);
-const columns = Object.keys(rows[0] || {});
+await writeFile(path.join(outDir, "editorial-reference.json"), `${JSON.stringify({ report, rows: referenceRows }, null, 2)}\n`);
+const columns = Object.keys(referenceRows[0] || {});
 const csvCell = (value) => `"${String(value ?? "").replaceAll('"', '""')}"`;
-await writeFile(path.join(outDir, "editorial-reference.csv"), `${columns.join(",")}\n${rows.map((row) => columns.map((column) => csvCell(row[column])).join(",")).join("\n")}\n`);
+await writeFile(path.join(outDir, "editorial-reference.csv"), `${columns.join(",")}\n${referenceRows.map((row) => columns.map((column) => csvCell(row[column])).join(",")).join("\n")}\n`);
 console.log(JSON.stringify(report, null, 2));

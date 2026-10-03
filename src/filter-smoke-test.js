@@ -2222,6 +2222,30 @@ const authoritativeSnippetOnlyArticle = publishable({
 assert.equal(isPublishableArticle(authoritativeSnippetOnlyArticle, sentIds), false);
 assert.ok(getRejectionReasons(authoritativeSnippetOnlyArticle, sentIds).some((reason) => /FULL_ARTICLE|SNIPPET|INSUFFICIENT/i.test(reason)));
 
+const hardFilterBeforeReviewArticle = article({
+  cityCode: "faridabad",
+  title: "Faridabad buyer dispute delays housing project while article remains unreadable",
+  description: "Homebuyers complain about a stalled project and the detail page is unavailable.",
+  articleText: "",
+  articleReadAttempted: true,
+  fullArticleRead: false,
+  articleReadError: "detail timeout",
+  newsLink: "https://example.com/faridabad/stalled-buyer-dispute"
+});
+const hardFilterBeforeReviewReasons = getRejectionReasons(hardFilterBeforeReviewArticle, sentIds);
+assert.equal(getArticleFinalState(hardFilterBeforeReviewArticle, hardFilterBeforeReviewReasons), "REJECTED_NEGATIVE");
+
+const reviewOnlyArticle = publishable({
+  articleReadAttempted: false,
+  fullArticleRead: false,
+  title: "Dwarka Expressway luxury housing project launched in Gurugram",
+  description: "A developer launched a residential project on Dwarka Expressway with improved connectivity and infrastructure.",
+  articleText: "The Gurugram project includes housing, connectivity, infrastructure upgrades, and residential development.",
+  newsLink: "https://example.com/gurugram/review-only-project"
+});
+const reviewOnlyReasons = getRejectionReasons(reviewOnlyArticle, sentIds);
+assert.equal(getArticleFinalState(reviewOnlyArticle, reviewOnlyReasons), "REVIEW");
+
 const gurugramSprArticle = publishable({
   cityCode: "new_delhi",
   sourceCityCodes: ["new_delhi"],

@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-10-03T14:15:56.978Z",
+    "generatedAt": "2026-10-03T14:25:59.593Z",
     "acquisitionSources": 134,
     "normalizedRecords": 388,
     "funnel": {
@@ -13,25 +13,45 @@
       "geoValid": 80,
       "dedupePass": 388,
       "wouldPublish": 2,
-      "review": 345,
-      "reject": 41
+      "review": 47,
+      "reject": 339
     },
     "decisions": {
-      "REVIEW": 345,
-      "REJECT": 41,
+      "REJECT": 339,
+      "REVIEW": 47,
       "WOULD_PUBLISH": 2
     },
     "topRejectReasons": {
-      "filter 8: outside-city conflict": 18,
-      "filter 7: outside region in title/description": 15,
-      "filter 9: no specific project/development signal": 7,
-      "filter 5: no allowed city match": 4,
-      "filter 6: target region missing or weak": 2,
-      "filter 4: not positive target real-estate/project news": 2,
-      "filter 1: spam/menu page": 2,
-      "filter 3: negative/crime/utility concern news": 2,
-      "filter 15: direct media/PDF link, not article page": 1,
-      "filter 2: unsupported language/script": 1
+      "filter 5: no allowed city match": 308,
+      "filter 4: not positive target real-estate/project news": 249,
+      "filter 3: negative/crime/utility concern news": 101,
+      "filter 8: outside-city conflict": 93,
+      "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)": 74,
+      "filter 7: outside region in title/description": 71,
+      "review: ambiguous multi-city geo evidence": 57,
+      "filter 1: spam/menu page": 43,
+      "filter 9: no specific project/development signal": 37,
+      "filter 15: direct media/PDF link, not article page": 22,
+      "filter 17: local quality judge rejected article (weak city evidence, score 48)": 16,
+      "review: INSUFFICIENT_ARTICLE_EVIDENCE": 14,
+      "filter 17: local quality judge rejected article (weak city evidence, score 59)": 14,
+      "filter 17: local quality judge rejected article (weak city evidence, score 136)": 14,
+      "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 2)": 10,
+      "filter 17: local quality judge rejected article (weak city evidence, score 14)": 9,
+      "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 6)": 8,
+      "filter 17: local quality judge rejected article (weak city evidence, score 12)": 7,
+      "filter 17: local quality judge rejected article (weak city evidence, score 8)": 7,
+      "POSITIVE_INFRASTRUCTURE_WITHOUT_SUFFICIENT_REAL_ESTATE_NEXUS": 7,
+      "filter 17: local quality judge rejected article (weak city evidence, score 10)": 7,
+      "filter 2: unsupported language/script": 7,
+      "filter 17: local quality judge rejected article (weak city evidence, score 4)": 7,
+      "filter 17: local quality judge rejected article (weak city evidence, score 16)": 6,
+      "filter 17: local quality judge rejected article (weak city evidence, score 32)": 5,
+      "filter 17: local quality judge rejected article (weak city evidence, score 28)": 5,
+      "review: FULL_ARTICLE_UNAVAILABLE": 5,
+      "filter 17: local quality judge rejected article (weak city evidence, score 20)": 5,
+      "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score -3)": 5,
+      "filter 17: local quality judge rejected article (weak city evidence, score 6)": 5
     },
     "note": "Canonical evaluation only. No source fetch, production API, backfill, or sent-news mutation was performed."
   },
@@ -51,7 +71,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -73,7 +93,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -95,7 +115,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -117,7 +137,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -140,7 +160,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -164,7 +184,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -186,7 +206,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": []
     },
     {
@@ -244,7 +264,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -268,7 +288,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -291,7 +311,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -315,7 +335,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -337,7 +357,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -359,7 +379,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -382,7 +402,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -404,7 +424,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -427,7 +447,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -449,7 +469,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -472,7 +492,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -494,7 +514,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -520,7 +540,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -542,7 +562,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 5: no allowed city match",
         "filter 17: local quality judge rejected article (weak city evidence, score 28)"
@@ -563,7 +583,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 5: no allowed city match",
         "filter 8: outside-city conflict",
@@ -585,7 +605,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -608,7 +628,7 @@
       "propertyNexus": false,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "review: ambiguous multi-city geo evidence",
         "filter 9: no specific project/development signal"
@@ -671,7 +691,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -695,7 +715,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -720,7 +740,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "review: FULL_ARTICLE_UNAVAILABLE",
@@ -743,7 +763,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "review: FULL_ARTICLE_UNAVAILABLE",
@@ -765,7 +785,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "review: FULL_ARTICLE_UNAVAILABLE",
@@ -788,7 +808,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "review: FULL_ARTICLE_UNAVAILABLE",
         "filter 5: no allowed city match",
@@ -810,7 +830,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "review: FULL_ARTICLE_UNAVAILABLE",
         "filter 5: no allowed city match",
@@ -833,7 +853,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -855,7 +875,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -879,7 +899,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -921,7 +941,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "POSITIVE_INFRASTRUCTURE_WITHOUT_SUFFICIENT_REAL_ESTATE_NEXUS",
         "review: INSUFFICIENT_ARTICLE_EVIDENCE",
@@ -944,7 +964,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "review: INSUFFICIENT_ARTICLE_EVIDENCE",
         "filter 7: outside region in title/description",
@@ -986,7 +1006,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -1012,7 +1032,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -1038,7 +1058,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -1064,7 +1084,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -1088,7 +1108,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": []
     },
     {
@@ -1106,7 +1126,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -1128,7 +1148,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "POSITIVE_INFRASTRUCTURE_WITHOUT_SUFFICIENT_REAL_ESTATE_NEXUS",
         "filter 1: spam/menu page",
@@ -1152,7 +1172,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": []
     },
     {
@@ -1170,7 +1190,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -1192,7 +1212,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": []
     },
     {
@@ -1210,7 +1230,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": []
     },
     {
@@ -1248,7 +1268,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": []
     },
     {
@@ -1266,7 +1286,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "POSITIVE_INFRASTRUCTURE_WITHOUT_SUFFICIENT_REAL_ESTATE_NEXUS",
         "filter 5: no allowed city match",
@@ -1308,7 +1328,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "POSITIVE_INFRASTRUCTURE_WITHOUT_SUFFICIENT_REAL_ESTATE_NEXUS",
         "filter 3: negative/crime/utility concern news",
@@ -1395,7 +1415,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -1418,7 +1438,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -1443,7 +1463,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -1466,7 +1486,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -1488,7 +1508,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -1510,7 +1530,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": []
     },
     {
@@ -1548,7 +1568,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -1570,7 +1590,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": []
     },
     {
@@ -1588,7 +1608,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "filter 4: not positive target real-estate/project news",
@@ -1611,7 +1631,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -1633,7 +1653,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -1655,7 +1675,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -1678,7 +1698,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -1701,7 +1721,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -1724,7 +1744,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -1747,7 +1767,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -1770,7 +1790,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -1793,7 +1813,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -1817,7 +1837,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -1842,7 +1862,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -1866,7 +1886,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -1889,7 +1909,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -1913,7 +1933,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -1937,7 +1957,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -1962,7 +1982,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -1987,7 +2007,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -2013,7 +2033,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -2038,7 +2058,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -2063,7 +2083,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -2087,7 +2107,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -2112,7 +2132,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -2136,7 +2156,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -2160,7 +2180,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -2184,7 +2204,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -2209,7 +2229,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -2233,7 +2253,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -2255,7 +2275,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "review: INSUFFICIENT_ARTICLE_EVIDENCE",
@@ -2278,7 +2298,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -2300,7 +2320,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "review: INSUFFICIENT_ARTICLE_EVIDENCE",
@@ -2324,7 +2344,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -2506,7 +2526,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -2531,7 +2551,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -2556,7 +2576,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -2581,7 +2601,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": []
     },
     {
@@ -2599,7 +2619,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -2621,7 +2641,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -2644,7 +2664,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -2666,7 +2686,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -2688,7 +2708,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 8: outside-city conflict",
         "review: ambiguous multi-city geo evidence"
@@ -2769,7 +2789,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -2811,7 +2831,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -2833,7 +2853,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -2856,7 +2876,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -2878,7 +2898,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -2901,7 +2921,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -2924,7 +2944,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -2947,7 +2967,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -2970,7 +2990,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -2993,7 +3013,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -3016,7 +3036,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3039,7 +3059,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3062,7 +3082,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -3085,7 +3105,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3108,7 +3128,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3131,7 +3151,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -3154,7 +3174,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3177,7 +3197,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3200,7 +3220,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -3223,7 +3243,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3246,7 +3266,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3269,7 +3289,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -3292,7 +3312,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3315,7 +3335,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3338,7 +3358,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -3361,7 +3381,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3384,7 +3404,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3407,7 +3427,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -3430,7 +3450,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3453,7 +3473,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3476,7 +3496,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -3499,7 +3519,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3522,7 +3542,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3545,7 +3565,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -3568,7 +3588,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3591,7 +3611,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3614,7 +3634,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -3637,7 +3657,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3660,7 +3680,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -3683,7 +3703,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -3706,7 +3726,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -3729,7 +3749,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -3753,7 +3773,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -3778,7 +3798,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -3800,7 +3820,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "filter 4: not positive target real-estate/project news",
@@ -3823,7 +3843,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -3868,7 +3888,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "filter 4: not positive target real-estate/project news",
@@ -3891,7 +3911,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -3913,7 +3933,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -3938,7 +3958,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -3964,7 +3984,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -3988,7 +4008,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -4014,7 +4034,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -4040,7 +4060,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -4062,7 +4082,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -4086,7 +4106,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -4110,7 +4130,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -4134,7 +4154,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -4156,7 +4176,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -4179,7 +4199,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -4204,7 +4224,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -4227,7 +4247,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -4250,7 +4270,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -4273,7 +4293,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -4297,7 +4317,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -4320,7 +4340,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -4343,7 +4363,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": []
     },
     {
@@ -4403,7 +4423,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -4428,7 +4448,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -4452,7 +4472,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -4476,7 +4496,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -4501,7 +4521,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -4525,7 +4545,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "review: INSUFFICIENT_ARTICLE_EVIDENCE",
@@ -4550,7 +4570,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -4574,7 +4594,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -4597,7 +4617,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -4619,7 +4639,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -4641,7 +4661,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "review: INSUFFICIENT_ARTICLE_EVIDENCE",
@@ -4666,7 +4686,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "review: INSUFFICIENT_ARTICLE_EVIDENCE",
@@ -4689,7 +4709,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -4712,7 +4732,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -4734,7 +4754,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -4760,7 +4780,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -4784,7 +4804,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "review: INSUFFICIENT_ARTICLE_EVIDENCE",
@@ -4807,7 +4827,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -4829,7 +4849,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -4852,7 +4872,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -4875,7 +4895,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -4897,7 +4917,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -4920,7 +4940,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -4943,7 +4963,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -4967,7 +4987,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -4989,7 +5009,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5011,7 +5031,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -5034,7 +5054,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -5057,7 +5077,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5079,7 +5099,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5101,7 +5121,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -5124,7 +5144,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 6: target region missing or weak",
         "review: ambiguous multi-city geo evidence"
@@ -5145,7 +5165,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "review: INSUFFICIENT_ARTICLE_EVIDENCE",
@@ -5168,7 +5188,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "review: INSUFFICIENT_ARTICLE_EVIDENCE",
@@ -5191,7 +5211,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5214,7 +5234,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5237,7 +5257,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 7: outside region in title/description",
         "filter 8: outside-city conflict",
@@ -5259,7 +5279,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5282,7 +5302,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5305,7 +5325,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 7: outside region in title/description",
         "filter 8: outside-city conflict",
@@ -5327,7 +5347,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "POSITIVE_INFRASTRUCTURE_WITHOUT_SUFFICIENT_REAL_ESTATE_NEXUS",
         "review: INSUFFICIENT_ARTICLE_EVIDENCE",
@@ -5350,7 +5370,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -5373,7 +5393,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -5397,7 +5417,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -5420,7 +5440,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5442,7 +5462,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "review: INSUFFICIENT_ARTICLE_EVIDENCE",
@@ -5465,7 +5485,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5509,7 +5529,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5532,7 +5552,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5554,7 +5574,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5576,7 +5596,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5598,7 +5618,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5620,7 +5640,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5642,7 +5662,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5664,7 +5684,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -5687,7 +5707,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -5710,7 +5730,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -5733,7 +5753,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -5756,7 +5776,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -5779,7 +5799,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -5802,7 +5822,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5824,7 +5844,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5846,7 +5866,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -5909,7 +5929,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5931,7 +5951,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5953,7 +5973,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -5975,7 +5995,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -6044,7 +6064,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6066,7 +6086,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "filter 4: not positive target real-estate/project news",
@@ -6089,7 +6109,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "filter 4: not positive target real-estate/project news",
@@ -6112,7 +6132,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "review: OFFICIAL_DOCUMENT_UNREADABLE",
         "filter 7: outside region in title/description",
@@ -6154,7 +6174,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "review: OFFICIAL_DOCUMENT_UNREADABLE",
         "filter 5: no allowed city match"
@@ -6175,7 +6195,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6215,7 +6235,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": []
     },
     {
@@ -6233,7 +6253,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6356,7 +6376,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "POSITIVE_INFRASTRUCTURE_WITHOUT_SUFFICIENT_REAL_ESTATE_NEXUS",
         "filter 5: no allowed city match",
@@ -6380,7 +6400,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "POSITIVE_INFRASTRUCTURE_WITHOUT_SUFFICIENT_REAL_ESTATE_NEXUS",
         "filter 5: no allowed city match",
@@ -6404,7 +6424,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "filter 4: not positive target real-estate/project news",
@@ -6427,7 +6447,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6450,7 +6470,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6473,7 +6493,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6495,7 +6515,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6517,7 +6537,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "filter 4: not positive target real-estate/project news",
@@ -6540,7 +6560,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "filter 4: not positive target real-estate/project news",
@@ -6563,7 +6583,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6585,7 +6605,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -6608,7 +6628,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6630,7 +6650,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6652,7 +6672,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6675,7 +6695,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6697,7 +6717,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6719,7 +6739,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6741,7 +6761,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -6785,7 +6805,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6807,7 +6827,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6831,7 +6851,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6854,7 +6874,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6877,7 +6897,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6899,7 +6919,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6922,7 +6942,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6944,7 +6964,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6966,7 +6986,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -6989,7 +7009,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -7011,7 +7031,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -7033,7 +7053,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "review: INSUFFICIENT_ARTICLE_EVIDENCE",
@@ -7056,7 +7076,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "review: INSUFFICIENT_ARTICLE_EVIDENCE",
@@ -7079,7 +7099,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -7121,7 +7141,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 7: outside region in title/description",
         "filter 8: outside-city conflict",
@@ -7143,7 +7163,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -7185,7 +7205,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 7: outside region in title/description",
         "filter 8: outside-city conflict",
@@ -7207,7 +7227,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -7229,7 +7249,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -7251,7 +7271,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -7274,7 +7294,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -7296,7 +7316,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "filter 4: not positive target real-estate/project news",
@@ -7319,7 +7339,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "filter 2: unsupported language/script",
@@ -7345,7 +7365,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "filter 2: unsupported language/script",
@@ -7369,7 +7389,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "filter 4: not positive target real-estate/project news",
@@ -7392,7 +7412,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -7416,7 +7436,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -7440,7 +7460,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 5: no allowed city match",
         "filter 7: outside region in title/description",
@@ -7463,7 +7483,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -7485,7 +7505,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -7507,7 +7527,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -7529,7 +7549,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -7551,7 +7571,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -7573,7 +7593,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -7595,7 +7615,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -7617,7 +7637,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -7639,7 +7659,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -7661,7 +7681,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -7684,7 +7704,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -7707,7 +7727,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -7730,7 +7750,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": []
     },
     {
@@ -7811,7 +7831,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": []
     },
     {
@@ -7829,7 +7849,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": []
     },
     {
@@ -7868,7 +7888,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": []
     },
     {
@@ -7886,7 +7906,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": []
     },
     {
@@ -7904,7 +7924,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -7928,7 +7948,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "filter 4: not positive target real-estate/project news",
@@ -7953,7 +7973,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -7976,7 +7996,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "filter 2: unsupported language/script",
@@ -8000,7 +8020,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "filter 2: unsupported language/script",
@@ -8025,7 +8045,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -8048,7 +8068,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "filter 2: unsupported language/script",
@@ -8072,7 +8092,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 15: direct media/PDF link, not article page",
         "filter 2: unsupported language/script",
@@ -8157,7 +8177,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -8180,7 +8200,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -8203,7 +8223,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -8227,7 +8247,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -8249,7 +8269,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -8271,7 +8291,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
@@ -8315,7 +8335,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
@@ -8339,7 +8359,7 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 5: no allowed city match",
         "filter 7: outside region in title/description",
@@ -8428,7 +8448,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -8450,7 +8470,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -8472,7 +8492,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -8494,7 +8514,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -8516,7 +8536,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": []
     },
     {
@@ -8534,7 +8554,7 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": []
     },
     {
@@ -8552,7 +8572,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -8575,7 +8595,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -8618,7 +8638,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
@@ -8641,7 +8661,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -8663,7 +8683,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -8685,7 +8705,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -8707,7 +8727,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
@@ -8729,7 +8749,7 @@
       "propertyNexus": false,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REVIEW",
+      "decision": "REJECT",
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
