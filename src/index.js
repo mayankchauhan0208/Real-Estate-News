@@ -6551,7 +6551,7 @@ async function fetchHtmlWithCurl(sourceUrl, options = {}) {
     "\n__NEWS_API_STATUS__:%{http_code}",
     sourceUrl
   ];
-  const result = await execFile(command, args, {
+  const result = await execFileWithHardTimeout(command, args, {
     timeout: timeoutMs + (options.deadlineAt ? 500 : 5000),
     maxBuffer: 12 * 1024 * 1024,
     windowsHide: true,
@@ -6570,6 +6570,41 @@ async function fetchHtmlWithCurl(sourceUrl, options = {}) {
 
 function isMissingPaginatedPageError(error) {
   return /^HTTP (404|410)\b/.test(error.message || "");
+}
+
+function execFileWithHardTimeout(command, args, options = {}) {
+  return new Promise((resolve, reject) => {
+    let settled = false;
+    let timer;
+    const finish = (error, stdout = "", stderr = "") => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      options.signal?.removeEventListener("abort", abortHandler);
+      if (error) reject(Object.assign(error, { stdout, stderr }));
+      else resolve({ stdout, stderr });
+    };
+    const abortHandler = () => {
+      child?.kill("SIGKILL");
+      finish(createBudgetExhaustedError("global source budget exhausted during curl request"));
+    };
+    const child = execFileCallback(command, args, {
+      ...options,
+      signal: undefined
+    }, (error, stdout, stderr) => finish(error, stdout, stderr));
+    child.on("error", (error) => finish(error));
+    if (options.signal) {
+      if (options.signal.aborted) abortHandler();
+      else options.signal.addEventListener("abort", abortHandler, { once: true });
+    }
+    if (options.timeout) {
+      timer = setTimeout(() => {
+        child.kill("SIGKILL");
+        finish(Object.assign(new Error(`curl request timed out after ${options.timeout}ms`), { code: "ETIMEDOUT" }));
+      }, options.timeout);
+      timer.unref?.();
+    }
+  });
 }
 
 function extractArticleText($) {
@@ -8731,9 +8766,11 @@ async function fetchSourceBatch(sourceList, options = {}) {
     const telemetry = options.telemetry;
     const sourceId = sourceTelemetryId(source);
     const sourceHost = sourceTelemetryHost(source);
-    const sourceStartedAt = Date.now();
-    await telemetry?.emit("SOURCE_START", { sourceId, sourceUrl: source, sourceHost, mode: options.mode || "normal" });
-    await telemetry?.emit("SOURCE_STAGE", { sourceId, sourceUrl: source, stage: "fetch" });
+    const workerStartedAt = Date.now();
+    let operationStartedAt = null;
+    let sourceDeadlineAt = null;
+    await telemetry?.emit("SOURCE_START", { sourceId, sourceUrl: source, sourceHost, mode: options.mode || "normal", workerStartedAt });
+    await telemetry?.emit("SOURCE_STAGE", { sourceId, sourceUrl: source, stage: "fetch", workerStartedAt });
     try {
       throwIfSourceBudgetExhausted(options);
     } catch (error) {
@@ -8741,12 +8778,22 @@ async function fetchSourceBatch(sourceList, options = {}) {
         sourceId,
         sourceUrl: source,
         sourceHost,
-        stage: "budget-check",
-        timeoutType: "batch-deadline",
-        elapsedMs: 0,
-        error: error.message
+        stage: "queue-boundary",
+        timeoutType: "global-boundary-before-operation",
+        elapsedMs: Date.now() - workerStartedAt,
+        error: "source deferred at global boundary before operation",
+        operationStarted: false,
+        terminalStatus: "DEFERRED_BY_GLOBAL_BOUNDARY"
       });
-      return recordResult(source, { source, status: "BUDGET_EXHAUSTED", error: error.message, attempts: 0 });
+      return recordResult(source, {
+        source,
+        status: "DEFERRED_BY_GLOBAL_BOUNDARY",
+        error: "source deferred at global boundary before operation",
+        attempts: 0,
+        operationStarted: false,
+        workerStartedAt,
+        queueWaitMs: Date.now() - workerStartedAt
+      });
     }
 
     const remainingMs = options.deadlineAt
@@ -8757,19 +8804,30 @@ async function fetchSourceBatch(sourceList, options = {}) {
         sourceId,
         sourceUrl: source,
         sourceHost,
-        stage: "budget-check",
-        timeoutType: "batch-deadline",
-        elapsedMs: 0,
-        error: "source budget exhausted before attempt"
+        stage: "queue-boundary",
+        timeoutType: "global-boundary-before-operation",
+        elapsedMs: Date.now() - workerStartedAt,
+        error: "source deferred at global boundary before operation",
+        operationStarted: false,
+        terminalStatus: "DEFERRED_BY_GLOBAL_BOUNDARY"
       });
-      return recordResult(source, { source, status: "BUDGET_EXHAUSTED", error: "source budget exhausted before attempt", attempts: 0 });
+      return recordResult(source, {
+        source,
+        status: "DEFERRED_BY_GLOBAL_BOUNDARY",
+        error: "source deferred at global boundary before operation",
+        attempts: 0,
+        operationStarted: false,
+        workerStartedAt,
+        queueWaitMs: Date.now() - workerStartedAt
+      });
     }
     // Bound the entire recovery/retry chain, not just each individual
     // network attempt. A source with several aliases must not consume the
     // runtime budget through repeated 90-second attempts.
-    const sourceDeadlineAt = Math.min(
+    operationStartedAt = Date.now();
+    sourceDeadlineAt = Math.min(
       options.deadlineAt || Number.POSITIVE_INFINITY,
-      sourceStartedAt + getSourceTimeoutMs()
+      operationStartedAt + getSourceTimeoutMs()
     );
     try {
       const sourceOptions = {
@@ -8801,19 +8859,23 @@ async function fetchSourceBatch(sourceList, options = {}) {
           attempts: result.attempts,
           recovered: result.recovered === true,
           fetchResult: "success",
-          fetchDurationMs: Date.now() - sourceStartedAt,
+          fetchDurationMs: Date.now() - operationStartedAt,
+          workerWaitMs: operationStartedAt - workerStartedAt,
+          operationStartedAt,
           sourceType: isLikelyFeedUrl(source) ? "RSS_OR_ATOM" : "HTML_OR_SPECIALIZED"
         }
       }));
       const recoveryLabel = result.recovered ? ` via ${result.fetchedSource}` : "";
-      console.log(`Fetched ${result.articles.length} items from ${source}${recoveryLabel} in ${formatDuration(Date.now() - sourceStartedAt)} (attempts: ${result.attempts})`);
+      console.log(`Fetched ${result.articles.length} items from ${source}${recoveryLabel} in ${formatDuration(Date.now() - operationStartedAt)} (attempts: ${result.attempts})`);
       await telemetry?.emit("SOURCE_END", {
         sourceId,
         sourceUrl: source,
         sourceHost,
         status: articles.length ? "COMPLETED" : "COMPLETED_NO_CANDIDATE",
         stage: "article-extraction",
-        elapsedMs: Date.now() - sourceStartedAt,
+        elapsedMs: Date.now() - operationStartedAt,
+        workerWaitMs: operationStartedAt - workerStartedAt,
+        operationStarted: true,
         linksDiscovered: articles.length,
         articlesAttempted: articles.filter((article) => article.articleReadAttempted).length,
         articlesReadable: articles.filter((article) => article.fullArticleRead === true).length,
@@ -8821,12 +8883,15 @@ async function fetchSourceBatch(sourceList, options = {}) {
         geoValid: articles.filter((article) => article.cityCode).length,
         candidates: articles.length
       });
-      return recordResult(source, { source, status: articles.length ? "SUCCESS_PRODUCTIVE" : "SUCCESS_NO_CANDIDATE", articles, attempts: result.attempts, fetchedSource: result.fetchedSource, recovered: result.recovered });
+      return recordResult(source, { source, status: articles.length ? "SUCCESS_PRODUCTIVE" : "SUCCESS_NO_CANDIDATE", articles, attempts: result.attempts, fetchedSource: result.fetchedSource, recovered: result.recovered, operationStarted: true, workerStartedAt, operationStartedAt, workerWaitMs: operationStartedAt - workerStartedAt });
     } catch (error) {
-      const elapsedMs = Date.now() - sourceStartedAt;
+      const elapsedMs = Date.now() - (operationStartedAt || workerStartedAt);
       const sourceDeadlineExpired = sourceDeadlineAt <= Date.now() &&
         (!options.deadlineAt || sourceDeadlineAt < options.deadlineAt);
       const timeout = error?.sourceStatus === "BUDGET_EXHAUSTED" || sourceDeadlineExpired || /timed?\s*out|timeout|deadline|aborted/i.test(error.message || "");
+      const terminalStatus = timeout
+        ? (operationStartedAt ? "SOURCE_TIMEOUT_AFTER_EXECUTION" : "DEFERRED_BY_GLOBAL_BOUNDARY")
+        : (error.sourceStatus || "TRANSPORT_FAILURE");
       await telemetry?.emit(timeout ? "SOURCE_TIMEOUT" : "SOURCE_FAIL", {
         sourceId,
         sourceUrl: source,
@@ -8834,18 +8899,25 @@ async function fetchSourceBatch(sourceList, options = {}) {
         status: timeout ? "TIMEOUT_ACCOUNTED" : "FAILED_ACCOUNTED",
         stage: "fetch",
         elapsedMs,
-        timeoutType: timeout ? (options.signal?.aborted || (options.deadlineAt && sourceDeadlineAt >= options.deadlineAt)
-          ? "batch-deadline"
-          : "source-timeout") : undefined,
+        timeoutType: timeout ? (operationStartedAt ? "source-timeout-after-operation" : "global-boundary-before-operation") : undefined,
         error: error.message,
-        failureClass: error.sourceStatus || "TRANSPORT_FAILURE"
+        failureClass: terminalStatus,
+        operationStarted: Boolean(operationStartedAt),
+        workerWaitMs: operationStartedAt ? operationStartedAt - workerStartedAt : Date.now() - workerStartedAt
       });
       console.error(`Failed to fetch ${source}: ${error.message}`);
+      const terminalError = timeout
+        ? `source operation timed out after execution: ${String(error.message || "timeout").replace(/source budget exhausted before operation/gi, "operation deadline reached")}`
+        : error.message;
       return recordResult(source, {
         source,
-        status: timeout ? "TIMEOUT" : (error.sourceStatus || "TRANSPORT_FAILURE"),
-        error: error.message,
-        attempts: error.sourceAttempts || getSourceRetryAttempts()
+        status: terminalStatus,
+        error: terminalError,
+        attempts: error.sourceAttempts || getSourceRetryAttempts(),
+        operationStarted: Boolean(operationStartedAt),
+        workerStartedAt,
+        operationStartedAt,
+        workerWaitMs: operationStartedAt ? operationStartedAt - workerStartedAt : Date.now() - workerStartedAt
       });
     }
   });
@@ -8859,32 +8931,35 @@ async function fetchSourceBatch(sourceList, options = {}) {
   if (!options.deadlineAt) return batchPromise;
   const remainingMs = options.deadlineAt - Date.now();
   if (remainingMs <= 0) {
-    return sourceList.map((source) => settledResults.get(source) || { source, status: "BUDGET_EXHAUSTED", error: "source batch deadline exhausted", attempts: 0 });
+    return sourceList.map((source) => settledResults.get(source) || { source, status: "DEFERRED_BY_GLOBAL_BOUNDARY", error: "source deferred at global boundary before operation", attempts: 0, operationStarted: false });
   }
   let deadlineTimer;
   const deadlinePromise = new Promise((resolve) => {
     deadlineTimer = setTimeout(() => resolve(sourceList.map((source) => settledResults.get(source) || {
       source,
-      status: "BUDGET_EXHAUSTED",
-      error: "source batch deadline exhausted",
-      attempts: 0
+      status: "DEFERRED_BY_GLOBAL_BOUNDARY",
+      error: "source deferred at global boundary before operation",
+      attempts: 0,
+      operationStarted: false
     })), remainingMs);
   });
   batchPromise.catch(() => {});
   try {
     const results = await Promise.race([batchPromise, deadlinePromise]);
-    if (results.some((result) => result.status === "BUDGET_EXHAUSTED")) {
+    if (results.some((result) => result.status === "DEFERRED_BY_GLOBAL_BOUNDARY")) {
       await Promise.all(results
-        .filter((result) => result.status === "BUDGET_EXHAUSTED")
+        .filter((result) => result.status === "DEFERRED_BY_GLOBAL_BOUNDARY")
         .map((result) => options.telemetry?.emit("SOURCE_TIMEOUT", {
           sourceId: sourceTelemetryId(result.source),
           sourceUrl: result.source,
           sourceHost: sourceTelemetryHost(result.source),
-          status: "DEFERRED",
+          status: "DEFERRED_BY_GLOBAL_BOUNDARY",
           stage: "batch-deadline",
           elapsedMs: 0,
           timeoutType: "batch-deadline",
-          error: result.error
+          error: result.error,
+          operationStarted: false,
+          terminalStatus: "DEFERRED_BY_GLOBAL_BOUNDARY"
         })));
     }
     return results;
@@ -9085,7 +9160,7 @@ async function main() {
           telemetry: runTelemetry,
           mode: "normal-current-news"
         });
-        const startedResults = batchResults.filter((result) => result.status !== "BUDGET_EXHAUSTED");
+        const startedResults = batchResults.filter((result) => result.status !== "DEFERRED_BY_GLOBAL_BOUNDARY");
         await checkpointResumableSourceShard(resumableContext, shard, startedResults);
         for (const result of startedResults) {
           const sourceId = shard.sources.find((source) => normalizeSourceUrl(source.url) === normalizeSourceUrl(result.source))?.sourceId;
@@ -9126,7 +9201,10 @@ async function main() {
     error: result.error || "",
     failureClass: result.error ? (result.status || "TRANSPORT_FAILURE") : "",
     fetchedSource: result.fetchedSource || result.source,
-    recovered: result.recovered === true
+    recovered: result.recovered === true,
+    operationStarted: result.operationStarted === true,
+    workerWaitMs: result.workerWaitMs || 0,
+    operationStartedAt: result.operationStartedAt || null
   }));
 
   for (const result of sourceResults) {
