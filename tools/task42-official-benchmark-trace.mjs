@@ -17,6 +17,13 @@ const traces = manifest.cases.filter((item) => item.INCLUDED_IN_RECALL).map((ite
   }[item.BENCHMARK_ID] || ""));
   const outcome = original.outcome || "UNKNOWN_PIPELINE_GAP";
   const review = outcome === "FOUND_REVIEW";
+  const runtimeCandidate = (runtime?.records || []).some((record) => record.finalState === "CANDIDATE");
+  const runtimeReview = (runtime?.records || []).some((record) => record.finalState === "REVIEW");
+  const currentAccessBlocked = item.BENCHMARK_ID === "nashik-mhada-lottery-september-2026"
+    ? runtime?.status === "FAILED"
+    : item.BENCHMARK_ID === "up-rera-press-release-register"
+      ? runtime?.status === "FAILED" || (runtime?.records || []).some((record) => /maintenance|document_unavailable|portal/i.test(record.articleReadError || ""))
+      : false;
   const primaryMiss = original.primaryMiss || outcome;
   const documentType = item.SOURCE_FAMILY || "UNKNOWN";
   const event = item.EXPECTED_EVENT_CLASS || documentType;
@@ -44,14 +51,16 @@ const traces = manifest.cases.filter((item) => item.INCLUDED_IN_RECALL).map((ite
       : item.BENCHMARK_ID === "nashik-mhada-lottery-september-2026"
         ? "Retained listing/detail traversal and document evidence review; no unsafe inference."
         : "Integrated bounded trusted-authority PDF OCR into the canonical document path. Unsupported languages remain explicit.",
-    FINAL_STAGE_AFTER: runtime?.status === "FETCHED"
-      ? item.BENCHMARK_ID === "up-rera-press-release-register" ? "PUBLIC_VIEW_FILE_MAINTENANCE_BLOCK" : "CANONICAL_DOCUMENT_EVIDENCE"
+    FINAL_STAGE_AFTER: runtimeCandidate
+      ? "CANONICAL_DOCUMENT_EVIDENCE_AND_GATE_PASS"
+      : currentAccessBlocked && item.BENCHMARK_ID === "up-rera-press-release-register" ? "PUBLIC_VIEW_FILE_MAINTENANCE_BLOCK"
+      : currentAccessBlocked && item.BENCHMARK_ID === "nashik-mhada-lottery-september-2026" ? "EXTERNAL_CURRENT_ACCESS_BLOCK"
       : item.BENCHMARK_ID === "nashik-mhada-lottery-september-2026" ? "LISTING_DETAIL_RECOVERED_DOCUMENT_INCOMPLETE" : "EXTERNAL_OR_RUNTIME_UNAVAILABLE",
-    FINAL_DECISION: item.BENCHMARK_ID === "up-rera-press-release-register" ? "EXTERNAL_BLOCKED" : "REVIEW",
+    FINAL_DECISION: runtimeCandidate ? "PUBLISH" : currentAccessBlocked ? "EXTERNAL_BLOCKED" : "REVIEW",
     REMAINING_MISSING_EVIDENCE: item.BENCHMARK_ID === "up-rera-press-release-register"
       ? "A public readable official release/detail/document representation."
       : item.BENCHMARK_ID === "nashik-mhada-lottery-september-2026"
-        ? "Readable detail/document evidence for the incomplete notices."
+        ? currentAccessBlocked ? "A public MHADA representation not returning HTTP 403." : "Readable detail/document evidence for the incomplete notices."
         : "Sufficient normalized event/date/project/location evidence for automatic publication.",
     SOURCE_PRESENT: true,
     LISTING_DISCOVERED: !/SOURCE_GAP|DISCOVERY_GAP/i.test(outcome),
@@ -64,7 +73,7 @@ const traces = manifest.cases.filter((item) => item.INCLUDED_IN_RECALL).map((ite
     RELEVANT: true,
     GEO_VALID: item.EXPECTED_GEO !== "unknown",
     DEDUPE_PASS: true,
-    FINAL_CAPTURE: outcome === "FOUND_PUBLISHED" ? "PUBLISHED" : review ? "REVIEW" : "REJECT_OR_LOSS",
+    FINAL_CAPTURE: runtimeCandidate ? "PUBLISHED" : currentAccessBlocked ? "REJECT_OR_LOSS" : runtimeReview || review ? "REVIEW" : "REJECT_OR_LOSS",
     PRIMARY_LOSS_STAGE: outcome === "FOUND_REVIEW" ? primaryMiss : outcome,
     POST_DEVELOPMENT_NOTE: original.requiredFix || "Current evidence retained without weakening the publication gate."
   };

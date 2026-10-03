@@ -1,0 +1,1529 @@
+{
+  "version": 1,
+  "status": "PARTIAL_RESUMABLE",
+  "generatedAt": "2026-10-03T15:44:58.517Z",
+  "cycleId": "source-cycle-2026-10-03",
+  "universeFingerprint": "63ec259303992b9b8d1c86078b26602654a46805ba05588446f3b113256c92c2",
+  "selectedSources": 571,
+  "accountedSources": 50,
+  "pendingSources": 521,
+  "sourceResults": {
+    "source-00a0c32b225feb2f": {
+      "source": "https://ncrtc.in/ncrtc-updates",
+      "status": "TIMEOUT",
+      "error": "source budget exhausted before operation",
+      "attempts": 4
+    },
+    "source-0130f0c2db03fc06": {
+      "source": "https://mchi.net/newsletters",
+      "status": "TIMEOUT",
+      "error": "source budget exhausted before operation",
+      "attempts": 4
+    },
+    "source-014b78b07c631018": {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Lioness attacks 5 people in 12 hours in Amreli village, caged",
+          "description": "A lioness went on a near-12-hour rampage in Amreli district, attacking five people, including a forest department guard, in Arjansukh village of Vadia taluka on Thursday night....",
+          "articleText": "",
+          "articleReadAttempted": true,
+          "fullArticleRead": false,
+          "articleReadError": "article page returned insufficient readable text",
+          "isActive": true,
+          "newsLink": "https://timesofindia.indiatimes.com/city/rajkot/lioness-attacks-5-people-in-12-hours-in-amreli-village-caged/articleshow/134645867.cms",
+          "thumbnailImage": "https://static.toiimg.com/thumb/msid-134645866,imgsize-399652,width-400,height-225,resizemode-75/13e28771-5f9b-4b37-838f-dbf7af0d53c5_vid-20261002-wa00932jpg.jpg",
+          "postedBy": "Times of India",
+          "postedByLogo": "https://timesofindia.indiatimes.com/photo/507610.cms",
+          "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms",
+          "createdAt": "2026-10-02T18:30:00.000Z",
+          "publishedAt": "2026-10-02T18:30:00.000Z",
+          "publicationDateExtractionMethod": "article-page-metadata",
+          "fetchedAt": "2026-10-03T15:44:45.268Z",
+          "cityCode": "",
+          "id": "c121a85b335f333f0be953f02d17c3a6cfbc106a24c1f9bcba89f705f5917d79",
+          "sourceCityCodes": [
+            "rajkot"
+          ],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms",
+            "actualFetchedUrl": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms",
+            "fetchedSource": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 1888,
+            "sourceType": "RSS_OR_ATOM"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms",
+      "recovered": false
+    },
+    "source-023ac8c6548a4037": {
+      "source": "https://www.vocport.gov.in",
+      "status": "SUCCESS_NO_CANDIDATE",
+      "articles": [],
+      "attempts": 1,
+      "fetchedSource": "https://www.vocport.gov.in",
+      "recovered": false
+    },
+    "source-0259585e62afaa8e": {
+      "source": "https://dfccil.com",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Skip to Main Content",
+          "description": "The Indian Railways' quadrilateral linking the four metropolitan cities of Delhi, Mumbai, Chennai and Howrah, commonly known as the Golden Quadrilateral.",
+          "articleText": "",
+          "cityCode": "",
+          "isActive": true,
+          "newsLink": "https://dfccil.com/#DivMainContent1",
+          "thumbnailImage": "https://dfccil.com/images/uploads/img/new_6TDV.gif",
+          "postedBy": "DFCCIL",
+          "postedByLogo": "https://dfccil.com/favicon.png",
+          "publishedAt": "2025-10-30T18:30:00.000Z",
+          "fetchedAt": "2026-10-03T15:44:46.234Z",
+          "publicationDateExtractionMethod": "article-page-metadata",
+          "articleReadAttempted": true,
+          "fullArticleRead": false,
+          "articleReadError": "article page returned insufficient readable text",
+          "createdAt": "2025-10-30T18:30:00.000Z",
+          "id": "895954630ba8f8af73d048c7c9dabeb97ec24898095308dec34f3724bcd7ad74",
+          "sourceUrl": "https://dfccil.com",
+          "sourceCityCodes": [],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://dfccil.com",
+            "actualFetchedUrl": "https://dfccil.com",
+            "fetchedSource": "https://dfccil.com",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 4861,
+            "sourceType": "HTML_OR_SPECIALIZED"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://dfccil.com",
+      "recovered": false
+    },
+    "source-033f6cbd20977a39": {
+      "source": "https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Thiruvananthapuram",
+          "description": "Thiruvananthapuram",
+          "articleText": "",
+          "cityCode": "trivandrum",
+          "isActive": true,
+          "newsLink": "https://realty.economictimes.indiatimes.com/tag/thiruvananthapuram?utm_source=main_menu2_dropdown&utm_medium=tagListing",
+          "thumbnailImage": "https://www.google.com/s2/favicons?domain=realty.economictimes.indiatimes.com&sz=128",
+          "postedBy": "ET Realty",
+          "postedByLogo": "https://img.etb2bimg.com/files/cp/upload-1686643859-realty.ico",
+          "publishedAt": null,
+          "fetchedAt": "2026-10-03T15:44:46.855Z",
+          "publicationDateExtractionMethod": "unknown",
+          "articleReadAttempted": true,
+          "fullArticleRead": false,
+          "articleReadError": "source budget exhausted before operation",
+          "createdAt": "",
+          "id": "2c36a433952ff993f10bd4906ea55912ca4803e8b008d1ef2d49a042cc4d814d",
+          "sourceUrl": "https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority",
+          "sourceCityCodes": [
+            "noida"
+          ],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority",
+            "actualFetchedUrl": "https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority",
+            "fetchedSource": "https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 5078,
+            "sourceType": "HTML_OR_SPECIALIZED"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority",
+      "recovered": false
+    },
+    "source-0380b98e303d7b9c": {
+      "source": "https://www.moneycontrol.com/news/business/real-estate",
+      "status": "SUCCESS_NO_CANDIDATE",
+      "articles": [],
+      "attempts": 1,
+      "fetchedSource": "https://www.moneycontrol.com/news/business/real-estate",
+      "recovered": false
+    },
+    "source-03b62007309e7e21": {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "‘Delhi to witness massive mobilisation of young Indians on Oct 10’: CJP’s Abhijeet Dipke",
+          "description": "Cockroach Janata Party (CJP) founder Abhijeet Dipke on Saturday hit out at the Delhi Police over its alleged crackdown on protesting students and activists, saying dissent was...",
+          "articleText": "",
+          "articleReadAttempted": true,
+          "fullArticleRead": false,
+          "articleReadError": "article page returned insufficient readable text",
+          "isActive": true,
+          "newsLink": "https://timesofindia.indiatimes.com/city/delhi/delhi-to-witness-massive-mobilisation-of-young-indians-on-oct-10-cjps-abhijeet-dipke/articleshow/134661396.cms",
+          "thumbnailImage": "https://static.toiimg.com/thumb/msid-134661629,imgsize-221684,width-400,height-225,resizemode-75/police-on-saturday-registered-an-fir-against-the-organisers-and-400-500-unidentified-people-in-connection-with-the-cjps-october-2-protest.jpg",
+          "postedBy": "Times of India",
+          "postedByLogo": "https://timesofindia.indiatimes.com/photo/507610.cms",
+          "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+          "createdAt": "2026-10-02T18:30:00.000Z",
+          "publishedAt": "2026-10-02T18:30:00.000Z",
+          "publicationDateExtractionMethod": "article-page-metadata",
+          "fetchedAt": "2026-10-03T15:44:45.699Z",
+          "cityCode": "",
+          "id": "6796e00cd9ddf8dd9e31cf840c550cef9169763f1e59cb6bfba28d5cda25c474",
+          "sourceCityCodes": [
+            "faridabad",
+            "gurugram",
+            "new_delhi",
+            "noida"
+          ],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+            "actualFetchedUrl": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+            "fetchedSource": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 2284,
+            "sourceType": "RSS_OR_ATOM"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+      "recovered": false
+    },
+    "source-03f4889297241635": {
+      "source": "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Thiruvananthapuram",
+          "description": "Thiruvananthapuram",
+          "articleText": "",
+          "cityCode": "trivandrum",
+          "isActive": true,
+          "newsLink": "https://realty.economictimes.indiatimes.com/tag/thiruvananthapuram?utm_source=main_menu2_dropdown&utm_medium=tagListing",
+          "thumbnailImage": "https://www.google.com/s2/favicons?domain=realty.economictimes.indiatimes.com&sz=128",
+          "postedBy": "ET Realty",
+          "postedByLogo": "https://img.etb2bimg.com/files/cp/upload-1686643859-realty.ico",
+          "publishedAt": null,
+          "fetchedAt": "2026-10-03T15:44:46.912Z",
+          "publicationDateExtractionMethod": "unknown",
+          "articleReadAttempted": true,
+          "fullArticleRead": false,
+          "articleReadError": "source budget exhausted before operation",
+          "createdAt": "",
+          "id": "2c36a433952ff993f10bd4906ea55912ca4803e8b008d1ef2d49a042cc4d814d",
+          "sourceUrl": "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida",
+          "sourceCityCodes": [
+            "noida"
+          ],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida",
+            "actualFetchedUrl": "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida",
+            "fetchedSource": "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 5081,
+            "sourceType": "HTML_OR_SPECIALIZED"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida",
+      "recovered": false
+    },
+    "source-044d938a79daeb9c": {
+      "source": "https://www.gera.in/press-releases",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "The Latest Gera Pune Residential Realty Report | Volume 15 | Issue 2 | Out Now",
+          "description": "[Official] Read Gera Developments official comprehensive Pune Realty Report, offering valuable insights and analysis of Pune's real estate market trends, investment...",
+          "articleText": "The Latest Gera Pune Residential Realty Report | Volume 15 | Issue 2 | Out Now + Welcome to GERA, LET'S OUTDO The Gera Pune Residential Realty Report is a bi-annual initiative by Gera Developments that is aimed at garnering insights on both the supply and demand sides of the residential realty market in Pune. This census-based study uses feet on street methodology of data gathering and covers the Pune Urban Agglomeration area. The data is then validated and statistically analysed. What started, as a knowledge gathering initiative in 2011 has now become something that realtors, IPCs, Research Houses, Brokerage Houses and Banks & Financial Institutions look forward to. Besides a broad overview of inventory available, off-takes and prices, the report dives deeper to mine insights by price segment, sq. footage, construction stage and size of unit. Welcome to Gera Developments, creators of premium residential and commercial projects. We strive for excellence and our main objective is not just to meet the expectations of our customers but to surpass them. Privacy Policy - Disclaimer - Sitemap - Whistleblower Disclaimer: By filling our web enquiry form, you authorize us to send you transactional and promotional SMS and calls regarding the products/services you have shown interest in. Disclaimer: By filling our web enquiry form, you authorize us to send you transactional and promotional SMS and calls regarding the products/services you have shown interest in. for your interest. We will contact you soon. Disclaimer: By filling our web enquiry form, you authorize us to send you transactional and promotional SMS and calls regarding the products/services you have shown interest in. you've taken the first step to being an outdoer. Our team will evaluate your profile and get back to you. Thanks. All the best! Thanks for bringing this to our notice. Rest assured requisite action will be taken. View Download View Download for showing interest. Your download is ready. View Report Disclaimer: By filling our web enquiry form, you authorize us to send you transactional and promotional SMS and calls regarding the products/services you have shown interest in. Disclaimer: By filling our web enquiry form, you authorize us to send you transactional and promotional SMS and calls regarding the products/services you have shown interest in.",
+          "cityCode": "pune",
+          "isActive": true,
+          "newsLink": "https://www.gera.in/media-center/pune-realty-report",
+          "thumbnailImage": "https://www.gera.in/assets/images/webp/home.webp",
+          "postedBy": "[Official] Media Kit: Resources and Information ",
+          "postedByLogo": "https://www.gera.in/assets/images/favicon.ico",
+          "publishedAt": "",
+          "fetchedAt": "2026-10-03T15:44:46.180Z",
+          "publicationDateExtractionMethod": "unknown",
+          "articleReadAttempted": true,
+          "fullArticleRead": true,
+          "articleReadError": "",
+          "createdAt": "",
+          "id": "4f5607ef70c57f531121b1a8ed8e40237c2c782a8de90bfd4fde8427019bc4b0",
+          "sourceUrl": "https://www.gera.in/press-releases",
+          "sourceCityCodes": [
+            "bangalore",
+            "goa",
+            "pune"
+          ],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://www.gera.in/press-releases",
+            "actualFetchedUrl": "https://www.gera.in/press-releases",
+            "fetchedSource": "https://www.gera.in/press-releases",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 3812,
+            "sourceType": "HTML_OR_SPECIALIZED"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://www.gera.in/press-releases",
+      "recovered": false
+    },
+    "source-0458e87ca76a664b": {
+      "source": "https://www.mindspacereit.com/newsroom",
+      "status": "TIMEOUT",
+      "error": "source budget exhausted before operation",
+      "attempts": 4
+    },
+    "source-04f50c87ef06ab34": {
+      "source": "https://publish.tribuneindia.com/city/patiala/feed",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Patiala police arrest another accused in Chitkara University unrest; 3 held so far",
+          "description": "Moving ahead with their probe into the recent incidents at Chitkara University and in continuation into their investigation in connection with the incident of student unrest at...",
+          "articleText": "",
+          "articleReadAttempted": true,
+          "fullArticleRead": false,
+          "articleReadError": "source budget exhausted before operation",
+          "isActive": true,
+          "newsLink": "https://www.tribuneindia.com/news/patiala/patiala-police-arrest-another-accused-in-chitkara-university-unrest-3-held-so-far",
+          "thumbnailImage": "https://www.google.com/s2/favicons?domain=www.tribuneindia.com&sz=128",
+          "postedBy": "The Tribune",
+          "postedByLogo": "https://publish.tribuneindia.com/wp-content/uploads/2026/01/cropped-697b55048b5a7-black-tribune-logo-32x32.png",
+          "sourceUrl": "https://publish.tribuneindia.com/city/patiala/feed",
+          "createdAt": "2026-10-03T10:51:38.000Z",
+          "publishedAt": "2026-10-03T10:51:38.000Z",
+          "publicationDateExtractionMethod": "unknown",
+          "fetchedAt": "2026-10-03T15:44:48.879Z",
+          "cityCode": "",
+          "id": "8ab0c348898daa2585787f9e7734411caa6bb044f3ecba4814beb3866a10511b",
+          "sourceCityCodes": [
+            "patiala"
+          ],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://publish.tribuneindia.com/city/patiala/feed",
+            "actualFetchedUrl": "https://publish.tribuneindia.com/city/patiala/feed",
+            "fetchedSource": "https://publish.tribuneindia.com/city/patiala/feed",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 5457,
+            "sourceType": "RSS_OR_ATOM"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://publish.tribuneindia.com/city/patiala/feed",
+      "recovered": false
+    },
+    "source-051264dfa5f73030": {
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Ghaziabad: Two arrested for firing at moving bus, injuring two on NH-9",
+          "description": "Ghaziabad: Police on Friday arrested two men for firing at a moving bus from a two-wheeler and injuring two occupants over a rivalry near Masuri on NH-9 last week, officials said",
+          "articleText": "Ghaziabad: Two arrested for firing at moving bus, injuring two on NH-9Ghaziabad: Police on Friday arrested two men for firing at a moving bus from a two-wheeler and injuring two occupants over a rivalry near Masuri on NH-9 last week, officials saidPublished on: Oct 3, 2026, 07:36:30 ISTBy HT CorrespondentPrefer HTon GoogleShare viaCopy link Ghaziabad: Police on Friday arrested two men for firing at a moving bus from a two-wheeler and injuring two occupants over a rivalry near Masuri on NH-9 last week, officials said.The two suspects, both in their 20s, were identified as residents of New Mustafabad and Jagjit Nagar. Police said they are part of a group rival to bus operator Mohammad Arif. (Representative photo)According to police, the suspects were arrested during a brief exchange of fire near Bhoorgarhi on Friday after they—who were on a two-wheeler—ignored police signals to stop for an inspection at a checkpoint.Police said the incident occurred around 11.40pm on September 28 when the bus was headed from Delhi to Budaun. The suspects fired eight rounds using a pistol, injuring bus conductor Talib Hussain, 25, and the bus operator’s friend Kanruddin Ansari, 45. The injured were rushed to a hospital in Delhi and are stated to be stable.The two suspects, both in their 20s, were identified as residents of New Mustafabad and Jagjit Nagar. Police said they are part of a group rival to bus operator Mohammad Arif.Arif filed a complaint at Masuri police station in Ghaziabad on September 29 and an FIR was registered under Section 109 (attempted murder)of BNS.Police arrested the two suspects after receiving information about their movement from Hapur.Surendra Nath Tiwari, DCP (rural), said police set up a checkpoint, and they asked the two suspects, who were arriving on a two-wheeler, to stop. “However, they instead opened fire at the police. In retaliatory firing, police shot one suspect in the leg while overpowering and arresting the second. The injured person was taken to the hospital for treatment. During questioning, the suspects confessed to their involvement in the firing,” the DCP added.The DCP added, “They revealed they had a dispute with Arif since 2023 and also fought with bus conductor Hussain about four days before the incident. The firing was part of a revenge plot planned by a group of five people. The other three suspects will also be arrested and the pistol seized.”Catch every big hit, every wicket with Crickit, a one stop destination for Live Scores, Match Stats, Infographics & much more. Explore now!.Stay updated with all the Breaking News and Latest News from Mumbai. Click here for comprehensive coverage of top Cities including Bengaluru, Delhi, Hyderabad, and more across India along with Stay informed on the latest happenings in World News.Home/Cities/Noida News/Ghaziabad: Two Arrested For Firing At Moving Bus, Injuring Two On NH-9See LessBy HT CorrespondentGhaziabad: Police on Friday arrested two men for firing at a moving bus from a two-wheeler and injuring two occupants over a rivalry near Masuri on NH-9 last week, officials said.The two suspects, both in their 20s, were identified as residents of New Mustafabad and Jagjit Nagar. Police said they are part of a group rival to bus operator Mohammad Arif. (Representative photo)",
+          "articleReadAttempted": true,
+          "fullArticleRead": true,
+          "articleReadError": "",
+          "isActive": true,
+          "newsLink": "https://www.hindustantimes.com/cities/noida-news/ghaziabad-two-arrested-for-firing-at-moving-bus-injuring-two-on-nh9-101790963923835.html",
+          "thumbnailImage": "https://www.hindustantimes.com/ht-img/img/2026/10/02/400x225/The-two-suspects--both-in-their-20s--were-identifi_1790963921781_3dC5.jpg",
+          "postedBy": "Hindustan Times",
+          "postedByLogo": "https://www.hindustantimes.com/images/app-images/ht2020/desktop.png",
+          "sourceUrl": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+          "createdAt": "2026-10-03T02:06:30.000Z",
+          "publishedAt": "2026-10-03T02:06:30.000Z",
+          "publicationDateExtractionMethod": "article-page-metadata",
+          "fetchedAt": "2026-10-03T15:44:47.901Z",
+          "cityCode": "",
+          "id": "aa5b85d306d82753b8238a731a938ceddf97294b570c1b4b1fc7abdf30521c61",
+          "sourceCityCodes": [
+            "noida"
+          ],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+            "actualFetchedUrl": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+            "fetchedSource": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 4485,
+            "sourceType": "RSS_OR_ATOM"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+      "recovered": false
+    },
+    "source-05b635a5599004a4": {
+      "source": "https://rera.assam.gov.in",
+      "status": "TIMEOUT",
+      "error": "source budget exhausted before operation",
+      "attempts": 4
+    },
+    "source-0606a31cae709f4a": {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "More than 150 anglers to fight for top prize at int’l angling meet in NMPA",
+          "description": "Over 150 anglers to compete at NMPA Mangaluru’s International Saltwater Catch & Release meet on Nov 14-15, with Rs 50,000 top prize and rules on lures.",
+          "articleText": "",
+          "articleReadAttempted": true,
+          "fullArticleRead": false,
+          "articleReadError": "article page returned insufficient readable text",
+          "isActive": true,
+          "newsLink": "https://timesofindia.indiatimes.com/city/mangaluru/more-than-150-anglers-to-fight-for-top-prize-at-intl-angling-meet-in-nmpa/articleshow/134644459.cms",
+          "thumbnailImage": "https://static.toiimg.com/thumb/msid-47529300,imgsize-110164,width-400,height-225,resizemode-75/47529300.jpg",
+          "postedBy": "Times of India",
+          "postedByLogo": "https://timesofindia.indiatimes.com/photo/507610.cms",
+          "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms",
+          "createdAt": "2026-10-01T18:30:00.000Z",
+          "publishedAt": "2026-10-01T18:30:00.000Z",
+          "publicationDateExtractionMethod": "article-page-metadata",
+          "fetchedAt": "2026-10-03T15:44:46.316Z",
+          "cityCode": "",
+          "id": "069415f149a5240d967435dd78435895acc793f16b04b8eca1fb6a902ae45ab3",
+          "sourceCityCodes": [
+            "mangalore"
+          ],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms",
+            "actualFetchedUrl": "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms",
+            "fetchedSource": "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 2896,
+            "sourceType": "RSS_OR_ATOM"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms",
+      "recovered": false
+    },
+    "source-061655f616d9d01e": {
+      "source": "https://www.signatureglobal.in/mediacoverage/page/1",
+      "status": "TIMEOUT",
+      "error": "source budget exhausted before operation",
+      "attempts": 4
+    },
+    "source-062843489f03f77f": {
+      "source": "https://indianexpress.com/section/cities/hyderabad",
+      "status": "TIMEOUT",
+      "error": "source budget exhausted before operation",
+      "attempts": 4
+    },
+    "source-071ed0189f8d3eee": {
+      "source": "https://www.mahindralifespaces.com/newsroom/media-resources",
+      "status": "TIMEOUT",
+      "error": "source budget exhausted before operation",
+      "attempts": 4
+    },
+    "source-07a58c03bb4ef845": {
+      "source": "https://www.grinfra.com/media-coverage",
+      "status": "TIMEOUT",
+      "error": "source budget exhausted before operation",
+      "attempts": 4
+    },
+    "source-0819a5254e8497cb": {
+      "source": "https://mddaonline.in",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Guidelines for Map Approval / Occupancy / Approval Certificate",
+          "description": "Guidelines for Map Approval / Occupancy / Approval Certificate",
+          "articleText": "",
+          "cityCode": "",
+          "isActive": true,
+          "newsLink": "https://mddaonline.in/index.php/guidelines-for-map-approval-occupancy-approval-certificate/",
+          "thumbnailImage": "https://www.google.com/s2/favicons?domain=mddaonline.in&sz=128",
+          "postedBy": "MDDA",
+          "postedByLogo": "https://mddaonline.in/wp-content/uploads/2022/10/logo-round.jpg",
+          "publishedAt": "",
+          "fetchedAt": "2026-10-03T15:44:46.751Z",
+          "publicationDateExtractionMethod": "unknown",
+          "articleReadAttempted": true,
+          "fullArticleRead": false,
+          "articleReadError": "article page returned insufficient readable text",
+          "createdAt": "",
+          "id": "e1c1fefbc65c31a213de7c1a0b4f79b2a2cca6ed271fdfdf82ebd17320f4937c",
+          "sourceUrl": "https://mddaonline.in",
+          "sourceCityCodes": [
+            "dehradun"
+          ],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://mddaonline.in",
+            "actualFetchedUrl": "https://mddaonline.in",
+            "fetchedSource": "https://mddaonline.in",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 4495,
+            "sourceType": "HTML_OR_SPECIALIZED"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://mddaonline.in",
+      "recovered": false
+    },
+    "source-0846cdd749ccc109": {
+      "source": "https://www.krahejacorp.com/newsroom",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Analyst Day Presentation - November 2025",
+          "description": "Analyst Day Presentation - November 2025",
+          "articleText": "",
+          "cityCode": "",
+          "isActive": true,
+          "newsLink": "https://www.krahejacorp.com/2025/KRahejaCorpAnalystDay.pdf",
+          "thumbnailImage": "https://www.google.com/s2/favicons?domain=www.krahejacorp.com&sz=128",
+          "postedBy": "Latest News, Updates, and Press Releases.",
+          "postedByLogo": "https://www.krahejacorp.com/Frontend/img/favicon.png",
+          "publishedAt": null,
+          "fetchedAt": "2026-10-03T15:44:47.299Z",
+          "publicationDateExtractionMethod": "unknown",
+          "articleReadAttempted": true,
+          "fullArticleRead": false,
+          "articleReadError": "response body exceeded 8388608 bytes",
+          "createdAt": "",
+          "id": "12ce75d5f3ff88f5c1afd8f6f1cb94be29a59ddda5768d07e426f21640d2e04c",
+          "sourceUrl": "https://www.krahejacorp.com/newsroom",
+          "sourceCityCodes": [
+            "bangalore",
+            "goa",
+            "hyderabad",
+            "mumbai",
+            "pune"
+          ],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://www.krahejacorp.com/newsroom",
+            "actualFetchedUrl": "https://www.krahejacorp.com/newsroom",
+            "fetchedSource": "https://www.krahejacorp.com/newsroom",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 5089,
+            "sourceType": "HTML_OR_SPECIALIZED"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://www.krahejacorp.com/newsroom",
+      "recovered": false
+    },
+    "source-09167bfaf6032267": {
+      "source": "https://www.kmda.wb.gov.in",
+      "status": "TIMEOUT",
+      "error": "source budget exhausted before operation",
+      "attempts": 4
+    },
+    "source-09610d7e1eed3066": {
+      "source": "https://www.aba-corp.com",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Corporate Secretarial",
+          "description": "Get started with a free consultation!",
+          "articleText": "Ensuring compliance with the Companies Ordinance is essential for every entity incorporated or registered in Hong Kong. We provide a full spectrum of company secretarial services to support your business, including: New Company Incorporation: Streamlined processes to set up your company with ease. Annual Corporate Renewals and Maintenance: Keeping your business in good standing with timely updates and filings. Corporate Governance Compliance: Assisting with adherence to statutory requirements and best practices. Deregistration and Dissolution: Professional guidance to ensure smooth and compliant closure of your company. Copyright © 2026 ABA Corporate Services Limited - All Rights Reserved. Powered by We use cookies to analyze website traffic and optimize your website experience. By accepting our use of cookies, your data will be aggregated with all other user data.",
+          "cityCode": "",
+          "isActive": true,
+          "newsLink": "https://www.aba-corp.com/corporate-secretarial",
+          "thumbnailImage": "https://img1.wsimg.com/isteam/getty/2037006388/:/rs=w:400",
+          "postedBy": "ABA Corporate Services Limited",
+          "postedByLogo": "https://www.google.com/s2/favicons?domain=www.aba-corp.com&sz=128",
+          "publishedAt": "",
+          "fetchedAt": "2026-10-03T15:44:47.928Z",
+          "publicationDateExtractionMethod": "unknown",
+          "articleReadAttempted": true,
+          "fullArticleRead": true,
+          "articleReadError": "",
+          "createdAt": "",
+          "id": "78f8149c084c41949c95f7b7f0769cfde043636256c47c4ead06979627186164",
+          "sourceUrl": "https://www.aba-corp.com",
+          "sourceCityCodes": [
+            "noida"
+          ],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://www.aba-corp.com",
+            "actualFetchedUrl": "https://www.aba-corp.com",
+            "fetchedSource": "https://www.aba-corp.com",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 2723,
+            "sourceType": "HTML_OR_SPECIALIZED"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://www.aba-corp.com",
+      "recovered": false
+    },
+    "source-09d97774cfba4e8b": {
+      "source": "https://www.jll.co.in/en/newsroom",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Skip to main content",
+          "description": "By shaping the future of real estate for a better world, JLL is making headlines around the globe. Read the latest news from JLL’s experts here.",
+          "articleText": "Stay up to date on the changing landscape of commercial real estate. Read, watch and listen to the latest JLL news.Find media contactsarrow_forwardStay up to date on the changing landscape of commercial real estate. Read, watch and listen to the latest JLL news.Find media contactsarrow_forwardFind media contactsarrow_forwardFind media contactsarrow_forward",
+          "cityCode": "",
+          "isActive": true,
+          "newsLink": "https://www.jll.co.in/en/newsroom#main",
+          "thumbnailImage": "https://s7d1.scene7.com/is/image/joneslanglasalle/25-collection-newsroom?qlt=85&wid=320&dpr=off&fit=constrain",
+          "postedBy": "Latest press releases and corporate news",
+          "postedByLogo": "https://www.jll.co.in/content/dam/tech-resources/favicon-16x16.png",
+          "publishedAt": "",
+          "fetchedAt": "2026-10-03T15:44:50.515Z",
+          "publicationDateExtractionMethod": "unknown",
+          "articleReadAttempted": true,
+          "fullArticleRead": true,
+          "articleReadError": "",
+          "createdAt": "",
+          "id": "944fa065897be54e592c0c6c3477bc9559c0f3035b16fb92f14572deeee84b5f",
+          "sourceUrl": "https://www.jll.co.in/en/newsroom",
+          "sourceCityCodes": [],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://www.jll.co.in/en/newsroom",
+            "actualFetchedUrl": "https://www.jll.co.in/en/newsroom",
+            "fetchedSource": "https://www.jll.co.in/en/newsroom",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 4760,
+            "sourceType": "HTML_OR_SPECIALIZED"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://www.jll.co.in/en/newsroom",
+      "recovered": false
+    },
+    "source-0a79146a6576633b": {
+      "source": "https://rera.kerala.gov.in",
+      "status": "TIMEOUT",
+      "error": "source budget exhausted before operation",
+      "attempts": 4
+    },
+    "source-0ac442b7d9dda24b": {
+      "source": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-real-estate-investment-trusts-reits-_95232.html",
+      "status": "SUCCESS_NO_CANDIDATE",
+      "articles": [],
+      "attempts": 1,
+      "fetchedSource": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-real-estate-investment-trusts-reits-_95232.html",
+      "recovered": false
+    },
+    "source-0acf872e4a50e670": {
+      "source": "https://maxestates.in/news-and-media",
+      "status": "TIMEOUT",
+      "error": "source budget exhausted before operation",
+      "attempts": 4
+    },
+    "source-0bb8db938cd1fa9a": {
+      "source": "https://rera.goa.gov.in",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Functions And Services",
+          "description": "Functions And Services",
+          "articleText": "Central Government is the appropriate Government under the Act for the State of Goa in terms of clause (g) of Section 2 of this Act. Exercising the power conferred by the third proviso to sub-section 91) of section 20 and first proviso to sub section 94) of the Act Central Govt. has designated Secretary Housing, Goa Administration as the Regulatory Authority and Value Added Tax Tribunal, State of Goa as the Appellate Tribunal respectively. The key responsibilities of the Authority shall be as follows: The Appellate Tribunal will hear appeals from the decisions, directions or orders of the Real Estate Regulatory Authority. Any person aggrieved by any direction or decision or order made by the Authority or by an adjudicating officer may file an appeal before the Appellate Tribunal. All commercial and residential real estate projects will have to register except in projects where Promoter of ongoing real estate projects, in which all buildings as per sanctioned plan have not received Completion Certificate, shall also be required to be registered for such phase of the project which consists of buildings not having occupation or completion certificate. If any promoter fails to register as per Act, he shall be liable to a penalty which may extend up to ten per cent of the estimated cost of the real estate project. On continued violation, he shall be punishable with imprisonment for a term which may extend up to three years or with fine which may extend up to a further ten per cent of the estimated cost of the real estate project, or with both. Apart from Registration, the promoters shall be required to provide quarterly updates on the status of the project to the authority. All Real Estate Agents should register under this Act. No real estate agent shall facilitate the sale or purchase of or act on behalf of any person to facilitate the sale or purchase of any plot, apartment or building, as the case may be, in a real estate project or part of it, without obtaining registration under this section. If any real estate agent fails to register, he shall be liable to a penalty of ten thousand rupees for every day during which such default continues, which may cumulatively extend up to five per cent of the cost of plot, apartment or buildings, as the case may be, of the real estate project, for which the sale or purchase has been facilitated Details of all the Registered Projects shall be available online for citizens including The real estate sector has grown in the recent years but has largely been unregulated from the perspective of consumer protection. Though, consumer protection laws are available, the recourse available therein are only curative, but not preventive. Government of India has enacted the Real Estate (Regulation and Development) Act 2016 and all the sections of the Act have come into force with effect from May 1, 2017. Any aggrieved person may file a complaint with RERA Goa or the adjudicating officer, as the case may be, with respect to any registered real estate project, for any violation or contravention of the provisions of this Act or the rules and regulations made there under. Any person aggrieved by any direction or decision or order made by RERA Goa or by an adjudicating officer may file an appeal before the Appellate Tribunal Any person aggrieved by any decision or order of the Appellate Tribunal, may file an appeal to the High Court",
+          "cityCode": "goa",
+          "isActive": true,
+          "newsLink": "https://rera.goa.gov.in/functionsAndServicesPage",
+          "thumbnailImage": "https://www.google.com/s2/favicons?domain=rera.goa.gov.in&sz=128",
+          "postedBy": "Welcome To RERA",
+          "postedByLogo": "https://rera.goa.gov.in/resources/images/favicon.ico",
+          "publishedAt": "",
+          "fetchedAt": "2026-10-03T15:44:50.450Z",
+          "publicationDateExtractionMethod": "unknown",
+          "articleReadAttempted": true,
+          "fullArticleRead": true,
+          "articleReadError": "",
+          "createdAt": "",
+          "id": "901886fbdd7b73a498e345a94845429c1fb770a24e04af995ccc67185af7ea91",
+          "sourceUrl": "https://rera.goa.gov.in",
+          "sourceCityCodes": [
+            "goa"
+          ],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://rera.goa.gov.in",
+            "actualFetchedUrl": "https://rera.goa.gov.in",
+            "fetchedSource": "https://rera.goa.gov.in",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 2946,
+            "sourceType": "HTML_OR_SPECIALIZED"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://rera.goa.gov.in",
+      "recovered": false
+    },
+    "source-0c41be471d1fab90": {
+      "source": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Priya Blue, India’s biggest ship recycler, becomes target of online fake news",
+          "description": "The company says reports alleging sanctions breaches and money laundering were published across multiple websites, while reviews by legal firms found no evidence backing the...",
+          "articleText": "Ports and Shipping 5 min read Priya Blue, India’s biggest ship recycler, becomes target of online fake news The company says reports alleging sanctions breaches and money laundering were published across multiple websites, while reviews by legal firms found no evidence backing the allegations. ET Infra Desk ETInfra Published On Oct 3, 2026 at 05:54 PM IST The case of Priya Blue Industries and Best Oasis, family-owned businesses led by Sanjay Mehta and his son Gaurav Mehta, shows how this pattern unfolds in practice.Gujarat-based Priya Blue Group, India’s biggest ship recycler by number of ships and tonnage, and its Dubai-based unit Best Oasis Ltd, which buys ships for recycling, have become the target of reports published online by rogue websites seeking to tarnish their reputation by alleging money laundering, sanctions breaches, and dealings involving sanctioned vessels.Fake stories, allegations and reputation attacks are not new. For years, politicians and celebrities have been among the most visible targets. Advt What is changing is the target's profile. The same tactics are increasingly reaching businesses and family-owned corporate groups that may not be widely known to the public but whose reputations are central to their ability to operate.These attacks often follow a pattern. A story carrying serious allegations against a company appears online. It uses genuine details about a company, its owners, locations, transactions or business history, and then builds an unverified or misleading allegation around those facts.Because the background information is accurate, the accusation can appear credible as well. The reader recognises the names and facts as genuine and may therefore assume that the accusation based on them has also been validated.The pattern becomes more concerning when the same story is published by the same source across several unrelated websites in different countries, often under slightly altered headlines or bylines.To an outside reader, this can create the impression of multiple independent reports, even though the articles may trace back to one person or content supplier. Many of these platforms have limited readership, little visible editorial structure and no easily identifiable newsroom or responsible editor, making it difficult to establish who verified the allegations or to obtain a meaningful response once the story is challenged. Advt The purpose of such an attack is to tarnish a company’s reputation, weaken trust in its name and disrupt or damage its business relationships and commercial standing. In today’s digital footprint, anything published online can become part of what customers, banks, investors and business partners find about a company, whether the information is true, false or never independently verified.The case of Priya Blue Industries and Best Oasis, family-owned businesses led by Sanjay Mehta and his son Gaurav Mehta, shows how this pattern unfolds in practice.Questions over credibilityArticles alleging money laundering, sanctions breaches, and dealings involving sanctioned vessels appeared on websites in several countries, including the US, the UK, and India.Despite appearing under different publication names and in different parts of the world, the reports were strikingly similar. The allegations followed the same sequence, with identical text and photographs, and only the headlines changed.There was no clearly identifiable journalist taking responsibility for the reporting. Some articles were attributed simply to a “Web Desk” or “Monitoring Desk”.Official records and documents reviewed by ET Infra relating to the allegations did not show any criminal or money-laundering investigations against the group or its principals of the kind mentioned in the articles.The material reviewed also did not establish that Priya Blue, Best Oasis, its promoter Sanjay Mehta and his son Gaurav Mehta were involved in the sanctions-related conduct alleged in the reports.No evidence backing allegationsHolman Fenwick Willan LLP (HFW), an international law firm, has certified that there is no criminal record or ongoing criminal investigation against the Mehta family in Dubai.Crawford Bayley & Co., a reputable Indian law firm, has certified that the Mehta family are not shareholders or directors of the recycling companies named in the articles alleging that they have recycled sanctioned ships.Besides, the vessels named ‘Blue Lady’ and ‘Oriental Nicety’ were recycled by Priya Blue Industries strictly in accordance with permissions granted by the Supreme Court of India and relevant Indian authorities, including the Gujarat Maritime Board, Gujarat Pollution Control Board, and Atomic Energy Regulatory Board, according to Crawford Bayley & Co.Business transactions involving the company are being carried out through the required commercial and regulatory process and executed through banking channels and in USD, reflecting full compliance, sources said.A Police report submitted by the Gho",
+          "articleReadAttempted": true,
+          "fullArticleRead": true,
+          "articleReadError": "",
+          "isActive": true,
+          "newsLink": "https://infra.economictimes.indiatimes.com/news/ports-shipping/priya-blue-indias-biggest-ship-recycler-becomes-target-of-online-fake-news/134659406",
+          "thumbnailImage": "https://etimg.etb2bimg.com/photo/134659622.cms",
+          "postedBy": "Latest Infrastructure News : ETInfra.com",
+          "postedByLogo": "https://www.google.com/s2/favicons?domain=infra.economictimes.indiatimes.com&sz=128",
+          "sourceUrl": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+          "createdAt": "2026-10-03T12:24:12.000Z",
+          "publishedAt": "2026-10-03T12:24:12.000Z",
+          "publicationDateExtractionMethod": "article-page-metadata",
+          "fetchedAt": "2026-10-03T15:44:50.763Z",
+          "cityCode": "",
+          "id": "c4d8b63b587ec6d62a1c96df3e86c3cebd49910b0f4706fac3ba4d3f84c167bb",
+          "sourceCityCodes": [],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+            "actualFetchedUrl": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+            "fetchedSource": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 2490,
+            "sourceType": "RSS_OR_ATOM"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+      "recovered": false
+    },
+    "source-0c5cf4d813513ac4": {
+      "source": "https://realty.economictimes.indiatimes.com/rss/international",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Homeowners in UK and beyond hit as global bond selloff drives up mortgage costs",
+          "description": "UK Mortgage Rates: Homeowners in the UK and globally are grappling with skyrocketing mortgage costs due to a global bond market selloff and rising energy prices stemming from...",
+          "articleText": "International 4 min read Homeowners in UK and beyond hit as global bond selloff drives up mortgage costs In the UK, mortgage rates are experiencing a sharp upswing, fueled by inflationary pressures linked to the ongoing conflict in Iran. Borrowers who once enjoyed lower fixed-rate mortgages are now confronting significant increases in their payments. Meanwhile, the UK housing market is experiencing its sluggish growth in years, with mortgage approvals plummeting—prompting many homeowners to fret over rising expenses and the overall economic climate. Yann Tessier Reuters Published On Oct 3, 2026 at 08:22 AM IST LONDON: For five years, the interest rate on Richard Merrett's mortgage was locked at 1.14%, but with that ultra-cheap deal due to expire in early 2027 he faces a sudden trebling of his monthly housing costs from £550 ($728) a month to £1,650.Merrett is no stranger to the risks in the lending market - he is managing director at mortgage firm Alexander Hall. But even he has been shocked by the scale of the increase, which has been stoked by a surge in energy prices caused by the Iran war.\"It's a big jump up and it means that the monthly payments are trebling. So there'll be some sharp intakes of breath and some belt-tightening,\" Merrett told Reuters. Advt A global bond market selloff has propelled borrowing costs from the US to Japan to decade highs and is impacting Britain's mortgage market, which could feed through to the wider economy.It is also a harbinger of what could happen in the euro zone, the US and beyond if rates remain stubbornly high.Borrowers face mounting pressuresThe rise in Britain's 30-year government bond yield , which topped 6% on Thursday for the first time since 1998, will further increase mortgage rates as banks pass on the increased cost of funding to homebuyers, said Nicholas Mendes, mortgage manager at broker John Charcol.\"For borrowers, today's moves add to pressure that has been building for weeks,\" he said.The 30-year yield stood just below 6% on Friday.Unlike in much of Europe and the US, where fixed-rate mortgages are typically funded via multi-decade loans, in Britain they are usually priced from two- and five-year swap rates.The Bank of England in July estimated that over 5 million households were projected to see their mortgage repayments increase by end-2028, more than 1 million more than it expected before the start of the conflict in the Gulf.For a typical homeowner, monthly mortgage repayments were projected to increase by a relatively manageable £45. Advt But for almost 750,000 people such as Merrett, who took out fixed-rate mortgages before rates began rising in 2022 from their COVID-era lows and which are due to expire this year, the average increase is £170 per month, the BoE estimated.Mendes at John Charcol said Britain's 2-year Sonia swap rate has risen 27 basis points in the last month to 4.68%.\"That adds around a third of a percentage point to the cost of funding a fixed rate, and lenders cannot absorb that for long,\" he said.Shortly after the start of the Iran war British banks withdrew more home loan products than on any day since the 2022 mini-budget crisis under then-Prime Minister Liz Truss. Lenders have been pulling sub-5% deals in recent days.Global phenomenonMortgage rates around the world are rising.The US rate on a 30-year fixed-rate mortgage has soared more than 100 basis points since the war started and this week hit 7.28%, its highest in almost three years, dealing another blow to first-time buyers. The week-on-week increase - the 30-year rate was 7.03% last week - was the biggest in about four years.In the euro area, loans with an initial fixed-rate period of 10 years-plus rose by 8 basis points to 3.43% in August. The surge in euro zone government yields in recent weeks will push rates even higher.In Australia, home prices fell for a sixth straight month in September, on track for the worst downturn in three decades.In Britain, house prices last month rose at their weakest pace since December 2025, Nationwide Building Society said on Thursday, reflecting worries about possible Bank of England rate hikes.Mortgage approvals fallData published this week showed the lowest number of UK mortgage approvals since the end of 2023, another sign of how rising borrowing costs are hitting demand.Ashley Webb, senior UK economist at consultancy Capital Economics, said he still expected UK house prices to rise by 2.5% in 2027, amid a lack of homes being put up for sale.But the possibility of another jump in government borrowing in finance minister John Healey's first budget on October 28 could put more pressure on borrowing costs and \"limit the housing recovery\", Webb said.For Merrett, the UK mortgage broker, the feeling is one of helplessness without the prospect of an end to the Iran war and no let-up in inflation pressures.\"I am worried. Why wouldn't you be when mortgage costs are trebling?\" Merrett said. \"But I remain quietly optimistic that we'll see s",
+          "articleReadAttempted": true,
+          "fullArticleRead": true,
+          "articleReadError": "",
+          "isActive": true,
+          "newsLink": "https://realty.economictimes.indiatimes.com/news/international/homeowners-in-uk-and-beyond-hit-as-global-bond-selloff-drives-up-mortgage-costs/134651051",
+          "thumbnailImage": "https://etimg.etb2bimg.com/photo/134651082.cms",
+          "postedBy": "ET Realty",
+          "postedByLogo": "https://img.etb2bimg.com/files/cp/upload-1679566505-et-realty-light-theme.png",
+          "sourceUrl": "https://realty.economictimes.indiatimes.com/rss/international",
+          "createdAt": "2026-10-03T02:52:08.000Z",
+          "publishedAt": "2026-10-03T02:52:08.000Z",
+          "publicationDateExtractionMethod": "article-page-metadata",
+          "fetchedAt": "2026-10-03T15:44:50.900Z",
+          "cityCode": "",
+          "id": "b0c12579c955aee12886ff667c77a77c26fc23a18b467ae39f8115dfa66734c9",
+          "sourceCityCodes": [],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://realty.economictimes.indiatimes.com/rss/international",
+            "actualFetchedUrl": "https://realty.economictimes.indiatimes.com/rss/international",
+            "fetchedSource": "https://realty.economictimes.indiatimes.com/rss/international",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 2482,
+            "sourceType": "RSS_OR_ATOM"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://realty.economictimes.indiatimes.com/rss/international",
+      "recovered": false
+    },
+    "source-0d98ea0a5402ecad": {
+      "source": "https://in.esr.com/newsroom",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "EDGE+ Facility Management",
+          "description": "ESR India's EDGE+ facility management delivers integrated services across security, housekeeping, MEP and soft services for Grade A industrial and.",
+          "articleText": "Incident Management One-click incident management system through ESR Smart App. Park Security 24x7 security with frequent patrolling and surveillance through AI-based cameras. Landscaping Regular maintenance of garden and green areas. Waste Management Responsible waste management through organic composting and waste segregation on site. Engineering Services Technical staff available on-site for maintenance of all MEP equipment. Park Incident Management The team is well equipped to handle any unforeseen incidents including evacuation and assembly. Facility Manager Dedicated facility manager for overall park management and customer queries. Post the pandemic, all ESR India parks have adapted to deliver contactless park management, regular sanitization of common areas, temperature checks of park entrants, digital service requests for repair and maintenance of amenities.",
+          "cityCode": "",
+          "isActive": true,
+          "newsLink": "https://in.esr.com/edge-facility-management",
+          "thumbnailImage": "https://in.esr.com/esraccess/sites/default/files/2022-07/Picture2.jpg",
+          "postedBy": "Newsroom",
+          "postedByLogo": "https://in.esr.com//esraccess/sites/default/files/Esr_logo_0.png",
+          "publishedAt": "",
+          "fetchedAt": "2026-10-03T15:44:50.027Z",
+          "publicationDateExtractionMethod": "unknown",
+          "articleReadAttempted": true,
+          "fullArticleRead": true,
+          "articleReadError": "",
+          "createdAt": "",
+          "id": "d50dc808166764021ffd72f00cf77928d98e09566fec78cafddaac2a7be902ea",
+          "sourceUrl": "https://in.esr.com/newsroom",
+          "sourceCityCodes": [],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://in.esr.com/newsroom",
+            "actualFetchedUrl": "https://in.esr.com/newsroom",
+            "fetchedSource": "https://in.esr.com/newsroom",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 1977,
+            "sourceType": "HTML_OR_SPECIALIZED"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://in.esr.com/newsroom",
+      "recovered": false
+    },
+    "source-0e0aa16addae84d7": {
+      "source": "https://english.bmrc.co.in",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Large Property Development",
+          "description": "Large Property Development",
+          "articleText": "Email: pd@bmrc.co.in ಈಗ ನೀವು 'ನಮ್ಮ ಮೆಟ್ರೋ', 'Paytm' ಮತ್ತು 'Amazon Pay' ಮೊಬೈಲ್ ಅಪ್ಲಿಕೇಶನ್ಗಳ ಮೂಲಕವೂ ನಿಮ್ಮ ಬೆಂಗಳೂರು ಮೆಟ್ರೋ ಸ್ಮಾರ್ಟ್ ಕಾರ್ಡ್ಗಳನ್ನು ರೀಚಾರ್ಜ್ ಮಾಡಬಹುದು. ಲಾಗಿನ್ ಸಮಯದಲ್ಲಿ ಯಾವುದೇ ಸಮಸ್ಯೆ ಎದುರಾದರೆ, ದಯವಿಟ್ಟು ಬಿಎಂಆರ್ಸಿಎಲ್ ಸಹಾಯವಾಣಿ 1800 425 12345 ಅನ್ನು ಸಂಪರ್ಕಿಸಿ ಅಥವಾ travelhelp@bmrc.co.in. ಬೆಂಗಳೂರು ಮೆಟ್ರೋ ರೈಲು ನಿಗಮ ನಿಯಮಿತ, 3ನೇ ಮಹಡಿ, ಬಿಎಂಟಿಸಿ ಸಂಕೀರ್ಣ, ಕೆ.ಹೆಚ್. ರಸ್ತೆ, ಶಾಂತಿನಗರ ಬೆಂಗಳೂರು - 560 027 91-80-2296 9300,91-80-2296 9301 ಬೈಯಪ್ಪನಹಳ್ಳಿ ಡಿಪೋ, ಹಳೆಯ ಮದ್ರಾಸ್ ರಸ್ತೆ, NGEF ಸ್ಟಾಪ್, ಬೆಂಗಳೂರು - 560 038 ಇಮೇಲ್ : travelhelp@bmrc.co.in 080 -25191091 ಶುಲ್ಕರಹಿತ ಸಹಾಯವಾಣಿ : 080 -25191091 ಸೈಟ್ ನಕ್ಷೆ ಬೆಂಗಳೂರು ಮೆಟ್ರೋ ರೈಲು ಯೋಜನೆ ಬಗ್ಗೆ ಹೆಚ್ಚಿನ ಮಾಹಿತಿ ಪಡೆಯಬಯಸುವವರು ಶ್ರೀಮತಿ ನಂದಿನಿ ಸೌಂದರ್ರಾಜ್ (ಪಿಐಒ), ಬಿ.ಎ೦.ಆರ್.ಸಿ.ಎಲ್, ದೂರವಾಣಿ ಸಂಖ್ಯೆ: 080-22969200/080-22969400 ಇವರನ್ನು ಸಂಪರ್ಕಿಸಬಹುದು. ನಿಲ್ದಾಣಗಳು/ಭದ್ರತಾ ಸಮಸ್ಯೆಗಳು/ ಪ್ರಯಾಣ/ ರೀಚಾರ್ಜ್/ಟೋಕನ್ಗಳಿಗೆ ಸಂಬಂಧಿಸಿದ ಯಾವುದೇ ದೂರುಗಳಿಗಾಗಿ, ಪ್ರಯಾಣಿಕರು, ದೂರವಾಣಿ ಸಂಖ್ಯೆ: ಶುಲ್ಕರಹಿತ ಸಹಾಯವಾಣಿ 1800-425-12345 ಸಂಪರ್ಕಿಸಬಹುದು. Loading...",
+          "cityCode": "bangalore",
+          "isActive": true,
+          "newsLink": "https://english.bmrc.co.in/pd-LargePD/",
+          "thumbnailImage": "https://english.bmrc.co.in/pd/1pd.jpeg",
+          "postedBy": "Namma Metro",
+          "postedByLogo": "https://english.bmrc.co.in/images/metro/favicon.png",
+          "publishedAt": "",
+          "fetchedAt": "2026-10-03T15:44:50.948Z",
+          "publicationDateExtractionMethod": "unknown",
+          "articleReadAttempted": true,
+          "fullArticleRead": true,
+          "articleReadError": "",
+          "createdAt": "",
+          "id": "b93697bd8570829964fee94b90b89e32f6aee2429bf719938e4e092e797023b4",
+          "sourceUrl": "https://english.bmrc.co.in",
+          "sourceCityCodes": [
+            "bangalore"
+          ],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "kn",
+          "languageScript": "Kannada",
+          "languageConfidence": 0.8253521126760563,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://english.bmrc.co.in",
+            "actualFetchedUrl": "https://english.bmrc.co.in",
+            "fetchedSource": "https://english.bmrc.co.in",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 3752,
+            "sourceType": "HTML_OR_SPECIALIZED"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://english.bmrc.co.in",
+      "recovered": false
+    },
+    "source-0e2222bd1272ab4e": {
+      "source": "https://indianexpress.com/section/cities/pune",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Cannabis extract worth ₹1 crore concealed in cosmetic jars seized at Pune airport",
+          "description": "The recovered substance, weighing 1.243 kg and having an estimated value of around ₹1 crore, has been seized under provisions of the (NDPS) Act, 1985.",
+          "articleText": "Cannabis extract worth ₹1 crore concealed in cosmetic jars seized at Pune airportThe recovered substance, weighing 1.243 kg and having an estimated value of around ₹1 crore, has been seized under provisions of the (NDPS) Act, 1985.Published on: Oct 3, 2026, 12:22:42 ISTBy Shrinivas DeshpandePrefer HTon GoogleShare viaCopy link Pune Customs officials, in coordination with the Directorate of Revenue Intelligence (DRI), Pune Regional Unit, seized 1.243 kg of suspected cannabis extract (hashish), allegedly concealed inside cosmetic jars at Pune International Airport on Thursday.Officers allegedly found a waxy, semi-solid substance with a pungent odour concealed inside three commercial cosmetic containers. (Hindustan Times)According to Pune Customs, the seizure followed behavioural profiling and screening of suspicious check-in baggage. Officers of the Air Intelligence Unit (AIU), Pune Customs, and DRI intercepted an Indian woman passenger who arrived at the airport from Bangkok via Air India Express flight IX-241 on the evening of October 1.During a detailed examination of her baggage, officers allegedly found a waxy, semi-solid substance with a pungent odour concealed inside three commercial cosmetic containers.Two of the containers were labelled as Rice and Yolk Hair Treatment, while the third was labelled as ‘Body Scrub’, officials said. The containers were allegedly used to camouflage the suspected narcotic substance as ordinary personal care products.A preliminary test conducted using a Narcotic Drug Field Testing Kit returned a positive result for cannabis, according to Customs officials.The recovered substance, weighing 1.243 kg and having an estimated value of around ₹1 crore, has been seized under provisions of the Narcotic Drugs and Psychotropic Substances (NDPS) Act, 1985.The passenger has been arrested under the relevant provisions of the NDPS Act, and further investigation is underway to ascertain the source of the contraband and its intended destination, officials said.PuneDrugsNarcotic Drugs And Psychotropic Substances (ndps) ActNdps ActHome/Cities/Pune News/Cannabis Extract Worth ₹1 Crore Concealed In Cosmetic Jars Seized At Pune AirportSee LessHome/Cities/Pune News/Cannabis Extract Worth ₹1 Crore Concealed In Cosmetic Jars Seized At Pune AirportBy Shrinivas DeshpandePune Customs officials, in coordination with the Directorate of Revenue Intelligence (DRI), Pune Regional Unit, seized 1.243 kg of suspected cannabis extract (hashish), allegedly concealed inside cosmetic jars at Pune International Airport on Thursday.Officers allegedly found a waxy, semi-solid substance with a pungent odour concealed inside three commercial cosmetic containers. (Hindustan Times)",
+          "articleReadAttempted": true,
+          "fullArticleRead": true,
+          "articleReadError": "",
+          "isActive": true,
+          "newsLink": "https://www.hindustantimes.com/cities/pune-news/cannabis-extract-worth-1-crore-concealed-in-cosmetic-jars-seized-at-maharashtra-pune-airport-customs-dri-101791009223494.html",
+          "thumbnailImage": "https://www.hindustantimes.com/ht-img/img/2026/10/03/400x225/Screenshot_2026-10-03_120203_1791009314984_1tkz_1791009328854_oOXJ_3ce5bc2e-c8ee-4937-88c2-246bf7b2c053_GoaP.png",
+          "postedBy": "Hindustan Times",
+          "postedByLogo": "https://www.hindustantimes.com/images/app-images/ht2020/desktop.png",
+          "sourceUrl": "https://www.hindustantimes.com/feeds/rss/cities/pune-news/rssfeed.xml",
+          "createdAt": "2026-10-03T06:52:42.000Z",
+          "publishedAt": "2026-10-03T06:52:42.000Z",
+          "publicationDateExtractionMethod": "article-page-metadata",
+          "fetchedAt": "2026-10-03T15:44:53.299Z",
+          "cityCode": "",
+          "id": "cef9313fab6235acda05d46ad1e7704a3f0ce4c3146060ccfb3d113aa649c820",
+          "sourceCityCodes": [
+            "pune"
+          ],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://indianexpress.com/section/cities/pune",
+            "actualFetchedUrl": "https://www.hindustantimes.com/feeds/rss/cities/pune-news/rssfeed.xml",
+            "fetchedSource": "https://www.hindustantimes.com/feeds/rss/cities/pune-news/rssfeed.xml",
+            "attempts": 1,
+            "recovered": true,
+            "fetchResult": "success",
+            "fetchDurationMs": 4610,
+            "sourceType": "HTML_OR_SPECIALIZED"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://www.hindustantimes.com/feeds/rss/cities/pune-news/rssfeed.xml",
+      "recovered": true
+    },
+    "source-0f22334df40bb729": {
+      "source": "https://rera.ap.gov.in/RERA/Views/index.html",
+      "status": "TIMEOUT",
+      "error": "source budget exhausted before operation",
+      "attempts": 4
+    },
+    "source-0f25af3d5fce200f": {
+      "source": "https://www.aai.aero/en/media/press-releases",
+      "status": "TIMEOUT",
+      "error": "source budget exhausted before operation",
+      "attempts": 4
+    },
+    "source-0f956f2811b0501c": {
+      "source": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Mortal remains of 2 J'khand yoga instructors killed in Vietnam accident likely to arrive on Oct 3",
+          "description": "Mortal remains of 2 J'khand yoga instructors killed in Vietnam accident likely to arrive on Oct 3",
+          "articleText": "Mortal remains of 2 J'khand yoga instructors killed in Vietnam accident likely to arrive on Oct 3Mortal remains of 2 J'khand yoga instructors killed in Vietnam accident likely to arrive on Oct 3Published on: Oct 3, 2026, 09:20:55 ISTPTIPrefer HTon GoogleShare viaCopy link Ranchi, The mortal remains of two Jharkhand-based yoga instructors, who were killed in a road accident in Vietnam, are expected to arrive in the state on Saturday evening, an official said.Mortal remains of 2 J'khand yoga instructors killed in Vietnam accident likely to arrive on Oct 3The bodies are likely to be brought to Kolkata by Saturday afternoon and then transported to the state by ambulance, Jharkhand Migration Cell team head Sikha Lakra said.\"The bodies are expected to arrive in Jharkhand on Saturday evening,\" Lakra told PTI.Earlier, the mortal remains of the two yoga instructors were expected to arrive in Kolkata by Tuesday night, but the plan has changed due to some issues.Raja Kumar from Ranchi and Vinay Kumar Rai from Jamshedpur had been teaching yoga at Adi Yoga Academy in Vietnam's Da Lat city. They died on September 25 after their two-wheeler collided with a car, the official said.The families had expressed inability to bring back the bodies due to their financial condition.Friends of the deceased and members of the Indian community in Vietnam pooled funds to meet the expenses for sending the bodies, family members said.The Jharkhand government will provide compensation of ₹5 lakh to the next of kin of each deceased after the mortal remains arrive in the state, the official said.Raja's father Umesh Verma, an electrician, said his son had been supporting the family by working in Vietnam.\"On September 25, we got information that my son died in an accident. He had last visited Ranchi two to three months back. We want his mortal remains to be brought back at the earliest,\" Verma had told reporters on Wednesday.Vinay's father Ramesh Rai said the family was awaiting the arrival of his son's body to perform the last rites.He said Vinay's friends and Indians in Vietnam had pooled funds to bring back the body.Vinay had gone to Vietnam around two years ago, his father said.This article was generated from an automated news agency feed without modifications to text.RanchiHome/Cities/Ranchi News/Mortal Remains Of 2 J'khand Yoga Instructors Killed In Vietnam Accident Likely To Arrive On Oct 3See LessHome/Cities/Ranchi News/Mortal Remains Of 2 J'khand Yoga Instructors Killed In Vietnam Accident Likely To Arrive On Oct 3PTIRanchi, The mortal remains of two Jharkhand-based yoga instructors, who were killed in a road accident in Vietnam, are expected to arrive in the state on Saturday evening, an official said.Mortal remains of 2 J'khand yoga instructors killed in Vietnam accident likely to arrive on Oct 3",
+          "articleReadAttempted": true,
+          "fullArticleRead": true,
+          "articleReadError": "",
+          "isActive": true,
+          "newsLink": "https://www.hindustantimes.com/cities/ranchi-news/mortal-remains-of-2-j-khand-yoga-instructors-killed-in-vietnam-accident-likely-to-arrive-on-oct-3-101790999455687.html",
+          "thumbnailImage": "https://www.hindustantimes.com/ht-img/img/2026/09/22/400x225/Cities_Image_Ai_Generated_2_version_1790062416079_y1DW_1790062447010_L0sX_ed9b5eee-44ba-4f65-bb29-aee7b16f9ea7_THhB.png",
+          "postedBy": "Hindustan Times",
+          "postedByLogo": "https://www.hindustantimes.com/images/app-images/ht2020/desktop.png",
+          "sourceUrl": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml",
+          "createdAt": "2026-10-03T03:50:55.000Z",
+          "publishedAt": "2026-10-03T03:50:55.000Z",
+          "publicationDateExtractionMethod": "article-page-metadata",
+          "fetchedAt": "2026-10-03T15:44:51.018Z",
+          "cityCode": "",
+          "id": "fb1a8895c06623a88411d14ee3b28f5c9094151405b2da823f3acb5db0a5b6bc",
+          "sourceCityCodes": [
+            "ranchi"
+          ],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml",
+            "actualFetchedUrl": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml",
+            "fetchedSource": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 613,
+            "sourceType": "RSS_OR_ATOM"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml",
+      "recovered": false
+    },
+    "source-0fb6755d243a0a3e": {
+      "source": "https://www.brigadegroup.com/investor",
+      "status": "TIMEOUT",
+      "error": "source budget exhausted before operation",
+      "attempts": 4
+    },
+    "source-0fe593d4189e47db": {
+      "source": "https://mmrda.maharashtra.gov.in/en/other-services/news-and-announcements",
+      "status": "TIMEOUT",
+      "error": "source budget exhausted before operation",
+      "attempts": 4
+    },
+    "source-107cf71f6fddc1f6": {
+      "source": "https://apiic.in/old-tenders",
+      "status": "TIMEOUT",
+      "error": "source budget exhausted before operation",
+      "attempts": 4
+    },
+    "source-10b1e33195222996": {
+      "source": "https://realty.economictimes.indiatimes.com/rss/technology",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Iris scan, Aadhaar app if fingerprint fails during property registration in Maharashtra",
+          "description": "Pune property registration: Aadhaar verification mandatory from Oct 1; if fingerprint fails, iris scan or Aadhaar app face authentication to prevent fraud, ease seniors.",
+          "articleText": "Technology 2 min read Iris scan, Aadhaar app if fingerprint fails during property registration in Maharashtra Beginning October 1, it will be essential to use Aadhaar-based identity verification for property registrations covering a wide array of documents. To assist senior citizens and those with fingerprints that cannot be read, options like iris scanning and an Aadhaar application will be available. This new approach is designed to combat fraudulent registrations while decreasing the need for witnesses during transactions. Nisha Nambiar TNN Published On Oct 3, 2026 at 08:49 AM IST Representative AI imagePUNE: People, especially senior citizens, whose fingerprints cannot be authenticated during property registration will have other options, including iris scanning and an Aadhaar app-based facility, the state registration department said.Aadhaar-based identity verification is being made compulsory for property registration from Oct 1 to check fraudulent transactions and impersonation.Aadhaar authentication will be required for 63 categories of documents, including sale, purchase, mortgage and partition deeds. The department said citizens will not have to depend only on fingerprint authentication if it fails. Advt The department will also provide an Aadhaar app-based option, officials said. The latest Aadhaar app supports face authentication and services such as biometric lock and unlock, authentication history and e-Aadhaar. The registration department will use the app-based facility for verification in cases where the conventional fingerprint process cannot be completed.This could be particularly useful for senior citizens and people whose fingerprints are difficult to capture because of age or the nature of their work. It could also save citizens from having to make another trip to the sub-registrar’s office simply because a biometric device fails to read their fingerprint.Under the system, the fingerprint of the person registering the document will first be checked against Aadhaar records. If the fingerprint cannot be captured or does not match, an iris scan can be used. An iris scanner uses a camera to read the unique pattern in a person’s iris and match it with the biometric information linked to Aadhaar. UIDAI recognises iris authentication as an alternative biometric mode along with fingerprint and face authentication. “We have currently started with Aadhaar verification from Oct 1 and the remaining options would be made available in the next 10 days. The entire aim is to ensure that it is made compulsory and there is no need of witnesses. The authentication will weed out fake witnesses,” said DIG IT Abhay Mohite. He said that all the offices will have the biometric scanner, iris, and the system will be synched to the Aadhaar app too. Advt Citizens said the department must ensure that compulsory Aadhaar verification does not become another reason for genuine property buyers, sellers or other parties to a transaction being sent back. “Using technology to prevent fraud is a good step, but it should not make registration more difficult for ordinary citizens. If a fingerprint fails, the alternative should be available immediately instead of asking the person to return another day,” said a Pune resident.Another citizen said technical problems should not be passed on to applicants. “If Aadhaar authentication is compulsory, the registration office should have a working alternative when there is a scanner, connectivity or app problem. A genuine citizen should not lose a day or have a registration delayed because of a technical glitch,” he said.The department said the different authentication options would allow citizens to complete verification even when fingerprint authentication is not possible, while Aadhaar-based identity checks will help guard against fraudulent property registrations. By Nisha Nambiar , TNN Published On Oct 3, 2026 at 08:49 AM IST See more on: Pune, Maharashtra registration department, Aadhaar authentication, property registration, iris scan, fingerprint authentication, Aadhaar app, face authentication, UIDAI, Abhay Mohite Join the community of 2M+ industry professionals. Subscribe to Newsletter to get latest insights & analysis in your inbox. All about ETRealty industry right on your smartphone! Download the ETRealty App and get the Realtime updates and Save your favourite articles. HomeNewsTechnologyIris scan, Aadhaar app if fingerprint fails during property registration in Maharashtra Technology 2 min read Iris scan, Aadhaar app if fingerprint fails during property registration in Maharashtra Beginning October 1, it will be essential to use Aadhaar-based identity verification for property registrations covering a wide array of documents. To assist senior citizens and those with fingerprints that cannot be read, options like iris scanning and an Aadhaar application will be available. This new approach is designed to combat fraudulent registrations while decreasing the need for witne",
+          "articleReadAttempted": true,
+          "fullArticleRead": true,
+          "articleReadError": "",
+          "isActive": true,
+          "newsLink": "https://realty.economictimes.indiatimes.com/news/technology/iris-scan-aadhaar-app-if-fingerprint-fails-during-property-registration-in-maharashtra/134651284",
+          "thumbnailImage": "https://etimg.etb2bimg.com/photo/134651299.cms",
+          "postedBy": "ET Realty",
+          "postedByLogo": "https://img.etb2bimg.com/files/cp/upload-1679566505-et-realty-light-theme.png",
+          "sourceUrl": "https://realty.economictimes.indiatimes.com/rss/technology",
+          "createdAt": "2026-10-03T03:19:35.000Z",
+          "publishedAt": "2026-10-03T03:19:35.000Z",
+          "publicationDateExtractionMethod": "article-page-metadata",
+          "fetchedAt": "2026-10-03T15:44:51.982Z",
+          "cityCode": "",
+          "id": "a4f721d231942ca6dea09be0de8f14c2e28416232cc5e19b4102fed65fd2dab0",
+          "sourceCityCodes": [],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://realty.economictimes.indiatimes.com/rss/technology",
+            "actualFetchedUrl": "https://realty.economictimes.indiatimes.com/rss/technology",
+            "fetchedSource": "https://realty.economictimes.indiatimes.com/rss/technology",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 1010,
+            "sourceType": "RSS_OR_ATOM"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://realty.economictimes.indiatimes.com/rss/technology",
+      "recovered": false
+    },
+    "source-11b7e1e441ea3144": {
+      "source": "https://www.livehindustan.com/ncr/gurugram",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "India vs Pakistan Live score",
+          "description": "IND vs PAK Final Highlights: भारत ने एशियन गेम्स 2026 के फाइनल में पाकिस्तान कोधूल चटाई। भारत ने 212 रनों का टारगेट दिया था। भारतीय पुरुष क्रिकेट टीम ने पिछले साल भी एशियन...",
+          "articleText": "3 Oct 2026, 01:34:46 PM IST ND vs PAK Live Score: भारत ने जीता मुकाबला भारत ने पाकिस्तान को 19 रनों से हराया है। हसन नवाजा 96 रन बनाकर आखिरी गेंद पर आउट हुए। पाकिस्तान को आखिरी ओवर में 33 रनों की जरूरत थी। 3 Oct 2026, 01:27:19 PM IST ND vs PAK Live Score: पाकिस्तान को 6 गेंदों में चाहिए 33 रन पाकिस्तान को छह गेंदों में 33 रन चाहिए। बुमराह ने 19वें ओवर में 11 रन दिए, जिसमें एक सिक्स भी गया। नवाज 84 रन बनाकर खेल रहे हैं। 3 Oct 2026, 01:17:52 PM IST ND vs PAK Live Score: पाकिस्तान को 18 गेंदों में चाहिए 52 रन पाकिस्तान को 18 गेंदों में 52 रन चाहिए। भारत की नवाज के विकेट पर नजर है। वह 40 गेंदों में 79 रन बना चुके हैं। अब्दुल समद 7 गेंदों में 8 रन बनाकर खेल रहे हैं। 3 Oct 2026, 01:07:58 PM IST IND vs PAK Live Score: नवाज और अयूब की साझेदारी टूटी नवाज और अयूब की साझेदारी टूट गई है। दुबे ने 15वें ओवर में अयूब को सुंदर के हाथों कैच कराया। उन्होंने 22 गेंदों में 29 रन जुटाए। नवाज 32 गेंदों में 60 रन बनाकर टिके हैं। 3 Oct 2026, 12:56:21 PM IST IND vs PAK Live Score: पाकिस्तान टीम 100 के पार 13 ओवर के बाद पाकिस्तान का स्कोर 117/3 है। नवाज और अयूब चौथे विकेट के लिए 75 रनों से ज्यादा की साझेदारी कर चुके हैं। नवाज 29 गेंदों में 54 रन बनाकर टिके हैं। अयूब 16 गेंदों में 24 रन बनाकर क्रीज पर हैं। बिश्नोई ने 13वें ओवर में 20 रन लुटाए। 3 Oct 2026, 12:42:08 PM IST IND vs PAK Live Score: पाकिस्तान पहुंचा 75 के पार 10 ओवर के बाद पाकिस्तान का स्कोर दो विकेट पर 76 रन है। सईम अयूब और हसन नवाज क्रीज पर हैं। अयूब ने 9 गेंदों में 12 और नवाज ने 28 गेंदों मे 26 रन जोड़ लिए हैं। दोनों के बीच चौथे विकेट के लिए 35 रनों से अधिक की साझेदारी हो गई है। 3 Oct 2026, 12:32:23 PM IST IND vs PAK Live Score: सुंदर ने लपका गजब का कैच पाकिस्तान का तीसरा विकेट माज सदाकत (18 गेंदों में 23, तीन चौके) के तौर पर गिरा है। उन्हें अक्षर ने सातवें ओवर की पहली गेंद पर सुंदर को कैच कराया। सुंदर ने डीप बैकवर्ड स्क्वेयर लेग पर जाकर गजब का कैच लपका। उन्होंने गेंद को हवा में उछाला और फिर बाउंड्री के बाहर गए। वह बाउंड्री के अंदर और कैच कंलीट किया। सईम अयूब 10 और हसन नवाज चार बनाकर क्रीज पर हैं। 3 Oct 2026, 12:16:03 PM IST IND vs PAK Live Score: भारत को मिली पहली सफलता भारत को पहली सफलता वॉशिंगटन सुंदर ने दिलाई है। उन्होंने चौथे ओवर में पाकिस्तान के कप्तान साहिबजादा फरहान (11 गेंदों में 10) को अक्षर के हाथों लपकवाया। उन्होंने सदाकत के साथ 33 रनों की ओपनिंग पार्टनरशिप की। अक्षर ने अगले ओवर में उसमान खान (6 गेंदों में 3) का शिकार किया। सदाकत 21 रन बनाकर क्रीज पर हैं। 3 Oct 2026, 12:02:52 PM IST IND vs PAK Live Score: पाकिस्तान की बल्लेबाजी हुई शुरू पाकिस्तान की बल्लेबाजी हुई शुरू हो गई है। कप्तान साहिबजादा फरहान और माज सदाकत लक्ष्य का पीछा करने उतरे हैं। जसप्रीत बुमराह ने भारत की बॉलिंग अटैक की कमान संभाली। उन्होंने पहले ओवर में 11 रन दिए, जिसमें दो नो बॉल हैं। सदाकत ने एक चौके समेत 8 रन बटोरे और फरहान के बल्ले से सिंगल निकला। 3 Oct 2026, 11:44:51 AM IST IND vs PAK Live Score: भारत ने दिया 212 का टारगेट भारत ने पाकिस्तान को 212 रनों का बड़ा टारगेट दिया है। भारत ने आखिरी ओवर में 16 रन जुटाए और शिवम दुबे (27) का विकेट गंवाया। तिलक वर्मा 51 और अक्षर पटेल 1 रन बनाकर नाबाद रहे। 3 Oct 2026, 11:34:13 AM IST IND vs PAK Live Score: दुबे और तिलक ने अयूब को कूटा दुबे और तिलक ने 19वें अयूब को कूटा। अयूब ने 23 रन खर्च किए। दुबे ने पहली-दूसरी गेंद पर छक्का और तीसरी पर चौका लगाया। तिलक ने पांचवी गेंद पर बाउंड्री लगाई। 3 Oct 2026, 11:26:34 AM IST IND vs PAK Live Score: भारतीय टीम पहुंची 150 के पार 17 ओवर के बाद भारत का स्कोर 154/5 है। शिवम दुबे 9 और तिलक वर्मा 13 रन बनाकर बल्लेबाजी कर रहे हैं। भारत की नजर 180 प्लस रन जुटाने पर होगी। 3 Oct 2026, 11:13:53 AM IST IND vs PAK Live Score: श्रेयस अय्यर भी लौटे पवेलियन भारत की आधी टीम पवेलियन लौट गई है। कप्तान श्रेयस अय्यर ने 24 गेंदों में 21 रन बनाए, जिसमें दो चौके शामिल हैं। उन्हें अबरार अहमद ने 15वें ओवर में आउट किया। 3 Oct 2026, 11:07:14 AM IST IND vs PAK Live Score: ईशान बड़ी पारी नहीं खेल पाए सेमीफाइनल में 80 रन बनाने वाले ईशान किशान फाइनल में बड़ी पारी नहीं खेल पाए। उन्होंने 18 गेंदों में तीन चौकों के जरिए 20 रन बनाए। ईशान को मिन्हास ने 14वें ओवर में बोल्ड किया। उन्होंने कप्तान अय्यर के साथ चौथे विकेट के लिए 35 रनों की साझेदारी की। 3 Oct 2026, 11:01:49 AM IST IND vs PAK Live Score: भारत की रनों की रफ्तार थमी भारत की रनों की रफ्तार थोड़ी थम गई है। भारत ने 11वें ओवर में 6 जबकि 12वें ओवर में चार रन बटोरे। अय्यर 17 और ईशान 18 रन बनाकर टिके हैं। भारत का स्कोर 124//3 है। 3 Oct 2026, 10:44:51 AM IST IND vs PAK Live Score: अभिषेक शर्मा ने गंवाया विकेट भारत का तीसरा विकेट अभिषेक शर्मा के रूप में गिरा है। उन्होंने 28 गेंदों में 61 रन बनाए, जिसमें तीन चौके और सात सिक्स हैं। उन्हें अराफात मिन्हास ने आठवें ओवर में स्टंप आउट कराया। 3 Oct 2026, 10:36:07 AM IST IND vs PAK Final Live Score: अभिषेक ने ठोकी तूफानी फिफ्टी अभिषेक शर्मा ने 20 गेंदों में तूफानी फिफ्टी ठोकी। यह उनके टी20 इंटरनेशनल करियर का 13वां अर्धशतक है। उन्होंने छठे ओवर की आखिरी गेंद पर छक्का लगाकर पचासा पूरा किया। भारत का 6 ओवर के बाद स्कोर 81/2 है। 3 Oct 2026, 10:24:06 AM IST IND vs PAK Live Score: संजू सैमसन भी सस्ते में लौटे भारत को दूसरा झटका संजू सैमसन के रूप में लगा है। वह चार गेंदों में दो रन बना सके। उन्हें अहमद दानियाल ने चौथे ओवर में अराफात मिन्हास को लपकवाया। भारत ने 3.2 ओवर मे",
+          "cityCode": "",
+          "isActive": true,
+          "newsLink": "https://www.livehindustan.com/cricket/ind-vs-pak-final-live-score-asian-games-2026-india-vs-pakistan-gold-medal-match-scorecard-updates-vaibhav-sooryavanshi-live-blog-201790995689056.html",
+          "thumbnailImage": "https://www.livehindustan.com/lh-img/smart/img/2026/10/03/640x360/IND_vs_PAK_Final_Highlights_1791014838125_4vgz_1791014838314_6pfF_a2426b90-1d94-4e68-bbe9-a5415293c347_AvOA.jpg",
+          "postedBy": "NCR News Today in Hindi, NCR Ki news, NCR news H",
+          "postedByLogo": "https://www.livehindustan.com/static-content/1y/lh/img/favicon-96x96.ico",
+          "publishedAt": "2026-10-03T03:04:07.000Z",
+          "fetchedAt": "2026-10-03T15:44:53.390Z",
+          "publicationDateExtractionMethod": "article-page-metadata",
+          "articleReadAttempted": true,
+          "fullArticleRead": true,
+          "articleReadError": "",
+          "createdAt": "2026-10-03T03:04:07.000Z",
+          "id": "061310b04320f15ef47a8485dc7976575775fe8b16de2ddc4aadb727075af280",
+          "sourceUrl": "https://www.livehindustan.com/ncr/gurugram",
+          "sourceCityCodes": [
+            "gurugram"
+          ],
+          "sourceMode": "ACTIVE_FOR_REVIEW",
+          "regionalSource": true,
+          "language": "hi",
+          "languageScript": "Devanagari",
+          "languageConfidence": 0.8628744160483649,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://www.livehindustan.com/ncr/gurugram",
+            "actualFetchedUrl": "https://www.livehindustan.com/ncr/gurugram",
+            "fetchedSource": "https://www.livehindustan.com/ncr/gurugram",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 3409,
+            "sourceType": "HTML_OR_SPECIALIZED"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://www.livehindustan.com/ncr/gurugram",
+      "recovered": false
+    },
+    "source-11bbdda355af99d8": {
+      "source": "https://uhuda.uk.gov.in",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "उत्तराखंड आवास एवं नगर विकास प्राधिकरण Uttarakhand Housing and Urban Development Authority",
+          "description": "उत्तराखंड आवास एवं नगर विकास प्राधिकरण Uttarakhand Housing and Urban Development Authority",
+          "articleText": "Latest News New Date Extension of Land proposals invited from landowners/companies/partnership firms/societies/private partners/private sector for development of housing scheme in various cities of Uttarakhand in Public Private Partnership (PPP) mode under the affordable housing component of Pradhan Mantri Awas Yojana-2.0 (Urban). New Hon'ble Chief Minister Govt of Uttarakhand Shri Pushkar Singh Dhami Chief Administrator Dr. R. Rajesh Kumar, I.A.S. Online Services Apply for RTI Apply for Map WhatsApp Services Grievances Sanctioned Letter Application Status Court Cases Vendor Registration IMPORTANT LINKS MERI YOJNA-BOOK State Portal Online e-ASE App UKAVP RERA PMAY MOHUA CTCP Invest Uttarakhand UKMRC Apuni Sarkar ABOUT THE DEPARTMENTThe “Development Authority or the Authority” in relation to the whole of the State Area shall be ‘The Uttarakhand housing and Urban Development Authority’ (hereinafter referred to as the State Authority) and in relation to any development area shall be the Local Development Authority (hereinafter referred to as the Local Authority) constituted and notified under section 4 of the Act : Provided wherever in this Act the word “Authority” appears, it shall be construed as the Local Authority until and unless expressly provided as the State Authority :Read MoreNewsTendersDevelopment AuthoritiesNews The Prime Minister may inaugurate the Dehradun-Delhi Expressway in the first week of April; preparations are accelerating, with construction of the helipad already underway. Transit-Oriented Development (TOD) zones and Personal Rapid Transit (PRT) alignments will be integrated into the master plan. The government has approved funding of over ₹242 crore to accelerate key development initiatives across the region. Dhami Government’s Masterstroke: Dehradun–Haridwar–Rishikesh Corridor to Get Smart, Congestion-Free Transport Network From Paperwork to Progress: Dr. R. Rajesh Kumar Accelerates Development View All Tenders No post to displayNo post to display Development Authorities District Level Development Authority Bageshwar District Level Development Authority Nainital District Level Development Authority US NAGAR Haridwar Rishikesh Development Authority Mussoorie Dehradun Development Authority Acts and Rules Uttarakhand Town and Country Planning and Development (Amendment Act, 2025) The Uttarakhand Urban and Country Planning & Development Act, 1973 (Town Planning Amendment Act, 2022) View All Bye-Laws Regarding updating of bye-laws as per government orders regarding amendment in building construction and development bye-laws Current provisions in the standards contained in Uttarakhand Building Construction and Development Bye-laws Regulations 2011 (Amendment 2015) View All Policies Guidelines for Pradhan Mantri Awas Yojana – Urban 2.0 Uttarakhand Housing Rules, 2025 Uttarakhand Housing Rules, 2025, Uttarakhand Avas Evum Vikas Parishad View All Awards Skoch Award (Platinum) 2025 The SKOCH Award is recognised as the highest independent honour conferred on governments, institutions, and… DARPG, Govt of India- 2024 The National e-Governance Service Delivery Assessment (NeSDA) is a framework that evaluates the effectiveness of… DARPG, Govt of India- 2021 The National e-Governance Service Delivery Assessment (NeSDA) is a framework that evaluates the effectiveness of… Photo Gallery View All Latest News New Date Extension of Land proposals invited from landowners/companies/partnership firms/societies/private partners/private sector for development of housing scheme in various cities of Uttarakhand in Public Private Partnership (PPP) mode under the affordable housing component of Pradhan Mantri Awas Yojana-2.0 (Urban). New Skoch Award (Platinum) 2025 The SKOCH Award is recognised as the highest independent honour conferred on governments, institutions, and… Skoch Award (Platinum) 2025 The SKOCH Award is recognised as the highest independent honour conferred on governments, institutions, and… DARPG, Govt of India- 2024 The National e-Governance Service Delivery Assessment (NeSDA) is a framework that evaluates the effectiveness of… DARPG, Govt of India- 2024 The National e-Governance Service Delivery Assessment (NeSDA) is a framework that evaluates the effectiveness of… DARPG, Govt of India- 2021 The National e-Governance Service Delivery Assessment (NeSDA) is a framework that evaluates the effectiveness of… DARPG, Govt of India- 2021 The National e-Governance Service Delivery Assessment (NeSDA) is a framework that evaluates the effectiveness of…",
+          "cityCode": "new_delhi",
+          "isActive": true,
+          "newsLink": "https://uhuda.uk.gov.in/",
+          "thumbnailImage": "https://cdnbbsr.s3waas.gov.in/s3ac1ad983e08ad3304a97e147f522747e/uploads/2025/02/202502201404002251-300x200.jpg",
+          "postedBy": "Homepage",
+          "postedByLogo": "https://www.google.com/s2/favicons?domain=uhuda.uk.gov.in&sz=128",
+          "publishedAt": "",
+          "fetchedAt": "2026-10-03T15:44:53.585Z",
+          "publicationDateExtractionMethod": "unknown",
+          "articleReadAttempted": true,
+          "fullArticleRead": true,
+          "articleReadError": "",
+          "createdAt": "",
+          "id": "d2cc3d90c7f49c0a52943a2efd946dbf4fe71e80658e4275424bf117520e7687",
+          "sourceUrl": "https://uhuda.uk.gov.in",
+          "sourceCityCodes": [],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://uhuda.uk.gov.in",
+            "actualFetchedUrl": "https://uhuda.uk.gov.in",
+            "fetchedSource": "https://uhuda.uk.gov.in",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 3373,
+            "sourceType": "HTML_OR_SPECIALIZED"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://uhuda.uk.gov.in",
+      "recovered": false
+    },
+    "source-120d7d25396e8ee5": {
+      "source": "https://realty.economictimes.indiatimes.com/news/industry",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Thiruvananthapuram",
+          "description": "ETRealty.com brings latest thiruvananthapuram news, views and updates from all top sources for the Indian Real Estate industry.",
+          "articleText": "Construction of houses for Wayanad rehabilitation to be completed by Oct-end: Minister The construction of homes in the Wayanad rehabilitation township is on track, with a completion date set for the end of October. The contractor is focused on delivering all 110 houses as planned. Additionally, a review will allow for the inclusion of disaster victims initially overlooked. By December, basic infrastructure work will be completed, followed by a beneficiary selection process via a draw. Thiruvananthapuram corporation plans AI push to recover ₹200 crore in property tax arrears Brigade Group leases 1.62 lakh sq ft office space to HealthEdge in Thiruvananthapuram Kerala: 30,000 beneficiaries to get houses under PMAY-Urban 2.0 Rajaji Nagar housing project nears occupancy as final utility connection awaits Kerala RERA awards buyers 16.65% interest for delayed flat handover Thiruvananthapuram: Housing project in limbo, families left waiting Private developers to build IT infra at Thiruvananthapuram's Technocity Green nod delay holds up Thiruvanthapuram airport expansion Construction of houses for Wayanad rehabilitation to be completed by Oct-end: Minister The construction of homes in the Wayanad rehabilitation township is on track, with a completion date set for the end of October. The contractor is focused on delivering all 110 houses as planned. Additionally, a review will allow for the inclusion of disaster victims initially overlooked. By December, basic infrastructure work will be completed, followed by a beneficiary selection process via a draw. Construction of houses for Wayanad rehabilitation to be completed by Oct-end: Minister The construction of homes in the Wayanad rehabilitation township is on track, with a completion date set for the end of October. The contractor is focused on delivering all 110 houses as planned. Additionally, a review will allow for the inclusion of disaster victims initially overlooked. By December, basic infrastructure work will be completed, followed by a beneficiary selection process via a draw. Construction of houses for Wayanad rehabilitation to be completed by Oct-end: Minister The construction of homes in the Wayanad rehabilitation township is on track, with a completion date set for the end of October. The contractor is focused on delivering all 110 houses as planned. Additionally, a review will allow for the inclusion of disaster victims initially overlooked. By December, basic infrastructure work will be completed, followed by a beneficiary selection process via a draw. Construction of houses for Wayanad rehabilitation to be completed by Oct-end: Minister The construction of homes in the Wayanad rehabilitation township is on track, with a completion date set for the end of October. The contractor is focused on delivering all 110 houses as planned. Additionally, a review will allow for the inclusion of disaster victims initially overlooked. By December, basic infrastructure work will be completed, followed by a beneficiary selection process via a draw. Thiruvananthapuram corporation plans AI push to recover ₹200 crore in property tax arrears Brigade Group leases 1.62 lakh sq ft office space to HealthEdge in Thiruvananthapuram Kerala: 30,000 beneficiaries to get houses under PMAY-Urban 2.0 Rajaji Nagar housing project nears occupancy as final utility connection awaits Kerala RERA awards buyers 16.65% interest for delayed flat handover Thiruvananthapuram: Housing project in limbo, families left waiting Private developers to build IT infra at Thiruvananthapuram's Technocity Green nod delay holds up Thiruvanthapuram airport expansion Thiruvananthapuram corporation plans AI push to recover ₹200 crore in property tax arrears Thiruvananthapuram corporation plans AI push to recover ₹200 crore in property tax arrears Thiruvananthapuram corporation plans AI push to recover ₹200 crore in property tax arrears Brigade Group leases 1.62 lakh sq ft office space to HealthEdge in Thiruvananthapuram Brigade Group leases 1.62 lakh sq ft office space to HealthEdge in Thiruvananthapuram Brigade Group leases 1.62 lakh sq ft office space to HealthEdge in Thiruvananthapuram Kerala: 30,000 beneficiaries to get houses under PMAY-Urban 2.0 Kerala: 30,000 beneficiaries to get houses under PMAY-Urban 2.0 Kerala: 30,000 beneficiaries to get houses under PMAY-Urban 2.0 Rajaji Nagar housing project nears occupancy as final utility connection awaits Rajaji Nagar housing project nears occupancy as final utility connection awaits Rajaji Nagar housing project nears occupancy as final utility connection awaits Kerala RERA awards buyers 16.65% interest for delayed flat handover Kerala RERA awards buyers 16.65% interest for delayed flat handover Kerala RERA awards buyers 16.65% interest for delayed flat handover Thiruvananthapuram: Housing project in limbo, families left waiting Thiruvananthapuram: Housing project in limbo, families left waiting Thiruvananthapuram: Housing project in limbo, families left wait",
+          "cityCode": "trivandrum",
+          "isActive": true,
+          "newsLink": "https://realty.economictimes.indiatimes.com/tag/thiruvananthapuram?utm_source=main_menu2_dropdown&utm_medium=sectionListing",
+          "thumbnailImage": "https://etimg.etb2bimg.com/thumb/img-size-311712/134050698.cms?width=400&height=300",
+          "postedBy": "ET Realty",
+          "postedByLogo": "https://img.etb2bimg.com/files/cp/upload-1686643859-realty.ico",
+          "publishedAt": "",
+          "fetchedAt": "2026-10-03T15:44:51.932Z",
+          "publicationDateExtractionMethod": "unknown",
+          "articleReadAttempted": true,
+          "fullArticleRead": true,
+          "articleReadError": "",
+          "createdAt": "",
+          "id": "2e41d7735d9c5d2dfd1c745bae57bb62c80c3b40fa4a69c315e4ae26e10ffef1",
+          "sourceUrl": "https://realty.economictimes.indiatimes.com/news/industry",
+          "sourceCityCodes": [],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://realty.economictimes.indiatimes.com/news/industry",
+            "actualFetchedUrl": "https://realty.economictimes.indiatimes.com/news/industry",
+            "fetchedSource": "https://realty.economictimes.indiatimes.com/news/industry",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 1830,
+            "sourceType": "HTML_OR_SPECIALIZED"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://realty.economictimes.indiatimes.com/news/industry",
+      "recovered": false
+    },
+    "source-12a685aa6773d5f8": {
+      "source": "https://www.pmrda.gov.in/en/pmrda-news",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Skip to Main Content",
+          "description": "Read the latest press releases and official notices from Pune Metropolitan Region Development Authority (PMRDA), Government of Maharashtra.",
+          "articleText": "PUNE METROPOLITAN REGION DEVELOPMENT AUTHORITY GOVERNMENT OF MAHARASHTRA Aundh Office Survey No. 152-153, Maharaja Sayaji Gaikwad Udyog Bhavan, Aundh, Pune, 411067 View in Map Akurdi Office New Administrative Building Near Akurdi Railway Station Akurdi, Pune 411044 View in Map",
+          "cityCode": "",
+          "isActive": true,
+          "newsLink": "https://www.pmrda.gov.in/en/pmrda-news#main",
+          "thumbnailImage": "https://www.google.com/s2/favicons?domain=www.pmrda.gov.in&sz=128",
+          "postedBy": "Pune Metropolitan Region Development Authority (",
+          "postedByLogo": "https://www.pmrda.gov.in/wp-content/uploads/2025/02/favicon.webp",
+          "publishedAt": "2025-03-17T07:19:21.000Z",
+          "fetchedAt": "2026-10-03T15:44:54.188Z",
+          "publicationDateExtractionMethod": "article-page-metadata",
+          "articleReadAttempted": true,
+          "fullArticleRead": true,
+          "articleReadError": "",
+          "createdAt": "2025-03-17T07:19:21.000Z",
+          "id": "90214e5f40ea8ef5433d46b34fbf1c8a4c7f392406caac392ad2f918c165eb22",
+          "sourceUrl": "https://www.pmrda.gov.in/en/pmrda-news",
+          "sourceCityCodes": [
+            "pune"
+          ],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://www.pmrda.gov.in/en/pmrda-news",
+            "actualFetchedUrl": "https://www.pmrda.gov.in/en/pmrda-news",
+            "fetchedSource": "https://www.pmrda.gov.in/en/pmrda-news",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 4656,
+            "sourceType": "HTML_OR_SPECIALIZED"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://www.pmrda.gov.in/en/pmrda-news",
+      "recovered": false
+    },
+    "source-12d4322ce5cb8f54": {
+      "source": "https://publish.tribuneindia.com/state/uttarakhand/feed",
+      "status": "TIMEOUT",
+      "error": "source budget exhausted before operation",
+      "attempts": 4
+    },
+    "source-12f596f55c4324ec": {
+      "source": "https://www.welspunone.com/news-insights/press-release",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Skip to main content",
+          "description": "Stay updated with Welspun One's latest news, insights, and trends in logistics and warehousing. Discover developments shaping India's industrial landscape.",
+          "articleText": "In light of the increasing fraudulent communications, we urge all our stakeholders, investors, and the general public to remain vigilant against potential fraudulent messages and communications being circulated via social media, messaging platforms (including WhatsApp and Telegram), or other unofficial channels, claiming to be from or affiliated with Welspun One. Please be advised that Welspun One and its authorized representatives do not offer any investment products or schemes directly to the general public, nor do they solicit investments, offer stock recommendations, or provide financial advice via unofficial platforms or third party groups. Any such communications or groups claiming affiliation with Welspun One or its leadership for trading tips, market advice, or investment schemes are unauthorized and should be regarded with extreme caution. If you encounter any such suspicious activity, please do not engage, click on any links, or share any personal or financial information. Welspun One will not be liable for any loss or damage arising from such unauthorized communications or fraudulent representations. We remain committed to our investors' and stakeholders' safety and the integrity of our communication. Impersonating Welspun One or its representatives is a criminal offense, and we reserve the right to pursue legal action against any individuals or entities involved in such activities. Press Release 26th August 2026 21st July 2026 3rd June 2026 11th May 2026 21st April 2026 9th December 2025 20th August 2025 7th April 2025 27th February 2025 18th December 2024 10th December 2024 29th November 2024 Your Relationship with us: Subscribe now for exclusive insights and offers that keep you ahead of industry trends.",
+          "cityCode": "",
+          "isActive": true,
+          "newsLink": "https://www.welspunone.com/news-insights/press-release#main-content",
+          "thumbnailImage": "https://welspuncms.welspunone.com/uploads/New_image_78ddee6189.png",
+          "postedBy": "Welspun One News & Insights",
+          "postedByLogo": "https://www.welspunone.com/_next/static/media/favicon.ef86e902.png",
+          "publishedAt": "",
+          "fetchedAt": "2026-10-03T15:44:54.319Z",
+          "publicationDateExtractionMethod": "unknown",
+          "articleReadAttempted": true,
+          "fullArticleRead": true,
+          "articleReadError": "",
+          "createdAt": "",
+          "id": "004e60f9b9c01b0f2548803e004a5e3634de40fd6ec12ff6a1d1c0e3594495a5",
+          "sourceUrl": "https://www.welspunone.com/news-insights/press-release",
+          "sourceCityCodes": [],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://www.welspunone.com/news-insights/press-release",
+            "actualFetchedUrl": "https://www.welspunone.com/news-insights/press-release",
+            "fetchedSource": "https://www.welspunone.com/news-insights/press-release",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 3996,
+            "sourceType": "HTML_OR_SPECIALIZED"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://www.welspunone.com/news-insights/press-release",
+      "recovered": false
+    },
+    "source-13ccdfb5df2a59d2": {
+      "source": "https://realty.economictimes.indiatimes.com/rss/webstories",
+      "status": "SUCCESS_NO_CANDIDATE",
+      "articles": [],
+      "attempts": 1,
+      "fetchedSource": "https://realty.economictimes.indiatimes.com/rss/webstories",
+      "recovered": false
+    },
+    "source-14894528d7a649f2": {
+      "source": "https://aiforera.org/publications/public_notice",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Skip to Main Content",
+          "description": "All India Forum of Real Estate Regulatory Authorities",
+          "articleText": "",
+          "cityCode": "",
+          "isActive": true,
+          "newsLink": "https://aiforera.org/publications/public_notice#main-content",
+          "thumbnailImage": "https://www.google.com/s2/favicons?domain=aiforera.org&sz=128",
+          "postedBy": ".. : All India Forum of Real Estate Regulatory A",
+          "postedByLogo": "https://aiforera.org/public/website-assets/images/resources/aiforera-logo-square.png",
+          "publishedAt": "",
+          "fetchedAt": "2026-10-03T15:44:52.944Z",
+          "publicationDateExtractionMethod": "unknown",
+          "articleReadAttempted": true,
+          "fullArticleRead": false,
+          "articleReadError": "article page returned insufficient readable text",
+          "createdAt": "",
+          "id": "c94833d626ee5d4a46b062cda39b28e98086eecbd84816f5b38d921cf2c53496",
+          "sourceUrl": "https://aiforera.org/publications/public_notice",
+          "sourceCityCodes": [],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://aiforera.org/publications/public_notice",
+            "actualFetchedUrl": "https://aiforera.org/publications/public_notice",
+            "fetchedSource": "https://aiforera.org/publications/public_notice",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 2433,
+            "sourceType": "HTML_OR_SPECIALIZED"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://aiforera.org/publications/public_notice",
+      "recovered": false
+    },
+    "source-154017a3c81eec01": {
+      "source": "https://www.hindustantimes.com/cities/mumbai-news",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Live Cricket Score",
+          "description": "Live Score: Check live cricket scores, ball-by-ball commentary, live cricket scores, and ipl live score updates with latest news for todays live cricket matches and upcoming...",
+          "articleText": "As 2026 is finally here, the focus is well and truly on the Men's T20 World Cup, which begins on February 7 and runs through March 8. The 20 two participating teams will fight to bring the silverware home. However, before the competition begins, India will take on New Zealand in three ODIs and three T20Is. Adding to the packed calendar are the Women's Premier League (WPL) and the Indian women's team’s tour of Australia, comprising three ODIs, three T20Is, and a one-off Test. Once the T20 World Cup is done and dusted with in March, the attention will then move over to the Indian Premier League. The premier T20 tournament will begin on March 26. Defending champions Royal Challengers Bengaluru (RCB) will look to defend their title, but it won't be that easy, considering the other nine teams are top-notch, and every team plugged holes in the mini auction in Abu Dhabi. For ongoing and future cricket series, Crickit remains your go-to destination for live match insights. Get real-time score updates, ball-by-ball commentary, player statistics and in-depth match reports. Follow expert analysis, post-match discussions, and highlights of the biggest clashes across formats. Stay ahead with match alerts and never miss a moment of action from your favourite team. Stay tuned on Crickit for live scores, ball-by-ball commentary, player stats and expert insights from the India vs New Zealand series, the T20 World Cup, WPL 2026 and the IPL 2026 edition. Get real-time updates as the action unfolds and catch all the post-match coverage, including highlights, top moments and player reactions, right here from the IND v NZ series. For ongoing and future cricket series, Crickit remains your go-to destination for live match insights. Get real-time score updates, ball-by-ball commentary, player statistics and in-depth match reports. Follow expert analysis, post-match discussions, and highlights of the biggest clashes across formats. Stay ahead with match alerts and never miss a moment of action from your favourite team. The T20 World Cup 2026 tournament officially kicks off on February 7, 2026, and the final will be played on March 8, 2026. The 2026 T20 World Cup is being co-hosted by India and Sri Lanka. Matches will be held across five venues in India and three in Sri Lanka. A total of 20 teams are competing. They are divided into four groups of five. The top two teams from each group will advance to the Super 8 stage, followed by the semi-finals and the grand final. The final is scheduled to take place on March 8 at the Narendra Modi Stadium in Ahmedabad (subject to final qualification scenarios). You can follow every ball, wicket, and boundary on Cricket Live Score page by Hindustan Times, which features real-time updates, win probabilities, and detailed player stats. India is placed in Group A and will play four matches in the opening round. They begin their campaign against the USA on February 7 in Mumbai, followed by a match against Namibia on February 12 in Delhi. The highly anticipated clash against Pakistan will take place on February 15 in Colombo, and they will wrap up the group stage against the Netherlands on February 18 in Ahmedabad. Following the World Cup and the IPL, India has a busy bilateral schedule. In June, they host Afghanistan for a one-off Test and three ODIs. In July, India travels to England for a high-profile white-ball tour consisting of five T20Is and three ODIs. August sees a two-Test tour of Sri Lanka, followed by a series in Bangladesh in September. India will host the West Indies in September for three ODIs and five T20Is. To close out the year, they will embark on a full tour of New Zealand in October and November (Tests, ODIs, and T20Is) before returning home to host Sri Lanka for a limited-overs series in December. Several major rivalries will be renewed this year. New Zealand tours England for a Test series in June, while Australia travels to Bangladesh that same month. In the latter half of the year, Australia will head to South Africa for a crucial three-match Test series, and England will tour Australia for a white-ball series starting in November.",
+          "cityCode": "",
+          "isActive": true,
+          "newsLink": "https://www.hindustantimes.com/cricket/live-score",
+          "thumbnailImage": "https://www.hindustantimes.com/ht-img/img/2026/10/03/550x309/CRICKET-IND-WIS-ODI-49_1791035829604_dJ1t_1791035844396_AZsg_8ea9580c-a7a4-4fef-ad4d-ea9c61a6d74b_1dF1.jpg",
+          "postedBy": "Hindustan Times",
+          "postedByLogo": "https://www.hindustantimes.com/favicon.ico",
+          "publishedAt": "",
+          "fetchedAt": "2026-10-03T15:44:51.366Z",
+          "publicationDateExtractionMethod": "unknown",
+          "articleReadAttempted": true,
+          "fullArticleRead": true,
+          "articleReadError": "",
+          "createdAt": "",
+          "id": "cfaa3d95a355aa7bcc78ebe580e8a470d45f62dc3d8777d7361d2bfb09d41b5b",
+          "sourceUrl": "https://www.hindustantimes.com/cities/mumbai-news",
+          "sourceCityCodes": [
+            "thane",
+            "kalyan_dombivli"
+          ],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://www.hindustantimes.com/cities/mumbai-news",
+            "actualFetchedUrl": "https://www.hindustantimes.com/cities/mumbai-news",
+            "fetchedSource": "https://www.hindustantimes.com/cities/mumbai-news",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 1091,
+            "sourceType": "HTML_OR_SPECIALIZED"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://www.hindustantimes.com/cities/mumbai-news",
+      "recovered": false
+    },
+    "source-1555b0977c7708b9": {
+      "source": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+      "status": "SUCCESS_PRODUCTIVE",
+      "articles": [
+        {
+          "title": "Third Asian Para Throwball Championship trophy unveiled; tournament from March 17-19 at Singhania University campus...",
+          "description": "The 3rd Asian Para Throwball Championship trophy was unveiled here on Friday in the presence of Pyush Sonkar, principal commissioner, Income Tax and Dr Manoj Kumar (IAS, Retd),...",
+          "articleText": "",
+          "articleReadAttempted": true,
+          "fullArticleRead": false,
+          "articleReadError": "article page returned insufficient readable text",
+          "isActive": true,
+          "newsLink": "https://timesofindia.indiatimes.com/city/jaipur/third-asian-para-throwball-championship-trophy-unveiled-tournament-from-march-17-19-at-singhania-university-campus-in-pacheri-jhunjhunu/articleshow/134655439.cms",
+          "thumbnailImage": "https://static.toiimg.com/thumb/msid-134655438,imgsize-214594,width-400,height-225,resizemode-75/world-throwballjpg.jpg",
+          "postedBy": "Times of India",
+          "postedByLogo": "https://timesofindia.indiatimes.com/photo/507610.cms",
+          "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+          "createdAt": "2026-10-02T18:30:00.000Z",
+          "publishedAt": "2026-10-02T18:30:00.000Z",
+          "publicationDateExtractionMethod": "article-page-metadata",
+          "fetchedAt": "2026-10-03T15:44:53.278Z",
+          "cityCode": "",
+          "id": "0624e90dc04207ee9cf5d0cfbaeea7bb96e434e3630234edf1afb1c2d87efcd4",
+          "sourceCityCodes": [
+            "jaipur"
+          ],
+          "sourceMode": "AUTO_PUBLISH",
+          "regionalSource": false,
+          "language": "en",
+          "languageScript": "Latin",
+          "languageConfidence": 1,
+          "languageDetectionMethod": "unicode-script-ratio",
+          "sourceTrace": {
+            "configuredUrl": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+            "actualFetchedUrl": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+            "fetchedSource": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+            "attempts": 1,
+            "recovered": false,
+            "fetchResult": "success",
+            "fetchDurationMs": 1751,
+            "sourceType": "RSS_OR_ATOM"
+          }
+        }
+      ],
+      "attempts": 1,
+      "fetchedSource": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+      "recovered": false
+    }
+  },
+  "note": "Cycle-scoped source/article evidence; publication decisions are written by the normal run report after filtering."
+}

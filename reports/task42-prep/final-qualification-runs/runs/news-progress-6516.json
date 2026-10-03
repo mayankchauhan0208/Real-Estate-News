@@ -1,0 +1,2380 @@
+{
+  "version": 1,
+  "status": "COMPLETE",
+  "startedAt": "2026-10-03T15:44:43.407Z",
+  "updatedAt": "2026-10-03T15:44:58.861Z",
+  "pid": 6516,
+  "mode": "dry-run",
+  "commitSha": "",
+  "allowedSources": 571,
+  "selectedSources": 571,
+  "elapsedMs": 15454,
+  "activeWorkers": 0,
+  "lastCompletedSource": "https://publish.tribuneindia.com/state/uttarakhand/feed",
+  "lastCompletedStage": "fetch",
+  "currentSources": [],
+  "counts": {
+    "started": 50,
+    "completed": 33,
+    "failed": 0,
+    "timeout": 17,
+    "deferred": 0,
+    "links": 29,
+    "articleAttempts": 29,
+    "readable": 18,
+    "fresh": 14,
+    "relevant": 0,
+    "geoValid": 7,
+    "review": 0,
+    "duplicates": 0,
+    "candidates": 29,
+    "published": 0,
+    "apiFailures": 0
+  },
+  "sources": {
+    "https://ncrtc.in/ncrtc-updates": {
+      "sourceId": "https://ncrtc.in/ncrtc-updates",
+      "sourceHost": "ncrtc.in",
+      "sourceUrl": "https://ncrtc.in/ncrtc-updates",
+      "startedAtMs": 1791042283424,
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "startedAt": "2026-10-03T15:44:43.424Z",
+      "elapsedMs": 7516
+    },
+    "https://mchi.net/newsletters": {
+      "sourceId": "https://mchi.net/newsletters",
+      "sourceHost": "mchi.net",
+      "sourceUrl": "https://mchi.net/newsletters",
+      "startedAtMs": 1791042283424,
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "startedAt": "2026-10-03T15:44:43.424Z",
+      "elapsedMs": 5267
+    },
+    "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms": {
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms",
+      "sourceHost": "timesofindia.indiatimes.com",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms",
+      "startedAtMs": 1791042283424,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:43.424Z",
+      "elapsedMs": 1888
+    },
+    "https://www.vocport.gov.in": {
+      "sourceId": "https://www.vocport.gov.in",
+      "sourceHost": "www.vocport.gov.in",
+      "sourceUrl": "https://www.vocport.gov.in",
+      "startedAtMs": 1791042283424,
+      "status": "COMPLETED_NO_CANDIDATE",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:43.424Z",
+      "elapsedMs": 2183
+    },
+    "https://dfccil.com": {
+      "sourceId": "https://dfccil.com",
+      "sourceHost": "dfccil.com",
+      "sourceUrl": "https://dfccil.com",
+      "startedAtMs": 1791042283424,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:43.424Z",
+      "elapsedMs": 4861
+    },
+    "https://realty.economictimes.indiatimes.com/tag/noida%2bauthority": {
+      "sourceId": "https://realty.economictimes.indiatimes.com/tag/noida%2bauthority",
+      "sourceHost": "realty.economictimes.indiatimes.com",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority",
+      "startedAtMs": 1791042283424,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:43.424Z",
+      "elapsedMs": 5079
+    },
+    "https://www.moneycontrol.com/news/business/real-estate": {
+      "sourceId": "https://www.moneycontrol.com/news/business/real-estate",
+      "sourceHost": "www.moneycontrol.com",
+      "sourceUrl": "https://www.moneycontrol.com/news/business/real-estate",
+      "startedAtMs": 1791042283424,
+      "status": "COMPLETED_NO_CANDIDATE",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:43.424Z",
+      "elapsedMs": 2859
+    },
+    "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms": {
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+      "sourceHost": "timesofindia.indiatimes.com",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+      "startedAtMs": 1791042283424,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:43.424Z",
+      "elapsedMs": 2284
+    },
+    "https://realty.economictimes.indiatimes.com/tag/greater%2bnoida": {
+      "sourceId": "https://realty.economictimes.indiatimes.com/tag/greater%2bnoida",
+      "sourceHost": "realty.economictimes.indiatimes.com",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida",
+      "startedAtMs": 1791042283424,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:43.424Z",
+      "elapsedMs": 5081
+    },
+    "https://www.gera.in/press-releases": {
+      "sourceId": "https://www.gera.in/press-releases",
+      "sourceHost": "www.gera.in",
+      "sourceUrl": "https://www.gera.in/press-releases",
+      "startedAtMs": 1791042283424,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:43.424Z",
+      "elapsedMs": 3812
+    },
+    "https://www.mindspacereit.com/newsroom": {
+      "sourceId": "https://www.mindspacereit.com/newsroom",
+      "sourceHost": "www.mindspacereit.com",
+      "sourceUrl": "https://www.mindspacereit.com/newsroom",
+      "startedAtMs": 1791042283424,
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "startedAt": "2026-10-03T15:44:43.424Z",
+      "elapsedMs": 7516
+    },
+    "https://publish.tribuneindia.com/city/patiala/feed": {
+      "sourceId": "https://publish.tribuneindia.com/city/patiala/feed",
+      "sourceHost": "publish.tribuneindia.com",
+      "sourceUrl": "https://publish.tribuneindia.com/city/patiala/feed",
+      "startedAtMs": 1791042283424,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:43.424Z",
+      "elapsedMs": 5457
+    },
+    "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml": {
+      "sourceId": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+      "sourceHost": "www.hindustantimes.com",
+      "sourceUrl": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+      "startedAtMs": 1791042283425,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:43.425Z",
+      "elapsedMs": 4485
+    },
+    "https://rera.assam.gov.in": {
+      "sourceId": "https://rera.assam.gov.in",
+      "sourceHost": "rera.assam.gov.in",
+      "sourceUrl": "https://rera.assam.gov.in",
+      "startedAtMs": 1791042283425,
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "startedAt": "2026-10-03T15:44:43.425Z",
+      "elapsedMs": 7516
+    },
+    "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms": {
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms",
+      "sourceHost": "timesofindia.indiatimes.com",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms",
+      "startedAtMs": 1791042283425,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:43.425Z",
+      "elapsedMs": 2896
+    },
+    "https://www.signatureglobal.in/mediacoverage/page/1": {
+      "sourceId": "https://www.signatureglobal.in/mediacoverage/page/1",
+      "sourceHost": "www.signatureglobal.in",
+      "sourceUrl": "https://www.signatureglobal.in/mediacoverage/page/1",
+      "startedAtMs": 1791042283425,
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "startedAt": "2026-10-03T15:44:43.425Z",
+      "elapsedMs": 7516
+    },
+    "https://indianexpress.com/section/cities/hyderabad": {
+      "sourceId": "https://indianexpress.com/section/cities/hyderabad",
+      "sourceHost": "indianexpress.com",
+      "sourceUrl": "https://indianexpress.com/section/cities/hyderabad",
+      "startedAtMs": 1791042283425,
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "startedAt": "2026-10-03T15:44:43.425Z",
+      "elapsedMs": 7516
+    },
+    "https://www.mahindralifespaces.com/newsroom/media-resources": {
+      "sourceId": "https://www.mahindralifespaces.com/newsroom/media-resources",
+      "sourceHost": "www.mahindralifespaces.com",
+      "sourceUrl": "https://www.mahindralifespaces.com/newsroom/media-resources",
+      "startedAtMs": 1791042283425,
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "startedAt": "2026-10-03T15:44:43.425Z",
+      "elapsedMs": 7515
+    },
+    "https://www.grinfra.com/media-coverage": {
+      "sourceId": "https://www.grinfra.com/media-coverage",
+      "sourceHost": "www.grinfra.com",
+      "sourceUrl": "https://www.grinfra.com/media-coverage",
+      "startedAtMs": 1791042283425,
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "startedAt": "2026-10-03T15:44:43.425Z",
+      "elapsedMs": 7516
+    },
+    "https://mddaonline.in": {
+      "sourceId": "https://mddaonline.in",
+      "sourceHost": "mddaonline.in",
+      "sourceUrl": "https://mddaonline.in",
+      "startedAtMs": 1791042283425,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:43.425Z",
+      "elapsedMs": 4495
+    },
+    "https://www.krahejacorp.com/newsroom": {
+      "sourceId": "https://www.krahejacorp.com/newsroom",
+      "sourceHost": "www.krahejacorp.com",
+      "sourceUrl": "https://www.krahejacorp.com/newsroom",
+      "startedAtMs": 1791042285319,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:45.319Z",
+      "elapsedMs": 5090
+    },
+    "https://www.kmda.wb.gov.in": {
+      "sourceId": "https://www.kmda.wb.gov.in",
+      "sourceHost": "www.kmda.wb.gov.in",
+      "sourceUrl": "https://www.kmda.wb.gov.in",
+      "startedAtMs": 1791042285609,
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "startedAt": "2026-10-03T15:44:45.609Z",
+      "elapsedMs": 7503
+    },
+    "https://www.aba-corp.com": {
+      "sourceId": "https://www.aba-corp.com",
+      "sourceHost": "www.aba-corp.com",
+      "sourceUrl": "https://www.aba-corp.com",
+      "startedAtMs": 1791042285710,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:45.710Z",
+      "elapsedMs": 2723
+    },
+    "https://www.jll.co.in/en/newsroom": {
+      "sourceId": "https://www.jll.co.in/en/newsroom",
+      "sourceHost": "www.jll.co.in",
+      "sourceUrl": "https://www.jll.co.in/en/newsroom",
+      "startedAtMs": 1791042286289,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:46.289Z",
+      "elapsedMs": 4760
+    },
+    "https://rera.kerala.gov.in": {
+      "sourceId": "https://rera.kerala.gov.in",
+      "sourceHost": "rera.kerala.gov.in",
+      "sourceUrl": "https://rera.kerala.gov.in",
+      "startedAtMs": 1791042286323,
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "startedAt": "2026-10-03T15:44:46.323Z",
+      "elapsedMs": 7509
+    },
+    "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-real-estate-investment-trusts-reits-_95232.html": {
+      "sourceId": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-real-estate-investment-trusts-reits-_95232.html",
+      "sourceHost": "www.sebi.gov.in",
+      "sourceUrl": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-real-estate-investment-trusts-reits-_95232.html",
+      "startedAtMs": 1791042287241,
+      "status": "COMPLETED_NO_CANDIDATE",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:47.241Z",
+      "elapsedMs": 2238
+    },
+    "https://maxestates.in/news-and-media": {
+      "sourceId": "https://maxestates.in/news-and-media",
+      "sourceHost": "maxestates.in",
+      "sourceUrl": "https://maxestates.in/news-and-media",
+      "startedAtMs": 1791042287991,
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "startedAt": "2026-10-03T15:44:47.991Z",
+      "elapsedMs": 7507
+    },
+    "https://rera.goa.gov.in": {
+      "sourceId": "https://rera.goa.gov.in",
+      "sourceHost": "rera.goa.gov.in",
+      "sourceUrl": "https://rera.goa.gov.in",
+      "startedAtMs": 1791042287993,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:47.993Z",
+      "elapsedMs": 2946
+    },
+    "https://infra.economictimes.indiatimes.com/rss/lateststories": {
+      "sourceId": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+      "sourceHost": "infra.economictimes.indiatimes.com",
+      "sourceUrl": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+      "startedAtMs": 1791042288286,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:48.286Z",
+      "elapsedMs": 2490
+    },
+    "https://realty.economictimes.indiatimes.com/rss/international": {
+      "sourceId": "https://realty.economictimes.indiatimes.com/rss/international",
+      "sourceHost": "realty.economictimes.indiatimes.com",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/rss/international",
+      "startedAtMs": 1791042288436,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:48.436Z",
+      "elapsedMs": 2482
+    },
+    "https://in.esr.com/newsroom": {
+      "sourceId": "https://in.esr.com/newsroom",
+      "sourceHost": "in.esr.com",
+      "sourceUrl": "https://in.esr.com/newsroom",
+      "startedAtMs": 1791042288506,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:48.506Z",
+      "elapsedMs": 1977
+    },
+    "https://english.bmrc.co.in": {
+      "sourceId": "https://english.bmrc.co.in",
+      "sourceHost": "english.bmrc.co.in",
+      "sourceUrl": "https://english.bmrc.co.in",
+      "startedAtMs": 1791042288509,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:48.509Z",
+      "elapsedMs": 3752
+    },
+    "https://indianexpress.com/section/cities/pune": {
+      "sourceId": "https://indianexpress.com/section/cities/pune",
+      "sourceHost": "indianexpress.com",
+      "sourceUrl": "https://indianexpress.com/section/cities/pune",
+      "startedAtMs": 1791042288695,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:48.695Z",
+      "elapsedMs": 4610
+    },
+    "https://rera.ap.gov.in/rera/views/index.html": {
+      "sourceId": "https://rera.ap.gov.in/rera/views/index.html",
+      "sourceHost": "rera.ap.gov.in",
+      "sourceUrl": "https://rera.ap.gov.in/RERA/Views/index.html",
+      "startedAtMs": 1791042288885,
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "startedAt": "2026-10-03T15:44:48.885Z",
+      "elapsedMs": 7515
+    },
+    "https://www.aai.aero/en/media/press-releases": {
+      "sourceId": "https://www.aai.aero/en/media/press-releases",
+      "sourceHost": "www.aai.aero",
+      "sourceUrl": "https://www.aai.aero/en/media/press-releases",
+      "startedAtMs": 1791042289482,
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "startedAt": "2026-10-03T15:44:49.482Z",
+      "elapsedMs": 7520
+    },
+    "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml": {
+      "sourceId": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml",
+      "sourceHost": "www.hindustantimes.com",
+      "sourceUrl": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml",
+      "startedAtMs": 1791042290411,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:50.411Z",
+      "elapsedMs": 613
+    },
+    "https://www.brigadegroup.com/investor": {
+      "sourceId": "https://www.brigadegroup.com/investor",
+      "sourceHost": "www.brigadegroup.com",
+      "sourceUrl": "https://www.brigadegroup.com/investor",
+      "startedAtMs": 1791042290490,
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "startedAt": "2026-10-03T15:44:50.490Z",
+      "elapsedMs": 5988
+    },
+    "https://mmrda.maharashtra.gov.in/en/other-services/news-and-announcements": {
+      "sourceId": "https://mmrda.maharashtra.gov.in/en/other-services/news-and-announcements",
+      "sourceHost": "mmrda.maharashtra.gov.in",
+      "sourceUrl": "https://mmrda.maharashtra.gov.in/en/other-services/news-and-announcements",
+      "startedAtMs": 1791042290779,
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "startedAt": "2026-10-03T15:44:50.779Z",
+      "elapsedMs": 5652
+    },
+    "https://apiic.in/old-tenders": {
+      "sourceId": "https://apiic.in/old-tenders",
+      "sourceHost": "apiic.in",
+      "sourceUrl": "https://apiic.in/old-tenders",
+      "startedAtMs": 1791042290976,
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "startedAt": "2026-10-03T15:44:50.976Z",
+      "elapsedMs": 7523
+    },
+    "https://realty.economictimes.indiatimes.com/rss/technology": {
+      "sourceId": "https://realty.economictimes.indiatimes.com/rss/technology",
+      "sourceHost": "realty.economictimes.indiatimes.com",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/rss/technology",
+      "startedAtMs": 1791042290980,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:50.980Z",
+      "elapsedMs": 1010
+    },
+    "https://www.livehindustan.com/ncr/gurugram": {
+      "sourceId": "https://www.livehindustan.com/ncr/gurugram",
+      "sourceHost": "www.livehindustan.com",
+      "sourceUrl": "https://www.livehindustan.com/ncr/gurugram",
+      "startedAtMs": 1791042290981,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:50.981Z",
+      "elapsedMs": 3409
+    },
+    "https://uhuda.uk.gov.in": {
+      "sourceId": "https://uhuda.uk.gov.in",
+      "sourceHost": "uhuda.uk.gov.in",
+      "sourceUrl": "https://uhuda.uk.gov.in",
+      "startedAtMs": 1791042290984,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:50.984Z",
+      "elapsedMs": 3373
+    },
+    "https://realty.economictimes.indiatimes.com/news/industry": {
+      "sourceId": "https://realty.economictimes.indiatimes.com/news/industry",
+      "sourceHost": "realty.economictimes.indiatimes.com",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/news/industry",
+      "startedAtMs": 1791042290986,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:50.986Z",
+      "elapsedMs": 1830
+    },
+    "https://www.pmrda.gov.in/en/pmrda-news": {
+      "sourceId": "https://www.pmrda.gov.in/en/pmrda-news",
+      "sourceHost": "www.pmrda.gov.in",
+      "sourceUrl": "https://www.pmrda.gov.in/en/pmrda-news",
+      "startedAtMs": 1791042290988,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:50.988Z",
+      "elapsedMs": 4656
+    },
+    "https://publish.tribuneindia.com/state/uttarakhand/feed": {
+      "sourceId": "https://publish.tribuneindia.com/state/uttarakhand/feed",
+      "sourceHost": "publish.tribuneindia.com",
+      "sourceUrl": "https://publish.tribuneindia.com/state/uttarakhand/feed",
+      "startedAtMs": 1791042290990,
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "startedAt": "2026-10-03T15:44:50.990Z",
+      "elapsedMs": 7511
+    },
+    "https://www.welspunone.com/news-insights/press-release": {
+      "sourceId": "https://www.welspunone.com/news-insights/press-release",
+      "sourceHost": "www.welspunone.com",
+      "sourceUrl": "https://www.welspunone.com/news-insights/press-release",
+      "startedAtMs": 1791042290992,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:50.992Z",
+      "elapsedMs": 3996
+    },
+    "https://realty.economictimes.indiatimes.com/rss/webstories": {
+      "sourceId": "https://realty.economictimes.indiatimes.com/rss/webstories",
+      "sourceHost": "realty.economictimes.indiatimes.com",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/rss/webstories",
+      "startedAtMs": 1791042290995,
+      "status": "COMPLETED_NO_CANDIDATE",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:50.995Z",
+      "elapsedMs": 531
+    },
+    "https://aiforera.org/publications/public_notice": {
+      "sourceId": "https://aiforera.org/publications/public_notice",
+      "sourceHost": "aiforera.org",
+      "sourceUrl": "https://aiforera.org/publications/public_notice",
+      "startedAtMs": 1791042291065,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:51.065Z",
+      "elapsedMs": 2433
+    },
+    "https://www.hindustantimes.com/cities/mumbai-news": {
+      "sourceId": "https://www.hindustantimes.com/cities/mumbai-news",
+      "sourceHost": "www.hindustantimes.com",
+      "sourceUrl": "https://www.hindustantimes.com/cities/mumbai-news",
+      "startedAtMs": 1791042291067,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:51.067Z",
+      "elapsedMs": 1091
+    },
+    "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms": {
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+      "sourceHost": "timesofindia.indiatimes.com",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+      "startedAtMs": 1791042291530,
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "startedAt": "2026-10-03T15:44:51.530Z",
+      "elapsedMs": 1751
+    }
+  },
+  "events": [
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:43.425Z",
+      "sourceId": "https://mddaonline.in",
+      "sourceUrl": "https://mddaonline.in",
+      "sourceHost": "mddaonline.in",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.425Z",
+      "sourceId": "https://ncrtc.in/ncrtc-updates",
+      "sourceUrl": "https://ncrtc.in/ncrtc-updates",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.425Z",
+      "sourceId": "https://mchi.net/newsletters",
+      "sourceUrl": "https://mchi.net/newsletters",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.425Z",
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.425Z",
+      "sourceId": "https://www.vocport.gov.in",
+      "sourceUrl": "https://www.vocport.gov.in",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.425Z",
+      "sourceId": "https://dfccil.com",
+      "sourceUrl": "https://dfccil.com",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.425Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/tag/noida%2bauthority",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.425Z",
+      "sourceId": "https://www.moneycontrol.com/news/business/real-estate",
+      "sourceUrl": "https://www.moneycontrol.com/news/business/real-estate",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.425Z",
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.425Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/tag/greater%2bnoida",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.425Z",
+      "sourceId": "https://www.gera.in/press-releases",
+      "sourceUrl": "https://www.gera.in/press-releases",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.425Z",
+      "sourceId": "https://www.mindspacereit.com/newsroom",
+      "sourceUrl": "https://www.mindspacereit.com/newsroom",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.426Z",
+      "sourceId": "https://publish.tribuneindia.com/city/patiala/feed",
+      "sourceUrl": "https://publish.tribuneindia.com/city/patiala/feed",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.426Z",
+      "sourceId": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+      "sourceUrl": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.426Z",
+      "sourceId": "https://rera.assam.gov.in",
+      "sourceUrl": "https://rera.assam.gov.in",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.426Z",
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.426Z",
+      "sourceId": "https://www.signatureglobal.in/mediacoverage/page/1",
+      "sourceUrl": "https://www.signatureglobal.in/mediacoverage/page/1",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.426Z",
+      "sourceId": "https://indianexpress.com/section/cities/hyderabad",
+      "sourceUrl": "https://indianexpress.com/section/cities/hyderabad",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.426Z",
+      "sourceId": "https://www.mahindralifespaces.com/newsroom/media-resources",
+      "sourceUrl": "https://www.mahindralifespaces.com/newsroom/media-resources",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.426Z",
+      "sourceId": "https://www.grinfra.com/media-coverage",
+      "sourceUrl": "https://www.grinfra.com/media-coverage",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:43.426Z",
+      "sourceId": "https://mddaonline.in",
+      "sourceUrl": "https://mddaonline.in",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:44.535Z",
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:44.831Z",
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:44.965Z",
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:45.312Z",
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms",
+      "sourceHost": "timesofindia.indiatimes.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 1888,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 0,
+      "fresh": 1,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:45.319Z",
+      "sourceId": "https://www.krahejacorp.com/newsroom",
+      "sourceUrl": "https://www.krahejacorp.com/newsroom",
+      "sourceHost": "www.krahejacorp.com",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:45.319Z",
+      "sourceId": "https://www.krahejacorp.com/newsroom",
+      "sourceUrl": "https://www.krahejacorp.com/newsroom",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:45.350Z",
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:45.381Z",
+      "sourceId": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+      "sourceUrl": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:45.433Z",
+      "sourceId": "https://www.vocport.gov.in",
+      "sourceUrl": "https://www.vocport.gov.in",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:45.435Z",
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:45.607Z",
+      "sourceId": "https://www.vocport.gov.in",
+      "sourceUrl": "https://www.vocport.gov.in",
+      "sourceHost": "www.vocport.gov.in",
+      "status": "COMPLETED_NO_CANDIDATE",
+      "stage": "article-extraction",
+      "elapsedMs": 2183,
+      "linksDiscovered": 0,
+      "articlesAttempted": 0,
+      "articlesReadable": 0,
+      "fresh": 0,
+      "geoValid": 0,
+      "candidates": 0
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:45.609Z",
+      "sourceId": "https://www.kmda.wb.gov.in",
+      "sourceUrl": "https://www.kmda.wb.gov.in",
+      "sourceHost": "www.kmda.wb.gov.in",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:45.609Z",
+      "sourceId": "https://www.kmda.wb.gov.in",
+      "sourceUrl": "https://www.kmda.wb.gov.in",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:45.708Z",
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms",
+      "sourceHost": "timesofindia.indiatimes.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 2284,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 0,
+      "fresh": 1,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:45.710Z",
+      "sourceId": "https://www.aba-corp.com",
+      "sourceUrl": "https://www.aba-corp.com",
+      "sourceHost": "www.aba-corp.com",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:45.711Z",
+      "sourceId": "https://www.aba-corp.com",
+      "sourceUrl": "https://www.aba-corp.com",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:45.712Z",
+      "sourceId": "https://dfccil.com",
+      "sourceUrl": "https://dfccil.com",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:45.741Z",
+      "sourceId": "https://www.gera.in/press-releases",
+      "sourceUrl": "https://www.gera.in/press-releases",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:46.107Z",
+      "sourceId": "https://www.gera.in/press-releases",
+      "sourceUrl": "https://www.gera.in/press-releases",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:46.280Z",
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:46.281Z",
+      "sourceId": "https://www.moneycontrol.com/news/business/real-estate",
+      "sourceUrl": "https://www.moneycontrol.com/news/business/real-estate",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:46.283Z",
+      "sourceId": "https://www.moneycontrol.com/news/business/real-estate",
+      "sourceUrl": "https://www.moneycontrol.com/news/business/real-estate",
+      "sourceHost": "www.moneycontrol.com",
+      "status": "COMPLETED_NO_CANDIDATE",
+      "stage": "article-extraction",
+      "elapsedMs": 2859,
+      "linksDiscovered": 0,
+      "articlesAttempted": 0,
+      "articlesReadable": 0,
+      "fresh": 0,
+      "geoValid": 0,
+      "candidates": 0
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:46.289Z",
+      "sourceId": "https://www.jll.co.in/en/newsroom",
+      "sourceUrl": "https://www.jll.co.in/en/newsroom",
+      "sourceHost": "www.jll.co.in",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:46.289Z",
+      "sourceId": "https://www.jll.co.in/en/newsroom",
+      "sourceUrl": "https://www.jll.co.in/en/newsroom",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:46.321Z",
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/3942690.cms",
+      "sourceHost": "timesofindia.indiatimes.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 2896,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 0,
+      "fresh": 1,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:46.323Z",
+      "sourceId": "https://rera.kerala.gov.in",
+      "sourceUrl": "https://rera.kerala.gov.in",
+      "sourceHost": "rera.kerala.gov.in",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:46.323Z",
+      "sourceId": "https://rera.kerala.gov.in",
+      "sourceUrl": "https://rera.kerala.gov.in",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:46.439Z",
+      "sourceId": "https://mddaonline.in",
+      "sourceUrl": "https://mddaonline.in",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:46.459Z",
+      "sourceId": "https://publish.tribuneindia.com/city/patiala/feed",
+      "sourceUrl": "https://publish.tribuneindia.com/city/patiala/feed",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:46.599Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/tag/noida%2bauthority",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:46.633Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/tag/greater%2bnoida",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:46.942Z",
+      "sourceId": "https://www.krahejacorp.com/newsroom",
+      "sourceUrl": "https://www.krahejacorp.com/newsroom",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:46.961Z",
+      "sourceId": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+      "sourceUrl": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:47.142Z",
+      "sourceId": "https://www.gera.in/press-releases",
+      "sourceUrl": "https://www.gera.in/press-releases",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:47.236Z",
+      "sourceId": "https://www.gera.in/press-releases",
+      "sourceUrl": "https://www.gera.in/press-releases",
+      "sourceHost": "www.gera.in",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 3812,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 1,
+      "fresh": 0,
+      "geoValid": 1,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:47.241Z",
+      "sourceId": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-real-estate-investment-trusts-reits-_95232.html",
+      "sourceUrl": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-real-estate-investment-trusts-reits-_95232.html",
+      "sourceHost": "www.sebi.gov.in",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:47.241Z",
+      "sourceId": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-real-estate-investment-trusts-reits-_95232.html",
+      "sourceUrl": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-real-estate-investment-trusts-reits-_95232.html",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:47.876Z",
+      "sourceId": "https://mddaonline.in",
+      "sourceUrl": "https://mddaonline.in",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:47.878Z",
+      "sourceId": "https://www.aba-corp.com",
+      "sourceUrl": "https://www.aba-corp.com",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:47.879Z",
+      "sourceId": "https://www.mindspacereit.com/newsroom",
+      "sourceUrl": "https://www.mindspacereit.com/newsroom",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:47.910Z",
+      "sourceId": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+      "sourceUrl": "https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml",
+      "sourceHost": "www.hindustantimes.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 4485,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 1,
+      "fresh": 1,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:47.920Z",
+      "sourceId": "https://mddaonline.in",
+      "sourceUrl": "https://mddaonline.in",
+      "sourceHost": "mddaonline.in",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 4495,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 0,
+      "fresh": 0,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:47.921Z",
+      "sourceId": "https://dfccil.com",
+      "sourceUrl": "https://dfccil.com",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:47.991Z",
+      "sourceId": "https://maxestates.in/news-and-media",
+      "sourceUrl": "https://maxestates.in/news-and-media",
+      "sourceHost": "maxestates.in",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:47.991Z",
+      "sourceId": "https://maxestates.in/news-and-media",
+      "sourceUrl": "https://maxestates.in/news-and-media",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:47.993Z",
+      "sourceId": "https://rera.goa.gov.in",
+      "sourceUrl": "https://rera.goa.gov.in",
+      "sourceHost": "rera.goa.gov.in",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:47.993Z",
+      "sourceId": "https://rera.goa.gov.in",
+      "sourceUrl": "https://rera.goa.gov.in",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:48.265Z",
+      "sourceId": "https://www.krahejacorp.com/newsroom",
+      "sourceUrl": "https://www.krahejacorp.com/newsroom",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:48.285Z",
+      "sourceId": "https://dfccil.com",
+      "sourceUrl": "https://dfccil.com",
+      "sourceHost": "dfccil.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 4861,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 0,
+      "fresh": 1,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:48.286Z",
+      "sourceId": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+      "sourceUrl": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+      "sourceHost": "infra.economictimes.indiatimes.com",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:48.287Z",
+      "sourceId": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+      "sourceUrl": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:48.419Z",
+      "sourceId": "https://www.aba-corp.com",
+      "sourceUrl": "https://www.aba-corp.com",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:48.433Z",
+      "sourceId": "https://www.aba-corp.com",
+      "sourceUrl": "https://www.aba-corp.com",
+      "sourceHost": "www.aba-corp.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 2723,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 1,
+      "fresh": 0,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:48.436Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/rss/international",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/rss/international",
+      "sourceHost": "realty.economictimes.indiatimes.com",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:48.436Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/rss/international",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/rss/international",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:48.503Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/tag/noida%2bauthority",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority",
+      "sourceHost": "realty.economictimes.indiatimes.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 5079,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 0,
+      "fresh": 0,
+      "geoValid": 1,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:48.505Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/tag/greater%2bnoida",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida",
+      "sourceHost": "realty.economictimes.indiatimes.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 5081,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 0,
+      "fresh": 0,
+      "geoValid": 1,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:48.506Z",
+      "sourceId": "https://in.esr.com/newsroom",
+      "sourceUrl": "https://in.esr.com/newsroom",
+      "sourceHost": "in.esr.com",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:48.507Z",
+      "sourceId": "https://in.esr.com/newsroom",
+      "sourceUrl": "https://in.esr.com/newsroom",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:48.509Z",
+      "sourceId": "https://english.bmrc.co.in",
+      "sourceUrl": "https://english.bmrc.co.in",
+      "sourceHost": "english.bmrc.co.in",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:48.509Z",
+      "sourceId": "https://english.bmrc.co.in",
+      "sourceUrl": "https://english.bmrc.co.in",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_TIMEOUT",
+      "timestamp": "2026-10-03T15:44:48.691Z",
+      "sourceId": "https://mchi.net/newsletters",
+      "sourceUrl": "https://mchi.net/newsletters",
+      "sourceHost": "mchi.net",
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "elapsedMs": 5267,
+      "timeoutType": "source-timeout",
+      "error": "source budget exhausted before operation",
+      "failureClass": "BUDGET_EXHAUSTED"
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:48.695Z",
+      "sourceId": "https://indianexpress.com/section/cities/pune",
+      "sourceUrl": "https://indianexpress.com/section/cities/pune",
+      "sourceHost": "indianexpress.com",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:48.695Z",
+      "sourceId": "https://indianexpress.com/section/cities/pune",
+      "sourceUrl": "https://indianexpress.com/section/cities/pune",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:48.881Z",
+      "sourceId": "https://publish.tribuneindia.com/city/patiala/feed",
+      "sourceUrl": "https://publish.tribuneindia.com/city/patiala/feed",
+      "sourceHost": "publish.tribuneindia.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 5457,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 0,
+      "fresh": 1,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:48.885Z",
+      "sourceId": "https://rera.ap.gov.in/rera/views/index.html",
+      "sourceUrl": "https://rera.ap.gov.in/RERA/Views/index.html",
+      "sourceHost": "rera.ap.gov.in",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:48.885Z",
+      "sourceId": "https://rera.ap.gov.in/rera/views/index.html",
+      "sourceUrl": "https://rera.ap.gov.in/RERA/Views/index.html",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:49.431Z",
+      "sourceId": "https://www.jll.co.in/en/newsroom",
+      "sourceUrl": "https://www.jll.co.in/en/newsroom",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:49.478Z",
+      "sourceId": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-real-estate-investment-trusts-reits-_95232.html",
+      "sourceUrl": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-real-estate-investment-trusts-reits-_95232.html",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:49.479Z",
+      "sourceId": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-real-estate-investment-trusts-reits-_95232.html",
+      "sourceUrl": "https://www.sebi.gov.in/legal/master-circulars/jul-2025/master-circular-for-real-estate-investment-trusts-reits-_95232.html",
+      "sourceHost": "www.sebi.gov.in",
+      "status": "COMPLETED_NO_CANDIDATE",
+      "stage": "article-extraction",
+      "elapsedMs": 2238,
+      "linksDiscovered": 0,
+      "articlesAttempted": 0,
+      "articlesReadable": 0,
+      "fresh": 0,
+      "geoValid": 0,
+      "candidates": 0
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:49.482Z",
+      "sourceId": "https://www.aai.aero/en/media/press-releases",
+      "sourceUrl": "https://www.aai.aero/en/media/press-releases",
+      "sourceHost": "www.aai.aero",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:49.482Z",
+      "sourceId": "https://www.aai.aero/en/media/press-releases",
+      "sourceUrl": "https://www.aai.aero/en/media/press-releases",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:49.509Z",
+      "sourceId": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+      "sourceUrl": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:49.887Z",
+      "sourceId": "https://in.esr.com/newsroom",
+      "sourceUrl": "https://in.esr.com/newsroom",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:49.933Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/rss/international",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/rss/international",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.393Z",
+      "sourceId": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+      "sourceUrl": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:50.409Z",
+      "sourceId": "https://www.krahejacorp.com/newsroom",
+      "sourceUrl": "https://www.krahejacorp.com/newsroom",
+      "sourceHost": "www.krahejacorp.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 5090,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 0,
+      "fresh": 0,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:50.411Z",
+      "sourceId": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml",
+      "sourceUrl": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml",
+      "sourceHost": "www.hindustantimes.com",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.411Z",
+      "sourceId": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml",
+      "sourceUrl": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.439Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/rss/international",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/rss/international",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.446Z",
+      "sourceId": "https://rera.goa.gov.in",
+      "sourceUrl": "https://rera.goa.gov.in",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.460Z",
+      "sourceId": "https://in.esr.com/newsroom",
+      "sourceUrl": "https://in.esr.com/newsroom",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:50.483Z",
+      "sourceId": "https://in.esr.com/newsroom",
+      "sourceUrl": "https://in.esr.com/newsroom",
+      "sourceHost": "in.esr.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 1977,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 1,
+      "fresh": 0,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:50.490Z",
+      "sourceId": "https://www.brigadegroup.com/investor",
+      "sourceUrl": "https://www.brigadegroup.com/investor",
+      "sourceHost": "www.brigadegroup.com",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.490Z",
+      "sourceId": "https://www.brigadegroup.com/investor",
+      "sourceUrl": "https://www.brigadegroup.com/investor",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.608Z",
+      "sourceId": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml",
+      "sourceUrl": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:50.776Z",
+      "sourceId": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+      "sourceUrl": "https://infra.economictimes.indiatimes.com/rss/lateststories",
+      "sourceHost": "infra.economictimes.indiatimes.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 2490,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 1,
+      "fresh": 1,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.777Z",
+      "sourceId": "https://english.bmrc.co.in",
+      "sourceUrl": "https://english.bmrc.co.in",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:50.779Z",
+      "sourceId": "https://mmrda.maharashtra.gov.in/en/other-services/news-and-announcements",
+      "sourceUrl": "https://mmrda.maharashtra.gov.in/en/other-services/news-and-announcements",
+      "sourceHost": "mmrda.maharashtra.gov.in",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.779Z",
+      "sourceId": "https://mmrda.maharashtra.gov.in/en/other-services/news-and-announcements",
+      "sourceUrl": "https://mmrda.maharashtra.gov.in/en/other-services/news-and-announcements",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.823Z",
+      "sourceId": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml",
+      "sourceUrl": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:50.918Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/rss/international",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/rss/international",
+      "sourceHost": "realty.economictimes.indiatimes.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 2482,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 1,
+      "fresh": 1,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.919Z",
+      "sourceId": "https://rera.goa.gov.in",
+      "sourceUrl": "https://rera.goa.gov.in",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:50.939Z",
+      "sourceId": "https://rera.goa.gov.in",
+      "sourceUrl": "https://rera.goa.gov.in",
+      "sourceHost": "rera.goa.gov.in",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 2946,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 1,
+      "fresh": 0,
+      "geoValid": 1,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_TIMEOUT",
+      "timestamp": "2026-10-03T15:44:50.940Z",
+      "sourceId": "https://ncrtc.in/ncrtc-updates",
+      "sourceUrl": "https://ncrtc.in/ncrtc-updates",
+      "sourceHost": "ncrtc.in",
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "elapsedMs": 7516,
+      "timeoutType": "source-timeout",
+      "error": "source budget exhausted before operation",
+      "failureClass": "BUDGET_EXHAUSTED"
+    },
+    {
+      "type": "SOURCE_TIMEOUT",
+      "timestamp": "2026-10-03T15:44:50.940Z",
+      "sourceId": "https://www.mahindralifespaces.com/newsroom/media-resources",
+      "sourceUrl": "https://www.mahindralifespaces.com/newsroom/media-resources",
+      "sourceHost": "www.mahindralifespaces.com",
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "elapsedMs": 7515,
+      "timeoutType": "source-timeout",
+      "error": "source budget exhausted before operation",
+      "failureClass": "BUDGET_EXHAUSTED"
+    },
+    {
+      "type": "SOURCE_TIMEOUT",
+      "timestamp": "2026-10-03T15:44:50.940Z",
+      "sourceId": "https://www.mindspacereit.com/newsroom",
+      "sourceUrl": "https://www.mindspacereit.com/newsroom",
+      "sourceHost": "www.mindspacereit.com",
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "elapsedMs": 7516,
+      "timeoutType": "source-timeout",
+      "error": "source budget exhausted before operation",
+      "failureClass": "BUDGET_EXHAUSTED"
+    },
+    {
+      "type": "SOURCE_TIMEOUT",
+      "timestamp": "2026-10-03T15:44:50.941Z",
+      "sourceId": "https://indianexpress.com/section/cities/hyderabad",
+      "sourceUrl": "https://indianexpress.com/section/cities/hyderabad",
+      "sourceHost": "indianexpress.com",
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "elapsedMs": 7516,
+      "timeoutType": "source-timeout",
+      "error": "source budget exhausted before operation",
+      "failureClass": "BUDGET_EXHAUSTED"
+    },
+    {
+      "type": "SOURCE_TIMEOUT",
+      "timestamp": "2026-10-03T15:44:50.941Z",
+      "sourceId": "https://rera.assam.gov.in",
+      "sourceUrl": "https://rera.assam.gov.in",
+      "sourceHost": "rera.assam.gov.in",
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "elapsedMs": 7516,
+      "timeoutType": "source-timeout",
+      "error": "source budget exhausted before operation",
+      "failureClass": "BUDGET_EXHAUSTED"
+    },
+    {
+      "type": "SOURCE_TIMEOUT",
+      "timestamp": "2026-10-03T15:44:50.941Z",
+      "sourceId": "https://www.signatureglobal.in/mediacoverage/page/1",
+      "sourceUrl": "https://www.signatureglobal.in/mediacoverage/page/1",
+      "sourceHost": "www.signatureglobal.in",
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "elapsedMs": 7516,
+      "timeoutType": "source-timeout",
+      "error": "source budget exhausted before operation",
+      "failureClass": "BUDGET_EXHAUSTED"
+    },
+    {
+      "type": "SOURCE_TIMEOUT",
+      "timestamp": "2026-10-03T15:44:50.941Z",
+      "sourceId": "https://www.grinfra.com/media-coverage",
+      "sourceUrl": "https://www.grinfra.com/media-coverage",
+      "sourceHost": "www.grinfra.com",
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "elapsedMs": 7516,
+      "timeoutType": "source-timeout",
+      "error": "source budget exhausted before operation",
+      "failureClass": "BUDGET_EXHAUSTED"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.942Z",
+      "sourceId": "https://www.jll.co.in/en/newsroom",
+      "sourceUrl": "https://www.jll.co.in/en/newsroom",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:50.976Z",
+      "sourceId": "https://apiic.in/old-tenders",
+      "sourceUrl": "https://apiic.in/old-tenders",
+      "sourceHost": "apiic.in",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.976Z",
+      "sourceId": "https://apiic.in/old-tenders",
+      "sourceUrl": "https://apiic.in/old-tenders",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:50.980Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/rss/technology",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/rss/technology",
+      "sourceHost": "realty.economictimes.indiatimes.com",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.980Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/rss/technology",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/rss/technology",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:50.981Z",
+      "sourceId": "https://www.livehindustan.com/ncr/gurugram",
+      "sourceUrl": "https://www.livehindustan.com/ncr/gurugram",
+      "sourceHost": "www.livehindustan.com",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.982Z",
+      "sourceId": "https://www.livehindustan.com/ncr/gurugram",
+      "sourceUrl": "https://www.livehindustan.com/ncr/gurugram",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:50.984Z",
+      "sourceId": "https://uhuda.uk.gov.in",
+      "sourceUrl": "https://uhuda.uk.gov.in",
+      "sourceHost": "uhuda.uk.gov.in",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.984Z",
+      "sourceId": "https://uhuda.uk.gov.in",
+      "sourceUrl": "https://uhuda.uk.gov.in",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:50.986Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/news/industry",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/news/industry",
+      "sourceHost": "realty.economictimes.indiatimes.com",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.986Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/news/industry",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/news/industry",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:50.988Z",
+      "sourceId": "https://www.pmrda.gov.in/en/pmrda-news",
+      "sourceUrl": "https://www.pmrda.gov.in/en/pmrda-news",
+      "sourceHost": "www.pmrda.gov.in",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.988Z",
+      "sourceId": "https://www.pmrda.gov.in/en/pmrda-news",
+      "sourceUrl": "https://www.pmrda.gov.in/en/pmrda-news",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:50.990Z",
+      "sourceId": "https://publish.tribuneindia.com/state/uttarakhand/feed",
+      "sourceUrl": "https://publish.tribuneindia.com/state/uttarakhand/feed",
+      "sourceHost": "publish.tribuneindia.com",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.990Z",
+      "sourceId": "https://publish.tribuneindia.com/state/uttarakhand/feed",
+      "sourceUrl": "https://publish.tribuneindia.com/state/uttarakhand/feed",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:50.992Z",
+      "sourceId": "https://www.welspunone.com/news-insights/press-release",
+      "sourceUrl": "https://www.welspunone.com/news-insights/press-release",
+      "sourceHost": "www.welspunone.com",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.993Z",
+      "sourceId": "https://www.welspunone.com/news-insights/press-release",
+      "sourceUrl": "https://www.welspunone.com/news-insights/press-release",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:50.995Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/rss/webstories",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/rss/webstories",
+      "sourceHost": "realty.economictimes.indiatimes.com",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:50.995Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/rss/webstories",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/rss/webstories",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:51.024Z",
+      "sourceId": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml",
+      "sourceUrl": "https://www.hindustantimes.com/feeds/rss/cities/ranchi-news/rssfeed.xml",
+      "sourceHost": "www.hindustantimes.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 613,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 1,
+      "fresh": 1,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:51.049Z",
+      "sourceId": "https://www.jll.co.in/en/newsroom",
+      "sourceUrl": "https://www.jll.co.in/en/newsroom",
+      "sourceHost": "www.jll.co.in",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 4760,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 1,
+      "fresh": 0,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:51.065Z",
+      "sourceId": "https://aiforera.org/publications/public_notice",
+      "sourceUrl": "https://aiforera.org/publications/public_notice",
+      "sourceHost": "aiforera.org",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:51.065Z",
+      "sourceId": "https://aiforera.org/publications/public_notice",
+      "sourceUrl": "https://aiforera.org/publications/public_notice",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:51.067Z",
+      "sourceId": "https://www.hindustantimes.com/cities/mumbai-news",
+      "sourceUrl": "https://www.hindustantimes.com/cities/mumbai-news",
+      "sourceHost": "www.hindustantimes.com",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:51.067Z",
+      "sourceId": "https://www.hindustantimes.com/cities/mumbai-news",
+      "sourceUrl": "https://www.hindustantimes.com/cities/mumbai-news",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:51.271Z",
+      "sourceId": "https://www.hindustantimes.com/cities/mumbai-news",
+      "sourceUrl": "https://www.hindustantimes.com/cities/mumbai-news",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:51.308Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/rss/technology",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/rss/technology",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:51.525Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/rss/webstories",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/rss/webstories",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:51.526Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/rss/webstories",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/rss/webstories",
+      "sourceHost": "realty.economictimes.indiatimes.com",
+      "status": "COMPLETED_NO_CANDIDATE",
+      "stage": "article-extraction",
+      "elapsedMs": 531,
+      "linksDiscovered": 0,
+      "articlesAttempted": 0,
+      "articlesReadable": 0,
+      "fresh": 0,
+      "geoValid": 0,
+      "candidates": 0
+    },
+    {
+      "type": "SOURCE_START",
+      "timestamp": "2026-10-03T15:44:51.530Z",
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+      "sourceHost": "timesofindia.indiatimes.com",
+      "mode": "normal-current-news"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:51.530Z",
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+      "stage": "fetch"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:51.781Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/news/industry",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/news/industry",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:51.801Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/rss/technology",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/rss/technology",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:51.863Z",
+      "sourceId": "https://english.bmrc.co.in",
+      "sourceUrl": "https://english.bmrc.co.in",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:51.888Z",
+      "sourceId": "https://www.hindustantimes.com/cities/mumbai-news",
+      "sourceUrl": "https://www.hindustantimes.com/cities/mumbai-news",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:51.990Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/rss/technology",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/rss/technology",
+      "sourceHost": "realty.economictimes.indiatimes.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 1010,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 1,
+      "fresh": 1,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:52.158Z",
+      "sourceId": "https://www.hindustantimes.com/cities/mumbai-news",
+      "sourceUrl": "https://www.hindustantimes.com/cities/mumbai-news",
+      "sourceHost": "www.hindustantimes.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 1091,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 1,
+      "fresh": 0,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:52.261Z",
+      "sourceId": "https://english.bmrc.co.in",
+      "sourceUrl": "https://english.bmrc.co.in",
+      "sourceHost": "english.bmrc.co.in",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 3752,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 1,
+      "fresh": 0,
+      "geoValid": 1,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:52.564Z",
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:52.572Z",
+      "sourceId": "https://www.livehindustan.com/ncr/gurugram",
+      "sourceUrl": "https://www.livehindustan.com/ncr/gurugram",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:52.587Z",
+      "sourceId": "https://www.aai.aero/en/media/press-releases",
+      "sourceUrl": "https://www.aai.aero/en/media/press-releases",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:52.718Z",
+      "sourceId": "https://indianexpress.com/section/cities/pune",
+      "sourceUrl": "https://indianexpress.com/section/cities/pune",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:52.737Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/news/industry",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/news/industry",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:52.769Z",
+      "sourceId": "https://aiforera.org/publications/public_notice",
+      "sourceUrl": "https://aiforera.org/publications/public_notice",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:52.816Z",
+      "sourceId": "https://realty.economictimes.indiatimes.com/news/industry",
+      "sourceUrl": "https://realty.economictimes.indiatimes.com/news/industry",
+      "sourceHost": "realty.economictimes.indiatimes.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 1830,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 1,
+      "fresh": 0,
+      "geoValid": 1,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:52.828Z",
+      "sourceId": "https://www.pmrda.gov.in/en/pmrda-news",
+      "sourceUrl": "https://www.pmrda.gov.in/en/pmrda-news",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:53.005Z",
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:53.073Z",
+      "sourceId": "https://www.welspunone.com/news-insights/press-release",
+      "sourceUrl": "https://www.welspunone.com/news-insights/press-release",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:53.091Z",
+      "sourceId": "https://indianexpress.com/section/cities/pune",
+      "sourceUrl": "https://indianexpress.com/section/cities/pune",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_TIMEOUT",
+      "timestamp": "2026-10-03T15:44:53.112Z",
+      "sourceId": "https://www.kmda.wb.gov.in",
+      "sourceUrl": "https://www.kmda.wb.gov.in",
+      "sourceHost": "www.kmda.wb.gov.in",
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "elapsedMs": 7503,
+      "timeoutType": "source-timeout",
+      "error": "source budget exhausted before operation",
+      "failureClass": "BUDGET_EXHAUSTED"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:53.281Z",
+      "sourceId": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+      "sourceUrl": "https://timesofindia.indiatimes.com/rssfeeds/3012544.cms",
+      "sourceHost": "timesofindia.indiatimes.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 1751,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 0,
+      "fresh": 1,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:53.305Z",
+      "sourceId": "https://indianexpress.com/section/cities/pune",
+      "sourceUrl": "https://indianexpress.com/section/cities/pune",
+      "sourceHost": "indianexpress.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 4610,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 1,
+      "fresh": 1,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:53.317Z",
+      "sourceId": "https://aiforera.org/publications/public_notice",
+      "sourceUrl": "https://aiforera.org/publications/public_notice",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:53.342Z",
+      "sourceId": "https://uhuda.uk.gov.in",
+      "sourceUrl": "https://uhuda.uk.gov.in",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:53.498Z",
+      "sourceId": "https://aiforera.org/publications/public_notice",
+      "sourceUrl": "https://aiforera.org/publications/public_notice",
+      "sourceHost": "aiforera.org",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 2433,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 0,
+      "fresh": 0,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_TIMEOUT",
+      "timestamp": "2026-10-03T15:44:53.832Z",
+      "sourceId": "https://rera.kerala.gov.in",
+      "sourceUrl": "https://rera.kerala.gov.in",
+      "sourceHost": "rera.kerala.gov.in",
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "elapsedMs": 7509,
+      "timeoutType": "source-timeout",
+      "error": "source budget exhausted before operation",
+      "failureClass": "BUDGET_EXHAUSTED"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:53.972Z",
+      "sourceId": "https://www.welspunone.com/news-insights/press-release",
+      "sourceUrl": "https://www.welspunone.com/news-insights/press-release",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:54.002Z",
+      "sourceId": "https://www.livehindustan.com/ncr/gurugram",
+      "sourceUrl": "https://www.livehindustan.com/ncr/gurugram",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:54.005Z",
+      "sourceId": "https://uhuda.uk.gov.in",
+      "sourceUrl": "https://uhuda.uk.gov.in",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:54.357Z",
+      "sourceId": "https://uhuda.uk.gov.in",
+      "sourceUrl": "https://uhuda.uk.gov.in",
+      "sourceHost": "uhuda.uk.gov.in",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 3373,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 1,
+      "fresh": 0,
+      "geoValid": 1,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:54.390Z",
+      "sourceId": "https://www.livehindustan.com/ncr/gurugram",
+      "sourceUrl": "https://www.livehindustan.com/ncr/gurugram",
+      "sourceHost": "www.livehindustan.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 3409,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 1,
+      "fresh": 1,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:54.642Z",
+      "sourceId": "https://www.pmrda.gov.in/en/pmrda-news",
+      "sourceUrl": "https://www.pmrda.gov.in/en/pmrda-news",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:54.859Z",
+      "sourceId": "https://publish.tribuneindia.com/state/uttarakhand/feed",
+      "sourceUrl": "https://publish.tribuneindia.com/state/uttarakhand/feed",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:54.908Z",
+      "sourceId": "https://www.welspunone.com/news-insights/press-release",
+      "sourceUrl": "https://www.welspunone.com/news-insights/press-release",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:54.988Z",
+      "sourceId": "https://www.welspunone.com/news-insights/press-release",
+      "sourceUrl": "https://www.welspunone.com/news-insights/press-release",
+      "sourceHost": "www.welspunone.com",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 3996,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 1,
+      "fresh": 0,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_STAGE",
+      "timestamp": "2026-10-03T15:44:55.369Z",
+      "sourceId": "https://apiic.in/old-tenders",
+      "sourceUrl": "https://apiic.in/old-tenders",
+      "stage": "response-body-read"
+    },
+    {
+      "type": "SOURCE_TIMEOUT",
+      "timestamp": "2026-10-03T15:44:55.498Z",
+      "sourceId": "https://maxestates.in/news-and-media",
+      "sourceUrl": "https://maxestates.in/news-and-media",
+      "sourceHost": "maxestates.in",
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "elapsedMs": 7507,
+      "timeoutType": "source-timeout",
+      "error": "source budget exhausted before operation",
+      "failureClass": "BUDGET_EXHAUSTED"
+    },
+    {
+      "type": "SOURCE_END",
+      "timestamp": "2026-10-03T15:44:55.644Z",
+      "sourceId": "https://www.pmrda.gov.in/en/pmrda-news",
+      "sourceUrl": "https://www.pmrda.gov.in/en/pmrda-news",
+      "sourceHost": "www.pmrda.gov.in",
+      "status": "COMPLETED",
+      "stage": "article-extraction",
+      "elapsedMs": 4656,
+      "linksDiscovered": 1,
+      "articlesAttempted": 1,
+      "articlesReadable": 1,
+      "fresh": 1,
+      "geoValid": 0,
+      "candidates": 1
+    },
+    {
+      "type": "SOURCE_TIMEOUT",
+      "timestamp": "2026-10-03T15:44:56.399Z",
+      "sourceId": "https://rera.ap.gov.in/rera/views/index.html",
+      "sourceUrl": "https://rera.ap.gov.in/RERA/Views/index.html",
+      "sourceHost": "rera.ap.gov.in",
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "elapsedMs": 7515,
+      "timeoutType": "source-timeout",
+      "error": "source budget exhausted before operation",
+      "failureClass": "BUDGET_EXHAUSTED"
+    },
+    {
+      "type": "SOURCE_TIMEOUT",
+      "timestamp": "2026-10-03T15:44:56.431Z",
+      "sourceId": "https://mmrda.maharashtra.gov.in/en/other-services/news-and-announcements",
+      "sourceUrl": "https://mmrda.maharashtra.gov.in/en/other-services/news-and-announcements",
+      "sourceHost": "mmrda.maharashtra.gov.in",
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "elapsedMs": 5652,
+      "timeoutType": "source-timeout",
+      "error": "source budget exhausted before operation",
+      "failureClass": "BUDGET_EXHAUSTED"
+    },
+    {
+      "type": "SOURCE_TIMEOUT",
+      "timestamp": "2026-10-03T15:44:56.478Z",
+      "sourceId": "https://www.brigadegroup.com/investor",
+      "sourceUrl": "https://www.brigadegroup.com/investor",
+      "sourceHost": "www.brigadegroup.com",
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "elapsedMs": 5988,
+      "timeoutType": "source-timeout",
+      "error": "source budget exhausted before operation",
+      "failureClass": "BUDGET_EXHAUSTED"
+    },
+    {
+      "type": "SOURCE_TIMEOUT",
+      "timestamp": "2026-10-03T15:44:57.002Z",
+      "sourceId": "https://www.aai.aero/en/media/press-releases",
+      "sourceUrl": "https://www.aai.aero/en/media/press-releases",
+      "sourceHost": "www.aai.aero",
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "elapsedMs": 7520,
+      "timeoutType": "source-timeout",
+      "error": "source budget exhausted before operation",
+      "failureClass": "BUDGET_EXHAUSTED"
+    },
+    {
+      "type": "HEARTBEAT",
+      "timestamp": "2026-10-03T15:44:58.421Z",
+      "elapsedMs": 15014,
+      "completedSources": 48,
+      "remainingSources": 523,
+      "activeWorkers": 2,
+      "currentSources": [
+        {
+          "sourceId": "https://apiic.in/old-tenders",
+          "stage": "response-body-read",
+          "elapsedMs": 6026
+        },
+        {
+          "sourceId": "https://publish.tribuneindia.com/state/uttarakhand/feed",
+          "stage": "response-body-read",
+          "elapsedMs": 6012
+        }
+      ]
+    },
+    {
+      "type": "SOURCE_TIMEOUT",
+      "timestamp": "2026-10-03T15:44:58.499Z",
+      "sourceId": "https://apiic.in/old-tenders",
+      "sourceUrl": "https://apiic.in/old-tenders",
+      "sourceHost": "apiic.in",
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "elapsedMs": 7523,
+      "timeoutType": "source-timeout",
+      "error": "source budget exhausted before operation",
+      "failureClass": "BUDGET_EXHAUSTED"
+    },
+    {
+      "type": "SOURCE_TIMEOUT",
+      "timestamp": "2026-10-03T15:44:58.501Z",
+      "sourceId": "https://publish.tribuneindia.com/state/uttarakhand/feed",
+      "sourceUrl": "https://publish.tribuneindia.com/state/uttarakhand/feed",
+      "sourceHost": "publish.tribuneindia.com",
+      "status": "TIMEOUT_ACCOUNTED",
+      "stage": "fetch",
+      "elapsedMs": 7511,
+      "timeoutType": "source-timeout",
+      "error": "source budget exhausted before operation",
+      "failureClass": "BUDGET_EXHAUSTED"
+    },
+    {
+      "type": "RUN_STAGE",
+      "timestamp": "2026-10-03T15:44:58.521Z",
+      "stage": "source-fetch-complete",
+      "completedSources": 50
+    },
+    {
+      "type": "RUN_STAGE",
+      "timestamp": "2026-10-03T15:44:58.522Z",
+      "stage": "filtering"
+    },
+    {
+      "type": "RUN_STAGE",
+      "timestamp": "2026-10-03T15:44:58.861Z",
+      "stage": "run-summary",
+      "links": 29,
+      "candidates": 0,
+      "published": 0,
+      "apiFailures": 0
+    }
+  ]
+}

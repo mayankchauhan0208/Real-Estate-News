@@ -32,14 +32,27 @@ for (const item of cases) {
         return {
           title: article.title,
           url: article.newsLink,
+          officialSource: true,
+          documentValid: article.officialDocumentRead === true,
+          ocrConfidence: article.ocr?.status || (article.officialDocumentRead ? 'TEXT_EXTRACTED' : 'NOT_AVAILABLE'),
           publishedAt: article.publishedAt || '',
+          dateConfidence: article.publishedAt ? 'LISTING_METADATA' : 'MISSING',
+          eventClass: /sale|allot|auction|lottery/i.test(article.title) ? 'SCHEME_SALE' : /circular|flat|housing/i.test(article.title) ? 'HOUSING_UPDATE' : 'AUTHORITY_UPDATE',
+          eventEvidence: article.title,
+          projectScheme: article.title,
+          projectEvidence: article.title,
           cityCode: article.cityCode || '',
+          geoEvidence: article.cityCode ? `authority jurisdiction and property document: ${article.cityCode}` : '',
+          propertyNexus: /flat|housing|residential|plot|scheme|lottery|tenement|आवास|फ्लैट|प्लॉट|सदनिका/iu.test(article.title),
+          propertyNexusEvidence: article.title,
+          contentSufficiency: article.fullArticleRead === true ? 'FULL_DOCUMENT_READ' : 'INSUFFICIENT',
           fullArticleRead: article.fullArticleRead === true,
           officialDocumentRead: article.officialDocumentRead === true,
           extractionMethod: article.extractionMethod || article.documentExtractionMethod || '',
           ocr: article.ocr || null,
           articleReadError: article.articleReadError || '',
-          finalState: getArticleFinalState(article, reasons),
+          finalState: getArticleFinalState(article, reasons, { candidate: reasons.length === 0 }),
+          failedCanonicalGate: reasons[0] || 'NONE',
           reasons
         };
       })
