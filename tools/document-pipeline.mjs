@@ -17,7 +17,11 @@ export function classifyDocumentResponse({ status = 0, contentType = '', body = 
   const signature = body.subarray(0, 5).toString('ascii');
   if (/application\/pdf/i.test(contentType) && signature === '%PDF-') return 'VALID_PDF';
   if (signature === '%PDF-') return 'VALID_PDF';
-  if (/text\/html|application\/xhtml/i.test(contentType) || /^\s*</.test(body.toString('utf8', 0, 120))) return 'HTML_ERROR_PAGE';
+  if (/text\/html|application\/xhtml/i.test(contentType) || /^\s*</.test(body.toString('utf8', 0, 120))) {
+    const html = body.toString('utf8', 0, 24000);
+    if (/servermaintenance|maintenance page|service unavailable|application error|access denied|captcha|\blogin\b|page not found|temporarily unavailable|generic error/i.test(html)) return 'DOCUMENT_UNAVAILABLE';
+    return 'HTML_ERROR_PAGE';
+  }
   if (!body.length) return 'EMPTY_DOCUMENT';
   return 'OTHER';
 }

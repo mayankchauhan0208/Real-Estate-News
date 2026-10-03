@@ -6238,6 +6238,7 @@ async function fetchFeed(sourceUrl, options = {}) {
   return mapWithConcurrency(feedItems, getArticleMetadataConcurrency(), async (item) => {
     const newsLink = item.link || item.guid;
     const metadata = newsLink ? await fetchArticleMetadataWithTimeout(newsLink, {}, options) : {};
+    const publishedAt = metadata.publishedAt || item.isoDate || item.pubDate || null;
     const rawArticle = {
       title: stripHtml(item.title),
       description: stripHtml(
@@ -6248,7 +6249,7 @@ async function fetchFeed(sourceUrl, options = {}) {
       thumbnailImage: absoluteUrl(metadata.thumbnailImage || getThumbnail(item), newsLink || sourceUrl),
       postedBy: source,
       postedByLogo: publisherLogo,
-      publishedAt: metadata.publishedAt || item.isoDate || item.pubDate || null,
+      publishedAt,
       fetchedAt: new Date().toISOString()
     };
 
@@ -6267,6 +6268,7 @@ async function fetchFeed(sourceUrl, options = {}) {
       sourceUrl,
       createdAt: rawArticle.publishedAt || "",
       publishedAt: rawArticle.publishedAt,
+      publicationDateExtractionMethod: metadata.publicationDateExtractionMethod || (item.isoDate || item.pubDate ? "feed-item-date" : "unknown"),
       fetchedAt: rawArticle.fetchedAt
     };
 
@@ -6748,6 +6750,7 @@ async function fetchArticleMetadata(articleUrl, fallback = {}, options = {}) {
     const $ = cheerio.load(html);
     const articleText = extractArticleText($);
 
+    const pagePublishedAt = extractPagePublishedAt($, fallback);
     return {
       description: pickFirst(
         pickDescription(
@@ -6761,10 +6764,8 @@ async function fetchArticleMetadata(articleUrl, fallback = {}, options = {}) {
         extractMetadataImage($, fallback),
         fallback.thumbnailImage
       ),
-      publishedAt: pickFirst(
-        extractPagePublishedAt($, fallback),
-        fallback.publishedAt
-      ),
+      publishedAt: pickFirst(pagePublishedAt, fallback.publishedAt),
+      publicationDateExtractionMethod: pagePublishedAt ? "article-page-metadata" : fallback.publishedAt ? "listing-date-fallback" : "unknown",
       articleText,
       articleReadAttempted: true,
       fullArticleRead: articleText.trim().length >= 200,
@@ -6773,6 +6774,7 @@ async function fetchArticleMetadata(articleUrl, fallback = {}, options = {}) {
   } catch (error) {
     return {
       ...fallback,
+      publicationDateExtractionMethod: fallback.publishedAt ? "listing-date-fallback" : "unknown",
       articleReadAttempted: true,
       fullArticleRead: false,
       articleReadError: String(error?.message || error || "article page could not be read").slice(0, 240)
@@ -7807,6 +7809,7 @@ async function fetchAuthorityListings(sourceUrl, options = {}) {
       listingUrl,
       publishedAt: detail.publishedAt || candidate.publishedAt,
       createdAt: detail.publishedAt || candidate.publishedAt,
+      publicationDateExtractionMethod: detail.publishedAt ? "authority-detail" : "authority-listing",
       fetchedAt: new Date().toISOString(),
       authorityEventType: profile.contentType,
       authorityJurisdiction: profile.cityCode || "",
@@ -7875,6 +7878,7 @@ async function fetchUpReraPressReleases(sourceUrl, options = {}) {
       postedByLogo: publisherLogo,
       publishedAt,
       createdAt: publishedAt,
+      publicationDateExtractionMethod: "up-rera-listing",
       fetchedAt: new Date().toISOString(),
       postbackEventTarget: postbackMatch?.[1] || ""
     };
@@ -7907,8 +7911,8 @@ async function fetchUpReraPressReleases(sourceUrl, options = {}) {
       const contentType = response.headers.get("content-type") || "";
       const responseBody = await readResponseBodyWithTimeout(response, "arrayBuffer", options);
       const responseText = Buffer.from(responseBody).toString("utf8");
-      if (/servermaintenance\.aspx|maintenance page|service unavailable|application error/i.test(`${response.url} ${responseText.slice(0, 12000)}`)) {
-        throw new Error("UP RERA View File returned a portal maintenance/error page");
+      if (/servermaintenance\.aspx|maintenance page|service unavailable|application error|access denied|captcha|\blogin\b/i.test(`${response.url} ${responseText.slice(0, 12000)}`)) {
+        throw new Error("DOCUMENT_UNAVAILABLE: UP RERA View File returned a portal maintenance/error page");
       }
       const body = Buffer.from(responseBody);
       const isPdf = /pdf/i.test(contentType) || body.subarray(0, 4).toString() === "%PDF";

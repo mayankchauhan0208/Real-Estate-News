@@ -13,6 +13,7 @@ const zeroCities = coverage.cities.filter((city) => city.status === "ZERO_PRODUC
 const lowCities = coverage.cities.filter((city) => city.status === "LOW_COVERAGE");
 const oldBenchmark = readJson("reports/source-audits/task42/external-benchmark.json");
 const geoBenchmark = readJson("reports/source-audits/task42/geo-benchmark.json");
+const precisionBenchmark = readJson("reports/source-audits/task42/precision-benchmark.json");
 
 // These are intentionally conservative: human-audited PUBLISH rows are used only
 // when the independent record already has an explicit city and pipeline outcome.
@@ -154,6 +155,42 @@ const positives = [...verifiedOfficialControls, ...auditedPositives];
 const dedupe = new Map(positives.map((row) => [row.benchmark_id, row]));
 const benchmarkRecords = [...dedupe.values()];
 
+const stageStatus = (value) => value === true ? "PASS" : value === false ? "FAIL" : value === "UNMEASURED" ? "UNKNOWN" : value || "UNKNOWN";
+const stageMatrix = benchmarkRecords.map((row) => ({
+  id: row.benchmark_id,
+  city: row.city,
+  language: row.language,
+  sourceClass: row.source_class,
+  url: row.url,
+  discovered: stageStatus(row.pipeline_trace.discovered),
+  fetched: stageStatus(row.pipeline_trace.article_fetched),
+  readable: stageStatus(row.pipeline_trace.readable),
+  dateStatus: stageStatus(row.pipeline_trace.date_valid),
+  fresh: stageStatus(row.pipeline_trace.fresh),
+  relevance: stageStatus(row.pipeline_trace.relevance_pass),
+  geo: row.city ? stageStatus(row.pipeline_trace.geo_correct) : "NOT_APPLICABLE",
+  dedupe: stageStatus(row.pipeline_trace.dedupe_correct),
+  candidate: stageStatus(row.pipeline_trace.final_candidate),
+  review: row.pipeline_trace.published_or_review === "FOUND_REVIEW" ? "PASS" : "NOT_APPLICABLE",
+  finalCaptured: stageStatus(row.pipeline_trace.final_candidate),
+  primaryLoss: row.primary_loss || "NONE"
+}));
+
+const negativeHoldout = precisionBenchmark.records
+  .filter((record) => record.humanLabel !== "PUBLISH")
+  .slice(0, 20)
+  .map((record) => ({
+    id: `task42-negative-${record.recordId}`,
+    source: record.source,
+    title: record.title,
+    language: record.language,
+    expectedLabel: record.humanLabel,
+    pipelineOutcome: record.currentOutcome,
+    negativeClass: record.humanLabel === "REJECT_NEGATIVE" ? "NEGATIVE_RE" : record.humanLabel === "REJECT_OFF_TOPIC" ? "OFF_TOPIC" : "INSUFFICIENT",
+    verificationStatus: "HUMAN_AUDITED",
+    falsePositive: record.humanLabel === "PUBLISH" && record.currentOutcome === "PUBLISH"
+  }));
+
 const cityAssessmentRows = [
   ...["delhi", "delhi_ncr", "rohtak", "ambala", "palwal", "indore", "jabalpur", "ujjain", "patna", "navi_mumbai", "nashik", "coimbatore", "warangal", "rajkot", "kota", "raigad", "jamshedpur", "dhanbad"].map((city) => ({ city, batch: "A", status: "ASSESSED_WITH_VERIFIED_OR_EXISTING_EVIDENCE" })),
   ...zeroCities.filter((city) => !["delhi", "delhi_ncr", "rohtak", "ambala", "palwal", "indore", "jabalpur", "ujjain", "patna", "navi_mumbai", "nashik", "coimbatore", "warangal", "rajkot", "kota", "raigad", "jamshedpur", "dhanbad"].includes(city.city_code)).slice(0, 57).map((city) => ({ city: city.city_code, batch: "ZERO_CITY", status: "UNVERIFIED", primaryCoverageGap: "Needs exact current article/document verification across news, local, native, authority and RERA surfaces." }))
@@ -182,7 +219,8 @@ const report = {
   batchA: { required: 18, assessed: 18, rows: cityAssessmentRows.filter((row) => row.batch === "A") },
   zeroCity: { total: zeroCities.length, benchmarkedBefore: 13, benchmarkedAfter: 13 + cityAssessmentRows.filter((row) => row.batch === "ZERO_CITY").length, rows: cityAssessmentRows.filter((row) => row.batch === "ZERO_CITY") },
   lowCoverage: { total: lowCities.length, benchmarkedBefore: 0, benchmarkedAfter: lowAssessmentRows.length, rows: lowAssessmentRows },
-  externalBenchmark: { total: benchmarkRecords.length, records: benchmarkRecords, verificationCounts: Object.fromEntries(["VERIFIED_POSITIVE", "VERIFIED_NEGATIVE_RE", "VERIFIED_OFFTOPIC", "VERIFIED_INSUFFICIENT", "UNVERIFIED", "OUTSIDE_WINDOW"].map((key) => [key, benchmarkRecords.filter((row) => row.verification_status === key).length])) },
+  externalBenchmark: { total: benchmarkRecords.length, records: benchmarkRecords, stageMatrix, verificationCounts: Object.fromEntries(["VERIFIED_POSITIVE", "VERIFIED_NEGATIVE_RE", "VERIFIED_OFFTOPIC", "VERIFIED_INSUFFICIENT", "UNVERIFIED", "OUTSIDE_WINDOW"].map((key) => [key, benchmarkRecords.filter((row) => row.verification_status === key).length])) },
+  negativeHoldout: { total: negativeHoldout.length, records: negativeHoldout, trueNegatives: negativeHoldout.filter((row) => row.falsePositive === false).length, falsePositives: negativeHoldout.filter((row) => row.falsePositive === true).length, note: "Human-audited non-publish records; labels are independent of current pipeline output." },
   pipelineRecall: { denominator, stageCounts, recallAmongMeasured: Object.fromEntries(stageKeys.map((key) => [key, recall(stageCounts[key])])), lossCounts, caveat: "UNMEASURED stages are excluded from that stage's recall denominator. This is an observed-trace dataset, not a claim of internet-wide recall." }
 };
 
