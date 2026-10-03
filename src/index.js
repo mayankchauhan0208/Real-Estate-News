@@ -38,7 +38,8 @@ const parser = new Parser({
 const stateDir = path.resolve(process.env.NEWS_STATE_DIR || ".state");
 const sentNewsPath = path.join(stateDir, "sent-news.json");
 const sentNewsSeedPath = path.resolve("data", "sent-news-seed.json");
-const runReportsDir = path.resolve("reports", "runs");
+const runReportsDir = path.resolve(process.env.NEWS_RUN_REPORTS_DIR || "reports", "runs");
+const sourceResultsPath = path.join(stateDir, "source-monitor-results.json");
 const adminSettingsPath = path.resolve("config", "admin-settings.json");
 const adminSettings = readAdminSettings();
 
@@ -8576,6 +8577,41 @@ async function checkpointResumableSourceShard(context, shard, sourceResults) {
   return outcomes;
 }
 
+async function readCycleSourceResults(cycleId) {
+  const saved = await readJson(sourceResultsPath, { version: 1, cycles: {} });
+  const cycle = saved?.cycles?.[cycleId];
+  if (!cycle?.sources || typeof cycle.sources !== "object") return new Map();
+  return new Map(Object.entries(cycle.sources));
+}
+
+async function persistCycleSourceResults(cycleId, sourceResults, context) {
+  const saved = await readJson(sourceResultsPath, { version: 1, cycles: {} });
+  const cycles = { ...(saved?.cycles || {}) };
+  cycles[cycleId] = {
+    updatedAt: new Date().toISOString(),
+    sources: Object.fromEntries(sourceResults.entries())
+  };
+  const retainedCycleIds = Object.keys(cycles).sort().slice(-3);
+  await writeJsonAtomic(sourceResultsPath, {
+    version: 1,
+    cycles: Object.fromEntries(retainedCycleIds.map((id) => [id, cycles[id]]))
+  });
+
+  const progress = cycleProgress(context.state, context.snapshot);
+  await writeJsonAtomic(path.join(runReportsDir, `news-cycle-${cycleId}-partial.json`), {
+    version: 1,
+    status: progress.remainingThisCycle === 0 ? "COMPLETE" : "PARTIAL_RESUMABLE",
+    generatedAt: new Date().toISOString(),
+    cycleId,
+    universeFingerprint: context.snapshot.universeFingerprint,
+    selectedSources: context.snapshot.sources.length,
+    accountedSources: progress.attemptedThisCycle,
+    pendingSources: progress.remainingThisCycle,
+    sourceResults: Object.fromEntries(sourceResults.entries()),
+    note: "Cycle-scoped source/article evidence; publication decisions are written by the normal run report after filtering."
+  });
+}
+
 async function main() {
   await loadDotEnv();
 
@@ -8661,6 +8697,9 @@ async function main() {
     schedulerLock = await acquireSchedulerLock(path.join(stateDir, "source-monitor.lock"), `${process.pid}-${Date.now()}`, 15 * 60 * 1000);
     if (!schedulerLock.acquired) throw new Error("Resumable source scheduler is already owned by another ingestion worker.");
     resumableContext = await prepareResumableSourceCycle(allSelectedSources);
+    const cycleId = resumableContext.state.activeCycle?.cycleId || resumableContext.snapshot.cycleId;
+    const persistedSourceResults = await readCycleSourceResults(cycleId);
+    const sourceResultsById = new Map(persistedSourceResults);
     const runtimeBudgetMs = getPositiveIntegerEnv("SOURCE_RUNTIME_BUDGET_MS", 42 * 60 * 1000);
     const maxShards = getPositiveIntegerEnv("SOURCE_MAX_SHARDS_PER_RUN", 12);
     const cleanupReserveMs = getSourceCleanupReserveMs();
@@ -8689,8 +8728,13 @@ async function main() {
         });
         const startedResults = batchResults.filter((result) => result.status !== "BUDGET_EXHAUSTED");
         await checkpointResumableSourceShard(resumableContext, shard, startedResults);
-        selectedSources.push(...startedResults.map((result) => result.source));
-        sourceResults.push(...startedResults);
+        for (const result of startedResults) {
+          const sourceId = shard.sources.find((source) => normalizeSourceUrl(source.url) === normalizeSourceUrl(result.source))?.sourceId;
+          if (sourceId) sourceResultsById.set(sourceId, result);
+        }
+        await persistCycleSourceResults(cycleId, sourceResultsById, resumableContext);
+        selectedSources = allSelectedSources;
+        sourceResults = [...sourceResultsById.values()];
         if (startedResults.length < batchResults.length || Date.now() >= fetchDeadlineAt - cleanupReserveMs) {
           budgetStopped = true;
           break;
@@ -8857,6 +8901,19 @@ async function main() {
       continue;
     }
 
+    const publicationLockOwner = `${process.pid}-${Date.now()}-${stableId(article.newsLink || article.title || "article")}`;
+    const publicationLock = await acquireSchedulerLock(
+      path.join(stateDir, "publication.lock"),
+      publicationLockOwner,
+      5 * 60 * 1000
+    );
+    if (!publicationLock.acquired) {
+      const reasons = ["concurrent publication lock unavailable; defer candidate to next run"];
+      missedNewsCandidates.push({ article, reasons });
+      console.log(`Deferred concurrent publication (${article.cityCode}): ${article.title} | ${article.newsLink}`);
+      continue;
+    }
+
     try {
       const latestReconciliation = await reconcileRemoteSentIds();
       if (latestReconciliation.enabled) {
@@ -8887,6 +8944,8 @@ async function main() {
       };
       pushFailures.push(failure);
       console.error(`Failed to push (${article.cityCode}): ${article.title} | ${failure.error}`);
+    } finally {
+      await releaseSchedulerLock(path.join(stateDir, "publication.lock"), publicationLockOwner);
     }
   }
 
@@ -9015,6 +9074,8 @@ export {
   isLikelyFeedUrl,
   getFeedFallbackPageUrl,
   getAutomaticSourceBatchIndex,
+  readCycleSourceResults,
+  persistCycleSourceResults,
   shouldSkipTitle,
   articleDedupeIds,
   normalizeArticleUrlForDedupe,
