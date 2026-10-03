@@ -42,6 +42,154 @@ const runReportsDir = path.resolve("reports", "runs");
 const adminSettingsPath = path.resolve("config", "admin-settings.json");
 const adminSettings = readAdminSettings();
 
+function sourceTelemetryId(sourceUrl = "") {
+  return normalizeSourceUrl(sourceUrl) || sourceUrl || "unknown-source";
+}
+
+function sourceTelemetryHost(sourceUrl = "") {
+  try {
+    return new URL(sourceUrl).hostname;
+  } catch {
+    return "unknown-host";
+  }
+}
+
+function createRunTelemetry(meta = {}) {
+  const startedAt = Date.now();
+  const progressPath = path.join(runReportsDir, `news-progress-${process.pid}.json`);
+  const state = {
+    version: 1,
+    status: "RUNNING",
+    startedAt: new Date(startedAt).toISOString(),
+    updatedAt: new Date(startedAt).toISOString(),
+    pid: process.pid,
+    mode: meta.mode || "unknown",
+    commitSha: meta.commitSha || "",
+    allowedSources: Number(meta.allowedSources || 0),
+    selectedSources: Number(meta.selectedSources || 0),
+    elapsedMs: 0,
+    activeWorkers: 0,
+    lastCompletedSource: "",
+    lastCompletedStage: "",
+    currentSources: [],
+    counts: {
+      started: 0,
+      completed: 0,
+      failed: 0,
+      timeout: 0,
+      deferred: 0,
+      links: 0,
+      articleAttempts: 0,
+      readable: 0,
+      fresh: 0,
+      relevant: 0,
+      geoValid: 0,
+      review: 0,
+      duplicates: 0,
+      candidates: 0,
+      published: 0,
+      apiFailures: 0
+    },
+    sources: {},
+    events: []
+  };
+  let writeChain = Promise.resolve();
+  let heartbeatTimer;
+
+  const persist = () => {
+    state.updatedAt = new Date().toISOString();
+    state.elapsedMs = Date.now() - startedAt;
+    const snapshot = JSON.parse(JSON.stringify(state));
+    writeChain = writeChain
+      .then(async () => {
+        await fs.mkdir(runReportsDir, { recursive: true });
+        await writeJsonAtomic(progressPath, snapshot);
+      })
+      .catch(() => {});
+    return writeChain;
+  };
+
+  const refreshWorkers = () => {
+    state.currentSources = Object.values(state.sources)
+      .filter((source) => source.status === "RUNNING")
+      .map((source) => ({ sourceId: source.sourceId, stage: source.stage, elapsedMs: Date.now() - source.startedAtMs }));
+    state.activeWorkers = state.currentSources.length;
+  };
+
+  const emit = async (type, fields = {}) => {
+    const event = { type, timestamp: new Date().toISOString(), ...fields };
+    state.events.push(event);
+    if (state.events.length > 200) state.events.splice(0, state.events.length - 200);
+    const sourceId = fields.sourceId;
+    if (sourceId) {
+      const source = state.sources[sourceId] || {
+        sourceId,
+        sourceHost: fields.sourceHost || "unknown-host",
+        sourceUrl: fields.sourceUrl || "",
+        startedAtMs: Date.now(),
+        status: "RUNNING",
+        stage: "unknown"
+      };
+      state.sources[sourceId] = source;
+      if (type === "SOURCE_START") {
+        Object.assign(source, { status: "RUNNING", stage: "select", startedAtMs: Date.now(), startedAt: event.timestamp });
+        state.counts.started += 1;
+      } else if (type === "SOURCE_STAGE") {
+        source.stage = fields.stage || source.stage;
+      } else if (["SOURCE_END", "SOURCE_FAIL", "SOURCE_TIMEOUT"].includes(type)) {
+        source.status = fields.status || (type === "SOURCE_TIMEOUT" ? "TIMEOUT_ACCOUNTED" : type === "SOURCE_FAIL" ? "FAILED_ACCOUNTED" : "COMPLETED");
+        source.stage = fields.stage || source.stage;
+        source.elapsedMs = fields.elapsedMs ?? Date.now() - source.startedAtMs;
+        if (type === "SOURCE_END") state.counts.completed += 1;
+        if (type === "SOURCE_FAIL") state.counts.failed += 1;
+        if (type === "SOURCE_TIMEOUT") state.counts.timeout += 1;
+        if (fields.status === "DEFERRED") state.counts.deferred += 1;
+        state.lastCompletedSource = sourceId;
+        state.lastCompletedStage = source.stage;
+        state.counts.links += Number(fields.linksDiscovered || 0);
+        state.counts.articleAttempts += Number(fields.articlesAttempted || 0);
+        state.counts.readable += Number(fields.articlesReadable || 0);
+        state.counts.fresh += Number(fields.fresh || 0);
+        state.counts.relevant += Number(fields.relevant || 0);
+        state.counts.geoValid += Number(fields.geoValid || 0);
+        state.counts.review += Number(fields.review || 0);
+        state.counts.duplicates += Number(fields.duplicates || 0);
+        state.counts.candidates += Number(fields.candidates || 0);
+      }
+    }
+    refreshWorkers();
+    if (type === "HEARTBEAT" || ["SOURCE_END", "SOURCE_FAIL", "SOURCE_TIMEOUT"].includes(type)) await persist();
+    else void persist();
+  };
+
+  heartbeatTimer = setInterval(() => {
+    void emit("HEARTBEAT", {
+      elapsedMs: Date.now() - startedAt,
+      completedSources: state.counts.completed + state.counts.failed + state.counts.timeout,
+      remainingSources: Math.max(0, state.selectedSources - (state.counts.completed + state.counts.failed + state.counts.timeout)),
+      activeWorkers: state.activeWorkers,
+      currentSources: state.currentSources
+    });
+  }, 15000);
+  heartbeatTimer.unref?.();
+
+  return {
+    path: progressPath,
+    emit,
+    async finish(status = "COMPLETE") {
+      clearInterval(heartbeatTimer);
+      state.status = status;
+      refreshWorkers();
+      await persist();
+      await writeChain;
+    },
+    async flush() {
+      await persist();
+      await writeChain;
+    }
+  };
+}
+
 const defaultSources = [
   "https://www.magicbricks.com/news/feed",
   "https://www.hindustantimes.com/real-estate",
@@ -2999,6 +3147,11 @@ async function fetchWithTimeout(url, options = {}, timeoutMs = getFetchTimeoutMs
   }
 
   try {
+    void options.telemetry?.emit("SOURCE_STAGE", {
+      sourceId: sourceTelemetryId(options.sourceUrl || url),
+      sourceUrl: options.sourceUrl || url,
+      stage: "network-request"
+    });
     return await fetch(url, {
       ...options,
       signal
@@ -3017,6 +3170,11 @@ async function readResponseBodyWithTimeout(response, mode = "text", options = {}
     throw createBudgetExhaustedError("source budget exhausted before response body read");
   }
   const reader = response.body?.getReader();
+  void options.telemetry?.emit("SOURCE_STAGE", {
+    sourceId: sourceTelemetryId(options.sourceUrl || response.url),
+    sourceUrl: options.sourceUrl || response.url,
+    stage: mode === "arrayBuffer" ? "document-body-read" : "response-body-read"
+  });
   // Official authority and developer pages frequently exceed 1 MB because of
   // bundled scripts and embedded media metadata; keep a bounded but usable cap.
   const maxBytes = mode === "arrayBuffer" ? 20 * 1024 * 1024 : 8 * 1024 * 1024;
@@ -8103,22 +8261,50 @@ async function pushArticle(article) {
 }
 
 async function fetchSourceBatch(sourceList, options = {}) {
+  const settledResults = new Map();
+  const recordResult = (source, result) => {
+    settledResults.set(source, result);
+    return result;
+  };
   const batchPromise = mapWithConcurrency(sourceList, getSourceConcurrency(), async (source) => {
+    const telemetry = options.telemetry;
+    const sourceId = sourceTelemetryId(source);
+    const sourceHost = sourceTelemetryHost(source);
+    const sourceStartedAt = Date.now();
+    await telemetry?.emit("SOURCE_START", { sourceId, sourceUrl: source, sourceHost, mode: options.mode || "normal" });
+    await telemetry?.emit("SOURCE_STAGE", { sourceId, sourceUrl: source, stage: "fetch" });
     try {
       throwIfSourceBudgetExhausted(options);
     } catch (error) {
-      return { source, status: "BUDGET_EXHAUSTED", error: error.message, attempts: 0 };
+      await telemetry?.emit("SOURCE_TIMEOUT", {
+        sourceId,
+        sourceUrl: source,
+        sourceHost,
+        stage: "budget-check",
+        timeoutType: "batch-deadline",
+        elapsedMs: 0,
+        error: error.message
+      });
+      return recordResult(source, { source, status: "BUDGET_EXHAUSTED", error: error.message, attempts: 0 });
     }
 
     const remainingMs = options.deadlineAt
       ? options.deadlineAt - Date.now()
       : getSourceTimeoutMs();
     if (remainingMs <= getSourceMinimumSafeStartWindowMs()) {
-      return { source, status: "BUDGET_EXHAUSTED", error: "source budget exhausted before attempt", attempts: 0 };
+      await telemetry?.emit("SOURCE_TIMEOUT", {
+        sourceId,
+        sourceUrl: source,
+        sourceHost,
+        stage: "budget-check",
+        timeoutType: "batch-deadline",
+        elapsedMs: 0,
+        error: "source budget exhausted before attempt"
+      });
+      return recordResult(source, { source, status: "BUDGET_EXHAUSTED", error: "source budget exhausted before attempt", attempts: 0 });
     }
     try {
-      const startedAt = Date.now();
-      const result = await fetchSourceWithRecovery(source, options);
+      const result = await fetchSourceWithRecovery(source, { ...options, sourceUrl: source });
       const sourceCityCodes = getConfiguredSourceCityCodes(source);
       const articles = result.articles.map((article) => ({
         ...article,
@@ -8142,16 +8328,43 @@ async function fetchSourceBatch(sourceList, options = {}) {
           attempts: result.attempts,
           recovered: result.recovered === true,
           fetchResult: "success",
-          fetchDurationMs: Date.now() - startedAt,
+          fetchDurationMs: Date.now() - sourceStartedAt,
           sourceType: isLikelyFeedUrl(source) ? "RSS_OR_ATOM" : "HTML_OR_SPECIALIZED"
         }
       }));
       const recoveryLabel = result.recovered ? ` via ${result.fetchedSource}` : "";
-      console.log(`Fetched ${result.articles.length} items from ${source}${recoveryLabel} in ${formatDuration(Date.now() - startedAt)} (attempts: ${result.attempts})`);
-      return { source, status: articles.length ? "SUCCESS_PRODUCTIVE" : "SUCCESS_NO_CANDIDATE", articles, attempts: result.attempts, fetchedSource: result.fetchedSource, recovered: result.recovered };
+      console.log(`Fetched ${result.articles.length} items from ${source}${recoveryLabel} in ${formatDuration(Date.now() - sourceStartedAt)} (attempts: ${result.attempts})`);
+      await telemetry?.emit("SOURCE_END", {
+        sourceId,
+        sourceUrl: source,
+        sourceHost,
+        status: articles.length ? "COMPLETED" : "COMPLETED_NO_CANDIDATE",
+        stage: "article-extraction",
+        elapsedMs: Date.now() - sourceStartedAt,
+        linksDiscovered: articles.length,
+        articlesAttempted: articles.filter((article) => article.articleReadAttempted).length,
+        articlesReadable: articles.filter((article) => article.fullArticleRead === true).length,
+        fresh: articles.filter((article) => article.publishedAt).length,
+        geoValid: articles.filter((article) => article.cityCode).length,
+        candidates: articles.length
+      });
+      return recordResult(source, { source, status: articles.length ? "SUCCESS_PRODUCTIVE" : "SUCCESS_NO_CANDIDATE", articles, attempts: result.attempts, fetchedSource: result.fetchedSource, recovered: result.recovered });
     } catch (error) {
+      const elapsedMs = Date.now() - sourceStartedAt;
+      const timeout = error?.sourceStatus === "BUDGET_EXHAUSTED" || /timed?\s*out|timeout|deadline|aborted/i.test(error.message || "");
+      await telemetry?.emit(timeout ? "SOURCE_TIMEOUT" : "SOURCE_FAIL", {
+        sourceId,
+        sourceUrl: source,
+        sourceHost,
+        status: timeout ? "TIMEOUT_ACCOUNTED" : "FAILED_ACCOUNTED",
+        stage: "fetch",
+        elapsedMs,
+        timeoutType: timeout ? (error?.sourceStatus === "BUDGET_EXHAUSTED" ? "batch-deadline" : "source-timeout") : undefined,
+        error: error.message,
+        failureClass: error.sourceStatus || "TRANSPORT_FAILURE"
+      });
       console.error(`Failed to fetch ${source}: ${error.message}`);
-      return { source, status: error.sourceStatus || (/timed?\s*out|timeout/i.test(error.message) ? "TIMEOUT" : "TRANSPORT_FAILURE"), error: error.message, attempts: error.sourceAttempts || getSourceRetryAttempts() };
+      return recordResult(source, { source, status: error.sourceStatus || (/timed?\s*out|timeout/i.test(error.message) ? "TIMEOUT" : "TRANSPORT_FAILURE"), error: error.message, attempts: error.sourceAttempts || getSourceRetryAttempts() });
     }
   });
 
@@ -8164,20 +8377,35 @@ async function fetchSourceBatch(sourceList, options = {}) {
   if (!options.deadlineAt) return batchPromise;
   const remainingMs = options.deadlineAt - Date.now();
   if (remainingMs <= 0) {
-    return sourceList.map((source) => ({ source, status: "BUDGET_EXHAUSTED", error: "source batch deadline exhausted", attempts: 0 }));
+    return sourceList.map((source) => settledResults.get(source) || { source, status: "BUDGET_EXHAUSTED", error: "source batch deadline exhausted", attempts: 0 });
   }
   let deadlineTimer;
   const deadlinePromise = new Promise((resolve) => {
-    deadlineTimer = setTimeout(() => resolve(sourceList.map((source) => ({
+    deadlineTimer = setTimeout(() => resolve(sourceList.map((source) => settledResults.get(source) || {
       source,
       status: "BUDGET_EXHAUSTED",
       error: "source batch deadline exhausted",
       attempts: 0
-    }))), remainingMs);
+    })), remainingMs);
   });
   batchPromise.catch(() => {});
   try {
-    return await Promise.race([batchPromise, deadlinePromise]);
+    const results = await Promise.race([batchPromise, deadlinePromise]);
+    if (results.some((result) => result.status === "BUDGET_EXHAUSTED")) {
+      await Promise.all(results
+        .filter((result) => result.status === "BUDGET_EXHAUSTED")
+        .map((result) => options.telemetry?.emit("SOURCE_TIMEOUT", {
+          sourceId: sourceTelemetryId(result.source),
+          sourceUrl: result.source,
+          sourceHost: sourceTelemetryHost(result.source),
+          status: "DEFERRED",
+          stage: "batch-deadline",
+          elapsedMs: 0,
+          timeoutType: "batch-deadline",
+          error: result.error
+        })));
+    }
+    return results;
   } finally {
     clearTimeout(deadlineTimer);
   }
@@ -8256,6 +8484,13 @@ async function main() {
   const postedArticles = [];
   const pushFailures = [];
   const dryRunCandidates = [];
+  const runTelemetry = createRunTelemetry({
+    mode: shouldDryRun() ? "dry-run" : "live",
+    commitSha,
+    allowedSources: allSelectedSources.length,
+    selectedSources: useResumableScheduler ? allSelectedSources.length : selectedSources.length
+  });
+  await runTelemetry.emit("RUN_STAGE", { stage: "initialization", selectedSources: selectedSources.length || allSelectedSources.length });
 
   if (isNoidaCityEnabled() && !getBooleanEnv("DRY_RUN") && !getBooleanEnv("ALLOW_NOIDA_API")) {
     throw new Error("Noida city mode is local-only for now. Set DRY_RUN=true, or set ALLOW_NOIDA_API=true after the API supports cityCode=noida.");
@@ -8326,7 +8561,9 @@ async function main() {
         const batchSources = shard.sources.map((source) => source.url);
         const batchResults = await fetchSourceBatch(batchSources, {
           deadlineAt: fetchDeadlineAt,
-          signal: globalBudgetController.signal
+          signal: globalBudgetController.signal,
+          telemetry: runTelemetry,
+          mode: "normal-current-news"
         });
         const startedResults = batchResults.filter((result) => result.status !== "BUDGET_EXHAUSTED");
         await checkpointResumableSourceShard(resumableContext, shard, startedResults);
@@ -8348,8 +8585,12 @@ async function main() {
     if (budgetStopped) console.log("Source scheduler stopped at the hard deadline; checkpoint is resumable.");
   } else {
     console.log(`Fetching ${selectedSources.length} sources with ${getSourceConcurrency()} parallel source workers and ${formatDuration(getSourceTimeoutMs())} max per source.`);
-    sourceResults = await fetchSourceBatch(selectedSources);
+    sourceResults = await fetchSourceBatch(selectedSources, {
+      telemetry: runTelemetry,
+      mode: "normal-current-news"
+    });
   }
+  await runTelemetry.emit("RUN_STAGE", { stage: "source-fetch-complete", completedSources: sourceResults.length });
 
   const sourceHealth = sourceResults.map((result) => ({
     source: result.source,
@@ -8385,6 +8626,7 @@ async function main() {
   }
 
   const filterStartedAt = Date.now();
+  await runTelemetry.emit("RUN_STAGE", { stage: "filtering" });
   const expandedAllArticles = allArticles
     .flatMap(expandCityArticles)
     .filter((article) => targetCityCodeFilter.size === 0 || targetCityCodeFilter.has(article.cityCode));
@@ -8553,6 +8795,10 @@ async function main() {
     buildVersion,
     commitSha,
     sourceStrategy,
+    runtimeTelemetry: {
+      progressPath: runTelemetry.path,
+      status: pushFailures.length > 0 ? "COMPLETE_WITH_API_FAILURES" : "COMPLETE"
+    },
     allSelectedSourceCount: allSelectedSources.length,
     selectedSourceCount: selectedSources.length,
     sourceHealth,
@@ -8601,6 +8847,15 @@ async function main() {
       reasons
     }))
   });
+
+  await runTelemetry.emit("RUN_STAGE", {
+    stage: "run-summary",
+    links: allArticles.length,
+    candidates: articlesToPush.length,
+    published: postedArticles.length,
+    apiFailures: pushFailures.length
+  });
+  await runTelemetry.finish(pushFailures.length > 0 ? "COMPLETE_WITH_API_FAILURES" : "COMPLETE");
 
   if (pushFailures.length > 0) {
     throw new Error(`${pushFailures.length} article push(es) failed; see pushFailures in the run report.`);
