@@ -2169,6 +2169,25 @@ for (const adverseTitle of [
   }), sentIds), false, adverseTitle);
 }
 
+const adverseAuthorityInsolvencyArticle = publishable({
+  cityCode: "noida",
+  title: "NCLAT rejects Noida authority plea for secured creditor status in insolvency case",
+  description: "Homebuyers are relieved from further payments after the tribunal rejected the development authority's claim.",
+  articleText: "The National Company Law Appellate Tribunal rejected the Noida and Greater Noida authorities' plea for secured creditor status in the insolvency proceedings of a real-estate developer. The authorities were treated as unsecured creditors and homebuyers were relieved from further payments.",
+  newsLink: "https://example.com/noida/nclat-authority-secured-creditor-plea-rejected"
+});
+assert.equal(isPublishableArticle(adverseAuthorityInsolvencyArticle, sentIds), false);
+assert.ok(getRejectionReasons(adverseAuthorityInsolvencyArticle, sentIds).includes("filter 3: negative/crime/utility concern news"));
+
+const positiveAuthorityProjectApproval = publishable({
+  cityCode: "noida",
+  title: "Noida authority approves new residential project with infrastructure plan",
+  description: "The development authority approved a residential project and its supporting infrastructure plan.",
+  articleText: "The development authority approved the residential project after reviewing the site plan, housing units and infrastructure works for the new development in Noida.",
+  newsLink: "https://example.com/noida/authority-approves-residential-project"
+});
+assert.equal(isPublishableArticle(positiveAuthorityProjectApproval, sentIds), true);
+
 const gurugramSprArticle = publishable({
   cityCode: "new_delhi",
   sourceCityCodes: ["new_delhi"],

@@ -4051,6 +4051,30 @@ function isAdverseCourtRealEstateArticle(article) {
   ]);
 }
 
+// Court and tribunal reports involving development authorities can be adverse
+// even when they do not use the older project-specific negative vocabulary.
+// Keep this semantic and evidence-based: require a legal forum, an authority
+// or insolvency context, and an adverse disposition affecting the property
+// matter. This prevents authority-creditor and homebuyer-relief decisions from
+// entering the positive feed while preserving approvals and project milestones.
+function isAdverseAuthorityLegalArticle(article) {
+  const haystack = `${getArticleSearchText(article)} ${getArticleUrlText(article)}`;
+  const legalForum = hasWholeWordKeyword(haystack, [
+    "court", "tribunal", "nclt", "nclat", "high court", "supreme court"
+  ]);
+  const authorityOrInsolvency = hasKeyword(haystack, [
+    "authority", "development authority", "secured creditor", "unsecured creditor",
+    "insolvency", "insolvency proceedings", "resolution plan", "homebuyers"
+  ]);
+  const adverseDisposition = hasKeyword(haystack, [
+    "rejects plea", "rejected plea", "plea rejected", "dismissed plea",
+    "claims rejected", "claim rejected", "secured creditor status rejected",
+    "relieved from further payments", "unsecured", "insolvency case"
+  ]);
+
+  return isCourtRealEstateRelated(article) && legalForum && authorityOrInsolvency && adverseDisposition;
+}
+
 function isNationalRealEstateBusinessUpdate(article) {
   const haystack = getArticleSearchText(article);
   const title = article.title || "";
@@ -5927,7 +5951,8 @@ function isNegativeNews(article) {
     hasWholeWordKeyword(bodyText, severeBodyNegativeKeywords) ||
     hasKeyword(bodyText, severeBodyNegativePhrases) ||
     isAdverseReraArticle(article) ||
-    isAdverseCourtRealEstateArticle(article)
+    isAdverseCourtRealEstateArticle(article) ||
+    isAdverseAuthorityLegalArticle(article)
   );
 }
 
