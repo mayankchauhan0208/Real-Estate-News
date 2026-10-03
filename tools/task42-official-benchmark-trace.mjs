@@ -9,8 +9,27 @@ const traces = manifest.cases.filter((item) => item.INCLUDED_IN_RECALL).map((ite
   const original = cases.get(item.BENCHMARK_ID) || {};
   const outcome = original.outcome || "UNKNOWN_PIPELINE_GAP";
   const review = outcome === "FOUND_REVIEW";
+  const primaryMiss = original.primaryMiss || outcome;
+  const documentType = item.SOURCE_FAMILY || "UNKNOWN";
+  const event = item.EXPECTED_EVENT_CLASS || documentType;
+  const projectScheme = item.ORIGINAL_TITLE || "";
+  const geo = item.EXPECTED_GEO || "unknown";
   return {
     BENCHMARK_ID: item.BENCHMARK_ID,
+    SOURCE: item.SOURCE,
+    LISTING: item.URL,
+    ROW: item.ORIGINAL_TITLE,
+    DETAIL: original.requiredFix || "",
+    DOCUMENT: item.URL,
+    DOCUMENT_TYPE: documentType,
+    CONTENT_VALID: review,
+    TEXT_EXTRACTION: /not text-readable|unreadable|maintenance|error/i.test(primaryMiss) ? "FAILED_OR_UNREADABLE" : review ? "AVAILABLE" : "NOT_PROVEN",
+    OCR_IF_REQUIRED: /not text-readable|unreadable|PDF/i.test(primaryMiss) ? "REQUIRED_AND_NOT_IN_CANONICAL_PATH" : "NOT_REQUIRED_OR_NOT_PROVEN",
+    DATE: item.DATE || "",
+    EVENT: event,
+    PROJECT_SCHEME: projectScheme,
+    GEO: geo,
+    PROPERTY_NEXUS: true,
     SOURCE_PRESENT: true,
     LISTING_DISCOVERED: !/SOURCE_GAP|DISCOVERY_GAP/i.test(outcome),
     DETAIL_DISCOVERED: !/DISCOVERY_GAP|RERA_EVENT_GAP/i.test(outcome),
@@ -20,11 +39,10 @@ const traces = manifest.cases.filter((item) => item.INCLUDED_IN_RECALL).map((ite
     READABLE: review && !/unreadable|maintenance|error|PDF/i.test(original.primaryMiss || ""),
     DATE_VALID: Boolean(item.DATE),
     RELEVANT: true,
-    PROPERTY_NEXUS: true,
     GEO_VALID: item.EXPECTED_GEO !== "unknown",
     DEDUPE_PASS: true,
     FINAL_CAPTURE: outcome === "FOUND_PUBLISHED" ? "PUBLISHED" : review ? "REVIEW" : "REJECT_OR_LOSS",
-    PRIMARY_LOSS_STAGE: outcome === "FOUND_REVIEW" ? (original.primaryMiss || "REVIEW_GATE") : outcome,
+    PRIMARY_LOSS_STAGE: outcome === "FOUND_REVIEW" ? primaryMiss : outcome,
     POST_DEVELOPMENT_NOTE: original.requiredFix || "Current evidence retained without weakening the publication gate."
   };
 });
