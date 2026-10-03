@@ -8,7 +8,11 @@ import { availableOcrTools, ocrCacheKey, pdfHash, validateOcrText } from './ocr-
 import { classifyArticle, detectCityCodes } from '../src/index.js';
 
 const execFileAsync = promisify(execFile); const root = process.cwd(); const outDir = path.join(root, 'reports/source-audits/task14'); const rawDir = path.join(outDir, 'raw-ocr'); await fs.mkdir(rawDir, { recursive: true });
-const tools = availableOcrTools(); const tessdataDir = process.env.BROKKET_TASK14_TESSDATA || path.join(process.env.TEMP || os.tmpdir(), 'brokket-task14-tessdata');
+const tools = availableOcrTools();
+// Prefer the verified local installation so the bounded recovery path does
+// not silently point Tesseract at an empty temporary language directory.
+const installedTessdata = tools.tesseract ? path.join(path.dirname(tools.tesseract), 'tessdata') : '';
+const tessdataDir = process.env.BROKKET_TASK14_TESSDATA || installedTessdata || path.join(process.env.TEMP || os.tmpdir(), 'brokket-task14-tessdata');
 const task12 = JSON.parse(await fs.readFile(path.join(root, 'reports/source-audits/task12/task12-document-recovery-report.json'), 'utf8'));
 const targets = task12.sources.HSVP.documents;
 const limits = { timeoutMs: 10000, documentTimeoutMs: 60000, maxPages: 5, maxPixels: 25_000_000, verifiedDocumentBytes: 8 * 1024 * 1024, maxConcurrent: 1 };
