@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-10-03T13:20:22.505Z",
+    "generatedAt": "2026-10-03T14:15:56.978Z",
     "acquisitionSources": 134,
     "normalizedRecords": 388,
     "funnel": {
@@ -12,18 +12,18 @@
       "propertyNexus": 95,
       "geoValid": 80,
       "dedupePass": 388,
-      "wouldPublish": 3,
-      "review": 342,
-      "reject": 43
+      "wouldPublish": 2,
+      "review": 345,
+      "reject": 41
     },
     "decisions": {
-      "REVIEW": 342,
-      "REJECT": 43,
-      "WOULD_PUBLISH": 3
+      "REVIEW": 345,
+      "REJECT": 41,
+      "WOULD_PUBLISH": 2
     },
     "topRejectReasons": {
-      "filter 8: outside-city conflict": 20,
-      "filter 7: outside region in title/description": 17,
+      "filter 8: outside-city conflict": 18,
+      "filter 7: outside region in title/description": 15,
       "filter 9: no specific project/development signal": 7,
       "filter 5: no allowed city match": 4,
       "filter 6: target region missing or weak": 2,
@@ -720,8 +720,10 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": [
+        "filter 15: direct media/PDF link, not article page",
+        "review: FULL_ARTICLE_UNAVAILABLE",
         "filter 7: outside region in title/description",
         "filter 8: outside-city conflict"
       ]
@@ -743,6 +745,8 @@
       "dedupePass": true,
       "decision": "REVIEW",
       "reasons": [
+        "filter 15: direct media/PDF link, not article page",
+        "review: FULL_ARTICLE_UNAVAILABLE",
         "review: ambiguous multi-city geo evidence"
       ]
     },
@@ -761,8 +765,10 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": [
+        "filter 15: direct media/PDF link, not article page",
+        "review: FULL_ARTICLE_UNAVAILABLE",
         "filter 7: outside region in title/description",
         "filter 8: outside-city conflict"
       ]
@@ -895,8 +901,10 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "WOULD_PUBLISH",
-      "reasons": []
+      "decision": "REVIEW",
+      "reasons": [
+        "review: FULL_ARTICLE_UNAVAILABLE"
+      ]
     },
     {
       "source_id": "runtime-0064",

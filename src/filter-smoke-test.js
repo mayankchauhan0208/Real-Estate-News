@@ -2209,6 +2209,19 @@ const explicitlyScopedCityArticle = publishable({
 });
 assert.equal(isPublishableArticle(explicitlyScopedCityArticle, sentIds), true);
 
+const authoritativeSnippetOnlyArticle = publishable({
+  cityCode: "noida",
+  title: "Noida luxury housing market shifts focus to serviced residences",
+  description: "Infrastructure and global connectivity are reshaping residential demand, said a developer executive.",
+  articleText: "Noida luxury housing market shifts focus to serviced residences. Know More Smartworld Media official real estate media update.",
+  authoritativeContent: true,
+  fullArticleRead: false,
+  articleReadAttempted: false,
+  newsLink: "https://example.com/noida/developer-media-snippet"
+});
+assert.equal(isPublishableArticle(authoritativeSnippetOnlyArticle, sentIds), false);
+assert.ok(getRejectionReasons(authoritativeSnippetOnlyArticle, sentIds).some((reason) => /FULL_ARTICLE|SNIPPET|INSUFFICIENT/i.test(reason)));
+
 const gurugramSprArticle = publishable({
   cityCode: "new_delhi",
   sourceCityCodes: ["new_delhi"],

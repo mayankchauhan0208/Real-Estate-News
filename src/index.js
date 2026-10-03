@@ -3914,9 +3914,22 @@ function hasAuthoritativeContentEvidence(article) {
     return false;
   }
 
+  if (isAuthoritativeSnippetOnly(article)) {
+    return false;
+  }
+
   return article.officialDocumentRead === true ||
     article.fullArticleRead === true ||
     getArticleBodyText(article).trim().length >= 200;
+}
+
+function isAuthoritativeSnippetOnly(article) {
+  if (article.fullArticleRead === true || article.officialDocumentRead === true) {
+    return false;
+  }
+
+  const body = getArticleBodyText(article).trim();
+  return body.length < 500 && /\b(?:know more|official\s+(?:real\s+estate\s+)?(?:media|newsroom)\s+update|read more)\b/i.test(body);
 }
 
 function getArticleEvidenceReviewReason(article) {
