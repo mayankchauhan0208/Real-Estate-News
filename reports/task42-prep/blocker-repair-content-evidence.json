@@ -1,0 +1,45 @@
+{
+  "generatedAt": "2026-10-03T17:36:59.371Z",
+  "mode": "local-read-only-content-reacquisition",
+  "productionApiCalls": 0,
+  "productionMutations": 0,
+  "records": [
+    {
+      "recordId": "runtime-0435",
+      "source": "Live Hindustan",
+      "url": "https://www.livehindustan.com/business/who-is-dinesh-thakkar-the-man-who-bought-a-rs-711-crore-home-in-mumbai-juhu-journey-from-a-rented-house-to-a-dream-home-201790058991352.html",
+      "httpStatus": 200,
+      "language": "hi",
+      "thumbnail": "https://www.livehindustan.com/lh-img/smart/img/2026/09/22/1200x900/dinesh_thakkar_1790059590040_3ldP_1790059590276_8knF_a605ef59-bece-4aa5-abb9-8392ae3d4bc4_IYbK.JPG",
+      "evidenceSource": "JSON_LD_ARTICLE_BODY",
+      "articleEvidence": "मुंबई के जुहू में एक पूरा 8 मंजिला (G+7) रेजिडेंशियल टावर खरीदा जाए। कीमत? 711 करोड़ रुपये से भी ज्यादा। यह कहानी एंजेल वन के फाउंडर, चेयरमैन और मैनेजिंग डायरेक्टर दिनेश ठक्कर की है। ठक्कर ने जुहू तारा रोड पर बने एम्बेसी टेराजा में एक पूरा टावर खरीदा है। टावर का RERA कारपेट एरिया 63,000 वर्ग फुट है और डील लगभग 1.13 लाख रुपये प्रति वर्ग फुट पर हुई है, जो जुहू में रेजिडेंशियल प्रॉपर्टी का नया रिकॉर्ड है। एम्बेसी टेराजा पांच टावरों का प्रोजेक्ट है, जो 2 एकड़ से ज्यादा में फैला है, इसमें करीब 50 रेसिडेंस हैं और अनुमानित ग्रॉस डेवलपमेंट वैल्यू 3,000 करोड़ रुपये से ज्यादा है।",
+      "verifiedFacts": [
+        "actual property transaction: complete residential tower purchase",
+        "price claim: more than ₹711 crore",
+        "location: Juhu Tara Road, Juhu, Mumbai",
+        "property nexus: RERA carpet area, residential property, named residential project and GDV",
+        "event character: positive transaction/profile story, no adverse or enforcement event"
+      ],
+      "engineDecisionBefore": "WOULD_PUBLISH",
+      "editorialDecision": "PUBLISH",
+      "evidenceNote": "The local extractor returned 3,540 characters from JSON-LD. Its title-overlap quality sub-check was conservative for the Hindi title, but the original-language body contains sufficient independently reviewable facts."
+    },
+    {
+      "recordId": "runtime-0083",
+      "source": "ET Realty",
+      "url": "https://realty.economictimes.indiatimes.com/news/infrastructure/kochi-metro-phase-ii-construction-to-be-completed-in-august-2027/134633393",
+      "language": "en",
+      "evidenceSource": "local acquisition ledger",
+      "articleEvidence": "Kochi Metro Rail Ltd reviewed track laying, station construction, electrical systems, signalling, telecommunications, lifts, escalators, land acquisition and Water Metro works. No housing, property, township, TOD, commercial development or property-market event is identified.",
+      "verifiedFacts": [
+        "generic metro construction",
+        "generic station and transport systems",
+        "land acquisition for transport civil works only",
+        "no independent property/development nexus"
+      ],
+      "engineDecisionBefore": "WOULD_PUBLISH",
+      "engineDecisionAfter": "REJECT_OFFTOPIC",
+      "reason": "GENERIC_TRANSPORT_INFRASTRUCTURE_WITHOUT_PROPERTY_NEXUS"
+    }
+  ]
+}

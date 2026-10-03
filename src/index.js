@@ -4891,6 +4891,10 @@ function isRealEstateRelated(article) {
     return false;
   }
 
+  if (isGenericTransportConstructionWithoutPropertyNexus(article)) {
+    return false;
+  }
+
   if (isPositiveInfrastructureWithoutPropertyNexus(article)) {
     return false;
   }
@@ -5809,6 +5813,43 @@ function isGenericBroadMarketHeadline(article) {
     "what will drive demand"
   ]);
 }
+function isNavigationOrListingShell(article) {
+  const title = cleanText(article.title || "", 240).toLowerCase();
+  const url = getArticleUrlText(article);
+  const hasDatedEvidence = Boolean(article.publishedAt || article.officialDocumentRead === true || article.authorityEventType);
+  const exactNavigationTitle = /^(?:click to subscribe|completed projects?|screen reader access|online public services|right to information|e-auction archives|allottee online services|ongoing projects?|delivered projects?|residential projects?|new projects in noida|02residential projects?)$/i.test(title);
+  const navigationUrl = /(?:#(?:footer-part|res-|$)|\/project-category\/|\/projects?\/residential(?:\/|$)|\/new-projects-in-noida(?:\/|$)|\/screen-reader(?:access)?(?:\.aspx)?(?:\/|$)|\/online-public-services(?:\/|$)|\/right-to-information(?:\/|$)|\/e-auction-archives(?:\/|$)|\/citizen-portal|\/rti\/)/i.test(url);
+
+  // Listing shells are not publishable events. Dated official documents and
+  // explicit authority events continue through the normal evidence gates.
+  if (hasDatedEvidence) return false;
+  return exactNavigationTitle || navigationUrl;
+}
+
+function hasExplicitTransportPropertyNexus(article) {
+  // Do not let a publisher hostname such as `realty.example.com` satisfy
+  // the nexus. The evidence must appear in the title, description or body.
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  return hasKeyword(text, [
+    "real estate", "property market", "property development", "real-estate development",
+    "housing development", "residential development", "commercial development", "residential project",
+    "commercial project", "housing project", "township", "plotted development", "land parcel",
+    "development zone", "new development sector", "new residential sectors", "office space",
+    "tod", "transit-oriented development", "mixed-use", "मेट्रो के आसपास आवास", "आवासीय परियोजना"
+  ]);
+}
+
+function isGenericTransportConstructionWithoutPropertyNexus(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const transportConstruction = hasKeyword(primaryAndUrl, [
+    "metro construction", "metro line", "metro phase", "metro station", "metro corridor",
+    "railway construction", "rail line", "airport construction", "airport expansion",
+    "flyover construction", "road construction", "highway construction", "transport infrastructure",
+    "water metro", "station development", "land acquisition"
+  ]);
+  return transportConstruction && !hasExplicitTransportPropertyNexus(article);
+}
+
 function isBlockedArticle(article) {
   const title = article.title || "";
   const description = article.description || "";
@@ -5821,6 +5862,7 @@ function isBlockedArticle(article) {
   const isWeakFoodRetailSource = articleHost === "businessoffood.in" && !hasKeyword(`${title} ${description} ${newsLink}`.toLowerCase(), ["real estate", "realty", "developer", "residential", "commercial project", "retail destination", "tenant mix", "open-air retail", "sector 70", "office space", "leased", "rents", "sq ft"]);
 
   return (
+    isNavigationOrListingShell(article) ||
     blockedExactTitles.includes(normalizedTitle) ||
     isAddressLikeHeadline(title) ||
     isMalformedCategoryHeadline(title, article) ||

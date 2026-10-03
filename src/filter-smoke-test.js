@@ -2064,6 +2064,41 @@ const genericTransportArticle = publishable({
 });
 assert.equal(isPublishableArticle(genericTransportArticle, sentIds), false);
 
+const genericKochiMetroConstruction = publishable({
+  cityCode: "kochi",
+  title: "Kochi metro phase-II construction to be completed in August 2027",
+  description: "Kochi Metro Phase II covers track laying, station development, electrical systems and land acquisition.",
+  articleText: "Kochi Metro Rail Ltd reviewed track laying, station construction, electrical installations, signalling, land acquisition and Water Metro works. The article contains transport construction and operations only.",
+  newsLink: "https://realty.economictimes.indiatimes.com/news/infrastructure/kochi-metro-phase-ii-construction-to-be-completed-in-august-2027/134633393",
+  publishedAt: "2026-10-02T09:30:00.000Z"
+});
+assert.equal(isPublishableArticle(genericKochiMetroConstruction, sentIds), false);
+assert.ok(getRejectionReasons(genericKochiMetroConstruction, sentIds).includes("filter 4: not positive target real-estate/project news"));
+
+for (const navigationTitle of [
+  "CLICK TO SUBSCRIBE",
+  "Completed Projects",
+  "Screen Reader Access",
+  "Online Public Services",
+  "Right to Information",
+  "E-Auction Archives",
+  "Allottee Online Services",
+  "Ongoing Projects",
+  "Delivered Projects",
+  "Residential Projects",
+  "New Projects in Noida"
+]) {
+  const navigationArticle = publishable({
+    title: navigationTitle,
+    description: "Real estate projects and residential properties.",
+    articleText: "Navigation and portfolio menu content only.",
+    publishedAt: "",
+    newsLink: `https://example.com/projects/${navigationTitle.toLowerCase().replaceAll(" ", "-")}`
+  });
+  assert.equal(isPublishableArticle(navigationArticle, sentIds), false, navigationTitle);
+  assert.ok(getRejectionReasons(navigationArticle, sentIds).some((reason) => /spam\/menu|not positive target|FULL_ARTICLE|date/i.test(reason)), navigationTitle);
+}
+
 const busOperationsArticle = publishable({
   cityCode: "gorakhpur",
   title: "Double-decker electric bus service begins between Gorakhpur and Maharajganj",
