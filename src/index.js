@@ -5990,6 +5990,22 @@ function hasOutsideCityConflict(article) {
   return hasOutsideLocationDominance(article);
 }
 
+function hasAmbiguousMultiCityGeoEvidence(article) {
+  if (article.fullArticleRead !== true && getArticleBodyText(article).length < 200) {
+    return false;
+  }
+
+  const titleOrUrl = `${article.title || ""} ${getArticleUrlText(article)}`;
+  const titleOrUrlCity = cityRules.some((rule) => hasWholeWordKeyword(titleOrUrl, rule.keywords));
+  if (titleOrUrlCity) {
+    return false;
+  }
+
+  const bodyCityCodes = detectTargetCityCodesFromFullArticle(article)
+    .filter((code) => !["delhi_ncr", "new_delhi"].includes(code));
+  return new Set(bodyCityCodes).size > 1;
+}
+
 function hasOutsideLocationDominance(article) {
   const bodyText = getArticleBodyText(article);
 
@@ -6158,6 +6174,10 @@ function getRejectionReasons(article, sentIds) {
 
   if (hasOutsideCityConflict(article)) {
     reasons.push("filter 8: outside-city conflict");
+  }
+
+  if (hasAmbiguousMultiCityGeoEvidence(article)) {
+    reasons.push("review: ambiguous multi-city geo evidence");
   }
 
   if (hasSourceCityUrlMismatch(article)) {

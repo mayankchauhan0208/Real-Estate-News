@@ -2188,6 +2188,27 @@ const positiveAuthorityProjectApproval = publishable({
 });
 assert.equal(isPublishableArticle(positiveAuthorityProjectApproval, sentIds), true);
 
+const ambiguousMultiCityCorporateArticle = publishable({
+  cityCode: "pune",
+  title: "Developer plans major investment across multiple markets",
+  description: "The group plans residential and commercial projects across Maharashtra and West Bengal.",
+  articleText: "The developer plans a World Trade Center mixed-use project in Kolkata and new residential and commercial projects in Pune. The long-term pipeline includes launches, construction and development potential in both cities.",
+  fullArticleRead: true,
+  newsLink: "https://example.com/industry/multi-market-development"
+});
+assert.equal(isPublishableArticle(ambiguousMultiCityCorporateArticle, sentIds), false);
+assert.ok(getRejectionReasons(ambiguousMultiCityCorporateArticle, sentIds).includes("review: ambiguous multi-city geo evidence"));
+
+const explicitlyScopedCityArticle = publishable({
+  cityCode: "pune",
+  title: "Pune residential project adds new homes and commercial space",
+  description: "The Pune project adds new housing supply and commercial development.",
+  articleText: "The Pune residential project adds new homes and commercial space, with construction scheduled to begin this year.",
+  fullArticleRead: true,
+  newsLink: "https://example.com/pune/residential-project"
+});
+assert.equal(isPublishableArticle(explicitlyScopedCityArticle, sentIds), true);
+
 const gurugramSprArticle = publishable({
   cityCode: "new_delhi",
   sourceCityCodes: ["new_delhi"],

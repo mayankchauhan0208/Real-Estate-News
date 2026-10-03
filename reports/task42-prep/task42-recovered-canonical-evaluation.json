@@ -1,6 +1,6 @@
 {
   "summary": {
-    "generatedAt": "2026-10-03T13:01:22.848Z",
+    "generatedAt": "2026-10-03T13:20:22.505Z",
     "acquisitionSources": 134,
     "normalizedRecords": 388,
     "funnel": {
@@ -11,26 +11,25 @@
       "negativeSafe": 282,
       "propertyNexus": 95,
       "geoValid": 80,
-      "dedupePass": 387,
-      "wouldPublish": 4,
-      "review": 321,
-      "reject": 63
+      "dedupePass": 388,
+      "wouldPublish": 3,
+      "review": 342,
+      "reject": 43
     },
     "decisions": {
-      "REVIEW": 321,
-      "REJECT": 63,
-      "WOULD_PUBLISH": 4
+      "REVIEW": 342,
+      "REJECT": 43,
+      "WOULD_PUBLISH": 3
     },
     "topRejectReasons": {
-      "filter 8: outside-city conflict": 25,
-      "filter 7: outside region in title/description": 21,
-      "filter 9: no specific project/development signal": 8,
-      "filter 5: no allowed city match": 7,
-      "filter 3: negative/crime/utility concern news": 5,
-      "filter 6: target region missing or weak": 3,
+      "filter 8: outside-city conflict": 20,
+      "filter 7: outside region in title/description": 17,
+      "filter 9: no specific project/development signal": 7,
+      "filter 5: no allowed city match": 4,
+      "filter 6: target region missing or weak": 2,
       "filter 4: not positive target real-estate/project news": 2,
       "filter 1: spam/menu page": 2,
-      "filter 13: already sent": 1,
+      "filter 3: negative/crime/utility concern news": 2,
       "filter 15: direct media/PDF link, not article page": 1,
       "filter 2: unsupported language/script": 1
     },
@@ -122,6 +121,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score -4)"
       ]
     },
@@ -145,6 +145,7 @@
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score -17)"
       ]
     },
@@ -223,8 +224,10 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "WOULD_PUBLISH",
-      "reasons": []
+      "decision": "REVIEW",
+      "reasons": [
+        "review: ambiguous multi-city geo evidence"
+      ]
     },
     {
       "source_id": "runtime-0025",
@@ -246,6 +249,7 @@
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
       ]
     },
@@ -268,6 +272,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 8)"
       ]
     },
@@ -310,10 +315,11 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
-        "filter 5: no allowed city match"
+        "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence"
       ]
     },
     {
@@ -357,6 +363,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 84)"
       ]
     },
@@ -401,6 +408,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 70)"
       ]
     },
@@ -445,6 +453,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 146)"
       ]
     },
@@ -492,6 +501,7 @@
         "filter 5: no allowed city match",
         "filter 7: outside region in title/description",
         "filter 8: outside-city conflict",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 98)"
       ]
     },
@@ -579,6 +589,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 16)"
       ]
     },
@@ -597,8 +608,9 @@
       "propertyNexus": false,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": [
+        "review: ambiguous multi-city geo evidence",
         "filter 9: no specific project/development signal"
       ]
     },
@@ -617,8 +629,10 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
-      "reasons": []
+      "decision": "REVIEW",
+      "reasons": [
+        "review: ambiguous multi-city geo evidence"
+      ]
     },
     {
       "source_id": "runtime-0037",
@@ -727,8 +741,10 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
-      "reasons": []
+      "decision": "REVIEW",
+      "reasons": [
+        "review: ambiguous multi-city geo evidence"
+      ]
     },
     {
       "source_id": "runtime-0051",
@@ -1204,8 +1220,10 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
-      "reasons": []
+      "decision": "REVIEW",
+      "reasons": [
+        "review: ambiguous multi-city geo evidence"
+      ]
     },
     {
       "source_id": "runtime-0080",
@@ -1324,10 +1342,10 @@
       "negativeSafe": true,
       "propertyNexus": true,
       "geoValid": true,
-      "dedupePass": false,
-      "decision": "REJECT",
+      "dedupePass": true,
+      "decision": "REVIEW",
       "reasons": [
-        "filter 13: already sent"
+        "review: ambiguous multi-city geo evidence"
       ]
     },
     {
@@ -1373,6 +1391,7 @@
       "reasons": [
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 54)"
       ]
     },
@@ -1439,10 +1458,11 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
-        "filter 5: no allowed city match"
+        "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence"
       ]
     },
     {
@@ -1460,10 +1480,11 @@
       "propertyNexus": true,
       "geoValid": false,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": [
         "filter 3: negative/crime/utility concern news",
-        "filter 5: no allowed city match"
+        "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence"
       ]
     },
     {
@@ -1499,8 +1520,10 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
-      "reasons": []
+      "decision": "REVIEW",
+      "reasons": [
+        "review: ambiguous multi-city geo evidence"
+      ]
     },
     {
       "source_id": "runtime-0108",
@@ -1674,6 +1697,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 136)"
       ]
     },
@@ -1742,6 +1766,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 136)"
       ]
     },
@@ -2655,9 +2680,10 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": [
-        "filter 8: outside-city conflict"
+        "filter 8: outside-city conflict",
+        "review: ambiguous multi-city geo evidence"
       ]
     },
     {
@@ -2894,6 +2920,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 136)"
       ]
     },
@@ -2962,6 +2989,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 136)"
       ]
     },
@@ -3030,6 +3058,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 136)"
       ]
     },
@@ -3098,6 +3127,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 136)"
       ]
     },
@@ -3166,6 +3196,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 136)"
       ]
     },
@@ -3234,6 +3265,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 136)"
       ]
     },
@@ -3302,6 +3334,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 136)"
       ]
     },
@@ -3370,6 +3403,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 136)"
       ]
     },
@@ -3438,6 +3472,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 136)"
       ]
     },
@@ -3506,6 +3541,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 136)"
       ]
     },
@@ -3574,6 +3610,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 136)"
       ]
     },
@@ -3642,6 +3679,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 136)"
       ]
     },
@@ -4021,6 +4059,7 @@
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 14)"
       ]
     },
@@ -4068,6 +4107,7 @@
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 6)"
       ]
     },
@@ -4137,6 +4177,7 @@
         "filter 1: spam/menu page",
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score -30)"
       ]
     },
@@ -4229,6 +4270,7 @@
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score -1)"
       ]
     },
@@ -4358,6 +4400,7 @@
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 10: broad market/company update, not city project news",
         "filter 17: local quality judge rejected article (weak city evidence, score 32)"
       ]
@@ -5073,9 +5116,10 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": [
-        "filter 6: target region missing or weak"
+        "filter 6: target region missing or weak",
+        "review: ambiguous multi-city geo evidence"
       ]
     },
     {
@@ -5143,6 +5187,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 28)"
       ]
     },
@@ -5165,6 +5210,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 28)"
       ]
     },
@@ -5183,10 +5229,11 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": [
         "filter 7: outside region in title/description",
-        "filter 8: outside-city conflict"
+        "filter 8: outside-city conflict",
+        "review: ambiguous multi-city geo evidence"
       ]
     },
     {
@@ -5208,6 +5255,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 28)"
       ]
     },
@@ -5230,6 +5278,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 28)"
       ]
     },
@@ -5248,10 +5297,11 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": [
         "filter 7: outside region in title/description",
-        "filter 8: outside-city conflict"
+        "filter 8: outside-city conflict",
+        "review: ambiguous multi-city geo evidence"
       ]
     },
     {
@@ -5320,6 +5370,7 @@
         "filter 4: not positive target real-estate/project news",
         "filter 1: spam/menu page",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score -4)"
       ]
     },
@@ -5410,6 +5461,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
       ]
     },
@@ -5453,6 +5505,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 30)"
       ]
     },
@@ -5808,8 +5861,10 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
-      "reasons": []
+      "decision": "REVIEW",
+      "reasons": [
+        "review: ambiguous multi-city geo evidence"
+      ]
     },
     {
       "source_id": "runtime-0411",
@@ -5826,8 +5881,10 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
-      "reasons": []
+      "decision": "REVIEW",
+      "reasons": [
+        "review: ambiguous multi-city geo evidence"
+      ]
     },
     {
       "source_id": "runtime-0413",
@@ -6190,8 +6247,10 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
-      "reasons": []
+      "decision": "REVIEW",
+      "reasons": [
+        "review: ambiguous multi-city geo evidence"
+      ]
     },
     {
       "source_id": "runtime-0436",
@@ -6364,6 +6423,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 32)"
       ]
     },
@@ -6386,6 +6446,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 32)"
       ]
     },
@@ -6587,6 +6648,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 2)"
       ]
     },
@@ -6765,6 +6827,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 8)"
       ]
     },
@@ -6787,6 +6850,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 2)"
       ]
     },
@@ -6831,6 +6895,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
       ]
     },
@@ -6897,6 +6962,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
       ]
     },
@@ -7027,8 +7093,10 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
-      "reasons": []
+      "decision": "REVIEW",
+      "reasons": [
+        "review: ambiguous multi-city geo evidence"
+      ]
     },
     {
       "source_id": "runtime-0515",
@@ -7045,10 +7113,11 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": [
         "filter 7: outside region in title/description",
-        "filter 8: outside-city conflict"
+        "filter 8: outside-city conflict",
+        "review: ambiguous multi-city geo evidence"
       ]
     },
     {
@@ -7088,8 +7157,10 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
-      "reasons": []
+      "decision": "REVIEW",
+      "reasons": [
+        "review: ambiguous multi-city geo evidence"
+      ]
     },
     {
       "source_id": "runtime-0516",
@@ -7106,10 +7177,11 @@
       "propertyNexus": true,
       "geoValid": true,
       "dedupePass": true,
-      "decision": "REJECT",
+      "decision": "REVIEW",
       "reasons": [
         "filter 7: outside region in title/description",
-        "filter 8: outside-city conflict"
+        "filter 8: outside-city conflict",
+        "review: ambiguous multi-city geo evidence"
       ]
     },
     {
@@ -8081,6 +8153,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 78)"
       ]
     },
@@ -8103,6 +8176,7 @@
       "reasons": [
         "filter 4: not positive target real-estate/project news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 45)"
       ]
     },
@@ -8126,6 +8200,7 @@
         "filter 4: not positive target real-estate/project news",
         "filter 3: negative/crime/utility concern news",
         "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
         "filter 17: local quality judge rejected article (weak city evidence, score 110)"
       ]
     },
