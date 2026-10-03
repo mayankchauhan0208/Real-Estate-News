@@ -2145,3 +2145,36 @@ const unverifiedMultiCityRows = expandCityArticles(unverifiedMultiCityArticle);
 assert.equal(unverifiedMultiCityRows.length, 1);
 assert.equal(unverifiedMultiCityRows[0].multiCityValidation, "EXTRA_CITY_REMOVED");
 assert.deepEqual(unverifiedMultiCityRows[0].suppressedCityCodes, ["udaipur"]);
+
+const transportHeadquartersArticle = publishable({
+  cityCode: "new_delhi",
+  title: "Delhi to build new DTC headquarters at ₹128 crore cost over two years",
+  description: "The Delhi Transport Corporation will construct a new headquarters at IP Estate Bus Depot.",
+  articleText: "The new building is for DTC bus operations and public transport administration, with no property-market or development consequence.",
+  newsLink: "https://example.com/delhi-dtc-headquarters"
+});
+assert.equal(isPublishableArticle(transportHeadquartersArticle, sentIds), false);
+
+for (const adverseTitle of [
+  "ATS buyers object to revised Noida Sector 152 Sports City layout",
+  "Noida: Allottees challenge ATS's revised Sports City plan over nine commercial sites",
+  "Uttarakhand GST department recovers ₹2.25 crore as tax evasion from Eden Senior Living & Wellness"
+]) {
+  assert.equal(isPublishableArticle(publishable({
+    cityCode: adverseTitle.includes("Uttarakhand") ? "dehradun" : "noida",
+    title: adverseTitle,
+    description: "The article reports objections, adverse action or tax irregularities involving a real-estate project.",
+    articleText: "The report concerns buyer objections, an adverse regulatory action and no positive development milestone.",
+    newsLink: `https://example.com/adverse/${adverseTitle.toLowerCase().replaceAll(" ", "-")}`
+  }), sentIds), false, adverseTitle);
+}
+
+const gurugramSprArticle = publishable({
+  cityCode: "new_delhi",
+  sourceCityCodes: ["new_delhi"],
+  title: "GMDA floats ₹776 crore SPR elevated road project tender, CM holds project review",
+  description: "Gurugram: The Gurugram Metropolitan Development Authority floated a tender for an elevated road through Gurugram sectors 69, 70, 71 and 72.",
+  articleText: "The Southern Peripheral Road project runs from Vatika Chowk to Dwarka Expressway through Gurugram sectors and is intended to improve access and traffic flow.",
+  newsLink: "https://www.hindustantimes.com/cities/gurugram-news/gmda-floats-776-crore-spr-elevated-road-project-tender-cm-holds-project-review-101790963074198.html"
+});
+assert.equal(applyCityCode(gurugramSprArticle).cityCode, "gurugram");

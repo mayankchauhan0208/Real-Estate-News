@@ -1474,6 +1474,15 @@ const negativePhraseKeywords = [
   "awaits buyers",
   "caqm pollution",
   "cheated homebuyers",
+  "buyers object",
+  "allottees challenge",
+  "raise objections",
+  "raising alarm",
+  "unauthorized commercial",
+  "tax evasion",
+  "tax liability",
+  "gst irregularities",
+  "improper input tax credit",
   "circle rates surge",
   "construction ban",
   "construction halted",
@@ -4449,7 +4458,15 @@ function isOperationalInfrastructureOnlyArticle(article) {
     "metro service",
     "metro timetable"
   ]);
-  return hasOperationalSignal && !hasMeaningfulPropertyNexus(article);
+  const transportAdministrationSignal = hasKeyword(primaryAndUrl, [
+    "dtc headquarters",
+    "transport headquarters",
+    "public transport headquarters",
+    "transport corporation",
+    "bus depot",
+    "fleet operations"
+  ]);
+  return (hasOperationalSignal || transportAdministrationSignal) && !hasMeaningfulPropertyNexus(article);
 }
 
 function hasMeaningfulPropertyNexus(article) {
@@ -5307,7 +5324,11 @@ function getCachedDetectedCityCodes(article) {
 
 function applyCityCode(article) {
   const detectedCityCodes = getCachedDetectedCityCodes(article);
-  const detectedCityCode = detectedCityCodes.includes(article.cityCode) ? article.cityCode : detectedCityCodes[0];
+  const primaryCityCodes = cityRules
+    .filter((rule) => hasWholeWordKeyword(getArticlePrimaryText(article), rule.keywords))
+    .map((rule) => rule.code);
+  const articlePrimaryCityCode = primaryCityCodes.length === 1 ? primaryCityCodes[0] : "";
+  const detectedCityCode = articlePrimaryCityCode || (detectedCityCodes.includes(article.cityCode) ? article.cityCode : detectedCityCodes[0]);
 
   return {
     ...article,
