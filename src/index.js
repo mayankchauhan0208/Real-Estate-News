@@ -5433,31 +5433,59 @@ function hasKeyword(value, keywords) {
   return keywords.some((keyword) => normalized.includes(keyword));
 }
 
+const wholeWordRegexCache = new Map();
+const keywordMentionCache = new WeakMap();
+const keywordPresenceCache = new WeakMap();
+
+function getWholeWordRegex(keyword, flags = "i") {
+  const normalizedKeyword = String(keyword || "");
+  const cacheKey = `${flags}:${normalizedKeyword}`;
+  if (!wholeWordRegexCache.has(cacheKey)) {
+    const escaped = normalizedKeyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    wholeWordRegexCache.set(cacheKey, new RegExp(`\\b${escaped}\\b`, flags));
+  }
+  return wholeWordRegexCache.get(cacheKey);
+}
+
 function countKeywordMentions(value, keywords) {
   const normalized = value.toLowerCase();
+  let byText = keywordMentionCache.get(keywords);
+  if (!byText) {
+    byText = new Map();
+    keywordMentionCache.set(keywords, byText);
+  }
+  if (byText.has(normalized)) return byText.get(normalized);
 
-  return keywords.reduce((count, keyword) => {
+  const result = keywords.reduce((count, keyword) => {
     if (/[^\u0000-\u007f]/u.test(keyword)) {
       const nativeKeyword = keyword.toLowerCase();
       return count + (normalized.split(nativeKeyword).length - 1);
     }
-    const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const matches = normalized.match(new RegExp(`\\b${escaped}\\b`, "gi"));
+    const matches = normalized.match(getWholeWordRegex(keyword, "gi"));
 
     return count + (matches?.length || 0);
   }, 0);
+  byText.set(normalized, result);
+  return result;
 }
 
 function hasWholeWordKeyword(value, keywords) {
   const normalized = value.toLowerCase();
+  let byText = keywordPresenceCache.get(keywords);
+  if (!byText) {
+    byText = new Map();
+    keywordPresenceCache.set(keywords, byText);
+  }
+  if (byText.has(normalized)) return byText.get(normalized);
 
-  return keywords.some((keyword) => {
+  const result = keywords.some((keyword) => {
     if (/[^\u0000-\u007f]/u.test(keyword)) {
       return normalized.includes(keyword.toLowerCase());
     }
-    const escaped = keyword.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    return new RegExp(`\\b${escaped}\\b`, "i").test(normalized);
+    return getWholeWordRegex(keyword).test(normalized);
   });
+  byText.set(normalized, result);
+  return result;
 }
 
 function hasNcrMatch(article) {
