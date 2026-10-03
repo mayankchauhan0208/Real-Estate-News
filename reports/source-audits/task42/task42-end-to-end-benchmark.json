@@ -1,6 +1,6 @@
 {
   "task": "42",
-  "generatedAt": "2026-10-03T05:19:53.780Z",
+  "generatedAt": "2026-10-03T05:52:52.213Z",
   "readOnly": true,
   "noBackfill": true,
   "noProductionMutation": true,
@@ -1529,7 +1529,7 @@
     }
   },
   "negativeHoldout": {
-    "total": 20,
+    "total": 40,
     "records": [
       {
         "id": "task42-negative-task17-002",
@@ -1750,9 +1750,229 @@
         "negativeClass": "OFF_TOPIC",
         "verificationStatus": "HUMAN_AUDITED",
         "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-022",
+        "source": "https://infra.economictimes.indiatimes.com/rss/recentstories",
+        "title": "Highway Infrastructure bags ₹245 crore toll contracts in UP, Tamil Nadu",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_OFF_TOPIC",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "OFF_TOPIC",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-023",
+        "source": "https://infra.economictimes.indiatimes.com/rss/rural-infrastructure",
+        "title": "Four-year-old Jal Jeevan Mission water project in Hosanagara set for revival after minister’s intervention",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_NEGATIVE",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "NEGATIVE_RE",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-024",
+        "source": "https://realty.economictimes.indiatimes.com/rss/lighting/smart-lighting",
+        "title": "Ranchi civic body to install 5,300 LED street lights across city",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_OFF_TOPIC",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "OFF_TOPIC",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-025",
+        "source": "https://realty.economictimes.indiatimes.com/rss/lighting/smart-lighting",
+        "title": "Repair, maintain all street lights in Patna civic body's area: Bihar CM",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_OFF_TOPIC",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "OFF_TOPIC",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-026",
+        "source": "https://realty.economictimes.indiatimes.com/rss/smart-city",
+        "title": "SPVs set up under smart cities mission in Tamil Nadu reduced to funding conduits: CAG report",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_NEGATIVE",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "NEGATIVE_RE",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-027",
+        "source": "https://realty.economictimes.indiatimes.com/rss/smart-city",
+        "title": "Zahirabad Industrial Smart City to attract ₹15,000 crore investment, project completion by 2028: Telangana IT minister",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_INSUFFICIENT",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "INSUFFICIENT",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-028",
+        "source": "https://realty.economictimes.indiatimes.com/rss/hospitality",
+        "title": "Homestays in Hampi must secure legal tag by September 30",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_NEGATIVE",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "NEGATIVE_RE",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-029",
+        "source": "https://realty.economictimes.indiatimes.com/rss/international",
+        "title": "Spain aims to ban evictions until 2030 amid housing protests",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_NEGATIVE",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "NEGATIVE_RE",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-030",
+        "source": "https://realty.economictimes.indiatimes.com/rss/topstories",
+        "title": "ED arrests two promoters of Gurugram-based Vatika Group in homebuyers 'fraud' case",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_NEGATIVE",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "NEGATIVE_RE",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-031",
+        "source": "https://realty.economictimes.indiatimes.com/rss/regulatory",
+        "title": "Enforcement directorate search at TDI’s Mohali office ends after 53 hours",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_NEGATIVE",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "NEGATIVE_RE",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-032",
+        "source": "https://realty.economictimes.indiatimes.com/rss/regulatory",
+        "title": "Gurugram admin acts against 71 builders for failing to refund amounts ordered by Haryana RERA",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_NEGATIVE",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "NEGATIVE_RE",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-033",
+        "source": "https://realty.economictimes.indiatimes.com/rss/residential",
+        "title": "Aadhaar mandatory for property transactions in Maharashtra from October 1",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_INSUFFICIENT",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "INSUFFICIENT",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-034",
+        "source": "https://dda.gov.in/whats-new",
+        "title": "Home page | Delhi Development Authority (DDA)",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_INSUFFICIENT",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "INSUFFICIENT",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-035",
+        "source": "https://faridabad.nic.in/department/faridabad-metropolitan-development-authority-fmda",
+        "title": "District Faridabad",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_INSUFFICIENT",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "INSUFFICIENT",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-036",
+        "source": "https://faridabad.nic.in/department/faridabad-metropolitan-development-authority-fmda",
+        "title": "District Social Welfare Office",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_OFF_TOPIC",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "OFF_TOPIC",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-037",
+        "source": "https://gnida.up.gov.in/en/announcements",
+        "title": "Error Page",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_INSUFFICIENT",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "INSUFFICIENT",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-038",
+        "source": "https://gnida.up.gov.in/en/announcements",
+        "title": "Error Page",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_INSUFFICIENT",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "INSUFFICIENT",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-039",
+        "source": "https://realty.economictimes.indiatimes.com/news/residential",
+        "title": "News",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_INSUFFICIENT",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "INSUFFICIENT",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-040",
+        "source": "https://www.bda.gov.in/notice",
+        "title": "BDA :: Bhubaneswar Development Authority",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_INSUFFICIENT",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "INSUFFICIENT",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
+      },
+      {
+        "id": "task42-negative-task17-041",
+        "source": "https://www.cial.aero/News-Updates/URL",
+        "title": "News Updates",
+        "language": "English/unknown",
+        "expectedLabel": "REJECT_OFF_TOPIC",
+        "pipelineOutcome": "REVIEW_OR_REJECT",
+        "negativeClass": "OFF_TOPIC",
+        "verificationStatus": "HUMAN_AUDITED",
+        "falsePositive": false
       }
     ],
-    "trueNegatives": 20,
+    "trueNegatives": 40,
     "falsePositives": 0,
     "note": "Human-audited non-publish records; labels are independent of current pipeline output."
   },

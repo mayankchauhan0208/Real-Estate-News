@@ -178,7 +178,7 @@ const stageMatrix = benchmarkRecords.map((row) => ({
 
 const negativeHoldout = precisionBenchmark.records
   .filter((record) => record.humanLabel !== "PUBLISH")
-  .slice(0, 20)
+  .slice(0, 40)
   .map((record) => ({
     id: `task42-negative-${record.recordId}`,
     source: record.source,
