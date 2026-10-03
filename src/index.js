@@ -4394,6 +4394,30 @@ function isPositiveCityMarketArticle(article) {
 function isOperationalInfrastructureOnlyArticle(article) {
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
   const hasOperationalSignal = hasKeyword(primaryAndUrl, [
+    "bus travel",
+    "bus card",
+    "bus cards",
+    "bus pass",
+    "bus passes",
+    "bus fare",
+    "bus fares",
+    "free bus",
+    "free travel",
+    "public transport",
+    "public transportation",
+    "commuter benefit",
+    "metro fare",
+    "metro fares",
+    "metro card",
+    "metro cards",
+    "rail fare",
+    "rail fares",
+    "airport passenger",
+    "airport operations",
+    "traffic management",
+    "parking operations",
+    "toll operations",
+    "ticketing",
     "bus service",
     "electric bus",
     "bus route",
@@ -4425,28 +4449,7 @@ function isOperationalInfrastructureOnlyArticle(article) {
     "metro service",
     "metro timetable"
   ]);
-  const hasPropertyOrDevelopmentSignal = hasKeyword(primaryAndUrl, [
-    "real estate",
-    "realty",
-    "property",
-    "housing",
-    "residential",
-    "commercial",
-    "office",
-    "land parcel",
-    "plot",
-    "mall",
-    "warehouse",
-    "township",
-    "apartment",
-    "builder",
-    "developer",
-    "rera",
-    "property development",
-    "real estate development"
-  ]);
-
-  return hasOperationalSignal && !hasPropertyOrDevelopmentSignal;
+  return hasOperationalSignal && !hasMeaningfulPropertyNexus(article);
 }
 
 function hasMeaningfulPropertyNexus(article) {

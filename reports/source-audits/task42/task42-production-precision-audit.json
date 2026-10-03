@@ -1,0 +1,72 @@
+{
+  "task": "42",
+  "readOnly": true,
+  "productionMutations": 0,
+  "recordsAudited": 5,
+  "validPublish": 1,
+  "shouldReview": 2,
+  "falsePositive": 2,
+  "wrongCity": 0,
+  "duplicate": 0,
+  "productionAuditFalsePositiveCountIsSeparateFromRegressionAndHoldout": true,
+  "records": [
+    {
+      "auditId": "TASK42_PROD_FP_PINK_SAHELI",
+      "productionId": "NOT_AVAILABLE_IN_LOCAL_ARTIFACTS",
+      "title": "Delhi makes Pink Saheli cards mandatory for women's free bus travel from today",
+      "source": "ETInfra / Economic Times Infrastructure",
+      "city": "new_delhi",
+      "classificationBeforeFix": "FALSE_POSITIVE",
+      "expected": "REJECT_OFFTOPIC",
+      "reason": "TRANSPORT_SERVICE_ONLY; NO_REAL_ESTATE_PROPERTY_DEVELOPMENT_NEXUS",
+      "rootCause": "The article used transport-policy language that was not covered by the operational-service boundary; source category and Delhi geo did not themselves establish property relevance.",
+      "fix": "General transport-service boundary now rejects bus travel/cards/passes/fares, public transport benefits, passenger operations, ticketing, parking/toll operations and related service stories unless the existing contextual property/development nexus is present.",
+      "afterFix": "REJECT_OFFTOPIC",
+      "deletedOrMutated": false,
+      "evidenceUrl": "NOT_AVAILABLE_IN_LOCAL_ARTIFACTS"
+    },
+    {
+      "auditId": "TASK42_PROD_PRIOR_001",
+      "title": "Rajasthan CM inaugurates, lays foundation for 1,013 projects worth ₹2,824 crore",
+      "source": "Latest Infrastructure News : ETInfra.com",
+      "city": "jodhpur",
+      "classification": "SHOULD_REVIEW",
+      "reason": "Generic civic works package without a specific property nexus."
+    },
+    {
+      "auditId": "TASK42_PROD_PRIOR_002",
+      "title": "Adani Group eyes ₹6 lakh crore investment in Maharashtra, ₹2.6 lakh crore projects underway",
+      "source": "Latest Infrastructure News : ETInfra.com",
+      "city": "mumbai",
+      "classification": "SHOULD_REVIEW",
+      "reason": "Broad state investment announcement without sufficiently specific property event or city evidence."
+    },
+    {
+      "auditId": "TASK42_PROD_PRIOR_003",
+      "title": "Nagpur plans ₹1,226 crore multi-storey textile park with 672 units",
+      "source": "Latest Infrastructure News : ETInfra.com",
+      "city": "nagpur",
+      "classification": "VALID_PUBLISH",
+      "reason": "Specific commercial property project, site, unit count and city are explicit."
+    },
+    {
+      "auditId": "TASK42_PROD_PRIOR_004",
+      "title": "Haryana government launches correction module for digital revenue records",
+      "source": "Hindustan Times",
+      "city": "chandigarh",
+      "classification": "FALSE_POSITIVE",
+      "reason": "Generic government administration/revenue-record service with no property or development event."
+    }
+  ],
+  "contrastCases": {
+    "transportServiceHardNegativeCases": 10,
+    "transportServiceFalsePositives": 0,
+    "propertyLinkedInfrastructureContrastCases": 4,
+    "propertyLinkedInfrastructureFalseNegativesIntroduced": 0
+  },
+  "qualityMetrics": {
+    "regressionCorpusFP": 0,
+    "externalHoldoutFP": 0,
+    "realProductionAuditFP": 2
+  }
+}

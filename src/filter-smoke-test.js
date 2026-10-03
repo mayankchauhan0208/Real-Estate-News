@@ -2091,6 +2091,38 @@ const waterMetroOperationsArticle = publishable({
 });
 assert.equal(isPublishableArticle(waterMetroOperationsArticle, sentIds), false);
 
+const pinkSaheliTransportServiceArticle = publishable({
+  cityCode: "new_delhi",
+  title: "Delhi makes Pink Saheli cards mandatory for women's free bus travel from today",
+  description: "Women must carry the Pink Saheli smart card to continue free travel on Delhi buses.",
+  articleText: "The Delhi Transport Corporation is replacing paper tickets with Pink Saheli cards for women's free bus travel. The policy covers cards, fares and passenger eligibility, not property or development.",
+  postedBy: "ETInfra",
+  newsLink: "https://infra.economictimes.indiatimes.com/news/urban-transportation/delhi-makes-pink-saheli-cards-mandatory-for-womens-free-bus-travel/000000000",
+  publishedAt: "2026-10-02T00:00:00.000Z"
+});
+assert.equal(isPublishableArticle(pinkSaheliTransportServiceArticle, sentIds), false);
+assert.ok(getRejectionReasons(pinkSaheliTransportServiceArticle, sentIds).some((reason) => /not positive target|operational|off-topic/i.test(reason)));
+
+for (const transportTitle of [
+  "Delhi expands free bus travel through Pink Saheli cards",
+  "Metro fares revised for daily commuters",
+  "Airport passenger operations resume after upgrade",
+  "City parking operations move to digital ticketing",
+  "Toll operations begin on the new highway",
+  "Rail fares and train schedules change this week"
+]) {
+  assert.equal(isPublishableArticle(publishable({ cityCode: "new_delhi", title: transportTitle, description: "The update concerns passenger operations, fares or ticketing.", articleText: "This is public transport service information with no housing, land, property, project, township or development nexus.", newsLink: `https://example.com/transport/${transportTitle.toLowerCase().replaceAll(" ", "-")}` }), sentIds), false, transportTitle);
+}
+
+for (const propertyInfrastructureArticle of [
+  publishable({ cityCode: "noida", title: "Noida Expressway unlocks new residential sectors and land parcels", description: "The expressway directly enables a new housing development corridor.", articleText: "The expressway connects new residential sectors and land parcels, enabling township development and new housing supply in Noida.", newsLink: "https://example.com/noida/expressway-residential-sectors" }),
+  publishable({ cityCode: "hyderabad", title: "Metro corridor opens Hyderabad development zone for commercial projects", description: "The corridor supports a defined commercial development zone.", articleText: "The metro corridor unlocks a development zone with commercial projects and office space around the station in Hyderabad.", newsLink: "https://example.com/hyderabad/metro-development-zone" }),
+  publishable({ cityCode: "noida", title: "Airport-linked township development advances near Noida", description: "The airport project is tied to a named township and land development plan.", articleText: "The airport-linked land plan advances township development, logistics plots and residential projects near Noida.", newsLink: "https://example.com/noida/airport-township-development" }),
+  publishable({ cityCode: "faridabad", title: "New sector road opens to support Faridabad residential development", description: "The road serves a defined new residential sector.", articleText: "The road opening supports a new residential sector, housing plots and property development in Faridabad.", newsLink: "https://example.com/faridabad/new-sector-road-housing" })
+]) {
+  assert.equal(isPublishableArticle(propertyInfrastructureArticle, sentIds), true, propertyInfrastructureArticle.title);
+}
+
 const validatedMultiCityArticle = publishable({
   title: "Residential development expands across Surat and Udaipur",
   description: "The developer announced housing projects in Surat and Udaipur.",
