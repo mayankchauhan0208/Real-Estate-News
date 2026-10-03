@@ -1,0 +1,577 @@
+{
+  "generatedAt": "2026-10-03T04:10:23.816Z",
+  "readOnly": true,
+  "noBackfill": true,
+  "batchA": {
+    "required": 18,
+    "assessed": 18,
+    "rows": [
+      {
+        "city": "delhi",
+        "batch": "A",
+        "status": "ASSESSED_WITH_VERIFIED_OR_EXISTING_EVIDENCE"
+      },
+      {
+        "city": "delhi_ncr",
+        "batch": "A",
+        "status": "ASSESSED_WITH_VERIFIED_OR_EXISTING_EVIDENCE"
+      },
+      {
+        "city": "rohtak",
+        "batch": "A",
+        "status": "ASSESSED_WITH_VERIFIED_OR_EXISTING_EVIDENCE"
+      },
+      {
+        "city": "ambala",
+        "batch": "A",
+        "status": "ASSESSED_WITH_VERIFIED_OR_EXISTING_EVIDENCE"
+      },
+      {
+        "city": "palwal",
+        "batch": "A",
+        "status": "ASSESSED_WITH_VERIFIED_OR_EXISTING_EVIDENCE"
+      },
+      {
+        "city": "indore",
+        "batch": "A",
+        "status": "ASSESSED_WITH_VERIFIED_OR_EXISTING_EVIDENCE"
+      },
+      {
+        "city": "jabalpur",
+        "batch": "A",
+        "status": "ASSESSED_WITH_VERIFIED_OR_EXISTING_EVIDENCE"
+      },
+      {
+        "city": "ujjain",
+        "batch": "A",
+        "status": "ASSESSED_WITH_VERIFIED_OR_EXISTING_EVIDENCE"
+      },
+      {
+        "city": "patna",
+        "batch": "A",
+        "status": "ASSESSED_WITH_VERIFIED_OR_EXISTING_EVIDENCE"
+      },
+      {
+        "city": "navi_mumbai",
+        "batch": "A",
+        "status": "ASSESSED_WITH_VERIFIED_OR_EXISTING_EVIDENCE"
+      },
+      {
+        "city": "nashik",
+        "batch": "A",
+        "status": "ASSESSED_WITH_VERIFIED_OR_EXISTING_EVIDENCE"
+      },
+      {
+        "city": "coimbatore",
+        "batch": "A",
+        "status": "ASSESSED_WITH_VERIFIED_OR_EXISTING_EVIDENCE"
+      },
+      {
+        "city": "warangal",
+        "batch": "A",
+        "status": "ASSESSED_WITH_VERIFIED_OR_EXISTING_EVIDENCE"
+      },
+      {
+        "city": "rajkot",
+        "batch": "A",
+        "status": "ASSESSED_WITH_VERIFIED_OR_EXISTING_EVIDENCE"
+      },
+      {
+        "city": "kota",
+        "batch": "A",
+        "status": "ASSESSED_WITH_VERIFIED_OR_EXISTING_EVIDENCE"
+      },
+      {
+        "city": "raigad",
+        "batch": "A",
+        "status": "ASSESSED_WITH_VERIFIED_OR_EXISTING_EVIDENCE"
+      },
+      {
+        "city": "jamshedpur",
+        "batch": "A",
+        "status": "ASSESSED_WITH_VERIFIED_OR_EXISTING_EVIDENCE"
+      },
+      {
+        "city": "dhanbad",
+        "batch": "A",
+        "status": "ASSESSED_WITH_VERIFIED_OR_EXISTING_EVIDENCE"
+      }
+    ]
+  },
+  "zeroCity": {
+    "total": 163,
+    "benchmarkedBefore": 13,
+    "benchmarkedAfter": 70,
+    "rows": [
+      {
+        "city": "gwalior",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "dewas",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "satna",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "ratlam",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "rewa",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "burhanpur",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "khandwa",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "chhindwara",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "mandsaur",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "damoh",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "neemuch",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "khargone",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "sehore",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "betul",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "seoni",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "anantapur",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "bhimavaram",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "chittoor",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "eluru",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "kadapa",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "kakinada",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "krishna",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "kurnool",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "nellore",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "rajahmundry",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "srikakulam",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "tirupati",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "vizianagaram",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "west_godavari",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "dibrugarh",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "golaghat",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "jorhat",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "kamrup",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "marigaon",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "nalbari",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "silchar",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "tinsukia",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "bhilai",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "bilaspur",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "durg",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "korba",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "kota_chhattisgarh",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "raipur",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "rajnandgaon",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "daman_and_diu",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "silvassa",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "banaskantha",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "bardoli",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "bharuch",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "bhavnagar",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "dholera",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "junagadh",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "kalol",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "kheda",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "kutch",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "navsari",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      },
+      {
+        "city": "patan",
+        "batch": "ZERO_CITY",
+        "status": "UNVERIFIED",
+        "primaryCoverageGap": "Needs exact current article/document verification across news, local, native, authority and RERA surfaces."
+      }
+    ]
+  },
+  "lowCoverage": {
+    "total": 40,
+    "benchmarkedBefore": 0,
+    "benchmarkedAfter": 20,
+    "rows": [
+      {
+        "city": "panipat",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 1
+      },
+      {
+        "city": "karnal",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 1
+      },
+      {
+        "city": "yamunanagar",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 1
+      },
+      {
+        "city": "panchkula",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 1
+      },
+      {
+        "city": "kurukshetra",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 1
+      },
+      {
+        "city": "rewari",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 1
+      },
+      {
+        "city": "bhopal",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 1
+      },
+      {
+        "city": "sagar",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 1
+      },
+      {
+        "city": "vijayawada",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 2
+      },
+      {
+        "city": "visakhapatnam",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 2
+      },
+      {
+        "city": "nagaon",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 1
+      },
+      {
+        "city": "tezpur",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 1
+      },
+      {
+        "city": "ahmedabad",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 2
+      },
+      {
+        "city": "anand",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 1
+      },
+      {
+        "city": "gandhinagar",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 1
+      },
+      {
+        "city": "calicut",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 1
+      },
+      {
+        "city": "thrissur",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 2
+      },
+      {
+        "city": "udupi",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 1
+      },
+      {
+        "city": "mohali",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 2
+      },
+      {
+        "city": "ludhiana",
+        "status": "ASSESSED_PRODUCTION_LOW_COVERAGE",
+        "primaryCoverageGap": "NONE_OBSERVED",
+        "productionUniqueArticles": 1
+      }
+    ]
+  }
+}

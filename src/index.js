@@ -2766,6 +2766,18 @@ function createFunnelRow(key) {
     sourceSelected: 0,
     attempted: 0,
     success: 0,
+    discovered: 0,
+    articleAttempted: 0,
+    readable: 0,
+    dateValid: 0,
+    relevancePass: 0,
+    negativeReject: 0,
+    offtopicReject: 0,
+    insufficientReject: 0,
+    genericInfraReject: 0,
+    geoReview: 0,
+    manualReview: 0,
+    apiFailure: 0,
     linksDiscovered: 0,
     articleFetchAttempted: 0,
     articleFetchSuccess: 0,
@@ -2796,30 +2808,69 @@ function funnelDimensionKey(article, dimension) {
 
 function applyArticleFunnelOutcome(row, article, reasons, readyKeys, postedKeys, includeDiscovery = true) {
   if (includeDiscovery) {
+    incrementFunnelCounter(row, "discovered");
     incrementFunnelCounter(row, "linksDiscovered");
-    if (article.articleReadAttempted) incrementFunnelCounter(row, "articleFetchAttempted");
-    if (article.fullArticleRead === true) incrementFunnelCounter(row, "articleFetchSuccess");
+    if (article.articleReadAttempted) {
+      incrementFunnelCounter(row, "articleAttempted");
+      incrementFunnelCounter(row, "articleFetchAttempted");
+    }
+    if (article.fullArticleRead === true) {
+      incrementFunnelCounter(row, "readable");
+      incrementFunnelCounter(row, "articleFetchSuccess");
+    }
   }
   if (article.fullArticleRead === true && (article.articleText || "").length > 0) incrementFunnelCounter(row, "fullArticleReadable");
-  if (article.publishedAt) incrementFunnelCounter(row, "reliableDate");
-  if (article.publishedAt) incrementFunnelCounter(row, "fresh");
+  if (article.publishedAt) {
+    incrementFunnelCounter(row, "dateValid");
+    incrementFunnelCounter(row, "reliableDate");
+    incrementFunnelCounter(row, "fresh");
+  }
   if (article.cityCode) incrementFunnelCounter(row, "geoValid");
-  else incrementFunnelCounter(row, "geoUncertain");
-  if (reasons.length === 0) incrementFunnelCounter(row, "relevance");
-  if (reasons.some((reason) => /negative/i.test(reason))) incrementFunnelCounter(row, "negative");
-  if (reasons.some((reason) => /not positive|off-topic|outside-region/i.test(reason))) incrementFunnelCounter(row, "offTopic");
-  if (reasons.some((reason) => /insufficient|article|content|no specific project/i.test(reason))) incrementFunnelCounter(row, "insufficient");
-  if (reasons.some((reason) => /infrastructure/i.test(reason))) incrementFunnelCounter(row, "genericInfrastructure");
-  if (reasons.some((reason) => /^review:/.test(reason))) incrementFunnelCounter(row, "review");
+  else {
+    incrementFunnelCounter(row, "geoReview");
+    incrementFunnelCounter(row, "geoUncertain");
+  }
+  const relevanceRejected = reasons.some((reason) =>
+    /^filter 4:|POSITIVE_INFRASTRUCTURE_WITHOUT_SUFFICIENT_REAL_ESTATE_NEXUS|^filter 9:|^filter 10:|^filter 14:|^filter 17:/i.test(reason)
+  );
+  const negativeRejected = reasons.some((reason) => /^filter 3:/i.test(reason));
+  const offtopicRejected = reasons.some((reason) => /^filter 4:|^filter 7:|^filter 8:/i.test(reason));
+  const insufficientRejected = reasons.some((reason) => /^review:|^filter (11|12|15):/i.test(reason));
+  const genericInfrastructureRejected = reasons.some((reason) => /infrastructure|real_estate_nexus/i.test(reason));
+  if (!relevanceRejected) {
+    incrementFunnelCounter(row, "relevancePass");
+    incrementFunnelCounter(row, "relevance");
+  }
+  if (negativeRejected) {
+    incrementFunnelCounter(row, "negativeReject");
+    incrementFunnelCounter(row, "negative");
+  }
+  if (offtopicRejected) {
+    incrementFunnelCounter(row, "offtopicReject");
+    incrementFunnelCounter(row, "offTopic");
+  }
+  if (insufficientRejected) {
+    incrementFunnelCounter(row, "insufficientReject");
+    incrementFunnelCounter(row, "insufficient");
+  }
+  if (genericInfrastructureRejected) {
+    incrementFunnelCounter(row, "genericInfraReject");
+    incrementFunnelCounter(row, "genericInfrastructure");
+  }
+  if (reasons.some((reason) => /^review:/i.test(reason))) {
+    incrementFunnelCounter(row, "manualReview");
+    incrementFunnelCounter(row, "review");
+  }
   if (reasons.some((reason) => /duplicate|already sent|already reposted/i.test(reason))) incrementFunnelCounter(row, "duplicate");
   if (readyKeys.has(articleReportKey(article))) incrementFunnelCounter(row, "candidate");
   if (postedKeys.has(articleReportKey(article))) incrementFunnelCounter(row, "published");
 }
 
-function buildFunnelTelemetry({ allSelectedSources, selectedSources, sourceResults, failedSources, expandedArticles, readyArticles, postedArticles, getReasons }) {
+function buildFunnelTelemetry({ allSelectedSources, selectedSources, sourceResults, failedSources, expandedArticles, readyArticles, postedArticles, apiFailures = [], getReasons }) {
   const readyKeys = new Set(readyArticles.map(articleReportKey));
   const postedKeys = new Set(postedArticles.map(articleReportKey));
   const dimensions = { city: new Map(), source: new Map(), language: new Map(), contentType: new Map() };
+  const totals = createFunnelRow("TOTAL");
   const ensure = (dimension, key) => {
     if (!dimensions[dimension].has(key)) dimensions[dimension].set(key, createFunnelRow(key));
     return dimensions[dimension].get(key);
@@ -2847,10 +2898,12 @@ function buildFunnelTelemetry({ allSelectedSources, selectedSources, sourceResul
 
   for (const article of expandedArticles || []) {
     const reasons = getReasons(article);
+    applyArticleFunnelOutcome(totals, article, reasons, readyKeys, postedKeys);
     for (const dimension of Object.keys(dimensions)) {
       applyArticleFunnelOutcome(ensure(dimension, funnelDimensionKey(article, dimension)), article, reasons, readyKeys, postedKeys, dimension !== "source");
     }
   }
+  totals.apiFailure = Array.isArray(apiFailures) ? apiFailures.length : Number(apiFailures || 0);
 
   const sameEventGroups = new Map();
   for (const article of expandedArticles || []) {
@@ -2864,7 +2917,8 @@ function buildFunnelTelemetry({ allSelectedSources, selectedSources, sourceResul
 
   return {
     version: 1,
-    semantics: "Counts are current-run observations. Possible same-event groups are telemetry only and never suppress publication.",
+    semantics: "Explicit stage counters are current-run observations: discovered, articleAttempted, readable, dateValid, fresh, relevancePass, negativeReject, offtopicReject, insufficientReject, genericInfraReject, geoValid, geoReview, duplicate, candidate, manualReview, published, apiFailure. Possible same-event groups are telemetry only and never suppress publication.",
+    totals,
     dimensions: Object.fromEntries(Object.entries(dimensions).map(([name, rows]) => [name, [...rows.values()].sort((a, b) => a.key.localeCompare(b.key))])),
     possibleSameEventGroups: [...sameEventGroups.entries()]
       .filter(([, group]) => group.length > 1)
@@ -8721,17 +8775,6 @@ async function main() {
     .filter((result) => isRegionalSource(result.source))
     .reduce((sum, result) => sum + (result.articles?.length || 0), 0);
   regionalMetrics.published = postedArticles.filter((article) => article.trace?.regionalSource === true).length;
-  const funnelTelemetry = buildFunnelTelemetry({
-    allSelectedSources,
-    selectedSources,
-    sourceResults,
-    failedSources,
-    expandedArticles,
-    readyArticles: articlesToPush,
-    postedArticles,
-    getReasons: getCachedRejectionReasons
-  });
-
   console.log(`Filtering phase completed in ${formatDuration(Date.now() - filterStartedAt)}.`);
   console.log(`Found ${uniqueArticles.length} new articles.`);
   for (const [reason, count] of [...rejectionCounts.entries()].sort((a, b) => a[0].localeCompare(b[0]))) {
@@ -8803,6 +8846,17 @@ async function main() {
   if (!shouldDryRun()) {
     await writeSentIds(sentIds);
   }
+  const funnelTelemetry = buildFunnelTelemetry({
+    allSelectedSources,
+    selectedSources,
+    sourceResults,
+    failedSources,
+    expandedArticles,
+    readyArticles: articlesToPush,
+    postedArticles,
+    apiFailures: pushFailures,
+    getReasons: getCachedRejectionReasons
+  });
   await writeRunReport({
     generatedAt: new Date().toISOString(),
     mode: shouldDryRun() ? "dry-run" : "live",
