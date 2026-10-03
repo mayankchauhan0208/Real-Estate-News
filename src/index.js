@@ -4784,7 +4784,8 @@ function isClearlyOffTopicNonDevelopmentArticle(article) {
   const hasConcreteDevelopment = hasKeyword(title, [
     "land acquisition", "land parcel", "land purchase", "plot", "housing project", "residential project",
     "commercial project", "township", "real estate development", "property development", "construction project",
-    "project approval", "project approved", "project launch", "developer", "builder", "office space", "warehouse"
+    "project approval", "project approved", "project launch", "developer", "builder", "office space", "warehouse",
+    "textile park", "industrial park", "logistics park"
   ]);
 
   if (hasConcreteDevelopment) return false;
@@ -4793,6 +4794,22 @@ function isClearlyOffTopicNonDevelopmentArticle(article) {
   if (hasKeyword(title, ["street lights", "streetlight", "luggage locker", "luggage lockers"]) && hasKeyword(title, ["repair", "maintain", "maintenance", "install"])) return true;
   if (hasKeyword(title, ["private college", "private colleges", "college affiliation", "education affiliation", "university affiliation"])) return true;
   if (hasKeyword(title, ["ipo", "drhp", "share-swap", "share swap", "equity stake", "stake sale"]) && !hasKeyword(title, ["land", "plot", "housing", "project", "township"])) return true;
+  const propertyNexus = hasKeyword(text, [
+    "real estate", "realty", "property", "housing", "residential", "commercial", "plot", "land parcel",
+    "township", "apartment", "builder", "developer", "warehouse", "textile park", "industrial park",
+    "logistics park", "office space", "redevelopment", "allotment", "auction", "rera", "retail",
+    "tenant mix", "shopping center", "shopping centre", "mall", "mixed-use"
+  ]);
+  const genericCivicOrAdministration = hasKeyword(text, [
+    "roads", "road work", "drinking water", "power", "healthcare", "education", "revenue records",
+    "land records", "record correction", "digital records", "tehsil", "tehsils", "correction module",
+    "government service", "e-governance"
+  ]);
+  if (genericCivicOrAdministration && !propertyNexus && !hasKeyword(title, ["land acquisition", "plot", "housing", "residential", "commercial", "property", "real estate"])) return true;
+  const broadNonPropertyInvestment = hasKeyword(title, ["investment", "invest", "projects underway"]) &&
+    hasKeyword(text, ["energy", "aviation", "data centres", "data centers", "coal gasification", "urban regeneration"]) &&
+    !propertyNexus;
+  if (broadNonPropertyInvestment) return true;
   const promotionalExpo = /(?:property|real estate|housing|പ്രോപ്പർട്ടി|റിയൽ എസ്റ്റേറ്റ്|ആവാസ).{0,50}(?:expo|exhibition|എക്സ്പോ|പ്രദർശനം)/iu.test(`${title} ${text}`);
   if (promotionalExpo && !hasKeyword(title, ["project launch", "project approved", "land acquisition", "construction project", "township"])) return true;
   return false;

@@ -1,0 +1,51 @@
+{
+  "task": "42",
+  "run": "37095733998",
+  "sha": "00bea4d",
+  "readOnly": true,
+  "productionMutations": 0,
+  "articlesAudited": 4,
+  "validPublish": 1,
+  "shouldReview": 2,
+  "falsePositive": 1,
+  "wrongCity": 0,
+  "duplicate": 0,
+  "records": [
+    {
+      "title": "Rajasthan CM inaugurates, lays foundation for 1,013 projects worth ₹2,824 crore",
+      "source": "Latest Infrastructure News : ETInfra.com",
+      "url": "https://infra.economictimes.indiatimes.com/news/urban-infrastructure/rajasthan-cm-inaugurates-lays-foundation-for-1013-projects-worth-2824-crore/134617737",
+      "city": "jodhpur",
+      "classification": "SHOULD_REVIEW",
+      "reason": "Large civic works package without a specific property/development nexus.",
+      "fix": "Generic civic-only regression added; future items require explicit property/development evidence."
+    },
+    {
+      "title": "Adani Group eyes ₹6 lakh crore investment in Maharashtra, ₹2.6 lakh crore projects underway",
+      "source": "Latest Infrastructure News : ETInfra.com",
+      "url": "https://infra.economictimes.indiatimes.com/news/urban-infrastructure/adani-group-eyes-6-lakh-crore-investment-in-maharashtra-2-6-lakh-crore-projects-underway/134633490",
+      "city": "mumbai",
+      "classification": "SHOULD_REVIEW",
+      "reason": "Broad state investment announcement with no sufficiently specific property event or city evidence.",
+      "fix": "Broad non-property investment regression added; future items remain review/rejected without a property nexus."
+    },
+    {
+      "title": "Nagpur plans ₹1,226 crore multi-storey textile park with 672 units",
+      "source": "Latest Infrastructure News : ETInfra.com",
+      "url": "https://infra.economictimes.indiatimes.com/news/urban-infrastructure/nagpur-plans-1226-crore-multi-storey-textile-park-with-672-units/134636468",
+      "city": "nagpur",
+      "classification": "VALID_PUBLISH",
+      "reason": "Specific commercial property project, site, unit count and city are explicit.",
+      "fix": "No change required."
+    },
+    {
+      "title": "Haryana government launches correction module for digital revenue records",
+      "source": "Hindustan Times",
+      "url": "https://www.hindustantimes.com/cities/chandigarh-news/haryana-government-launches-correction-module-for-digital-revenue-records-101790969435309.html",
+      "city": "chandigarh",
+      "classification": "FALSE_POSITIVE",
+      "reason": "Generic government administration/revenue-record service; no property or development event.",
+      "fix": "Generic civic/administration regression added to the filter suite."
+    }
+  ]
+}

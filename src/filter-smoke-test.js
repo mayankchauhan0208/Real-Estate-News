@@ -85,6 +85,30 @@ const reportedOffTopicArticles = [
     description: "Digital luggage lockers were launched at a bus stand for passenger convenience.",
     newsLink: "https://example.com/hosur/digital-luggage-lockers-bus-stand",
     cityCode: "hosur"
+  },
+  {
+    title: "Haryana government launches correction module for digital revenue records",
+    description: "The module corrects minor errors in online land and revenue records across tehsils.",
+    articleText: "The initiative simplifies correction of digital revenue records and reduces routine government-service pendency across tehsils.",
+    newsLink: "https://www.hindustantimes.com/cities/chandigarh-news/haryana-government-launches-correction-module-for-digital-revenue-records-101790969435309.html",
+    cityCode: "chandigarh",
+    postedBy: "Hindustan Times"
+  },
+  {
+    title: "Rajasthan CM inaugurates, lays foundation for 1,013 projects worth ₹2,824 crore",
+    description: "The projects cover roads, drinking water, power, healthcare and education.",
+    articleText: "The government works cover roads, drinking water, power, healthcare and education. No housing, land, property, plot, township or real-estate development is identified.",
+    newsLink: "https://infra.economictimes.indiatimes.com/news/urban-infrastructure/rajasthan-cm-inaugurates-lays-foundation-for-1013-projects-worth-2824-crore/134617737",
+    cityCode: "jodhpur",
+    postedBy: "Latest Infrastructure News : ETInfra.com"
+  },
+  {
+    title: "Adani Group eyes ₹6 lakh crore investment in Maharashtra, ₹2.6 lakh crore projects underway",
+    description: "The proposed initiatives span energy, aviation, aero-districts, urban regeneration and data centres.",
+    articleText: "The investment plan covers energy, aviation, aero-districts, urban regeneration, data centres and coal gasification. No specific property, housing, plot, land or real-estate event is identified.",
+    newsLink: "https://infra.economictimes.indiatimes.com/news/urban-infrastructure/adani-group-eyes-6-lakh-crore-investment-in-maharashtra-2-6-lakh-crore-projects-underway/134633490",
+    cityCode: "mumbai",
+    postedBy: "Latest Infrastructure News : ETInfra.com"
   }
 ];
 
