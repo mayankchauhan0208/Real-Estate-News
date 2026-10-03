@@ -1977,9 +1977,9 @@ function getSources() {
       .filter((source) => {
         const mode = getRegionalSourceMode(source.url);
         if (mode === "OFF") return false;
-        // A source that has passed the measured promotion gate must remain
-        // selectable even when the broader experimental pool is disabled.
-        return getBooleanEnv("ENABLE_EXPERIMENTAL_SOURCES") || !isExperimentalManualSource(source) || mode !== "OFF";
+        // Regional and other experimental sources require explicit opt-in;
+        // sourceMode controls review/publish behavior after selection.
+        return getBooleanEnv("ENABLE_EXPERIMENTAL_SOURCES") || !isExperimentalManualSource(source);
       })
       .filter((source) => {
         if (!requestedCategory) return true;
@@ -8306,7 +8306,209 @@ async function fetchSourceWithTimeout(sourceUrl, timeoutMsOverride = getSourceTi
   }
 }
 
+function isManoramaNestSource(sourceUrl = "") {
+  return /manoramaonline\.com\/homestyle\/nest\.html/i.test(String(sourceUrl));
+}
+
+function regionalHtmlSourceConfig(sourceUrl = "") {
+  const value = String(sourceUrl);
+  if (/eisamay\.com\/topic\/kolkata-news/i.test(value)) {
+    return {
+      language: "bn",
+      script: "Bengali",
+      linkPattern: /\/west-bengal-news\/kolkata-news\/[^/]+\/\d+\.cms(?:$|\?)/i,
+      // Ei Samay is a general native-language Kolkata surface. Keep the
+      // discovery layer broad; the full-article relevance and positive gates
+      // decide whether a story is suitable for Brokket.
+      titlePattern: null
+    };
+  }
+  if (/lokmat\.com\/real-estate\/?$/i.test(value)) {
+    return {
+      language: "mr",
+      script: "Devanagari",
+      linkPattern: /\/real-estate\/[^/]+-a-a\d+\/?(?:$|\?)/i,
+      titlePattern: null
+    };
+  }
+  if (/gujaratsamachar\.com\/news\/business(?:-plus)?\/?$/i.test(value)) {
+    return {
+      language: "gu",
+      script: "Gujarati",
+      linkPattern: /\/news\/[^/]+\/[^/]+(?:-\d+)?(?:\.html)?(?:$|\?)/i,
+      // Gujarat Samachar's business-plus page is not a property-only feed;
+      // retain its native Gujarati articles and leave topic qualification to
+      // the existing full-article gates.
+      titlePattern: null
+    };
+  }
+  return null;
+}
+
+function isRegionalHtmlSource(sourceUrl = "") {
+  return Boolean(regionalHtmlSourceConfig(sourceUrl));
+}
+
+async function fetchRegionalHtmlSource(sourceUrl, options = {}) {
+  const config = regionalHtmlSourceConfig(sourceUrl);
+  if (!config) return fetchPage(sourceUrl, options);
+
+  const html = await fetchHtml(sourceUrl, options);
+  const $ = cheerio.load(html);
+  const seenLinks = new Set();
+  const candidates = [];
+  const publisher = getPublisherName(sourceUrl, $("title").text());
+  const publisherLogo = pickFirst(
+    absoluteUrl($("link[rel='icon']").attr("href"), sourceUrl),
+    absoluteUrl($("link[rel='shortcut icon']").attr("href"), sourceUrl),
+    getFallbackLogo(sourceUrl)
+  );
+
+  $("a[href]").each((_, element) => {
+    const link = absoluteUrl($(element).attr("href"), sourceUrl);
+    const title = stripHtml($(element).text()).replace(/\s+/g, " ").trim();
+    if (!link || seenLinks.has(link) || title.length < 18 || !config.linkPattern.test(link)) return;
+    if (/\/live-blog(?:-|\/)/i.test(link)) return;
+    if (config.titlePattern && !config.titlePattern.test(title)) return;
+    try {
+      if (new URL(link).hostname.replace(/^www\./, "") !== new URL(sourceUrl).hostname.replace(/^www\./, "")) return;
+    } catch {
+      return;
+    }
+
+    seenLinks.add(link);
+    const listingText = stripHtml($(element).closest("article, li, div").text());
+    const candidateThumbnail = getImageCandidate($, $(element).find("img").first());
+    candidates.push({
+      title,
+      description: title,
+      articleText: "",
+      cityCode: "",
+      isActive: true,
+      newsLink: link,
+      thumbnailImage: isRejectedImageCandidate(candidateThumbnail) ? "" : absoluteUrl(candidateThumbnail, sourceUrl),
+      postedBy: publisher,
+      postedByLogo: publisherLogo,
+      publishedAt: extractPublishedAtFromText(`${title} ${listingText}`) || null,
+      fetchedAt: new Date().toISOString()
+    });
+  });
+
+  const articles = await mapWithConcurrency(candidates.slice(0, getMaxItemsPerSource()), 6, async (candidate) => {
+    const metadata = await fetchArticleMetadataWithTimeout(candidate.newsLink, candidate, options);
+    const article = cleanArticleFields({
+      ...candidate,
+      ...metadata,
+      nativeLanguageSource: true,
+      language: config.language,
+      languageScript: config.script,
+      authoritativeContent: false,
+      description: stripHtml(metadata.description || candidate.description),
+      articleText: stripHtml(metadata.articleText || candidate.articleText || ""),
+      thumbnailImage: absoluteUrl(metadata.thumbnailImage || candidate.thumbnailImage, candidate.newsLink),
+      createdAt: metadata.publishedAt || candidate.publishedAt || ""
+    });
+    return { ...applyCityCode(article), id: stableId(article) };
+  });
+
+  return uniqueByDedupeIds(articles);
+}
+
+async function fetchManoramaNest(sourceUrl, options = {}) {
+  const html = await fetchHtml(sourceUrl, options);
+  const $ = cheerio.load(html);
+  const seenLinks = new Set();
+  const candidates = [];
+  const publisher = getPublisherName(sourceUrl, $("title").text());
+  const publisherLogo = pickFirst(
+    absoluteUrl($("link[rel='icon']").attr("href"), sourceUrl),
+    absoluteUrl($("link[rel='shortcut icon']").attr("href"), sourceUrl),
+    getFallbackLogo(sourceUrl)
+  );
+
+  $("a[href*='/homestyle/nest/20']").each((_, element) => {
+    const link = absoluteUrl($(element).attr("href"), sourceUrl);
+    const title = stripHtml($(element).text());
+    if (!link || seenLinks.has(link) || title.length < 18 || !/\/homestyle\/nest\/20\d{2}\/\d{2}\/[^/]+\.html(?:$|\?)/i.test(link)) {
+      return;
+    }
+
+    seenLinks.add(link);
+    const dateMatch = link.match(/\/homestyle\/nest\/(\d{4})\/(\d{2})\/(\d{2})\//i);
+    const publishedAt = dateMatch
+      ? new Date(Date.UTC(Number(dateMatch[1]), Number(dateMatch[2]) - 1, Number(dateMatch[3]), 12)).toISOString()
+      : null;
+    const fallback = {
+      title,
+      description: title,
+      articleText: "",
+      cityCode: "",
+      isActive: true,
+      newsLink: link,
+      thumbnailImage: isRejectedImageCandidate(getImageCandidate($, $(element).find("img").first()))
+        ? ""
+        : absoluteUrl(getImageCandidate($, $(element).find("img").first()), sourceUrl),
+      postedBy: publisher,
+      postedByLogo: publisherLogo,
+      publishedAt,
+      fetchedAt: new Date().toISOString()
+    };
+    candidates.push(fallback);
+  });
+
+  if (candidates.length === 0) {
+    const discoveredLinks = [...html.matchAll(/(?:href|data-href)=["']([^"']*\/homestyle\/nest\/20\d{2}\/\d{2}\/[^"']+\.html(?:\?[^"']*)?)["']/gi)]
+      .map((match) => absoluteUrl(match[1], sourceUrl))
+      .filter((link) => link && !seenLinks.has(link));
+    for (const link of discoveredLinks) {
+      const slug = new URL(link).pathname.split("/").pop()?.replace(/\.html$/i, "").replace(/[-_]+/g, " ") || "Malayalam real estate article";
+      seenLinks.add(link);
+      candidates.push({
+        title: slug,
+        description: slug,
+        articleText: "",
+        cityCode: "",
+        isActive: true,
+        newsLink: link,
+        thumbnailImage: "",
+        postedBy: publisher,
+        postedByLogo: publisherLogo,
+        publishedAt: (() => {
+          const dateMatch = link.match(/\/homestyle\/nest\/(\d{4})\/(\d{2})\/(\d{2})\//i);
+          return dateMatch
+            ? new Date(Date.UTC(Number(dateMatch[1]), Number(dateMatch[2]) - 1, Number(dateMatch[3]), 12)).toISOString()
+            : null;
+        })(),
+        fetchedAt: new Date().toISOString()
+      });
+    }
+  }
+
+  const articles = await Promise.all(candidates.slice(0, getMaxItemsPerSource()).map(async (candidate) => {
+    const metadata = await fetchArticleMetadataWithTimeout(candidate.newsLink, candidate, options);
+    const article = cleanArticleFields({
+      ...candidate,
+      ...metadata,
+      authoritativeContent: true,
+      nativeLanguageSource: true,
+      language: "ml",
+      languageScript: "Malayalam"
+    });
+    return { ...applyCityCode(article), id: stableId(article) };
+  }));
+
+  return uniqueByDedupeIds(articles);
+}
+
 async function fetchSource(sourceUrl, options = {}) {
+  if (isManoramaNestSource(sourceUrl)) {
+    return fetchManoramaNest(sourceUrl, options);
+  }
+
+  if (isRegionalHtmlSource(sourceUrl)) {
+    return fetchRegionalHtmlSource(sourceUrl, options);
+  }
+
   if (isUpReraPressReleaseSource(sourceUrl)) {
     return fetchUpReraPressReleases(sourceUrl, options);
   }

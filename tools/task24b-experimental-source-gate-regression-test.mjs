@@ -6,7 +6,7 @@ const experimental = settings.manualSources.filter((source) => {
   const label = String(source.label || "").toLowerCase();
   return category.startsWith("regional-") || /regional\s+p2/.test(label);
 });
-if (experimental.length !== 18) throw new Error(`Expected 18 experimental sources, found ${experimental.length}`);
+if (experimental.length !== 28) throw new Error(`Expected 28 experimental sources, found ${experimental.length}`);
 delete process.env.ENABLE_EXPERIMENTAL_SOURCES;
 const { getSourceUrls } = await import("../src/index.js");
 const defaultUrls = new Set(getSourceUrls());
