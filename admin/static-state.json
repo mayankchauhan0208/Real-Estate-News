@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T07:40:12.730Z",
+  "generatedAt": "2026-10-03T08:44:44.683Z",
   "settings": {
     "automationEnabled": true,
     "apiPushEnabled": true,
@@ -5605,7 +5605,7 @@
     "enabledSources": 571,
     "disabledSources": 0,
     "manualSources": 427,
-    "reports": 0,
+    "reports": 1,
     "postedNews": 0,
     "candidateNews": 0,
     "needsReviewNews": 0,
@@ -5616,7 +5616,7 @@
     "readyForApiPush": false,
     "duplicateSourceUrlGroups": 0,
     "disabledSourceUrls": 0,
-    "latestReportName": "",
+    "latestReportName": "news-progress-2551.json",
     "checks": [
       {
         "key": "api-safe",
@@ -18320,7 +18320,33 @@
       "lastRunAttempts": 0
     }
   ],
-  "reports": [],
+  "reports": [
+    {
+      "name": "news-progress-2551.json",
+      "generatedAt": "2026-10-03T08:31:35.197Z",
+      "mode": "live",
+      "dryRun": false,
+      "sourceCount": 0,
+      "fetchedArticleCount": 0,
+      "expandedArticleCount": 0,
+      "candidateCount": 0,
+      "postedCount": 0,
+      "rejectedArticleCount": 0,
+      "needsReviewCount": 0,
+      "failureCount": 0,
+      "failures": [],
+      "pushFailures": [],
+      "sourceHealthSummary": {},
+      "sourceHealth": [],
+      "candidates": [],
+      "posted": [],
+      "rejectedArticles": [],
+      "needsReviewArticles": [],
+      "cityBreakdown": [],
+      "coverageAlerts": [],
+      "skippedByReason": {}
+    }
+  ],
   "analytics": {
     "totals": {
       "fetched": 0,
