@@ -6551,11 +6551,58 @@ async function fetchHtmlWithCurl(sourceUrl, options = {}) {
     "\n__NEWS_API_STATUS__:%{http_code}",
     sourceUrl
   ];
-  const result = await execFileWithHardTimeout(command, args, {
-    timeout: timeoutMs + (options.deadlineAt ? 500 : 5000),
-    maxBuffer: 12 * 1024 * 1024,
-    windowsHide: true,
-    signal: options.signal
+  const workerStartedAt = Date.now();
+  const memoryBefore = process.memoryUsage().rss;
+  await options.telemetry?.emit("EXTERNAL_WORKER_START", {
+    sourceId: sourceTelemetryId(sourceUrl),
+    sourceUrl,
+    sourceHost: sourceTelemetryHost(sourceUrl),
+    adapter: "curl",
+    operation: "fetch-html",
+    workerStartedAt,
+    parentRssBeforeBytes: memoryBefore,
+    timeoutMs,
+    maxBufferBytes: 12 * 1024 * 1024
+  });
+  let result;
+  try {
+    result = await execFileWithHardTimeout(command, args, {
+      timeout: timeoutMs + (options.deadlineAt ? 500 : 5000),
+      maxBuffer: 12 * 1024 * 1024,
+      windowsHide: true,
+      signal: options.signal
+    });
+  } catch (error) {
+    await options.telemetry?.emit("EXTERNAL_WORKER_END", {
+      sourceId: sourceTelemetryId(sourceUrl),
+      sourceUrl,
+      sourceHost: sourceTelemetryHost(sourceUrl),
+      adapter: "curl",
+      operation: "fetch-html",
+      status: "failed",
+      elapsedMs: Date.now() - workerStartedAt,
+      exitCode: error.code || null,
+      signal: error.signal || null,
+      stdoutBytes: Buffer.byteLength(error.stdout || ""),
+      stderrBytes: Buffer.byteLength(error.stderr || ""),
+      parentRssBeforeBytes: memoryBefore,
+      parentRssAfterBytes: process.memoryUsage().rss,
+      timeoutOrKill: error.code === "ETIMEDOUT" || error.sourceStatus === "BUDGET_EXHAUSTED"
+    });
+    throw error;
+  }
+  await options.telemetry?.emit("EXTERNAL_WORKER_END", {
+    sourceId: sourceTelemetryId(sourceUrl),
+    sourceUrl,
+    sourceHost: sourceTelemetryHost(sourceUrl),
+    adapter: "curl",
+    operation: "fetch-html",
+    status: "success",
+    elapsedMs: Date.now() - workerStartedAt,
+    stdoutBytes: Buffer.byteLength(result.stdout || ""),
+    stderrBytes: Buffer.byteLength(result.stderr || ""),
+    parentRssBeforeBytes: memoryBefore,
+    parentRssAfterBytes: process.memoryUsage().rss
   });
   const marker = result.stdout.lastIndexOf("\n__NEWS_API_STATUS__:");
   const status = marker >= 0 ? Number.parseInt(result.stdout.slice(marker).split(":")[1], 10) : 0;
@@ -9492,6 +9539,7 @@ export {
   fetchSourceWithRecovery,
   fetchSourceWithRetry,
   fetchSourceWithTimeout,
+  execFileWithHardTimeout,
   getSourcePageUrls,
   getSourceUrls,
   getGeographicAliasAudit,
