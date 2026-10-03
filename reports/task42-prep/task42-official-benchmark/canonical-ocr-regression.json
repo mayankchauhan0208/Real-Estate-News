@@ -1,0 +1,880 @@
+{
+  "generatedAt": "2026-10-03T15:09:49.513Z",
+  "localOnly": true,
+  "noProductionPosts": true,
+  "noBackfill": true,
+  "limits": {
+    "sourceTimeoutMs": 30000,
+    "maxItemsPerSource": 8,
+    "ocr": "trusted authority listing only"
+  },
+  "rows": [
+    {
+      "id": "OFFICIAL-001",
+      "source": "https://dda.gov.in/housing/housing-circulars",
+      "city": "new_delhi",
+      "status": "FETCHED",
+      "elapsedMs": 21026,
+      "records": [
+        {
+          "title": "Circular dated 01.10.2026 - Addition of 384 1-BHK flats under DDA Karmajeevi Awaas Yojana 2026",
+          "url": "https://dda.gov.in/sites/default/files/Housing_Department/untitled_attachment01102026.pdf",
+          "publishedAt": "2026-10-01T12:00:00.000Z",
+          "cityCode": "new_delhi",
+          "fullArticleRead": true,
+          "officialDocumentRead": true,
+          "extractionMethod": "BOUNDED_OCR",
+          "ocr": {
+            "status": "OCR_HIGH_CONFIDENCE",
+            "engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+            "requestedLanguages": [
+              "eng",
+              "hin",
+              "mr"
+            ],
+            "languages": [
+              "eng"
+            ],
+            "pages": [
+              {
+                "page": 1,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 1400,
+                "confidence": "HIGH",
+                "text": "facet facrra wife TART (WAT) RAT facia ac, acter — oh, faerra ey, Ae feet Computer No. 115222 No.: F/1/0066/2026/CORD/-Coordination(H)/4334 Date:01- 10-2026 CIRCULAR Sub: Offering of additional 384 1-BHK flats under DDA Karmajeevi Awaas Yojana 2026 in Pocket 11, Sector A1-A4, Narela — reg. The Delhi Development Authority had launched “DDA Karmajeevi Awaas Yojana 2026”, a special housing scheme launched to cater to the housing aspirations of Karmajeevis of the nation. 2. Keeping in view the encouraging response to the Scheme and in order to provide additional housing opportunities to the Karmajeevis, especially under affordable categories, it has been decided to offer additional 384 newly constructed 1-BHK flats located in Pocket 11, Sector A1-A4, Narela under the said scheme. The details of the additional flats are as under: Details of Additional Flats at Pocket 411, Sector A1-A4, Narela: Disposal Price Plinth Area Range* Range excluding includi Q Flat Number of (including common Discount Maintenance Cat Flats area and balcony) Offered Charges* (Rs. in ategory (in Sqm.) Lakhs) after 25% discount 4-BHK ob4 60.86 61.34 25% 33.40 | 33.66 ° [Tower X] , . ° , , * Parking area is also available {1-BHK: 5.76 sqm.} #The above tentative disposal price is valid for this scheme only. The price would vary depending on the respective plinth area of a flat. Besides this, maintenance charges,",
+                "error": ""
+              },
+              {
+                "page": 2,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 1927,
+                "confidence": "HIGH",
+                "text": "| conversion charges and water connection charges will be separately demanded at the time of issuance of Demand-cum-Allotment Letter. 3. The additional flats shall be offered on the same terms and conditions of the Scheme, including the flat 25% discount on disposal price, as applicable to the flats offered earlier under the Scheme. 4. Allotment of these additional flats will also be made on First-Come-First-Serve (FCFS) basis (Geet anait, ved Tai) through DDA’s Awaas Portal (https://eservices.dda.org.in), subject to availability. To enable them to participate for booking, interested buyers can register in the ongoing DDA Karmajeevi Awaas Yojana 2026. It is further clarified that if someone is already registered in any FCFS scheme of the housing department of DDA, he/she will also be eligible to book flat(s) under the scheme. Booking for these additional flats will commence on Sunday, 11% October 2026 at 12:00 Noon, on the auspicious beginning of NAVRATRI CTaTap. 5. All other terms and conditions, eligibility criteria, booking amounts and procedures | prescribed in the detailed Scheme Brochure of DDA Karmajeevi Awaas Yojana 2026 shall | remain unchanged and applicable to the additional flats being offered. 6. Interested applicants are advised to visit the DDA websites www.dda.gov.in and eservices.dda.org.in for detailed information regarding the scheme and the additional flats on offer. The list of additional 384 1-BHK flats are attached herewith. For any further information or for physical inspection of flats, interested applicants can contact the following officials: a. Sh. Mahendra Singh, (AE/ NPD-9) (Mob: 9873379012) b. Sh. Vivek Prakash, (AE/ NPD-9) (Mob: 7303871570) c. Sh. Archit Katiyar, (JE/ NPD-9) (Mob: 9149080345) d. Sh. Sumit Kumar Singh, (JE/ NPD-9) (Mob: 8791579309) This issues with the approval of Vice Chairman, DDA. Pay Q — Encl.: As above. ee “ft 0/6 (rh apa 3a Freee, stars (qa)",
+                "error": ""
+              },
+              {
+                "page": 3,
+                "language": "eng",
+                "status": "OCR_GARBLED",
+                "chars": 2690,
+                "confidence": "LOW",
+                "text": "",
+                "error": ""
+              }
+            ],
+            "unsupportedLanguages": [
+              "hin",
+              "mr"
+            ],
+            "extractionMethod": "OCR",
+            "textLength": 3354
+          },
+          "articleReadError": "",
+          "finalState": "REVIEW",
+          "reasons": []
+        },
+        {
+          "title": "Corrigendum : Allotment of Car Parking Spaces to Allottees of MIG/2bhk and HIG/3bhk Flats under all Housing Schemes...",
+          "url": "https://dda.gov.in/sites/default/files/Housing_Department/narela_corrigendum.pdf",
+          "publishedAt": "2026-09-23T12:00:00.000Z",
+          "cityCode": "new_delhi",
+          "fullArticleRead": true,
+          "officialDocumentRead": true,
+          "extractionMethod": "BOUNDED_OCR",
+          "ocr": {
+            "status": "OCR_HIGH_CONFIDENCE",
+            "engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+            "requestedLanguages": [
+              "eng",
+              "hin",
+              "mr"
+            ],
+            "languages": [
+              "eng"
+            ],
+            "pages": [
+              {
+                "page": 1,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 1983,
+                "confidence": "HIGH",
+                "text": "_— Aeeeht feepre wftrepeor SHA (AA-dq) ZIRE facta a, sate — St, fara yer, ag facet F1(Misc)2026/Coordn(H)/DDA/ 43 6 6 Date: 22(2 9/202¢ CORRIGENDUM Sub - Allotment of Car Parking Spaces to Allottees of MIG/2BHK and HIG/3BHK Flats under all Housing Schemes in Pockets 1A, 1B, 1C, 4 and 7 of Sector A1—A4, Narela In partial modification. of the earlier issued circular issued regarding submission of applications for preferential parking spaces to the allottees of DDA Karmayogi Awaas Yojana 2025 and DDA Nagrik Awaas Yojana 2026, the following shall be read in continuation thereof: 1. HIG and MIG allottees of all schemes who have booked flats in Pockets 1A, 1B, 1C, 4 and 7 of Sector Al-A4, Narela are also requested to submit their applications for preferential parking spaces in accordance with the earlier issued circular. 2. Applicants who have not submitted their requests till date, as well as applicants submitting their applications in future, are required to enclose a copy of the booking amount slip along with their application. 3. Applicants shall be allowed to indicate only 3 preferences for parking spaces at each level of parking. Accordingly, only these 3 preferences indicated by the applicant shall be considered for allotment of parking space after that allotment of. parking space will be carried out as per availability. 4. Future applicants may submit their application for allotment of parking space in the prescribed format attached herewith. Applicants who have already submitted their applications need not submit a fresh application in the revised format. 5. The allotment of parking spaces in other pockets of Narela shall be taken up in the upcoming months. Applicants are advised to regularly visit the official website of DDA for further updates in this regard. All other terms and conditions of the earlier circular shall remain unchanged. This issues with the approval of the competent authority. Va Qe A sen » \\ (Rradtapad) | BU FreRre, sare (Waa)",
+                "error": ""
+              },
+              {
+                "page": 2,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 1001,
+                "confidence": "HIGH",
+                "text": "To, Date :- The Dy. Director (Coordination - Housing) D-215, 2\" floor, D-block, DDA, Vikas Sadan, INA New Delhi Subject: Application for Allotment of Preferential Parking Space in Narela. Madam, I, Sh./Smt. ,am an allottee of DDA Flat with following details: - [SchemeName | —Ss=—~—“~“S*~“‘; Cd FlatCategory fT [Plato [Floor no fT ToweriBlock[—SsS—S—SCSCSSCSCSCSCSCSCSCSCSCSCSCSsCSsSSSS [Pocket fT [Sector Narela, Delhi Application No. Booking acknowledgement slip Date and time [Possession letter issue daié—~SCSC~S~S~—SSCSC‘“‘“‘“SCS*CS*‘“<CS Mobile No. I Thereby submit my application for allotment of a preferential parking space in accordance with the terms and conditions prescribed in the DDA circular issued in this regard. My preferences for parking space at different levels are as under: Jam enclosing herewith a copy following documents along with this application for necessary verification and further processing : - 1. Copy of Proof of Payment of Booking Amount indicating date and time.",
+                "error": ""
+              },
+              {
+                "page": 3,
+                "language": "eng",
+                "status": "OCR_USABLE",
+                "chars": 207,
+                "confidence": "MEDIUM",
+                "text": "2. Copy of Demand cum Allotment letter. 3. Copy of Possession letter. 4. Copy of Allottee’s ID proof. Applicant Details: - Sign. :- Name: Flat No.: Pocket: Sector: Al-A4, Narela Scheme: Mobile No.: Email ID:",
+                "error": ""
+              }
+            ],
+            "unsupportedLanguages": [
+              "hin",
+              "mr"
+            ],
+            "extractionMethod": "OCR",
+            "textLength": 3232
+          },
+          "articleReadError": "",
+          "finalState": "REVIEW",
+          "reasons": []
+        },
+        {
+          "title": "Circular dt 14.09.2026 - List of Successful bidders DDA CSP HS 25 (e-Auction Round II) - reg",
+          "url": "https://dda.gov.in/sites/default/files/Housing_Department/untitled_attachment_0000514092026.pdf",
+          "publishedAt": "2026-09-14T12:00:00.000Z",
+          "cityCode": "new_delhi",
+          "fullArticleRead": true,
+          "officialDocumentRead": true,
+          "extractionMethod": "BOUNDED_OCR",
+          "ocr": {
+            "status": "OCR_HIGH_CONFIDENCE",
+            "engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+            "requestedLanguages": [
+              "eng",
+              "hin",
+              "mr"
+            ],
+            "languages": [
+              "eng"
+            ],
+            "pages": [
+              {
+                "page": 1,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 1097,
+                "confidence": "HIGH",
+                "text": "fecett fecora wiferaeor STA (FAA) RIG fede aa, sate - 3, feore wer, aE Reet Computer no. 89985 No. F/1/0017/2025/CORD/-O/o DD (Coordination)/¥334 Date: 14-09-2026 CIRCULAR Subject: List of Successful H1 Bidders of DDA Dwarka Community Service Personnel (CSP) Housing Scheme 2025 (e-Auction Round - Il) — reg. DDA Dwarka Community Service Personnel (CSP) Housing Scheme 2025 (e- Auction Round - Il) concluded on 25.08.2026. The list of successful Highest (H1) bidders is enclosed. The demand-cum-allotment letters will be issued in due course through eservices.dda.org.in (AWAAS Portal). Though messages and email will be sent in their registered mobile numbers & email addresses, it shall be the responsibility of the H1 allottees to regularly keep on checking eservcies.dda.org.in (AWAAS Portal) for getting updates on demand letter. The demand letters likely to be issued within the next 10 to 15 working days. For any future updates you are requested to refer to the DDA website. This is issued with the approval of Vice Chairman, DDA. pan Qiysamr Naf | (Raeaeht swath Bo fergere (STATA) - WATT",
+                "error": ""
+              },
+              {
+                "page": 2,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 3545,
+                "confidence": "HIGH",
+                "text": "Sr.No. | Eventid | Flatid_| Property Details Hi bidder e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 1 41070 625 View), BLOCK M, Sixth Floor, Flat No-M-625 with 50.043(sqm) plinth Aditya Kumar area e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 2 41083 1001 View), BLOCK M, Tenth Floor, Flat No-M-1001 with 50.043(sqm) plinth MANISH KUMAR area e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 3 41067 517 View), BLOCK M, Fifth Floor, Flat No-M-517 with 50.043(sqm) plinth Pankaj Chaturvedi area e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 4 41087 1028 View), BLOCK M, Tenth Floor, Flat No-M-1028 with 50.043(sqm) plinth PRATEEK KADIAN area e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 5 41084 1006 View), BLOCK M, Tenth Floor, Flat No-M-1006 with 50.043(sqm) plinth Ananya Singh area e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 6 41093 1314 View), BLOCK M, Thirteenth Floor, Flat No-M-1314 with 50.043(sqm) | Kunwar Vishvendra Dev plinth area e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 7 41081 926 View), BLOCK M, Ninth Floor, Flat No-M-926 with 50.043(sqm) plinth TARUN BALA area e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 8 41080 908 View), BLOCK M, Ninth Floor, Flat No-M-908 with 50.043(sqm) plinth Gopesh Sachdeva area e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 9 41082 928 View), BLOCK M, Ninth Floor, Flat No-M-928 with 50.043(sqm) plinth Piyush Arora area e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 10 41091 1222 View), BLOCK M, twelfth Floor, Flat No-M-1222 with 50.043(sqm) Rupesh Kumar plinth area e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 1 41059 204 View), BLOCK M, Second Floor, Flat No-M-204 with 50.043(sqm) plinth | NARENDER KUMAR ARORA area -Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 12 41072 716 View), BLOCK M, Seventh Floor, Flat No-M-716 with 50.043(sqm) plinth MOHD OVAIS. area e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 13 41062 306 View), BLOCK M, Third Floor, Flat No-M-306 with 50.043(sqm) plinth | SURINDER KUMAR JUNEJA area e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 14 41092 1306 View), BLOCK M, Thirteenth Floor, Flat No-M-1306 with 50.043(sqm) SANJAY SEHWAG plinth area e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 15 41079 View), BLOCK M, Ninth Floor, Flat No-M-906 with 50.043(sqm) plinth Deepali Shukla area e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 16 41058 124 View), BLOCK M, First Floor, Flat No-M-124 with 50.043(sqm) plinth Kiran Yadav area e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 7 41094 1316 View), BLOCK M, Thirteenth Floor, Flat No-M-1316 with 50.043(sqm) joshi amit plinth area e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 18 41085 1012 View), BLOCK M, Tenth Floor, Flat No-M-1012 with 50.043(sqm) plinth mani verma area e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 19 41071 712 View), BLOCK M, Seventh Floor, Flat No-M-712 with 50.043(sqm) plinth Sahil Narang area -Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 20 41073 718 View), BLOCK M, Seventh Floor, Flat No-M-718 with 50.043(sqm) plinth Fehmida Baba area e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 21 41063 314 View), BLOCK M, Third Floor, Flat No-M-314 with 50.043(sqm) plinth | _ KHUSHBOO KASHYAP area",
+                "error": ""
+              },
+              {
+                "page": 3,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 2122,
+                "confidence": "HIGH",
+                "text": "SrNo. | Eventid | Flatid | _________PropertyDetalls SSS Hi bidder e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf » eeraNonns e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf * Aoekaner e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf ” Memataes e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 29 41088 1103 View), BLOCK M, Eleventh Floor, Flat No-M-1103 with 50.043(sqm) Rakesh plinth area, Reserved for Person With Disability Category e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf * “vv area, Reserved for Scheduled caste category e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf area, Reserved for Scheduled caste category e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf » senienaneve plinth area, Reserved for Scheduled Caste Category e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf area, Reserved for Scheduled Caste Category e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf * fompons area, Reserved for scheduled Caste category e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf area, Reserved for Scheduled caste category e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 36 41095 1324 View), BLOCK M, Thirteenth Floor, Flat No-M-1324 with 50.043(sqm) Chander Kala plinth area, Reserved for Person with Disability Category e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf ” ‘MhaSneh Mens plinth area, Reserved for Scheduled Tribe category e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf plinth area, Reserved for Scheduled Tribe category e-Auction for DDA EWS flat at DWARKA, SECTOR-19B, POCKET-NA(Golf 39 41068 608 View), BLOCK M, Sixth Floor, Flat No-M-608 with 50.043(sqm) plinth Narsi Ram Meena area, Reserved for Scheduled Tribe Category",
+                "error": ""
+              }
+            ],
+            "unsupportedLanguages": [
+              "hin",
+              "mr"
+            ],
+            "extractionMethod": "OCR",
+            "textLength": 6805
+          },
+          "articleReadError": "",
+          "finalState": "REVIEW",
+          "reasons": []
+        },
+        {
+          "title": "Additional 544 Flats under DDA Karmajeevi Awaas Yojana 2026 - Booking to commence on Ganesh Chaturthi",
+          "url": "https://dda.gov.in/sites/default/files/Housing_Department/untitled_attachment08092026.pdf",
+          "publishedAt": "2026-09-08T12:00:00.000Z",
+          "cityCode": "new_delhi",
+          "fullArticleRead": true,
+          "officialDocumentRead": true,
+          "extractionMethod": "PDF_TEXT",
+          "ocr": null,
+          "articleReadError": "",
+          "finalState": "REVIEW",
+          "reasons": []
+        },
+        {
+          "title": "Circular dated 29.09.2026 - Extension of DDA Karmayogi Awaas Yojana 2025",
+          "url": "https://dda.gov.in/sites/default/files/Housing_Department/untitled_attachment_0001030092026.pdf",
+          "publishedAt": "2026-09-30T12:00:00.000Z",
+          "cityCode": "new_delhi",
+          "fullArticleRead": true,
+          "officialDocumentRead": true,
+          "extractionMethod": "BOUNDED_OCR",
+          "ocr": {
+            "status": "OCR_HIGH_CONFIDENCE",
+            "engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+            "requestedLanguages": [
+              "eng",
+              "hin",
+              "mr"
+            ],
+            "languages": [
+              "eng"
+            ],
+            "pages": [
+              {
+                "page": 1,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 1419,
+                "confidence": "HIGH",
+                "text": "| fecceit feeprer srftrep zor ; STA (SAT) RAT fetta ar, sates - Sh, repre we, aE fae Computer No. 95579 No.: F/1/0079/2025/CORD/-O/o DD (Coordination)/ 43% | Date: 24 \\o4 |202¢ CIRCULAR Subject: Extension of DDA Karmayogi Awaas Yojana 2025 (FCFS) up to 31.10.2026 — reg. Attention is invited towards the ongoing DDA Karmayogi Awaas Yojana 2025 (FCFS) launched for serving and retired employees of Central Government, State Government, PSUs, PSBs, Local Bodies, Autonomous Bodies and Government Universities. Under the scheme, flats in Pocket-9, Sector A1-A4, Narela were initially Offered for booking, followed by flats in Pocket-6, Sector A1-A4, Narela. Further, DDA has now offered additional 1552 flats in Pocket-13, Sector A1- A4, Narela under the DDA Karmayogi Awaas Yojana 2025 (FCFS) vide circular dated 21.05.2026 and booking of these flats are open from 01.06.2026. In view of the addition of new inventory in Pocket-13 and the continued response being received under the scheme, it has been decided to further extend the booking period of DDA Karmayogi Awaas Yojana 2025 (FCFS) up to 31.10.2026. Accordingly, interested eligible applicants may avail the opportunity for booking of flats in Pocket-6, Pocket-9 and Pocket-13, Sector A1-A4, Narela under the aforesaid scheme within the above said extended period. This issues with the approval of the Competent Authority Os ae (fara unach 3a ferdern(eaAeaa)-3TaT",
+                "error": ""
+              }
+            ],
+            "unsupportedLanguages": [
+              "hin",
+              "mr"
+            ],
+            "extractionMethod": "OCR",
+            "textLength": 1432
+          },
+          "articleReadError": "",
+          "finalState": "REVIEW",
+          "reasons": []
+        },
+        {
+          "title": "Circular dated 29.09.2026 - Extension of DDA Nagrik Awaas Yojana 2026 - reg",
+          "url": "https://dda.gov.in/sites/default/files/Housing_Department/untitled_attachment_0000530092026.pdf",
+          "publishedAt": "2026-09-30T12:00:00.000Z",
+          "cityCode": "new_delhi",
+          "fullArticleRead": true,
+          "officialDocumentRead": true,
+          "extractionMethod": "BOUNDED_OCR",
+          "ocr": {
+            "status": "OCR_HIGH_CONFIDENCE",
+            "engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+            "requestedLanguages": [
+              "eng",
+              "hin",
+              "mr"
+            ],
+            "languages": [
+              "eng"
+            ],
+            "pages": [
+              {
+                "page": 1,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 1246,
+                "confidence": "HIGH",
+                "text": "® feeeht facora wnfereer STANT (WA-da) RIRGT facia oa, sate - Sh, fae wea, AE feet Computer No. 106481 No.: F/1/0016/2026/CORD/-Coordination (HY 4392 Date: 24 \\o4 (202.6 CIRCULAR Subject: Extension of DDA Nagrik Awaas Yojana 2026 (FCFS) up to 31.10.2026 — reg. DDA Nagrik Awaas Yojana 2026 (FCFS) was launched vide circular dated 23.01.2026, Offering flats of HIG, MIG, LIG and EWS categories in Narela and LIG flats in Siraspur. Moreover, 1,944 flats in Sector G-7/G-8, Narela were Offered in addition to the previously offered flats vide circular dated 18.03.2026, with booking commencing on 27.03.2026. Subsequently, an additional 1,183 flats were added under the scheme, with booking for the same commencing on 28.08.2026. In continuation of the above, it has been decided to further extend the booking period for flats under the said scheme up to 31.10.2026. The extension will enable prospective buyers to apply for both previously offered flats as well as newly added flats in Narela. Prospective buyers are advised to take note of the extension and complete the booking of flats at the earliest to avoid any last-minute inconvenience. This is issued with the approval of Competent Authority. Ce Ce he (Farah apa) | 30 Prderh (wareag) TART",
+                "error": ""
+              }
+            ],
+            "unsupportedLanguages": [
+              "hin",
+              "mr"
+            ],
+            "extractionMethod": "OCR",
+            "textLength": 1259
+          },
+          "articleReadError": "",
+          "finalState": "REVIEW",
+          "reasons": []
+        },
+        {
+          "title": "Circular dated 24.09.2026 - Launch of DDA JANTA AWAAS YOJANA Phase II 2026 - reg",
+          "url": "https://dda.gov.in/sites/default/files/Housing_Department/untitled_attachment24092026.pdf",
+          "publishedAt": "2026-09-24T12:00:00.000Z",
+          "cityCode": "new_delhi",
+          "fullArticleRead": true,
+          "officialDocumentRead": true,
+          "extractionMethod": "BOUNDED_OCR",
+          "ocr": {
+            "status": "OCR_HIGH_CONFIDENCE",
+            "engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+            "requestedLanguages": [
+              "eng",
+              "hin",
+              "mr"
+            ],
+            "languages": [
+              "eng"
+            ],
+            "pages": [
+              {
+                "page": 1,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 1873,
+                "confidence": "HIGH",
+                "text": "feeeit faere vittro STAM (WA-Aa) RIRET fedta oa, aie - Si, fara war, Ag feet Computer No. 109600 No.: F1(misc.)2022/EWS/DLF/RohtakRoad [4310 Date:24, 04.2026, CIRCULAR Sub: Launch of DDA JANTA AWAAS YOJANA Phase II 2026 [Online Scheme on Computerized Draw Basis] for disposal of 209 EWS Flats — reg. The Delhi Development Authority is pleased to announce the launching of “DDA Janta Awaas Yojana Phase II 2026”, for disposal of 209 EWS flats (Group Housing Project “Pragati 1”) situated at Rohtak Road, Near Jakhira Flyover, New Delhi — 110026 developed by M/s DLF Urban Pvt. Ltd. through end-to-end online system through Computerized Draw of flats in line with DDA Circular No. E/312/0002/2022/CGHS/DW-Janta-ll/286 dated 12.03.2025. 2 Under this Scheme, 209 EWS flats located in the above-mentioned localities are being offered for disposal, with the following details: Approx. Range of Broad range plinth area of Tentative e - : Developer | No. of | including Price (Raith eee ts Locality Entit flats Lakh)** Official for y common Enquiries** area* (excluding GST, (Sam) } Rohtak Road| M/s DLF eo {0 oe Barra Sh. Mandeep 4. | Near Jakhira | Urban Pvt. | 209 | , Scooter | Rs. 34.86 to |Rathee (Manager) Figccar fe Parking 7.08 35.50 y : Sqm) (Mob.:9289976250 * Plinth Area includes common area and it may vary from flat to flat. ** The demand letter will be issued as per actual plinth area of the individual flats and therefore the disposal price of flats may vary depending on the plinth area. ** The official of DE may be contacted for facilitation in inspection of flats between 10:00 AM and 05:00 PM on all working days. 3 The important dates related to the Scheme are as under: « Detailed Scheme Brochure available on DDA website: 30.09.2026 « Registration opens on: 07.10.2026 « Last Date of Registration: 07.12.2026 « Date of Draw of Flats: 15.12.2026 Page 1 of 3",
+                "error": ""
+              },
+              {
+                "page": 2,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 2756,
+                "confidence": "HIGH",
+                "text": "4. ELIGIBILITY CRITERIA: 4.1. The applicant must be a citizen of India. 4.2. He/ She should have attained the age of majority i.e., an applicant should have completed 18 years of age as on the last date of registration and legally competent to enter into a contract. 4.3. There shall be no restriction with regard to owning any land/built up property in Delhi, 4.4. The family income of the applicant as well as of joint/co-applicant applying for EWS flats should not exceed Rs. 10 Lakh per annum in case of both the families considered separately. Family Income for this clause is defined to include the income of the applicant and his/her spouse, if married. 4.5 The joint applicant/co-applicant should be from within the family and for this clause. Family means a person or his/her parents or his/her blood relatives or his/her spouse or unmarried children. The applicant (and/or co-applicant) has to produce a valid annual family income certificate /EWS Certificate issued by the competent authority (from the office of concerned SDM/Tehsildar/issuing authority) in this regard issued on or before the last date of registration. 4.6. The applicant should give particulars of his/her savings account in any Bank in the name of the applicant only in the ‘Application Form’. 4.7. Applicant must have Permanent Account Number (PAN) allotted under the provisions of the Income Tax Act and the same must be quoted in the Application Form. 4.8. In case of joint applicant under SC/ST Reserved Category, the joint applicant should be from within the Family. Family for this clause means a person or his/her parents or his/her blood relatives or his/her spouse or unmarried children 4.9. In case of joint application under Persons with Benchmark Disabilities (Divyangjan), ex-servicemen reserved categories, the applicant himself/herself should fall within the reserved category and the joint applicant/co-applicant should be from within the Family. Family for this clause means a person or his/her parents or his/her blood relatives or his/her spouse or unmarried children 4.10. It is advisable that co-allottee, if any, may preferably be added at the application stage rather than at later stage, for easy processing. 5. Allotment Process All the eligible applicants shall be considered for allotment through a computerized draw based on random number technique. The draw shall be conducted in online mode in a transparent manner in the presence of independent observers along with presence of sample number of applicants, say 20. In case excess flats remain un-allotted, DDA will again call for applications from eligible applicants and another draw for such flats shall be conducted by DDA. The draw for this Housing Scheme will be web-streamed. Page 2 of 3",
+                "error": ""
+              },
+              {
+                "page": 3,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 655,
+                "confidence": "HIGH",
+                "text": "6. Process to Apply Interested persons have to visit official website of DDA i.e., www.dda.gov.in_ or https://eservices.dda.org.in and have to create login credentials using PAN and other details and thereafter login with the same and register themselves for DDA JANTA AWAAS YOJANA Phase II 2026 by paying a sum of Rs. 2,500/-. This amount is to be paid online and is non- refundable. One needs to register himself/herself specifically for this scheme to participate in the draw notwithstanding the fact that he is already registered with DDA. This issues with the approval of the Competent Authority. f ch. 4 (erat asad ou Pree (stare) - Wada Page 3 of 3",
+                "error": ""
+              }
+            ],
+            "unsupportedLanguages": [
+              "hin",
+              "mr"
+            ],
+            "extractionMethod": "OCR",
+            "textLength": 5325
+          },
+          "articleReadError": "",
+          "finalState": "REVIEW",
+          "reasons": []
+        },
+        {
+          "title": "Allotment of Car Parking Spaces to Allottees of DDA Karmayogi Awaas Yojana 2025 and DDA Nagrik Awaas Yojana 2026",
+          "url": "https://dda.gov.in/sites/default/files/Housing_Department/docscanner_16_sept_2026_15-16.pdf",
+          "publishedAt": "2026-09-16T12:00:00.000Z",
+          "cityCode": "new_delhi",
+          "fullArticleRead": true,
+          "officialDocumentRead": true,
+          "extractionMethod": "BOUNDED_OCR",
+          "ocr": {
+            "status": "OCR_HIGH_CONFIDENCE",
+            "engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+            "requestedLanguages": [
+              "eng",
+              "hin",
+              "mr"
+            ],
+            "languages": [
+              "eng"
+            ],
+            "pages": [
+              {
+                "page": 1,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 2591,
+                "confidence": "HIGH",
+                "text": "fecett facre virco STG (Ada) RIG facta act, sates — Sh, fore er, Ag facet F4(Misc)2026/Coordn(H)/DDA | 434.5 Date | goa 2026 Circular Allotment of Car Parking Spaces to Allottees of DDA Karmayogi Awaas Yojana 2025 and DDA Naagrik Awaas Yojana 2026 It is hereby informed that HIG/3 BHK and MIG/2 BHK allottees of DDA Karmayogi Awaas Yojana 2025 and DDA Naagrik Awaas Yojana 2026 are invited to submit their requests for allotment of car parking space(s), along with their preference for car parking space(s) , from amongst the available parking spaces in their respective housing pockets. 2. The allotment of parking spaces shall be carried out on a monthly basis. The last working day of each month shall be considered as the cut-off date for determining the priority of eligible allottees for the respective round of allotment. An eligible allottee who does not submit his/her request during the current round may submit the request in a subsequent month and shall be considered for allotment in that round only. 3. Priority for allotment of parking spaces shall be determined on the basis of the date of issuance of the Demand-cum-Allotment Letter (DAL), subject to the issuance of the Possession Letter and availability of the requested parking space(s), with earlier issuance of DAL being accorded higher priority. In case of the same DAL date, priority shall be determined on the basis of the earlier date of booking/allotment of the flat and, where the same, by the earlier time of booking. 4. The number of parking spaces to be allotted to an allottee shall be as specified in the brochure/Demand-cum-Allotment Letter of the concerned scheme/flat. However, not more than one parking space shall be allotted at the stilt level to any allottee. In case an allottee is eligible for two parking spaces, he/she may give preference for one stilt-level parking space and one upper/lower basement parking space. Allotment as per the preference shall be subject to availability. 5. Applications for allotment of parking space(s), along with the prescribed documents, may be submitted to: DD Coordination (Housing) Room No. 215, 2nd Floor, D-Block Vikas Sadan, INA, New Delhi-110023 6. The application shall be submitted along with the following documents: (i) Copy of Demand-cum-Allotment Letter (DAL); (ii) Copy of Possession Letter; (iii) Copy of allottee’s ID proof; and (iv) Details/preferences of the parking space(s) sought, including preference for 1 stilt-level and 1 basement-level parking. This issues with the approval of the Competent Authority. Dy. Director Coordination (Hotsing)",
+                "error": ""
+              }
+            ],
+            "unsupportedLanguages": [
+              "hin",
+              "mr"
+            ],
+            "extractionMethod": "OCR",
+            "textLength": 2604
+          },
+          "articleReadError": "",
+          "finalState": "REVIEW",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": "OFFICIAL-002",
+      "source": "https://www.idaindore.org/frmSchemes.aspx",
+      "city": "indore",
+      "status": "FETCHED",
+      "elapsedMs": 13816,
+      "records": [
+        {
+          "title": "SALE OF SCHEME NO. 103 PALASH RESIDENTIAL FLATS योजना क्रमांक 103 पलाश में आवासीय उपयोग के फ्लैट्स",
+          "url": "https://www.idaindore.org/PDF/Schemes/SchDoc_311-1.pdf",
+          "publishedAt": "2026-09-16T12:00:00.000Z",
+          "cityCode": "indore",
+          "fullArticleRead": true,
+          "officialDocumentRead": true,
+          "extractionMethod": "BOUNDED_OCR",
+          "ocr": {
+            "status": "OCR_HIGH_CONFIDENCE",
+            "engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+            "requestedLanguages": [
+              "eng",
+              "hin",
+              "mr"
+            ],
+            "languages": [
+              "eng"
+            ],
+            "pages": [
+              {
+                "page": 1,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 2116,
+                "confidence": "HIGH",
+                "text": "iSJen 22z faasras uirfeiasecor ee een ae ie : 16-09-2026 2026_DTCP_536807_1 Sekt fara onftent Fr alse w. 103 vere A 3raria scar & veel at aca afton W sada AU H IN a afl FoI W waa aXe Sq Aleit Te seeet (Tender cum Auction) & ata F 3iteteliset Online fataar anata sr oct $1 fAfa|er wr fran ferarqan t:- 2 BHK | B-305 7 iia = a [5 _|2BHk [6-405 (aaa | aise = ol SB El | 6 | 2BHK | B-406 es | / et = “age | Lz [2enx| rae] waren [rao | sooo | aso | osszszaoo | aso | iS eo Sj is =o Saee., |e | : z. ee es Td re [9 [2BnK | F500 a — a, Sy Se et eel [10 | 2BHk | F602 = Sea es = = — ~ 2BHK | 6-605 = - : 2BHK | B-606 siererga fafaar Wed axe Hah Agere fear 2 BHK | F-609 We z [75 [eK | 708 a | 16 | 2 BHK | B-905 [2 _| Pitar vege at A alien aR we wat _—_—~(|—_aaaozez0 | 1800ne ‘| 2 BHK | F-1002 [3 | amatet fatter ates et fae ~S~S~*d~Ct toes at mee | [8 | 2BHk [F-10710 ee ; [oS BHK | F203 es eet ee rete | 2 2 [20 | 3BHk [8-207 on ffteernst &g $-ararsh (Live e-Auction) oven ae & AR ci SBHK | F-308 ara wet S-afteraft eae eter fa Cer WERT 3 BHK | 'B-404 [am Oeosae—SS*~*~“C~*~*é~idiC Cn —* SBHK [6-407 s ees ee Ro SBHK | F603, EAOS ITAL soa SBHK | 8-604 SAPD AMAL 14:30 hes [28 [aBHK [8-704 Hw, 25 8 31 aw SBHK | B-707 ae [20 | SRK | F008 oH oH deh 81 $tose tou Bem a ci Ht ABC 01204001002 FI [20 | 3BHk [6-104 >eoftat at cam fafear ag anaee Gat & far sre] get afrAT mptender wea SBHK [B-1007 we feeifter often siege 1 saat | : > fafter A gra Seg Paar wegen aclseac cufBafa) ow grater staré wad & urd & wie HIs/ Be / ae aftr / arxétalies & Arena 8 BT THT > fafaererar at ara fafaar site (ex) siteronga eat ehh) weft seagica fafa vor a < fer ae camer Fa wea Heresa HSS TAT et) afte oraart & fore afer wary Hf aft fade Hr 99260-98343, a aeleax Uee 98936- yfefaar at fare aft wear amr aetuer gate fear ure aa mptender cre wx * . we vette fran aren, Se gan a wara-cat aH verte aét far sree 99153 B Gach aX, HYaT wifey AT Aaaise www.idaindore.org W eal >of ate rer og oraearn fader fader Uuy gee eT | > uniter ant feet at tax ox fafaer edenre srrar fered aeat ar afte ERiarat TT! wea artenferen aiferanrgt Sek frcore wftrertgeht",
+                "error": ""
+              }
+            ],
+            "unsupportedLanguages": [
+              "hin",
+              "mr"
+            ],
+            "extractionMethod": "OCR",
+            "textLength": 2129
+          },
+          "articleReadError": "",
+          "finalState": "REVIEW",
+          "reasons": []
+        },
+        {
+          "title": "SALE OF RESIDENTIAL MODAL RO-HOUSE IN SCHEME NO. 134योजना क्रमांक 134 में आवासीय उपयोग का रो-हाउस",
+          "url": "https://www.idaindore.org/PDF/Schemes/SchDoc_313-1.pdf",
+          "publishedAt": "2026-09-15T12:00:00.000Z",
+          "cityCode": "indore",
+          "fullArticleRead": true,
+          "officialDocumentRead": true,
+          "extractionMethod": "BOUNDED_OCR",
+          "ocr": {
+            "status": "OCR_HIGH_CONFIDENCE",
+            "engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+            "requestedLanguages": [
+              "eng",
+              "hin",
+              "mr"
+            ],
+            "languages": [
+              "eng"
+            ],
+            "pages": [
+              {
+                "page": 1,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 1787,
+                "confidence": "HIGH",
+                "text": "fasifta #171 py ida sax fara nition eee cle = hs =—thn Asai ace gah fora orfterl a ator ». 134 4 01 aranfa saat @ asa 5 rear Were of yeah after oe Pad yer we Seger ani aekt vad! @ aaa hie sau oe 2g aiverga (Online) aided arafaa fet ond 21 Vere or faa oper ht A PAR & — vawEu asset STIREAT aapea UW ese oT deft w. aofy af. ¥ ord &. URI &. a ated tg ander veda oet waefl qecaqet feaie vd waa [uw |e tw | Fs art me oe Ree Re a wa Le eter a Re we dle — O aed & amteq wien a aaage https://www.idaindore.org w @@ vd W oT Wad Z| QO afet 4 am oF tg artes oRgae@dt dois URI oF yam sited “Ri b SRE ON /Saeos /Ac Her / Ts TH A. /IRAMVA S AAA V SX THAT | O sraereat et Y-eee oT ae sifsengs Ge err cen st ors, OF aay, oraes wos vd wh sreple a ula kara | wri od sites ayers Get enh | OQ aiet cafe 4 feet i vor or digi daa tease oe dt vaftta fear aren, SR vere S warar—oa F vera set fear eT | O wrote ot site at vert 25 ufter aft Gra wer ata) arent ca UN eA > feat G1 we a oral H GAT art evi vd oy 75 vfcerdt ue smh 3 are a safe 4 seta omer va ont eA S fesie V4 are A aafl ¥ oT |r Vfl PetRa eraratt 4 sia at wr oar a ee oe arr fraH.2018 dem aereieifera Prva 09.04.2021 & Fad 12 aque wots a Pret of @rfardt at ort O aden araet oe Sos ator PRenr oe cok oT aaciiosd aX oraad aX wa POL Ugh BA Ww A oraeT or! dUfeT oT wont uenhert ¥ fear orem | O wafer a ite a wr wert of ¥ oa oe ott Rad fate G6 Raw yd went orate F suka gee oT af at gfe oat aftari @, feet ft oreo S Pac fei ce wr oftent ate 4 oer ad a we wafer FH Preah caeit SRT Vara Vet artaw /aefett at eh | abet eq QR Code wa we) O wtee ot sries eter sera Pret oe or aiftrore axle WT | yea prfarfere arftreney seh fron uitrentg-k site oreatent & fu orierita waa a sit dae sores Gil. 9893699121) & ae we, stat wifererst at daarse www.idaindore.org uw 2a",
+                "error": ""
+              }
+            ],
+            "unsupportedLanguages": [
+              "hin",
+              "mr"
+            ],
+            "extractionMethod": "OCR",
+            "textLength": 1800
+          },
+          "articleReadError": "",
+          "finalState": "REVIEW",
+          "reasons": []
+        },
+        {
+          "title": "SALE OF SCHEME NO 78 ARANYA RESIDENTIAL USE PLOTSयोजना क्रमांक 78 अरण्य में आवासीय उपयोग के भूखंड",
+          "url": "https://www.idaindore.org/PDF/Schemes/SchDoc_312-1.pdf",
+          "publishedAt": "2026-09-15T12:00:00.000Z",
+          "cityCode": "indore",
+          "fullArticleRead": true,
+          "officialDocumentRead": true,
+          "extractionMethod": "BOUNDED_OCR",
+          "ocr": {
+            "status": "OCR_HIGH_CONFIDENCE",
+            "engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+            "requestedLanguages": [
+              "eng",
+              "hin",
+              "mr"
+            ],
+            "languages": [
+              "eng"
+            ],
+            "pages": [
+              {
+                "page": 1,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 1433,
+                "confidence": "HIGH",
+                "text": "A fasta sara : 170 sak fama widen Ft aloe w. 78 ava A ara suaht & spavel at MAA AT HAGAN Tas HIG WL IaaH aX H ATEN A Zila a WW aaa aay %q ae BE area (Tender cum Auction) & Hvaya B 3ieteise Online fafaar seit a ort G1 fetter or fraxor farenega 8:- Portal E-tender No. : 2026_DTCP_536185_1 ae. waft oT aaa ap ae arte wht frat (asi) (afa af.) (ware 4) [ee a Poe | smc | eases | 200000 | aase | a Ps [ssa [ero | ats000 ee | am. Taaor fear war | 1 |tetaet ee 21-09-2026 | 14:00 hrs | | 2 | fafaet wea oer at sida Tae wa wee 12-40-2026 | 18:00hrs | ua fea -arerat (Live e-Auction) 11:30 hrs. fafa va waa 14:30 hrs yfafaar $-cterainaic vefa & utéa https:/www.mptenders.gov.in WW @@l Ud 3itaensa HT at ot aaHdt $1 $-evsx Sou Sep aT ela ht AGT 01204001002 FI >aufeat a casa fatter ae seed vad @ frat area! sacht ura mptender Wea WT facia ufrar = at saat >fafaar A amt aa PRIN OE al al Sede Ma ) TY ar yaa sions Tat & ud a we ws/ Sfacas / Fhe | oconee aren 8 ee gal >fafaerara a aaa fafaar simex (ex) Siterenga dev eet] Bat srapica fafaar wos a feu >fafaar a at vee ar Sele sche frre wir aM mptender Vea ux é Valea fra_arhn, fet gan & wara-cal A varia aet fear sat pasate ht dies tq sravae fader fafaer wor sax etl SRT Rh adetetiatten an Eccl acaenotteeamaae eam ature sitet ees wien, seahe ain sree & few arferita aaa a at siete ore 9584555568 at caeaeq 3 9893699142, aT SAA SUA 98936-99121 A Bu aX, HUST wisn Ar daase www.idaindore.org W FS]",
+                "error": ""
+              }
+            ],
+            "unsupportedLanguages": [
+              "hin",
+              "mr"
+            ],
+            "extractionMethod": "OCR",
+            "textLength": 1446
+          },
+          "articleReadError": "",
+          "finalState": "REVIEW",
+          "reasons": []
+        },
+        {
+          "title": "SALE OF SCHOOL USE 1 PLOT IN SCHEME NO. 114योजना क्रमांक 114 में 1 स्कुल उपयोग का भूखंड",
+          "url": "https://www.idaindore.org/PDF/Schemes/SchDoc_309-1.pdf",
+          "publishedAt": "2026-09-10T12:00:00.000Z",
+          "cityCode": "indore",
+          "fullArticleRead": true,
+          "officialDocumentRead": true,
+          "extractionMethod": "BOUNDED_OCR",
+          "ocr": {
+            "status": "OCR_HIGH_CONFIDENCE",
+            "engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+            "requestedLanguages": [
+              "eng",
+              "hin",
+              "mr"
+            ],
+            "languages": [
+              "eng"
+            ],
+            "pages": [
+              {
+                "page": 1,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 1381,
+                "confidence": "HIGH",
+                "text": "; frafe waite: 164 seR fara wife Bee | deh Prana onftertt At ate wm. 114-geat at ERR Oh ae eae anvst eer sua & ys a da wee wear at Le te Re OW Hl AW asda wa eq ae He aaa te oar Ed (Tender cum Auction) & alta A 3ieteSa Online fafear 25 rah rr HR. §-d0sy lea dota wai =| IRA aan yaa simat eA Hee eh wr. wap AA (a.aft.) ag ft oftst a (ofa (EMD 5%) Cire aa.) AH. Terao Te Waa ura fate _ S-eferat (Live e-Auction) 11:30 hrs. 5 uRea aa fr fafa vd waa va S-cferat ware ee | 22-10-2026 to a fafa wa war 14:30 hrs >fafaar $-ctenae uefa a otéa https:/www.mptenders.gov.in W &ght wa sictersa Ha H aT Tact S| S-20sx fou SEH a cheat HT aaT 01204001002 #1 >auaa a caea fafaer ae sree cedt @ fear area! sacl ufar mptender Wea WT fauikta Oran agar cht srdeth | >fafaer a ant aa eq fafaar veqaadt seicerel (Gfeafa) UY a aaa Hitesa Tad & UT a ey Gates S snes & Ate a oe yiafacrern wt araet fafaet sitee (ex) sittonsa cen ee) weft sericea fefaer wor A fer av feeregan ta secrete sieteset HTS He St >fafaar at fret sft var ar dete sek frre wii eRxor at mptender Tea ox & Yalta far am, foe yan S aaran-uat A veri ae frat sree pee eee Fed SA ter Sea >urtencor apt feret ait Tax ox felfaer eden seat feet axel ar sf Aiea TT! ea arturo siftrepret ite aan & fore artertear Bara F aff aeite ure 95845-55568, at Gaeaea HT 98936-99142, At Sata SUT 98936-99121 A Wah HL, HYaT UH HT Aaese www.idaindore.org W el",
+                "error": ""
+              }
+            ],
+            "unsupportedLanguages": [
+              "hin",
+              "mr"
+            ],
+            "extractionMethod": "OCR",
+            "textLength": 1394
+          },
+          "articleReadError": "",
+          "finalState": "REVIEW",
+          "reasons": []
+        },
+        {
+          "title": "SALE OF SCHOOL USE 4 PLOTS IN SCHEME NO. 136योजना क्रमांक 136 में 4 स्कुल उपयोग के भूखंड",
+          "url": "https://www.idaindore.org/PDF/Schemes/SchDoc_308-1.pdf",
+          "publishedAt": "2026-09-09T12:00:00.000Z",
+          "cityCode": "indore",
+          "fullArticleRead": true,
+          "officialDocumentRead": true,
+          "extractionMethod": "BOUNDED_OCR",
+          "ocr": {
+            "status": "OCR_HIGH_CONFIDENCE",
+            "engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+            "requestedLanguages": [
+              "eng",
+              "hin",
+              "mr"
+            ],
+            "languages": [
+              "eng"
+            ],
+            "pages": [
+              {
+                "page": 1,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 1635,
+                "confidence": "HIGH",
+                "text": "- Tae wate : 163 iSJen 22z faasras uirfeiasecor fea 09-09-2026 Salt ferepra onitrepey Hr Ursa w. 136 A Maio (KH) Sua h 04 gest al cet vee W aay NH TT o sil QW asad HT ateht Be Beet (Tender cum Auction) & areaat B 3itaosat Online Baer araifia &t orc 31 fefeer ar Trax faseragae B:- a faaxor ah) | dteke vas. | eRe ga. (afer aft) (EMD 5%) a. 202 6_DTCP_534795_1 Varta (Kaa) 1 = 983.00 54,000 26,54,100 /— rr.” 5, =, Lt | arrears | soe | par eee Te Pe [ee [oe | Piers, ll : Grr Sd po OO; r. Fin a O - af a car = Ud Waa wa $- Ware Vd waa 14:30 hrs r.! | ‘fhe ae OPO Oo =] patter é-steanaie caft & cise hups/www.mptenders.gov.in 0 wt wa sitters wer FY ot wercht Yee . rhea F. Bl S-cost Bou SEH HT clot sr Aax 01204001002 ZI Pp r. ‘ha Ort Ls es RSA A ea Le Sea rer Peer mptendenschew” wy fete rf. re TT. . ir r. 1h. 4 SETI ; = 5014.00 ca . Rt 88300 >fafaa A ant dat tq fafaar wedaaal sriecach (ufaaya) UY ar ayaa sitatensa FIs & UT = = . hs Meee Tac ee archaic aus oer fh “5 1 i> rt es pfafaararat at ave fafeen sex (ak) Sirens 2at ehh waht sregice fafear ver a fer ae = . 4 ed IMGAR HI Sema Hienst HUIS LAT eH Dt a et fee e Sa, a he =. viata a fret aft vere ar deter sche fear orfteror At Aaege aM mptender ces ue e rar, OF. Pah gs O- ve Rm amet, fare er Se warere-ast H gemea ae Rea TT Ober Oe a: Bos pega ES TNL CE (TPIGT UTE STR ETL = fo | patent QR vorftencor at feret aff Tax oy fafaer edie sua fared aka aT HMR Alea WM! - ate oreo & fore areferdita waa F aft arefly uret 90398-26160 , aT ce aprerurferes 31ftrepret fora Hreat 98936-57988, a Yaa Ute 98936-99153 A Wh Hi, fepra uniter, sealt 3a urreant hr dears www.idaindore.org Ww Fal",
+                "error": ""
+              }
+            ],
+            "unsupportedLanguages": [
+              "hin",
+              "mr"
+            ],
+            "extractionMethod": "OCR",
+            "textLength": 1648
+          },
+          "articleReadError": "",
+          "finalState": "REVIEW",
+          "reasons": []
+        },
+        {
+          "title": "SCHEME NO 136 FLATS ONLINE LOTTERYयोजना क्रमांक 136 में आवासीय उपयोग के फ्लैट्स (प्रकोष्ठ)",
+          "url": "https://www.idaindore.org/PDF/Schemes/SchDoc_314-1.pdf",
+          "publishedAt": "2026-09-08T12:00:00.000Z",
+          "cityCode": "indore",
+          "fullArticleRead": true,
+          "officialDocumentRead": true,
+          "extractionMethod": "BOUNDED_OCR",
+          "ocr": {
+            "status": "OCR_HIGH_CONFIDENCE",
+            "engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+            "requestedLanguages": [
+              "eng",
+              "hin",
+              "mr"
+            ],
+            "languages": [
+              "eng"
+            ],
+            "pages": [
+              {
+                "page": 1,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 2155,
+                "confidence": "HIGH",
+                "text": "= feria’ spatter : 157-158-159 (@) ft: @) Reeocn SR faeorat arfeieeeor fate : 08-09-2026 igh tebe aa she ahr &. 136 PRomge 4 fia crafty we aftifeae cRey aime whaciae, “Ua Wal ch Zeal HT soa qeriee ervey, area aruda Fara seh F onanfa saeder F (1/2/3 BHK) Bla TAA HT Fae ZTE!” pier cps vars! or yeah after w fad ye Ww Heyer an ciel val a aa oS eg (eee 8 siftemgt (Online) sraes arafaa fad ord 8 | verset or frat PAR s — tes'eat ehaseettth sara | aor faecsra | faccara arte wRat | yats or faa | doled uf EL: at = satet at | oftar (wtah)| often (fan) | wah) | ea (ware a) | ( are 9) -2 ae = 5% os eer) & at _ ie Wea - - \" ws | por 1 * — i aim dradaa (fast oare 157) Po | ae ioe y Ly 2 BHK- 55 ge er A a rr is ry 9218 a 73.55 8 60.90 43.75 @ 43.92 250 HA el - J Fi = ) 96.13 76.70 62.75 ee) | “Lalla ; - [2 [sees | assaa [rosso | azao | sta | 380 i i = ne ' - - hs! a ‘oon | spinal! ' sama Torte orrare (fasta wate 158) mg ee, [a [rerK toe | ets7 | ases[ssar | taea | 100 ahi erie area aman erretee (fasiitt @aie 159) SARA RAbISENY Babes bl 1BHK- 491] 4987 @ 36.15 @ 30.75 15.09 @ 15.95 Sag adet Wedd Ge Wael Hecayel feaia va wry awe faaeny y 2 > seh x arte afte & ergnfe wuseidsindore org 1 3a wat a awa 2 a a chen & area | orate | aruda jacks evar et a ot aeey feat ve Waa ea len es ech ertere eas mae gs cat Bd 2 BB im Wen / 4 jaada waa Waa Ga awe id (aie a Gas a i aa ven fee creer, foe que a a ud mega Het a sift fate — | 19-10-2026 | 19-10-2026 | 19-10-2026 | 18:00 hrs. > mete A te aprare, ager faer . > rear a = > Se rte 9g at Sb a a Seon a ae OH GE OA oe oc atl a EN sirens wa 99-10-2006 | 22-10-2026 | 22-10-2026 | 11:30 hrs. plescrs 10: 10+ 10+ > aaah either AY ORY ore ate a som ay suker Par Renter 6 Rawr ge wien rater at sufEarr are ar ax uitat ar feaie wd waa Onwards aay GR. acer aia Brat att mrcor a Perr Raton er a one ate at ora at MA Oe MoU A ace eet BARR TaTaeeY Hes / Sev SY MAT WS ordeal Gt GRyey db ARTA w . 03-11-2026 | 04-11-2026 | 05-11-2026 12:30 hrs. oa eee Se a aie owt or fate ve wa 12 ut & Te Meat THA A AT Tae PE 98936-57988, A HellT let 98936-99130, A Yq Ue 98936-99153 ST Ah He, sar urfteant tr daase www.idaindore.org wt fal",
+                "error": ""
+              }
+            ],
+            "unsupportedLanguages": [
+              "hin",
+              "mr"
+            ],
+            "extractionMethod": "OCR",
+            "textLength": 2168
+          },
+          "articleReadError": "",
+          "finalState": "REVIEW",
+          "reasons": []
+        },
+        {
+          "title": "SALE OF RESIDENTIAL FLATS IN SCHEME NO 114 RAJEEV AWAS VIHAR योजना क्रमांक 114 राजीव आवास विहार में आवासीय उपयोग के...",
+          "url": "https://www.idaindore.org/PDF/Schemes/SchDoc_310-1.pdf",
+          "publishedAt": "2026-09-02T12:00:00.000Z",
+          "cityCode": "indore",
+          "fullArticleRead": true,
+          "officialDocumentRead": true,
+          "extractionMethod": "BOUNDED_OCR",
+          "ocr": {
+            "status": "OCR_HIGH_CONFIDENCE",
+            "engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+            "requestedLanguages": [
+              "eng",
+              "hin",
+              "mr"
+            ],
+            "languages": [
+              "eng"
+            ],
+            "pages": [
+              {
+                "page": 1,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 1984,
+                "confidence": "HIGH",
+                "text": ": fasifta sp. : 150 Mow eg ida ser faerufies See Dp hi aor &. 114 woeite snare flere 4 fafa ears sit & oranda sore Re he Wenrect xarét atte ue frac attest ‘eats oem eg sittenga (Online) snaea anata fea ore &| wert or fraxor i hie Fe Pregar &— oped avandia wetsst oT aaa vers of Pad yer STATA UAT wen (ath) (ware Y ) (@. are 4) 11,93,500.00 8 34.44 G 41.93 TH 80,000.00 15,29,500.00 7h Saag ade Wedd we Uaell vecagef feare ED | 1 | sirenge ores soa oa oe oH oer Rat yd ea 15-09-2026 14:00 hrs. | 2 | sions SST WII SI SCY Va wRYT HY at ifs feaiw vd was 05-10-2026 18:00 hrs. 3 simengs set WIS STSAeis GX Vitas oT feaiw Ve WAT 06-10-2026 11:30 hrs. Onwards | 4 [as ondeat ob orgex } aeaH a diet oe aT Rain VE wT 14-10-2026 12:30 hrs. ae -— OQ ated & onter sntant a aaure https:/www.idaindore.org W BY Ud we GT Bae 21 Q diet A arr oh 8g sndew cola wr or ara siscngs wa } Hise oS /shleos/Ae Mor / MVHS. /ARA MIG GS AIH WH wom | Oo aeaeat @ satel or ae aifterda oer eb cen dda wR oT oY oI OS, eer Ta Ud aI aiftea srepic a uf whit ay srucirs @eat erft | OQ Rater a feet of vor or eight daa mat Jaane oe A valle Ree seer, SRY yer S wera —aat A wef ae fe TPT Oo waft @ ster a werk 25 oftrert afer (eit ur Bea) set oa GN eM > ferio S 1 He wl ara ¥ wai S ard S Ga we ef vd ge Per ot 75 vftert wR srl 3 wre wt ora ¥ sea oer oa aN em & fetiw S 4 are A sal 4 eal H Ta oT wer eh Pata wrarafy A aes @ UR oa a oe wR er fray, 2018 & fos 12 aque wate of Peed @ orfardt at orerf| O anes antes oe a yd Stor Pret ae vets or ares Ge aided oY vd ool tighe em wR A andgs GY] vols or want yererd A fear OFT | OQ site at waar mf Rain S eat er are asa GA ot agiftren vor S ater oR A soe Afr, gat eRe gene wel q sere A RT oer oer sfrars eft | OQ siftraxer at antes ator sierat Peet et or sito yeti S| qe ordarfers aftrore geht frora orange site oraernt & fav aafeita waa F oft 2a camo sre (9893699142) st aed sure il. 9893699121) oft anfira uret (9584555568) A Bue we, star wisest at aaarge www.idaindore.org w 21",
+                "error": ""
+              }
+            ],
+            "unsupportedLanguages": [
+              "hin",
+              "mr"
+            ],
+            "extractionMethod": "OCR",
+            "textLength": 1997
+          },
+          "articleReadError": "",
+          "finalState": "REVIEW",
+          "reasons": []
+        },
+        {
+          "title": "SALE OF SCHOOL USE 2 PLOTS IN SCHEME NO. 74 योजना क्रमांक 74 में 2 स्कुल उपयोग के भूखंड",
+          "url": "https://www.idaindore.org/PDF/Schemes/SchDoc_307-1.pdf",
+          "publishedAt": "2026-09-02T12:00:00.000Z",
+          "cityCode": "indore",
+          "fullArticleRead": true,
+          "officialDocumentRead": true,
+          "extractionMethod": "BOUNDED_OCR",
+          "ocr": {
+            "status": "OCR_HIGH_CONFIDENCE",
+            "engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
+            "requestedLanguages": [
+              "eng",
+              "hin",
+              "mr"
+            ],
+            "languages": [
+              "eng"
+            ],
+            "pages": [
+              {
+                "page": 1,
+                "language": "eng",
+                "status": "OCR_HIGH_CONFIDENCE",
+                "chars": 1617,
+                "confidence": "HIGH",
+                "text": "A forafe setter : 149 San fara wifeeor feats 02-09-2026 | Salt fonra wuiteent hr arse wm. 74 Aeex-et va Baers A Mariorp FRA STAT h ss al cial Vee W Pld Nh NA M it XW Asa ad &q Tel BE 3a (Tender cum Auction) & arta S 3itetersat Online fafaer aaa a oct G1 fatter ar faaor faranegan &:- x. $-t0gy urea wate aie want waa annet av aE | o-Healee Felt w. ware waren Chil aa.) crt (ofa afte cafe ax (aft = (EMD 5%) aa.) aa.) aa.) fel: Ay: | Cie ed FW. Tearyo Te wast | oi | afar eee 18-09-2026 | 14:00 hrs _| | 3 | ceneticht Feiterer watered chr Fe 07-10-2026 | 11:30 hrs | A ura fafaararensit %q $-cenaft (Live e-Auction) WRFH eat meee 11:30 hrs. & fara ve Gara va Satna Gare eet ahr fava ud wae | 21% Aden. > fafaar $-crranaic vafa A cee https:/www.mptenders.gov.in 1 @@ vd Heatensa Ha A aT HH S) S-20sx fou SEH HT Ale MT Aa 01204001002 z1 > Poferat a cae fafaer we sneered vedt A far sree sac Ufrat mptender Wee oy farulRa Oia agar ht srastt | > fafaat a amt aa eq fAfaar weqaaal steer (ofaafa) UY aT ate steers Ta & UT a Pee at, Smead ae ARTS oan Fae foe we i > fafaarrar ar aaa fafaer simex (ax) Hietensa ger eof) ast seegica fafaar waa aA feu aw feregqan Fa eealeia Heese ses aa ert > fafaar a feet ot car a aelua seh fame ofr at mptender Tea WX & vafa far arhn, fe yun 8 waran-cal F vena ae fear sas! > Eo a oaatcltes Sere Tipe (aifear vow aeqereaety I > wider at fret at Tax Wy feafaer Kho sua fea ake ar sien ALiela Lea! ae arturo sftp Salt frpra orftenrtseale site oan & fore arte Fas F af areile ure 95845-55568, at Gaeaea HT 98936-99142, AT Sata SUA 98936-99121 A Wah HL, HYaT WHA HT Aaese www.idaindore.org UW el",
+                "error": ""
+              }
+            ],
+            "unsupportedLanguages": [
+              "hin",
+              "mr"
+            ],
+            "extractionMethod": "OCR",
+            "textLength": 1630
+          },
+          "articleReadError": "",
+          "finalState": "REVIEW",
+          "reasons": [
+            "review: ambiguous multi-city geo evidence"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "OFFICIAL-003",
+      "source": "https://mhada.gov.in/en/nashik",
+      "city": "nashik",
+      "status": "FAILED",
+      "elapsedMs": 5959,
+      "error": "HTTP 403"
+    },
+    {
+      "id": "OFFICIAL-004",
+      "source": "https://www.up-rera.in/PressRelease",
+      "city": "",
+      "status": "FETCHED",
+      "elapsedMs": 28082,
+      "records": [
+        {
+          "title": "50th Real Estate Agent Training Session Begins in Lucknow",
+          "url": "https://www.up-rera.in/PressRelease#release-50th%20real%20estate%20agent%20training%20session%20begins%20in%20lucknow",
+          "publishedAt": "2026-09-22T18:30:00.000Z",
+          "cityCode": "",
+          "fullArticleRead": false,
+          "officialDocumentRead": false,
+          "extractionMethod": "",
+          "ocr": null,
+          "articleReadError": "DOCUMENT_UNAVAILABLE: UP RERA View File returned a portal maintenance/error page",
+          "finalState": "CITY_UNMAPPED",
+          "reasons": [
+            "review: OFFICIAL_DOCUMENT_UNREADABLE",
+            "filter 5: no allowed city match",
+            "filter 7: outside region in title/description",
+            "filter 8: outside-city conflict"
+          ]
+        },
+        {
+          "title": "50वां रियल एस्टेट एजेंट प्रशिक्षण सत्र लखनऊ में प्रारंभ",
+          "url": "https://www.up-rera.in/PressRelease#release-50%E0%A4%B5%20%E0%A4%B0%20%E0%A4%AF%E0%A4%B2%20%E0%A4%8F%E0%A4%B8%20%E0%A4%9F%20%E0%A4%9F%20%E0%A4%8F%E0%A4%9C%20%E0%A4%9F%20%E0%A4%AA%20%E0%A4%B0%E0%A4%B6%20%E",
+          "publishedAt": "2026-09-22T18:30:00.000Z",
+          "cityCode": "",
+          "fullArticleRead": false,
+          "officialDocumentRead": false,
+          "extractionMethod": "",
+          "ocr": null,
+          "articleReadError": "DOCUMENT_UNAVAILABLE: UP RERA View File returned a portal maintenance/error page",
+          "finalState": "CITY_UNMAPPED",
+          "reasons": [
+            "review: OFFICIAL_DOCUMENT_UNREADABLE",
+            "filter 5: no allowed city match"
+          ]
+        },
+        {
+          "title": "UP RERA Approves 12 Real Estate Projects in Six Districts",
+          "url": "https://www.up-rera.in/PressRelease#release-up%20rera%20approves%2012%20real%20estate%20projects%20in%20six%20districts",
+          "publishedAt": "2026-09-21T18:30:00.000Z",
+          "cityCode": "",
+          "fullArticleRead": false,
+          "officialDocumentRead": false,
+          "extractionMethod": "",
+          "ocr": null,
+          "articleReadError": "DOCUMENT_UNAVAILABLE: UP RERA View File returned a portal maintenance/error page",
+          "finalState": "CITY_UNMAPPED",
+          "reasons": [
+            "review: OFFICIAL_DOCUMENT_UNREADABLE",
+            "filter 5: no allowed city match"
+          ]
+        },
+        {
+          "title": "यूपी रेरा ने छह जिलों की 12 रियल एस्टेट परियोजनाओं को मंजूरी",
+          "url": "https://www.up-rera.in/PressRelease#release-%E0%A4%AF%20%E0%A4%AA%20%E0%A4%B0%20%E0%A4%B0%20%E0%A4%A8%20%E0%A4%9B%E0%A4%B9%20%E0%A4%9C%20%E0%A4%B2%20%E0%A4%95%2012%20%E0%A4%B0%20%E0%A4%AF%E0%A4%B2%20%E0%A",
+          "publishedAt": "2026-09-21T18:30:00.000Z",
+          "cityCode": "",
+          "fullArticleRead": false,
+          "officialDocumentRead": false,
+          "extractionMethod": "",
+          "ocr": null,
+          "articleReadError": "DOCUMENT_UNAVAILABLE: UP RERA View File returned a portal maintenance/error page",
+          "finalState": "CITY_UNMAPPED",
+          "reasons": [
+            "review: OFFICIAL_DOCUMENT_UNREADABLE",
+            "filter 5: no allowed city match"
+          ]
+        },
+        {
+          "title": "UPRERA Pays More Than ₹73.84 Lakh in Interest to Around 430 Complaints",
+          "url": "https://www.up-rera.in/PressRelease#release-uprera%20pays%20more%20than%2073%2084%20lakh%20in%20interest%20to%20around%20430%20complaints",
+          "publishedAt": "2026-09-20T18:30:00.000Z",
+          "cityCode": "",
+          "fullArticleRead": false,
+          "officialDocumentRead": false,
+          "extractionMethod": "",
+          "ocr": null,
+          "articleReadError": "DOCUMENT_UNAVAILABLE: UP RERA View File returned a portal maintenance/error page",
+          "finalState": "CITY_UNMAPPED",
+          "reasons": [
+            "review: OFFICIAL_DOCUMENT_UNREADABLE",
+            "filter 5: no allowed city match"
+          ]
+        },
+        {
+          "title": "यूपी रेरा ने शिकायतकर्ताओं को ₹73.84 लाख से अधिक का ब्याज भुगतान किया",
+          "url": "https://www.up-rera.in/PressRelease#release-%E0%A4%AF%20%E0%A4%AA%20%E0%A4%B0%20%E0%A4%B0%20%E0%A4%A8%20%E0%A4%B6%20%E0%A4%95%20%E0%A4%AF%E0%A4%A4%E0%A4%95%E0%A4%B0%20%E0%A4%A4%20%E0%A4%93%20%E0%A4%95%207",
+          "publishedAt": "2026-09-20T18:30:00.000Z",
+          "cityCode": "",
+          "fullArticleRead": false,
+          "officialDocumentRead": false,
+          "extractionMethod": "",
+          "ocr": null,
+          "articleReadError": "DOCUMENT_UNAVAILABLE: UP RERA View File returned a portal maintenance/error page",
+          "finalState": "CITY_UNMAPPED",
+          "reasons": [
+            "review: OFFICIAL_DOCUMENT_UNREADABLE",
+            "filter 5: no allowed city match"
+          ]
+        },
+        {
+          "title": "Now Get Information Related to RERA Orders and Recovery Certificates Through Email",
+          "url": "https://www.up-rera.in/PressRelease#release-now%20get%20information%20related%20to%20rera%20orders%20and%20recovery%20certificates%20through%20email",
+          "publishedAt": "2026-08-19T18:30:00.000Z",
+          "cityCode": "",
+          "fullArticleRead": false,
+          "officialDocumentRead": false,
+          "extractionMethod": "",
+          "ocr": null,
+          "articleReadError": "DOCUMENT_UNAVAILABLE: UP RERA View File returned a portal maintenance/error page",
+          "finalState": "CITY_UNMAPPED",
+          "reasons": [
+            "review: OFFICIAL_DOCUMENT_UNREADABLE",
+            "filter 5: no allowed city match"
+          ]
+        },
+        {
+          "title": "घर बैठे ई-मेल के माध्यम से प्राप्त करें रेरा आदेश और रिकवरी सर्टिफिकेट से जुड़ी जानकारी",
+          "url": "https://www.up-rera.in/PressRelease#release-%E0%A4%98%E0%A4%B0%20%E0%A4%AC%20%E0%A4%A0%20%E0%A4%88%20%E0%A4%AE%20%E0%A4%B2%20%E0%A4%95%20%E0%A4%AE%20%E0%A4%A7%20%E0%A4%AF%E0%A4%AE%20%E0%A4%B8%20%E0%A4%AA%",
+          "publishedAt": "2026-08-19T18:30:00.000Z",
+          "cityCode": "",
+          "fullArticleRead": false,
+          "officialDocumentRead": false,
+          "extractionMethod": "",
+          "ocr": null,
+          "articleReadError": "DOCUMENT_UNAVAILABLE: UP RERA View File returned a portal maintenance/error page",
+          "finalState": "CITY_UNMAPPED",
+          "reasons": [
+            "review: OFFICIAL_DOCUMENT_UNREADABLE",
+            "filter 5: no allowed city match"
+          ]
+        }
+      ]
+    }
+  ]
+}

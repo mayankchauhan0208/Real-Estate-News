@@ -5005,7 +5005,12 @@ function detectCityCodes(article) {
   const authorityJurisdiction = String(article.authorityJurisdiction || "").trim().toLowerCase();
   if (article.authoritativeContent === true && authorityJurisdiction) {
     const authorityRule = cityRules.find((rule) => rule.code === authorityJurisdiction);
-    if (authorityRule && hasWholeWordKeyword(primaryText, authorityRule.keywords)) {
+    const dedicatedAuthorityEvidence = Boolean(article.authorityEventType) &&
+      (article.fullArticleRead === true || article.officialDocumentRead === true) &&
+      hasMeaningfulPropertyNexus(article);
+    const authorityPropertyText = /flat|housing|residential|plot|scheme|lottery|tenement|आवास|फ्लैट|प्लॉट|सदनिका/iu.test(getArticleSearchText(article));
+    if (authorityRule && (hasWholeWordKeyword(primaryText, authorityRule.keywords) || dedicatedAuthorityEvidence ||
+      (Boolean(article.authorityEventType) && (article.fullArticleRead === true || article.officialDocumentRead === true) && authorityPropertyText))) {
       return [authorityJurisdiction];
     }
   }
@@ -5926,6 +5931,15 @@ function isMalformedCategoryHeadline(title = "", article = {}) {
 
 function isNegativeNews(article) {
   if (isOfficialReraPressRelease(article)) {
+    return false;
+  }
+
+  // OCR can surface incidental words from official housing circulars (for
+  // example procedural notices) that are not the article's event. Once the
+  // authority identity, property event, and full document evidence are all
+  // verified, retain the normal adverse-event checks but do not let a generic
+  // body keyword discard a positive authority record.
+  if (isVerifiedAuthorityPropertyEvent(article) && !hasContextualAdverseEvent(article) && !isAdverseAuthorityLegalArticle(article)) {
     return false;
   }
 
@@ -7901,11 +7915,23 @@ async function fetchAuthorityListings(sourceUrl, options = {}) {
         const document = await fetchDocument(candidate.link, {
           timeoutMs: getFetchTimeoutForUrl(candidate.link),
           maxBytes: 4 * 1024 * 1024
+        }, {
+          ocr: {
+            trustedSource: true,
+            discoveredFromListing: true,
+            languages: ["eng", "hin", "mr"],
+            maxPages: 3,
+            documentTimeoutMs: 15000
+          }
         });
         if (document.telemetry.validation === "VALID_PDF" && document.text.length >= 200) {
           articleText = `${articleText} ${document.text}`.slice(0, 12000);
           officialDocumentRead = true;
           fullArticleRead = true;
+          detail = {
+            extractionMethod: document.telemetry.extractionMethod,
+            ocr: document.telemetry.ocr || null
+          };
         } else if (document.telemetry.failureReason) {
           detail = { articleReadError: document.telemetry.failureReason };
         }
@@ -7930,6 +7956,8 @@ async function fetchAuthorityListings(sourceUrl, options = {}) {
       officialDocumentRead,
       articleReadAttempted: true,
       fullArticleRead,
+      extractionMethod: detail.extractionMethod || (officialDocumentRead ? "PDF_TEXT" : ""),
+      ocr: detail.ocr || null,
       articleReadError: detail.articleReadError || "",
       isActive: true,
       newsLink: candidate.link,

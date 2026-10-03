@@ -1,6 +1,13 @@
 import zlib from 'node:zlib';
+import fs from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
+import { availableOcrTools, validateOcrText } from './ocr-fallback.mjs';
 
 export const DOCUMENT_LIMITS = Object.freeze({ timeoutMs: 8000, maxBytes: 4 * 1024 * 1024 });
+const execFileAsync = promisify(execFile);
 
 export function canonicalUrl(value = '') {
   try { const url = new URL(value); url.hash = ''; return url.href.replace(/\/$/, ''); } catch { return String(value || ''); }
@@ -68,16 +75,88 @@ export function extractPdfText(body) {
   return { text, status: 'TEXT_EXTRACTED', textLength: text.length };
 }
 
-export async function fetchDocument(url, limits = DOCUMENT_LIMITS) {
+async function runOfficialPdfOcr(body, options = {}) {
+  const tools = availableOcrTools();
+  const requestedLanguages = options.languages || ['eng'];
+  const result = {
+    status: 'OCR_UNSUPPORTED',
+    engine: tools.tesseract || '',
+    requestedLanguages,
+    languages: [],
+    pages: [],
+    unsupportedLanguages: [],
+    extractionMethod: 'OCR'
+  };
+  if (!tools.tesseract || !tools.pdfinfo || !tools.pdftoppm) return result;
+  const started = Date.now();
+  const maxPages = Math.min(Number(options.maxPages || 3), 5);
+  const documentTimeoutMs = Number(options.documentTimeoutMs || 15000);
+  const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'brokket-canonical-ocr-'));
+  const pdfPath = path.join(tempDir, 'document.pdf');
+  const command = async (file, args, timeout) => {
+    try { return { ok: true, stdout: (await execFileAsync(file, args, { timeout, windowsHide: true, maxBuffer: 20 * 1024 * 1024 })).stdout || '' }; }
+    catch (error) { return { ok: false, stdout: error.stdout || '', error: error.message || '' }; }
+  };
+  try {
+    await fs.writeFile(pdfPath, body);
+    const tessdataDir = options.tessdataDir || (tools.tesseract ? path.join(path.dirname(tools.tesseract), 'tessdata') : '');
+    const languageProbe = await command(tools.tesseract, ['--tessdata-dir', tessdataDir, '--list-langs'], 3000);
+    const installed = new Set((languageProbe.stdout || '').split(/\r?\n/).map((line) => line.trim()).filter(Boolean));
+    result.unsupportedLanguages = requestedLanguages.filter((language) => !installed.has(language));
+    result.languages = requestedLanguages.filter((language) => installed.has(language));
+    if (!result.languages.length) return result;
+    const pageProbe = await command(tools.pdfinfo, [pdfPath], 3000);
+    const pageCount = Number((pageProbe.stdout || '').match(/^Pages:\s+(\d+)/m)?.[1] || 0);
+    const pages = Math.min(pageCount || 1, maxPages);
+    const texts = [];
+    for (let page = 1; page <= pages; page += 1) {
+      if (Date.now() - started >= documentTimeoutMs) { result.status = 'OCR_TIMEOUT'; break; }
+      const imageBase = path.join(tempDir, `page-${page}`);
+      const rendered = await command(tools.pdftoppm, ['-f', String(page), '-l', String(page), '-singlefile', '-r', '150', '-png', pdfPath, imageBase], Math.max(1000, documentTimeoutMs - (Date.now() - started)));
+      if (!rendered.ok) { result.pages.push({ page, status: 'OCR_RENDER_FAILED', error: rendered.error }); continue; }
+      for (const language of result.languages) {
+        if (Date.now() - started >= documentTimeoutMs) { result.status = 'OCR_TIMEOUT'; break; }
+        const ocr = await command(tools.tesseract, ['--tessdata-dir', tessdataDir, `${imageBase}.png`, 'stdout', '-l', language, '--psm', '6'], Math.max(1000, documentTimeoutMs - (Date.now() - started)));
+        const quality = validateOcrText(ocr.stdout || '', { minChars: 20 });
+        result.pages.push({ page, language, status: ocr.ok ? quality.status : 'OCR_FAILED', chars: quality.chars, confidence: quality.status === 'OCR_HIGH_CONFIDENCE' ? 'HIGH' : quality.status === 'OCR_USABLE' ? 'MEDIUM' : 'LOW', text: quality.text, error: ocr.error || '' });
+        if (quality.text) texts.push(`[${language} page ${page}] ${quality.text}`);
+      }
+    }
+    const text = texts.join('\n').replace(/\s+/g, ' ').trim();
+    result.text = text;
+    result.textLength = text.length;
+    result.status = text.length >= 20 ? (text.length >= 400 ? 'OCR_HIGH_CONFIDENCE' : 'OCR_PARTIAL') : result.status === 'OCR_TIMEOUT' ? 'OCR_TIMEOUT' : 'OCR_INSUFFICIENT';
+    return result;
+  } finally {
+    await fs.rm(tempDir, { recursive: true, force: true }).catch(() => {});
+  }
+}
+
+export async function fetchDocument(url, limits = DOCUMENT_LIMITS, options = {}) {
   const started = Date.now(); const controller = new AbortController(); const timer = setTimeout(() => controller.abort(), limits.timeoutMs);
-  const telemetry = { documentUrl: url, status: 0, finalUrl: '', contentType: '', bytes: 0, validation: '', elapsedMs: 0, textExtraction: '', textLength: 0, failureReason: '' };
+  const telemetry = { documentUrl: url, status: 0, finalUrl: '', contentType: '', bytes: 0, validation: '', elapsedMs: 0, textExtraction: '', textLength: 0, extractionMethod: 'PDF_TEXT', ocr: null, failureReason: '' };
   try {
     const response = await fetch(url, { redirect: 'follow', signal: controller.signal, headers: { 'user-agent': 'Brokken-Task12-Local/1.0', accept: 'application/pdf,text/html,application/xhtml+xml,*/*' } });
     telemetry.status = response.status; telemetry.finalUrl = response.url; telemetry.contentType = response.headers.get('content-type') || '';
     const declared = Number(response.headers.get('content-length') || 0); if (declared > limits.maxBytes) throw new Error('response-size-limit');
     const body = Buffer.from(await response.arrayBuffer()); telemetry.bytes = body.length; if (body.length > limits.maxBytes) throw new Error('response-size-limit');
     telemetry.validation = classifyDocumentResponse({ status: response.status, contentType: telemetry.contentType, body });
-    if (telemetry.validation === 'VALID_PDF') { const extracted = extractPdfText(body); telemetry.textExtraction = extracted.status; telemetry.textLength = extracted.textLength; return { telemetry, body, text: extracted.text }; }
+    if (telemetry.validation === 'VALID_PDF') {
+      const extracted = extractPdfText(body);
+      telemetry.textExtraction = extracted.status;
+      telemetry.textLength = extracted.textLength;
+      if (extracted.status === 'IMAGE_ONLY_PDF' && options.ocr?.trustedSource && options.ocr?.discoveredFromListing) {
+        const ocr = await runOfficialPdfOcr(body, options.ocr);
+        telemetry.ocr = { ...ocr, text: undefined };
+        if (ocr.text) {
+          telemetry.textExtraction = ocr.status;
+          telemetry.textLength = ocr.textLength;
+          telemetry.extractionMethod = 'BOUNDED_OCR';
+          return { telemetry, body, text: ocr.text };
+        }
+      }
+      return { telemetry, body, text: extracted.text };
+    }
     telemetry.failureReason = telemetry.validation; return { telemetry, body, text: '' };
   } catch (error) { telemetry.failureReason = /abort|timeout/i.test(error.name + error.message) ? 'TIMEOUT' : error.message; telemetry.validation = telemetry.failureReason === 'TIMEOUT' ? 'TIMEOUT' : 'OTHER'; return { telemetry, body: Buffer.alloc(0), text: '' }; }
   finally { clearTimeout(timer); telemetry.elapsedMs = Date.now() - started; }
