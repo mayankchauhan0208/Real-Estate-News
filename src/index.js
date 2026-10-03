@@ -5327,7 +5327,9 @@ function applyCityCode(article) {
   const primaryCityCodes = cityRules
     .filter((rule) => hasWholeWordKeyword(getArticlePrimaryText(article), rule.keywords))
     .map((rule) => rule.code);
-  const articlePrimaryCityCode = primaryCityCodes.length === 1 ? primaryCityCodes[0] : "";
+  const articlePrimaryCityCode = primaryCityCodes.length === 1 && detectedCityCodes.includes(primaryCityCodes[0])
+    ? primaryCityCodes[0]
+    : "";
   const detectedCityCode = articlePrimaryCityCode || (detectedCityCodes.includes(article.cityCode) ? article.cityCode : detectedCityCodes[0]);
 
   return {
