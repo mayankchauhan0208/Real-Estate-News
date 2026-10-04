@@ -44,6 +44,74 @@ const propertyLinkedInfrastructure = {
   articleText: "The approved metro corridor will connect new sectors and unlock a named mixed-use development zone, supporting residential housing and commercial offices along the corridor."
 };
 
+const manesarFlyoverWithoutPropertyNexus = {
+  ...common,
+  cityCode: "gurugram",
+  title: "Smoother Drive to Manesar: New Gurgaon Flyover Set to Decongest Key Junctions Near Dwarka Expressway",
+  description: "GMDA plans a new Gurgaon flyover to reduce traffic bottlenecks and improve commuter connectivity.",
+  newsLink: "https://www.magicbricks.com/news/smoother-drive-to-manesar-new-gurgaon-flyover-set-to-decongest-key-junctions-near-dwarka-expressway-jkmb/151946.html",
+  articleText: "The GMDA flyover will reduce traffic congestion between New Gurgaon and Manesar. A later promotional section mentions generic real-estate impact, but the article does not identify a property development, land event, or development-zone decision tied to the flyover."
+};
+
+const unreadableOrdinaryNews = {
+  ...common,
+  fullArticleRead: false,
+  cityCode: "gurugram",
+  title: "New residential project announced in Gurugram",
+  newsLink: "https://example.com/gurugram/new-residential-project",
+  articleText: "New residential project announced."
+};
+
+const portalAndStatusPages = [
+  {
+    ...common,
+    cityCode: "ahmedabad",
+    title: "MIG - LIG - EWS Housing Schemes - Online Application Forms for Vacant Houses of AUDA",
+    newsLink: "https://auda.org.in:8443/",
+    articleText: "Ahmedabad Urban Development Authority online housing application portal."
+  },
+  {
+    ...common,
+    cityCode: "dhanbad",
+    title: "Project Registration Status",
+    newsLink: "https://jharera.jharkhand.gov.in/Home/DataCorrection",
+    articleText: "All Rights Reserved by JHARERA. Data correction and project registration status portal."
+  },
+  {
+    ...common,
+    cityCode: "dhanbad",
+    title: "Project Extension Status",
+    newsLink: "https://jharera.jharkhand.gov.in/Home/ProjectExtensionCorrection",
+    articleText: "All Rights Reserved by JHARERA. Project extension correction portal."
+  },
+  {
+    ...common,
+    cityCode: "dhanbad",
+    title: "ULB Project Registration Status",
+    newsLink: "https://jharera.jharkhand.gov.in/Home/ULBDataCorrection",
+    articleText: "All Rights Reserved by JHARERA. ULB project registration correction portal."
+  }
+];
+
+const offTopicFeedContamination = [
+  {
+    ...common,
+    cityCode: "noida",
+    sourceUrl: "https://timesofindia.indiatimes.com/city/noida",
+    title: "OpenAI GPT 6.1 Sol",
+    newsLink: "https://timesofindia.indiatimes.com/technology/tech-news/openai-launches-gpt-6-1-sol/articleshow/134582763.cms",
+    articleText: "OpenAI launched a new technology model with pricing and performance details."
+  },
+  {
+    ...common,
+    cityCode: "noida",
+    sourceUrl: "https://timesofindia.indiatimes.com/city/noida",
+    title: "Pebble Wellness Band",
+    newsLink: "https://timesofindia.indiatimes.com/technology/tech-news/pebble-launches-qore-ultra-wellness-band/articleshow/134583984.cms",
+    articleText: "Pebble launched a wellness band with health tracking and battery features."
+  }
+];
+
 const greaterNoidaNcrArticle = {
   ...common,
   cityCode: "noida",
@@ -91,6 +159,17 @@ assert.equal(isPublishableArticle(dda, sentIds), false);
 assert.match(getRejectionReasons(dda, sentIds).join("; "), /adverse property\/court event in readable full article/);
 assert.equal(isPublishableArticle(mumbaiRegistrations, sentIds), true);
 assert.equal(isPublishableArticle(propertyLinkedInfrastructure, sentIds), true);
+assert.equal(isPublishableArticle(manesarFlyoverWithoutPropertyNexus, sentIds), false);
+assert.match(getRejectionReasons(manesarFlyoverWithoutPropertyNexus, sentIds).join("; "), /not positive target real-estate|POSITIVE_INFRASTRUCTURE_WITHOUT_SUFFICIENT_REAL_ESTATE_NEXUS/);
+assert.equal(isPublishableArticle(unreadableOrdinaryNews, sentIds), false);
+assert.match(getRejectionReasons(unreadableOrdinaryNews, sentIds).join("; "), /FULL_ARTICLE_EXTRACTION_FAILED/);
+for (const article of portalAndStatusPages) {
+  assert.equal(isPublishableArticle(article, sentIds), false, article.title);
+  assert.match(getRejectionReasons(article, sentIds).join("; "), /portal\/status\/landing page/);
+}
+for (const article of offTopicFeedContamination) {
+  assert.equal(isPublishableArticle(article, sentIds), false, article.title);
+}
 assert.deepEqual(detectCityCodes(greaterNoidaNcrArticle), ["noida"]);
 for (const article of unrelatedTopicPageArticles) {
   assert.equal(isPublishableArticle(article, sentIds), false, article.title);
@@ -102,5 +181,9 @@ console.log(JSON.stringify({
   dda: "REJECTED_FULL_BODY_ADVERSE_EVENT",
   mumbaiRegistrations: "PUBLISHABLE",
   propertyLinkedInfrastructure: "PUBLISHABLE",
+  manesarFlyoverWithoutPropertyNexus: "REJECTED",
+  unreadableOrdinaryNews: "REJECTED",
+  portalAndStatusPages: "REJECTED",
+  offTopicFeedContamination: "REJECTED",
   unrelatedTopicPageArticles: "REJECTED"
 }, null, 2));

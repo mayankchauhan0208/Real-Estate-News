@@ -3510,16 +3510,22 @@ function eventFingerprintId(article) {
   ].find(([pattern]) => pattern.test(text))?.[1] || "";
   const scope = eventType === "real-estate-aif" ? "national" : city;
 
+  // These event classes have a stable entity/event/scope identity even when
+  // publishers omit the project name or format transaction facts differently.
+  const stableEventWithoutFacts = eventType === "real-estate-aif" ||
+    (eventType === "senior-living-sale" && city === "gurugram");
+  const fingerprintLocation = stableEventWithoutFacts ? "" : location;
+
   // A fingerprint is emitted only when the entity/event pair is specific
   // enough to survive different publisher wording without merging routine
   // same-developer stories. Numeric facts strengthen transaction clusters;
   // named project/event types are sufficient for the villa/plot variants.
-  if (!location && stableFacts.length === 0) {
+  if (!fingerprintLocation && stableFacts.length === 0 && !stableEventWithoutFacts) {
     return "";
   }
 
-  const factKey = location ? "" : stableFacts.slice(0, 2).join(",");
-  return `event:${entity}|${eventType}|${scope}|${location}|${factKey}`;
+  const factKey = fingerprintLocation || stableEventWithoutFacts ? "" : stableFacts.slice(0, 2).join(",");
+  return `event:${entity}|${eventType}|${scope}|${fingerprintLocation}|${factKey}`;
 }
 
 function sourceSlugCityId(article) {
@@ -3958,6 +3964,27 @@ function isDirectMediaUrl(value = "") {
 
 function hasNewsArticlePageLink(article) {
   return isHttpUrl(article.newsLink || article.url || "") && !isDirectMediaUrl(article.newsLink || article.url || "");
+}
+
+function isNonArticlePortalPage(article) {
+  const title = String(article.title || "").trim();
+  const url = String(article.newsLink || article.url || "");
+  const titleAndUrl = `${title} ${url}`;
+  const portalTitle = /\b(?:status|search results?|lookup|data correction|project extension|registration status|online application|application forms?|dashboard|login|sign in|navigation|home page|category index|notice board)\b/i.test(title);
+  const portalPath = /\/(?:home|login|signin|dashboard|search|lookup|datacorrection|projectextension|registrationstatus|projectregistrationstatus)(?:[/?#]|$)/i.test(url);
+  const formOrListingTitle = /\b(?:online application forms?|vacant houses?|project registration|project extension|ulb project|data correction)\b/i.test(title);
+  const discreteEvent = /\b(?:approv(?:e|ed|es)|launch(?:ed|es)?|inaugur|order|circular|press release|training session|allot(?:ted|ment)|auction|acquir(?:e|ed|es)|sanction(?:ed|s)?)\b/i.test(titleAndUrl);
+
+  return (portalTitle || portalPath || formOrListingTitle) && !discreteEvent;
+}
+
+function isStronglyOffTopicHeadline(article) {
+  const title = String(article.title || "").trim();
+  const titleAndUrl = `${title} ${getArticleUrlText(article)}`;
+  const offTopicHeadline = /\b(?:openai|gpt\b|wellness band|smartphone|laptop|tablet|smartwatch|gaming console|software update|technology news|tech news|tech launch|gadget)\b/i.test(titleAndUrl);
+  const propertyHeadline = /\b(?:real estate|realty|property|housing|residential|commercial|land parcel|plot|township|developer|builder|project)\b/i.test(title);
+
+  return offTopicHeadline && !propertyHeadline;
 }
 
 function isReraDocumentSource(article) {
@@ -4643,6 +4670,20 @@ function isUnqualifiedTransportOrCivicDevelopmentArticle(article) {
     return false;
   }
 
+  // Generic transport headlines must carry the property/development object
+  // in the headline or description itself. Body copy and SEO appendices often
+  // add speculative "real-estate impact" sections to an otherwise ordinary
+  // road story; those cannot create the nexus after the fact.
+  const headlinePropertyNexus = hasKeyword(getArticlePrimaryText(evidenceArticle), [
+    "real estate", "realty", "property", "housing", "residential", "commercial",
+    "land parcel", "plots", "township", "mixed-use", "development zone",
+    "property market", "office development", "retail development", "logistics park",
+    "industrial park", "warehouse", "warehousing"
+  ]);
+  if (!headlinePropertyNexus) {
+    return true;
+  }
+
   return (
     !hasExplicitInfrastructurePropertyNexus(evidenceArticle) &&
     !hasKeyword(text, [
@@ -5169,6 +5210,12 @@ function isRealEstateRelated(article) {
   }
 
   if (isClearlyOffTopicNonDevelopmentArticle(article)) {
+    return false;
+  }
+
+  // A city/category feed is only a discovery surface. It cannot turn a
+  // clearly unrelated technology or product headline into real-estate news.
+  if (isStronglyOffTopicHeadline(article)) {
     return false;
   }
 
@@ -6558,6 +6605,10 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("filter 15: direct media/PDF link, not article page");
   }
 
+  if (isNonArticlePortalPage(article)) {
+    reasons.push("filter 15: portal/status/landing page, not a discrete article or document event");
+  }
+
   if (hasDisallowedLanguage(article)) {
     reasons.push("filter 2: unsupported language/script");
   }
@@ -6612,6 +6663,16 @@ function getRejectionReasons(article, sentIds) {
 
   if (isFullArticleReviewRequired(article)) {
     reasons.push(`review: ${getArticleEvidenceReviewReason(article)}`);
+  }
+
+  // Ordinary news must have a verified readable body. Source authority,
+  // category context, snippets, and city routing are never substitutes for
+  // the article itself. Official document exceptions remain handled by the
+  // existing authoritative-content path.
+  if (!isOfficialReraPressRelease(article) &&
+      article.fullArticleRead !== true &&
+      !hasAuthoritativeContentEvidence(article)) {
+    reasons.push("review: FULL_ARTICLE_EXTRACTION_FAILED");
   }
 
   if (!article.cityCode || article.cityCode === "delhi_ncr") {
