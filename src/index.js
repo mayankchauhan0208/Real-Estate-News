@@ -2250,6 +2250,14 @@ function createBudgetExhaustedError(message = "source budget exhausted") {
   return Object.assign(new Error(message), { sourceStatus: "BUDGET_EXHAUSTED" });
 }
 
+function createSourceExecutionTimeoutError(message = "source execution deadline reached") {
+  return Object.assign(new Error(message), { sourceStatus: "SOURCE_EXECUTION_TIMEOUT" });
+}
+
+function isSourceExecutionTimeout(error) {
+  return error?.sourceStatus === "SOURCE_EXECUTION_TIMEOUT";
+}
+
 function isBudgetAborted(signal) {
   return Boolean(signal?.aborted);
 }
@@ -2260,6 +2268,9 @@ function throwIfSourceBudgetExhausted(options = {}) {
   }
 
   if (options.deadlineAt && options.deadlineAt - Date.now() <= getSourceMinimumSafeStartWindowMs()) {
+    if (options.executionStarted === true) {
+      throw createSourceExecutionTimeoutError("source execution deadline reached before next operation");
+    }
     throw createBudgetExhaustedError("source budget exhausted before operation");
   }
 }
@@ -6690,7 +6701,7 @@ async function fetchHtml(sourceUrl, options = {}) {
         throw error;
       }
 
-      if (attempt === attempts && isGovernmentPortalUrl(sourceUrl) && isRetryableSourceError(error)) {
+      if (attempt === attempts && !isSourceExecutionTimeout(error) && isGovernmentPortalUrl(sourceUrl) && isRetryableSourceError(error)) {
         try {
           return await fetchHtmlWithCurl(sourceUrl, options);
         } catch (curlError) {
@@ -6717,6 +6728,9 @@ async function fetchHtmlWithCurl(sourceUrl, options = {}) {
     options.deadlineAt ? options.deadlineAt - Date.now() : getFetchTimeoutForUrl(sourceUrl)
   );
   if (timeoutMs <= getSourceMinimumSafeStartWindowMs()) {
+    if (options.executionStarted === true) {
+      throw createSourceExecutionTimeoutError("source execution deadline reached before curl request");
+    }
     throw createBudgetExhaustedError("source budget exhausted before curl request");
   }
   const command = process.platform === "win32" ? "curl.exe" : "curl";
@@ -8919,7 +8933,7 @@ async function fetchSourceWithRetry(sourceUrl, timeoutMsOverride = getSourceTime
       return { articles: await fetchSourceWithTimeout(sourceUrl, Math.min(timeoutMsOverride, remainingMs), options), attempts: attempt };
     } catch (error) {
       lastError = error;
-      if (error?.sourceStatus === "BUDGET_EXHAUSTED") throw error;
+      if (error?.sourceStatus === "BUDGET_EXHAUSTED" || isSourceExecutionTimeout(error)) throw error;
       if (!isRetryableSourceError(error)) {
         throw Object.assign(error, { sourceAttempts: attempt });
       }
@@ -8958,7 +8972,7 @@ async function fetchSourceWithRecovery(sourceUrl, options = {}) {
       };
     } catch (error) {
       lastError = error;
-      if (error?.sourceStatus === "BUDGET_EXHAUSTED") break;
+      if (error?.sourceStatus === "BUDGET_EXHAUSTED" || isSourceExecutionTimeout(error)) break;
       if (candidate !== candidates[candidates.length - 1]) {
         console.warn(`Source ${sourceUrl} failed at ${candidate}; trying official recovery URL.`);
       }
@@ -9083,6 +9097,7 @@ async function fetchSourceBatch(sourceList, options = {}) {
       const sourceOptions = {
         ...options,
         sourceUrl: source,
+        executionStarted: true,
         deadlineAt: sourceDeadlineAt
       };
       const result = await fetchSourceWithRecovery(source, sourceOptions);
