@@ -11,6 +11,7 @@
     "test:deadline": "node tools/source-deadline-semantics-regression-test.mjs",
     "test:external-worker": "node tools/external-worker-resource-regression-test.mjs",
     "test:memory": "node --expose-gc tools/memory-bounded-pipeline-regression-test.mjs",
+    "test:text-cache": "node --expose-gc tools/text-cache-retention-regression-test.mjs",
     "build": "npm run check && node src/filter-smoke-test.js",
     "admin": "node src/admin-server.js",
     "admin:export": "node tools/export-admin-static-state.js",

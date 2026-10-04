@@ -5636,6 +5636,7 @@ function hasKeyword(value, keywords) {
 }
 
 const wholeWordRegexCache = new Map();
+const keywordTextCacheLimit = 64;
 const keywordMentionCache = new WeakMap();
 const keywordPresenceCache = new WeakMap();
 
@@ -5667,6 +5668,7 @@ function countKeywordMentions(value, keywords) {
 
     return count + (matches?.length || 0);
   }, 0);
+  if (byText.size >= keywordTextCacheLimit) byText.clear();
   byText.set(normalized, result);
   return result;
 }
@@ -5686,6 +5688,7 @@ function hasWholeWordKeyword(value, keywords) {
     }
     return getWholeWordRegex(keyword).test(normalized);
   });
+  if (byText.size >= keywordTextCacheLimit) byText.clear();
   byText.set(normalized, result);
   return result;
 }
