@@ -112,6 +112,18 @@ const offTopicFeedContamination = [
   }
 ];
 
+const externalDeveloperMediaArticle = {
+  ...common,
+  cityCode: "noida",
+  sourceUrl: "https://smartworlddevelopers.com/media",
+  authoritativeContent: true,
+  fullArticleRead: false,
+  articleReadAttempted: false,
+  title: "How Airports Create Wealth: Lessons From Global Cities And Noida’s Opportunity",
+  newsLink: "https://www.outlookmoney.com/invest/how-airports-create-wealth-lessons-from-global-cities-and-noidas-opportunity",
+  articleText: "Smartworld Developers discusses Noida property demand and airport-led development in a media update."
+};
+
 const greaterNoidaNcrArticle = {
   ...common,
   cityCode: "noida",
@@ -170,6 +182,8 @@ for (const article of portalAndStatusPages) {
 for (const article of offTopicFeedContamination) {
   assert.equal(isPublishableArticle(article, sentIds), false, article.title);
 }
+assert.equal(isPublishableArticle(externalDeveloperMediaArticle, sentIds), false);
+assert.match(getRejectionReasons(externalDeveloperMediaArticle, sentIds).join("; "), /FULL_ARTICLE_EXTRACTION_FAILED/);
 assert.deepEqual(detectCityCodes(greaterNoidaNcrArticle), ["noida"]);
 for (const article of unrelatedTopicPageArticles) {
   assert.equal(isPublishableArticle(article, sentIds), false, article.title);
@@ -185,5 +199,6 @@ console.log(JSON.stringify({
   unreadableOrdinaryNews: "REJECTED",
   portalAndStatusPages: "REJECTED",
   offTopicFeedContamination: "REJECTED",
+  externalDeveloperMediaArticle: "REJECTED_WITHOUT_SAME_SITE_AUTHORITY_BYPASS",
   unrelatedTopicPageArticles: "REJECTED"
 }, null, 2));

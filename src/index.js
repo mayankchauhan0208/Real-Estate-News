@@ -4019,8 +4019,26 @@ function isOfficialContentSource(article) {
   );
 }
 
+function isSameOfficialContentHost(article) {
+  if (!isOfficialDeveloperMediaSource(article.sourceUrl || article.feedUrl || "")) {
+    return true;
+  }
+
+  try {
+    const sourceHost = new URL(article.sourceUrl || article.feedUrl).hostname.replace(/^www\./, "");
+    const articleHost = getArticleHost(article);
+    return Boolean(articleHost) && (
+      articleHost === sourceHost ||
+      articleHost.endsWith(`.${sourceHost}`) ||
+      sourceHost.endsWith(`.${articleHost}`)
+    );
+  } catch {
+    return false;
+  }
+}
+
 function hasAuthoritativeContentEvidence(article) {
-  if (article.authoritativeContent !== true) {
+  if (article.authoritativeContent !== true || !isSameOfficialContentHost(article)) {
     return false;
   }
 
