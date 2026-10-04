@@ -55,6 +55,17 @@ function sourceTelemetryHost(sourceUrl = "") {
   }
 }
 
+function getMemorySnapshot() {
+  const memory = process.memoryUsage();
+  return {
+    rss: memory.rss,
+    heapUsed: memory.heapUsed,
+    heapTotal: memory.heapTotal,
+    external: memory.external,
+    arrayBuffers: memory.arrayBuffers
+  };
+}
+
 function createRunTelemetry(meta = {}) {
   const startedAt = Date.now();
   const progressPath = path.join(runReportsDir, `news-progress-${process.pid}.json`);
@@ -7309,8 +7320,10 @@ async function fetchHsvpNotices(sourceUrl, options = {}) {
   const $ = cheerio.load(html);
   const seenLinks = new Set();
   const noticeCandidates = [];
+  const candidateLimit = getMaxItemsPerSource();
 
   $("a[href]").each((_, element) => {
+    if (noticeCandidates.length >= candidateLimit) return;
     const noticeUrl = absoluteUrl($(element).attr("href"), sourceUrl);
 
     if (!/\/documents\/notices\/NEWS_\d+.*\.pdf/i.test(noticeUrl) || seenLinks.has(noticeUrl)) {
@@ -7802,8 +7815,10 @@ async function fetchPressReleaseListings(sourceUrl, options = {}) {
   );
   const candidates = [];
   const seen = new Set();
+  const candidateLimit = getMaxItemsPerSource();
 
   $("table tr, article, li").each((_, element) => {
+    if (candidates.length >= candidateLimit) return;
     const row = $(element);
     const rowText = stripHtml(row.text());
     const links = row.find("a[href]");
@@ -8004,9 +8019,11 @@ async function fetchAuthorityListings(sourceUrl, options = {}) {
   );
   const candidates = [];
   const seen = new Set();
+  const candidateLimit = getMaxItemsPerSource();
   const rows = $("table tr, article, li, .card, [class*='notice' i], [class*='scheme' i], [class*='listing' i]");
 
   rows.each((_, element) => {
+    if (candidates.length >= candidateLimit) return;
     const row = $(element);
     const title = authorityRowTitle($, row);
     const publishedAt = authorityRowDate($, row);
@@ -8243,6 +8260,7 @@ async function fetchPage(sourceUrl, options = {}) {
   const pageUrls = getSourcePageUrls(sourceUrl);
   const seenLinks = new Set();
   const candidates = [];
+  const candidateLimit = getMaxItemsPerSource();
   let publisher = "";
   let publisherLogo = "";
 
@@ -8292,6 +8310,7 @@ async function fetchPage(sourceUrl, options = {}) {
     );
 
     $("a[href]").each((_, element) => {
+      if (candidates.length >= candidateLimit) return;
       const link = absoluteUrl($(element).attr("href"), sourceUrl);
       const title = stripHtml($(element).text());
       const listingText = stripHtml(
@@ -8328,6 +8347,8 @@ async function fetchPage(sourceUrl, options = {}) {
         fetchedAt: new Date().toISOString()
       });
     });
+
+    if (candidates.length >= candidateLimit) break;
 
     if (exhaustivePagination && pageIndex > 0 && candidates.length === candidatesBeforePage) {
       console.log(`Reached end of paginated source ${sourceUrl} after ${pageIndex} page(s) with no new article links.`);
@@ -8481,6 +8502,7 @@ async function fetchRegionalHtmlSource(sourceUrl, options = {}) {
   const $ = cheerio.load(html);
   const seenLinks = new Set();
   const candidates = [];
+  const candidateLimit = getMaxItemsPerSource();
   const publisher = getPublisherName(sourceUrl, $("title").text());
   const publisherLogo = pickFirst(
     absoluteUrl($("link[rel='icon']").attr("href"), sourceUrl),
@@ -8489,6 +8511,7 @@ async function fetchRegionalHtmlSource(sourceUrl, options = {}) {
   );
 
   $("a[href]").each((_, element) => {
+    if (candidates.length >= candidateLimit) return;
     const link = absoluteUrl($(element).attr("href"), sourceUrl);
     const title = stripHtml($(element).text()).replace(/\s+/g, " ").trim();
     if (!link || seenLinks.has(link) || title.length < 18 || !config.linkPattern.test(link)) return;
@@ -8543,6 +8566,7 @@ async function fetchManoramaNest(sourceUrl, options = {}) {
   const $ = cheerio.load(html);
   const seenLinks = new Set();
   const candidates = [];
+  const candidateLimit = getMaxItemsPerSource();
   const publisher = getPublisherName(sourceUrl, $("title").text());
   const publisherLogo = pickFirst(
     absoluteUrl($("link[rel='icon']").attr("href"), sourceUrl),
@@ -8551,6 +8575,7 @@ async function fetchManoramaNest(sourceUrl, options = {}) {
   );
 
   $("a[href*='/homestyle/nest/20']").each((_, element) => {
+    if (candidates.length >= candidateLimit) return;
     const link = absoluteUrl($(element).attr("href"), sourceUrl);
     const title = stripHtml($(element).text());
     if (!link || seenLinks.has(link) || title.length < 18 || !/\/homestyle\/nest\/20\d{2}\/\d{2}\/[^/]+\.html(?:$|\?)/i.test(link)) {
@@ -8585,6 +8610,7 @@ async function fetchManoramaNest(sourceUrl, options = {}) {
       .map((match) => absoluteUrl(match[1], sourceUrl))
       .filter((link) => link && !seenLinks.has(link));
     for (const link of discoveredLinks) {
+      if (candidates.length >= candidateLimit) break;
       const slug = new URL(link).pathname.split("/").pop()?.replace(/\.html$/i, "").replace(/[-_]+/g, " ") || "Malayalam real estate article";
       seenLinks.add(link);
       candidates.push({
@@ -8814,6 +8840,7 @@ async function fetchSourceBatch(sourceList, options = {}) {
     const sourceId = sourceTelemetryId(source);
     const sourceHost = sourceTelemetryHost(source);
     const workerStartedAt = Date.now();
+    const memoryAtWorkerStart = getMemorySnapshot();
     let operationStartedAt = null;
     let sourceDeadlineAt = null;
     await telemetry?.emit("SOURCE_START", { sourceId, sourceUrl: source, sourceHost, mode: options.mode || "normal", workerStartedAt });
@@ -8883,6 +8910,7 @@ async function fetchSourceBatch(sourceList, options = {}) {
         deadlineAt: sourceDeadlineAt
       };
       const result = await fetchSourceWithRecovery(source, sourceOptions);
+      const memoryAfterDiscovery = getMemorySnapshot();
       const sourceCityCodes = getConfiguredSourceCityCodes(source);
       const articles = result.articles.map((article) => ({
         ...article,
@@ -8913,6 +8941,18 @@ async function fetchSourceBatch(sourceList, options = {}) {
         }
       }));
       const recoveryLabel = result.recovered ? ` via ${result.fetchedSource}` : "";
+      const memoryAfterArticleExtraction = getMemorySnapshot();
+      await telemetry?.emit("SOURCE_MEMORY", {
+        sourceId,
+        sourceUrl: source,
+        sourceHost,
+        stage: "article-extraction",
+        adapter: isLikelyFeedUrl(source) ? "RSS_OR_ATOM" : "HTML_OR_SPECIALIZED",
+        articleCount: articles.length,
+        memoryAtWorkerStart,
+        memoryAfterDiscovery,
+        memoryAfterArticleExtraction
+      });
       console.log(`Fetched ${result.articles.length} items from ${source}${recoveryLabel} in ${formatDuration(Date.now() - operationStartedAt)} (attempts: ${result.attempts})`);
       await telemetry?.emit("SOURCE_END", {
         sourceId,
@@ -9569,7 +9609,8 @@ export {
   isNegativeNews,
   isPublishableArticle,
   isWithinBackfillDateRange,
-  parseNewsDateValue
+  parseNewsDateValue,
+  getMemorySnapshot
 };
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
