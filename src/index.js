@@ -4550,6 +4550,50 @@ function isOperationalInfrastructureOnlyArticle(article) {
   return (hasOperationalSignal || transportAdministrationSignal) && !hasMeaningfulPropertyNexus(article);
 }
 
+function isUnqualifiedTransportOrCivicDevelopmentArticle(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const bodyBeforePromotionalTail = getArticleBodyText(article).split(
+    /\b(?:top rated projects|property options|explore all projects|disclaimer:)\b/i
+  )[0];
+  const evidenceArticle = {
+    ...article,
+    articleText: bodyBeforePromotionalTail,
+    fullArticleText: bodyBeforePromotionalTail
+  };
+  const text = getArticleSearchText(evidenceArticle);
+  const telecomHeadline = hasKeyword(primaryAndUrl, ["5g", "telecom", "telecom sector", "mobile subscribers"]);
+  const telecomOnly = telecomHeadline &&
+    !hasKeyword(getArticlePrimaryText(article), [
+      "real estate", "realty", "property", "housing", "residential", "commercial",
+      "office space", "land parcel", "plots", "township", "project development"
+    ]);
+
+  if (telecomOnly) {
+    return true;
+  }
+  const transportOrCivicSignal = hasKeyword(text, [
+    "railway network", "railway infrastructure", "railway projects", "railway project",
+    "railway station", "railway line", "rail line", "road project", "model route",
+    "flyover", "underpass", "metro phase", "metro corridor", "metro line", "bridge",
+    "civic maintenance", "corpus fund", "public facilities", "public health",
+    "telecom sector", "5g", "mobile subscribers", "broadband subscribers", "digital transformation"
+  ]);
+
+  if (!transportOrCivicSignal) {
+    return false;
+  }
+
+  return (
+    !hasExplicitInfrastructurePropertyNexus(evidenceArticle) &&
+    !hasKeyword(text, [
+      "residential project", "commercial project", "housing project", "township",
+      "land parcel", "plots allotted", "office space",
+      "property market", "real estate market", "property prices", "housing demand", "tod",
+      "transit-oriented development", "mixed-use development"
+    ])
+  );
+}
+
 function hasMeaningfulPropertyNexus(article) {
   const text = getArticleSearchText(article);
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
@@ -5069,6 +5113,10 @@ function isRealEstateRelated(article) {
   }
 
   if (isOperationalInfrastructureOnlyArticle(article)) {
+    return false;
+  }
+
+  if (isUnqualifiedTransportOrCivicDevelopmentArticle(article)) {
     return false;
   }
 
