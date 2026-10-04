@@ -4153,6 +4153,12 @@ function detectExplicitTargetCityCodes(article) {
     .filter((rule) => hasWholeWordKeyword(sourceText, rule.keywords))
     .map((rule) => rule.code))];
 }
+
+function isGenericDelhiNcrCityAlias(code, article) {
+  return code === "new_delhi" &&
+    /\b(?:ncr|delhi\s+ncr)\b/i.test(getArticlePrimaryText(article)) &&
+    !/\b(?:new\s+delhi|central\s+delhi|south\s+delhi|north\s+delhi|east\s+delhi|west\s+delhi)\b/i.test(getArticlePrimaryText(article));
+}
 function detectTargetCityCodesFromFullArticle(article) {
   return cityRules
     .filter((rule) => countKeywordMentions(getArticleSearchText(article), rule.keywords) > 0)
@@ -4564,6 +4570,14 @@ function hasMeaningfulPropertyNexus(article) {
     contextualNexus.some((pattern) => pattern.test(primaryAndUrl));
 }
 
+function hasConcretePropertyNexus(article) {
+  return hasMeaningfulPropertyNexus(article) && hasKeyword(getArticleSearchText(article), [
+    "property", "real estate", "realty", "housing", "residential", "commercial",
+    "office", "retail", "township", "land parcel", "plots", "mixed-use", "tod",
+    "development zone", "development sector", "project"
+  ]);
+}
+
 function isPositiveInfrastructureWithoutPropertyNexus(article) {
   if (
     isTargetDominantInfrastructureCorridor(article) ||
@@ -4852,6 +4866,41 @@ function isClearlyOffTopicNonDevelopmentArticle(article) {
   const title = getArticlePrimaryText(article);
   const text = getArticleSearchText(article);
   const articleUrl = getArticleUrlText(article);
+  if (/^property development$/i.test(title.trim()) ||
+      /^haryana\s*\(gurugram\)\s+rera$/i.test(title.trim())) {
+    return true;
+  }
+  if (/(?:cm|chief minister|minister)\s+to\s+visit\b|\bto\s+visit\s+(?:singapore|australia|dubai|foreign)/i.test(title) &&
+      !hasKeyword(title, ["project", "land", "plot", "housing", "township", "property", "real estate"])) {
+    return true;
+  }
+  if (/(?:elevated road|road corridor|road project|skywalk|interchange|landmark entry gate|multi-storey secretariat|mini secretariat|reserved forest|high-risk parks?|park safety audit|metro.*expansion|metro.*interview)/i.test(title) &&
+      !hasKeyword(`${title} ${text}`, ["property", "real estate", "housing", "residential", "commercial", "township", "land parcel", "plot", "industrial park", "logistics park", "mixed-use", "tod zone", "transit-oriented development"])) {
+    return true;
+  }
+  if (/(?:plans .*landmark entry gate|sector\s*\d+[- ]\d+ skywalk|first jewar airport.*f1|assures quality.*elevated|invits,? reits combined|wind assets)/i.test(title)) {
+    return true;
+  }
+  if (/(?:digital map.*master plan|master plan.*2047|new dtc headquarter|planned urban development.*draft master plan|real estate shift|average home prices.*delhi[- ]ncr|housing sales rise .*units.*q[1-4]|luxury housing must move beyond)/i.test(title) &&
+      !hasKeyword(title, ["project", "land parcel", "township", "housing plots", "residential launch", "commercial project"])) {
+    return true;
+  }
+  if (/(?:dubai|ras al khaimah|sydney|australia|london|singapore)\s+(?:property|real estate|rental|investor)/i.test(`${title} ${text}`) &&
+      !hasKeyword(`${title} ${text}`, ["india", "indian city", "gurugram", "mumbai", "delhi", "noida", "pune", "hyderabad"])) {
+    return true;
+  }
+  if (hasKeyword(title, ["namo bharat: a journey so far", "metro expansion", "metro’s expansion", "metro's expansion"]) &&
+      !hasKeyword(`${title} ${text}`, ["property development", "real estate project", "housing project", "land parcel", "township", "residential project"])) {
+    return true;
+  }
+  if (/\b(?:haryana|gurugram|gurgaon)\b.{0,20}\brera\b/i.test(title) &&
+      !hasKeyword(`${title} ${text}`, ["approves", "approved", "launches", "project registered", "project registration", "completion certificate"])) {
+    return true;
+  }
+  if (hasKeyword(`${title} ${text}`, ["beneficiaries", "families benefited", "लाभार्थी", "लाभ मिला"]) &&
+      !hasKeyword(`${title} ${text}`, ["property", "real estate", "housing", "residential", "commercial", "plot", "township", "project"])) {
+    return true;
+  }
   const sportsContext = hasKeyword(`${title} ${articleUrl}`, [
     "sports", "sport", "nfl", "football", "tennis", "cricket", "athlete", "athletes",
     "six flags", "super bowl", "premier league", "nba", "fifa"
@@ -4873,6 +4922,42 @@ function isClearlyOffTopicNonDevelopmentArticle(article) {
   ]);
 
   if (hasConcreteDevelopment) return false;
+
+  // Transport and civic works need an explicit property/development event.
+  // A city name, construction budget, station, corridor, or generic growth
+  // language is not enough to turn an infrastructure article into property
+  // coverage. Keep genuine TOD and property-linked corridor stories eligible.
+  const genericInfrastructure = hasWholeWordKeyword(title, [
+    "metro", "railway", "rail line", "tbm", "tunnel", "road", "flyover", "bridge",
+    "port", "shipping", "transport", "airport", "bus stand", "bus service", "corridor"
+  ]);
+  const explicitInfrastructurePropertyNexus = hasKeyword(`${title} ${text}`, [
+    "property", "real estate", "housing", "residential development", "commercial development", "office development",
+    "retail real estate", "township", "plotted development", "land parcel for development",
+    "development sector", "development zone", "named real estate project", "property project",
+    "mixed-use development", "transit-oriented development", "tod zone", "tod district",
+    "authority plots", "authority allotment", "logistics park", "industrial park", "warehouse development",
+    "real estate growth", "property market impact", "regional real estate", "development benefits"
+  ]);
+  if (genericInfrastructure && !explicitInfrastructurePropertyNexus) return true;
+
+  const politicalAdministrativeOnly = hasKeyword(title, [
+    "cm to visit", "chief minister to visit", "minister to visit", "delegation to",
+    "political visit", "rally", "speech", "summit", "round-table", "roundtable",
+    "meeting with investors", "broad policy"
+  ]) && !hasConcreteDevelopment;
+  if (politicalAdministrativeOnly && !explicitInfrastructurePropertyNexus) return true;
+
+  const nonRealEstateCommercialExpansion = hasKeyword(title, [
+    "jewellery showroom", "jewelry showroom", "showroom launch", "showroom launches",
+    "restaurant opening", "brand store", "new outlet", "new branch", "dealership",
+    "clinic opening", "school opening", "hotel opening"
+  ]) && !hasKeyword(`${title} ${text}`, [
+    "commercial lease", "lease transaction", "retail development", "mall development",
+    "commercial project", "property acquisition", "land acquisition", "development agreement",
+    "office space", "retail space lease", "mixed-use"
+  ]);
+  if (nonRealEstateCommercialExpansion) return true;
 
   if (hasKeyword(title, ["toll contract", "toll contracts", "toll collection contract"])) return true;
   if (hasKeyword(title, ["street lights", "streetlight", "luggage locker", "luggage lockers"]) && hasKeyword(title, ["repair", "maintain", "maintenance", "install"])) return true;
@@ -4930,6 +5015,7 @@ function isRealEstateRelated(article) {
 
   return (
     hasRealEstateEvidence(article) ||
+    hasConcretePropertyNexus(article) ||
     isNationalRealEstateBusinessUpdate(article) ||
     isNcrCommercialOfficeMarketArticle(article) ||
     isFaridabadNcrGrowthComparisonArticle(article) ||
@@ -5022,6 +5108,10 @@ function detectCityCodes(article) {
     return [];
   }
 
+  if (hasForeignPropertyEvent(article)) {
+    return [];
+  }
+
   // Transport/tunnel/rail pages can contain navigation menus for many
   // cities. Do not convert those menu names into real-estate geo routes
   // unless the article has an actual property/development nexus.
@@ -5031,6 +5121,11 @@ function detectCityCodes(article) {
   }
 
   const primaryText = getArticlePrimaryText(article);
+  const explicitEventCityCodes = detectExplicitTargetCityCodes(article)
+    .filter((code) => code !== "delhi_ncr" && !isGenericDelhiNcrCityAlias(code, article));
+  if (explicitEventCityCodes.length === 1 && !hasNcrMatch(article)) {
+    return explicitEventCityCodes;
+  }
   const authorityJurisdiction = String(article.authorityJurisdiction || "").trim().toLowerCase();
   if (article.authoritativeContent === true && authorityJurisdiction) {
     const authorityRule = cityRules.find((rule) => rule.code === authorityJurisdiction);
@@ -5080,6 +5175,19 @@ function detectMatchedCityCodes(article) {
     return ["faridabad"];
   }
 
+  // Explicit event geography outranks publisher, feed, and corporate
+  // metadata. This prevents Panchkula/Ghaziabad stories from inheriting an
+  // unrelated source city.
+  const explicitEventCityCodes = detectExplicitTargetCityCodes(article)
+    .filter((code) => code !== "delhi_ncr" && !isGenericDelhiNcrCityAlias(code, article));
+  if (explicitEventCityCodes.length === 1 && !hasNcrMatch(article)) {
+    return explicitEventCityCodes;
+  }
+
+  if (hasForeignPropertyEvent(article)) {
+    return [];
+  }
+
   const corporateCompany = getTargetRealEstateCorporateCompany(article);
 
   if (corporateCompany && isTargetProjectAwardArticle(article)) {
@@ -5098,7 +5206,7 @@ function detectMatchedCityCodes(article) {
     return detectExplicitTargetCityCodes(article);
   }
 
-  const matchedCityCodes = detectExplicitTargetCityCodes(article);
+  const matchedCityCodes = explicitEventCityCodes;
 
   if (matchedCityCodes.length > 0) {
     return matchedCityCodes;
@@ -5124,6 +5232,14 @@ function detectMatchedCityCodes(article) {
   }
 
   return [];
+}
+
+function hasForeignPropertyEvent(article) {
+  const text = getArticleSearchText(article);
+  const foreignLocation = /\b(?:dubai|ras al khaimah|united arab emirates|uae|sydney|australia|london|singapore)\b/i.test(text);
+  const propertyEvent = /\b(?:property|real estate|realty|residential|commercial|developer|housing|apartment|land parcel|township)\b/i.test(text);
+  const supportedIndianLocation = cityRules.some((rule) => hasWholeWordKeyword(text, rule.keywords));
+  return foreignLocation && propertyEvent && !supportedIndianLocation;
 }
 
 function hasTargetRegionInPrimaryText(article) {
@@ -5439,6 +5555,9 @@ function validateMultiCityCodes(article, cityCodes) {
 }
 
 function expandCityArticles(article) {
+  if (hasForeignPropertyEvent(article)) {
+    return [{ ...article, cityCode: "", sourceCityCodes: [] }];
+  }
   const cityCodes = getCachedDetectedCityCodes(article);
 
   if (cityCodes.length === 0) {
@@ -6054,7 +6173,7 @@ function isNegativeNews(article) {
 function hasContextualAdverseEvent(article) {
   const primary = getArticlePrimaryText(article);
   const text = getArticleSearchText(article);
-  const adverseAction = /\b(?:razed|demolished|demolition|sealed|evicted|attached|arrested|investigated|protested|protest|pushing back|pushback|failed to refund|refund ordered|stalled|cancelled|canceled|delayed)\b/i;
+  const adverseAction = /\b(?:razed|demolished|demolition|sealed|evicted|attached|arrested|investigated|protested|protest|pushing back|pushback|failed to refund|refund ordered|stalled|cancelled|canceled|delayed|recovery|refund|penalt(?:y|ies)|freezes? bank accounts?|default|non-compliance|unauthori[sz]ed|safety clearance|safety problem|pending cases?)\b/i;
   const propertyObject = /\b(?:property|properties|residential|residences|housing|homebuyers?|homes?|units?|project|promoters?|developer|builder|metro|stake sale|sale timeline|neighbou?rhood|neighbourhood)\b/i;
   const nativeAdverse = /(?:रखड|विलंब|उशीर|स्थगित|न्यायालय|कोर्ट|तक्रार|विरोध|थांब|പൂട്ടി|താമസം|വൈകി|പരാതി|തടഞ്ഞ|నిలిచిపో|ఆలస్యం|ఫిర్యాదు|ವಿಳಂಬ|ವಿರುದ್ಧ|ದೂರು|পতন|কমছে|বিতর্ক)/u;
   const nativeProperty = /(?:गृहनिर्माण|घर|फ्लॅट|प्रकल्प|मालमत्ता|सोसायटी|ആവാസ|വീട്|ഫ്ലാറ്റ്|പദ്ധതി|റിയൽ എസ്റ്റേറ്റ്|ఇల్లు|ఫ్లాట్|ప్రాజెక్టు|రియల్ ఎస్టేట్|ಮನೆ|ವಸತಿ|ರಿಯಲ್ ಎಸ್ಟೇಟ್|আবাসন|বাড়ি|ফ্ল্যাট|রিয়েল এস্টেট)/u;
@@ -6064,6 +6183,7 @@ function hasContextualAdverseEvent(article) {
   if (/\b(?:stake sale|sale timeline)\b/i.test(`${primary} ${text}`) && /\b(?:extend(?:s|ed)?|delay(?:ed|s)?|timeline|financial|regulatory challenge)\b/i.test(`${primary} ${text}`)) return true;
   if (adverseAction.test(primary) && propertyObject.test(`${primary} ${text}`) && !/\b(?:reduces?|removes?|resolves?|address(?:es|ed)?|avoids?)\s+(?:approval\s+)?(?:delay|delays|delayed)\b/i.test(primary)) return true;
   if (nativeAdverse.test(`${primary} ${text}`) && nativeProperty.test(`${primary} ${text}`)) return true;
+  if (adverseAction.test(primary) && /\b(?:rera|promoters?|builders?|homebuyers?|project|occupancy|completion certificate|bank accounts?|recovery cases?)\b/i.test(`${primary} ${text}`)) return true;
   return false;
 }
 
@@ -6235,12 +6355,27 @@ function getRejectionReasons(article, sentIds) {
   const realEstateRelated = isRealEstateRelated(article);
   const negativeNews = isNegativeNews(article);
 
+  if (/^property development$/i.test(String(article.title || "").trim()) ||
+      /^haryana\s*\(gurugram\)\s+rera$/i.test(String(article.title || "").trim())) {
+    reasons.push("filter 4: generic authority landing page, not a concrete property event");
+  }
+
+  if (hasForeignPropertyEvent(article)) {
+    reasons.push("filter 5: foreign property event has no supported Indian city");
+  }
+
   if (!realEstateRelated) {
     reasons.push(
       isPositiveInfrastructureWithoutPropertyNexus(article)
         ? "POSITIVE_INFRASTRUCTURE_WITHOUT_SUFFICIENT_REAL_ESTATE_NEXUS"
         : "filter 4: not positive target real-estate/project news"
     );
+  }
+
+  if (hasKeyword(`${getArticlePrimaryText(article)} ${getArticleSearchText(article)}`, ["beneficiaries", "families benefited", "लाभार्थी", "लाभ मिला"]) &&
+      !hasKeyword(getArticleSearchText(article), ["property", "real estate", "housing", "residential", "commercial", "plot", "township", "project"]) &&
+      !/\b(?:property|real estate|housing|residential|commercial|plot|township|project)\b/i.test(getArticleSearchText(article))) {
+    reasons.push("filter 4: not positive target real-estate/project news");
   }
 
   if (isBlockedArticle(article) && !isOfficialReraPressRelease(article)) {
@@ -6251,11 +6386,18 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("filter 3: negative/crime/utility concern news");
   }
 
+  const adversePropertyTitle = /(?:recovery cases?|pending recovery|refund|refunds|dues|safety audit|fire audit|structural audit|unauthori[sz]ed construction|freeze(?:s|d)? bank accounts?|enforcement action|penalt(?:y|ies)|non-compliance|occupancy .*compliance|violation)/i.test(
+    `${getArticlePrimaryText(article)} ${getArticleSearchText(article)}`
+  );
+  if (adversePropertyTitle && !isOfficialReraPressRelease(article)) {
+    reasons.push("filter 3: adverse property/RERA enforcement or recovery news");
+  }
+
   if (isFullArticleReviewRequired(article)) {
     reasons.push(`review: ${getArticleEvidenceReviewReason(article)}`);
   }
 
-  if (!article.cityCode) {
+  if (!article.cityCode || article.cityCode === "delhi_ncr") {
     reasons.push("filter 5: no allowed city match");
   }
 
@@ -6269,6 +6411,26 @@ function getRejectionReasons(article, sentIds) {
 
   if (hasOutsideCityConflict(article)) {
     reasons.push("filter 8: outside-city conflict");
+  }
+
+  const explicitEventCities = detectMatchedCityCodes(article).filter((code) => code && code !== "delhi_ncr");
+  if (article.cityCode && explicitEventCities.length === 1 && explicitEventCities[0] !== article.cityCode &&
+      !ncrCityCodes.includes(article.cityCode) && !ncrCityCodes.includes(explicitEventCities[0])) {
+    reasons.push("filter 8: explicit event city conflicts with assigned city");
+  }
+
+  const explicitTitle = getArticlePrimaryText(article);
+  if (/^panchkula\b/i.test(explicitTitle) && article.cityCode && article.cityCode !== "panchkula") {
+    reasons.push("filter 8: explicit event city conflicts with assigned city");
+  }
+  if (/^ghaziabad\b/i.test(explicitTitle) && article.cityCode && article.cityCode !== "ghaziabad") {
+    reasons.push("filter 8: explicit event city conflicts with assigned city");
+  }
+  const routingText = `${explicitTitle} ${getArticleUrlText(article)}`;
+  if ((/\b(?:gurugram|gurgaon)\b/i.test(explicitTitle) || /(?:cities\/|\/)(?:gurugram|gurgaon)-news(?:\/|-|\b)/i.test(getArticleUrlText(article))) &&
+      article.cityCode && !["gurugram", "faridabad", "noida"].includes(article.cityCode) &&
+      !/delhi[- ]ncr|\bncr\b/i.test(explicitTitle)) {
+    reasons.push("filter 8: explicit event city conflicts with assigned city");
   }
 
   if (hasAmbiguousMultiCityGeoEvidence(article)) {
