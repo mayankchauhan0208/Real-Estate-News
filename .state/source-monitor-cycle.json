@@ -1,7 +1,7 @@
 {
   "cycleId": "source-cycle-2026-10-04",
-  "createdAt": "2026-10-04T00:34:26.154Z",
-  "universeFingerprint": "63ec259303992b9b8d1c86078b26602654a46805ba05588446f3b113256c92c2",
+  "createdAt": "2026-10-04T04:10:36.921Z",
+  "universeFingerprint": "354ab7704e2116ac1eb8804cb1d5f0e140340fd4e20c895ef9cfeafc70d16c9a",
   "sources": [
     {
       "sourceId": "source-00a0c32b225feb2f",
@@ -164,10 +164,6 @@
       "url": "https://realty.economictimes.indiatimes.com/rss/technology"
     },
     {
-      "sourceId": "source-11b7e1e441ea3144",
-      "url": "https://www.livehindustan.com/ncr/gurugram"
-    },
-    {
       "sourceId": "source-11bbdda355af99d8",
       "url": "https://uhuda.uk.gov.in"
     },
@@ -262,10 +258,6 @@
     {
       "sourceId": "source-1cc9d1b6488417dd",
       "url": "https://www.tarc.in/dis-46-pt-2025-26"
-    },
-    {
-      "sourceId": "source-1d29ab0ffe597b00",
-      "url": "https://proppuls.in"
     },
     {
       "sourceId": "source-1d3c7c01db970463",
@@ -424,10 +416,6 @@
       "url": "https://www.hindustantimes.com/feeds/rss/cities/mumbai-news/rssfeed.xml"
     },
     {
-      "sourceId": "source-27a757798ee707f0",
-      "url": "https://www.livehindustan.com/ncr/noida"
-    },
-    {
       "sourceId": "source-280e2c532da36bad",
       "url": "https://apiic.in"
     },
@@ -550,10 +538,6 @@
     {
       "sourceId": "source-374aa8ba8eb4e239",
       "url": "https://www.anantrajlimited.com/investors"
-    },
-    {
-      "sourceId": "source-3825b5f47bfc8bd9",
-      "url": "https://squarefeatindia.com/feed"
     },
     {
       "sourceId": "source-3a3549f385068b82",
@@ -774,10 +758,6 @@
     {
       "sourceId": "source-529eaeb9864fe9b0",
       "url": "https://indianexpress.com/section/cities/jalandhar"
-    },
-    {
-      "sourceId": "source-538424d6470c817d",
-      "url": "https://chennaidreamhomes.com/real-estate-blog"
     },
     {
       "sourceId": "source-53cb703dfede1cac",
@@ -1024,10 +1004,6 @@
       "url": "https://www.bda.org.in"
     },
     {
-      "sourceId": "source-6fa224d753609043",
-      "url": "https://vijaykarnataka.com/real-estate/articlelist/133644218.cms"
-    },
-    {
       "sourceId": "source-6ff9305fcaa38d0b",
       "url": "https://indianexpress.com/section/cities/ahmedabad"
     },
@@ -1060,16 +1036,8 @@
       "url": "https://rera.telangana.gov.in/384798wfybwev9fya62435-TG-RERA-skfjdgky483yunskljghfdgjh"
     },
     {
-      "sourceId": "source-72d1b06bb1929c00",
-      "url": "https://www.telanganatribune.com/category/realestate"
-    },
-    {
       "sourceId": "source-7330dd3bf8577c7d",
       "url": "https://mcg.gov.in"
-    },
-    {
-      "sourceId": "source-73786011d8a39fd1",
-      "url": "https://www.unimarkgroup.com/blog"
     },
     {
       "sourceId": "source-745e30fa57c1cd2c",
@@ -1308,10 +1276,6 @@
       "url": "https://tatarealty.in/newsroom"
     },
     {
-      "sourceId": "source-948305cce1fbf7aa",
-      "url": "https://maharashtratimes.com/business/real-estate-news/articlelist/2429626.cms"
-    },
-    {
       "sourceId": "source-950e16b9fa32c53b",
       "url": "https://birlaestatesltd.com/updates"
     },
@@ -1438,10 +1402,6 @@
     {
       "sourceId": "source-a2fa17fe411ac065",
       "url": "https://infra.economictimes.indiatimes.com/rss/railways"
-    },
-    {
-      "sourceId": "source-a36bbadc6e481b43",
-      "url": "https://tv9gujarati.com/topic/real-estate"
     },
     {
       "sourceId": "source-a36eae1f22951043",
@@ -1604,10 +1564,6 @@
       "url": "https://www.pmrda.gov.in/en/tender-notice"
     },
     {
-      "sourceId": "source-b3ea1b862f1bbfc6",
-      "url": "https://www.amarujala.com/rss/real-estate.xml"
-    },
-    {
       "sourceId": "source-b42f43c46525805c",
       "url": "https://ncrpb.nic.in"
     },
@@ -1644,10 +1600,6 @@
       "url": "https://www.dlf.in/investor"
     },
     {
-      "sourceId": "source-b85c31a004dc5391",
-      "url": "https://api.livehindustan.com/feeds/rss/business/real-estate/rssfeed.xml"
-    },
-    {
       "sourceId": "source-b93f644fcac0e5d9",
       "url": "https://www.koltepatil.com/news-media/media-coverage"
     },
@@ -1658,10 +1610,6 @@
     {
       "sourceId": "source-bafe11bb39571bdf",
       "url": "https://infra.economictimes.indiatimes.com/rss/construction"
-    },
-    {
-      "sourceId": "source-bb66beab33995794",
-      "url": "https://www.amarujala.com/rss/faridabad.xml"
     },
     {
       "sourceId": "source-bcc812dd104e763d",
@@ -1856,10 +1804,6 @@
       "url": "https://realty.economictimes.indiatimes.com/tag/faridabad"
     },
     {
-      "sourceId": "source-d587b14de18710f9",
-      "url": "https://navimumbaihouses.com/blog/feed"
-    },
-    {
       "sourceId": "source-d63ad7294e83aed6",
       "url": "https://morth.nic.in"
     },
@@ -2004,10 +1948,6 @@
       "url": "https://www.sebi.gov.in/sebiweb/home/HomeAction.do?doListing=yes&sid=1&ssid=6"
     },
     {
-      "sourceId": "source-e2643f0f319790d5",
-      "url": "https://chennaiproperties.in/blog"
-    },
-    {
       "sourceId": "source-e2cb4955db02bfc6",
       "url": "https://www.livemint.com/rss/budgetRSS"
     },
@@ -2034,10 +1974,6 @@
     {
       "sourceId": "source-e4cff614bad560a8",
       "url": "https://www.hindustantimes.com/feeds/rss/cities/others/rssfeed.xml"
-    },
-    {
-      "sourceId": "source-e538b8d265fb17ba",
-      "url": "https://www.drahomes.in/blog/feed"
     },
     {
       "sourceId": "source-e54bd0e4bcff5c38",
@@ -2070,10 +2006,6 @@
     {
       "sourceId": "source-e98560d779777b14",
       "url": "https://www.puravankara.com/investors"
-    },
-    {
-      "sourceId": "source-e99861d1643a7271",
-      "url": "https://www.livehindustan.com/ncr/faridabad"
     },
     {
       "sourceId": "source-e9b160058f56f989",
@@ -2274,10 +2206,6 @@
     {
       "sourceId": "source-ff0e7eb8a6d81954",
       "url": "https://www.ukrera.org.in"
-    },
-    {
-      "sourceId": "source-ff1921d0c22d6988",
-      "url": "https://hilifebuilders.in/feed"
     },
     {
       "sourceId": "source-ff7f75827ae117e2",
