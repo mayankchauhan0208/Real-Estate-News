@@ -109,6 +109,27 @@ const offTopicFeedContamination = [
     title: "Pebble Wellness Band",
     newsLink: "https://timesofindia.indiatimes.com/technology/tech-news/pebble-launches-qore-ultra-wellness-band/articleshow/134583984.cms",
     articleText: "Pebble launched a wellness band with health tracking and battery features."
+  },
+  {
+    ...common,
+    cityCode: "faridabad",
+    title: "Valuations of IT stocks already capture most of AI disruption risk",
+    newsLink: "https://economictimes.indiatimes.com/markets/stocks/news/valuations-of-it-stocks-already-capture-most-of-ai-disruption-risk/articleshow/134673144.cms",
+    articleText: "The article discusses stock valuations and AI disruption risk for technology companies."
+  },
+  {
+    ...common,
+    cityCode: "bhatinda",
+    title: "Mithapur women celebrate sons' Asian Games gold",
+    newsLink: "https://www.tribuneindia.com/news/jalandhar/mithapur-women-celebrate-sons-asian-games-gold",
+    articleText: "Families celebrate a sporting achievement and discuss the Asian Games."
+  },
+  {
+    ...common,
+    cityCode: "patna",
+    title: "How India Inc can turn AI investment into productivity",
+    newsLink: "https://www.hindustantimes.com/ht-insight/future-tech/how-india-inc-can-turn-ai-investment-into-productivity-101791136306123.html",
+    articleText: "The article discusses artificial intelligence investment and business productivity."
   }
 ];
 
