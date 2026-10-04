@@ -112,6 +112,28 @@ const reportedOffTopicArticles = [
   }
 ];
 
+const sportsFeedFalsePositives = [
+  "Travis Kelce Investment",
+  "Maria Sharapova Fortune",
+  "Travis Kelce Mansions"
+].map((title, index) => ({
+  cityCode: "noida",
+  title,
+  description: "A sports news article with incidental investment or property language.",
+  articleText: "The article is about sports and a celebrity, not a real-estate or development event.",
+  newsLink: [
+    "https://timesofindia.indiatimes.com/sports/nfl/news/travis-kelce-investment/articleshow/1.cms",
+    "https://timesofindia.indiatimes.com/sports/international-sports/maria-sharapova-fortune/articleshow/2.cms",
+    "https://timesofindia.indiatimes.com/sports/nfl/news/travis-kelce-mansions/articleshow/3.cms"
+  ][index],
+  fullArticleRead: true,
+  articleReadAttempted: true
+}));
+for (const sportsArticle of sportsFeedFalsePositives) {
+  assert.equal(isPublishableArticle(sportsArticle, sentIds), false);
+  assert.ok(getRejectionReasons(sportsArticle, sentIds).some((reason) => /off-topic|real-estate|quality/i.test(reason)));
+}
+
 for (const article of reportedOffTopicArticles) {
   assert.equal(isPublishableArticle(article, sentIds), false, `reported off-topic article must remain rejected: ${article.title}`);
   assert.ok(getRejectionReasons(article, sentIds).length > 0, `reported off-topic article needs an audit reason: ${article.title}`);

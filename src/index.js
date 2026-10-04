@@ -4851,6 +4851,20 @@ function isEducationOnlyAnnouncement(article) {
 function isClearlyOffTopicNonDevelopmentArticle(article) {
   const title = getArticlePrimaryText(article);
   const text = getArticleSearchText(article);
+  const articleUrl = getArticleUrlText(article);
+  const sportsContext = hasKeyword(`${title} ${articleUrl}`, [
+    "sports", "sport", "nfl", "football", "tennis", "cricket", "athlete", "athletes",
+    "six flags", "super bowl", "premier league", "nba", "fifa"
+  ]);
+  const concretePropertyEvent = hasKeyword(`${title} ${text}`, [
+    "real estate project", "property development", "residential project", "commercial project",
+    "housing project", "land parcel", "land acquisition", "township", "builder", "developer",
+    "realty", "real estate", "housing development", "property launch", "stadium development",
+    "sports complex", "sports city"
+  ]);
+
+  if (sportsContext && !concretePropertyEvent) return true;
+
   const hasConcreteDevelopment = hasKeyword(title, [
     "land acquisition", "land parcel", "land purchase", "plot", "housing project", "residential project",
     "commercial project", "township", "real estate development", "property development", "construction project",
