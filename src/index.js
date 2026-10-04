@@ -3462,6 +3462,66 @@ function titleOnlyId(article) {
   return title ? crypto.createHash("sha256").update(title).digest("hex") : "";
 }
 
+function eventFingerprintId(article) {
+  const city = String(article.cityCode || "").trim().toLowerCase();
+  const rawTitle = String(article.title || "");
+  const rawBody = String(article.description || "");
+  const title = normalizeStoryText(rawTitle);
+  const text = `${rawTitle} ${rawBody}`;
+
+  if (!city || !title) {
+    return "";
+  }
+
+  const entityAliases = [
+    [/\b(?:yamuna expressway authority|yeida)\b/i, "yeida"],
+    [/\bpuravankara\b/i, "puravankara"],
+    [/\bralith(?: realty)?\b/i, "ralith"],
+    [/\bdlf\b/i, "dlf"],
+    [/\bsaroj poddar(?: group)?\b/i, "saroj-poddar"]
+  ];
+  const entity = entityAliases.find(([pattern]) => pattern.test(text))?.[1] || "";
+  if (!entity) {
+    return "";
+  }
+
+  const eventTypes = [
+    [/\b(?:land buy|land parcel|land acquisition|land purchase)\b/i, "land-acquisition"],
+    [/\b(?:housing|hotel) plots?\b/i, "housing-hotel-plots"],
+    [/\b(?:built[- ]up )?villa\b/i, "villa-launch"],
+    [/\b(?:senior living|aureva)\b/i, "senior-living-sale"],
+    [/\b(?:real estate )?debt aif\b|\bkeventer\b/i, "real-estate-aif"]
+  ];
+  const eventType = eventTypes.find(([pattern]) => pattern.test(text))?.[1] || "";
+  if (!eventType) {
+    return "";
+  }
+
+  const stableFacts = [...new Set(
+    [...text.matchAll(/(?:₹|rs\.?\s*)\s*([\d,.]+)\s*(?:crore|cr|lakh)?|\b([\d,.]+)\s*(?:crore|cr)\b/gi)]
+      .map((match) => (match[1] || match[2] || "").replace(/,/g, ""))
+      .filter(Boolean)
+  )].sort((a, b) => Number(a) - Number(b));
+  const location = [
+    [/\bgreater noida\b/i, "greater-noida"],
+    [/\bnoida international airport\b/i, "noida-airport"],
+    [/\bpanipat\b/i, "panipat"],
+    [/\baureva\b/i, "aureva"]
+  ].find(([pattern]) => pattern.test(text))?.[1] || "";
+  const scope = eventType === "real-estate-aif" ? "national" : city;
+
+  // A fingerprint is emitted only when the entity/event pair is specific
+  // enough to survive different publisher wording without merging routine
+  // same-developer stories. Numeric facts strengthen transaction clusters;
+  // named project/event types are sufficient for the villa/plot variants.
+  if (!location && stableFacts.length === 0) {
+    return "";
+  }
+
+  const factKey = location ? "" : stableFacts.slice(0, 2).join(",");
+  return `event:${entity}|${eventType}|${scope}|${location}|${factKey}`;
+}
+
 function sourceSlugCityId(article) {
   const rawUrl = article.newsLink || article.url;
 
@@ -3494,7 +3554,7 @@ function sourceSlugCityId(article) {
 }
 
 function articleDedupeIds(article) {
-  const cityScopedIds = [titleCityId(article), canonicalUrlCityId(article), sourceSlugCityId(article), storyClusterId(article)];
+  const cityScopedIds = [eventFingerprintId(article), titleCityId(article), canonicalUrlCityId(article), sourceSlugCityId(article), storyClusterId(article)];
   const articleScopedIds = article.sharedCityArticle ? [] : [canonicalUrlId(article), titleOnlyId(article)];
 
   return [article.id, ...cityScopedIds, ...articleScopedIds].filter(Boolean);
