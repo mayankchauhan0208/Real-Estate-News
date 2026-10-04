@@ -55,6 +55,17 @@ function sourceTelemetryHost(sourceUrl = "") {
   }
 }
 
+function getMemorySnapshot() {
+  const memory = process.memoryUsage();
+  return {
+    rss: memory.rss,
+    heapUsed: memory.heapUsed,
+    heapTotal: memory.heapTotal,
+    external: memory.external,
+    arrayBuffers: memory.arrayBuffers
+  };
+}
+
 function createRunTelemetry(meta = {}) {
   const startedAt = Date.now();
   const progressPath = path.join(runReportsDir, `news-progress-${process.pid}.json`);
@@ -1977,9 +1988,9 @@ function getSources() {
       .filter((source) => {
         const mode = getRegionalSourceMode(source.url);
         if (mode === "OFF") return false;
-        // A source that has passed the measured promotion gate must remain
-        // selectable even when the broader experimental pool is disabled.
-        return getBooleanEnv("ENABLE_EXPERIMENTAL_SOURCES") || !isExperimentalManualSource(source) || mode !== "OFF";
+        // Regional and other experimental sources require explicit opt-in;
+        // sourceMode controls review/publish behavior after selection.
+        return getBooleanEnv("ENABLE_EXPERIMENTAL_SOURCES") || !isExperimentalManualSource(source);
       })
       .filter((source) => {
         if (!requestedCategory) return true;
@@ -2542,7 +2553,6 @@ function logMissedNewsAudit(missedCandidates, limit = 20) {
 function getArticleFinalState(article, reasons = [], context = {}) {
   if (context.finalState) return context.finalState;
   if (context.publishError) return "PUBLISH_FAILED";
-  if (reasons.some((reason) => reason.startsWith("review:"))) return "REVIEW";
   if (reasons.some((reason) => reason.includes("duplicate") || reason.includes("already reposted"))) return "DUPLICATE";
   if (reasons.some((reason) => reason.includes("no allowed city"))) return "CITY_UNMAPPED";
   if (reasons.some((reason) => reason.includes("outside-city"))) return "OUTSIDE_CITY";
@@ -2551,6 +2561,8 @@ function getArticleFinalState(article, reasons = [], context = {}) {
   if (reasons.some((reason) => reason.includes("no specific project"))) return "REJECTED_NO_PROJECT_SIGNAL";
   if (reasons.some((reason) => reason.includes("not positive"))) return "REJECTED_RELEVANCE";
   if (article.articleReadAttempted && article.fullArticleRead !== true && article.articleReadError) return "ARTICLE_EXTRACTION_FAILED";
+  if (reasons.some((reason) => reason.startsWith("filter "))) return "REJECTED";
+  if (reasons.some((reason) => reason.startsWith("review:"))) return "REVIEW";
   return context.candidate ? "CANDIDATE" : "REVIEW";
 }
 
@@ -3914,9 +3926,22 @@ function hasAuthoritativeContentEvidence(article) {
     return false;
   }
 
+  if (isAuthoritativeSnippetOnly(article)) {
+    return false;
+  }
+
   return article.officialDocumentRead === true ||
     article.fullArticleRead === true ||
     getArticleBodyText(article).trim().length >= 200;
+}
+
+function isAuthoritativeSnippetOnly(article) {
+  if (article.fullArticleRead === true || article.officialDocumentRead === true) {
+    return false;
+  }
+
+  const body = getArticleBodyText(article).trim();
+  return body.length < 500 && /\b(?:know more|official\s+(?:real\s+estate\s+)?(?:media|newsroom)\s+update|read more)\b/i.test(body);
 }
 
 function getArticleEvidenceReviewReason(article) {
@@ -4127,6 +4152,12 @@ function detectExplicitTargetCityCodes(article) {
   return [...new Set(cityRules
     .filter((rule) => hasWholeWordKeyword(sourceText, rule.keywords))
     .map((rule) => rule.code))];
+}
+
+function isGenericDelhiNcrCityAlias(code, article) {
+  return code === "new_delhi" &&
+    /\b(?:ncr|delhi\s+ncr)\b/i.test(getArticlePrimaryText(article)) &&
+    !/\b(?:new\s+delhi|central\s+delhi|south\s+delhi|north\s+delhi|east\s+delhi|west\s+delhi)\b/i.test(getArticlePrimaryText(article));
 }
 function detectTargetCityCodesFromFullArticle(article) {
   return cityRules
@@ -4539,6 +4570,14 @@ function hasMeaningfulPropertyNexus(article) {
     contextualNexus.some((pattern) => pattern.test(primaryAndUrl));
 }
 
+function hasConcretePropertyNexus(article) {
+  return hasMeaningfulPropertyNexus(article) && hasKeyword(getArticleSearchText(article), [
+    "property", "real estate", "realty", "housing", "residential", "commercial",
+    "office", "retail", "township", "land parcel", "plots", "mixed-use", "tod",
+    "development zone", "development sector", "project"
+  ]);
+}
+
 function isPositiveInfrastructureWithoutPropertyNexus(article) {
   if (
     isTargetDominantInfrastructureCorridor(article) ||
@@ -4826,6 +4865,55 @@ function isEducationOnlyAnnouncement(article) {
 function isClearlyOffTopicNonDevelopmentArticle(article) {
   const title = getArticlePrimaryText(article);
   const text = getArticleSearchText(article);
+  const articleUrl = getArticleUrlText(article);
+  if (/^property development$/i.test(title.trim()) ||
+      /^haryana\s*\(gurugram\)\s+rera$/i.test(title.trim())) {
+    return true;
+  }
+  if (/(?:cm|chief minister|minister)\s+to\s+visit\b|\bto\s+visit\s+(?:singapore|australia|dubai|foreign)/i.test(title) &&
+      !hasKeyword(title, ["project", "land", "plot", "housing", "township", "property", "real estate"])) {
+    return true;
+  }
+  if (/(?:elevated road|road corridor|road project|skywalk|interchange|landmark entry gate|multi-storey secretariat|mini secretariat|reserved forest|high-risk parks?|park safety audit|metro.*expansion|metro.*interview)/i.test(title) &&
+      !hasKeyword(`${title} ${text}`, ["property", "real estate", "housing", "residential", "commercial", "township", "land parcel", "plot", "industrial park", "logistics park", "mixed-use", "tod zone", "transit-oriented development"])) {
+    return true;
+  }
+  if (/(?:plans .*landmark entry gate|sector\s*\d+[- ]\d+ skywalk|first jewar airport.*f1|assures quality.*elevated|invits,? reits combined|wind assets)/i.test(title)) {
+    return true;
+  }
+  if (/(?:digital map.*master plan|master plan.*2047|new dtc headquarter|planned urban development.*draft master plan|real estate shift|average home prices.*delhi[- ]ncr|housing sales rise .*units.*q[1-4]|luxury housing must move beyond)/i.test(title) &&
+      !hasKeyword(title, ["project", "land parcel", "township", "housing plots", "residential launch", "commercial project"])) {
+    return true;
+  }
+  if (/(?:dubai|ras al khaimah|sydney|australia|london|singapore)\s+(?:property|real estate|rental|investor)/i.test(`${title} ${text}`) &&
+      !hasKeyword(`${title} ${text}`, ["india", "indian city", "gurugram", "mumbai", "delhi", "noida", "pune", "hyderabad"])) {
+    return true;
+  }
+  if (hasKeyword(title, ["namo bharat: a journey so far", "metro expansion", "metro’s expansion", "metro's expansion"]) &&
+      !hasKeyword(`${title} ${text}`, ["property development", "real estate project", "housing project", "land parcel", "township", "residential project"])) {
+    return true;
+  }
+  if (/\b(?:haryana|gurugram|gurgaon)\b.{0,20}\brera\b/i.test(title) &&
+      !hasKeyword(`${title} ${text}`, ["approves", "approved", "launches", "project registered", "project registration", "completion certificate"])) {
+    return true;
+  }
+  if (hasKeyword(`${title} ${text}`, ["beneficiaries", "families benefited", "लाभार्थी", "लाभ मिला"]) &&
+      !hasKeyword(`${title} ${text}`, ["property", "real estate", "housing", "residential", "commercial", "plot", "township", "project"])) {
+    return true;
+  }
+  const sportsContext = hasKeyword(`${title} ${articleUrl}`, [
+    "sports", "sport", "nfl", "football", "tennis", "cricket", "athlete", "athletes",
+    "six flags", "super bowl", "premier league", "nba", "fifa"
+  ]);
+  const concretePropertyEvent = hasKeyword(`${title} ${text}`, [
+    "real estate project", "property development", "residential project", "commercial project",
+    "housing project", "land parcel", "land acquisition", "township", "builder", "developer",
+    "realty", "real estate", "housing development", "property launch", "stadium development",
+    "sports complex", "sports city"
+  ]);
+
+  if (sportsContext && !concretePropertyEvent) return true;
+
   const hasConcreteDevelopment = hasKeyword(title, [
     "land acquisition", "land parcel", "land purchase", "plot", "housing project", "residential project",
     "commercial project", "township", "real estate development", "property development", "construction project",
@@ -4834,6 +4922,42 @@ function isClearlyOffTopicNonDevelopmentArticle(article) {
   ]);
 
   if (hasConcreteDevelopment) return false;
+
+  // Transport and civic works need an explicit property/development event.
+  // A city name, construction budget, station, corridor, or generic growth
+  // language is not enough to turn an infrastructure article into property
+  // coverage. Keep genuine TOD and property-linked corridor stories eligible.
+  const genericInfrastructure = hasWholeWordKeyword(title, [
+    "metro", "railway", "rail line", "tbm", "tunnel", "road", "flyover", "bridge",
+    "port", "shipping", "transport", "airport", "bus stand", "bus service", "corridor"
+  ]);
+  const explicitInfrastructurePropertyNexus = hasKeyword(`${title} ${text}`, [
+    "property", "real estate", "housing", "residential development", "commercial development", "office development",
+    "retail real estate", "township", "plotted development", "land parcel for development",
+    "development sector", "development zone", "named real estate project", "property project",
+    "mixed-use development", "transit-oriented development", "tod zone", "tod district",
+    "authority plots", "authority allotment", "logistics park", "industrial park", "warehouse development",
+    "real estate growth", "property market impact", "regional real estate", "development benefits"
+  ]);
+  if (genericInfrastructure && !explicitInfrastructurePropertyNexus) return true;
+
+  const politicalAdministrativeOnly = hasKeyword(title, [
+    "cm to visit", "chief minister to visit", "minister to visit", "delegation to",
+    "political visit", "rally", "speech", "summit", "round-table", "roundtable",
+    "meeting with investors", "broad policy"
+  ]) && !hasConcreteDevelopment;
+  if (politicalAdministrativeOnly && !explicitInfrastructurePropertyNexus) return true;
+
+  const nonRealEstateCommercialExpansion = hasKeyword(title, [
+    "jewellery showroom", "jewelry showroom", "showroom launch", "showroom launches",
+    "restaurant opening", "brand store", "new outlet", "new branch", "dealership",
+    "clinic opening", "school opening", "hotel opening"
+  ]) && !hasKeyword(`${title} ${text}`, [
+    "commercial lease", "lease transaction", "retail development", "mall development",
+    "commercial project", "property acquisition", "land acquisition", "development agreement",
+    "office space", "retail space lease", "mixed-use"
+  ]);
+  if (nonRealEstateCommercialExpansion) return true;
 
   if (hasKeyword(title, ["toll contract", "toll contracts", "toll collection contract"])) return true;
   if (hasKeyword(title, ["street lights", "streetlight", "luggage locker", "luggage lockers"]) && hasKeyword(title, ["repair", "maintain", "maintenance", "install"])) return true;
@@ -4877,6 +5001,10 @@ function isRealEstateRelated(article) {
     return false;
   }
 
+  if (isGenericTransportConstructionWithoutPropertyNexus(article)) {
+    return false;
+  }
+
   if (isPositiveInfrastructureWithoutPropertyNexus(article)) {
     return false;
   }
@@ -4887,6 +5015,7 @@ function isRealEstateRelated(article) {
 
   return (
     hasRealEstateEvidence(article) ||
+    hasConcretePropertyNexus(article) ||
     isNationalRealEstateBusinessUpdate(article) ||
     isNcrCommercialOfficeMarketArticle(article) ||
     isFaridabadNcrGrowthComparisonArticle(article) ||
@@ -4979,6 +5108,10 @@ function detectCityCodes(article) {
     return [];
   }
 
+  if (hasForeignPropertyEvent(article)) {
+    return [];
+  }
+
   // Transport/tunnel/rail pages can contain navigation menus for many
   // cities. Do not convert those menu names into real-estate geo routes
   // unless the article has an actual property/development nexus.
@@ -4988,10 +5121,20 @@ function detectCityCodes(article) {
   }
 
   const primaryText = getArticlePrimaryText(article);
+  const explicitEventCityCodes = detectExplicitTargetCityCodes(article)
+    .filter((code) => code !== "delhi_ncr" && !isGenericDelhiNcrCityAlias(code, article));
+  if (explicitEventCityCodes.length === 1 && !hasNcrMatch(article)) {
+    return explicitEventCityCodes;
+  }
   const authorityJurisdiction = String(article.authorityJurisdiction || "").trim().toLowerCase();
   if (article.authoritativeContent === true && authorityJurisdiction) {
     const authorityRule = cityRules.find((rule) => rule.code === authorityJurisdiction);
-    if (authorityRule && hasWholeWordKeyword(primaryText, authorityRule.keywords)) {
+    const dedicatedAuthorityEvidence = Boolean(article.authorityEventType) &&
+      (article.fullArticleRead === true || article.officialDocumentRead === true) &&
+      hasMeaningfulPropertyNexus(article);
+    const authorityPropertyText = /flat|housing|residential|plot|scheme|lottery|tenement|आवास|फ्लैट|प्लॉट|सदनिका/iu.test(getArticleSearchText(article));
+    if (authorityRule && (hasWholeWordKeyword(primaryText, authorityRule.keywords) || dedicatedAuthorityEvidence ||
+      (Boolean(article.authorityEventType) && (article.fullArticleRead === true || article.officialDocumentRead === true) && authorityPropertyText))) {
       return [authorityJurisdiction];
     }
   }
@@ -5032,6 +5175,19 @@ function detectMatchedCityCodes(article) {
     return ["faridabad"];
   }
 
+  // Explicit event geography outranks publisher, feed, and corporate
+  // metadata. This prevents Panchkula/Ghaziabad stories from inheriting an
+  // unrelated source city.
+  const explicitEventCityCodes = detectExplicitTargetCityCodes(article)
+    .filter((code) => code !== "delhi_ncr" && !isGenericDelhiNcrCityAlias(code, article));
+  if (explicitEventCityCodes.length === 1 && !hasNcrMatch(article)) {
+    return explicitEventCityCodes;
+  }
+
+  if (hasForeignPropertyEvent(article)) {
+    return [];
+  }
+
   const corporateCompany = getTargetRealEstateCorporateCompany(article);
 
   if (corporateCompany && isTargetProjectAwardArticle(article)) {
@@ -5050,7 +5206,7 @@ function detectMatchedCityCodes(article) {
     return detectExplicitTargetCityCodes(article);
   }
 
-  const matchedCityCodes = detectExplicitTargetCityCodes(article);
+  const matchedCityCodes = explicitEventCityCodes;
 
   if (matchedCityCodes.length > 0) {
     return matchedCityCodes;
@@ -5076,6 +5232,14 @@ function detectMatchedCityCodes(article) {
   }
 
   return [];
+}
+
+function hasForeignPropertyEvent(article) {
+  const text = getArticleSearchText(article);
+  const foreignLocation = /\b(?:dubai|ras al khaimah|united arab emirates|uae|sydney|australia|london|singapore)\b/i.test(text);
+  const propertyEvent = /\b(?:property|real estate|realty|residential|commercial|developer|housing|apartment|land parcel|township)\b/i.test(text);
+  const supportedIndianLocation = cityRules.some((rule) => hasWholeWordKeyword(text, rule.keywords));
+  return foreignLocation && propertyEvent && !supportedIndianLocation;
 }
 
 function hasTargetRegionInPrimaryText(article) {
@@ -5391,6 +5555,9 @@ function validateMultiCityCodes(article, cityCodes) {
 }
 
 function expandCityArticles(article) {
+  if (hasForeignPropertyEvent(article)) {
+    return [{ ...article, cityCode: "", sourceCityCodes: [] }];
+  }
   const cityCodes = getCachedDetectedCityCodes(article);
 
   if (cityCodes.length === 0) {
@@ -5790,6 +5957,43 @@ function isGenericBroadMarketHeadline(article) {
     "what will drive demand"
   ]);
 }
+function isNavigationOrListingShell(article) {
+  const title = cleanText(article.title || "", 240).toLowerCase();
+  const url = getArticleUrlText(article);
+  const hasDatedEvidence = Boolean(article.publishedAt || article.officialDocumentRead === true || article.authorityEventType);
+  const exactNavigationTitle = /^(?:click to subscribe|completed projects?|screen reader access|online public services|right to information|e-auction archives|allottee online services|ongoing projects?|delivered projects?|residential projects?|new projects in noida|02residential projects?)$/i.test(title);
+  const navigationUrl = /(?:#(?:footer-part|res-|$)|\/project-category\/|\/projects?\/residential(?:\/|$)|\/new-projects-in-noida(?:\/|$)|\/screen-reader(?:access)?(?:\.aspx)?(?:\/|$)|\/online-public-services(?:\/|$)|\/right-to-information(?:\/|$)|\/e-auction-archives(?:\/|$)|\/citizen-portal|\/rti\/)/i.test(url);
+
+  // Listing shells are not publishable events. Dated official documents and
+  // explicit authority events continue through the normal evidence gates.
+  if (hasDatedEvidence) return false;
+  return exactNavigationTitle || navigationUrl;
+}
+
+function hasExplicitTransportPropertyNexus(article) {
+  // Do not let a publisher hostname such as `realty.example.com` satisfy
+  // the nexus. The evidence must appear in the title, description or body.
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  return hasKeyword(text, [
+    "real estate", "property market", "property development", "real-estate development",
+    "housing development", "residential development", "commercial development", "residential project",
+    "commercial project", "housing project", "township", "plotted development", "land parcel",
+    "development zone", "new development sector", "new residential sectors", "office space",
+    "tod", "transit-oriented development", "mixed-use", "मेट्रो के आसपास आवास", "आवासीय परियोजना"
+  ]);
+}
+
+function isGenericTransportConstructionWithoutPropertyNexus(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const transportConstruction = hasKeyword(primaryAndUrl, [
+    "metro construction", "metro line", "metro phase", "metro station", "metro corridor",
+    "railway construction", "rail line", "airport construction", "airport expansion",
+    "flyover construction", "road construction", "highway construction", "transport infrastructure",
+    "water metro", "station development", "land acquisition"
+  ]);
+  return transportConstruction && !hasExplicitTransportPropertyNexus(article);
+}
+
 function isBlockedArticle(article) {
   const title = article.title || "";
   const description = article.description || "";
@@ -5802,6 +6006,7 @@ function isBlockedArticle(article) {
   const isWeakFoodRetailSource = articleHost === "businessoffood.in" && !hasKeyword(`${title} ${description} ${newsLink}`.toLowerCase(), ["real estate", "realty", "developer", "residential", "commercial project", "retail destination", "tenant mix", "open-air retail", "sector 70", "office space", "leased", "rents", "sq ft"]);
 
   return (
+    isNavigationOrListingShell(article) ||
     blockedExactTitles.includes(normalizedTitle) ||
     isAddressLikeHeadline(title) ||
     isMalformedCategoryHeadline(title, article) ||
@@ -5915,6 +6120,15 @@ function isNegativeNews(article) {
     return false;
   }
 
+  // OCR can surface incidental words from official housing circulars (for
+  // example procedural notices) that are not the article's event. Once the
+  // authority identity, property event, and full document evidence are all
+  // verified, retain the normal adverse-event checks but do not let a generic
+  // body keyword discard a positive authority record.
+  if (isVerifiedAuthorityPropertyEvent(article) && !hasContextualAdverseEvent(article) && !isAdverseAuthorityLegalArticle(article)) {
+    return false;
+  }
+
   const primaryText = getArticlePrimaryText(article);
   const urlText = getArticleUrlText(article);
   const bodyText = getArticleBodyText(article);
@@ -5959,7 +6173,7 @@ function isNegativeNews(article) {
 function hasContextualAdverseEvent(article) {
   const primary = getArticlePrimaryText(article);
   const text = getArticleSearchText(article);
-  const adverseAction = /\b(?:razed|demolished|demolition|sealed|evicted|attached|arrested|investigated|protested|protest|pushing back|pushback|failed to refund|refund ordered|stalled|cancelled|canceled|delayed)\b/i;
+  const adverseAction = /\b(?:razed|demolished|demolition|sealed|evicted|attached|arrested|investigated|protested|protest|pushing back|pushback|failed to refund|refund ordered|stalled|cancelled|canceled|delayed|recovery|refund|penalt(?:y|ies)|freezes? bank accounts?|default|non-compliance|unauthori[sz]ed|safety clearance|safety problem|pending cases?)\b/i;
   const propertyObject = /\b(?:property|properties|residential|residences|housing|homebuyers?|homes?|units?|project|promoters?|developer|builder|metro|stake sale|sale timeline|neighbou?rhood|neighbourhood)\b/i;
   const nativeAdverse = /(?:रखड|विलंब|उशीर|स्थगित|न्यायालय|कोर्ट|तक्रार|विरोध|थांब|പൂട്ടി|താമസം|വൈകി|പരാതി|തടഞ്ഞ|నిలిచిపో|ఆలస్యం|ఫిర్యాదు|ವಿಳಂಬ|ವಿರುದ್ಧ|ದೂರು|পতন|কমছে|বিতর্ক)/u;
   const nativeProperty = /(?:गृहनिर्माण|घर|फ्लॅट|प्रकल्प|मालमत्ता|सोसायटी|ആവാസ|വീട്|ഫ്ലാറ്റ്|പദ്ധതി|റിയൽ എസ്റ്റേറ്റ്|ఇల్లు|ఫ్లాట్|ప్రాజెక్టు|రియల్ ఎస్టేట్|ಮನೆ|ವಸತಿ|ರಿಯಲ್ ಎಸ್ಟೇಟ್|আবাসন|বাড়ি|ফ্ল্যাট|রিয়েল এস্টেট)/u;
@@ -5969,6 +6183,7 @@ function hasContextualAdverseEvent(article) {
   if (/\b(?:stake sale|sale timeline)\b/i.test(`${primary} ${text}`) && /\b(?:extend(?:s|ed)?|delay(?:ed|s)?|timeline|financial|regulatory challenge)\b/i.test(`${primary} ${text}`)) return true;
   if (adverseAction.test(primary) && propertyObject.test(`${primary} ${text}`) && !/\b(?:reduces?|removes?|resolves?|address(?:es|ed)?|avoids?)\s+(?:approval\s+)?(?:delay|delays|delayed)\b/i.test(primary)) return true;
   if (nativeAdverse.test(`${primary} ${text}`) && nativeProperty.test(`${primary} ${text}`)) return true;
+  if (adverseAction.test(primary) && /\b(?:rera|promoters?|builders?|homebuyers?|project|occupancy|completion certificate|bank accounts?|recovery cases?)\b/i.test(`${primary} ${text}`)) return true;
   return false;
 }
 
@@ -5988,6 +6203,22 @@ function hasOutsideCityConflict(article) {
   }
 
   return hasOutsideLocationDominance(article);
+}
+
+function hasAmbiguousMultiCityGeoEvidence(article) {
+  if (article.fullArticleRead !== true && getArticleBodyText(article).length < 200) {
+    return false;
+  }
+
+  const titleOrUrl = `${article.title || ""} ${getArticleUrlText(article)}`;
+  const titleOrUrlCity = cityRules.some((rule) => hasWholeWordKeyword(titleOrUrl, rule.keywords));
+  if (titleOrUrlCity) {
+    return false;
+  }
+
+  const bodyCityCodes = detectTargetCityCodesFromFullArticle(article)
+    .filter((code) => !["delhi_ncr", "new_delhi"].includes(code));
+  return new Set(bodyCityCodes).size > 1;
 }
 
 function hasOutsideLocationDominance(article) {
@@ -6124,12 +6355,27 @@ function getRejectionReasons(article, sentIds) {
   const realEstateRelated = isRealEstateRelated(article);
   const negativeNews = isNegativeNews(article);
 
+  if (/^property development$/i.test(String(article.title || "").trim()) ||
+      /^haryana\s*\(gurugram\)\s+rera$/i.test(String(article.title || "").trim())) {
+    reasons.push("filter 4: generic authority landing page, not a concrete property event");
+  }
+
+  if (hasForeignPropertyEvent(article)) {
+    reasons.push("filter 5: foreign property event has no supported Indian city");
+  }
+
   if (!realEstateRelated) {
     reasons.push(
       isPositiveInfrastructureWithoutPropertyNexus(article)
         ? "POSITIVE_INFRASTRUCTURE_WITHOUT_SUFFICIENT_REAL_ESTATE_NEXUS"
         : "filter 4: not positive target real-estate/project news"
     );
+  }
+
+  if (hasKeyword(`${getArticlePrimaryText(article)} ${getArticleSearchText(article)}`, ["beneficiaries", "families benefited", "लाभार्थी", "लाभ मिला"]) &&
+      !hasKeyword(getArticleSearchText(article), ["property", "real estate", "housing", "residential", "commercial", "plot", "township", "project"]) &&
+      !/\b(?:property|real estate|housing|residential|commercial|plot|township|project)\b/i.test(getArticleSearchText(article))) {
+    reasons.push("filter 4: not positive target real-estate/project news");
   }
 
   if (isBlockedArticle(article) && !isOfficialReraPressRelease(article)) {
@@ -6140,11 +6386,18 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("filter 3: negative/crime/utility concern news");
   }
 
+  const adversePropertyTitle = /(?:recovery cases?|pending recovery|refund|refunds|dues|safety audit|fire audit|structural audit|unauthori[sz]ed construction|freeze(?:s|d)? bank accounts?|enforcement action|penalt(?:y|ies)|non-compliance|occupancy .*compliance|violation)/i.test(
+    `${getArticlePrimaryText(article)} ${getArticleSearchText(article)}`
+  );
+  if (adversePropertyTitle && !isOfficialReraPressRelease(article)) {
+    reasons.push("filter 3: adverse property/RERA enforcement or recovery news");
+  }
+
   if (isFullArticleReviewRequired(article)) {
     reasons.push(`review: ${getArticleEvidenceReviewReason(article)}`);
   }
 
-  if (!article.cityCode) {
+  if (!article.cityCode || article.cityCode === "delhi_ncr") {
     reasons.push("filter 5: no allowed city match");
   }
 
@@ -6158,6 +6411,30 @@ function getRejectionReasons(article, sentIds) {
 
   if (hasOutsideCityConflict(article)) {
     reasons.push("filter 8: outside-city conflict");
+  }
+
+  const explicitEventCities = detectMatchedCityCodes(article).filter((code) => code && code !== "delhi_ncr");
+  if (article.cityCode && explicitEventCities.length === 1 && explicitEventCities[0] !== article.cityCode &&
+      !ncrCityCodes.includes(article.cityCode) && !ncrCityCodes.includes(explicitEventCities[0])) {
+    reasons.push("filter 8: explicit event city conflicts with assigned city");
+  }
+
+  const explicitTitle = getArticlePrimaryText(article);
+  if (/^panchkula\b/i.test(explicitTitle) && article.cityCode && article.cityCode !== "panchkula") {
+    reasons.push("filter 8: explicit event city conflicts with assigned city");
+  }
+  if (/^ghaziabad\b/i.test(explicitTitle) && article.cityCode && article.cityCode !== "ghaziabad") {
+    reasons.push("filter 8: explicit event city conflicts with assigned city");
+  }
+  const routingText = `${explicitTitle} ${getArticleUrlText(article)}`;
+  if ((/\b(?:gurugram|gurgaon)\b/i.test(explicitTitle) || /(?:cities\/|\/)(?:gurugram|gurgaon)-news(?:\/|-|\b)/i.test(getArticleUrlText(article))) &&
+      article.cityCode && !["gurugram", "faridabad", "noida"].includes(article.cityCode) &&
+      !/delhi[- ]ncr|\bncr\b/i.test(explicitTitle)) {
+    reasons.push("filter 8: explicit event city conflicts with assigned city");
+  }
+
+  if (hasAmbiguousMultiCityGeoEvidence(article)) {
+    reasons.push("review: ambiguous multi-city geo evidence");
   }
 
   if (hasSourceCityUrlMismatch(article)) {
@@ -6461,11 +6738,58 @@ async function fetchHtmlWithCurl(sourceUrl, options = {}) {
     "\n__NEWS_API_STATUS__:%{http_code}",
     sourceUrl
   ];
-  const result = await execFile(command, args, {
-    timeout: timeoutMs + (options.deadlineAt ? 500 : 5000),
-    maxBuffer: 12 * 1024 * 1024,
-    windowsHide: true,
-    signal: options.signal
+  const workerStartedAt = Date.now();
+  const memoryBefore = process.memoryUsage().rss;
+  await options.telemetry?.emit("EXTERNAL_WORKER_START", {
+    sourceId: sourceTelemetryId(sourceUrl),
+    sourceUrl,
+    sourceHost: sourceTelemetryHost(sourceUrl),
+    adapter: "curl",
+    operation: "fetch-html",
+    workerStartedAt,
+    parentRssBeforeBytes: memoryBefore,
+    timeoutMs,
+    maxBufferBytes: 12 * 1024 * 1024
+  });
+  let result;
+  try {
+    result = await execFileWithHardTimeout(command, args, {
+      timeout: timeoutMs + (options.deadlineAt ? 500 : 5000),
+      maxBuffer: 12 * 1024 * 1024,
+      windowsHide: true,
+      signal: options.signal
+    });
+  } catch (error) {
+    await options.telemetry?.emit("EXTERNAL_WORKER_END", {
+      sourceId: sourceTelemetryId(sourceUrl),
+      sourceUrl,
+      sourceHost: sourceTelemetryHost(sourceUrl),
+      adapter: "curl",
+      operation: "fetch-html",
+      status: "failed",
+      elapsedMs: Date.now() - workerStartedAt,
+      exitCode: error.code || null,
+      signal: error.signal || null,
+      stdoutBytes: Buffer.byteLength(error.stdout || ""),
+      stderrBytes: Buffer.byteLength(error.stderr || ""),
+      parentRssBeforeBytes: memoryBefore,
+      parentRssAfterBytes: process.memoryUsage().rss,
+      timeoutOrKill: error.code === "ETIMEDOUT" || error.sourceStatus === "BUDGET_EXHAUSTED"
+    });
+    throw error;
+  }
+  await options.telemetry?.emit("EXTERNAL_WORKER_END", {
+    sourceId: sourceTelemetryId(sourceUrl),
+    sourceUrl,
+    sourceHost: sourceTelemetryHost(sourceUrl),
+    adapter: "curl",
+    operation: "fetch-html",
+    status: "success",
+    elapsedMs: Date.now() - workerStartedAt,
+    stdoutBytes: Buffer.byteLength(result.stdout || ""),
+    stderrBytes: Buffer.byteLength(result.stderr || ""),
+    parentRssBeforeBytes: memoryBefore,
+    parentRssAfterBytes: process.memoryUsage().rss
   });
   const marker = result.stdout.lastIndexOf("\n__NEWS_API_STATUS__:");
   const status = marker >= 0 ? Number.parseInt(result.stdout.slice(marker).split(":")[1], 10) : 0;
@@ -6480,6 +6804,41 @@ async function fetchHtmlWithCurl(sourceUrl, options = {}) {
 
 function isMissingPaginatedPageError(error) {
   return /^HTTP (404|410)\b/.test(error.message || "");
+}
+
+function execFileWithHardTimeout(command, args, options = {}) {
+  return new Promise((resolve, reject) => {
+    let settled = false;
+    let timer;
+    const finish = (error, stdout = "", stderr = "") => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      options.signal?.removeEventListener("abort", abortHandler);
+      if (error) reject(Object.assign(error, { stdout, stderr }));
+      else resolve({ stdout, stderr });
+    };
+    const abortHandler = () => {
+      child?.kill("SIGKILL");
+      finish(createBudgetExhaustedError("global source budget exhausted during curl request"));
+    };
+    const child = execFileCallback(command, args, {
+      ...options,
+      signal: undefined
+    }, (error, stdout, stderr) => finish(error, stdout, stderr));
+    child.on("error", (error) => finish(error));
+    if (options.signal) {
+      if (options.signal.aborted) abortHandler();
+      else options.signal.addEventListener("abort", abortHandler, { once: true });
+    }
+    if (options.timeout) {
+      timer = setTimeout(() => {
+        child.kill("SIGKILL");
+        finish(Object.assign(new Error(`curl request timed out after ${options.timeout}ms`), { code: "ETIMEDOUT" }));
+      }, options.timeout);
+      timer.unref?.();
+    }
+  });
 }
 
 function extractArticleText($) {
@@ -7137,8 +7496,10 @@ async function fetchHsvpNotices(sourceUrl, options = {}) {
   const $ = cheerio.load(html);
   const seenLinks = new Set();
   const noticeCandidates = [];
+  const candidateLimit = getMaxItemsPerSource();
 
   $("a[href]").each((_, element) => {
+    if (noticeCandidates.length >= candidateLimit) return;
     const noticeUrl = absoluteUrl($(element).attr("href"), sourceUrl);
 
     if (!/\/documents\/notices\/NEWS_\d+.*\.pdf/i.test(noticeUrl) || seenLinks.has(noticeUrl)) {
@@ -7630,8 +7991,10 @@ async function fetchPressReleaseListings(sourceUrl, options = {}) {
   );
   const candidates = [];
   const seen = new Set();
+  const candidateLimit = getMaxItemsPerSource();
 
   $("table tr, article, li").each((_, element) => {
+    if (candidates.length >= candidateLimit) return;
     const row = $(element);
     const rowText = stripHtml(row.text());
     const links = row.find("a[href]");
@@ -7832,9 +8195,11 @@ async function fetchAuthorityListings(sourceUrl, options = {}) {
   );
   const candidates = [];
   const seen = new Set();
+  const candidateLimit = getMaxItemsPerSource();
   const rows = $("table tr, article, li, .card, [class*='notice' i], [class*='scheme' i], [class*='listing' i]");
 
   rows.each((_, element) => {
+    if (candidates.length >= candidateLimit) return;
     const row = $(element);
     const title = authorityRowTitle($, row);
     const publishedAt = authorityRowDate($, row);
@@ -7867,11 +8232,23 @@ async function fetchAuthorityListings(sourceUrl, options = {}) {
         const document = await fetchDocument(candidate.link, {
           timeoutMs: getFetchTimeoutForUrl(candidate.link),
           maxBytes: 4 * 1024 * 1024
+        }, {
+          ocr: {
+            trustedSource: true,
+            discoveredFromListing: true,
+            languages: ["eng", "hin", "mr"],
+            maxPages: 3,
+            documentTimeoutMs: 15000
+          }
         });
         if (document.telemetry.validation === "VALID_PDF" && document.text.length >= 200) {
           articleText = `${articleText} ${document.text}`.slice(0, 12000);
           officialDocumentRead = true;
           fullArticleRead = true;
+          detail = {
+            extractionMethod: document.telemetry.extractionMethod,
+            ocr: document.telemetry.ocr || null
+          };
         } else if (document.telemetry.failureReason) {
           detail = { articleReadError: document.telemetry.failureReason };
         }
@@ -7896,6 +8273,8 @@ async function fetchAuthorityListings(sourceUrl, options = {}) {
       officialDocumentRead,
       articleReadAttempted: true,
       fullArticleRead,
+      extractionMethod: detail.extractionMethod || (officialDocumentRead ? "PDF_TEXT" : ""),
+      ocr: detail.ocr || null,
       articleReadError: detail.articleReadError || "",
       isActive: true,
       newsLink: candidate.link,
@@ -8057,6 +8436,7 @@ async function fetchPage(sourceUrl, options = {}) {
   const pageUrls = getSourcePageUrls(sourceUrl);
   const seenLinks = new Set();
   const candidates = [];
+  const candidateLimit = getMaxItemsPerSource();
   let publisher = "";
   let publisherLogo = "";
 
@@ -8106,6 +8486,7 @@ async function fetchPage(sourceUrl, options = {}) {
     );
 
     $("a[href]").each((_, element) => {
+      if (candidates.length >= candidateLimit) return;
       const link = absoluteUrl($(element).attr("href"), sourceUrl);
       const title = stripHtml($(element).text());
       const listingText = stripHtml(
@@ -8142,6 +8523,8 @@ async function fetchPage(sourceUrl, options = {}) {
         fetchedAt: new Date().toISOString()
       });
     });
+
+    if (candidates.length >= candidateLimit) break;
 
     if (exhaustivePagination && pageIndex > 0 && candidates.length === candidatesBeforePage) {
       console.log(`Reached end of paginated source ${sourceUrl} after ${pageIndex} page(s) with no new article links.`);
@@ -8244,7 +8627,214 @@ async function fetchSourceWithTimeout(sourceUrl, timeoutMsOverride = getSourceTi
   }
 }
 
+function isManoramaNestSource(sourceUrl = "") {
+  return /manoramaonline\.com\/homestyle\/nest\.html/i.test(String(sourceUrl));
+}
+
+function regionalHtmlSourceConfig(sourceUrl = "") {
+  const value = String(sourceUrl);
+  if (/eisamay\.com\/topic\/kolkata-news/i.test(value)) {
+    return {
+      language: "bn",
+      script: "Bengali",
+      linkPattern: /\/west-bengal-news\/kolkata-news\/[^/]+\/\d+\.cms(?:$|\?)/i,
+      // Ei Samay is a general native-language Kolkata surface. Keep the
+      // discovery layer broad; the full-article relevance and positive gates
+      // decide whether a story is suitable for Brokket.
+      titlePattern: null
+    };
+  }
+  if (/lokmat\.com\/real-estate\/?$/i.test(value)) {
+    return {
+      language: "mr",
+      script: "Devanagari",
+      linkPattern: /\/real-estate\/[^/]+-a-a\d+\/?(?:$|\?)/i,
+      titlePattern: null
+    };
+  }
+  if (/gujaratsamachar\.com\/news\/business(?:-plus)?\/?$/i.test(value)) {
+    return {
+      language: "gu",
+      script: "Gujarati",
+      linkPattern: /\/news\/[^/]+\/[^/]+(?:-\d+)?(?:\.html)?(?:$|\?)/i,
+      // Gujarat Samachar's business-plus page is not a property-only feed;
+      // retain its native Gujarati articles and leave topic qualification to
+      // the existing full-article gates.
+      titlePattern: null
+    };
+  }
+  return null;
+}
+
+function isRegionalHtmlSource(sourceUrl = "") {
+  return Boolean(regionalHtmlSourceConfig(sourceUrl));
+}
+
+async function fetchRegionalHtmlSource(sourceUrl, options = {}) {
+  const config = regionalHtmlSourceConfig(sourceUrl);
+  if (!config) return fetchPage(sourceUrl, options);
+
+  const html = await fetchHtml(sourceUrl, options);
+  const $ = cheerio.load(html);
+  const seenLinks = new Set();
+  const candidates = [];
+  const candidateLimit = getMaxItemsPerSource();
+  const publisher = getPublisherName(sourceUrl, $("title").text());
+  const publisherLogo = pickFirst(
+    absoluteUrl($("link[rel='icon']").attr("href"), sourceUrl),
+    absoluteUrl($("link[rel='shortcut icon']").attr("href"), sourceUrl),
+    getFallbackLogo(sourceUrl)
+  );
+
+  $("a[href]").each((_, element) => {
+    if (candidates.length >= candidateLimit) return;
+    const link = absoluteUrl($(element).attr("href"), sourceUrl);
+    const title = stripHtml($(element).text()).replace(/\s+/g, " ").trim();
+    if (!link || seenLinks.has(link) || title.length < 18 || !config.linkPattern.test(link)) return;
+    if (/\/live-blog(?:-|\/)/i.test(link)) return;
+    if (config.titlePattern && !config.titlePattern.test(title)) return;
+    try {
+      if (new URL(link).hostname.replace(/^www\./, "") !== new URL(sourceUrl).hostname.replace(/^www\./, "")) return;
+    } catch {
+      return;
+    }
+
+    seenLinks.add(link);
+    const listingText = stripHtml($(element).closest("article, li, div").text());
+    const candidateThumbnail = getImageCandidate($, $(element).find("img").first());
+    candidates.push({
+      title,
+      description: title,
+      articleText: "",
+      cityCode: "",
+      isActive: true,
+      newsLink: link,
+      thumbnailImage: isRejectedImageCandidate(candidateThumbnail) ? "" : absoluteUrl(candidateThumbnail, sourceUrl),
+      postedBy: publisher,
+      postedByLogo: publisherLogo,
+      publishedAt: extractPublishedAtFromText(`${title} ${listingText}`) || null,
+      fetchedAt: new Date().toISOString()
+    });
+  });
+
+  const articles = await mapWithConcurrency(candidates.slice(0, getMaxItemsPerSource()), 6, async (candidate) => {
+    const metadata = await fetchArticleMetadataWithTimeout(candidate.newsLink, candidate, options);
+    const article = cleanArticleFields({
+      ...candidate,
+      ...metadata,
+      nativeLanguageSource: true,
+      language: config.language,
+      languageScript: config.script,
+      authoritativeContent: false,
+      description: stripHtml(metadata.description || candidate.description),
+      articleText: stripHtml(metadata.articleText || candidate.articleText || ""),
+      thumbnailImage: absoluteUrl(metadata.thumbnailImage || candidate.thumbnailImage, candidate.newsLink),
+      createdAt: metadata.publishedAt || candidate.publishedAt || ""
+    });
+    return { ...applyCityCode(article), id: stableId(article) };
+  });
+
+  return uniqueByDedupeIds(articles);
+}
+
+async function fetchManoramaNest(sourceUrl, options = {}) {
+  const html = await fetchHtml(sourceUrl, options);
+  const $ = cheerio.load(html);
+  const seenLinks = new Set();
+  const candidates = [];
+  const candidateLimit = getMaxItemsPerSource();
+  const publisher = getPublisherName(sourceUrl, $("title").text());
+  const publisherLogo = pickFirst(
+    absoluteUrl($("link[rel='icon']").attr("href"), sourceUrl),
+    absoluteUrl($("link[rel='shortcut icon']").attr("href"), sourceUrl),
+    getFallbackLogo(sourceUrl)
+  );
+
+  $("a[href*='/homestyle/nest/20']").each((_, element) => {
+    if (candidates.length >= candidateLimit) return;
+    const link = absoluteUrl($(element).attr("href"), sourceUrl);
+    const title = stripHtml($(element).text());
+    if (!link || seenLinks.has(link) || title.length < 18 || !/\/homestyle\/nest\/20\d{2}\/\d{2}\/[^/]+\.html(?:$|\?)/i.test(link)) {
+      return;
+    }
+
+    seenLinks.add(link);
+    const dateMatch = link.match(/\/homestyle\/nest\/(\d{4})\/(\d{2})\/(\d{2})\//i);
+    const publishedAt = dateMatch
+      ? new Date(Date.UTC(Number(dateMatch[1]), Number(dateMatch[2]) - 1, Number(dateMatch[3]), 12)).toISOString()
+      : null;
+    const fallback = {
+      title,
+      description: title,
+      articleText: "",
+      cityCode: "",
+      isActive: true,
+      newsLink: link,
+      thumbnailImage: isRejectedImageCandidate(getImageCandidate($, $(element).find("img").first()))
+        ? ""
+        : absoluteUrl(getImageCandidate($, $(element).find("img").first()), sourceUrl),
+      postedBy: publisher,
+      postedByLogo: publisherLogo,
+      publishedAt,
+      fetchedAt: new Date().toISOString()
+    };
+    candidates.push(fallback);
+  });
+
+  if (candidates.length === 0) {
+    const discoveredLinks = [...html.matchAll(/(?:href|data-href)=["']([^"']*\/homestyle\/nest\/20\d{2}\/\d{2}\/[^"']+\.html(?:\?[^"']*)?)["']/gi)]
+      .map((match) => absoluteUrl(match[1], sourceUrl))
+      .filter((link) => link && !seenLinks.has(link));
+    for (const link of discoveredLinks) {
+      if (candidates.length >= candidateLimit) break;
+      const slug = new URL(link).pathname.split("/").pop()?.replace(/\.html$/i, "").replace(/[-_]+/g, " ") || "Malayalam real estate article";
+      seenLinks.add(link);
+      candidates.push({
+        title: slug,
+        description: slug,
+        articleText: "",
+        cityCode: "",
+        isActive: true,
+        newsLink: link,
+        thumbnailImage: "",
+        postedBy: publisher,
+        postedByLogo: publisherLogo,
+        publishedAt: (() => {
+          const dateMatch = link.match(/\/homestyle\/nest\/(\d{4})\/(\d{2})\/(\d{2})\//i);
+          return dateMatch
+            ? new Date(Date.UTC(Number(dateMatch[1]), Number(dateMatch[2]) - 1, Number(dateMatch[3]), 12)).toISOString()
+            : null;
+        })(),
+        fetchedAt: new Date().toISOString()
+      });
+    }
+  }
+
+  const articles = await Promise.all(candidates.slice(0, getMaxItemsPerSource()).map(async (candidate) => {
+    const metadata = await fetchArticleMetadataWithTimeout(candidate.newsLink, candidate, options);
+    const article = cleanArticleFields({
+      ...candidate,
+      ...metadata,
+      authoritativeContent: true,
+      nativeLanguageSource: true,
+      language: "ml",
+      languageScript: "Malayalam"
+    });
+    return { ...applyCityCode(article), id: stableId(article) };
+  }));
+
+  return uniqueByDedupeIds(articles);
+}
+
 async function fetchSource(sourceUrl, options = {}) {
+  if (isManoramaNestSource(sourceUrl)) {
+    return fetchManoramaNest(sourceUrl, options);
+  }
+
+  if (isRegionalHtmlSource(sourceUrl)) {
+    return fetchRegionalHtmlSource(sourceUrl, options);
+  }
+
   if (isUpReraPressReleaseSource(sourceUrl)) {
     return fetchUpReraPressReleases(sourceUrl, options);
   }
@@ -8425,9 +9015,12 @@ async function fetchSourceBatch(sourceList, options = {}) {
     const telemetry = options.telemetry;
     const sourceId = sourceTelemetryId(source);
     const sourceHost = sourceTelemetryHost(source);
-    const sourceStartedAt = Date.now();
-    await telemetry?.emit("SOURCE_START", { sourceId, sourceUrl: source, sourceHost, mode: options.mode || "normal" });
-    await telemetry?.emit("SOURCE_STAGE", { sourceId, sourceUrl: source, stage: "fetch" });
+    const workerStartedAt = Date.now();
+    const memoryAtWorkerStart = getMemorySnapshot();
+    let operationStartedAt = null;
+    let sourceDeadlineAt = null;
+    await telemetry?.emit("SOURCE_START", { sourceId, sourceUrl: source, sourceHost, mode: options.mode || "normal", workerStartedAt });
+    await telemetry?.emit("SOURCE_STAGE", { sourceId, sourceUrl: source, stage: "fetch", workerStartedAt });
     try {
       throwIfSourceBudgetExhausted(options);
     } catch (error) {
@@ -8435,12 +9028,22 @@ async function fetchSourceBatch(sourceList, options = {}) {
         sourceId,
         sourceUrl: source,
         sourceHost,
-        stage: "budget-check",
-        timeoutType: "batch-deadline",
-        elapsedMs: 0,
-        error: error.message
+        stage: "queue-boundary",
+        timeoutType: "global-boundary-before-operation",
+        elapsedMs: Date.now() - workerStartedAt,
+        error: "source deferred at global boundary before operation",
+        operationStarted: false,
+        terminalStatus: "DEFERRED_BY_GLOBAL_BOUNDARY"
       });
-      return recordResult(source, { source, status: "BUDGET_EXHAUSTED", error: error.message, attempts: 0 });
+      return recordResult(source, {
+        source,
+        status: "DEFERRED_BY_GLOBAL_BOUNDARY",
+        error: "source deferred at global boundary before operation",
+        attempts: 0,
+        operationStarted: false,
+        workerStartedAt,
+        queueWaitMs: Date.now() - workerStartedAt
+      });
     }
 
     const remainingMs = options.deadlineAt
@@ -8451,19 +9054,30 @@ async function fetchSourceBatch(sourceList, options = {}) {
         sourceId,
         sourceUrl: source,
         sourceHost,
-        stage: "budget-check",
-        timeoutType: "batch-deadline",
-        elapsedMs: 0,
-        error: "source budget exhausted before attempt"
+        stage: "queue-boundary",
+        timeoutType: "global-boundary-before-operation",
+        elapsedMs: Date.now() - workerStartedAt,
+        error: "source deferred at global boundary before operation",
+        operationStarted: false,
+        terminalStatus: "DEFERRED_BY_GLOBAL_BOUNDARY"
       });
-      return recordResult(source, { source, status: "BUDGET_EXHAUSTED", error: "source budget exhausted before attempt", attempts: 0 });
+      return recordResult(source, {
+        source,
+        status: "DEFERRED_BY_GLOBAL_BOUNDARY",
+        error: "source deferred at global boundary before operation",
+        attempts: 0,
+        operationStarted: false,
+        workerStartedAt,
+        queueWaitMs: Date.now() - workerStartedAt
+      });
     }
     // Bound the entire recovery/retry chain, not just each individual
     // network attempt. A source with several aliases must not consume the
     // runtime budget through repeated 90-second attempts.
-    const sourceDeadlineAt = Math.min(
+    operationStartedAt = Date.now();
+    sourceDeadlineAt = Math.min(
       options.deadlineAt || Number.POSITIVE_INFINITY,
-      sourceStartedAt + getSourceTimeoutMs()
+      operationStartedAt + getSourceTimeoutMs()
     );
     try {
       const sourceOptions = {
@@ -8472,6 +9086,7 @@ async function fetchSourceBatch(sourceList, options = {}) {
         deadlineAt: sourceDeadlineAt
       };
       const result = await fetchSourceWithRecovery(source, sourceOptions);
+      const memoryAfterDiscovery = getMemorySnapshot();
       const sourceCityCodes = getConfiguredSourceCityCodes(source);
       const articles = result.articles.map((article) => ({
         ...article,
@@ -8495,19 +9110,35 @@ async function fetchSourceBatch(sourceList, options = {}) {
           attempts: result.attempts,
           recovered: result.recovered === true,
           fetchResult: "success",
-          fetchDurationMs: Date.now() - sourceStartedAt,
+          fetchDurationMs: Date.now() - operationStartedAt,
+          workerWaitMs: operationStartedAt - workerStartedAt,
+          operationStartedAt,
           sourceType: isLikelyFeedUrl(source) ? "RSS_OR_ATOM" : "HTML_OR_SPECIALIZED"
         }
       }));
       const recoveryLabel = result.recovered ? ` via ${result.fetchedSource}` : "";
-      console.log(`Fetched ${result.articles.length} items from ${source}${recoveryLabel} in ${formatDuration(Date.now() - sourceStartedAt)} (attempts: ${result.attempts})`);
+      const memoryAfterArticleExtraction = getMemorySnapshot();
+      await telemetry?.emit("SOURCE_MEMORY", {
+        sourceId,
+        sourceUrl: source,
+        sourceHost,
+        stage: "article-extraction",
+        adapter: isLikelyFeedUrl(source) ? "RSS_OR_ATOM" : "HTML_OR_SPECIALIZED",
+        articleCount: articles.length,
+        memoryAtWorkerStart,
+        memoryAfterDiscovery,
+        memoryAfterArticleExtraction
+      });
+      console.log(`Fetched ${result.articles.length} items from ${source}${recoveryLabel} in ${formatDuration(Date.now() - operationStartedAt)} (attempts: ${result.attempts})`);
       await telemetry?.emit("SOURCE_END", {
         sourceId,
         sourceUrl: source,
         sourceHost,
         status: articles.length ? "COMPLETED" : "COMPLETED_NO_CANDIDATE",
         stage: "article-extraction",
-        elapsedMs: Date.now() - sourceStartedAt,
+        elapsedMs: Date.now() - operationStartedAt,
+        workerWaitMs: operationStartedAt - workerStartedAt,
+        operationStarted: true,
         linksDiscovered: articles.length,
         articlesAttempted: articles.filter((article) => article.articleReadAttempted).length,
         articlesReadable: articles.filter((article) => article.fullArticleRead === true).length,
@@ -8515,12 +9146,15 @@ async function fetchSourceBatch(sourceList, options = {}) {
         geoValid: articles.filter((article) => article.cityCode).length,
         candidates: articles.length
       });
-      return recordResult(source, { source, status: articles.length ? "SUCCESS_PRODUCTIVE" : "SUCCESS_NO_CANDIDATE", articles, attempts: result.attempts, fetchedSource: result.fetchedSource, recovered: result.recovered });
+      return recordResult(source, { source, status: articles.length ? "SUCCESS_PRODUCTIVE" : "SUCCESS_NO_CANDIDATE", articles, attempts: result.attempts, fetchedSource: result.fetchedSource, recovered: result.recovered, operationStarted: true, workerStartedAt, operationStartedAt, workerWaitMs: operationStartedAt - workerStartedAt });
     } catch (error) {
-      const elapsedMs = Date.now() - sourceStartedAt;
+      const elapsedMs = Date.now() - (operationStartedAt || workerStartedAt);
       const sourceDeadlineExpired = sourceDeadlineAt <= Date.now() &&
         (!options.deadlineAt || sourceDeadlineAt < options.deadlineAt);
       const timeout = error?.sourceStatus === "BUDGET_EXHAUSTED" || sourceDeadlineExpired || /timed?\s*out|timeout|deadline|aborted/i.test(error.message || "");
+      const terminalStatus = timeout
+        ? (operationStartedAt ? "SOURCE_TIMEOUT_AFTER_EXECUTION" : "DEFERRED_BY_GLOBAL_BOUNDARY")
+        : (error.sourceStatus || "TRANSPORT_FAILURE");
       await telemetry?.emit(timeout ? "SOURCE_TIMEOUT" : "SOURCE_FAIL", {
         sourceId,
         sourceUrl: source,
@@ -8528,18 +9162,25 @@ async function fetchSourceBatch(sourceList, options = {}) {
         status: timeout ? "TIMEOUT_ACCOUNTED" : "FAILED_ACCOUNTED",
         stage: "fetch",
         elapsedMs,
-        timeoutType: timeout ? (options.signal?.aborted || (options.deadlineAt && sourceDeadlineAt >= options.deadlineAt)
-          ? "batch-deadline"
-          : "source-timeout") : undefined,
+        timeoutType: timeout ? (operationStartedAt ? "source-timeout-after-operation" : "global-boundary-before-operation") : undefined,
         error: error.message,
-        failureClass: error.sourceStatus || "TRANSPORT_FAILURE"
+        failureClass: terminalStatus,
+        operationStarted: Boolean(operationStartedAt),
+        workerWaitMs: operationStartedAt ? operationStartedAt - workerStartedAt : Date.now() - workerStartedAt
       });
       console.error(`Failed to fetch ${source}: ${error.message}`);
+      const terminalError = timeout
+        ? `source operation timed out after execution: ${String(error.message || "timeout").replace(/source budget exhausted before operation/gi, "operation deadline reached")}`
+        : error.message;
       return recordResult(source, {
         source,
-        status: timeout ? "TIMEOUT" : (error.sourceStatus || "TRANSPORT_FAILURE"),
-        error: error.message,
-        attempts: error.sourceAttempts || getSourceRetryAttempts()
+        status: terminalStatus,
+        error: terminalError,
+        attempts: error.sourceAttempts || getSourceRetryAttempts(),
+        operationStarted: Boolean(operationStartedAt),
+        workerStartedAt,
+        operationStartedAt,
+        workerWaitMs: operationStartedAt ? operationStartedAt - workerStartedAt : Date.now() - workerStartedAt
       });
     }
   });
@@ -8553,32 +9194,35 @@ async function fetchSourceBatch(sourceList, options = {}) {
   if (!options.deadlineAt) return batchPromise;
   const remainingMs = options.deadlineAt - Date.now();
   if (remainingMs <= 0) {
-    return sourceList.map((source) => settledResults.get(source) || { source, status: "BUDGET_EXHAUSTED", error: "source batch deadline exhausted", attempts: 0 });
+    return sourceList.map((source) => settledResults.get(source) || { source, status: "DEFERRED_BY_GLOBAL_BOUNDARY", error: "source deferred at global boundary before operation", attempts: 0, operationStarted: false });
   }
   let deadlineTimer;
   const deadlinePromise = new Promise((resolve) => {
     deadlineTimer = setTimeout(() => resolve(sourceList.map((source) => settledResults.get(source) || {
       source,
-      status: "BUDGET_EXHAUSTED",
-      error: "source batch deadline exhausted",
-      attempts: 0
+      status: "DEFERRED_BY_GLOBAL_BOUNDARY",
+      error: "source deferred at global boundary before operation",
+      attempts: 0,
+      operationStarted: false
     })), remainingMs);
   });
   batchPromise.catch(() => {});
   try {
     const results = await Promise.race([batchPromise, deadlinePromise]);
-    if (results.some((result) => result.status === "BUDGET_EXHAUSTED")) {
+    if (results.some((result) => result.status === "DEFERRED_BY_GLOBAL_BOUNDARY")) {
       await Promise.all(results
-        .filter((result) => result.status === "BUDGET_EXHAUSTED")
+        .filter((result) => result.status === "DEFERRED_BY_GLOBAL_BOUNDARY")
         .map((result) => options.telemetry?.emit("SOURCE_TIMEOUT", {
           sourceId: sourceTelemetryId(result.source),
           sourceUrl: result.source,
           sourceHost: sourceTelemetryHost(result.source),
-          status: "DEFERRED",
+          status: "DEFERRED_BY_GLOBAL_BOUNDARY",
           stage: "batch-deadline",
           elapsedMs: 0,
           timeoutType: "batch-deadline",
-          error: result.error
+          error: result.error,
+          operationStarted: false,
+          terminalStatus: "DEFERRED_BY_GLOBAL_BOUNDARY"
         })));
     }
     return results;
@@ -8779,7 +9423,7 @@ async function main() {
           telemetry: runTelemetry,
           mode: "normal-current-news"
         });
-        const startedResults = batchResults.filter((result) => result.status !== "BUDGET_EXHAUSTED");
+        const startedResults = batchResults.filter((result) => result.status !== "DEFERRED_BY_GLOBAL_BOUNDARY");
         await checkpointResumableSourceShard(resumableContext, shard, startedResults);
         for (const result of startedResults) {
           const sourceId = shard.sources.find((source) => normalizeSourceUrl(source.url) === normalizeSourceUrl(result.source))?.sourceId;
@@ -8820,7 +9464,10 @@ async function main() {
     error: result.error || "",
     failureClass: result.error ? (result.status || "TRANSPORT_FAILURE") : "",
     fetchedSource: result.fetchedSource || result.source,
-    recovered: result.recovered === true
+    recovered: result.recovered === true,
+    operationStarted: result.operationStarted === true,
+    workerWaitMs: result.workerWaitMs || 0,
+    operationStartedAt: result.operationStartedAt || null
   }));
 
   for (const result of sourceResults) {
@@ -9108,6 +9755,7 @@ export {
   fetchSourceWithRecovery,
   fetchSourceWithRetry,
   fetchSourceWithTimeout,
+  execFileWithHardTimeout,
   getSourcePageUrls,
   getSourceUrls,
   getGeographicAliasAudit,
@@ -9137,7 +9785,8 @@ export {
   isNegativeNews,
   isPublishableArticle,
   isWithinBackfillDateRange,
-  parseNewsDateValue
+  parseNewsDateValue,
+  getMemorySnapshot
 };
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

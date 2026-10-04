@@ -1,14 +1,13 @@
 {
-  "generatedAt": "2026-09-30T11:25:35.356Z",
+  "generatedAt": "2026-10-03T14:22:59.435Z",
   "environment": {
     "os": "win32",
     "arch": "x64",
     "node": "v24.18.0",
     "tesseract": "tesseract v5.5.0.20241111\r",
-    "tessdataDir": "C:\\Users\\pc\\AppData\\Local\\Temp\\brokket-task14-tessdata",
+    "tessdataDir": "C:\\Program Files\\Tesseract-OCR\\tessdata",
     "languages": [
-      "eng",
-      "hin"
+      "eng"
     ],
     "poppler": {
       "pdfinfo": "C:\\Users\\pc\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdfinfo.exe",
@@ -25,198 +24,34 @@
   },
   "hsvp": {
     "pdfsTested": 4,
-    "pdfsSuccessfullyOcrd": 4,
+    "pdfsSuccessfullyOcrd": 2,
     "documents": [
       {
         "documentUrl": "https://hsvphry.org.in/documents/notices/PUBLIC_NOTICE_202608201128_91b182e9.pdf",
         "listingUrl": "https://hsvphry.org.in/Home/Notices?branch=HEWO&type=All&year=2026",
         "title": "Advertisement Flotation of surplus/surrendered/cancelled flats of HEWO Site GH-09 & GH-02, Sector-12, Sonepat. Uploaded on:20 August 2026 Revised on: 20 August 2026 ] HEWO",
         "listingDate": "20 August 2026",
-        "sizeBytes": 2242708,
+        "sizeBytes": 0,
         "fetch": {
           "documentUrl": "https://hsvphry.org.in/documents/notices/PUBLIC_NOTICE_202608201128_91b182e9.pdf",
           "status": 200,
           "finalUrl": "https://hsvphry.org.in/documents/notices/PUBLIC_NOTICE_202608201128_91b182e9.pdf",
           "contentType": "application/pdf",
-          "bytes": 2242708,
-          "validation": "VALID_PDF",
-          "elapsedMs": 333,
-          "textExtraction": "IMAGE_ONLY_PDF",
+          "bytes": 0,
+          "validation": "TIMEOUT",
+          "elapsedMs": 10019,
+          "textExtraction": "",
           "textLength": 0,
-          "failureReason": ""
+          "failureReason": "TIMEOUT"
         },
-        "pages": 5,
-        "render": [
-          {
-            "page": 1,
-            "status": "RENDERED",
-            "elapsedMs": 878
-          },
-          {
-            "page": 2,
-            "status": "RENDERED",
-            "elapsedMs": 698
-          },
-          {
-            "page": 3,
-            "status": "RENDERED",
-            "elapsedMs": 878
-          },
-          {
-            "page": 4,
-            "status": "RENDERED",
-            "elapsedMs": 834
-          },
-          {
-            "page": 5,
-            "status": "RENDERED",
-            "elapsedMs": 661
-          }
-        ],
+        "pages": 0,
+        "render": [],
         "ocr": {
           "engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
-          "languages": [
-            "eng",
-            "hin"
-          ],
-          "pages": [
-            {
-              "status": "OCR_HIGH_CONFIDENCE",
-              "page": 1,
-              "language": "eng",
-              "chars": 2580,
-              "elapsedMs": 856,
-              "text": "HUDA URBAN ESTATE TOWN & CO!\r\nUNTI\r\nEMPLOYEES WELFARE ORGANISATION HEWO)\r\nC-3, SECTOR-6, PANCHKUL.\r\nNo./HEWO/20: : \" Ls\r\n/ 26//4\\2 Dated: (4 6|26\r\n', To\r\n\r\nAll the General Public\r\nSubject: Floatation of balance constructed flat at Sonepat.\r\n\r\nApplications for residential flats are invited from the General Public on as is\r\n\r\n= where is basis. The detail of the constructed vacant flats, cost & area are given as under:-\r\nte / Stat\r\ned Reece |e] a fee eee Tate | ato MAE TT,\r\nat | floated] including ae ee tala\r\nsite for all Fhe aa deposited\r\nwil\r\nParki i,\r\n(in sqft) | Pals\r\nGH-09, Sec- | Super 20 = eo)\r\nES 32,698,190 ; d\r\nx = 45,94,662/-\r\na a\r\nSpecification of flats:-\r\n\r\nThese are multistoried flats provided with facilities viz; plumbing, internal\r\nand external water supply, sewerage, electrification etc. The constructed flats ready to\r\nenter are being sold on as is where is basis.\r\n\r\nApplicant will have to submit the application complete in all respect in the\r\nenclosed performa alongwith 10% cost of flats in shape of demand draft in favour of M.D\r\nHEWO, Panchkula and shall reach on or before 21.09.2026 in the office of M.D. HEWO, Cc\r\n3, HSVP Complex, Sector-6, Panchkula, either through registered post or in person. No\r\nclaim on account of delay shall be entertained.\r\n\r\n*, Other Terms & Conditions will be as under:-\r\n\r\nals The application will be submitted, indicating full particulars i.e. name,\r\ndesignation, father's name and permanent address (on the perform\r\nenclosed alongwith affidavit).\r\n\r\n2. A demand draft of 10% of cost of flat in favour of Managing Director HEWO,\r\nPanchkula payable at Panchkula/Chandigarh will be enclosed with the\r\napplication. The application received without Earnest Money shall be\r\nstraightway rejected.\r\n\r\n3. The particular floor and flat will be allocated through draw of lots.\r\n\r\n4. Balnce 90% of cost of flat shall be deposited within 60 days from the date of\r\nissue of Letter of Intent (LOI). The LOI will be sent on the Email ID provided\r\nby the applicant. In case of default the allocation will be cancelled and\r\namount will be refunded after deducting 20% amount of the earnest money\r\n\r\nHis as per HEWO policy.\r\n\r\n5. Deposit of 10% amount will not create any right whatsoever for the\r\nallocation of membership. In case numbers of applications are more than\r\navailable flats, the same will be decided through draw of lots.\r\n\r\n6. In future any enhancement received from the concerned Estate Officer will\r\nbe paid by the applicant. Hence the cost of flat can increase at any stage of\r\ntime.\r\n\r\nQE Scanned with OKEN Scanner\r\n",
-              "error": "",
-              "imageBytes": 1144634
-            },
-            {
-              "status": "OCR_USABLE",
-              "page": 1,
-              "language": "hin",
-              "chars": 2212,
-              "elapsedMs": 6648,
-              "text": "न्ण0/ एार8/घ१ 85278 70४0 8 00\r\nछा\r\nहानएा.0१५६४६५ ४82२६ पर 7\r\n0-3, 5६80८707२-6, ?# १८0,\r\n॥१०./#६५/०/ 20: दे दि दी\r\n/2०26/ [9] 2. ००६०१: (प | 2. ट\r\n\", 0\r\nमै॥ पीह 5629 रिप0८\r\n5प्राजुं८:; . ना०मघवघिंणा 0 906 0005घ'घ८:60 8. भा, 50608:\r\n8८25 णि' 7€50279। विडड आह ताधए80 वि 6 828| रिपशी८ 0 ०5 5\r\nगा की धाहा९ 5 0855. ९ 08 0 (९ टणाइप00060 ४०८०: वि, 005 8 भा28 माह पहला 25 पाएंहार\r\nः डा फल फलापपपट गठिफपपता जि\r\nलमिफलाई पमइयाग ग्छ रा गम टमणता एव व्म्न पद न गाग्दा उ०्कऋ\r\nभा. | ०3६८0 लएलीपप शक कप मय\r\nडॉट 8. आदड बदलाव\r\n४\r\n'। ग\r\nदि फिर) | कि\r\nरा माक उठ, खत रू दा\r\nण ट बड़, 34,6627-\r\nएड जनम छापने आए 3 छ5ऊ. ...\r\n506टॉंपि८०घ07 0 (व: -\r\nपह56 वा& पए50(060 वविडि फा०त060 पापी विटा॥पह5 ट; पा जि, व(हि8|\r\nवाा0 हज>हा9। ४827 5000४, 58#8ा806, श60प्राधिटवपंघा 600८. प€ ८0ा5घ00(60 हव5 7680४ (0\r\n(डा वा€ 9९00 500 0 85 5 028 5 0855.\r\n00 ४४॥ विवि (0 50ंजाए: पीह 3000 00068 हा का 65060. ही घी&\r\nहाए।0560 02008 8000४गघी 40% ८050: ए वविडि ही 58906 0 हां पा वा विध00ा 0-0\r\nनाह/0, एवाएा(08 200 डी8॥| 2800 00 0 0606 2.09.2026 ॥ घा& 006 0 ८0. ६0, ८-\r\nउ, #50? (069, 56000-6, शाला (प8, शॉपाहा पा 00 6पांड/हा&0 905. 0 96507: 0\r\nटाक्ा 00 80000 0 088) 08 96 छा(हा(आा60.\r\n*. 0067 705 & ८०ापॉपिंएाड ध ए व पााबडन 0० तापि0ा5 ४४ 06 वड परासडा:-\r\n. चक€ 20ॉप्गं0ा जां॥ 96. 50८60, 00800 ि॥. एमए छाई ।,€. , ठा6,\r\n65800, िधाहा'5. ॥8ा6. गाए 0288. 800655 (0 घा&. 0हाणिएा\r\nहाए।0560 वणापुशापी विवश,\r\n2. 8 0ह्ा।भाएं पाव 0 0% 0 ८050 0 वा हा वि#0ए ए िंगावपाएप णाह८0 800,\r\nराएी (08. 0व/806 ०६ ?माटी(09/(ा8ाएंपुक ४॥ 06 00560 ४0. पी&\r\nवछीए्वपंगा, 6 0ॉटविंणा. 606४60 एंपी00:. रिगाा65: . 06) 5ीवे॥ 96\r\nइप्ावांपा व ९6060.\r\n3. पा एछाप0ए8ा 007 आए (8: ५ 96 (0८ व60 प0००पी एव 0 05.\r\nथे. 82006 90% 0 005: 0 व. 508 06 त6005060 पगी। 60 08५5 वा प्राह 086 रण\r\n5506 0 ।.&87 0 पा: (07). 6 (07 क0॥ ७९6 58 00 (06 दिम। [0 फ0५/060\r\n0४ (6 800 पा] ८856 0 06विए॥: (6 व॥!008घं07 ए॥ 096 ८वाए6॥60 भाएं\r\n000८ ४४ 06 हधा060 डा ९०0८घरा00 20% 00: 0 पी& 68765 060\r\nडे 25 08 ५६४0 एणॉट7-\r\n5 060050: 0 0% काा0 भ॥ 0. टाष86 वा पंप 'शव.506४6  पी€\r\n00800 0. पाह्ा।026500: 0०56 0085 0 20 08प0ा5 वाह 06 (वा\r\n४०॥०9€ (805, (6 586 दा ७6 60060 पा0०एप0 एव 0 ।05.\r\n6. ता छिपा था 80088: 60860 पा 6 ए0ा08060 एि50806 (एड ४४\r\n0९ एमए 0४ पट 00080: 806 पा ८05: 0 वां: (8 ८6856 था; था 5806 0.\r\n(6,\r\n(छू 5८वााह० पापी 0६९ 5८22\r\n",
-              "error": "",
-              "imageBytes": 1144634
-            },
-            {
-              "status": "OCR_HIGH_CONFIDENCE",
-              "page": 2,
-              "language": "eng",
-              "chars": 972,
-              "elapsedMs": 402,
-              "text": "7 In case applicant is un-successful in the draw of lot the refund will be made\r\nin the same account provided by the applicant in the application form.\r\nCancelled cheque for refund purpose be enclosed.\r\n\r\n8. Applicant should enclose valid ID proof of residence i.e. Aadhar card/ driving\r\nlicence/Electricity Bill/Voter card alongwith Affidavit. F\r\n\r\n9. For loan purpose, HEWO shall give only the following documents:-\r\n\r\n1. Mortgage Permission in favour of bank.\r\n2. Tripartite Agreement.\r\n3. Copy of registration of HEWO.\r\n4 Letter of Intent. :\r\n5. Copy of allotment letter of Site issued by the Estate Officer, HSVP.\r\n6. Copy of letter vide which approval of building plans has been granted\r\nby concerned Estate Officer, HSVP.\r\n7 Copy of Occupation Certificate of concerned site issued by Estate\r\nOfficer, HSVP to HEWO.\r\nDA: Application Form\r\nAffidavit Superintendent\r\nDetail of vacant flat For Managing Directo!\r\nHEWO, Panchkul \\y y\r\n?\r\n(@ 3 Scanned with OKEN Scanner\r\n",
-              "error": "",
-              "imageBytes": 856552
-            },
-            {
-              "status": "OCR_USABLE",
-              "page": 2,
-              "language": "hin",
-              "chars": 808,
-              "elapsedMs": 1523,
-              "text": "् पा ८858 ०90॥८800 5 एान50८८९55घि ही (6 ताव४/ 0 00: प€ 6000 ४४॥ 96 प806\r\n॥ (१९ 586 8८८०० 0060 0४ पीट 300॥८800 0. 6 80080 शिए.\r\n(गा८९॥९ दी69०९ णि एर्डधि0 90ा0056 0९ €00560,\r\n\r\n8. 800८9: 5000 हाए056 ४0 [0 छा00 0 650806 ।,€. 2808 ८गएं/ पाधशि09\r\n॥ट्हा८€/ह९८घा0४/ छि॥/४/०६67 ८8ाए 00५00 तपपिकएं(, थी\r\n\r\nन #07 08 00056, ६५0 डा पांभ& 0४ घी€ ॥0४000 00005:\r\nउ. 00०06 रिहाएां5500 ह विध0एा 0 08.\r\nश. वाएगप(€ #पा68ा8-\r\n3. (0०0४ 0 ९पंडधवां0ा 0 ६४0,\r\nहर हप67 0 पा 8: डा\r\n5. (0०0४ 0 भ॥0 068 हा हा 0 डॉ 55060 0४ प्रा& 50806 (एड, 5४0,\r\n6. (0०0४ 0 ९02 शा06 शा एी 0०४9 0 9एर000 एि05 25 968 प्रागा(60\r\n\r\n0) एणाएडा060 रिंड 6 (ीट्डा, 500,\r\nचल (०9४ ० 0८८००म0ा एहापीएवड 0 ट८णाएहाा60 56 55060 0५ €िडवड\r\n0पएहा, 5४? (0 ६00.\r\n0/:.. 0080 शा\r\n0... 50 (न\r\n0९वां। 0 ४०८७ हवा: #0 धिंगा80ा00 6८00\r\nनह४/0, रिवादी 0८ |\r\n/\r\n0 5८260 एप 0६६१ 508९\r\n",
-              "error": "",
-              "imageBytes": 856552
-            },
-            {
-              "status": "OCR_HIGH_CONFIDENCE",
-              "page": 3,
-              "language": "eng",
-              "chars": 1189,
-              "elapsedMs": 591,
-              "text": "APPLICATION FORM FOR HEWO FLAT AT SONIPAT\r\nNo.S-III/2026.....\r\nFull Name of applicant (In Block Letters):___-_——=—— —$-_—______\r\n(As per Aadhar card)\r\nFather’s/Husband’s Name (In Block L eters): ______-\r\nDate of Birth of the applicant: TT\r\nCorrespondence Address: eT\r\n_\r\nOccupation: ee\r\n——— ee\r\nContact Phone No.: a\r\nEmail ID: ee\r\nCategory of flat applied for: a\r\nName of the Site where flat is applied for: _\r\nSignature of the applicant\r\nDeclaration by the applicant\r\nI hereby declare\r\n1. That I am depositing the requisite amount Rs. vide Demand Draft\r\nNo., dated 7\r\n2: That I have gone through the terms and conditions of the scheme mentioned in the\r\ncircular letter and agree to accept the same.\r\n3. That applying for the vacant flats will not give me any right for allotment of flat and\r\nI will not make any claim if declared unsuccessful in the draw of lot.\r\n4, That I will abide by the Rules and Regulations of HEWO in this regard.\r\n5. I will also abide by the rules & instructions of the Governing Body of HEWO that\r\nmay be announced from time to time and hosted on HSVP site www.hsvp.org.im at\r\nHEWO page.\r\nPlace: Signature of the applicant\r\nDate:\r\n(e2 Scanned with OKEN Scanner\r\n",
-              "error": "",
-              "imageBytes": 862199
-            },
-            {
-              "status": "OCR_USABLE",
-              "page": 3,
-              "language": "hin",
-              "chars": 1035,
-              "elapsedMs": 2351,
-              "text": "#??.0/#77074 ह0रान नर लि ना #0ारान 0२ लह्४४0 ह।- 87. #7 50५0?८27.\r\n१०.5-7/2026.....\r\n#0॥ वाह ए 80080 (व जि०द६ ।«छा5):___ एप\r\n(85 067 808 ८8)\r\nन्वाहा'5/050805 ठााद (0 80८ ।. शक्ा5) पा\r\n0806 ए छिपी 0 पा ०000बा:: पाए\r\n(०ा९500006806 00655: पाप\r\nपाए\r\n0८००0: भर\r\nएन\r\n(0णा(वट: शिणाथ षि०.: पलटा\r\nहाावां। [0: का...\r\n(869०४ 0 ॥8: 80060 छणिए एप\r\nाा& 0 घ6 506 ४6 थिवां, 5 थ00॥60 छिप पाप\r\nअंत 0 प& वी:\r\n0९८वाविंणा 9४ घा€ 8008:\r\nप 660४ 06086\r\n3. नाव: द था। 06005घ00 पिाह ।6प०ांड(6 00: रि5.. 06 00800 एव:\r\n0. 08060 दि\r\nये पवा: द पव४€ 0०6 घा 000 06 (605 20 ए0ाएघ005 0 घा€ 52086 60060 6\r\nलाएप।ा (हा भ00 पा&€ (0 ०८०७0: 6 56,\r\n3. गम: व फ00 ि घट व८वा।: वविए$ ध॥ 00: प्रांध€ ता वा? एप: 0 व॥॥00प्रा€ा: 0 ॥8 ठा0\r\nप॒ ध॥ 0: ार्वाइ€ ठा/ वा ७८860 पा50006€550 ह पाह एा8४/ 0 0..\r\nया पका: 7 ४४॥ 206 0४ घा€ रिए 5 भा रिह90वघ05 ए निरिप0 हा पांडि 6080.\r\nई- ग ध॥ 250 806 9४ पीह 7065 8 050000005 0 पा€ 60४00 800४ 0 ६४०: घाव:\r\n8४ 06 छा॥000080 छि00 पाए (0 पाा€ भा0 00560 0 ५5४? डांएड ४/४४४४.१5४७-०पनप मे:\r\n६४४0 0896.\r\nशठ06: ऊापावपा& 0 पा 80008\r\nवां:\r\n0 50860 एप 0९६९ 5086\r\n",
-              "error": "",
-              "imageBytes": 862199
-            },
-            {
-              "status": "OCR_HIGH_CONFIDENCE",
-              "page": 4,
-              "language": "eng",
-              "chars": 940,
-              "elapsedMs": 481,
-              "text": "AFFIDAVIT\r\n16 aged about a Years S/o\r\nCe EE —e\r\ndo hereby solemnly affirm and declare as under:-\r\ni That I have applied enrollment of member in HEWO flat at__...__— sor\r\nee Category.\r\n2. That the said scheme has been circulated by M.D HEWO, Panchkula vide public\r\nnotice dated :\r\n3. That I have gone through the terms and conditions of the scheme mentioned in the\r\nsaid letter and agree to accept the same.\r\n4. That I am depositing the requisite amount Rs.. vide Demand Draft\r\nNo. dated .\r\n5. That applying for the constructed flats will not give me any right for allotment of\r\nflat and I will not make any claim if declared unsuccessful in the draw of lot.\r\n6. That I will abide by Rules and Regulations of HEWO in this regard.\r\nDEPONENT\r\nPlace:\r\nDated:\r\nVERIFICATION:-\r\nVerified that the contents of above affidavit are true and correct to my knowledge\r\nand nothing has been concealed therein.\r\nDEPONENT\r\nt\r\nQE Scanned with OKEN Scanner\r\n",
-              "error": "",
-              "imageBytes": 773541
-            },
-            {
-              "status": "OCR_USABLE",
-              "page": 4,
-              "language": "hin",
-              "chars": 922,
-              "elapsedMs": 1919,
-              "text": "#कलाए# पा\r\nदे. ग60 8000: €ठा5 5/०\r\n5. स्टडपलाभ पे पर\r\n_______________________.................00॥660# 5060४ वि वा0 8८8९ व5 पाएंहा:-\r\nरद पवां: 7 कव४७ 8060 हा॥00ा8/ 0 वा8हा008 ॥ ६0 वा: व. __________......\r\n-.............्अध्9ण+ः\r\n2. पका पा& 5 5लाहाह 085 968 लाएपव60 9४ 0 नह 0/0, शवाएादिपवि पठह 00\r\n006 08060 नि\r\nड. पकाग 7 0व४७ ०6 घा 0000 घ€ (एहावा5 200 00ा0ीघ005 0 प6 50806 ताहा(0060 0 पीट\r\n5वां0 ।6((68 वाएं 2066 (0 80060 6 5806.\r\n4. पका द का 06005ांघी00 घा€ 600ांडा(€ का000 रि5.. 0 08080 एव:\r\nह०._______._...__.._. ०४ ही\r\n5, पवां: व छी0 छि घीा6 0एणाइए0:60 विधि ४त॥ 00: पां/& 6 गाए पाए णि व0घा6ा: 0\r\nवा गाए व ४४॥ 00: वा8६6 भा एव व 60860 पा50006557ि। व घा6 एा8४४ 0 40:.\r\n(च पावा द ४॥ 2शिं08 9४ रिधा।ह5 बाएं र6008घ005 ए निटि४0 पा पड 6080,\r\n0ह?0एटा९\r\nशिव८्6:\r\n060:\r\nहारानाए&ए0घ१:-\r\n१/हा 60 वां पा& 0८085 0 00४6 वीवो: वाह घध6 वाएं (060: (0 पा? ।0/76006\r\n00 00000 ५85 068 0006860 प6ा€ांग,\r\n9९0६९\r\nतर\r\n(छू 5८वााह० पापी 0६९ 5८22\r\n",
-              "error": "",
-              "imageBytes": 773541
-            },
-            {
-              "status": "OCR_HIGH_CONFIDENCE",
-              "page": 5,
-              "language": "eng",
-              "chars": 445,
-              "elapsedMs": 318,
-              "text": "ry wise vacant fl f HEW\r\neme-ITT at S at on as is where is basi:\r\nSr.No, | Category Area of Total GH Site & Sector Flat No.\r\nflat ; nos. of\r\nee |_ (In Saft. flats eee aae ese eenan:\r\n: a Super 2536.10 9 | GH-09, Sec-12, Sonipat 301, 302, 303, 304, 401,\r\nDeluxe 404, 502, 503 & 504\r\n| 2. Econom 1485.00 GH-09, Sec-12, Sonipat | _601, 602, 603 & 604\r\n3. Econom’ 1747.24 GH-02, Sec-12; Sonipat 601\r\nee SS EE EE Ce\r\ni\r\nQE Scanned with OKEN Scanner\r\n",
-              "error": "",
-              "imageBytes": 830456
-            },
-            {
-              "status": "OCR_USABLE",
-              "page": 5,
-              "language": "hin",
-              "chars": 444,
-              "elapsedMs": 869,
-              "text": "८४८६ 59005 ० ८०१६८१०४/ ५४४56 ४०८०६ 905 0 ६५४0\r\n560८-77 ०६ 50709 00 85 (5 ४४९९ 5 (9त55\r\nडाचषि०, | टबवणता ह्ा४8 ०. | कठ्छ्य ठढ डाएड 8 56ल०ा राजू\r\n8. 05. 0.\r\nदि | (व 5वा्पि, 805 कक\r\nदर कक 506 2536.0 9 |. 64-09, 560-2, 50008: | 30... 302, 303, 304, 407,\r\n060५९ 404, 502, 503 & 504\r\n2. ९८०ा00' 485.00 ठान-09, 56८-2, 50008 | 60, 602, 603 & 604\r\n3: ६८०00 4747.24 ठाम-02, 56८-2, 50080: लगा\r\nकक दा अलावा ला हम काया किडणाल\r\n।\r\n(छू 5८वााह० पापी 0६९ 5८22\r\n",
-              "error": "",
-              "imageBytes": 830456
-            }
-          ]
+          "languages": [],
+          "pages": []
         },
-        "quality": {
-          "english": {
-            "status": "OCR_HIGH_CONFIDENCE",
-            "text": "HUDA URBAN ESTATE TOWN & CO! UNTI EMPLOYEES WELFARE ORGANISATION HEWO) C-3, SECTOR-6, PANCHKUL. No./HEWO/20: : \" Ls / 26//4\\2 Dated: (4 6|26 ', To All the General Public Subject: Floatation of balance constructed flat at Sonepat. Applications for residential flats are invited from the General Public on as is = where is basis. The detail of the constructed vacant flats, cost & area are given as under:- te / Stat ed Reece |e] a fee eee Tate | ato MAE TT, at | floated] including ae ee tala site for all Fhe aa deposited wil Parki i, (in sqft) | Pals GH-09, Sec- | Super 20 = eo) ES 32,698,190 ; d x = 45,94,662/- a a Specification of flats:- These are multistoried flats provided with facilities viz; plumbing, internal and external water supply, sewerage, electrification etc. The constructed flats ready to enter are being sold on as is where is basis. Applicant will have to submit the application complete in all respect in the enclosed performa alongwith 10% cost of flats in shape of demand draft in favour of M.D HEWO, Panchkula and shall reach on or before 21.09.2026 in the office of M.D. HEWO, Cc 3, HSVP Complex, Sector-6, Panchkula, either through registered post or in person. No claim on account of delay shall be entertained. *, Other Terms & Conditions will be as under:- als The application will be submitted, indicating full particulars i.e. name, designation, father's name and permanent address (on the perform enclosed alongwith affidavit). 2. A demand draft of 10% of cost of flat in favour of Managing Director HEWO, Panchkula payable at Panchkula/Chandigarh will be enclosed with the application. The application received without Earnest Money shall be straightway rejected. 3. The particular floor and flat will be allocated through draw of lots. 4. Balnce 90% of cost of flat shall be deposited within 60 days from the date of issue of Letter of Intent (LOI). The LOI will be sent on the Email ID provided by the applicant. In case of default the allocation will be cancelled and amount will be refunded after deducting 20% amount of the earnest money His as per HEWO policy. 5. Deposit of 10% amount will not create any right whatsoever for the allocation of membership. In case numbers of applications are more than available flats, the same will be decided through draw of lots. 6. In future any enhancement received from the concerned Estate Officer will be paid by the applicant. Hence the cost of flat can increase at any stage of time. QE Scanned with OKEN Scanner 7 In case applicant is un-successful in the draw of lot the refund will be made in the same account provided by the applicant in the application form. Cancelled cheque for refund purpose be enclosed. 8. Applicant should enclose valid ID proof of residence i.e. Aadhar card/ driving licence/Electricity Bill/Voter card alongwith Affidavit. F 9. For loan purpose, HEWO shall give only the following documents:- 1. Mortgage Permission in favour of bank. 2. Tripartite Agreement. 3. Copy of registration of HEWO. 4 Letter of Intent. : 5. Copy of allotment letter of Site issued by the Estate Officer, HSVP. 6. Copy of letter vide which approval of building plans has been granted by concerned Estate Officer, HSVP. 7 Copy of Occupation Certificate of concerned site issued by Estate Officer, HSVP to HEWO. DA: Application Form Affidavit Superintendent Detail of vacant flat For Managing Directo! HEWO, Panchkul \\y y ? (@ 3 Scanned with OKEN Scanner APPLICATION FORM FOR HEWO FLAT AT SONIPAT No.S-III/2026..... Full Name of applicant (In Block Letters):___-_——=—— —$-_—______ (As per Aadhar card) Father’s/Husband’s Name (In Block L eters): ______- Date of Birth of the applicant: TT Correspondence Address: eT _ Occupation: ee ——— ee Contact Phone No.: a Email ID: ee Category of flat applied for: a Name of the Site where flat is applied for: _ Signature of the applicant Declaration by the applicant I hereby declare 1. That I am depositing the requisite amount Rs. vide Demand Draft No., dated 7 2: That I have gone through the terms and conditions of the scheme mentioned in the circular letter and agree to accept the same. 3. That applying for the vacant flats will not give me any right for allotment of flat and I will not make any claim if declared unsuccessful in the draw of lot. 4, That I will abide by the Rules and Regulations of HEWO in this regard. 5. I will also abide by the rules & instructions of the Governing Body of HEWO that may be announced from time to time and hosted on HSVP site www.hsvp.org.im at HEWO page. Place: Signature of the applicant Date: (e2 Scanned with OKEN Scanner AFFIDAVIT 16 aged about a Years S/o Ce EE —e do hereby solemnly affirm and declare as under:- i That I have applied enrollment of member in HEWO flat at__...__— sor ee Category. 2. That the said scheme has been circulated by M.D HEWO, Panchkula vide public notice dated : 3. That I have gone through the terms and conditions of the scheme mentioned in the said letter and agree to accept the same. 4. That I am depositing the requisite amount Rs.. vide Demand Draft No. dated . 5. That applying for the constructed flats will not give me any right for allotment of flat and I will not make any claim if declared unsuccessful in the draw of lot. 6. That I will abide by Rules and Regulations of HEWO in this regard. DEPONENT Place: Dated: VERIFICATION:- Verified that the contents of above affidavit are true and correct to my knowledge and nothing has been concealed therein. DEPONENT t QE Scanned with OKEN Scanner ry wise vacant fl f HEW eme-ITT at S at on as is where is basi: Sr.No, | Category Area of Total GH Site & Sector Flat No. flat ; nos. of ee |_ (In Saft. flats eee aae ese eenan: : a Super 2536.10 9 | GH-09, Sec-12, Sonipat 301, 302, 303, 304, 401, Deluxe 404, 502, 503 & 504 | 2. Econom 1485.00 GH-09, Sec-12, Sonipat | _601, 602, 603 & 604 3. Econom’ 1747.24 GH-02, Sec-12; Sonipat 601 ee SS EE EE Ce i QE Scanned with OKEN Scanner",
-            "chars": 5952,
-            "words": 922,
-            "alphaRatio": 0.7350470430107527,
-            "garbled": 0
-          },
-          "hindi": {
-            "status": "OCR_USABLE",
-            "text": "न्ण0/ एार8/घ१ 85278 70४0 8 00 छा हानएा.0१५६४६५ ४82२६ पर 7 0-3, 5६80८707२-6, ?# १८0, ॥१०./#६५/०/ 20: दे दि दी /2०26/ [9] 2. ००६०१: (प | 2. ट \", 0 मै॥ पीह 5629 रिप0८ 5प्राजुं८:; . ना०मघवघिंणा 0 906 0005घ'घ८:60 8. भा, 50608: 8८25 णि' 7€50279। विडड आह ताधए80 वि 6 828| रिपशी८ 0 ०5 5 गा की धाहा९ 5 0855. ९ 08 0 (९ टणाइप00060 ४०८०: वि, 005 8 भा28 माह पहला 25 पाएंहार ः डा फल फलापपपट गठिफपपता जि लमिफलाई पमइयाग ग्छ रा गम टमणता एव व्म्न पद न गाग्दा उ०्कऋ भा. | ०3६८0 लएलीपप शक कप मय डॉट 8. आदड बदलाव ४ '। ग दि फिर) | कि रा माक उठ, खत रू दा ण ट बड़, 34,6627- एड जनम छापने आए 3 छ5ऊ. ... 506टॉंपि८०घ07 0 (व: - पह56 वा& पए50(060 वविडि फा०त060 पापी विटा॥पह5 ट; पा जि, व(हि8| वाा0 हज>हा9। ४827 5000४, 58#8ा806, श60प्राधिटवपंघा 600८. प€ ८0ा5घ00(60 हव5 7680४ (0 (डा वा€ 9९00 500 0 85 5 028 5 0855. 00 ४४॥ विवि (0 50ंजाए: पीह 3000 00068 हा का 65060. ही घी& हाए।0560 02008 8000४गघी 40% ८050: ए वविडि ही 58906 0 हां पा वा विध00ा 0-0 नाह/0, एवाएा(08 200 डी8॥| 2800 00 0 0606 2.09.2026 ॥ घा& 006 0 ८0. ६0, ८- उ, #50? (069, 56000-6, शाला (प8, शॉपाहा पा 00 6पांड/हा&0 905. 0 96507: 0 टाक्ा 00 80000 0 088) 08 96 छा(हा(आा60. *. 0067 705 & ८०ापॉपिंएाड ध ए व पााबडन 0० तापि0ा5 ४४ 06 वड परासडा:- . चक€ 20ॉप्गं0ा जां॥ 96. 50८60, 00800 ि॥. एमए छाई ।,€. , ठा6, 65800, िधाहा'5. ॥8ा6. गाए 0288. 800655 (0 घा&. 0हाणिएा हाए।0560 वणापुशापी विवश, 2. 8 0ह्ा।भाएं पाव 0 0% 0 ८050 0 वा हा वि#0ए ए िंगावपाएप णाह८0 800, राएी (08. 0व/806 ०६ ?माटी(09/(ा8ाएंपुक ४॥ 06 00560 ४0. पी& वछीए्वपंगा, 6 0ॉटविंणा. 606४60 एंपी00:. रिगाा65: . 06) 5ीवे॥ 96 इप्ावांपा व ९6060. 3. पा एछाप0ए8ा 007 आए (8: ५ 96 (0८ व60 प0००पी एव 0 05. थे. 82006 90% 0 005: 0 व. 508 06 त6005060 पगी। 60 08५5 वा प्राह 086 रण 5506 0 ।.&87 0 पा: (07). 6 (07 क0॥ ७९6 58 00 (06 दिम। [0 फ0५/060 0४ (6 800 पा] ८856 0 06विए॥: (6 व॥!008घं07 ए॥ 096 ८वाए6॥60 भाएं 000८ ४४ 06 हधा060 डा ९०0८घरा00 20% 00: 0 पी& 68765 060 डे 25 08 ५६४0 एणॉट7- 5 060050: 0 0% काा0 भ॥ 0. टाष86 वा पंप 'शव.506४6 पी€ 00800 0. पाह्ा।026500: 0०56 0085 0 20 08प0ा5 वाह 06 (वा ४०॥०9€ (805, (6 586 दा ७6 60060 पा0०एप0 एव 0 ।05. 6. ता छिपा था 80088: 60860 पा 6 ए0ा08060 एि50806 (एड ४४ 0९ एमए 0४ पट 00080: 806 पा ८05: 0 वां: (8 ८6856 था; था 5806 0. (6, (छू 5८वााह० पापी 0६९ 5८22 ् पा ८858 ०90॥८800 5 एान50८८९55घि ही (6 ताव४/ 0 00: प€ 6000 ४४॥ 96 प806 ॥ (१९ 586 8८८०० 0060 0४ पीट 300॥८800 0. 6 80080 शिए. (गा८९॥९ दी69०९ णि एर्डधि0 90ा0056 0९ €00560, 8. 800८9: 5000 हाए056 ४0 [0 छा00 0 650806 ।,€. 2808 ८गएं/ पाधशि09 ॥ट्हा८€/ह९८घा0४/ छि॥/४/०६67 ८8ाए 00५00 तपपिकएं(, थी न #07 08 00056, ६५0 डा पांभ& 0४ घी€ ॥0४000 00005: उ. 00०06 रिहाएां5500 ह विध0एा 0 08. श. वाएगप(€ #पा68ा8- 3. (0०0४ 0 ९पंडधवां0ा 0 ६४0, हर हप67 0 पा 8: डा 5. (0०0४ 0 भ॥0 068 हा हा 0 डॉ 55060 0४ प्रा& 50806 (एड, 5४0, 6. (0०0४ 0 ९02 शा06 शा एी 0०४9 0 9एर000 एि05 25 968 प्रागा(60 0) एणाएडा060 रिंड 6 (ीट्डा, 500, चल (०9४ ० 0८८००म0ा एहापीएवड 0 ट८णाएहाा60 56 55060 0५ €िडवड 0पएहा, 5४? (0 ६00. 0/:.. 0080 शा 0... 50 (न 0९वां। 0 ४०८७ हवा: #0 धिंगा80ा00 6८00 नह४/0, रिवादी 0८ | / 0 5८260 एप 0६६१ 508९ #??.0/#77074 ह0रान नर लि ना #0ारान 0२ लह्४४0 ह।- 87. #7 50५0?८27. १०.5-7/2026..... #0॥ वाह ए 80080 (व जि०द६ ।«छा5):___ एप (85 067 808 ८8) न्वाहा'5/050805 ठााद (0 80८ ।. शक्ा5) पा 0806 ए छिपी 0 पा ०000बा:: पाए (०ा९500006806 00655: पाप पाए 0८००0: भर एन (0णा(वट: शिणाथ षि०.: पलटा हाावां। [0: का... (869०४ 0 ॥8: 80060 छणिए एप ाा& 0 घ6 506 ४6 थिवां, 5 थ00॥60 छिप पाप अंत 0 प& वी: 0९८वाविंणा 9४ घा€ 8008: प 660४ 06086 3. नाव: द था। 06005घ00 पिाह ।6प०ांड(6 00: रि5.. 06 00800 एव: 0. 08060 दि ये पवा: द पव४€ 0०6 घा 000 06 (605 20 ए0ाएघ005 0 घा€ 52086 60060 6 लाएप।ा (हा भ00 पा&€ (0 ०८०७0: 6 56, 3. गम: व फ00 ि घट व८वा।: वविए$ ध॥ 00: प्रांध€ ता वा? एप: 0 व॥॥00प्रा€ा: 0 ॥8 ठा0 प॒ ध॥ 0: ार्वाइ€ ठा/ वा ७८860 पा50006€550 ह पाह एा8४/ 0 0.. या पका: 7 ४४॥ 206 0४ घा€ रिए 5 भा रिह90वघ05 ए निरिप0 हा पांडि 6080. ई- ग ध॥ 250 806 9४ पीह 7065 8 050000005 0 पा€ 60४00 800४ 0 ६४०: घाव: 8४ 06 छा॥000080 छि00 पाए (0 पाा€ भा0 00560 0 ५5४? डांएड ४/४४४४.१5४७-०पनप मे: ६४४0 0896. शठ06: ऊापावपा& 0 पा 80008 वां: 0 50860 एप 0९६९ 5086 #कलाए# पा दे. ग60 8000: €ठा5 5/० 5. स्टडपलाभ पे पर _______________________.................00॥660# 5060४ वि वा0 8८8९ व5 पाएंहा:- रद पवां: 7 कव४७ 8060 हा॥00ा8/ 0 वा8हा008 ॥ ६0 वा: व. __________...... -.............्अध्9ण+ः 2. पका पा& 5 5लाहाह 085 968 लाएपव60 9४ 0 नह 0/0, शवाएादिपवि पठह 00 006 08060 नि ड. पकाग 7 0व४७ ०6 घा 0000 घ€ (एहावा5 200 00ा0ीघ005 0 प6 50806 ताहा(0060 0 पीट 5वां0 ।6((68 वाएं 2066 (0 80060 6 5806. 4. पका द का 06005ांघी00 घा€ 600ांडा(€ का000 रि5.. 0 08080 एव: ह०._______._...__.._. ०४ ही 5, पवां: व छी0 छि घीा6 0एणाइए0:60 विधि ४त॥ 00: पां/& 6 गाए पाए णि व0घा6ा: 0 वा गाए व ४४॥ 00: वा8६6 भा एव व 60860 पा50006557ि। व घा6 एा8४४ 0 40:. (च पावा द ४॥ 2शिं08 9४ रिधा।ह5 बाएं र6008घ005 ए निटि४0 पा पड 6080, 0ह?0एटा९ शिव८्6: 060: हारानाए&ए0घ१:- १/हा 60 वां पा& 0८085 0 00४6 वीवो: वाह घध6 वाएं (060: (0 पा? ।0/76006 00 00000 ५85 068 0006860 प6ा€ांग, 9९0६९ तर (छू 5८वााह० पापी 0६९ 5८22 ८४८६ 59005 ० ८०१६८१०४/ ५४४56 ४०८०६ 905 0 ६५४0 560८-77 ०६ 50709 00 85 (5 ४४९९ 5 (9त55 डाचषि०, | टबवणता ह्ा४8 ०. | कठ्छ्य ठढ डाएड 8 56ल०ा राजू 8. 05. 0. दि | (व 5वा्पि, 805 कक दर कक 506 2536.0 9 |. 64-09, 560-2, 50008: | 30... 302, 303, 304, 407, 060५९ 404, 502, 503 & 504 2. ९८०ा00' 485.00 ठान-09, 56८-2, 50008 | 60, 602, 603 & 604 3: ६८०00 4747.24 ठाम-02, 56८-2, 50080: लगा कक दा अलावा ला हम काया किडणाल । (छू 5८वााह० पापी 0६९ 5८22",
-            "chars": 5275,
-            "words": 547,
-            "alphaRatio": 0.33630331753554504,
-            "garbled": 0
-          },
-          "combined": {
-            "status": "OCR_HIGH_CONFIDENCE",
-            "text": "[eng page 1] HUDA URBAN ESTATE TOWN & CO! UNTI EMPLOYEES WELFARE ORGANISATION HEWO) C-3, SECTOR-6, PANCHKUL. No./HEWO/20: : \" Ls / 26//4\\2 Dated: (4 6|26 ', To All the General Public Subject: Floatation of balance constructed flat at Sonepat. Applications for residential flats are invited from the General Public on as is = where is basis. The detail of the constructed vacant flats, cost & area are given as under:- te / Stat ed Reece |e] a fee eee Tate | ato MAE TT, at | floated] including ae ee tala site for all Fhe aa deposited wil Parki i, (in sqft) | Pals GH-09, Sec- | Super 20 = eo) ES 32,698,190 ; d x = 45,94,662/- a a Specification of flats:- These are multistoried flats provided with facilities viz; plumbing, internal and external water supply, sewerage, electrification etc. The constructed flats ready to enter are being sold on as is where is basis. Applicant will have to submit the application complete in all respect in the enclosed performa alongwith 10% cost of flats in shape of demand draft in favour of M.D HEWO, Panchkula and shall reach on or before 21.09.2026 in the office of M.D. HEWO, Cc 3, HSVP Complex, Sector-6, Panchkula, either through registered post or in person. No claim on account of delay shall be entertained. *, Other Terms & Conditions will be as under:- als The application will be submitted, indicating full particulars i.e. name, designation, father's name and permanent address (on the perform enclosed alongwith affidavit). 2. A demand draft of 10% of cost of flat in favour of Managing Director HEWO, Panchkula payable at Panchkula/Chandigarh will be enclosed with the application. The application received without Earnest Money shall be straightway rejected. 3. The particular floor and flat will be allocated through draw of lots. 4. Balnce 90% of cost of flat shall be deposited within 60 days from the date of issue of Letter of Intent (LOI). The LOI will be sent on the Email ID provided by the applicant. In case of default the allocation will be cancelled and amount will be refunded after deducting 20% amount of the earnest money His as per HEWO policy. 5. Deposit of 10% amount will not create any right whatsoever for the allocation of membership. In case numbers of applications are more than available flats, the same will be decided through draw of lots. 6. In future any enhancement received from the concerned Estate Officer will be paid by the applicant. Hence the cost of flat can increase at any stage of time. QE Scanned with OKEN Scanner [hin page 1] न्ण0/ एार8/घ१ 85278 70४0 8 00 छा हानएा.0१५६४६५ ४82२६ पर 7 0-3, 5६80८707२-6, ?# १८0, ॥१०./#६५/०/ 20: दे दि दी /2०26/ [9] 2. ००६०१: (प | 2. ट \", 0 मै॥ पीह 5629 रिप0८ 5प्राजुं८:; . ना०मघवघिंणा 0 906 0005घ'घ८:60 8. भा, 50608: 8८25 णि' 7€50279। विडड आह ताधए80 वि 6 828| रिपशी८ 0 ०5 5 गा की धाहा९ 5 0855. ९ 08 0 (९ टणाइप00060 ४०८०: वि, 005 8 भा28 माह पहला 25 पाएंहार ः डा फल फलापपपट गठिफपपता जि लमिफलाई पमइयाग ग्छ रा गम टमणता एव व्म्न पद न गाग्दा उ०्कऋ भा. | ०3६८0 लएलीपप शक कप मय डॉट 8. आदड बदलाव ४ '। ग दि फिर) | कि रा माक उठ, खत रू दा ण ट बड़, 34,6627- एड जनम छापने आए 3 छ5ऊ. ... 506टॉंपि८०घ07 0 (व: - पह56 वा& पए50(060 वविडि फा०त060 पापी विटा॥पह5 ट; पा जि, व(हि8| वाा0 हज>हा9। ४827 5000४, 58#8ा806, श60प्राधिटवपंघा 600८. प€ ८0ा5घ00(60 हव5 7680४ (0 (डा वा€ 9९00 500 0 85 5 028 5 0855. 00 ४४॥ विवि (0 50ंजाए: पीह 3000 00068 हा का 65060. ही घी& हाए।0560 02008 8000४गघी 40% ८050: ए वविडि ही 58906 0 हां पा वा विध00ा 0-0 नाह/0, एवाएा(08 200 डी8॥| 2800 00 0 0606 2.09.2026 ॥ घा& 006 0 ८0. ६0, ८- उ, #50? (069, 56000-6, शाला (प8, शॉपाहा पा 00 6पांड/हा&0 905. 0 96507: 0 टाक्ा 00 80000 0 088) 08 96 छा(हा(आा60. *. 0067 705 & ८०ापॉपिंएाड ध ए व पााबडन 0० तापि0ा5 ४४ 06 वड परासडा:- . चक€ 20ॉप्गं0ा जां॥ 96. 50८60, 00800 ि॥. एमए छाई ।,€. , ठा6, 65800, िधाहा'5. ॥8ा6. गाए 0288. 800655 (0 घा&. 0हाणिएा हाए।0560 वणापुशापी विवश, 2. 8 0ह्ा।भाएं पाव 0 0% 0 ८050 0 वा हा वि#0ए ए िंगावपाएप णाह८0 800, राएी (08. 0व/806 ०६ ?माटी(09/(ा8ाएंपुक ४॥ 06 00560 ४0. पी& वछीए्वपंगा, 6 0ॉटविंणा. 606४60 एंपी00:. रिगाा65: . 06) 5ीवे॥ 96 इप्ावांपा व ९6060. 3. पा एछाप0ए8ा 007 आए (8: ५ 96 (0८ व60 प0००पी एव 0 05. थे. 82006 90% 0 005: 0 व. 508 06 त6005060 पगी। 60 08५5 वा प्राह 086 रण 5506 0 ।.&87 0 पा: (07). 6 (07 क0॥ ७९6 58 00 (06 दिम। [0 फ0५/060 0४ (6 800 पा] ८856 0 06विए॥: (6 व॥!008घं07 ए॥ 096 ८वाए6॥60 भाएं 000८ ४४ 06 हधा060 डा ९०0८घरा00 20% 00: 0 पी& 68765 060 डे 25 08 ५६४0 एणॉट7- 5 060050: 0 0% काा0 भ॥ 0. टाष86 वा पंप 'शव.506४6 पी€ 00800 0. पाह्ा।026500: 0०56 0085 0 20 08प0ा5 वाह 06 (वा ४०॥०9€ (805, (6 586 दा ७6 60060 पा0०एप0 एव 0 ।05. 6. ता छिपा था 80088: 60860 पा 6 ए0ा08060 एि50806 (एड ४४ 0९ एमए 0४ पट 00080: 806 पा ८05: 0 वां: (8 ८6856 था; था 5806 0. (6, (छू 5८वााह० पापी 0६९ 5८22 [eng page 2] 7 In case applicant is un-successful in the draw of lot the refund will be made in the same account provided by the applicant in the application form. Cancelled cheque for refund purpose be enclosed. 8. Applicant should enclose valid ID proof of residence i.e. Aadhar card/ driving licence/Electricity Bill/Voter card alongwith Affidavit. F 9. For loan purpose, HEWO shall give only the following documents:- 1. Mortgage Permission in favour of bank. 2. Tripartite Agreement. 3. Copy of registration of HEWO. 4 Letter of Intent. : 5. Copy of allotment letter of Site issued by the Estate Officer, HSVP. 6. Copy of letter vide which approval of building plans has been granted by concerned Estate Officer, HSVP. 7 Copy of Occupation Certificate of concerned site issued by Estate Officer, HSVP to HEWO. DA: Application Form Affidavit Superintendent Detail of vacant flat For Managing Directo! HEWO, Panchkul \\y y ? (@ 3 Scanned with OKEN Scanner [hin page 2] ् पा ८858 ०90॥८800 5 एान50८८९55घि ही (6 ताव४/ 0 00: प€ 6000 ४४॥ 96 प806 ॥ (१९ 586 8८८०० 0060 0४ पीट 300॥८800 0. 6 80080 शिए. (गा८९॥९ दी69०९ णि एर्डधि0 90ा0056 0९ €00560, 8. 800८9: 5000 हाए056 ४0 [0 छा00 0 650806 ।,€. 2808 ८गएं/ पाधशि09 ॥ट्हा८€/ह९८घा0४/ छि॥/४/०६67 ८8ाए 00५00 तपपिकएं(, थी न #07 08 00056, ६५0 डा पांभ& 0४ घी€ ॥0४000 00005: उ. 00०06 रिहाएां5500 ह विध0एा 0 08. श. वाएगप(€ #पा68ा8- 3. (0०0४ 0 ९पंडधवां0ा 0 ६४0, हर हप67 0 पा 8: डा 5. (0०0४ 0 भ॥0 068 हा हा 0 डॉ 55060 0४ प्रा& 50806 (एड, 5४0, 6. (0०0४ 0 ९02 शा06 शा एी 0०४9 0 9एर000 एि05 25 968 प्रागा(60 0) एणाएडा060 रिंड 6 (ीट्डा, 500, चल (०9४ ० 0८८००म0ा एहापीएवड 0 ट८णाएहाा60 56 55060 0५ €िडवड 0पएहा, 5४? (0 ६00. 0/:.. 0080 शा 0... 50 (न 0९वां। 0 ४०८७ हवा: #0 धिंगा80ा00 6८00 नह४/0, रिवादी 0८ | / 0 5८260 एप 0६६१ 508९ [eng page 3] APPLICATION FORM FOR HEWO FLAT AT SONIPAT No.S-III/2026..... Full Name of applicant (In Block Letters):___-_——=—— —$-_—______ (As per Aadhar card) Father’s/Husband’s Name (In Block L eters): ______- Date of Birth of the applicant: TT Correspondence Address: eT _ Occupation: ee ——— ee Contact Phone No.: a Email ID: ee Category of flat applied for: a Name of the Site where flat is applied for: _ Signature of the applicant Declaration by the applicant I hereby declare 1. That I am depositing the requisite amount Rs. vide Demand Draft No., dated 7 2: That I have gone through the terms and conditions of the scheme mentioned in the circular letter and agree to accept the same. 3. That applying for the vacant flats will not give me any right for allotment of flat and I will not make any claim if declared unsuccessful in the draw of lot. 4, That I will abide by the Rules and Regulations of HEWO in this regard. 5. I will also abide by the rules & instructions of the Governing Body of HEWO that may be announced from time to time and hosted on HSVP site www.hsvp.org.im at HEWO page. Place: Signature of the applicant Date: (e2 Scanned with OKEN Scanner [hin page 3] #??.0/#77074 ह0रान नर लि ना #0ारान 0२ लह्४४0 ह।- 87. #7 50५0?८27. १०.5-7/2026..... #0॥ वाह ए 80080 (व जि०द६ ।«छा5):___ एप (85 067 808 ८8) न्वाहा'5/050805 ठााद (0 80८ ।. शक्ा5) पा 0806 ए छिपी 0 पा ०000बा:: पाए (०ा९500006806 00655: पाप पाए 0८००0: भर एन (0णा(वट: शिणाथ षि०.: पलटा हाावां। [0: का... (869०४ 0 ॥8: 80060 छणिए एप ाा& 0 घ6 506 ४6 थिवां, 5 थ00॥60 छिप पाप अंत 0 प& वी: 0९८वाविंणा 9४ घा€ 8008: प 660४ 06086 3. नाव: द था। 06005घ00 पिाह ।6प०ांड(6 00: रि5.. 06 00800 एव: 0. 08060 दि ये पवा: द पव४€ 0०6 घा 000 06 (605 20 ए0ाएघ005 0 घा€ 52086 60060 6 लाएप।ा (हा भ00 पा&€ (0 ०८०७0: 6 56, 3. गम: व फ00 ि घट व८वा।: वविए$ ध॥ 00: प्रांध€ ता वा? एप: 0 व॥॥00प्रा€ा: 0 ॥8 ठा0 प॒ ध॥ 0: ार्वाइ€ ठा/ वा ७८860 पा50006€550 ह पाह एा8४/ 0 0.. या पका: 7 ४४॥ 206 0४ घा€ रिए 5 भा रिह90वघ05 ए निरिप0 हा पांडि 6080. ई- ग ध॥ 250 806 9४ पीह 7065 8 050000005 0 पा€ 60४00 800४ 0 ६४०: घाव: 8४ 06 छा॥000080 छि00 पाए (0 पाा€ भा0 00560 0 ५5४? डांएड ४/४४४४.१5४७-०पनप मे: ६४४0 0896. शठ06: ऊापावपा& 0 पा 80008 वां: 0 50860 एप 0९६९ 5086 [eng page 4] AFFIDAVIT 16 aged about a Years S/o Ce EE —e do hereby solemnly affirm and declare as under:- i That I have applied enrollment of member in HEWO flat at__...__— sor ee Category. 2. That the said scheme has been circulated by M.D HEWO, Panchkula vide public notice dated : 3. That I have gone through the terms and conditions of the scheme mentioned in the said letter and agree to accept the same. 4. That I am depositing the requisite amount Rs.. vide Demand Draft No. dated . 5. That applying for the constructed flats will not give me any right for allotment of flat and I will not make any claim if declared unsuccessful in the draw of lot. 6. That I will abide by Rules and Regulations of HEWO in this regard. DEPONENT Place: Dated: VERIFICATION:- Verified that the contents of above affidavit are true and correct to my knowledge and nothing has been concealed therein. DEPONENT t QE Scanned with OKEN Scanner [hin page 4] #कलाए# पा दे. ग60 8000: €ठा5 5/० 5. स्टडपलाभ पे पर _______________________.................00॥660# 5060४ वि वा0 8८8९ व5 पाएंहा:- रद पवां: 7 कव४७ 8060 हा॥00ा8/ 0 वा8हा008 ॥ ६0 वा: व. __________...... -.............्अध्9ण+ः 2. पका पा& 5 5लाहाह 085 968 लाएपव60 9४ 0 नह 0/0, शवाएादिपवि पठह 00 006 08060 नि ड. पकाग 7 0व४७ ०6 घा 0000 घ€ (एहावा5 200 00ा0ीघ005 0 प6 50806 ताहा(0060 0 पीट 5वां0 ।6((68 वाएं 2066 (0 80060 6 5806. 4. पका द का 06005ांघी00 घा€ 600ांडा(€ का000 रि5.. 0 08080 एव: ह०._______._...__.._. ०४ ही 5, पवां: व छी0 छि घीा6 0एणाइए0:60 विधि ४त॥ 00: पां/& 6 गाए पाए णि व0घा6ा: 0 वा गाए व ४४॥ 00: वा8६6 भा एव व 60860 पा50006557ि। व घा6 एा8४४ 0 40:. (च पावा द ४॥ 2शिं08 9४ रिधा।ह5 बाएं र6008घ005 ए निटि४0 पा पड 6080, 0ह?0एटा९ शिव८्6: 060: हारानाए&ए0घ१:- १/हा 60 वां पा& 0८085 0 00४6 वीवो: वाह घध6 वाएं (060: (0 पा? ।0/76006 00 00000 ५85 068 0006860 प6ा€ांग, 9९0६९ तर (छू 5८वााह० पापी 0६९ 5८22 [eng page 5] ry wise vacant fl f HEW eme-ITT at S at on as is where is basi: Sr.No, | Category Area of Total GH Site & Sector Flat No. flat ; nos. of ee |_ (In Saft. flats eee aae ese eenan: : a Super 2536.10 9 | GH-09, Sec-12, Sonipat 301, 302, 303, 304, 401, Deluxe 404, 502, 503 & 504 | 2. Econom 1485.00 GH-09, Sec-12, Sonipat | _601, 602, 603 & 604 3. Econom’ 1747.24 GH-02, Sec-12; Sonipat 601 ee SS EE EE Ce i QE Scanned with OKEN Scanner [hin page 5] ८४८६ 59005 ० ८०१६८१०४/ ५४४56 ४०८०६ 905 0 ६५४0 560८-77 ०६ 50709 00 85 (5 ४४९९ 5 (9त55 डाचषि०, | टबवणता ह्ा४8 ०. | कठ्छ्य ठढ डाएड 8 56ल०ा राजू 8. 05. 0. दि | (व 5वा्पि, 805 कक दर कक 506 2536.0 9 |. 64-09, 560-2, 50008: | 30... 302, 303, 304, 407, 060५९ 404, 502, 503 & 504 2. ९८०ा00' 485.00 ठान-09, 56८-2, 50008 | 60, 602, 603 & 604 3: ६८०00 4747.24 ठाम-02, 56८-2, 50080: लगा कक दा अलावा ला हम काया किडणाल । (छू 5८वााह० पापी 0६९ 5८22",
-            "chars": 11358,
-            "words": 1489,
-            "alphaRatio": 0.5475435816164818,
-            "garbled": 0
-          },
-          "criticalFieldEvidence": {
-            "authority": true,
-            "date": true,
-            "location": true,
-            "noticeNumber": false,
-            "scheme": true,
-            "numeric": true
-          },
-          "criticalFieldEvidenceRatio": 0.8333333333333334
-        },
+        "quality": {},
         "metadata": {
           "listing": {
             "title": "Advertisement Flotation of surplus/surrendered/cancelled flats of HEWO Site GH-09 & GH-02, Sector-12, Sonepat. Uploaded on:20 August 2026 Revised on: 20 August 2026 ] HEWO",
@@ -224,31 +59,13 @@
             "branch": "HEWO",
             "location": "Sector-12; Sonepat"
           },
-          "ocr": {
-            "textFile": "C:\\Users\\pc\\Documents\\news-api-pusher\\reports\\source-audits\\task14\\raw-ocr\\d540707b667e15240aea2d1478545275372d965f063ae9e7141e44161be8f2a1.txt",
-            "rawHash": "d540707b667e15240aea2d1478545275372d965f063ae9e7141e44161be8f2a1",
-            "englishChars": 6130,
-            "hindiChars": 5425
-          },
-          "provenance": {
-            "title": "LISTING",
-            "date": "LISTING",
-            "branch": "LISTING",
-            "location": "OCR_TEXT+LISTING",
-            "scheme": "OCR_TEXT"
-          }
+          "ocr": {},
+          "provenance": {}
         },
-        "cache": {
-          "documentHash": "d540707b667e15240aea2d1478545275372d965f063ae9e7141e44161be8f2a1",
-          "key": "12e7c28d903ac112b1b97f55fbed580db7adb7c1c4bd70bf16c1614f14522c6e"
-        },
+        "cache": {},
         "validity": "PROCEDURAL_ONLY",
         "automaticallyRecovered": false,
-        "humanValidity": "PROCEDURAL_ONLY",
-        "classifier": "reject_negative",
-        "classifierPass": false,
-        "detectedCityCodes": [],
-        "geoPass": false
+        "failure": "TIMEOUT"
       },
       {
         "documentUrl": "https://hsvphry.org.in/documents/hewo/hewo_202604101504_639114302426525114.pdf",
@@ -263,7 +80,7 @@
           "contentType": "application/pdf",
           "bytes": 1066429,
           "validation": "VALID_PDF",
-          "elapsedMs": 664,
+          "elapsedMs": 7481,
           "textExtraction": "IMAGE_ONLY_PDF",
           "textLength": 0,
           "failureReason": ""
@@ -273,7 +90,7 @@
           {
             "page": 1,
             "status": "RENDERED",
-            "elapsedMs": 4460
+            "elapsedMs": 4188
           }
         ],
         "ocr": {
@@ -288,19 +105,19 @@
               "page": 1,
               "language": "eng",
               "chars": 1169,
-              "elapsedMs": 585,
+              "elapsedMs": 574,
               "text": "HUDA URBAN ESTATE TOWN & COUNTRY PLANNING\r\nEMPLOYEES WELFARE ORGANISATION (HEWO)\r\nC-3, SECTOR-6, PANCHKULA\r\nNo./HEWO/2026//} > G4 Dated: } 0 ly }2 6\r\nTo\r\n\r\nAll the General Public\r\nSubject: Status of flotation of surplus/surrendered/ cancelled flats of HEWO\r\n\r\nGH Site-09, Sector-12, Sonepat and GH-33, Sector-65, Faridabad on\r\n\r\nas is where is basis.\r\n\r\nIn continuation of this office letter No.HEWO/2026/1584 dated 20.01.2026,\r\non the subject cited above.\r\n\r\nIt is brought to the notice of all the General Public that surplus/\r\nsurrendered/cancelled flats of HEWO GH Site-09, Sector-12, Sonepat and GH-33, Sector-\r\n65, Faridabad were floated on as is where is basis vide this office letter No./HEWO/2026/\r\n1584 dated 20.01.2026. The category, number of flat, area, cost of flats and detailed\r\nterms and conditions for submitting application are mentioned in the aforesaid letter. The\r\nabove said circular letter has been hosted on web site of HSVP i.e. www.hsvphry.org.in\r\nat HEWO page. The last date for receipt of applications has been extended upto\r\n19.05.2026. A\r\n\r\npo\r\nSuperintendent\r\nFor Managing Directoj, \\\r\nHEWO, Panchkula, 3\r\npe\r\n‘Scanned By Camera Scanner\r\n",
               "error": "",
               "imageBytes": 1572466
             },
             {
-              "status": "OCR_USABLE",
+              "status": "OCR_FAILED",
               "page": 1,
               "language": "hin",
-              "chars": 1063,
-              "elapsedMs": 1963,
-              "text": "0०८ णार8/घ१ 852६ 70४/0५ & 000घपाार१ ?2प्रधाधठ\r\nहानार.0१+६६५ ४/६।.#/.२६ 0२७८ १5770 (लह४/४०)\r\n0-3, $5६0८707२-७, ?/८2१८ता९०.८\r\nष०./नह४/0/2026/ | 3 (4 03६66:  ] 0 (हि ग ८\r\n०\r\n\r\n#॥ पी 56ा68। रि00॥0८\r\n5पणुंडट: 505 0 02घं00 0 5घा05/5प्रा'डा पड ९0/ ८गाए€॥€ठ 25 ० नह/४0०\r\n\r\n७ 56-09, 560007-42, 50608. 200 ७#-33, 56८0-65, #वांप्व020 0\r\n\r\n85 [5 ४86 5 09855.\r\n\r\nगा ८णापाधवधणा 0 पं 006 60067 १०.१६४४०/2026/7584 08६60 20.0.2026,\r\n0 पघा6 500ुंह८: ट(60 800४6.\r\n\r\nव. ।$. 00000 (0 006 0006 0. त॥ 6. 68ा69।. ००८ (08. 50005/\r\n5पाहाएडा60/08ा06॥60 ॥वघ5 0 १६४४० ७6 506-09, 560007-2, 50608: वा0 6-33, 560घ0-\r\n65, नवांएव030 #/€6 08:60 00 5 5 066 5 0855 पंप घ॥5 006 6006 ४०./0६0/0/2026/\r\n584 0व60 20.0.2026. 06 ८९90४, पा 0€ 0 ॥,, वा€8, 005: ए ववि.5 वा 0९वां।60\r\n(05 वा00 ८0०00घ005 णि 500ाएघघ00 90008घ00 वा हा 060 ॥ 06 26520 60067. प6\r\n390४६ 5वां0 ला एएवा' 66 085 066 05060 00 ४४९0० (6 0 5000? ।.6. ए/ध/४४.५5४छ१४.०ाप.\r\nका. १६४0 04५४. 06 ।85: 08६6 छि ।60८€ांफ 0 व0एं८घं005 १35 966 €>दडावं€त॑ प्छ0\r\n9.05.2026. ्\r\n\r\n2\r\n50 [हा\r\n0 ठा3पांग09 गा गे ही\r\n५200, शवाएा पान, ह//\r\n्छ\r\n5080 छि। 08 5088\r\n",
-              "error": "",
+              "chars": 0,
+              "elapsedMs": 22,
+              "text": "",
+              "error": "Command failed: C:\\Program Files\\Tesseract-OCR\\tesseract.exe --tessdata-dir C:\\Program Files\\Tesseract-OCR\\tessdata C:\\Users\\pc\\AppData\\Local\\Temp\\brokket-task14-7OAWc8\\page-1.png stdout -l hin --psm 6\nError opening data file C:\\Program Files\\Tesseract-OCR\\tessdata/hin.traineddata\r\nPlease make sure the TESSDATA_PREFIX environment variable is set to your \"tessdata\" directory.\r\nFailed loading language 'hin'\r\nTesseract couldn't load any languages!\r\nCould not initialize tesseract.\r\n",
               "imageBytes": 1572466
             }
           ]
@@ -315,30 +132,30 @@
             "garbled": 0
           },
           "hindi": {
-            "status": "OCR_USABLE",
-            "text": "0०८ णार8/घ१ 852६ 70४/0५ & 000घपाार१ ?2प्रधाधठ हानार.0१+६६५ ४/६।.#/.२६ 0२७८ १5770 (लह४/४०) 0-3, $5६0८707२-७, ?/८2१८ता९०.८ ष०./नह४/0/2026/ | 3 (4 03६66: ] 0 (हि ग ८ ० #॥ पी 56ा68। रि00॥0८ 5पणुंडट: 505 0 02घं00 0 5घा05/5प्रा'डा पड ९0/ ८गाए€॥€ठ 25 ० नह/४0० ७ 56-09, 560007-42, 50608. 200 ७#-33, 56८0-65, #वांप्व020 0 85 [5 ४86 5 09855. गा ८णापाधवधणा 0 पं 006 60067 १०.१६४४०/2026/7584 08६60 20.0.2026, 0 पघा6 500ुंह८: ट(60 800४6. व. ।$. 00000 (0 006 0006 0. त॥ 6. 68ा69।. ००८ (08. 50005/ 5पाहाएडा60/08ा06॥60 ॥वघ5 0 १६४४० ७6 506-09, 560007-2, 50608: वा0 6-33, 560घ0- 65, नवांएव030 #/€6 08:60 00 5 5 066 5 0855 पंप घ॥5 006 6006 ४०./0६0/0/2026/ 584 0व60 20.0.2026. 06 ८९90४, पा 0€ 0 ॥,, वा€8, 005: ए ववि.5 वा 0९वां।60 (05 वा00 ८0०00घ005 णि 500ाएघघ00 90008घ00 वा हा 060 ॥ 06 26520 60067. प6 390४६ 5वां0 ला एएवा' 66 085 066 05060 00 ४४९0० (6 0 5000? ।.6. ए/ध/४४.५5४छ१४.०ाप. का. १६४0 04५४. 06 ।85: 08६6 छि ।60८€ांफ 0 व0एं८घं005 १35 966 €>दडावं€त॑ प्छ0 9.05.2026. ् 2 50 [हा 0 ठा3पांग09 गा गे ही ५200, शवाएा पान, ह// ्छ 5080 छि। 08 5088",
-            "chars": 1024,
-            "words": 82,
-            "alphaRatio": 0.2490234375,
+            "status": "OCR_EMPTY",
+            "text": "",
+            "chars": 0,
+            "words": 0,
+            "alphaRatio": 0,
             "garbled": 0
           },
           "combined": {
             "status": "OCR_HIGH_CONFIDENCE",
-            "text": "[eng page 1] HUDA URBAN ESTATE TOWN & COUNTRY PLANNING EMPLOYEES WELFARE ORGANISATION (HEWO) C-3, SECTOR-6, PANCHKULA No./HEWO/2026//} > G4 Dated: } 0 ly }2 6 To All the General Public Subject: Status of flotation of surplus/surrendered/ cancelled flats of HEWO GH Site-09, Sector-12, Sonepat and GH-33, Sector-65, Faridabad on as is where is basis. In continuation of this office letter No.HEWO/2026/1584 dated 20.01.2026, on the subject cited above. It is brought to the notice of all the General Public that surplus/ surrendered/cancelled flats of HEWO GH Site-09, Sector-12, Sonepat and GH-33, Sector- 65, Faridabad were floated on as is where is basis vide this office letter No./HEWO/2026/ 1584 dated 20.01.2026. The category, number of flat, area, cost of flats and detailed terms and conditions for submitting application are mentioned in the aforesaid letter. The above said circular letter has been hosted on web site of HSVP i.e. www.hsvphry.org.in at HEWO page. The last date for receipt of applications has been extended upto 19.05.2026. A po Superintendent For Managing Directoj, \\ HEWO, Panchkula, 3 pe ‘Scanned By Camera Scanner [hin page 1] 0०८ णार8/घ१ 852६ 70४/0५ & 000घपाार१ ?2प्रधाधठ हानार.0१+६६५ ४/६।.#/.२६ 0२७८ १5770 (लह४/४०) 0-3, $5६0८707२-७, ?/८2१८ता९०.८ ष०./नह४/0/2026/ | 3 (4 03६66: ] 0 (हि ग ८ ० #॥ पी 56ा68। रि00॥0८ 5पणुंडट: 505 0 02घं00 0 5घा05/5प्रा'डा पड ९0/ ८गाए€॥€ठ 25 ० नह/४0० ७ 56-09, 560007-42, 50608. 200 ७#-33, 56८0-65, #वांप्व020 0 85 [5 ४86 5 09855. गा ८णापाधवधणा 0 पं 006 60067 १०.१६४४०/2026/7584 08६60 20.0.2026, 0 पघा6 500ुंह८: ट(60 800४6. व. ।$. 00000 (0 006 0006 0. त॥ 6. 68ा69।. ००८ (08. 50005/ 5पाहाएडा60/08ा06॥60 ॥वघ5 0 १६४४० ७6 506-09, 560007-2, 50608: वा0 6-33, 560घ0- 65, नवांएव030 #/€6 08:60 00 5 5 066 5 0855 पंप घ॥5 006 6006 ४०./0६0/0/2026/ 584 0व60 20.0.2026. 06 ८९90४, पा 0€ 0 ॥,, वा€8, 005: ए ववि.5 वा 0९वां।60 (05 वा00 ८0०00घ005 णि 500ाएघघ00 90008घ00 वा हा 060 ॥ 06 26520 60067. प6 390४६ 5वां0 ला एएवा' 66 085 066 05060 00 ४४९0० (6 0 5000? ।.6. ए/ध/४४.५5४छ१४.०ाप. का. १६४0 04५४. 06 ।85: 08६6 छि ।60८€ांफ 0 व0एं८घं005 १35 966 €>दडावं€त॑ प्छ0 9.05.2026. ् 2 50 [हा 0 ठा3पांग09 गा गे ही ५200, शवाएा पान, ह// ्छ 5080 छि। 08 5088",
-            "chars": 2182,
-            "words": 253,
-            "alphaRatio": 0.49587534372135655,
+            "text": "[eng page 1] HUDA URBAN ESTATE TOWN & COUNTRY PLANNING EMPLOYEES WELFARE ORGANISATION (HEWO) C-3, SECTOR-6, PANCHKULA No./HEWO/2026//} > G4 Dated: } 0 ly }2 6 To All the General Public Subject: Status of flotation of surplus/surrendered/ cancelled flats of HEWO GH Site-09, Sector-12, Sonepat and GH-33, Sector-65, Faridabad on as is where is basis. In continuation of this office letter No.HEWO/2026/1584 dated 20.01.2026, on the subject cited above. It is brought to the notice of all the General Public that surplus/ surrendered/cancelled flats of HEWO GH Site-09, Sector-12, Sonepat and GH-33, Sector- 65, Faridabad were floated on as is where is basis vide this office letter No./HEWO/2026/ 1584 dated 20.01.2026. The category, number of flat, area, cost of flats and detailed terms and conditions for submitting application are mentioned in the aforesaid letter. The above said circular letter has been hosted on web site of HSVP i.e. www.hsvphry.org.in at HEWO page. The last date for receipt of applications has been extended upto 19.05.2026. A po Superintendent For Managing Directoj, \\ HEWO, Panchkula, 3 pe ‘Scanned By Camera Scanner",
+            "chars": 1144,
+            "words": 169,
+            "alphaRatio": 0.7167832167832168,
             "garbled": 0
           },
           "criticalFieldEvidence": {
             "authority": true,
-            "date": true,
+            "date": false,
             "location": true,
             "noticeNumber": true,
             "scheme": true,
             "numeric": true
           },
-          "criticalFieldEvidenceRatio": 1
+          "criticalFieldEvidenceRatio": 0.8333333333333334
         },
         "metadata": {
           "listing": {
@@ -351,7 +168,7 @@
             "textFile": "C:\\Users\\pc\\Documents\\news-api-pusher\\reports\\source-audits\\task14\\raw-ocr\\ff9264d46ae6425cb587d84ac06cbe3d06c778dad7aff3f716df633a4c091e0a.txt",
             "rawHash": "ff9264d46ae6425cb587d84ac06cbe3d06c778dad7aff3f716df633a4c091e0a",
             "englishChars": 1169,
-            "hindiChars": 1063
+            "hindiChars": 0
           },
           "provenance": {
             "title": "LISTING",
@@ -386,7 +203,7 @@
           "contentType": "application/pdf",
           "bytes": 928749,
           "validation": "VALID_PDF",
-          "elapsedMs": 191,
+          "elapsedMs": 8246,
           "textExtraction": "IMAGE_ONLY_PDF",
           "textLength": 0,
           "failureReason": ""
@@ -396,7 +213,7 @@
           {
             "page": 1,
             "status": "RENDERED",
-            "elapsedMs": 1073
+            "elapsedMs": 1053
           }
         ],
         "ocr": {
@@ -411,19 +228,19 @@
               "page": 1,
               "language": "eng",
               "chars": 1131,
-              "elapsedMs": 502,
+              "elapsedMs": 475,
               "text": "HUDA URBAN ESTATE TOWN & COUNTRY PLANNING\r\nEMPLOYEES WELFARE ORGANISATION (HEWO)\r\nC-3, SECTOR-6, PANCHKULA\r\nNo./HEWO/2026/ | 6& 2 Dated: 9 § ]>3) 26\r\nTo\r\n\r\nAll the General Public\r\nSubject: Status of flotation of surplus/surrendered/ cancelled flats of HEWO\r\n\r\nGH Site-09, Sector-12, Sonepat and GH-33, Sector-65, Faridabad on\r\n\r\nas is where is basis.\r\n\r\nIn continuation of this office letter No. HEWO/2026/1584 dated 20.01.2026,\r\non the subject cited above.\r\n\r\nIt is brought to the notice of all the General Public that surplus/\r\nsurrendered/cancelled flats of HEWO GH Site-09, Sector-12, Sonepat and GH-33, Sector-\r\n65, Faridabad were floated vide this office letter No,./HEWO/2026/1584 dated 20.01.2026.\r\nThe category, number of flat, area, cost of flats and detailed terms and conditions for\r\nsubmitting application are mentioned in the aforesaid letter. The above said circular letter\r\nhas been hosted on web site of HSVP i.e. www.hsvphry.org.in at HEWO page. The last\r\ndate for receipt of applications has been extended upto min eo\r\n\r\nSuperintendent\r\nFor Managing Director, be\r\nHEWO, Panchkula:,)\r\n‘Scanned By Camera Scanner\r\n",
               "error": "",
               "imageBytes": 833593
             },
             {
-              "status": "OCR_USABLE",
+              "status": "OCR_FAILED",
               "page": 1,
               "language": "hin",
-              "chars": 1026,
-              "elapsedMs": 1908,
-              "text": "नण०/ एर8/#घ१ ह5ा28६ 0४0१ &. (८0०0एघाार४ ?.&प्रधाषठ\r\nहानए।.0१६६५ ४४६।.क2रिह 0२७८ा5/7705 (६४४०)\r\n€-3, 5६0707२-6, ८2८९०.\r\n\r\nघ०./पह४४०/2026/ | (८2 2 0गप6व: 0 (० हर । दही\r\nग०\r\n\r\n/॥ 6 566व9। रि00॥0\r\n5002८: 5ध्वधघ्र5 0 03007 0 डा घड/ डा हाउटा60/ ८गा८6॥€0 5 9 ५४०\r\n\r\n७ 56-09, 560६07-2, 50608. गाए (७-३३, 56८६0-65, कमा पव080 0\r\n\r\n85 5 ४6 [5 0855.\r\n\r\nपा टणापाएवपंणा 0 पा 00९ 6287 १0.५ि४/0/2026/584 0व६60 20.0.2026,\r\n0 6 5006८: टाए€0 800५6,\r\n\r\nपा 5. 900पा0: (0. पा 000८6 0. तप (62ा68।. २००८. पाठ. 5पाए05/\r\n50धा208760/एवा06॥6€0 ॥व55 0 १६४४० 6 5ाए6-09, 56000720 50608. वा0 ७4-33, 56007\r\n65, #वा0व080 26 १0:60 प06 (5 0८6 66 १०./६४४०/२2026/7584 0860 20.0.2026.\r\nपक ८29०४, ॥पा॥068 0 हवॉ., वा€8, 005: 0 ॥वघ5 वा00 06घवा।60 (805 वा0 ८0ा0घं005 णि\r\nडरा (घा00 80[0८वघ00 ठा€ हा पं0ा60 6 वणि९5वांए 2:27. 06 800४९ 5वांप घाएपए वा 60067\r\n85 9686 ११05060 07 ४४९७० 506 0 ५500? ।,6. एए४४४४-१७४छ़ि४-0ाप.॥ व: ६४४० 0०0९. 6 85:\r\n2६6 0 6८60 0 व0ए८वॉघं०ाड 35 968 6>(हाव6व पएड० सणस्गस्थ\r\n\r\n500 6ा067.\r\nन0ा धिगावपाण09 यदय| ,..\r\n६0, ?ठाटीा६08:(0,\r\n508 छि एशाशभ 50\r\n",
-              "error": "",
+              "chars": 0,
+              "elapsedMs": 23,
+              "text": "",
+              "error": "Command failed: C:\\Program Files\\Tesseract-OCR\\tesseract.exe --tessdata-dir C:\\Program Files\\Tesseract-OCR\\tessdata C:\\Users\\pc\\AppData\\Local\\Temp\\brokket-task14-33UCKm\\page-1.png stdout -l hin --psm 6\nError opening data file C:\\Program Files\\Tesseract-OCR\\tessdata/hin.traineddata\r\nPlease make sure the TESSDATA_PREFIX environment variable is set to your \"tessdata\" directory.\r\nFailed loading language 'hin'\r\nTesseract couldn't load any languages!\r\nCould not initialize tesseract.\r\n",
               "imageBytes": 833593
             }
           ]
@@ -438,19 +255,19 @@
             "garbled": 0
           },
           "hindi": {
-            "status": "OCR_USABLE",
-            "text": "नण०/ एर8/#घ१ ह5ा28६ 0४0१ &. (८0०0एघाार४ ?.&प्रधाषठ हानए।.0१६६५ ४४६।.क2रिह 0२७८ा5/7705 (६४४०) €-3, 5६0707२-6, ८2८९०. घ०./पह४४०/2026/ | (८2 2 0गप6व: 0 (० हर । दही ग० /॥ 6 566व9। रि00॥0 5002८: 5ध्वधघ्र5 0 03007 0 डा घड/ डा हाउटा60/ ८गा८6॥€0 5 9 ५४० ७ 56-09, 560६07-2, 50608. गाए (७-३३, 56८६0-65, कमा पव080 0 85 5 ४6 [5 0855. पा टणापाएवपंणा 0 पा 00९ 6287 १0.५ि४/0/2026/584 0व६60 20.0.2026, 0 6 5006८: टाए€0 800५6, पा 5. 900पा0: (0. पा 000८6 0. तप (62ा68।. २००८. पाठ. 5पाए05/ 50धा208760/एवा06॥6€0 ॥व55 0 १६४४० 6 5ाए6-09, 56000720 50608. वा0 ७4-33, 56007 65, #वा0व080 26 १0:60 प06 (5 0८6 66 १०./६४४०/२2026/7584 0860 20.0.2026. पक ८29०४, ॥पा॥068 0 हवॉ., वा€8, 005: 0 ॥वघ5 वा00 06घवा।60 (805 वा0 ८0ा0घं005 णि डरा (घा00 80[0८वघ00 ठा€ हा पं0ा60 6 वणि९5वांए 2:27. 06 800४९ 5वांप घाएपए वा 60067 85 9686 ११05060 07 ४४९७० 506 0 ५500? ।,6. एए४४४४-१७४छ़ि४-0ाप.॥ व: ६४४० 0०0९. 6 85: 2६6 0 6८60 0 व0ए८वॉघं०ाड 35 968 6>(हाव6व पएड० सणस्गस्थ 500 6ा067. न0ा धिगावपाण09 यदय| ,.. ६0, ?ठाटीा६08:(0, 508 छि एशाशभ 50",
-            "chars": 989,
-            "words": 91,
-            "alphaRatio": 0.30738119312436807,
+            "status": "OCR_EMPTY",
+            "text": "",
+            "chars": 0,
+            "words": 0,
+            "alphaRatio": 0,
             "garbled": 0
           },
           "combined": {
             "status": "OCR_HIGH_CONFIDENCE",
-            "text": "[eng page 1] HUDA URBAN ESTATE TOWN & COUNTRY PLANNING EMPLOYEES WELFARE ORGANISATION (HEWO) C-3, SECTOR-6, PANCHKULA No./HEWO/2026/ | 6& 2 Dated: 9 § ]>3) 26 To All the General Public Subject: Status of flotation of surplus/surrendered/ cancelled flats of HEWO GH Site-09, Sector-12, Sonepat and GH-33, Sector-65, Faridabad on as is where is basis. In continuation of this office letter No. HEWO/2026/1584 dated 20.01.2026, on the subject cited above. It is brought to the notice of all the General Public that surplus/ surrendered/cancelled flats of HEWO GH Site-09, Sector-12, Sonepat and GH-33, Sector- 65, Faridabad were floated vide this office letter No,./HEWO/2026/1584 dated 20.01.2026. The category, number of flat, area, cost of flats and detailed terms and conditions for submitting application are mentioned in the aforesaid letter. The above said circular letter has been hosted on web site of HSVP i.e. www.hsvphry.org.in at HEWO page. The last date for receipt of applications has been extended upto min eo Superintendent For Managing Director, be HEWO, Panchkula:,) ‘Scanned By Camera Scanner [hin page 1] नण०/ एर8/#घ१ ह5ा28६ 0४0१ &. (८0०0एघाार४ ?.&प्रधाषठ हानए।.0१६६५ ४४६।.क2रिह 0२७८ा5/7705 (६४४०) €-3, 5६0707२-6, ८2८९०. घ०./पह४४०/2026/ | (८2 2 0गप6व: 0 (० हर । दही ग० /॥ 6 566व9। रि00॥0 5002८: 5ध्वधघ्र5 0 03007 0 डा घड/ डा हाउटा60/ ८गा८6॥€0 5 9 ५४० ७ 56-09, 560६07-2, 50608. गाए (७-३३, 56८६0-65, कमा पव080 0 85 5 ४6 [5 0855. पा टणापाएवपंणा 0 पा 00९ 6287 १0.५ि४/0/2026/584 0व६60 20.0.2026, 0 6 5006८: टाए€0 800५6, पा 5. 900पा0: (0. पा 000८6 0. तप (62ा68।. २००८. पाठ. 5पाए05/ 50धा208760/एवा06॥6€0 ॥व55 0 १६४४० 6 5ाए6-09, 56000720 50608. वा0 ७4-33, 56007 65, #वा0व080 26 १0:60 प06 (5 0८6 66 १०./६४४०/२2026/7584 0860 20.0.2026. पक ८29०४, ॥पा॥068 0 हवॉ., वा€8, 005: 0 ॥वघ5 वा00 06घवा।60 (805 वा0 ८0ा0घं005 णि डरा (घा00 80[0८वघ00 ठा€ हा पं0ा60 6 वणि९5वांए 2:27. 06 800४९ 5वांप घाएपए वा 60067 85 9686 ११05060 07 ४४९७० 506 0 ५500? ।,6. एए४४४४-१७४छ़ि४-0ाप.॥ व: ६४४० 0०0९. 6 85: 2६6 0 6८60 0 व0ए८वॉघं०ाड 35 968 6>(हाव6व पएड० सणस्गस्थ 500 6ा067. न0ा धिगावपाण09 यदय| ,.. ६0, ?ठाटीा६08:(0, 508 छि एशाशभ 50",
-            "chars": 2112,
-            "words": 256,
-            "alphaRatio": 0.5274621212121212,
+            "text": "[eng page 1] HUDA URBAN ESTATE TOWN & COUNTRY PLANNING EMPLOYEES WELFARE ORGANISATION (HEWO) C-3, SECTOR-6, PANCHKULA No./HEWO/2026/ | 6& 2 Dated: 9 § ]>3) 26 To All the General Public Subject: Status of flotation of surplus/surrendered/ cancelled flats of HEWO GH Site-09, Sector-12, Sonepat and GH-33, Sector-65, Faridabad on as is where is basis. In continuation of this office letter No. HEWO/2026/1584 dated 20.01.2026, on the subject cited above. It is brought to the notice of all the General Public that surplus/ surrendered/cancelled flats of HEWO GH Site-09, Sector-12, Sonepat and GH-33, Sector- 65, Faridabad were floated vide this office letter No,./HEWO/2026/1584 dated 20.01.2026. The category, number of flat, area, cost of flats and detailed terms and conditions for submitting application are mentioned in the aforesaid letter. The above said circular letter has been hosted on web site of HSVP i.e. www.hsvphry.org.in at HEWO page. The last date for receipt of applications has been extended upto min eo Superintendent For Managing Director, be HEWO, Panchkula:,) ‘Scanned By Camera Scanner",
+            "chars": 1109,
+            "words": 163,
+            "alphaRatio": 0.7240757439134355,
             "garbled": 0
           },
           "criticalFieldEvidence": {
@@ -474,7 +291,7 @@
             "textFile": "C:\\Users\\pc\\Documents\\news-api-pusher\\reports\\source-audits\\task14\\raw-ocr\\9f0fb3c425f7c59d01eb587f489e0ec4cafeb05c452300d1e0b7a033c48ec2c9.txt",
             "rawHash": "9f0fb3c425f7c59d01eb587f489e0ec4cafeb05c452300d1e0b7a033c48ec2c9",
             "englishChars": 1131,
-            "hindiChars": 1026
+            "hindiChars": 0
           },
           "provenance": {
             "title": "LISTING",
@@ -501,191 +318,27 @@
         "listingUrl": "https://hsvphry.org.in/Home/Notices?branch=HEWO&type=All&year=2026",
         "title": "PUBLIC_NOTICE Floatation of constructed flat at Faridabad and Sonepat Uploaded on:21 January 2026 ] HEWO",
         "listingDate": "21 January 2026",
-        "sizeBytes": 5150729,
+        "sizeBytes": 0,
         "fetch": {
           "documentUrl": "https://hsvphry.org.in/documents/hewo/hewo_202601211617_639046090248941560.pdf",
           "status": 200,
           "finalUrl": "https://hsvphry.org.in/documents/hewo/hewo_202601211617_639046090248941560.pdf",
           "contentType": "application/pdf",
-          "bytes": 5150729,
-          "validation": "VALID_PDF",
-          "elapsedMs": 598,
-          "textExtraction": "IMAGE_ONLY_PDF",
+          "bytes": 0,
+          "validation": "TIMEOUT",
+          "elapsedMs": 10008,
+          "textExtraction": "",
           "textLength": 0,
-          "failureReason": ""
+          "failureReason": "TIMEOUT"
         },
-        "pages": 5,
-        "render": [
-          {
-            "page": 1,
-            "status": "RENDERED",
-            "elapsedMs": 3276
-          },
-          {
-            "page": 2,
-            "status": "RENDERED",
-            "elapsedMs": 4409
-          },
-          {
-            "page": 3,
-            "status": "RENDERED",
-            "elapsedMs": 4295
-          },
-          {
-            "page": 4,
-            "status": "RENDERED",
-            "elapsedMs": 3945
-          },
-          {
-            "page": 5,
-            "status": "RENDERED",
-            "elapsedMs": 3712
-          }
-        ],
+        "pages": 0,
+        "render": [],
         "ocr": {
           "engine": "C:\\Program Files\\Tesseract-OCR\\tesseract.exe",
-          "languages": [
-            "eng",
-            "hin"
-          ],
-          "pages": [
-            {
-              "status": "OCR_HIGH_CONFIDENCE",
-              "page": 1,
-              "language": "eng",
-              "chars": 2520,
-              "elapsedMs": 1012,
-              "text": "‘\r\n. COUNTRY PLANNING\r\nEMpit Daa ea ORGANISATION (HEWO)\r\nEMPLOY!\r\nr |ICHKULA\r\nis C-3, SECTOR-6, Ha pated: 2.0/0 1/26\r\nNo./HEWO/2026/ ) S &\r\nTo\r\nAll the General Public\r\n2 at Faridabad and\r\nSubject: Floatation of balance constructed flat\r\nSonepat.\r\n1 ic on as IS\r\nApplications for residential flats are invited from the General Public ;\r\ni inder:-\r\nwhere is basis. The detail of the constructed vacant flats, cost & area are Maa = Es ue\r\nme. © Ciena Matec. Cost of fla!\r\n\r\n[Sr.No | Site/Station| Category rota Noe.f oe ee Land cost EC Cost raateee R/off amount to\r\nat | floated| including deposited\r\nsite for all | area of with\r\n\r\nparame application\r\nparking Rs. In\r\n(in Sqft.) faes)\r\n\r\n| 60,66,029/- | 6,06,603/-\r\n\r\nMesa 0—t—~«~<‘i‘“‘i Rl\r\n\r\neae 455.00 | 32,6890 | 70,018/- | 610.3677 | 2,37,080/- | #5,54,682/- | 459,866/- |\r\n\r\nOo ee | ||\r\n\r\nThese are multistoried flats provided with facilities viz; plumbing, internal\r\nand external water supply, sewerage, electrification etc. The constructed flats ready to\r\nenter are being sold on as is where is basis.\r\nApplicant will have to submit the application complete in all respect in the\r\nenclosed performa alongwith 10% cost of flats in shape of demand draft in favour of M.D\r\nHEWO, Panchkula and shall reach on or before 20.02.2026 in the office of M.D. HEWO, C-\r\n3, HSVP Complex, Sector-6, Panchkula, either through registered po: t or in person. No\r\nbe claim on account of delay shall be entertained. = ”\r\nee Other Terms & Conditions will be as under:- eS: a\r\naa 1. The application will be submitted, indicating full p i.\r\ne designation, father's name and permanent add res: %\r\nEe enclosed alongwith affidavit). ag |\r\nia 2. A demand draft of 10% of cost of flat in favour of Man\r\ni? Panchkula payable at Panchkula/Chandigarh will be\r\nEe application. The application received without Earr\r\naa straightway rejected, ‘ =\r\nci catee 3. The particular floor and flat will be allocated throug!\r\n4. Balnce 90% of cost of flat shall be deposited with\r\nposited within\r\nissue of Letter of Intent (LOI). The LOI will be s\r\nby the applicant. In case of default the alloca\r\namount will be refunded after deducting 20%\r\nas per HEWO policy. me\r\n5. Deposit of 10% am a\r\njount 0\r\nallocation of membership. ral\r\navailable flats, the same will be\r\n6. Allotment/Possession of flat\r\nflat including Land cost Enh\r\ncost has been updated up\r\nof the flat the land cost.\r\ninterest payable to HS\\\r\nfrom the concerned Eé\r\nCost of flat can incree\r\nAaa\r\nFLOATATE oe id\r\na ‘Scanned By Camera Scanner\r\n",
-              "error": "",
-              "imageBytes": 1748897
-            },
-            {
-              "status": "OCR_USABLE",
-              "page": 1,
-              "language": "hin",
-              "chars": 2253,
-              "elapsedMs": 4100,
-              "text": "।\r\nकर & 0८00 ए.2्रघा१७\r\nदगन पारहडाक हडा भा पड 2:0५ (नह४४०)\r\nहान?.07\r\n्ं (९७.\r\nमम ८-3, 58टाणर-6, हम 0260: 2.6|० / 24\r\nप०./मह/०/2026/ ] 5 & न\r\n०\r\n&॥ प्रा€ 6268। रिप०0॥0८\r\nपा । ८०ाडघघर्टा€ मॉ.. मा. रिप80व20 ाएं\r\nइपुं€८:... 0वॉउपं0 0 0206\r\n50608.\r\nथ ८ 0 85 5\r\n#0ॉ८गं0ाई णि €5089। 2.5 ठा€ पाए (60 वि0ाा (006 ७6069 रिप00 दे\r\nं' ॥006:-\r\n्हा€ ।5 9855. ग06€ 060मां। 0 6 ८0ा5000060 ४०८87 ॥वि.$, 0०50 68. दर पिया रे पा रा\r\n| गच्डपठना व्मप्ब्यनता एप । पिठस्‍ वा पब्मएण् ठमतबतपत्स गएडतम बन [हट टन. निज पिन लग उपर०धतए १०\r\n\"कर जय ६. |. 25. | 5०92 भाह2 | 00८०5 7965 पिएं\r\nभा... | 0०266 पटापतीफस ७00ड(एढत\r\nडॉप्ड 02 | उठ रण सा\r\n७०5७6. ग99॥८8पं07\r\nमद (रि5. बता\r\n3 ।9८5)\r\n\r\n7 ढठ;ढढ/०टझ/: | 6,०6,6037-\r\nबज हन्यानियनिन सर\r\nजिप्णि प्यिका उड  उल्डलबर | ढफउन्ा |\r\n[उऊ.. छा ज्जच जज लि\r\n\r\n506८ाव८०घ०7) 0 ॥35:-\r\nपह5€ उा€ 0005(060 कवि 9०४60 तप विलंपंह5 भर; 9|एा0000, (6008\r\n0 ह)4(हा08। ५४2६6 50009#, 5€#2206, €।6€८(घाघ08घ00 €(८. 06 ८05000(60 85 630) (0\r\nहा 2 ठ€ 9९00 500 0 85 5 #006€ 5 9855,\r\n00८80 ४7॥ विवि (0 5090 (6 200॥0800 0000606 ॥॥ 3॥ ।€5060 (6\r\nहा८0560 9008 ०000४४११ 0% ८०5 0 हवडड ॥ 50806 0 02800 02 ॥॥ 2५०0 0 गि.0\r\n#ह0/0, शगाता(ए० गाए डी €3ती 0.0 0ह0ि९ 20.02.2026 हा पाह 0८४ 0 ५.0. 9६४0, 0-\r\n3, #50४/? (00063, 560(0-6, ?गाठीा।६08, हॉफिडा पा0000 €पां5660 9050 07 0 96 500, 0\r\nकि कप भा 00 ०८८०७ 0 0९3४ 5008 9€ शा(डा20060. कि भी\r\nहा 00 7४5 & ८००ता0005 ध४॥ 0९ 25 पतला: - न के.\r\nहा . ४ वए॥८व80ा ४॥॥ 9९ 50 (९0, ॥ा0टव्ाव छि॥ 9 के\r\nहै 06500ग000,  विधीहा'ड_ ॥का&. 20. 98808. 2007652\r\nभ्ल्क ८0560 ग0ापुधपी 30), उन तर\r\nगम 2. + १2090 ठावाि 0 0% 0 ८05 0 2 वि#007 0 32\r\nही रिकाटा॥६08 0४१०९ शिगाठी६05/0008ाएंपुठाव . ४४॥|. 96\r\nअं ०90॥८०00ा, 6. ठ0ॉ८बघंणा 0९४९0. शपी00:. हंठा।\r\n“रा 5धगंपर॥ 008४ छुड८(60, डर ्\r\nजहा 3... 06 एगपंटपागा १007 बाएं ॥2: ४४॥ 9९ 2॥0८5:60 (7090\r\n4... 8०00९ 90% 0 ८०50 0 8 508॥। 96 त९005060 90\r\nल 90560 धंधा\r\n5506 0 (22 0 प(हा( (07). गो।ह ।07 ५0॥ 0€ 56\r\n0४ पा€ ०00॥८80(... ह॥ ८०5९ 0 0९800: (0९ 30024\r\nगा।00ा ४४॥ 9९ 7५060 22 06000000 20%\r\nव5 96 ६४४0 90०८, डा मिलकर\r\n5. 06005 0 0% काा। भी\r\n!! 0000. ४४॥ 00\r\n0८00 रण हा 08500, हा रे\r\nव४व०96 हवॉड, पी€ 58९ ४9॥ 96\r\n6... ह॥000800/९05585507 ० 4\r\nवा ८0000 (.ा0 ८०5/ 800\r\n८०५१ 085 0९९ 0908060 ७\r\n9 (06 ॥8 (06 ।800 ८050.\r\nपहाड5: 9०४/०96 (० १50\r\nपा (06 ८0८60 €:\r\n८०५ 0 8: ८80 0782\r\nलि\r\n#04987800. “2 की\r\nव्य 5० बा छिए एआाशा 50आाश\r\n",
-              "error": "",
-              "imageBytes": 1748897
-            },
-            {
-              "status": "OCR_HIGH_CONFIDENCE",
-              "page": 2,
-              "language": "eng",
-              "chars": 984,
-              "elapsedMs": 526,
-              "text": "fe fi In case applicant is un-successful in the draw of lot the refund will be Ain\r\nin the same account provided by the applicant in the application form.\r\nCancelled cheque for refund purpose be enclosed.\r\n8. Applicant should enclose valid ID proof of residence i.e. Aadhar card/ driving\r\nlicence/Electricity Bill/Voter card alongwith Affidavit.\r\n9. For loan purpose, HEWO shall give only the following documents: -\r\nay Mortgage Permission in favour of bank.\r\nDi Tripartite Agreement. ;\r\n; Fi Copy of registration of HEWO.\r\n4. Letter of Intent.\r\nSy Copy of allotment letter of Site issued by the Estate Officer, HSVP.\r\n6. Copy of letter vide which approval of building plans has been granted\r\nby concerned Estate Officer, HSVP.\r\nZs Copy of Occupation Certified of concerned site issued by Estate\r\nOfficer, HSVP to HEWO.\r\nDA: — Applicatior: Form sss\r\nAffidavit a Superintendent\r\nDetail of vacant fl _ For Managing Director \\\r\na ____HEWO, Panchkul. on\r\naoe\r\n‘Scanned By Camera Scanner\r\n",
-              "error": "",
-              "imageBytes": 1436460
-            },
-            {
-              "status": "OCR_USABLE",
-              "page": 2,
-              "language": "hin",
-              "chars": 810,
-              "elapsedMs": 1521,
-              "text": "ि ही पा ८856 80008 5 पा-500८९55॥0ि। घ0 (6 प80/ 0 0 घा€ 6५00 रा 06 दया\r\nपा पा€ 5काह 3८८00: 0५060 9४ पी 200८8 0 6 ०0000 शिप-\r\n(गाए€॥€0 ता&6५०६ हि 6000 90709056 96 हा00560,\r\nहै. 9८8: 50000 हा।056 ४१॥0 0 फ़ा0०0 0 7€ड080€ ।.€. 02008 ८80/ एप\r\n॥८हा८6/ह।600700/ 8ां॥/४/0०(6 ८80 200४0 #पी0०४ा(.\r\n9. 0 ।08 90ा005€, ६0४४0 508 पां४€ 0४ (06 छि॥0४४00 00८0 5:-\r\nके 00906 ?ापा।ं5500  छि४00ा 0 0870.\r\n2, वांफगप(€ 20 €ा९(.. न\r\nहे 3, (८०0४ 0 7€पां5धवघं0ा 0 १६४४0.\r\n4. (हा 0 पा (8,\r\n5. ८००४ 0 १008 ।6((67 0 506 55060 9४ (6 ह50806 008, 5000,\r\n6. ८०0४ ण ।6(67 भठ€ ५0 3000४०। 0 9०0ा।000 25 85 068 प्रागा(60\r\n0४ 0008060 ६5086 (एटा, १50.\r\n7. ६०0४ 0. 0८८५०वप0ा एप 0. ८0ाएशाहत ड(€ 55060 0४ €5(व(6\r\n00८४, 500? (0 #६४/०,\r\n0: #प्उपंणाणा\r\n/िपव्ी: न है... 5. .\r\n068 0 ५४१८७: ह _ 0 िठा9000 कद) बा\r\nही ४0, शिवा दिए | कु\r\n+ ..\r\n5८80 छि४ 08 508\r\n",
-              "error": "",
-              "imageBytes": 1436460
-            },
-            {
-              "status": "OCR_HIGH_CONFIDENCE",
-              "page": 3,
-              "language": "eng",
-              "chars": 586,
-              "elapsedMs": 391,
-              "text": "ICATION FORM FORHEWOFLATAT\r\n\r\nNo.S-III/2026.....\r\nPienenieromenp canta in Block Letters)s.\r\n\r\n(As per Aadhar card)\r\n\r\nFather’s/Husband’s Name (In Block L etters);__-———\r\n\r\nDate of Birth of the applicant:\r\n\r\nCorrespondence Address:\r\n\r\nOccupation:\r\n\r\nContact Phone No. 3\r\n\r\nEmail ID: z\r\n\r\nCategory of flat app i\r\n\r\nName of the Site whi 4\r\n\r\n2 4 Signature of the applicant\r\n\r\nDeclaration by the af :\r\n\r\nThereby declare M\r\n\r\nit, Th Iam a . vide Demand Draft\r\n\r\n0. : Be\r\n2. That I hav I s of the s scheme mentioned in the\r\n* aga hy cant foray otment of flat and\r\n‘Scanned By Camera Scanner\r\n",
-              "error": "",
-              "imageBytes": 1482163
-            },
-            {
-              "status": "OCR_USABLE",
-              "page": 3,
-              "language": "hin",
-              "chars": 545,
-              "elapsedMs": 1265,
-              "text": "#9?0?70#7707४ #0ारान ह0ार ४४० 8 हुष४0 #। &7 & के 5\r\n\r\n०.5-ए/2026.....\r\nचना वामीप्माए छा ०0: [ इफ़टा5):____------णटााएणा6एणाा\r\n\r\n(85 06 23008 0८80)\r\n\r\nन्मिलिह-' घी ण9930%5 पा ही 800८ . «फ्डा5):\r\n\r\n046 0 छिप 0 06 300॥087:\r\n\r\n(06€5000806 2007655:\r\n\r\n0८८५0वघ077:\r\n\r\nए०ा(वट शि0ाह 0. कं\r\n\r\nट्ाावां। [0: ह औ\r\n\r\n(०69०४ 0 व: 800 डी\r\n\r\nवाा€ 0 06 506 ४४0१ -\r\n\r\nग ही 50806 0 (06 80008.\r\n\r\n06८।वावघ0 9४ 06 वे] जे\r\n\r\n[ हा€0%# 06८86 गा\r\n\r\nदी 7 8000 06 . ाठ6 0हा0वा0 एव:\r\n\r\n0 क\r\nडा गाव, [ 8७ । 5 0ह (06 < 606 पा 60760 [0 (06\r\n“अत न 008 0 2 20\r\n508 छि एशाशभ 50\r\n",
-              "error": "",
-              "imageBytes": 1482163
-            },
-            {
-              "status": "OCR_HIGH_CONFIDENCE",
-              "page": 4,
-              "language": "eng",
-              "chars": 709,
-              "elapsedMs": 471,
-              "text": "AFFIDAVIT\r\nTo ee aged about ee Years S/o\r\nSf eee eee es Recidentsof eae eee\r\nONS a ee do hereby solemnly affirm and declare as under:-\r\nak That I have applied enrollment of member in HEWO flat at — for\r\ncategory.\r\noF That the said scheme has been circulated by M.D HEWO, Panchkula vide public _\r\nnotice dated -\r\n3. That I have gone hroug! rerms and conditions of the scheme mentioned in the\r\nsaid letter and } 4\r\n4. That I am depc 3 vide Demand Draft\r\nNo. 4 Y\r\n5: That applying fe me any right for allotment of\r\nflat and I will nc cessful in the draw of lot.\r\n6. That I will abid in this regard.\r\n2 — DEPONENT\r\nPlace: 4 a.\r\nDated: a —\r\nVERIFICATIC 4\r\nand. my knowledge\r\ni EPONENT\r\n‘Scanned By Camera Scanner\r\n",
-              "error": "",
-              "imageBytes": 1439377
-            },
-            {
-              "status": "OCR_USABLE",
-              "page": 4,
-              "language": "hin",
-              "chars": 646,
-              "elapsedMs": 1586,
-              "text": "| #&नष0& ४\r\nबट कट किट कि कक ०0६० 8000 :फडी- ज €ठा5 5/०\r\nझाभ्ड डा पडता 0 नणणणणपााण\r\nअ........... ...नननणनणनाणा 00 6609४ 50600 वी 200 06086 85 धा06:-\r\nट गवां: [ 0क४९ व00॥60 हा 0॥॥ाहा॥ 0 8008 ॥॥ ५५0 हि वी. णि\r\nएव600%४.\r\nदे नव: 6 580 50806 ॥85 968 घाएए 060 0४ .0. नरि0, रात ए।8 पॉप 9000८\r\n006 0व:60 ि\r\n3. .... फ॥वा [ 0व४९ 0०6 0 ०७०0 ध0€ (2005 800 ८0005 0 पा& 52026 त02ा(ं0060 हा पा\r\n50 ।ह(€ा 200. ्\r\n4. ग08६ 7 का। (छा भर 06 0हा।वाए एव:\r\n१०, कि ही\r\n5. पवां नि 06 का0/ 00 छिए व॥॥00घा6 0\r\nवां. 200 ह ४ ॥ 550 0 (06 08४४ 0 0.\r\n6... 00. [ ४४॥| 220 जा (5 ।60870.\r\nही . 0०02५\r\nशठ८€: दि “ि\r\n060: कि गन\r\nभार ८ 8770\r\n00 । 0 ।00४/6006\r\n। ६९0६५\r\n5८80 छि४ 08 508\r\n",
-              "error": "",
-              "imageBytes": 1439377
-            },
-            {
-              "status": "OCR_USABLE",
-              "page": 5,
-              "language": "eng",
-              "chars": 411,
-              "elapsedMs": 327,
-              "text": "[\r\nPresent status of category wise vacant flats of HEWO Scheme-lll\r\nat various Urban Estate on as is where is basis\r\nIn Saft.) of flats\r\n| 1. [Deluxe | 1725.00 [4 __|_GH-33, Sec-65, Faridabad 102, 302, 403 & 703\r\n(gi 2) ete 2536.10 wel GH-09, Sec-12, Sonipat 302, 303, 304, 401, 404, 502,\r\n503 & 504\r\n[3] Economy | 1485.00 | 4 | GH-09, Sec-12, Sonipat 601, 602, 603 & 604\r\npe ee\r\n|\r\n‘Scanned By Camera Scanner\r\n",
-              "error": "",
-              "imageBytes": 1302639
-            },
-            {
-              "status": "OCR_USABLE",
-              "page": 5,
-              "language": "hin",
-              "chars": 365,
-              "elapsedMs": 908,
-              "text": "|\r\n०७6 5805 0 ८०९०४ ४56 ४०८8 85५ टी ५४56 ४०८8 085 0 नटि४0 50८06806-॥|\r\n3 ध3ा005 (080 रिड(€ 0 35 [5 ५४2९ (इ8३ड5::2\r\n॥ा 5. 085\r\nजा गे. 00 4 | 6-33, 5680-65, निला0व080 02, 302, 405 & 705\r\n2536.0 नि आदी ठन-09, 56८-2, 5008 302, 303, 304, 407, 404, 502,\r\n503 & 504\r\nनि दलाररज़ातता गे जार ठाम-09, 560८-42, 50709. 607, 602, 603 & 604\r\nकि चर चर न\r\nडी\r\n5080 छि/ (क्ाशा8 508\r\n",
-              "error": "",
-              "imageBytes": 1302639
-            }
-          ]
+          "languages": [],
+          "pages": []
         },
-        "quality": {
-          "english": {
-            "status": "OCR_HIGH_CONFIDENCE",
-            "text": "‘ . COUNTRY PLANNING EMpit Daa ea ORGANISATION (HEWO) EMPLOY! r |ICHKULA is C-3, SECTOR-6, Ha pated: 2.0/0 1/26 No./HEWO/2026/ ) S & To All the General Public 2 at Faridabad and Subject: Floatation of balance constructed flat Sonepat. 1 ic on as IS Applications for residential flats are invited from the General Public ; i inder:- where is basis. The detail of the constructed vacant flats, cost & area are Maa = Es ue me. © Ciena Matec. Cost of fla! [Sr.No | Site/Station| Category rota Noe.f oe ee Land cost EC Cost raateee R/off amount to at | floated| including deposited site for all | area of with parame application parking Rs. In (in Sqft.) faes) | 60,66,029/- | 6,06,603/- Mesa 0—t—~«~<‘i‘“‘i Rl eae 455.00 | 32,6890 | 70,018/- | 610.3677 | 2,37,080/- | #5,54,682/- | 459,866/- | Oo ee | || These are multistoried flats provided with facilities viz; plumbing, internal and external water supply, sewerage, electrification etc. The constructed flats ready to enter are being sold on as is where is basis. Applicant will have to submit the application complete in all respect in the enclosed performa alongwith 10% cost of flats in shape of demand draft in favour of M.D HEWO, Panchkula and shall reach on or before 20.02.2026 in the office of M.D. HEWO, C- 3, HSVP Complex, Sector-6, Panchkula, either through registered po: t or in person. No be claim on account of delay shall be entertained. = ” ee Other Terms & Conditions will be as under:- eS: a aa 1. The application will be submitted, indicating full p i. e designation, father's name and permanent add res: % Ee enclosed alongwith affidavit). ag | ia 2. A demand draft of 10% of cost of flat in favour of Man i? Panchkula payable at Panchkula/Chandigarh will be Ee application. The application received without Earr aa straightway rejected, ‘ = ci catee 3. The particular floor and flat will be allocated throug! 4. Balnce 90% of cost of flat shall be deposited with posited within issue of Letter of Intent (LOI). The LOI will be s by the applicant. In case of default the alloca amount will be refunded after deducting 20% as per HEWO policy. me 5. Deposit of 10% am a jount 0 allocation of membership. ral available flats, the same will be 6. Allotment/Possession of flat flat including Land cost Enh cost has been updated up of the flat the land cost. interest payable to HS\\ from the concerned Eé Cost of flat can incree Aaa FLOATATE oe id a ‘Scanned By Camera Scanner fe fi In case applicant is un-successful in the draw of lot the refund will be Ain in the same account provided by the applicant in the application form. Cancelled cheque for refund purpose be enclosed. 8. Applicant should enclose valid ID proof of residence i.e. Aadhar card/ driving licence/Electricity Bill/Voter card alongwith Affidavit. 9. For loan purpose, HEWO shall give only the following documents: - ay Mortgage Permission in favour of bank. Di Tripartite Agreement. ; ; Fi Copy of registration of HEWO. 4. Letter of Intent. Sy Copy of allotment letter of Site issued by the Estate Officer, HSVP. 6. Copy of letter vide which approval of building plans has been granted by concerned Estate Officer, HSVP. Zs Copy of Occupation Certified of concerned site issued by Estate Officer, HSVP to HEWO. DA: — Applicatior: Form sss Affidavit a Superintendent Detail of vacant fl _ For Managing Director \\ a ____HEWO, Panchkul. on aoe ‘Scanned By Camera Scanner ICATION FORM FORHEWOFLATAT No.S-III/2026..... Pienenieromenp canta in Block Letters)s. (As per Aadhar card) Father’s/Husband’s Name (In Block L etters);__-——— Date of Birth of the applicant: Correspondence Address: Occupation: Contact Phone No. 3 Email ID: z Category of flat app i Name of the Site whi 4 2 4 Signature of the applicant Declaration by the af : Thereby declare M it, Th Iam a . vide Demand Draft 0. : Be 2. That I hav I s of the s scheme mentioned in the * aga hy cant foray otment of flat and ‘Scanned By Camera Scanner AFFIDAVIT To ee aged about ee Years S/o Sf eee eee es Recidentsof eae eee ONS a ee do hereby solemnly affirm and declare as under:- ak That I have applied enrollment of member in HEWO flat at — for category. oF That the said scheme has been circulated by M.D HEWO, Panchkula vide public _ notice dated - 3. That I have gone hroug! rerms and conditions of the scheme mentioned in the said letter and } 4 4. That I am depc 3 vide Demand Draft No. 4 Y 5: That applying fe me any right for allotment of flat and I will nc cessful in the draw of lot. 6. That I will abid in this regard. 2 — DEPONENT Place: 4 a. Dated: a — VERIFICATIC 4 and. my knowledge i EPONENT ‘Scanned By Camera Scanner [ Present status of category wise vacant flats of HEWO Scheme-lll at various Urban Estate on as is where is basis In Saft.) of flats | 1. [Deluxe | 1725.00 [4 __|_GH-33, Sec-65, Faridabad 102, 302, 403 & 703 (gi 2) ete 2536.10 wel GH-09, Sec-12, Sonipat 302, 303, 304, 401, 404, 502, 503 & 504 [3] Economy | 1485.00 | 4 | GH-09, Sec-12, Sonipat 601, 602, 603 & 604 pe ee | ‘Scanned By Camera Scanner",
-            "chars": 5027,
-            "words": 751,
-            "alphaRatio": 0.7049930375969763,
-            "garbled": 0
-          },
-          "hindi": {
-            "status": "OCR_USABLE",
-            "text": "। कर & 0८00 ए.2्रघा१७ दगन पारहडाक हडा भा पड 2:0५ (नह४४०) हान?.07 ्ं (९७. मम ८-3, 58टाणर-6, हम 0260: 2.6|० / 24 प०./मह/०/2026/ ] 5 & न ० &॥ प्रा€ 6268। रिप०0॥0८ पा । ८०ाडघघर्टा€ मॉ.. मा. रिप80व20 ाएं इपुं€८:... 0वॉउपं0 0 0206 50608. थ ८ 0 85 5 #0ॉ८गं0ाई णि €5089। 2.5 ठा€ पाए (60 वि0ाा (006 ७6069 रिप00 दे ं' ॥006:- ्हा€ ।5 9855. ग06€ 060मां। 0 6 ८0ा5000060 ४०८87 ॥वि.$, 0०50 68. दर पिया रे पा रा | गच्डपठना व्मप्ब्यनता एप । पिठस्‍ वा पब्मएण् ठमतबतपत्स गएडतम बन [हट टन. निज पिन लग उपर०धतए १० \"कर जय ६. |. 25. | 5०92 भाह2 | 00८०5 7965 पिएं भा... | 0०266 पटापतीफस ७00ड(एढत डॉप्ड 02 | उठ रण सा ७०5७6. ग99॥८8पं07 मद (रि5. बता 3 ।9८5) 7 ढठ;ढढ/०टझ/: | 6,०6,6037- बज हन्यानियनिन सर जिप्णि प्यिका उड उल्डलबर | ढफउन्ा | [उऊ.. छा ज्जच जज लि 506८ाव८०घ०7) 0 ॥35:- पह5€ उा€ 0005(060 कवि 9०४60 तप विलंपंह5 भर; 9|एा0000, (6008 0 ह)4(हा08। ५४2६6 50009#, 5€#2206, €।6€८(घाघ08घ00 €(८. 06 ८05000(60 85 630) (0 हा 2 ठ€ 9९00 500 0 85 5 #006€ 5 9855, 00८80 ४7॥ विवि (0 5090 (6 200॥0800 0000606 ॥॥ 3॥ ।€5060 (6 हा८0560 9008 ०000४४११ 0% ८०5 0 हवडड ॥ 50806 0 02800 02 ॥॥ 2५०0 0 गि.0 #ह0/0, शगाता(ए० गाए डी €3ती 0.0 0ह0ि९ 20.02.2026 हा पाह 0८४ 0 ५.0. 9६४0, 0- 3, #50४/? (00063, 560(0-6, ?गाठीा।६08, हॉफिडा पा0000 €पां5660 9050 07 0 96 500, 0 कि कप भा 00 ०८८०७ 0 0९3४ 5008 9€ शा(डा20060. कि भी हा 00 7४5 & ८००ता0005 ध४॥ 0९ 25 पतला: - न के. हा . ४ वए॥८व80ा ४॥॥ 9९ 50 (९0, ॥ा0टव्ाव छि॥ 9 के है 06500ग000, विधीहा'ड_ ॥का&. 20. 98808. 2007652 भ्ल्क ८0560 ग0ापुधपी 30), उन तर गम 2. + १2090 ठावाि 0 0% 0 ८05 0 2 वि#007 0 32 ही रिकाटा॥६08 0४१०९ शिगाठी६05/0008ाएंपुठाव . ४४॥|. 96 अं ०90॥८०00ा, 6. ठ0ॉ८बघंणा 0९४९0. शपी00:. हंठा। “रा 5धगंपर॥ 008४ छुड८(60, डर ् जहा 3... 06 एगपंटपागा १007 बाएं ॥2: ४४॥ 9९ 2॥0८5:60 (7090 4... 8०00९ 90% 0 ८०50 0 8 508॥। 96 त९005060 90 ल 90560 धंधा 5506 0 (22 0 प(हा( (07). गो।ह ।07 ५0॥ 0€ 56 0४ पा€ ०00॥८80(... ह॥ ८०5९ 0 0९800: (0९ 30024 गा।00ा ४४॥ 9९ 7५060 22 06000000 20% व5 96 ६४४0 90०८, डा मिलकर 5. 06005 0 0% काा। भी !! 0000. ४४॥ 00 0८00 रण हा 08500, हा रे व४व०96 हवॉड, पी€ 58९ ४9॥ 96 6... ह॥000800/९05585507 ० 4 वा ८0000 (.ा0 ८०5/ 800 ८०५१ 085 0९९ 0908060 ७ 9 (06 ॥8 (06 ।800 ८050. पहाड5: 9०४/०96 (० १50 पा (06 ८0८60 €: ८०५ 0 8: ८80 0782 लि #04987800. “2 की व्य 5० बा छिए एआाशा 50आाश ि ही पा ८856 80008 5 पा-500८९55॥0ि। घ0 (6 प80/ 0 0 घा€ 6५00 रा 06 दया पा पा€ 5काह 3८८00: 0५060 9४ पी 200८8 0 6 ०0000 शिप- (गाए€॥€0 ता&6५०६ हि 6000 90709056 96 हा00560, है. 9८8: 50000 हा।056 ४१॥0 0 फ़ा0०0 0 7€ड080€ ।.€. 02008 ८80/ एप ॥८हा८6/ह।600700/ 8ां॥/४/0०(6 ८80 200४0 #पी0०४ा(. 9. 0 ।08 90ा005€, ६0४४0 508 पां४€ 0४ (06 छि॥0४४00 00८0 5:- के 00906 ?ापा।ं5500 छि४00ा 0 0870. 2, वांफगप(€ 20 €ा९(.. न हे 3, (८०0४ 0 7€पां5धवघं0ा 0 १६४४0. 4. (हा 0 पा (8, 5. ८००४ 0 १008 ।6((67 0 506 55060 9४ (6 ह50806 008, 5000, 6. ८०0४ ण ।6(67 भठ€ ५0 3000४०। 0 9०0ा।000 25 85 068 प्रागा(60 0४ 0008060 ६5086 (एटा, १50. 7. ६०0४ 0. 0८८५०वप0ा एप 0. ८0ाएशाहत ड(€ 55060 0४ €5(व(6 00८४, 500? (0 #६४/०, 0: #प्उपंणाणा /िपव्ी: न है... 5. . 068 0 ५४१८७: ह _ 0 िठा9000 कद) बा ही ४0, शिवा दिए | कु + .. 5८80 छि४ 08 508 #9?0?70#7707४ #0ारान ह0ार ४४० 8 हुष४0 #। &7 & के 5 ०.5-ए/2026..... चना वामीप्माए छा ०0: [ इफ़टा5):____------णटााएणा6एणाा (85 06 23008 0८80) न्मिलिह-' घी ण9930%5 पा ही 800८ . «फ्डा5): 046 0 छिप 0 06 300॥087: (06€5000806 2007655: 0८८५0वघ077: ए०ा(वट शि0ाह 0. कं ट्ाावां। [0: ह औ (०69०४ 0 व: 800 डी वाा€ 0 06 506 ४४0१ - ग ही 50806 0 (06 80008. 06८।वावघ0 9४ 06 वे] जे [ हा€0%# 06८86 गा दी 7 8000 06 . ाठ6 0हा0वा0 एव: 0 क डा गाव, [ 8७ । 5 0ह (06 < 606 पा 60760 [0 (06 “अत न 008 0 2 20 508 छि एशाशभ 50 | #&नष0& ४ बट कट किट कि कक ०0६० 8000 :फडी- ज €ठा5 5/० झाभ्ड डा पडता 0 नणणणणपााण अ........... ...नननणनणनाणा 00 6609४ 50600 वी 200 06086 85 धा06:- ट गवां: [ 0क४९ व00॥60 हा 0॥॥ाहा॥ 0 8008 ॥॥ ५५0 हि वी. णि एव600%४. दे नव: 6 580 50806 ॥85 968 घाएए 060 0४ .0. नरि0, रात ए।8 पॉप 9000८ 006 0व:60 ि 3. .... फ॥वा [ 0व४९ 0०6 0 ०७०0 ध0€ (2005 800 ८0005 0 पा& 52026 त02ा(ं0060 हा पा 50 ।ह(€ा 200. ् 4. ग08६ 7 का। (छा भर 06 0हा।वाए एव: १०, कि ही 5. पवां नि 06 का0/ 00 छिए व॥॥00घा6 0 वां. 200 ह ४ ॥ 550 0 (06 08४४ 0 0. 6... 00. [ ४४॥| 220 जा (5 ।60870. ही . 0०02५ शठ८€: दि “ि 060: कि गन भार ८ 8770 00 । 0 ।00४/6006 । ६९0६५ 5८80 छि४ 08 508 | ०७6 5805 0 ८०९०४ ४56 ४०८8 85५ टी ५४56 ४०८8 085 0 नटि४0 50८06806-॥| 3 ध3ा005 (080 रिड(€ 0 35 [5 ५४2९ (इ8३ड5::2 ॥ा 5. 085 जा गे. 00 4 | 6-33, 5680-65, निला0व080 02, 302, 405 & 705 2536.0 नि आदी ठन-09, 56८-2, 5008 302, 303, 304, 407, 404, 502, 503 & 504 नि दलाररज़ातता गे जार ठाम-09, 560८-42, 50709. 607, 602, 603 & 604 कि चर चर न डी 5080 छि/ (क्ाशा8 508",
-            "chars": 4442,
-            "words": 433,
-            "alphaRatio": 0.2985141828005403,
-            "garbled": 0
-          },
-          "combined": {
-            "status": "OCR_HIGH_CONFIDENCE",
-            "text": "[eng page 1] ‘ . COUNTRY PLANNING EMpit Daa ea ORGANISATION (HEWO) EMPLOY! r |ICHKULA is C-3, SECTOR-6, Ha pated: 2.0/0 1/26 No./HEWO/2026/ ) S & To All the General Public 2 at Faridabad and Subject: Floatation of balance constructed flat Sonepat. 1 ic on as IS Applications for residential flats are invited from the General Public ; i inder:- where is basis. The detail of the constructed vacant flats, cost & area are Maa = Es ue me. © Ciena Matec. Cost of fla! [Sr.No | Site/Station| Category rota Noe.f oe ee Land cost EC Cost raateee R/off amount to at | floated| including deposited site for all | area of with parame application parking Rs. In (in Sqft.) faes) | 60,66,029/- | 6,06,603/- Mesa 0—t—~«~<‘i‘“‘i Rl eae 455.00 | 32,6890 | 70,018/- | 610.3677 | 2,37,080/- | #5,54,682/- | 459,866/- | Oo ee | || These are multistoried flats provided with facilities viz; plumbing, internal and external water supply, sewerage, electrification etc. The constructed flats ready to enter are being sold on as is where is basis. Applicant will have to submit the application complete in all respect in the enclosed performa alongwith 10% cost of flats in shape of demand draft in favour of M.D HEWO, Panchkula and shall reach on or before 20.02.2026 in the office of M.D. HEWO, C- 3, HSVP Complex, Sector-6, Panchkula, either through registered po: t or in person. No be claim on account of delay shall be entertained. = ” ee Other Terms & Conditions will be as under:- eS: a aa 1. The application will be submitted, indicating full p i. e designation, father's name and permanent add res: % Ee enclosed alongwith affidavit). ag | ia 2. A demand draft of 10% of cost of flat in favour of Man i? Panchkula payable at Panchkula/Chandigarh will be Ee application. The application received without Earr aa straightway rejected, ‘ = ci catee 3. The particular floor and flat will be allocated throug! 4. Balnce 90% of cost of flat shall be deposited with posited within issue of Letter of Intent (LOI). The LOI will be s by the applicant. In case of default the alloca amount will be refunded after deducting 20% as per HEWO policy. me 5. Deposit of 10% am a jount 0 allocation of membership. ral available flats, the same will be 6. Allotment/Possession of flat flat including Land cost Enh cost has been updated up of the flat the land cost. interest payable to HS\\ from the concerned Eé Cost of flat can incree Aaa FLOATATE oe id a ‘Scanned By Camera Scanner [hin page 1] । कर & 0८00 ए.2्रघा१७ दगन पारहडाक हडा भा पड 2:0५ (नह४४०) हान?.07 ्ं (९७. मम ८-3, 58टाणर-6, हम 0260: 2.6|० / 24 प०./मह/०/2026/ ] 5 & न ० &॥ प्रा€ 6268। रिप०0॥0८ पा । ८०ाडघघर्टा€ मॉ.. मा. रिप80व20 ाएं इपुं€८:... 0वॉउपं0 0 0206 50608. थ ८ 0 85 5 #0ॉ८गं0ाई णि €5089। 2.5 ठा€ पाए (60 वि0ाा (006 ७6069 रिप00 दे ं' ॥006:- ्हा€ ।5 9855. ग06€ 060मां। 0 6 ८0ा5000060 ४०८87 ॥वि.$, 0०50 68. दर पिया रे पा रा | गच्डपठना व्मप्ब्यनता एप । पिठस्‍ वा पब्मएण् ठमतबतपत्स गएडतम बन [हट टन. निज पिन लग उपर०धतए १० \"कर जय ६. |. 25. | 5०92 भाह2 | 00८०5 7965 पिएं भा... | 0०266 पटापतीफस ७00ड(एढत डॉप्ड 02 | उठ रण सा ७०5७6. ग99॥८8पं07 मद (रि5. बता 3 ।9८5) 7 ढठ;ढढ/०टझ/: | 6,०6,6037- बज हन्यानियनिन सर जिप्णि प्यिका उड उल्डलबर | ढफउन्ा | [उऊ.. छा ज्जच जज लि 506८ाव८०घ०7) 0 ॥35:- पह5€ उा€ 0005(060 कवि 9०४60 तप विलंपंह5 भर; 9|एा0000, (6008 0 ह)4(हा08। ५४2६6 50009#, 5€#2206, €।6€८(घाघ08घ00 €(८. 06 ८05000(60 85 630) (0 हा 2 ठ€ 9९00 500 0 85 5 #006€ 5 9855, 00८80 ४7॥ विवि (0 5090 (6 200॥0800 0000606 ॥॥ 3॥ ।€5060 (6 हा८0560 9008 ०000४४११ 0% ८०5 0 हवडड ॥ 50806 0 02800 02 ॥॥ 2५०0 0 गि.0 #ह0/0, शगाता(ए० गाए डी €3ती 0.0 0ह0ि९ 20.02.2026 हा पाह 0८४ 0 ५.0. 9६४0, 0- 3, #50४/? (00063, 560(0-6, ?गाठीा।६08, हॉफिडा पा0000 €पां5660 9050 07 0 96 500, 0 कि कप भा 00 ०८८०७ 0 0९3४ 5008 9€ शा(डा20060. कि भी हा 00 7४5 & ८००ता0005 ध४॥ 0९ 25 पतला: - न के. हा . ४ वए॥८व80ा ४॥॥ 9९ 50 (९0, ॥ा0टव्ाव छि॥ 9 के है 06500ग000, विधीहा'ड_ ॥का&. 20. 98808. 2007652 भ्ल्क ८0560 ग0ापुधपी 30), उन तर गम 2. + १2090 ठावाि 0 0% 0 ८05 0 2 वि#007 0 32 ही रिकाटा॥६08 0४१०९ शिगाठी६05/0008ाएंपुठाव . ४४॥|. 96 अं ०90॥८०00ा, 6. ठ0ॉ८बघंणा 0९४९0. शपी00:. हंठा। “रा 5धगंपर॥ 008४ छुड८(60, डर ् जहा 3... 06 एगपंटपागा १007 बाएं ॥2: ४४॥ 9९ 2॥0८5:60 (7090 4... 8०00९ 90% 0 ८०50 0 8 508॥। 96 त९005060 90 ल 90560 धंधा 5506 0 (22 0 प(हा( (07). गो।ह ।07 ५0॥ 0€ 56 0४ पा€ ०00॥८80(... ह॥ ८०5९ 0 0९800: (0९ 30024 गा।00ा ४४॥ 9९ 7५060 22 06000000 20% व5 96 ६४४0 90०८, डा मिलकर 5. 06005 0 0% काा। भी !! 0000. ४४॥ 00 0८00 रण हा 08500, हा रे व४व०96 हवॉड, पी€ 58९ ४9॥ 96 6... ह॥000800/९05585507 ० 4 वा ८0000 (.ा0 ८०5/ 800 ८०५१ 085 0९९ 0908060 ७ 9 (06 ॥8 (06 ।800 ८050. पहाड5: 9०४/०96 (० १50 पा (06 ८0८60 €: ८०५ 0 8: ८80 0782 लि #04987800. “2 की व्य 5० बा छिए एआाशा 50आाश [eng page 2] fe fi In case applicant is un-successful in the draw of lot the refund will be Ain in the same account provided by the applicant in the application form. Cancelled cheque for refund purpose be enclosed. 8. Applicant should enclose valid ID proof of residence i.e. Aadhar card/ driving licence/Electricity Bill/Voter card alongwith Affidavit. 9. For loan purpose, HEWO shall give only the following documents: - ay Mortgage Permission in favour of bank. Di Tripartite Agreement. ; ; Fi Copy of registration of HEWO. 4. Letter of Intent. Sy Copy of allotment letter of Site issued by the Estate Officer, HSVP. 6. Copy of letter vide which approval of building plans has been granted by concerned Estate Officer, HSVP. Zs Copy of Occupation Certified of concerned site issued by Estate Officer, HSVP to HEWO. DA: — Applicatior: Form sss Affidavit a Superintendent Detail of vacant fl _ For Managing Director \\ a ____HEWO, Panchkul. on aoe ‘Scanned By Camera Scanner [hin page 2] ि ही पा ८856 80008 5 पा-500८९55॥0ि। घ0 (6 प80/ 0 0 घा€ 6५00 रा 06 दया पा पा€ 5काह 3८८00: 0५060 9४ पी 200८8 0 6 ०0000 शिप- (गाए€॥€0 ता&6५०६ हि 6000 90709056 96 हा00560, है. 9८8: 50000 हा।056 ४१॥0 0 फ़ा0०0 0 7€ड080€ ।.€. 02008 ८80/ एप ॥८हा८6/ह।600700/ 8ां॥/४/0०(6 ८80 200४0 #पी0०४ा(. 9. 0 ।08 90ा005€, ६0४४0 508 पां४€ 0४ (06 छि॥0४४00 00८0 5:- के 00906 ?ापा।ं5500 छि४00ा 0 0870. 2, वांफगप(€ 20 €ा९(.. न हे 3, (८०0४ 0 7€पां5धवघं0ा 0 १६४४0. 4. (हा 0 पा (8, 5. ८००४ 0 १008 ।6((67 0 506 55060 9४ (6 ह50806 008, 5000, 6. ८०0४ ण ।6(67 भठ€ ५0 3000४०। 0 9०0ा।000 25 85 068 प्रागा(60 0४ 0008060 ६5086 (एटा, १50. 7. ६०0४ 0. 0८८५०वप0ा एप 0. ८0ाएशाहत ड(€ 55060 0४ €5(व(6 00८४, 500? (0 #६४/०, 0: #प्उपंणाणा /िपव्ी: न है... 5. . 068 0 ५४१८७: ह _ 0 िठा9000 कद) बा ही ४0, शिवा दिए | कु + .. 5८80 छि४ 08 508 [eng page 3] ICATION FORM FORHEWOFLATAT No.S-III/2026..... Pienenieromenp canta in Block Letters)s. (As per Aadhar card) Father’s/Husband’s Name (In Block L etters);__-——— Date of Birth of the applicant: Correspondence Address: Occupation: Contact Phone No. 3 Email ID: z Category of flat app i Name of the Site whi 4 2 4 Signature of the applicant Declaration by the af : Thereby declare M it, Th Iam a . vide Demand Draft 0. : Be 2. That I hav I s of the s scheme mentioned in the * aga hy cant foray otment of flat and ‘Scanned By Camera Scanner [hin page 3] #9?0?70#7707४ #0ारान ह0ार ४४० 8 हुष४0 #। &7 & के 5 ०.5-ए/2026..... चना वामीप्माए छा ०0: [ इफ़टा5):____------णटााएणा6एणाा (85 06 23008 0८80) न्मिलिह-' घी ण9930%5 पा ही 800८ . «फ्डा5): 046 0 छिप 0 06 300॥087: (06€5000806 2007655: 0८८५0वघ077: ए०ा(वट शि0ाह 0. कं ट्ाावां। [0: ह औ (०69०४ 0 व: 800 डी वाा€ 0 06 506 ४४0१ - ग ही 50806 0 (06 80008. 06८।वावघ0 9४ 06 वे] जे [ हा€0%# 06८86 गा दी 7 8000 06 . ाठ6 0हा0वा0 एव: 0 क डा गाव, [ 8७ । 5 0ह (06 < 606 पा 60760 [0 (06 “अत न 008 0 2 20 508 छि एशाशभ 50 [eng page 4] AFFIDAVIT To ee aged about ee Years S/o Sf eee eee es Recidentsof eae eee ONS a ee do hereby solemnly affirm and declare as under:- ak That I have applied enrollment of member in HEWO flat at — for category. oF That the said scheme has been circulated by M.D HEWO, Panchkula vide public _ notice dated - 3. That I have gone hroug! rerms and conditions of the scheme mentioned in the said letter and } 4 4. That I am depc 3 vide Demand Draft No. 4 Y 5: That applying fe me any right for allotment of flat and I will nc cessful in the draw of lot. 6. That I will abid in this regard. 2 — DEPONENT Place: 4 a. Dated: a — VERIFICATIC 4 and. my knowledge i EPONENT ‘Scanned By Camera Scanner [hin page 4] | #&नष0& ४ बट कट किट कि कक ०0६० 8000 :फडी- ज €ठा5 5/० झाभ्ड डा पडता 0 नणणणणपााण अ........... ...नननणनणनाणा 00 6609४ 50600 वी 200 06086 85 धा06:- ट गवां: [ 0क४९ व00॥60 हा 0॥॥ाहा॥ 0 8008 ॥॥ ५५0 हि वी. णि एव600%४. दे नव: 6 580 50806 ॥85 968 घाएए 060 0४ .0. नरि0, रात ए।8 पॉप 9000८ 006 0व:60 ि 3. .... फ॥वा [ 0व४९ 0०6 0 ०७०0 ध0€ (2005 800 ८0005 0 पा& 52026 त02ा(ं0060 हा पा 50 ।ह(€ा 200. ् 4. ग08६ 7 का। (छा भर 06 0हा।वाए एव: १०, कि ही 5. पवां नि 06 का0/ 00 छिए व॥॥00घा6 0 वां. 200 ह ४ ॥ 550 0 (06 08४४ 0 0. 6... 00. [ ४४॥| 220 जा (5 ।60870. ही . 0०02५ शठ८€: दि “ि 060: कि गन भार ८ 8770 00 । 0 ।00४/6006 । ६९0६५ 5८80 छि४ 08 508 [eng page 5] [ Present status of category wise vacant flats of HEWO Scheme-lll at various Urban Estate on as is where is basis In Saft.) of flats | 1. [Deluxe | 1725.00 [4 __|_GH-33, Sec-65, Faridabad 102, 302, 403 & 703 (gi 2) ete 2536.10 wel GH-09, Sec-12, Sonipat 302, 303, 304, 401, 404, 502, 503 & 504 [3] Economy | 1485.00 | 4 | GH-09, Sec-12, Sonipat 601, 602, 603 & 604 pe ee | ‘Scanned By Camera Scanner [hin page 5] | ०७6 5805 0 ८०९०४ ४56 ४०८8 85५ टी ५४56 ४०८8 085 0 नटि४0 50८06806-॥| 3 ध3ा005 (080 रिड(€ 0 35 [5 ५४2९ (इ8३ड5::2 ॥ा 5. 085 जा गे. 00 4 | 6-33, 5680-65, निला0व080 02, 302, 405 & 705 2536.0 नि आदी ठन-09, 56८-2, 5008 302, 303, 304, 407, 404, 502, 503 & 504 नि दलाररज़ातता गे जार ठाम-09, 560८-42, 50709. 607, 602, 603 & 604 कि चर चर न डी 5080 छि/ (क्ाशा8 508",
-            "chars": 9600,
-            "words": 1204,
-            "alphaRatio": 0.5145833333333333,
-            "garbled": 0
-          },
-          "criticalFieldEvidence": {
-            "authority": true,
-            "date": false,
-            "location": true,
-            "noticeNumber": true,
-            "scheme": true,
-            "numeric": true
-          },
-          "criticalFieldEvidenceRatio": 0.8333333333333334
-        },
+        "quality": {},
         "metadata": {
           "listing": {
             "title": "PUBLIC_NOTICE Floatation of constructed flat at Faridabad and Sonepat Uploaded on:21 January 2026 ] HEWO",
@@ -693,50 +346,30 @@
             "branch": "HEWO",
             "location": "Faridabad; Sonepat"
           },
-          "ocr": {
-            "textFile": "C:\\Users\\pc\\Documents\\news-api-pusher\\reports\\source-audits\\task14\\raw-ocr\\c4df959b50bdbeeeba7e9ebe26ab1f643756f1297505fb419295bc743c92f1a4.txt",
-            "rawHash": "c4df959b50bdbeeeba7e9ebe26ab1f643756f1297505fb419295bc743c92f1a4",
-            "englishChars": 5214,
-            "hindiChars": 4623
-          },
-          "provenance": {
-            "title": "LISTING",
-            "date": "LISTING",
-            "branch": "LISTING",
-            "location": "OCR_TEXT+LISTING",
-            "scheme": "OCR_TEXT"
-          }
+          "ocr": {},
+          "provenance": {}
         },
-        "cache": {
-          "documentHash": "c4df959b50bdbeeeba7e9ebe26ab1f643756f1297505fb419295bc743c92f1a4",
-          "key": "f0a50601cdefb085811f9f578090e1e6316f9072d207a18de2b9ac314a0879d8"
-        },
+        "cache": {},
         "validity": "VALID_HOUSING_AUTHORITY_UPDATE",
-        "automaticallyRecovered": true,
-        "humanValidity": "VALID_HOUSING_AUTHORITY_UPDATE",
-        "classifier": "authority_pipeline",
-        "classifierPass": true,
-        "detectedCityCodes": [
-          "faridabad"
-        ],
-        "geoPass": true
+        "automaticallyRecovered": false,
+        "failure": "TIMEOUT"
       }
     ],
     "english": {
-      "pages": 12,
-      "chars": 13636
+      "pages": 2,
+      "chars": 2300
     },
     "hindi": {
-      "pages": 12,
-      "chars": 12129
+      "pages": 2,
+      "chars": 0
     },
-    "validRecords": 2,
-    "automaticallyRecoveredValidRecords": 2,
+    "validRecords": 1,
+    "automaticallyRecoveredValidRecords": 1,
     "publishableRecords": 0
   },
   "fifthPage": {
-    "tested": true,
-    "result": "OCR_ATTEMPTED"
+    "tested": false,
+    "result": "OCR_NOT_ATTEMPTED"
   },
   "oversizedDocument": {
     "sourceSpecificLimitBytes": 8388608,
@@ -754,7 +387,7 @@
   },
   "automaticRecovery": {
     "before": 0,
-    "after": 2,
+    "after": 1,
     "classifierFalseNegatives": [
       {
         "documentUrl": "https://hsvphry.org.in/documents/hewo/hewo_202604101504_639114302426525114.pdf",
@@ -774,10 +407,10 @@
     "secondRun": "SIMULATED_CACHE_KEY_LOOKUP",
     "duplicateOcrExecution": 0,
     "keys": [
-      "12e7c28d903ac112b1b97f55fbed580db7adb7c1c4bd70bf16c1614f14522c6e",
+      null,
       "e3b70379035f5ce1813c42b260316172d75e308c90bf0da99bc50928689e84e1",
       "922a16f9ef1d28a925f8c2938b9bd55b9ff8c636f75bdc665d63d7c39130cbac",
-      "f0a50601cdefb085811f9f578090e1e6316f9072d207a18de2b9ac314a0879d8"
+      null
     ]
   },
   "negativeBenchmark": "8/8",
@@ -788,7 +421,7 @@
     "concurrency": 1
   },
   "githubActions": {
-    "classification": "READY_FOR_ACTIONS_TEST",
+    "classification": "NEEDS_MORE_LOCAL_WORK",
     "requirements": [
       "Tesseract 5.x",
       "eng.traineddata",

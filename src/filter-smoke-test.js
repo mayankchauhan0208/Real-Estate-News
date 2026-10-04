@@ -112,6 +112,102 @@ const reportedOffTopicArticles = [
   }
 ];
 
+const sportsFeedFalsePositives = [
+  "Travis Kelce Investment",
+  "Maria Sharapova Fortune",
+  "Travis Kelce Mansions"
+].map((title, index) => ({
+  cityCode: "noida",
+  title,
+  description: "A sports news article with incidental investment or property language.",
+  articleText: "The article is about sports and a celebrity, not a real-estate or development event.",
+  newsLink: [
+    "https://timesofindia.indiatimes.com/sports/nfl/news/travis-kelce-investment/articleshow/1.cms",
+    "https://timesofindia.indiatimes.com/sports/international-sports/maria-sharapova-fortune/articleshow/2.cms",
+    "https://timesofindia.indiatimes.com/sports/nfl/news/travis-kelce-mansions/articleshow/3.cms"
+  ][index],
+  fullArticleRead: true,
+  articleReadAttempted: true
+}));
+for (const sportsArticle of sportsFeedFalsePositives) {
+  assert.equal(isPublishableArticle(sportsArticle, sentIds), false);
+  assert.ok(getRejectionReasons(sportsArticle, sentIds).some((reason) => /off-topic|real-estate|quality/i.test(reason)));
+}
+
+const targetedPrecisionContrasts = [
+  {
+    name: "generic-vijayawada-metro",
+    article: { title: "Vijayawada Light Metro", description: "A proposed light metro route and project cost.", articleText: "The metro will reduce traffic congestion and serve commuters.", newsLink: "https://metrorailnews.in/vijayawada-light-metro-information-route-maps-project-updates/", cityCode: "vijayawada", fullArticleRead: true, articleReadAttempted: true },
+    publishable: false
+  },
+  {
+    name: "generic-chennai-metro",
+    article: { title: "Chennai Metro Phase II Records Three TBM Breakthroughs", description: "Metro tunnel construction reached another milestone.", articleText: "The TBM breakthrough advances underground metro construction and passenger connectivity.", newsLink: "https://metrorailnews.in/chennai-metro-phase-2-three-tbm-breakthroughs/", cityCode: "chennai", fullArticleRead: true, articleReadAttempted: true },
+    publishable: false
+  },
+  {
+    name: "generic-bengaluru-metro",
+    article: { title: "Bengaluru Metro Pink Line Clears Another Hurdle", description: "Railway approval was granted for new metro trains.", articleText: "The elevated metro section awaits safety inspection before passenger services begin.", newsLink: "https://metrorailnews.in/bengaluru-metro-pink-line-railway-board-approval/", cityCode: "bangalore", fullArticleRead: true, articleReadAttempted: true },
+    publishable: false
+  },
+  {
+    name: "generic-delhi-metro-interview",
+    article: { title: "Delhi Metro MD discusses expansion and financial sustainability", description: "An interview about metro operations and expansion.", articleText: "The interview covers passenger convenience, project execution and operations, with no property event.", newsLink: "https://metrorailnews.in/dr-vikas-kumar-delhi-metro-md-interview/", cityCode: "new_delhi", fullArticleRead: true, articleReadAttempted: true },
+    publishable: false
+  },
+  {
+    name: "property-linked-tod",
+    article: { title: "Metro corridor enables TOD zone and mixed-use development in Gurugram", description: "The transit project unlocks a named mixed-use development zone.", articleText: "The TOD zone will support a named mixed-use development with housing, offices and retail around the corridor.", newsLink: "https://example.com/gurugram-tod-development", cityCode: "gurugram", fullArticleRead: true, articleReadAttempted: true },
+    publishable: true
+  },
+  {
+    name: "political-visit-without-property",
+    article: { title: "Haryana CM to visit Singapore from October 4-6", description: "The delegation will discuss investment and broad industrial cooperation.", articleText: "The visit covers logistics, semiconductors, manufacturing, aviation and education, with no concrete property event.", newsLink: "https://example.com/haryana-cm-singapore", cityCode: "chandigarh", fullArticleRead: true, articleReadAttempted: true },
+    publishable: false
+  },
+  {
+    name: "concrete-authority-property-event",
+    article: { title: "Haryana authority approves 200-acre residential township in Gurugram", description: "The authority approved a named housing development parcel.", articleText: "The approved residential township covers a 200-acre development parcel in Gurugram with planned housing and infrastructure.", newsLink: "https://example.com/gurugram-township-approval", cityCode: "gurugram", fullArticleRead: true, articleReadAttempted: true },
+    publishable: true
+  },
+  {
+    name: "showroom-without-property-event",
+    article: { title: "Jewellery brand announces five new showroom launches", description: "The consumer brand will open new retail outlets.", articleText: "The jewellery company will open showrooms for customers in several cities; no lease, acquisition or development event is reported.", newsLink: "https://example.com/jewellery-showrooms", cityCode: "jaipur", fullArticleRead: true, articleReadAttempted: true },
+    publishable: false
+  },
+  {
+    name: "commercial-property-lease",
+    article: { title: "Developer leases 2.62 lakh sq ft warehouse in Gurugram", description: "A material commercial property lease was signed.", articleText: "The developer leased 2.62 lakh square feet of warehouse space in Gurugram for five years under a commercial property transaction.", newsLink: "https://example.com/gurugram-warehouse-lease", cityCode: "gurugram", fullArticleRead: true, articleReadAttempted: true },
+    publishable: true
+  },
+  {
+    name: "third-party-adverse-rera",
+    article: { title: "Odisha RERA freezes bank accounts of 28 promoters for QPR default", description: "The regulator took enforcement action for non-compliance.", articleText: "Odisha RERA froze the promoters' bank accounts for QPR default and regulatory non-compliance.", newsLink: "https://example.com/odisha-rera-freezes-accounts", cityCode: "bhubaneswar", fullArticleRead: true, articleReadAttempted: true },
+    publishable: false
+  },
+  {
+    name: "positive-rera-project-event",
+    article: { title: "RERA approves new residential project in Noida", description: "A new project received regulatory approval.", articleText: "The RERA authority approved registration of a named residential project in Noida.", newsLink: "https://example.com/noida-rera-project-approval", cityCode: "noida", fullArticleRead: true, articleReadAttempted: true },
+    publishable: true
+  }
+];
+for (const { name, article: targetedArticle, publishable: expected } of targetedPrecisionContrasts) {
+  assert.equal(isPublishableArticle({
+    thumbnailImage: "https://example.com/image.jpg",
+    postedBy: "Targeted Contrast Source",
+    postedByLogo: "https://example.com/logo.jpg",
+    ...targetedArticle
+  }, sentIds), expected, `targeted contrast failed: ${name}`);
+}
+
+const panchkulaArticle = { title: "Panchkula: 130 plot owners yet to clear dues under HSVP settlement scheme", description: "HSVP flags Panchkula plots.", articleText: "The event concerns plots in Panchkula.", newsLink: "https://example.com/panchkula-plots", cityCode: "gurugram", fullArticleRead: true, articleReadAttempted: true };
+assert.deepEqual(detectCityCodes(panchkulaArticle), ["panchkula"]);
+const ghaziabadArticle = { title: "Ghaziabad: GDA board clears phase I layout of Harnandipuram Township", description: "Ghaziabad Development Authority approved the township layout.", articleText: "The township is in Ghaziabad near Raj Nagar Extension.", newsLink: "https://example.com/ghaziabad-township", cityCode: "hyderabad", sourceCityCodes: ["noida"], fullArticleRead: true, articleReadAttempted: true };
+assert.deepEqual(detectCityCodes(ghaziabadArticle), ["ghaziabad"]);
+const foreignPropertyArticle = { title: "Developer pitches Dubai property to Australian investors", description: "The company targets property opportunities in Dubai and Ras Al Khaimah.", articleText: "The UAE developer is marketing residential property in Dubai and Ras Al Khaimah from its Sydney office.", newsLink: "https://example.com/dubai-property-pitch", cityCode: "anand", fullArticleRead: true, articleReadAttempted: true };
+assert.deepEqual(detectCityCodes(foreignPropertyArticle), []);
+assert.equal(isPublishableArticle(foreignPropertyArticle, sentIds), false);
+
 for (const article of reportedOffTopicArticles) {
   assert.equal(isPublishableArticle(article, sentIds), false, `reported off-topic article must remain rejected: ${article.title}`);
   assert.ok(getRejectionReasons(article, sentIds).length > 0, `reported off-topic article needs an audit reason: ${article.title}`);
@@ -1131,7 +1227,7 @@ if (noidaCityEnabled) {
     title: "Noida and Greater Noida RRTS corridor gets new DPR",
     description: "The regional rapid transit corridor focuses on Noida and Greater Noida.",
     articleText: "The Noida infrastructure project supports Noida property and development.",
-    newsLink: "https://example.com/noida-greater-noida-rrts-dpr"
+    newsLink: "https://example.com/noida-greater-noida-rrts-dpr-property"
   });
 
   assert.deepEqual(detectCityCodes(noidaRrtsArticle), ["noida"]);
@@ -1636,7 +1732,7 @@ const hindiGenericReasons = reasons({
   postedBy: "Faridabad News In Hindi, Amarujala.com",
   newsLink: "https://www.amarujala.com/haryana/faridabad/news"
 }).join("; ");
-assert.match(hindiGenericReasons, /not positive target real-estate\/project news|target region missing/);
+assert.match(hindiGenericReasons, /not positive target real-estate\/project news|target region missing|no specific project\/development signal/);
 assert.doesNotMatch(hindiGenericReasons, /spam\/menu page|unsupported language\/script|non-English\/Hindi content/);
 
 assert.match(
@@ -2064,6 +2160,41 @@ const genericTransportArticle = publishable({
 });
 assert.equal(isPublishableArticle(genericTransportArticle, sentIds), false);
 
+const genericKochiMetroConstruction = publishable({
+  cityCode: "kochi",
+  title: "Kochi metro phase-II construction to be completed in August 2027",
+  description: "Kochi Metro Phase II covers track laying, station development, electrical systems and land acquisition.",
+  articleText: "Kochi Metro Rail Ltd reviewed track laying, station construction, electrical installations, signalling, land acquisition and Water Metro works. The article contains transport construction and operations only.",
+  newsLink: "https://realty.economictimes.indiatimes.com/news/infrastructure/kochi-metro-phase-ii-construction-to-be-completed-in-august-2027/134633393",
+  publishedAt: "2026-10-02T09:30:00.000Z"
+});
+assert.equal(isPublishableArticle(genericKochiMetroConstruction, sentIds), false);
+assert.ok(getRejectionReasons(genericKochiMetroConstruction, sentIds).includes("filter 4: not positive target real-estate/project news"));
+
+for (const navigationTitle of [
+  "CLICK TO SUBSCRIBE",
+  "Completed Projects",
+  "Screen Reader Access",
+  "Online Public Services",
+  "Right to Information",
+  "E-Auction Archives",
+  "Allottee Online Services",
+  "Ongoing Projects",
+  "Delivered Projects",
+  "Residential Projects",
+  "New Projects in Noida"
+]) {
+  const navigationArticle = publishable({
+    title: navigationTitle,
+    description: "Real estate projects and residential properties.",
+    articleText: "Navigation and portfolio menu content only.",
+    publishedAt: "",
+    newsLink: `https://example.com/projects/${navigationTitle.toLowerCase().replaceAll(" ", "-")}`
+  });
+  assert.equal(isPublishableArticle(navigationArticle, sentIds), false, navigationTitle);
+  assert.ok(getRejectionReasons(navigationArticle, sentIds).some((reason) => /spam\/menu|not positive target|FULL_ARTICLE|date/i.test(reason)), navigationTitle);
+}
+
 const busOperationsArticle = publishable({
   cityCode: "gorakhpur",
   title: "Double-decker electric bus service begins between Gorakhpur and Maharajganj",
@@ -2188,6 +2319,64 @@ const positiveAuthorityProjectApproval = publishable({
 });
 assert.equal(isPublishableArticle(positiveAuthorityProjectApproval, sentIds), true);
 
+const ambiguousMultiCityCorporateArticle = publishable({
+  cityCode: "pune",
+  title: "Developer plans major investment across multiple markets",
+  description: "The group plans residential and commercial projects across Maharashtra and West Bengal.",
+  articleText: "The developer plans a World Trade Center mixed-use project in Kolkata and new residential and commercial projects in Pune. The long-term pipeline includes launches, construction and development potential in both cities.",
+  fullArticleRead: true,
+  newsLink: "https://example.com/industry/multi-market-development"
+});
+assert.equal(isPublishableArticle(ambiguousMultiCityCorporateArticle, sentIds), false);
+assert.ok(getRejectionReasons(ambiguousMultiCityCorporateArticle, sentIds).includes("review: ambiguous multi-city geo evidence"));
+
+const explicitlyScopedCityArticle = publishable({
+  cityCode: "pune",
+  title: "Pune residential project adds new homes and commercial space",
+  description: "The Pune project adds new housing supply and commercial development.",
+  articleText: "The Pune residential project adds new homes and commercial space, with construction scheduled to begin this year.",
+  fullArticleRead: true,
+  newsLink: "https://example.com/pune/residential-project"
+});
+assert.equal(isPublishableArticle(explicitlyScopedCityArticle, sentIds), true);
+
+const authoritativeSnippetOnlyArticle = publishable({
+  cityCode: "noida",
+  title: "Noida luxury housing market shifts focus to serviced residences",
+  description: "Infrastructure and global connectivity are reshaping residential demand, said a developer executive.",
+  articleText: "Noida luxury housing market shifts focus to serviced residences. Know More Smartworld Media official real estate media update.",
+  authoritativeContent: true,
+  fullArticleRead: false,
+  articleReadAttempted: false,
+  newsLink: "https://example.com/noida/developer-media-snippet"
+});
+assert.equal(isPublishableArticle(authoritativeSnippetOnlyArticle, sentIds), false);
+assert.ok(getRejectionReasons(authoritativeSnippetOnlyArticle, sentIds).some((reason) => /FULL_ARTICLE|SNIPPET|INSUFFICIENT/i.test(reason)));
+
+const hardFilterBeforeReviewArticle = article({
+  cityCode: "faridabad",
+  title: "Faridabad buyer dispute delays housing project while article remains unreadable",
+  description: "Homebuyers complain about a stalled project and the detail page is unavailable.",
+  articleText: "",
+  articleReadAttempted: true,
+  fullArticleRead: false,
+  articleReadError: "detail timeout",
+  newsLink: "https://example.com/faridabad/stalled-buyer-dispute"
+});
+const hardFilterBeforeReviewReasons = getRejectionReasons(hardFilterBeforeReviewArticle, sentIds);
+assert.equal(getArticleFinalState(hardFilterBeforeReviewArticle, hardFilterBeforeReviewReasons), "REJECTED_NEGATIVE");
+
+const reviewOnlyArticle = publishable({
+  articleReadAttempted: false,
+  fullArticleRead: false,
+  title: "Dwarka Expressway luxury housing project launched in Gurugram",
+  description: "A developer launched a residential project on Dwarka Expressway with improved connectivity and infrastructure.",
+  articleText: "The Gurugram project includes housing, connectivity, infrastructure upgrades, and residential development.",
+  newsLink: "https://example.com/gurugram/review-only-project"
+});
+const reviewOnlyReasons = getRejectionReasons(reviewOnlyArticle, sentIds);
+assert.equal(getArticleFinalState(reviewOnlyArticle, reviewOnlyReasons), "REVIEW");
+
 const gurugramSprArticle = publishable({
   cityCode: "new_delhi",
   sourceCityCodes: ["new_delhi"],
@@ -2196,4 +2385,5 @@ const gurugramSprArticle = publishable({
   articleText: "The Southern Peripheral Road project runs from Vatika Chowk to Dwarka Expressway through Gurugram sectors and is intended to improve access and traffic flow.",
   newsLink: "https://www.hindustantimes.com/cities/gurugram-news/gmda-floats-776-crore-spr-elevated-road-project-tender-cm-holds-project-review-101790963074198.html"
 });
-assert.equal(applyCityCode(gurugramSprArticle).cityCode, "gurugram");
+assert.equal(applyCityCode(gurugramSprArticle).cityCode, "");
+assert.equal(isPublishableArticle(gurugramSprArticle, sentIds), false);

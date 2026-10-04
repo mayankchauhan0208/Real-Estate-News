@@ -5206,6 +5206,106 @@
       "enabled": true,
       "category": "regional-telangana",
       "createdAt": "2026-09-28T12:00:00.000Z"
+    },
+    {
+      "id": "id-196410006",
+      "url": "https://telugu.oneindia.com/topic/real-estate/",
+      "label": "OneIndia Telugu Real Estate | Regional P2",
+      "cityCodes": ["hyderabad", "warangal", "nizamabad", "karimnagar", "khammam", "mahabubnagar", "mancherial", "nalgonda", "suryapet"],
+      "enabled": true,
+      "category": "regional-telugu",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-03T00:00:00.000Z"
+    },
+    {
+      "id": "id-196410007",
+      "url": "https://tamil.oneindia.com/topic/real-estate",
+      "label": "OneIndia Tamil Real Estate | Regional P2",
+      "cityCodes": ["chennai", "coimbatore", "madurai", "tiruchirappalli", "salem", "tirunelveli", "vellore", "erode", "thoothukudi", "thanjavur", "dindigul", "hosur", "avadi", "cuddalore", "karur", "tambaram", "namakkal", "pudukkottai", "tiruvannamalai"],
+      "enabled": true,
+      "category": "regional-tamil",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-03T00:00:00.000Z"
+    },
+    {
+      "id": "id-196410008",
+      "url": "https://www.manoramaonline.com/homestyle/nest.html",
+      "label": "Manorama Online Nest Malayalam | Regional P2",
+      "cityCodes": ["kochi", "ernakulam", "thrissur", "trivandrum", "calicut", "palakkad"],
+      "enabled": true,
+      "category": "regional-malayalam",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-03T00:00:00.000Z"
+    },
+    {
+      "id": "id-196410009",
+      "url": "https://kannada.oneindia.com/topic/real-estate",
+      "label": "OneIndia Kannada Real Estate | Regional P2",
+      "cityCodes": ["bangalore", "mysore", "mangalore"],
+      "enabled": true,
+      "category": "regional-kannada",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-03T00:00:00.000Z"
+    },
+    {
+      "id": "id-196410010",
+      "url": "https://www.tv9hindi.com/topic/real-estate",
+      "label": "TV9 Hindi Real Estate | Regional P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-03T00:00:00.000Z"
+    },
+    {
+      "id": "id-196410011",
+      "url": "https://hindi.news24online.com/topic/real-estate/",
+      "label": "News24 Hindi Real Estate | Regional P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-03T00:00:00.000Z"
+    },
+    {
+      "id": "id-196410012",
+      "url": "https://hindi.etnownews.com/real-estate",
+      "label": "ET Now Swadesh Real Estate | Regional P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-03T00:00:00.000Z"
+    },
+    {
+      "id": "id-196410013",
+      "url": "https://eisamay.com/topic/kolkata-news",
+      "label": "Ei Samay Bengali Kolkata News | Regional P2",
+      "cityCodes": ["kolkata"],
+      "enabled": true,
+      "category": "regional-bengali",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-03T00:00:00.000Z"
+    },
+    {
+      "id": "id-196410014",
+      "url": "https://www.lokmat.com/real-estate/",
+      "label": "Lokmat Marathi Real Estate | Regional P2",
+      "cityCodes": ["mumbai", "pune", "nashik", "nagpur", "aurangabad"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-03T00:00:00.000Z"
+    },
+    {
+      "id": "id-196410015",
+      "url": "https://www.gujaratsamachar.com/news/business-plus",
+      "label": "Gujarat Samachar Gujarati Business Plus | Regional P2",
+      "cityCodes": ["ahmedabad", "surat", "vadodara", "rajkot", "bhavnagar", "junagadh", "gandhinagar"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-03T00:00:00.000Z"
     }
   ],
   "lastBackfill": {

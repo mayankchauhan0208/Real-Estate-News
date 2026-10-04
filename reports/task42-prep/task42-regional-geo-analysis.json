@@ -1,0 +1,460 @@
+{
+  "generatedAt": "2026-10-03T15:44:03.480Z",
+  "source": "reports\\source-audits\\task39\\regional-go-live.json",
+  "inputGeoUncertain": 30,
+  "counts": {
+    "NEGATIVE": 18,
+    "OFFTOPIC": 12
+  },
+  "rows": [
+    {
+      "title": "फ्लॅटचा ताबा देऊनही बिल्डरला द्यावे लागेल व्याज! उच्च न्यायालयाचा निर्णय, काय आहे प्रकरण?",
+      "source": "https://maharashtratimes.com/business/real-estate-news/articlelist/2429626.cms",
+      "language": "mr",
+      "url": "https://maharashtratimes.com/business/real-estate-news/delayed-flat-possession-interest-rate-know-about-rera-section-18/articleshow/134561289.cms",
+      "expectedClassification": "NEGATIVE",
+      "firstGeoLossStage": "GEO_ROUTING",
+      "primaryCause": "CONFIDENCE_TOO_LOW",
+      "reasons": [
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "review: ambiguous multi-city geo evidence",
+        "filter 17: local quality judge rejected article (weak city evidence, score 31)"
+      ]
+    },
+    {
+      "title": "सीमेंट महंगा करने की तैयारी: अक्टूबर में ₹5-20 तक बढ़ सकते दाम, सितंबर में ₹11 तक बढ़े थे",
+      "source": "https://api.livehindustan.com/feeds/rss/business/real-estate/rssfeed.xml",
+      "language": "hi",
+      "url": "https://www.livehindustan.com/business/cement-set-to-get-costlier-prices-may-rise-by-rs-5-to-20-in-october-had-also-increased-by-rs-11-in-september-201790672571053.html",
+      "expectedClassification": "OFFTOPIC",
+      "firstGeoLossStage": "GEO_ROUTING",
+      "primaryCause": "CONFIDENCE_TOO_LOW",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score -1)"
+      ]
+    },
+    {
+      "title": "फरीदाबाद: नशे में धुत बाइक चालक ने ऑटो में मारी टक्कर, 112 की गाड़ी से पहुंचाया गया अस्पताल",
+      "source": "https://www.amarujala.com/rss/faridabad.xml",
+      "language": "hi",
+      "url": "https://www.amarujala.com/video/delhi-ncr/faridabad/video-drunk-motorcyclist-rams-into-auto-rickshaw-in-faridabad-2026-10-03",
+      "expectedClassification": "NEGATIVE",
+      "firstGeoLossStage": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "primaryCause": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score -6)"
+      ]
+    },
+    {
+      "title": "फरीदाबाद में सुरक्षित अंडरपास छोड़ पटरी पार कर रहे लोग",
+      "source": "https://www.amarujala.com/rss/faridabad.xml",
+      "language": "hi",
+      "url": "https://www.amarujala.com/video/news-archives/city-and-states-archives/video-people-in-faridabad-crossing-tracks-instead-of-using-safe-underpass-2026-10-03",
+      "expectedClassification": "OFFTOPIC",
+      "firstGeoLossStage": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "primaryCause": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (weak city evidence, score 4)"
+      ]
+    },
+    {
+      "title": "फरीदाबाद: बाथरूम में करंट की चपेट में आने से 11वीं के छात्र की मौत, नहाने के बाद तौलिया टांगते समय हादसा",
+      "source": "https://www.amarujala.com/rss/faridabad.xml",
+      "language": "hi",
+      "url": "https://www.amarujala.com/delhi-ncr/faridabad/class-11-student-dies-after-suffering-electric-shock-in-bathroom-accident-occurred-while-hanging-a-towel-after-2026-10-03",
+      "expectedClassification": "NEGATIVE",
+      "firstGeoLossStage": "GEO_ROUTING",
+      "primaryCause": "CONFIDENCE_TOO_LOW",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score -12)"
+      ]
+    },
+    {
+      "title": "फरीदाबाद: रिहायशी इलाके से 2.5 टन से ज्यादा घातक विस्फोटक रसायन बरामद, आरोपी गिरफ्तार",
+      "source": "https://www.amarujala.com/rss/faridabad.xml",
+      "language": "hi",
+      "url": "https://www.amarujala.com/delhi-ncr/faridabad/over-2-5-tonnes-of-deadly-explosive-chemicals-seized-from-a-residential-area-accused-arrested-in-faridabad-2026-10-03",
+      "expectedClassification": "NEGATIVE",
+      "firstGeoLossStage": "GEO_ROUTING",
+      "primaryCause": "CONFIDENCE_TOO_LOW",
+      "reasons": [
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (low local quality score, score -27)"
+      ]
+    },
+    {
+      "title": "फरीदाबाद: टेरा लाविनियम प्रोजेक्ट में नहीं मिला कब्जा, रेरा के आदेश के बाद भी बिल्डर ने नहीं किया हैंडओवर",
+      "source": "https://www.amarujala.com/rss/faridabad.xml",
+      "language": "hi",
+      "url": "https://www.amarujala.com/video/delhi-ncr/faridabad/video-possession-not-received-for-terra-lavinium-project-in-faridabad-2026-10-03",
+      "expectedClassification": "OFFTOPIC",
+      "firstGeoLossStage": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "primaryCause": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 5: no allowed city match"
+      ]
+    },
+    {
+      "title": "फरीदाबाद में बढ़ा फैटी लिवर का खतरा: पांच साल में 25 फीसदी तक बढ़े मामले, युवाओं में भी बढ़ी समस्या",
+      "source": "https://www.amarujala.com/rss/faridabad.xml",
+      "language": "hi",
+      "url": "https://www.amarujala.com/video/delhi-ncr/faridabad/video-fatty-liver-cases-in-faridabad-have-risen-by-up-to-25-percent-over-last-five-years-2026-10-03",
+      "expectedClassification": "OFFTOPIC",
+      "firstGeoLossStage": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "primaryCause": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ]
+    },
+    {
+      "title": "फरीदाबाद में श्री अग्रसेन जयंती शोभा यात्रा की तैयारियों पर बैठक संपन्न",
+      "source": "https://www.amarujala.com/rss/faridabad.xml",
+      "language": "hi",
+      "url": "https://www.amarujala.com/video/delhi-ncr/faridabad/video-meeting-regarding-preparations-for-shri-agrasen-jayanti-procession-in-faridabad-concludes-2026-10-03",
+      "expectedClassification": "OFFTOPIC",
+      "firstGeoLossStage": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "primaryCause": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ]
+    },
+    {
+      "title": "फरीदाबाद की अंडर 19 टीम ने जीता राज्य स्तरीय बास्केटबॉल खिताब",
+      "source": "https://www.amarujala.com/rss/faridabad.xml",
+      "language": "hi",
+      "url": "https://www.amarujala.com/video/delhi-ncr/faridabad/video-faridabads-under-19-team-won-the-state-level-basketball-title-2026-10-03",
+      "expectedClassification": "OFFTOPIC",
+      "firstGeoLossStage": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "primaryCause": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ]
+    },
+    {
+      "title": "India vs Pakistan Live score",
+      "source": "https://www.livehindustan.com/ncr/gurugram",
+      "language": "hi",
+      "url": "https://www.livehindustan.com/cricket/ind-vs-pak-final-live-score-asian-games-2026-india-vs-pakistan-gold-medal-match-scorecard-updates-vaibhav-sooryavanshi-live-blog-201790995689056.html",
+      "expectedClassification": "OFFTOPIC",
+      "firstGeoLossStage": "GEO_ROUTING",
+      "primaryCause": "CONFIDENCE_TOO_LOW",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ]
+    },
+    {
+      "title": "कुत्तों के मामले में SC के निर्देश की अनदेखी से लोग परेशान, HC ने दिया यह आदेश",
+      "source": "https://www.livehindustan.com/ncr/gurugram",
+      "language": "hi",
+      "url": "https://www.livehindustan.com/ncr/people-distressed-by-disregard-for-sc-directives-regarding-dogs-delhi-high-court-seeks-report-201791037628950.html",
+      "expectedClassification": "NEGATIVE",
+      "firstGeoLossStage": "GEO_ROUTING",
+      "primaryCause": "CONFIDENCE_TOO_LOW",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score -22)"
+      ]
+    },
+    {
+      "title": "दिल्ली के अनोखे चुनाव में मौत के बाद भी जीती 'गोला', मिले 66 हजार से ज्यादा वोट",
+      "source": "https://www.livehindustan.com/ncr/gurugram",
+      "language": "hi",
+      "url": "https://www.livehindustan.com/ncr/delhi-fattest-dog-election-crowns-hauz-khas-favourite-gola-as-winner-201790922208126.html",
+      "expectedClassification": "NEGATIVE",
+      "firstGeoLossStage": "GEO_ROUTING",
+      "primaryCause": "CONFIDENCE_TOO_LOW",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score -78)"
+      ]
+    },
+    {
+      "title": "सौरभ दास, आशुतोष रांका अचानक 'लिबरल्स' पर भड़क उठे, कहा- वे BJP से भी बुरे",
+      "source": "https://www.livehindustan.com/ncr/gurugram",
+      "language": "hi",
+      "url": "https://www.livehindustan.com/ncr/saurav-das-and-ashutosh-ranka-attacks-liberals-201791019733360.html",
+      "expectedClassification": "NEGATIVE",
+      "firstGeoLossStage": "GEO_ROUTING",
+      "primaryCause": "CONFIDENCE_TOO_LOW",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score -6)"
+      ]
+    },
+    {
+      "title": "हटाया जा सकता है मेरा एक्स अकाउंट, अभिजीत दीपके ने क्यों जताई ऐसी आशंका?",
+      "source": "https://www.livehindustan.com/ncr/gurugram",
+      "language": "hi",
+      "url": "https://www.livehindustan.com/ncr/abhijit-dipke-says-my-x-account-could-be-removed-know-why-201791017905571.html",
+      "expectedClassification": "NEGATIVE",
+      "firstGeoLossStage": "GEO_ROUTING",
+      "primaryCause": "CONFIDENCE_TOO_LOW",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score -1)"
+      ]
+    },
+    {
+      "title": "ज्ञानेश कुमार के खिलाफ दिल्ली में हल्ला बोल; हिरासत में 150 लोग, जमावड़े पर रोक",
+      "source": "https://www.livehindustan.com/ncr/gurugram",
+      "language": "hi",
+      "url": "https://www.livehindustan.com/ncr/delhi-protest-against-cec-gyanesh-kumar-prohibitory-restrictions-imposed-many-detain-201791026849212.html",
+      "expectedClassification": "NEGATIVE",
+      "firstGeoLossStage": "GEO_ROUTING",
+      "primaryCause": "CONFIDENCE_TOO_LOW",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score -59)"
+      ]
+    },
+    {
+      "title": "फक्त भाडेकरार असणे पुरेसे नाही! घरमालक कधीही करू शकतो बेदखल, मद्रास हायकोर्टाचा निर्णय चर्चेत",
+      "source": "https://maharashtratimes.com/business/real-estate-news/articlelist/2429626.cms",
+      "language": "mr",
+      "url": "https://maharashtratimes.com/business/real-estate-news/unregistered-rent-agreement-tenant-eviction-case-in-madras-high-court/articleshow/134658664.cms",
+      "expectedClassification": "NEGATIVE",
+      "firstGeoLossStage": "GEO_ROUTING",
+      "primaryCause": "CONFIDENCE_TOO_LOW",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 13)"
+      ]
+    },
+    {
+      "title": "Property Inheritance Rules : मृत्यूपत्र न करता वडिलांचं निधन झाल्यास संपत्तीवर पहिला हक्क कोणाचा? मुली-मुलांमध्ये...",
+      "source": "https://maharashtratimes.com/business/real-estate-news/articlelist/2429626.cms",
+      "language": "mr",
+      "url": "https://maharashtratimes.com/business/real-estate-news/property-rules-of-son-daughter-no-will-what-right-does-daughter-have-following-her-fathers-death/articleshow/134634883.cms",
+      "expectedClassification": "NEGATIVE",
+      "firstGeoLossStage": "GEO_ROUTING",
+      "primaryCause": "CONFIDENCE_TOO_LOW",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (weak city evidence, score 36)"
+      ]
+    },
+    {
+      "title": "Legal Property Documents : आजोबा-पणजोबांची वर्षांनुवर्षे जुन्या मालमत्तेची कागदपत्रे सापडत नाहीत? घरबसल्या असं...",
+      "source": "https://maharashtratimes.com/business/real-estate-news/articlelist/2429626.cms",
+      "language": "mr",
+      "url": "https://maharashtratimes.com/business/real-estate-news/land-inherited-from-your-grandfathers-but-lack-documents-know-how-you-to-search-records-online/articleshow/134584037.cms",
+      "expectedClassification": "NEGATIVE",
+      "firstGeoLossStage": "GEO_ROUTING",
+      "primaryCause": "CONFIDENCE_TOO_LOW",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (weak city evidence, score 31)"
+      ]
+    },
+    {
+      "title": "Buyers Can Take Delay Interest Now, Must Return It If Builder Wins Appeal",
+      "source": "https://squarefeatindia.com/feed",
+      "language": "en",
+      "url": "https://squarefeatindia.com/buyers-can-take-delay-interest-now-must-return-it-if-builder-wins-appeal/",
+      "expectedClassification": "NEGATIVE",
+      "firstGeoLossStage": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "primaryCause": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (weak city evidence, score 8)"
+      ]
+    },
+    {
+      "title": "Didn’t Challenge AGM Resolution: Malad Member Loses Stay on ₹21 Lakh Penalty",
+      "source": "https://squarefeatindia.com/feed",
+      "language": "en",
+      "url": "https://squarefeatindia.com/didnt-challenge-agm-resolution-malad-member-loses-stay-on-%e2%82%b921-lakh-penalty/",
+      "expectedClassification": "NEGATIVE",
+      "firstGeoLossStage": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "primaryCause": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 0)"
+      ]
+    },
+    {
+      "title": "New Rules For Redevelopment: Builder Must Finish Society Redevelopment In 2 Years From Plinth",
+      "source": "https://squarefeatindia.com/feed",
+      "language": "en",
+      "url": "https://squarefeatindia.com/new-rules-for-redevelopment-builder-must-finish-society-redevelopment-in-2-years-from-plinth/",
+      "expectedClassification": "OFFTOPIC",
+      "firstGeoLossStage": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "primaryCause": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "reasons": [
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (weak city evidence, score 24)"
+      ]
+    },
+    {
+      "title": "Realty Stocks Open Carefully as Traders Brace for Three-Day Break After a Punishing Quarter",
+      "source": "https://squarefeatindia.com/feed",
+      "language": "en",
+      "url": "https://squarefeatindia.com/realty-stocks-open-carefully-as-traders-brace-for-three-day-break-after-a-punishing-quarter/",
+      "expectedClassification": "OFFTOPIC",
+      "firstGeoLossStage": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "primaryCause": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "reasons": [
+        "filter 5: no allowed city match",
+        "filter 9: no specific project/development signal",
+        "filter 17: local quality judge rejected article (weak city evidence, score 10)"
+      ]
+    },
+    {
+      "title": "HC Calls Santacruz Case Bizarre: Chairman Left Flatless, Contractor Relatives Get 4",
+      "source": "https://squarefeatindia.com/feed",
+      "language": "en",
+      "url": "https://squarefeatindia.com/hc-calls-santacruz-case-bizarre-chairman-left-flatless-contractor-relatives-get-4/",
+      "expectedClassification": "NEGATIVE",
+      "firstGeoLossStage": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "primaryCause": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 7: outside region in title/description",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (no core real-estate/infrastructure topic, score 4)"
+      ]
+    },
+    {
+      "title": "Realty Stocks End a Volatile Quarter as October Brings Festive Demand",
+      "source": "https://squarefeatindia.com/feed",
+      "language": "en",
+      "url": "https://squarefeatindia.com/realty-stocks-end-a-volatile-quarter-as-october-brings-festive-demand/",
+      "expectedClassification": "NEGATIVE",
+      "firstGeoLossStage": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "primaryCause": "ARTICLE_EVIDENCE_NOT_EXTRACTED",
+      "reasons": [
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 9: no specific project/development signal",
+        "filter 10: broad market/company update, not city project news",
+        "filter 17: local quality judge rejected article (weak city evidence, score 10)"
+      ]
+    },
+    {
+      "title": "How Your Home Layout Can Shape Your Everyday Routine",
+      "source": "https://hilifebuilders.in/feed",
+      "language": "en",
+      "url": "https://hilifebuilders.in/home-layout-everyday-routine-thrissur/",
+      "expectedClassification": "NEGATIVE",
+      "firstGeoLossStage": "GEO_ROUTING",
+      "primaryCause": "CONFIDENCE_TOO_LOW",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (negative/local topic outweighs project signal, score -2)"
+      ]
+    },
+    {
+      "title": "Why Location Still Matters Even When You Work Remotely",
+      "source": "https://hilifebuilders.in/feed",
+      "language": "en",
+      "url": "https://hilifebuilders.in/location-matters-remote-workers-thrissur/",
+      "expectedClassification": "OFFTOPIC",
+      "firstGeoLossStage": "GEO_ROUTING",
+      "primaryCause": "CONFIDENCE_TOO_LOW",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (weak city evidence, score 17)"
+      ]
+    },
+    {
+      "title": "A Home That Grows With You: Planning for Life Beyond Today",
+      "source": "https://hilifebuilders.in/feed",
+      "language": "en",
+      "url": "https://hilifebuilders.in/future-ready-homes-thrissur/",
+      "expectedClassification": "OFFTOPIC",
+      "firstGeoLossStage": "GEO_ROUTING",
+      "primaryCause": "CONFIDENCE_TOO_LOW",
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (weak city evidence, score 22)"
+      ]
+    },
+    {
+      "title": "Flat possession delayed: MahaRERA orders inte...",
+      "source": "https://proppuls.in/",
+      "language": "en",
+      "url": "https://proppuls.in/maharera-wagholi-delayed-possession-interest-homebuyer",
+      "expectedClassification": "NEGATIVE",
+      "firstGeoLossStage": "GEO_ROUTING",
+      "primaryCause": "CONFIDENCE_TOO_LOW",
+      "reasons": [
+        "filter 3: negative/crime/utility concern news",
+        "filter 5: no allowed city match",
+        "filter 7: outside region in title/description",
+        "filter 8: outside-city conflict",
+        "filter 17: local quality judge rejected article (weak city evidence, score 90)"
+      ]
+    },
+    {
+      "title": "Stricter rules for layout registration in TN",
+      "source": "https://proppuls.in/",
+      "language": "en",
+      "url": "https://proppuls.in/tnrera-tightens-plot-project-checks-fund-utilisation",
+      "expectedClassification": "OFFTOPIC",
+      "firstGeoLossStage": "GEO_ROUTING",
+      "primaryCause": "CONFIDENCE_TOO_LOW",
+      "reasons": [
+        "filter 5: no allowed city match",
+        "filter 17: local quality judge rejected article (weak city evidence, score 88)"
+      ]
+    }
+  ],
+  "note": "No geo mapping was added for negative, off-topic, or insufficient records. Positive records require verified location evidence before routing."
+}

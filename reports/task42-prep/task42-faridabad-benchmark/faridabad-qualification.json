@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-03T16:12:03.401Z",
+  "frozenManifest": "reports/task42-prep/task42-faridabad-benchmark/faridabad-benchmark.json",
+  "totalFrozen": 6,
+  "sourcePresent": 6,
+  "discovered": 6,
+  "fullArticle": 6,
+  "dateValid": 6,
+  "fresh": 6,
+  "relevant": 4,
+  "propertyNexus": 4,
+  "geoValid": 4,
+  "dedupePass": 6,
+  "wouldPublish": 4,
+  "review": 0,
+  "missed": 0,
+  "rawCaptureRecall": "4/4",
+  "falsePositive": 0,
+  "wrongCity": 0,
+  "duplicates": 0,
+  "positiveRows": [
+    {
+      "id": "FBD-POS-001",
+      "source": "BPTP official",
+      "url": "https://www.bptp.com/media/bptp-limited-launches-skynest-in-sector-80-greater-faridabad-with-a-gdv-of-rs-1800-crore",
+      "expected": "PUBLISH",
+      "sourcePresent": true,
+      "discovered": true,
+      "fullArticle": true,
+      "dateValid": true,
+      "fresh": true,
+      "relevant": true,
+      "propertyNexus": true,
+      "geoValid": true,
+      "dedupePass": true,
+      "cities": [
+        "faridabad"
+      ],
+      "finalState": "CANDIDATE",
+      "wouldPublish": true,
+      "reasons": []
+    },
+    {
+      "id": "FBD-POS-002",
+      "source": "The Financial Express",
+      "url": "https://www.financialexpress.com/business/news/faridabad-real-estate-market-gets-a-fresh-push-from-infrastructure-rising-home-demand/4336419/",
+      "expected": "PUBLISH",
+      "sourcePresent": true,
+      "discovered": true,
+      "fullArticle": true,
+      "dateValid": true,
+      "fresh": true,
+      "relevant": true,
+      "propertyNexus": true,
+      "geoValid": true,
+      "dedupePass": true,
+      "cities": [
+        "faridabad"
+      ],
+      "finalState": "CANDIDATE",
+      "wouldPublish": true,
+      "reasons": []
+    },
+    {
+      "id": "FBD-POS-003",
+      "source": "MagicBricks",
+      "url": "https://www.magicbricks.com/news/faridabad-to-get-new-sectors-along-yamuna-high-rise-buildings-planned-pmmb/151487.html",
+      "expected": "PUBLISH",
+      "sourcePresent": true,
+      "discovered": true,
+      "fullArticle": true,
+      "dateValid": true,
+      "fresh": true,
+      "relevant": true,
+      "propertyNexus": true,
+      "geoValid": true,
+      "dedupePass": true,
+      "cities": [
+        "faridabad"
+      ],
+      "finalState": "CANDIDATE",
+      "wouldPublish": true,
+      "reasons": []
+    },
+    {
+      "id": "FBD-POS-004",
+      "source": "NewsVoir / BPTP release",
+      "url": "https://www.newsvoir.com/release/bptp-commences-allotments-for-skynest-towers-following-overwhelming-response-setting-a-new-benchmark-for-luxury-living-in-faridabad-36205.html",
+      "expected": "PUBLISH",
+      "sourcePresent": true,
+      "discovered": true,
+      "fullArticle": true,
+      "dateValid": true,
+      "fresh": true,
+      "relevant": true,
+      "propertyNexus": true,
+      "geoValid": true,
+      "dedupePass": true,
+      "cities": [
+        "faridabad"
+      ],
+      "finalState": "CANDIDATE",
+      "wouldPublish": true,
+      "reasons": []
+    }
+  ],
+  "negativeRows": [
+    {
+      "id": "FBD-NEG-001",
+      "source": "Amar Ujala",
+      "url": "https://www.amarujala.com/video/delhi-ncr/faridabad/video-drunk-motorcyclist-rams-into-auto-rickshaw-in-faridabad-2026-10-03",
+      "expected": "REJECT",
+      "sourcePresent": true,
+      "discovered": true,
+      "fullArticle": true,
+      "dateValid": true,
+      "fresh": true,
+      "relevant": false,
+      "propertyNexus": false,
+      "geoValid": false,
+      "dedupePass": true,
+      "cities": [],
+      "finalState": "REJECTED_NEGATIVE",
+      "wouldPublish": false,
+      "reasons": [
+        "filter 4: not positive target real-estate/project news",
+        "filter 1: spam/menu page",
+        "filter 3: negative/crime/utility concern news"
+      ]
+    },
+    {
+      "id": "FBD-NEG-003",
+      "source": "Control",
+      "url": "https://example.com/faridabad-generic-electricity-control",
+      "expected": "REJECT",
+      "sourcePresent": true,
+      "discovered": true,
+      "fullArticle": true,
+      "dateValid": true,
+      "fresh": true,
+      "relevant": false,
+      "propertyNexus": false,
+      "geoValid": false,
+      "dedupePass": true,
+      "cities": [],
+      "finalState": "REJECTED_NEGATIVE",
+      "wouldPublish": false,
+      "reasons": [
+        "filter 3: negative/crime/utility concern news"
+      ]
+    }
+  ],
+  "misses": []
+}
