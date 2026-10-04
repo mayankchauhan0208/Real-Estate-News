@@ -4408,8 +4408,22 @@ function isConnectivityCatalystArticle(article) {
   return (
     hasCleanPrimaryAndUrlText(article) &&
     (hasTargetRegionInTitleOrUrl(article) || hasNcrMatch(article) || isFaridabadJewarGrowthArticle(article)) &&
-    hasKeyword(primaryAndUrl, connectivityCatalystKeywords) &&
-    hasKeyword(primaryAndUrl, ["connectivity", "development", "growth", "real estate", "property", "infrastructure"])
+    hasKeyword(primaryAndUrl, [...connectivityCatalystKeywords, "flyover", "underpass", "road widening", "elevated road"]) &&
+    hasExplicitInfrastructurePropertyNexus(article)
+  );
+}
+
+function isUnqualifiedConnectivityCatalystArticle(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+
+  return (
+    hasCleanPrimaryAndUrlText(article) &&
+    hasKeyword(primaryAndUrl, [...connectivityCatalystKeywords, "flyover", "underpass", "road widening", "elevated road"]) &&
+    hasKeyword(primaryAndUrl, ["infrastructure", "connectivity", "expressway", "flyover", "underpass", "metro", "road", "highway"]) &&
+    !isFaridabadJewarGrowthArticle(article) &&
+    !isFngConnectivityCatalystArticle(article) &&
+    !isTargetDominantInfrastructureCorridor(article) &&
+    !hasExplicitInfrastructurePropertyNexus(article)
   );
 }
 
@@ -4579,6 +4593,21 @@ function hasMeaningfulPropertyNexus(article) {
 
   return contextualNexus.some((pattern) => pattern.test(text)) ||
     contextualNexus.some((pattern) => pattern.test(primaryAndUrl));
+}
+
+function hasExplicitInfrastructurePropertyNexus(article) {
+  const text = getArticleSearchText(article);
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const explicitNexusPatterns = [
+    /\b(?:residential|commercial|office|retail|housing|mixed[- ]use)\s+(?:project|development|complex|township|corridor)\b/i,
+    /\b(?:township|plotted development|plot scheme|land parcel|tod|transit-oriented development|development zone|sector development|new sector)\b/i,
+    /\b(?:land acquisition|land allotment|plots? allotted)\s+(?:for|to)\s+(?:the\s+)?(?:development|housing|project|township|sector|commercial|residential)\b/i,
+    /\b(?:unlocks?|enables?|supports?|serves?|connects?|cataly[sz]es?|drives?)\b.{0,120}\b(?:housing|residential|commercial|office|retail|township|plots?|land parcels?|real estate|property market|development zone|mixed[- ]use)\b/i,
+    /\b(?:housing demand|property prices?|real estate market|commercial demand|office demand)\b.{0,80}\b(?:rise|rises|boost|boosts|increase|increases|impact|impacting|benefit|benefits)\b/i
+  ];
+
+  return explicitNexusPatterns.some((pattern) => pattern.test(text)) ||
+    explicitNexusPatterns.some((pattern) => pattern.test(primaryAndUrl));
 }
 
 function hasConcretePropertyNexus(article) {
@@ -4904,6 +4933,37 @@ function isClearlyOffTopicNonDevelopmentArticle(article) {
       !hasKeyword(`${title} ${text}`, ["property development", "real estate project", "housing project", "land parcel", "township", "residential project"])) {
     return true;
   }
+  // Topic pages can leak unrelated national stories into a city-specific
+  // realty feed. A source city is routing evidence, not article relevance.
+  // Keep these exclusions deliberately narrow and require the absence of a
+  // material property/development nexus before rejecting.
+  const materialPropertyContext = hasKeyword(`${title} ${text}`, [
+    "real estate", "realty", "property development", "property market", "housing project",
+    "residential project", "commercial project", "office development", "retail development",
+    "township", "plotted development", "land parcel", "land acquisition", "land allotment",
+    "builder", "developer", "warehouse", "warehousing", "logistics park", "industrial park",
+    "mixed-use", "transit-oriented development", "tod zone", "development zone", "new sectors"
+  ]);
+  const automotiveProductStory = hasKeyword(title, [
+    "car", "cars", "suv", "facelift", "powertrain", "pre-bookings", "pre bookings",
+    "led drl", "ex-showroom", "automobile", "motorcycle", "bike launch"
+  ]) && hasKeyword(`${title} ${text}`, ["launch", "launches", "teaser", "features", "design", "price"]);
+  if (automotiveProductStory && !materialPropertyContext) return true;
+
+  const nonPropertyInvestmentOutreach = hasKeyword(title, [
+    "cm sai reaches", "cm arrives", "chief minister reaches", "chief minister arrives",
+    "pitch state's investment", "pitch state investment", "seek investment opportunities",
+    "global investors", "investment potential", "investment prospects"
+  ]) && hasKeyword(`${title} ${text}`, ["singapore", "investors", "investment", "forum", "delegation"]);
+  if (nonPropertyInvestmentOutreach && !materialPropertyContext) return true;
+
+  const civicUtilityOrEnvironmentalProject = hasKeyword(title, [
+    "waste processing", "landfill", "ev charging", "ev charging infrastructure",
+    "charging infrastructure", "charging stations", "biogas plant", "waste management",
+    "sewage treatment", "water treatment", "street lights", "luggage lockers"
+  ]);
+  if (civicUtilityOrEnvironmentalProject && !materialPropertyContext) return true;
+
   if (/\b(?:haryana|gurugram|gurgaon)\b.{0,20}\brera\b/i.test(title) &&
       !hasKeyword(`${title} ${text}`, ["approves", "approved", "launches", "project registered", "project registration", "completion certificate"])) {
     return true;
@@ -5009,6 +5069,10 @@ function isRealEstateRelated(article) {
   }
 
   if (isOperationalInfrastructureOnlyArticle(article)) {
+    return false;
+  }
+
+  if (isUnqualifiedConnectivityCatalystArticle(article)) {
     return false;
   }
 
@@ -5159,7 +5223,12 @@ function detectCityCodes(article) {
     return ["noida"];
   }
   const hasPreviousNcrRoute = matchedCodes.some((code) => ncrCityCodes.includes(code));
-  const ncrDelhiRoute = hasNcrMatch(article) && hasPreviousNcrRoute ? ncrDelhiCityCodes : [];
+  const hasConcreteDelhiEvidence = /\b(?:new\s+delhi|central\s+delhi|south\s+delhi|north\s+delhi|east\s+delhi|west\s+delhi|dda|delhi\s+development\s+authority)\b/i.test(
+    `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`
+  );
+  const ncrDelhiRoute = hasNcrMatch(article) && hasPreviousNcrRoute && hasConcreteDelhiEvidence
+    ? ncrDelhiCityCodes
+    : [];
   const routedCodes = [...matchedCodes, ...ncrDelhiRoute];
   const sourceCityCodes = getArticleSourceCityCodes(article);
   return [...new Set(routedCodes)].filter((code) =>
@@ -6201,6 +6270,28 @@ function hasContextualAdverseEvent(article) {
   return false;
 }
 
+function isAdverseFullArticleEvent(article) {
+  if (article.fullArticleRead !== true) return false;
+
+  const body = getArticleBodyText(article);
+  if (body.length < 200) return false;
+
+  const propertyContext = /\b(?:property|properties|leasehold|freehold|conversion|conveyance deed|housing|homebuyers?|residents?|flats?|plots?|land|project|developer|builder|dda|rera)\b/i.test(body);
+  if (!propertyContext) return false;
+
+  const adverseCategories = [
+    /\b(?:pending|backlog|standstill|stalled|blocked|held up|not processed)\b/i,
+    /\b(?:delay|delayed|inaction|no progress|unavailable|non-functional|nonfunctioning|failed to)\b/i,
+    /\b(?:court|high court|petition|litigation|lawsuit|legal proceedings|order)\b/i,
+    /\b(?:residents?|property owners?|homebuyers?)\b.{0,100}\b(?:difficult|distress|困|complaint|problem|unable|waiting)\b/i,
+    /\b(?:refund|recovery|penalty|demolition|eviction|sealed|violation|non-compliance|unauthori[sz]ed)\b/i
+  ];
+  const matchedCategories = adverseCategories.filter((pattern) => pattern.test(body)).length;
+
+  return matchedCategories >= 2 &&
+    /\b(?:pending|delay|delayed|inaction|unavailable|court|petition|litigation|residents?|property owners?|homebuyers?|difficult|unable|waiting|refund|recovery|violation)\b/i.test(body);
+}
+
 function hasOutsideCityConflict(article) {
   if (
     isPositiveTargetProjectUpdate(article) ||
@@ -6398,6 +6489,10 @@ function getRejectionReasons(article, sentIds) {
 
   if (negativeNews && !isOfficialReraPressRelease(article)) {
     reasons.push("filter 3: negative/crime/utility concern news");
+  }
+
+  if (isAdverseFullArticleEvent(article) && !isOfficialReraPressRelease(article)) {
+    reasons.push("filter 3: adverse property/court event in readable full article");
   }
 
   const adversePropertyTitle = /(?:recovery cases?|pending recovery|refund|refunds|dues|safety audit|fire audit|structural audit|unauthori[sz]ed construction|freeze(?:s|d)? bank accounts?|enforcement action|penalt(?:y|ies)|non-compliance|occupancy .*compliance|violation)/i.test(

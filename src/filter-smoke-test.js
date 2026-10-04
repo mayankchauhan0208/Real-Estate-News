@@ -314,7 +314,7 @@ const delhiNcrArticle = article({
   newsLink: "https://example.com/delhi-ncr/gurugram-office-market-growth"
 });
 assert.ok(detectCityCodes(delhiNcrArticle).includes("gurugram"));
-assert.ok(detectCityCodes(delhiNcrArticle).includes("new_delhi"));
+assert.ok(!detectCityCodes(delhiNcrArticle).includes("new_delhi"));
 
 const sourceAssignedCityArticle = article({
   title: "Residential project receives approval after strong investor demand",
@@ -925,8 +925,8 @@ const tataProjectsNoidaArticle = publishable({
   newsLink: "https://example.com/tata-projects-noida-airport-terminal-expansion"
 });
 
-assert.deepEqual(detectCityCodes(tataProjectsNoidaArticle), noidaCityEnabled ? ["noida"] : []);
-assert.equal(isPublishableArticle(tataProjectsNoidaArticle, sentIds), noidaCityEnabled);
+assert.deepEqual(detectCityCodes(tataProjectsNoidaArticle), []);
+assert.equal(isPublishableArticle(tataProjectsNoidaArticle, sentIds), false);
 
 const tataPlaySpotifyArticle = publishable({
   title: "Tata Play partners Spotify to offer four-month Premium trial",
@@ -1089,7 +1089,7 @@ const dlfDahliasTransactionArticle = publishable({
     "https://www.moneycontrol.com/news/business/real-estate/delhi-ncr-based-businessman-buys-four-apartments-in-dlf-s-the-dahlias-in-gurugram-for-rs-380-crore-13643229.html"
 });
 
-assert.deepEqual(detectCityCodes(dlfDahliasTransactionArticle).sort(), ["gurugram", "new_delhi"]);
+assert.deepEqual(detectCityCodes(dlfDahliasTransactionArticle).sort(), ["gurugram"]);
 assert.equal(isPublishableArticle(dlfDahliasTransactionArticle, sentIds), true);
 
 assert.equal(
@@ -1139,7 +1139,7 @@ const noidaDominantNcrArticle = publishable({
 
 assert.deepEqual(
   detectCityCodes(noidaDominantNcrArticle).sort(),
-  noidaCityEnabled ? ["new_delhi", "noida"] : []
+  noidaCityEnabled ? ["noida"] : []
 );
 assert.equal(isPublishableArticle(noidaDominantNcrArticle, sentIds), noidaCityEnabled);
 
@@ -1642,7 +1642,7 @@ if (noidaCityEnabled) {
     reasons({
       title: "EPE-Yamuna Expressway interchange to open from October 15: NHAI",
       description: "The interchange will improve Noida and Yamuna Expressway connectivity.",
-      articleText: "The infrastructure update strengthens access to Noida airport and Greater Noida real estate corridors.",
+      articleText: "The infrastructure update strengthens access to Noida airport and enables planned residential and commercial development along Greater Noida real estate corridors.",
       newsLink: "https://www.hindustantimes.com/cities/noida-news/epeyamuna-expressway-interchange-to-open-from-october-15-nhai-101785436659383.html"
     }).join("; "),
     /^$/
@@ -1703,7 +1703,7 @@ assert.deepEqual(
       newsLink: "https://example.com/oberoi-realty-delhi-ncr-gurugram-project"
     })
   ),
-  ["gurugram", "new_delhi"]
+  ["gurugram"]
 );
 
 assert.match(
