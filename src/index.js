@@ -2927,9 +2927,12 @@ function buildFunnelTelemetry({ allSelectedSources, selectedSources, sourceResul
   for (const result of sourceResults || []) {
     const row = ensure("source", result.source);
     if (!result.error) incrementFunnelCounter(row, "success");
-    if (result.articles?.length) incrementFunnelCounter(row, "linksDiscovered", result.articles.length);
-    if (result.articles?.some((article) => article.articleReadAttempted)) incrementFunnelCounter(row, "articleFetchAttempted", result.articles.filter((article) => article.articleReadAttempted).length);
-    if (result.articles?.some((article) => article.fullArticleRead === true)) incrementFunnelCounter(row, "articleFetchSuccess", result.articles.filter((article) => article.fullArticleRead === true).length);
+    const articleCount = Number(result.articleCount ?? result.articles?.length ?? 0);
+    const articleAttemptCount = Number(result.articleAttemptCount ?? result.articles?.filter((article) => article.articleReadAttempted).length ?? 0);
+    const readableArticleCount = Number(result.readableArticleCount ?? result.articles?.filter((article) => article.fullArticleRead === true).length ?? 0);
+    if (articleCount) incrementFunnelCounter(row, "linksDiscovered", articleCount);
+    if (articleAttemptCount) incrementFunnelCounter(row, "articleFetchAttempted", articleAttemptCount);
+    if (readableArticleCount) incrementFunnelCounter(row, "articleFetchSuccess", readableArticleCount);
   }
 
   for (const failed of failedSources || []) {
@@ -9433,6 +9436,18 @@ async function pushArticle(article) {
 async function fetchSourceBatch(sourceList, options = {}) {
   const settledResults = new Map();
   const recordResult = (source, result) => {
+    if (options.streamResults === true && !result.error && Array.isArray(result.articles)) {
+      const articles = result.articles;
+      const streamed = {
+        ...result,
+        articleCount: articles.length,
+        articleAttemptCount: articles.filter((article) => article.articleReadAttempted).length,
+        readableArticleCount: articles.filter((article) => article.fullArticleRead === true).length,
+        articles: []
+      };
+      options.onSourceResult?.(articles, streamed);
+      result = streamed;
+    }
     settledResults.set(source, result);
     return result;
   };
@@ -9876,7 +9891,11 @@ async function main() {
     console.log(`Fetching ${selectedSources.length} sources with ${getSourceConcurrency()} parallel source workers and ${formatDuration(getSourceTimeoutMs())} max per source.`);
     sourceResults = await fetchSourceBatch(selectedSources, {
       telemetry: runTelemetry,
-      mode: "normal-current-news"
+      mode: "normal-current-news",
+      streamResults: hasBackfillDateRange(backfillDateRange),
+      onSourceResult: hasBackfillDateRange(backfillDateRange)
+        ? (articles) => allArticles.push(...articles)
+        : undefined
     });
   }
   await runTelemetry.emit("RUN_STAGE", { stage: "source-fetch-complete", completedSources: sourceResults.length });
@@ -9885,7 +9904,7 @@ async function main() {
     source: result.source,
     status: result.error ? "failed" : "ok",
     terminalStatus: result.status || (result.error ? "TRANSPORT_FAILURE" : "SUCCESS_NO_CANDIDATE"),
-    count: result.error ? 0 : result.articles.length,
+    count: result.error ? 0 : Number(result.articleCount ?? result.articles.length),
     attempts: result.attempts || 1,
     error: result.error || "",
     failureClass: result.error ? (result.status || "TRANSPORT_FAILURE") : "",
@@ -9901,8 +9920,8 @@ async function main() {
       failedSources.push({ source: result.source, error: result.error, attempts: result.attempts || 1 });
       continue;
     }
-    allArticles.push(...result.articles);
-    fetchedSources.push({ source: result.source, count: result.articles.length, attempts: result.attempts || 1 });
+    if (!hasBackfillDateRange(backfillDateRange)) allArticles.push(...result.articles);
+    fetchedSources.push({ source: result.source, count: Number(result.articleCount ?? result.articles.length), attempts: result.attempts || 1 });
   }
   console.log(`Source fetch phase completed in ${formatDuration(Date.now() - fetchStartedAt)}.`);
   for (const articleUrl of extraArticleUrls) {
@@ -9990,7 +10009,7 @@ async function main() {
   regionalMetrics.attempted = sourceResults.filter((result) => isRegionalSource(result.source)).length;
   regionalMetrics.linksDiscovered = sourceResults
     .filter((result) => isRegionalSource(result.source))
-    .reduce((sum, result) => sum + (result.articles?.length || 0), 0);
+    .reduce((sum, result) => sum + Number(result.articleCount ?? result.articles?.length ?? 0), 0);
   regionalMetrics.published = postedArticles.filter((article) => article.trace?.regionalSource === true).length;
   console.log(`Filtering phase completed in ${formatDuration(Date.now() - filterStartedAt)}.`);
   console.log(`Found ${uniqueArticles.length} new articles.`);
