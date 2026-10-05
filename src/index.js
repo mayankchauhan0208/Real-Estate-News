@@ -131,6 +131,11 @@ function createRunTelemetry(meta = {}) {
   };
 
   const refreshWorkers = () => {
+    if (state.workerLifecycle) {
+      state.activeWorkers = Number(state.workerLifecycle.activeSourceWorkers || 0);
+      state.currentSources = state.workerLifecycle.currentSources || [];
+      return;
+    }
     state.currentSources = Object.values(state.sources)
       .filter((source) => source.status === "RUNNING")
       .map((source) => ({ sourceId: source.sourceId, stage: source.stage, elapsedMs: Date.now() - source.startedAtMs }));
