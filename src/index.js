@@ -5158,8 +5158,10 @@ function isClearlyOffTopicNonDevelopmentArticle(article) {
   // Transport-led headlines require their own property/development object.
   // A speculative real-estate sentence later in the body must not promote a
   // generic rail/road announcement into publishable property news.
+  const transportPropertyEvidence = /\b(?:development benefits focused|supports?\s+(?:[a-z -]+\s+)?property\s+and\s+development|property market impact|housing demand (?:will|is expected to|expected to))\b/i.test(getArticleBodyText(article));
   if (/\b(?:namo bharat|rrts|rapid rail|metro|rail corridor|flyover|underpass|road corridor|road project)\b/i.test(title) &&
-      !hasKeyword(title, ["property", "real estate", "realty", "housing", "residential", "commercial", "township", "land", "plot", "development zone", "mixed-use"])) {
+      !hasKeyword(title, ["property", "real estate", "realty", "housing", "residential", "commercial", "township", "land", "plot", "development zone", "mixed-use"]) &&
+      !transportPropertyEvidence) {
     return true;
   }
   if (/(?:elevated road|road corridor|road project|skywalk|interchange|landmark entry gate|multi-storey secretariat|mini secretariat|reserved forest|high-risk parks?|park safety audit|metro.*expansion|metro.*interview)/i.test(title) &&
