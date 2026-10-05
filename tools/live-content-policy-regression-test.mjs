@@ -181,6 +181,15 @@ const genericRrtsTopicFeedContamination = {
   articleText: "The proposed rail corridor would improve public transport connectivity. A late speculative paragraph says it could influence real-estate demand, but no property project, land event, development zone or property-market evidence is reported."
 };
 
+const multiRegionFinanceReview = {
+  ...common,
+  cityCode: "new_delhi",
+  title: "Saroj Poddar Group, Keventer launch ₹400 crore real estate debt AIF",
+  description: "The fund will invest in secured real estate debt opportunities across Delhi-NCR and West Bengal.",
+  newsLink: "https://realty.economictimes.indiatimes.com/news/industry/saroj-poddar-group-keventer-launch-400-crore-real-estate-debt-aif/134651253",
+  articleText: "The sponsors launched a Category II fund for secured real estate debt opportunities across Delhi-NCR and West Bengal. No city-specific project or land event is named."
+};
+
 const unrelatedTopicPageArticles = [
   {
     ...common,
@@ -239,6 +248,8 @@ for (const article of unrelatedTopicPageArticles) {
 for (const article of [diplomaticTopicFeedContamination, exciseTopicFeedContamination, genericRrtsTopicFeedContamination]) {
   assert.equal(isPublishableArticle(article, sentIds), false, article.title);
 }
+assert.equal(isPublishableArticle(multiRegionFinanceReview, sentIds), false);
+assert.match(getRejectionReasons(multiRegionFinanceReview, sentIds).join("; "), /multi-region real-estate finance update/);
 
 console.log(JSON.stringify({
   passed: true,

@@ -5365,6 +5365,16 @@ function isRealEstateRelated(article) {
   );
 }
 
+function isMultiRegionRealEstateFinanceUpdate(article) {
+  const primary = getArticlePrimaryText(article);
+  const text = getArticleBodyText(article);
+  const financeSignal = /\b(?:aif|alternative investment fund|real estate debt|structured financing|investment platform|fund corpus|greenshoe|secured debt)\b/i.test(`${primary} ${text}`);
+  const multiRegion = /\b(?:across|covering|between)\b[^.!?]{0,100}\b(?:delhi[- ]ncr|west bengal|mumbai|bengaluru|hyderabad|pune|kolkata)\b/i.test(`${primary} ${text}`) &&
+    /\b(?:delhi[- ]ncr|west bengal)\b/i.test(`${primary} ${text}`);
+  const concreteCityEvent = /\b(?:project|land parcel|plot|housing launch|residential development|commercial development|township|mall|office building)\b/i.test(primary);
+  return financeSignal && multiRegion && !concreteCityEvent;
+}
+
 function hasSpecificProjectOrDevelopmentSignal(article) {
   if (isVerifiedAuthorityPropertyEvent(article)) {
     return true;
@@ -6774,6 +6784,10 @@ function getRejectionReasons(article, sentIds) {
 
   if (isFullArticleReviewRequired(article)) {
     reasons.push(`review: ${getArticleEvidenceReviewReason(article)}`);
+  }
+
+  if (isMultiRegionRealEstateFinanceUpdate(article)) {
+    reasons.push("review: multi-region real-estate finance update needs editorial city assignment");
   }
 
   // Ordinary news must have a verified readable body. Source authority,
