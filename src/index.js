@@ -6526,6 +6526,40 @@ function isGenericBroadMarketHeadline(article) {
     "what will drive demand"
   ]);
 }
+
+function hasConcreteMaterialPropertyEvent(article) {
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  const propertyObject = /\b(?:named project|project|property|housing|residential|commercial|land parcel|plots?|township|mall|hotel|office space|flats?|apartments?|units?|acres?|ownership rights|house sites?)\b/i.test(text)
+    || /\bairport-led growth\b/i.test(text);
+  const concreteEvent = /\b(?:project (?:launch|launched|development|approved|approval)|new .*?(?:housing|residential|commercial) launches?|scouting land|residential development|commercial development|housing project|housing projects|residential township|mixed-use development|development zone|land parcel|plot (?:offering|allotment|pricing)|plots?\b.*?\b(?:off|near|airport|scheme|authority)|allot(?:ted|ment)|acqui(?:red|sition) of (?:land|property)|property (?:sale|acquisition|lease|purchase)|(?:buy|buys|bought|purchase|purchased)\b.*?\b(?:apartment|flat|home|property)s?\b|lease(?:d|s)? \d[\d,]*\s*(?:sq\.?\s*ft|square feet)|rent(?:s|ed)? \d[\d,]*\s*(?:sq\.?\s*ft|square feet)|lease(?:s|d)? .*?(?:office|retail|warehouse|space)|office stock|office space expansion|office leasing|commercial property demand|real estate growth|property development|projects? .*?(?:lined up|GDV)|pre-sales .*? projects?|infrastructure .*? real estate|real estate .*? infrastructure|boom .*? real estate|real estate .*? boom|airport-led growth|airport .*? development|mall|hotel(?: project)?|branded residences|apartments? sold|homes? sold|sell(?:s|out)? .*homes?|launch(?:es|ed)? .*?(?:housing|residential|commercial) project|invest(?:ed|ment) in .*?(?:project|housing|residential|commercial)|commit(?:s|ted|ment)? .*?(?:housing|residential|commercial) project|develop(?:ed|ing) .*project|ownership rights|house sites?|construction (?:complete|completion|milestone))\b/i.test(text);
+  return propertyObject && concreteEvent;
+}
+
+function isGenericPropertyCommentaryWithoutConcreteEvent(article) {
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  const title = getArticlePrimaryText(article);
+  const genericMarketHeadline = /\b(?:drop|rise|increase|decline|lift)\b.*\b(?:home|housing) prices?|\b(?:drop|decline)\b.*\b(?:home|housing) launches?\b/i.test(title);
+  const commentary = /\b(?:market outlook|market trend|market trends|price commentary|prices? rise|prices? fell|demand|investment outlook|industry analysis|city attractiveness|tier[- ]?[23]|forecast|outlook|trend|trends|growth likely|what will drive|credibility metric|market statistics|sales growth|drop in .*?(?:home|housing) launches?|home prices?|housing prices?|land costs?)\b/i.test(text);
+  return genericMarketHeadline || (commentary && !hasConcreteMaterialPropertyEvent(article));
+}
+
+function isGenericCivicOrPlanningWithoutPropertyEvent(article) {
+  const text = getArticlePrimaryText(article);
+  const centralParkOnly = /\b(?:plans?|will develop|to develop)\s+(?:a\s+)?\d[\d,.-]*[- ]?(?:acre|hectare)[^\.]{0,80}\bcentral park\b/i.test(text)
+    && !/\b(?:housing|residential|commercial)\s+project|\bproperty development\b|\bplots?\b/i.test(text);
+  const civic = /\b(?:road|metro|rail|flyover|fogging|parking|traffic|water|sewerage|drainage|electricity|utility|municipal maintenance|civic beautification|floor area ratio|\bFAR\b|master plan|urban planning|development control|building rules|land use|urban policy)\b/i.test(text) || centralParkOnly;
+  return centralParkOnly || (civic && !hasConcreteMaterialPropertyEvent(article));
+}
+
+function isFinancialOrTaxOnlyWithoutPropertyEvent(article) {
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  const financeOrTax = /\b(?:investor exits?|fund exits?|stake sale|share transaction|corporate finance|valuation|fundraise|debt exits?|investment exits?|tax|GST|enforcement|recovery|penalty|investigation|raid)\b/i.test(text);
+  const title = getArticlePrimaryText(article);
+  const exitOnly = /\b(?:fund|investor|debt|investment)\s+exit(?:s|ed)?\b/i.test(title)
+    && !/\b(?:launch|develop|acquire|sale|construction|project approval)\b/i.test(title);
+  const concretePropertyTransaction = /\b(?:acqui(?:re|red|sition)|land parcel|property purchase|project funding|project finance|development funding|lease|sale of homes|launch(?:es|ed)?|housing project)\b/i.test(text);
+  return financeOrTax && (exitOnly || (!concretePropertyTransaction && !hasConcreteMaterialPropertyEvent(article)));
+}
 function isNavigationOrListingShell(article) {
   const title = cleanText(article.title || "", 240).toLowerCase();
   const url = getArticleUrlText(article);
@@ -7064,6 +7098,18 @@ function getRejectionReasons(article, sentIds) {
 
   if (!isOfficialReraPressRelease(article) && isBroadNonProjectUpdate(article)) {
     reasons.push("filter 10: broad market/company update, not city project news");
+  }
+
+  if (!isOfficialReraPressRelease(article) && isGenericPropertyCommentaryWithoutConcreteEvent(article)) {
+    reasons.push("filter 10: commentary without a concrete material property event");
+  }
+
+  if (!isOfficialReraPressRelease(article) && isGenericCivicOrPlanningWithoutPropertyEvent(article)) {
+    reasons.push("filter 10: civic/planning item without a material property nexus");
+  }
+
+  if (!isOfficialReraPressRelease(article) && isFinancialOrTaxOnlyWithoutPropertyEvent(article)) {
+    reasons.push("filter 10: financial or enforcement event without a concrete property event");
   }
 
   if (isNoidaDeveloperBlogArticle(article) && !hasNoidaDeveloperBlogQualitySignal(article)) {
@@ -9589,6 +9635,57 @@ function uniqueByDedupeIds(articles) {
   });
 }
 
+function semanticEventTokens(article) {
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`.toLowerCase();
+  return new Set((text.match(/[a-z0-9]+/g) || []).filter((token) => token.length >= 4 && ![
+    "real", "estate", "group", "project", "projects", "property", "properties", "develop", "development",
+    "launch", "launched", "plans", "plan", "million", "crore", "lakh", "near", "india", "city", "new",
+    "homes", "housing", "residential", "commercial", "luxury", "target", "targets"
+  ].includes(token)));
+}
+
+function semanticEventNumbers(article) {
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`.toLowerCase();
+  return new Set((text.match(/\b\d+(?:\.\d+)?\b/g) || []).map((value) => Number(value)));
+}
+
+function isSameSemanticPropertyEvent(left, right) {
+  if (!left?.cityCode || left.cityCode !== right?.cityCode) return false;
+  const leftDate = new Date(left.publishedAt || 0).getTime();
+  const rightDate = new Date(right.publishedAt || 0).getTime();
+  if (!Number.isFinite(leftDate) || !Number.isFinite(rightDate) || Math.abs(leftDate - rightDate) > 14 * 24 * 60 * 60 * 1000) return false;
+  const leftTokens = semanticEventTokens(left);
+  const rightTokens = semanticEventTokens(right);
+  const sharedTokens = [...leftTokens].filter((token) => rightTokens.has(token));
+  const sharedNumbers = [...semanticEventNumbers(left)].filter((value) => semanticEventNumbers(right).has(value));
+  return sharedNumbers.length > 0 && sharedTokens.some((token) => token.length >= 5);
+}
+
+function semanticWinnerRank(article) {
+  const source = `${article.sourceName || ""} ${article.postedBy || ""}`.toLowerCase();
+  const authoritativeSource = /(?:hindustan times|economic times|business standard|cnbc|moneycontrol|indian express|tribune)/i.test(source) ? 1 : 0;
+  return [article.fullArticleRead === true ? 1 : 0, Number(article.decisionEvidence?.articleTextLength || article.articleText?.length || 0), authoritativeSource];
+}
+
+function uniqueBySemanticEvent(articles) {
+  const winners = [];
+  for (const article of articles) {
+    const existingIndex = winners.findIndex((winner) => isSameSemanticPropertyEvent(winner, article));
+    if (existingIndex < 0) {
+      winners.push(article);
+      continue;
+    }
+    const current = winners[existingIndex];
+    const candidateRank = semanticWinnerRank(article);
+    const currentRank = semanticWinnerRank(current);
+    const better = candidateRank.some((value, index) => value !== currentRank[index]
+      && value > currentRank[index]
+      && candidateRank.slice(0, index).every((prior, priorIndex) => prior === currentRank[priorIndex]));
+    if (better) winners[existingIndex] = article;
+  }
+  return winners;
+}
+
 function shouldDryRun() {
   return getBooleanEnv("DRY_RUN") || adminSettings.apiPushEnabled !== true;
 }
@@ -10388,7 +10485,7 @@ async function main() {
     return rejectionReasonCache.get(key);
   };
 
-  const uniqueArticles = uniqueByDedupeIds(
+  const uniqueArticles = uniqueBySemanticEvent(uniqueByDedupeIds(
     expandedArticles
     .filter((article) => getCachedRejectionReasons(article).length === 0)
     .sort((a, b) => {
@@ -10400,7 +10497,7 @@ async function main() {
 
       return new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0);
     })
-  ).map((article) => streamedCandidateArticles.get(streamArticleKey(article)) || article).slice(0, maxItems);
+  )).map((article) => streamedCandidateArticles.get(streamArticleKey(article)) || article).slice(0, maxItems);
   const articlesToPush = [...uniqueArticles].sort((a, b) => {
     const priorityDifference = articlePriority(b) - articlePriority(a);
 
