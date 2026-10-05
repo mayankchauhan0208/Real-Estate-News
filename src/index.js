@@ -4962,6 +4962,15 @@ function hasMeaningfulPropertyNexus(article) {
     contextualNexus.some((pattern) => pattern.test(primaryAndUrl));
 }
 
+function hasPositivePropertyRightsEvent(article) {
+  const text = getArticleSearchText(article);
+  const readable = article.fullArticleRead === true || article.officialDocumentRead === true;
+  const rightsEvent = /\b(?:ownership rights?|property rights?|house[- ]site(?:s)?|regulari[sz]ation pattas?|title deeds?|land titles?)\b/i.test(text)
+    && /\b(?:famil(?:y|ies)|resident(?:s)?|beneficiar(?:y|ies)|pattas?|title|regulari[sz]ed|distributed|allotted|granted|received)\b/i.test(text);
+  const adverse = /\b(?:evict(?:ed|ion)|demolish(?:ed|ion)|fraud|illegal possession|forcible|dispute|litigation|distress|default|penalty|raid|enforcement)\b/i.test(text);
+  return readable && rightsEvent && !adverse;
+}
+
 function hasExplicitInfrastructurePropertyNexus(article) {
   const text = getArticleSearchText(article);
   const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
@@ -5548,6 +5557,10 @@ function isRealEstateRelated(article) {
   }
 
   if (isVerifiedAuthorityPropertyEvent(article)) {
+    return true;
+  }
+
+  if (hasPositivePropertyRightsEvent(article)) {
     return true;
   }
 
