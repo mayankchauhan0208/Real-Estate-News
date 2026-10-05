@@ -144,6 +144,8 @@ function createRunTelemetry(meta = {}) {
     const sourceId = fields.sourceId;
     if (type === "WORKER_LIFECYCLE" && fields.workerLifecycle) {
       state.workerLifecycle = { ...state.workerLifecycle, ...fields.workerLifecycle };
+      state.currentSources = fields.workerLifecycle.currentSources || state.currentSources;
+      state.activeWorkers = Number(fields.workerLifecycle.activeSourceWorkers || 0);
       state.workerLifecycle.peakActiveSourceWorkers = Math.max(
         state.workerLifecycle.peakActiveSourceWorkers,
         Number(state.workerLifecycle.activeSourceWorkers || 0)
@@ -9705,7 +9707,13 @@ async function fetchSourceBatch(sourceList, options = {}) {
       activeDetailWorkers: [...workerRegistry.values()].reduce((total, worker) => total + Number(worker.activeDetailTasks || 0), 0),
       timedOutButNotSettled,
       abortedButNotCleaned,
-      registrySize: workerRegistry.size
+      registrySize: workerRegistry.size,
+      currentSources: [...workerRegistry.values()].map((worker) => ({
+        workerId: worker.workerId,
+        sourceId: worker.sourceId,
+        stage: worker.state,
+        elapsedMs: Date.now() - new Date(worker.startedAt).getTime()
+      }))
     };
   };
   const emitLifecycle = () => options.telemetry?.emit("WORKER_LIFECYCLE", { workerLifecycle: lifecycleSnapshot() });
@@ -10254,7 +10262,8 @@ async function main() {
           deadlineAt: fetchDeadlineAt,
           signal: globalBudgetController.signal,
           telemetry: runTelemetry,
-          mode: "normal-current-news"
+          mode: hasBackfillDateRange(backfillDateRange) ? "backfill" : "normal-current-news",
+          concurrency: hasBackfillDateRange(backfillDateRange) ? getBackfillSourceConcurrency() : getSourceConcurrency()
         });
         const startedResults = batchResults.filter((result) => result.status !== "DEFERRED_BY_GLOBAL_BOUNDARY");
         await checkpointResumableSourceShard(resumableContext, shard, startedResults);
