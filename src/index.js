@@ -10293,6 +10293,16 @@ async function main() {
       schedulerLock = null;
     }
     if (budgetStopped) console.log("Source scheduler stopped at the hard deadline; checkpoint is resumable.");
+
+    // Resumable backfill jobs persist source results between process runs. Rehydrate
+    // those results into the terminal article stream before qualification so a job
+    // boundary cannot account for sources while silently dropping their content.
+    if (streamingBackfill) {
+      for (const result of sourceResults) {
+        if (result.error || !Array.isArray(result.articles) || result.articles.length === 0) continue;
+        await consumeBackfillArticles(result.articles);
+      }
+    }
   } else {
     const sourceConcurrency = hasBackfillDateRange(backfillDateRange)
       ? getBackfillSourceConcurrency()
