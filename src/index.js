@@ -5377,6 +5377,19 @@ function isMultiRegionRealEstateFinanceUpdate(article) {
   return financeSignal && multiRegion && !concreteCityEvent;
 }
 
+function isOrdinaryCommercialTenantLaunch(article) {
+  const primary = getArticlePrimaryText(article);
+  const tenantLaunch = hasKeyword(primary, [
+    "multiplex", "cinema opening", "cinema launch", "restaurant opening", "brand store",
+    "new outlet", "new branch", "showroom launch"
+  ]);
+  const propertyEvent = hasKeyword(primary, [
+    "mall development", "commercial project", "commercial lease", "lease transaction",
+    "retail development", "property development", "land acquisition", "mixed-use"
+  ]);
+  return tenantLaunch && !propertyEvent;
+}
+
 function hasSpecificProjectOrDevelopmentSignal(article) {
   if (isVerifiedAuthorityPropertyEvent(article)) {
     return true;
@@ -6790,6 +6803,10 @@ function getRejectionReasons(article, sentIds) {
 
   if (isMultiRegionRealEstateFinanceUpdate(article)) {
     reasons.push("review: multi-region real-estate finance update needs editorial city assignment");
+  }
+
+  if (isOrdinaryCommercialTenantLaunch(article)) {
+    reasons.push("filter 4: ordinary commercial tenant launch, not a property/development event");
   }
 
   // Ordinary news must have a verified readable body. Source authority,
