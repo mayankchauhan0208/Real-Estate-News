@@ -2324,6 +2324,53 @@ function writeJsonFileSync(filePath, value) {
   renameSync(temporaryPath, filePath);
 }
 
+function createBackfillTerminalStream() {
+  const root = path.join(stateDir, "backfill-terminal");
+  const identityDir = path.join(root, "identities");
+  const recordsPath = path.join(root, "records.jsonl");
+  mkdirSync(identityDir, { recursive: true });
+  const identityPath = (article) => path.join(identityDir, `${backfillFrontierKey(`${stableId(article)}|${article.cityCode || ""}`)}.json`);
+  const project = (article, reasons, decision) => ({
+    id: stableId(article),
+    title: String(article.title || "").slice(0, 500),
+    description: String(article.description || "").slice(0, 1200),
+    articleText: String(article.articleText || "").slice(0, 2400),
+    newsLink: article.newsLink || "",
+    sourceUrl: article.sourceUrl || "",
+    publishedAt: article.publishedAt || article.createdAt || null,
+    cityCode: article.cityCode || "",
+    cityCodes: Array.isArray(article.cityCodes) ? article.cityCodes.slice(0, 8) : [],
+    language: article.language || "",
+    languageScript: article.languageScript || "",
+    fullArticleRead: article.fullArticleRead === true,
+    articleReadAttempted: article.articleReadAttempted === true,
+    authoritativeContent: article.authoritativeContent === true,
+    officialDocumentRead: article.officialDocumentRead === true,
+    regionalSource: article.regionalSource === true,
+    sourceMode: article.sourceMode || "",
+    authorityEventType: article.authorityEventType || "",
+    sharedCityArticle: article.sharedCityArticle === true,
+    decision,
+    reasons: reasons.slice(0, 12),
+    canonicalUrl: normalizeArticleUrlForDedupe(article.newsLink || "")
+  });
+  return {
+    append(article, reasons, decision) {
+      const identity = identityPath(article);
+      if (existsSync(identity)) return null;
+      const record = project(article, reasons, decision);
+      writeFileSync(identity, JSON.stringify({ id: record.id, canonicalUrl: record.canonicalUrl, cityCode: record.cityCode }));
+      appendFileSync(recordsPath, `${JSON.stringify(record)}\n`);
+      return record;
+    },
+    readRecords() {
+      if (!existsSync(recordsPath)) return [];
+      return readFileSync(recordsPath, "utf8").split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
+    },
+    paths: { root, recordsPath, identityDir }
+  };
+}
+
 function getArticleMetadataConcurrency() {
   return Math.min(getPositiveIntegerEnv("ARTICLE_METADATA_CONCURRENCY", 10), 10);
 }
@@ -9940,6 +9987,32 @@ async function main() {
   const postedArticles = [];
   const pushFailures = [];
   const dryRunCandidates = [];
+  const streamingBackfill = hasBackfillDateRange(backfillDateRange) && getBooleanEnv("BACKFILL_EXHAUSTIVE");
+  const backfillTerminalStream = streamingBackfill ? createBackfillTerminalStream() : null;
+  const streamedRejectionReasons = new Map();
+  const streamedCandidateArticles = new Map();
+  const streamArticleKey = (article) => `${stableId(article)}|${article.cityCode || ""}`;
+  const consumeBackfillArticles = (articles) => {
+    if (!streamingBackfill) {
+      allArticles.push(...articles);
+      return;
+    }
+    for (const sourceArticle of articles) {
+      const expanded = expandCityArticles(sourceArticle)
+        .filter((article) => targetCityCodeFilter.size === 0 || targetCityCodeFilter.has(article.cityCode));
+      for (const article of expanded) {
+        if (!isWithinBackfillDateRange(article, backfillDateRange)) continue;
+        const reasons = shouldSkipTitle(article, skipTitleSet)
+          ? ["manual skip: title already reposted"]
+          : getFastRejectionReasons(article, filterSentIds, skipTitleSet);
+        const decision = reasons.length ? "TERMINAL_REJECT" : "WOULD_PUBLISH";
+        const record = backfillTerminalStream.append(article, reasons, decision);
+        const key = streamArticleKey(article);
+        if (record) streamedRejectionReasons.set(key, reasons);
+        if (!reasons.length && !streamedCandidateArticles.has(key)) streamedCandidateArticles.set(key, article);
+      }
+    }
+  };
   const runTelemetry = createRunTelemetry({
     mode: shouldDryRun() ? "dry-run" : "live",
     commitSha,
@@ -10058,7 +10131,7 @@ async function main() {
       concurrency: sourceConcurrency,
       streamResults: hasBackfillDateRange(backfillDateRange),
       onSourceResult: hasBackfillDateRange(backfillDateRange)
-        ? (articles) => allArticles.push(...articles)
+        ? (articles) => consumeBackfillArticles(articles)
         : undefined
     });
   }
@@ -10091,7 +10164,7 @@ async function main() {
   for (const articleUrl of extraArticleUrls) {
     try {
       const article = await fetchDirectArticle(articleUrl);
-      allArticles.push(article);
+      consumeBackfillArticles([article]);
       fetchedSources.push({ source: articleUrl, count: 1, direct: true });
       console.log(`Fetched direct article: ${article.title || articleUrl}`);
     } catch (error) {
@@ -10102,10 +10175,12 @@ async function main() {
 
   const filterStartedAt = Date.now();
   await runTelemetry.emit("RUN_STAGE", { stage: "filtering" });
-  const expandedAllArticles = allArticles
-    .flatMap(expandCityArticles)
-    .filter((article) => targetCityCodeFilter.size === 0 || targetCityCodeFilter.has(article.cityCode));
-  console.log(`Expanded ${allArticles.length} fetched articles to ${expandedAllArticles.length} city articles in ${formatDuration(Date.now() - filterStartedAt)}.`);
+  const expandedAllArticles = streamingBackfill
+    ? backfillTerminalStream.readRecords()
+    : allArticles
+      .flatMap(expandCityArticles)
+      .filter((article) => targetCityCodeFilter.size === 0 || targetCityCodeFilter.has(article.cityCode));
+  console.log(`Expanded ${streamingBackfill ? expandedAllArticles.length : allArticles.length} fetched articles to ${expandedAllArticles.length} city articles in ${formatDuration(Date.now() - filterStartedAt)}.`);
   logDateExcludedPublishableArticles(expandedAllArticles, backfillDateRange, filterSentIds, skipTitleSet);
 
   const expandedArticles = expandedAllArticles.filter((article) =>
@@ -10119,11 +10194,12 @@ async function main() {
     if (!rejectionReasonCache.has(key)) {
       rejectionReasonCache.set(
         key,
-        getBooleanEnv("DETAILED_REJECTION_REASONS", false)
+        streamedRejectionReasons.get(streamArticleKey(article)) || (getBooleanEnv("DETAILED_REJECTION_REASONS", false)
           ? shouldSkipTitle(article, skipTitleSet)
             ? ["manual skip: title already reposted"]
             : getRejectionReasons(article, filterSentIds)
           : getFastRejectionReasons(article, filterSentIds, skipTitleSet)
+        )
       );
     }
     return rejectionReasonCache.get(key);
@@ -10141,7 +10217,7 @@ async function main() {
 
       return new Date(b.publishedAt || 0) - new Date(a.publishedAt || 0);
     })
-  ).slice(0, maxItems);
+  ).map((article) => streamedCandidateArticles.get(streamArticleKey(article)) || article).slice(0, maxItems);
   const articlesToPush = [...uniqueArticles].sort((a, b) => {
     const priorityDifference = articlePriority(b) - articlePriority(a);
 
