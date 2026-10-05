@@ -5278,7 +5278,8 @@ function isClearlyOffTopicNonDevelopmentArticle(article) {
   const nonRealEstateCommercialExpansion = hasKeyword(title, [
     "jewellery showroom", "jewelry showroom", "showroom launch", "showroom launches",
     "restaurant opening", "brand store", "new outlet", "new branch", "dealership",
-    "clinic opening", "school opening", "hotel opening"
+    "clinic opening", "school opening", "hotel opening", "multiplex opening",
+    "multiplex launches", "launches multiplex", "cinema opening", "cinema launches"
   ]) && !hasKeyword(`${title} ${text}`, [
     "commercial lease", "lease transaction", "retail development", "mall development",
     "commercial project", "property acquisition", "land acquisition", "development agreement",

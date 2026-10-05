@@ -190,6 +190,15 @@ const multiRegionFinanceReview = {
   articleText: "The sponsors launched a Category II fund for secured real estate debt opportunities across Delhi-NCR and West Bengal. No city-specific project or land event is named."
 };
 
+const ordinaryMultiplexLaunch = {
+  ...common,
+  cityCode: "faridabad",
+  title: "Cinépolis India Launches Second Multiplex in Faridabad at City Life Mall",
+  description: "Cinépolis India has launched a new four-screen multiplex at City Life Mall.",
+  newsLink: "https://realtynmore.com/cinepolis-india-launches-second-multiplex-in/",
+  articleText: "The cinema opened inside an existing mall. The article describes screens, seats and catchment demand, but does not report a new mall, lease transaction or property development event."
+};
+
 const unrelatedTopicPageArticles = [
   {
     ...common,
@@ -250,6 +259,7 @@ for (const article of [diplomaticTopicFeedContamination, exciseTopicFeedContamin
 }
 assert.equal(isPublishableArticle(multiRegionFinanceReview, sentIds), false);
 assert.match(getRejectionReasons(multiRegionFinanceReview, sentIds).join("; "), /multi-region real-estate finance update/);
+assert.equal(isPublishableArticle(ordinaryMultiplexLaunch, sentIds), false);
 
 console.log(JSON.stringify({
   passed: true,
