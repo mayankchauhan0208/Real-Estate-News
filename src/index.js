@@ -3427,9 +3427,17 @@ async function readResponseBodyWithTimeout(response, mode = "text", options = {}
     sourceUrl: options.sourceUrl || response.url,
     stage: mode === "arrayBuffer" ? "document-body-read" : "response-body-read"
   });
-  // Official authority and developer pages frequently exceed 1 MB because of
-  // bundled scripts and embedded media metadata; keep a bounded but usable cap.
-  const maxBytes = mode === "arrayBuffer" ? 20 * 1024 * 1024 : 8 * 1024 * 1024;
+  // Keep HTML ingestion bounded before a large document reaches synchronous
+  // parsers such as cheerio. Some authority portals serve oversized pages
+  // with bundled scripts and media metadata; those pages must fail as an
+  // external-source problem instead of starving the other source workers.
+  let maxBytes = mode === "arrayBuffer" ? 20 * 1024 * 1024 : 4 * 1024 * 1024;
+  try {
+    const host = new URL(response.url || options.sourceUrl || "").hostname.toLowerCase().replace(/^www\./, "");
+    if (mode === "text" && host === "rera.wb.gov.in") maxBytes = 1 * 1024 * 1024;
+  } catch {
+    // Keep the general bound when the response URL is unavailable or invalid.
+  }
   const readBody = reader
     ? (async () => {
       const chunks = [];
@@ -9628,7 +9636,7 @@ async function pushArticle(article) {
 
 async function fetchSourceBatch(sourceList, options = {}) {
   const settledResults = new Map();
-  const recordResult = (source, result) => {
+  const recordResult = async (source, result) => {
     if (options.streamResults === true && !result.error && Array.isArray(result.articles)) {
       const articles = result.articles;
       const streamed = {
@@ -9638,7 +9646,7 @@ async function fetchSourceBatch(sourceList, options = {}) {
         readableArticleCount: articles.filter((article) => article.fullArticleRead === true).length,
         articles: []
       };
-      options.onSourceResult?.(articles, streamed);
+      await options.onSourceResult?.(articles, streamed);
       result = streamed;
     }
     settledResults.set(source, result);
@@ -9726,7 +9734,6 @@ async function fetchSourceBatch(sourceList, options = {}) {
         sourceDeadlineTimer = setTimeout(() => {
           reject(createSourceExecutionTimeoutError("source execution deadline reached before adapter settled"));
         }, Math.max(1, sourceDeadlineAt - Date.now()));
-        sourceDeadlineTimer.unref?.();
       });
       let result;
       try {
@@ -9992,11 +9999,12 @@ async function main() {
   const streamedRejectionReasons = new Map();
   const streamedCandidateArticles = new Map();
   const streamArticleKey = (article) => `${stableId(article)}|${article.cityCode || ""}`;
-  const consumeBackfillArticles = (articles) => {
+  const consumeBackfillArticles = async (articles) => {
     if (!streamingBackfill) {
       allArticles.push(...articles);
       return;
     }
+    let processed = 0;
     for (const sourceArticle of articles) {
       const expanded = expandCityArticles(sourceArticle)
         .filter((article) => targetCityCodeFilter.size === 0 || targetCityCodeFilter.has(article.cityCode));
@@ -10010,6 +10018,10 @@ async function main() {
         const key = streamArticleKey(article);
         if (record) streamedRejectionReasons.set(key, reasons);
         if (!reasons.length && !streamedCandidateArticles.has(key)) streamedCandidateArticles.set(key, article);
+        processed += 1;
+        if (processed % getBackfillDetailBatchLimit() === 0) {
+          await new Promise((resolve) => setImmediate(resolve));
+        }
       }
     }
   };
@@ -10164,7 +10176,7 @@ async function main() {
   for (const articleUrl of extraArticleUrls) {
     try {
       const article = await fetchDirectArticle(articleUrl);
-      consumeBackfillArticles([article]);
+      await consumeBackfillArticles([article]);
       fetchedSources.push({ source: articleUrl, count: 1, direct: true });
       console.log(`Fetched direct article: ${article.title || articleUrl}`);
     } catch (error) {
