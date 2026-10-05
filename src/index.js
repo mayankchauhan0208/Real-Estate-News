@@ -2218,6 +2218,10 @@ function getSourceConcurrency() {
   return Math.min(getPositiveIntegerEnv("SOURCE_CONCURRENCY", 20), 20);
 }
 
+function getBackfillSourceConcurrency() {
+  return Math.min(getPositiveIntegerEnv("BACKFILL_SOURCE_CONCURRENCY", 4), 4);
+}
+
 function getArticleMetadataConcurrency() {
   return Math.min(getPositiveIntegerEnv("ARTICLE_METADATA_CONCURRENCY", 10), 10);
 }
@@ -9451,7 +9455,7 @@ async function fetchSourceBatch(sourceList, options = {}) {
     settledResults.set(source, result);
     return result;
   };
-  const batchPromise = mapWithConcurrency(sourceList, getSourceConcurrency(), async (source) => {
+  const batchPromise = mapWithConcurrency(sourceList, options.concurrency || getSourceConcurrency(), async (source) => {
     const telemetry = options.telemetry;
     const sourceId = sourceTelemetryId(source);
     const sourceHost = sourceTelemetryHost(source);
@@ -9526,7 +9530,21 @@ async function fetchSourceBatch(sourceList, options = {}) {
         executionStarted: true,
         deadlineAt: sourceDeadlineAt
       };
-      const result = await fetchSourceWithRecovery(source, sourceOptions);
+      const sourcePromise = fetchSourceWithRecovery(source, sourceOptions);
+      sourcePromise.catch(() => {});
+      let sourceDeadlineTimer;
+      const sourceDeadlinePromise = new Promise((_, reject) => {
+        sourceDeadlineTimer = setTimeout(() => {
+          reject(createSourceExecutionTimeoutError("source execution deadline reached before adapter settled"));
+        }, Math.max(1, sourceDeadlineAt - Date.now()));
+        sourceDeadlineTimer.unref?.();
+      });
+      let result;
+      try {
+        result = await Promise.race([sourcePromise, sourceDeadlinePromise]);
+      } finally {
+        clearTimeout(sourceDeadlineTimer);
+      }
       const memoryAfterDiscovery = getMemorySnapshot();
       const sourceCityCodes = getConfiguredSourceCityCodes(source);
       const articles = result.articles.map((article) => ({
@@ -9888,10 +9906,14 @@ async function main() {
     }
     if (budgetStopped) console.log("Source scheduler stopped at the hard deadline; checkpoint is resumable.");
   } else {
-    console.log(`Fetching ${selectedSources.length} sources with ${getSourceConcurrency()} parallel source workers and ${formatDuration(getSourceTimeoutMs())} max per source.`);
+    const sourceConcurrency = hasBackfillDateRange(backfillDateRange)
+      ? getBackfillSourceConcurrency()
+      : getSourceConcurrency();
+    console.log(`Fetching ${selectedSources.length} sources with ${sourceConcurrency} parallel source workers and ${formatDuration(getSourceTimeoutMs())} max per source.`);
     sourceResults = await fetchSourceBatch(selectedSources, {
       telemetry: runTelemetry,
       mode: "normal-current-news",
+      concurrency: sourceConcurrency,
       streamResults: hasBackfillDateRange(backfillDateRange),
       onSourceResult: hasBackfillDateRange(backfillDateRange)
         ? (articles) => allArticles.push(...articles)
