@@ -5065,6 +5065,68 @@ function isEducationOnlyAnnouncement(article) {
   return educationSignal && !realEstateSignal;
 }
 
+function hasConcretePropertyEvent(article) {
+  const primary = getArticlePrimaryText(article);
+  const searchable = getArticleSearchText(article);
+  const eventText = `${primary} ${searchable}`;
+  const propertyObject = "(?:real estate|realty|property|properties|housing|residential|commercial|apartment|apartments|homes?|plots?|land parcel|land acquisition|township|warehouse|warehousing|logistics park|industrial park|office space|retail space|redevelopment|project|scheme|allotment|registration)";
+  const eventAction = "(?:launch(?:ed|es)?|approv(?:e|es|ed|al)|acquir(?:e|ed|es)|purchas(?:e|ed|es)|sell|sold|sale|registr(?:ation|ered)|leas(?:e|ed|es)|rent(?:ed|s)?|allot(?:ment|ted)?|auction(?:ed|s)?|construct(?:ion|ed|s)|complet(?:ion|ed)|develop(?:ed|ing|ment|s)?|plan(?:s|ned)?|invest(?:ed|ment|s)?|redevelop(?:ed|ment|s)?|sign(?:ed|s)?|conver(?:sion|ted)|transact(?:ion|ions)?)";
+
+  // Require the action and the concrete property object to occur in the same
+  // local phrase. Generic references to development, projects or markets in
+  // a long interview/panel body do not satisfy this event gate.
+  const concreteEvent = new RegExp(`\\b${eventAction}\\b[^.!?]{0,100}\\b${propertyObject}\\b|\\b${propertyObject}\\b[^.!?]{0,100}\\b${eventAction}\\b`, "i");
+  if (concreteEvent.test(eventText)) return true;
+
+  const primaryAndUrl = `${primary} ${getArticleUrlText(article)}`;
+  return new RegExp(`\\b(?:named|specific|identified|new|upcoming|proposed|approved|launched|acquired|leased|allotted|registered)\\b[^.!?]{0,100}\\b${propertyObject}\\b`, "i").test(primaryAndUrl);
+}
+
+function hasSpecificPropertyEventInLead(article) {
+  const lead = `${getArticlePrimaryText(article)} ${String(article.articleText || "").slice(0, 1200)} ${getArticleUrlText(article)}`;
+  const object = "(?:residential|commercial|housing)\\s+project|named\\s+(?:project|property)|specific\\s+(?:project|property|land)|land parcel|plots?|township|logistics park|industrial park|warehouse|warehousing|office space|retail space|apartments?|housing scheme";
+  const action = "(?:launch(?:ed|es)?|approv(?:e|es|ed|al)|acquir(?:e|ed|es)|purchas(?:e|ed|es)|sold|sale|registr(?:ation|ered)|leas(?:e|ed|es)|allot(?:ment|ted)?|auction(?:ed|s)?|construct(?:ion|ed|s)|complet(?:ion|ed)|develop(?:ed|ing|ment|s)?|invest(?:ed|ment|s)?|redevelop(?:ed|ment|s)?|transact(?:ion|ions)?)";
+  return new RegExp(`\\b${action}\\b[^.!?]{0,100}\\b${object}\\b|\\b${object}\\b[^.!?]{0,100}\\b${action}\\b`, "i").test(lead);
+}
+
+function isGenericCommentaryWithoutConcreteEvent(article) {
+  const primary = getArticlePrimaryText(article);
+  const searchable = getArticleSearchText(article);
+  const formatSignal = /\b(?:interview|opinion|panel|discussion|commentary|thought leadership|trend|trends|perspective|industry leaders?|conference|summit|micro-?markets?|growth map|moving towards|assess(?:es|ing)?)\b/i.test(primary);
+  const bodyFormatSignal = /\b(?:speaking at|in an interview|panel discussion|industry leaders?|shares his perspective|research report|thought leadership|broad market|tier[- ]2 cities|rural[- ]urban transition)\b/i.test(searchable);
+  if (!(formatSignal || bodyFormatSignal)) return false;
+
+  const leadArticle = { ...article, articleText: String(article.articleText || "").slice(0, 1200) };
+  const primaryEvent = { ...article, articleText: "" };
+  return !hasSpecificPropertyEventInLead(leadArticle) || !hasSpecificPropertyEventInLead(primaryEvent);
+}
+
+function isGenericPolicyCommentaryWithoutConcreteEvent(article) {
+  const primary = getArticlePrimaryText(article);
+  const searchable = getArticleSearchText(article);
+  if (/\bbuilding plan approvals?\b/i.test(primary) &&
+      !/\b(?:named|specific)\s+(?:property|project|plot|land)|\b(?:residential|commercial|housing)\s+project\b|\bplot(?:s)?\b|\bland parcel\b/i.test(primary)) {
+    return true;
+  }
+  const policySignal = /\b(?:rera|regulation|regulatory|policy|building plan approval|building plan approvals|self-certif(?:y|ication)|online approval system)\b/i.test(`${primary} ${searchable}`);
+  if (!policySignal) return false;
+
+  const genericSignal = /\b(?:build trust|should|must|will play a key role|discussion|conference|panel|commentary|system|dashboard|sms|email alerts|self-certif(?:y|ication))\b/i.test(`${primary} ${searchable}`);
+  const leadArticle = { ...article, articleText: String(article.articleText || "").slice(0, 1200) };
+  const primaryEvent = { ...article, articleText: "" };
+  return genericSignal && (!hasSpecificPropertyEventInLead(leadArticle) || !hasSpecificPropertyEventInLead(primaryEvent));
+}
+
+function isNonRealEstateBusinessExpansion(article) {
+  const primary = getArticlePrimaryText(article);
+  const searchable = getArticleSearchText(article);
+  const operationalSignal = /\b(?:manufactur(?:e|ing)|electronics|production capacity|plant operations?|factory operations?|component placement|server and ai boards?|business capacity|production line|output)\b/i.test(`${primary} ${searchable}`);
+  if (!operationalSignal) return false;
+
+  const propertyEvent = /\b(?:acquir(?:e|ed|es)|purchas(?:e|d|es)|land parcel|industrial plot|major property lease|warehouse lease|logistics park|industrial park|specific industrial property|developer-led)\b/i.test(`${primary} ${searchable}`);
+  return !propertyEvent;
+}
+
 function isClearlyOffTopicNonDevelopmentArticle(article) {
   const title = getArticlePrimaryText(article);
   const text = getArticleSearchText(article);
@@ -5086,6 +5148,12 @@ function isClearlyOffTopicNonDevelopmentArticle(article) {
   }
   if (/(?:digital map.*master plan|master plan.*2047|new dtc headquarter|planned urban development.*draft master plan|real estate shift|average home prices.*delhi[- ]ncr|housing sales rise .*units.*q[1-4]|luxury housing must move beyond)/i.test(title) &&
       !hasKeyword(title, ["project", "land parcel", "township", "housing plots", "residential launch", "commercial project"])) {
+    return true;
+  }
+  if (isGenericCommentaryWithoutConcreteEvent(article) || isGenericPolicyCommentaryWithoutConcreteEvent(article)) {
+    return true;
+  }
+  if (isNonRealEstateBusinessExpansion(article)) {
     return true;
   }
   if (/(?:dubai|ras al khaimah|sydney|australia|london|singapore)\s+(?:property|real estate|rental|investor)/i.test(`${title} ${text}`) &&

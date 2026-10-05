@@ -1546,6 +1546,74 @@ const faridabadPositiveMarketArticle = publishable({
 assert.deepEqual(detectCityCodes(faridabadPositiveMarketArticle), ["faridabad"]);
 assert.equal(isPublishableArticle(faridabadPositiveMarketArticle, sentIds), true);
 assert.equal(classifyArticle(faridabadPositiveMarketArticle), "positive_city_market");
+
+// General precision boundary: commentary, generic policy discussion and
+// ordinary industrial operations must not become publishable through feed
+// context or broad real-estate vocabulary alone.
+for (const commentaryArticle of [
+  publishable({
+    title: "India's next urban challenge lies in managing the rural-urban transition: NIUA",
+    description: "A research commentary discusses urban transition and infrastructure planning.",
+    articleText: "The conference discussion covers rural-urban transition, climate resilience and planning across India, without a named property event.",
+    newsLink: "https://example.com/noida/niua-rural-urban-transition",
+    sourceCityCodes: ["noida"]
+  }),
+  publishable({
+    title: "Branded residences must deliver long-term value beyond the brand name: Industry leaders",
+    description: "A panel discusses design, execution and resale value in branded residences.",
+    articleText: "Industry leaders speaking at a conference discuss branded residences and long-term value, without a named project, launch or transaction.",
+    newsLink: "https://example.com/noida/branded-residences-panel",
+    sourceCityCodes: ["noida"]
+  }),
+  publishable({
+    title: "India is moving towards a multi-city real-estate model",
+    description: "An interview discusses Tier-2 markets and changing demand.",
+    articleText: "In an interview, a research report and industry perspective discuss Tier-2 cities, infrastructure and property trends without a discrete city event.",
+    newsLink: "https://example.com/gurugram/tier-2-interview",
+    sourceCityCodes: ["gurugram"]
+  }),
+  publishable({
+    title: "Building plan approvals in Chandigarh go fully online",
+    description: "The administration rolls out an online building-plan approval system.",
+    articleText: "The policy system provides dashboards, SMS alerts and self-certification across residential, commercial and industrial categories, without a named property event.",
+    newsLink: "https://example.com/chandigarh/online-building-plan-approvals"
+  }),
+  publishable({
+    title: "Regulation must build trust for buyers, developers and investors: Delhi RERA",
+    description: "A RERA official discusses confidence, disclosures and regulation.",
+    articleText: "Speaking at a conference, the RERA official offers broad policy commentary about trust and accountability without a concrete project or regulatory action.",
+    newsLink: "https://example.com/new-delhi/rera-commentary"
+  }),
+  publishable({
+    title: "Rapidise plans fourfold Manesar capacity expansion with INR 200 crore investment",
+    description: "An electronics manufacturer will expand production capacity at its plant.",
+    articleText: "The electronics company will add manufacturing capacity, SMT lines and production of server and AI boards at its existing facilities, without acquiring or developing industrial real estate.",
+    newsLink: "https://example.com/gurugram/rapidise-manesar-factory-expansion"
+  })
+]) {
+  assert.equal(isPublishableArticle(commentaryArticle, sentIds), false, commentaryArticle.title);
+  assert.deepEqual(detectCityCodes(commentaryArticle), [], commentaryArticle.title);
+}
+
+const implementedPropertyRegulation = publishable({
+  title: "Gurugram property registration fee change takes effect for redevelopment projects",
+  description: "The implemented rule changes registration charges for identified redevelopment projects in Gurugram.",
+  articleText: "The state formally implemented the property registration rule for named redevelopment projects in Gurugram, changing the applicable charges for those transactions.",
+  newsLink: "https://example.com/gurugram/property-registration-rule-redevelopment",
+  cityCode: "gurugram",
+  sourceCityCodes: ["gurugram"],
+  postedBy: "Example Realty"
+});
+assert.equal(isPublishableArticle(implementedPropertyRegulation, sentIds), true);
+
+const industrialRealEstateContrast = publishable({
+  title: "Developer acquires 40-acre industrial land parcel for logistics park in Gurugram",
+  description: "The developer will build a logistics park on the acquired industrial land in Gurugram.",
+  articleText: "The developer acquired a specific industrial land parcel and will develop a logistics park with warehouse space in Gurugram.",
+  newsLink: "https://example.com/gurugram/industrial-land-logistics-park"
+});
+assert.equal(isPublishableArticle(industrialRealEstateContrast, sentIds), true);
+
 const faridabadRealEstateRiseArticle = publishable({
   title: "Faridabad's Real Estate Rise: From Industrial Town to Modern Urban Hub",
   description: "Faridabad real estate rise is being driven by infrastructure development and improving connectivity.",
