@@ -9162,8 +9162,33 @@ async function fetchPage(sourceUrl, options = {}) {
   }
 
   const limitedCandidates = candidates.slice(0, getMaxItemsPerSource());
-  const articles = await mapWithConcurrency(limitedCandidates, 8, async (candidate) => {
-    const metadata = await fetchArticleMetadataWithTimeout(candidate.newsLink, candidate, options);
+  const articleConcurrency = options.streamResults === true ? 2 : 8;
+  const articles = await mapWithConcurrency(limitedCandidates, articleConcurrency, async (candidate) => {
+    let metadata;
+    if (isDirectMediaUrl(candidate.newsLink)) {
+      try {
+        const document = await fetchDocument(candidate.newsLink, {
+          timeoutMs: getFetchTimeoutForUrl(candidate.newsLink),
+          maxBytes: 4 * 1024 * 1024
+        });
+        const readable = document.telemetry.validation === "VALID_PDF" && document.text.length >= 200;
+        metadata = {
+          articleText: readable ? document.text : "",
+          articleReadAttempted: true,
+          fullArticleRead: readable,
+          articleReadError: readable ? "" : document.telemetry.failureReason || "document was not readable",
+          extractionMethod: document.telemetry.extractionMethod || "PDF_TEXT"
+        };
+      } catch (error) {
+        metadata = {
+          articleReadAttempted: true,
+          fullArticleRead: false,
+          articleReadError: String(error?.message || error || "document could not be read").slice(0, 240)
+        };
+      }
+    } else {
+      metadata = await fetchArticleMetadataWithTimeout(candidate.newsLink, candidate, options);
+    }
     const article = {
       ...candidate,
       ...metadata,
