@@ -9268,8 +9268,13 @@ async function fetchSourceWithTimeout(sourceUrl, timeoutMsOverride = getSourceTi
       throw createBudgetExhaustedError("global source budget exhausted during source operation");
     }
 
-    if (controller.signal.aborted && !/timed out/i.test(error.message || "")) {
+    // A local timeout aborts the adapter too. Always give the abandoned
+    // operation a short settlement window before releasing its source slot;
+    // otherwise late recovery/detail work can continue after the source was
+    // already accounted and accumulate external workers across the run.
+    if (controller.signal.aborted) {
       await waitForSourceStop();
+      if (/timed out/i.test(error.message || "")) throw error;
       throw new Error(`source timed out after ${timeoutMs}ms`);
     }
 
