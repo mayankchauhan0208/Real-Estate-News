@@ -5148,6 +5148,20 @@ function isClearlyOffTopicNonDevelopmentArticle(article) {
       !hasKeyword(title, ["project", "land", "plot", "housing", "township", "property", "real estate"])) {
     return true;
   }
+  // City/topic feeds can leak diplomatic, trade, excise, and consumer-price
+  // administration stories. Their location is real, but the event is not
+  // property coverage unless the headline itself names a property event.
+  if (/(?:prime minister|president|diplomatic|state visit|trade|excise|liquor|whisky|whiskey|wine|beer|alcohol)\b/i.test(title) &&
+      !hasKeyword(title, ["project", "land", "plot", "housing", "township", "property", "real estate", "realty", "residential", "commercial", "developer", "builder"])) {
+    return true;
+  }
+  // Transport-led headlines require their own property/development object.
+  // A speculative real-estate sentence later in the body must not promote a
+  // generic rail/road announcement into publishable property news.
+  if (/\b(?:namo bharat|rrts|rapid rail|metro|rail corridor|flyover|underpass|road corridor|road project)\b/i.test(title) &&
+      !hasKeyword(title, ["property", "real estate", "realty", "housing", "residential", "commercial", "township", "land", "plot", "development zone", "mixed-use"])) {
+    return true;
+  }
   if (/(?:elevated road|road corridor|road project|skywalk|interchange|landmark entry gate|multi-storey secretariat|mini secretariat|reserved forest|high-risk parks?|park safety audit|metro.*expansion|metro.*interview)/i.test(title) &&
       !hasKeyword(`${title} ${text}`, ["property", "real estate", "housing", "residential", "commercial", "township", "land parcel", "plot", "industrial park", "logistics park", "mixed-use", "tod zone", "transit-oriented development"])) {
     return true;

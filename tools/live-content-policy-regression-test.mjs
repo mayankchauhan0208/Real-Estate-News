@@ -154,6 +154,33 @@ const greaterNoidaNcrArticle = {
   articleText: "Puravankara acquired a land parcel in Greater Noida for a residential development in the Delhi-NCR market."
 };
 
+const diplomaticTopicFeedContamination = {
+  ...common,
+  cityCode: "new_delhi",
+  title: "PM Modi meets Swiss president Parmelin in Delhi; trade, investment on agenda",
+  description: "Prime Minister Narendra Modi met Swiss Confederation president Guy Parmelin at Hyderabad House in New Delhi.",
+  newsLink: "https://timesofindia.indiatimes.com/india/pm-modi-meets-swiss-president-parmelin-in-delhi-trade-investment-on-agenda/articleshow/134689705.cms",
+  articleText: "The leaders discussed bilateral relations, trade and investment. No property, land, housing or development event was reported."
+};
+
+const exciseTopicFeedContamination = {
+  ...common,
+  cityCode: "new_delhi",
+  title: "Delhi excise department invites applications to reduce imported liquor prices after India-UK trade pact",
+  description: "The department said the trade agreement reduced customs duty on specified liquor imports.",
+  newsLink: "https://www.hindustantimes.com/india-news/delhi-excise-department-invites-applications-to-reduce-imported-liquor-prices-after-india-uk-trade-pact-101791176127850.html",
+  articleText: "The Delhi Excise Department asked wholesale liquor licence holders to apply for revised maximum retail prices. The order concerns customs duty and liquor pricing, not property or development."
+};
+
+const genericRrtsTopicFeedContamination = {
+  ...common,
+  cityCode: "faridabad",
+  title: "Gurugram to Faridabad in 20 minutes: Namo Bharat RRTS corridor proposed",
+  description: "A proposed Namo Bharat RRTS corridor could cut travel time between Gurugram and Faridabad.",
+  newsLink: "https://www.tribuneindia.com/news/haryana/gurugram-to-faridabad-in-20-minutes-namo-bharat-rrts-corridor-proposed",
+  articleText: "The proposed rail corridor would improve public transport connectivity. A late speculative paragraph says it could influence real-estate demand, but no property project, land event, development zone or property-market evidence is reported."
+};
+
 const unrelatedTopicPageArticles = [
   {
     ...common,
@@ -209,6 +236,9 @@ assert.deepEqual(detectCityCodes(greaterNoidaNcrArticle), ["noida"]);
 for (const article of unrelatedTopicPageArticles) {
   assert.equal(isPublishableArticle(article, sentIds), false, article.title);
 }
+for (const article of [diplomaticTopicFeedContamination, exciseTopicFeedContamination, genericRrtsTopicFeedContamination]) {
+  assert.equal(isPublishableArticle(article, sentIds), false, article.title);
+}
 
 console.log(JSON.stringify({
   passed: true,
@@ -222,4 +252,5 @@ console.log(JSON.stringify({
   offTopicFeedContamination: "REJECTED",
   externalDeveloperMediaArticle: "REJECTED_WITHOUT_SAME_SITE_AUTHORITY_BYPASS",
   unrelatedTopicPageArticles: "REJECTED"
+  ,newlyProtectedTopicFeedContamination: "REJECTED"
 }, null, 2));
