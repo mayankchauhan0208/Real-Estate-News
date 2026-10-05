@@ -10476,9 +10476,15 @@ export {
 };
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  // Some native fetch/parser branches can leave only unref'ed timers while
+  // their promise is still settling. Keep the ingestion process alive until
+  // main() reaches a truthful terminal state instead of exiting as RUNNING.
+  const mainKeepAlive = setInterval(() => {}, 1000);
   main().catch((error) => {
     console.error(error);
     process.exitCode = 1;
+  }).finally(() => {
+    clearInterval(mainKeepAlive);
   });
 }
 
