@@ -1,8 +1,8 @@
 {
   "version": 1,
   "activeCycle": {
-    "cycleId": "source-cycle-2026-10-05",
-    "createdAt": "2026-10-05T09:03:23.598Z",
+    "cycleId": "source-cycle-2026-10-05-6",
+    "createdAt": "2026-10-05T15:54:02.456Z",
     "sourceIds": [
       "source-00a0c32b225feb2f",
       "source-0130f0c2db03fc06",
@@ -1114,23 +1114,23 @@
       "source-fff5e97e132c1bf9"
     ],
     "completedShardIds": [
-      "source-cycle-2026-10-05-shard-0001",
-      "source-cycle-2026-10-05-shard-0002",
-      "source-cycle-2026-10-05-shard-0003",
-      "source-cycle-2026-10-05-shard-0004",
-      "source-cycle-2026-10-05-shard-0005",
-      "source-cycle-2026-10-05-shard-0006",
-      "source-cycle-2026-10-05-shard-0007",
-      "source-cycle-2026-10-05-shard-0008",
-      "source-cycle-2026-10-05-shard-0009",
-      "source-cycle-2026-10-05-shard-0010",
-      "source-cycle-2026-10-05-shard-0011",
-      "source-cycle-2026-10-05-shard-0012"
+      "source-cycle-2026-10-05-6-shard-0001",
+      "source-cycle-2026-10-05-6-shard-0002",
+      "source-cycle-2026-10-05-6-shard-0003",
+      "source-cycle-2026-10-05-6-shard-0004",
+      "source-cycle-2026-10-05-6-shard-0005",
+      "source-cycle-2026-10-05-6-shard-0006",
+      "source-cycle-2026-10-05-6-shard-0007",
+      "source-cycle-2026-10-05-6-shard-0008",
+      "source-cycle-2026-10-05-6-shard-0009",
+      "source-cycle-2026-10-05-6-shard-0010",
+      "source-cycle-2026-10-05-6-shard-0011",
+      "source-cycle-2026-10-05-6-shard-0012"
     ],
     "nextShardNumber": 13,
     "universeFingerprint": "354ab7704e2116ac1eb8804cb1d5f0e140340fd4e20c895ef9cfeafc70d16c9a",
     "cyclePositionStart": 0,
-    "lastCheckpointAt": "2026-10-05T09:24:14.477Z",
+    "lastCheckpointAt": "2026-10-05T16:14:38.307Z",
     "cyclePositionEnd": 553
   },
   "sources": {
@@ -8325,14 +8325,14 @@
     },
     "undefined": {
       "url": "https://ncrtc.in/ncrtc-updates",
-      "attemptCount": 6580,
-      "failureCount": 1021,
+      "attemptCount": 7133,
+      "failureCount": 1104,
       "consecutiveFailureCount": 0,
-      "lastAttemptAt": "2026-10-05T09:24:14.477Z",
-      "lastCycleId": "source-cycle-2026-10-05",
+      "lastAttemptAt": "2026-10-05T16:14:38.307Z",
+      "lastCycleId": "source-cycle-2026-10-05-6",
       "lastFailureReason": null,
-      "lastSuccessAt": "2026-10-05T09:24:14.477Z",
-      "lastProductiveAt": "2026-10-05T09:24:14.477Z"
+      "lastSuccessAt": "2026-10-05T16:14:38.307Z",
+      "lastProductiveAt": "2026-10-05T16:14:38.307Z"
     },
     "source-11b7e1e441ea3144": {
       "sourceId": "source-11b7e1e441ea3144",
@@ -8590,6 +8590,11 @@
     {
       "cycleId": "source-cycle-2026-10-05",
       "completedAt": "2026-10-05T01:07:57.762Z",
+      "sources": 553
+    },
+    {
+      "cycleId": "source-cycle-2026-10-05",
+      "completedAt": "2026-10-05T09:24:14.477Z",
       "sources": 553
     }
   ]

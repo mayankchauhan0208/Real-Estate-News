@@ -5599,7 +5599,7 @@ function isOrdinaryCommercialTenantLaunch(article) {
 }
 
 function hasSpecificProjectOrDevelopmentSignal(article) {
-  if (isVerifiedAuthorityPropertyEvent(article)) {
+  if (isVerifiedAuthorityPropertyEvent(article) || hasPositivePropertyRightsEvent(article)) {
     return true;
   }
 
@@ -6894,7 +6894,7 @@ function localQualityJudge(article) {
   const cityScore = article.cityCode
     ? Math.max(countKeywordMentions(fullText, cityKeywords), getArticleSourceCityCodes(article).includes(article.cityCode) ? 2 : 0)
     : 0;
-  const authorityEvent = isVerifiedAuthorityPropertyEvent(article);
+  const authorityEvent = isVerifiedAuthorityPropertyEvent(article) || hasPositivePropertyRightsEvent(article);
   const hasCoreTopic = authorityEvent || hasKeyword(primaryAndUrl, ["real estate", "realty", "property", "housing", "infrastructure", "project", "metro", "expressway", "airport", "rera", "township", "land parcel", "construction", "builder", "developer", "residential", "commercial", "रियल एस्टेट", "रियल्टी", "प्रॉपर्टी", "परियोजना", "प्रोजेक्ट", "जमीन", "भूमि", "मेट्रो", "आवास", "निर्माण", "विकास", ...regionalRealEstateKeywords]);
   const hasStrongProjectSignal = authorityEvent || hasSpecificProjectOrDevelopmentSignal(article) || isPositiveTargetBusinessOrDevelopmentArticle(article) || isPositiveTargetProjectUpdate(article);
   const hasCityEvidence = cityScore > 0 || Boolean(getVerifiedAuthorityEventCityCode(article)) || hasNcrMatch(article) || hasMappedCorporateCityEvidence(article);
