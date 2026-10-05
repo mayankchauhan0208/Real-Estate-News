@@ -10,6 +10,7 @@
     "test:capacity": "node tools/normal-runtime-capacity-regression-test.mjs",
     "test:deadline": "node tools/source-deadline-semantics-regression-test.mjs",
     "test:external-worker": "node tools/external-worker-resource-regression-test.mjs",
+    "test:stale-worker": "node tools/stale-worker-lifecycle-regression-test.mjs",
     "test:memory": "node --expose-gc tools/memory-bounded-pipeline-regression-test.mjs",
     "test:text-cache": "node --expose-gc tools/text-cache-retention-regression-test.mjs",
     "test:live-content-policy": "node tools/live-content-policy-regression-test.mjs",

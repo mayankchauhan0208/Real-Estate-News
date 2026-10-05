@@ -84,6 +84,15 @@ function createRunTelemetry(meta = {}) {
     lastCompletedSource: "",
     lastCompletedStage: "",
     currentSources: [],
+    workerLifecycle: {
+      activeSourceWorkers: 0,
+      activeDetailWorkers: 0,
+      timedOutButNotSettled: 0,
+      abortedButNotCleaned: 0,
+      registrySize: 0,
+      peakActiveSourceWorkers: 0,
+      peakStaleWorkers: 0
+    },
     counts: {
       started: 0,
       completed: 0,
@@ -133,6 +142,17 @@ function createRunTelemetry(meta = {}) {
     state.events.push(event);
     if (state.events.length > 200) state.events.splice(0, state.events.length - 200);
     const sourceId = fields.sourceId;
+    if (type === "WORKER_LIFECYCLE" && fields.workerLifecycle) {
+      state.workerLifecycle = { ...state.workerLifecycle, ...fields.workerLifecycle };
+      state.workerLifecycle.peakActiveSourceWorkers = Math.max(
+        state.workerLifecycle.peakActiveSourceWorkers,
+        Number(state.workerLifecycle.activeSourceWorkers || 0)
+      );
+      state.workerLifecycle.peakStaleWorkers = Math.max(
+        state.workerLifecycle.peakStaleWorkers,
+        Number(state.workerLifecycle.timedOutButNotSettled || 0) + Number(state.workerLifecycle.abortedButNotCleaned || 0)
+      );
+    }
     if (sourceId) {
       const source = state.sources[sourceId] || {
         sourceId,
@@ -198,6 +218,10 @@ function createRunTelemetry(meta = {}) {
     async flush() {
       await persist();
       await writeChain;
+    },
+    snapshot() {
+      refreshWorkers();
+      return JSON.parse(JSON.stringify(state));
     }
   };
 }
@@ -9666,6 +9690,38 @@ async function pushArticle(article) {
 
 async function fetchSourceBatch(sourceList, options = {}) {
   const settledResults = new Map();
+  const sourceControllers = new Map();
+  const workerRegistry = new Map();
+  let workerSequence = 0;
+  const lifecycleSnapshot = () => {
+    let timedOutButNotSettled = 0;
+    let abortedButNotCleaned = 0;
+    for (const worker of workerRegistry.values()) {
+      if (worker.state === "TIMED_OUT" || worker.state === "ABORT_REQUESTED" || worker.state === "ABORTING") timedOutButNotSettled += 1;
+      if (worker.state === "ABORT_REQUESTED" || worker.state === "ABORTING") abortedButNotCleaned += 1;
+    }
+    return {
+      activeSourceWorkers: [...workerRegistry.values()].filter((worker) => worker.state === "RUNNING").length,
+      activeDetailWorkers: [...workerRegistry.values()].reduce((total, worker) => total + Number(worker.activeDetailTasks || 0), 0),
+      timedOutButNotSettled,
+      abortedButNotCleaned,
+      registrySize: workerRegistry.size
+    };
+  };
+  const emitLifecycle = () => options.telemetry?.emit("WORKER_LIFECYCLE", { workerLifecycle: lifecycleSnapshot() });
+  const boundedSettlement = async (promise, graceMs = 750) => {
+    let timer;
+    try {
+      await Promise.race([
+        promise.then(() => undefined, () => undefined),
+        new Promise((resolve) => {
+          timer = setTimeout(resolve, graceMs);
+        })
+      ]);
+    } finally {
+      clearTimeout(timer);
+    }
+  };
   const recordResult = async (source, result) => {
     if (options.streamResults === true && !result.error && Array.isArray(result.articles)) {
       const articles = result.articles;
@@ -9687,14 +9743,43 @@ async function fetchSourceBatch(sourceList, options = {}) {
     const sourceId = sourceTelemetryId(source);
     const sourceHost = sourceTelemetryHost(source);
     const workerStartedAt = Date.now();
+    const workerId = `source-${process.pid}-${++workerSequence}`;
+    const sourceController = new AbortController();
+    const worker = {
+      workerId,
+      sourceId,
+      sourceUrl: source,
+      state: "CREATED",
+      startedAt: new Date(workerStartedAt).toISOString(),
+      deadline: null,
+      abortTime: null,
+      settleTime: null,
+      cleanupTime: null,
+      activeDetailTasks: 0
+    };
+    workerRegistry.set(workerId, worker);
+    sourceControllers.set(workerId, sourceController);
+    await emitLifecycle();
+    const cleanupWorker = async (terminalState = "SETTLED_FAILURE") => {
+      worker.state = terminalState;
+      worker.settleTime ||= new Date().toISOString();
+      worker.cleanupTime = new Date().toISOString();
+      workerRegistry.delete(workerId);
+      sourceControllers.delete(workerId);
+      await emitLifecycle();
+    };
+    let sourcePromise = Promise.resolve();
     const memoryAtWorkerStart = getMemorySnapshot();
     let operationStartedAt = null;
     let sourceDeadlineAt = null;
     await telemetry?.emit("SOURCE_START", { sourceId, sourceUrl: source, sourceHost, mode: options.mode || "normal", workerStartedAt });
     await telemetry?.emit("SOURCE_STAGE", { sourceId, sourceUrl: source, stage: "fetch", workerStartedAt });
     try {
+      worker.state = "RUNNING";
+      await emitLifecycle();
       throwIfSourceBudgetExhausted(options);
     } catch (error) {
+      await cleanupWorker("SETTLED_TIMEOUT");
       await telemetry?.emit("SOURCE_TIMEOUT", {
         sourceId,
         sourceUrl: source,
@@ -9721,6 +9806,7 @@ async function fetchSourceBatch(sourceList, options = {}) {
       ? options.deadlineAt - Date.now()
       : getSourceTimeoutMs();
     if (remainingMs <= getSourceMinimumSafeStartWindowMs()) {
+      await cleanupWorker("SETTLED_TIMEOUT");
       await telemetry?.emit("SOURCE_TIMEOUT", {
         sourceId,
         sourceUrl: source,
@@ -9755,13 +9841,21 @@ async function fetchSourceBatch(sourceList, options = {}) {
         ...options,
         sourceUrl: source,
         executionStarted: true,
-        deadlineAt: sourceDeadlineAt
+        deadlineAt: sourceDeadlineAt,
+        signal: typeof AbortSignal !== "undefined" && AbortSignal.any
+          ? AbortSignal.any([options.signal, sourceController.signal].filter(Boolean))
+          : sourceController.signal
       };
-      const sourcePromise = fetchSourceWithRecovery(source, sourceOptions);
+      worker.deadline = new Date(sourceDeadlineAt).toISOString();
+      sourcePromise = fetchSourceWithRecovery(source, sourceOptions);
       sourcePromise.catch(() => {});
       let sourceDeadlineTimer;
       const sourceDeadlinePromise = new Promise((_, reject) => {
         sourceDeadlineTimer = setTimeout(() => {
+          worker.state = "TIMED_OUT";
+          worker.abortTime = new Date().toISOString();
+          sourceController.abort();
+          void emitLifecycle();
           reject(createSourceExecutionTimeoutError("source execution deadline reached before adapter settled"));
         }, Math.max(1, sourceDeadlineAt - Date.now()));
       });
@@ -9771,6 +9865,8 @@ async function fetchSourceBatch(sourceList, options = {}) {
       } finally {
         clearTimeout(sourceDeadlineTimer);
       }
+      worker.state = "SETTLED_SUCCESS";
+      worker.settleTime = new Date().toISOString();
       const memoryAfterDiscovery = getMemorySnapshot();
       const sourceCityCodes = getConfiguredSourceCityCodes(source);
       const articles = result.articles.map((article) => ({
@@ -9833,6 +9929,18 @@ async function fetchSourceBatch(sourceList, options = {}) {
       });
       return recordResult(source, { source, status: articles.length ? "SUCCESS_PRODUCTIVE" : "SUCCESS_NO_CANDIDATE", articles, attempts: result.attempts, fetchedSource: result.fetchedSource, recovered: result.recovered, operationStarted: true, workerStartedAt, operationStartedAt, workerWaitMs: operationStartedAt - workerStartedAt });
     } catch (error) {
+      if (worker.state === "RUNNING") {
+        worker.state = "ABORT_REQUESTED";
+        worker.abortTime = new Date().toISOString();
+        sourceController.abort();
+        await emitLifecycle();
+      }
+      worker.state = worker.state === "TIMED_OUT" ? "ABORTING" : worker.state;
+      await boundedSettlement(sourcePromise, 750);
+      worker.state = /timed?\s*out|timeout|deadline|aborted/i.test(error?.message || "")
+        ? "SETTLED_TIMEOUT"
+        : "SETTLED_FAILURE";
+      worker.settleTime = new Date().toISOString();
       const elapsedMs = Date.now() - (operationStartedAt || workerStartedAt);
       const sourceDeadlineExpired = sourceDeadlineAt <= Date.now() &&
         (!options.deadlineAt || sourceDeadlineAt < options.deadlineAt);
@@ -9867,6 +9975,8 @@ async function fetchSourceBatch(sourceList, options = {}) {
         operationStartedAt,
         workerWaitMs: operationStartedAt ? operationStartedAt - workerStartedAt : Date.now() - workerStartedAt
       });
+    } finally {
+      await cleanupWorker("CLEANED");
     }
   });
 
@@ -9883,13 +9993,17 @@ async function fetchSourceBatch(sourceList, options = {}) {
   }
   let deadlineTimer;
   const deadlinePromise = new Promise((resolve) => {
-    deadlineTimer = setTimeout(() => resolve(sourceList.map((source) => settledResults.get(source) || {
-      source,
-      status: "DEFERRED_BY_GLOBAL_BOUNDARY",
-      error: "source deferred at global boundary before operation",
-      attempts: 0,
-      operationStarted: false
-    })), remainingMs);
+    deadlineTimer = setTimeout(async () => {
+      for (const controller of sourceControllers.values()) controller.abort();
+      await new Promise((settle) => setTimeout(settle, 750));
+      resolve(sourceList.map((source) => settledResults.get(source) || {
+        source,
+        status: "DEFERRED_BY_GLOBAL_BOUNDARY",
+        error: "source deferred at global boundary before operation",
+        attempts: 0,
+        operationStarted: false
+      }));
+    }, remainingMs);
   });
   batchPromise.catch(() => {});
   try {
@@ -9998,13 +10112,16 @@ async function main() {
   await loadDotEnv();
 
   const allSelectedSources = getSourceUrls().filter(isAllowedSource);
-  const useResumableScheduler = getBooleanEnv("USE_RESUMABLE_SOURCE_SCHEDULER");
+  const backfillDateRange = getBackfillDateRange();
+  const useResumableScheduler = getBooleanEnv(
+    "USE_RESUMABLE_SOURCE_SCHEDULER",
+    hasBackfillDateRange(backfillDateRange)
+  );
   let selectedSources = useResumableScheduler ? [] : applySourceBatch(allSelectedSources);
   let resumableContext = null;
   let schedulerLock = null;
   const extraArticleUrls = [...new Set(getExtraArticleUrls())].filter(isAllowedExtraArticleUrl);
   const maxItems = getMaxItemsPerRun();
-  const backfillDateRange = getBackfillDateRange();
   const sentIds = await readSentIds();
   const reconciliation = await reconcileRemoteSentIds();
   if (reconciliation.ids) {
@@ -10405,7 +10522,8 @@ async function main() {
     sourceStrategy,
     runtimeTelemetry: {
       progressPath: runTelemetry.path,
-      status: pushFailures.length > 0 ? "COMPLETE_WITH_API_FAILURES" : "COMPLETE"
+      status: pushFailures.length > 0 ? "COMPLETE_WITH_API_FAILURES" : "COMPLETE",
+      workerLifecycle: runTelemetry.snapshot().workerLifecycle
     },
     allSelectedSourceCount: allSelectedSources.length,
     selectedSourceCount: selectedSources.length,
