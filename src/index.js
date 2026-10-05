@@ -1,6 +1,6 @@
 import crypto from "node:crypto";
 import { execFile as execFileCallback } from "node:child_process";
-import { readFileSync } from "node:fs";
+import { appendFileSync, existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
@@ -2220,6 +2220,108 @@ function getSourceConcurrency() {
 
 function getBackfillSourceConcurrency() {
   return Math.min(getPositiveIntegerEnv("BACKFILL_SOURCE_CONCURRENCY", 4), 4);
+}
+
+function getBackfillDetailBatchLimit() {
+  return Math.min(getPositiveIntegerEnv("MAX_BACKFILL_DETAIL_BATCH", 16), 64);
+}
+
+function isExhaustiveBackfill(options = {}) {
+  // The main runner keeps the historical source-fetch telemetry label for
+  // parity with normal ingestion. Backfill mode is determined by its explicit
+  // date/exhaustive contract, not by that display label.
+  return getBooleanEnv("BACKFILL_EXHAUSTIVE") && hasBackfillDateRange(getBackfillDateRange());
+}
+
+function backfillFrontierKey(value = "") {
+  return crypto.createHash("sha256").update(normalizeArticleUrlForDedupe(value) || String(value)).digest("hex");
+}
+
+function createBackfillDetailFrontier(sourceUrl, options = {}) {
+  if (!isExhaustiveBackfill(options)) return null;
+  const sourceKey = backfillFrontierKey(sourceUrl);
+  const root = path.join(stateDir, "backfill-frontier", sourceKey);
+  const identityDir = path.join(root, "identities");
+  const terminalDir = path.join(root, "terminal");
+  const pendingPath = path.join(root, "pending.jsonl");
+  const checkpointPath = path.join(root, "checkpoint.json");
+  const inProgressPath = path.join(root, "in-progress.json");
+  mkdirSync(identityDir, { recursive: true });
+  mkdirSync(terminalDir, { recursive: true });
+
+  const readJsonLines = (filePath) => {
+    if (!existsSync(filePath)) return [];
+    return readFileSync(filePath, "utf8").split(/\r?\n/).filter(Boolean).map((line) => JSON.parse(line));
+  };
+  const writeJsonLines = (filePath, rows) => {
+    const temporaryPath = `${filePath}.tmp-${process.pid}`;
+    writeFileSync(temporaryPath, rows.length ? `${rows.map((row) => JSON.stringify(row)).join("\n")}\n` : "");
+    renameSync(temporaryPath, filePath);
+  };
+  const identityPath = (link) => path.join(identityDir, `${backfillFrontierKey(link)}.json`);
+  const terminalPath = (link) => path.join(terminalDir, `${backfillFrontierKey(link)}.json`);
+  const checkpoint = existsSync(checkpointPath) ? JSON.parse(readFileSync(checkpointPath, "utf8")) : { batchNumber: 0, listingCursor: 0, detailsDiscovered: 0, detailsCompleted: 0 };
+  const recovered = existsSync(inProgressPath) ? readJsonLines(inProgressPath) : [];
+  if (recovered.length) {
+    writeJsonLines(pendingPath, [...recovered, ...readJsonLines(pendingPath)]);
+    writeFileSync(inProgressPath, "");
+  }
+  let pending = readJsonLines(pendingPath);
+  let maxPending = pending.length;
+
+  const persistCheckpoint = (fields = {}) => {
+    Object.assign(checkpoint, fields, { updatedAt: new Date().toISOString() });
+    writeJsonFileSync(checkpointPath, checkpoint);
+  };
+  const enqueue = (candidate) => {
+    const identity = identityPath(candidate.link);
+    if (existsSync(identity) || existsSync(terminalPath(candidate.link))) return false;
+    writeFileSync(identity, JSON.stringify({ sourceUrl, canonicalUrl: normalizeArticleUrlForDedupe(candidate.link), stableId: stableId(candidate) }));
+    appendFileSync(pendingPath, `${JSON.stringify(candidate)}\n`);
+    pending.push(candidate);
+    maxPending = Math.max(maxPending, pending.length);
+    checkpoint.detailsDiscovered += 1;
+    persistCheckpoint({ listingCursor: checkpoint.listingCursor, detailsDiscovered: checkpoint.detailsDiscovered });
+    return true;
+  };
+  const takeBatch = (limit) => {
+    const batch = pending.splice(0, limit);
+    writeJsonLines(pendingPath, pending);
+    writeJsonLines(inProgressPath, batch);
+    return batch;
+  };
+  const completeBatch = (batch, results, fields = {}) => {
+    for (const [index, candidate] of batch.entries()) {
+      const result = results[index];
+      writeFileSync(terminalPath(candidate.link), JSON.stringify({
+        sourceUrl,
+        canonicalUrl: normalizeArticleUrlForDedupe(candidate.link),
+        stableId: result?.id || stableId(candidate),
+        state: "TERMINAL",
+        title: result?.title || candidate.title,
+        publishedAt: result?.publishedAt || candidate.publishedAt || null
+      }));
+    }
+    writeFileSync(inProgressPath, "");
+    checkpoint.detailsCompleted += batch.length;
+    checkpoint.batchNumber += 1;
+    persistCheckpoint(fields);
+  };
+  return {
+    checkpoint,
+    enqueue,
+    takeBatch,
+    completeBatch,
+    pendingCount: () => pending.length,
+    maxPending: () => maxPending,
+    paths: { root, pendingPath, checkpointPath, identityDir, terminalDir }
+  };
+}
+
+function writeJsonFileSync(filePath, value) {
+  const temporaryPath = `${filePath}.tmp-${process.pid}`;
+  writeFileSync(temporaryPath, JSON.stringify(value, null, 2));
+  renameSync(temporaryPath, filePath);
 }
 
 function getArticleMetadataConcurrency() {
@@ -8625,36 +8727,9 @@ async function fetchAuthorityListings(sourceUrl, options = {}) {
     absoluteUrl($("img[src*='logo' i]").first().attr("src"), sourceUrl),
     getFallbackLogo(sourceUrl)
   );
-  const candidates = [];
-  const seen = new Set();
   const candidateLimit = getMaxItemsPerSource();
   const rows = $("table tr, article, li, .card, [class*='notice' i], [class*='scheme' i], [class*='listing' i]");
-
-  rows.each((_, element) => {
-    if (candidates.length >= candidateLimit) return;
-    const row = $(element);
-    const title = authorityRowTitle($, row);
-    const publishedAt = authorityRowDate($, row);
-    const link = authorityRowLink($, row, listingUrl);
-    const rowText = stripHtml(row.text());
-    if (!title || title.length < 18 || !publishedAt || isBlockedArticle({ title }) || !link) return;
-    // Board pages often render the same document twice as “View” and “Read
-    // more” cards. The canonical document/detail URL is the authoritative
-    // identity for this listing, so collapse those rows before fetching.
-    const dedupeKey = normalizeArticleUrlForDedupe(link);
-    if (seen.has(dedupeKey)) return;
-    seen.add(dedupeKey);
-    candidates.push({ title, publishedAt, link, rowText });
-  });
-
-  const eventSignals = /flat|flats|housing|residential|plot|plots|lottery|tenement|auction|redevelopment|scheme|project|development|रहने|आवास|सदनिका|फ्लॅट|भूखंड/iu;
-  candidates.sort((left, right) => {
-    const leftScore = eventSignals.test(`${left.title} ${left.rowText}`) ? 1 : 0;
-    const rightScore = eventSignals.test(`${right.title} ${right.rowText}`) ? 1 : 0;
-    return rightScore - leftScore || new Date(right.publishedAt) - new Date(left.publishedAt);
-  });
-  const limited = candidates.slice(0, getMaxItemsPerSource());
-  return mapWithConcurrency(limited, 4, async (candidate) => {
+  const processCandidate = async (candidate) => {
     let articleText = `${profile.evidence}. ${candidate.title}. ${candidate.rowText}`.slice(0, 5000);
     let fullArticleRead = false;
     let officialDocumentRead = false;
@@ -8726,7 +8801,74 @@ async function fetchAuthorityListings(sourceUrl, options = {}) {
     });
     const routed = applyCityCode(article);
     return { ...routed, id: stableId(routed) };
+  };
+
+  const frontier = createBackfillDetailFrontier(sourceUrl, options);
+  if (frontier) {
+    const articles = [];
+    const detailBatchLimit = getBackfillDetailBatchLimit();
+    const processBatch = async (batch) => {
+      if (!batch.length) return;
+      const results = await mapWithConcurrency(batch, Math.min(4, detailBatchLimit), processCandidate);
+      articles.push(...results);
+      frontier.completeBatch(batch, results, {
+        listingUrl,
+        listingCursor: 0,
+        maxDetailBatchObserved: detailBatchLimit
+      });
+      await options.telemetry?.emit("DETAIL_BATCH", {
+        sourceId: sourceTelemetryId(sourceUrl),
+        sourceUrl,
+        batchNumber: frontier.checkpoint.batchNumber,
+        detailsDiscovered: frontier.checkpoint.detailsDiscovered,
+        detailsCompleted: frontier.checkpoint.detailsCompleted,
+        maxDetailBatchObserved: detailBatchLimit,
+        persistedFrontier: frontier.pendingCount(),
+        frontierPath: frontier.paths.root
+      });
+    };
+    const batch = [];
+    for (const element of rows.toArray()) {
+      const row = $(element);
+      const title = authorityRowTitle($, row);
+      const publishedAt = authorityRowDate($, row);
+      const link = authorityRowLink($, row, listingUrl);
+      const rowText = stripHtml(row.text());
+      if (!title || title.length < 18 || !publishedAt || isBlockedArticle({ title }) || !link) continue;
+      const candidate = { title, publishedAt, link, rowText };
+      if (!frontier.enqueue(candidate)) continue;
+      batch.push(candidate);
+      if (batch.length >= detailBatchLimit) {
+        await processBatch(batch.splice(0, batch.length));
+      }
+    }
+    await processBatch(batch.splice(0, batch.length));
+    return articles;
+  }
+
+  const candidates = [];
+  const seen = new Set();
+  rows.each((_, element) => {
+    if (candidates.length >= candidateLimit) return;
+    const row = $(element);
+    const title = authorityRowTitle($, row);
+    const publishedAt = authorityRowDate($, row);
+    const link = authorityRowLink($, row, listingUrl);
+    const rowText = stripHtml(row.text());
+    if (!title || title.length < 18 || !publishedAt || isBlockedArticle({ title }) || !link) return;
+    const dedupeKey = normalizeArticleUrlForDedupe(link);
+    if (seen.has(dedupeKey)) return;
+    seen.add(dedupeKey);
+    candidates.push({ title, publishedAt, link, rowText });
   });
+
+  const eventSignals = /flat|flats|housing|residential|plot|plots|lottery|tenement|auction|redevelopment|scheme|project|development|रहने|आवास|सदनिका|फ्लॅट|भूखंड/iu;
+  candidates.sort((left, right) => {
+    const leftScore = eventSignals.test(`${left.title} ${left.rowText}`) ? 1 : 0;
+    const rightScore = eventSignals.test(`${right.title} ${right.rowText}`) ? 1 : 0;
+    return rightScore - leftScore || new Date(right.publishedAt) - new Date(left.publishedAt);
+  });
+  return mapWithConcurrency(candidates.slice(0, getMaxItemsPerSource()), 4, processCandidate);
 }
 
 async function fetchUpReraPressReleases(sourceUrl, options = {}) {
@@ -10253,7 +10395,8 @@ export {
   isPublishableArticle,
   isWithinBackfillDateRange,
   parseNewsDateValue,
-  getMemorySnapshot
+  getMemorySnapshot,
+  createBackfillDetailFrontier
 };
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
