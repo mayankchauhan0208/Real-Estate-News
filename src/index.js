@@ -2648,6 +2648,7 @@ function getArticleTrace(article, reasons = [], context = {}) {
 
 function reportArticle(article, context = {}) {
   const reasons = context.reasons || [];
+  const decisionPassed = reasons.length === 0;
   return {
     title: article.title || "",
     description: (article.description || "").slice(0, 500),
@@ -2663,6 +2664,14 @@ function reportArticle(article, context = {}) {
     authoritativeContent: article.authoritativeContent === true,
     articleReadError: article.articleReadError || "",
     articleTextExcerpt: (article.articleText || "").slice(0, 1200),
+    decisionEvidence: {
+      passed: decisionPassed,
+      reasons,
+      articleTextLength: (article.articleText || "").length,
+      fullArticleRead: article.fullArticleRead === true,
+      cityCode: article.cityCode || "",
+      dedupeIds: articleDedupeIds(article)
+    },
     trace: getArticleTrace(article, reasons, context)
   };
 }
