@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-06T18:31:49.606Z",
+  "updatedAt": "2026-10-06T18:31:51.858Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -68,7 +68,7 @@
     },
     {
       "claimId": "5b31f99e-ae1f-464c-94a2-d6df96ca7f12",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realtynmore.com/blue-tokai-joins-grandthum-by-group-108s-growin",
         "title-city:blue tokai joins grandthum by group 108 s growing f and b and lifestyle mix|noida",
@@ -85,7 +85,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-06T18:31:49.606Z",
-      "expiresAt": "2026-10-06T18:46:49.606Z"
+      "expiresAt": "2026-10-06T18:46:49.606Z",
+      "finalizedAt": "2026-10-06T18:31:51.858Z"
     }
   ]
 }
