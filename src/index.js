@@ -26,6 +26,7 @@ import {
   loadPublicationLedger,
   publishWithPublicationLedger
 } from "./publication-ledger.js";
+import { createGitHubPublicationClaimStore } from "./github-publication-claim.js";
 
 const userAgent =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
@@ -48,6 +49,7 @@ const sentNewsSeedPath = path.resolve("data", "sent-news-seed.json");
 // publication identity ledger for cross-mode dedupe.
 const publicationLedgerPath = path.resolve(process.env.PUBLICATION_LEDGER_PATH || path.join(".state", "publication-ledger.json"));
 const publicationLedgerSeedPath = path.resolve("data", "publication-ledger-seed.json");
+const distributedPublicationClaimStore = createGitHubPublicationClaimStore();
 let sharedPublicationLedger = null;
 const runReportsDir = path.resolve(process.env.NEWS_RUN_REPORTS_DIR || "reports", "runs");
 const sourceResultsPath = path.join(stateDir, "source-monitor-results.json");
@@ -10701,7 +10703,8 @@ async function main() {
         article,
         dedupeIds: articleDedupeIds(article),
         mode: backfillMode ? "BACKFILL" : "NORMAL",
-        publish: () => pushArticle(article)
+        publish: () => pushArticle(article),
+        claimStore: distributedPublicationClaimStore
       });
       if (publication.duplicate) {
         const reasons = ["filter 13: already sent (shared publication ledger)"];

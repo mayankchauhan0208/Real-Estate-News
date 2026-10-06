@@ -105,6 +105,10 @@ jobs:
           APP_API_KEY: ${{ secrets.APP_API_KEY }}
           APP_LIST_API_URL: ${{ secrets.APP_LIST_API_URL }}
           APP_LIST_API_KEY: ${{ secrets.APP_LIST_API_KEY || secrets.APP_API_KEY }}
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+          PUBLICATION_CLAIM_PATH: .state/publication-claims.json
           PUBLICATION_LEDGER_PATH: .state/publication-ledger.json
           BACKFILL_FROM: ${{ inputs.backfill_from }}
           BACKFILL_TO: ${{ inputs.backfill_to }}

@@ -5,6 +5,7 @@ import path from "node:path";
 const LEDGER_VERSION = 1;
 const DEFAULT_LOCK_WAIT_MS = 15_000;
 const DEFAULT_LOCK_TTL_MS = 5 * 60 * 1000;
+const DEFAULT_CLAIM_TTL_MS = 15 * 60 * 1000;
 
 function normalizeUrl(value = "") {
   if (!value) return "";
@@ -167,7 +168,8 @@ export async function publishWithPublicationLedger({
   dedupeIds,
   mode = "NORMAL",
   publish,
-  lockWaitMs = DEFAULT_LOCK_WAIT_MS
+  lockWaitMs = DEFAULT_LOCK_WAIT_MS,
+  claimStore = null
 }) {
   if (typeof publish !== "function") throw new Error("PUBLICATION_LEDGER_PUBLISH_CALLBACK_REQUIRED");
   await ensurePublicationLedgerWritable(ledgerPath);
@@ -177,12 +179,28 @@ export async function publishWithPublicationLedger({
     if (ledgerHasMatch(ledger, article, dedupeIds)) {
       return { duplicate: true, ledgerEntries: ledger.entries.length };
     }
-    const result = await publish();
+    const claim = claimStore
+      ? await claimStore.claim({ article, dedupeIds, mode })
+      : null;
+    if (claimStore && !claim?.acquired) {
+      return { duplicate: true, claimLost: true, ledgerEntries: ledger.entries.length };
+    }
+    let result;
+    try {
+      result = await publish();
+    } catch (error) {
+      if (claimStore && claim) await claimStore.finalize(claim, "FAILED");
+      throw error;
+    }
     const status = Number(result?.status || 0);
-    if (status < 200 || status >= 300) throw new Error(`PUBLICATION_POST_NOT_SUCCESSFUL_HTTP_${status || "UNKNOWN"}`);
+    if (status < 200 || status >= 300) {
+      if (claimStore && claim) await claimStore.finalize(claim, "FAILED");
+      throw new Error(`PUBLICATION_POST_NOT_SUCCESSFUL_HTTP_${status || "UNKNOWN"}`);
+    }
     const entry = identityFor({ ...article, originMode: mode }, dedupeIds);
     if (!mergeEntries(ledger, [entry])) throw new Error("PUBLICATION_LEDGER_IDENTITY_CONFLICT");
     await writeJsonAtomic(ledgerPath, ledger);
+    if (claimStore && claim) await claimStore.finalize(claim, "PUBLISHED");
     return { duplicate: false, result, entry, ledgerEntries: ledger.entries.length };
   } finally {
     await release();
