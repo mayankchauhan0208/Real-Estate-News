@@ -98,6 +98,8 @@ jobs:
           APP_LIST_API_KEY: ${{ secrets.APP_LIST_API_KEY || secrets.APP_API_KEY }}
           BACKFILL_FROM: ${{ inputs.backfill_from }}
           BACKFILL_TO: ${{ inputs.backfill_to }}
+          RUN_MODE: BACKFILL
+          BACKFILL_MODE: "true"
           BACKFILL_EXHAUSTIVE: "true"
           DRY_RUN: ${{ inputs.mode == 'DRY_RUN' && 'true' || 'false' }}
           RESEND_BACKFILL: "false"

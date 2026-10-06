@@ -2523,6 +2523,11 @@ function getDefaultLookbackDays() {
   return getPositiveIntegerEnv("DEFAULT_LOOKBACK_DAYS", 20);
 }
 
+const RUN_MODE = Object.freeze({
+  NORMAL_CURRENT: "NORMAL_CURRENT",
+  BACKFILL: "BACKFILL"
+});
+
 function getBooleanEnv(name, fallback = false) {
   const value = env(name);
 
@@ -2552,21 +2557,57 @@ function parseDateBoundary(value, endOfDay = false) {
   return date;
 }
 
+function hasExplicitBackfillInputs() {
+  return Boolean(String(env("BACKFILL_FROM") || "").trim() || String(env("BACKFILL_TO") || "").trim());
+}
+
+function getRunMode() {
+  const requested = String(env("RUN_MODE") || "").trim().toUpperCase();
+  const explicitBackfill = hasExplicitBackfillInputs();
+
+  if (requested === RUN_MODE.NORMAL_CURRENT || requested === "NORMAL") {
+    return RUN_MODE.NORMAL_CURRENT;
+  }
+
+  if (requested === RUN_MODE.BACKFILL || getBooleanEnv("BACKFILL_MODE") || explicitBackfill) {
+    return RUN_MODE.BACKFILL;
+  }
+
+  if (!requested) {
+    return RUN_MODE.NORMAL_CURRENT;
+  }
+
+  throw new Error(`Unsupported RUN_MODE: ${requested}. Use NORMAL_CURRENT or BACKFILL.`);
+}
+
 function getBackfillDateRange() {
   let from = parseDateBoundary("BACKFILL_FROM");
   let to = parseDateBoundary("BACKFILL_TO", true);
-
-  if (!from && !to) {
-    const defaultLookbackDays = getDefaultLookbackDays();
-    to = new Date();
-    from = new Date(to.getTime() - defaultLookbackDays * 24 * 60 * 60 * 1000);
-  }
 
   if (from && to && from > to) {
     throw new Error("BACKFILL_FROM must be before or equal to BACKFILL_TO.");
   }
 
   return { from, to };
+}
+
+function getCurrentNewsFreshnessRange(now = new Date()) {
+  const to = new Date(now);
+  const from = new Date(to.getTime() - getDefaultLookbackDays() * 24 * 60 * 60 * 1000);
+  return { from, to };
+}
+
+function assertRunModeContract(runMode, backfillDateRange) {
+  const hasRange = hasBackfillDateRange(backfillDateRange);
+  const explicitBackfill = hasExplicitBackfillInputs();
+
+  if (runMode === RUN_MODE.NORMAL_CURRENT && (hasRange || explicitBackfill || getBooleanEnv("BACKFILL_MODE"))) {
+    throw new Error("NORMAL_MODE_HISTORICAL_RANGE_FORBIDDEN");
+  }
+
+  if (runMode === RUN_MODE.BACKFILL && !hasRange) {
+    throw new Error("BACKFILL_MODE_REQUIRES_EXPLICIT_DATE_RANGE");
+  }
 }
 
 function getArticleDate(article) {
@@ -10235,11 +10276,13 @@ async function main() {
   await loadDotEnv();
 
   const allSelectedSources = getSourceUrls().filter(isAllowedSource);
+  const runMode = getRunMode();
   const backfillDateRange = getBackfillDateRange();
-  const useResumableScheduler = getBooleanEnv(
-    "USE_RESUMABLE_SOURCE_SCHEDULER",
-    hasBackfillDateRange(backfillDateRange)
-  );
+  assertRunModeContract(runMode, backfillDateRange);
+  const backfillMode = runMode === RUN_MODE.BACKFILL;
+  const currentFreshnessRange = backfillMode ? { from: null, to: null } : getCurrentNewsFreshnessRange();
+  const activeDateRange = backfillMode ? backfillDateRange : currentFreshnessRange;
+  const useResumableScheduler = getBooleanEnv("USE_RESUMABLE_SOURCE_SCHEDULER", false);
   let selectedSources = useResumableScheduler ? [] : applySourceBatch(allSelectedSources);
   let resumableContext = null;
   let schedulerLock = null;
@@ -10251,7 +10294,7 @@ async function main() {
     for (const id of reconciliation.ids) sentIds.add(id);
     console.log(`Remote API reconciliation loaded ${reconciliation.fetched} existing article keys from ${reconciliation.pages} page(s).`);
   }
-  const resendBackfill = getBooleanEnv("RESEND_BACKFILL") && hasBackfillDateRange(backfillDateRange);
+  const resendBackfill = backfillMode && getBooleanEnv("RESEND_BACKFILL");
   const filterSentIds = resendBackfill ? new Set() : sentIds;
   const skipTitleSet = getSkipTitleSet();
   const targetCityCodeFilter = getTargetCityCodeFilter();
@@ -10264,7 +10307,7 @@ async function main() {
   const postedArticles = [];
   const pushFailures = [];
   const dryRunCandidates = [];
-  const streamingBackfill = hasBackfillDateRange(backfillDateRange) && getBooleanEnv("BACKFILL_EXHAUSTIVE");
+  const streamingBackfill = backfillMode && getBooleanEnv("BACKFILL_EXHAUSTIVE");
   const backfillTerminalStream = streamingBackfill ? createBackfillTerminalStream() : null;
   const streamedRejectionReasons = new Map();
   const streamedCandidateArticles = new Map();
@@ -10320,11 +10363,15 @@ async function main() {
     console.log(`Source batch: processing ${selectedSources.length} of ${allSelectedSources.length} allowed sources.`);
   }
 
-  if (backfillDateRange.from || backfillDateRange.to) {
+  if (backfillMode && (backfillDateRange.from || backfillDateRange.to)) {
     console.log(
       `Backfill date window: ${backfillDateRange.from?.toISOString() || "beginning"} to ${
         backfillDateRange.to?.toISOString() || "now"
       }`
+    );
+  } else if (!backfillMode) {
+    console.log(
+      `Current-news freshness window: ${currentFreshnessRange.from.toISOString()} to ${currentFreshnessRange.to.toISOString()}`
     );
   }
 
@@ -10377,8 +10424,8 @@ async function main() {
           deadlineAt: fetchDeadlineAt,
           signal: globalBudgetController.signal,
           telemetry: runTelemetry,
-          mode: hasBackfillDateRange(backfillDateRange) ? "backfill" : "normal-current-news",
-          concurrency: hasBackfillDateRange(backfillDateRange) ? getBackfillSourceConcurrency() : getSourceConcurrency()
+          mode: backfillMode ? "backfill" : "normal-current-news",
+          concurrency: backfillMode ? getBackfillSourceConcurrency() : getSourceConcurrency()
         });
         const startedResults = batchResults.filter((result) => result.status !== "DEFERRED_BY_GLOBAL_BOUNDARY");
         await checkpointResumableSourceShard(resumableContext, shard, startedResults);
@@ -10474,10 +10521,12 @@ async function main() {
       .flatMap(expandCityArticles)
       .filter((article) => targetCityCodeFilter.size === 0 || targetCityCodeFilter.has(article.cityCode));
   console.log(`Expanded ${streamingBackfill ? expandedAllArticles.length : allArticles.length} fetched articles to ${expandedAllArticles.length} city articles in ${formatDuration(Date.now() - filterStartedAt)}.`);
-  logDateExcludedPublishableArticles(expandedAllArticles, backfillDateRange, filterSentIds, skipTitleSet);
+  if (backfillMode) {
+    logDateExcludedPublishableArticles(expandedAllArticles, backfillDateRange, filterSentIds, skipTitleSet);
+  }
 
   const expandedArticles = expandedAllArticles.filter((article) =>
-    isWithinBackfillDateRange(article, backfillDateRange)
+    isWithinBackfillDateRange(article, activeDateRange)
   );
   console.log(`Date window kept ${expandedArticles.length} articles in ${formatDuration(Date.now() - filterStartedAt)}.`);
 
@@ -10644,6 +10693,8 @@ async function main() {
   await writeRunReport({
     generatedAt: new Date().toISOString(),
     mode: shouldDryRun() ? "dry-run" : "live",
+    runMode,
+    backfillMode,
     dryRun: shouldDryRun(),
     noidaEnabled: isNoidaCityEnabled(),
     targetCityCodes: [...targetCityCodeFilter],
@@ -10651,6 +10702,12 @@ async function main() {
       from: backfillDateRange.from?.toISOString() || "",
       to: backfillDateRange.to?.toISOString() || ""
     },
+    freshnessWindow: {
+      from: currentFreshnessRange.from?.toISOString() || "",
+      to: currentFreshnessRange.to?.toISOString() || ""
+    },
+    historicalTraversal: backfillMode,
+    backfillStateUsed: backfillMode,
     buildVersion,
     commitSha,
     sourceStrategy,
@@ -10751,6 +10808,10 @@ export {
   getExtraArticleUrls,
   hasDisallowedLanguage,
   hasBackfillDateRange,
+  getRunMode,
+  getBackfillDateRange,
+  getCurrentNewsFreshnessRange,
+  assertRunModeContract,
   isLikelyFeedUrl,
   getFeedFallbackPageUrl,
   getAutomaticSourceBatchIndex,
