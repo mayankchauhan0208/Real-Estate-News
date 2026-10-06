@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-06T17:42:42.918Z",
+  "updatedAt": "2026-10-06T17:42:44.519Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -26,7 +26,7 @@
     },
     {
       "claimId": "6fea866e-7572-445b-a778-f8b81db76ff5",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/residential/prayagraj-plans-to-build-1200-government-flats-in-naini-jhunsi-amid-housing-shortage/134722463",
         "title-city:prayagraj plans to build 1 200 government flats in naini jhunsi amid housing shortage|allahabad",
@@ -42,7 +42,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-06T17:42:42.918Z",
-      "expiresAt": "2026-10-06T17:57:42.918Z"
+      "expiresAt": "2026-10-06T17:57:42.918Z",
+      "finalizedAt": "2026-10-06T17:42:44.519Z"
     }
   ]
 }
