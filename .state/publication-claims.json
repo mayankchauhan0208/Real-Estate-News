@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-06T17:42:47.823Z",
+  "updatedAt": "2026-10-06T18:31:49.606Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -65,6 +65,27 @@
       "claimedAt": "2026-10-06T17:42:46.153Z",
       "expiresAt": "2026-10-06T17:57:46.153Z",
       "finalizedAt": "2026-10-06T17:42:47.823Z"
+    },
+    {
+      "claimId": "5b31f99e-ae1f-464c-94a2-d6df96ca7f12",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/blue-tokai-joins-grandthum-by-group-108s-growin",
+        "title-city:blue tokai joins grandthum by group 108 s growing f and b and lifestyle mix|noida",
+        "dedupe:19de3b1510199de5adae35634cf0044deb800cdf9f42d93c6f5b23a1ce561bfc",
+        "dedupe:85d5df3c4b2062ef67c4b8c8a80d7ecc8466ff5c2866af7fd99c07320e7bc692",
+        "dedupe:0be0089efd9af1944d3c9610d3bfcb7c48e7b755593d03eb2a96ad3ff346765d",
+        "dedupe:d7ce0d0f25a397f2aabba46eb8531fd4f58299f26a03516222489dd420f4cd4a",
+        "dedupe:blue tokai grandthum group s growing f b lifestyle mix|noida",
+        "dedupe:2f4f2eaab503b1b5f4c61476af1a13e7c2eaa16191bfb030ec1cb2c21b51b244",
+        "dedupe:4ffdfc3052f7982c17c1b50ae252a6c914b5eae4e9bcc5460908c42a9f13bb01"
+      ],
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-06T18:31:49.606Z",
+      "expiresAt": "2026-10-06T18:46:49.606Z"
     }
   ]
 }
