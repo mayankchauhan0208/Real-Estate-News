@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-06T17:42:44.519Z",
+  "updatedAt": "2026-10-06T17:42:46.153Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -44,6 +44,26 @@
       "claimedAt": "2026-10-06T17:42:42.918Z",
       "expiresAt": "2026-10-06T17:57:42.918Z",
       "finalizedAt": "2026-10-06T17:42:44.519Z"
+    },
+    {
+      "claimId": "f1f092eb-89bc-4379-9684-29d8c1ff4a42",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/residential/rehabilitation-township-to-be-ready-by-oct-end-kerala-agriculture-minister/134741355",
+        "title-city:rehabilitation township to be ready by oct end kerala agriculture minister|calicut",
+        "dedupe:4302724f5bbf6c7ff14dd929b0aa5258a286cd66adaefde3a5b7f28eec8068a6",
+        "dedupe:5c65eee40659d53338389702f509ff3c65f76c7575e57b8122d475da42b8aab6",
+        "dedupe:55f29aa460b715796b6efdb91e6796e7261415a42875607948e30c0b2f78c09f",
+        "dedupe:rehabilitation township be ready oct end kerala agriculture minister|calicut",
+        "dedupe:3287211bab8d10872b842282c19f38a391bf3fa66b04adb3b947c11982b0224f",
+        "dedupe:0d76ee189c67a6e958d54667ec0476cc1b38b16e1cbc952c3f1220099056b801"
+      ],
+      "city": [
+        "calicut"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-06T17:42:46.153Z",
+      "expiresAt": "2026-10-06T17:57:46.153Z"
     }
   ]
 }
