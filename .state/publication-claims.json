@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-06T17:42:39.160Z",
+  "claims": [
+    {
+      "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/news/company/corporate-trends/cci-approves-jsw-internal-restructuring-three-more-deals/articleshow/134743275.cms",
+        "title-city:cci approves jsw internal restructuring three more deals|gujarat",
+        "dedupe:f044425cf10b803a0e63c9c1e0bb287996f070c75ea2c9aa511a844a40c57ba0",
+        "dedupe:344142602b50d2409a1b0e7e2d0a94d65622263ccb0e3b0aa718bbf80ac699ad",
+        "dedupe:3eac3507f42144410e9e105753aecde364e9adcd0922ed169b0752bdeebce858",
+        "dedupe:4c19ae6f195199463534a74409d721fca35c3bcba34807d311c408877a92535c",
+        "dedupe:cci approves jsw internal restructuring three more deals|gujarat",
+        "dedupe:29a1d356c952ca2ce153695b4141a6b534895bf1f2c7f16c6ae57e50d460c609",
+        "dedupe:89959a20e6deb9dbffa51e5b40cf7b6edfa46511407cf4f6c969357b23318925"
+      ],
+      "city": [
+        "gujarat"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-06T17:42:39.160Z",
+      "expiresAt": "2026-10-06T17:57:39.160Z"
+    }
+  ]
+}
