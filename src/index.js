@@ -5334,8 +5334,13 @@ function isEducationOnlyAnnouncement(article) {
 
 function hasConcretePropertyEvent(article) {
   const primary = getArticlePrimaryText(article);
-  const searchable = getArticleSearchText(article);
-  const eventText = `${primary} ${searchable}`;
+  // Full-page extraction can include related-story rails, newsletter copy,
+  // and recommendation modules. They must not manufacture a property event
+  // for a corporate article whose actual lead is about another transaction.
+  const body = getArticleBodyText(article).split(
+    /\b(?:top rated projects|property options|explore all projects|read more news on|prime exclusives|investment ideas)\b/i
+  )[0].slice(0, 3500);
+  const eventText = `${primary} ${body}`;
   const propertyObject = "(?:real estate|realty|property|properties|housing|residential|commercial|apartment|apartments|homes?|plots?|land parcel|land acquisition|township|warehouse|warehousing|logistics park|industrial park|office space|retail space|redevelopment|project|scheme|allotment|registration)";
   const eventAction = "(?:launch(?:ed|es)?|approv(?:e|es|ed|al)|acquir(?:e|ed|es)|purchas(?:e|ed|es)|sell|sold|sale|registr(?:ation|ered)|leas(?:e|ed|es)|rent(?:ed|s)?|allot(?:ment|ted)?|auction(?:ed|s)?|construct(?:ion|ed|s)|complet(?:ion|ed)|develop(?:ed|ing|ment|s)?|plan(?:s|ned)?|invest(?:ed|ment|s)?|redevelop(?:ed|ment|s)?|sign(?:ed|s)?|conver(?:sion|ted)|transact(?:ion|ions)?)";
 
@@ -5347,6 +5352,35 @@ function hasConcretePropertyEvent(article) {
 
   const primaryAndUrl = `${primary} ${getArticleUrlText(article)}`;
   return new RegExp(`\\b(?:named|specific|identified|new|upcoming|proposed|approved|launched|acquired|leased|allotted|registered)\\b[^.!?]{0,100}\\b${propertyObject}\\b`, "i").test(primaryAndUrl);
+}
+
+function isCorporateTransactionWithoutPropertyEvent(article) {
+  const primary = getArticlePrimaryText(article);
+  const searchable = getArticleSearchText(article);
+  const corporateTransaction = hasKeyword(primary, [
+    "cci", "competition commission", "corporate restructuring", "internal restructuring",
+    "merger", "merger approval", "stake acquisition", "shareholding", "corporate deal",
+    "corporate transaction", "approves deals", "approved deals"
+  ]) || hasKeyword(searchable, [
+    "competition commission of india", "internal restructuring", "corporate restructuring"
+  ]);
+
+  if (!corporateTransaction) {
+    return false;
+  }
+
+  const equityOnlyTransaction = /\b(?:acquir(?:e|ed|es)|buy|bought|purchase(?:d|s)?|takeover|take a stake|shareholding)\b[^.!?]{0,100}\b(?:stake|shareholding|shares?|company|control)\b/i.test(searchable);
+  const explicitPropertyAsset = /\b(?:land parcel|land acquisition|residential project|commercial project|housing project|office space|retail space|warehouse|logistics park|industrial park|township|property asset|real estate asset)\b/i.test(searchable);
+
+  if (equityOnlyTransaction && !explicitPropertyAsset) {
+    return true;
+  }
+
+  // Company, securities, highway, hospitality, and other CCI transactions
+  // cannot become property coverage from generic words such as project,
+  // development, investment, or deal. A material property object and action
+  // must occur in the same bounded phrase before this guard yields.
+  return !hasConcretePropertyEvent(article);
 }
 
 function hasSpecificPropertyEventInLead(article) {
@@ -5398,6 +5432,9 @@ function isClearlyOffTopicNonDevelopmentArticle(article) {
   const title = getArticlePrimaryText(article);
   const text = getArticleSearchText(article);
   const articleUrl = getArticleUrlText(article);
+  if (isCorporateTransactionWithoutPropertyEvent(article)) {
+    return true;
+  }
   if (/^property development$/i.test(title.trim()) ||
       /^haryana\s*\(gurugram\)\s+rera$/i.test(title.trim())) {
     return true;
@@ -5587,6 +5624,10 @@ function isRealEstateRelated(article) {
     return false;
   }
 
+  if (isCorporateTransactionWithoutPropertyEvent(article)) {
+    return false;
+  }
+
   if (isClearlyOffTopicNonDevelopmentArticle(article)) {
     return false;
   }
@@ -5751,6 +5792,10 @@ function detectCityCodes(article) {
     return [];
   }
 
+  if (getUnsupportedEventLocationEvidence(article)) {
+    return [];
+  }
+
   // Transport/tunnel/rail pages can contain navigation menus for many
   // cities. Do not convert those menu names into real-estate geo routes
   // unless the article has an actual property/development nexus.
@@ -5760,6 +5805,13 @@ function detectCityCodes(article) {
   }
 
   const primaryText = getArticlePrimaryText(article);
+  const titleEventCityCodes = cityRules
+    .filter((rule) => hasWholeWordKeyword(String(article.title || "").toLowerCase(), rule.keywords))
+    .map((rule) => rule.code)
+    .filter((code) => code !== "delhi_ncr" && !isGenericDelhiNcrCityAlias(code, article));
+  if (titleEventCityCodes.length === 1 && !article.authoritativeContent && article.cityCode === titleEventCityCodes[0]) {
+    return titleEventCityCodes;
+  }
   if (hasSpecificYeidaProjectEvidence(article)) {
     return ["noida"];
   }
@@ -5884,6 +5936,28 @@ function hasForeignPropertyEvent(article) {
   const propertyEvent = /\b(?:property|real estate|realty|residential|commercial|developer|housing|apartment|land parcel|township)\b/i.test(text);
   const supportedIndianLocation = cityRules.some((rule) => hasWholeWordKeyword(text, rule.keywords));
   return foreignLocation && propertyEvent && !supportedIndianLocation;
+}
+
+function getUnsupportedEventLocationEvidence(article) {
+  const title = getArticlePrimaryText(article);
+  const body = getArticleBodyText(article);
+  const eventObject = "(?:home|homes|house|houses|residence|residences|housing|flat|flats|township|project|construction|reconstruction|development|land|plot|plots|amenit(?:y|ies))";
+  const unsupportedLocation = "(?:wayanad|kalpetta|mundakkai|chooralmala)";
+  const eventLocationPattern = new RegExp(
+    `(?:\\b${eventObject}\\b[^.!?]{0,160}\\b${unsupportedLocation}\\b|\\b${unsupportedLocation}\\b[^.!?]{0,160}\\b${eventObject}\\b)`,
+    "i"
+  );
+
+  if (eventLocationPattern.test(body)) {
+    return "unsupported event locality: Wayanad/Kalpetta";
+  }
+
+  if (hasWholeWordKeyword(title, ["wayanad", "kalpetta", "mundakkai", "chooralmala"]) &&
+      hasKeyword(`${title} ${body}`, ["housing", "home", "house", "flat", "township", "project", "construction", "development"])) {
+    return "unsupported event locality: Wayanad/Kalpetta";
+  }
+
+  return "";
 }
 
 function hasTargetRegionInPrimaryText(article) {
@@ -7069,6 +7143,11 @@ function getRejectionReasons(article, sentIds) {
 
   if (hasForeignPropertyEvent(article)) {
     reasons.push("filter 5: foreign property event has no supported Indian city");
+  }
+
+  const unsupportedEventLocation = getUnsupportedEventLocationEvidence(article);
+  if (unsupportedEventLocation) {
+    reasons.push("review: NO_SUPPORTED_EVENT_CITY");
   }
 
   if (!realEstateRelated) {
