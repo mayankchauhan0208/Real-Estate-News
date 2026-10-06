@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "updatedAt": "2026-10-05T09:26:00.753Z",
+  "entries": [
+    {
+      "recordId": "",
+      "canonicalUrl": "https://www.business-standard.com/industry/news/raymond-realty-q2-fy27-pre-sales-rs-902-crore-mahim-projects-126100500476_1.html",
+      "normalizedUrl": "https://business-standard.com/industry/news/raymond-realty-q2-fy27-pre-sales-rs-902-crore-mahim-projects-126100500476_1.html",
+      "stableId": "",
+      "unicodeNormalizedTitle": "raymond realty sees 98 q2 pre sales growth keeps leverage below ceiling mumbai",
+      "city": ["mumbai"],
+      "publicationDate": "2026-10-04T18:30:00Z",
+      "eventFingerprint": "",
+      "identityKeys": [
+        "url:https://business-standard.com/industry/news/raymond-realty-q2-fy27-pre-sales-rs-902-crore-mahim-projects-126100500476_1.html",
+        "title-city:raymond realty sees 98 q2 pre sales growth keeps leverage below ceiling|mumbai",
+        "dedupe:43590fc8172772490a5bb8118fa62dc3dd1c35065a7d16a165ba40f7a14f1e11"
+      ],
+      "postedAt": "2026-10-05T09:26:00.753Z",
+      "originMode": "NORMAL"
+    },
+    {
+      "recordId": "",
+      "canonicalUrl": "https://www.magicbricks.com/news/dlf-sells-172-senior-living-homes-in-gurugram-for-rs-1985-crore-ssmb/151978.html",
+      "normalizedUrl": "https://magicbricks.com/news/dlf-sells-172-senior-living-homes-in-gurugram-for-rs-1985-crore-ssmb/151978.html",
+      "stableId": "",
+      "unicodeNormalizedTitle": "dlf sells 172 senior living homes in gurugram for rs 1 985 crore",
+      "city": ["gurugram"],
+      "publicationDate": "2026-10-05T07:25:36Z",
+      "eventFingerprint": "event:dlf|senior-living-sale|gurugram||",
+      "identityKeys": [
+        "url:https://magicbricks.com/news/dlf-sells-172-senior-living-homes-in-gurugram-for-rs-1985-crore-ssmb/151978.html",
+        "title-city:dlf sells 172 senior living homes in gurugram for rs 1 985 crore|gurugram",
+        "dedupe:event:dlf|senior-living-sale|gurugram||"
+      ],
+      "postedAt": "2026-10-05T09:26:00.753Z",
+      "originMode": "NORMAL"
+    },
+    {
+      "recordId": "",
+      "canonicalUrl": "https://realtynmore.com/gaur-alaris-sells-out-entire-inventory-in-48-hours/",
+      "normalizedUrl": "https://realtynmore.com/gaur-alaris-sells-out-entire-inventory-in-48-hours",
+      "stableId": "",
+      "unicodeNormalizedTitle": "gaur alaris sells out entire inventory in 48 hours reaching sales of rs 1800 crore",
+      "city": ["noida"],
+      "publicationDate": "2026-10-05T08:00:02Z",
+      "eventFingerprint": "",
+      "identityKeys": [
+        "url:https://realtynmore.com/gaur-alaris-sells-out-entire-inventory-in-48-hours",
+        "title-city:gaur alaris sells out entire inventory in 48 hours reaching sales of rs 1800 crore|noida",
+        "dedupe:01824806338a68981b99b55b32e23487bdad0d2fcd31837e000f1fe40c876947"
+      ],
+      "postedAt": "2026-10-05T09:26:00.753Z",
+      "originMode": "NORMAL"
+    }
+  ]
+}

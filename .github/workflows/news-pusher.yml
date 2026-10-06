@@ -100,6 +100,14 @@ jobs:
           restore-keys: |
             news-state-
 
+      - name: Restore shared publication ledger
+        uses: actions/cache@v6
+        with:
+          path: .state/publication-ledger.json
+          key: publication-ledger-${{ github.run_id }}
+          restore-keys: |
+            publication-ledger-
+
       - name: Install dependencies
         run: npm ci
 
@@ -113,6 +121,7 @@ jobs:
           APP_API_KEY: ${{ secrets.APP_API_KEY }}
           APP_LIST_API_URL: ${{ secrets.APP_LIST_API_URL }}
           APP_LIST_API_KEY: ${{ secrets.APP_LIST_API_KEY || secrets.APP_API_KEY }}
+          PUBLICATION_LEDGER_PATH: .state/publication-ledger.json
           BACKFILL_FROM: ${{ github.event.inputs.backfill_from || '' }}
           BACKFILL_TO: ${{ github.event.inputs.backfill_to || '' }}
           RESEND_BACKFILL: ${{ github.event.inputs.resend_backfill || 'false' }}

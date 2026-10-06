@@ -21,6 +21,11 @@ import {
   startOrResumeCycle,
   writeJsonAtomic
 } from "./source-monitor-scheduler.js";
+import {
+  ledgerHasMatch,
+  loadPublicationLedger,
+  publishWithPublicationLedger
+} from "./publication-ledger.js";
 
 const userAgent =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36";
@@ -38,6 +43,12 @@ const parser = new Parser({
 const stateDir = path.resolve(process.env.NEWS_STATE_DIR || ".state");
 const sentNewsPath = path.join(stateDir, "sent-news.json");
 const sentNewsSeedPath = path.resolve("data", "sent-news-seed.json");
+// Publication history is deliberately outside NEWS_STATE_DIR. Backfill keeps
+// scheduler/frontier state isolated, but normal and backfill share this one
+// publication identity ledger for cross-mode dedupe.
+const publicationLedgerPath = path.resolve(process.env.PUBLICATION_LEDGER_PATH || path.join(".state", "publication-ledger.json"));
+const publicationLedgerSeedPath = path.resolve("data", "publication-ledger-seed.json");
+let sharedPublicationLedger = null;
 const runReportsDir = path.resolve(process.env.NEWS_RUN_REPORTS_DIR || "reports", "runs");
 const sourceResultsPath = path.join(stateDir, "source-monitor-results.json");
 const adminSettingsPath = path.resolve("config", "admin-settings.json");
@@ -7198,7 +7209,8 @@ function getRejectionReasons(article, sentIds) {
     reasons.push(`filter 12: invalid URL fields (${invalidUrlFields.join(", ")})`);
   }
 
-  if (articleDedupeIds(article).some((id) => sentIds.has(id))) {
+  if (articleDedupeIds(article).some((id) => sentIds.has(id)) ||
+      (sharedPublicationLedger && ledgerHasMatch(sharedPublicationLedger, article, articleDedupeIds(article)))) {
     reasons.push("filter 13: already sent");
   }
 
@@ -7222,7 +7234,8 @@ function getFastRejectionReasons(article, sentIds, skipTitleSet) {
     return ["filter 5: no allowed city match"];
   }
 
-  if (articleDedupeIds(article).some((id) => sentIds.has(id))) {
+  if (articleDedupeIds(article).some((id) => sentIds.has(id)) ||
+      (sharedPublicationLedger && ledgerHasMatch(sharedPublicationLedger, article, articleDedupeIds(article)))) {
     return ["filter 13: already sent"];
   }
 
@@ -7281,7 +7294,7 @@ async function writeSentIds(sentIds) {
 }
 
 async function reconcileRemoteSentIds() {
-  const listUrl = env("APP_LIST_API_URL");
+  const listUrl = env("APP_LIST_API_URL") || env("BROKKET_NEWS_LIST_URL") || "https://www.brokket.app/api/more-pages/news/list";
   if (!listUrl) return { enabled: false, fetched: 0, pages: 0 };
 
   const apiKey = env("APP_LIST_API_KEY") || env("APP_API_KEY");
@@ -7296,16 +7309,26 @@ async function reconcileRemoteSentIds() {
       headers.Authorization = `Bearer ${apiKey}`;
       headers.ACCESS_TOKEN = apiKey;
     }
-    const response = await fetchWithTimeout(listUrl, {
-      method: "POST",
-      headers,
-      body: JSON.stringify({ page, size: pageSize })
-    }, Math.min(30000, getFetchTimeoutMs()));
-    const body = await readResponseBodyWithTimeout(response);
-    if (!response.ok) throw new Error(`API reconciliation failed with ${response.status}: ${body.slice(0, 240)}`);
+    let response;
+    let body;
+    try {
+      response = await fetchWithTimeout(listUrl, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({ page, size: pageSize })
+      }, Math.min(30000, getFetchTimeoutMs()));
+      body = await readResponseBodyWithTimeout(response);
+    } catch (error) {
+      return { enabled: true, unavailable: true, fetched: 0, pages, ids, error: String(error?.message || error) };
+    }
+    if (!response.ok) {
+      return { enabled: true, unavailable: true, fetched: 0, pages, ids, error: `API reconciliation failed with ${response.status}: ${body.slice(0, 240)}` };
+    }
 
     let payload;
-    try { payload = JSON.parse(body); } catch { throw new Error("API reconciliation returned invalid JSON."); }
+    try { payload = JSON.parse(body); } catch {
+      return { enabled: true, unavailable: true, fetched: 0, pages, ids, error: "API reconciliation returned invalid JSON." };
+    }
     const pageData = payload?.data?.page || payload?.data || payload;
     const items = Array.isArray(pageData?.content) ? pageData.content : Array.isArray(pageData) ? pageData : [];
     for (const item of items) {
@@ -10299,11 +10322,19 @@ async function main() {
   let schedulerLock = null;
   const extraArticleUrls = [...new Set(getExtraArticleUrls())].filter(isAllowedExtraArticleUrl);
   const maxItems = getMaxItemsPerRun();
+  sharedPublicationLedger = await loadPublicationLedger({
+    ledgerPath: publicationLedgerPath,
+    seedPath: publicationLedgerSeedPath
+  });
+  console.log(`Shared publication ledger loaded: ${sharedPublicationLedger.entries.length} identities.`);
   const sentIds = await readSentIds();
   const reconciliation = await reconcileRemoteSentIds();
   if (reconciliation.ids) {
     for (const id of reconciliation.ids) sentIds.add(id);
     console.log(`Remote API reconciliation loaded ${reconciliation.fetched} existing article keys from ${reconciliation.pages} page(s).`);
+  }
+  if (reconciliation.unavailable) {
+    console.warn(`Remote history reconciliation unavailable; continuing with shared publication ledger: ${reconciliation.error}`);
   }
   const resendBackfill = backfillMode && getBooleanEnv("RESEND_BACKFILL");
   const filterSentIds = resendBackfill ? new Set() : sentIds;
@@ -10664,11 +10695,27 @@ async function main() {
           continue;
         }
       }
-      const result = await pushArticle(article);
-      for (const id of articleDedupeIds(article)) {
-        sentIds.add(id);
+      const publication = await publishWithPublicationLedger({
+        ledgerPath: publicationLedgerPath,
+        seedPath: publicationLedgerSeedPath,
+        article,
+        dedupeIds: articleDedupeIds(article),
+        mode: backfillMode ? "BACKFILL" : "NORMAL",
+        publish: () => pushArticle(article)
+      });
+      if (publication.duplicate) {
+        const reasons = ["filter 13: already sent (shared publication ledger)"];
+        missedNewsCandidates.push({ article, reasons });
+        console.log(`Skipped shared-ledger duplicate (${article.cityCode}): ${article.title} | ${article.newsLink}`);
+        continue;
       }
+      sharedPublicationLedger = await loadPublicationLedger({
+        ledgerPath: publicationLedgerPath,
+        seedPath: publicationLedgerSeedPath
+      });
+      for (const id of articleDedupeIds(article)) sentIds.add(id);
       await writeSentIds(sentIds);
+      const result = publication.result;
       postedArticles.push(reportArticle(article, { finalState: "PUBLISHED", publishAttempt: "attempted", publishResult: `HTTP_${result.status}` }));
       console.log(
         `Pushed (${result.status}, ${article.cityCode}): ${article.title} | API response: ${
