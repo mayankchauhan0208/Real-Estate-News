@@ -5559,6 +5559,13 @@ function isClearlyOffTopicNonDevelopmentArticle(article) {
 }
 
 function isRealEstateRelated(article) {
+  // A concrete Gaurs Alaris/YEIDA project can be described in native
+  // language, so establish the specific project signal before generic
+  // transport or off-topic guards inspect English-only vocabulary.
+  if (hasSpecificYeidaProjectEvidence(article)) {
+    return true;
+  }
+
   if (isOfficialReraPressRelease(article)) {
     return true;
   }
@@ -5608,6 +5615,7 @@ function isRealEstateRelated(article) {
   return (
     hasRealEstateEvidence(article) ||
     hasConcretePropertyNexus(article) ||
+    hasSpecificYeidaProjectEvidence(article) ||
     isNationalRealEstateBusinessUpdate(article) ||
     isNcrCommercialOfficeMarketArticle(article) ||
     isFaridabadNcrGrowthComparisonArticle(article) ||
@@ -5712,7 +5720,10 @@ function shouldSendToBothCities(article) {
 }
 
 function hasSpecificYeidaProjectEvidence(article) {
-  const text = getArticlePrimaryText(article).toLowerCase();
+  // Project and corridor evidence may be present only in the readable body.
+  // Use the same bounded search surface as the other content gates so a
+  // title-only "Delhi NCR" label cannot hide a concrete Greater Noida event.
+  const text = getArticleSearchText(article);
   const hasCorridor = /yamuna\s+expressway|yeida|sector\s*22\s*d|greater\s+noida|जेवर|यमुना\s+एक्सप्रेसवे/u.test(text);
   const hasProject = /gaur(?:s|\s+group)?|residential\s+project|housing\s+project|flats?|आवासीय\s+परियोजना|फ्लैट/u.test(text);
   return hasCorridor && hasProject && /sector\s*22\s*d|gaur(?:s|\s+group)?|yeida|greater\s+noida/u.test(text);
@@ -5736,6 +5747,9 @@ function detectCityCodes(article) {
   }
 
   const primaryText = getArticlePrimaryText(article);
+  if (hasSpecificYeidaProjectEvidence(article)) {
+    return ["noida"];
+  }
   const explicitEventCityCodes = detectExplicitTargetCityCodes(article)
     .filter((code) => code !== "delhi_ncr" && !isGenericDelhiNcrCityAlias(code, article));
   if (explicitEventCityCodes.length === 1 && !hasNcrMatch(article)) {
@@ -5759,9 +5773,6 @@ function detectCityCodes(article) {
   }
   const concreteNcrCityCodes = hasNcrMatch(article) ? detectConcreteNcrCityCodesFromFullArticle(article) : [];
   const matchedCodes = concreteNcrCityCodes.length > 0 ? concreteNcrCityCodes : detectMatchedCityCodes(article);
-  if (hasSpecificYeidaProjectEvidence(article)) {
-    return ["noida"];
-  }
   const hasPreviousNcrRoute = matchedCodes.some((code) => ncrCityCodes.includes(code));
   const hasConcreteDelhiEvidence = /\b(?:new\s+delhi|central\s+delhi|south\s+delhi|north\s+delhi|east\s+delhi|west\s+delhi|dda|delhi\s+development\s+authority)\b/i.test(
     `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`
