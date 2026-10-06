@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-06T23:22:48.202Z",
+  "updatedAt": "2026-10-06T23:22:50.597Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -90,7 +90,7 @@
     },
     {
       "claimId": "29fa1aa7-68e4-4b7a-97e3-4cd8b12a3804",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/icici-prudential-amc-buys-over-0-5-million-sq-ft-office-space-in-bengaluru-for-rs-626-crore/articleshow/134748335.cms",
         "title-city:icici prudential amc buys over 0 5 million sq ft office space in bengaluru for rs 626 crore|bangalore",
@@ -107,7 +107,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-06T23:22:48.202Z",
-      "expiresAt": "2026-10-06T23:37:48.202Z"
+      "expiresAt": "2026-10-06T23:37:48.202Z",
+      "finalizedAt": "2026-10-06T23:22:50.597Z"
     }
   ]
 }
