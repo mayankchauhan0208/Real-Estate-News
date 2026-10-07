@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T16:36:12.477Z",
+  "updatedAt": "2026-10-07T16:36:14.331Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -959,6 +959,32 @@
       "claimedAt": "2026-10-07T16:36:11.050Z",
       "expiresAt": "2026-10-07T16:51:11.050Z",
       "finalizedAt": "2026-10-07T16:36:12.477Z"
+    },
+    {
+      "claimId": "18e3589b-daf6-4e56-a4d4-3c26ba3f3ceb",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/delhi-news/dda-begins-in-situ-rehabilitation-of-45-jj-clusters-housing-21-229-families-in-delhi-101791370956162.html",
+        "title-city:dda begins in situ rehabilitation of 45 jj clusters housing 21 229 families in delhi|new_delhi",
+        "dedupe:1090f82e6219f555ff60a9f91d7850befcd6fb63e41851772762c3f8279b754c",
+        "dedupe:2158a4248e2da9a6be55fef7fdf2f4a27fa25a26b658d005949f7e4c106d1555",
+        "dedupe:fa8c7755dd6d84e361bce19c1607f5809b8b152643cc5f70dbf743527dd26ae9",
+        "dedupe:407253ecc87571f89cf6faf3cdee57b9ff2fcd9eab6de0a95953c45dd8e4e066",
+        "dedupe:dda begins situ rehabilitation jj clusters housing families delhi|new_delhi",
+        "dedupe:0108d113a42735ba77740b3f0450b01a76543cda3b3140ec892a7358f342f14e",
+        "dedupe:131ad75d216e361acaa626a82b15b43a2bf75ccfdb0721249792e664eb98c04d"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-07T16:36:14.331Z",
+      "expiresAt": "2026-10-07T16:51:14.331Z"
     }
   ]
 }
