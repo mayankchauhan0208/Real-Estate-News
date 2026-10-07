@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T03:17:50.632Z",
+  "updatedAt": "2026-10-07T03:17:52.474Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -527,6 +527,30 @@
       "claimedAt": "2026-10-07T03:17:49.205Z",
       "expiresAt": "2026-10-07T03:32:49.205Z",
       "finalizedAt": "2026-10-07T03:17:50.632Z"
+    },
+    {
+      "claimId": "0785f79b-e082-45e4-b18c-23fedacceb43",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/real-estate-guide/yeida-launches-housing-and-hotel-plots-near-noida-international-airport-check-rates-plot-sizes-and-e-auction-dates-101790508354415.html",
+        "title-city:yeida launches housing and hotel plots near noida international airport|noida",
+        "dedupe:f784222abeb5cc46935119301ee9da5a7a953f70f962c0099005769167f6f529",
+        "dedupe:event:yeida|housing-hotel-plots|noida|noida-airport|",
+        "dedupe:941c5a2f9b5f798a3ee929423bccfb357a6918720a66d9afebc136ba78c36f70",
+        "dedupe:c0a4eff3851758580478ec421bb75513fe0a23309f4b236b148494151c5baafd",
+        "dedupe:9fa17e02d9794ab8daed10fc23f909b38fbbfd9efdc6a643d7df06e97a599bdd",
+        "dedupe:yeida launches housing hotel plots near noida international airport|noida",
+        "dedupe:027a7dc7929e8a4ecc98cdcebe167f38ebe2ad8630b3c2a0169a1fbf91742f54",
+        "dedupe:c709b4159cd4ac40c7a6c02faef803175b530239cd2be37a5e94fffaf2c75cb6",
+        "event:event:yeida|housing-hotel-plots|noida|noida-airport|"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "noida"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:17:52.474Z",
+      "expiresAt": "2026-10-07T03:32:52.474Z"
     }
   ]
 }
