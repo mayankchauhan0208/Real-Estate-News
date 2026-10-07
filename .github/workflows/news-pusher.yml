@@ -170,6 +170,9 @@ jobs:
           REJECTION_AUDIT_LIMIT: "5000"
           DETAILED_REJECTION_REASONS: "true"
           MISSED_NEWS_AUDIT: "true"
+          # Regional/native sources are committed production inputs. Their
+          # individual sourceMode still controls review versus auto-publish.
+          ENABLE_EXPERIMENTAL_SOURCES: "true"
 
       - name: Persist scheduler checkpoint
         if: always()

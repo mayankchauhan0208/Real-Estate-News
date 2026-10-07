@@ -167,6 +167,9 @@ jobs:
           REJECTION_AUDIT_LIMIT: "50000"
           DETAILED_REJECTION_REASONS: "true"
           MISSED_NEWS_AUDIT: "true"
+          # Include committed regional/native sources in historical recovery;
+          # per-source sourceMode remains the publication gate.
+          ENABLE_EXPERIMENTAL_SOURCES: "true"
 
       - name: Upload historical batch report
         if: always()
