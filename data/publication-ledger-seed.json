@@ -45,6 +45,13 @@
       "city": ["noida"],
       "publicationDate": "2026-10-05T08:00:02Z",
       "eventFingerprint": "",
+      "semanticIdentity": {
+        "city": "noida",
+        "builder": "gaurs",
+        "project": "gaur-alaris",
+        "eventType": "residential-sale",
+        "numericAnchors": ["1800:crore"]
+      },
       "identityKeys": [
         "url:https://realtynmore.com/gaur-alaris-sells-out-entire-inventory-in-48-hours",
         "title-city:gaur alaris sells out entire inventory in 48 hours reaching sales of rs 1800 crore|noida",
@@ -52,6 +59,111 @@
       ],
       "postedAt": "2026-10-05T09:26:00.753Z",
       "originMode": "NORMAL"
+    },
+    {
+      "recordId": "",
+      "canonicalUrl": "https://torbitrealty.com/elan-group-ropes-in-marriott-to-manage-upcoming-hotel-in-gurugram/",
+      "normalizedUrl": "https://torbitrealty.com/elan-group-ropes-in-marriott-to-manage-upcoming-hotel-in-gurugram",
+      "stableId": "",
+      "unicodeNormalizedTitle": "elan group ropes in marriott international to manage upcoming hotel branded homes in gurugram",
+      "city": ["gurugram"],
+      "publicationDate": "2026-10-05T00:00:00Z",
+      "eventFingerprint": "",
+      "identityKeys": ["url:https://torbitrealty.com/elan-group-ropes-in-marriott-to-manage-upcoming-hotel-in-gurugram", "title-city:elan group ropes in marriott international to manage upcoming hotel branded homes in gurugram|gurugram"],
+      "postedAt": "2026-10-07T02:10:08.374Z",
+      "originMode": "BACKFILL"
+    },
+    {
+      "recordId": "",
+      "canonicalUrl": "https://realty.economictimes.indiatimes.com/news/industry/prestige-group-acquired-17-14-acre-land-parcel-in-gurugram/133751016",
+      "normalizedUrl": "https://realty.economictimes.indiatimes.com/news/industry/prestige-group-acquired-17-14-acre-land-parcel-in-gurugram/133751016",
+      "stableId": "",
+      "unicodeNormalizedTitle": "prestige group acquires 17 14 acre land parcel in gurugram",
+      "city": ["gurugram"],
+      "publicationDate": "2026-09-01T00:00:00Z",
+      "eventFingerprint": "",
+      "identityKeys": ["url:https://realty.economictimes.indiatimes.com/news/industry/prestige-group-acquired-17-14-acre-land-parcel-in-gurugram/133751016", "title-city:prestige group acquires 17 14 acre land parcel in gurugram|gurugram"],
+      "postedAt": "2026-10-07T02:10:11.380Z",
+      "originMode": "BACKFILL"
+    },
+    {
+      "recordId": "",
+      "canonicalUrl": "https://realty.economictimes.indiatimes.com/news/industry/m3m-emerges-as-highest-bidder-for-prime-noida-land-parcels-at-1850-crore/133950829",
+      "normalizedUrl": "https://realty.economictimes.indiatimes.com/news/industry/m3m-emerges-as-highest-bidder-for-prime-noida-land-parcels-at-1850-crore/133950829",
+      "stableId": "",
+      "unicodeNormalizedTitle": "m3m emerges as highest bidder for prime noida land parcels at 1 850 crore",
+      "city": ["noida"],
+      "publicationDate": "2026-09-01T00:00:00Z",
+      "eventFingerprint": "",
+      "identityKeys": ["url:https://realty.economictimes.indiatimes.com/news/industry/m3m-emerges-as-highest-bidder-for-prime-noida-land-parcels-at-1850-crore/133950829", "title-city:m3m emerges as highest bidder for prime noida land parcels at 1 850 crore|noida"],
+      "postedAt": "2026-10-07T02:10:14.182Z",
+      "originMode": "BACKFILL"
+    },
+    {
+      "recordId": "",
+      "canonicalUrl": "https://cnbctv18.com/real-estate/prestige-estates-share-price-launches-rs-1750-crore-residential-project-in-bengaluru-prestige-parklane-19998643.htm",
+      "normalizedUrl": "https://cnbctv18.com/real-estate/prestige-estates-share-price-launches-rs-1750-crore-residential-project-in-bengaluru-prestige-parklane-19998643.htm",
+      "stableId": "",
+      "unicodeNormalizedTitle": "prestige estates launches 1 750 crore residential project in bengaluru",
+      "city": ["bangalore"],
+      "publicationDate": "2026-09-01T00:00:00Z",
+      "eventFingerprint": "",
+      "identityKeys": ["url:https://cnbctv18.com/real-estate/prestige-estates-share-price-launches-rs-1750-crore-residential-project-in-bengaluru-prestige-parklane-19998643.htm", "title-city:prestige estates launches 1 750 crore residential project in bengaluru|bangalore"],
+      "postedAt": "2026-10-07T02:10:17.150Z",
+      "originMode": "BACKFILL"
+    },
+    {
+      "recordId": "",
+      "canonicalUrl": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/godrej-properties-makes-6000-crore-luxury-bet-on-south-mumbai-with-marine-lines-project/articleshow/134531351.cms",
+      "normalizedUrl": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/godrej-properties-makes-6000-crore-luxury-bet-on-south-mumbai-with-marine-lines-project/articleshow/134531351.cms",
+      "stableId": "",
+      "unicodeNormalizedTitle": "godrej properties makes 6 000 crore luxury bet on south mumbai with marine lines project",
+      "city": ["mumbai"],
+      "publicationDate": "2026-09-01T00:00:00Z",
+      "eventFingerprint": "",
+      "identityKeys": ["url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/godrej-properties-makes-6000-crore-luxury-bet-on-south-mumbai-with-marine-lines-project/articleshow/134531351.cms", "title-city:godrej properties makes 6 000 crore luxury bet on south mumbai with marine lines project|mumbai"],
+      "postedAt": "2026-10-07T02:10:20.131Z",
+      "originMode": "BACKFILL"
+    },
+    {
+      "recordId": "",
+      "canonicalUrl": "https://cnbctv18.com/business/companies/signatureglobal-gdv-target-gurugram-luxury-project-middle-income-affordable-housing-farmhouse-19999749.htm",
+      "normalizedUrl": "https://cnbctv18.com/business/companies/signatureglobal-gdv-target-gurugram-luxury-project-middle-income-affordable-housing-farmhouse-19999749.htm",
+      "stableId": "",
+      "unicodeNormalizedTitle": "signatureglobal targets 6 000 crore gdv from gurugram luxury villa project launch in 9 12 months",
+      "city": ["gurugram"],
+      "publicationDate": "2026-09-01T00:00:00Z",
+      "eventFingerprint": "",
+      "identityKeys": ["url:https://cnbctv18.com/business/companies/signatureglobal-gdv-target-gurugram-luxury-project-middle-income-affordable-housing-farmhouse-19999749.htm", "title-city:signatureglobal targets 6 000 crore gdv from gurugram luxury villa project launch in 9 12 months|gurugram"],
+      "postedAt": "2026-10-07T02:10:23.036Z",
+      "originMode": "BACKFILL"
+    },
+    {
+      "recordId": "",
+      "canonicalUrl": "https://realty.economictimes.indiatimes.com/news/residential/over-24000-vijayawada-families-get-ownership-rights-to-decades-old-house-sites/134631687",
+      "normalizedUrl": "https://realty.economictimes.indiatimes.com/news/residential/over-24000-vijayawada-families-get-ownership-rights-to-decades-old-house-sites/134631687",
+      "stableId": "",
+      "unicodeNormalizedTitle": "over 24 000 vijayawada families get ownership rights to decades old house sites",
+      "city": ["vijayawada"],
+      "publicationDate": "2026-09-01T00:00:00Z",
+      "eventFingerprint": "",
+      "identityKeys": ["url:https://realty.economictimes.indiatimes.com/news/residential/over-24000-vijayawada-families-get-ownership-rights-to-decades-old-house-sites/134631687", "title-city:over 24 000 vijayawada families get ownership rights to decades old house sites|vijayawada"],
+      "postedAt": "2026-10-07T02:10:26.036Z",
+      "originMode": "BACKFILL"
+    },
+    {
+      "recordId": "",
+      "canonicalUrl": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gaurs-group-sells-1088-flats-for-rs-1800-cr-in-new-housing-project-in-ncr/articleshow/134704516.cms",
+      "normalizedUrl": "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gaurs-group-sells-1088-flats-for-rs-1800-cr-in-new-housing-project-in-ncr/articleshow/134704516.cms",
+      "stableId": "",
+      "unicodeNormalizedTitle": "gaurs group sells 1 088 flats for rs 1 800 cr in new housing project in ncr",
+      "city": ["noida"],
+      "publicationDate": "2026-10-05T12:02:00Z",
+      "eventFingerprint": "",
+      "semanticIdentity": {"city":"noida","builder":"gaurs","project":"gaur-alaris","eventType":"residential-sale","numericAnchors":["1800:crore","1088:flats","12:acres"]},
+      "identityKeys": ["url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gaurs-group-sells-1088-flats-for-rs-1800-cr-in-new-housing-project-in-ncr/articleshow/134704516.cms", "title-city:gaurs group sells 1 088 flats for rs 1 800 cr in new housing project in ncr|noida"],
+      "postedAt": "2026-10-07T02:10:29.256Z",
+      "originMode": "BACKFILL"
     }
   ]
 }

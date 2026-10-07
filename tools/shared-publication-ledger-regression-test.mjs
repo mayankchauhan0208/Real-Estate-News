@@ -68,13 +68,26 @@ const gaur = {
   cityCode: "noida",
   newsLink: "https://realtynmore.com/gaur-alaris-sells-out-entire-inventory-in-48-hours/"
 };
+const gaurAlternate = {
+  title: "Gaurs Group sells 1,088 flats for Rs 1,800 cr in new housing project in NCR",
+  description: "Gaurs Group sold all units in its 12-acre project Gaur Alaris in Sector 22D, Yamuna Expressway.",
+  cityCode: "noida",
+  newsLink: "https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gaurs-group-sells-1088-flats-for-rs-1800-cr-in-new-housing-project-in-ncr/articleshow/134704516.cms"
+};
 const eventDedupe = ["event:dlf|senior-living-sale|gurugram||"];
 
 let ledger = await loadPublicationLedger({ ledgerPath, seedPath });
-assert.equal(ledger.entries.length, 3, "verified live seed must contain exactly three entries");
+assert.equal(ledger.entries.length, 11, "verified local history must contain the three seed and eight backfill entries");
 assert.equal(ledgerHasMatch(ledger, raymond), true);
 assert.equal(ledgerHasMatch(ledger, dlf), true);
 assert.equal(ledgerHasMatch(ledger, gaur), true);
+assert.equal(ledgerHasMatch(ledger, gaurAlternate), true, "Gaur/Gaurs alternate source must match the same project event");
+assert.equal(ledgerHasMatch(ledger, {
+  title: "Gaurs Group sells 1,088 flats in a new Noida project for Rs 1,800 crore",
+  description: "A separate project with a different project name.",
+  cityCode: "noida",
+  newsLink: "https://example.test/gaurs-separate-project"
+}), false, "same builder and amount must not suppress a distinct unnamed event");
 assert.equal(ledgerHasMatch(ledger, dlfAlternate, eventDedupe), true, "alternate DLF URL must match event identity");
 
 async function post(article, mode, response = { status: 200 }) {
@@ -154,11 +167,16 @@ const distributedResults = distributed.map((item) => JSON.parse(item.stdout));
 assert.equal(distributedResults.filter((item) => !item.duplicate).length, 1, "remote CAS must select one claimant");
 assert.equal(remoteState.claims.filter((claim) => claim.status === "PUBLISHED").length, 1);
 
-const expiringStore = new GitHubPublicationClaimStore({ token: "test", repository: "test/repo", branch: "main", baseUrl: casBaseUrl, path: ".state/publication-claims.json", ttlMs: 25 });
+const semanticClaimStore = new GitHubPublicationClaimStore({ token: "test", repository: "test/repo", branch: "main", baseUrl: casBaseUrl, path: ".state/publication-claims.json" });
+const semanticWinner = await semanticClaimStore.claim({ article: gaur, mode: "NORMAL" });
+assert.equal(semanticWinner.acquired, true, "first source may claim the Gaur event");
+assert.equal((await semanticClaimStore.claim({ article: gaurAlternate, mode: "BACKFILL" })).acquired, false, "alternate Gaur source must lose the shared semantic claim");
+
+const expiringStore = new GitHubPublicationClaimStore({ token: "test", repository: "test/repo", branch: "main", baseUrl: casBaseUrl, path: ".state/publication-claims.json", ttlMs: 100 });
 const abandoned = await expiringStore.claim({ article: { title: "Abandoned claim", cityCode: "mumbai", newsLink: "https://example.test/abandoned" }, mode: "NORMAL" });
 assert.equal(abandoned.acquired, true, "crashed-before-POST process must be able to acquire a bounded claim");
 assert.equal((await expiringStore.claim({ article: { title: "Abandoned claim", cityCode: "mumbai", newsLink: "https://example.test/abandoned" }, mode: "BACKFILL" })).acquired, false);
-await new Promise((resolve) => setTimeout(resolve, 40));
+await new Promise((resolve) => setTimeout(resolve, 150));
 assert.equal((await expiringStore.claim({ article: { title: "Abandoned claim", cityCode: "mumbai", newsLink: "https://example.test/abandoned" }, mode: "BACKFILL" })).acquired, true, "expired claim must recover");
 
 const failedEvent = { title: "Failed publication must not enter ledger", cityCode: "mumbai", newsLink: "https://example.test/failed" };

@@ -34,6 +34,67 @@ function normalizeTitle(value = "") {
     .trim();
 }
 
+const BUILDER_ALIASES = [
+  [/\bgaur(?:s|sons)?\b/i, "gaurs"],
+  [/\bdlf\b/i, "dlf"],
+  [/\bprestige(?: estates| group)?\b/i, "prestige"],
+  [/\bgodrej properties\b/i, "godrej-properties"],
+  [/\bsignatureglobal\b/i, "signatureglobal"],
+  [/\bm3m\b/i, "m3m"],
+  [/\belan group\b/i, "elan"]
+];
+
+function semanticText(article = {}) {
+  return [article.title, article.description, article.articleText, article.articleTextExcerpt]
+    .filter(Boolean)
+    .join(" ")
+    .normalize("NFKC");
+}
+
+function semanticNumbers(text) {
+  return [...new Set([...text.matchAll(/(?:₹|rs\.?\s*)?([\d]+(?:[,.][\d]+)*)\s*(?:-|\s+)?(crore|cr|lakh|acre|acres|apartments?|flats?|units?|homes?|million\s+sq\.?\s*ft)?/gi)]
+    .map((match) => `${match[1].replace(/,/g, "")}:${(match[2] || "number").toLowerCase().replace(/\s+/g, " ").replace(/^cr$/, "crore").replace(/^acres?$/, "acre")}`)
+    .filter((value) => !value.startsWith("0:")))].sort();
+}
+
+function semanticEventType(text) {
+  if (/\b(?:sell(?:s|ing)?|sold|sell[- ]out|sales|bookings?)\b/i.test(text)) return "residential-sale";
+  if (/\b(?:launch(?:es|ed)?|unveil(?:s|ed)?|upcoming)\b/i.test(text)) return "project-launch";
+  if (/\b(?:acquire(?:s|d)?|acquisition|land parcel|land purchase)\b/i.test(text)) return "land-acquisition";
+  if (/\b(?:approve(?:s|d)?|sanction(?:s|ed)?|permission)\b/i.test(text)) return "development-approval";
+  return "";
+}
+
+function semanticProject(text) {
+  const known = [
+    [/\bgaur\s+alaris\b/i, "gaur-alaris"],
+    [/\bprestige\s+parklane\b/i, "prestige-parklane"],
+    [/\bdlf\s+aureva\b/i, "dlf-aureva"]
+  ];
+  return known.find(([pattern]) => pattern.test(text))?.[1] || "";
+}
+
+function semanticIdentityFor(article = {}) {
+  const text = semanticText(article);
+  const city = String(article.cityCode || article.city || "").trim().toLowerCase();
+  const builder = BUILDER_ALIASES.find(([pattern]) => pattern.test(text))?.[1] || "";
+  const project = semanticProject(text);
+  const eventType = semanticEventType(text);
+  const numericAnchors = semanticNumbers(text);
+  if (!city || !eventType || (!project && !builder) || numericAnchors.length === 0) return null;
+  return { city, builder, project, eventType, numericAnchors };
+}
+
+function semanticIdentityMatches(left, right) {
+  const a = left?.semanticIdentity;
+  const b = right?.semanticIdentity;
+  if (!a || !b || a.city !== b.city || a.eventType !== b.eventType) return false;
+  if (a.builder && b.builder && a.builder !== b.builder) return false;
+  if (a.project !== b.project && (a.project || b.project)) return false;
+  if (!a.numericAnchors.some((value) => b.numericAnchors.includes(value))) return false;
+  return Boolean(a.project || b.project || (a.builder && b.builder));
+}
+
 function hash(value) {
   return crypto.createHash("sha256").update(value).digest("hex");
 }
@@ -62,6 +123,7 @@ function identityFor(article = {}, dedupeIds = []) {
     city: city ? [city] : [],
     publicationDate: article.publishedAt || article.publicationDate || "",
     eventFingerprint: eventFingerprints[0] || "",
+    semanticIdentity: article.semanticIdentity || semanticIdentityFor(article),
     identityKeys: [...new Set(identityKeys)],
     postedAt: article.postedAt || new Date().toISOString(),
     originMode: article.originMode || article.mode || "NORMAL"
@@ -126,8 +188,17 @@ function mergeEntries(ledger, entries) {
   const known = new Set(ledger.entries.flatMap((entry) => entry.identityKeys));
   let changed = false;
   for (const entry of entries) {
-    const keys = entry.identityKeys.filter((key) => !known.has(key));
-    if (!keys.length) continue;
+    const existing = ledger.entries.find((candidate) =>
+      candidate.identityKeys.some((key) => entry.identityKeys.includes(key))
+    );
+    if (existing) {
+      const enriched = entry.semanticIdentity && !existing.semanticIdentity;
+      if (enriched) {
+        existing.semanticIdentity = entry.semanticIdentity;
+        changed = true;
+      }
+      continue;
+    }
     const merged = { ...entry, identityKeys: [...new Set(entry.identityKeys)] };
     ledger.entries.push(merged);
     for (const key of merged.identityKeys) known.add(key);
@@ -149,8 +220,11 @@ export async function loadPublicationLedger({ ledgerPath, seedPath = "", persist
 }
 
 export function ledgerHasMatch(ledger, article, dedupeIds = []) {
-  const keys = new Set(identityFor(article, dedupeIds).identityKeys);
-  return ledger.entries.some((entry) => entry.identityKeys.some((key) => keys.has(key)));
+  const identity = identityFor(article, dedupeIds);
+  const keys = new Set(identity.identityKeys);
+  return ledger.entries.some((entry) =>
+    entry.identityKeys.some((key) => keys.has(key)) || semanticIdentityMatches(entry, identity)
+  );
 }
 
 export async function ensurePublicationLedgerWritable(ledgerPath) {
@@ -207,4 +281,4 @@ export async function publishWithPublicationLedger({
   }
 }
 
-export { identityFor, normalizeTitle, normalizeUrl, validateLedger };
+export { identityFor, normalizeTitle, normalizeUrl, validateLedger, semanticIdentityMatches };

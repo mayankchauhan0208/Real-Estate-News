@@ -1,5 +1,5 @@
 import crypto from "node:crypto";
-import { identityFor } from "./publication-ledger.js";
+import { identityFor, semanticIdentityMatches } from "./publication-ledger.js";
 
 const DEFAULT_TTL_MS = 15 * 60 * 1000;
 const MAX_CAS_RETRIES = 4;
@@ -80,13 +80,15 @@ export class GitHubPublicationClaimStore {
       const now = Date.now();
       const active = current.state.claims.find((claim) =>
         (claim.status === "PUBLISHED" || (claim.status === "CLAIMED" && Date.parse(claim.expiresAt || "") > now)) &&
-        claim.identityKeys.some((key) => identity.identityKeys.includes(key))
+        (claim.identityKeys.some((key) => identity.identityKeys.includes(key)) ||
+          semanticIdentityMatches(claim, identity))
       );
       if (active) return { acquired: false, existing: active };
       const claim = {
         claimId: crypto.randomUUID(),
         status: "CLAIMED",
         identityKeys: identity.identityKeys,
+        semanticIdentity: identity.semanticIdentity,
         city: identity.city,
         originMode: mode,
         claimedAt: new Date(now).toISOString(),
