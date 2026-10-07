@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T03:27:29.296Z",
+  "updatedAt": "2026-10-07T03:27:30.997Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -613,6 +613,28 @@
       "claimedAt": "2026-10-07T03:27:28.031Z",
       "expiresAt": "2026-10-07T03:42:28.031Z",
       "finalizedAt": "2026-10-07T03:27:29.296Z"
+    },
+    {
+      "claimId": "9244e910-c94a-4a05-873e-6d74efaaeabd",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://business-standard.com/companies/news/signature-global-plans-194-acre-luxury-farmhouse-project-in-gurugram-west-126092500965_1.html",
+        "title-city:signature global plans 194 acre luxury farmhouse project in gurugram west|gurugram",
+        "dedupe:a0becc98891ae11591efbac20c225756ba508ccfa039c8fb43d36eaf21985275",
+        "dedupe:fc33bfb418dd54548b53e3f8d13238ea5c0577de5605b5d719bc5bece7fb6941",
+        "dedupe:1ecfa397147d480d819669bc76815ef0afef59901f9f4ee0c4eab65993ce3c29",
+        "dedupe:85a4ca1760f4014956a8f678217ae842cb5e13c3d545c85e4393e708a3495814",
+        "dedupe:signature global plans acre farmhouse gurugram west|gurugram",
+        "dedupe:8dd60bb1f318a05d41fba434e0b340c77bd2c11892d07a621a43e421656c4087",
+        "dedupe:91fba5c98f04021b7540db406bcd11ad67019c7472593c69d4b7c75ef65ef13b"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:27:30.997Z",
+      "expiresAt": "2026-10-07T03:42:30.997Z"
     }
   ]
 }
