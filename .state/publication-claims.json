@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T03:17:34.577Z",
+  "updatedAt": "2026-10-07T03:17:36.686Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -392,6 +392,28 @@
       "claimedAt": "2026-10-07T03:17:32.381Z",
       "expiresAt": "2026-10-07T03:32:32.381Z",
       "finalizedAt": "2026-10-07T03:17:34.577Z"
+    },
+    {
+      "claimId": "70fa8d81-df36-4d87-a856-4b6cccecc1c0",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/elevate-homes-to-develop-10-5-acre-premium-residential-project-in-gurugram",
+        "title-city:elevate homes to develop 10 5 acre premium residential project in gurugram|gurugram",
+        "dedupe:1a2610bf21d83276c8940b3a0159886daa93392a68987cc153fddefbff72e73e",
+        "dedupe:28b193eccb683b719d64f41a70b17c008cb2d6902b5f11070acf73840d336093",
+        "dedupe:0bd7eadd2d137c9b45fa166a15101aee4820a2175014efc1eaa68bbc01651e1d",
+        "dedupe:d77e9de7f4e44c3fec37941edae9cbcf72e159a27836641bfb5a04e8716f2c5c",
+        "dedupe:elevate homes develop acre premium residential gurugram|gurugram",
+        "dedupe:0f9e9b4b043a44c045ad1fe672147cb096838a4597bbf02188d3af5ce97d9aae",
+        "dedupe:e4466e9838d7d9d9be674ab06d3675cff4f8beb49efe6b6d80418c656707358d"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:17:36.686Z",
+      "expiresAt": "2026-10-07T03:32:36.686Z"
     }
   ]
 }
