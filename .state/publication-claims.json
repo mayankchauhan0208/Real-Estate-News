@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T02:10:29.256Z",
+  "updatedAt": "2026-10-07T03:05:30.337Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -284,6 +284,27 @@
       "claimedAt": "2026-10-07T02:10:28.069Z",
       "expiresAt": "2026-10-07T02:25:28.069Z",
       "finalizedAt": "2026-10-07T02:10:29.256Z"
+    },
+    {
+      "claimId": "723cc11d-a432-4ccc-85d9-a8fd50463193",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/residential/indiabulls-signs-rs-3700-crore-development-deal-for-gurugram-residential-project/133537113",
+        "title-city:indiabulls signs 3 700 crore development deal for gurugram residential project|gurugram",
+        "dedupe:e9f452a639f98c753338b56d869fcd68931e93b11a3e0dcd9f6f070475f055b3",
+        "dedupe:0a8b86d64d8c9326860cf01b585278b8bf0a6a38693b48523cc71180cbc36025",
+        "dedupe:d7f72ecad5d7de38fa67dd69a225e90b21ebde0676cfc6e5040efae17987911e",
+        "dedupe:indiabulls signs development deal gurugram residential|gurugram",
+        "dedupe:f36e2d4b0cef6a728bc5452d821259f8a14868367abdf271821c6ce1cefb087e",
+        "dedupe:9427e63096661a7d6ff40a8416b85d8e82aeea735e9cc29260a1fc7f5a37af2d"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:05:30.337Z",
+      "expiresAt": "2026-10-07T03:20:30.337Z"
     }
   ]
 }
