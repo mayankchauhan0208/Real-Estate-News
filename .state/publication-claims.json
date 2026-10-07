@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T03:17:53.883Z",
+  "updatedAt": "2026-10-07T03:27:24.486Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -552,6 +552,42 @@
       "claimedAt": "2026-10-07T03:17:52.474Z",
       "expiresAt": "2026-10-07T03:32:52.474Z",
       "finalizedAt": "2026-10-07T03:17:53.883Z"
+    },
+    {
+      "claimId": "5a351536-c6fb-4829-a1a0-f6514a52f0b6",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/smartworld-kotak-realty-fund-partner-for-%e2%82%b9800-crore-investment-in-gurugram-luxury-projects",
+        "title-city:smartworld kotak realty fund partner for 800 crore investment in gurugram luxury projects|gurugram",
+        "dedupe:dd05cd215dfe73a2e3f25a667b9ac2c57989bf12519ac70689c2c5bc5b603bba",
+        "dedupe:83c0c0a84ddfd0706fbbe2262c563961a2e183c4512a15fb878d86ead92bf58c",
+        "dedupe:c325b457e7e3de0661075c56895ce7e5be1cdc2c8f7777554d94cbe4ec8f28b1",
+        "dedupe:d65a422e8be00ebfaa909b411a9416427ac5a14a70b5eff676d447aa73b03316",
+        "dedupe:smartworld-kotak-800cr|gurugram",
+        "dedupe:851206d24233396ada1bd1efb04d7c14b0d534471bad38fdb55e55f85c6b19e0",
+        "dedupe:d5ae922ff2a37a7e830ba9fbe60fe5e860a28d50eafb4f28aa16cf9e3daeb4b2"
+      ],
+      "semanticIdentity": {
+        "city": "gurugram",
+        "builder": "m3m",
+        "project": "",
+        "eventType": "residential-sale",
+        "numericAnchors": [
+          "1:number",
+          "2.6:million sq. ft",
+          "3:number",
+          "69:number",
+          "800:crore",
+          "8200:crore",
+          "94:number"
+        ]
+      },
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:27:24.486Z",
+      "expiresAt": "2026-10-07T03:42:24.486Z"
     }
   ]
 }
