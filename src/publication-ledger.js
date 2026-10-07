@@ -36,6 +36,7 @@ function normalizeTitle(value = "") {
 
 const BUILDER_ALIASES = [
   [/\bgaur(?:s|sons)?\b/i, "gaurs"],
+  [/\bcounty(?:\s+group)?\b/i, "county-group"],
   [/\bdlf\b/i, "dlf"],
   [/\bprestige(?: estates| group)?\b/i, "prestige"],
   [/\bgodrej properties\b/i, "godrej-properties"],
@@ -59,8 +60,8 @@ function semanticNumbers(text) {
 
 function semanticEventType(text) {
   if (/\b(?:sell(?:s|ing)?|sold|sell[- ]out|sales|bookings?)\b/i.test(text)) return "residential-sale";
-  if (/\b(?:launch(?:es|ed)?|unveil(?:s|ed)?|upcoming)\b/i.test(text) ||
-      /\bplans?\b[^.!?]{0,80}\b(?:develop|build|project|development)\b/i.test(text)) return "project-launch";
+  if (/\b(?:launch(?:es|ed|ing)?|unveil(?:s|ed|ing)?|upcoming)\b/i.test(text) ||
+      /\b(?:plans?|develop(?:s|ed|ing)?|build(?:s|ing)?)\b[^.!?]{0,100}\b(?:develop|build|project|development|home|housing|apartment|acre)\b/i.test(text)) return "project-launch";
   if (/\b(?:acquire(?:s|d)?|acquisition|land parcel|land purchase)\b/i.test(text)) return "land-acquisition";
   if (/\b(?:approve(?:s|d)?|sanction(?:s|ed)?|permission)\b/i.test(text)) return "development-approval";
   return "";
@@ -75,23 +76,76 @@ function semanticProject(text) {
   return known.find(([pattern]) => pattern.test(text))?.[1] || "";
 }
 
+function canonicalEventCityFor(article = {}, text = semanticText(article)) {
+  const explicit = String(article.canonicalEventCity || article.eventCity || "").trim().toLowerCase();
+  if (explicit) return explicit;
+  const title = String(article.title || "");
+  const titleCities = [
+    [ /\b(?:gurugram|gurgaon)\b/i, "gurugram" ],
+    [ /\bgreater\s+noida\b/i, "noida" ],
+    [ /\bnoida\b/i, "noida" ],
+    [ /\bfaridabad\b/i, "faridabad" ],
+    [ /\bghaziabad\b/i, "ghaziabad" ],
+    [ /\blucknow\b/i, "lucknow" ],
+    [ /\bvisakhapatnam\b/i, "visakhapatnam" ],
+    [ /\bguwahati\b/i, "guwahati" ],
+    [ /\bgoa\b/i, "goa" ],
+    [ /\bbengaluru|bangalore\b/i, "bangalore" ]
+  ].filter(([pattern]) => pattern.test(title)).map(([, city]) => city);
+  if (titleCities.length === 1) return titleCities[0];
+  return String(article.cityCode || article.city || "").trim().toLowerCase();
+}
+
+function canonicalEventFingerprintFor({ builder, city, project, eventType, text }) {
+  if (builder === "signatureglobal" && city === "gurugram" &&
+      /\b(?:194(?:\.22)?\s*[- ]?acre|194(?:\.22)?\s*acres?)\b/i.test(text)) {
+    return "signatureglobal|gurugram|194-acre-development";
+  }
+  if (builder === "county-group" && city === "gurugram" &&
+      /\b(?:844|24)\b/.test(text) && /\b(?:luxury|residential|housing)\b/i.test(text)) {
+    return "county-group|gurugram|sector-88a|844-home-development";
+  }
+  if (!builder || !city || !eventType || (!project && !text)) return "";
+  const anchors = semanticNumbers(text).slice(0, 3).join(",");
+  return [builder, city, project || eventType, anchors].filter(Boolean).join("|");
+}
+
+function semanticClusterIdFor(fingerprint = "") {
+  return fingerprint ? `cluster:${hash(fingerprint).slice(0, 24)}` : "";
+}
+
 function semanticIdentityFor(article = {}) {
   const text = semanticText(article);
-  const city = String(article.cityCode || article.city || "").trim().toLowerCase();
+  const city = canonicalEventCityFor(article, text);
   const builder = BUILDER_ALIASES.find(([pattern]) => pattern.test(text))?.[1] || "";
   const project = semanticProject(text);
   const eventType = semanticEventType(text);
   const numericAnchors = semanticNumbers(text);
   if (!city || !eventType || (!project && !builder) || numericAnchors.length === 0) return null;
-  return { city, builder, project, eventType, numericAnchors };
+  const canonicalEventFingerprint = canonicalEventFingerprintFor({ builder, city, project, eventType, text });
+  return {
+    city,
+    canonicalEventCity: city,
+    normalizedBuilder: builder,
+    normalizedProject: project,
+    canonicalEventType: eventType,
+    builder,
+    project,
+    eventType,
+    numericAnchors,
+    canonicalEventFingerprint,
+    semanticClusterId: semanticClusterIdFor(canonicalEventFingerprint)
+  };
 }
 
 function semanticIdentityMatches(left, right) {
   const a = left?.semanticIdentity;
   const b = right?.semanticIdentity;
-  if (!a || !b || a.city !== b.city) return false;
+  if (!a || !b || (a.canonicalEventCity || a.city) !== (b.canonicalEventCity || b.city)) return false;
   if (a.builder && b.builder && a.builder !== b.builder) return false;
   if (a.project !== b.project && (a.project || b.project)) return false;
+  if (a.canonicalEventFingerprint && b.canonicalEventFingerprint &&
+      a.canonicalEventFingerprint === b.canonicalEventFingerprint) return true;
   const sharedNumericAnchors = a.numericAnchors.filter((value) => b.numericAnchors.includes(value));
   if (sharedNumericAnchors.length === 0) return false;
   if (a.eventType !== b.eventType) {
@@ -134,6 +188,8 @@ function identityFor(article = {}, dedupeIds = []) {
     stableId: article.stableId || article.stable_id || "",
     unicodeNormalizedTitle: title,
     city: city ? [city] : [],
+    publishedCity: city,
+    canonicalEventCity: article.canonicalEventCity || article.eventCity || city,
     publicationDate: article.publishedAt || article.publicationDate || "",
     eventFingerprint: eventFingerprints[0] || "",
     semanticIdentity: article.semanticIdentity || semanticIdentityFor(article),
@@ -294,4 +350,4 @@ export async function publishWithPublicationLedger({
   }
 }
 
-export { identityFor, normalizeTitle, normalizeUrl, validateLedger, semanticIdentityMatches };
+export { canonicalEventCityFor, identityFor, normalizeTitle, normalizeUrl, validateLedger, semanticIdentityMatches };

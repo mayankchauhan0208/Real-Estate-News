@@ -8,6 +8,7 @@
     "check": "node --check src/index.js && node --check src/filter-smoke-test.js && node --check src/admin-server.js && node --check admin/app.js && node src/config-audit.js",
     "test": "node src/filter-smoke-test.js && node tools/continuation-boundary-test.mjs && node tools/publication-concurrency-test.mjs",
     "test:shared-ledger": "node tools/shared-publication-ledger-regression-test.mjs",
+    "test:semantic-persistence": "node tools/historical-semantic-persistence-regression-test.mjs",
     "test:capacity": "node tools/normal-runtime-capacity-regression-test.mjs",
     "test:deadline": "node tools/source-deadline-semantics-regression-test.mjs",
     "test:external-worker": "node tools/external-worker-resource-regression-test.mjs",

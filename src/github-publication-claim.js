@@ -17,7 +17,7 @@ function decode(value) {
 }
 
 function emptyRemoteState() {
-  return { version: 1, updatedAt: new Date(0).toISOString(), claims: [] };
+  return { version: 2, updatedAt: new Date(0).toISOString(), claims: [] };
 }
 
 export class GitHubPublicationClaimStore {
@@ -55,7 +55,7 @@ export class GitHubPublicationClaimStore {
     const payload = parseJson(body, null);
     if (!payload?.content) throw new Error("GITHUB_CLAIM_STATE_INVALID");
     const state = decode(payload.content);
-    if (state.version !== 1 || !Array.isArray(state.claims)) throw new Error("GITHUB_CLAIM_STATE_CORRUPT");
+    if (![1, 2].includes(state.version) || !Array.isArray(state.claims)) throw new Error("GITHUB_CLAIM_STATE_CORRUPT");
     return { sha: payload.sha || null, state };
   }
 
@@ -89,13 +89,17 @@ export class GitHubPublicationClaimStore {
         status: "CLAIMED",
         identityKeys: identity.identityKeys,
         semanticIdentity: identity.semanticIdentity,
+        publishedCity: identity.publishedCity || identity.city?.[0] || "",
+        canonicalEventCity: identity.canonicalEventCity || identity.semanticIdentity?.canonicalEventCity || identity.city?.[0] || "",
+        canonicalEventFingerprint: identity.semanticIdentity?.canonicalEventFingerprint || "",
+        semanticClusterId: identity.semanticIdentity?.semanticClusterId || "",
         city: identity.city,
         originMode: mode,
         claimedAt: new Date(now).toISOString(),
         expiresAt: new Date(now + this.ttlMs).toISOString()
       };
       const next = {
-        version: 1,
+        version: current.state.version >= 2 ? 2 : 1,
         updatedAt: new Date(now).toISOString(),
         claims: [...current.state.claims.filter((item) => item.status === "PUBLISHED" || Date.parse(item.expiresAt || "") > now), claim]
       };
@@ -114,7 +118,7 @@ export class GitHubPublicationClaimStore {
       const nextClaims = current.state.claims.map((item) => item.claimId === claim.claimId
         ? { ...item, status, finalizedAt: new Date().toISOString() }
         : item);
-      const result = await this.compareAndSwap(current.sha, { version: 1, updatedAt: new Date().toISOString(), claims: nextClaims }, `Finalize publication ${claim.claimId}`);
+      const result = await this.compareAndSwap(current.sha, { version: current.state.version >= 2 ? 2 : 1, updatedAt: new Date().toISOString(), claims: nextClaims }, `Finalize publication ${claim.claimId}`);
       if (result.ok) return;
       if (!result.conflict) throw new Error(`GITHUB_CLAIM_FINALIZE_HTTP_${result.status}`);
     }
