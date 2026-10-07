@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T03:17:39.901Z",
+  "updatedAt": "2026-10-07T03:17:41.431Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -418,7 +418,7 @@
     },
     {
       "claimId": "c4368483-37d5-4f2d-8063-addae405511a",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/residential/greater-noida-plot-allottees-again-get-two-more-years-to-complete-construction/133786978",
         "title-city:greater noida plot allottees again get two more years to complete construction|noida",
@@ -435,7 +435,8 @@
       ],
       "originMode": "BACKFILL",
       "claimedAt": "2026-10-07T03:17:39.901Z",
-      "expiresAt": "2026-10-07T03:32:39.901Z"
+      "expiresAt": "2026-10-07T03:32:39.901Z",
+      "finalizedAt": "2026-10-07T03:17:41.431Z"
     }
   ]
 }
