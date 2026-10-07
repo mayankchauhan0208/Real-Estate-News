@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T18:10:46.494Z",
+  "updatedAt": "2026-10-07T18:10:48.162Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1040,6 +1040,32 @@
       "claimedAt": "2026-10-07T18:10:44.346Z",
       "expiresAt": "2026-10-07T18:25:44.346Z",
       "finalizedAt": "2026-10-07T18:10:46.494Z"
+    },
+    {
+      "claimId": "d2e837bb-18e0-4d02-bfe5-17f6f7f5afd8",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/ncr-developers-see-limited-impact-of-25-bps-repo-rate-hike-expect-festive-housing-demand-to-remain-steady-101791352303819.html",
+        "title-city:ncr developers see limited impact of 25 bps repo rate hike expect festive housing demand to remain steady|gurugram",
+        "dedupe:bd5a7738b5594146cd8396741a30d02be1d294289a3fe2dedee9423aa2fc7026",
+        "dedupe:29227e8bb8aa5fa793cc914db3144dd61ed54ca5aaf6b0d80a6ae724b2a542dc",
+        "dedupe:377bae05b8d67927fe612924e721dbd34840746c88e4e2506df665cdcc348ad9",
+        "dedupe:35fc7e1e273dfb787f41cb40adb19e66e537085c27e1072045b33ae3ea7727e5",
+        "dedupe:see limited impact bps repo rate hike expect festive housing demand remain steady|gurugram",
+        "dedupe:8f16cae62de831f1f6a8c7da16c97655acb145132b4580f7f62b534e19c03808",
+        "dedupe:1e80883b00dd3fa9a7a4821d4e671c286284d95300f8a95e776ed99af917fc23"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-07T18:10:48.162Z",
+      "expiresAt": "2026-10-07T18:25:48.162Z"
     }
   ]
 }
