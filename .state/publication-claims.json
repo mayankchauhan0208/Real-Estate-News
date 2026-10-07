@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T03:05:38.585Z",
+  "updatedAt": "2026-10-07T03:05:40.256Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -350,6 +350,27 @@
       "claimedAt": "2026-10-07T03:05:37.035Z",
       "expiresAt": "2026-10-07T03:20:37.035Z",
       "finalizedAt": "2026-10-07T03:05:38.585Z"
+    },
+    {
+      "claimId": "2f65047c-d7b6-4cd2-b008-11c8f6ca8a0b",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/infrastructure/yeida-approves-logistics-park-8000-hectares-industrial-hub-near-noida-international-airport/134577767",
+        "title-city:yeida approves logistics park 8 000 hectares industrial hub near noida international airport|noida",
+        "dedupe:1fea0e1f7ee5a56be39c005399c4c511d382699418d33b62d4a12299f2762064",
+        "dedupe:8ced0343ea892dd1bceab0800b2cd51a88502479842a830fb3295f11e183bcb6",
+        "dedupe:7d80f47350972b4a94eedb02aeb00597c44410ab528f77f835a8dedbf2f20a18",
+        "dedupe:yeida approves logistics park hectares industrial hub near noida international airport|noida",
+        "dedupe:f100582882dbd3ee4d791973738b69191822eb5f21c1b0c04f3740535c179696",
+        "dedupe:224beb9ddb7e704824936accaf181349b42168768c47de307a143f191b1e1440"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "noida"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:05:40.256Z",
+      "expiresAt": "2026-10-07T03:20:40.256Z"
     }
   ]
 }
