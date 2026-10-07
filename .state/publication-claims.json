@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T03:27:32.454Z",
+  "updatedAt": "2026-10-07T03:44:11.377Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -636,6 +636,28 @@
       "claimedAt": "2026-10-07T03:27:30.997Z",
       "expiresAt": "2026-10-07T03:42:30.997Z",
       "finalizedAt": "2026-10-07T03:27:32.454Z"
+    },
+    {
+      "claimId": "57990104-2e21-44a4-800f-445960b90060",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/county-group-to-invest-rs-2500-cr-to-develop-luxury-homes-in-gurugram",
+        "title-city:county group to invest rs 2 500 cr to develop luxury homes in gurugram|noida",
+        "dedupe:5871755d43bb49d151e3a219c2f2789ca7e47f841cea0d7f9f3c34e84db3b268",
+        "dedupe:e69e69f9b5d3562b0ac40c352d80fb5cc8e3012b30d781acb624f473a6072871",
+        "dedupe:3658da1f635ab4edf98e11a8ef684157f88d90f00994ea1a57b5131f2f587981",
+        "dedupe:6fc1d1dffff0f69465d7bd79141a68de1158810a10a224be4908803998545d91",
+        "dedupe:county group develop homes gurugram|noida",
+        "dedupe:d0f19b9b8048b9fa45e30f0daa281519f794f20bda972bc0de5855b5ce92a86d",
+        "dedupe:4654e2707769edca19a7202214a8f6706ce3fdb87f164cd891efbf8d85ef9ad4"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "noida"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:44:11.377Z",
+      "expiresAt": "2026-10-07T03:59:11.377Z"
     }
   ]
 }
