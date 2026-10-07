@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T16:36:17.582Z",
+  "updatedAt": "2026-10-07T16:36:19.080Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -989,7 +989,7 @@
     },
     {
       "claimId": "9760b42a-0bb1-4efe-8548-e99b9e2f47ce",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/real-estate/embassy-reit-board-approves-acquisition-of-8-048-sq-ft-retail-space-at-fifc-mumbai-101791370466646.html",
         "title-city:embassy reit board approves acquisition of 8 048 sq ft retail space at fifc mumbai|mumbai",
@@ -1011,7 +1011,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-07T16:36:17.582Z",
-      "expiresAt": "2026-10-07T16:51:17.582Z"
+      "expiresAt": "2026-10-07T16:51:17.582Z",
+      "finalizedAt": "2026-10-07T16:36:19.080Z"
     }
   ]
 }
