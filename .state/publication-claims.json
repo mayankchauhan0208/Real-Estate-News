@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T10:11:41.150Z",
+  "updatedAt": "2026-10-07T10:11:42.981Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -879,6 +879,32 @@
       "claimedAt": "2026-10-07T10:11:39.500Z",
       "expiresAt": "2026-10-07T10:26:39.500Z",
       "finalizedAt": "2026-10-07T10:11:41.150Z"
+    },
+    {
+      "claimId": "829a8233-a19d-4d46-b832-fb0afdd402d2",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://amarujala.com/delhi-ncr/faridabad/dog-injures-18-month-old-toddler-faridabad-news-c-26-1-fbd1023-82032-2026-10-07",
+        "title-city:faridabad news ड ढ स ल क म स म क क त त न क य घ यल|faridabad",
+        "dedupe:2d542c316a8aebbe40e646ca668d58ead1a5ef679ebc6935bc982cfab72bdc56",
+        "dedupe:7e62dc40a178f48536735ab6de74d7e04aaeca979068258bc80c39b25db5866b",
+        "dedupe:f404c65b81b3b16eb5d58fa18bb9257bc05a9efdd792be586b85c289db3abe36",
+        "dedupe:d282b147052ff2629570b5cef641e0617c79c35846c2a7a978c7f3e6b1ec8cbe",
+        "dedupe:faridabad news ड ढ स ल क म स म क क त त न क य घ यल|faridabad",
+        "dedupe:a3fec7be69331dc49cc9ba0d1d501f9ee4ce647ada9aa055c367a57283d5dd16",
+        "dedupe:7dc0e94af7586ad56f1f8af954a11c1abc3b143b43ed98e9590cdb96b5ac385d"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "faridabad",
+      "canonicalEventCity": "faridabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "faridabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-07T10:11:42.981Z",
+      "expiresAt": "2026-10-07T10:26:42.981Z"
     }
   ]
 }
