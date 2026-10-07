@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T03:17:41.431Z",
+  "updatedAt": "2026-10-07T03:17:43.122Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -437,6 +437,27 @@
       "claimedAt": "2026-10-07T03:17:39.901Z",
       "expiresAt": "2026-10-07T03:32:39.901Z",
       "finalizedAt": "2026-10-07T03:17:41.431Z"
+    },
+    {
+      "claimId": "699aea67-4d1d-42bb-b198-1d5cacefd43d",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/retail/nexus-select-trust-to-acquire-guwahati-mall-hotel-project-for-1600-crore/133991166",
+        "title-city:nexus select trust to acquire guwahati mall hotel project for 1 600 crore|guwahati",
+        "dedupe:4a08a2cfb248a936599c8efcb910311b8df66209150ef39a2ae0615095585e8b",
+        "dedupe:be89a4a633f1faa7557ebb9dd7a1fe81217877392bc112820ab1b5277b446993",
+        "dedupe:6017fe03839c48292c38cb70e31818f529f1f4ae1193e0b63d293da77b5c7e50",
+        "dedupe:nexus select trust acquire guwahati mall hotel|guwahati",
+        "dedupe:bb549c069d9fd28e55f1cea6d22228bdf27a74710bf72357a52f9d581ae86845",
+        "dedupe:24efa8ab7046bc39ed00fd80deac07b89593bfbfdbb0278c3f57d0db29d3dae1"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "guwahati"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:17:43.122Z",
+      "expiresAt": "2026-10-07T03:32:43.122Z"
     }
   ]
 }
