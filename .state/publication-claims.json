@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T16:36:09.231Z",
+  "updatedAt": "2026-10-07T16:36:11.050Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -933,6 +933,31 @@
       "claimedAt": "2026-10-07T16:36:06.869Z",
       "expiresAt": "2026-10-07T16:51:06.869Z",
       "finalizedAt": "2026-10-07T16:36:09.231Z"
+    },
+    {
+      "claimId": "3ee6c351-2637-46cb-9798-2bcf1cf4310d",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://magicbricks.com/news/mdda-aalayam-housing-scheme-dehradun-1bhk-flat-asmb/152039.html",
+        "title-city:द हर द न म नद पह ड क प स 23 ल ख क घर mdda scheme म 2 30 ल ख द कर कर ब क ग|dehradun",
+        "dedupe:d4675d0ded7b5b1e21800ca4216ce55bfaf950addcdf6f3014a021fc6860c720",
+        "dedupe:d81f31d9761eead4b67f5dbb5752a40322e9e36b4ff7087c407b9bd1e154a1b0",
+        "dedupe:2d34f7f549d361ddc62cf07f98f603eb49bf258d6b782c9cc2e40edaf9c2528b",
+        "dedupe:द हर द न म नद पह ड क प स ल ख क घर mdda scheme म ल ख द कर कर ब क ग|dehradun",
+        "dedupe:dd6eaf7ccd50fa9d2c809600c38957906a9c2c845b8dbe59a3d14e4ea17e72bf",
+        "dedupe:915682ad7faff1204722fd8a300cfa7e8c0aa4bf05f4cb2b07a9434c30cbb098"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "dehradun",
+      "canonicalEventCity": "dehradun",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "dehradun"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-07T16:36:11.050Z",
+      "expiresAt": "2026-10-07T16:51:11.050Z"
     }
   ]
 }
