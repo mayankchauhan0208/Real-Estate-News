@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T02:10:21.646Z",
+  "updatedAt": "2026-10-07T02:10:23.036Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -222,7 +222,7 @@
     },
     {
       "claimId": "2829af6f-8f97-4065-aa0f-84782b6dda29",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://cnbctv18.com/business/companies/signatureglobal-gdv-target-gurugram-luxury-project-middle-income-affordable-housing-farmhouse-19999749.htm",
         "title-city:signatureglobal targets 6 000 crore gdv from gurugram luxury villa project launch in 9 12 months|gurugram",
@@ -239,7 +239,8 @@
       ],
       "originMode": "BACKFILL",
       "claimedAt": "2026-10-07T02:10:21.646Z",
-      "expiresAt": "2026-10-07T02:25:21.646Z"
+      "expiresAt": "2026-10-07T02:25:21.646Z",
+      "finalizedAt": "2026-10-07T02:10:23.036Z"
     }
   ]
 }
