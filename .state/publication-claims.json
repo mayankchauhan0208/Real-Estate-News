@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T02:10:23.036Z",
+  "updatedAt": "2026-10-07T02:10:24.717Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -241,6 +241,26 @@
       "claimedAt": "2026-10-07T02:10:21.646Z",
       "expiresAt": "2026-10-07T02:25:21.646Z",
       "finalizedAt": "2026-10-07T02:10:23.036Z"
+    },
+    {
+      "claimId": "0c2f270a-343b-41b4-b336-b29f4608d043",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/residential/over-24000-vijayawada-families-get-ownership-rights-to-decades-old-house-sites/134631687",
+        "title-city:over 24 000 vijayawada families get ownership rights to decades old house sites|vijayawada",
+        "dedupe:cc128f0fd88a01a5d6b1d7d191f8490ce407604ff273a96027a1a8c82687f03e",
+        "dedupe:46222cced8e92970c7c84314d27b1ccb697eb1a80695b2ce089ba2473074475e",
+        "dedupe:65e8e37a1542d740a70676771ac908aef8ffb00dc04d711b588077a168871dd0",
+        "dedupe:vijayawada families get ownership rights decades old house sites|vijayawada",
+        "dedupe:af0bb3752aadbe4b13c8ea5ed0e9ae206060a012ff961f840510cd36d25d3c9f",
+        "dedupe:2b30f8dfe02174780cb074b5f6d8d6693334766647f15b82b6f6c99d22fc8adc"
+      ],
+      "city": [
+        "vijayawada"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T02:10:24.717Z",
+      "expiresAt": "2026-10-07T02:25:24.717Z"
     }
   ]
 }
