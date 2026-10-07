@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T02:10:09.894Z",
+  "updatedAt": "2026-10-07T02:10:11.380Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -134,7 +134,7 @@
     },
     {
       "claimId": "b6c30a8f-8de8-4db0-b8df-466fe1dd4feb",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/industry/prestige-group-acquired-17-14-acre-land-parcel-in-gurugram/133751016",
         "title-city:prestige group acquires 17 14 acre land parcel in gurugram|gurugram",
@@ -150,7 +150,8 @@
       ],
       "originMode": "BACKFILL",
       "claimedAt": "2026-10-07T02:10:09.894Z",
-      "expiresAt": "2026-10-07T02:25:09.894Z"
+      "expiresAt": "2026-10-07T02:25:09.894Z",
+      "finalizedAt": "2026-10-07T02:10:11.380Z"
     }
   ]
 }
