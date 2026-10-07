@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T02:10:12.829Z",
+  "updatedAt": "2026-10-07T02:10:14.182Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -155,7 +155,7 @@
     },
     {
       "claimId": "6044d124-9b98-4c96-ae3a-ec6c8d2888ea",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/industry/m3m-emerges-as-highest-bidder-for-prime-noida-land-parcels-at-1850-crore/133950829",
         "title-city:m3m emerges as highest bidder for prime noida land parcels at 1 850 crore|noida",
@@ -173,7 +173,8 @@
       ],
       "originMode": "BACKFILL",
       "claimedAt": "2026-10-07T02:10:12.829Z",
-      "expiresAt": "2026-10-07T02:25:12.829Z"
+      "expiresAt": "2026-10-07T02:25:12.829Z",
+      "finalizedAt": "2026-10-07T02:10:14.182Z"
     }
   ]
 }
