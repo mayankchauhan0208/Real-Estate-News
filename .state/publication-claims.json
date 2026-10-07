@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T02:10:29.256Z",
+  "updatedAt": "2026-10-07T04:10:35.774Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -284,6 +284,473 @@
       "claimedAt": "2026-10-07T02:10:28.069Z",
       "expiresAt": "2026-10-07T02:25:28.069Z",
       "finalizedAt": "2026-10-07T02:10:29.256Z"
+    },
+    {
+      "claimId": "723cc11d-a432-4ccc-85d9-a8fd50463193",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/residential/indiabulls-signs-rs-3700-crore-development-deal-for-gurugram-residential-project/133537113",
+        "title-city:indiabulls signs 3 700 crore development deal for gurugram residential project|gurugram",
+        "dedupe:e9f452a639f98c753338b56d869fcd68931e93b11a3e0dcd9f6f070475f055b3",
+        "dedupe:0a8b86d64d8c9326860cf01b585278b8bf0a6a38693b48523cc71180cbc36025",
+        "dedupe:d7f72ecad5d7de38fa67dd69a225e90b21ebde0676cfc6e5040efae17987911e",
+        "dedupe:indiabulls signs development deal gurugram residential|gurugram",
+        "dedupe:f36e2d4b0cef6a728bc5452d821259f8a14868367abdf271821c6ce1cefb087e",
+        "dedupe:9427e63096661a7d6ff40a8416b85d8e82aeea735e9cc29260a1fc7f5a37af2d"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:05:30.337Z",
+      "expiresAt": "2026-10-07T03:20:30.337Z",
+      "finalizedAt": "2026-10-07T03:05:32.517Z"
+    },
+    {
+      "claimId": "9658f0dc-d42d-4e56-a679-c5909c916ba8",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/commercial/noida-authority-fixes-uniform-rate-of-86000-per-sq-metre-for-it/ites-plots/133905361",
+        "title-city:noida authority fixes uniform rate of 86 000 per sq metre for it ites plots|noida",
+        "dedupe:7a55f257985134e47e05c6d34862d7b34bdf2bbc0b74ebcb1e8219d5a158a23f",
+        "dedupe:8ab61c8b9ca897480297f8de967ce9ff66938ef0136681ea280aa1a0d9bcf967",
+        "dedupe:f3967608f0d8ec64f1946e2a192c92b05baf916d5e285d594a1fa7c5fd39978e",
+        "dedupe:noida authority fixes uniform rate per metre it ites plots|noida",
+        "dedupe:128446175acc5b9bc81a4840a43e4b48d491e6bda782cccd9404f1b644b4d319",
+        "dedupe:8f3d6a9245a35988446094ae40a73438cf8cac354569138af8157d8de9b9749b"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "noida"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:05:33.995Z",
+      "expiresAt": "2026-10-07T03:20:33.995Z",
+      "finalizedAt": "2026-10-07T03:05:35.393Z"
+    },
+    {
+      "claimId": "88ef746b-2dce-4ddc-8ec6-f13f24d1ff7d",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/signature-global-buys-25-acres-for-150-crore-ties-up-169-22-acres-in-gurugram/134496305",
+        "title-city:signature global buys 25 acres for 150 crore ties up 169 22 acres in gurugram|gurugram",
+        "dedupe:8a4baeea9a5ee1be068a32a4d6282617435d7b5ee7de22976e3a6b45d17ae411",
+        "dedupe:97bd9b8b34923d27519a830d9fc107db2f4586729bb1877dd85cce6c307cc4bb",
+        "dedupe:514fce4bf69152828eacb385f00c67059bd87f75e83e2e2cb3501bfdc016f84b",
+        "dedupe:signature global buys acres ties acres gurugram|gurugram",
+        "dedupe:86a5e4f24e6fa68cad95d921c64b1d076aebcdf3b277e435cf285d997039eca7",
+        "dedupe:7e93267bd51a0bd9f0dd0be3a520576e5560e67de3ab5c8b83a29cde8b7950d0"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:05:37.035Z",
+      "expiresAt": "2026-10-07T03:20:37.035Z",
+      "finalizedAt": "2026-10-07T03:05:38.585Z"
+    },
+    {
+      "claimId": "2f65047c-d7b6-4cd2-b008-11c8f6ca8a0b",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/infrastructure/yeida-approves-logistics-park-8000-hectares-industrial-hub-near-noida-international-airport/134577767",
+        "title-city:yeida approves logistics park 8 000 hectares industrial hub near noida international airport|noida",
+        "dedupe:1fea0e1f7ee5a56be39c005399c4c511d382699418d33b62d4a12299f2762064",
+        "dedupe:8ced0343ea892dd1bceab0800b2cd51a88502479842a830fb3295f11e183bcb6",
+        "dedupe:7d80f47350972b4a94eedb02aeb00597c44410ab528f77f835a8dedbf2f20a18",
+        "dedupe:yeida approves logistics park hectares industrial hub near noida international airport|noida",
+        "dedupe:f100582882dbd3ee4d791973738b69191822eb5f21c1b0c04f3740535c179696",
+        "dedupe:224beb9ddb7e704824936accaf181349b42168768c47de307a143f191b1e1440"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "noida"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:05:40.256Z",
+      "expiresAt": "2026-10-07T03:20:40.256Z",
+      "finalizedAt": "2026-10-07T03:05:41.444Z"
+    },
+    {
+      "claimId": "52890bcb-68e4-4df2-97af-bc5989e680ee",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/hospitality/ganpati-group-plans-to-invest-2000-crore-to-develop-projects-in-lucknow-visakhapatnam/134309356",
+        "title-city:ganpati group plans to invest 2 000 crore to develop projects in lucknow and visakhapatnam|visakhapatnam",
+        "dedupe:1f070e5655cd0bbcf5828136cb242ade9d27398346469b0d43b30b627fbcba18",
+        "dedupe:99707f48f94247a4eb53b1852a85040a61ad94da38624df8e61be7919235157c",
+        "dedupe:46c95941da2566c0c5b08c9eb6a284aafe2331b70487d6fd66456a7810ec0c10",
+        "dedupe:ganpati group plans develop lucknow visakhapatnam|visakhapatnam"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "visakhapatnam"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:17:32.381Z",
+      "expiresAt": "2026-10-07T03:32:32.381Z",
+      "finalizedAt": "2026-10-07T03:17:34.577Z"
+    },
+    {
+      "claimId": "70fa8d81-df36-4d87-a856-4b6cccecc1c0",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/elevate-homes-to-develop-10-5-acre-premium-residential-project-in-gurugram",
+        "title-city:elevate homes to develop 10 5 acre premium residential project in gurugram|gurugram",
+        "dedupe:1a2610bf21d83276c8940b3a0159886daa93392a68987cc153fddefbff72e73e",
+        "dedupe:28b193eccb683b719d64f41a70b17c008cb2d6902b5f11070acf73840d336093",
+        "dedupe:0bd7eadd2d137c9b45fa166a15101aee4820a2175014efc1eaa68bbc01651e1d",
+        "dedupe:d77e9de7f4e44c3fec37941edae9cbcf72e159a27836641bfb5a04e8716f2c5c",
+        "dedupe:elevate homes develop acre premium residential gurugram|gurugram",
+        "dedupe:0f9e9b4b043a44c045ad1fe672147cb096838a4597bbf02188d3af5ce97d9aae",
+        "dedupe:e4466e9838d7d9d9be674ab06d3675cff4f8beb49efe6b6d80418c656707358d"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:17:36.686Z",
+      "expiresAt": "2026-10-07T03:32:36.686Z",
+      "finalizedAt": "2026-10-07T03:17:38.058Z"
+    },
+    {
+      "claimId": "c4368483-37d5-4f2d-8063-addae405511a",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/residential/greater-noida-plot-allottees-again-get-two-more-years-to-complete-construction/133786978",
+        "title-city:greater noida plot allottees again get two more years to complete construction|noida",
+        "dedupe:0a95626847f2b9d09cefab2362d116de4de5408e95578ef6bc47e3a7a6428b93",
+        "dedupe:783c5855169be5ce8ab4b3286e47ec110e6ada2553b3f13c1407e1275953c70d",
+        "dedupe:95234fc7cf9fcce41d5c855b749be7b99b18a8c2b1ac6c19c32a256ca421eb16",
+        "dedupe:greater noida plot allottees again get two more years complete construction|noida",
+        "dedupe:e8c22f63efcbeb6643383ea9088039f1853a96bf184f3ad0d033bea9b1aaf2e8",
+        "dedupe:3234eaf2e1c9700239172d1346a6707ca135100300457b8d03f98a364bb99c8c"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "noida"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:17:39.901Z",
+      "expiresAt": "2026-10-07T03:32:39.901Z",
+      "finalizedAt": "2026-10-07T03:17:41.431Z"
+    },
+    {
+      "claimId": "699aea67-4d1d-42bb-b198-1d5cacefd43d",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/retail/nexus-select-trust-to-acquire-guwahati-mall-hotel-project-for-1600-crore/133991166",
+        "title-city:nexus select trust to acquire guwahati mall hotel project for 1 600 crore|guwahati",
+        "dedupe:4a08a2cfb248a936599c8efcb910311b8df66209150ef39a2ae0615095585e8b",
+        "dedupe:be89a4a633f1faa7557ebb9dd7a1fe81217877392bc112820ab1b5277b446993",
+        "dedupe:6017fe03839c48292c38cb70e31818f529f1f4ae1193e0b63d293da77b5c7e50",
+        "dedupe:nexus select trust acquire guwahati mall hotel|guwahati",
+        "dedupe:bb549c069d9fd28e55f1cea6d22228bdf27a74710bf72357a52f9d581ae86845",
+        "dedupe:24efa8ab7046bc39ed00fd80deac07b89593bfbfdbb0278c3f57d0db29d3dae1"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "guwahati"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:17:43.122Z",
+      "expiresAt": "2026-10-07T03:32:43.122Z",
+      "finalizedAt": "2026-10-07T03:17:44.585Z"
+    },
+    {
+      "claimId": "e56e605e-f5fb-41b8-a031-53d661048300",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/retail/dlf-to-open-500-crore-goa-mall-by-march-2027-eyes-over-150-crore-annual-rental-income/134338724",
+        "title-city:dlf to open 500 crore goa mall by march 2027 eyes over 150 crore annual rental income|goa",
+        "dedupe:5f8243674f4eba7695e97814a8643fef16f88c5d43b21189604a644588de4476",
+        "dedupe:dda53e1bc231ef5efd831ed8e14173758be9cca5032fb1c79951bbace3869fc8",
+        "dedupe:de00ad515e9a0f84aaef593e50ff5d98e38bffe8c1ef64407552be9be523ce5c",
+        "dedupe:dlf open goa mall march eyes annual rental income|goa",
+        "dedupe:7b806b2c895031078538e6dc051e71228583fa454474204b7f06be58e83b7a7e",
+        "dedupe:dd06ff2f8de5683f349c4a10bdc06010adff48673e518cca07da4829f02faef7"
+      ],
+      "semanticIdentity": {
+        "city": "goa",
+        "builder": "dlf",
+        "project": "",
+        "eventType": "project-launch",
+        "numericAnchors": [
+          "07:number",
+          "09:number",
+          "1.15:lakh",
+          "100:number",
+          "150:crore",
+          "175:number",
+          "180:number",
+          "18:number",
+          "2.8:lakh",
+          "2026:number",
+          "2027:number",
+          "2:number",
+          "500:crore",
+          "5:number",
+          "70:number",
+          "75:number"
+        ]
+      },
+      "city": [
+        "goa"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:17:46.320Z",
+      "expiresAt": "2026-10-07T03:32:46.320Z",
+      "finalizedAt": "2026-10-07T03:17:47.547Z"
+    },
+    {
+      "claimId": "b58f3b41-f9d3-4377-ab2f-3cbc3ea8362f",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/signature-global-signs-pact-to-develop-194-acre-land-in-gurugram-targets-rs-55006000-crore-gdv/articleshow/134483932.cms",
+        "title-city:signature global signs pact to develop 194 acre land in gurugram targets rs 5 500 6 000 crore gdv|gurugram",
+        "dedupe:c993284092486bfba4b079a2294227f4e9fef80fb3e79ae3af1906f242f40435",
+        "dedupe:74360d37b41f8f6deb94240a2a47efd5388e8df887a6fff9567d04ed3890f84f",
+        "dedupe:060ed8a25b7d252ea7db9b3739a7c0264c26c1ae63865e3b7d67d863b4b570a8",
+        "dedupe:d7468c3e95dd4e76effc7199c9292b706952ca41d8ef9346b55277cb8e350fc9",
+        "dedupe:signature global signs pact develop acre land gurugram targets gdv|gurugram",
+        "dedupe:402cc2eb0ba574636c3b98ac31563189d4bd5610edf3c6f97a8b920167029dd7",
+        "dedupe:d88f9f04e98de9b582914309a8b11578ef5264c4a64b1dfca81c6147128f029d"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:17:49.205Z",
+      "expiresAt": "2026-10-07T03:32:49.205Z",
+      "finalizedAt": "2026-10-07T03:17:50.632Z"
+    },
+    {
+      "claimId": "0785f79b-e082-45e4-b18c-23fedacceb43",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/real-estate-guide/yeida-launches-housing-and-hotel-plots-near-noida-international-airport-check-rates-plot-sizes-and-e-auction-dates-101790508354415.html",
+        "title-city:yeida launches housing and hotel plots near noida international airport|noida",
+        "dedupe:f784222abeb5cc46935119301ee9da5a7a953f70f962c0099005769167f6f529",
+        "dedupe:event:yeida|housing-hotel-plots|noida|noida-airport|",
+        "dedupe:941c5a2f9b5f798a3ee929423bccfb357a6918720a66d9afebc136ba78c36f70",
+        "dedupe:c0a4eff3851758580478ec421bb75513fe0a23309f4b236b148494151c5baafd",
+        "dedupe:9fa17e02d9794ab8daed10fc23f909b38fbbfd9efdc6a643d7df06e97a599bdd",
+        "dedupe:yeida launches housing hotel plots near noida international airport|noida",
+        "dedupe:027a7dc7929e8a4ecc98cdcebe167f38ebe2ad8630b3c2a0169a1fbf91742f54",
+        "dedupe:c709b4159cd4ac40c7a6c02faef803175b530239cd2be37a5e94fffaf2c75cb6",
+        "event:event:yeida|housing-hotel-plots|noida|noida-airport|"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "noida"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:17:52.474Z",
+      "expiresAt": "2026-10-07T03:32:52.474Z",
+      "finalizedAt": "2026-10-07T03:17:53.883Z"
+    },
+    {
+      "claimId": "5a351536-c6fb-4829-a1a0-f6514a52f0b6",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/smartworld-kotak-realty-fund-partner-for-%e2%82%b9800-crore-investment-in-gurugram-luxury-projects",
+        "title-city:smartworld kotak realty fund partner for 800 crore investment in gurugram luxury projects|gurugram",
+        "dedupe:dd05cd215dfe73a2e3f25a667b9ac2c57989bf12519ac70689c2c5bc5b603bba",
+        "dedupe:83c0c0a84ddfd0706fbbe2262c563961a2e183c4512a15fb878d86ead92bf58c",
+        "dedupe:c325b457e7e3de0661075c56895ce7e5be1cdc2c8f7777554d94cbe4ec8f28b1",
+        "dedupe:d65a422e8be00ebfaa909b411a9416427ac5a14a70b5eff676d447aa73b03316",
+        "dedupe:smartworld-kotak-800cr|gurugram",
+        "dedupe:851206d24233396ada1bd1efb04d7c14b0d534471bad38fdb55e55f85c6b19e0",
+        "dedupe:d5ae922ff2a37a7e830ba9fbe60fe5e860a28d50eafb4f28aa16cf9e3daeb4b2"
+      ],
+      "semanticIdentity": {
+        "city": "gurugram",
+        "builder": "m3m",
+        "project": "",
+        "eventType": "residential-sale",
+        "numericAnchors": [
+          "1:number",
+          "2.6:million sq. ft",
+          "3:number",
+          "69:number",
+          "800:crore",
+          "8200:crore",
+          "94:number"
+        ]
+      },
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:27:24.486Z",
+      "expiresAt": "2026-10-07T03:42:24.486Z",
+      "finalizedAt": "2026-10-07T03:27:26.548Z"
+    },
+    {
+      "claimId": "d83bc0b0-d59e-4751-b835-eceb1beb6c30",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/puravankara-acquires-13-44-acre-land-parcel-in-greater-noida-for-340-crore/134402153",
+        "title-city:puravankara acquires 13 44 acre land parcel in greater noida for 340 crore|noida",
+        "dedupe:a5554585ba761dcf99d34b6efdfa3c50956b7d748832270bd3748e273cded62a",
+        "dedupe:event:puravankara|land-acquisition|noida|greater-noida|",
+        "dedupe:ef82ff44c001a04bad8ae89bce1cd8efe3e33ee56e8a07384738a6db1bb932cc",
+        "dedupe:4c248ca22bd9d5a2775684079e1e91e340fd99960c9bc68e07d012820a1f0172",
+        "dedupe:puravankara acquires acre land parcel greater noida|noida",
+        "dedupe:ced056bf556656c4b41c2148c38e88dbff58616acf4e204b0384856cca5c07f2",
+        "dedupe:a98a60a2ea2abc1a04a35e3d9b4989c2e98dee1a58adb93ed090fda6ba21ae19",
+        "event:event:puravankara|land-acquisition|noida|greater-noida|"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "noida"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:27:28.031Z",
+      "expiresAt": "2026-10-07T03:42:28.031Z",
+      "finalizedAt": "2026-10-07T03:27:29.296Z"
+    },
+    {
+      "claimId": "9244e910-c94a-4a05-873e-6d74efaaeabd",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://business-standard.com/companies/news/signature-global-plans-194-acre-luxury-farmhouse-project-in-gurugram-west-126092500965_1.html",
+        "title-city:signature global plans 194 acre luxury farmhouse project in gurugram west|gurugram",
+        "dedupe:a0becc98891ae11591efbac20c225756ba508ccfa039c8fb43d36eaf21985275",
+        "dedupe:fc33bfb418dd54548b53e3f8d13238ea5c0577de5605b5d719bc5bece7fb6941",
+        "dedupe:1ecfa397147d480d819669bc76815ef0afef59901f9f4ee0c4eab65993ce3c29",
+        "dedupe:85a4ca1760f4014956a8f678217ae842cb5e13c3d545c85e4393e708a3495814",
+        "dedupe:signature global plans acre farmhouse gurugram west|gurugram",
+        "dedupe:8dd60bb1f318a05d41fba434e0b340c77bd2c11892d07a621a43e421656c4087",
+        "dedupe:91fba5c98f04021b7540db406bcd11ad67019c7472593c69d4b7c75ef65ef13b"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:27:30.997Z",
+      "expiresAt": "2026-10-07T03:42:30.997Z",
+      "finalizedAt": "2026-10-07T03:27:32.454Z"
+    },
+    {
+      "claimId": "57990104-2e21-44a4-800f-445960b90060",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/county-group-to-invest-rs-2500-cr-to-develop-luxury-homes-in-gurugram",
+        "title-city:county group to invest rs 2 500 cr to develop luxury homes in gurugram|noida",
+        "dedupe:5871755d43bb49d151e3a219c2f2789ca7e47f841cea0d7f9f3c34e84db3b268",
+        "dedupe:e69e69f9b5d3562b0ac40c352d80fb5cc8e3012b30d781acb624f473a6072871",
+        "dedupe:3658da1f635ab4edf98e11a8ef684157f88d90f00994ea1a57b5131f2f587981",
+        "dedupe:6fc1d1dffff0f69465d7bd79141a68de1158810a10a224be4908803998545d91",
+        "dedupe:county group develop homes gurugram|noida",
+        "dedupe:d0f19b9b8048b9fa45e30f0daa281519f794f20bda972bc0de5855b5ce92a86d",
+        "dedupe:4654e2707769edca19a7202214a8f6706ce3fdb87f164cd891efbf8d85ef9ad4"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "noida"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:44:11.377Z",
+      "expiresAt": "2026-10-07T03:59:11.377Z",
+      "finalizedAt": "2026-10-07T03:44:13.636Z"
+    },
+    {
+      "claimId": "4b07040f-a4e1-4600-83ba-4b16487b591a",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/asf-group-rents-4-lakh-sq-ft-office-space-to-genpact-in-gurugram",
+        "title-city:asf group rents 4 lakh sq ft office space to genpact in gurugram|gurugram",
+        "dedupe:8d0a5e90d07986827e233390429b549b07973a125fc0819df82b9dad0772be3d",
+        "dedupe:7c70f07e943bae46ca75efb7dd2e1344d91e451b3e3e6bae05684cd4eefdaed4",
+        "dedupe:687523b35edac96e19aa3bb3eda118c7545d775e4251a426ccde36e5eaf4f83c",
+        "dedupe:b53bfec72b99370940ac8e6cc2b0adccff33ff3022f140015a1b3bfb9ddfd0db",
+        "dedupe:asf group rents office space genpact gurugram|gurugram",
+        "dedupe:17445c97b58cd1ab0a59cca52eee70d9377bee09e3a91ab0f9968d954d86ab0c",
+        "dedupe:0d2d24691d88c1e507576a67783d97d16ddab1cb24ae106b3c22f2e696889993"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:44:15.263Z",
+      "expiresAt": "2026-10-07T03:59:15.263Z",
+      "finalizedAt": "2026-10-07T03:44:16.646Z"
+    },
+    {
+      "claimId": "8fe379a6-355b-4930-9218-92d93a2c6ab6",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://propnewstime.com/latestnewsstories/mzuynjg=/pvr-inox-to-open-25-000-sq-ft-multiplex-at-bhumika-realty-s-the-icon-in-faridabad",
+        "title-city:pvr inox to open 25 000 sq ft multiplex at bhumika realty s the icon in faridabad|faridabad",
+        "dedupe:cea80437bd0f7e45108256061554479b6d11a83f2d7c9b766fb38f873d5d06de",
+        "dedupe:d706cd859d5438409e56d79337b90a570172e3007cc369d6ec67790fdebb0872",
+        "dedupe:33ded68b70001058d511218d82f52d8a3b1b5880007d8edafe421e2a95e1fbb6",
+        "dedupe:c1633e1c5b2c167e389d9d08cf87bae100480ce03de72d7ead1ce7108d43ab68",
+        "dedupe:pvr inox open multiplex bhumika s icon faridabad|faridabad",
+        "dedupe:ee36f580a40a41fd10c826fec44ecb92b4e15f6fd8ab0952fa5f22e39636d54d",
+        "dedupe:dfcb1244bbb730ea0f2744ea8dda9dcd93f746590546290569bfd11cfea183e4"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "faridabad"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T04:10:27.001Z",
+      "expiresAt": "2026-10-07T04:25:27.001Z",
+      "finalizedAt": "2026-10-07T04:10:28.908Z"
+    },
+    {
+      "claimId": "49bfd42f-5ef3-421c-80d0-ebabded5afae",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/blackstone-backed-ask-property-fund-commits-rs-300-crore-to-ghaziabad-housing-projects/articleshow/133727430.cms",
+        "title-city:blackstone backed ask property fund commits rs 300 crore to ghaziabad housing projects|ghaziabad",
+        "dedupe:9dc37eadc83ed062d9e3c815884a08577ba6671c804d7ca80e4a90cc4eb6caa5",
+        "dedupe:2533e5227258d99d415d80e78f8f8bf38d0c508df320923009dcfac87065a572",
+        "dedupe:ff40fea0e2b2991af2ad9bf9f4c4f051487eb62bf0f48a8d77d08ae32417dd5d",
+        "dedupe:a484d7e1f15c633f0b5a9c6aabfca87b53c38b6ab8d905abe6cfdff3c791a89f",
+        "dedupe:blackstone backed ask property commits ghaziabad housing|ghaziabad",
+        "dedupe:b2458df5bcbda16ee28ad094878a5f1372b36acc939956f5e026a227b26c563b",
+        "dedupe:1891efe8f6c732b32762fdf6b43c7bc5f71283bb2c7cec9593f5ca6b2c91aef1"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "ghaziabad"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T04:10:30.742Z",
+      "expiresAt": "2026-10-07T04:25:30.742Z",
+      "finalizedAt": "2026-10-07T04:10:32.291Z"
+    },
+    {
+      "claimId": "69ca1241-3a4b-4612-b41d-d953db0ac7b2",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/markets/digital-real-estate/realty-news/bhumika-realty-leases-24000-sq-ft-retail-space-to-lifestyle-in-faridabad/articleshow/134335383.cms",
+        "title-city:bhumika realty leases 24 000 sq ft retail space to lifestyle in faridabad|faridabad",
+        "dedupe:e54c36b29c51c393f82770e730040d9d7422df776fb6af9f1dbbaa0331bcb6f2",
+        "dedupe:3de793b4b45d2e39c09c09dd41599487c3b115c3f4764cf7acbfc5ed1d5d2625",
+        "dedupe:efdf85bf654155663cc242b0659d99e3c3d00a60f8b18b864af4e966ca030c45",
+        "dedupe:ac320844fa8adb44303498a35a3b390ba3dbf5d66a13938b6e9190114b8b1b3a",
+        "dedupe:bhumika leases retail space lifestyle faridabad|faridabad",
+        "dedupe:ef9b25439188d8a8ddbf3ba27a2de53c1df6d1e6da9a1e5b2d29c6d3a614a810",
+        "dedupe:ccbfe0feade9c190d3079dec8eedc11b8109cd86feafd1a6bd366652c6fcf571"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "faridabad"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T04:10:34.069Z",
+      "expiresAt": "2026-10-07T04:25:34.069Z",
+      "finalizedAt": "2026-10-07T04:10:35.774Z"
     }
   ]
 }
