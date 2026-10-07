@@ -23,6 +23,11 @@ on:
         description: "Stable ID used to resume the same backfill state"
         required: true
         type: string
+      resume_from_offset:
+        description: "Production resume offset; completed lower offsets are skipped without fetching"
+        required: false
+        default: "0"
+        type: string
 
 concurrency:
   group: news-45-day-backfill-${{ inputs.backfill_id }}
@@ -98,7 +103,30 @@ jobs:
       - name: Build and verify filters
         run: npm run build
 
+      - name: Record skipped completed source range
+        if: ${{ inputs.mode == 'PRODUCTION' && fromJSON(inputs.resume_from_offset) > matrix.source_offset }}
+        run: |
+          mkdir -p reports/runs
+          cat > "reports/runs/news-run-resume-skipped-${{ matrix.source_offset }}.json" <<'JSON'
+          {
+            "sourceStrategy": "task41-resumable-backfill",
+            "allSelectedSourceCount": 553,
+            "sources": [],
+            "failures": [],
+            "candidates": [],
+            "posted": [],
+            "fetchedArticleCount": 0,
+            "expandedArticleCount": 0,
+            "rejectedArticleCount": 0,
+            "needsReviewCount": 0,
+            "resumeSkipped": true,
+            "resumeFromOffset": ${{ inputs.resume_from_offset }},
+            "note": "Completed source range skipped during an authorized resume; no source fetch or publication was attempted."
+          }
+          JSON
+
       - name: Fetch and evaluate historical batch
+        if: ${{ !(inputs.mode == 'PRODUCTION' && fromJSON(inputs.resume_from_offset) > matrix.source_offset) }}
         run: npm start
         env:
           APP_API_URL: ${{ secrets.APP_API_URL }}
@@ -122,6 +150,7 @@ jobs:
           API_RECONCILE_PAGE_SIZE: "1000"
           SOURCE_OFFSET: ${{ matrix.source_offset }}
           SOURCE_LIMIT: ${{ matrix.source_limit }}
+          BACKFILL_RESUME_FROM_OFFSET: ${{ inputs.resume_from_offset }}
           SOURCE_CONCURRENCY: "12"
           BUILD_VERSION: "task41-quality-hardened-backfill"
           SOURCE_STRATEGY: "task41-resumable-backfill"
