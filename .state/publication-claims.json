@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T04:10:35.774Z",
+  "updatedAt": "2026-10-07T06:01:48.067Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -751,6 +751,80 @@
       "claimedAt": "2026-10-07T04:10:34.069Z",
       "expiresAt": "2026-10-07T04:25:34.069Z",
       "finalizedAt": "2026-10-07T04:10:35.774Z"
+    },
+    {
+      "claimId": "523f0655-824d-4d75-84a2-80c2f625c9a2",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/anushka-sharma-parents-buy-two-adjoining-apartments-in-mumbai-s-versova-for-25-80-crore-101791282053717.html",
+        "title-city:anushka sharma parents invest in two adjoining apartments in mumbai s versova for 25 80 crore|mumbai",
+        "dedupe:e44d3fabf564d67c79d7320e8f7b984784539f610544b1d889560099e2342760",
+        "dedupe:e9024b7a71d68df23fb5f3cd481355d8525e8f7711a1032f07b3f282abfcc4df",
+        "dedupe:680d48bace6ef92412314a87b1746a7b058ec27d27d7cc9efc97d8be0897b7c8",
+        "dedupe:6aa2c291ad51b6dccddb6b2bc394e1737b7fdaed704a32b555221cbfe1d4cbe0",
+        "dedupe:anushka sharma parents two adjoining apartments mumbai s versova|mumbai",
+        "dedupe:17e65e212333c3e458617e5a950cc766abaac1e2fcb2bc9d7100ae5066c58429",
+        "dedupe:39ba4ef0cc294bcb7ee402f5a505733350cb29a3cdf26b85ca9143b9443cc7ce"
+      ],
+      "semanticIdentity": {
+        "city": "mumbai",
+        "canonicalEventCity": "mumbai",
+        "normalizedBuilder": "godrej-properties",
+        "normalizedProject": "",
+        "canonicalEventType": "residential-sale",
+        "builder": "godrej-properties",
+        "project": "",
+        "eventType": "residential-sale",
+        "numericAnchors": [
+          "08:number",
+          "1.09:crore",
+          "10.91:crore",
+          "100:number",
+          "10:crore",
+          "11:number",
+          "126:number",
+          "12:number",
+          "14.89:crore",
+          "1577:number",
+          "18.29:crore",
+          "2016:number",
+          "2026:number",
+          "2031:number",
+          "2153:number",
+          "21:number",
+          "24:number",
+          "25.80:crore",
+          "2644:number",
+          "30000:number",
+          "30:number",
+          "316:number",
+          "34:crore",
+          "35:number",
+          "37:crore",
+          "3:flats",
+          "44:crore",
+          "56:number",
+          "65.44:lakh",
+          "69159:number",
+          "7171:number",
+          "74.47:lakh",
+          "7:number",
+          "8:number"
+        ],
+        "canonicalEventFingerprint": "godrej-properties|mumbai|residential-sale|08:number,1.09:crore,10.91:crore",
+        "semanticClusterId": "cluster:731e94eb595122bd6d49e8a4"
+      },
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "godrej-properties|mumbai|residential-sale|08:number,1.09:crore,10.91:crore",
+      "semanticClusterId": "cluster:731e94eb595122bd6d49e8a4",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-07T06:01:45.819Z",
+      "expiresAt": "2026-10-07T06:16:45.819Z",
+      "finalizedAt": "2026-10-07T06:01:48.067Z"
     }
   ]
 }
