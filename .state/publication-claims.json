@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T03:05:32.517Z",
+  "updatedAt": "2026-10-07T03:05:33.995Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -306,6 +306,27 @@
       "claimedAt": "2026-10-07T03:05:30.337Z",
       "expiresAt": "2026-10-07T03:20:30.337Z",
       "finalizedAt": "2026-10-07T03:05:32.517Z"
+    },
+    {
+      "claimId": "9658f0dc-d42d-4e56-a679-c5909c916ba8",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/commercial/noida-authority-fixes-uniform-rate-of-86000-per-sq-metre-for-it/ites-plots/133905361",
+        "title-city:noida authority fixes uniform rate of 86 000 per sq metre for it ites plots|noida",
+        "dedupe:7a55f257985134e47e05c6d34862d7b34bdf2bbc0b74ebcb1e8219d5a158a23f",
+        "dedupe:8ab61c8b9ca897480297f8de967ce9ff66938ef0136681ea280aa1a0d9bcf967",
+        "dedupe:f3967608f0d8ec64f1946e2a192c92b05baf916d5e285d594a1fa7c5fd39978e",
+        "dedupe:noida authority fixes uniform rate per metre it ites plots|noida",
+        "dedupe:128446175acc5b9bc81a4840a43e4b48d491e6bda782cccd9404f1b644b4d319",
+        "dedupe:8f3d6a9245a35988446094ae40a73438cf8cac354569138af8157d8de9b9749b"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "noida"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:05:33.995Z",
+      "expiresAt": "2026-10-07T03:20:33.995Z"
     }
   ]
 }
