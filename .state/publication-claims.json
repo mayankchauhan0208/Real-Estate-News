@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T02:10:11.380Z",
+  "updatedAt": "2026-10-07T02:10:12.829Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -152,6 +152,28 @@
       "claimedAt": "2026-10-07T02:10:09.894Z",
       "expiresAt": "2026-10-07T02:25:09.894Z",
       "finalizedAt": "2026-10-07T02:10:11.380Z"
+    },
+    {
+      "claimId": "6044d124-9b98-4c96-ae3a-ec6c8d2888ea",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/m3m-emerges-as-highest-bidder-for-prime-noida-land-parcels-at-1850-crore/133950829",
+        "title-city:m3m emerges as highest bidder for prime noida land parcels at 1 850 crore|noida",
+        "dedupe:0501b66f4ba2a5103ba9a6c727bb101971e47f584a55518efd34c2a9f006be02",
+        "dedupe:event:dlf|land-acquisition|noida||1850",
+        "dedupe:4f07c8e6ecc11947f31fcfe82d882b06d7f3568aa49f82b42c58143005f7b158",
+        "dedupe:59e36a2bd9fee22cf6c3cb79423a6d60c9cdcc66a3d574ffc987eb97c6b775bd",
+        "dedupe:m3m emerges as highest bidder prime noida land parcels|noida",
+        "dedupe:37c42bcb326196690d45e05bd2d9436bc30446f2d6367006dec359e31706d42e",
+        "dedupe:6c5e266b3314597e5dfe313f899ca43666c005673d02d6dcd228d74b09d4327f",
+        "event:event:dlf|land-acquisition|noida||1850"
+      ],
+      "city": [
+        "noida"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T02:10:12.829Z",
+      "expiresAt": "2026-10-07T02:25:12.829Z"
     }
   ]
 }
