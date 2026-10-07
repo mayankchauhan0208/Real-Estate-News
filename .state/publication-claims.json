@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T03:05:35.393Z",
+  "updatedAt": "2026-10-07T03:05:37.035Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -328,6 +328,27 @@
       "claimedAt": "2026-10-07T03:05:33.995Z",
       "expiresAt": "2026-10-07T03:20:33.995Z",
       "finalizedAt": "2026-10-07T03:05:35.393Z"
+    },
+    {
+      "claimId": "88ef746b-2dce-4ddc-8ec6-f13f24d1ff7d",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/signature-global-buys-25-acres-for-150-crore-ties-up-169-22-acres-in-gurugram/134496305",
+        "title-city:signature global buys 25 acres for 150 crore ties up 169 22 acres in gurugram|gurugram",
+        "dedupe:8a4baeea9a5ee1be068a32a4d6282617435d7b5ee7de22976e3a6b45d17ae411",
+        "dedupe:97bd9b8b34923d27519a830d9fc107db2f4586729bb1877dd85cce6c307cc4bb",
+        "dedupe:514fce4bf69152828eacb385f00c67059bd87f75e83e2e2cb3501bfdc016f84b",
+        "dedupe:signature global buys acres ties acres gurugram|gurugram",
+        "dedupe:86a5e4f24e6fa68cad95d921c64b1d076aebcdf3b277e435cf285d997039eca7",
+        "dedupe:7e93267bd51a0bd9f0dd0be3a520576e5560e67de3ab5c8b83a29cde8b7950d0"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:05:37.035Z",
+      "expiresAt": "2026-10-07T03:20:37.035Z"
     }
   ]
 }
