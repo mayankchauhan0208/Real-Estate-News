@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T16:36:06.869Z",
+  "updatedAt": "2026-10-07T16:36:09.231Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -909,7 +909,7 @@
     },
     {
       "claimId": "dff935a4-a2c0-49c3-9e26-a3b866f6b636",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/landmark-group-secures-rs-330-crore-financing-from-sbi-for-landmark-one-development-in-gurugram/articleshow/134764267.cms",
         "title-city:landmark group raises rs 330 crore sbi finance for gurugram project|gurugram",
@@ -931,7 +931,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-07T16:36:06.869Z",
-      "expiresAt": "2026-10-07T16:51:06.869Z"
+      "expiresAt": "2026-10-07T16:51:06.869Z",
+      "finalizedAt": "2026-10-07T16:36:09.231Z"
     }
   ]
 }
