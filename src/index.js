@@ -2501,7 +2501,11 @@ function getRegionalSourceMode(sourceUrl) {
     .find((item) => normalizeSourceUrl(item?.url) === normalizeSourceUrl(sourceUrl));
   const configured = String(source?.sourceMode || "").trim().toUpperCase();
   if (["AUTO_PUBLISH", "ACTIVE_FOR_REVIEW", "OFF"].includes(configured)) return configured;
-  return isExperimentalManualSource(source || {}) ? "ACTIVE_FOR_REVIEW" : "AUTO_PUBLISH";
+  // Experimental sources are opt-in at discovery time, but a qualifying
+  // article must use the same deterministic publish gates as every other
+  // source. Editorial review remains available through an explicit
+  // sourceMode: ACTIVE_FOR_REVIEW configuration.
+  return "AUTO_PUBLISH";
 }
 
 function isRegionalSource(sourceUrl) {
@@ -6780,6 +6784,20 @@ function isBlockedArticle(article) {
   );
 }
 
+function isObviousNonArticleDiscoveryCandidate(article) {
+  const title = String(article?.title || "").trim();
+  const newsLink = String(article?.newsLink || article?.url || "").trim();
+  if (title.length < 18 || !isHttpUrl(newsLink)) return true;
+
+  // Discovery must not apply the full relevance classifier before the detail
+  // page is read. Keep only structural shells and unmistakable off-topic
+  // headlines out of the detail queue; the normal gates decide everything
+  // else after bounded full-article extraction.
+  return isNavigationOrListingShell(article) ||
+    isNonArticlePortalPage(article) ||
+    isStronglyOffTopicHeadline(article);
+}
+
 // Native-language authority and housing stories often use short headlines
 // whose property meaning is carried by the body. Permit those pages through
 // the generic-local guard only when both a native property object and a
@@ -9374,7 +9392,7 @@ async function fetchPage(sourceUrl, options = {}) {
       );
       const listingPublishedAt = extractPublishedAtFromText(`${title} ${listingText}`);
 
-      if (!link || seenLinks.has(link) || title.length < 18 || isBlockedArticle({ title, newsLink: link })) {
+      if (!link || seenLinks.has(link) || isObviousNonArticleDiscoveryCandidate({ title, newsLink: link })) {
         return;
       }
 

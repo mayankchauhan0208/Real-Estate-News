@@ -1,4 +1,5 @@
 import crypto from "node:crypto";
+import { existsSync, readFileSync } from "node:fs";
 import { identityFor, semanticIdentityMatches } from "./publication-ledger.js";
 
 const DEFAULT_TTL_MS = 15 * 60 * 1000;
@@ -21,7 +22,7 @@ function emptyRemoteState() {
 }
 
 export class GitHubPublicationClaimStore {
-  constructor({ token, repository, branch, path = ".state/publication-claims.json", fetchImpl = fetch, ttlMs = DEFAULT_TTL_MS, baseUrl = "https://api.github.com" } = {}) {
+  constructor({ token, repository, branch, path = ".state/publication-claims.json", fetchImpl = fetch, ttlMs = DEFAULT_TTL_MS, baseUrl = "https://api.github.com", semanticSeedPath = "data/legacy-semantic-history.json" } = {}) {
     if (!token || !repository) throw new Error("GITHUB_PUBLICATION_CLAIM_CONFIGURATION_MISSING");
     this.token = token;
     this.repository = repository;
@@ -30,6 +31,7 @@ export class GitHubPublicationClaimStore {
     this.fetchImpl = fetchImpl;
     this.ttlMs = ttlMs;
     this.baseUrl = baseUrl.replace(/\/$/, "");
+    this.semanticSeedPath = semanticSeedPath;
   }
 
   endpoint() {
@@ -45,18 +47,46 @@ export class GitHubPublicationClaimStore {
     };
   }
 
+  mergeSemanticSeed(state) {
+    if (!this.semanticSeedPath || !existsSync(this.semanticSeedPath)) return state;
+    try {
+      const seed = JSON.parse(readFileSync(this.semanticSeedPath, "utf8"));
+      if (!Array.isArray(seed.claims) || !seed.claims.length) return state;
+      const claims = [...state.claims];
+      for (const candidate of seed.claims) {
+        if (!candidate?.claimId || candidate.status !== "PUBLISHED") continue;
+        const existing = claims.find((item) => item.claimId === candidate.claimId ||
+          item.identityKeys?.some((key) => candidate.identityKeys?.includes(key)));
+        if (existing) {
+          Object.assign(existing, {
+            semanticIdentity: existing.semanticIdentity || candidate.semanticIdentity,
+            publishedCity: existing.publishedCity || candidate.publishedCity || candidate.city?.[0] || "",
+            canonicalEventCity: existing.canonicalEventCity || candidate.canonicalEventCity || candidate.city?.[0] || "",
+            canonicalEventFingerprint: existing.canonicalEventFingerprint || candidate.canonicalEventFingerprint || "",
+            semanticClusterId: existing.semanticClusterId || candidate.semanticClusterId || ""
+          });
+        } else {
+          claims.push(candidate);
+        }
+      }
+      return { ...state, version: Math.max(2, Number(state.version || 1)), claims };
+    } catch {
+      return state;
+    }
+  }
+
   async read() {
     const response = await this.fetchImpl(`${this.endpoint()}?ref=${encodeURIComponent(this.branch)}`, {
       headers: this.headers()
     });
-    if (response.status === 404) return { sha: null, state: emptyRemoteState() };
+    if (response.status === 404) return { sha: null, state: this.mergeSemanticSeed(emptyRemoteState()) };
     const body = await response.text();
     if (!response.ok) throw new Error(`GITHUB_CLAIM_READ_HTTP_${response.status}`);
     const payload = parseJson(body, null);
     if (!payload?.content) throw new Error("GITHUB_CLAIM_STATE_INVALID");
     const state = decode(payload.content);
     if (![1, 2].includes(state.version) || !Array.isArray(state.claims)) throw new Error("GITHUB_CLAIM_STATE_CORRUPT");
-    return { sha: payload.sha || null, state };
+    return { sha: payload.sha || null, state: this.mergeSemanticSeed(state) };
   }
 
   async compareAndSwap(expectedSha, state, message) {
