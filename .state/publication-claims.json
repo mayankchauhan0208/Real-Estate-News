@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T02:10:17.150Z",
+  "updatedAt": "2026-10-07T02:10:18.679Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -197,6 +197,27 @@
       "claimedAt": "2026-10-07T02:10:15.731Z",
       "expiresAt": "2026-10-07T02:25:15.731Z",
       "finalizedAt": "2026-10-07T02:10:17.150Z"
+    },
+    {
+      "claimId": "d6c724cd-493a-4db6-a1ae-7a18db39b5b1",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/godrej-properties-makes-6000-crore-luxury-bet-on-south-mumbai-with-marine-lines-project/articleshow/134531351.cms",
+        "title-city:godrej properties makes 6 000 crore luxury bet on south mumbai with marine lines project|mumbai",
+        "dedupe:f554c4211ea4c75565a4f2980cc52c476db79dfd55518991493e2b46605b4cc6",
+        "dedupe:80bb7a2ded50ebc22eb1717a526efee0e511b7b7a98bb2d0b2df6ded7814c4ac",
+        "dedupe:eae4e621aaeffe95634a6a5dc75db41203ee44cdc4cb63fd9d1a6afbf3ec7322",
+        "dedupe:55a0fd6dbb04a8aa859b0059562df5a613b9455f2515583d95c05edee2a4f522",
+        "dedupe:godrej properties makes bet south mumbai marine lines|mumbai",
+        "dedupe:d424898092e9b82cf64e7e67853ffbd4158c327b4f16c9e285f906f50080fabc",
+        "dedupe:b26d076e4b0538474808b7a82758b3d43c2e04e0a63a147fa21c86fea9fbb030"
+      ],
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T02:10:18.679Z",
+      "expiresAt": "2026-10-07T02:25:18.679Z"
     }
   ]
 }
