@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T03:44:13.636Z",
+  "updatedAt": "2026-10-07T03:44:15.263Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -659,6 +659,28 @@
       "claimedAt": "2026-10-07T03:44:11.377Z",
       "expiresAt": "2026-10-07T03:59:11.377Z",
       "finalizedAt": "2026-10-07T03:44:13.636Z"
+    },
+    {
+      "claimId": "4b07040f-a4e1-4600-83ba-4b16487b591a",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/asf-group-rents-4-lakh-sq-ft-office-space-to-genpact-in-gurugram",
+        "title-city:asf group rents 4 lakh sq ft office space to genpact in gurugram|gurugram",
+        "dedupe:8d0a5e90d07986827e233390429b549b07973a125fc0819df82b9dad0772be3d",
+        "dedupe:7c70f07e943bae46ca75efb7dd2e1344d91e451b3e3e6bae05684cd4eefdaed4",
+        "dedupe:687523b35edac96e19aa3bb3eda118c7545d775e4251a426ccde36e5eaf4f83c",
+        "dedupe:b53bfec72b99370940ac8e6cc2b0adccff33ff3022f140015a1b3bfb9ddfd0db",
+        "dedupe:asf group rents office space genpact gurugram|gurugram",
+        "dedupe:17445c97b58cd1ab0a59cca52eee70d9377bee09e3a91ab0f9968d954d86ab0c",
+        "dedupe:0d2d24691d88c1e507576a67783d97d16ddab1cb24ae106b3c22f2e696889993"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:44:15.263Z",
+      "expiresAt": "2026-10-07T03:59:15.263Z"
     }
   ]
 }
