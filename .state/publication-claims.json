@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T02:10:14.182Z",
+  "updatedAt": "2026-10-07T02:10:15.731Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -175,6 +175,27 @@
       "claimedAt": "2026-10-07T02:10:12.829Z",
       "expiresAt": "2026-10-07T02:25:12.829Z",
       "finalizedAt": "2026-10-07T02:10:14.182Z"
+    },
+    {
+      "claimId": "a442d187-0bfd-418f-b8c5-abf13783da53",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://cnbctv18.com/real-estate/prestige-estates-share-price-launches-rs-1750-crore-residential-project-in-bengaluru-prestige-parklane-19998643.htm",
+        "title-city:prestige estates launches 1 750 crore residential project in bengaluru|bangalore",
+        "dedupe:5e97b2231c467d06d52afbccb26e640704d4e2fc56a6daf5024f58760bad6e79",
+        "dedupe:6a290365e7eb7d9bd1f87539e443ac31f8fc5971baa9fefd712877e2362c6c96",
+        "dedupe:b31c111939307c13152c48dd77dddd7f38436f72efd1b0460678984a434dc76a",
+        "dedupe:adc30d34e26c93836739298aa189449fecb1281bdf523d0deb58435169fcacfd",
+        "dedupe:prestige estates launches residential bengaluru|bangalore",
+        "dedupe:42d95362c2c209c3c5237cea432c8151e082b151ff17f698e5cc9631cb0d5eb7",
+        "dedupe:cd4561326a964ea4806006ab50e89a40a9b78dbefd78be436ff129ddb6f513b9"
+      ],
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T02:10:15.731Z",
+      "expiresAt": "2026-10-07T02:25:15.731Z"
     }
   ]
 }
