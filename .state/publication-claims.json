@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T03:27:28.031Z",
+  "updatedAt": "2026-10-07T03:27:29.296Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -592,7 +592,7 @@
     },
     {
       "claimId": "d83bc0b0-d59e-4751-b835-eceb1beb6c30",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/industry/puravankara-acquires-13-44-acre-land-parcel-in-greater-noida-for-340-crore/134402153",
         "title-city:puravankara acquires 13 44 acre land parcel in greater noida for 340 crore|noida",
@@ -611,7 +611,8 @@
       ],
       "originMode": "BACKFILL",
       "claimedAt": "2026-10-07T03:27:28.031Z",
-      "expiresAt": "2026-10-07T03:42:28.031Z"
+      "expiresAt": "2026-10-07T03:42:28.031Z",
+      "finalizedAt": "2026-10-07T03:27:29.296Z"
     }
   ]
 }
