@@ -61,11 +61,12 @@ const substringOnly = {
 
 const headlineCityAgainstComparison = {
   ...base,
-  title: "County Group to develop luxury homes in Gurugram",
-  description: "County Group plans a residential project in Gurugram.",
+  title: "County Group to invest Rs 2,500 cr to develop luxury homes in Gurugram",
+  description: "County Group plans a residential project in Sector 151, Noida.",
   articleText: "County Group will develop 844 apartments in Sector 88A, Gurugram. The article also notes an earlier 226-apartment project in Sector 151, Noida.",
-  cityCode: "gurugram",
-  newsLink: "https://example.com/gurugram-county-project"
+  cityCode: "noida",
+  sourceUrl: "https://torbitrealty.com/category/news/city-updates/gurugram/",
+  newsLink: "https://torbitrealty.com/county-group-to-invest-rs-2500-cr-to-develop-luxury-homes-in-gurugram/"
 };
 
 const routedCci = applyCityCode(cci);

@@ -16,7 +16,8 @@ async function filesUnder(directory) {
 }
 
 const reportPaths = (await filesUnder(root))
-  .filter((file) => path.basename(file).startsWith("news-run-"))
+  .filter((file) => path.basename(file).startsWith("news-run-") &&
+    file.split(/[\\/]/).includes("runs"))
   .sort();
 const reports = [];
 for (const reportPath of reportPaths) {

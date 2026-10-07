@@ -39,7 +39,7 @@ const BUILDER_ALIASES = [
   [/\bdlf\b/i, "dlf"],
   [/\bprestige(?: estates| group)?\b/i, "prestige"],
   [/\bgodrej properties\b/i, "godrej-properties"],
-  [/\bsignatureglobal\b/i, "signatureglobal"],
+  [/\bsignature\s*global\b/i, "signatureglobal"],
   [/\bm3m\b/i, "m3m"],
   [/\belan group\b/i, "elan"]
 ];
@@ -59,7 +59,8 @@ function semanticNumbers(text) {
 
 function semanticEventType(text) {
   if (/\b(?:sell(?:s|ing)?|sold|sell[- ]out|sales|bookings?)\b/i.test(text)) return "residential-sale";
-  if (/\b(?:launch(?:es|ed)?|unveil(?:s|ed)?|upcoming)\b/i.test(text)) return "project-launch";
+  if (/\b(?:launch(?:es|ed)?|unveil(?:s|ed)?|upcoming)\b/i.test(text) ||
+      /\bplans?\b[^.!?]{0,80}\b(?:develop|build|project|development)\b/i.test(text)) return "project-launch";
   if (/\b(?:acquire(?:s|d)?|acquisition|land parcel|land purchase)\b/i.test(text)) return "land-acquisition";
   if (/\b(?:approve(?:s|d)?|sanction(?:s|ed)?|permission)\b/i.test(text)) return "development-approval";
   return "";
@@ -88,10 +89,22 @@ function semanticIdentityFor(article = {}) {
 function semanticIdentityMatches(left, right) {
   const a = left?.semanticIdentity;
   const b = right?.semanticIdentity;
-  if (!a || !b || a.city !== b.city || a.eventType !== b.eventType) return false;
+  if (!a || !b || a.city !== b.city) return false;
   if (a.builder && b.builder && a.builder !== b.builder) return false;
   if (a.project !== b.project && (a.project || b.project)) return false;
-  if (!a.numericAnchors.some((value) => b.numericAnchors.includes(value))) return false;
+  const sharedNumericAnchors = a.numericAnchors.filter((value) => b.numericAnchors.includes(value));
+  if (sharedNumericAnchors.length === 0) return false;
+  if (a.eventType !== b.eventType) {
+    // A single builder can report one development as land acquisition in one
+    // article and as the planned project in another. Reconcile only that
+    // narrow pair when the same city, builder, and at least two independent
+    // numeric facts agree. This preserves distinct lifecycle events that share
+    // only one amount or acreage figure.
+    const sameDevelopment = new Set([a.eventType, b.eventType]);
+    if (!sameDevelopment.has("land-acquisition") || !sameDevelopment.has("project-launch") || sharedNumericAnchors.length < 2) {
+      return false;
+    }
+  }
   return Boolean(a.project || b.project || (a.builder && b.builder));
 }
 

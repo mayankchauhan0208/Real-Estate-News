@@ -90,6 +90,25 @@ assert.equal(ledgerHasMatch(ledger, {
 }), false, "same builder and amount must not suppress a distinct unnamed event");
 assert.equal(ledgerHasMatch(ledger, dlfAlternate, eventDedupe), true, "alternate DLF URL must match event identity");
 
+// A development can be described as land acquisition by one publisher and as
+// the planned project by another. The reconciliation is intentionally
+// conservative: same builder/city plus at least two shared numeric facts.
+const signatureAcquisition = {
+  title: "Signature Global signs pact to develop 194-acre land in Gurugram, targets Rs 5,500-6,000 crore GDV",
+  description: "Signature Global acquired 25 acres for Rs 150 crore and entered a collaboration for 169.22 acres, with 6.77 million sq ft and GDV of Rs 5,500-6,000 crore.",
+  cityCode: "gurugram",
+  newsLink: "https://example.test/signature-global-land-acquisition"
+};
+const signatureDevelopment = {
+  title: "Signature Global plans 194-acre luxury farmhouse project in Gurugram West",
+  description: "The 194-acre project combines 25 acres acquired for Rs 150 crore and 169.22 acres under collaboration, with 6.77 million sq ft and Rs 5,500-6,000 crore GDV.",
+  cityCode: "gurugram",
+  newsLink: "https://example.test/signature-global-project-plan"
+};
+assert.equal((await post(signatureAcquisition, "BACKFILL")).duplicate, false);
+ledger = await loadPublicationLedger({ ledgerPath, seedPath });
+assert.equal(ledgerHasMatch(ledger, signatureDevelopment), true, "same Signature Global development must reconcile across land and project wording");
+
 async function post(article, mode, response = { status: 200 }) {
   return publishWithPublicationLedger({
     ledgerPath,

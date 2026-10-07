@@ -5807,9 +5807,12 @@ function detectCityCodes(article) {
   const primaryText = getArticlePrimaryText(article);
   const titleEventCityCodes = cityRules
     .filter((rule) => hasWholeWordKeyword(String(article.title || "").toLowerCase(), rule.keywords))
-    .map((rule) => rule.code)
+    .map((rule) => rule.code === "delhi" && enabledCityCodeSet.has("new_delhi") ? "new_delhi" : rule.code)
     .filter((code) => code !== "delhi_ncr" && !isGenericDelhiNcrCityAlias(code, article));
-  if (titleEventCityCodes.length === 1 && !article.authoritativeContent && article.cityCode === titleEventCityCodes[0]) {
+  if (titleEventCityCodes.length === 1 && !article.authoritativeContent) {
+    // An explicit single-city title identifies the event location. It must
+    // outrank a secondary city mentioned in the body, source category, or an
+    // older comparison project.
     return titleEventCityCodes;
   }
   if (hasSpecificYeidaProjectEvidence(article)) {
