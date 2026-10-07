@@ -19,7 +19,9 @@
     "test:live-content-policy": "node tools/live-content-policy-regression-test.mjs",
     "test:targeted-live-defects": "node tools/targeted-live-defect-regression-test.mjs",
     "test:regional-recall": "node tools/regional-recall-regression-test.mjs",
-    "build": "npm run check && node src/filter-smoke-test.js && npm run test:regional-recall",
+    "test:document-parity": "node tools/shared-document-ingestion-regression-test.mjs",
+    "test:rera-policy": "node tools/rera-event-policy-regression-test.mjs",
+    "build": "npm run check && node src/filter-smoke-test.js && npm run test:regional-recall && npm run test:document-parity && npm run test:rera-policy",
     "admin": "node src/admin-server.js",
     "admin:export": "node tools/export-admin-static-state.js",
     "local:backfill-other-cities": "node tools/local-other-cities-backfill.mjs"

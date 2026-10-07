@@ -8,7 +8,7 @@ import { promisify } from "node:util";
 import * as cheerio from "cheerio";
 import Parser from "rss-parser";
 import { citySourceRules, workbookCityRules } from "./city-config.js";
-import { fetchDocument, extractPdfText } from "../tools/document-pipeline.mjs";
+import { ingestDocumentEvidence } from "./document-ingestion.js";
 import {
   acquireSchedulerLock,
   buildCycleSnapshot,
@@ -3022,7 +3022,7 @@ function buildRegionalMetrics(expandedArticles, getReasons) {
   const rows = regional.map((article) => ({ article, reasons: getReasons(article) }));
   const hardReject = rows.filter(({ reasons }) => reasons.some((reason) => reason.startsWith("filter "))).length;
   const review = rows.filter(({ reasons }) => reasons.some((reason) => reason.startsWith("review:"))).length;
-  const wouldAutoPublish = rows.filter(({ article, reasons }) => article.sourceMode === "AUTO_PUBLISH" && reasons.length === 0).length;
+  const wouldAutoPublish = rows.filter(({ article, reasons }) => article.sourceMode !== "OFF" && reasons.length === 0).length;
   return {
     configured: modeCounts,
     attempted: 0,
@@ -4224,6 +4224,25 @@ function isDirectMediaUrl(value = "") {
   }
 }
 
+function isPdfDocumentUrl(value = "") {
+  try {
+    return /\.pdf$/i.test(new URL(String(value || "")).pathname);
+  } catch {
+    return /\.pdf(?:[?#]|$)/i.test(String(value || ""));
+  }
+}
+
+function isLikelyDocumentEndpoint(value = "") {
+  return isPdfDocumentUrl(value) || /(?:view|download|get|show)(?:file|document|doc)|document(?:id|no|number)?=/i.test(String(value || ""));
+}
+
+function extractLinkedDocumentUrl($, articleUrl) {
+  return $("a[href]")
+    .map((_, element) => absoluteUrl($(element).attr("href"), articleUrl))
+    .get()
+    .find((value) => isLikelyDocumentEndpoint(value)) || "";
+}
+
 function hasNewsArticlePageLink(article) {
   return isHttpUrl(article.newsLink || article.url || "") && !isDirectMediaUrl(article.newsLink || article.url || "");
 }
@@ -4250,7 +4269,7 @@ function isStronglyOffTopicHeadline(article) {
 }
 
 function isReraDocumentSource(article) {
-  const sourceText = `${article.sourceUrl || ""} ${article.feedUrl || ""} ${article.newsLink || ""}`;
+  const sourceText = `${article.sourceUrl || ""} ${article.feedUrl || ""} ${article.newsLink || ""} ${article.listingUrl || ""} ${article.detailUrl || ""} ${article.documentUrl || ""}`;
   return isPressReleaseDocumentSource(sourceText);
 }
 
@@ -4259,7 +4278,7 @@ function isOfficialReraPressRelease(article) {
     return false;
   }
 
-  const sourceText = `${article.sourceUrl || ""} ${article.feedUrl || ""} ${article.newsLink || ""}`;
+  const sourceText = `${article.sourceUrl || ""} ${article.feedUrl || ""} ${article.newsLink || ""} ${article.listingUrl || ""} ${article.detailUrl || ""} ${article.documentUrl || ""}`;
   const host = getArticleHost(article);
   const officialHost = host === "up-rera.in" ||
     host.endsWith(".rera.gov.in") ||
@@ -4268,6 +4287,18 @@ function isOfficialReraPressRelease(article) {
   const pressReleasePath = /press\s*[-_]?release|pressrelease/i.test(sourceText);
 
   return officialHost && pressReleasePath;
+}
+
+function classifyOfficialReraEvent(article) {
+  if (!isOfficialReraPressRelease(article)) return "NOT_RERA";
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  const adverse = /\b(?:complaint|hearing|penalt(?:y|ies)|refund|recovery|revocation|revoked|cancel(?:led|lation)|enforcement|non-compliance|dispute|litigation|arrest|attachment)\b/i.test(text);
+  const routine = /\b(?:qpr|quarterly progress report|digital certificate|training|webinar|examination|exam|recruitment|result|procurement|furniture|holiday|office order|routine compliance|filing procedure|submission instruction|general circular)\b/i.test(text) ||
+    /\b(?:architect|engineer|chartered accountant|CA)\b.{0,100}\b(?:qpr|certificate|filing|submission|compliance)\b/i.test(text);
+  const meaningful = /\b(?:project|phase)\s+(?:registration|registered|approval|approved)|\b(?:approves?|approved|registers?|registered)\b.{0,100}\b(?:real estate|housing|residential|commercial|project|projects|phase|development)\b|\b(?:development approval|project amendment|project revival|registration certificate|project certificate|occupancy certificate|completion certificate)\b/i.test(text);
+  if (adverse) return "ADVERSE";
+  if (routine) return "ROUTINE_ADMINISTRATIVE";
+  return meaningful ? "MEANINGFUL_PROPERTY_EVENT" : "NON_MATERIAL_RERA_NOTICE";
 }
 
 function isOfficialContentSource(article) {
@@ -7156,6 +7187,19 @@ function getRejectionReasons(article, sentIds) {
   // real-estate relevance gate.
   const realEstateRelated = isRealEstateRelated(article);
   const negativeNews = isNegativeNews(article);
+  const officialReraEvent = classifyOfficialReraEvent(article);
+
+  if (article.sourceMode === "OFF") {
+    reasons.push("filter 18: source mode OFF");
+  }
+
+  if (officialReraEvent !== "NOT_RERA" && officialReraEvent !== "MEANINGFUL_PROPERTY_EVENT") {
+    reasons.push(`filter 19: official RERA event is not normal-feed eligible (${officialReraEvent})`);
+  }
+
+  if (isOfficialReraPressRelease(article) && article.officialDocumentRead === true && article.documentUrl && article.directDocumentVerified !== true) {
+    reasons.push("review: verified reusable direct official document URL unavailable");
+  }
 
   if (/^property development$/i.test(String(article.title || "").trim()) ||
       /^haryana\s*\(gurugram\)\s+rera$/i.test(String(article.title || "").trim())) {
@@ -7266,6 +7310,10 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("review: ambiguous multi-city geo evidence");
   }
 
+  if (article.cityConfidence === "uncertain") {
+    reasons.push("review: uncertain event geography");
+  }
+
   if (hasSourceCityUrlMismatch(article)) {
     reasons.push("filter 16: source URL city mismatch");
   }
@@ -7314,10 +7362,6 @@ function getRejectionReasons(article, sentIds) {
   if (articleDedupeIds(article).some((id) => sentIds.has(id)) ||
       (sharedPublicationLedger && ledgerHasMatch(sharedPublicationLedger, article, articleDedupeIds(article)))) {
     reasons.push("filter 13: already sent");
-  }
-
-  if (article.sourceMode === "ACTIVE_FOR_REVIEW" && !reasons.some((reason) => reason.startsWith("filter "))) {
-    reasons.push("review: regional source active for editorial review");
   }
 
   return reasons;
@@ -8061,6 +8105,7 @@ async function fetchArticleMetadata(articleUrl, fallback = {}, options = {}) {
     const html = await fetchArticleHtml(articleUrl, options);
     const $ = cheerio.load(html);
     const articleText = extractArticleText($);
+    const documentUrl = extractLinkedDocumentUrl($, articleUrl);
 
     const pagePublishedAt = extractPagePublishedAt($, fallback);
     return {
@@ -8078,6 +8123,7 @@ async function fetchArticleMetadata(articleUrl, fallback = {}, options = {}) {
       ),
       publishedAt: pickFirst(pagePublishedAt, fallback.publishedAt),
       publicationDateExtractionMethod: pagePublishedAt ? "article-page-metadata" : fallback.publishedAt ? "listing-date-fallback" : "unknown",
+      documentUrl,
       articleText,
       articleReadAttempted: true,
       fullArticleRead: articleText.trim().length >= 200,
@@ -8201,22 +8247,6 @@ async function fetchArticleHtml(articleUrl, options = {}) {
   throw lastError;
 }
 
-async function fetchBinary(sourceUrl, options = {}) {
-  const response = await fetchWithTimeout(sourceUrl, {
-        signal: options.signal,
-        headers: {
-      "User-Agent": userAgent,
-      Accept: "application/pdf,*/*"
-    }
-  }, 20000);
-
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status}`);
-  }
-
-  return Buffer.from(await readResponseBodyWithTimeout(response, "arrayBuffer", options));
-}
-
 function extractPdfLinksFromLatinText(value = "") {
   return [...String(value).matchAll(/https?:\/\/[^\s)<>]+/g)]
     .map((match) => match[0])
@@ -8308,7 +8338,7 @@ function getHsvpCardTitle($, element) {
   return stripHtml($(element).text());
 }
 
-function buildHsvpFaridabadArticle({ sourceUrl, noticeUrl, cardTitle, pdfLatinText }) {
+function buildHsvpFaridabadArticle({ sourceUrl, noticeUrl, cardTitle, pdfLatinText, documentEvidence }) {
   const details = extractHsvpFaridabadDetails(pdfLatinText);
 
   if (details.faridabadLinks.length === 0) {
@@ -8327,14 +8357,25 @@ function buildHsvpFaridabadArticle({ sourceUrl, noticeUrl, cardTitle, pdfLatinTe
   const article = {
     title,
     description,
-    articleText: `${description} Source notice: ${cardTitle}. Faridabad-linked plan references: ${details.faridabadLinks.length}.`,
+    articleText: `${description} Source notice: ${cardTitle}. Faridabad-linked plan references: ${details.faridabadLinks.length}. ${documentEvidence?.text || ""}`.slice(0, 12000),
     authoritativeContent: true,
-    officialDocumentRead: Boolean(pdfLatinText && pdfLatinText.trim().length >= 200),
+    officialDocumentRead: documentEvidence?.officialDocumentRead === true,
+    articleReadAttempted: true,
+    fullArticleRead: documentEvidence?.fullArticleRead === true,
+    extractionMethod: documentEvidence?.extractionMethod || "",
+    ocr: documentEvidence?.ocr || null,
+    articleReadError: documentEvidence?.articleReadError || "",
     isActive: true,
-    newsLink: noticeUrl,
-    thumbnailImage: getFallbackLogo(sourceUrl),
+    newsLink: documentEvidence?.directDocumentVerified ? documentEvidence.documentUrl : noticeUrl,
+    thumbnailImage: documentEvidence?.thumbnail?.thumbnailUrl || getFallbackLogo(sourceUrl),
+    thumbnailExtractionMethod: documentEvidence?.thumbnail?.thumbnailUrl ? "PDF_PAGE_RENDER" : "publisher-logo-fallback",
     postedBy: "Haryana Shehri Vikas Pradhikaran (HSVP)",
     postedByLogo: getFallbackLogo(sourceUrl),
+    sourceUrl: documentEvidence?.directDocumentVerified ? documentEvidence.documentUrl : sourceUrl,
+    listingUrl: sourceUrl,
+    detailUrl: "",
+    documentUrl: documentEvidence?.documentUrl || noticeUrl,
+    directDocumentVerified: documentEvidence?.directDocumentVerified === true,
     createdAt: publishedAt,
     publishedAt,
     fetchedAt: new Date().toISOString()
@@ -8372,12 +8413,18 @@ async function fetchHsvpNotices(sourceUrl, options = {}) {
   const limitedCandidates = noticeCandidates.slice(0, getMaxItemsPerSource());
   const articles = await mapWithConcurrency(limitedCandidates, 4, async (candidate) => {
     try {
-      const pdfBuffer = await fetchBinary(candidate.noticeUrl, options);
-      const pdfLatinText = pdfBuffer.toString("latin1");
+      const documentEvidence = await ingestDocumentEvidence({
+        documentUrl: candidate.noticeUrl,
+        sourceUrl,
+        timeoutMs: getFetchTimeoutForUrl(candidate.noticeUrl),
+        signal: options.signal
+      });
+      const pdfLatinText = documentEvidence.body.toString("latin1");
       return buildHsvpFaridabadArticle({
         sourceUrl,
         ...candidate,
-        pdfLatinText
+        pdfLatinText,
+        documentEvidence
       });
     } catch (error) {
       if (options.signal?.aborted) {
@@ -9056,37 +9103,57 @@ async function fetchAuthorityListings(sourceUrl, options = {}) {
     let fullArticleRead = false;
     let officialDocumentRead = false;
     let detail = {};
+    let detailUrl = "";
+    let verifiedDocumentUrl = "";
+    let documentThumbnail = "";
     try {
-      if (isDirectMediaUrl(candidate.link)) {
-        const document = await fetchDocument(candidate.link, {
+      if (isLikelyDocumentEndpoint(candidate.link)) {
+        const document = await ingestDocumentEvidence({
+          documentUrl: candidate.link,
+          sourceUrl,
           timeoutMs: getFetchTimeoutForUrl(candidate.link),
-          maxBytes: 4 * 1024 * 1024
-        }, {
-          ocr: {
-            trustedSource: true,
-            discoveredFromListing: true,
-            languages: ["eng", "hin", "mr"],
-            maxPages: 3,
-            documentTimeoutMs: 15000
-          }
+          signal: options.signal
         });
-        if (document.telemetry.validation === "VALID_PDF" && document.text.length >= 200) {
+        verifiedDocumentUrl = document.directDocumentVerified ? document.documentUrl : "";
+        documentThumbnail = document.thumbnail?.thumbnailUrl || "";
+        if (document.readable) {
           articleText = `${articleText} ${document.text}`.slice(0, 12000);
-          officialDocumentRead = true;
-          fullArticleRead = true;
+          officialDocumentRead = document.officialDocumentRead;
+          fullArticleRead = document.fullArticleRead;
           detail = {
-            extractionMethod: document.telemetry.extractionMethod,
-            ocr: document.telemetry.ocr || null
+            extractionMethod: document.extractionMethod,
+            ocr: document.ocr
           };
-        } else if (document.telemetry.failureReason) {
-          detail = { articleReadError: document.telemetry.failureReason };
+        } else if (document.articleReadError) {
+          detail = { articleReadError: document.articleReadError };
         }
       } else {
+        detailUrl = candidate.link;
         detail = await fetchArticleMetadataWithTimeout(candidate.link, {}, options);
         const extracted = stripHtml(detail.articleText || detail.description || "");
         if (extracted.length >= 200) {
           articleText = `${articleText} ${extracted}`.slice(0, 12000);
           fullArticleRead = detail.fullArticleRead === true;
+        }
+        if (detail.documentUrl) {
+          const document = await ingestDocumentEvidence({
+            documentUrl: detail.documentUrl,
+            sourceUrl,
+            timeoutMs: getFetchTimeoutForUrl(detail.documentUrl),
+            signal: options.signal
+          });
+          verifiedDocumentUrl = document.directDocumentVerified ? document.documentUrl : "";
+          documentThumbnail = document.thumbnail?.thumbnailUrl || "";
+          if (document.readable) {
+            articleText = `${articleText} ${document.text}`.slice(0, 12000);
+            officialDocumentRead = document.officialDocumentRead;
+            fullArticleRead = document.fullArticleRead;
+            detail.extractionMethod = document.extractionMethod;
+            detail.ocr = document.ocr;
+            detail.articleReadError = "";
+          } else if (!fullArticleRead) {
+            detail.articleReadError = document.articleReadError;
+          }
         }
       }
     } catch (error) {
@@ -9106,12 +9173,16 @@ async function fetchAuthorityListings(sourceUrl, options = {}) {
       ocr: detail.ocr || null,
       articleReadError: detail.articleReadError || "",
       isActive: true,
-      newsLink: candidate.link,
-      thumbnailImage: absoluteUrl(detail.thumbnailImage || publisherLogo, candidate.link),
+      newsLink: verifiedDocumentUrl || detailUrl || candidate.link,
+      thumbnailImage: documentThumbnail || absoluteUrl(detail.thumbnailImage || publisherLogo, candidate.link),
+      thumbnailExtractionMethod: documentThumbnail ? "PDF_PAGE_RENDER" : "metadata-or-fallback",
       postedBy: profile.publisher,
       postedByLogo: publisherLogo,
-      sourceUrl,
+      sourceUrl: verifiedDocumentUrl || detailUrl || sourceUrl,
       listingUrl,
+      detailUrl,
+      documentUrl: verifiedDocumentUrl || detail.documentUrl || (isLikelyDocumentEndpoint(candidate.link) ? candidate.link : ""),
+      directDocumentVerified: Boolean(verifiedDocumentUrl),
       publishedAt: detail.publishedAt || candidate.publishedAt,
       createdAt: detail.publishedAt || candidate.publishedAt,
       publicationDateExtractionMethod: detail.publishedAt ? "authority-detail" : "authority-listing",
@@ -9293,13 +9364,26 @@ async function fetchUpReraPressReleases(sourceUrl, options = {}) {
       let fullArticleRead = false;
       let articleReadError = "";
       if (isPdf) {
-        const extracted = extractPdfText(body).text;
-        if (extracted.length >= 200) {
-          articleText = `${candidate.title}. ${extracted}`.slice(0, 12000);
-          officialDocumentRead = true;
-          fullArticleRead = true;
+        const document = await ingestDocumentEvidence({
+          documentUrl: response.url || candidate.newsLink,
+          sourceUrl,
+          body,
+          contentType,
+          status: response.status
+        });
+        candidate.documentEvidenceUrl = document.documentUrl;
+        candidate.directDocumentVerified = document.directDocumentVerified;
+        candidate.documentUrl = document.directDocumentVerified ? document.documentUrl : "";
+        candidate.thumbnailImage = document.thumbnail?.thumbnailUrl || candidate.thumbnailImage;
+        candidate.thumbnailExtractionMethod = document.thumbnail?.thumbnailUrl ? "PDF_PAGE_RENDER" : candidate.thumbnailExtractionMethod;
+        if (document.readable) {
+          articleText = `${candidate.title}. ${document.text}`.slice(0, 12000);
+          officialDocumentRead = document.officialDocumentRead;
+          fullArticleRead = document.fullArticleRead;
+          candidate.extractionMethod = document.extractionMethod;
+          candidate.ocr = document.ocr;
         } else {
-          articleReadError = "UP RERA document has no readable embedded text";
+          articleReadError = document.articleReadError;
         }
       } else {
         const detail$ = cheerio.load(responseText);
@@ -9318,6 +9402,12 @@ async function fetchUpReraPressReleases(sourceUrl, options = {}) {
         officialDocumentRead,
         fullArticleRead,
         articleReadError: fullArticleRead ? "" : articleReadError || "UP RERA View File returned unreadable document content",
+        newsLink: candidate.documentUrl || candidate.newsLink,
+        sourceUrl: candidate.documentUrl || sourceUrl,
+        listingUrl: sourceUrl,
+        detailUrl: "",
+        documentUrl: candidate.documentUrl || candidate.documentEvidenceUrl || "",
+        directDocumentVerified: candidate.directDocumentVerified === true,
         postbackEventTarget: undefined
       });
       return { ...applyCityCode(article), id: stableId(article) };
@@ -9432,19 +9522,26 @@ async function fetchPage(sourceUrl, options = {}) {
   const articleConcurrency = options.streamResults === true ? 2 : 8;
   const articles = await mapWithConcurrency(limitedCandidates, articleConcurrency, async (candidate) => {
     let metadata;
-    if (isDirectMediaUrl(candidate.newsLink)) {
+    if (isLikelyDocumentEndpoint(candidate.newsLink)) {
       try {
-        const document = await fetchDocument(candidate.newsLink, {
+        const document = await ingestDocumentEvidence({
+          documentUrl: candidate.newsLink,
+          sourceUrl,
           timeoutMs: getFetchTimeoutForUrl(candidate.newsLink),
-          maxBytes: 4 * 1024 * 1024
+          signal: options.signal
         });
-        const readable = document.telemetry.validation === "VALID_PDF" && document.text.length >= 200;
         metadata = {
-          articleText: readable ? document.text : "",
-          articleReadAttempted: true,
-          fullArticleRead: readable,
-          articleReadError: readable ? "" : document.telemetry.failureReason || "document was not readable",
-          extractionMethod: document.telemetry.extractionMethod || "PDF_TEXT"
+          articleText: document.text,
+          articleReadAttempted: document.articleReadAttempted,
+          fullArticleRead: document.fullArticleRead,
+          officialDocumentRead: document.officialDocumentRead,
+          articleReadError: document.articleReadError,
+          extractionMethod: document.extractionMethod,
+          ocr: document.ocr,
+          thumbnailImage: document.thumbnail?.thumbnailUrl || "",
+          thumbnailExtractionMethod: document.thumbnail?.thumbnailUrl ? "PDF_PAGE_RENDER" : "",
+          documentUrl: document.documentUrl,
+          directDocumentVerified: document.directDocumentVerified
         };
       } catch (error) {
         metadata = {
@@ -10946,6 +11043,7 @@ export {
   cleanArticleFields,
   detectCityCodes,
   expandCityArticles,
+  extractLinkedDocumentUrl,
   extractMetadataImage,
   fetchSource,
   fetchSourceBatch,
@@ -10984,7 +11082,9 @@ export {
   detectArticleLanguage,
   isAllowedSource,
   isNegativeNews,
+  classifyOfficialReraEvent,
   isPublishableArticle,
+  toApiPayload,
   isWithinBackfillDateRange,
   parseNewsDateValue,
   getMemorySnapshot,

@@ -54,4 +54,27 @@ for (const control of controls) {
   assert.equal(isPublishableArticle(article, new Set()), true, `${control.name} publish gate`);
 }
 
-console.log(`Regional recall controls passed: ${controls.length}/3`);
+const reviewModeValid = applyCityCode(cleanArticleFields({
+  ...base,
+  ...controls[0],
+  sourceMode: "ACTIVE_FOR_REVIEW",
+  newsLink: "https://example.com/active-review-valid"
+}));
+assert.deepEqual(getRejectionReasons(reviewModeValid, new Set()), [], "ACTIVE_FOR_REVIEW must not impose a publication ceiling");
+
+const uncertainGeo = { ...reviewModeValid, cityConfidence: "uncertain", newsLink: "https://example.com/active-review-uncertain" };
+assert.deepEqual(getRejectionReasons(uncertainGeo, new Set()), ["review: uncertain event geography"]);
+
+const genericInfrastructure = {
+  ...reviewModeValid,
+  title: "Indore opens new flyover to reduce traffic congestion",
+  description: "A flyover will reduce commuter travel time.",
+  articleText: "The Indore flyover improves traffic flow and road connectivity for commuters without a property or development event.",
+  newsLink: "https://example.com/active-review-generic-infrastructure"
+};
+assert.equal(isPublishableArticle(genericInfrastructure, new Set()), false, "generic infrastructure must remain rejected");
+
+const offSource = { ...reviewModeValid, sourceMode: "OFF", newsLink: "https://example.com/off-source-valid" };
+assert.equal(isPublishableArticle(offSource, new Set()), false, "OFF sources must never auto-publish");
+
+console.log(`Regional recall controls passed: ${controls.length}/3 plus source-mode policy`);

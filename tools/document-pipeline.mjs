@@ -132,29 +132,64 @@ async function runOfficialPdfOcr(body, options = {}) {
   }
 }
 
+export async function extractDocumentBody(body, { contentType = 'application/pdf', status = 200, ocr = null } = {}) {
+  const telemetry = {
+    status,
+    contentType,
+    bytes: Buffer.isBuffer(body) ? body.length : 0,
+    validation: '',
+    textExtraction: '',
+    textLength: 0,
+    extractionMethod: 'PDF_TEXT',
+    ocr: null,
+    failureReason: ''
+  };
+  const buffer = Buffer.isBuffer(body) ? body : Buffer.from(body || '');
+  telemetry.validation = classifyDocumentResponse({ status, contentType, body: buffer });
+  if (telemetry.validation !== 'VALID_PDF') {
+    telemetry.failureReason = telemetry.validation;
+    return { telemetry, body: buffer, text: '' };
+  }
+
+  const extracted = extractPdfText(buffer);
+  telemetry.textExtraction = extracted.status;
+  telemetry.textLength = extracted.textLength;
+  if (extracted.status === 'IMAGE_ONLY_PDF' && ocr?.trustedSource && ocr?.discoveredFromListing) {
+    const ocrResult = await runOfficialPdfOcr(buffer, ocr);
+    telemetry.ocr = { ...ocrResult, text: undefined };
+    if (ocrResult.text) {
+      telemetry.textExtraction = ocrResult.status;
+      telemetry.textLength = ocrResult.textLength;
+      telemetry.extractionMethod = 'BOUNDED_OCR';
+      return { telemetry, body: buffer, text: ocrResult.text };
+    }
+  }
+  return { telemetry, body: buffer, text: extracted.text };
+}
+
 export async function fetchDocument(url, limits = DOCUMENT_LIMITS, options = {}) {
   const started = Date.now(); const controller = new AbortController(); const timer = setTimeout(() => controller.abort(), limits.timeoutMs);
   const telemetry = { documentUrl: url, status: 0, finalUrl: '', contentType: '', bytes: 0, validation: '', elapsedMs: 0, textExtraction: '', textLength: 0, extractionMethod: 'PDF_TEXT', ocr: null, failureReason: '' };
   try {
-    const response = await fetch(url, { redirect: 'follow', signal: controller.signal, headers: { 'user-agent': 'Brokken-Task12-Local/1.0', accept: 'application/pdf,text/html,application/xhtml+xml,*/*' } });
+    const signal = options.signal && typeof AbortSignal !== 'undefined' && AbortSignal.any
+      ? AbortSignal.any([controller.signal, options.signal])
+      : controller.signal;
+    if (options.signal && !AbortSignal.any) {
+      if (options.signal.aborted) controller.abort();
+      else options.signal.addEventListener('abort', () => controller.abort(), { once: true });
+    }
+    const response = await fetch(url, { redirect: 'follow', signal, headers: { 'user-agent': 'Brokket-Document-Ingestion/1.0', accept: 'application/pdf,text/html,application/xhtml+xml,*/*' } });
     telemetry.status = response.status; telemetry.finalUrl = response.url; telemetry.contentType = response.headers.get('content-type') || '';
     const declared = Number(response.headers.get('content-length') || 0); if (declared > limits.maxBytes) throw new Error('response-size-limit');
     const body = Buffer.from(await response.arrayBuffer()); telemetry.bytes = body.length; if (body.length > limits.maxBytes) throw new Error('response-size-limit');
     telemetry.validation = classifyDocumentResponse({ status: response.status, contentType: telemetry.contentType, body });
     if (telemetry.validation === 'VALID_PDF') {
-      const extracted = extractPdfText(body);
-      telemetry.textExtraction = extracted.status;
-      telemetry.textLength = extracted.textLength;
-      if (extracted.status === 'IMAGE_ONLY_PDF' && options.ocr?.trustedSource && options.ocr?.discoveredFromListing) {
-        const ocr = await runOfficialPdfOcr(body, options.ocr);
-        telemetry.ocr = { ...ocr, text: undefined };
-        if (ocr.text) {
-          telemetry.textExtraction = ocr.status;
-          telemetry.textLength = ocr.textLength;
-          telemetry.extractionMethod = 'BOUNDED_OCR';
-          return { telemetry, body, text: ocr.text };
-        }
-      }
+      const extracted = await extractDocumentBody(body, { contentType: telemetry.contentType, status: response.status, ocr: options.ocr });
+      Object.assign(telemetry, extracted.telemetry, {
+        documentUrl: url,
+        finalUrl: response.url,
+        elapsedMs: telemetry.elapsedMs
+      });
       return { telemetry, body, text: extracted.text };
     }
     telemetry.failureReason = telemetry.validation; return { telemetry, body, text: '' };

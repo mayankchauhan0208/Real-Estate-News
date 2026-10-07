@@ -168,7 +168,7 @@ jobs:
           DETAILED_REJECTION_REASONS: "true"
           MISSED_NEWS_AUDIT: "true"
           # Include committed regional/native sources in historical recovery;
-          # per-source sourceMode remains the publication gate.
+          # OFF is excluded and enabled articles pass the same content gates.
           ENABLE_EXPERIMENTAL_SOURCES: "true"
 
       - name: Upload historical batch report
@@ -180,6 +180,7 @@ jobs:
             reports/runs/
             reports/source-audits/
             .state/task41-backfill/${{ inputs.backfill_id }}/
+            admin/document-thumbnails/
           retention-days: 90
           if-no-files-found: ignore
 
@@ -207,6 +208,18 @@ jobs:
       - name: Aggregate and gate batch reports
         run: |
           node tools/task41-aggregate-backfill.mjs .task41-artifacts reports/source-audits/task41/backfill-summary.json
+
+      - name: Persist generated document thumbnails
+        continue-on-error: true
+        run: |
+          mkdir -p admin/document-thumbnails
+          find .task41-artifacts -path '*/admin/document-thumbnails/*.jpg' -exec cp -n {} admin/document-thumbnails/ \;
+          if compgen -G "admin/document-thumbnails/*.jpg" > /dev/null; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -f admin/document-thumbnails/*.jpg
+            git diff --cached --quiet || (git commit -m "Persist backfill document thumbnails [skip ci]" && git push)
+          fi
 
       - name: Upload aggregate report
         if: always()

@@ -382,7 +382,8 @@ const officialReraRelease = article({
   sourceUrl: "https://up-rera.in/PressRelease",
   newsLink: "https://up-rera.in/PressRelease#release-up-rera-order"
 });
-assert.equal(isPublishableArticle(officialReraRelease, sentIds), true);
+assert.equal(isPublishableArticle(officialReraRelease, sentIds), false);
+assert.ok(getRejectionReasons(officialReraRelease, sentIds).some((reason) => reason.includes("filter 19")));
 
 const marathiRealEstateArticle = article({
   title: "मुंबईत नवीन गृहनिर्माण प्रकल्पाला मंजुरी",

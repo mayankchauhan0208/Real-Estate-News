@@ -11,4 +11,6 @@ tmp_*.mjs
 tmp_*.js
 tmp_*.py
 reports/source-audits/*.xlsx
+admin/document-thumbnails/*.jpg
+!admin/document-thumbnails/.gitkeep
 
