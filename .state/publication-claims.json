@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T04:10:30.742Z",
+  "updatedAt": "2026-10-07T04:10:32.291Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -708,7 +708,7 @@
     },
     {
       "claimId": "49bfd42f-5ef3-421c-80d0-ebabded5afae",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/blackstone-backed-ask-property-fund-commits-rs-300-crore-to-ghaziabad-housing-projects/articleshow/133727430.cms",
         "title-city:blackstone backed ask property fund commits rs 300 crore to ghaziabad housing projects|ghaziabad",
@@ -726,7 +726,8 @@
       ],
       "originMode": "BACKFILL",
       "claimedAt": "2026-10-07T04:10:30.742Z",
-      "expiresAt": "2026-10-07T04:25:30.742Z"
+      "expiresAt": "2026-10-07T04:25:30.742Z",
+      "finalizedAt": "2026-10-07T04:10:32.291Z"
     }
   ]
 }
