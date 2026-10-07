@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T16:36:19.080Z",
+  "updatedAt": "2026-10-07T18:10:44.346Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1013,6 +1013,32 @@
       "claimedAt": "2026-10-07T16:36:17.582Z",
       "expiresAt": "2026-10-07T16:51:17.582Z",
       "finalizedAt": "2026-10-07T16:36:19.080Z"
+    },
+    {
+      "claimId": "830c892f-7373-4ca8-bf19-63e01719caa9",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/delhi-news/govt-to-strengthen-youth-led-community-mobilisation-for-tuberculosis-elimination-101791352104796.html",
+        "title-city:govt to strengthen youth led community mobilisation for tuberculosis elimination|new_delhi",
+        "dedupe:b3e8d8ec2b9ed45cf575f6385227474c3590224bd27b042645bac621742522dd",
+        "dedupe:38f1f683b3e1a0b4f01f944647ed98699572cfca1bfba6cfd336c12aeb81eb15",
+        "dedupe:0194dc7a545c458dd0506777e0a7e53d2baaba9f88d798127b9073d8c395a0a7",
+        "dedupe:eb5b04b500b1a2f268cf98b650b1eaa11e6153bc5ed44c12f7a9d4cb1897a353",
+        "dedupe:govt strengthen youth led community mobilisation tuberculosis elimination|new_delhi",
+        "dedupe:e2463f2969c05180f8a36c7b3e8d4699723adf1d2e33b233486e0ec08fca98e7",
+        "dedupe:4040bc6a3eb031662e3e534dcc27148efe65dc0450c97b2f8346d9f03ce6fda1"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-07T18:10:44.346Z",
+      "expiresAt": "2026-10-07T18:25:44.346Z"
     }
   ]
 }
