@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T04:10:27.001Z",
+  "updatedAt": "2026-10-07T04:10:28.908Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -685,7 +685,7 @@
     },
     {
       "claimId": "8fe379a6-355b-4930-9218-92d93a2c6ab6",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://propnewstime.com/latestnewsstories/mzuynjg=/pvr-inox-to-open-25-000-sq-ft-multiplex-at-bhumika-realty-s-the-icon-in-faridabad",
         "title-city:pvr inox to open 25 000 sq ft multiplex at bhumika realty s the icon in faridabad|faridabad",
@@ -703,7 +703,8 @@
       ],
       "originMode": "BACKFILL",
       "claimedAt": "2026-10-07T04:10:27.001Z",
-      "expiresAt": "2026-10-07T04:25:27.001Z"
+      "expiresAt": "2026-10-07T04:25:27.001Z",
+      "finalizedAt": "2026-10-07T04:10:28.908Z"
     }
   ]
 }
