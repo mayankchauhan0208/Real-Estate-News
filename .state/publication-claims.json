@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T02:10:26.036Z",
+  "updatedAt": "2026-10-07T02:10:28.069Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -262,6 +262,27 @@
       "claimedAt": "2026-10-07T02:10:24.717Z",
       "expiresAt": "2026-10-07T02:25:24.717Z",
       "finalizedAt": "2026-10-07T02:10:26.036Z"
+    },
+    {
+      "claimId": "7461015c-3fcb-478c-8a59-b8c3c54c6728",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gaurs-group-sells-1088-flats-for-rs-1800-cr-in-new-housing-project-in-ncr/articleshow/134704516.cms",
+        "title-city:gaurs group sells 1 088 flats for rs 1 800 cr in new housing project in ncr|noida",
+        "dedupe:0a35fa6a5150cc09745ea3865baea81345a9360e96887957a35249b78f13960c",
+        "dedupe:d2cf1eccf842830e009dbb31e79668ffa8ac6ff2e21a52902187f12213aa376e",
+        "dedupe:ac35c5e82535659004d76e19818e36ba09adf96d926372db37e5529339498b90",
+        "dedupe:14f9f2b2ffa57ebcb7c47d90ebd66dc911673201c474d8053318e28cc92d7115",
+        "dedupe:gaurs group sells flats new housing|noida",
+        "dedupe:eea54161378d81b67db527d818db4cae76f8aef4a9cfc5cd4c83e0c0c66f8c96",
+        "dedupe:d399090d86af852c9eece265ee6fb492953ec8e19968407290b3be25a79653a7"
+      ],
+      "city": [
+        "noida"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T02:10:28.069Z",
+      "expiresAt": "2026-10-07T02:25:28.069Z"
     }
   ]
 }
