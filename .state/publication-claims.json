@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T04:10:34.069Z",
+  "updatedAt": "2026-10-07T04:10:35.774Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -731,7 +731,7 @@
     },
     {
       "claimId": "69ca1241-3a4b-4612-b41d-d953db0ac7b2",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/markets/digital-real-estate/realty-news/bhumika-realty-leases-24000-sq-ft-retail-space-to-lifestyle-in-faridabad/articleshow/134335383.cms",
         "title-city:bhumika realty leases 24 000 sq ft retail space to lifestyle in faridabad|faridabad",
@@ -749,7 +749,8 @@
       ],
       "originMode": "BACKFILL",
       "claimedAt": "2026-10-07T04:10:34.069Z",
-      "expiresAt": "2026-10-07T04:25:34.069Z"
+      "expiresAt": "2026-10-07T04:25:34.069Z",
+      "finalizedAt": "2026-10-07T04:10:35.774Z"
     }
   ]
 }
