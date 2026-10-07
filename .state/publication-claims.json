@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T03:17:46.320Z",
+  "updatedAt": "2026-10-07T03:17:47.547Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -462,7 +462,7 @@
     },
     {
       "claimId": "e56e605e-f5fb-41b8-a031-53d661048300",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/retail/dlf-to-open-500-crore-goa-mall-by-march-2027-eyes-over-150-crore-annual-rental-income/134338724",
         "title-city:dlf to open 500 crore goa mall by march 2027 eyes over 150 crore annual rental income|goa",
@@ -502,7 +502,8 @@
       ],
       "originMode": "BACKFILL",
       "claimedAt": "2026-10-07T03:17:46.320Z",
-      "expiresAt": "2026-10-07T03:32:46.320Z"
+      "expiresAt": "2026-10-07T03:32:46.320Z",
+      "finalizedAt": "2026-10-07T03:17:47.547Z"
     }
   ]
 }
