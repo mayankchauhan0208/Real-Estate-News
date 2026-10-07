@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T03:05:41.444Z",
+  "updatedAt": "2026-10-07T03:17:32.381Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -372,6 +372,25 @@
       "claimedAt": "2026-10-07T03:05:40.256Z",
       "expiresAt": "2026-10-07T03:20:40.256Z",
       "finalizedAt": "2026-10-07T03:05:41.444Z"
+    },
+    {
+      "claimId": "52890bcb-68e4-4df2-97af-bc5989e680ee",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/hospitality/ganpati-group-plans-to-invest-2000-crore-to-develop-projects-in-lucknow-visakhapatnam/134309356",
+        "title-city:ganpati group plans to invest 2 000 crore to develop projects in lucknow and visakhapatnam|visakhapatnam",
+        "dedupe:1f070e5655cd0bbcf5828136cb242ade9d27398346469b0d43b30b627fbcba18",
+        "dedupe:99707f48f94247a4eb53b1852a85040a61ad94da38624df8e61be7919235157c",
+        "dedupe:46c95941da2566c0c5b08c9eb6a284aafe2331b70487d6fd66456a7810ec0c10",
+        "dedupe:ganpati group plans develop lucknow visakhapatnam|visakhapatnam"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "visakhapatnam"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:17:32.381Z",
+      "expiresAt": "2026-10-07T03:32:32.381Z"
     }
   ]
 }
