@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T06:01:48.067Z",
+  "updatedAt": "2026-10-07T10:11:35.333Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -825,6 +825,32 @@
       "claimedAt": "2026-10-07T06:01:45.819Z",
       "expiresAt": "2026-10-07T06:16:45.819Z",
       "finalizedAt": "2026-10-07T06:01:48.067Z"
+    },
+    {
+      "claimId": "1417e4c6-8b57-4027-8ecc-6b45fbc4798d",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://livehindustan.com/business/who-is-dinesh-thakkar-the-man-who-bought-a-rs-711-crore-home-in-mumbai-juhu-journey-from-a-rented-house-to-a-dream-home-201790058991352.html",
+        "title-city:क न ह द न श ठक कर ज म बई क ज ह म खर द ल ए 711 कर ड क घर क र ए क मक न स ड र म ह म तक क द स त न|mumbai",
+        "dedupe:2a8535725ee1bc54e2cfc75642cd881e00e27e88168217265fd5f07767fd8625",
+        "dedupe:c7a214b229cf37e7d11a1bd04be8d3d7438ee5170c9b527eb343ec928676218d",
+        "dedupe:7b259a252a05a850c330f7fb0d9c1d7608763f10aec4ebe2b54f4c8e429e194b",
+        "dedupe:08a0b5fc5d4fc20c88d64c6a1509d3239c60f9637900d24e6fc65a3c727bf67b",
+        "dedupe:क न ह द न श ठक कर ज म बई क ज ह म खर द ल ए कर ड क घर क र ए क मक न स ड र म ह म तक क द स त न|mumbai",
+        "dedupe:643248eba4f6a524df5abfe77bf2e4ecd054381ec280f05cdd7df24d6d50a792",
+        "dedupe:684772ce4a163089fa8c7c44693fcacb3502822c0987a1c9dc98a3b3e22ede46"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-07T10:11:35.333Z",
+      "expiresAt": "2026-10-07T10:26:35.333Z"
     }
   ]
 }
