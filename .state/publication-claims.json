@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T03:17:47.547Z",
+  "updatedAt": "2026-10-07T03:17:49.205Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -504,6 +504,28 @@
       "claimedAt": "2026-10-07T03:17:46.320Z",
       "expiresAt": "2026-10-07T03:32:46.320Z",
       "finalizedAt": "2026-10-07T03:17:47.547Z"
+    },
+    {
+      "claimId": "b58f3b41-f9d3-4377-ab2f-3cbc3ea8362f",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/signature-global-signs-pact-to-develop-194-acre-land-in-gurugram-targets-rs-55006000-crore-gdv/articleshow/134483932.cms",
+        "title-city:signature global signs pact to develop 194 acre land in gurugram targets rs 5 500 6 000 crore gdv|gurugram",
+        "dedupe:c993284092486bfba4b079a2294227f4e9fef80fb3e79ae3af1906f242f40435",
+        "dedupe:74360d37b41f8f6deb94240a2a47efd5388e8df887a6fff9567d04ed3890f84f",
+        "dedupe:060ed8a25b7d252ea7db9b3739a7c0264c26c1ae63865e3b7d67d863b4b570a8",
+        "dedupe:d7468c3e95dd4e76effc7199c9292b706952ca41d8ef9346b55277cb8e350fc9",
+        "dedupe:signature global signs pact develop acre land gurugram targets gdv|gurugram",
+        "dedupe:402cc2eb0ba574636c3b98ac31563189d4bd5610edf3c6f97a8b920167029dd7",
+        "dedupe:d88f9f04e98de9b582914309a8b11578ef5264c4a64b1dfca81c6147128f029d"
+      ],
+      "semanticIdentity": null,
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T03:17:49.205Z",
+      "expiresAt": "2026-10-07T03:32:49.205Z"
     }
   ]
 }
