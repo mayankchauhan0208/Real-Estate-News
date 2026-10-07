@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T02:10:20.131Z",
+  "updatedAt": "2026-10-07T02:10:21.646Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -219,6 +219,27 @@
       "claimedAt": "2026-10-07T02:10:18.679Z",
       "expiresAt": "2026-10-07T02:25:18.679Z",
       "finalizedAt": "2026-10-07T02:10:20.131Z"
+    },
+    {
+      "claimId": "2829af6f-8f97-4065-aa0f-84782b6dda29",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://cnbctv18.com/business/companies/signatureglobal-gdv-target-gurugram-luxury-project-middle-income-affordable-housing-farmhouse-19999749.htm",
+        "title-city:signatureglobal targets 6 000 crore gdv from gurugram luxury villa project launch in 9 12 months|gurugram",
+        "dedupe:f0df17909158e7a759720e74ba13a33c2cfb4f451a9e80233d20c2162951d614",
+        "dedupe:ea11ea2e0c81227e728e4d4acf6f4dbef11ec9081879a6b10f4b0c4469d3ac97",
+        "dedupe:219414acf923f03fbb39f37bb110c1fd5db565d3e1a2fbeaeb4cc93b25dba125",
+        "dedupe:45dcdd3116fc40b43e0c5ff04eab3faa4f0c1d658f55eacbfd36cb46c2634e6b",
+        "dedupe:signatureglobal targets gdv gurugram villa launch months|gurugram",
+        "dedupe:672a78898229ed51f36c8071ecc063a3ce1445aa06819ea32cc333caa780c086",
+        "dedupe:13a4e77ec30f1c9d04eaf5e8458cbeb0c12cc5a60a87ddd7779f065cb8cda601"
+      ],
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T02:10:21.646Z",
+      "expiresAt": "2026-10-07T02:25:21.646Z"
     }
   ]
 }
