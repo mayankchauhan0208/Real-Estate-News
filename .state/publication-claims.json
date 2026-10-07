@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T10:11:37.570Z",
+  "updatedAt": "2026-10-07T10:11:39.500Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -852,6 +852,32 @@
       "claimedAt": "2026-10-07T10:11:35.333Z",
       "expiresAt": "2026-10-07T10:26:35.333Z",
       "finalizedAt": "2026-10-07T10:11:37.570Z"
+    },
+    {
+      "claimId": "5facc8ac-c449-4bb1-bb7b-afef0aba0044",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hilifebuilders.in/lifestyle-centric-homes-thrissur",
+        "title-city:the rise of lifestyle centric homes in thrissur|thrissur",
+        "dedupe:f705604548c505c745aee6823cf0ca9d56940b4dad1f4460a47c1b34b1343d55",
+        "dedupe:451faf3cfc4c9f7073e02e787480a5537f9d1aee92f4f305522841b2576bc543",
+        "dedupe:30f26398a96d66a306c468274c0e734a8f64a6d2b2b86b64c4d22a81eb181b09",
+        "dedupe:e7a73310a4bc17e885952c66b61388ad7319d5c14ca1f9b3aa5d02d6e6468232",
+        "dedupe:rise lifestyle centric homes thrissur|thrissur",
+        "dedupe:f1f7af8f9b6e760775f6d95150edb2e772049510b78e8b18fe1d1464073b5e07",
+        "dedupe:2e40c0f2b2d42b2dc4bec97920e6abbb3d94e3491c624c16ecb137b7eaa653a8"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "thrissur",
+      "canonicalEventCity": "thrissur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "thrissur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-07T10:11:39.500Z",
+      "expiresAt": "2026-10-07T10:26:39.500Z"
     }
   ]
 }
