@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T02:10:06.496Z",
+  "updatedAt": "2026-10-07T02:10:08.374Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -112,7 +112,7 @@
     },
     {
       "claimId": "4bfa7f38-1a2d-4528-bddf-221765d962df",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://torbitrealty.com/elan-group-ropes-in-marriott-to-manage-upcoming-hotel-in-gurugram",
         "title-city:elan group ropes in marriott international to manage upcoming hotel branded homes in gurugram|gurugram",
@@ -129,7 +129,8 @@
       ],
       "originMode": "BACKFILL",
       "claimedAt": "2026-10-07T02:10:06.496Z",
-      "expiresAt": "2026-10-07T02:25:06.496Z"
+      "expiresAt": "2026-10-07T02:25:06.496Z",
+      "finalizedAt": "2026-10-07T02:10:08.374Z"
     }
   ]
 }
