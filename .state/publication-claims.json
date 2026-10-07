@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T02:10:08.374Z",
+  "updatedAt": "2026-10-07T02:10:09.894Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -131,6 +131,26 @@
       "claimedAt": "2026-10-07T02:10:06.496Z",
       "expiresAt": "2026-10-07T02:25:06.496Z",
       "finalizedAt": "2026-10-07T02:10:08.374Z"
+    },
+    {
+      "claimId": "b6c30a8f-8de8-4db0-b8df-466fe1dd4feb",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/prestige-group-acquired-17-14-acre-land-parcel-in-gurugram/133751016",
+        "title-city:prestige group acquires 17 14 acre land parcel in gurugram|gurugram",
+        "dedupe:916c09801f9965026419676d883512cdc4912e5b0bf7bfe0bf8a7980d8991f59",
+        "dedupe:efa7a0c5aba757273668a4811fe11d59d995885c1bf414425d0eac3c3604defa",
+        "dedupe:82e1138f01080aac9d3c13c3cbd8529313aa75df8b65def8a42ac7f1b2bb546f",
+        "dedupe:prestige group acquires acre land parcel gurugram|gurugram",
+        "dedupe:daf65d452fcc7bd7df7411d8acb7c6a319787743142439f94164578ec6f0c926",
+        "dedupe:2ea9be481b2ac960ef60ef63e88e12e042b7916c8b13b26cfb71de36a471d835"
+      ],
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-07T02:10:09.894Z",
+      "expiresAt": "2026-10-07T02:25:09.894Z"
     }
   ]
 }
