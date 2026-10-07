@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T03:17:52.474Z",
+  "updatedAt": "2026-10-07T03:17:53.883Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -530,7 +530,7 @@
     },
     {
       "claimId": "0785f79b-e082-45e4-b18c-23fedacceb43",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/real-estate/real-estate-guide/yeida-launches-housing-and-hotel-plots-near-noida-international-airport-check-rates-plot-sizes-and-e-auction-dates-101790508354415.html",
         "title-city:yeida launches housing and hotel plots near noida international airport|noida",
@@ -550,7 +550,8 @@
       ],
       "originMode": "BACKFILL",
       "claimedAt": "2026-10-07T03:17:52.474Z",
-      "expiresAt": "2026-10-07T03:32:52.474Z"
+      "expiresAt": "2026-10-07T03:32:52.474Z",
+      "finalizedAt": "2026-10-07T03:17:53.883Z"
     }
   ]
 }
