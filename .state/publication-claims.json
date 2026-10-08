@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T10:52:28.369Z",
+  "updatedAt": "2026-10-08T10:52:30.032Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1433,6 +1433,31 @@
       "claimedAt": "2026-10-08T10:52:26.403Z",
       "expiresAt": "2026-10-08T11:07:26.403Z",
       "finalizedAt": "2026-10-08T10:52:28.369Z"
+    },
+    {
+      "claimId": "8dc160d4-9789-458d-8607-eca67d6e4762",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://magicbricks.com/news/pune-inner-ring-road-pmrda-advances-land-acquisition-across-haveli-and-maval-rbmb/152070.html",
+        "title-city:pune inner ring road pmrda advances land acquisition across haveli and maval|pune",
+        "dedupe:43f8b643611c2a19b4f3c0ff43987b83c0f5de79b8f384c1acf3d2f0abcbdd06",
+        "dedupe:f103341372388e8c6e6618b9ea607528a92613d107e395ec93d5018e51c37f7e",
+        "dedupe:d4a8cfee4ade67655275099cf7011908917fda32afb5e517a25154c9f0e55fcc",
+        "dedupe:pune inner ring road pmrda advances land acquisition across haveli maval|pune",
+        "dedupe:5d28d63ca194837f2a383b61eb0f88ca06174fd4db4669cbecf628854d6101c8",
+        "dedupe:4af888aa1613b6b21dee84b2e2d9e3abef57b720432c94d7b7b2456a35aaebb2"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "pune",
+      "canonicalEventCity": "pune",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "pune"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-08T10:52:30.032Z",
+      "expiresAt": "2026-10-08T11:07:30.032Z"
     }
   ]
 }
