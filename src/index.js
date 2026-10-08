@@ -2368,20 +2368,35 @@ function writeJsonFileSync(filePath, value) {
   renameSync(temporaryPath, filePath);
 }
 
+function backfillStreamArticleKey(article) {
+  return `${article.id || stableId(article)}|${article.cityCode || ""}`;
+}
+
 function createBackfillTerminalStream() {
   const root = path.join(stateDir, "backfill-terminal");
   const identityDir = path.join(root, "identities");
   const recordsPath = path.join(root, "records.jsonl");
   mkdirSync(identityDir, { recursive: true });
-  const identityPath = (article) => path.join(identityDir, `${backfillFrontierKey(`${stableId(article)}|${article.cityCode || ""}`)}.json`);
+  const identityPath = (article) => path.join(identityDir, `${backfillFrontierKey(backfillStreamArticleKey(article))}.json`);
   const project = (article, reasons, decision) => ({
-    id: stableId(article),
+    schemaVersion: 2,
+    id: article.id || stableId(article),
     title: String(article.title || "").slice(0, 500),
     description: String(article.description || "").slice(0, 1200),
-    articleText: String(article.articleText || "").slice(0, 2400),
+    articleText: String(article.articleText || "").slice(0, 12000),
     newsLink: article.newsLink || "",
     sourceUrl: article.sourceUrl || "",
+    detailUrl: article.detailUrl || "",
+    listingUrl: article.listingUrl || "",
+    documentUrl: article.documentUrl || "",
+    documentEvidenceUrl: article.documentEvidenceUrl || "",
+    thumbnailImage: article.thumbnailImage || "",
+    postedBy: article.postedBy || "",
+    postedByLogo: article.postedByLogo || "",
+    sourceName: article.sourceName || article.postedBy || "",
+    source: article.source || "",
     publishedAt: article.publishedAt || article.createdAt || null,
+    createdAt: article.createdAt || article.publishedAt || null,
     cityCode: article.cityCode || "",
     cityCodes: Array.isArray(article.cityCodes) ? article.cityCodes.slice(0, 8) : [],
     language: article.language || "",
@@ -2390,9 +2405,15 @@ function createBackfillTerminalStream() {
     articleReadAttempted: article.articleReadAttempted === true,
     authoritativeContent: article.authoritativeContent === true,
     officialDocumentRead: article.officialDocumentRead === true,
+    directDocumentVerified: article.directDocumentVerified === true,
+    extractionMethod: article.extractionMethod || "",
+    thumbnailExtractionMethod: article.thumbnailExtractionMethod || "",
+    ocr: article.ocr || null,
     regionalSource: article.regionalSource === true,
     sourceMode: article.sourceMode || "",
     authorityEventType: article.authorityEventType || "",
+    authorityJurisdiction: article.authorityJurisdiction || "",
+    cityConfidence: article.cityConfidence || "",
     sharedCityArticle: article.sharedCityArticle === true,
     decision,
     reasons: reasons.slice(0, 12),
@@ -3023,6 +3044,8 @@ function buildRegionalMetrics(expandedArticles, getReasons) {
   const hardReject = rows.filter(({ reasons }) => reasons.some((reason) => reason.startsWith("filter "))).length;
   const review = rows.filter(({ reasons }) => reasons.some((reason) => reason.startsWith("review:"))).length;
   const wouldAutoPublish = rows.filter(({ article, reasons }) => article.sourceMode !== "OFF" && reasons.length === 0).length;
+  const relevanceRejectPattern = /^filter 4:|POSITIVE_INFRASTRUCTURE_WITHOUT_SUFFICIENT_REAL_ESTATE_NEXUS|^filter 9:|^filter 10:|^filter 14:|^filter 17:/i;
+  const geoRejectPattern = /^filter (5|6|7|8|16):|^review: (?:NO_SUPPORTED_EVENT_CITY|ambiguous multi-city geo evidence|uncertain event geography)/i;
   return {
     configured: modeCounts,
     attempted: 0,
@@ -3030,10 +3053,10 @@ function buildRegionalMetrics(expandedArticles, getReasons) {
     articlesExtracted: regional.length,
     languagesObserved: languages,
     current: regional.length,
-    relevantSafe: rows.filter(({ reasons }) => !reasons.some((reason) => reason.includes("filter 4"))).length,
+    relevantSafe: rows.filter(({ reasons }) => !reasons.some((reason) => relevanceRejectPattern.test(reason))).length,
     hardRejected: hardReject,
-    geoValid: regional.filter((article) => Boolean(article.cityCode)).length,
-    geoUncertain: regional.filter((article) => !article.cityCode || article.cityConfidence === "uncertain").length,
+    geoValid: rows.filter(({ article, reasons }) => Boolean(article.cityCode) && !reasons.some((reason) => geoRejectPattern.test(reason))).length,
+    geoUncertain: rows.filter(({ article, reasons }) => !article.cityCode || reasons.some((reason) => geoRejectPattern.test(reason))).length,
     review,
     wouldAutoPublish,
     published: 0
@@ -10552,7 +10575,7 @@ async function main() {
   const backfillTerminalStream = streamingBackfill ? createBackfillTerminalStream() : null;
   const streamedRejectionReasons = new Map();
   const streamedCandidateArticles = new Map();
-  const streamArticleKey = (article) => `${stableId(article)}|${article.cityCode || ""}`;
+  const streamArticleKey = backfillStreamArticleKey;
   const consumeBackfillArticles = async (articles) => {
     if (!streamingBackfill) {
       allArticles.push(...articles);
@@ -11088,7 +11111,10 @@ export {
   isWithinBackfillDateRange,
   parseNewsDateValue,
   getMemorySnapshot,
-  createBackfillDetailFrontier
+  createBackfillDetailFrontier,
+  createBackfillTerminalStream,
+  backfillStreamArticleKey,
+  buildRegionalMetrics
 };
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
