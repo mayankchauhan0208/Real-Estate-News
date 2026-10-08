@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T08:55:13.062Z",
+  "updatedAt": "2026-10-08T08:55:15.304Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1273,6 +1273,32 @@
       "claimedAt": "2026-10-08T08:55:11.462Z",
       "expiresAt": "2026-10-08T09:10:11.462Z",
       "finalizedAt": "2026-10-08T08:55:13.062Z"
+    },
+    {
+      "claimId": "e537d6b2-8215-4bef-9f10-5c5f42e41991",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/elevate-infracon-targets-over-40-annual-growth-as-it-plans-new-projects-around-dehradun",
+        "title-city:elevate infracon targets over 40|dehradun",
+        "dedupe:f5639524340dae6ddecec1180fb106f0f4644e95c96f8770a172209e255fddf7",
+        "dedupe:cfc5ea76cdf8c0be761f0b1e3f5914026a7422cb8d801f9053d5c7f1205d30a4",
+        "dedupe:f36c7bcf2a219d9952af4fbcd4352c153c612f781aad8df75de257dfd1e7bb3d",
+        "dedupe:96a3a08432bbc04d831d072789ad7a37a7e77d4936471f2588b2b49a7a6bc0f9",
+        "dedupe:elevate infracon targets|dehradun",
+        "dedupe:bc7d9f86c55618cdbd613b09f9741577a441f119446d85dc79eff5c3e5534230",
+        "dedupe:489b1d7ee3651fc82cdb5f879b31d1074a9dbfa5b484bdf3b3a126c477cc51b6"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "dehradun",
+      "canonicalEventCity": "dehradun",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "dehradun"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-08T08:55:15.304Z",
+      "expiresAt": "2026-10-08T09:10:15.304Z"
     }
   ]
 }
