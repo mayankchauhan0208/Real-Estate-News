@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T10:52:34.124Z",
+  "updatedAt": "2026-10-08T10:52:35.469Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1462,7 +1462,7 @@
     },
     {
       "claimId": "276354ac-1a98-4a16-87e8-d3413f3136ed",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://livehindustan.com/ncr/noida-news-yamuna-city-set-for-an-employment-boom-25-new-companies-to-be-established-201791450875743.html",
         "title-city:यम न स ट म र जग र क बह र लग ग 25 क पन य 9000 स ज य द न कर य|noida",
@@ -1484,7 +1484,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-08T10:52:34.124Z",
-      "expiresAt": "2026-10-08T11:07:34.124Z"
+      "expiresAt": "2026-10-08T11:07:34.124Z",
+      "finalizedAt": "2026-10-08T10:52:35.469Z"
     }
   ]
 }
