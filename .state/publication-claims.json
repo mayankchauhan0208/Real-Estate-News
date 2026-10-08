@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T08:55:01.641Z",
+  "updatedAt": "2026-10-08T08:55:03.762Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1193,6 +1193,32 @@
       "claimedAt": "2026-10-08T08:54:59.154Z",
       "expiresAt": "2026-10-08T09:09:59.154Z",
       "finalizedAt": "2026-10-08T08:55:01.641Z"
+    },
+    {
+      "claimId": "c20c85da-9aa4-4b38-8e24-11bd7fe3e0d2",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://business-standard.com/companies/news/brigade-group-to-invest-40-000-cr-to-build-realty-hospitality-projects-126100800580_1.html",
+        "title-city:brigade group to invest 40 000 cr to build realty hospitality projects|bangalore",
+        "dedupe:2b683b077f204b8ba569ab376a01d9ce54670c4af51f5088649f7872a5da0ed2",
+        "dedupe:0f5a6bb48a6ef5115746d2351b0a3784e8a4bf7850ad2f766a87131de9a08ba5",
+        "dedupe:0be8d56c87f4dce81e705a2d22062c8daead8ad6e0d51da37baee8545bd81686",
+        "dedupe:bdced7a1eccb08ccc3d904cd12c853efe15147d25592e368ecd79da118c8d956",
+        "dedupe:brigade group build hospitality|bangalore",
+        "dedupe:2f3b95f2bef04a4c5091580c137558614710dbcd151456a3d5a1a7439fc95b19",
+        "dedupe:626ca02ea23dbed6488df791a22b049e902faee005a85864007463a5097c7091"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-08T08:55:03.762Z",
+      "expiresAt": "2026-10-08T09:10:03.762Z"
     }
   ]
 }
