@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T08:59:46.368Z",
+  "updatedAt": "2026-10-08T08:59:48.494Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1379,6 +1379,32 @@
       "claimedAt": "2026-10-08T08:59:44.786Z",
       "expiresAt": "2026-10-08T09:14:44.786Z",
       "finalizedAt": "2026-10-08T08:59:46.368Z"
+    },
+    {
+      "claimId": "277f8837-abb2-4387-8285-78c00431df8b",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://proppuls.in/cmc-joins-hands-with-t-works-to-develop-tech-solutions-for-urban-challenges",
+        "title-city:cmc joins hands with t works to develop tech solutions for urban challenges|hyderabad",
+        "dedupe:ae5280073028299310424e8cf185d19ead3426bc60a58dba83ce1e351a77d4c8",
+        "dedupe:826c34491419ecfe11a4357035f3c72bf63cbf3b70a60fd9b79b104b1d11d03e",
+        "dedupe:a77f051989d99f90bee9927f955bd21f902029952ef76860b9b8d958f8c72d50",
+        "dedupe:8508fbd9d3de675a9b726d6f2baec8fc427815136b13b662cd5fae1b60ec92d7",
+        "dedupe:cmc hands t works develop tech solutions urban challenges|hyderabad",
+        "dedupe:633ed434df76dbe3eb6013c7c57597a9b5b333d6bdc240a292f4014acbb37868",
+        "dedupe:99b572cf7d6553d5ab2dad3206f8e0ab91a7bad1bcc6a98ab8e7b2c0a7454738"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-08T08:59:48.494Z",
+      "expiresAt": "2026-10-08T09:14:48.494Z"
     }
   ]
 }
