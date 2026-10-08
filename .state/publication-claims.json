@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T08:59:48.494Z",
+  "updatedAt": "2026-10-08T08:59:51.084Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1382,7 +1382,7 @@
     },
     {
       "claimId": "277f8837-abb2-4387-8285-78c00431df8b",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://proppuls.in/cmc-joins-hands-with-t-works-to-develop-tech-solutions-for-urban-challenges",
         "title-city:cmc joins hands with t works to develop tech solutions for urban challenges|hyderabad",
@@ -1404,7 +1404,8 @@
       ],
       "originMode": "BACKFILL",
       "claimedAt": "2026-10-08T08:59:48.494Z",
-      "expiresAt": "2026-10-08T09:14:48.494Z"
+      "expiresAt": "2026-10-08T09:14:48.494Z",
+      "finalizedAt": "2026-10-08T08:59:51.084Z"
     }
   ]
 }
