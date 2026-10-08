@@ -4285,7 +4285,7 @@ function isNonArticlePortalPage(article) {
 function isStronglyOffTopicHeadline(article) {
   const title = String(article.title || "").trim();
   const titleAndUrl = `${title} ${getArticleUrlText(article)}`;
-  const offTopicHeadline = /\b(?:openai|gpt\b|wellness band|smartphone|laptop|tablet|smartwatch|gaming console|software update|technology news|tech news|tech launch|gadget|it stocks?|stock valuations?|stock market|asian games|olympics?|cricket|football|gold medal|ai investment|artificial intelligence investment|turn .* investment into productivity)\b/i.test(titleAndUrl);
+  const offTopicHeadline = /\b(?:openai|gpt\b|wellness band|smartphone|laptop|tablet|smartwatch|gaming console|software update|technology news|tech news|tech launch|tech solutions?|gadget|it stocks?|stock valuations?|stock market|asian games|olympics?|cricket|football|gold medal|ai investment|artificial intelligence investment|turn .* investment into productivity)\b/i.test(titleAndUrl);
   const propertyHeadline = /\b(?:real estate|realty|property|housing|residential|commercial|land parcel|plot|township|developer|builder|project)\b/i.test(title);
 
   return offTopicHeadline && !propertyHeadline;
@@ -5676,6 +5676,14 @@ function isRealEstateRelated(article) {
 
   if (isOfficialReraPressRelease(article)) {
     return true;
+  }
+
+  const primaryText = getArticlePrimaryText(article);
+  const routineReraCoverage = /\b(?:rera|real estate regulatory authority)\b/i.test(primaryText) &&
+    /\b(?:seminar|webinar|training|workshop|conference|awareness session|stakeholder guidance)\b/i.test(primaryText) &&
+    !hasConcreteMaterialPropertyEvent(article);
+  if (routineReraCoverage) {
+    return false;
   }
 
   if (isBlockedArticle(article)) {

@@ -69,6 +69,24 @@ const headlineCityAgainstComparison = {
   newsLink: "https://torbitrealty.com/county-group-to-invest-rs-2500-cr-to-develop-luxury-homes-in-gurugram/"
 };
 
+const reraSeminar = {
+  ...base,
+  title: "Ranchi RERA seminar to guide stakeholders on the Act",
+  description: "Jharkhand RERA will hold a seminar for stakeholders in Ranchi.",
+  articleText: "The authority is organising a seminar to explain the RERA Act and guide stakeholders. The event is a routine awareness session and announces no project registration, approval, development, or property transaction.",
+  cityCode: "ranchi",
+  newsLink: "https://hindi.news24online.com/gov-news/jharkhand-rera-seminar-ranchi-real-estate/1739397/"
+};
+
+const urbanTechCollaboration = {
+  ...base,
+  title: "CMC joins hands with T-Works to develop tech solutions for urban challenges",
+  description: "The organisations will collaborate on technology solutions for civic challenges.",
+  articleText: "CMC and T-Works signed an agreement to develop technology solutions for urban challenges, including digital tools and civic innovation. No land, housing, property, real-estate project, or development approval was announced.",
+  cityCode: "hyderabad",
+  newsLink: "https://proppuls.in/cmc-joins-hands-with-t-works-to-develop-tech-solutions-for-urban-challenges"
+};
+
 const routedCci = applyCityCode(cci);
 assert.equal(routedCci.cityCode, "", "CCI corporate transaction must not inherit Gujarat");
 assert.equal(isPublishableArticle(routedCci, new Set()), false, "CCI corporate transaction must not publish");
@@ -99,4 +117,9 @@ assert.equal(
   "Headline event city must not be reassigned to a comparison city"
 );
 
-console.log("Targeted live defect regression passed: corporate FP blocked, Gujarat fallback removed, Wayanad nearest-city fallback blocked, Prayagraj preserved, property corporate contrast preserved, substring geo blocked, headline city precedence protected.");
+assert.equal(isPublishableArticle(reraSeminar, new Set()), false, "Routine non-official RERA seminar coverage must not publish");
+assert.ok(getRejectionReasons(reraSeminar, new Set()).some((reason) => reason.includes("not positive target")));
+assert.equal(isPublishableArticle(urbanTechCollaboration, new Set()), false, "Urban-tech collaboration without a property event must not publish");
+assert.ok(getRejectionReasons(urbanTechCollaboration, new Set()).some((reason) => reason.includes("not positive target")));
+
+console.log("Targeted live defect regression passed: corporate FP blocked, Gujarat fallback removed, Wayanad nearest-city fallback blocked, Prayagraj preserved, property corporate contrast preserved, substring geo blocked, headline city precedence protected, routine RERA seminar blocked, urban-tech collaboration blocked.");
