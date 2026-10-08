@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T08:55:17.176Z",
+  "updatedAt": "2026-10-08T08:59:37.256Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1300,6 +1300,31 @@
       "claimedAt": "2026-10-08T08:55:15.304Z",
       "expiresAt": "2026-10-08T09:10:15.304Z",
       "finalizedAt": "2026-10-08T08:55:17.176Z"
+    },
+    {
+      "claimId": "f97b930c-d120-4874-b9b2-4d430c401e48",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindi.news24online.com/gov-news/jharkhand-rera-seminar-ranchi-real-estate/1739397",
+        "title-city:र च म 23 अगस त क झ रख ड र र स म न र ह तध रक क अध न यम क ब र क य पर म ल ग म र गदर शन|ranchi",
+        "dedupe:781d60d9936a56070d5f6b44a5da04fa1dd9af752b51ead14e240dee6d68ce91",
+        "dedupe:e446d58ff57f1f8dbde79634c880be0666cdd3875f58271b49d28c1d5786eec1",
+        "dedupe:0f77ca08968d7263fac5e70a46cd858e5c3d0618f1f8a1ce8c42f00b1da2cc26",
+        "dedupe:र च म अगस त क झ रख ड र र स म न र ह तध रक क अध न यम क ब र क य पर म ल ग म र गदर शन|ranchi",
+        "dedupe:25fe146bd2e28e5fef6853f05daaa040111be6cad1c1e4b00fd98160a15d7d16",
+        "dedupe:820cbbb3c1317f5b127a65fb69df68cf80e100c567d619e513258581c4886348"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "ranchi",
+      "canonicalEventCity": "ranchi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "ranchi"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-08T08:59:37.256Z",
+      "expiresAt": "2026-10-08T09:14:37.256Z"
     }
   ]
 }
