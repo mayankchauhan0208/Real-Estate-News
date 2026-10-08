@@ -3045,6 +3045,7 @@ function buildRegionalMetrics(expandedArticles, getReasons) {
   const review = rows.filter(({ reasons }) => reasons.some((reason) => reason.startsWith("review:"))).length;
   const wouldAutoPublish = rows.filter(({ article, reasons }) => article.sourceMode !== "OFF" && reasons.length === 0).length;
   const relevanceRejectPattern = /^filter 4:|POSITIVE_INFRASTRUCTURE_WITHOUT_SUFFICIENT_REAL_ESTATE_NEXUS|^filter 9:|^filter 10:|^filter 14:|^filter 17:/i;
+  const adverseRejectPattern = /^filter 3:/i;
   const geoRejectPattern = /^filter (5|6|7|8|16):|^review: (?:NO_SUPPORTED_EVENT_CITY|ambiguous multi-city geo evidence|uncertain event geography)/i;
   return {
     configured: modeCounts,
@@ -3053,7 +3054,7 @@ function buildRegionalMetrics(expandedArticles, getReasons) {
     articlesExtracted: regional.length,
     languagesObserved: languages,
     current: regional.length,
-    relevantSafe: rows.filter(({ reasons }) => !reasons.some((reason) => relevanceRejectPattern.test(reason))).length,
+    relevantSafe: rows.filter(({ reasons }) => !reasons.some((reason) => relevanceRejectPattern.test(reason) || adverseRejectPattern.test(reason))).length,
     hardRejected: hardReject,
     geoValid: rows.filter(({ article, reasons }) => Boolean(article.cityCode) && !reasons.some((reason) => geoRejectPattern.test(reason))).length,
     geoUncertain: rows.filter(({ article, reasons }) => !article.cityCode || reasons.some((reason) => geoRejectPattern.test(reason))).length,

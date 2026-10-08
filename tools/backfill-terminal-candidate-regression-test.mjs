@@ -58,14 +58,16 @@ try {
   const metrics = buildRegionalMetrics([
     record,
     { ...record, id: "geo-reject", cityCode: "hyderabad", cityConfidence: "uncertain" },
-    { ...record, id: "content-reject", title: "General commentary" }
+    { ...record, id: "content-reject", title: "General commentary" },
+    { ...record, id: "adverse-reject", title: "Builder penalized" }
   ], (candidate) => {
     if (candidate.id === "geo-reject") return ["review: uncertain event geography"];
     if (candidate.id === "content-reject") return ["filter 10: commentary without a concrete material property event"];
+    if (candidate.id === "adverse-reject") return ["filter 3: adverse property/RERA enforcement or recovery news"];
     return [];
   });
   assert.equal(metrics.relevantSafe, 2, "content rejection must not be reported as relevance-safe");
-  assert.equal(metrics.geoValid, 2, "uncertain geography must not be reported as geo-valid");
+  assert.equal(metrics.geoValid, 3, "uncertain geography must not be reported as geo-valid");
   assert.equal(metrics.geoUncertain, 1);
   assert.equal(metrics.wouldAutoPublish, 1);
 
