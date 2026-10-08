@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T08:59:42.965Z",
+  "updatedAt": "2026-10-08T08:59:44.786Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1353,6 +1353,31 @@
       "claimedAt": "2026-10-08T08:59:41.461Z",
       "expiresAt": "2026-10-08T09:14:41.461Z",
       "finalizedAt": "2026-10-08T08:59:42.965Z"
+    },
+    {
+      "claimId": "9c3e3274-abee-43b9-a9c3-95cab042c800",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindi.news24online.com/business/up-rera-approves-12-new-realty-projects-worth-1664-crore-lucknow-ghaziabad-ayodhya/1803624",
+        "title-city:up rera approved projects up म ब छ ग नए घर क ज ल लखनऊ ग ज य ब द स अय ध य तक 1664 कर ड र पय क 12 नए|lucknow",
+        "dedupe:e686f7a941b3069642dd02b218bb979005d3bbd765821752ad283f8e899430de",
+        "dedupe:26f4e947095e812cd4c33c9e064c8ebe224f7090a47103fe852035dfc5e3e033",
+        "dedupe:6616ee2e999299160b0ae9cd53289ea21ac090615e134476e9187997006e7f38",
+        "dedupe:rera approved म ब छ ग नए घर क ज ल लखनऊ ग ज य ब द स अय ध य तक कर ड र पय क नए|lucknow",
+        "dedupe:747c65ff1ec04e242bdad8688148205d72bff2447120fe678deedb7f74be27c6",
+        "dedupe:ad15ce1f70a6cdf4bf91b21171b79909e7334553a81abb428e2470c59c8d9cce"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-08T08:59:44.786Z",
+      "expiresAt": "2026-10-08T09:14:44.786Z"
     }
   ]
 }
