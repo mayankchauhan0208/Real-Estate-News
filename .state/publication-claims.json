@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T18:14:08.859Z",
+  "updatedAt": "2026-10-08T18:14:11.859Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1489,7 +1489,7 @@
     },
     {
       "claimId": "69079415-2923-4017-a80a-ae20d29c6013",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://amarujala.com/delhi-ncr/faridabad/ballabhgarh-palwal-metro-extension-project-approved-haryana-and-up-to-get-better-connectivity-in-faridabad-2026-10-08",
         "title-city:फर द ब द बल लभगढ पलवल म ट र व स त र पर य जन क म ल म ज र हर य ण य प क म ल ग ब हतर कन क ट व ट|faridabad",
@@ -1509,7 +1509,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-08T18:14:08.859Z",
-      "expiresAt": "2026-10-08T18:29:08.859Z"
+      "expiresAt": "2026-10-08T18:29:08.859Z",
+      "finalizedAt": "2026-10-08T18:14:11.859Z"
     }
   ]
 }
