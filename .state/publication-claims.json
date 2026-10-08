@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T10:52:31.525Z",
+  "updatedAt": "2026-10-08T10:52:34.124Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1459,6 +1459,32 @@
       "claimedAt": "2026-10-08T10:52:30.032Z",
       "expiresAt": "2026-10-08T11:07:30.032Z",
       "finalizedAt": "2026-10-08T10:52:31.525Z"
+    },
+    {
+      "claimId": "276354ac-1a98-4a16-87e8-d3413f3136ed",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://livehindustan.com/ncr/noida-news-yamuna-city-set-for-an-employment-boom-25-new-companies-to-be-established-201791450875743.html",
+        "title-city:यम न स ट म र जग र क बह र लग ग 25 क पन य 9000 स ज य द न कर य|noida",
+        "dedupe:591a9e7ff9a70086dddfed81e699086278c7024dc5953bc68a716bde8c3b5d2d",
+        "dedupe:33dbd1143b6d3f564b22698d5b5636fb26cdabcd4c6e6dd5332f96503ebb9d9f",
+        "dedupe:d3aee12c8da420b753e72216a39f7541c129991df7d0fd9bbb35c0be7a47a9d1",
+        "dedupe:9807229e7c4be3b746ab71a2fef61269337fd72ee7b248e4dd371d01bfc0e697",
+        "dedupe:यम न स ट म र जग र क बह र लग ग क पन य स ज य द न कर य|noida",
+        "dedupe:5b4cc72d72a644c3de41ea3b2db2ee5c47f18c0b8583d2513403c63bbdb3f046",
+        "dedupe:7fb7d03177dc17aabf6f4157eae0ec32ce93eafe60b2fb6c959c11ce85582be7"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-08T10:52:34.124Z",
+      "expiresAt": "2026-10-08T11:07:34.124Z"
     }
   ]
 }
