@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T08:55:07.660Z",
+  "updatedAt": "2026-10-08T08:55:09.247Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1223,7 +1223,7 @@
     },
     {
       "claimId": "c3164bee-b777-4d6d-b70c-9f5594647fe3",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/infrastructure/gda-plans-gurukul-city-in-new-gorakhpur-project-launch-around-diwali/134779934",
         "title-city:gda plans gurukul city in new gorakhpur project launch around diwali|gorakhpur",
@@ -1244,7 +1244,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-08T08:55:07.660Z",
-      "expiresAt": "2026-10-08T09:10:07.660Z"
+      "expiresAt": "2026-10-08T09:10:07.660Z",
+      "finalizedAt": "2026-10-08T08:55:09.247Z"
     }
   ]
 }
