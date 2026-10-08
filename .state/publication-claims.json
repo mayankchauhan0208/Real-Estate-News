@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T03:04:18.314Z",
+  "updatedAt": "2026-10-08T08:54:59.154Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1166,6 +1166,32 @@
       "claimedAt": "2026-10-08T03:04:16.203Z",
       "expiresAt": "2026-10-08T03:19:16.203Z",
       "finalizedAt": "2026-10-08T03:04:18.314Z"
+    },
+    {
+      "claimId": "7bf964c2-d798-4e27-8169-58cefefcafc4",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/landmark-group-raises-330-crore-from-sbi-for-gurugram-commercial-project-101791377648333.html",
+        "title-city:landmark group raises 330 crore from sbi for gurugram commercial project|gurugram",
+        "dedupe:030037097b053cdd67f3e84d6ebaef6d2a0d6c6ddad2f50f98f52bf0bc1a3acb",
+        "dedupe:76eff42398e7da2091d58880e05b7731a4bad91a0345a15be229d7742ed693df",
+        "dedupe:ea6224a58c32b3d699982957aee53dcd58af3420ba82023f7f2cdad36d85f46c",
+        "dedupe:545f33fbd5d31adcc61c4ab37f131d2f27c5f7b7f417d837ebeee17651c5feb5",
+        "dedupe:landmark group raises sbi gurugram commercial|gurugram",
+        "dedupe:acbae682a7cc03135b4d4a8b033f58667e2e20bf0713bc28a20d35438838b9e3",
+        "dedupe:05beeb99b2bc47a2e971d92c2fbfecc05574287a45225a78377840b2d1f3c0e9"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-08T08:54:59.154Z",
+      "expiresAt": "2026-10-08T09:09:59.154Z"
     }
   ]
 }
