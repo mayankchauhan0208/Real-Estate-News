@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T08:59:39.588Z",
+  "updatedAt": "2026-10-08T08:59:41.461Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1326,6 +1326,32 @@
       "claimedAt": "2026-10-08T08:59:37.256Z",
       "expiresAt": "2026-10-08T09:14:37.256Z",
       "finalizedAt": "2026-10-08T08:59:39.588Z"
+    },
+    {
+      "claimId": "eac80b2a-4608-4657-9678-bcee2052eaa5",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://proppuls.in/rajapushpa-aurelia-tellapur-luxury-3-4-bhk-corner-homes",
+        "title-city:rajapushpa aurelia targets the ultra luxury segment with larger residences in tellapur|hyderabad",
+        "dedupe:cf499d10eedf15ae874885140917d6eae1e5a4c07b4e005c9b8700a36c8c3291",
+        "dedupe:286379ffb026d1194290ea0868c342fcdb109ead6f8a6068c144d63147587df1",
+        "dedupe:1c809ae368f7e90ec65e89f005ecbc6ca25f354a86e5f2394b32f7586717cf2d",
+        "dedupe:ae4577a7e458eaea9e1f33997ee3af7df74740dd502a740e4b6eaa2fbb0c34f7",
+        "dedupe:rajapushpa aurelia targets ultra segment larger residences tellapur|hyderabad",
+        "dedupe:5338f2355cfcf9a18a6a9bbfda95ef1e3df5e7876e8b83f4e744e8afbe634c4f",
+        "dedupe:a916119b4f492616baa2b572529964f598d067238576b2430af06ea44032e49b"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "BACKFILL",
+      "claimedAt": "2026-10-08T08:59:41.461Z",
+      "expiresAt": "2026-10-08T09:14:41.461Z"
     }
   ]
 }
