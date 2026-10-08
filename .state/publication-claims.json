@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T08:59:51.084Z",
+  "updatedAt": "2026-10-08T10:52:26.403Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1406,6 +1406,32 @@
       "claimedAt": "2026-10-08T08:59:48.494Z",
       "expiresAt": "2026-10-08T09:14:48.494Z",
       "finalizedAt": "2026-10-08T08:59:51.084Z"
+    },
+    {
+      "claimId": "bdfa94cc-74f8-436e-abfc-d2f063b3d968",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/brigade-group-to-invest-rs-40000-cr-in-3-yrs-to-build-realty-hospitality-projects/articleshow/134784402.cms",
+        "title-city:brigade group to invest rs 40 000 cr in 3 yrs to build realty hospitality projects|bangalore",
+        "dedupe:7d00cc06af2b43d25b6547e50af69cf3e92a7e3155f5c38bc9b13267d32e400e",
+        "dedupe:63b80cb2800713a2624f7b0e6dcefc3cac81b51025b3825c83dc124eec39b5a3",
+        "dedupe:d23798278642febd1e8d48c55682872375c7438ab4f1103e2bd5454b1661f326",
+        "dedupe:845b6617e17b03c286585d33bee3f7f55b423762d2adf8fb7ea8732e8263584a",
+        "dedupe:brigade group yrs build hospitality|bangalore",
+        "dedupe:f09d84ae42174248aad4d758c3596dc521487b961947219fb45b25ebf547fe6c",
+        "dedupe:3771d80b570c6c489f9f7abd1977126d4bc13dc9b89fa7c16218f623c69d41b0"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-08T10:52:26.403Z",
+      "expiresAt": "2026-10-08T11:07:26.403Z"
     }
   ]
 }
