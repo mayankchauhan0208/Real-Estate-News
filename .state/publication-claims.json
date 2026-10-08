@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-07T23:24:39.799Z",
+  "updatedAt": "2026-10-08T03:04:16.203Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1093,6 +1093,78 @@
       "claimedAt": "2026-10-07T23:24:37.560Z",
       "expiresAt": "2026-10-07T23:39:37.560Z",
       "finalizedAt": "2026-10-07T23:24:39.799Z"
+    },
+    {
+      "claimId": "06be465d-31d4-48fc-9eda-3f3612e8766e",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://birlaestatesltd.com/updates/birla-pravaah-sector-71-new-launch-in-sector-71-spr-road-gurugram-rera-not-rera-registered-status-unclear",
+        "title-city:reraoct 2026birla pravaah in gurugram sector 71 project details and timeline|gurugram",
+        "dedupe:a33b4cc124434b41a459ac49918d6579a302e00e59ca54cb101802ef5828d3d9",
+        "dedupe:143076d4bdb4f78b5638e9b8949ab5788fdf7c4953134a9ced055872fd8e4c89",
+        "dedupe:9eb62b6b7d1e4559009d6e297b1a2a70d9d8343f8b7d4b1566057c2ae7e0c477",
+        "dedupe:8b8e3f574987832aac58f60a72f3c40ba1f298aba44cb56538ee903b616bd594",
+        "dedupe:reraoct 2026birla pravaah gurugram sector details timeline|gurugram",
+        "dedupe:b0c0fd215001849cc65938da548b2a6285c372f89e60cfea6df7c502adeab300",
+        "dedupe:14c6d5f04783dd74e3bfbf7a8e016ce625607ca2949865121feaca0afd2e707b"
+      ],
+      "semanticIdentity": {
+        "city": "gurugram",
+        "canonicalEventCity": "gurugram",
+        "normalizedBuilder": "dlf",
+        "normalizedProject": "",
+        "canonicalEventType": "project-launch",
+        "builder": "dlf",
+        "project": "",
+        "eventType": "project-launch",
+        "numericAnchors": [
+          "07:number",
+          "10:lakh",
+          "15:number",
+          "1:number",
+          "2000:number",
+          "2016:number",
+          "2025:number",
+          "2026:number",
+          "2032:number",
+          "20537.79:number",
+          "20:number",
+          "21:number",
+          "2450:number",
+          "27:number",
+          "3.26:crore",
+          "30:number",
+          "31:number",
+          "35:number",
+          "36:number",
+          "3:number",
+          "48:number",
+          "492:number",
+          "5.075:acre",
+          "56:number",
+          "580:homes",
+          "587:units",
+          "5:number",
+          "60:number",
+          "6:lakh",
+          "70:number",
+          "71:number",
+          "72:number",
+          "88:number"
+        ],
+        "canonicalEventFingerprint": "dlf|gurugram|project-launch|07:number,10:lakh,15:number",
+        "semanticClusterId": "cluster:a83a55061b6dce13a0cacdf4"
+      },
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "dlf|gurugram|project-launch|07:number,10:lakh,15:number",
+      "semanticClusterId": "cluster:a83a55061b6dce13a0cacdf4",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-08T03:04:16.203Z",
+      "expiresAt": "2026-10-08T03:19:16.203Z"
     }
   ]
 }
