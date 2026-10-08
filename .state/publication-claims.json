@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T08:55:09.247Z",
+  "updatedAt": "2026-10-08T08:55:11.462Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1246,6 +1246,32 @@
       "claimedAt": "2026-10-08T08:55:07.660Z",
       "expiresAt": "2026-10-08T09:10:07.660Z",
       "finalizedAt": "2026-10-08T08:55:09.247Z"
+    },
+    {
+      "claimId": "fefcbbae-b317-4fd0-8feb-6f0ec695792a",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/great-value-realty-sells-out-tower-a-at-ekanam-opens-tower-b-in-noida",
+        "title-city:great value realty sells out|noida",
+        "dedupe:521e7cfe4e847a3a0743e4d1042983d33c59750eb007a82bcae240e44a080ba3",
+        "dedupe:27cf6ea939344f040df1415ae3bed653471e145b31aed9284c8e84bfce825b71",
+        "dedupe:4ea2a4f41917df695de4fe6aca2f518c78eb2d95d44d849f3a527d3a0268d2c6",
+        "dedupe:ebe74ea3370298da769ed608e72f394406eb13b7185c2bd66b7658aa33c0f445",
+        "dedupe:great value sells out|noida",
+        "dedupe:df879383ccc8a5606ea8ca4d05e0e45d5ebee59aa8b8612f4de4c05ebaf8c63a",
+        "dedupe:53d3b2cb34f4987d46cd5420cac344b23ae5feb4b93452a9d2616f36f516ed27"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-08T08:55:11.462Z",
+      "expiresAt": "2026-10-08T09:10:11.462Z"
     }
   ]
 }
