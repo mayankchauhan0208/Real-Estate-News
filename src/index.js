@@ -4292,6 +4292,18 @@ function isStronglyOffTopicHeadline(article) {
   return offTopicHeadline && !propertyHeadline;
 }
 
+function isEventCenteredWithoutConcretePropertyEvent(article) {
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  const eventCentered = /\b(?:seminar|conference|workshop|webinar|awareness session|training session|capacity[- ]building session|stakeholder meeting|industry discussion|panel discussion|knowledge session|expo participation|event participation|ceremonial event)\b/i.test(text);
+  return eventCentered && !hasConcreteMaterialPropertyEvent(article);
+}
+
+function isTechnologyPartnershipWithoutConcretePropertyEvent(article) {
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  const collaboration = /\b(?:memorandum of understanding|MoU|partnership|collaboration|innovation program|technology partnership|smart[- ]city technology program|proptech collaboration|proptech partnership|urban[- ]tech initiative|startup program|research collaboration|software partnership|platform partnership|technology solutions?)\b/i.test(text);
+  return collaboration && !hasConcreteMaterialPropertyEvent(article);
+}
+
 function isReraDocumentSource(article) {
   const sourceText = `${article.sourceUrl || ""} ${article.feedUrl || ""} ${article.newsLink || ""} ${article.listingUrl || ""} ${article.detailUrl || ""} ${article.documentUrl || ""}`;
   return isPressReleaseDocumentSource(sourceText);
@@ -5679,11 +5691,7 @@ function isRealEstateRelated(article) {
     return true;
   }
 
-  const primaryText = getArticlePrimaryText(article);
-  const routineReraCoverage = /\b(?:rera|real estate regulatory authority)\b/i.test(primaryText) &&
-    /\b(?:seminar|webinar|training|workshop|conference|awareness session|stakeholder guidance)\b/i.test(primaryText) &&
-    !hasConcreteMaterialPropertyEvent(article);
-  if (routineReraCoverage) {
+  if (isEventCenteredWithoutConcretePropertyEvent(article) || isTechnologyPartnershipWithoutConcretePropertyEvent(article)) {
     return false;
   }
 
@@ -6753,7 +6761,7 @@ function hasConcreteMaterialPropertyEvent(article) {
   const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
   const propertyObject = /\b(?:named project|project|property|housing|residential|commercial|land parcel|plots?|township|mall|hotel|office space|flats?|apartments?|units?|acres?|ownership rights|house sites?)\b/i.test(text)
     || /\bairport-led growth\b/i.test(text);
-  const concreteEvent = /\b(?:project (?:launch|launched|development|approved|approval)|new .*?(?:housing|residential|commercial) launches?|scouting land|residential development|commercial development|housing project|housing projects|residential township|mixed-use development|development zone|land parcel|plot (?:offering|allotment|pricing)|plots?\b.*?\b(?:off|near|airport|scheme|authority)|allot(?:ted|ment)|acqui(?:red|sition) of (?:land|property)|property (?:sale|acquisition|lease|purchase)|(?:buy|buys|bought|purchase|purchased)\b.*?\b(?:apartment|flat|home|property)s?\b|lease(?:d|s)? \d[\d,]*\s*(?:sq\.?\s*ft|square feet)|rent(?:s|ed)? \d[\d,]*\s*(?:sq\.?\s*ft|square feet)|lease(?:s|d)? .*?(?:office|retail|warehouse|space)|office stock|office space expansion|office leasing|commercial property demand|real estate growth|property development|projects? .*?(?:lined up|GDV)|pre-sales .*? projects?|infrastructure .*? real estate|real estate .*? infrastructure|boom .*? real estate|real estate .*? boom|airport-led growth|airport .*? development|mall|hotel(?: project)?|branded residences|apartments? sold|homes? sold|sell(?:s|out)? .*homes?|launch(?:es|ed)? .*?(?:housing|residential|commercial) project|invest(?:ed|ment) in .*?(?:project|housing|residential|commercial)|commit(?:s|ted|ment)? .*?(?:housing|residential|commercial) project|develop(?:ed|ing) .*project|ownership rights|house sites?|construction (?:complete|completion|milestone))\b/i.test(text);
+  const concreteEvent = /\b(?:project (?:launch|launched|development|approved|approval)|redevelopment (?:approved|approval|launched|project|will create)|(?:approves?|approved|sanctions?|sanctioned|registers?|registered)\b[^.!?]{0,120}\b(?:housing|residential|commercial|real estate|property|development)\s+projects?|new .*?(?:housing|residential|commercial) launches?|scouting land|residential development|commercial development|housing project|housing projects|residential township|mixed-use development|development zone|land parcel|plot (?:offering|allotment|pricing)|plots?\b.*?\b(?:off|near|airport|scheme|authority)|allot(?:ted|ment)|acqui(?:red|sition) of (?:land|property)|property (?:sale|acquisition|lease|purchase)|(?:buy|buys|bought|purchase|purchased)\b.*?\b(?:apartment|flat|home|property)s?\b|lease(?:d|s)? \d[\d,]*\s*(?:sq\.?\s*ft|square feet)|rent(?:s|ed)? \d[\d,]*\s*(?:sq\.?\s*ft|square feet)|lease(?:s|d)? .*?(?:office|retail|warehouse|space)|office stock|office space expansion|office leasing|commercial property demand|real estate growth|property development|projects? .*?(?:lined up|GDV)|pre-sales .*? projects?|infrastructure .*? real estate|real estate .*? infrastructure|boom .*? real estate|real estate .*? boom|airport-led growth|airport .*? development|mall|hotel(?: project)?|branded residences|apartments? sold|homes? sold|sell(?:s|out)? .*homes?|launch(?:es|ed)? .*?(?:housing|residential|commercial) project|invest(?:ed|ment) in .*?(?:project|housing|residential|commercial)|commit(?:s|ted|ment)? .*?(?:housing|residential|commercial) project|develop(?:ed|ing) .*project|ownership rights|house sites?|construction (?:complete|completion|milestone))\b/i.test(text);
   return propertyObject && concreteEvent;
 }
 
@@ -9296,6 +9304,21 @@ async function fetchAuthorityListings(sourceUrl, options = {}) {
   return mapWithConcurrency(candidates.slice(0, getMaxItemsPerSource()), 4, processCandidate);
 }
 
+function responseCookieHeader(headers) {
+  const setCookies = typeof headers?.getSetCookie === "function"
+    ? headers.getSetCookie()
+    : [headers?.get?.("set-cookie") || ""];
+  return [...new Set(setCookies
+    .map((value) => String(value || "").split(";", 1)[0].trim())
+    .filter(Boolean))].join("; ");
+}
+
+function isUpReraPostbackListingPage($) {
+  // The press-release register contains one postback control per row. If a
+  // postback returns that grid, global navigation PDFs are not release files.
+  return $("a[id$='lnkdocname']").length > 1;
+}
+
 async function fetchUpReraPressReleases(sourceUrl, options = {}) {
   const pageResponse = await fetchWithTimeout(sourceUrl, {
     signal: options.signal,
@@ -9306,7 +9329,7 @@ async function fetchUpReraPressReleases(sourceUrl, options = {}) {
   }, getFetchTimeoutForUrl(sourceUrl));
   if (!pageResponse.ok) throw new Error(`UP RERA press-release request failed with HTTP ${pageResponse.status}`);
   const html = await readResponseBodyWithTimeout(pageResponse, "text", options);
-  const sessionCookie = pageResponse.headers.get("set-cookie") || "";
+  const sessionCookie = responseCookieHeader(pageResponse.headers);
   const $ = cheerio.load(html);
   const publisherLogo = pickFirst(
     absoluteUrl($("link[rel='shortcut icon']").attr("href"), sourceUrl),
@@ -9419,8 +9442,36 @@ async function fetchUpReraPressReleases(sourceUrl, options = {}) {
         }
       } else {
         const detail$ = cheerio.load(responseText);
+        const returnedListingPage = isUpReraPostbackListingPage(detail$);
+        const linkedDocumentUrl = returnedListingPage ? "" : extractLinkedDocumentUrl(detail$, response.url || action);
+        if (linkedDocumentUrl) {
+          const document = await ingestDocumentEvidence({
+            documentUrl: linkedDocumentUrl,
+            sourceUrl,
+            runMode: getRunMode()
+          });
+          candidate.documentEvidenceUrl = document.documentUrl;
+          candidate.directDocumentVerified = document.directDocumentVerified;
+          candidate.documentUrl = document.directDocumentVerified ? document.documentUrl : "";
+          candidate.thumbnailImage = document.thumbnail?.thumbnailUrl || candidate.thumbnailImage;
+          candidate.thumbnailExtractionMethod = document.thumbnail?.thumbnailUrl ? "PDF_PAGE_RENDER" : candidate.thumbnailExtractionMethod;
+          if (document.readable) {
+            articleText = `${candidate.title}. ${document.text}`.slice(0, 12000);
+            officialDocumentRead = document.officialDocumentRead;
+            fullArticleRead = document.fullArticleRead;
+            candidate.extractionMethod = document.extractionMethod;
+            candidate.ocr = document.ocr;
+          } else {
+            articleReadError = document.articleReadError;
+          }
+        }
         const extracted = stripHtml(detail$("article, main, .content, body").first().text()).replace(/\s+/g, " ").trim();
-        if (extracted.length >= 200) {
+        if (!fullArticleRead && linkedDocumentUrl) {
+          articleReadError ||= "UP RERA postback document was not readable";
+        } else if (!linkedDocumentUrl && returnedListingPage) {
+          articleReadError = "SESSION_BOUND_OFFICIAL_DOCUMENT: postback returned listing HTML without a reusable document URL";
+          candidate.documentAccessMode = "SESSION_BOUND_OFFICIAL_DOCUMENT";
+        } else if (extracted.length >= 200) {
           articleText = `${candidate.title}. ${extracted}`.slice(0, 12000);
           fullArticleRead = true;
         } else {
@@ -11123,7 +11174,9 @@ export {
   createBackfillDetailFrontier,
   createBackfillTerminalStream,
   backfillStreamArticleKey,
-  buildRegionalMetrics
+  buildRegionalMetrics,
+  responseCookieHeader,
+  isUpReraPostbackListingPage
 };
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

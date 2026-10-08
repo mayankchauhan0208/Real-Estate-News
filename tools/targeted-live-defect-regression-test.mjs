@@ -1,9 +1,12 @@
 import assert from "node:assert/strict";
+import * as cheerio from "cheerio";
 import {
   applyCityCode,
   detectCityCodes,
   getRejectionReasons,
-  isPublishableArticle
+  isPublishableArticle,
+  isUpReraPostbackListingPage,
+  responseCookieHeader
 } from "../src/index.js";
 
 const base = {
@@ -87,6 +90,60 @@ const urbanTechCollaboration = {
   newsLink: "https://proppuls.in/cmc-joins-hands-with-t-works-to-develop-tech-solutions-for-urban-challenges"
 };
 
+const genericPropertyConference = {
+  ...base,
+  title: "Developers attend property industry conference in Hyderabad",
+  description: "The conference featured panel discussions and knowledge sessions.",
+  articleText: "Developers attended a real-estate industry conference with panel discussions and a knowledge session. No project, land transaction, approval, launch, financing, or construction milestone was announced.",
+  cityCode: "hyderabad",
+  newsLink: "https://example.com/hyderabad-property-conference"
+};
+
+const approvalAtSeminar = {
+  ...base,
+  title: "RERA approves Sunrise Residency during stakeholder seminar in Lucknow",
+  description: "UP RERA approved the named 420-home residential project during the seminar.",
+  articleText: "During a stakeholder seminar, UP RERA approved Sunrise Residency, a named 420-home residential project in Lucknow, and issued the project registration approval.",
+  cityCode: "lucknow",
+  newsLink: "https://example.com/lucknow-rera-project-approval"
+};
+
+const genericProptechPartnership = {
+  ...base,
+  title: "Proptech firms announce software platform partnership",
+  description: "The companies signed an MoU for a property technology platform.",
+  articleText: "Two proptech companies announced a software and platform partnership for digital services. The MoU includes no land, building, development project, property transaction, financing, approval, or construction milestone.",
+  cityCode: "bangalore",
+  newsLink: "https://example.com/proptech-platform-partnership"
+};
+
+const technologyApproval = {
+  ...base,
+  title: "Authority approves 600-home residential project alongside technology partnership",
+  description: "The authority approved a named residential development in Hyderabad.",
+  articleText: "Alongside a technology partnership, the authority approved Green Park Residency, a specific 600-home residential project in Hyderabad, and issued its development approval.",
+  cityCode: "hyderabad",
+  newsLink: "https://example.com/hyderabad-residential-approval"
+};
+
+const replayValidAurelia = {
+  ...base,
+  title: "Rajapushpa Aurelia Targets the Ultra-Luxury Segment with Larger Residences in Tellapur",
+  description: "Aurelia offers 3 and 4 BHK homes in a 12.5-acre residential development.",
+  articleText: "Rajapushpa Aurelia is a named 12.5-acre residential development in Tellapur with seven towers and 1,561 apartment units. The developer launched larger 3 and 4 BHK corner homes.",
+  cityCode: "hyderabad",
+  newsLink: "https://proppuls.in/rajapushpa-aurelia-tellapur-luxury-3-4-bhk-corner-homes"
+};
+
+const replayValidUpRera = {
+  ...base,
+  title: "UP RERA approves 12 new realty projects worth Rs 1,664 crore",
+  description: "Twelve approved projects will deliver 3,090 homes and shops across six districts.",
+  articleText: "UP RERA approved 12 specific real-estate projects worth Rs 1,664 crore across six districts. The approved projects will create 3,090 homes and shops, including named developments in Lucknow.",
+  cityCode: "lucknow",
+  newsLink: "https://hindi.news24online.com/business/up-rera-approves-12-new-realty-projects-worth-1664-crore-lucknow-ghaziabad-ayodhya/1803624/"
+};
+
 const routedCci = applyCityCode(cci);
 assert.equal(routedCci.cityCode, "", "CCI corporate transaction must not inherit Gujarat");
 assert.equal(isPublishableArticle(routedCci, new Set()), false, "CCI corporate transaction must not publish");
@@ -121,5 +178,37 @@ assert.equal(isPublishableArticle(reraSeminar, new Set()), false, "Routine non-o
 assert.ok(getRejectionReasons(reraSeminar, new Set()).some((reason) => reason.includes("not positive target")));
 assert.equal(isPublishableArticle(urbanTechCollaboration, new Set()), false, "Urban-tech collaboration without a property event must not publish");
 assert.ok(getRejectionReasons(urbanTechCollaboration, new Set()).some((reason) => reason.includes("not positive target")));
+assert.equal(isPublishableArticle(genericPropertyConference, new Set()), false, "Generic property conference participation must not publish");
+assert.equal(isPublishableArticle(approvalAtSeminar, new Set()), true, "A concrete project approval remains publishable when announced at a seminar");
+assert.equal(isPublishableArticle(genericProptechPartnership, new Set()), false, "Generic proptech partnership must not publish");
+assert.equal(isPublishableArticle(technologyApproval, new Set()), true, "A concrete residential approval remains publishable alongside a technology partnership");
+assert.equal(isPublishableArticle(replayValidAurelia, new Set()), true, "Previously valid Aurelia replay record must remain publishable");
+assert.equal(isPublishableArticle(replayValidUpRera, new Set()), true, "Previously valid UP RERA approval report must remain publishable");
 
-console.log("Targeted live defect regression passed: corporate FP blocked, Gujarat fallback removed, Wayanad nearest-city fallback blocked, Prayagraj preserved, property corporate contrast preserved, substring geo blocked, headline city precedence protected, routine RERA seminar blocked, urban-tech collaboration blocked.");
+const cookieHeaders = {
+  getSetCookie: () => [
+    "ASP.NET_SessionId=abc123; path=/; HttpOnly; SameSite=Lax",
+    "__AntiXsrfToken=token456; path=/; HttpOnly",
+    "ASP.NET_SessionId=abc123; path=/; HttpOnly"
+  ]
+};
+assert.equal(
+  responseCookieHeader(cookieHeaders),
+  "ASP.NET_SessionId=abc123; __AntiXsrfToken=token456",
+  "ASP.NET postback must send cookie pairs, not raw Set-Cookie attributes"
+);
+const returnedListing = cheerio.load(`
+  <h1>Press Releases</h1>
+  <nav><a href="/pdf/Best_Practices_by_UP-RERA.pdf">Best Practices</a></nav>
+  <table><tr><th>View Release</th></tr>
+    <tr><td><a id="ctl00_grid_ctl02_lnkdocname" href="javascript:__doPostBack('a','')">View File</a></td></tr>
+    <tr><td><a id="ctl00_grid_ctl03_lnkdocname" href="javascript:__doPostBack('b','')">View File</a></td></tr>
+  </table>
+`);
+assert.equal(
+  isUpReraPostbackListingPage(returnedListing),
+  true,
+  "A returned release listing must not donate an unrelated navigation PDF to the selected event"
+);
+
+console.log("Targeted live defect regression passed: replay false-positive classes generalized, concrete event contrasts preserved, and ASP.NET cookies normalized.");
