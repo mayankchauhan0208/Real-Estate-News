@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-10-08T10:52:35.469Z",
+  "updatedAt": "2026-10-08T18:14:08.859Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1486,6 +1486,30 @@
       "claimedAt": "2026-10-08T10:52:34.124Z",
       "expiresAt": "2026-10-08T11:07:34.124Z",
       "finalizedAt": "2026-10-08T10:52:35.469Z"
+    },
+    {
+      "claimId": "69079415-2923-4017-a80a-ae20d29c6013",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://amarujala.com/delhi-ncr/faridabad/ballabhgarh-palwal-metro-extension-project-approved-haryana-and-up-to-get-better-connectivity-in-faridabad-2026-10-08",
+        "title-city:फर द ब द बल लभगढ पलवल म ट र व स त र पर य जन क म ल म ज र हर य ण य प क म ल ग ब हतर कन क ट व ट|faridabad",
+        "dedupe:6af5727ef5113bc62de437acf8211f6f3fe9fe352c3a62d9d0ae12769431ef36",
+        "dedupe:6c6366eedccbde241d5847c86be1107b61c67e0eb3b298c24ac119151280e210",
+        "dedupe:b4c4531afb2c1815f29ce66d7e5d1780ec323a34c0471b0c18b9ad59923128fc",
+        "dedupe:a95290a6595e18750eda33096fc4a6c722d08c3db800ef0da0bbcf45bde37bd7",
+        "dedupe:फर द ब द बल लभगढ पलवल म ट र व स त र पर य जन क म ल म ज र हर य ण य प क म ल ग ब हतर कन क ट व ट|faridabad"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "faridabad",
+      "canonicalEventCity": "faridabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "faridabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-08T18:14:08.859Z",
+      "expiresAt": "2026-10-08T18:29:08.859Z"
     }
   ]
 }
