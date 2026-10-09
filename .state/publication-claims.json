@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-09T06:26:03.087Z",
+  "updatedAt": "2026-10-09T06:26:05.516Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1528,7 +1528,7 @@
     },
     {
       "claimId": "f899da63-b268-4bb5-83c1-67a3ec7536b6",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/cities/lucknow-news/gomti-recedes-upstream-relief-for-lucknow-expected-in-48-hrs-101791485653747.html",
         "title-city:gomti recedes upstream relief for lucknow expected in 48 hrs|lucknow",
@@ -1550,7 +1550,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-09T06:26:03.087Z",
-      "expiresAt": "2026-10-09T06:41:03.087Z"
+      "expiresAt": "2026-10-09T06:41:03.087Z",
+      "finalizedAt": "2026-10-09T06:26:05.516Z"
     }
   ]
 }
