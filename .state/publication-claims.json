@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-09T06:26:07.565Z",
+  "updatedAt": "2026-10-09T06:26:09.018Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1555,7 +1555,7 @@
     },
     {
       "claimId": "7e4290d8-2f2d-469c-94ac-348137b1df4b",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/commercial/wework-india-leases-1-61-lakh-sq-ft-in-pune-plans-44-crore-investment/134806314",
         "title-city:wework india leases 1 61 lakh sq ft in pune plans 44 crore investment|pune",
@@ -1576,7 +1576,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-09T06:26:07.565Z",
-      "expiresAt": "2026-10-09T06:41:07.565Z"
+      "expiresAt": "2026-10-09T06:41:07.565Z",
+      "finalizedAt": "2026-10-09T06:26:09.018Z"
     }
   ]
 }
