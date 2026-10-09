@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "updatedAt": "2026-10-08T18:14:11.859Z",
+  "version": 2,
+  "updatedAt": "2026-10-09T06:22:34.542Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1303,7 +1303,7 @@
     },
     {
       "claimId": "f97b930c-d120-4874-b9b2-4d430c401e48",
-      "status": "PUBLISHED",
+      "status": "REJECTED_TOMBSTONE",
       "identityKeys": [
         "url:https://hindi.news24online.com/gov-news/jharkhand-rera-seminar-ranchi-real-estate/1739397",
         "title-city:र च म 23 अगस त क झ रख ड र र स म न र ह तध रक क अध न यम क ब र क य पर म ल ग म र गदर शन|ranchi",
@@ -1325,7 +1325,14 @@
       "originMode": "BACKFILL",
       "claimedAt": "2026-10-08T08:59:37.256Z",
       "expiresAt": "2026-10-08T09:14:37.256Z",
-      "finalizedAt": "2026-10-08T08:59:39.588Z"
+      "finalizedAt": "2026-10-08T08:59:39.588Z",
+      "rejectionReason": "ROUTINE_RERA_SEMINAR_EVENT",
+      "deletedProductionArticleId": "6ac75b7bb027ce51c9a777d4",
+      "deletedAt": "2026-10-09T06:22:34.542Z",
+      "classificationVersion": "surgical-cleanup-v1",
+      "tombstoneTitle": "राँची में 23 अगस्त को झारखंड रेरा सेमिनार, हितधारकों को अधिनियम की बारीकियों पर मिलेगा मार्गदर्शन",
+      "tombstoneSourceUrl": "https://hindi.news24online.com/gov-news/jharkhand-rera-seminar-ranchi-real-estate/1739397/",
+      "tombstoneCity": "ranchi"
     },
     {
       "claimId": "eac80b2a-4608-4657-9678-bcee2052eaa5",
