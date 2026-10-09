@@ -88,9 +88,9 @@ async function deactivate(record) {
   });
   const body = await response.text();
   if (!response.ok) throw new Error(`DEACTIVATE_HTTP_${response.status}:${body.slice(0, 200)}`);
-  let record = null;
-  try { record = JSON.parse(body)?.data || null; } catch {}
-  return { status: response.status, body: body.slice(0, 500), record };
+  let responseRecord = null;
+  try { responseRecord = JSON.parse(body)?.data || null; } catch {}
+  return { status: response.status, body: body.slice(0, 500), record: responseRecord };
 }
 
 let before = [];
