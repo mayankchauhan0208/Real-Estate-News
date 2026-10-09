@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-09T19:54:09.123Z",
+  "updatedAt": "2026-10-09T19:54:11.597Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1581,7 +1581,7 @@
     },
     {
       "claimId": "c506fdb9-774d-4ca6-b36f-ddb071757a80",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/real-estate/bptp-sells-150-flats-for-750-crore-in-its-luxury-housing-project-in-faridabad-101791551611454.html",
         "title-city:bptp sells 150 flats for 750 crore in its luxury housing project in faridabad|faridabad",
@@ -1657,7 +1657,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-09T19:54:09.123Z",
-      "expiresAt": "2026-10-09T20:09:09.123Z"
+      "expiresAt": "2026-10-09T20:09:09.123Z",
+      "finalizedAt": "2026-10-09T19:54:11.597Z"
     }
   ]
 }
