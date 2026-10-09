@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-09T06:26:09.018Z",
+  "updatedAt": "2026-10-09T19:54:09.123Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1578,6 +1578,86 @@
       "claimedAt": "2026-10-09T06:26:07.565Z",
       "expiresAt": "2026-10-09T06:41:07.565Z",
       "finalizedAt": "2026-10-09T06:26:09.018Z"
+    },
+    {
+      "claimId": "c506fdb9-774d-4ca6-b36f-ddb071757a80",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/bptp-sells-150-flats-for-750-crore-in-its-luxury-housing-project-in-faridabad-101791551611454.html",
+        "title-city:bptp sells 150 flats for 750 crore in its luxury housing project in faridabad|faridabad",
+        "dedupe:6ea689c6b7e4b6fb4edec5c0cc7a5d4ac25d117239ed45a2b9d36832119b5910",
+        "dedupe:01c633a5b1e75d1b9efa392eb640958ab29af95743174e0278e5f054574fcbd1",
+        "dedupe:012f08e80ab98ce1b0dcb035bc69cb3fa04590e746bdba969df7f28bff461b69",
+        "dedupe:3129237e18c4280d37ae19aa46efe2731b247d91ea97f090b5f5e97668eb5419",
+        "dedupe:bptp sells flats housing faridabad|faridabad",
+        "dedupe:e568c78d389502d1f35b3dd64c2f09a0f98023ff1268347fdbbebc406d8d17d5",
+        "dedupe:eb4ad5b2735e7fa25c937f15c8b9bcbb0d4d249b6d652e342984264fc3be42e5"
+      ],
+      "semanticIdentity": {
+        "city": "faridabad",
+        "canonicalEventCity": "faridabad",
+        "normalizedBuilder": "dlf",
+        "normalizedProject": "",
+        "canonicalEventType": "residential-sale",
+        "builder": "dlf",
+        "project": "",
+        "eventType": "residential-sale",
+        "numericAnchors": [
+          "1.52:lakh",
+          "1.55:lakh",
+          "10:number",
+          "11:number",
+          "12970:units",
+          "12:number",
+          "13765:units",
+          "150:apartments",
+          "150:flats",
+          "15690:units",
+          "15:number",
+          "16670:units",
+          "172:homes",
+          "18:number",
+          "1985:crore",
+          "19:number",
+          "1:lakh",
+          "1:number",
+          "2026:number",
+          "20:number",
+          "2:number",
+          "3185:number",
+          "325:apartments",
+          "32:number",
+          "3856:number",
+          "3980:units",
+          "3:number",
+          "4.17:acre",
+          "44:number",
+          "4:number",
+          "5.4:acre",
+          "5395:units",
+          "5:crore",
+          "5:number",
+          "63:number",
+          "6:number",
+          "750:crore",
+          "7:number",
+          "80:number",
+          "82000:number",
+          "9:number"
+        ],
+        "canonicalEventFingerprint": "dlf|faridabad|residential-sale|1.52:lakh,1.55:lakh,10:number",
+        "semanticClusterId": "cluster:db53a3fa291262d0aba4331b"
+      },
+      "publishedCity": "faridabad",
+      "canonicalEventCity": "faridabad",
+      "canonicalEventFingerprint": "dlf|faridabad|residential-sale|1.52:lakh,1.55:lakh,10:number",
+      "semanticClusterId": "cluster:db53a3fa291262d0aba4331b",
+      "city": [
+        "faridabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-09T19:54:09.123Z",
+      "expiresAt": "2026-10-09T20:09:09.123Z"
     }
   ]
 }
