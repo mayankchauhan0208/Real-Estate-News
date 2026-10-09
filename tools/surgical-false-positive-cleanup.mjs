@@ -88,7 +88,9 @@ async function deactivate(record) {
   });
   const body = await response.text();
   if (!response.ok) throw new Error(`DEACTIVATE_HTTP_${response.status}:${body.slice(0, 200)}`);
-  return { status: response.status, body: body.slice(0, 500) };
+  let record = null;
+  try { record = JSON.parse(body)?.data || null; } catch {}
+  return { status: response.status, body: body.slice(0, 500), record };
 }
 
 let before = [];
@@ -137,8 +139,7 @@ if (execute && !listError) after = await listAll();
 for (const result of results) {
   const target = targets.find((item) => item.claimId === result.claimId);
   const matches = after.length ? exactMatches(after, target) : [];
-  let responseRecord = null;
-  try { responseRecord = JSON.parse(result.deactivate?.body || "")?.data || null; } catch {}
+  const responseRecord = result.deactivate?.record || null;
   result.activeMatchesAfter = after.length
     ? matches.filter((item) => item.isActive === true).length
     : responseRecord?.id === target.articleId && responseRecord?.isActive === false ? 0 : null;
