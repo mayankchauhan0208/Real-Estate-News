@@ -11,16 +11,20 @@ const outputDir = path.resolve("reports/source-audits/surgical-cleanup");
 const targets = [
   {
     claimId: "f97b930c-d120-4874-b9b2-4d430c401e48",
+    articleId: "6ac75b7bb027ce51c9a777d4",
     title: "राँची में 23 अगस्त को झारखंड रेरा सेमिनार, हितधारकों को अधिनियम की बारीकियों पर मिलेगा मार्गदर्शन",
     city: "ranchi",
     sourceUrl: "https://hindi.news24online.com/gov-news/jharkhand-rera-seminar-ranchi-real-estate/1739397/",
+    description: "झारखंड रेरा 23 अगस्त 2026 को रांची में रियल एस्टेट कानून और नियमों को लेकर सेमिनार आयोजित करेगा. इसमें बिल्डर, होमबायर्स और अन्य हितधारकों को जानकारी दी जाएगी.",
     rejectionReason: "ROUTINE_RERA_SEMINAR_EVENT"
   },
   {
     claimId: "277f8837-abb2-4387-8285-78c00431df8b",
+    articleId: "6ac75b86b027ce51c9a777d6",
     title: "CMC Joins Hands with T-Works to Develop Tech Solutions for Urban Challenges",
     city: "hyderabad",
     sourceUrl: "https://proppuls.in/cmc-joins-hands-with-t-works-to-develop-tech-solutions-for-urban-challenges",
+    description: "The partnership will take civic problems from prototype development to real-world testing, with successful solutions considered for wider deployment across Cyberabad.",
     rejectionReason: "URBAN_TECH_COLLABORATION_WITHOUT_PROPERTY_EVENT"
   }
 ];
@@ -87,7 +91,13 @@ async function deactivate(record) {
   return { status: response.status, body: body.slice(0, 500) };
 }
 
-const before = await listAll();
+let before = [];
+let listError = "";
+try {
+  before = await listAll();
+} catch (error) {
+  listError = String(error?.message || error);
+}
 const store = new GitHubPublicationClaimStore({
   token: process.env.GITHUB_TOKEN,
   repository: process.env.GITHUB_REPOSITORY,
@@ -96,7 +106,14 @@ const store = new GitHubPublicationClaimStore({
 });
 const results = [];
 for (const target of targets) {
-  const matches = exactMatches(before, target);
+  const matches = before.length ? exactMatches(before, target) : [{
+    id: target.articleId,
+    title: target.title,
+    description: target.description,
+    cityCode: target.city,
+    newsLink: target.sourceUrl,
+    isActive: true
+  }];
   const classification = matches.length === 1 ? rejectionState(matches[0]) : null;
   const result = { ...target, exactMatchCount: matches.length, articleId: matches[0]?.id || "", classification, tombstone: false, deactivateAttempted: false };
   if (execute && matches.length === 1 && classification?.finalState?.startsWith("REJECTED")) {
@@ -115,16 +132,22 @@ for (const target of targets) {
   results.push(result);
 }
 
-const after = execute ? await listAll() : before;
+let after = before;
+if (execute && !listError) after = await listAll();
 for (const result of results) {
   const target = targets.find((item) => item.claimId === result.claimId);
-  const matches = exactMatches(after, target);
-  result.activeMatchesAfter = matches.filter((item) => item.isActive === true).length;
-  result.recordMatchesAfter = matches.length;
-  result.publicRecordPresentAfter = result.activeMatchesAfter > 0;
+  const matches = after.length ? exactMatches(after, target) : [];
+  let responseRecord = null;
+  try { responseRecord = JSON.parse(result.deactivate?.body || "")?.data || null; } catch {}
+  result.activeMatchesAfter = after.length
+    ? matches.filter((item) => item.isActive === true).length
+    : responseRecord?.id === target.articleId && responseRecord?.isActive === false ? 0 : null;
+  result.recordMatchesAfter = after.length ? matches.length : null;
+  result.publicRecordPresentAfter = result.activeMatchesAfter === null ? null : result.activeMatchesAfter > 0;
+  result.verification = after.length ? "AUTHENTICATED_LIST" : "EXACT_UPDATE_RESPONSE";
 }
-const report = { generatedAt: new Date().toISOString(), execute, listUrl, apiUrl, recordsBefore: before.length, recordsAfter: after.length, results };
+const report = { generatedAt: new Date().toISOString(), execute, listUrl, apiUrl, listError, idEvidence: "AUTHORITATIVE_PRODUCTION_CREATE_RESPONSE_RUN_37753324192", recordsBefore: before.length, recordsAfter: after.length, results };
 await fs.mkdir(outputDir, { recursive: true });
 await fs.writeFile(path.join(outputDir, "surgical-cleanup-report.json"), `${JSON.stringify(report, null, 2)}\n`);
 console.log(JSON.stringify(report, null, 2));
-if (results.some((item) => item.exactMatchCount !== 1 || !item.classification?.finalState?.startsWith("REJECTED") || (execute && (!item.tombstone || item.publicRecordPresentAfter)))) process.exitCode = 1;
+if (results.some((item) => item.exactMatchCount !== 1 || !item.classification?.finalState?.startsWith("REJECTED") || (execute && (!item.tombstone || item.publicRecordPresentAfter !== false)))) process.exitCode = 1;
