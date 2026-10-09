@@ -4,6 +4,7 @@ import { identityFor, semanticIdentityMatches } from "./publication-ledger.js";
 
 const DEFAULT_TTL_MS = 15 * 60 * 1000;
 const MAX_CAS_RETRIES = 4;
+const TERMINAL_SUPPRESSION_STATUSES = new Set(["PUBLISHED", "REJECTED_TOMBSTONE"]);
 
 function parseJson(text, fallback) {
   try { return JSON.parse(text); } catch { return fallback; }
@@ -54,7 +55,7 @@ export class GitHubPublicationClaimStore {
       if (!Array.isArray(seed.claims) || !seed.claims.length) return state;
       const claims = [...state.claims];
       for (const candidate of seed.claims) {
-        if (!candidate?.claimId || candidate.status !== "PUBLISHED") continue;
+        if (!candidate?.claimId || !TERMINAL_SUPPRESSION_STATUSES.has(candidate.status)) continue;
         const existing = claims.find((item) => item.claimId === candidate.claimId ||
           item.identityKeys?.some((key) => candidate.identityKeys?.includes(key)));
         if (existing) {
@@ -109,7 +110,7 @@ export class GitHubPublicationClaimStore {
       const current = await this.read();
       const now = Date.now();
       const active = current.state.claims.find((claim) =>
-        (claim.status === "PUBLISHED" || (claim.status === "CLAIMED" && Date.parse(claim.expiresAt || "") > now)) &&
+        (TERMINAL_SUPPRESSION_STATUSES.has(claim.status) || (claim.status === "CLAIMED" && Date.parse(claim.expiresAt || "") > now)) &&
         (claim.identityKeys.some((key) => identity.identityKeys.includes(key)) ||
           semanticIdentityMatches(claim, identity))
       );
@@ -131,7 +132,7 @@ export class GitHubPublicationClaimStore {
       const next = {
         version: current.state.version >= 2 ? 2 : 1,
         updatedAt: new Date(now).toISOString(),
-        claims: [...current.state.claims.filter((item) => item.status === "PUBLISHED" || Date.parse(item.expiresAt || "") > now), claim]
+        claims: [...current.state.claims.filter((item) => TERMINAL_SUPPRESSION_STATUSES.has(item.status) || Date.parse(item.expiresAt || "") > now), claim]
       };
       const result = await this.compareAndSwap(current.sha, next, `Claim publication ${claim.claimId}`);
       if (result.ok) return { acquired: true, ...claim };
@@ -153,6 +154,33 @@ export class GitHubPublicationClaimStore {
       if (!result.conflict) throw new Error(`GITHUB_CLAIM_FINALIZE_HTTP_${result.status}`);
     }
     throw new Error("GITHUB_CLAIM_FINALIZE_CAS_RETRIES_EXHAUSTED");
+  }
+
+  async tombstone(claimId, metadata = {}) {
+    for (let attempt = 0; attempt < MAX_CAS_RETRIES; attempt += 1) {
+      const current = await this.read();
+      const found = current.state.claims.find((item) => item.claimId === claimId);
+      if (!found) throw new Error(`GITHUB_CLAIM_NOT_FOUND:${claimId}`);
+      const deletedAt = metadata.deletedAt || new Date().toISOString();
+      const nextClaims = current.state.claims.map((item) => item.claimId === claimId
+        ? {
+            ...item,
+            status: "REJECTED_TOMBSTONE",
+            rejectionReason: metadata.rejectionReason || "CONFIRMED_FALSE_POSITIVE",
+            deletedProductionArticleId: metadata.deletedProductionArticleId || "",
+            deletedAt,
+            classificationVersion: metadata.classificationVersion || "",
+            tombstoneTitle: metadata.title || "",
+            tombstoneSourceUrl: metadata.sourceUrl || "",
+            tombstoneCity: metadata.city || item.publishedCity || ""
+          }
+        : item);
+      const next = { version: Math.max(2, Number(current.state.version || 1)), updatedAt: deletedAt, claims: nextClaims };
+      const result = await this.compareAndSwap(current.sha, next, `Tombstone publication ${claimId}`);
+      if (result.ok) return nextClaims.find((item) => item.claimId === claimId);
+      if (!result.conflict) throw new Error(`GITHUB_CLAIM_TOMBSTONE_HTTP_${result.status}`);
+    }
+    throw new Error("GITHUB_CLAIM_TOMBSTONE_CAS_RETRIES_EXHAUSTED");
   }
 }
 

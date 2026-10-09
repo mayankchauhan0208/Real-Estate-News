@@ -191,6 +191,20 @@ const semanticWinner = await semanticClaimStore.claim({ article: gaur, mode: "NO
 assert.equal(semanticWinner.acquired, true, "first source may claim the Gaur event");
 assert.equal((await semanticClaimStore.claim({ article: gaurAlternate, mode: "BACKFILL" })).acquired, false, "alternate Gaur source must lose the shared semantic claim");
 
+const tombstoneArticle = { title: "Routine authority seminar", cityCode: "ranchi", newsLink: "https://example.test/routine-seminar" };
+const tombstoneClaim = await semanticClaimStore.claim({ article: tombstoneArticle, mode: "NORMAL" });
+assert.equal(tombstoneClaim.acquired, true);
+await semanticClaimStore.finalize(tombstoneClaim, "PUBLISHED");
+await semanticClaimStore.tombstone(tombstoneClaim.claimId, {
+  rejectionReason: "ROUTINE_RERA_SEMINAR_EVENT",
+  deletedProductionArticleId: "production-1",
+  title: tombstoneArticle.title,
+  sourceUrl: tombstoneArticle.newsLink,
+  city: tombstoneArticle.cityCode
+});
+assert.equal((await semanticClaimStore.claim({ article: tombstoneArticle, mode: "BACKFILL" })).acquired, false, "a rejected tombstone must permanently suppress the exact event");
+assert.equal(remoteState.claims.find((claim) => claim.claimId === tombstoneClaim.claimId)?.status, "REJECTED_TOMBSTONE");
+
 const expiringStore = new GitHubPublicationClaimStore({ token: "test", repository: "test/repo", branch: "main", baseUrl: casBaseUrl, path: ".state/publication-claims.json", ttlMs: 100 });
 const abandoned = await expiringStore.claim({ article: { title: "Abandoned claim", cityCode: "mumbai", newsLink: "https://example.test/abandoned" }, mode: "NORMAL" });
 assert.equal(abandoned.acquired, true, "crashed-before-POST process must be able to acquire a bounded claim");
