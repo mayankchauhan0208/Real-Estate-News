@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-10T12:48:15.888Z",
+  "updatedAt": "2026-10-10T12:48:18.187Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1688,7 +1688,7 @@
     },
     {
       "claimId": "09990003-d189-4d6c-990d-17dd76e1dbd2",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/real-estate/gurugram-tops-luxury-housing-market-by-launch-value-at-1-38-lakh-crore-despite-fewer-units-bengaluru-follows-at-1-30-lakh-crore-101791622968397.html",
         "title-city:gurugram tops luxury housing market by launch value at 1 38 lakh crore despite fewer units bengaluru follows at|gurugram",
@@ -1708,7 +1708,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-10T12:48:15.888Z",
-      "expiresAt": "2026-10-10T13:03:15.888Z"
+      "expiresAt": "2026-10-10T13:03:15.888Z",
+      "finalizedAt": "2026-10-10T12:48:18.187Z"
     }
   ]
 }
