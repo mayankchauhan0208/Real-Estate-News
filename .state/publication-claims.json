@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-10T12:48:21.472Z",
+  "updatedAt": "2026-10-10T12:48:23.172Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1737,6 +1737,32 @@
       "claimedAt": "2026-10-10T12:48:20.044Z",
       "expiresAt": "2026-10-10T13:03:20.044Z",
       "finalizedAt": "2026-10-10T12:48:21.472Z"
+    },
+    {
+      "claimId": "522344a9-d18c-4532-b390-61ad06cd2107",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/grandthum-to-open-to-public-on-11th-october",
+        "title-city:grandthum to open to public on 11th october in greater noida west|noida",
+        "dedupe:444b738c37e2112980278ea341ca66a0072660669dcef8ac96cfb70ad3db0696",
+        "dedupe:fb285e343abbdba51551bc4a68e65039f466237a71c668be1b277bb9a9619903",
+        "dedupe:df4cf9934b7ebac3bbe2013ba5c90f31ad2aa247f83ff47006d41d5db377b8db",
+        "dedupe:08bec7b837500edbc87a30ca37a644c471eee2a0f344b5da65e5cda40ca4fea7",
+        "dedupe:grandthum open public 11th october greater noida west|noida",
+        "dedupe:39e527be081b8dd03689b340b38d7c13b0506ec1e44e23adef70fea67eedda62",
+        "dedupe:8ecaed2531cb1594537d6682a3802a30360aaf8e4511aafa39a3ff8292b6eb9f"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-10T12:48:23.172Z",
+      "expiresAt": "2026-10-10T13:03:23.172Z"
     }
   ]
 }
