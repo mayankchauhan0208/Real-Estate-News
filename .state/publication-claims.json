@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-10T18:12:23.828Z",
+  "updatedAt": "2026-10-10T18:12:25.313Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1794,7 +1794,7 @@
     },
     {
       "claimId": "e57f0881-2a27-47ed-913f-cc04d9533352",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://livehindustan.com/ncr/delhi/uproar-as-protesters-enter-bangla-sahib-gurudwara-committee-issues-warn-bjp-and-aap-clash-201791652342450.html",
         "title-city:ब गल स ह ब म प रदर शक र य क घ सन पर मच बव ल ग र द व र कम ट न च त य|new_delhi",
@@ -1816,7 +1816,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-10T18:12:23.828Z",
-      "expiresAt": "2026-10-10T18:27:23.828Z"
+      "expiresAt": "2026-10-10T18:27:23.828Z",
+      "finalizedAt": "2026-10-10T18:12:25.313Z"
     }
   ]
 }
