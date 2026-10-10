@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-10T06:09:45.913Z",
+  "updatedAt": "2026-10-10T06:09:48.030Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1662,7 +1662,7 @@
     },
     {
       "claimId": "8753c4c1-1d6b-41af-b9ba-f10dd56734b7",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/industry/kalpataru-pre-sales-fall-5-to-1258-crore-in-q2-fy27/134846848",
         "title-city:kalpataru pre sales fall 5 to 1 258 crore in q2 fy27|mumbai",
@@ -1683,7 +1683,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-10T06:09:45.913Z",
-      "expiresAt": "2026-10-10T06:24:45.913Z"
+      "expiresAt": "2026-10-10T06:24:45.913Z",
+      "finalizedAt": "2026-10-10T06:09:48.030Z"
     }
   ]
 }
