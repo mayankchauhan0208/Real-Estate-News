@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-10T12:48:24.586Z",
+  "updatedAt": "2026-10-10T18:12:20.133Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1764,6 +1764,32 @@
       "claimedAt": "2026-10-10T12:48:23.172Z",
       "expiresAt": "2026-10-10T13:03:23.172Z",
       "finalizedAt": "2026-10-10T12:48:24.586Z"
+    },
+    {
+      "claimId": "fc974da5-fbc5-49d8-ad6b-44528d461a96",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/bptps-skynest-clocks-rs-750-crore-in-sales-sells",
+        "title-city:bptp s skynest clocks rs 750 crore in sales sells 150 luxury|faridabad",
+        "dedupe:66e638edab8f35c9b58323eee5c7d22e8ac638acfd3be07ebb1c2101370b17e7",
+        "dedupe:4bdf3319d2541edcdcee9ddb32aa34b48029334b120a657da2632125fe205a0c",
+        "dedupe:0dad249681139cb24c3f88a56dd067523f4bb2be0944aeac9153f4bac8d514d0",
+        "dedupe:9559a05c1d554c28b0d71c3ebd4c13ff0518f36c71f8f8eb5077ed0d7a15f0cf",
+        "dedupe:bptp s skynest clocks sales sells|faridabad",
+        "dedupe:32b15975d6cbc6f417946a3ebac22a24c6d9d5e769d0ca4b20e2f5ea4ddd7b7a",
+        "dedupe:b0bc170cf78ccd5f024ae0e8b63beb17473b5f4b4d52c532ebfd1c5c78b6005a"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "faridabad",
+      "canonicalEventCity": "faridabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "faridabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-10T18:12:20.133Z",
+      "expiresAt": "2026-10-10T18:27:20.133Z"
     }
   ]
 }
