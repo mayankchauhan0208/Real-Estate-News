@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-09T19:54:11.597Z",
+  "updatedAt": "2026-10-10T06:09:45.913Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1659,6 +1659,31 @@
       "claimedAt": "2026-10-09T19:54:09.123Z",
       "expiresAt": "2026-10-09T20:09:09.123Z",
       "finalizedAt": "2026-10-09T19:54:11.597Z"
+    },
+    {
+      "claimId": "8753c4c1-1d6b-41af-b9ba-f10dd56734b7",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/kalpataru-pre-sales-fall-5-to-1258-crore-in-q2-fy27/134846848",
+        "title-city:kalpataru pre sales fall 5 to 1 258 crore in q2 fy27|mumbai",
+        "dedupe:ff51bf7f1ecc2e99f0a64ab9fdd587c7fba895403fb6592296e07be40d367acf",
+        "dedupe:8c514c3c01ce7a9171450d617066397470f4f3b58f5e2b2a2048a8c88e18c230",
+        "dedupe:8d6cc7e6b239f406fb4279d70cd479daeb41ea454a58229f4eba661c9159ffa1",
+        "dedupe:kalpataru pre sales fall q2 fy27|mumbai",
+        "dedupe:bf4a693cf273801e403deed3ecb47b3847272315480a6c6fe804feaa16df4a3f",
+        "dedupe:d9eefb8e4e2c0117c3d049b24e297c3fffc6c4f047215913af5d70caccd065cf"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-10T06:09:45.913Z",
+      "expiresAt": "2026-10-10T06:24:45.913Z"
     }
   ]
 }
