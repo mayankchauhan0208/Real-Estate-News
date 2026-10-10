@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-10T12:48:18.187Z",
+  "updatedAt": "2026-10-10T12:48:20.044Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1710,6 +1710,32 @@
       "claimedAt": "2026-10-10T12:48:15.888Z",
       "expiresAt": "2026-10-10T13:03:15.888Z",
       "finalizedAt": "2026-10-10T12:48:18.187Z"
+    },
+    {
+      "claimId": "2a656a01-643e-4af4-b74f-fafc49601717",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/markets/digital-real-estate/realty-news/bptp-sells-150-apartments-in-its-new-housing-project-at-faridabad/articleshow/134853093.cms",
+        "title-city:bptp sells 150 apartments in its new housing project at faridabad|faridabad",
+        "dedupe:23b1de760ad6e6ef94fb8e6efd92a082f639a04a3b00a1c804f5f690b0bc1c7d",
+        "dedupe:d6f89ce5e710d06d1c43c6cc156ee8e2a5f8f20bd5689673af8f8b9fda5481ed",
+        "dedupe:2f1fdceb049a6b9380671da82a666edbf91b82915d076f08c16e03910059d5f0",
+        "dedupe:2c02334e65a2ff1c6c3718e1099f94dcef464d1c1cd1ea90ac5ae2996f46832c",
+        "dedupe:bptp sells apartments new housing faridabad|faridabad",
+        "dedupe:b3e495922304ba2213b569d93879506f18d3bab4c15cacf0256233a63fff2aca",
+        "dedupe:2a5ebd8ee57a21b79560e34dafdb26c4c516697e767744f62338431cd85497a1"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "faridabad",
+      "canonicalEventCity": "faridabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "faridabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-10T12:48:20.044Z",
+      "expiresAt": "2026-10-10T13:03:20.044Z"
     }
   ]
 }
