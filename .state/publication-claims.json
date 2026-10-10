@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-10T22:01:47.697Z",
+  "updatedAt": "2026-10-10T22:01:50.323Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1821,7 +1821,7 @@
     },
     {
       "claimId": "f18266d4-4fd0-4429-b66b-e9e0823f7dd8",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://bptpltd.com/updates/bptp-sells-150-apartments-worth-750-crore-at-skynest-faridabad",
         "title-city:financialoct 2026skynest in faridabad crosses 750 crore in sales with 150 homes sold|faridabad",
@@ -1843,7 +1843,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-10T22:01:47.697Z",
-      "expiresAt": "2026-10-10T22:16:47.697Z"
+      "expiresAt": "2026-10-10T22:16:47.697Z",
+      "finalizedAt": "2026-10-10T22:01:50.323Z"
     }
   ]
 }
