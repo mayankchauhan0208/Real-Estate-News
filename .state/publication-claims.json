@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-10T18:12:22.304Z",
+  "updatedAt": "2026-10-10T18:12:23.828Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1791,6 +1791,32 @@
       "claimedAt": "2026-10-10T18:12:20.133Z",
       "expiresAt": "2026-10-10T18:27:20.133Z",
       "finalizedAt": "2026-10-10T18:12:22.304Z"
+    },
+    {
+      "claimId": "e57f0881-2a27-47ed-913f-cc04d9533352",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://livehindustan.com/ncr/delhi/uproar-as-protesters-enter-bangla-sahib-gurudwara-committee-issues-warn-bjp-and-aap-clash-201791652342450.html",
+        "title-city:ब गल स ह ब म प रदर शक र य क घ सन पर मच बव ल ग र द व र कम ट न च त य|new_delhi",
+        "dedupe:3188fa3f7022dce635403d1c2d5dc2d59c069d27c4e8317149335276bbf6c9fe",
+        "dedupe:5264e943148ee5bb184717479dcb2fb02139cfb054efff6b92666150e2e08cb1",
+        "dedupe:507921e4cf837e23a8bae805c9a2f10cbe4c27b489850afa1b2ebae4b7146330",
+        "dedupe:71c9a80ed7098761ab242897fe5207367ecc33750be27e8ca94ca1d0d2075afc",
+        "dedupe:ब गल स ह ब म प रदर शक र य क घ सन पर मच बव ल ग र द व र कम ट न च त य|new_delhi",
+        "dedupe:05b4007e1d9e784e2c49bf04b2d2ed9013d45678cc4fa9d3a54d03a9c2b615b5",
+        "dedupe:542a7e9ec0e6e726464285c0957fd94c7945a2b19a3eccce1308f55a66851488"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-10T18:12:23.828Z",
+      "expiresAt": "2026-10-10T18:27:23.828Z"
     }
   ]
 }
