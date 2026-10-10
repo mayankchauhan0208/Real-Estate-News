@@ -1,8 +1,8 @@
 {
   "version": 1,
   "activeCycle": {
-    "cycleId": "source-cycle-2026-10-09",
-    "createdAt": "2026-10-09T13:11:05.514Z",
+    "cycleId": "source-cycle-2026-10-10",
+    "createdAt": "2026-10-10T00:01:13.308Z",
     "sourceIds": [
       "source-00a0c32b225feb2f",
       "source-0130f0c2db03fc06",
@@ -1170,23 +1170,23 @@
       "source-fff5e97e132c1bf9"
     ],
     "completedShardIds": [
-      "source-cycle-2026-10-09-shard-0001",
-      "source-cycle-2026-10-09-shard-0002",
-      "source-cycle-2026-10-09-shard-0003",
-      "source-cycle-2026-10-09-shard-0004",
-      "source-cycle-2026-10-09-shard-0005",
-      "source-cycle-2026-10-09-shard-0006",
-      "source-cycle-2026-10-09-shard-0007",
-      "source-cycle-2026-10-09-shard-0008",
-      "source-cycle-2026-10-09-shard-0009",
-      "source-cycle-2026-10-09-shard-0010",
-      "source-cycle-2026-10-09-shard-0011",
-      "source-cycle-2026-10-09-shard-0012"
+      "source-cycle-2026-10-10-shard-0001",
+      "source-cycle-2026-10-10-shard-0002",
+      "source-cycle-2026-10-10-shard-0003",
+      "source-cycle-2026-10-10-shard-0004",
+      "source-cycle-2026-10-10-shard-0005",
+      "source-cycle-2026-10-10-shard-0006",
+      "source-cycle-2026-10-10-shard-0007",
+      "source-cycle-2026-10-10-shard-0008",
+      "source-cycle-2026-10-10-shard-0009",
+      "source-cycle-2026-10-10-shard-0010",
+      "source-cycle-2026-10-10-shard-0011",
+      "source-cycle-2026-10-10-shard-0012"
     ],
     "nextShardNumber": 13,
     "universeFingerprint": "133236806b79785e4f72ec4d997bead4afe694b3a951fa011210861fd210f466",
     "cyclePositionStart": 0,
-    "lastCheckpointAt": "2026-10-09T13:32:00.452Z",
+    "lastCheckpointAt": "2026-10-10T00:22:20.911Z",
     "cyclePositionEnd": 581
   },
   "sources": {
@@ -8381,14 +8381,14 @@
     },
     "undefined": {
       "url": "https://ncrtc.in/ncrtc-updates",
-      "attemptCount": 9907,
-      "failureCount": 1524,
+      "attemptCount": 10488,
+      "failureCount": 1610,
       "consecutiveFailureCount": 0,
-      "lastAttemptAt": "2026-10-09T13:32:00.452Z",
-      "lastCycleId": "source-cycle-2026-10-09",
+      "lastAttemptAt": "2026-10-10T00:22:20.911Z",
+      "lastCycleId": "source-cycle-2026-10-10",
       "lastFailureReason": null,
-      "lastSuccessAt": "2026-10-09T13:32:00.452Z",
-      "lastProductiveAt": "2026-10-09T13:32:00.452Z"
+      "lastSuccessAt": "2026-10-10T00:22:20.911Z",
+      "lastProductiveAt": "2026-10-10T00:22:20.911Z"
     },
     "source-11b7e1e441ea3144": {
       "sourceId": "source-11b7e1e441ea3144",
