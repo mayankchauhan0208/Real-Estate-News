@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-10T22:01:50.323Z",
+  "updatedAt": "2026-10-11T07:31:50.352Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1845,6 +1845,31 @@
       "claimedAt": "2026-10-10T22:01:47.697Z",
       "expiresAt": "2026-10-10T22:16:47.697Z",
       "finalizedAt": "2026-10-10T22:01:50.323Z"
+    },
+    {
+      "claimId": "a831d017-eecf-4b95-ac27-ba6df8aa7db0",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/residential/over-460-plot-owners-in-approved-layouts-hit-by-prr-2-notification-in-bengaluru/134865058",
+        "title-city:over 460 plot owners in approved layouts hit by prr 2 notification in bengaluru|bangalore",
+        "dedupe:50be299839a52a64c292a478145e7473b6247349b0561354c545678ceae82542",
+        "dedupe:fcfaeec9964cff3f8b74d96bf7868bacb2704712034a073d5481fb2fe9b96351",
+        "dedupe:612a69c16aea52990a788dc8897a86a01278dae3d31b1ca3496bb753f6a55944",
+        "dedupe:plot owners approved layouts hit prr notification bengaluru|bangalore",
+        "dedupe:40c8413348df31af152d53bcdd310230f8779c31a962332b7e91014fca71a143",
+        "dedupe:3cd5d45eefcfea3dfb44da66f1f75196fe25111b99a2065c6c4ea233d73f8962"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-11T07:31:50.352Z",
+      "expiresAt": "2026-10-11T07:46:50.352Z"
     }
   ]
 }
