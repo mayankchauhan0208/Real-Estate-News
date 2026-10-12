@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-12T20:38:16.591Z",
+  "updatedAt": "2026-10-12T20:38:18.410Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2113,7 +2113,7 @@
     },
     {
       "claimId": "60f32418-813a-47b7-b0d3-76c258b42c73",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://livehindustan.com/ncr/durga-scheme-portal-launched-government-to-distribute-electric-autos-to-women-and-transgender-individuals-201791818651495.html",
         "title-city:क म क ब त द र ग स क म क प र टल श र मह ल ओ और ट र सज डर क म ल ग इल क ट र क ऑट|delhi",
@@ -2135,7 +2135,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-12T20:38:16.591Z",
-      "expiresAt": "2026-10-12T20:53:16.591Z"
+      "expiresAt": "2026-10-12T20:53:16.591Z",
+      "finalizedAt": "2026-10-12T20:38:18.410Z"
     }
   ]
 }
