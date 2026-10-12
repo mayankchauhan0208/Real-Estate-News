@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-12T11:04:30.725Z",
+  "updatedAt": "2026-10-12T11:04:32.570Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2031,6 +2031,31 @@
       "claimedAt": "2026-10-12T11:04:29.233Z",
       "expiresAt": "2026-10-12T11:19:29.233Z",
       "finalizedAt": "2026-10-12T11:04:30.725Z"
+    },
+    {
+      "claimId": "d8af6840-80eb-4cfd-929a-7bd7a192dac5",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/puravankara-to-jointly-develop-12-76-acre-land-in-bengaluru/134888721",
+        "title-city:puravankara to jointly develop 12 76 acre land in bengaluru|bangalore",
+        "dedupe:d64ea820df7bf5ee928f8c8361c82119123426ad96f5cdfa08370ccc3a19e7f0",
+        "dedupe:a59b8f7aedc95de3fbefe98c6aa1675ef4056e33092c73d3e7f2bcf488fd7a8f",
+        "dedupe:d1ec24e33502be0ae062c0bc92f48ddf23384ad9605c23f311b0ee857258c5d5",
+        "dedupe:puravankara jointly develop acre land bengaluru|bangalore",
+        "dedupe:25a8342141c2996e4ef9acb5f98ef484179062cbdce57d74c9a4b896247b691b",
+        "dedupe:c3509513c2ed88bcdc68ded9f8a568445c58be4085ec914ca0ebe8832460a750"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-12T11:04:32.570Z",
+      "expiresAt": "2026-10-12T11:19:32.570Z"
     }
   ]
 }
