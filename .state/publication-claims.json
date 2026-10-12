@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-12T20:38:14.555Z",
+  "updatedAt": "2026-10-12T20:38:16.591Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2110,6 +2110,32 @@
       "claimedAt": "2026-10-12T20:38:12.782Z",
       "expiresAt": "2026-10-12T20:53:12.782Z",
       "finalizedAt": "2026-10-12T20:38:14.555Z"
+    },
+    {
+      "claimId": "60f32418-813a-47b7-b0d3-76c258b42c73",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://livehindustan.com/ncr/durga-scheme-portal-launched-government-to-distribute-electric-autos-to-women-and-transgender-individuals-201791818651495.html",
+        "title-city:क म क ब त द र ग स क म क प र टल श र मह ल ओ और ट र सज डर क म ल ग इल क ट र क ऑट|delhi",
+        "dedupe:bef0636cc699503c32ff2be7eb6854e4aab434144814116df89e7e169d809826",
+        "dedupe:66ff8e811cbd1c71cb90bed8ee9050f1d4060e634a84899fe99fa5efc5e421ed",
+        "dedupe:6226c59ef92ae6df231be69d358137d286a7d60140fbc38fb2c916a0de11e2ba",
+        "dedupe:0e299625d38aa4f65cabccd1fbdcf41b4e25bf6ef4eec66247527624dac853ca",
+        "dedupe:क म क ब त द र ग स क म क प र टल श र मह ल ओ और ट र सज डर क म ल ग इल क ट र क ऑट|delhi",
+        "dedupe:42c70de3603f32e7a3de3b9fa3c8d76e5169bd2c93f7175da08466d11696c97a",
+        "dedupe:77f652a845b88f3ebaa89b344fd77688095eb8d88660dfb79ac92a85ed37cfde"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "delhi",
+      "canonicalEventCity": "delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-12T20:38:16.591Z",
+      "expiresAt": "2026-10-12T20:53:16.591Z"
     }
   ]
 }
