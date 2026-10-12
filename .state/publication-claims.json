@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-12T11:04:23.846Z",
+  "updatedAt": "2026-10-12T11:04:25.559Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1978,6 +1978,32 @@
       "claimedAt": "2026-10-12T11:04:21.439Z",
       "expiresAt": "2026-10-12T11:19:21.439Z",
       "finalizedAt": "2026-10-12T11:04:23.846Z"
+    },
+    {
+      "claimId": "4de2a01e-118b-4f5d-9ff0-ac8be100f6b4",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://outlookmoney.com/invest/ups-model-building-regulations-2026-what-homebuyers-in-noida-greater-noida-and-yamuna-expressway-need-to-know",
+        "title-city:up s model building regulations 2026 what homebuyers in noida greater noida and yamuna expressway need to know|noida",
+        "dedupe:071f869dbaa7921a3767a89b85bfea79a9ceec0d647f6973988f5d4b4dc45b6d",
+        "dedupe:c0434c9942c2ad7e6a7f476374340117c22b649980e1bc61f423d7fc80276727",
+        "dedupe:34cdbeb162a63151e9ba341b5c7e841e67fc226cc49d5be1978463f919cd1e28",
+        "dedupe:e52b831b9d3279c16aa985192ffe4967ecf09fae1de1e0ee962ce11ec7395054",
+        "dedupe:s model building regulations what homebuyers noida greater noida yamuna expressway need know|noida",
+        "dedupe:d00172ea8ff8d7fb0555932d9b945ffa95b18f68eda06a2145ede070f919cb5f",
+        "dedupe:e6c582e8510f29560a8a667fd31f78b0c70951c2a521b9465f2461688fd315c7"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-12T11:04:25.559Z",
+      "expiresAt": "2026-10-12T11:19:25.559Z"
     }
   ]
 }
