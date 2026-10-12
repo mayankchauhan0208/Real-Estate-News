@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-12T11:04:29.233Z",
+  "updatedAt": "2026-10-12T11:04:30.725Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2008,7 +2008,7 @@
     },
     {
       "claimId": "9377076d-97f7-4391-8654-f5b18bdfad3c",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/residential/andhra-pradesh-cm-virtually-launches-house-title-distribution-in-nellore/134887713",
         "title-city:andhra pradesh cm virtually launches house title distribution in nellore|nellore",
@@ -2029,7 +2029,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-12T11:04:29.233Z",
-      "expiresAt": "2026-10-12T11:19:29.233Z"
+      "expiresAt": "2026-10-12T11:19:29.233Z",
+      "finalizedAt": "2026-10-12T11:04:30.725Z"
     }
   ]
 }
