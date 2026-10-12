@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-12T11:04:21.439Z",
+  "updatedAt": "2026-10-12T11:04:23.846Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1954,7 +1954,7 @@
     },
     {
       "claimId": "847ab253-baa2-430e-bdea-acc3493c75cd",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/cities/gurugram-news/gmda-identifies-27-roads-for-repair-under-30-day-challenge-101791746544459.html",
         "title-city:gmda identifies 27 roads for repair under 30 day challenge|gurugram",
@@ -1976,7 +1976,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-12T11:04:21.439Z",
-      "expiresAt": "2026-10-12T11:19:21.439Z"
+      "expiresAt": "2026-10-12T11:19:21.439Z",
+      "finalizedAt": "2026-10-12T11:04:23.846Z"
     }
   ]
 }
