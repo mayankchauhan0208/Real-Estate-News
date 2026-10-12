@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-11T07:31:52.322Z",
+  "updatedAt": "2026-10-12T02:44:25.460Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -1871,6 +1871,85 @@
       "claimedAt": "2026-10-11T07:31:50.352Z",
       "expiresAt": "2026-10-11T07:46:50.352Z",
       "finalizedAt": "2026-10-11T07:31:52.322Z"
+    },
+    {
+      "claimId": "258c1875-dc33-4540-9b95-94a20cf855b4",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/rustomjee-group-explores-senior-living-foray-sees-scope-for-over-5000-homes-in-mmr/134871768",
+        "title-city:rustomjee group explores senior living foray sees scope for over 5 000 homes in mmr|mumbai",
+        "dedupe:962e08b1b1e95e1fe78953782830acfb3b30a1ccb3b5c468a4e4d3ca96818748",
+        "dedupe:b059c8f0c7055cda25104886934c08029306eb2bed3dcaef64845347cc950d09",
+        "dedupe:7ecb6beb835728871ec322bce43e7ba664ece0f0b9ef27df57495ee6ad56db23",
+        "dedupe:rustomjee group explores senior foray sees scope homes mmr|mumbai",
+        "dedupe:093c947d0573153c478cecc72f46d3d8e91045100bd62c533132fd6d6089b5cd",
+        "dedupe:262eade23518cd0b4b368a75f2459037186a8b83648389ed375af050f9fb54b6"
+      ],
+      "semanticIdentity": {
+        "city": "mumbai",
+        "canonicalEventCity": "mumbai",
+        "normalizedBuilder": "dlf",
+        "normalizedProject": "",
+        "canonicalEventType": "residential-sale",
+        "builder": "dlf",
+        "project": "",
+        "eventType": "residential-sale",
+        "numericAnchors": [
+          "00:number",
+          "06:number",
+          "1.5:number",
+          "10:number",
+          "12.2:number",
+          "12:number",
+          "13000:crore",
+          "14.2:number",
+          "166.9:number",
+          "172:number",
+          "1985:crore",
+          "1:lakh",
+          "1:number",
+          "2019:number",
+          "2023:number",
+          "2024:number",
+          "2026:number",
+          "2030:number",
+          "2050:number",
+          "20:number",
+          "2100:number",
+          "24:number",
+          "25050:units",
+          "29:number",
+          "30000:crore",
+          "30:lakh",
+          "347:number",
+          "37:number",
+          "4.17:acre",
+          "4:number",
+          "5000:homes",
+          "5000:number",
+          "50:number",
+          "530:crore",
+          "60:number",
+          "63:number",
+          "7.5:lakh",
+          "74000:units",
+          "750:crore",
+          "8.5:number",
+          "8.8:number"
+        ],
+        "canonicalEventFingerprint": "dlf|mumbai|residential-sale|00:number,06:number,1.5:number",
+        "semanticClusterId": "cluster:bdf4d81f2c70465663f139cc"
+      },
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "dlf|mumbai|residential-sale|00:number,06:number,1.5:number",
+      "semanticClusterId": "cluster:bdf4d81f2c70465663f139cc",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-12T02:44:25.460Z",
+      "expiresAt": "2026-10-12T02:59:25.460Z"
     }
   ]
 }
