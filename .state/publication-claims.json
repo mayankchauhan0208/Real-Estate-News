@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-12T20:38:10.630Z",
+  "updatedAt": "2026-10-12T20:38:12.782Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2084,6 +2084,31 @@
       "claimedAt": "2026-10-12T20:38:08.063Z",
       "expiresAt": "2026-10-12T20:53:08.063Z",
       "finalizedAt": "2026-10-12T20:38:10.630Z"
+    },
+    {
+      "claimId": "0dc1ff59-2480-4fb4-b942-ad6e4d2006ca",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://magicbricks.com/news/ganga-link-expressway-tender-noida-airport-bulandshahr-yamuna-expressway-jymb/152146.html",
+        "title-city:noida airport link 74 5 km ganga link expressway moves ahead greater noida and bulandshahr in focus|noida",
+        "dedupe:628025b3502327c6f908d30bb59ff8842ab3367d32f0d5d348e459f28c8c338c",
+        "dedupe:250c41235660972353462f20470e1b9773fbcac692321d98ae4b2cf475087dba",
+        "dedupe:035c9169043d0b1e302ec59294e4dc3ed60a908b154cf62b754c58d78ec4e7f3",
+        "dedupe:noida airport link km ganga link expressway moves ahead greater noida bulandshahr focus|noida",
+        "dedupe:e4a191207f13f6cb314433dac2b782f9318c6940da0079d1aa49df198f00f20a",
+        "dedupe:283df271315915e3028048212140347ae431d7bf9e887463d13f859a58de6333"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-12T20:38:12.782Z",
+      "expiresAt": "2026-10-12T20:53:12.782Z"
     }
   ]
 }
