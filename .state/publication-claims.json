@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-12T20:38:08.063Z",
+  "updatedAt": "2026-10-12T20:38:10.630Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2060,7 +2060,7 @@
     },
     {
       "claimId": "36f05639-a5d9-46b0-835e-5044aac7cbb0",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realtynmore.com/expanded-uniqlo-store-opens-at-ambience-mall",
         "title-city:expanded uniqlo store opens at ambience mall gurugram|gurugram",
@@ -2082,7 +2082,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-12T20:38:08.063Z",
-      "expiresAt": "2026-10-12T20:53:08.063Z"
+      "expiresAt": "2026-10-12T20:53:08.063Z",
+      "finalizedAt": "2026-10-12T20:38:10.630Z"
     }
   ]
 }
