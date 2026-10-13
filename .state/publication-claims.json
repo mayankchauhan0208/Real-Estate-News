@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-13T10:52:27.912Z",
+  "updatedAt": "2026-10-13T10:52:30.740Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2166,7 +2166,7 @@
     },
     {
       "claimId": "2cf0684f-65ba-477b-9783-82fa75e41237",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://business-standard.com/companies/news/prestige-estates-q2-sales-bookings-rise-20-to-7-225-cr-on-housing-demand-126101300689_1.html",
         "title-city:prestige estates q2 sales bookings rise 20 to 7 225 cr on housing demand|bangalore",
@@ -2220,7 +2220,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-13T10:52:27.912Z",
-      "expiresAt": "2026-10-13T11:07:27.912Z"
+      "expiresAt": "2026-10-13T11:07:27.912Z",
+      "finalizedAt": "2026-10-13T10:52:30.740Z"
     }
   ]
 }
