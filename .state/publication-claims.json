@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-13T18:38:52.409Z",
+  "updatedAt": "2026-10-13T18:38:55.069Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2326,6 +2326,32 @@
       "claimedAt": "2026-10-13T18:38:49.543Z",
       "expiresAt": "2026-10-13T18:53:49.543Z",
       "finalizedAt": "2026-10-13T18:38:52.409Z"
+    },
+    {
+      "claimId": "c252f6eb-1ac3-4778-a0a2-c198a4589f0f",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://livehindustan.com/ncr/delhi-jal-board-aka-djb-launches-e-kyc-digital-billing-survey-process-across-delhi-201791903301596.html",
+        "title-city:क म क ब त djb क व ट सऐप ईम ल पर ब ल द न क त य र ड ज टल id बन न श र क य नय अभ य न|delhi",
+        "dedupe:e72d5a4d706e44f2a568f123eaf9ca6b8ced777c06efa040a8340c1d4dfbd4bb",
+        "dedupe:8b35d9585132f040e54e226e46df692f4bad647cc27b00d779269b163ba41d6c",
+        "dedupe:21f7a58f6ca53e00d7cf2c594c8c348710184ae6bd773a93344554800d7ace48",
+        "dedupe:8e9899025b511969ce92943dc535fa4dcdb844b7aa632dcbc9b77adf1f8447e8",
+        "dedupe:क म क ब त djb क व ट सऐप ईम ल पर ब ल द न क त य र ड ज टल id बन न श र क य नय अभ य न|delhi",
+        "dedupe:243c9e5c4979636603bf4e0f0db4b19798d2876e75dbc911f53464e4077489f0",
+        "dedupe:2e5c9e8d9687bbbe7e9b529b2f5743eb7e2e2936c735f79dcd4f574da9ee5801"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "delhi",
+      "canonicalEventCity": "delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-13T18:38:55.069Z",
+      "expiresAt": "2026-10-13T18:53:55.069Z"
     }
   ]
 }
