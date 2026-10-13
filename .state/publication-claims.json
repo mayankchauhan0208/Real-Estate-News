@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-13T10:52:43.096Z",
+  "updatedAt": "2026-10-13T10:52:46.081Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2279,7 +2279,7 @@
     },
     {
       "claimId": "924b1b27-2cfe-4488-b1f2-f71998d5e502",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://magicbricks.com/news/nagpur-third-ring-road-launched-know-about-the-149-km-multimodal-corridor-set-to-transform-the-city-rgmb/152167.html",
         "title-city:nagpur third ring road launched know about the 149 km multimodal corridor set to transform the city|nagpur",
@@ -2300,7 +2300,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-13T10:52:43.096Z",
-      "expiresAt": "2026-10-13T11:07:43.096Z"
+      "expiresAt": "2026-10-13T11:07:43.096Z",
+      "finalizedAt": "2026-10-13T10:52:46.081Z"
     }
   ]
 }
