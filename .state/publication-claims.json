@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-13T18:38:49.543Z",
+  "updatedAt": "2026-10-13T18:38:52.409Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2305,7 +2305,7 @@
     },
     {
       "claimId": "ecdaf50d-637e-4e5d-9464-c02c4439370b",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/industry/prayagraj-development-body-plans-township-along-prayagraj-rewa-highway/134911798",
         "title-city:prayagraj development body plans township along prayagraj rewa highway|rewa",
@@ -2324,7 +2324,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-13T18:38:49.543Z",
-      "expiresAt": "2026-10-13T18:53:49.543Z"
+      "expiresAt": "2026-10-13T18:53:49.543Z",
+      "finalizedAt": "2026-10-13T18:38:52.409Z"
     }
   ]
 }
