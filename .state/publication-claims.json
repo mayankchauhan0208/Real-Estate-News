@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-12T20:38:18.410Z",
+  "updatedAt": "2026-10-13T02:56:19.922Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2137,6 +2137,31 @@
       "claimedAt": "2026-10-12T20:38:16.591Z",
       "expiresAt": "2026-10-12T20:53:16.591Z",
       "finalizedAt": "2026-10-12T20:38:18.410Z"
+    },
+    {
+      "claimId": "c933d35d-fdf3-4df1-ba09-e917c729ca68",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://magicbricks.com/news/up-rera-clears-11-projects-across-five-districts-noida-leads-investment-vcmb/152144.html",
+        "title-city:noida gets 1 800 crore share as up rera clears 11 projects|noida",
+        "dedupe:72da5dd3b9efa6cec37273250e95ab318ac50b5e9457d53707fd1e7e7516bf9e",
+        "dedupe:494ee4a036588fb5e5ee122e0b75ab5c0d709eb1314dff4a548adcb11c045172",
+        "dedupe:c03653746d0eadb9f6245e2133d0a99bbc9ee7b87226522a4eafd308980a16e2",
+        "dedupe:noida gets share as rera clears|noida",
+        "dedupe:643c9e58907c9019d529109360c4e30d5fe3e5b11fe002fefaa4fba155f465e4",
+        "dedupe:3555708f114e48732d56bce974066952164fd3fe09f0ec3dad9f3c0c8b5531ff"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-13T02:56:19.922Z",
+      "expiresAt": "2026-10-13T03:11:19.922Z"
     }
   ]
 }
