@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-13T23:39:12.205Z",
+  "updatedAt": "2026-10-13T23:39:14.658Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2380,7 +2380,7 @@
     },
     {
       "claimId": "426a3371-dfb7-42a2-ae3f-20dd12a4c5fd",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://amarujala.com/delhi-ncr/faridabad/preparations-underway-to-launch-a-new-waste-disposal-unit-faridabad-news-c-26-1-fbd1023-82656-2026-10-14",
         "title-city:faridabad news क ड न स त रण क नई य न ट श र करन क त य र|faridabad",
@@ -2402,7 +2402,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-13T23:39:12.205Z",
-      "expiresAt": "2026-10-13T23:54:12.205Z"
+      "expiresAt": "2026-10-13T23:54:12.205Z",
+      "finalizedAt": "2026-10-13T23:39:14.658Z"
     }
   ]
 }
