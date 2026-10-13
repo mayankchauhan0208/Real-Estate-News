@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-13T18:38:55.069Z",
+  "updatedAt": "2026-10-13T18:38:57.484Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2329,7 +2329,7 @@
     },
     {
       "claimId": "c252f6eb-1ac3-4778-a0a2-c198a4589f0f",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://livehindustan.com/ncr/delhi-jal-board-aka-djb-launches-e-kyc-digital-billing-survey-process-across-delhi-201791903301596.html",
         "title-city:क म क ब त djb क व ट सऐप ईम ल पर ब ल द न क त य र ड ज टल id बन न श र क य नय अभ य न|delhi",
@@ -2351,7 +2351,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-13T18:38:55.069Z",
-      "expiresAt": "2026-10-13T18:53:55.069Z"
+      "expiresAt": "2026-10-13T18:53:55.069Z",
+      "finalizedAt": "2026-10-13T18:38:57.484Z"
     }
   ]
 }
