@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-13T10:52:30.740Z",
+  "updatedAt": "2026-10-13T10:52:33.402Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2222,6 +2222,32 @@
       "claimedAt": "2026-10-13T10:52:27.912Z",
       "expiresAt": "2026-10-13T11:07:27.912Z",
       "finalizedAt": "2026-10-13T10:52:30.740Z"
+    },
+    {
+      "claimId": "1ca591e1-9fad-4cbe-b34b-0d28c568229f",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://tribuneindia.com/news/himachal/baseless-shandil-chauhan-hit-back-at-naddas-remarks-on-himachals-finances",
+        "title-city:baseless shandil chauhan hit back at nadda s remarks on himachal s finances|allahabad",
+        "dedupe:bfecbf55cac7222da01ef02119b3bbc8ad99c7a3684af91f366a80379bb4a142",
+        "dedupe:bd96e1902a0e3dfa7c8770f96d41643de2561928923c2cb185bba2d0276e66d5",
+        "dedupe:862a00ea4e0a8826a10b47e913ed08d0e65fa869131c9443115ea1d6c8b7dc93",
+        "dedupe:5116f5ab5cdfb79d38b25063c4f7777d16c6f872ad8ea74b043fa317172dcef6",
+        "dedupe:baseless shandil chauhan hit back nadda s remarks himachal s finances|allahabad",
+        "dedupe:ffd2d51573d5a82cc442898ff48b117bc215bd00f95e2136f7ff9ced0fb45a10",
+        "dedupe:4687c761a62987e0d7c2a334bac9aeee0cf5c8e9c8052a7b3253bcb6178c12d9"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "allahabad",
+      "canonicalEventCity": "allahabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "allahabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-13T10:52:33.402Z",
+      "expiresAt": "2026-10-13T11:07:33.402Z"
     }
   ]
 }
