@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-13T02:56:22.580Z",
+  "updatedAt": "2026-10-13T10:52:27.912Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2163,6 +2163,64 @@
       "claimedAt": "2026-10-13T02:56:19.922Z",
       "expiresAt": "2026-10-13T03:11:19.922Z",
       "finalizedAt": "2026-10-13T02:56:22.580Z"
+    },
+    {
+      "claimId": "2cf0684f-65ba-477b-9783-82fa75e41237",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://business-standard.com/companies/news/prestige-estates-q2-sales-bookings-rise-20-to-7-225-cr-on-housing-demand-126101300689_1.html",
+        "title-city:prestige estates q2 sales bookings rise 20 to 7 225 cr on housing demand|bangalore",
+        "dedupe:51b1a203a54db783ecc775e4fac126dc1bfbcd3fad6cb3720f143ebb445e6e40",
+        "dedupe:be43055d72f93e6f5288acffdd8e1f7d94d2efaee53e68f1bed078b713185587",
+        "dedupe:ed4eef5d1033b128a15b3ffee5eaacdb90d325a3f6e4e324f46dee1ed791dcca",
+        "dedupe:693c2db83dab8f26fd4f4ab5452bc1b132a67f402c9eb01eb179cbf0e2d63151",
+        "dedupe:prestige estates q2 sales bookings rise housing demand|bangalore",
+        "dedupe:cfc2fd5811adeb09bbfb80818557cb026c9ebcc19b982b2e3272c79bae19b1e5",
+        "dedupe:d63cf5a727ffa609842cafa1e55ba6368a83da6afd171ffad16ed17bb7a1a4f9"
+      ],
+      "semanticIdentity": {
+        "city": "bangalore",
+        "canonicalEventCity": "bangalore",
+        "normalizedBuilder": "prestige",
+        "normalizedProject": "",
+        "canonicalEventType": "residential-sale",
+        "builder": "prestige",
+        "project": "",
+        "eventType": "residential-sale",
+        "numericAnchors": [
+          "11.88:number",
+          "137:number",
+          "13804.3:crore",
+          "13:number",
+          "16:number",
+          "2026:number",
+          "20:number",
+          "216:million sq ft",
+          "229:million sq ft",
+          "24:number",
+          "27:number",
+          "2:number",
+          "319:number",
+          "3910:units",
+          "3:number",
+          "5.84:number",
+          "72250:number",
+          "7225:crore",
+          "7247:units"
+        ],
+        "canonicalEventFingerprint": "prestige|bangalore|residential-sale|11.88:number,137:number,13804.3:crore",
+        "semanticClusterId": "cluster:85e1df57fd14e18638e2b9c5"
+      },
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "prestige|bangalore|residential-sale|11.88:number,137:number,13804.3:crore",
+      "semanticClusterId": "cluster:85e1df57fd14e18638e2b9c5",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-13T10:52:27.912Z",
+      "expiresAt": "2026-10-13T11:07:27.912Z"
     }
   ]
 }
