@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-13T23:39:09.897Z",
+  "updatedAt": "2026-10-13T23:39:12.205Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2377,6 +2377,32 @@
       "claimedAt": "2026-10-13T23:39:07.379Z",
       "expiresAt": "2026-10-13T23:54:07.379Z",
       "finalizedAt": "2026-10-13T23:39:09.897Z"
+    },
+    {
+      "claimId": "426a3371-dfb7-42a2-ae3f-20dd12a4c5fd",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://amarujala.com/delhi-ncr/faridabad/preparations-underway-to-launch-a-new-waste-disposal-unit-faridabad-news-c-26-1-fbd1023-82656-2026-10-14",
+        "title-city:faridabad news क ड न स त रण क नई य न ट श र करन क त य र|faridabad",
+        "dedupe:1b31fc4ca8674b9bfca0199f488e9e31eaad75d66f44f1d4c256ba862138cb76",
+        "dedupe:9e77c5e0605ec37c2035d868c3b44aa20f964562052a3427397e5c3ea69a1e08",
+        "dedupe:502581e6a7bf9e14f3337fb19100761df675abc3d436e0b989aa2aa93ed91ff6",
+        "dedupe:5ed4cbe5df1bef22432a3563239c64e2ad98eb71842672c140e602f40443d644",
+        "dedupe:faridabad news क ड न स त रण क नई य न ट श र करन क त य र|faridabad",
+        "dedupe:1b1c575e62345b872e9fbcd4619032dcf8f5f544e74c3f584db739ab0d93b4e7",
+        "dedupe:ef9670bc48c6d73d12e6bd39065184880463c0053853bb8fc3a43a933877846c"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "faridabad",
+      "canonicalEventCity": "faridabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "faridabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-13T23:39:12.205Z",
+      "expiresAt": "2026-10-13T23:54:12.205Z"
     }
   ]
 }
