@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-13T10:52:38.176Z",
+  "updatedAt": "2026-10-13T10:52:40.862Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2252,7 +2252,7 @@
     },
     {
       "claimId": "4e162f3a-fb89-4158-9b2b-053f613d2d6a",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realtynmore.com/grandthum-by-group-108-celebrates-grand-opening",
         "title-city:grandthum by group 108 celebrates grand opening with key retail and lifestyle brands|noida",
@@ -2274,7 +2274,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-13T10:52:38.176Z",
-      "expiresAt": "2026-10-13T11:07:38.176Z"
+      "expiresAt": "2026-10-13T11:07:38.176Z",
+      "finalizedAt": "2026-10-13T10:52:40.862Z"
     }
   ]
 }
