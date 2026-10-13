@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-13T18:38:57.484Z",
+  "updatedAt": "2026-10-13T23:39:07.379Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2353,6 +2353,29 @@
       "claimedAt": "2026-10-13T18:38:55.069Z",
       "expiresAt": "2026-10-13T18:53:55.069Z",
       "finalizedAt": "2026-10-13T18:38:57.484Z"
+    },
+    {
+      "claimId": "55bbf19d-f2b5-413e-bcd1-9f6eaae58b8a",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://infra.economictimes.indiatimes.com/news/urban-infrastructure/prayagraj-development-body-plans-township-along-prayagraj-rewa-highway/134915729",
+        "title-city:prayagraj development body plans township along prayagraj rewa highway|allahabad",
+        "dedupe:5ca9238223730629e61dde298ee15331802cf2746847b3932329bb4beca63b82",
+        "dedupe:67a08c3f5452c9c4f460bd545e41012222659b8fa860706be2d5657267528e86",
+        "dedupe:9f7ed02c5cef1bcce1fb0c2f2f23912dbd598e47cbb52c96b6fcfb4d1274322c",
+        "dedupe:prayagraj development body plans township along prayagraj rewa highway|allahabad"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "allahabad",
+      "canonicalEventCity": "allahabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "allahabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-13T23:39:07.379Z",
+      "expiresAt": "2026-10-13T23:54:07.379Z"
     }
   ]
 }
