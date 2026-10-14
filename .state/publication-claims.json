@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-14T15:32:34.866Z",
+  "updatedAt": "2026-10-14T19:48:29.933Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2753,6 +2753,55 @@
       "claimedAt": "2026-10-14T15:32:32.089Z",
       "expiresAt": "2026-10-14T15:47:32.089Z",
       "finalizedAt": "2026-10-14T15:32:34.866Z"
+    },
+    {
+      "claimId": "b0d8694f-05f3-4a87-a782-ab1db4e2126f",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/noida-housing-market-shifts-toward-premium-segment",
+        "title-city:noida housing market shifts toward premium segments driven by infrastructure growth|noida",
+        "dedupe:953621ff3e0712f630589434420b0b63183562c08919aa90f3a724df9cad5732",
+        "dedupe:9fb2dc3e7c3fd74399082fd2b48034c2ade5a2496a8c72c1a50ac8eacb86aae4",
+        "dedupe:4d8a43a653df740e12e49dd30340c8bfa50161b5eee56d86fd140f49583f4b83",
+        "dedupe:56b8b8e6a9c48e3f67f924710f29e151052964687cc8d1bbbbe2291f23a92856",
+        "dedupe:noida housing market shifts toward premium segments driven infrastructure growth|noida",
+        "dedupe:c73569d6714168c63d41f6d93c6e035d201461117aa3f431e552782b0f68cca0",
+        "dedupe:3c800be9dedea3c356af998832b9b7d8141fd7fbcdb9f345e3c612da55b84f3c"
+      ],
+      "semanticIdentity": {
+        "city": "noida",
+        "canonicalEventCity": "noida",
+        "normalizedBuilder": "county-group",
+        "normalizedProject": "",
+        "canonicalEventType": "residential-sale",
+        "builder": "county-group",
+        "project": "",
+        "eventType": "residential-sale",
+        "numericAnchors": [
+          "10021:number",
+          "11:number",
+          "14:number",
+          "15:number",
+          "17:number",
+          "1:number",
+          "2026:number",
+          "28:number",
+          "2:number",
+          "36:number"
+        ],
+        "canonicalEventFingerprint": "county-group|noida|residential-sale|10021:number,11:number,14:number",
+        "semanticClusterId": "cluster:40ae4a50cd8cfe552983e3db"
+      },
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "county-group|noida|residential-sale|10021:number,11:number,14:number",
+      "semanticClusterId": "cluster:40ae4a50cd8cfe552983e3db",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-14T19:48:29.933Z",
+      "expiresAt": "2026-10-14T20:03:29.933Z"
     }
   ]
 }
