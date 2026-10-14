@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-14T19:48:29.933Z",
+  "updatedAt": "2026-10-14T19:48:32.341Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2756,7 +2756,7 @@
     },
     {
       "claimId": "b0d8694f-05f3-4a87-a782-ab1db4e2126f",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realtynmore.com/noida-housing-market-shifts-toward-premium-segment",
         "title-city:noida housing market shifts toward premium segments driven by infrastructure growth|noida",
@@ -2801,7 +2801,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-14T19:48:29.933Z",
-      "expiresAt": "2026-10-14T20:03:29.933Z"
+      "expiresAt": "2026-10-14T20:03:29.933Z",
+      "finalizedAt": "2026-10-14T19:48:32.341Z"
     }
   ]
 }
