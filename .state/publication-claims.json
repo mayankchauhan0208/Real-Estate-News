@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-14T10:32:01.259Z",
+  "updatedAt": "2026-10-14T10:32:03.449Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2492,7 +2492,7 @@
     },
     {
       "claimId": "dd8a0a8b-36c7-4dfc-92f6-24d01d5d837c",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/real-estate/senior-living-market-to-touch-4-31-billion-in-2026-coimbatore-vadodara-ayodhya-and-varanasi-to-emerge-as-retirement-hubs-101791966310579.html",
         "title-city:senior living market to touch 4 31 billion in 2026 coimbatore vadodara ayodhya and varanasi to emerge as|vadodara",
@@ -2538,7 +2538,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-14T10:32:01.259Z",
-      "expiresAt": "2026-10-14T10:47:01.259Z"
+      "expiresAt": "2026-10-14T10:47:01.259Z",
+      "finalizedAt": "2026-10-14T10:32:03.449Z"
     }
   ]
 }
