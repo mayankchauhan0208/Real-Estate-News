@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-13T23:39:14.658Z",
+  "updatedAt": "2026-10-14T05:10:41.310Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2404,6 +2404,66 @@
       "claimedAt": "2026-10-13T23:39:12.205Z",
       "expiresAt": "2026-10-13T23:54:12.205Z",
       "finalizedAt": "2026-10-13T23:39:14.658Z"
+    },
+    {
+      "claimId": "864bf5b5-8c52-4fd7-b41f-909bc7c9301e",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/infrastructure/with-90-of-its-developable-land-utilised-new-noida-to-come-up-in-over-20000-hectares/134931764",
+        "title-city:with 90 of its developable land utilised new noida to come up in over 20 000 hectares|noida",
+        "dedupe:14179789bf0d7c91be95546038227dd98bd08fa6a65f3a80c5d9b5bb6299ff17",
+        "dedupe:c5655686f68a2a8da53104c16b64f504970cb22d9d16f6f0ede81aa24629f4f8",
+        "dedupe:a21013516d300f7bbfa47cb0d7cd76dd2235b6e2ee0877089571f15992209c12",
+        "dedupe:developable land utilised new noida come hectares|noida",
+        "dedupe:96c586e22744f15ba997b7e5ad05d02495b1b02a21adba06f8ee1750971a08c0",
+        "dedupe:28b24df807e8329026931be2a1bd50e36025c02918455a0d9da34f9da66798cf"
+      ],
+      "semanticIdentity": {
+        "city": "noida",
+        "canonicalEventCity": "noida",
+        "normalizedBuilder": "gaurs",
+        "normalizedProject": "",
+        "canonicalEventType": "project-launch",
+        "builder": "gaurs",
+        "project": "",
+        "eventType": "project-launch",
+        "numericAnchors": [
+          "09:number",
+          "10:number",
+          "120:number",
+          "12:lakh",
+          "14:number",
+          "168:number",
+          "1976:number",
+          "20000:number",
+          "2026:number",
+          "2030:number",
+          "2:number",
+          "33:number",
+          "35000:crore",
+          "500000:number",
+          "5000:number",
+          "5:number",
+          "600000:number",
+          "60:number",
+          "6:lakh",
+          "80:number",
+          "90:number",
+          "9500:number"
+        ],
+        "canonicalEventFingerprint": "gaurs|noida|project-launch|09:number,10:number,120:number",
+        "semanticClusterId": "cluster:1fa772d33c486d0713a1ed0c"
+      },
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "gaurs|noida|project-launch|09:number,10:number,120:number",
+      "semanticClusterId": "cluster:1fa772d33c486d0713a1ed0c",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-14T05:10:41.310Z",
+      "expiresAt": "2026-10-14T05:25:41.310Z"
     }
   ]
 }
