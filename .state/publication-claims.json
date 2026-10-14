@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-14T10:32:17.351Z",
+  "updatedAt": "2026-10-14T10:32:19.680Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2621,6 +2621,31 @@
       "claimedAt": "2026-10-14T10:32:15.455Z",
       "expiresAt": "2026-10-14T10:47:15.455Z",
       "finalizedAt": "2026-10-14T10:32:17.351Z"
+    },
+    {
+      "claimId": "ef714e38-4a18-47dc-90df-c6d157d9e32c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/residential/odisha-cm-inaugurates-two-affordable-housing-projects-for-urban-poor/134936315",
+        "title-city:odisha cm inaugurates two affordable housing projects for urban poor|bhubaneswar",
+        "dedupe:8cd9ebb340ba230ad1dfb93aa207b040b0f876d3330e47fb0e752144c04213ee",
+        "dedupe:a6f12533fb522ee8b016524cf8f19d2c26f90e895e990c67faf4707b8ee81cb9",
+        "dedupe:0986f5882d5e5232bb19ee055c0e1c43c8ffead09bdf80be0a6856e46fddbf8f",
+        "dedupe:odisha cm inaugurates two affordable housing urban poor|bhubaneswar",
+        "dedupe:0c2548cd22c95b09f22ba6512341bdb65fc51398b5da2b8399cb59229c378db4",
+        "dedupe:3be9d2620c904f7bed53dbc77c3afeb2f655393846477d21966352d93ffe804d"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bhubaneswar",
+      "canonicalEventCity": "bhubaneswar",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bhubaneswar"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-14T10:32:19.680Z",
+      "expiresAt": "2026-10-14T10:47:19.680Z"
     }
   ]
 }
