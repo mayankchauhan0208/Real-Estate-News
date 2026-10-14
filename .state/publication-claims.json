@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-14T10:32:22.235Z",
+  "updatedAt": "2026-10-14T10:32:24.688Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2647,6 +2647,31 @@
       "claimedAt": "2026-10-14T10:32:19.680Z",
       "expiresAt": "2026-10-14T10:47:19.680Z",
       "finalizedAt": "2026-10-14T10:32:22.235Z"
+    },
+    {
+      "claimId": "a5062416-a792-40c7-9d48-9c79eec7a6c1",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/rinl-lands-e-auction-in-visakhapatnam-fetches-over-366-crore/134936455",
+        "title-city:rinl lands e auction in visakhapatnam fetches over 366 crore|visakhapatnam",
+        "dedupe:4b1e77814d9189f1dabe486c5b5102165aba56eb92eb3dab199e60a2aba722f7",
+        "dedupe:072c50972a7f649906ab0ee8fadf378a178bfef79c1d5b9163c444a04d840dcf",
+        "dedupe:a7c586c3585764b7ee799280c02b6c6d3c873e2f24aa656de0635736c8cfb5a5",
+        "dedupe:rinl lands e auction visakhapatnam fetches|visakhapatnam",
+        "dedupe:3623341fcc0dcc189a1df8c8997638d7ac06981d2960a0349f668ce586f834cb",
+        "dedupe:44925899026af45c991fbf34cb440406b74bf26f43e4d4a0164cf2aded0e5259"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "visakhapatnam",
+      "canonicalEventCity": "visakhapatnam",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "visakhapatnam"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-14T10:32:24.688Z",
+      "expiresAt": "2026-10-14T10:47:24.688Z"
     }
   ]
 }
