@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-14T15:32:29.831Z",
+  "updatedAt": "2026-10-14T15:32:32.089Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2727,6 +2727,31 @@
       "claimedAt": "2026-10-14T15:32:27.481Z",
       "expiresAt": "2026-10-14T15:47:27.481Z",
       "finalizedAt": "2026-10-14T15:32:29.831Z"
+    },
+    {
+      "claimId": "a57561fb-74fd-4fe8-95fa-8ca64dd7ba3b",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://infra.economictimes.indiatimes.com/news/urban-infrastructure/surats-dream-city-gets-new-blueprint-for-growth/134939281",
+        "title-city:surat s dream city gets new blueprint for growth|surat",
+        "dedupe:938c5e5ca1f47da7603bb7ba8607cbec9951099cf71dd382052bb9aae93dbf0e",
+        "dedupe:17143151f62d5b99163b0c1ffe1b40f0f13c749027ba867043e000cf09ca1736",
+        "dedupe:b3762016f062a3be80257493437f3bc73b530ebff1378eedaf604166ad865647",
+        "dedupe:surat s dream city gets new blueprint growth|surat",
+        "dedupe:286b7424e3563fedf2286ce3da7df04e2ddbae33d4758cf488ba2120156fa7c3",
+        "dedupe:f43c3fbdd92d307c162f1f69ec72ad67728061a955cd75f5ec6ce46cc32737fc"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "surat",
+      "canonicalEventCity": "surat",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "surat"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-14T15:32:32.089Z",
+      "expiresAt": "2026-10-14T15:47:32.089Z"
     }
   ]
 }
