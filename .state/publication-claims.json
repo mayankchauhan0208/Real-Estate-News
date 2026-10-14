@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-14T10:32:13.137Z",
+  "updatedAt": "2026-10-14T10:32:15.455Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2594,6 +2594,32 @@
       "claimedAt": "2026-10-14T10:32:11.112Z",
       "expiresAt": "2026-10-14T10:47:11.112Z",
       "finalizedAt": "2026-10-14T10:32:13.137Z"
+    },
+    {
+      "claimId": "69c05a02-fed6-42de-839c-88e28ff1eefb",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://maharashtratimes.com/business/real-estate-news/ancestral-property-ownership-rules-how-to-update-land-records-required-documents-to-get-registeration-on-your-own-name/articleshow/134936368.cms",
+        "title-city:property inheritance rules व रस हक क न म ळ ल ल वड ल प र ज त घर जम न न व वर कस कर व क गदपत र अन प रत य क|ranchi",
+        "dedupe:17241008ec9f7235e9f127aac3d356f0b23c292f79e71801b8f76aa44ba61123",
+        "dedupe:2775adb19f1f0581d7a1a047ff803bdf3bbc1de952967b6343776034280790ca",
+        "dedupe:0aa3f408ae848e6444014ae6b6b03ace0bde374e4bd824d7dbe69a5e038faa4d",
+        "dedupe:9b2e41a3ceced8e216fe70af5c8de10b8c73f483b3c10d945e7df0cd20832c89",
+        "dedupe:property inheritance rules व रस हक क न म ळ ल ल वड ल प र ज त घर जम न न व वर कस कर व क गदपत र अन प रत य क|ranchi",
+        "dedupe:26e106233e72279db0657bfb566d85e064e220fe7eac1b3a3e512421d331b02c",
+        "dedupe:98fa3228a85d867c77afc2f364b4046cf8585e06e00edf13846d4cd525d3670d"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "ranchi",
+      "canonicalEventCity": "ranchi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "ranchi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-14T10:32:15.455Z",
+      "expiresAt": "2026-10-14T10:47:15.455Z"
     }
   ]
 }
