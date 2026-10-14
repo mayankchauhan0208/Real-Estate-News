@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-14T15:32:24.726Z",
+  "updatedAt": "2026-10-14T15:32:27.481Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2700,6 +2700,32 @@
       "claimedAt": "2026-10-14T15:32:22.138Z",
       "expiresAt": "2026-10-14T15:47:22.138Z",
       "finalizedAt": "2026-10-14T15:32:24.726Z"
+    },
+    {
+      "claimId": "dc9a96f7-cfde-48a3-89c4-ff51c7f1acda",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/noida-news/noida-signs-mou-with-private-firm-for-ev-charging-stations-101791915824065.html",
+        "title-city:noida signs mou with private firm for ev charging stations|noida",
+        "dedupe:edab5ed77a729aa00a917eb15829c2bc0ddf732c71c15ca3b862c4516deb19a5",
+        "dedupe:12ea017658a3b07dbc470edbf769ed4daf619ecaf4c5dc3e77f09c0e689c3119",
+        "dedupe:3be7090678e3db6a83f79d59be54382a0816e72af42b73cebd045414c3d746f5",
+        "dedupe:1b6e780254fa8f889c3772ca704a096efc855f142aa9781ac29bdbaa2589d6f7",
+        "dedupe:noida signs mou private firm ev charging stations|noida",
+        "dedupe:729e63e27b194e8ab0a0ab440210c139c4355c6a5b69b1c62b4f8e9468c011b4",
+        "dedupe:51a71f0b96359bf0d14342c9f9afbed6138f8345771204c5091029477707003e"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-14T15:32:27.481Z",
+      "expiresAt": "2026-10-14T15:47:27.481Z"
     }
   ]
 }
