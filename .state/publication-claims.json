@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-14T10:31:58.525Z",
+  "updatedAt": "2026-10-14T10:32:01.259Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2489,6 +2489,56 @@
       "claimedAt": "2026-10-14T10:31:55.964Z",
       "expiresAt": "2026-10-14T10:46:55.964Z",
       "finalizedAt": "2026-10-14T10:31:58.525Z"
+    },
+    {
+      "claimId": "dd8a0a8b-36c7-4dfc-92f6-24d01d5d837c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/senior-living-market-to-touch-4-31-billion-in-2026-coimbatore-vadodara-ayodhya-and-varanasi-to-emerge-as-retirement-hubs-101791966310579.html",
+        "title-city:senior living market to touch 4 31 billion in 2026 coimbatore vadodara ayodhya and varanasi to emerge as|vadodara",
+        "dedupe:6b391014e5a2c709cf5f7f2efe9bd8d233046f465a0733e0623728d79b0ab784",
+        "dedupe:b0e0fde2e819879b202387dce2c2c5b9ffaefeb0c5204a6337b98d63caa66a64",
+        "dedupe:2d5e2b93202eb1f9063c86cbf35ec79929e2f7fc4d7ec0cf1f796a993bf44db0",
+        "dedupe:e55730addb6a09688dab06d6141df3c845a710e4c1f727c28377ea443966446f",
+        "dedupe:senior market touch coimbatore vadodara ayodhya varanasi emerge as|vadodara"
+      ],
+      "semanticIdentity": {
+        "city": "vadodara",
+        "canonicalEventCity": "vadodara",
+        "normalizedBuilder": "dlf",
+        "normalizedProject": "",
+        "canonicalEventType": "residential-sale",
+        "builder": "dlf",
+        "project": "",
+        "eventType": "residential-sale",
+        "numericAnchors": [
+          "08:number",
+          "10432:homes",
+          "11.43:number",
+          "14:number",
+          "1985:crore",
+          "2026:number",
+          "2029:number",
+          "2031:number",
+          "22:acre",
+          "2:number",
+          "4.31:number",
+          "58:number",
+          "5:number"
+        ],
+        "canonicalEventFingerprint": "dlf|vadodara|residential-sale|08:number,10432:homes,11.43:number",
+        "semanticClusterId": "cluster:3e410b1bdc9b2d291d6ab5fc"
+      },
+      "publishedCity": "vadodara",
+      "canonicalEventCity": "vadodara",
+      "canonicalEventFingerprint": "dlf|vadodara|residential-sale|08:number,10432:homes,11.43:number",
+      "semanticClusterId": "cluster:3e410b1bdc9b2d291d6ab5fc",
+      "city": [
+        "vadodara"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-14T10:32:01.259Z",
+      "expiresAt": "2026-10-14T10:47:01.259Z"
     }
   ]
 }
