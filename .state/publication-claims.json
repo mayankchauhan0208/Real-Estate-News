@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-14T10:32:03.449Z",
+  "updatedAt": "2026-10-14T10:32:06.669Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2540,6 +2540,32 @@
       "claimedAt": "2026-10-14T10:32:01.259Z",
       "expiresAt": "2026-10-14T10:47:01.259Z",
       "finalizedAt": "2026-10-14T10:32:03.449Z"
+    },
+    {
+      "claimId": "89f20bde-ee6f-426b-b470-f1d5f0ef25ec",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/vedaanta-senior-living-launches-vedaanta-dakshin-in-trichy",
+        "title-city:vedaanta senior living launches vedaanta|tiruchirappalli",
+        "dedupe:e12575b365efef8e2fe5a6de4f922933a994d28bbc5b854a1cc0ec969c658413",
+        "dedupe:3f84763c1ca8a88a15ccc844ad2676eccf3be83c917fa0a7f98646131564541f",
+        "dedupe:2c129436d4711ddc474a5f0d4e9bcaa0a4f672996023ab3732cc1c888923d6f0",
+        "dedupe:5612edd343ef1bb535d59aa4fc07d08de3e69a5c888616844208d1beb76dcb9c",
+        "dedupe:vedaanta senior launches vedaanta|tiruchirappalli",
+        "dedupe:2afff0fd54c652e6365421c9f8b2996f1b754954ac91cd22d040425beb7b1f77",
+        "dedupe:51bf40e959716705236194616d83d4b614772e5ac75f193d5f119e804c809232"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "tiruchirappalli",
+      "canonicalEventCity": "tiruchirappalli",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "tiruchirappalli"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-14T10:32:06.669Z",
+      "expiresAt": "2026-10-14T10:47:06.669Z"
     }
   ]
 }
