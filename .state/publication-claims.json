@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-14T10:32:09.056Z",
+  "updatedAt": "2026-10-14T10:32:11.112Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2567,6 +2567,32 @@
       "claimedAt": "2026-10-14T10:32:06.669Z",
       "expiresAt": "2026-10-14T10:47:06.669Z",
       "finalizedAt": "2026-10-14T10:32:09.056Z"
+    },
+    {
+      "claimId": "69d7dddf-c657-4aa8-8db1-b1be77e507e0",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/bhumika-realty-targets-rs-1000-crore-cumulative",
+        "title-city:bhumika realty targets rs 1 000 crore cumulative land investment in faridabad by march 2027|faridabad",
+        "dedupe:cb6739585e0d7b68bb1ae4cc4d2324e36533a223ff93f7dbb763c96778866f2d",
+        "dedupe:1287bee694b136050d6a89165fcdc05d58c25260284ebdae3805c5484bc9bcec",
+        "dedupe:f4c931cbd457101da132ac09d3a7fa5d424154592326118799052fc880ee35c6",
+        "dedupe:aa90082790f4a0c2b1909e33c133da97aebe3add985b6e7f340024fc8e9894cb",
+        "dedupe:bhumika targets cumulative land faridabad march|faridabad",
+        "dedupe:568f2941ab2e84c4870dda8baf57e9c6e2fdcb88a1b039a0228de1403097ebac",
+        "dedupe:ef755eff30cfeec65d860c4d0f6808e9a86bdb6265b17378b62c533c977e1416"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "faridabad",
+      "canonicalEventCity": "faridabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "faridabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-14T10:32:11.112Z",
+      "expiresAt": "2026-10-14T10:47:11.112Z"
     }
   ]
 }
