@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-14T10:32:15.455Z",
+  "updatedAt": "2026-10-14T10:32:17.351Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2597,7 +2597,7 @@
     },
     {
       "claimId": "69c05a02-fed6-42de-839c-88e28ff1eefb",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://maharashtratimes.com/business/real-estate-news/ancestral-property-ownership-rules-how-to-update-land-records-required-documents-to-get-registeration-on-your-own-name/articleshow/134936368.cms",
         "title-city:property inheritance rules व रस हक क न म ळ ल ल वड ल प र ज त घर जम न न व वर कस कर व क गदपत र अन प रत य क|ranchi",
@@ -2619,7 +2619,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-14T10:32:15.455Z",
-      "expiresAt": "2026-10-14T10:47:15.455Z"
+      "expiresAt": "2026-10-14T10:47:15.455Z",
+      "finalizedAt": "2026-10-14T10:32:17.351Z"
     }
   ]
 }
