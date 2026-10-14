@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-14T19:48:32.341Z",
+  "updatedAt": "2026-10-14T19:48:35.159Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2803,6 +2803,32 @@
       "claimedAt": "2026-10-14T19:48:29.933Z",
       "expiresAt": "2026-10-14T20:03:29.933Z",
       "finalizedAt": "2026-10-14T19:48:32.341Z"
+    },
+    {
+      "claimId": "33d7ff52-734d-4323-aeac-7814a204b1cc",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/bhumika-realty-aims-1-000-crore-land-investment-in-faridabad-by-march-2027-101791969639106.html",
+        "title-city:bhumika realty aims 1 000 crore land investment in faridabad by march 2027|faridabad",
+        "dedupe:e2bfb8ae2a76262c33f6ec94e372b11afedb0b22c766fa21c602a89a1fd142ba",
+        "dedupe:8564f6dc1d118fe2ff1374ea563540e5cd578eaab0d50d70b6426d6cf7a3655b",
+        "dedupe:ecfb01962b3f08bc39c87f442b765aacf9993d2eb4a88d17cc210b7d89047db3",
+        "dedupe:842fd00fe69e8130513e48b39679e5977080c2e74fb7617a8cb88e92b192c028",
+        "dedupe:bhumika aims land faridabad march|faridabad",
+        "dedupe:033923e41f761d3da9981da88c59651a85039637cadac64bbfd9fb9ddd27e85d",
+        "dedupe:4dc72a09623f98d271eeb11e458d291780a63602a3d9183a75e83a23d472ba9e"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "faridabad",
+      "canonicalEventCity": "faridabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "faridabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-14T19:48:35.159Z",
+      "expiresAt": "2026-10-14T20:03:35.159Z"
     }
   ]
 }
