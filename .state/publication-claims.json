@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-14T05:10:43.394Z",
+  "updatedAt": "2026-10-14T10:31:55.964Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2465,6 +2465,29 @@
       "claimedAt": "2026-10-14T05:10:41.310Z",
       "expiresAt": "2026-10-14T05:25:41.310Z",
       "finalizedAt": "2026-10-14T05:10:43.394Z"
+    },
+    {
+      "claimId": "ae3e25c9-e2cd-4481-80ac-3d801d94d5ac",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://magicbricks.com/news/noida-expressway-home-prices-surge-225-percent-in-four-years-gurugram-leads-luxury-housing-launches-ssmb/152191.html",
+        "title-city:noida expressway home prices surge 225 percent in four years gurugram leads luxury housing launches|noida",
+        "dedupe:c996df8bd2d42944d0be0f4975c2d2ff77cc03c568fb6c311cb79e73a59e2ce3",
+        "dedupe:f64fae1ed1303bd73308bff1b2caec3763874081a625a5821492130596b37a4d",
+        "dedupe:1930ec038f1b377e214dfe760df4774e90b28f0abe35871e4ed4931d6c11c8ed",
+        "dedupe:noida expressway home prices surge percent four years gurugram leads housing launches|noida"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-14T10:31:55.964Z",
+      "expiresAt": "2026-10-14T10:46:55.964Z"
     }
   ]
 }
