@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-14T15:32:22.138Z",
+  "updatedAt": "2026-10-14T15:32:24.726Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2676,7 +2676,7 @@
     },
     {
       "claimId": "e3a44f82-4a58-46ed-af2b-1a7f8358a6d4",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/norwest-invests-over-rs-300-cr-growth-equity-in-silas-realty-development-business/articleshow/134939683.cms",
         "title-city:norwest invests over rs 300 cr growth equity in sila s realty development business|mumbai",
@@ -2698,7 +2698,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-14T15:32:22.138Z",
-      "expiresAt": "2026-10-14T15:47:22.138Z"
+      "expiresAt": "2026-10-14T15:47:22.138Z",
+      "finalizedAt": "2026-10-14T15:32:24.726Z"
     }
   ]
 }
