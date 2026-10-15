@@ -5306,6 +5306,96 @@
       "category": "regional-gujarati",
       "sourceMode": "ACTIVE_FOR_REVIEW",
       "createdAt": "2026-10-03T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-gurugram",
+      "url": "https://www.jagran.com/haryana/gurgaon",
+      "label": "Dainik Jagran — Gurugram Hindi News | Regional P2",
+      "cityCodes": ["gurugram"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-lucknow",
+      "url": "https://www.jagran.com/uttar-pradesh/lucknow-city",
+      "label": "Dainik Jagran — Lucknow Hindi News | Regional P2",
+      "cityCodes": ["lucknow"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-noida",
+      "url": "https://www.jagran.com/uttar-pradesh/noida",
+      "label": "Dainik Jagran — Noida Hindi News | Regional P2",
+      "cityCodes": ["noida"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-ghaziabad",
+      "url": "https://www.jagran.com/uttar-pradesh/ghaziabad",
+      "label": "Dainik Jagran — Ghaziabad Hindi News | Regional P2",
+      "cityCodes": ["ghaziabad"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-kanpur",
+      "url": "https://www.jagran.com/uttar-pradesh/kanpur-city",
+      "label": "Dainik Jagran — Kanpur Hindi News | Regional P2",
+      "cityCodes": ["kanpur"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-varanasi",
+      "url": "https://www.jagran.com/uttar-pradesh/varanasi-city",
+      "label": "Dainik Jagran — Varanasi Hindi News | Regional P2",
+      "cityCodes": ["varanasi"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-agra",
+      "url": "https://www.jagran.com/uttar-pradesh/agra-city",
+      "label": "Dainik Jagran — Agra Hindi News | Regional P2",
+      "cityCodes": ["agra"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-meerut",
+      "url": "https://www.jagran.com/uttar-pradesh/meerut-city",
+      "label": "Dainik Jagran — Meerut Hindi News | Regional P2",
+      "cityCodes": ["meerut"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-prayagraj",
+      "url": "https://www.jagran.com/uttar-pradesh/allahabad-city",
+      "label": "Dainik Jagran — Prayagraj Hindi News | Regional P2",
+      "cityCodes": ["allahabad"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-15T00:00:00.000Z"
     }
   ],
   "lastBackfill": {
