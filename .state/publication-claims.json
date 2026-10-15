@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-15T04:57:00.457Z",
+  "updatedAt": "2026-10-15T10:14:37.636Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2936,6 +2936,32 @@
       "claimedAt": "2026-10-15T04:56:58.311Z",
       "expiresAt": "2026-10-15T05:11:58.311Z",
       "finalizedAt": "2026-10-15T04:57:00.457Z"
+    },
+    {
+      "claimId": "d35cdfc5-0a09-4486-957c-9c3f99504724",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/bhumika-group-to-invest-another-rs-450-crore-for-land-acquisition-in-faridabad/articleshow/134963055.cms",
+        "title-city:bhumika group to invest another rs 450 crore for land acquisition in faridabad|faridabad",
+        "dedupe:79a265e093fcf1dc584042654288c0f7731dcba16f3a41dee25d83925c50e6ad",
+        "dedupe:8abdcfaea990158431b3ac7364a43919d0a7220352e4ebda7d569678618a66fe",
+        "dedupe:f284d942f6effeede8605469204278f985e21e2c40f912d924742d2db8591e5b",
+        "dedupe:907ba6adaee7f0bc5e49ffd2bb27556a58bb3999cfd73ec4daddc12a5dadb2fc",
+        "dedupe:bhumika group another land acquisition faridabad|faridabad",
+        "dedupe:e2243999779d13550531fea635820fdc510eb7edf7ca809784391416fcc6e10a",
+        "dedupe:8a99471fb85b4f65f8f9b453c8a56ac33cc1c89fc8006a528848b6e61fa0b837"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "faridabad",
+      "canonicalEventCity": "faridabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "faridabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-15T10:14:37.636Z",
+      "expiresAt": "2026-10-15T10:29:37.636Z"
     }
   ]
 }
