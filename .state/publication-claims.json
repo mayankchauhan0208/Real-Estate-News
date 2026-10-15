@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-14T19:48:37.226Z",
+  "updatedAt": "2026-10-15T04:56:40.088Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2830,6 +2830,32 @@
       "claimedAt": "2026-10-14T19:48:35.159Z",
       "expiresAt": "2026-10-14T20:03:35.159Z",
       "finalizedAt": "2026-10-14T19:48:37.226Z"
+    },
+    {
+      "claimId": "6539b636-91c3-45b7-a35c-eec0dddac366",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/birla-estates-in-advance-talks-to-buy-noida-plot-for-rs-1000-crore/articleshow/134956429.cms",
+        "title-city:birla estates in advance talks to buy noida plot for rs 1 000 crore|noida",
+        "dedupe:4ec1c010d80d3763e67c1d374e7685d84584faf647d5cc7071dfbb53ae8e98bc",
+        "dedupe:ee5a7c8b3e0bbe641d1fc56531ee7aa4a01b4f63d8dfbbd54c4d1318dd94dbe3",
+        "dedupe:eb51456ddc1ea42d3727f00cda178863d28b0e135e777f26d580921dfaf93686",
+        "dedupe:ada6a4b5308d8a16c56da2b0599da09507802eaba275811d7b0c5f0a3e7fcc5e",
+        "dedupe:birla estates advance talks buy noida plot|noida",
+        "dedupe:970929e78158a4bf90b286b85b978cd2b612d7840c45e4fbf648462e3471a03b",
+        "dedupe:2e360cdbd2c6a916564e949e60306bc0f7b5ba9e2c07dc70f250beecf4ad5d3b"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-15T04:56:40.088Z",
+      "expiresAt": "2026-10-15T05:11:40.088Z"
     }
   ]
 }
