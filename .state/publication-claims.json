@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-15T12:09:52.998Z",
+  "updatedAt": "2026-10-15T12:09:55.590Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3071,6 +3071,32 @@
       "claimedAt": "2026-10-15T12:09:50.156Z",
       "expiresAt": "2026-10-15T12:24:50.156Z",
       "finalizedAt": "2026-10-15T12:09:52.998Z"
+    },
+    {
+      "claimId": "e4df47d1-2b57-4e77-aab5-3e39679b1d08",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-direct-flight-between-pantnagar-and-noida-international-airport-boosts-kumaonncr-connectivity-40405246.html",
+        "title-city:द ल ल ncr स उत तर ख ड क सफर और भ आस न न एड एयरप र ट स क म ऊ क उड न श र ख न ट क स पर ख स छ ट|noida",
+        "dedupe:97656d69a40f20bca26e2c42b4ac917c1df996af7571e0879c847bcf327d28ae",
+        "dedupe:04a7a7d8caf68a7b4fa96a7dae6c58392d4fd17d121f14eccb9955c857067434",
+        "dedupe:ba35d18b16068a5d642750a6d810bf57f4324f62b08ddea2939b8a79f2066b86",
+        "dedupe:110fc452bf531f178f7afd045860721688879f64d8e403cdde3754bcc6817b63",
+        "dedupe:द ल ल स उत तर ख ड क सफर और भ आस न न एड एयरप र ट स क म ऊ क उड न श र ख न ट क स पर ख स छ ट|noida",
+        "dedupe:01c316b0bb9ebac69a8eaec012a066ba9e198eb740b6ed7903a79252e4a10fa6",
+        "dedupe:70a3a6450919189e74be0f831072af615120431bee2679693e545cc2a9a09edc"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-15T12:09:55.590Z",
+      "expiresAt": "2026-10-15T12:24:55.590Z"
     }
   ]
 }
