@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-15T04:56:40.088Z",
+  "updatedAt": "2026-10-15T04:56:48.014Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2833,7 +2833,7 @@
     },
     {
       "claimId": "6539b636-91c3-45b7-a35c-eec0dddac366",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/birla-estates-in-advance-talks-to-buy-noida-plot-for-rs-1000-crore/articleshow/134956429.cms",
         "title-city:birla estates in advance talks to buy noida plot for rs 1 000 crore|noida",
@@ -2855,7 +2855,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-15T04:56:40.088Z",
-      "expiresAt": "2026-10-15T05:11:40.088Z"
+      "expiresAt": "2026-10-15T05:11:40.088Z",
+      "finalizedAt": "2026-10-15T04:56:48.014Z"
     }
   ]
 }
