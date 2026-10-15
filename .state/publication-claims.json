@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-15T04:56:52.673Z",
+  "updatedAt": "2026-10-15T04:56:54.639Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2883,6 +2883,32 @@
       "claimedAt": "2026-10-15T04:56:50.400Z",
       "expiresAt": "2026-10-15T05:11:50.400Z",
       "finalizedAt": "2026-10-15T04:56:52.673Z"
+    },
+    {
+      "claimId": "b253fc6a-7186-49aa-a5c4-6b01526b6ff1",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/how-japan-inspired-krisumi-s-vision-of-japanese-living-in-gurugram-101791981990073.html",
+        "title-city:how japan inspired krisumi s vision of japanese living in gurugram|gurugram",
+        "dedupe:748b91a095fb4c1858ac7c8917f20d3c48f2fa7cff3cbd3690ae6f810d7b25c8",
+        "dedupe:8a95deb9ffd0b6e5cec8b76aec2528958922b32f112fabf11d435d1dd686fa21",
+        "dedupe:2b1707f9c418a629757a896feefd689bb5c8b1755eb42b67626f002450dea917",
+        "dedupe:0867a50c029fa6cb1d8fec9e5430f30079393f15a1d7952dec9ce00baebd8871",
+        "dedupe:how japan inspired krisumi s vision japanese gurugram|gurugram",
+        "dedupe:dbb5a95ad5b953ab55f70853dba962d84b70e1682fd140ad51462f29d150ddea",
+        "dedupe:b65fa63b2ca4422ad1ad4391aac32d93325620c76abae9fe87b3f3456d1880e0"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-15T04:56:54.639Z",
+      "expiresAt": "2026-10-15T05:11:54.639Z"
     }
   ]
 }
