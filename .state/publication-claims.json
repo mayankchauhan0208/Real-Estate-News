@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-15T12:10:00.580Z",
+  "updatedAt": "2026-10-15T12:10:03.194Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3101,7 +3101,7 @@
     },
     {
       "claimId": "c7e32656-0ec5-46b3-b8d3-b89a9fd250d1",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/kanpur-city-iit-kanpur-launches-1-billion-doller-deep-tech-fundraising-campaign-40405284.html",
         "title-city:iit kanpur क सबस बड अभ य न ड प ट क एआई और क व टम र सर च क म ल ग रफ त र ल ब स न कल ग भव ष य क उद यम|kanpur",
@@ -3123,7 +3123,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-15T12:10:00.580Z",
-      "expiresAt": "2026-10-15T12:25:00.580Z"
+      "expiresAt": "2026-10-15T12:25:00.580Z",
+      "finalizedAt": "2026-10-15T12:10:03.194Z"
     }
   ]
 }
