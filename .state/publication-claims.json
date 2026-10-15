@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-15T12:10:03.194Z",
+  "updatedAt": "2026-10-15T12:10:05.487Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3125,6 +3125,32 @@
       "claimedAt": "2026-10-15T12:10:00.580Z",
       "expiresAt": "2026-10-15T12:25:00.580Z",
       "finalizedAt": "2026-10-15T12:10:03.194Z"
+    },
+    {
+      "claimId": "d1ecc4c9-018d-437d-a194-29c1435bacd3",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/prayagraj-prayagraj-kasari-masari-area-renamed-krishnapuri-by-cm-yogi-40406026.html",
+        "title-city:य ग आद त यन थ न प रय गर ज क कस र मस र इल क क क ष णप र न म द य द हर य गर ब क जम न क छ नन व ल म फ य|allahabad",
+        "dedupe:519ae92a86ac4b5c7e885052a7006eae88e3bbd1f0327760e668d0a2284f38c2",
+        "dedupe:c19418410523c464c7911e3a47d0335f8b2449abe4587b9733c607a39f1ef0dc",
+        "dedupe:f0d91791c561fc8a50c18ab9766cbfe4afcaf6ab8ab0e9261b108aafdb9342a7",
+        "dedupe:28bd157bc5cf21494b89d79844fc08d278c51c5aa318a19dd81864c315bf5e72",
+        "dedupe:य ग आद त यन थ न प रय गर ज क कस र मस र इल क क क ष णप र न म द य द हर य गर ब क जम न क छ नन व ल म फ य|allahabad",
+        "dedupe:329c08111cdd5020f66ff349e2318882daa8ce6baa7cd8c69ec473df89ba5478",
+        "dedupe:990cbd3fd130dfab0680f0fb5c3a30137de3af41fd3b25c17aa68b21265a8f78"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "allahabad",
+      "canonicalEventCity": "allahabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "allahabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-15T12:10:05.487Z",
+      "expiresAt": "2026-10-15T12:25:05.487Z"
     }
   ]
 }
