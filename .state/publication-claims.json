@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-15T10:14:50.173Z",
+  "updatedAt": "2026-10-15T12:09:50.156Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3044,6 +3044,32 @@
       "claimedAt": "2026-10-15T10:14:48.801Z",
       "expiresAt": "2026-10-15T10:29:48.801Z",
       "finalizedAt": "2026-10-15T10:14:50.173Z"
+    },
+    {
+      "claimId": "f0724c4d-7da5-4eeb-b246-f9880ec8abc3",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/agra-city-shivaji-museum-and-unity-mall-projects-must-be-completed-on-time-dm-manish-bansal-inspected-both-projects-40404699.html",
+        "title-city:आगर छत रपत श व ज म य ज यम और य न ट म ल क क म समय पर ह प र ड एम मन ष क सख त न र द श|agra",
+        "dedupe:bd0f77124a3d15e52a04ae04fa37547cebe824693dacfceee47759101b2bd273",
+        "dedupe:0a4d3f3a4b3011118268d556462c19f728e3cfdfc77307789420fdf3a51afcb2",
+        "dedupe:e3222e41d749c36a90b9fe27cb3c554ce7a9361698eeca15c6092f7ef4fbb76d",
+        "dedupe:d52c5d257d5d63750999e624b2342291bb08194ea9a02ce0bddcb2006d3a202b",
+        "dedupe:आगर छत रपत श व ज म य ज यम और य न ट म ल क क म समय पर ह प र ड एम मन ष क सख त न र द श|agra",
+        "dedupe:f56adb8ce2ce7f4d5b1f430e5e67f92ee2a22e068069ccf7b5e6fc8bf928d559",
+        "dedupe:2e0e7559bd67835ad8925d39197547a367ed0f44c357532c457d80c4af731480"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "agra",
+      "canonicalEventCity": "agra",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "agra"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-15T12:09:50.156Z",
+      "expiresAt": "2026-10-15T12:24:50.156Z"
     }
   ]
 }
