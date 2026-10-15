@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-15T10:14:43.778Z",
+  "updatedAt": "2026-10-15T10:14:45.581Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2990,6 +2990,32 @@
       "claimedAt": "2026-10-15T10:14:41.741Z",
       "expiresAt": "2026-10-15T10:29:41.741Z",
       "finalizedAt": "2026-10-15T10:14:43.778Z"
+    },
+    {
+      "claimId": "faa7ee3c-929f-4033-9c48-bd587aad86cf",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/indian-real-estate-attracts-usd-85-5-billion-in",
+        "title-city:indian real estate attracts usd 85 5 billion in institutional investments over 16 years vestian|new_delhi",
+        "dedupe:6dde9396a582d9be92d9b77275cfc1cd5a6b59b59f5e14881a9d48e63d96a5cc",
+        "dedupe:259505a8ff73ca0468495272ea22a107913d0dafdca0091b901e175c155c18eb",
+        "dedupe:6c71816a8ce475fece3d46831d8490e169978e45787611b8e2e94beac152005c",
+        "dedupe:0a01cab62c0652f11596a5fb91503950723ffc55e8905c02203971ea71bbf749",
+        "dedupe:indian real estate attracts usd institutional investments years vestian|new_delhi",
+        "dedupe:d9c04a865450064916f972c2c4e536a95e2b813e21c93972b64782a976e537ea",
+        "dedupe:666064ce38cefe85d54060249c7941ce14b0d39bba1648ca59c20668d3cfc7e9"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-15T10:14:45.581Z",
+      "expiresAt": "2026-10-15T10:29:45.581Z"
     }
   ]
 }
