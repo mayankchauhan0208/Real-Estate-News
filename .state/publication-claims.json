@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-15T12:09:55.590Z",
+  "updatedAt": "2026-10-15T12:09:57.979Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3074,7 +3074,7 @@
     },
     {
       "claimId": "e4df47d1-2b57-4e77-aab5-3e39679b1d08",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-direct-flight-between-pantnagar-and-noida-international-airport-boosts-kumaonncr-connectivity-40405246.html",
         "title-city:द ल ल ncr स उत तर ख ड क सफर और भ आस न न एड एयरप र ट स क म ऊ क उड न श र ख न ट क स पर ख स छ ट|noida",
@@ -3096,7 +3096,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-15T12:09:55.590Z",
-      "expiresAt": "2026-10-15T12:24:55.590Z"
+      "expiresAt": "2026-10-15T12:24:55.590Z",
+      "finalizedAt": "2026-10-15T12:09:57.979Z"
     }
   ]
 }
