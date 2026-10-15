@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-15T04:56:56.340Z",
+  "updatedAt": "2026-10-15T04:56:58.311Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2910,6 +2910,31 @@
       "claimedAt": "2026-10-15T04:56:54.639Z",
       "expiresAt": "2026-10-15T05:11:54.639Z",
       "finalizedAt": "2026-10-15T04:56:56.340Z"
+    },
+    {
+      "claimId": "192a8954-9eda-45be-8a00-8ba16f79459f",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/sila-raises-300-crore-from-norwest-plans-500-crore-investment-in-mumbai-real-estate/134956255",
+        "title-city:sila raises 300 crore from norwest plans 500 crore investment in mumbai real estate|mumbai",
+        "dedupe:a6af91745411934bc3518c4aa625fadfa8c2abf3e3f6be91485ce846cb41659b",
+        "dedupe:bb06e23ff9bf781f4f0bbff6f7c0028fe6eb3adc6a1ec2f77411babafdcb08d0",
+        "dedupe:9e77b069e8c051c32a879f8d8d9ae0c11a90a1ee16f93af77f3adcaf8e0aa50e",
+        "dedupe:sila raises norwest plans mumbai real estate|mumbai",
+        "dedupe:3a032b0a61aea2147a38a6d1ccc0db44e5eb75c6ac42897b3bdf727a764f4393",
+        "dedupe:cc46c4e7e0ece1385e1546dcd45cba1f93a2aede76e718ecae929afdfb509dc5"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-15T04:56:58.311Z",
+      "expiresAt": "2026-10-15T05:11:58.311Z"
     }
   ]
 }
