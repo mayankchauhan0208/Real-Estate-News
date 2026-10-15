@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-15T04:56:48.014Z",
+  "updatedAt": "2026-10-15T04:56:50.400Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2857,6 +2857,31 @@
       "claimedAt": "2026-10-15T04:56:40.088Z",
       "expiresAt": "2026-10-15T05:11:40.088Z",
       "finalizedAt": "2026-10-15T04:56:48.014Z"
+    },
+    {
+      "claimId": "d956342e-c5fd-4cec-9ca4-c8187d3c2ec1",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/residential/eligibility-alone-will-decide-allocation-of-flats-in-indiramma-towers-telangana-housing-minister/134956117",
+        "title-city:eligibility alone will decide allocation of flats in indiramma towers telangana housing minister|hyderabad",
+        "dedupe:152193d616255ac384fd11a3d985926efa8623ec83c9b2942937fc4b2ba06d46",
+        "dedupe:1c878f14c60da1216a92074541d283ea6b69e26f8daade61159ac0b8bf64c291",
+        "dedupe:c5f30f00d75f4bc73228b44d54f36086d649d2dfd9ec6509bc68a3c6c4bbf6e1",
+        "dedupe:eligibility alone will decide allocation flats indiramma towers telangana housing minister|hyderabad",
+        "dedupe:4a6b481cf76188a7a2657a328cce93242df678f9305943b2123bf14d014cbfa8",
+        "dedupe:85075e4036270b01d908b62cc0a54460942475c4c205e156ddce7fc17c985e3c"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-15T04:56:50.400Z",
+      "expiresAt": "2026-10-15T05:11:50.400Z"
     }
   ]
 }
