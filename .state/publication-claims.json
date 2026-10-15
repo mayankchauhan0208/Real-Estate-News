@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-15T15:21:17.063Z",
+  "updatedAt": "2026-10-15T19:28:45.753Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3178,6 +3178,31 @@
       "claimedAt": "2026-10-15T15:21:14.063Z",
       "expiresAt": "2026-10-15T15:36:14.063Z",
       "finalizedAt": "2026-10-15T15:21:17.063Z"
+    },
+    {
+      "claimId": "f35728c9-9a0b-44b3-8322-8794066b96aa",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/birla-estates-in-advance-talks-to-buy-10-acre-plot-in-noida-for-1000-crore/134970771",
+        "title-city:birla estates in advance talks to buy 10 acre plot in noida for 1 000 crore|noida",
+        "dedupe:50fb7f345f285db5319e5afee0fdbadf508b8a4c391a093ef2663132c1f79416",
+        "dedupe:7d545999354e83abc81e81ffaeac689cdad81a96a8144530d3051e1a1275aa2c",
+        "dedupe:eea0431a92be4d9e55f888817d828387a14c51771f58618f37bb5e963988d234",
+        "dedupe:birla estates advance talks buy acre plot noida|noida",
+        "dedupe:3bd9c3b71905d400860eb48c49ac96c0a33040f69cf30135a4dae02324cf5dd8",
+        "dedupe:3fb93d4ba432d7ac3e20b9a4469ff8d8e2e5681383d0bd536073914c3d515ba0"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-15T19:28:45.753Z",
+      "expiresAt": "2026-10-15T19:43:45.753Z"
     }
   ]
 }
