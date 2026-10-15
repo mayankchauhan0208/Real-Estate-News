@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-15T15:21:14.063Z",
+  "updatedAt": "2026-10-15T15:21:17.063Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3155,7 +3155,7 @@
     },
     {
       "claimId": "1590cc05-e136-4458-8b75-3283cba194ef",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/brand-connect-initiative/schindler-india-strengthens-north-india-presence-with-strategic-noida-hub/134970423",
         "title-city:schindler india strengthens north india presence with strategic noida hub|noida",
@@ -3176,7 +3176,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-15T15:21:14.063Z",
-      "expiresAt": "2026-10-15T15:36:14.063Z"
+      "expiresAt": "2026-10-15T15:36:14.063Z",
+      "finalizedAt": "2026-10-15T15:21:17.063Z"
     }
   ]
 }
