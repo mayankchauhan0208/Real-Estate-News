@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-15T10:14:48.801Z",
+  "updatedAt": "2026-10-15T10:14:50.173Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3020,7 +3020,7 @@
     },
     {
       "claimId": "13cc8325-e712-4949-b6b0-c4f550dcaa46",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/entertainment/bollywood/saif-ali-khan-leases-office-space-in-mumbais-andheri-to-a-fintech-firm-for-22-76-lakh-monthly-rent-101792048663172.html",
         "title-city:saif ali khan leases office space in mumbai s andheri to a fintech firm for 22 76 lakh monthly rent|mumbai",
@@ -3042,7 +3042,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-15T10:14:48.801Z",
-      "expiresAt": "2026-10-15T10:29:48.801Z"
+      "expiresAt": "2026-10-15T10:29:48.801Z",
+      "finalizedAt": "2026-10-15T10:14:50.173Z"
     }
   ]
 }
