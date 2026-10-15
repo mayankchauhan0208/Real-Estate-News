@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-15T22:36:42.485Z",
+  "updatedAt": "2026-10-15T22:36:44.677Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3207,7 +3207,7 @@
     },
     {
       "claimId": "9ccdeb37-2069-45c1-94e0-43e0ab9d7371",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://birlaestatesltd.com/updates/birla-estates-in-advanced-talks-to-acquire-10-acre-noida-plot-from-shipra-group-for-nearly-1-000-crore",
         "title-city:acquisitionoct 2026birla estates noida talks could add a luxury home project to its pipeline|noida",
@@ -3229,7 +3229,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-15T22:36:42.485Z",
-      "expiresAt": "2026-10-15T22:51:42.485Z"
+      "expiresAt": "2026-10-15T22:51:42.485Z",
+      "finalizedAt": "2026-10-15T22:36:44.677Z"
     }
   ]
 }
