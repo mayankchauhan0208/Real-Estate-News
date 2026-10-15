@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-15T10:14:39.984Z",
+  "updatedAt": "2026-10-15T10:14:41.741Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -2963,6 +2963,32 @@
       "claimedAt": "2026-10-15T10:14:37.636Z",
       "expiresAt": "2026-10-15T10:29:37.636Z",
       "finalizedAt": "2026-10-15T10:14:39.984Z"
+    },
+    {
+      "claimId": "903ffa01-84a9-436d-8803-cdc1a7bdf3f2",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/swan-realty-launches-exquisite-low-density-residential-project-bodhi-in-jayanagar",
+        "title-city:swan realty launches exquisite low density|bangalore",
+        "dedupe:d66add57073aa234db722579ff43715a948d4a95f9a32a152438af2908c28f49",
+        "dedupe:0a50f19ef80cc6eb52fab2a9bdbc9b3309e1097ce4f7dde7453c202db668a88c",
+        "dedupe:e6fc338aa9afcc980556c1841e901c41da6bba8d94443919ca7504d498b414d3",
+        "dedupe:85ee2df7067516295ca1eca18b714d44d7406d453af0d1fa1299f0cf704e46c5",
+        "dedupe:swan launches exquisite low density|bangalore",
+        "dedupe:2b6a286420213b02d8b683f6929924882820615e3a201079ee9ae100aebce56d",
+        "dedupe:010fa014420244437f53b0b15d52ac68c8e7d981081ea6bd72ad7b5c72dead05"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-15T10:14:41.741Z",
+      "expiresAt": "2026-10-15T10:29:41.741Z"
     }
   ]
 }
