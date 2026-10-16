@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T21:26:25.254Z",
+  "updatedAt": "2026-10-16T21:26:27.448Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3555,6 +3555,31 @@
       "claimedAt": "2026-10-16T21:26:23.414Z",
       "expiresAt": "2026-10-16T21:41:23.414Z",
       "finalizedAt": "2026-10-16T21:26:25.254Z"
+    },
+    {
+      "claimId": "ce281c50-e622-40fb-b056-8b59558692f2",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/residential/odisha-extends-rural-housing-scheme-by-two-years-to-build-2-91-lakh-more-houses/134993150",
+        "title-city:odisha extends rural housing scheme by two years to build 2 91 lakh more houses|bhubaneswar",
+        "dedupe:c35f670f12fd300746716b0251e0741f04d3c4af87d31c2de972ce2cb9bcdc35",
+        "dedupe:e8ce11ba2577a8bb9378e932ecce8a45a7bed0cbb551ba588bf7562c1459d3ee",
+        "dedupe:473a883afc8968e424bc4fbd8671c9aae34f6cea35a0dac4cd25f7c6bf58fb93",
+        "dedupe:odisha extends rural housing scheme two years build more houses|bhubaneswar",
+        "dedupe:b960a0b917465b49703cd2f858e31c83b50e161892b61cedbc287ac905246914",
+        "dedupe:fae5bedc9149f5e6b26f54a7278686c9b84fd1c79307e0510e5154f1371c219d"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bhubaneswar",
+      "canonicalEventCity": "bhubaneswar",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bhubaneswar"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-16T21:26:27.448Z",
+      "expiresAt": "2026-10-16T21:41:27.448Z"
     }
   ]
 }
