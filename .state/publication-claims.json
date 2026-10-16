@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T21:26:29.252Z",
+  "updatedAt": "2026-10-16T21:26:31.251Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3581,6 +3581,32 @@
       "claimedAt": "2026-10-16T21:26:27.448Z",
       "expiresAt": "2026-10-16T21:41:27.448Z",
       "finalizedAt": "2026-10-16T21:26:29.252Z"
+    },
+    {
+      "claimId": "8d8df949-f769-4506-9f72-cdbfcddffcca",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://livehindustan.com/ncr/12-million-new-homes-to-be-built-under-master-plan-2047-land-pooling-process-gains-momentum-201792172846868.html",
+        "title-city:म स टर प ल न 2047 क तहत द ल ल म 12 ल ख नए घर ल डप ल ग क प रक र य बढ|delhi",
+        "dedupe:52ec36576b0262fe3d627c53cc820c1e4eb683c1664c0c67da86eacf72511d63",
+        "dedupe:574e69756fa3496b42ffac6aaedf5924dc7a329980502a4025e367eafa5d35c7",
+        "dedupe:32422a464f10c963caef8e768f1a2ab4637578c3478c7b4eaaed8153f8ec870e",
+        "dedupe:5ee8830f29fc3b5b4fde71e56ec6faec97ced842a0c44b5b764597a74e79e8ce",
+        "dedupe:म स टर प ल न क तहत द ल ल म ल ख नए घर ल डप ल ग क प रक र य बढ|delhi",
+        "dedupe:29c38eb013a4924cb7d891ba83789adb661ef6956d811d51123fc8529d93a1ee",
+        "dedupe:48d9e3cb3feb2a03a3e7740f7249c9e8eff10849ac43aebd99e86bc16f823809"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "delhi",
+      "canonicalEventCity": "delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-16T21:26:31.251Z",
+      "expiresAt": "2026-10-16T21:41:31.251Z"
     }
   ]
 }
