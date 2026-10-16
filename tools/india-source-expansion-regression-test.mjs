@@ -18,7 +18,7 @@ const sources = settings.manualSources.filter((source) => expected.has(source.id
 assert.equal(sources.length, expected.size, "all verified Jagran city sources must be configured");
 
 for (const source of sources) {
-  assert.equal(source.enabled, false, `${source.id} must remain disabled after the failed controlled live gate`);
+  assert.equal(source.enabled, true, `${source.id} must remain enabled after the clean event-core dry proof`);
   assert.equal(source.category, "regional-hindi", `${source.id} must retain native-language metadata`);
   assert.equal(source.sourceMode, "ACTIVE_FOR_REVIEW", `${source.id} must not bypass editorial safeguards`);
   assert.deepEqual(source.cityCodes, expected.get(source.id), `${source.id} must remain city scoped`);
@@ -32,10 +32,10 @@ assert.equal(new Set(urls).size, urls.length, "manual source URLs must be unique
 
 delete process.env.ENABLE_EXPERIMENTAL_SOURCES;
 const defaultRuntime = (await import("../src/index.js")).getSourceUrls();
-assert.equal(defaultRuntime.some((url) => url.includes("jagran.com")), false, "review-gated sources must not leak into the default runtime");
+assert.equal(defaultRuntime.some((url) => url.includes("jagran.com")), false, "experimental sources must still require explicit runtime opt-in");
 
 process.env.ENABLE_EXPERIMENTAL_SOURCES = "true";
 const productionRuntime = (await import(`../src/index.js?production-opt-in=${Date.now()}`)).getSourceUrls();
-assert.equal(productionRuntime.some((url) => url.includes("jagran.com")), false, "failed-gate Jagran surfaces must not remain in production runtime");
+assert.equal(productionRuntime.filter((url) => url.includes("jagran.com")).length, expected.size, "all verified Jagran surfaces must remain in the production runtime");
 
-console.log(`India source expansion safety regression passed: ${sources.length} verified Jagran city surfaces remain configured but disabled after the failed controlled live gate.`);
+console.log(`India source expansion safety regression passed: ${sources.length} verified Jagran city surfaces are enabled after the clean event-core dry proof.`);

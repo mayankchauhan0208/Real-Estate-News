@@ -4227,6 +4227,13 @@ function getArticleBodyText(article) {
   return (article.articleText || "").toLowerCase();
 }
 
+function getArticleEventCoreText(article) {
+  const body = String(article.articleText || "").split(
+    /\b(?:related stor(?:y|ies)|recommended|read more|also read|trending|popular stories|top stories|more from|you may also like)\b|(?:यह भी पढ़ें|संबंधित खबरें|अन्य खबरें|ट्रेंडिंग)/iu
+  )[0];
+  return `${article.title || ""} ${article.description || ""} ${body}`.normalize("NFKC").toLowerCase();
+}
+
 function getArticleUrlText(article) {
   return (article.newsLink || "").toLowerCase();
 }
@@ -4770,13 +4777,17 @@ function isLuxuryTransactionArticle(article) {
 }
 
 function isAuthorityPipelineArticle(article) {
-  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const eventCore = getArticleEventCoreText(article);
+  const authorityActor = /\b(?:dda|yeida|noida authority|gnida|pda|lda|hmda|hsvp|hsiidc|rera|development authority|housing board|industrial development authority|planning authority)\b/i.test(eventCore)
+    || /(?:विकास प्राधिकरण|आवास बोर्ड|औद्योगिक विकास प्राधिकरण|रेरा)/u.test(eventCore);
+  const materialPropertyAction = /\b(?:land (?:allotment|auction|purchase|acquisition)|housing scheme|project approval|layout approval|development plan|township|residential project|commercial project|industrial project|plot allotment|construction|redevelopment|project registration|development work|property acquisition|building project|housing flats?|development parcel|transit-oriented development|tod)\b/i.test(eventCore)
+    || /(?:भूमि (?:आवंटन|नीलामी|खरीद|अधिग्रहण)|आवासीय योजना|परियोजना (?:स्वीकृति|पंजीकरण)|भूखंड आवंटन|निर्माण|पुनर्विकास|विकास कार्य|औद्योगिक परियोजना|कमर्शियल परियोजना|फ्लैट)/u.test(eventCore);
 
   return (
     (hasCleanPrimaryAndUrlText(article) || isOfficialAuthorityPipelineNotice(article)) &&
     hasTargetRegionInTitleOrUrl(article) &&
-    hasKeyword(primaryAndUrl, authorityPipelineKeywords) &&
-    hasKeyword(primaryAndUrl, ["development", "commercial", "infrastructure", "sector", "mixed-use", "tod"])
+    authorityActor &&
+    materialPropertyAction
   );
 }
 
@@ -5290,6 +5301,10 @@ function isPositiveTargetBusinessOrDevelopmentArticle(article) {
 }
 
 function classifyArticle(article) {
+  if (isCommodityOrMarketPriceReportWithoutPropertyEvent(article)) {
+    return "reject_relevance";
+  }
+
   if (isNegativeNews(article)) {
     return "reject_negative";
   }
@@ -5702,6 +5717,15 @@ function isGenericStartupOrTechnologyFundraisingWithoutPropertyNexus(article) {
   return technologyOrStartup && fundraising && !hasStrongMaterialPropertyEvidence(article);
 }
 
+function isCommodityOrMarketPriceReportWithoutPropertyEvent(article) {
+  const eventCore = getArticleEventCoreText(article);
+  const commodityPriceEvent = /\b(?:gold|silver|bullion|grain|pulses?|vegetables?|petrol|diesel|commodity)\b[^.!?]{0,100}\b(?:price|prices|rate|rates)\b|\b(?:price|prices|rate|rates)\b[^.!?]{0,100}\b(?:gold|silver|bullion|grain|pulses?|vegetables?|petrol|diesel|commodity)\b/i.test(eventCore)
+    || /(?:मंडी भाव|बाजार भाव|सोने? का भाव|चांदी का भाव|सर्राफा भाव|गेहूं का भाव|दालों? के भाव|अनाज मंडी|आज का रेट|कीमतों की सूची)/u.test(eventCore);
+  const realEstatePriceEvent = /\b(?:property|housing|home|apartment|land|plot|office|warehouse|commercial)\b[^.!?]{0,100}\b(?:price|prices|rate|rates|rent|rental|lease)\b|\b(?:circle rate|collector rate|guidance value|property registration)\b/i.test(eventCore)
+    || /(?:संपत्ति|प्रॉपर्टी|आवास|फ्लैट|जमीन|भूमि|भूखंड)[^।.!?]{0,100}(?:कीमत|भाव|दर|किराया)/u.test(eventCore);
+  return commodityPriceEvent && !realEstatePriceEvent && !hasStrongMaterialPropertyEvidence({ ...article, articleText: eventCore });
+}
+
 function isRealEstateRelated(article) {
   // A concrete Gaurs Alaris/YEIDA project can be described in native
   // language, so establish the specific project signal before generic
@@ -5723,6 +5747,10 @@ function isRealEstateRelated(article) {
   }
 
   if (isGenericStartupOrTechnologyFundraisingWithoutPropertyNexus(article)) {
+    return false;
+  }
+
+  if (isCommodityOrMarketPriceReportWithoutPropertyEvent(article)) {
     return false;
   }
 
@@ -7288,7 +7316,9 @@ function getRejectionReasons(article, sentIds) {
 
   if (!realEstateRelated) {
     reasons.push(
-      isGenericTransportServiceWithoutPropertyNexus(article)
+      isCommodityOrMarketPriceReportWithoutPropertyEvent(article)
+        ? "COMMODITY_MARKET_PRICES_WITHOUT_PROPERTY_EVENT"
+        : isGenericTransportServiceWithoutPropertyNexus(article)
         ? "GENERIC_TRANSPORT_CONNECTIVITY_WITHOUT_PROPERTY_NEXUS"
         : isGenericStartupOrTechnologyFundraisingWithoutPropertyNexus(article)
           ? "NON_REAL_ESTATE_STARTUP_TECH_FUNDRAISING"
@@ -11161,6 +11191,7 @@ export {
   cleanArticleFields,
   detectCityCodes,
   expandCityArticles,
+  extractArticleText,
   extractLinkedDocumentUrl,
   extractMetadataImage,
   fetchSource,

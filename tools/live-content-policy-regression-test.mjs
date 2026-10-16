@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
-import { detectCityCodes, getRejectionReasons, isPublishableArticle } from "../src/index.js";
+import * as cheerio from "cheerio";
+import { classifyArticle, detectCityCodes, extractArticleText, getRejectionReasons, isPublishableArticle } from "../src/index.js";
 
 const common = {
   source: "Regression fixture",
@@ -239,6 +240,49 @@ const jagranPrayagrajFlatsAndLandRedevelopment = {
   articleText: "प्रयागराज में मुक्त कराई गई भूमि पर गरीब परिवारों के लिए 602 फ्लैट का पद्मलोक अपार्टमेंट बनेगा। मुख्यमंत्री ने आवासीय पुनर्विकास परियोजना का भूमि पूजन किया।"
 };
 
+const jagranCommodityPriceReport = {
+  ...common,
+  cityCode: "kanpur",
+  source: "Dainik Jagran Kanpur",
+  title: "कानपुर मंडी भाव 15 अक्टूबर: गेहूं, चावल और दाल के ताजा रेट, देखें Gold-Silver के दाम",
+  description: "कानपुर के खुले बाजार में गल्ला, दलहन, चावल, तेल, सोना और चांदी के थोक भाव जारी किए गए।",
+  newsLink: "https://www.jagran.com/uttar-pradesh/kanpur-city-kanpur-mandi-bhav-grain-pulses-gold-silver-prices-today-40406330.html",
+  articleText: "कानपुर मंडी भाव। खुले बाजार में गेहूं, चावल, दाल और खाद्य तेल के आज के रेट जारी हुए। सर्राफा बाजार में सोने और चांदी के भावों में परिवर्तन हुआ।"
+};
+
+function extractedFixtureArticle(body, surroundingHtml, overrides = {}) {
+  const $ = cheerio.load(`<html><body><header>Development Authority</header><nav>Housing projects</nav><main><article><h1>${overrides.title || "Fixture"}</h1><p>${body}</p></article>${surroundingHtml}</main><footer>Real estate development</footer></body></html>`);
+  return {
+    ...common,
+    cityCode: overrides.cityCode || "kanpur",
+    title: overrides.title || "Fixture",
+    description: overrides.description || body,
+    newsLink: overrides.newsLink || "https://example.com/city/fixture",
+    articleText: extractArticleText($)
+  };
+}
+
+const commodityWithPropertySidebar = extractedFixtureArticle(
+  "कानपुर मंडी भाव में गेहूं, दाल, सोना और चांदी के आज के रेट जारी हुए।",
+  "<aside>Development Authority launches housing scheme</aside><section class='related-stories'>New housing project approved</section>",
+  { title: "आज का मंडी भाव और सोने-चांदी का रेट" }
+);
+const sportsWithHousingRelatedLink = extractedFixtureArticle(
+  "Kanpur won the cricket match after a strong bowling performance.",
+  "<section class='related'>New housing project approved</section>",
+  { title: "Kanpur wins cricket final" }
+);
+const weatherWithAuthorityNavigation = extractedFixtureArticle(
+  "Heavy rain and cloudy weather are forecast in Kanpur tomorrow.",
+  "<nav>Development Authority land allotment</nav>",
+  { title: "Kanpur weather forecast for tomorrow" }
+);
+const authorityHousingWithCommoditySidebar = extractedFixtureArticle(
+  "The Noida Authority approved a housing scheme and plot allotment for a residential project.",
+  "<aside>Gold and silver prices today</aside>",
+  { cityCode: "noida", title: "Noida Authority approves housing scheme and plot allotment", newsLink: "https://example.com/noida/authority-housing" }
+);
+
 const unrelatedTopicPageArticles = [
   {
     ...common,
@@ -306,6 +350,13 @@ assert.equal(isPublishableArticle(jagranDeepTechFundraisingWithoutPropertyNexus,
 assert.match(getRejectionReasons(jagranDeepTechFundraisingWithoutPropertyNexus, sentIds).join("; "), /NON_REAL_ESTATE_STARTUP_TECH_FUNDRAISING/);
 assert.equal(isPublishableArticle(jagranAgraMuseumAndMallConstruction, sentIds), true);
 assert.equal(isPublishableArticle(jagranPrayagrajFlatsAndLandRedevelopment, sentIds), true);
+assert.equal(isPublishableArticle(jagranCommodityPriceReport, sentIds), false);
+assert.equal(classifyArticle(jagranCommodityPriceReport), "reject_relevance");
+assert.match(getRejectionReasons(jagranCommodityPriceReport, sentIds).join("; "), /COMMODITY_MARKET_PRICES_WITHOUT_PROPERTY_EVENT/);
+for (const article of [commodityWithPropertySidebar, sportsWithHousingRelatedLink, weatherWithAuthorityNavigation]) {
+  assert.equal(isPublishableArticle(article, sentIds), false, article.title);
+}
+assert.equal(isPublishableArticle(authorityHousingWithCommoditySidebar, sentIds), true);
 
 console.log(JSON.stringify({
   passed: true,
