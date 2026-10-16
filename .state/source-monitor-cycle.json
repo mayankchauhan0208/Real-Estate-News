@@ -1,7 +1,7 @@
 {
   "cycleId": "source-cycle-2026-10-16",
-  "createdAt": "2026-10-16T01:18:32.215Z",
-  "universeFingerprint": "133236806b79785e4f72ec4d997bead4afe694b3a951fa011210861fd210f466",
+  "createdAt": "2026-10-16T17:22:58.719Z",
+  "universeFingerprint": "eef376dd6e1ac4433ee1c91fd211d7192a70ece733f03106bde1b91748148232",
   "sources": [
     {
       "sourceId": "source-00a0c32b225feb2f",
@@ -34,6 +34,10 @@
     {
       "sourceId": "source-03b62007309e7e21",
       "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128839596.cms"
+    },
+    {
+      "sourceId": "source-03dcc416273373a7",
+      "url": "https://www.jagran.com/uttar-pradesh/agra-city"
     },
     {
       "sourceId": "source-03f4889297241635",
@@ -220,6 +224,10 @@
       "url": "https://realty.economictimes.indiatimes.com/rss/lighting/smart-lighting"
     },
     {
+      "sourceId": "source-17c048a97cc5ac5a",
+      "url": "https://www.jagran.com/uttar-pradesh/allahabad-city"
+    },
+    {
       "sourceId": "source-17d506eae1c7a8b0",
       "url": "https://publish.tribuneindia.com/state/chhattisgarh/feed"
     },
@@ -330,6 +338,10 @@
     {
       "sourceId": "source-2160d3897ff99004",
       "url": "https://chennaicorporation.gov.in/gcc/tender"
+    },
+    {
+      "sourceId": "source-2171924ef4156c45",
+      "url": "https://www.jagran.com/uttar-pradesh/kanpur-city"
     },
     {
       "sourceId": "source-21a6bea728420287",
@@ -498,6 +510,10 @@
     {
       "sourceId": "source-2f6c85ca35ce2928",
       "url": "https://www.giftgujarat.in"
+    },
+    {
+      "sourceId": "source-2f8a8f87b69376b3",
+      "url": "https://www.jagran.com/haryana/gurgaon"
     },
     {
       "sourceId": "source-2fbe9fa552614ea3",
@@ -1032,6 +1048,10 @@
       "url": "https://www.bda.org.in"
     },
     {
+      "sourceId": "source-6f08587957ce643e",
+      "url": "https://www.jagran.com/uttar-pradesh/lucknow-city"
+    },
+    {
       "sourceId": "source-6fa224d753609043",
       "url": "https://vijaykarnataka.com/real-estate/articlelist/133644218.cms"
     },
@@ -1042,6 +1062,10 @@
     {
       "sourceId": "source-7015c820c3715197",
       "url": "https://www.bda.gov.in/circular"
+    },
+    {
+      "sourceId": "source-705c702659b26f10",
+      "url": "https://www.jagran.com/uttar-pradesh/noida"
     },
     {
       "sourceId": "source-707a9ed921155562",
@@ -1724,6 +1748,10 @@
       "url": "https://realty.economictimes.indiatimes.com/news/residential"
     },
     {
+      "sourceId": "source-bf4a8258eb785191",
+      "url": "https://www.jagran.com/uttar-pradesh/meerut-city"
+    },
+    {
       "sourceId": "source-bf9ef90157bd7226",
       "url": "https://rera.telangana.gov.in/AnnualReports-TG-RERA-15121976REAT_Orders"
     },
@@ -1808,6 +1836,10 @@
       "url": "https://www.lntrealty.com/news-blogs"
     },
     {
+      "sourceId": "source-cb43781a1113e78f",
+      "url": "https://www.jagran.com/uttar-pradesh/ghaziabad"
+    },
+    {
       "sourceId": "source-cb563f53caf3d22e",
       "url": "https://www.experion.co/media"
     },
@@ -1862,6 +1894,10 @@
     {
       "sourceId": "source-d18acc08a374f4b3",
       "url": "https://www.mmrcl.com/en/content/press-releases"
+    },
+    {
+      "sourceId": "source-d1da90d80302e378",
+      "url": "https://www.jagran.com/uttar-pradesh/varanasi-city"
     },
     {
       "sourceId": "source-d1e51d39322f8813",
