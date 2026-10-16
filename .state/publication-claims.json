@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T05:20:28.658Z",
+  "updatedAt": "2026-10-16T05:20:30.543Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3285,6 +3285,32 @@
       "claimedAt": "2026-10-16T05:20:27.037Z",
       "expiresAt": "2026-10-16T05:35:27.037Z",
       "finalizedAt": "2026-10-16T05:20:28.658Z"
+    },
+    {
+      "claimId": "a3fae1ae-fc39-46fd-afde-10da4a3d4001",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/prayagraj-cm-yogi-lays-foundation-for-prayagraj-housing-on-freed-land-40406375.html",
+        "title-city:प रय गर ज म 800 स अध क फ ल ट व ल आव स य य जन क स एम क ह थ भ म प जन क तन ह ग क मत|allahabad",
+        "dedupe:54f1542b21e289eea47c1c616bf8b09e5949af6e2d718e31eb3209adc2711618",
+        "dedupe:51e5fb0e137eb45f0a8e2473be6d64f116964ac37bd3d622cc9e39ea7f371e6e",
+        "dedupe:c93d424f80482ee4cad7648fd37bc0de324fb5493f88dc2927dae4dd3c834f89",
+        "dedupe:2278a462cba0afce368825fb33543c1efa15a3c8195bb60ff3cd00a9bf04bca8",
+        "dedupe:प रय गर ज म स अध क फ ल ट व ल आव स य य जन क स एम क ह थ भ म प जन क तन ह ग क मत|allahabad",
+        "dedupe:9c09630f341c49718a8a0ed70e13e79a9486ee86dc6f33ed0106550025b683c2",
+        "dedupe:cb2b22aa7a5e7f0f522b27773db22251658f32e026dfa4cc368eefd219570e04"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "allahabad",
+      "canonicalEventCity": "allahabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "allahabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-16T05:20:30.543Z",
+      "expiresAt": "2026-10-16T05:35:30.543Z"
     }
   ]
 }
