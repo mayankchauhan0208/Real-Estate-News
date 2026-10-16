@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T05:20:25.245Z",
+  "updatedAt": "2026-10-16T05:20:27.037Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3258,6 +3258,32 @@
       "claimedAt": "2026-10-16T05:20:22.971Z",
       "expiresAt": "2026-10-16T05:35:22.971Z",
       "finalizedAt": "2026-10-16T05:20:25.245Z"
+    },
+    {
+      "claimId": "5bd7773e-2373-4857-8484-61d464bcf5f4",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/kanpur-city-kanpur-mandi-bhav-grain-pulses-gold-silver-prices-today-40406330.html",
+        "title-city:क नप र म ड भ व 15 अक ट बर ग ह च वल और द ल क त ज र ट द ख gold silver क द म|kanpur",
+        "dedupe:60100fdf1414c3d89bcce1e00479ce6cf545447ced141f316774f8f5ffc7b312",
+        "dedupe:2c35e20f08fcfa09d15913e640e55774f5ba0939668fccce801a797098ee45fb",
+        "dedupe:c338f80965831c416621d2f30364e52caddcb59817b309893b288947b9c85fa3",
+        "dedupe:561e2cd295be087cb1ea42ac8b4828e433acbf8b63fee3017ba131c6ba72bf88",
+        "dedupe:क नप र म ड भ व अक ट बर ग ह च वल और द ल क त ज र ट द ख gold silver क द म|kanpur",
+        "dedupe:62ac2bb63c33dba4f7e3f025a2a28192b0a3175eca611e3d3fca90a1f6e0f02a",
+        "dedupe:c46516dbd2a08dd3935a17285a2622c5401077d70996ef4fa94dd76c126d0ade"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "kanpur",
+      "canonicalEventCity": "kanpur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "kanpur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-16T05:20:27.037Z",
+      "expiresAt": "2026-10-16T05:35:27.037Z"
     }
   ]
 }
