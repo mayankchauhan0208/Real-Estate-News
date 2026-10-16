@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T12:23:55.799Z",
+  "updatedAt": "2026-10-16T12:23:58.649Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3450,7 +3450,7 @@
     },
     {
       "claimId": "09f6975a-d054-468b-bd0e-3d90bbba6825",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/varanasi-city-theme-of-the-air-show-in-varanasi-is-wings-over-ganges-the-air-force-has-released-the-full-report-40406996.html",
         "title-city:व र णस म एयरश क थ म व ग स ओवर ग ग स भ रत य न स न और भ रत य स न क व म न भ ल ग ह स स|varanasi",
@@ -3472,7 +3472,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-16T12:23:55.799Z",
-      "expiresAt": "2026-10-16T12:38:55.799Z"
+      "expiresAt": "2026-10-16T12:38:55.799Z",
+      "finalizedAt": "2026-10-16T12:23:58.649Z"
     }
   ]
 }
