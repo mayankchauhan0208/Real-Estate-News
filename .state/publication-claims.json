@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T12:23:53.253Z",
+  "updatedAt": "2026-10-16T12:23:55.799Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3447,6 +3447,32 @@
       "claimedAt": "2026-10-16T12:23:50.361Z",
       "expiresAt": "2026-10-16T12:38:50.361Z",
       "finalizedAt": "2026-10-16T12:23:53.253Z"
+    },
+    {
+      "claimId": "09f6975a-d054-468b-bd0e-3d90bbba6825",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/varanasi-city-theme-of-the-air-show-in-varanasi-is-wings-over-ganges-the-air-force-has-released-the-full-report-40406996.html",
+        "title-city:व र णस म एयरश क थ म व ग स ओवर ग ग स भ रत य न स न और भ रत य स न क व म न भ ल ग ह स स|varanasi",
+        "dedupe:5c295a34c57b880ce4e2f08307b2373b1bd93af5e3e2403328dac5ab040960c9",
+        "dedupe:e44128946c567b2a5e3a8bbdd6cf03d195ad484bb8cd75148e1720e47b46b26d",
+        "dedupe:c04b699c6131293fde46d56b577c0f14d45ac77eb735831f58f73ce007eb9431",
+        "dedupe:9a4426a5f27a1f1487822d512847106da64e9190841bbdd2971e88ddf846540a",
+        "dedupe:व र णस म एयरश क थ म व ग स ओवर ग ग स भ रत य न स न और भ रत य स न क व म न भ ल ग ह स स|varanasi",
+        "dedupe:69af94151a903755a058c503fcaaf2622cec12c02a076b9d7695708b6da44a1d",
+        "dedupe:c665f90c77796223a682a6ddd61c93f732f67ad8c07a6535383d41b79b5762da"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "varanasi",
+      "canonicalEventCity": "varanasi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "varanasi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-16T12:23:55.799Z",
+      "expiresAt": "2026-10-16T12:38:55.799Z"
     }
   ]
 }
