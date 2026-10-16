@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T05:20:22.971Z",
+  "updatedAt": "2026-10-16T05:20:25.245Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3234,7 +3234,7 @@
     },
     {
       "claimId": "911efdd1-dbec-4c64-9e58-5d76fd385408",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-yamuna-fintech-city-to-become-special-developed-zone-sdz-40405474.html",
         "title-city:न एड ज वर प स बस ग up क स प शल फ नट क स ट बन ग sdz ज न ज न ए जम न स ल कर स व ध ओ तक क प ल न|noida",
@@ -3256,7 +3256,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-16T05:20:22.971Z",
-      "expiresAt": "2026-10-16T05:35:22.971Z"
+      "expiresAt": "2026-10-16T05:35:22.971Z",
+      "finalizedAt": "2026-10-16T05:20:25.245Z"
     }
   ]
 }
