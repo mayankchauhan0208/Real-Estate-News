@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T05:20:33.933Z",
+  "updatedAt": "2026-10-16T05:20:35.514Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3315,7 +3315,7 @@
     },
     {
       "claimId": "b3b2a9d9-1763-420d-863d-bbd1e2d36149",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-industrial-corridor-global-companies-eye-2000acre-hub-40406461.html",
         "title-city:द श व द श क न मच न क पन य क भ रह म रठ म औद य ग क गल य र क ल क शन द हज र एकड क ह ग गल य र|meerut",
@@ -3337,7 +3337,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-16T05:20:33.933Z",
-      "expiresAt": "2026-10-16T05:35:33.933Z"
+      "expiresAt": "2026-10-16T05:35:33.933Z",
+      "finalizedAt": "2026-10-16T05:20:35.514Z"
     }
   ]
 }
