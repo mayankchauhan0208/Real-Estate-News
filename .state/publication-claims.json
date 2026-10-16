@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T21:26:14.577Z",
+  "updatedAt": "2026-10-16T21:26:17.286Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3477,7 +3477,7 @@
     },
     {
       "claimId": "4b52fb90-c1a8-4b39-9770-4567f2969679",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/cities/noida-news/new-noida-to-be-divided-into-3-work-circles-noida-authority-101792089976995.html",
         "title-city:new noida to be divided into 3 work circles noida authority|noida",
@@ -3499,7 +3499,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-16T21:26:14.577Z",
-      "expiresAt": "2026-10-16T21:41:14.577Z"
+      "expiresAt": "2026-10-16T21:41:14.577Z",
+      "finalizedAt": "2026-10-16T21:26:17.286Z"
     }
   ]
 }
