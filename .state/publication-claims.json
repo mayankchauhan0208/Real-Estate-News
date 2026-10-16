@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T09:05:53.708Z",
+  "updatedAt": "2026-10-16T09:05:55.775Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3396,7 +3396,7 @@
     },
     {
       "claimId": "54e35e20-b88c-4dbc-8365-c0e55bcd7d94",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-yamuna-authority-map-approval-mandatory-for-village-construction-40406637.html",
         "title-city:यम न प र ध करण क ग व म घर बन न क ल ए प स कर न ह ग नक श ल ग ह न ज रह नई न त|noida",
@@ -3418,7 +3418,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-16T09:05:53.708Z",
-      "expiresAt": "2026-10-16T09:20:53.708Z"
+      "expiresAt": "2026-10-16T09:20:53.708Z",
+      "finalizedAt": "2026-10-16T09:05:55.775Z"
     }
   ]
 }
