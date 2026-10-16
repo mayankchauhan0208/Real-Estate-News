@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T21:26:17.286Z",
+  "updatedAt": "2026-10-16T21:26:19.462Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3501,6 +3501,32 @@
       "claimedAt": "2026-10-16T21:26:14.577Z",
       "expiresAt": "2026-10-16T21:41:14.577Z",
       "finalizedAt": "2026-10-16T21:26:17.286Z"
+    },
+    {
+      "claimId": "98e81df4-e200-4864-97f7-b8cabb74b7b9",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/krisumi-to-invest-rs-1300-crore-in-two-new-luxury-residential-phases-in-gurugram",
+        "title-city:krisumi to invest rs 1 300 crore in two new luxury residential phases in gurugram|gurugram",
+        "dedupe:b4dc81cb9179e1c1d66baf2a2e74416d3e68d19e7eed6a3f058572ef1232fb3d",
+        "dedupe:8d4b103ccb63d523095eb131bc93a3ec843cac96ad98dfb9e10ef04531b8d1cc",
+        "dedupe:87c7e95390eb70a6bbfdfcfb81e8cc5ad30cc1428e8f25ec6da8fafbf72e1991",
+        "dedupe:bf844f0cddea36223e3e268bc121d7ca4bc6c3893725631ef52b81a616a54cc9",
+        "dedupe:krisumi two new residential phases gurugram|gurugram",
+        "dedupe:d1e48378bdbba0cd147c8e4cd7e0b44eb07780546293056e2cfdba1c35f8f3ac",
+        "dedupe:193170704f3c4913628c928a3026b6620bcb44d3592ee0adfaaa873febdf399c"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-16T21:26:19.462Z",
+      "expiresAt": "2026-10-16T21:41:19.462Z"
     }
   ]
 }
