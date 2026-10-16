@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T12:23:50.361Z",
+  "updatedAt": "2026-10-16T12:23:53.253Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3423,7 +3423,7 @@
     },
     {
       "claimId": "344750b6-3bd1-4b1a-9b4c-fbcc420641db",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/prayagraj-allahabad-to-prayagraj-name-transformation-8-year-ago-to-global-hub-now-40406927.html",
         "title-city:आठ स ल म बदल गई प रय गर ज शहर क पहच न आज ह क द न 2018 म य ग सरक र न इल ह ब द क बदल थ न म|allahabad",
@@ -3445,7 +3445,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-16T12:23:50.361Z",
-      "expiresAt": "2026-10-16T12:38:50.361Z"
+      "expiresAt": "2026-10-16T12:38:50.361Z",
+      "finalizedAt": "2026-10-16T12:23:53.253Z"
     }
   ]
 }
