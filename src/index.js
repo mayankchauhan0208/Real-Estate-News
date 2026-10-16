@@ -5679,6 +5679,29 @@ function isClearlyOffTopicNonDevelopmentArticle(article) {
   return false;
 }
 
+function hasStrongMaterialPropertyEvidence(article) {
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  const concretePropertyObject = /\b(?:real estate|realty|property market|property development|housing|residential|commercial|apartments?|flats?|homes?|plots?|land parcels?|land acquisition|land allotment|township|mixed[- ]use|office (?:space|development)|retail development|shopping (?:mall|centre|center)|mall|warehouse|logistics park|industrial park|housing scheme|redevelopment|rera (?:project|registration)|developer project)\b/i.test(text);
+  const nativePropertyObject = /(?:रियल एस्टेट|प्रॉपर्टी|संपत्ति|आवास|आवासीय|कमर्शियल|व्यावसायिक परियोजना|फ्लैट|मकान|भूखंड|प्लॉट|जमीन|भूमि (?:अधिग्रहण|आवंटन)|टाउनशिप|मॉल|हाउसिंग|पुनर्विकास|रेरा परियोजना)/u.test(text);
+  return concretePropertyObject || nativePropertyObject;
+}
+
+function isGenericTransportServiceWithoutPropertyNexus(article) {
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  const transportService = /\b(?:direct flights?|new flights?|flight routes?|air services?|airline routes?|airport[- ]to[- ][a-z]+ routes?|bus services?|bus routes?|train services?|rail services?|passenger routes?|metro frequency|transport connectivity|travel connectivity)\b/i.test(text)
+    || /(?:सीधी उड़ान|नई उड़ान|हवाई सेवा|विमान सेवा|बस सेवा|रेल सेवा|यात्री सेवा|यात्रा कनेक्टिविटी|बेहतर कनेक्टिविटी)/u.test(text);
+  return transportService && !hasStrongMaterialPropertyEvidence(article) && !hasExplicitTransportPropertyNexus(article);
+}
+
+function isGenericStartupOrTechnologyFundraisingWithoutPropertyNexus(article) {
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  const technologyOrStartup = /\b(?:startups?|deep[- ]tech|artificial intelligence|\bAI\b|quantum (?:research|technology|computing)|software|fintech|edtech|healthtech|incubators?|accelerators?|research commerciali[sz]ation)\b/i.test(text)
+    || /(?:स्टार्टअप|डीप[- ]?टेक|एआई|क्वांटम (?:रिसर्च|अनुसंधान|तकनीक)|प्रौद्योगिकी|तकनीक|उद्यमी|अनुसंधान)/u.test(text);
+  const fundraising = /\b(?:fundrais(?:e|es|ing)|raises? (?:funds?|capital)|capital raise|seed round|series [a-f]|venture funding|million dollars?|billion dollars?)\b/i.test(text)
+    || /(?:फंडिंग|धन[- ]?संग्रह|पूंजी जुटा|करोड़ (?:रुपये|डॉलर) जुटा|अरब डॉलर जुटा)/u.test(text);
+  return technologyOrStartup && fundraising && !hasStrongMaterialPropertyEvidence(article);
+}
+
 function isRealEstateRelated(article) {
   // A concrete Gaurs Alaris/YEIDA project can be described in native
   // language, so establish the specific project signal before generic
@@ -5692,6 +5715,14 @@ function isRealEstateRelated(article) {
   }
 
   if (isEventCenteredWithoutConcretePropertyEvent(article) || isTechnologyPartnershipWithoutConcretePropertyEvent(article)) {
+    return false;
+  }
+
+  if (isGenericTransportServiceWithoutPropertyNexus(article)) {
+    return false;
+  }
+
+  if (isGenericStartupOrTechnologyFundraisingWithoutPropertyNexus(article)) {
     return false;
   }
 
@@ -7257,7 +7288,11 @@ function getRejectionReasons(article, sentIds) {
 
   if (!realEstateRelated) {
     reasons.push(
-      isPositiveInfrastructureWithoutPropertyNexus(article)
+      isGenericTransportServiceWithoutPropertyNexus(article)
+        ? "GENERIC_TRANSPORT_CONNECTIVITY_WITHOUT_PROPERTY_NEXUS"
+        : isGenericStartupOrTechnologyFundraisingWithoutPropertyNexus(article)
+          ? "NON_REAL_ESTATE_STARTUP_TECH_FUNDRAISING"
+      : isPositiveInfrastructureWithoutPropertyNexus(article)
         ? "POSITIVE_INFRASTRUCTURE_WITHOUT_SUFFICIENT_REAL_ESTATE_NEXUS"
         : "filter 4: not positive target real-estate/project news"
     );

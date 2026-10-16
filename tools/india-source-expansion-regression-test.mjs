@@ -18,7 +18,7 @@ const sources = settings.manualSources.filter((source) => expected.has(source.id
 assert.equal(sources.length, expected.size, "all verified Jagran city sources must be configured");
 
 for (const source of sources) {
-  assert.equal(source.enabled, false, `${source.id} must remain disabled after the failed live content gate`);
+  assert.equal(source.enabled, true, `${source.id} must be enabled after the precision gate repair`);
   assert.equal(source.category, "regional-hindi", `${source.id} must retain native-language metadata`);
   assert.equal(source.sourceMode, "ACTIVE_FOR_REVIEW", `${source.id} must not bypass editorial safeguards`);
   assert.deepEqual(source.cityCodes, expected.get(source.id), `${source.id} must remain city scoped`);
@@ -36,6 +36,8 @@ assert.equal(defaultRuntime.some((url) => url.includes("jagran.com")), false, "r
 
 process.env.ENABLE_EXPERIMENTAL_SOURCES = "true";
 const productionRuntime = (await import(`../src/index.js?production-opt-in=${Date.now()}`)).getSourceUrls();
-assert.equal(productionRuntime.some((url) => url.includes("jagran.com")), false, "failed-gate Jagran surfaces must not remain in production runtime");
+for (const source of sources) {
+  assert.equal(productionRuntime.includes(source.url), true, `${source.id} must join the explicitly opted-in production runtime`);
+}
 
-console.log(`India source expansion safety regression passed: ${sources.length} verified Jagran city surfaces remain configured but disabled after the failed live content gate.`);
+console.log(`India source expansion regression passed: ${sources.length} verified Jagran city surfaces are active only in the explicitly opted-in production runtime.`);

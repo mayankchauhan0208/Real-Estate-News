@@ -199,6 +199,46 @@ const ordinaryMultiplexLaunch = {
   articleText: "The cinema opened inside an existing mall. The article describes screens, seats and catchment demand, but does not report a new mall, lease transaction or property development event."
 };
 
+const jagranFlightRouteWithoutPropertyNexus = {
+  ...common,
+  cityCode: "noida",
+  source: "Dainik Jagran Noida",
+  title: "दिल्ली-NCR से उत्तराखंड का सफर और भी आसान, नोएडा एयरपोर्ट से कुमाऊं की उड़ान शुरू; खाने-टैक्सी पर खास छूट",
+  description: "पंतनगर और नोएडा इंटरनेशनल एयरपोर्ट के बीच सीधी हवाई सेवा शुरू होने से कुमाऊं क्षेत्र को दिल्ली-एनसीआर से बेहतर कनेक्टिविटी मिली है।",
+  newsLink: "https://www.jagran.com/uttar-pradesh/noida-ncr-direct-flight-service-between-noida-airport-and-pantnagar-24000001.html",
+  articleText: "पंतनगर और नोएडा इंटरनेशनल एयरपोर्ट के बीच सीधी हवाई सेवा शुरू हुई। इससे पर्यटन, धार्मिक यात्राओं और व्यावसायिक गतिविधियों को बढ़ावा मिलेगा। यात्रियों को खाने और टैक्सी पर छूट दी जाएगी।"
+};
+
+const jagranDeepTechFundraisingWithoutPropertyNexus = {
+  ...common,
+  cityCode: "kanpur",
+  source: "Dainik Jagran Kanpur",
+  title: "IIT Kanpur का सबसे बड़ा अभियान: डीप-टेक, एआई और क्वांटम रिसर्च को मिलेगी रफ्तार, लैब से निकलेंगे भविष्य के उद्यमी",
+  description: "आईआईटी कानपुर ने ग्रेटर दैन अस अभियान शुरू किया, जिसका लक्ष्य मार्च 2029 तक एक अरब डॉलर जुटाना है।",
+  newsLink: "https://www.jagran.com/uttar-pradesh/kanpur-city-iit-kanpur-launches-billion-dollar-deep-tech-fundraising-campaign-24000002.html",
+  articleText: "अभियान डीप-टेक, एआई और क्वांटम अनुसंधान को आगे बढ़ाने के लिए एक अरब डॉलर जुटाएगा। संस्थान लैब से नए उद्यमी और तकनीकी स्टार्टअप तैयार करेगा।"
+};
+
+const jagranAgraMuseumAndMallConstruction = {
+  ...common,
+  cityCode: "agra",
+  source: "Dainik Jagran Agra",
+  title: "आगरा छत्रपति शिवाजी म्यूजियम और यूनिटी मॉल का काम समय पर हो पूरा, डीएम मनीष के सख्त निर्देश",
+  description: "डीएम ने शहर की विकास परियोजनाओं की समीक्षा कर म्यूजियम और यूनिटी मॉल का निर्माण समय पर पूरा करने के निर्देश दिए।",
+  newsLink: "https://www.jagran.com/uttar-pradesh/agra-city-dm-reviews-unity-mall-and-museum-construction-24000003.html",
+  articleText: "आगरा में निर्माणाधीन छत्रपति शिवाजी म्यूजियम और यूनिटी मॉल की बिल्डिंग का निर्माण तय समय में पूरा किया जाएगा। डीएम ने दोनों विकास परियोजनाओं की प्रगति की समीक्षा की।"
+};
+
+const jagranPrayagrajFlatsAndLandRedevelopment = {
+  ...common,
+  cityCode: "allahabad",
+  source: "Dainik Jagran Prayagraj",
+  title: "योगी आदित्यनाथ ने प्रयागराज के कसारी-मसारी इलाके को कृष्णपुरी नाम दिया",
+  description: "माफिया से मुक्त कराई गई जमीन पर 602 फ्लैट का पद्मलोक अपार्टमेंट बनाया जाएगा।",
+  newsLink: "https://www.jagran.com/uttar-pradesh/prayagraj-land-redevelopment-602-flats-padmalok-apartment-24000004.html",
+  articleText: "प्रयागराज में मुक्त कराई गई भूमि पर गरीब परिवारों के लिए 602 फ्लैट का पद्मलोक अपार्टमेंट बनेगा। मुख्यमंत्री ने आवासीय पुनर्विकास परियोजना का भूमि पूजन किया।"
+};
+
 const unrelatedTopicPageArticles = [
   {
     ...common,
@@ -260,6 +300,12 @@ for (const article of [diplomaticTopicFeedContamination, exciseTopicFeedContamin
 assert.equal(isPublishableArticle(multiRegionFinanceReview, sentIds), false);
 assert.match(getRejectionReasons(multiRegionFinanceReview, sentIds).join("; "), /multi-region real-estate finance update/);
 assert.equal(isPublishableArticle(ordinaryMultiplexLaunch, sentIds), false);
+assert.equal(isPublishableArticle(jagranFlightRouteWithoutPropertyNexus, sentIds), false);
+assert.match(getRejectionReasons(jagranFlightRouteWithoutPropertyNexus, sentIds).join("; "), /GENERIC_TRANSPORT_CONNECTIVITY_WITHOUT_PROPERTY_NEXUS/);
+assert.equal(isPublishableArticle(jagranDeepTechFundraisingWithoutPropertyNexus, sentIds), false);
+assert.match(getRejectionReasons(jagranDeepTechFundraisingWithoutPropertyNexus, sentIds).join("; "), /NON_REAL_ESTATE_STARTUP_TECH_FUNDRAISING/);
+assert.equal(isPublishableArticle(jagranAgraMuseumAndMallConstruction, sentIds), true);
+assert.equal(isPublishableArticle(jagranPrayagrajFlatsAndLandRedevelopment, sentIds), true);
 
 console.log(JSON.stringify({
   passed: true,
@@ -274,4 +320,5 @@ console.log(JSON.stringify({
   externalDeveloperMediaArticle: "REJECTED_WITHOUT_SAME_SITE_AUTHORITY_BYPASS",
   unrelatedTopicPageArticles: "REJECTED"
   ,newlyProtectedTopicFeedContamination: "REJECTED"
+  ,jagranPrecisionGate: "2_FALSE_POSITIVES_REJECTED_2_VALID_DEVELOPMENTS_PRESERVED"
 }, null, 2));
