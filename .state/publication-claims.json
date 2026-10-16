@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T09:05:55.775Z",
+  "updatedAt": "2026-10-16T12:23:50.361Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3420,6 +3420,32 @@
       "claimedAt": "2026-10-16T09:05:53.708Z",
       "expiresAt": "2026-10-16T09:20:53.708Z",
       "finalizedAt": "2026-10-16T09:05:55.775Z"
+    },
+    {
+      "claimId": "344750b6-3bd1-4b1a-9b4c-fbcc420641db",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/prayagraj-allahabad-to-prayagraj-name-transformation-8-year-ago-to-global-hub-now-40406927.html",
+        "title-city:आठ स ल म बदल गई प रय गर ज शहर क पहच न आज ह क द न 2018 म य ग सरक र न इल ह ब द क बदल थ न म|allahabad",
+        "dedupe:990ae6cf9158c0a433e6875f3c3dc56f0f42ddeb3f89d838187b2f8c5d71dd54",
+        "dedupe:9640bd6712613d3ccc174ccb58eab1aab9d833de094cd0046c712422051ab64d",
+        "dedupe:c1d75a84ded79b3744612b0af72232fc9437440b068b9790147ec9bd849b64f3",
+        "dedupe:131c52052481975ff64a31834d381aef3172f42ec7c3546c465e87bccff49d41",
+        "dedupe:आठ स ल म बदल गई प रय गर ज शहर क पहच न आज ह क द न म य ग सरक र न इल ह ब द क बदल थ न म|allahabad",
+        "dedupe:8b5b34d97def78f5af66f92cb39fe8909d0822b3832f2166917f84fdbf5b30b0",
+        "dedupe:f07a8c133e413ad62701c9f9f1970d7bdd1eac6a05fca18181930e816a8bf01c"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "allahabad",
+      "canonicalEventCity": "allahabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "allahabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-16T12:23:50.361Z",
+      "expiresAt": "2026-10-16T12:38:50.361Z"
     }
   ]
 }
