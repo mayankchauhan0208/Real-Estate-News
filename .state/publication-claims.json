@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-15T22:36:44.677Z",
+  "updatedAt": "2026-10-16T05:20:22.971Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3231,6 +3231,32 @@
       "claimedAt": "2026-10-15T22:36:42.485Z",
       "expiresAt": "2026-10-15T22:51:42.485Z",
       "finalizedAt": "2026-10-15T22:36:44.677Z"
+    },
+    {
+      "claimId": "911efdd1-dbec-4c64-9e58-5d76fd385408",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-yamuna-fintech-city-to-become-special-developed-zone-sdz-40405474.html",
+        "title-city:न एड ज वर प स बस ग up क स प शल फ नट क स ट बन ग sdz ज न ज न ए जम न स ल कर स व ध ओ तक क प ल न|noida",
+        "dedupe:3b2e545606d1abcf3bd21c17b81769ce4d4e3cf20eafdd7c802d798b84af6da7",
+        "dedupe:9ebcc526a3774ca3f4e6ba14de955663357df69db2e95cf8a7964ee7cf9e9d3b",
+        "dedupe:9f1f689c55f7e73ef1361244a58aaf6310f03e590db8e9bfda9554d1446c12e4",
+        "dedupe:e7d7cf7766e6bee788b566a07b6a388fee6bf2d02565cf787a5b329a29221a12",
+        "dedupe:न एड ज वर प स बस ग क स प शल फ नट क स ट बन ग sdz ज न ज न ए जम न स ल कर स व ध ओ तक क प ल न|noida",
+        "dedupe:6973a1cd8c2228338e5eb5f1243cf6176bc0dba7ef86782a48b4791b80d2e224",
+        "dedupe:1c698a7f91d1e8afc6f063338f4677096bddc108fc9fb33a1bb31344f64ee770"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-16T05:20:22.971Z",
+      "expiresAt": "2026-10-16T05:35:22.971Z"
     }
   ]
 }
