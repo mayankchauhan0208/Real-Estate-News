@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T23:56:31.523Z",
+  "updatedAt": "2026-10-16T23:56:33.510Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3662,6 +3662,32 @@
       "claimedAt": "2026-10-16T23:56:29.840Z",
       "expiresAt": "2026-10-17T00:11:29.840Z",
       "finalizedAt": "2026-10-16T23:56:31.523Z"
+    },
+    {
+      "claimId": "3344effc-1c29-4ce7-958f-b2c28b5ca8f6",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/varanasi-city-real-estate-sector-gains-momentum-in-kashi-during-navratri-business-turnover-could-once-again-exceed-300-crore-40406919.html",
+        "title-city:क श म नवर त र म र यल एस ट ट क म ल रफ त र इस ब र फ र 300 कर ड प र कर सकत ह क र ब र|varanasi",
+        "dedupe:4cdd2255f8d0a90f6236fe436017428b5fcc3a224873056f6aa172b870440919",
+        "dedupe:4efbe011399b4c60e8d945d96525097e766c2a6ad8b3f6314df5912168b514d4",
+        "dedupe:2e55bb23490d8e250e26998f53201cbabba38944ee4dff2032432395de33c938",
+        "dedupe:5f3da286320218b7f37c6bbc22a02f6d5c5592ab2dd8ef224b6b49c2e3ed2356",
+        "dedupe:क श म नवर त र म र यल एस ट ट क म ल रफ त र इस ब र फ र कर ड प र कर सकत ह क र ब र|varanasi",
+        "dedupe:58fc8f1248c52ba92529bb217fc4915704fc1f895493541ea7453a4056846b6c",
+        "dedupe:8a243701f7fff8490c6bc791df51ab81b6dcd9109773bfddc3c1c2fc4fd65936"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "varanasi",
+      "canonicalEventCity": "varanasi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "varanasi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-16T23:56:33.510Z",
+      "expiresAt": "2026-10-17T00:11:33.510Z"
     }
   ]
 }
