@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T23:56:33.510Z",
+  "updatedAt": "2026-10-16T23:56:35.067Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3665,7 +3665,7 @@
     },
     {
       "claimId": "3344effc-1c29-4ce7-958f-b2c28b5ca8f6",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/varanasi-city-real-estate-sector-gains-momentum-in-kashi-during-navratri-business-turnover-could-once-again-exceed-300-crore-40406919.html",
         "title-city:क श म नवर त र म र यल एस ट ट क म ल रफ त र इस ब र फ र 300 कर ड प र कर सकत ह क र ब र|varanasi",
@@ -3687,7 +3687,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-16T23:56:33.510Z",
-      "expiresAt": "2026-10-17T00:11:33.510Z"
+      "expiresAt": "2026-10-17T00:11:33.510Z",
+      "finalizedAt": "2026-10-16T23:56:35.067Z"
     }
   ]
 }
