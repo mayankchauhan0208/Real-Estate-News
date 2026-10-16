@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T05:20:30.543Z",
+  "updatedAt": "2026-10-16T05:20:32.164Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3288,7 +3288,7 @@
     },
     {
       "claimId": "a3fae1ae-fc39-46fd-afde-10da4a3d4001",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/prayagraj-cm-yogi-lays-foundation-for-prayagraj-housing-on-freed-land-40406375.html",
         "title-city:प रय गर ज म 800 स अध क फ ल ट व ल आव स य य जन क स एम क ह थ भ म प जन क तन ह ग क मत|allahabad",
@@ -3310,7 +3310,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-16T05:20:30.543Z",
-      "expiresAt": "2026-10-16T05:35:30.543Z"
+      "expiresAt": "2026-10-16T05:35:30.543Z",
+      "finalizedAt": "2026-10-16T05:20:32.164Z"
     }
   ]
 }
