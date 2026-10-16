@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T21:26:33.014Z",
+  "updatedAt": "2026-10-16T23:56:25.172Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3608,6 +3608,32 @@
       "claimedAt": "2026-10-16T21:26:31.251Z",
       "expiresAt": "2026-10-16T21:41:31.251Z",
       "finalizedAt": "2026-10-16T21:26:33.014Z"
+    },
+    {
+      "claimId": "74c0a6c1-9168-465e-8295-ebc3fbaeb28c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/gurugram-krisumi-corporation-commences-developmen",
+        "title-city:gurugram krisumi corporation commences development of the for|gurugram",
+        "dedupe:ad3190d57f62428aa13983b4a62df170adf331b17873dcaf12f2c32ffeefd0ec",
+        "dedupe:9b6cd11a2e794fc9372e905e96028a30502dea3ee8aae4c12c5e0fc1f9abdc51",
+        "dedupe:983d8c25e06ee95c167d93cd45307975758f1da42c19da4603da413a163b4885",
+        "dedupe:e0bebb4cdb6ca8365a3e721bf49ed1a81a45c2bfcfffd002a2b83c84a89ed1b6",
+        "dedupe:gurugram krisumi corporation commences development|gurugram",
+        "dedupe:5a2128fe2f4237119d3724f8360394e4b71ed62803e7edd28cd6411cdc34030a",
+        "dedupe:a79e72aca907a08700365def9584e916b261928d55bb184d45262a97a3c12ad1"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-16T23:56:25.172Z",
+      "expiresAt": "2026-10-17T00:11:25.172Z"
     }
   ]
 }
