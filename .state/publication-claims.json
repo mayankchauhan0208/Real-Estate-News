@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T07:29:54.421Z",
+  "updatedAt": "2026-10-16T07:29:57.198Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3342,7 +3342,7 @@
     },
     {
       "claimId": "a68fd8ec-86ce-478b-8ab3-e5a05b10c3f0",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://business-standard.com/companies/news/krisumi-corp-starts-construction-phases-5-6-krisumi-city-gurugram-126101600455_1.html",
         "title-city:krisumi corp starts construction of two phases at krisumi city in gurugram|gurugram",
@@ -3364,7 +3364,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-16T07:29:54.421Z",
-      "expiresAt": "2026-10-16T07:44:54.421Z"
+      "expiresAt": "2026-10-16T07:44:54.421Z",
+      "finalizedAt": "2026-10-16T07:29:57.198Z"
     }
   ]
 }
