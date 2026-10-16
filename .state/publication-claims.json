@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T23:56:27.825Z",
+  "updatedAt": "2026-10-16T23:56:29.840Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3635,6 +3635,32 @@
       "claimedAt": "2026-10-16T23:56:25.172Z",
       "expiresAt": "2026-10-17T00:11:25.172Z",
       "finalizedAt": "2026-10-16T23:56:27.825Z"
+    },
+    {
+      "claimId": "35343f62-1832-44a7-8760-c29778c59cde",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/prateek-group-commences-construction-for-new-luxury-residential-project-in-sector-150-noida",
+        "title-city:prateek group commences construction for new luxury residential project in sector 150 noida|noida",
+        "dedupe:877604deb7b2153b679fde1af0ca5643b95a19bfe4b20e15359f8228c51a7a23",
+        "dedupe:5be8eadff5d18c6f54ee7a4a484549c24c9946ece28394aa453cfe7fa9ab3955",
+        "dedupe:0c795d0fb7bbf13b06ee17a358bda90da0c7f63998e0eaeee716c9f8fb6c6ac1",
+        "dedupe:092a374223917764d7b66aece6d8c4ef3a41b5e07c2c5b53a0b2136cbb0214da",
+        "dedupe:prateek group commences construction new residential sector noida|noida",
+        "dedupe:61be6468a883e5a2de7f6fab3b837b2b1ef76510f71b9872e62449a77d5995d8",
+        "dedupe:fb3c8e42eede6f1ea1650dc2923464b14c0b5512ff25db55d30e753e3f6f6c2f"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-16T23:56:29.840Z",
+      "expiresAt": "2026-10-17T00:11:29.840Z"
     }
   ]
 }
