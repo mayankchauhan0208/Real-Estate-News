@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T21:26:23.414Z",
+  "updatedAt": "2026-10-16T21:26:25.254Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3531,7 +3531,7 @@
     },
     {
       "claimId": "1b328e08-a2db-4d07-b765-5fdbccea98d5",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/entertainment/bollywood/ranbir-kapoor-leases-his-luxury-apartment-in-pune-s-trump-towers-for-a-monthly-rent-starting-at-4-63-lakh-101792144335451.html",
         "title-city:ranbir kapoor leases his luxury apartment in pune s trump towers for a monthly rent starting at 4 63 lakh|pune",
@@ -3553,7 +3553,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-16T21:26:23.414Z",
-      "expiresAt": "2026-10-16T21:41:23.414Z"
+      "expiresAt": "2026-10-16T21:41:23.414Z",
+      "finalizedAt": "2026-10-16T21:26:25.254Z"
     }
   ]
 }
