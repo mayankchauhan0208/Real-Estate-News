@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T07:29:57.198Z",
+  "updatedAt": "2026-10-16T07:29:59.462Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3366,6 +3366,32 @@
       "claimedAt": "2026-10-16T07:29:54.421Z",
       "expiresAt": "2026-10-16T07:44:54.421Z",
       "finalizedAt": "2026-10-16T07:29:57.198Z"
+    },
+    {
+      "claimId": "f14e459d-0122-43fd-ab30-b634fe5bc82d",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/noida-authority-skips-13-again-new-noida-to-have-work-circles-11-12-and-14-but-no-13-101792125654649.html",
+        "title-city:noida authority skips 13 again new noida to have work circles 11 12 and 14 but no 13|noida",
+        "dedupe:8d0fc321cacc509c5ec836ac80e174a509ef1dd36fbcc380c2e7a23b675cf038",
+        "dedupe:0626e9fcfb345fabc089bf30a34fe818efd7815723184bd1c117df29beb1be85",
+        "dedupe:0a1f0fa2cd4c6dc5405e87defcfe0f2701da8394078c1e0806fc122815605c8f",
+        "dedupe:1847a6d1238b1a8e3fe89a0691b9e093dba5c1130c377b46fe8657b973c08f89",
+        "dedupe:noida authority skips again new noida have work circles but no|noida",
+        "dedupe:180ec831f856cbb66e5247e5ada0412b9dfa77518d50cd4967f30993242895fc",
+        "dedupe:cd0c7be1133778a886b9d4a95e2097ab1a89057f3e52f4f8102afdbbc343feb7"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-16T07:29:59.462Z",
+      "expiresAt": "2026-10-16T07:44:59.462Z"
     }
   ]
 }
