@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T23:56:25.172Z",
+  "updatedAt": "2026-10-16T23:56:27.825Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3611,7 +3611,7 @@
     },
     {
       "claimId": "74c0a6c1-9168-465e-8295-ebc3fbaeb28c",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realtynmore.com/gurugram-krisumi-corporation-commences-developmen",
         "title-city:gurugram krisumi corporation commences development of the for|gurugram",
@@ -3633,7 +3633,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-16T23:56:25.172Z",
-      "expiresAt": "2026-10-17T00:11:25.172Z"
+      "expiresAt": "2026-10-17T00:11:25.172Z",
+      "finalizedAt": "2026-10-16T23:56:27.825Z"
     }
   ]
 }
