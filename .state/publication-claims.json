@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T05:20:32.164Z",
+  "updatedAt": "2026-10-16T05:20:33.933Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3312,6 +3312,32 @@
       "claimedAt": "2026-10-16T05:20:30.543Z",
       "expiresAt": "2026-10-16T05:35:30.543Z",
       "finalizedAt": "2026-10-16T05:20:32.164Z"
+    },
+    {
+      "claimId": "b3b2a9d9-1763-420d-863d-bbd1e2d36149",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-industrial-corridor-global-companies-eye-2000acre-hub-40406461.html",
+        "title-city:द श व द श क न मच न क पन य क भ रह म रठ म औद य ग क गल य र क ल क शन द हज र एकड क ह ग गल य र|meerut",
+        "dedupe:c54da90bd83e37af64044a8172a8aa55e00d58c44bea582ee40ab2220b03ecd7",
+        "dedupe:b9750bc0e4b10ff2d5ad53bd9eda679e881d448347e94834dea41c7930c19e36",
+        "dedupe:118e039b862eae3cced33654cab378392367a37334a99b93b408a36c8455fc73",
+        "dedupe:4eebd99d34608666a6c49a8bca6c95a7c55bf0d78b5c55bdd25fc29437d806f8",
+        "dedupe:द श व द श क न मच न क पन य क भ रह म रठ म औद य ग क गल य र क ल क शन द हज र एकड क ह ग गल य र|meerut",
+        "dedupe:98e92155249ca7ffa647848595f83af52be50b6ff74f3ab5bfd8ec77cd373169",
+        "dedupe:a8c29f31b51a73b10f3e104fe9d0d5ecdf91d21685b33bfb3eb6508b68d9c156"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "meerut",
+      "canonicalEventCity": "meerut",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "meerut"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-16T05:20:33.933Z",
+      "expiresAt": "2026-10-16T05:35:33.933Z"
     }
   ]
 }
