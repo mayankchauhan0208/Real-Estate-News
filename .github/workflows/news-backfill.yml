@@ -23,6 +23,11 @@ on:
         description: "Stable ID used to resume the same backfill state"
         required: true
         type: string
+      source_urls:
+        description: "Optional exact source URLs, separated by comma, semicolon, or newline"
+        required: false
+        default: ""
+        type: string
       resume_from_offset:
         description: "Production resume offset; completed lower offsets are skipped without fetching"
         required: false
@@ -140,6 +145,7 @@ jobs:
           PUBLICATION_LEDGER_PATH: .state/publication-ledger.json
           BACKFILL_FROM: ${{ inputs.backfill_from }}
           BACKFILL_TO: ${{ inputs.backfill_to }}
+          SOURCE_URLS: ${{ inputs.source_urls }}
           RUN_MODE: BACKFILL
           BACKFILL_MODE: "true"
           BACKFILL_EXHAUSTIVE: "true"
