@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T09:41:36.775Z",
+  "updatedAt": "2026-10-17T09:41:38.926Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3768,6 +3768,32 @@
       "claimedAt": "2026-10-17T09:41:34.382Z",
       "expiresAt": "2026-10-17T09:56:34.382Z",
       "finalizedAt": "2026-10-17T09:41:36.775Z"
+    },
+    {
+      "claimId": "c741ce3d-b2f2-4fe5-abe6-6365d832d814",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/prateek-groups-new-sector-150-project-in-noida",
+        "title-city:prateek group s new sector 150 project in noida to generate over 2 000 jobs|noida",
+        "dedupe:569aa61dd4d59b1367f09df193117fd0059b2f75f46b1b8d234256d327bfac18",
+        "dedupe:92d58f676397c70700ca308e47cc64b0f3b7dcd8da130e27d9389b0c52b94e79",
+        "dedupe:915a67679381c7419c0b127789246018c1489e992b2e57a7d395a768bb03fde6",
+        "dedupe:2ae3527e8fa02b8ca5bcbabf08edfbeac574dc9b3c76eea9ff36ec70339e5151",
+        "dedupe:prateek group s new sector noida generate jobs|noida",
+        "dedupe:00bf3493685c635a6d4b10d880269636c2825debc971b9781af21c5649ddee07",
+        "dedupe:6ca7190bacb0162c4495101f65e54cfa57db75ef759ecd50d852aee263fdfa81"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-17T09:41:38.926Z",
+      "expiresAt": "2026-10-17T09:56:38.926Z"
     }
   ]
 }
