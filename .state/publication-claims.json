@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T04:42:55.835Z",
+  "updatedAt": "2026-10-17T09:41:34.382Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3741,6 +3741,32 @@
       "claimedAt": "2026-10-17T04:42:54.110Z",
       "expiresAt": "2026-10-17T04:57:54.110Z",
       "finalizedAt": "2026-10-17T04:42:55.835Z"
+    },
+    {
+      "claimId": "2e148470-a036-41b4-b2eb-6ce06d2e1966",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/delhi-news/dda-reaches-out-to-land-pooling-areas-for-phased-development-under-master-plan-101792176760117.html",
+        "title-city:dda reaches out to land pooling areas for phased development under master plan|new_delhi",
+        "dedupe:f3300db96b7e0094866a56225a1a736ae3e87d6cc92ccfa3c1bf65445faa1868",
+        "dedupe:fb81564568a8da99a9e7c82a2a0bb4deee34b2127eec255692f69fdefbe6cf0e",
+        "dedupe:2377d16129be4116b2b30f0559d336cd326a1926631db12674cc9b361d2b0761",
+        "dedupe:ca92ba4fd344e2d87463ea35ddfa2c21bc58ac90ef08dc1c4c6a236ebf79f40f",
+        "dedupe:dda reaches out land pooling areas phased development under master plan|new_delhi",
+        "dedupe:f41695c31ec2de2255d041710202347029bde424c14caa0e928d36ec3f7c2bb4",
+        "dedupe:ccf37c1200468f2d48e3033e590a0b11bbfd71565e99c4ba597c1bbc07366173"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-17T09:41:34.382Z",
+      "expiresAt": "2026-10-17T09:56:34.382Z"
     }
   ]
 }
