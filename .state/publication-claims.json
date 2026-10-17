@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T17:29:47.774Z",
+  "updatedAt": "2026-10-17T17:29:50.321Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3945,7 +3945,7 @@
     },
     {
       "claimId": "80fbfaa6-8b1c-41da-8b9b-e9c99c155cc7",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/industry/dlf-enters-collaboration-for-7-48-acre-gurugram-land-sector-61-parcel-to-expand-to-36-acres/135013939",
         "title-city:dlf enters collaboration for 7 48 acre gurugram land sector 61 parcel to expand to 36 acres|gurugram",
@@ -4022,7 +4022,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-17T17:29:47.774Z",
-      "expiresAt": "2026-10-17T17:44:47.774Z"
+      "expiresAt": "2026-10-17T17:44:47.774Z",
+      "finalizedAt": "2026-10-17T17:29:50.321Z"
     }
   ]
 }
