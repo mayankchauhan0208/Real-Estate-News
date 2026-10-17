@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T14:06:18.530Z",
+  "updatedAt": "2026-10-17T17:29:47.774Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3942,6 +3942,87 @@
       "claimedAt": "2026-10-17T14:06:16.809Z",
       "expiresAt": "2026-10-17T14:21:16.809Z",
       "finalizedAt": "2026-10-17T14:06:18.530Z"
+    },
+    {
+      "claimId": "80fbfaa6-8b1c-41da-8b9b-e9c99c155cc7",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/dlf-enters-collaboration-for-7-48-acre-gurugram-land-sector-61-parcel-to-expand-to-36-acres/135013939",
+        "title-city:dlf enters collaboration for 7 48 acre gurugram land sector 61 parcel to expand to 36 acres|gurugram",
+        "dedupe:9d6f8ce026de1a7a354b89b5b97c34763676d5c1f9e631cbeea92116cc858fbc",
+        "dedupe:3ddfc442f2095ca7777019f9d92b5b3e6fb163b34b62b14431a11b5d1b9ba9bc",
+        "dedupe:e0e1b25ca7acf14b2e71005a40f4c167e8c9378390f0da7f63af4a85c565b55a",
+        "dedupe:dlf enters collaboration acre gurugram land sector parcel expand acres|gurugram",
+        "dedupe:e8e1b672e872f9d5c1d9a13bac1ca1f6fc49d1bc327bfa8786b5883b0322de3d",
+        "dedupe:1d75d1cb54c52deab296baed1d09ffcd08dcb48bd8098c6668ecf9b75dc1aaba"
+      ],
+      "semanticIdentity": {
+        "city": "gurugram",
+        "canonicalEventCity": "gurugram",
+        "normalizedBuilder": "dlf",
+        "normalizedProject": "",
+        "canonicalEventType": "residential-sale",
+        "builder": "dlf",
+        "project": "",
+        "eventType": "residential-sale",
+        "numericAnchors": [
+          "05:number",
+          "1060:crore",
+          "10:number",
+          "1300:crore",
+          "15100:crore",
+          "1537:crore",
+          "175:number",
+          "17:number",
+          "180:crore",
+          "1858:crore",
+          "19.5:acre",
+          "1900:crore",
+          "1980:crore",
+          "1985:crore",
+          "2014:crore",
+          "2026:number",
+          "2298:crore",
+          "2780:crore",
+          "27:number",
+          "28.5:acre",
+          "280:units",
+          "29:number",
+          "2:number",
+          "3.6:million sq ft",
+          "30:number",
+          "36:acre",
+          "3800:crore",
+          "3:number",
+          "42:number",
+          "4:number",
+          "50:million sq ft",
+          "5:number",
+          "61:number",
+          "6800:crore",
+          "6:number",
+          "7.06:acre",
+          "7.48:acre",
+          "738:crore",
+          "750:crore",
+          "7:number",
+          "8:number",
+          "96:number",
+          "97:number"
+        ],
+        "canonicalEventFingerprint": "dlf|gurugram|residential-sale|05:number,1060:crore,10:number",
+        "semanticClusterId": "cluster:d3c7a6d082ba24110ef5f373"
+      },
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "dlf|gurugram|residential-sale|05:number,1060:crore,10:number",
+      "semanticClusterId": "cluster:d3c7a6d082ba24110ef5f373",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-17T17:29:47.774Z",
+      "expiresAt": "2026-10-17T17:44:47.774Z"
     }
   ]
 }
