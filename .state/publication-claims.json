@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T19:47:08.434Z",
+  "updatedAt": "2026-10-17T19:47:11.249Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4054,7 +4054,7 @@
     },
     {
       "claimId": "b9c8f5ad-5d0a-463d-be30-a267ee3124a7",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://bptpltd.com/updates/bptp-launches-52-unit-boulevard-at-green-oaks-retail-project-in-gurugram",
         "title-city:new launchoct 2026bptp launches 52 unit high street retail project in sector 70a|gurugram",
@@ -4076,7 +4076,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-17T19:47:08.434Z",
-      "expiresAt": "2026-10-17T20:02:08.434Z"
+      "expiresAt": "2026-10-17T20:02:08.434Z",
+      "finalizedAt": "2026-10-17T19:47:11.249Z"
     }
   ]
 }
