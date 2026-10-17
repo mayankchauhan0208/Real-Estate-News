@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T19:47:19.356Z",
+  "updatedAt": "2026-10-17T19:47:21.405Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4132,6 +4132,32 @@
       "claimedAt": "2026-10-17T19:47:17.357Z",
       "expiresAt": "2026-10-17T20:02:17.357Z",
       "finalizedAt": "2026-10-17T19:47:19.356Z"
+    },
+    {
+      "claimId": "4efd93f5-8450-4a49-a402-83dfd4cc41c9",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://bptpltd.com/updates/bptp-launches-bptp-skynest-towers-in-sector-80-faridabad",
+        "title-city:reraoct 2026bptp s skynest towers in faridabad sector 80 receives hrera registration|faridabad",
+        "dedupe:b9aabd04113265ca55e5a1026a236799ac7038c79c59808ca871fb1934d5d0df",
+        "dedupe:1bd24beeb973d3d7efec29b9137247e024c7ac29c773f1978a031e0ebb7810ff",
+        "dedupe:30603a310c466394e8d4cfa95e27d28d3c0c366470c2453a353d4007296faa9c",
+        "dedupe:c9ef907b6f3e9ed39fe3f298363fd8accf83e904d1d5dda2d894e71474ca1ad4",
+        "dedupe:reraoct 2026bptp s skynest towers faridabad sector receives hrera registration|faridabad",
+        "dedupe:ec50329c7a31f2673d577f8635d289bb7d7ac787b120c2f7ffbc69fbd29e5a21",
+        "dedupe:c67df04cfd77ad20da32942b715f2fef478379c8b7838e6d42490b0ab4dcb234"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "faridabad",
+      "canonicalEventCity": "faridabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "faridabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-17T19:47:21.405Z",
+      "expiresAt": "2026-10-17T20:02:21.405Z"
     }
   ]
 }
