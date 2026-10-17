@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T19:47:15.183Z",
+  "updatedAt": "2026-10-17T19:47:17.357Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4105,6 +4105,32 @@
       "claimedAt": "2026-10-17T19:47:13.432Z",
       "expiresAt": "2026-10-17T20:02:13.432Z",
       "finalizedAt": "2026-10-17T19:47:15.183Z"
+    },
+    {
+      "claimId": "cf58626a-128b-4156-83b3-3215b18243c1",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/agra-city-agra-metro-station-on-nagar-nigam-land-survey-done-40408491.html",
+        "title-city:आगर म नगर न गम क जम न पर बन ग म ट र स ट शन अगल म ह स श र ह ग न र म ण|agra",
+        "dedupe:0baa61aee5da9ed43a64da2fc7ccd6fe4582e904f14e4a1f2c778bc249e82d98",
+        "dedupe:768b0dbf0f0fb7521aba6b26a43466ac3995bcf41a0a82e3d85221902d30d774",
+        "dedupe:36608b79bf500764e5b8208a0fbaa105a7778ecef6a13f5e7e9bd45208337041",
+        "dedupe:a9e47ed61918fa98e9aaabc8a0e35d31ca87e5830ce05b02ea559a8fe6b5649f",
+        "dedupe:आगर म नगर न गम क जम न पर बन ग म ट र स ट शन अगल म ह स श र ह ग न र म ण|agra",
+        "dedupe:79bfb06cff3b0aef0b4b67a37e133a1e5a798f57f0af94e8fabab5855b4a9ac9",
+        "dedupe:87cb3e5ea9f5e8e51006e22fe02c74ad700fb3e4f7f622890977fe7c884e7a35"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "agra",
+      "canonicalEventCity": "agra",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "agra"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-17T19:47:17.357Z",
+      "expiresAt": "2026-10-17T20:02:17.357Z"
     }
   ]
 }
