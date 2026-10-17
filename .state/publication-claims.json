@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-16T23:56:35.067Z",
+  "updatedAt": "2026-10-17T04:42:49.455Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3689,6 +3689,31 @@
       "claimedAt": "2026-10-16T23:56:33.510Z",
       "expiresAt": "2026-10-17T00:11:33.510Z",
       "finalizedAt": "2026-10-16T23:56:35.067Z"
+    },
+    {
+      "claimId": "44eadbcd-b71c-450f-8c94-0ac6abffd440",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/delhi-development-body-carries-out-land-pooling-policy-campaign/135006603",
+        "title-city:delhi development body carries out land pooling policy campaign|new_delhi",
+        "dedupe:bc7e5e205231b4f8d85bf61cd6c4be539dafb32b981e549745afb8dc034baf39",
+        "dedupe:bbde8eb9fe02e6edcc66cc5800fe413cb127ff9880138e7daa02fa8b8f6a8b73",
+        "dedupe:27097715343dc5042368d1e204274d597c34b8e32862ec73be56e5c17f7d51b0",
+        "dedupe:delhi development body carries out land pooling policy campaign|new_delhi",
+        "dedupe:6da53789efa3aa51c30a9c8c47a41e0f7458aceeb8d438d6bfa8417109b33bbe",
+        "dedupe:38fe213f33cc859b6c25c99c06daa1b53a837784d3d204c0e1aa08111bb49bcd"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-17T04:42:49.455Z",
+      "expiresAt": "2026-10-17T04:57:49.455Z"
     }
   ]
 }
