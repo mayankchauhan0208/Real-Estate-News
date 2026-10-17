@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T14:06:11.326Z",
+  "updatedAt": "2026-10-17T14:06:13.198Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3889,6 +3889,32 @@
       "claimedAt": "2026-10-17T14:06:09.778Z",
       "expiresAt": "2026-10-17T14:21:09.778Z",
       "finalizedAt": "2026-10-17T14:06:11.326Z"
+    },
+    {
+      "claimId": "3edb9633-d297-47bd-a54e-6a9ffb04220b",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/prayagraj-prayagraj-ado-of-23-block-salary-halted-over-audit-negligence-in-resolving-audit-objections-40408088.html",
+        "title-city:प रय गर ज म 23 ब ल क क ado क र क व तन ऑड ट क आपत त य क न स त रण म ल परव ह बरतन पर क र रव ई|allahabad",
+        "dedupe:fac8f51f58d18bdc066d166554b39c2e3879add338a3193cee51cc2c06999217",
+        "dedupe:059f01c0564df0914ca2d2f47935cdbb474966ecc4ae0c9fb3dbb2134611e721",
+        "dedupe:737a129c8e4f9abf63ddec9ce2b2ecc764b277b83553741883117f61d4fd2770",
+        "dedupe:e6369be6478e62447487772cfe39fdf5bd857e40e56b2d9d205f416c00725ca3",
+        "dedupe:प रय गर ज म ब ल क क ado क र क व तन ऑड ट क आपत त य क न स त रण म ल परव ह बरतन पर क र रव ई|allahabad",
+        "dedupe:c8f3c79829e0fdb9e19191ae192d3d0db5036d08c3473bdc93225e78bc45f9dd",
+        "dedupe:602aff6d446ec65d9bbe1c122966f6b2831b72db7a698841ac13e495e9d8a94d"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "allahabad",
+      "canonicalEventCity": "allahabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "allahabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-17T14:06:13.198Z",
+      "expiresAt": "2026-10-17T14:21:13.198Z"
     }
   ]
 }
