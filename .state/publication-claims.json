@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T04:42:51.946Z",
+  "updatedAt": "2026-10-17T04:42:54.110Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3715,6 +3715,31 @@
       "claimedAt": "2026-10-17T04:42:49.455Z",
       "expiresAt": "2026-10-17T04:57:49.455Z",
       "finalizedAt": "2026-10-17T04:42:51.946Z"
+    },
+    {
+      "claimId": "f00042c3-a700-4414-9563-323679d49744",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/tgiic-gearing-up-for-fresh-land-auction-in-raidurg/135007118",
+        "title-city:tgiic gearing up for fresh land auction in raidurg|hyderabad",
+        "dedupe:78a4d560f31b1f245a6c759722acd9a2fb87c06aca1048b62434f5bd9aa7088a",
+        "dedupe:d616d6aa63d1b153575e87fbd1a4c1260978819647da8187f3da57ae633bd6cd",
+        "dedupe:920e26c72311f946541763b7744175c897ed1947074240f3ec0d324e59fda4b3",
+        "dedupe:tgiic gearing fresh land auction raidurg|hyderabad",
+        "dedupe:72413d9384c9f8d5e6da8c023cf7f371f6934e03bb7474e5cc550872fa469283",
+        "dedupe:ae287d7a14717346e412d29539b3ed9aadc581396cd84f1eca76a7871638cf9b"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-17T04:42:54.110Z",
+      "expiresAt": "2026-10-17T04:57:54.110Z"
     }
   ]
 }
