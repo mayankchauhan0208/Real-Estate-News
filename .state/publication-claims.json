@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T14:06:05.361Z",
+  "updatedAt": "2026-10-17T14:06:07.720Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3798,7 +3798,7 @@
     },
     {
       "claimId": "edde3ff5-d428-4c85-926f-3c34774eb5a1",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/dlf-signs-agreement-to-add-7-48-acre-land-on-golf-course-extension-road-in-gurgaon/articleshow/135011493.cms",
         "title-city:dlf signs agreement to add 7 48 acre land on golf course extension road in gurgaon|gurugram",
@@ -3860,7 +3860,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-17T14:06:05.361Z",
-      "expiresAt": "2026-10-17T14:21:05.361Z"
+      "expiresAt": "2026-10-17T14:21:05.361Z",
+      "finalizedAt": "2026-10-17T14:06:07.720Z"
     }
   ]
 }
