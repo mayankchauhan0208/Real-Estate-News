@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T19:47:11.249Z",
+  "updatedAt": "2026-10-17T19:47:13.432Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4078,6 +4078,32 @@
       "claimedAt": "2026-10-17T19:47:08.434Z",
       "expiresAt": "2026-10-17T20:02:08.434Z",
       "finalizedAt": "2026-10-17T19:47:11.249Z"
+    },
+    {
+      "claimId": "750be297-958f-4baf-a1c6-656f3f6cd397",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/chandigarh-news/despite-foreign-trips-cm-failed-to-get-investment-sukhbir-101792257347956.html",
+        "title-city:despite foreign trips cm failed to get investment sukhbir|chandigarh",
+        "dedupe:5862396654612945a105dcfe0a65cffed9886bd32c0d6ab5721fbd01120adecf",
+        "dedupe:c097b51cd0e953d1796de0001a2b33b0c18362abee209fdf90dac273709a947e",
+        "dedupe:3e5ed6576bd7c82850e175399d24b402ba6be533ac4b5108332ce2345acc940f",
+        "dedupe:16c631b06a8cb23306e0966428aa8968989dc750b9841d98683e7335988b86c3",
+        "dedupe:despite foreign trips cm failed get sukhbir|chandigarh",
+        "dedupe:112c0181badb4c14805fd8920d5db275c4d2dff2fd3a9073a87b5bf278913948",
+        "dedupe:5a1b4fa663bb93c0819cdaf5acdeb216a6940dc624ccb172dd3b39bbcca72846"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "chandigarh",
+      "canonicalEventCity": "chandigarh",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "chandigarh"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-17T19:47:13.432Z",
+      "expiresAt": "2026-10-17T20:02:13.432Z"
     }
   ]
 }
