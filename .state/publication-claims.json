@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T17:29:54.463Z",
+  "updatedAt": "2026-10-17T19:47:08.434Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4051,6 +4051,32 @@
       "claimedAt": "2026-10-17T17:29:52.578Z",
       "expiresAt": "2026-10-17T17:44:52.578Z",
       "finalizedAt": "2026-10-17T17:29:54.463Z"
+    },
+    {
+      "claimId": "b9c8f5ad-5d0a-463d-be30-a267ee3124a7",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://bptpltd.com/updates/bptp-launches-52-unit-boulevard-at-green-oaks-retail-project-in-gurugram",
+        "title-city:new launchoct 2026bptp launches 52 unit high street retail project in sector 70a|gurugram",
+        "dedupe:3865a1da71f819154f7d9ae40bda4534a4c8601a31fafd0504d582853e490c84",
+        "dedupe:91901494f5d57cfecbe0b383e67fb6a464500c4e780cc1fddf7aea65e1c28b96",
+        "dedupe:067dce7ebb0c14f444e58591d846023192366933ffa220280eb1106d36370ede",
+        "dedupe:fff52c67f65006f88174fcdb251cf5d00481213a7e32088118f9988d6c84960b",
+        "dedupe:new launchoct 2026bptp launches unit high street retail sector 70a|gurugram",
+        "dedupe:7387607128c682c8dc76b8a970c387f7687513c5d68c6bd5406efec0adfc86d8",
+        "dedupe:3b66aa7d119330e6acb8437594f7a4bbd697c70069fe8d06e28d68ac1ff510ec"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-17T19:47:08.434Z",
+      "expiresAt": "2026-10-17T20:02:08.434Z"
     }
   ]
 }
