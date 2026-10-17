@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T04:42:54.110Z",
+  "updatedAt": "2026-10-17T04:42:55.835Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3718,7 +3718,7 @@
     },
     {
       "claimId": "f00042c3-a700-4414-9563-323679d49744",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/industry/tgiic-gearing-up-for-fresh-land-auction-in-raidurg/135007118",
         "title-city:tgiic gearing up for fresh land auction in raidurg|hyderabad",
@@ -3739,7 +3739,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-17T04:42:54.110Z",
-      "expiresAt": "2026-10-17T04:57:54.110Z"
+      "expiresAt": "2026-10-17T04:57:54.110Z",
+      "finalizedAt": "2026-10-17T04:42:55.835Z"
     }
   ]
 }
