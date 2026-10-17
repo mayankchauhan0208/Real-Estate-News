@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T09:41:40.582Z",
+  "updatedAt": "2026-10-17T14:06:05.361Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3795,6 +3795,72 @@
       "claimedAt": "2026-10-17T09:41:38.926Z",
       "expiresAt": "2026-10-17T09:56:38.926Z",
       "finalizedAt": "2026-10-17T09:41:40.582Z"
+    },
+    {
+      "claimId": "edde3ff5-d428-4c85-926f-3c34774eb5a1",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/dlf-signs-agreement-to-add-7-48-acre-land-on-golf-course-extension-road-in-gurgaon/articleshow/135011493.cms",
+        "title-city:dlf signs agreement to add 7 48 acre land on golf course extension road in gurgaon|gurugram",
+        "dedupe:408404b2bcaa7a22aa79b93b62eb913511cc9cbe1dc863155ad7605f8f28866f",
+        "dedupe:1999cd2774848190249f024f2d9004e5f88f2008cafc0c62c7fdcbbad1d80e2c",
+        "dedupe:f72bb980836b83d2593eaea8aa74ba28815dca017dddbda87f77db4f02d99ae0",
+        "dedupe:3a7e58ee1aeb55fdffc60a47248ffd11a6f4695e1c18da178c7ccd085ed39657",
+        "dedupe:dlf signs agreement add acre land golf course extension road gurgaon|gurugram",
+        "dedupe:4509a12d99b8dec0e8b964fc2991f38ca7d89f3bbcc3ecd52817af635c4a02dd",
+        "dedupe:0ce7343dc3a500c09d105dc8785f0273a7fa60d4a81cadd7dc742317e23576cc"
+      ],
+      "semanticIdentity": {
+        "city": "gurugram",
+        "canonicalEventCity": "gurugram",
+        "normalizedBuilder": "county-group",
+        "normalizedProject": "",
+        "canonicalEventType": "residential-sale",
+        "builder": "county-group",
+        "project": "",
+        "eventType": "residential-sale",
+        "numericAnchors": [
+          "00:number",
+          "03:number",
+          "1060:crore",
+          "10:acre",
+          "1171:crore",
+          "1301:crore",
+          "17:number",
+          "2025:number",
+          "2026:number",
+          "2298:crore",
+          "2300:crore",
+          "27:number",
+          "28.5:acre",
+          "28:acre",
+          "2:number",
+          "36:acre",
+          "3800:crore",
+          "3:number",
+          "416:number",
+          "4:number",
+          "5.18:acre",
+          "61:number",
+          "7.06:acre",
+          "7.48:acre",
+          "7.5:million sq ft",
+          "8000:crore",
+          "825:crore"
+        ],
+        "canonicalEventFingerprint": "county-group|gurugram|residential-sale|00:number,03:number,1060:crore",
+        "semanticClusterId": "cluster:da4d56021c2c6f588fc09e92"
+      },
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "county-group|gurugram|residential-sale|00:number,03:number,1060:crore",
+      "semanticClusterId": "cluster:da4d56021c2c6f588fc09e92",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-17T14:06:05.361Z",
+      "expiresAt": "2026-10-17T14:21:05.361Z"
     }
   ]
 }
