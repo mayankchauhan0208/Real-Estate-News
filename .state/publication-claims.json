@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T14:06:14.899Z",
+  "updatedAt": "2026-10-17T14:06:16.809Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3916,6 +3916,31 @@
       "claimedAt": "2026-10-17T14:06:13.198Z",
       "expiresAt": "2026-10-17T14:21:13.198Z",
       "finalizedAt": "2026-10-17T14:06:14.899Z"
+    },
+    {
+      "claimId": "5d4df586-731b-4900-a0b3-0f404d70c5c8",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/blog/building-around-heritage-not-over-it-a-new-approach-to-urban-development-in-indias-historic-cities/135013104",
+        "title-city:building around heritage not over it a new approach to urban development in india s historic cities|jaipur",
+        "dedupe:e2c429a753228117e7d2681fd2b4dd0072bbeeb8ca199e8e13b0df716520211e",
+        "dedupe:b873fb8443d7ea90fb7acc81f256ee7988745805f64c898bba4416fd6112c505",
+        "dedupe:5eb1bb0e45e3037876f7f07b13cf44319950c360f24562510e01f8a9c2a9e342",
+        "dedupe:building around heritage not it a new approach urban development india s historic cities|jaipur",
+        "dedupe:d7ca3ba7eacc4512e6f7d272b64e5dc3ce83324f84fe750505c90cf56dbf6730",
+        "dedupe:6a2cc7b22ece6e742ee08162370b7ea6a5a1ab54edffda63ca50dd30e9e1d66a"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "jaipur",
+      "canonicalEventCity": "jaipur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "jaipur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-17T14:06:16.809Z",
+      "expiresAt": "2026-10-17T14:21:16.809Z"
     }
   ]
 }
