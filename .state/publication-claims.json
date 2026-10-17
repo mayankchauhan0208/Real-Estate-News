@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T14:06:07.720Z",
+  "updatedAt": "2026-10-17T14:06:09.778Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3862,6 +3862,32 @@
       "claimedAt": "2026-10-17T14:06:05.361Z",
       "expiresAt": "2026-10-17T14:21:05.361Z",
       "finalizedAt": "2026-10-17T14:06:07.720Z"
+    },
+    {
+      "claimId": "74751e95-4db4-4187-8339-fb258fe0b691",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-outer-ring-road-new-city-to-emerge-meda-master-plan-2031-40408007.html",
+        "title-city:आउटर र ग र ड स बदल ज एग म रठ क तस व र ख ल ग तरक क और र जग र क द व र शहर ल ग नय आक र|meerut",
+        "dedupe:30c05e877d37c0658171b314cf4a7926f71143f097eb239957eb1b1968f9b489",
+        "dedupe:ce96e7f200ff532d8438c91876bb580b18b1977b1e87a8f91523815e7c4bea69",
+        "dedupe:185511319a40bcb05c04a1e2dd6cb51aaccd517eee7f983c04b595dbf3c1d728",
+        "dedupe:d7eeb6a90b3aa404641e0edaf8bd9957a5db8e0db05afae9f8ee235d1ed890c7",
+        "dedupe:आउटर र ग र ड स बदल ज एग म रठ क तस व र ख ल ग तरक क और र जग र क द व र शहर ल ग नय आक र|meerut",
+        "dedupe:a5eef3e61be5c77786a566729554b5b6ad5f2351bef53acefec8fc2647bbbd6b",
+        "dedupe:fe7fdc2352352549e34f3c1fba03327aaadac59fafd066cb941c08f70e2987f7"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "meerut",
+      "canonicalEventCity": "meerut",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "meerut"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-17T14:06:09.778Z",
+      "expiresAt": "2026-10-17T14:21:09.778Z"
     }
   ]
 }
