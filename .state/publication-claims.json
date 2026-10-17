@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T14:06:13.198Z",
+  "updatedAt": "2026-10-17T14:06:14.899Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -3892,7 +3892,7 @@
     },
     {
       "claimId": "3edb9633-d297-47bd-a54e-6a9ffb04220b",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/prayagraj-prayagraj-ado-of-23-block-salary-halted-over-audit-negligence-in-resolving-audit-objections-40408088.html",
         "title-city:प रय गर ज म 23 ब ल क क ado क र क व तन ऑड ट क आपत त य क न स त रण म ल परव ह बरतन पर क र रव ई|allahabad",
@@ -3914,7 +3914,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-17T14:06:13.198Z",
-      "expiresAt": "2026-10-17T14:21:13.198Z"
+      "expiresAt": "2026-10-17T14:21:13.198Z",
+      "finalizedAt": "2026-10-17T14:06:14.899Z"
     }
   ]
 }
