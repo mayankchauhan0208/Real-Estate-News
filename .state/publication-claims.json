@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T17:29:52.578Z",
+  "updatedAt": "2026-10-17T17:29:54.463Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4027,7 +4027,7 @@
     },
     {
       "claimId": "de3eec10-2011-4045-a248-85ce65874e90",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://torbitrealty.com/faridabad-2-0-the-next-frontier-of-ncr-real-estate",
         "title-city:faridabad 2 0 the next frontier|faridabad",
@@ -4049,7 +4049,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-17T17:29:52.578Z",
-      "expiresAt": "2026-10-17T17:44:52.578Z"
+      "expiresAt": "2026-10-17T17:44:52.578Z",
+      "finalizedAt": "2026-10-17T17:29:54.463Z"
     }
   ]
 }
