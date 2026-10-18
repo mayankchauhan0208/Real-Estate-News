@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-18T06:14:26.710Z",
+  "updatedAt": "2026-10-18T06:14:28.915Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4189,7 +4189,7 @@
     },
     {
       "claimId": "49512a97-3082-4e90-8a7c-5a53c55f57f9",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-greater-noida-6-abadi-plot-list-for-farmers-released-40408795.html",
         "title-city:ग र टर न एड क क स न क बल ल बल ल 5 ग व क क स न क म ल ग 6 आब द भ ख ड स च ज र|noida",
@@ -4211,7 +4211,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-18T06:14:26.710Z",
-      "expiresAt": "2026-10-18T06:29:26.710Z"
+      "expiresAt": "2026-10-18T06:29:26.710Z",
+      "finalizedAt": "2026-10-18T06:14:28.915Z"
     }
   ]
 }
