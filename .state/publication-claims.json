@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-18T14:56:13.699Z",
+  "updatedAt": "2026-10-18T14:56:15.138Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4366,7 +4366,7 @@
     },
     {
       "claimId": "97283475-5705-43bc-9cb2-d2a45d642614",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/technology/joint-property-owners-in-bengaluru-can-now-split-a-ekhata-online-get-separate-records/135028901",
         "title-city:joint property owners in bengaluru can now split a ekhata online get separate records|bangalore",
@@ -4387,7 +4387,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-18T14:56:13.699Z",
-      "expiresAt": "2026-10-18T15:11:13.699Z"
+      "expiresAt": "2026-10-18T15:11:13.699Z",
+      "finalizedAt": "2026-10-18T14:56:15.138Z"
     }
   ]
 }
