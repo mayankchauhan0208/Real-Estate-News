@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-17T19:47:23.199Z",
+  "updatedAt": "2026-10-18T01:22:38.124Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4159,6 +4159,32 @@
       "claimedAt": "2026-10-17T19:47:21.405Z",
       "expiresAt": "2026-10-17T20:02:21.405Z",
       "finalizedAt": "2026-10-17T19:47:23.199Z"
+    },
+    {
+      "claimId": "e8392dc6-8dc9-42c3-9d9b-2fd6c241059e",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-land-use-change-eased-mda-board-approves-key-projects-40408623.html",
+        "title-city:ख शखबर म रठ म भ उपय ग पर वर तन ह आ आस न ब र ड क ब ठक म प रस त व प स न य ट उनश प भ बस ग|meerut",
+        "dedupe:6c2812c6e3f7b0244acd6c0add598e39500b6be8cb875f61c404cd625ae0c6d7",
+        "dedupe:39f83395b8b1c3cb372924d85add17417edd3586a3edef3b0e3bef3b256d0b2d",
+        "dedupe:841d0dac0ce828a041a0a3e2c9e30be685546be9bf9d0c5d3c8158b81c375407",
+        "dedupe:a3e3a6644903113a1046edee5ba904d8806826f1163c024f8ea713b5748a8996",
+        "dedupe:ख शखबर म रठ म भ उपय ग पर वर तन ह आ आस न ब र ड क ब ठक म प रस त व प स न य ट उनश प भ बस ग|meerut",
+        "dedupe:32d8f3a1dd1301e2e221d9336e02e4ba76b8503d95768778b9afe5349b261fc5",
+        "dedupe:1d9b4a8c64c1bc728f89806920a47f10e02b4ed9639ddbdf28283f7c38d760b6"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "meerut",
+      "canonicalEventCity": "meerut",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "meerut"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-18T01:22:38.124Z",
+      "expiresAt": "2026-10-18T01:37:38.124Z"
     }
   ]
 }
