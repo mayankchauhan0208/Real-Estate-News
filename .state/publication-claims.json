@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-18T01:22:40.859Z",
+  "updatedAt": "2026-10-18T06:14:26.710Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4186,6 +4186,32 @@
       "claimedAt": "2026-10-18T01:22:38.124Z",
       "expiresAt": "2026-10-18T01:37:38.124Z",
       "finalizedAt": "2026-10-18T01:22:40.859Z"
+    },
+    {
+      "claimId": "49512a97-3082-4e90-8a7c-5a53c55f57f9",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-greater-noida-6-abadi-plot-list-for-farmers-released-40408795.html",
+        "title-city:ग र टर न एड क क स न क बल ल बल ल 5 ग व क क स न क म ल ग 6 आब द भ ख ड स च ज र|noida",
+        "dedupe:68237f4c2e69c25329d761c879b07d405b7e958875b69271281f9b1c9369e3fa",
+        "dedupe:53016f6269ccd9d9dd789788fe8ff9bb815a94ee56ca094994c0e723d05e68b7",
+        "dedupe:c1370a9b6a9844b46b3db17e77a71b46e3cf501a5b79a0a4f9be1125e64c25c0",
+        "dedupe:b1a2674962122cb82bc188d699bb5bda0fa52dcb69e8087935d8bd8886194228",
+        "dedupe:ग र टर न एड क क स न क बल ल बल ल ग व क क स न क म ल ग आब द भ ख ड स च ज र|noida",
+        "dedupe:0dd6755239cd0967232d50709d198a17b51dae43aab5fa788befa355c9af68b6",
+        "dedupe:8c80e738caee458952fe84f4b411e4b8242ac81e9028e2cbe75671e6e8389ad4"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-18T06:14:26.710Z",
+      "expiresAt": "2026-10-18T06:29:26.710Z"
     }
   ]
 }
