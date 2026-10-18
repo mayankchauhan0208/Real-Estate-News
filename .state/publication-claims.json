@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-18T11:21:47.300Z",
+  "updatedAt": "2026-10-18T14:56:06.713Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4310,6 +4310,32 @@
       "claimedAt": "2026-10-18T11:21:45.740Z",
       "expiresAt": "2026-10-18T11:36:45.740Z",
       "finalizedAt": "2026-10-18T11:21:47.300Z"
+    },
+    {
+      "claimId": "c84aac23-5a1f-453c-8d8c-251c423fdbf5",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/oberoi-realty-q2-pre-sales-jump-seven-fold-to-rs-9149-crore-on-strong-sales-in-gurugram-housing-market/articleshow/135029296.cms",
+        "title-city:oberoi realty q2 pre sales jump seven fold to rs 9 149 crore on strong sales in gurugram housing market|gurugram",
+        "dedupe:201bb476fb6867227d7369d99611ee45b48f72c673e5599553039a49b6bb4713",
+        "dedupe:cc57b143862925cd25244aeb22b9b7a5515c9ad77952ce74707170e434904c0e",
+        "dedupe:4128dc7b31c3313f5f5659b85feaf9f6d52f9b9cdea4382a6058b18a50b6a75c",
+        "dedupe:6dc10a5b68a450c7c2d061b429f3873218be3d2c58d4ec563c6ac05aea11187c",
+        "dedupe:oberoi q2 pre sales jump seven fold strong sales gurugram housing market|gurugram",
+        "dedupe:d86ce116bfc764c7d5afdf55a53350c1e91dd53b3256584c1c6e969ed1b8dfcb",
+        "dedupe:affe4d3ac0dbdebcba43cd85fbd6bc71e6c6b8fc6d0544d302f5d998d6a153ce"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-18T14:56:06.713Z",
+      "expiresAt": "2026-10-18T15:11:06.713Z"
     }
   ]
 }
