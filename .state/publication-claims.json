@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-18T18:27:11.163Z",
+  "updatedAt": "2026-10-18T18:27:12.676Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4419,7 +4419,7 @@
     },
     {
       "claimId": "ffc3b3f5-6419-4449-bd90-aa29440b850a",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/varanasi-city-bsnl-satellite-phone-launched-call-without-mobile-network-40409443.html",
         "title-city:अब ब न म ब इल न टवर क क भ कर सक ग ब तच त bsnl ल य स ट ल इट फ न क य ह ग क मत|varanasi",
@@ -4441,7 +4441,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-18T18:27:11.163Z",
-      "expiresAt": "2026-10-18T18:42:11.163Z"
+      "expiresAt": "2026-10-18T18:42:11.163Z",
+      "finalizedAt": "2026-10-18T18:27:12.676Z"
     }
   ]
 }
