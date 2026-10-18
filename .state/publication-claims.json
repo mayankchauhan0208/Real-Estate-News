@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-18T06:14:28.915Z",
+  "updatedAt": "2026-10-18T11:21:41.998Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4213,6 +4213,75 @@
       "claimedAt": "2026-10-18T06:14:26.710Z",
       "expiresAt": "2026-10-18T06:29:26.710Z",
       "finalizedAt": "2026-10-18T06:14:28.915Z"
+    },
+    {
+      "claimId": "1f8c1353-a378-45a8-8e05-ce4549a0f148",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/from-bungalows-to-gated-high-rises-delhi-s-wealthy-upgrade-to-luxury-communities-within-their-neighbourhood-101792307790165.html",
+        "title-city:from bungalows to gated high rises delhi s wealthy upgrade to luxury communities within their neighbourhood|new_delhi",
+        "dedupe:b58a82b3c7e71a041edd0c0f236cec7d1e85d281994444bccb02c26eedd27cca",
+        "dedupe:770eb69815f42af2ec5c7bdadeca4a10241a812fa2dfc6f2c3bd7c2ddb52bc24",
+        "dedupe:380c304830b4a39c1ab156b20097bae536ce9c11548d7fb96b978d171a2b5905",
+        "dedupe:2038a949f9ff6a4dcbb5ff1db9fc2ea2b76de2fc4f28773890f3fbfe1543ea09",
+        "dedupe:bungalows gated high rises delhi s wealthy upgrade communities within neighbourhood|new_delhi",
+        "dedupe:e7f91df689fb12d6235206b41d14bec14e6f0a008c9897ced10c80ca03a356f1",
+        "dedupe:9556c6096561040555f388c5e0d3c16b7b726eaa2dc57bdce6390e4a949b0db9"
+      ],
+      "semanticIdentity": {
+        "city": "new_delhi",
+        "canonicalEventCity": "new_delhi",
+        "normalizedBuilder": "dlf",
+        "normalizedProject": "",
+        "canonicalEventType": "project-launch",
+        "builder": "dlf",
+        "project": "",
+        "eventType": "project-launch",
+        "numericAnchors": [
+          "1.25:lakh",
+          "10:number",
+          "114:apartments",
+          "1250:number",
+          "12:number",
+          "13:number",
+          "15:crore",
+          "18:number",
+          "1:lakh",
+          "2.07:acre",
+          "2009:number",
+          "2010:number",
+          "2021:number",
+          "2022:number",
+          "2026:number",
+          "21200:number",
+          "2700:number",
+          "27:number",
+          "3.5:number",
+          "36:number",
+          "3700:number",
+          "39:number",
+          "4.5:number",
+          "40:acre",
+          "412:number",
+          "5.5:number",
+          "5200:number",
+          "5500:number",
+          "6.12:acre",
+          "913:number"
+        ],
+        "canonicalEventFingerprint": "dlf|new_delhi|project-launch|1.25:lakh,10:number,114:apartments",
+        "semanticClusterId": "cluster:4c07296ad80bfecc05a86815"
+      },
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "dlf|new_delhi|project-launch|1.25:lakh,10:number,114:apartments",
+      "semanticClusterId": "cluster:4c07296ad80bfecc05a86815",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-18T11:21:41.998Z",
+      "expiresAt": "2026-10-18T11:36:41.998Z"
     }
   ]
 }
