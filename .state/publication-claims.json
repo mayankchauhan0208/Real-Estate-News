@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-18T14:56:08.955Z",
+  "updatedAt": "2026-10-18T14:56:10.553Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4337,6 +4337,31 @@
       "claimedAt": "2026-10-18T14:56:06.713Z",
       "expiresAt": "2026-10-18T15:11:06.713Z",
       "finalizedAt": "2026-10-18T14:56:08.955Z"
+    },
+    {
+      "claimId": "4f2ba9df-2ddf-496b-bd62-6f17246995ec",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/infrastructure/delhi-seelampur-sultanpuri-and-lajpat-nagar-jj-clusters-set-for-redevelopment/135028614",
+        "title-city:delhi seelampur sultanpuri and lajpat nagar jj clusters set for redevelopment|new_delhi",
+        "dedupe:9ac7d349335a5f20c85368ba1fc08f47a774bc66ee9bb179bd11592c21305dbe",
+        "dedupe:776bd652f89ac97f47e31c68ed871db2e2b2d79056e2ab3b39894bc8fff6ffcf",
+        "dedupe:ad17f835f5ec37802f388fdb19fe4c405a832b859a66bb20f58480a42b5ac48d",
+        "dedupe:delhi seelampur sultanpuri lajpat nagar jj clusters set redevelopment|new_delhi",
+        "dedupe:5e518c45f55295e499ed59c17ae56db0def43321edbe92970de4da9016f00ce2",
+        "dedupe:c2dd7b94a5500c9eb385015a4003c4a9f08c27499537ffed3100184a0708e003"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-18T14:56:10.553Z",
+      "expiresAt": "2026-10-18T15:11:10.553Z"
     }
   ]
 }
