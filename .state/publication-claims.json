@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-18T11:21:43.901Z",
+  "updatedAt": "2026-10-18T11:21:45.740Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4283,6 +4283,32 @@
       "claimedAt": "2026-10-18T11:21:41.998Z",
       "expiresAt": "2026-10-18T11:36:41.998Z",
       "finalizedAt": "2026-10-18T11:21:43.901Z"
+    },
+    {
+      "claimId": "e1fb908e-f5eb-43be-8f51-12dd04a976ba",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/varanasi-city-bhu-trauma-center-to-get-multi-level-parking-80-cr-project-40409102.html",
+        "title-city:bhu ट र म स टर म बन ग मल ट ल वल प र क ग 80 कर ड क ल गत स ह ग न र म ण|varanasi",
+        "dedupe:36d00f3306ed32bfa6e28ef96e690cb16b8f9eb53a786253cd21ca0821261bc6",
+        "dedupe:1c135144a8d040638297cb525c40f1d2c5962511d9370e1ea5825954ee334925",
+        "dedupe:767f02c031ac739bcb16a949bf9594944ad88f3a3ab0e037e7763e7f7c613ebe",
+        "dedupe:3f3ffbfdbea0090d8a2c74553d0ca036529287b0573e2f0b2bccfe6988fa8f84",
+        "dedupe:bhu ट र म स टर म बन ग मल ट ल वल प र क ग कर ड क ल गत स ह ग न र म ण|varanasi",
+        "dedupe:963892532ac4aa1e830c6dd39c0f91d38a2191db85d63c958c9b77d55c7d3c98",
+        "dedupe:d4ebdf29fc9c36f3b16ed1c0cd5f0424207b9f52a211270bb6f27667435a7618"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "varanasi",
+      "canonicalEventCity": "varanasi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "varanasi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-18T11:21:45.740Z",
+      "expiresAt": "2026-10-18T11:36:45.740Z"
     }
   ]
 }
