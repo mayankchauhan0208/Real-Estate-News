@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-18T11:21:45.740Z",
+  "updatedAt": "2026-10-18T11:21:47.300Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4286,7 +4286,7 @@
     },
     {
       "claimId": "e1fb908e-f5eb-43be-8f51-12dd04a976ba",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/varanasi-city-bhu-trauma-center-to-get-multi-level-parking-80-cr-project-40409102.html",
         "title-city:bhu ट र म स टर म बन ग मल ट ल वल प र क ग 80 कर ड क ल गत स ह ग न र म ण|varanasi",
@@ -4308,7 +4308,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-18T11:21:45.740Z",
-      "expiresAt": "2026-10-18T11:36:45.740Z"
+      "expiresAt": "2026-10-18T11:36:45.740Z",
+      "finalizedAt": "2026-10-18T11:21:47.300Z"
     }
   ]
 }
