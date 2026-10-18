@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-18T18:27:09.072Z",
+  "updatedAt": "2026-10-18T18:27:11.163Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4416,6 +4416,32 @@
       "claimedAt": "2026-10-18T18:27:06.981Z",
       "expiresAt": "2026-10-18T18:42:06.981Z",
       "finalizedAt": "2026-10-18T18:27:09.072Z"
+    },
+    {
+      "claimId": "ffc3b3f5-6419-4449-bd90-aa29440b850a",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/varanasi-city-bsnl-satellite-phone-launched-call-without-mobile-network-40409443.html",
+        "title-city:अब ब न म ब इल न टवर क क भ कर सक ग ब तच त bsnl ल य स ट ल इट फ न क य ह ग क मत|varanasi",
+        "dedupe:4aa91ad2c496eecdfc282cbd5308cd631e332f8cb1d818da9307c7af97708b9c",
+        "dedupe:305ba9ed45797b3b38ffdaa5881c937fd41e6df2ce1a8f168f2045e54f6501e1",
+        "dedupe:3d2c54253afcac224678196020791b55dfde08d075c8fca69a24308a4cecd8df",
+        "dedupe:d1e78e136d3d4da49ae6978732d273189b2c80124f021fd4df6237e3fb9a3e6a",
+        "dedupe:अब ब न म ब इल न टवर क क भ कर सक ग ब तच त bsnl ल य स ट ल इट फ न क य ह ग क मत|varanasi",
+        "dedupe:750f5352e8be96e49e4c24f33ffb9068a2a6e5a920a3064df559c2ecb03e6882",
+        "dedupe:9ff4ca08ae9d0216eb86d8eb82695724e6b6a9f62028bf469b37a4e47b0e2322"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "varanasi",
+      "canonicalEventCity": "varanasi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "varanasi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-18T18:27:11.163Z",
+      "expiresAt": "2026-10-18T18:42:11.163Z"
     }
   ]
 }
