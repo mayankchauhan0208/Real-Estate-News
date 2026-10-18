@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-18T14:56:15.138Z",
+  "updatedAt": "2026-10-18T18:27:06.981Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4389,6 +4389,32 @@
       "claimedAt": "2026-10-18T14:56:13.699Z",
       "expiresAt": "2026-10-18T15:11:13.699Z",
       "finalizedAt": "2026-10-18T14:56:15.138Z"
+    },
+    {
+      "claimId": "562ae5a1-8976-4ab9-82b0-029f00bea6f3",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://outlookmoney.com/invest/rajasthan-cm-launches-four-housing-projects-across-jaipur-kishangarh-and-bhiwadi",
+        "title-city:rajasthan cm launches four housing projects across jaipur kishangarh and bhiwadi|new_delhi",
+        "dedupe:89f37c4a10f11477af43f3cff768966685bc8c6d2204ecfc2d5b458414b84729",
+        "dedupe:1a88222040f097269f1ed359065d8f9fb1d15341042c172b20d58b3480d48618",
+        "dedupe:532bbcf021014d269c088040d8f87a2e53bbdfcf58d9bd84fc7aec36a3de1391",
+        "dedupe:b05967d95043953bf494839cf553fd7ac50443f7a6547d86ec3f25c1d1bd584c",
+        "dedupe:rajasthan cm launches four housing across jaipur kishangarh bhiwadi|new_delhi",
+        "dedupe:3dc76093e2a741702eb49de5774906cf33f84ab923474f7dc5c28c0e6d03c6d3",
+        "dedupe:8eeb56b2d1ac96c31ed34927483250ec17de3bae0ce89d96b4b48f0b661c1945"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-18T18:27:06.981Z",
+      "expiresAt": "2026-10-18T18:42:06.981Z"
     }
   ]
 }
