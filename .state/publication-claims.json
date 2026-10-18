@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-18T11:21:41.998Z",
+  "updatedAt": "2026-10-18T11:21:43.901Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4216,7 +4216,7 @@
     },
     {
       "claimId": "1f8c1353-a378-45a8-8e05-ce4549a0f148",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/real-estate/from-bungalows-to-gated-high-rises-delhi-s-wealthy-upgrade-to-luxury-communities-within-their-neighbourhood-101792307790165.html",
         "title-city:from bungalows to gated high rises delhi s wealthy upgrade to luxury communities within their neighbourhood|new_delhi",
@@ -4281,7 +4281,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-18T11:21:41.998Z",
-      "expiresAt": "2026-10-18T11:36:41.998Z"
+      "expiresAt": "2026-10-18T11:36:41.998Z",
+      "finalizedAt": "2026-10-18T11:21:43.901Z"
     }
   ]
 }
