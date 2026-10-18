@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-18T01:22:38.124Z",
+  "updatedAt": "2026-10-18T01:22:40.859Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4162,7 +4162,7 @@
     },
     {
       "claimId": "e8392dc6-8dc9-42c3-9d9b-2fd6c241059e",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-land-use-change-eased-mda-board-approves-key-projects-40408623.html",
         "title-city:ख शखबर म रठ म भ उपय ग पर वर तन ह आ आस न ब र ड क ब ठक म प रस त व प स न य ट उनश प भ बस ग|meerut",
@@ -4184,7 +4184,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-18T01:22:38.124Z",
-      "expiresAt": "2026-10-18T01:37:38.124Z"
+      "expiresAt": "2026-10-18T01:37:38.124Z",
+      "finalizedAt": "2026-10-18T01:22:40.859Z"
     }
   ]
 }
