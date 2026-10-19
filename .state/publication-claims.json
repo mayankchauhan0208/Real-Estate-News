@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T08:08:03.572Z",
+  "updatedAt": "2026-10-19T08:08:06.368Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4470,6 +4470,32 @@
       "claimedAt": "2026-10-19T08:08:00.992Z",
       "expiresAt": "2026-10-19T08:23:00.992Z",
       "finalizedAt": "2026-10-19T08:08:03.572Z"
+    },
+    {
+      "claimId": "ec22977c-0623-4e08-8260-7536c834a4f0",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/prayagraj-padmalok-apartment-dpr-ready-on-atiq-ahmeds-land-in-prayagraj-40409363.html",
+        "title-city:म फ य अत क अहमद क जम न पर पद मल क अप र टम ट क dpr त य र एक सप त ह म न कल ग ट डर जल द श र ह ग न र म ण|allahabad",
+        "dedupe:f40349fc88d78782b608581d5bb9de91e530559a5481fb3f667b8aadadd0ace7",
+        "dedupe:12405a7310e143d2b09e8bc4963c10df31283f8810b49b3c6b3fb382430afe79",
+        "dedupe:a0d6668f0818539c1f6220fece48a08d3b093c92aab5fa230b3743746c581e6f",
+        "dedupe:74f19ed1ce4d856ddd3cd7020c5aab7c4da67f70c2915b09401f785539bcde50",
+        "dedupe:म फ य अत क अहमद क जम न पर पद मल क अप र टम ट क dpr त य र एक सप त ह म न कल ग ट डर जल द श र ह ग न र म ण|allahabad",
+        "dedupe:7f4a536ff47fae54ac8d12522a743bf823b300731e014057c8399bc9cdbf773d",
+        "dedupe:4b5d91cc88bdc33a8b360b9ae4d40af30b5a6a7d3ea6f6f08b0c6231dbea5ac0"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "allahabad",
+      "canonicalEventCity": "allahabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "allahabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-19T08:08:06.368Z",
+      "expiresAt": "2026-10-19T08:23:06.368Z"
     }
   ]
 }
