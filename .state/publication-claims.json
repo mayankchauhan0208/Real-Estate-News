@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T21:24:06.697Z",
+  "updatedAt": "2026-10-19T21:24:09.637Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4740,7 +4740,7 @@
     },
     {
       "claimId": "94b7ec82-5266-4664-8590-36271a35bd59",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/haryana/gurgaon-mla-bimla-chaudhary-inaugurates-74-lakh-jamalpur-road-project-40410029.html",
         "title-city:जम लप र म 74 ल ख क ल गत स बन ग सड क व ध यक ब मल च धर न क य श ल न य स|gurugram",
@@ -4762,7 +4762,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-19T21:24:06.697Z",
-      "expiresAt": "2026-10-19T21:39:06.697Z"
+      "expiresAt": "2026-10-19T21:39:06.697Z",
+      "finalizedAt": "2026-10-19T21:24:09.637Z"
     }
   ]
 }
