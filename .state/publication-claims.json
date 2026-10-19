@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T15:57:15.388Z",
+  "updatedAt": "2026-10-19T15:57:17.858Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4714,7 +4714,7 @@
     },
     {
       "claimId": "df15b8b9-cb03-4454-87c6-83168ad51e4e",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://infra.economictimes.indiatimes.com/news/aviation/himachal-pradesh-to-launch-helicopter-service-on-shimla-rampur-reckong-peo-route-on-october-21/135050376",
         "title-city:himachal pradesh to launch helicopter service on shimla rampur reckong peo route on october 21|shimla",
@@ -4735,7 +4735,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-19T15:57:15.388Z",
-      "expiresAt": "2026-10-19T16:12:15.388Z"
+      "expiresAt": "2026-10-19T16:12:15.388Z",
+      "finalizedAt": "2026-10-19T15:57:17.858Z"
     }
   ]
 }
