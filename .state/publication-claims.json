@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T15:57:09.956Z",
+  "updatedAt": "2026-10-19T15:57:12.788Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4687,7 +4687,7 @@
     },
     {
       "claimId": "2f89a8e7-d0d6-495e-8aa0-9e733ee53989",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/haryana/gurgaon-manesar-municipal-office-construction-cleared-funding-secured-40410200.html",
         "title-city:म न सर नगर न गम क म ल 104 कर ड क फ ड imt च क क प स बन ग 7 म ज ल ह ईट क ऑफ स|gurugram",
@@ -4709,7 +4709,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-19T15:57:09.956Z",
-      "expiresAt": "2026-10-19T16:12:09.956Z"
+      "expiresAt": "2026-10-19T16:12:09.956Z",
+      "finalizedAt": "2026-10-19T15:57:12.788Z"
     }
   ]
 }
