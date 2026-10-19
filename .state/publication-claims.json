@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T21:24:09.637Z",
+  "updatedAt": "2026-10-19T21:24:11.738Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4764,6 +4764,32 @@
       "claimedAt": "2026-10-19T21:24:06.697Z",
       "expiresAt": "2026-10-19T21:39:06.697Z",
       "finalizedAt": "2026-10-19T21:24:09.637Z"
+    },
+    {
+      "claimId": "293cbdbf-640c-44d5-a9d9-36fec151b9fd",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-noida-airport-connectivity-yeida-begins-land-acquisition-for-5km-road-connecting-120meter-road-40410471.html",
+        "title-city:यम न अथ र ट क 13 स क टर क चमक ग क स मत फल द कट स न एड इ टरन शनल एयरप र ट तक बन ग नई सड क|noida",
+        "dedupe:3689871acfb0337b36e966875b6ff8dac4fa705a8c04050193303c4aa8911b0a",
+        "dedupe:8d28a982064cbdc2860833e781d8b45e28fa41c3da9e51af818325451b0347da",
+        "dedupe:b3382b6a1e71dd9966e5e2049bac333eb32b7006db5ef966ea94fd376c18323c",
+        "dedupe:e4d0b276c508c46926399dbedd7b2bceaec8ad5fa82dcd57f7101c51deadc6a8",
+        "dedupe:यम न अथ र ट क स क टर क चमक ग क स मत फल द कट स न एड इ टरन शनल एयरप र ट तक बन ग नई सड क|noida",
+        "dedupe:62b02024b36a20d11ccb68df3682f8274caf0b0bcbd5bdb9015c2ec329a78cf4",
+        "dedupe:3a8105b59a444ec1ab1c995005e208ff4e633780c284b932e325ede5783e3e07"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-19T21:24:11.738Z",
+      "expiresAt": "2026-10-19T21:39:11.738Z"
     }
   ]
 }
