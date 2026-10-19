@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-18T18:27:12.676Z",
+  "updatedAt": "2026-10-19T08:08:00.992Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4443,6 +4443,32 @@
       "claimedAt": "2026-10-18T18:27:11.163Z",
       "expiresAt": "2026-10-18T18:42:11.163Z",
       "finalizedAt": "2026-10-18T18:27:12.676Z"
+    },
+    {
+      "claimId": "e5013c7c-a8ee-4aef-a709-f0b6d78be62c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/delhi-news/ndmcto-implement-new-property-tax-regime-in-lutyens-delhi-101792344007767.html",
+        "title-city:ndmc to implement new property tax regime in lutyens delhi|new_delhi",
+        "dedupe:156c639da861c4f416cd911355a860882f6e4cb140d41cf8d6b20f136219d1ca",
+        "dedupe:00c18aa503212b6e1abb8eec276b395d59cd72a0dd9e80aebaab4124cb4f4380",
+        "dedupe:9595a1219950d0eb852fd7a6d85e20ff9b79cb34579ae076a2aa5e9e3212ad35",
+        "dedupe:e493205dd193dfd5b9069cafb8d6bac3a75647a653c481e3fc79412cb9cfad17",
+        "dedupe:ndmc implement new property tax regime lutyens delhi|new_delhi",
+        "dedupe:c66e036201b270352c89c7550728bdd575ac610e45a2b2317dfe185b0bc78576",
+        "dedupe:07faf77bc8a7987aefd98effc16470b5f6c67ba4f6783a74bc5855cd9325002f"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-19T08:08:00.992Z",
+      "expiresAt": "2026-10-19T08:23:00.992Z"
     }
   ]
 }
