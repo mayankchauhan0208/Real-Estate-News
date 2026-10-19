@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T15:57:02.523Z",
+  "updatedAt": "2026-10-19T15:57:05.113Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4658,6 +4658,31 @@
       "claimedAt": "2026-10-19T15:57:00.063Z",
       "expiresAt": "2026-10-19T16:12:00.063Z",
       "finalizedAt": "2026-10-19T15:57:02.523Z"
+    },
+    {
+      "claimId": "9327c251-8f23-4821-ac1e-71834c154ca7",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/commercial/sopra-steria-leases-4-74-lakh-sq-ft-office-space-in-noida-for-15-years-rent-outlay-at-816-crore/135048453",
+        "title-city:sopra steria leases 4 74 lakh sq ft office space in noida for 15 years rent outlay at 816 crore|noida",
+        "dedupe:b7f073c3d9a6db15150bf25ae82d37e4f9dc8dc32e65c398a71912c3725ed764",
+        "dedupe:a6311624c9c11cd131e861583f5258288f7ac008d39c7128c1d7ecd52f137bc5",
+        "dedupe:cf49aa4e69229767793607f1845b87b900b5442ab292d5f8adc523a18e8f4729",
+        "dedupe:sopra steria leases office space noida years rent outlay|noida",
+        "dedupe:d4c3fc938e3fbde166326fe72d2c01cb23d6532605d9a45ed38a99c5f3b645a0",
+        "dedupe:c87ffcf2dc0e5d3236633dc355ec74a26f74c3f6308a1968cea0bdbad6481ee3"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-19T15:57:05.113Z",
+      "expiresAt": "2026-10-19T16:12:05.113Z"
     }
   ]
 }
