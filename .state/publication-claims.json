@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T21:24:11.738Z",
+  "updatedAt": "2026-10-19T21:24:13.628Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4767,7 +4767,7 @@
     },
     {
       "claimId": "293cbdbf-640c-44d5-a9d9-36fec151b9fd",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-noida-airport-connectivity-yeida-begins-land-acquisition-for-5km-road-connecting-120meter-road-40410471.html",
         "title-city:यम न अथ र ट क 13 स क टर क चमक ग क स मत फल द कट स न एड इ टरन शनल एयरप र ट तक बन ग नई सड क|noida",
@@ -4789,7 +4789,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-19T21:24:11.738Z",
-      "expiresAt": "2026-10-19T21:39:11.738Z"
+      "expiresAt": "2026-10-19T21:39:11.738Z",
+      "finalizedAt": "2026-10-19T21:24:13.628Z"
     }
   ]
 }
