@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T08:08:20.769Z",
+  "updatedAt": "2026-10-19T08:08:22.813Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4577,6 +4577,32 @@
       "claimedAt": "2026-10-19T08:08:17.853Z",
       "expiresAt": "2026-10-19T08:23:17.853Z",
       "finalizedAt": "2026-10-19T08:08:20.769Z"
+    },
+    {
+      "claimId": "46eaf2d5-5ba7-4e00-937d-44a038454a0d",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindi.etnownews.com/markets/stock-market-live-updates-aaj-ka-sensex-nifty-19-october-share-bazar-stocks-in-focus-and-q2fy27-updates-liveblog-156364580",
+        "title-city:sensex nifty today|gurugram",
+        "dedupe:ff074babdc94794a8303488156dba662eac1fa9e7d37d338dbcc8c615a1f2a49",
+        "dedupe:3f8b72e004c100a36f1934f469dc90329131139adedb2e21be0b693634261fae",
+        "dedupe:de6e29049bdb3ca2bd00fab12f1b1ad1e2f782c4a8f4cc858e1796776f331490",
+        "dedupe:cba84cd52ed20b62d6e1ddf11fb5e6d99459f5d1e0712932afd48ca7f09acdc1",
+        "dedupe:sensex nifty today|gurugram",
+        "dedupe:7b08844123c0a3c0a020a4b924a22097c7e56e2911a4cb85e8520812bb67a829",
+        "dedupe:b65bb0d0c7bc9f24b2f47d4790bc59b8cae7024e79e24b2dc1be8b5fc518be72"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-19T08:08:22.813Z",
+      "expiresAt": "2026-10-19T08:23:22.813Z"
     }
   ]
 }
