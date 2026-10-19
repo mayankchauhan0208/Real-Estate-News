@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T08:08:10.623Z",
+  "updatedAt": "2026-10-19T08:08:12.311Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4500,7 +4500,7 @@
     },
     {
       "claimId": "e6cb7cc4-a796-4338-82d3-0cdca74b6cc4",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-inner-ring-road-plan-ready-land-acquisition-soon-40409704.html",
         "title-city:म रठ म इनर र ग र ड क ख क त य र शत ब द नगर ज र र नप र ह स स क ल ए द प वल क ब द ह ग जम न क खर द|meerut",
@@ -4522,7 +4522,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-19T08:08:10.623Z",
-      "expiresAt": "2026-10-19T08:23:10.623Z"
+      "expiresAt": "2026-10-19T08:23:10.623Z",
+      "finalizedAt": "2026-10-19T08:08:12.311Z"
     }
   ]
 }
