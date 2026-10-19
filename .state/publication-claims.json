@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T08:08:15.921Z",
+  "updatedAt": "2026-10-19T08:08:17.853Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4551,6 +4551,31 @@
       "claimedAt": "2026-10-19T08:08:14.213Z",
       "expiresAt": "2026-10-19T08:23:14.213Z",
       "finalizedAt": "2026-10-19T08:08:15.921Z"
+    },
+    {
+      "claimId": "481aad85-413d-413d-b74b-42ee3a0d7000",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://magicbricks.com/news/gurugram-global-city-700-meter-tallest-building-project-asmb/152277.html",
+        "title-city:ग र ग र म क ब र ज खल फ 100 म टर बढ द त burj khalifa स भ ऊ च ह ज एग य इम रत|gurugram",
+        "dedupe:36672b59a6c05df9376e3239c4fcabf66e36d2aae665371dbba86739505b12bc",
+        "dedupe:f6390f1249e084dd47d7fd23c98f2d2e8115a461923270ca07900468e0844021",
+        "dedupe:d9ec9e2164db469a20ff827cf15fc8d0276834000689e1ae2c97adb696b6a850",
+        "dedupe:ग र ग र म क ब र ज खल फ म टर बढ द त burj khalifa स भ ऊ च ह ज एग य इम रत|gurugram",
+        "dedupe:0f6578c01f82bf3d47a6912c7de1503577404348c43acb9c7dd1d9c091155693",
+        "dedupe:8eb9462851dd2a0d97576fb8b3f2421d1fc3c32386219bc1ab10e9d4a87d08c0"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-19T08:08:17.853Z",
+      "expiresAt": "2026-10-19T08:23:17.853Z"
     }
   ]
 }
