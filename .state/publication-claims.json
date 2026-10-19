@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T08:08:12.311Z",
+  "updatedAt": "2026-10-19T08:08:14.213Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4524,6 +4524,32 @@
       "claimedAt": "2026-10-19T08:08:10.623Z",
       "expiresAt": "2026-10-19T08:23:10.623Z",
       "finalizedAt": "2026-10-19T08:08:12.311Z"
+    },
+    {
+      "claimId": "42338983-09ba-4a7d-95e3-1097fb862087",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/noida-sports-city-authority-likely-to-take-up-revised-layouts-homebuyers-objections-at-its-upcoming-board-meeting-101792387370394.html",
+        "title-city:noida sports city authority likely to take up revised layouts homebuyers objections at its upcoming board meeting|noida",
+        "dedupe:ccfd58806cd3316f937e7492012b821055cac85058de5b1efae07ce6c0cc2a17",
+        "dedupe:17c7cce5baf85623a7b2e5e21a300beb98d58f9910b2a9aef8a076c73f89bb2e",
+        "dedupe:72574eaf14719dbd292dcb318c85e9ba5beeff07ff6248c56fbee84adfa1d8a4",
+        "dedupe:5a780a745f2f469ab88d8b9751ad45a586dd826b9a8321abae6bb4c496dd5a63",
+        "dedupe:noida sports city authority likely take revised layouts homebuyers objections upcoming board meeting|noida",
+        "dedupe:d4dc84307911b0eefd2ae1a1122c81ac628afe2bd81be45320e11ca4dad97a7f",
+        "dedupe:42d9258b7b607bf24ea34bdd05954902dfc8b4b10cc1ebf7e4a70c9dfbed184b"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-19T08:08:14.213Z",
+      "expiresAt": "2026-10-19T08:23:14.213Z"
     }
   ]
 }
