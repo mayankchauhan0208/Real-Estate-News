@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T15:56:57.358Z",
+  "updatedAt": "2026-10-19T15:57:00.063Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4631,6 +4631,32 @@
       "claimedAt": "2026-10-19T15:56:54.543Z",
       "expiresAt": "2026-10-19T16:11:54.543Z",
       "finalizedAt": "2026-10-19T15:56:57.358Z"
+    },
+    {
+      "claimId": "d0d494a8-8497-411d-b8d9-81002b772dbd",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/prayagraj-padmalok-apartment-prayagraj-flats-online-booking-to-be-start-during-construction-40410096.html",
+        "title-city:प रय गर ज क पद मल क अप र टम ट न र म ण श र ह न क 15 द न ब द फ ल ट क ब क ग 28 स 30 ल ख र पय ह ग क मत|allahabad",
+        "dedupe:0c790ee3c371812a50d7f4ca5c8ad11103fa74046a86575108c49cc290c4f1a6",
+        "dedupe:835937d8bf69f1e21b6a7e257ee925b99dbbb6204b275dd296392cc364682eb5",
+        "dedupe:e0fd24d1f0ff4b0dc9dccfd5f11733d8d66ebb674686f68fa6be8d4bbb477359",
+        "dedupe:c91f2e73d9f7b83ff7f8b599240e9f89eb1ee7a395c1598d6da47eb420cc52f9",
+        "dedupe:प रय गर ज क पद मल क अप र टम ट न र म ण श र ह न क द न ब द फ ल ट क ब क ग स ल ख र पय ह ग क मत|allahabad",
+        "dedupe:ab9cd9fba930d492667d361d0e5032a40eb7eed91dd832382827cb0804dda9a7",
+        "dedupe:0ab99059c759a2c5bbb60e1f2de1200a4b72886d98459d5faf59d3cfb0143d07"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "allahabad",
+      "canonicalEventCity": "allahabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "allahabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-19T15:57:00.063Z",
+      "expiresAt": "2026-10-19T16:12:00.063Z"
     }
   ]
 }
