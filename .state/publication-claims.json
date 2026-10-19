@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T15:56:54.543Z",
+  "updatedAt": "2026-10-19T15:56:57.358Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4607,7 +4607,7 @@
     },
     {
       "claimId": "4939bd5f-7882-4e28-a2c4-2669e6c2492a",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/meerut-city-up-govts-project-praveen-skill-training-for-kasturba-gandhi-balika-vidyalaya-40409894.html",
         "title-city:up सरक र क बड कदम म रठ सम त 30 ज ल म प र ज क ट प रव ण क तहत kgbv क छ त र ओ क म ल ग व श ष ट र न ग|meerut",
@@ -4629,7 +4629,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-19T15:56:54.543Z",
-      "expiresAt": "2026-10-19T16:11:54.543Z"
+      "expiresAt": "2026-10-19T16:11:54.543Z",
+      "finalizedAt": "2026-10-19T15:56:57.358Z"
     }
   ]
 }
