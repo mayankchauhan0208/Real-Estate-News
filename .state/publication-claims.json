@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T15:57:07.601Z",
+  "updatedAt": "2026-10-19T15:57:09.956Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4684,6 +4684,32 @@
       "claimedAt": "2026-10-19T15:57:05.113Z",
       "expiresAt": "2026-10-19T16:12:05.113Z",
       "finalizedAt": "2026-10-19T15:57:07.601Z"
+    },
+    {
+      "claimId": "2f89a8e7-d0d6-495e-8aa0-9e733ee53989",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/haryana/gurgaon-manesar-municipal-office-construction-cleared-funding-secured-40410200.html",
+        "title-city:म न सर नगर न गम क म ल 104 कर ड क फ ड imt च क क प स बन ग 7 म ज ल ह ईट क ऑफ स|gurugram",
+        "dedupe:300769bd7b8175b85993a681fcd33f627b7a7a910df65d245eaea91e9b9070da",
+        "dedupe:d137660287fa193db7d1c389257f5829c973194a616a8b9640867c49c54ef446",
+        "dedupe:5fbd26f638d28cb74ebed81b8d06947f36eb3dbaff4c74c2662cd1f96f1799a8",
+        "dedupe:19a4f5faf2fda5fdd28c67bbc629f50a411ce837a3dafa3a2bfd1b643e06e9c2",
+        "dedupe:म न सर नगर न गम क म ल कर ड क फ ड imt च क क प स बन ग म ज ल ह ईट क ऑफ स|gurugram",
+        "dedupe:a5c79d7f17a0f15512c50f07303f3db8d4a82a470f386ea89e4adf9ed81d9c45",
+        "dedupe:14ce3e8317efaa4c00afee4ff73ebc79b46ac8cf46f0a5131ee41c310a85d4f1"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-19T15:57:09.956Z",
+      "expiresAt": "2026-10-19T16:12:09.956Z"
     }
   ]
 }
