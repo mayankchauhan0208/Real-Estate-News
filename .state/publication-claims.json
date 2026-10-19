@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T15:57:00.063Z",
+  "updatedAt": "2026-10-19T15:57:02.523Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4634,7 +4634,7 @@
     },
     {
       "claimId": "d0d494a8-8497-411d-b8d9-81002b772dbd",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/prayagraj-padmalok-apartment-prayagraj-flats-online-booking-to-be-start-during-construction-40410096.html",
         "title-city:प रय गर ज क पद मल क अप र टम ट न र म ण श र ह न क 15 द न ब द फ ल ट क ब क ग 28 स 30 ल ख र पय ह ग क मत|allahabad",
@@ -4656,7 +4656,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-19T15:57:00.063Z",
-      "expiresAt": "2026-10-19T16:12:00.063Z"
+      "expiresAt": "2026-10-19T16:12:00.063Z",
+      "finalizedAt": "2026-10-19T15:57:02.523Z"
     }
   ]
 }
