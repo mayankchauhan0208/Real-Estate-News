@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T08:08:08.684Z",
+  "updatedAt": "2026-10-19T08:08:10.623Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4497,6 +4497,32 @@
       "claimedAt": "2026-10-19T08:08:06.368Z",
       "expiresAt": "2026-10-19T08:23:06.368Z",
       "finalizedAt": "2026-10-19T08:08:08.684Z"
+    },
+    {
+      "claimId": "e6cb7cc4-a796-4338-82d3-0cdca74b6cc4",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-inner-ring-road-plan-ready-land-acquisition-soon-40409704.html",
+        "title-city:म रठ म इनर र ग र ड क ख क त य र शत ब द नगर ज र र नप र ह स स क ल ए द प वल क ब द ह ग जम न क खर द|meerut",
+        "dedupe:06b7e5fff6a70f12c912555b86122438046a3529fb93bd6b44571f5745f3d3f3",
+        "dedupe:e59fd11195f7248a9b694671bdb16777be3379fc90d7ed77ef48746ceffc3737",
+        "dedupe:0ffa34c820f762dc67dc59755f52cc3048a6c909364e5958afd5492445dcea17",
+        "dedupe:0d764e0164877e348ea75846754678765c44f0b5b37481e9e75ed7be9b8005ee",
+        "dedupe:म रठ म इनर र ग र ड क ख क त य र शत ब द नगर ज र र नप र ह स स क ल ए द प वल क ब द ह ग जम न क खर द|meerut",
+        "dedupe:aadc23b03949ad66522e7df130d59ed351bf99e4c1807a28f60fec9e7b767c3f",
+        "dedupe:e55b94fc2d42ee3ae860d74161f482afbf5f5af6dcfcaa708e116afd239deb34"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "meerut",
+      "canonicalEventCity": "meerut",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "meerut"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-19T08:08:10.623Z",
+      "expiresAt": "2026-10-19T08:23:10.623Z"
     }
   ]
 }
