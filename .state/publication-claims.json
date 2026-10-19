@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T08:08:24.987Z",
+  "updatedAt": "2026-10-19T15:56:54.543Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4604,6 +4604,32 @@
       "claimedAt": "2026-10-19T08:08:22.813Z",
       "expiresAt": "2026-10-19T08:23:22.813Z",
       "finalizedAt": "2026-10-19T08:08:24.987Z"
+    },
+    {
+      "claimId": "4939bd5f-7882-4e28-a2c4-2669e6c2492a",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/meerut-city-up-govts-project-praveen-skill-training-for-kasturba-gandhi-balika-vidyalaya-40409894.html",
+        "title-city:up सरक र क बड कदम म रठ सम त 30 ज ल म प र ज क ट प रव ण क तहत kgbv क छ त र ओ क म ल ग व श ष ट र न ग|meerut",
+        "dedupe:2e32e6c61b9e97870b81609482bd2e6b23503b1b6da351d698ec6fe38f336ab9",
+        "dedupe:abaada1fbb6d7da244b0e624b8214780c7dfb914383ec28cd54ae4bb9a8e6f50",
+        "dedupe:5a72980a9aa780563d43a93f3b1045a262410738eb09519b7cd7f55301cfef59",
+        "dedupe:e1c39ed98e07ae9afe496cc9d250e9b76c9afe01988622290f644d76f366f183",
+        "dedupe:सरक र क बड कदम म रठ सम त ज ल म प र ज क ट प रव ण क तहत kgbv क छ त र ओ क म ल ग व श ष ट र न ग|meerut",
+        "dedupe:7821dcaa05096ac1037845e680c9f6b68e2a3f324bdc9fe5c036c2aedaef5be4",
+        "dedupe:7730568fc26186df09bd2985fe5a5321640a46d3138db738df3ab70a4d3aba64"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "meerut",
+      "canonicalEventCity": "meerut",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "meerut"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-19T15:56:54.543Z",
+      "expiresAt": "2026-10-19T16:11:54.543Z"
     }
   ]
 }
