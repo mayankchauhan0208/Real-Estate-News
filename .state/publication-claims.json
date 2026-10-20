@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T06:22:14.792Z",
+  "updatedAt": "2026-10-20T06:22:17.011Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4844,6 +4844,32 @@
       "claimedAt": "2026-10-20T06:22:13.078Z",
       "expiresAt": "2026-10-20T06:37:13.078Z",
       "finalizedAt": "2026-10-20T06:22:14.792Z"
+    },
+    {
+      "claimId": "db0f37d7-56c0-4586-ad86-f6731bd97fb4",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-new-industrial-area-tod-township-near-namo-bharat-corridor-40410618.html",
+        "title-city:म रठ म नम भ रत क र ड र क प स बस ग नई ट उनश प 549 एकड म बन ग इ डस ट र यल एर य|meerut",
+        "dedupe:3fc4f7483989b9da731bbd862d571cea7e97b8bc1962d56f99c2ecdfafd4dd9a",
+        "dedupe:9ffd19e363b2ab5cc1966c194e1ecd1e7e3c613c1056218adddf9c510b724bdb",
+        "dedupe:d5711799660af0d00b032c0970e996b64abe3458b42f9f8bdc1dff10c106864f",
+        "dedupe:5ccdd1ec14525324efee681b6da991b3cafb227049ec48901e4fedff374f238b",
+        "dedupe:म रठ म नम भ रत क र ड र क प स बस ग नई ट उनश प एकड म बन ग इ डस ट र यल एर य|meerut",
+        "dedupe:4f09fe5e04feed453e103126d1177b61db471960fcb8bf1836e69a7653c04a94",
+        "dedupe:b56431c51e6fb38e8445a2fd156027f69da192c6c02925d6248da2b429594f71"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "meerut",
+      "canonicalEventCity": "meerut",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "meerut"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-20T06:22:17.011Z",
+      "expiresAt": "2026-10-20T06:37:17.011Z"
     }
   ]
 }
