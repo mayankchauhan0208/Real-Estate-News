@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T17:21:36.641Z",
+  "updatedAt": "2026-10-20T17:21:39.293Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4955,7 +4955,7 @@
     },
     {
       "claimId": "91d47da9-5347-4790-b125-f525dc49e6f3",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-manjhawali-connecting-road-project-construction-to-begin-in-novdec-to-link-greater-noida-faridabad-40411140.html",
         "title-city:ग र टर न एड स फर द ब द ज न ह ग स परफ स ट म झ वल ल क र ड क हर झ ड नव बर द स बर स द ड ग ग ड य|faridabad",
@@ -4975,7 +4975,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-20T17:21:36.641Z",
-      "expiresAt": "2026-10-20T17:36:36.641Z"
+      "expiresAt": "2026-10-20T17:36:36.641Z",
+      "finalizedAt": "2026-10-20T17:21:39.293Z"
     }
   ]
 }
