@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T06:22:10.813Z",
+  "updatedAt": "2026-10-20T06:22:13.078Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4818,6 +4818,31 @@
       "claimedAt": "2026-10-20T06:22:08.348Z",
       "expiresAt": "2026-10-20T06:37:08.348Z",
       "finalizedAt": "2026-10-20T06:22:10.813Z"
+    },
+    {
+      "claimId": "99809350-88f2-40a0-a046-4ed216a6ca19",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/residential/lucknow-development-body-prepares-to-obtain-approval-for-second-phase-of-naimish-nagar/135061125",
+        "title-city:lucknow development body prepares to obtain approval for second phase of naimish nagar|lucknow",
+        "dedupe:9fdf5cd785c9da0b9e41c28b92fcc805c7460fa07f8dd97748cb0514883bbee2",
+        "dedupe:5ceddff81ec25e3e7f161df31677cfe2e1d942fc0f6a98e3c5071de0e13bda75",
+        "dedupe:0c19dabab6e3b1c0a36b0e54b8eac501af6cd65fbfc4b544ea89356bcd21a056",
+        "dedupe:lucknow development body prepares obtain approval second phase naimish nagar|lucknow",
+        "dedupe:8e5022240e8eca6c749e42703b917a16784e27f7861ac52079268a8d03fafe31",
+        "dedupe:b3db9ede63feea026c0dae457e727dccb7d3833a44c686e8419129b396176c61"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-20T06:22:13.078Z",
+      "expiresAt": "2026-10-20T06:37:13.078Z"
     }
   ]
 }
