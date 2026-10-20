@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T06:22:18.916Z",
+  "updatedAt": "2026-10-20T06:22:21.232Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4871,6 +4871,32 @@
       "claimedAt": "2026-10-20T06:22:17.011Z",
       "expiresAt": "2026-10-20T06:37:17.011Z",
       "finalizedAt": "2026-10-20T06:22:18.916Z"
+    },
+    {
+      "claimId": "30c5e11f-8881-4084-a563-5b5892bb978b",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://maharashtratimes.com/business/real-estate-news/mhada-lottery-2026-chhatrapati-sambhaji-nagar-affordable-housing-scheme-flat-connectivity-details/articleshow/135061799.cms",
+        "title-city:mhada lottery 2026 स वत च घर घ ण य च स वप न आत द र न ह म बईप स न 5 त स द र फक त 10 ल ख प स न म ळण र परवडण र|mumbai",
+        "dedupe:618398a0ac7ae802a861f8080a2bfcc4d9c315bf4d3a0f479fe2af9b8d97065c",
+        "dedupe:d506501ab80b051d338c8580382e42b6e74c8dad28525032e0f97635ebf158f7",
+        "dedupe:05018a30c0614208331a34b618a91302ef78f94f2dc39a06681378e1e3d34e37",
+        "dedupe:82f3315cd311af3d7a4908295d76d2bdcdc1f5055937154204a2c531784bc245",
+        "dedupe:mhada lottery स वत च घर घ ण य च स वप न आत द र न ह म बईप स न त स द र फक त ल ख प स न म ळण र परवडण र|mumbai",
+        "dedupe:93a8fd8c07f07c81f1655d77415972b5eb7f4f328d8eea486a0171a1e8874a90",
+        "dedupe:6acfe6b3eacf1ee2a611507f83b5b6028e34c7840099cdaa7bee45bb1524f342"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-20T06:22:21.232Z",
+      "expiresAt": "2026-10-20T06:37:21.232Z"
     }
   ]
 }
