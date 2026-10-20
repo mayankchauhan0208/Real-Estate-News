@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T06:22:17.011Z",
+  "updatedAt": "2026-10-20T06:22:18.916Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4847,7 +4847,7 @@
     },
     {
       "claimId": "db0f37d7-56c0-4586-ad86-f6731bd97fb4",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-new-industrial-area-tod-township-near-namo-bharat-corridor-40410618.html",
         "title-city:म रठ म नम भ रत क र ड र क प स बस ग नई ट उनश प 549 एकड म बन ग इ डस ट र यल एर य|meerut",
@@ -4869,7 +4869,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-20T06:22:17.011Z",
-      "expiresAt": "2026-10-20T06:37:17.011Z"
+      "expiresAt": "2026-10-20T06:37:17.011Z",
+      "finalizedAt": "2026-10-20T06:22:18.916Z"
     }
   ]
 }
