@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T06:22:23.552Z",
+  "updatedAt": "2026-10-20T11:52:55.321Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4898,6 +4898,32 @@
       "claimedAt": "2026-10-20T06:22:21.232Z",
       "expiresAt": "2026-10-20T06:37:21.232Z",
       "finalizedAt": "2026-10-20T06:22:23.552Z"
+    },
+    {
+      "claimId": "b9eab71a-fa2d-476a-8067-7633ec8ac1f5",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/black-opal-group-entity-receives-rera-approval-for",
+        "title-city:black opal group entity receives rera approval for rs 475 crore ghaziabad housing project|ghaziabad",
+        "dedupe:64c6330ecc384fdfed65385cef3e99b0337f61aedbbf8c52ef2a07cdba6af7d8",
+        "dedupe:80ce12875e7948671a4191c5cd3e570c284a49f3e46fe3bdd90497484e7b8195",
+        "dedupe:08048bc6ad067da0d9476e292b8785a7c397d8ef484c54b87b233c23fcbcff5f",
+        "dedupe:3d86fa02eae1278f68d9e38cf0ec0e07ba812645614c7ddd393e723f3edf5e1a",
+        "dedupe:black opal group entity receives rera approval ghaziabad housing|ghaziabad",
+        "dedupe:c9979071dcda256e7c73ae8ad7b6b25656c01ac766ab138057bc493fe1b0b3c8",
+        "dedupe:c9986939dad27f14ca5d1db74d5cd898b112372284bb4982765a52fd97e5c0f6"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "ghaziabad",
+      "canonicalEventCity": "ghaziabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "ghaziabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-20T11:52:55.321Z",
+      "expiresAt": "2026-10-20T12:07:55.321Z"
     }
   ]
 }
