@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-19T21:24:13.628Z",
+  "updatedAt": "2026-10-20T06:22:08.348Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4791,6 +4791,32 @@
       "claimedAt": "2026-10-19T21:24:11.738Z",
       "expiresAt": "2026-10-19T21:39:11.738Z",
       "finalizedAt": "2026-10-19T21:24:13.628Z"
+    },
+    {
+      "claimId": "cc5fadb1-08d3-4b2f-88ce-c133b12e7bc6",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/prayagraj-prayagraj-pda-flat-politicians-also-book-over-many-40410341.html",
+        "title-city:प ड ए क फ ल ट पर र जन त ओ क भ द व 30 स अध क न त ओ न द ख ई र च दस न 10 द कर कर ई ब क ग|allahabad",
+        "dedupe:e43329aecbcf9d0046a56af9c3b2b2d52e97d197062d9cbddf585fd6ce882201",
+        "dedupe:84ad21b0349ed0a326a30d6f1631984de4a5276230e044dc080cca6327ac8e6a",
+        "dedupe:96b0418c3ef755523277c070bf5038dda1b57795347df86aa52f37489bfc06e3",
+        "dedupe:818f5007d1a9e48a6f1e768c28fe8f0717266ae803de6b1da01810ee9166a083",
+        "dedupe:प ड ए क फ ल ट पर र जन त ओ क भ द व स अध क न त ओ न द ख ई र च दस न द कर कर ई ब क ग|allahabad",
+        "dedupe:589b3e4b1d6a384cb2612aba346162e24614f0dea0d4c2428ae6cecc45804f13",
+        "dedupe:71b0d55adba0d052f394e9ef97408385ca0325d76adaf4af2ecaa821d1607c7b"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "allahabad",
+      "canonicalEventCity": "allahabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "allahabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-20T06:22:08.348Z",
+      "expiresAt": "2026-10-20T06:37:08.348Z"
     }
   ]
 }
