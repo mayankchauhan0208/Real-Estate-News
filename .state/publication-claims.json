@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T11:52:58.023Z",
+  "updatedAt": "2026-10-20T11:52:59.991Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4925,6 +4925,32 @@
       "claimedAt": "2026-10-20T11:52:55.321Z",
       "expiresAt": "2026-10-20T12:07:55.321Z",
       "finalizedAt": "2026-10-20T11:52:58.023Z"
+    },
+    {
+      "claimId": "b73e29c9-9050-4cd9-949e-903d001004e6",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/infrastructure-upgrades-and-sports-city-framework",
+        "title-city:infrastructure upgrades and sports city framework drive growth in noida s premium housing hub sector 150|noida",
+        "dedupe:07f4fef13b08599e74c099a10562d35b7747b3c5d8d27f3e6642ee32104dc638",
+        "dedupe:7f368631af70b62b2ed055c18d169c0120b2b0a3d7b65d9be4523492dce7bf4e",
+        "dedupe:dc1c3c2837c80c71d9bd7c329504cf2008bca05f9285dbd9d6545e1a7ff9b3d5",
+        "dedupe:067f903c42d59024eb53b6630104e488c03a38c4e19f2d60c584f2d75c19627b",
+        "dedupe:infrastructure upgrades sports city framework drive growth noida s premium housing hub sector|noida",
+        "dedupe:b5107b2f9f689a4a78c74e1e85c25369a10a2771ac8651faee129920f27afd48",
+        "dedupe:8b632df99106700355ffe7785c00c9ac5cce132c9224bf41ffbb9ab3495d5781"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-20T11:52:59.991Z",
+      "expiresAt": "2026-10-20T12:07:59.991Z"
     }
   ]
 }
