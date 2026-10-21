@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-21T10:28:24.781Z",
+  "updatedAt": "2026-10-21T10:28:26.820Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5136,6 +5136,87 @@
       "claimedAt": "2026-10-21T10:28:23.196Z",
       "expiresAt": "2026-10-21T10:43:23.196Z",
       "finalizedAt": "2026-10-21T10:28:24.781Z"
+    },
+    {
+      "claimId": "6723b113-a213-4341-8cee-1a07dec8312a",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://magicbricks.com/news/hyderabads-gachibowli-gets-traffic-relief-as-shilpa-layout-flyover-service-roads-near-opening-pmmb/152317.html",
+        "title-city:hyderabad s gachibowli gets traffic relief as shilpa layout flyover service roads near opening|hyderabad",
+        "dedupe:def25f64d7a6396fb4613c368f16cebdce243f9e64d01cfc132b71ada0639568",
+        "dedupe:1b3ae1d320db159b4d06a3ac5feef17d44126374c69b0ea41c09af6a6895b7b0",
+        "dedupe:ff42d85192606cfc0defd03b856c46eae36d23ae133ff317a83d04ab6003348f",
+        "dedupe:hyderabad s gachibowli gets traffic relief as shilpa layout flyover service roads near opening|hyderabad",
+        "dedupe:813c084e26e4d92abfdcf4f7ba0823bb86f3d6a0abfe096b7349102eff4d9101",
+        "dedupe:74fccecfa7d5840fbd5aec4d7f3e69319ed5681672ad361ef3c1b2b138fe1416"
+      ],
+      "semanticIdentity": {
+        "city": "hyderabad",
+        "canonicalEventCity": "hyderabad",
+        "normalizedBuilder": "gaurs",
+        "normalizedProject": "",
+        "canonicalEventType": "project-launch",
+        "builder": "gaurs",
+        "project": "",
+        "eventType": "project-launch",
+        "numericAnchors": [
+          "03:number",
+          "04:number",
+          "09:number",
+          "1.2:number",
+          "1.44:lakh",
+          "1.5:lakh",
+          "101:acre",
+          "11:number",
+          "120:number",
+          "12:number",
+          "13:number",
+          "14:number",
+          "15:number",
+          "178:number",
+          "17:number",
+          "182.72:crore",
+          "18:number",
+          "19:number",
+          "1:number",
+          "2025:number",
+          "2026:number",
+          "2027:number",
+          "20:number",
+          "21:number",
+          "24:number",
+          "2553.84:crore",
+          "25:number",
+          "28:number",
+          "2:number",
+          "37:number",
+          "549:acre",
+          "56:number",
+          "6500:number",
+          "6800:number",
+          "6:number",
+          "7100:number",
+          "7200:number",
+          "75000:crore",
+          "7500:number",
+          "7600:number",
+          "7:number",
+          "8500:number",
+          "8:number"
+        ],
+        "canonicalEventFingerprint": "gaurs|hyderabad|project-launch|03:number,04:number,09:number",
+        "semanticClusterId": "cluster:051d33f151110d6e9e58d952"
+      },
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "gaurs|hyderabad|project-launch|03:number,04:number,09:number",
+      "semanticClusterId": "cluster:051d33f151110d6e9e58d952",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-21T10:28:26.820Z",
+      "expiresAt": "2026-10-21T10:43:26.820Z"
     }
   ]
 }
