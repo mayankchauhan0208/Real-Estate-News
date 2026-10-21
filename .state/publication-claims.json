@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-21T10:28:31.908Z",
+  "updatedAt": "2026-10-21T15:35:14.119Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5245,6 +5245,32 @@
       "claimedAt": "2026-10-21T10:28:30.376Z",
       "expiresAt": "2026-10-21T10:43:30.376Z",
       "finalizedAt": "2026-10-21T10:28:31.908Z"
+    },
+    {
+      "claimId": "be6e5b41-e934-4a17-a760-aa887c8cdcf3",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/lulu-group-plans-2-500-crore-investment-targets-25-outlets-across-delhi-ncr-by-2030-101792572534565.html",
+        "title-city:lulu group plans 2 500 crore investment targets 25 outlets across delhi ncr by 2030|noida",
+        "dedupe:2e3dc0ce4900f2e47c80baff329dd03ae7536d869f15fb45f835b028880d507f",
+        "dedupe:89dcb237649a8ece8e3a2ac349ba0dd38c180763c4651027ee89289e0797dcd9",
+        "dedupe:3a623355adf97a3c1270cd970cd0680117dc01ac935bc3de3a32b52b5b6532a1",
+        "dedupe:9a6a8de10fc69d637f332892a3f727e7bfc40244c75d062b86bd912dd81254b6",
+        "dedupe:lulu group plans targets outlets across delhi|noida",
+        "dedupe:23e8907cfcc7d3ffa64803145d0571a8d801a44380002c8002ad00ef9a62e67a",
+        "dedupe:ca2076b2e6b4591b6f404e450c84a0bb9623c524f0734f0ee18dd0c49b9ddee0"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-21T15:35:14.119Z",
+      "expiresAt": "2026-10-21T15:50:14.119Z"
     }
   ]
 }
