@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-20T17:21:39.293Z",
+  "updatedAt": "2026-10-21T05:03:07.938Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -4977,6 +4977,32 @@
       "claimedAt": "2026-10-20T17:21:36.641Z",
       "expiresAt": "2026-10-20T17:36:36.641Z",
       "finalizedAt": "2026-10-20T17:21:39.293Z"
+    },
+    {
+      "claimId": "ecc615f7-d737-4dea-aaa5-e17c37ef7416",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://livehindustan.com/ncr/greater-noida-small-plots-construction-plans-approval-is-set-to-become-easier-know-about-new-rules-201792549027827.html",
+        "title-city:क म क ब त ग र टर न एड म छ ट प ल ट पर नक श प स कर न ह ग और आस न क य नए न यम|noida",
+        "dedupe:6ca6fa03a6dfb266d21fde8c9162e843b10b70894368112dbb05d6f601f394c3",
+        "dedupe:bd67a14d361d5a3ccec7bef2bd51d62b3d08642ede26b59bf7c18eb483e6965a",
+        "dedupe:6d472c9c88ad6868fead7fdb0b550e5a32b0fbc7da6386800c59284d77e1b924",
+        "dedupe:39ddce81e8e6f926772723d6358683b73fbb86fa10c22435a306309d1e47277d",
+        "dedupe:क म क ब त ग र टर न एड म छ ट प ल ट पर नक श प स कर न ह ग और आस न क य नए न यम|noida",
+        "dedupe:bf0819bdf0ce00770fc2001ea614d5cbd3638972b870572441220cb147ac4d7a",
+        "dedupe:0912a4c2ee2c49173bcd7f2b5b7161960b915dba2fe3be75471b9bcade42e19c"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-21T05:03:07.938Z",
+      "expiresAt": "2026-10-21T05:18:07.938Z"
     }
   ]
 }
