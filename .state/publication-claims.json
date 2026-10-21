@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-21T05:03:10.411Z",
+  "updatedAt": "2026-10-21T05:03:12.156Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5004,6 +5004,32 @@
       "claimedAt": "2026-10-21T05:03:07.938Z",
       "expiresAt": "2026-10-21T05:18:07.938Z",
       "finalizedAt": "2026-10-21T05:03:10.411Z"
+    },
+    {
+      "claimId": "046200ad-71c7-4e94-a05e-79581114c436",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/agra-city-sound-and-light-show-at-fatehpur-sikri-is-expected-to-begin-in-november-with-a-rs-865-crore-project-underway-for-mapping-40411447.html",
+        "title-city:फत हप र स कर म श र ह ग स उ ड ए ड ल इट श द व न ए आम म 8 65 कर ड क ल गत प र ज क शन म प ग ज र|agra",
+        "dedupe:885165e86bf2b9e4a1c48470b2ceb60c5097f5bb772f689f5196196a6385b7a9",
+        "dedupe:1ecc2c8bfc9a78256fa269d796f48c6a374373d3720d410c4021a8e269491ca5",
+        "dedupe:5f4224358dcab2337f0b9469b3c98f85ed6eefe5282ddc10930705fb2dd0529f",
+        "dedupe:4d5eadacddd58aeedaad0c893bfe0145aa181f21631654c955fe3f650ae4c03a",
+        "dedupe:फत हप र स कर म श र ह ग स उ ड ए ड ल इट श द व न ए आम म कर ड क ल गत प र ज क शन म प ग ज र|agra",
+        "dedupe:e4eb1bd822cca92637fef83618968dd41c47aed077cb4ca052d5863f77ff8e1f",
+        "dedupe:39f51fef016e97cebc6f9a3949299e4c849273b9ebd79ee3054d1289d183123b"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "agra",
+      "canonicalEventCity": "agra",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "agra"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-21T05:03:12.156Z",
+      "expiresAt": "2026-10-21T05:18:12.156Z"
     }
   ]
 }
