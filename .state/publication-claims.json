@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-21T10:28:28.575Z",
+  "updatedAt": "2026-10-21T10:28:30.376Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5218,6 +5218,32 @@
       "claimedAt": "2026-10-21T10:28:26.820Z",
       "expiresAt": "2026-10-21T10:43:26.820Z",
       "finalizedAt": "2026-10-21T10:28:28.575Z"
+    },
+    {
+      "claimId": "a74c5a3e-8602-4ee9-bcce-b5ea5c38baa6",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/prayagraj-prayagraj-to-get-3-new-ev-charging-centers-by-pda-40411803.html",
+        "title-city:प रय गर ज म आज द प र क सम त 3 जगह पर बन ग ev च र ज ग स टर प ड ए न श र क कव यद|allahabad",
+        "dedupe:ea6d0c4e5b49c99dfc0325a1f6f581d9a6a296af2f09a8f2dcd170b77f5a5b2e",
+        "dedupe:fe5f07ac236db0bb1b03d19eb979ee3e52fe552b9498bb99af855ea3c8081386",
+        "dedupe:bfdc7f5ed1bbbb8e5c50cb65a3f52e01acec08b986de29c9c23e954af215ea67",
+        "dedupe:e96dfd15e0ae4a9908cf80edecf608c0d2ede0f3a5cb63dd562b232b2e2f7ee0",
+        "dedupe:प रय गर ज म आज द प र क सम त जगह पर बन ग ev च र ज ग स टर प ड ए न श र क कव यद|allahabad",
+        "dedupe:2a0fd2e0aa290cce07904958dce5636b4b006b7440e49b3f73b5b7ba6fb20afa",
+        "dedupe:3374f9aed00eee51d0ddf3c92e9f17008231c01ebc81a7164719045c9d99047e"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "allahabad",
+      "canonicalEventCity": "allahabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "allahabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-21T10:28:30.376Z",
+      "expiresAt": "2026-10-21T10:43:30.376Z"
     }
   ]
 }
