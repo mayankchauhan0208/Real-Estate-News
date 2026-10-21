@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-21T20:29:43.283Z",
+  "updatedAt": "2026-10-21T20:29:45.859Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5356,7 +5356,7 @@
     },
     {
       "claimId": "a7b44056-7a19-4e7d-adf5-3f8c78be7f71",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-to-get-new-550-acre-industrial-area-with-flatted-factories-40412166.html",
         "title-city:म रठ म बन ग 550 एकड क व श ल औद य ग क क ष त र फ ल ट म चल ग फ क ट र य इन ग व स खर द ज एग भ म|meerut",
@@ -5378,7 +5378,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-21T20:29:43.283Z",
-      "expiresAt": "2026-10-21T20:44:43.283Z"
+      "expiresAt": "2026-10-21T20:44:43.283Z",
+      "finalizedAt": "2026-10-21T20:29:45.859Z"
     }
   ]
 }
