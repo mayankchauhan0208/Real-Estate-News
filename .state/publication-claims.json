@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-21T15:35:21.888Z",
+  "updatedAt": "2026-10-21T20:29:32.842Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5299,6 +5299,32 @@
       "claimedAt": "2026-10-21T15:35:19.265Z",
       "expiresAt": "2026-10-21T15:50:19.265Z",
       "finalizedAt": "2026-10-21T15:35:21.888Z"
+    },
+    {
+      "claimId": "e10e613c-473c-4dbc-abd1-7977a096dbd2",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/noida-news/greater-noida-gaur-chowk-underpass-set-to-open-by-diwali-101792520259705.html",
+        "title-city:greater noida gaur chowk underpass set to open by diwali|noida",
+        "dedupe:13b0185f10c7486b89670cc5fc38d22081a05c4ef8eed232d4d90e8a2b1f356c",
+        "dedupe:1469a08da2238d7de01494541ebaaf7e007361f15a755c6ca8a0c48de74be4dc",
+        "dedupe:3c107be39dfa4a7b6de5c7a5886e8c0daffdfd87c87f39952f9e4b6084821e1d",
+        "dedupe:0eb82faa142d08e1c55ec43d97d6d5d0ec33773412f6e7faedb287e1ca7fa97f",
+        "dedupe:greater noida gaur chowk underpass set open diwali|noida",
+        "dedupe:2d2b2ac6655add7f977e88663c7c73e6b2031c9c48180e4d36f6e977c5f048a7",
+        "dedupe:ef8843b80a026e2cca5768f4c7c038001c9338feadcf2a0d3abc5303ac9c0c75"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-21T20:29:32.842Z",
+      "expiresAt": "2026-10-21T20:44:32.842Z"
     }
   ]
 }
