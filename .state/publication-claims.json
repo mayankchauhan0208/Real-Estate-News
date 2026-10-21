@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-21T20:29:36.074Z",
+  "updatedAt": "2026-10-21T20:29:38.510Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5326,6 +5326,32 @@
       "claimedAt": "2026-10-21T20:29:32.842Z",
       "expiresAt": "2026-10-21T20:44:32.842Z",
       "finalizedAt": "2026-10-21T20:29:36.074Z"
+    },
+    {
+      "claimId": "a6f73308-0b26-4bd0-9cb0-24b48c33af74",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-new-noida-land-acquisition-to-begin-after-diwali-361-farmers-consent-4phase-development-plan-outlined-40412139.html",
+        "title-city:80 ग व क जम न पर बस ग नय न एड द प वल क ब द श र ह ग जम न अध ग रहण 361 क स न न द सहमत|noida",
+        "dedupe:ff25676bb609a16042c4ee6b4689e1b709d3345e94177c43b71fdee842520467",
+        "dedupe:32b15818b85df837f885f81e9b4fe664587e5f9e943201282107f0bebe153f7d",
+        "dedupe:24bd5e893d7da6f261536e24217f4133f5a60cdc2476adfac3eb640c12934673",
+        "dedupe:aa643b670cacaba68947ede1dd0d41ff96db27e9a27dc2ea5208f7648c1450be",
+        "dedupe:ग व क जम न पर बस ग नय न एड द प वल क ब द श र ह ग जम न अध ग रहण क स न न द सहमत|noida",
+        "dedupe:426f0f7c714fdf1ac6d7cb1cafe28e2fd4a29ce4a9b8696404496253b59aeb04",
+        "dedupe:0565a68251e0abddec9a8c77fa1a21088bc4a30176c70e2c88a4722824f467e7"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-21T20:29:38.510Z",
+      "expiresAt": "2026-10-21T20:44:38.510Z"
     }
   ]
 }
