@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-21T10:28:30.376Z",
+  "updatedAt": "2026-10-21T10:28:31.908Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5221,7 +5221,7 @@
     },
     {
       "claimId": "a74c5a3e-8602-4ee9-bcce-b5ea5c38baa6",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/prayagraj-prayagraj-to-get-3-new-ev-charging-centers-by-pda-40411803.html",
         "title-city:प रय गर ज म आज द प र क सम त 3 जगह पर बन ग ev च र ज ग स टर प ड ए न श र क कव यद|allahabad",
@@ -5243,7 +5243,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-21T10:28:30.376Z",
-      "expiresAt": "2026-10-21T10:43:30.376Z"
+      "expiresAt": "2026-10-21T10:43:30.376Z",
+      "finalizedAt": "2026-10-21T10:28:31.908Z"
     }
   ]
 }
