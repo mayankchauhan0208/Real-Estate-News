@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-21T10:28:14.601Z",
+  "updatedAt": "2026-10-21T10:28:16.855Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5056,6 +5056,32 @@
       "claimedAt": "2026-10-21T10:28:12.276Z",
       "expiresAt": "2026-10-21T10:43:12.276Z",
       "finalizedAt": "2026-10-21T10:28:14.601Z"
+    },
+    {
+      "claimId": "68db077a-ae9b-4212-8348-6687c5c1886b",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://prateekgroup.com/blog/prateek-wisteria-sector-77-noida-legacy",
+        "title-city:prateek wisteria premium community living in the heart of sector 77 noida|noida",
+        "dedupe:d442add4bd851cdf7e4eafdd8ebba05951399d34f26983d12c89b5b788f31f23",
+        "dedupe:64fc287a4edb2db787d2122cd5b4fad67cc7f38798a492f8f1b9b61be933fc94",
+        "dedupe:e4513ce2c141ca048ca2b936837986e94650aa73418d01661a2ecf573481b643",
+        "dedupe:67435f144bfecce712be67c25e826fd4f6e5cc70a1e35a7627a6f83afdcf9ea6",
+        "dedupe:prateek wisteria premium community heart sector noida|noida",
+        "dedupe:8a50f4075923f22d979c5387a8f8a4b9dda04d6e9e2e893d066bb84380f54943",
+        "dedupe:24d938ab808cea41a653094207743813b09b0d9aedf172d6505ce2524d25ffbd"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-21T10:28:16.855Z",
+      "expiresAt": "2026-10-21T10:43:16.855Z"
     }
   ]
 }
