@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-21T10:28:21.558Z",
+  "updatedAt": "2026-10-21T10:28:23.196Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5109,6 +5109,32 @@
       "claimedAt": "2026-10-21T10:28:20.082Z",
       "expiresAt": "2026-10-21T10:43:20.082Z",
       "finalizedAt": "2026-10-21T10:28:21.558Z"
+    },
+    {
+      "claimId": "c3fb6a07-edb3-4da1-9e84-4711b0f9b330",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/kanpur-city-kanpur-atal-ghat-to-company-bagh-road-widening-approved-40411692.html",
+        "title-city:क नप र म बन ग फ रल न सड क ब र ज स क पन ब ग तक 11 हज र वर ग म टर भ म क ह ग अध ग रहण|kanpur",
+        "dedupe:fdc729192a50571a4d9d532530b41656d0537cd4ad13ac53868d7c4561d0ba29",
+        "dedupe:18b8d68e94d169211b4e655888e14a0e1f1223c6439fb91d4a6f3cf0b71f4376",
+        "dedupe:aabe698c29c4d5f93e76cd4e4412d64d53370452e842fb9fd1adc4c03af8f75d",
+        "dedupe:dd52a14ee5e75addd5d9c4534f66fe9d35b2d6f5121bb2d59f8ee372d07efe1c",
+        "dedupe:क नप र म बन ग फ रल न सड क ब र ज स क पन ब ग तक हज र वर ग म टर भ म क ह ग अध ग रहण|kanpur",
+        "dedupe:903a22733a6c66788139c8d3ec793544d60b65c246747d9c959d0a560da65da0",
+        "dedupe:1d88fa1149c77f51e881642d75f0dec5160ccebaef9ae4afa991a0e3aa4e2c6d"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "kanpur",
+      "canonicalEventCity": "kanpur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "kanpur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-21T10:28:23.196Z",
+      "expiresAt": "2026-10-21T10:43:23.196Z"
     }
   ]
 }
