@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-21T15:35:14.119Z",
+  "updatedAt": "2026-10-21T15:35:16.933Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5248,7 +5248,7 @@
     },
     {
       "claimId": "be6e5b41-e934-4a17-a760-aa887c8cdcf3",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/real-estate/lulu-group-plans-2-500-crore-investment-targets-25-outlets-across-delhi-ncr-by-2030-101792572534565.html",
         "title-city:lulu group plans 2 500 crore investment targets 25 outlets across delhi ncr by 2030|noida",
@@ -5270,7 +5270,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-21T15:35:14.119Z",
-      "expiresAt": "2026-10-21T15:50:14.119Z"
+      "expiresAt": "2026-10-21T15:50:14.119Z",
+      "finalizedAt": "2026-10-21T15:35:16.933Z"
     }
   ]
 }
