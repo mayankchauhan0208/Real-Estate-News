@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-21T10:28:20.082Z",
+  "updatedAt": "2026-10-21T10:28:21.558Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5086,7 +5086,7 @@
     },
     {
       "claimId": "6f25152a-e029-4a02-b68d-89f69163aafa",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://magicbricks.com/news/meerut-plans-549-acre-industrial-hub-and-101-acre-township-near-namo-bharat-corridor-pmmb/152307.html",
         "title-city:meerut plans 549 acre industrial hub and 101 acre township near namo bharat corridor|meerut",
@@ -5107,7 +5107,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-21T10:28:20.082Z",
-      "expiresAt": "2026-10-21T10:43:20.082Z"
+      "expiresAt": "2026-10-21T10:43:20.082Z",
+      "finalizedAt": "2026-10-21T10:28:21.558Z"
     }
   ]
 }
