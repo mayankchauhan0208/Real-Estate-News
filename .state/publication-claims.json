@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-21T05:03:13.729Z",
+  "updatedAt": "2026-10-21T10:28:12.276Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5031,6 +5031,30 @@
       "claimedAt": "2026-10-21T05:03:12.156Z",
       "expiresAt": "2026-10-21T05:18:12.156Z",
       "finalizedAt": "2026-10-21T05:03:13.729Z"
+    },
+    {
+      "claimId": "43dfd993-0c79-46b6-a7ac-c37bd7072f98",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/housing-demand-gurgaon-noida-falls-q3-2026-bengaluru-property-prices-rise-pune-mumbai-home-launches-ncr-real-estate-market-report/articleshow/135085273.cms",
+        "title-city:gurgaon noida housing demand drops 8 9 as ncr property market cools|noida",
+        "dedupe:46328ddd481f908599635a200fb6dedaf4ada14759e35fd575d11cd37d03e919",
+        "dedupe:f91ebd5c8121f2303e9184bbdc9f18a3eb7e2f42a5ef1cfda78f7b37708ef060",
+        "dedupe:841149ce7de2e8078246b42f5a3c67aa682731518b9e91a8d8b396904405e86e",
+        "dedupe:0ea72bc63b56509b247d0046dd522eb57828e556941ac6c8c72b711758f59f6f",
+        "dedupe:gurgaon noida housing demand drops as property market cools|noida"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-21T10:28:12.276Z",
+      "expiresAt": "2026-10-21T10:43:12.276Z"
     }
   ]
 }
