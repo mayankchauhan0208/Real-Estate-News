@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-21T20:29:40.895Z",
+  "updatedAt": "2026-10-21T20:29:43.283Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5353,6 +5353,32 @@
       "claimedAt": "2026-10-21T20:29:38.510Z",
       "expiresAt": "2026-10-21T20:44:38.510Z",
       "finalizedAt": "2026-10-21T20:29:40.895Z"
+    },
+    {
+      "claimId": "a7b44056-7a19-4e7d-adf5-3f8c78be7f71",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-to-get-new-550-acre-industrial-area-with-flatted-factories-40412166.html",
+        "title-city:म रठ म बन ग 550 एकड क व श ल औद य ग क क ष त र फ ल ट म चल ग फ क ट र य इन ग व स खर द ज एग भ म|meerut",
+        "dedupe:59de550731c7e2d93848047144f552a098ce8616caff20ba6e59d58a0954a729",
+        "dedupe:f238007ef527a473d076bea7a2b1f1043481406d714a925e2e4366db41d26cdb",
+        "dedupe:41f3414ef0f65885485d444a4d3627a41cd4921f269dc607db3ad2c05efb8e06",
+        "dedupe:c3e1a8416e246374bda4f47581bf95d75a6251a3633cae65289c829f836ca5e8",
+        "dedupe:म रठ म बन ग एकड क व श ल औद य ग क क ष त र फ ल ट म चल ग फ क ट र य इन ग व स खर द ज एग भ म|meerut",
+        "dedupe:04bb4aafa0c4e698c5ca8739f143a58dba85ac147864df9d268520d914372503",
+        "dedupe:6357ff191582412ab25c364be2fa410edd4b7d7fc7b20594eed429d409fdd720"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "meerut",
+      "canonicalEventCity": "meerut",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "meerut"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-21T20:29:43.283Z",
+      "expiresAt": "2026-10-21T20:44:43.283Z"
     }
   ]
 }
