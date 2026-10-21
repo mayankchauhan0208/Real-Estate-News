@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-21T15:35:16.933Z",
+  "updatedAt": "2026-10-21T15:35:19.265Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5272,6 +5272,32 @@
       "claimedAt": "2026-10-21T15:35:14.119Z",
       "expiresAt": "2026-10-21T15:50:14.119Z",
       "finalizedAt": "2026-10-21T15:35:16.933Z"
+    },
+    {
+      "claimId": "3658abae-8a82-43ca-8eb9-d570cbe42a12",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/tdi-infratech-partners-with-sarovar-hotels-to",
+        "title-city:tdi infratech partners with sarovar hotels to launch sarovar portico at tdi smart city in mohali|mohali",
+        "dedupe:66e61cd934edf722025d9edaa29d0c48d01c0f29543ba646f3668aa1a6433465",
+        "dedupe:8b233aab2d7ee62a35ea59d003535191b009db473af209177cb6eb21fdc844e4",
+        "dedupe:80f14c83ec9488b07c505d7b6df964546bbd38427db7ba4501cb7ca35906a3bc",
+        "dedupe:1a4a21c6d60367f9862685da68d2c83eb6d9b7be8e243029de637d8f980402cd",
+        "dedupe:tdi infratech partners sarovar hotels launch sarovar portico tdi smart city mohali|mohali",
+        "dedupe:52a7d101ce1bcdd42b95ac7f00ebcfe227fc3657648f9f2c110e2d3cc96cb0f1",
+        "dedupe:880ff99393bb80df3807f3cd3d4ede9189ea25715dac79d4db295c8e7483efa5"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mohali",
+      "canonicalEventCity": "mohali",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mohali"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-21T15:35:19.265Z",
+      "expiresAt": "2026-10-21T15:50:19.265Z"
     }
   ]
 }
