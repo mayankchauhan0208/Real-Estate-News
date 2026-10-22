@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-22T15:39:00.422Z",
+  "updatedAt": "2026-10-22T15:39:03.188Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5667,7 +5667,7 @@
     },
     {
       "claimId": "959066e3-f7f7-4836-b66b-972b1c530f80",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/industry/mahindra-lifespace-developers-net-profit-declines-66-to-16-34-crore-in-q2-fy27/135120970",
         "title-city:mahindra lifespaces net profit declines 66 to 16 34 crore in q2 fy27|new_delhi",
@@ -5688,7 +5688,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-22T15:39:00.422Z",
-      "expiresAt": "2026-10-22T15:54:00.422Z"
+      "expiresAt": "2026-10-22T15:54:00.422Z",
+      "finalizedAt": "2026-10-22T15:39:03.188Z"
     }
   ]
 }
