@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-22T20:27:42.497Z",
+  "updatedAt": "2026-10-22T20:27:44.899Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5720,7 +5720,7 @@
     },
     {
       "claimId": "137ef063-a1a1-4e81-b7ac-a642046caec8",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-up15fl-vip-numbers-eauction-starts-today-40413488.html",
         "title-city:up15 fl स र ज क व आइप न बर च ह ए त ई न ल म म आइय कर न ह ग प ज करण|meerut",
@@ -5742,7 +5742,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-22T20:27:42.497Z",
-      "expiresAt": "2026-10-22T20:42:42.497Z"
+      "expiresAt": "2026-10-22T20:42:42.497Z",
+      "finalizedAt": "2026-10-22T20:27:44.899Z"
     }
   ]
 }
