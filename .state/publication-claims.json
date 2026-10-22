@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-22T10:30:16.235Z",
+  "updatedAt": "2026-10-22T15:38:44.466Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5583,6 +5583,32 @@
       "claimedAt": "2026-10-22T10:30:14.276Z",
       "expiresAt": "2026-10-22T10:45:14.276Z",
       "finalizedAt": "2026-10-22T10:30:16.235Z"
+    },
+    {
+      "claimId": "220d3231-bf08-45f9-bfb5-19fcc3d828f6",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/gap-group-begins-work-on-200-room-hyatt-place-hotel-in-dholera",
+        "title-city:gap group begins work on|dholera",
+        "dedupe:703a01168b98d6e8640977b1ed2ef02f9b3311fc908eae0a98e4a81636ee5d1a",
+        "dedupe:947513355054f11ca0b63e19ca20d19baa76312146418a3a7ab9af7d979222ef",
+        "dedupe:7d25debef2d0ce2a8dbf0632dda52ad499e2472ca47b431458e0ac51526bb8e5",
+        "dedupe:a711faa712c65b9cb1c4c8fbd997dfed955292dfcb43c5c0b4f15a4cf619da00",
+        "dedupe:gap group begins work|dholera",
+        "dedupe:c1be7487e841d348dc2c5410eb436141da0df567396bc207e30ba51f653230fa",
+        "dedupe:1a3aa9173d6ee78dc9e3272eb596a1821cbdceaf581de4dab572a992b34d0527"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "dholera",
+      "canonicalEventCity": "dholera",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "dholera"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-22T15:38:44.466Z",
+      "expiresAt": "2026-10-22T15:53:44.466Z"
     }
   ]
 }
