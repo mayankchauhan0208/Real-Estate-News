@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-22T15:38:52.362Z",
+  "updatedAt": "2026-10-22T15:38:54.691Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5637,6 +5637,32 @@
       "claimedAt": "2026-10-22T15:38:49.652Z",
       "expiresAt": "2026-10-22T15:53:49.652Z",
       "finalizedAt": "2026-10-22T15:38:52.362Z"
+    },
+    {
+      "claimId": "3d9b7ff3-1c92-4040-abef-57297ec960de",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-noida-authority-considers-major-shift-in-land-acquisition-policy-landowners-may-get-regularisation-option-40413054.html",
+        "title-city:न एड म नह ह ग जम न अध ग रहण अथ र ट ल सकत ह नई ल ड प ल ग प ल स ख द बन सक ग म ल य फ ल ट|noida",
+        "dedupe:14deefc74e701a00b3f6b8cdd87c6bbd1cc4aafab684fadffbc284c0a7171ae4",
+        "dedupe:fce75bd615932b13a473b62379c03f1a57b603655376dccafdeb75bd16549eac",
+        "dedupe:1f5fd92b6cfc13fab4fe12fd2450164bba813dd0c48c3eee41aef4491c3cdea7",
+        "dedupe:1d7a9d3e12f8b2cf8de74694611b55c0eb8a4966a9965378aef095ede0493a61",
+        "dedupe:न एड म नह ह ग जम न अध ग रहण अथ र ट ल सकत ह नई ल ड प ल ग प ल स ख द बन सक ग म ल य फ ल ट|noida",
+        "dedupe:f1d7e81e4a40924a62ffb8a93789626bbe23473d6e1dd2116583347e175c1572",
+        "dedupe:123353c546921aed40847c2375e9c94affc30883073ff2cb224550c2af7e1463"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-22T15:38:54.691Z",
+      "expiresAt": "2026-10-22T15:53:54.691Z"
     }
   ]
 }
