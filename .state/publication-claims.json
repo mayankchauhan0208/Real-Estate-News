@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-22T10:30:02.693Z",
+  "updatedAt": "2026-10-22T10:30:06.420Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5507,7 +5507,7 @@
     },
     {
       "claimId": "b3f95a06-0ac3-4c6f-b093-cca7eaf48e2a",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/haryana/gurgaon-narsinghpur-pre-cast-drain-to-end-delhi-jaipur-highway-waterlogging-40412725.html",
         "title-city:द ल ल जयप र ह ईव क जलभर व स म ल ग म क त 9 कर ड क म स टरप ल न त य र|delhi",
@@ -5527,7 +5527,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-22T10:30:02.693Z",
-      "expiresAt": "2026-10-22T10:45:02.693Z"
+      "expiresAt": "2026-10-22T10:45:02.693Z",
+      "finalizedAt": "2026-10-22T10:30:06.420Z"
     }
   ]
 }
