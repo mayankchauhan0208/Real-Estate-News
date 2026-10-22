@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-21T20:29:45.859Z",
+  "updatedAt": "2026-10-22T04:59:22.961Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5380,6 +5380,32 @@
       "claimedAt": "2026-10-21T20:29:43.283Z",
       "expiresAt": "2026-10-21T20:44:43.283Z",
       "finalizedAt": "2026-10-21T20:29:45.859Z"
+    },
+    {
+      "claimId": "a3e60902-877b-4c1d-9914-81210af949ea",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/haryana/gurgaon-gurugram-water-cut-2-day-supply-disruption-in-half-city-40412517.html",
+        "title-city:ग र ग र म म 24 घ ट क व टर शटड उन dlf स इबर स ट सम त इन इल क म कल स ठप रह ग सप ल ई|gurugram",
+        "dedupe:842c0a8bf0fec91de85cfae9de451d8cc7fe51a59db9beafdfd09f3380f1e531",
+        "dedupe:a114b0363a4693dd713e2c838bd13d42d79a400d6569af6526d311d49240f0f2",
+        "dedupe:44d69baeaece38384d3057c9c22173d9c3963c9b30eec9646b00c01a3fda29ac",
+        "dedupe:1aea40056bce20ba057afa26aa5b454ffb95a194fbac1e4ee102e7f84230f1b4",
+        "dedupe:ग र ग र म म घ ट क व टर शटड उन dlf स इबर स ट सम त इन इल क म कल स ठप रह ग सप ल ई|gurugram",
+        "dedupe:b38d58e720ae4d867dca0fabdecfdedd9a95a865dea50c34f5b91ed5b8c0a5d7",
+        "dedupe:d6b399be390e094a73107266e79b9df8f8b052e1391b0e0055692eda321fc649"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-22T04:59:22.961Z",
+      "expiresAt": "2026-10-22T05:14:22.961Z"
     }
   ]
 }
