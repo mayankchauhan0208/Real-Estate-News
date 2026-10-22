@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-22T10:30:09.575Z",
+  "updatedAt": "2026-10-22T10:30:12.097Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5532,7 +5532,7 @@
     },
     {
       "claimId": "79743ec7-dacc-429b-b1d9-93e20ff87ac1",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://livehindustan.com/ncr/amit-shah-attacks-arvind-kejriwal-said-we-will-uproot-aap-from-punjab-as-well-201792653418666.html",
         "title-city:aap क प ज ब स भ उख ड फ क ग अम त श ह क अरव द क जर व ल पर अट क|faridabad",
@@ -5554,7 +5554,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-22T10:30:09.575Z",
-      "expiresAt": "2026-10-22T10:45:09.575Z"
+      "expiresAt": "2026-10-22T10:45:09.575Z",
+      "finalizedAt": "2026-10-22T10:30:12.097Z"
     }
   ]
 }
