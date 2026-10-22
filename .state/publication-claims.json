@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-22T04:59:25.758Z",
+  "updatedAt": "2026-10-22T04:59:27.573Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5407,6 +5407,77 @@
       "claimedAt": "2026-10-22T04:59:22.961Z",
       "expiresAt": "2026-10-22T05:14:22.961Z",
       "finalizedAt": "2026-10-22T04:59:25.758Z"
+    },
+    {
+      "claimId": "9c493056-191c-40dc-82c6-2d9a5a009a12",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://magicbricks.com/news/prayagrajs-new-ganga-bridge-moves-closer-to-opening-as-load-tests-begin-pmmb/152334.html",
+        "title-city:prayagraj s new ganga bridge moves closer to opening as load tests begin|allahabad",
+        "dedupe:5496bc05ad02f7720138cb8bfd3363eff53b365936dc2ebfae5d9628f18061e7",
+        "dedupe:38e6860abe06f0ba610e841a42ee36cb5e9858c0276a72293894253daf9fe592",
+        "dedupe:e14aa902840b204fb204b32810b94b1f8b518e825b914d1ad340e8546dd0af5d",
+        "dedupe:prayagraj s new ganga bridge moves closer opening as load tests begin|allahabad",
+        "dedupe:80351565e601032475e091ab65feba7e5d8b0576b3e628525d4e31532def9c53",
+        "dedupe:aeaa9582b61c631e09a5cea23785aab3bfdcbdf03dea45f42511b57648e3c2fb"
+      ],
+      "semanticIdentity": {
+        "city": "allahabad",
+        "canonicalEventCity": "allahabad",
+        "normalizedBuilder": "gaurs",
+        "normalizedProject": "",
+        "canonicalEventType": "development-approval",
+        "builder": "gaurs",
+        "project": "",
+        "eventType": "development-approval",
+        "numericAnchors": [
+          "00:number",
+          "03:number",
+          "09:number",
+          "10:number",
+          "12:number",
+          "13:number",
+          "14:number",
+          "15:number",
+          "18:number",
+          "1948.25:crore",
+          "1:number",
+          "2018:number",
+          "2024:number",
+          "2025:number",
+          "2026:number",
+          "21:number",
+          "22:number",
+          "2:number",
+          "3.1:number",
+          "3.84:number",
+          "30:number",
+          "37:number",
+          "40000:number",
+          "40:number",
+          "44:number",
+          "549:number",
+          "5:number",
+          "6:number",
+          "860:number",
+          "9.9:number",
+          "94:number",
+          "95:number",
+          "96:number"
+        ],
+        "canonicalEventFingerprint": "gaurs|allahabad|development-approval|00:number,03:number,09:number",
+        "semanticClusterId": "cluster:218b51676a0e6075526f1d54"
+      },
+      "publishedCity": "allahabad",
+      "canonicalEventCity": "allahabad",
+      "canonicalEventFingerprint": "gaurs|allahabad|development-approval|00:number,03:number,09:number",
+      "semanticClusterId": "cluster:218b51676a0e6075526f1d54",
+      "city": [
+        "allahabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-22T04:59:27.573Z",
+      "expiresAt": "2026-10-22T05:14:27.573Z"
     }
   ]
 }
