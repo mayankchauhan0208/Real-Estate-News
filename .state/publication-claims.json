@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-22T10:30:06.420Z",
+  "updatedAt": "2026-10-22T10:30:09.575Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5529,6 +5529,32 @@
       "claimedAt": "2026-10-22T10:30:02.693Z",
       "expiresAt": "2026-10-22T10:45:02.693Z",
       "finalizedAt": "2026-10-22T10:30:06.420Z"
+    },
+    {
+      "claimId": "79743ec7-dacc-429b-b1d9-93e20ff87ac1",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://livehindustan.com/ncr/amit-shah-attacks-arvind-kejriwal-said-we-will-uproot-aap-from-punjab-as-well-201792653418666.html",
+        "title-city:aap क प ज ब स भ उख ड फ क ग अम त श ह क अरव द क जर व ल पर अट क|faridabad",
+        "dedupe:8edf5118d41d4f6a3c203869f57760e19b25d18868916aa7da3c48b83bba06d1",
+        "dedupe:d4ad4972f53ccbe06fb83f08713a8fcd7ef0bc3fedd3dc8907e55289ed293cc0",
+        "dedupe:ba76aec958e87c7cff879341b2592a7d98508176b94c7c5ca0c00cd3f70ba599",
+        "dedupe:fe995a6636ad68420ea7f27f0708bd17ab2bc5b00d55f6ca74b7b2a3989d4d5f",
+        "dedupe:aap क प ज ब स भ उख ड फ क ग अम त श ह क अरव द क जर व ल पर अट क|faridabad",
+        "dedupe:4b77778002debf39509d66d365887c5722b35504e8b3392b61ee3889ad31f495",
+        "dedupe:6d775acc363e374ae94a75e84fced58d502674614116b24a32d31dc43c9770f9"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "faridabad",
+      "canonicalEventCity": "faridabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "faridabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-22T10:30:09.575Z",
+      "expiresAt": "2026-10-22T10:45:09.575Z"
     }
   ]
 }
