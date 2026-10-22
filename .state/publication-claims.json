@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-22T20:27:44.899Z",
+  "updatedAt": "2026-10-22T23:43:32.446Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5744,6 +5744,32 @@
       "claimedAt": "2026-10-22T20:27:42.497Z",
       "expiresAt": "2026-10-22T20:42:42.497Z",
       "finalizedAt": "2026-10-22T20:27:44.899Z"
+    },
+    {
+      "claimId": "316ee811-99d6-4efd-9751-fa71c12d3c85",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://birlaestatesltd.com/updates/birla-estates-in-advanced-talks-for-10-acre-central-noida-plot-from-shipra-group-unconfirmed",
+        "title-city:acquisitionoct 2026birla estates in talks for 10 acre central noida land parcel from shipra group|noida",
+        "dedupe:f6b5bedf63cbbbc87d1d70fc1bedeaf8620bc8ffc8e5971ec009b0e64866957d",
+        "dedupe:34ca9a00c6ddc5e38ddce98f8a80486215d42aabd6a84b044fe8eca24ee0d418",
+        "dedupe:54be64bcbc02149f09967737f0376f0903144a38a6111509f6781c4a57fd8fed",
+        "dedupe:46965ee42659fcff493cd44e799284eec76772b1cfd3c6975e9b71b5e2e15f27",
+        "dedupe:acquisitionoct 2026birla estates talks acre central noida land parcel shipra group|noida",
+        "dedupe:155560228406a47d99b7429f819578ffabf7a195774c49111d990afe03804771",
+        "dedupe:a924bbc20bba112c3f33a2e7824c8a7b2da9d224e7b4423b60a7b5384496cfaf"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-22T23:43:32.446Z",
+      "expiresAt": "2026-10-22T23:58:32.446Z"
     }
   ]
 }
