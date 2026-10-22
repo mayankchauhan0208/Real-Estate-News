@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-22T04:59:29.219Z",
+  "updatedAt": "2026-10-22T10:29:57.483Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5479,6 +5479,30 @@
       "claimedAt": "2026-10-22T04:59:27.573Z",
       "expiresAt": "2026-10-22T05:14:27.573Z",
       "finalizedAt": "2026-10-22T04:59:29.219Z"
+    },
+    {
+      "claimId": "d3a4be60-d4bb-4865-8f2b-4dd03d1d7167",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/prayagraj-prayagraj-pda-flat-attract-buyers-from-delhi-mp-and-more-also-40412710.html",
+        "title-city:pda क आव स य य जन ए बन आकर षण क क द र प रय गर ज म फ ल ट क द ल ल और मध य प रद श क ल ग न भ क य आव दन|allahabad",
+        "dedupe:2e08c42b2f6570acd9b02c39d661a9079de882bc0947f30e045af86211070ed3",
+        "dedupe:19fc1f32eb687fdc13757fdd210229ae757f93218b9e5b53681cf60e0c23b7ca",
+        "dedupe:fe500d882b63a7e1ef285ad3fbfa1c26a4a198520d84c3da119484c1f1eb55bf",
+        "dedupe:3968fea65fda4e4a7513a3e33c2270b6e4619655c5d02b55738b50aede536cf7",
+        "dedupe:pda क आव स य य जन ए बन आकर षण क क द र प रय गर ज म फ ल ट क द ल ल और मध य प रद श क ल ग न भ क य आव दन|allahabad"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "allahabad",
+      "canonicalEventCity": "allahabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "allahabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-22T10:29:57.483Z",
+      "expiresAt": "2026-10-22T10:44:57.483Z"
     }
   ]
 }
