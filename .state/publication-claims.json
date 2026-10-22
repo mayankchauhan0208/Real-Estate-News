@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-22T20:27:36.394Z",
+  "updatedAt": "2026-10-22T20:27:39.237Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5693,7 +5693,7 @@
     },
     {
       "claimId": "61330c9b-32da-4079-9501-532bd5e28186",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realtynmore.com/the-chatterjee-group-launches-cortex-dc-to-develop",
         "title-city:the chatterjee group launches cortex dc to develop 2 gw ai ready data center capacity|new_delhi",
@@ -5715,7 +5715,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-22T20:27:36.394Z",
-      "expiresAt": "2026-10-22T20:42:36.394Z"
+      "expiresAt": "2026-10-22T20:42:36.394Z",
+      "finalizedAt": "2026-10-22T20:27:39.237Z"
     }
   ]
 }
