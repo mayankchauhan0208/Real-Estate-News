@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-22T15:38:47.313Z",
+  "updatedAt": "2026-10-22T15:38:49.652Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5610,6 +5610,32 @@
       "claimedAt": "2026-10-22T15:38:44.466Z",
       "expiresAt": "2026-10-22T15:53:44.466Z",
       "finalizedAt": "2026-10-22T15:38:47.313Z"
+    },
+    {
+      "claimId": "fd64129e-ae9c-4e2b-9dfd-13b25a4ab22f",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://prateekgroup.com/blog/prateek-stylome-an-established-luxury-residential-landmark-in-sector-45-noida",
+        "title-city:prateek stylome an established luxury residential landmark in sector 45 noida|noida",
+        "dedupe:6fb2f37234e95f3d3499f782b091c6b167d0f80c60449ca6e5173c7dff2e4079",
+        "dedupe:b2e9f4482dc39a827f561104834d8aeecf9fe3180dc2e80abce335dbb8595f4c",
+        "dedupe:962d647b6827ed104d1f418e09694cc53caae81acb5b00ee0d86a6749b0b05e3",
+        "dedupe:5871184ec7d69182eb106bb836f110ae1b2b6be3b30837d0a3ab40265d1abe8a",
+        "dedupe:prateek stylome an established residential landmark sector noida|noida",
+        "dedupe:b57696d40abfe192960d7c2d6176f82c5f253de349fe4eb67e0b7bb088b470ab",
+        "dedupe:f3a9338e24fa96cfec789030bf1338d74ccc247101c7a3bb2f9705336b288ee3"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-22T15:38:49.652Z",
+      "expiresAt": "2026-10-22T15:53:49.652Z"
     }
   ]
 }
