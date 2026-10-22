@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-22T10:30:12.097Z",
+  "updatedAt": "2026-10-22T10:30:14.276Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5556,6 +5556,32 @@
       "claimedAt": "2026-10-22T10:30:09.575Z",
       "expiresAt": "2026-10-22T10:45:09.575Z",
       "finalizedAt": "2026-10-22T10:30:12.097Z"
+    },
+    {
+      "claimId": "13d169da-99f9-4f8b-b625-2159c5c9b5d7",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://livehindustan.com/ncr/new-noida-land-consent-350-farmers-80-hectares-201792662109949.html",
+        "title-city:नए न यड क 350 क स न द ग अपन जम न ज न ए कब श र ह ग ब न म क प रक र य|noida",
+        "dedupe:9c068abe65f61e321cdd406c3f289262955236a04122cd5f6987f22364c2aa3e",
+        "dedupe:d22b6341f74993c13c0b7f05f4a49c7a4f83fa1ab638e60a6a3386c035de1840",
+        "dedupe:a4162f5f68a47017c6af4244d1e6a8aeffd74e7a53a331adcc386ba27b268f41",
+        "dedupe:6faa418277198deb49010add443bc5956b9dce9748f47d319f47c8962e4e8c39",
+        "dedupe:नए न यड क क स न द ग अपन जम न ज न ए कब श र ह ग ब न म क प रक र य|noida",
+        "dedupe:86f7d255fbcd0fd863af2124ba84bde5074308172601f8f48f4de91f80bd69b6",
+        "dedupe:7b4999eb4f69c559471917049e76692a09f53ed55e36a6c9bc3caae21f420e2b"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-22T10:30:14.276Z",
+      "expiresAt": "2026-10-22T10:45:14.276Z"
     }
   ]
 }
