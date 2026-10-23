@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-22T23:43:35.203Z",
+  "updatedAt": "2026-10-23T10:23:15.107Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5771,6 +5771,31 @@
       "claimedAt": "2026-10-22T23:43:32.446Z",
       "expiresAt": "2026-10-22T23:58:32.446Z",
       "finalizedAt": "2026-10-22T23:43:35.203Z"
+    },
+    {
+      "claimId": "52f8ba1e-a7c1-4724-8f77-475474565556",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://mhada.gov.in/mr/node/540",
+        "title-city:setup of board under authority|mumbai",
+        "dedupe:e48044fd3553e52d095eb5a3e7adddff6cdc51080ba578fc31ce795629990234",
+        "dedupe:a208abb8bfd6d5bd807f86bcd016665321c1514d81413e5dd2e9091d1d43d9c0",
+        "dedupe:c6c1857d221e3aa2bb733975df749d78ec69010b3badbc475c9ec7f4d230f669",
+        "dedupe:setup board under authority|mumbai",
+        "dedupe:abefad3ebf862cb4a55c9332b024a450d3ea4d5cb275ef5e2f880702767a69be",
+        "dedupe:de3f5f7b99da2d04f1ac5ee486c3a059e18f3b47b2097e38a4a6eb6b5393a072"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-23T10:23:15.107Z",
+      "expiresAt": "2026-10-23T10:38:15.107Z"
     }
   ]
 }
