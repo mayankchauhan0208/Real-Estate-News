@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T10:23:22.625Z",
+  "updatedAt": "2026-10-23T10:23:24.168Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5827,7 +5827,7 @@
     },
     {
       "claimId": "58ca0395-12fb-443e-8402-c1a5c5b32cca",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://magicbricks.com/news/upavp-moradabad-housing-scheme-2026-asmb/152368.html",
         "title-city:ncr स 3 घ ट द र 25 47 ल ख म घर स र फ 1 27 ल ख स ब क ग 6 छ ट भ|moradabad",
@@ -5848,7 +5848,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-23T10:23:22.625Z",
-      "expiresAt": "2026-10-23T10:38:22.625Z"
+      "expiresAt": "2026-10-23T10:38:22.625Z",
+      "finalizedAt": "2026-10-23T10:23:24.168Z"
     }
   ]
 }
