@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T10:23:27.535Z",
+  "updatedAt": "2026-10-23T15:24:39.482Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5876,6 +5876,30 @@
       "claimedAt": "2026-10-23T10:23:25.987Z",
       "expiresAt": "2026-10-23T10:38:25.987Z",
       "finalizedAt": "2026-10-23T10:23:27.535Z"
+    },
+    {
+      "claimId": "62c4cfbc-6e84-4e8e-9a2d-4589e5f05348",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/varanasi-city-amrit-bharat-express-to-run-from-kashi-to-puducherry-proposed-timetable-released-40414285.html",
+        "title-city:क श स प ड च र तक चल ग अम त भ रत एक सप र स प रस त व त ट इम ट बल ह आ ज र न ट कर ल जर र स ट शन क न म|pondicherry",
+        "dedupe:e6ba8e9a73e272657dbd468d58b506c05c794b42b47d3116446180d11e2bca1f",
+        "dedupe:4230c1e126b7464ee3f32466f672e7e78daa58154c264667019f52e24d7ec945",
+        "dedupe:a14eec91e05f2821488a6168d88e465a21b0e4335d77666155a178b1d859e773",
+        "dedupe:cd9f2aaacad517fb14d787677ac8a49011084ee31c3496c8c02b9b29014d2c21",
+        "dedupe:क श स प ड च र तक चल ग अम त भ रत एक सप र स प रस त व त ट इम ट बल ह आ ज र न ट कर ल जर र स ट शन क न म|pondicherry"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "pondicherry",
+      "canonicalEventCity": "pondicherry",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "pondicherry"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-23T15:24:39.482Z",
+      "expiresAt": "2026-10-23T15:39:39.482Z"
     }
   ]
 }
