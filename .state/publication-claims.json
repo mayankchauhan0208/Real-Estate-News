@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T19:32:51.838Z",
+  "updatedAt": "2026-10-23T19:32:54.360Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6012,7 +6012,7 @@
     },
     {
       "claimId": "ce80bf4f-931b-47e8-8248-41e82b72fc3a",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/lucknow-city-up-gcc-summit-2026-global-investment-and-500-new-centers-40414518.html",
         "title-city:ज स स सम ट 2026 य प म व श व क न व श बढ न क त य र स थ प त ह ग 500 नए ग ल बल स टर स|lucknow",
@@ -6034,7 +6034,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-23T19:32:51.838Z",
-      "expiresAt": "2026-10-23T19:47:51.838Z"
+      "expiresAt": "2026-10-23T19:47:51.838Z",
+      "finalizedAt": "2026-10-23T19:32:54.360Z"
     }
   ]
 }
