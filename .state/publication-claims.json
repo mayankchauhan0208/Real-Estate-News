@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T15:24:59.725Z",
+  "updatedAt": "2026-10-23T19:32:51.838Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6009,6 +6009,32 @@
       "claimedAt": "2026-10-23T15:24:57.851Z",
       "expiresAt": "2026-10-23T15:39:57.851Z",
       "finalizedAt": "2026-10-23T15:24:59.725Z"
+    },
+    {
+      "claimId": "ce80bf4f-931b-47e8-8248-41e82b72fc3a",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/lucknow-city-up-gcc-summit-2026-global-investment-and-500-new-centers-40414518.html",
+        "title-city:ज स स सम ट 2026 य प म व श व क न व श बढ न क त य र स थ प त ह ग 500 नए ग ल बल स टर स|lucknow",
+        "dedupe:ef61b603251da6586103c211584bf1e605529b6c4f9c2465b3ecf567cde4cf6f",
+        "dedupe:ef01ef8b1a46b8147ca6640fe2fd550fd336e3bd3f31188067660d64fd90e4c8",
+        "dedupe:a0531f343f9c016a37af2cd14e8bbb2b7c643f71707f4ec97c46d693b8406c2d",
+        "dedupe:83578bbb21f37eec78012bf41ae1317b1c86d59b333ed10070fecb92ff5c6a91",
+        "dedupe:ज स स सम ट य प म व श व क न व श बढ न क त य र स थ प त ह ग नए ग ल बल स टर स|lucknow",
+        "dedupe:c4889ce1465f5d407634128edfa2c754e40fa28affac0d14b520d8aaec711d2c",
+        "dedupe:1115e3656b9e507872f03d01acdd09d04d99296a7bbe3f84bf9ac059c821d308"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-23T19:32:51.838Z",
+      "expiresAt": "2026-10-23T19:47:51.838Z"
     }
   ]
 }
