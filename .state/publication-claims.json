@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T19:32:56.658Z",
+  "updatedAt": "2026-10-23T19:32:59.385Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6039,7 +6039,7 @@
     },
     {
       "claimId": "e298803b-94ab-4a31-bce4-56104c2a1c04",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://proppuls.in/hyatt-place-dholera-200-room-hotel-gap-group",
         "title-city:gap group begins work on hotel hyatt place dh|new_delhi",
@@ -6061,7 +6061,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-23T19:32:56.658Z",
-      "expiresAt": "2026-10-23T19:47:56.658Z"
+      "expiresAt": "2026-10-23T19:47:56.658Z",
+      "finalizedAt": "2026-10-23T19:32:59.385Z"
     }
   ]
 }
