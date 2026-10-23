@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T10:23:24.168Z",
+  "updatedAt": "2026-10-23T10:23:25.987Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5850,6 +5850,31 @@
       "claimedAt": "2026-10-23T10:23:22.625Z",
       "expiresAt": "2026-10-23T10:38:22.625Z",
       "finalizedAt": "2026-10-23T10:23:24.168Z"
+    },
+    {
+      "claimId": "f0b74721-cc47-4554-9202-5ee31bc2575e",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://magicbricks.com/news/indias-real-estate-pe-investment-reaches-usd-61-bn-in-jan-sep-2026-led-by-data-centres-ssmb/152369.html",
+        "title-city:india s real estate pe investment reaches usd 6 1 bn in jan sep 2026 led by data centres|mumbai",
+        "dedupe:6d9e16dbb163da8f4eab426e2ddd2e8efa33913b2bc904ce2218446a917cfbc7",
+        "dedupe:4fe4c25911157a329331c0aeb6f3486fcd547f3eee80b3f2c7f08412854687b4",
+        "dedupe:a072f6caca722ca0ca5c559ad0c81eaee15be4f725286ad89aaf550ec562e002",
+        "dedupe:india s real estate pe reaches usd bn jan sep led data centres|mumbai",
+        "dedupe:c5113176069b82e95686d86865dfd10650de76241439e23e277ed3e42362844b",
+        "dedupe:af0996629245aa9e727b981185c5ee72bd0e4aef17e384c41de88ef9953fa0c0"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-23T10:23:25.987Z",
+      "expiresAt": "2026-10-23T10:38:25.987Z"
     }
   ]
 }
