@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T15:24:57.851Z",
+  "updatedAt": "2026-10-23T15:24:59.725Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5985,7 +5985,7 @@
     },
     {
       "claimId": "bea9a8aa-7da1-46f3-8a0a-351936879a7c",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-samvardhana-motherson-to-invest-3491-cr-in-yeida-create-20000-jobs-40414242.html",
         "title-city:ग र टर न एड क ल ए बड ख शखबर मदरसन क पन कर ग 3500 कर ड क न व श 20 हज र ल ग क म ल ग र जग र|noida",
@@ -6007,7 +6007,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-23T15:24:57.851Z",
-      "expiresAt": "2026-10-23T15:39:57.851Z"
+      "expiresAt": "2026-10-23T15:39:57.851Z",
+      "finalizedAt": "2026-10-23T15:24:59.725Z"
     }
   ]
 }
