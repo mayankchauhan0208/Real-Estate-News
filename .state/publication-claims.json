@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T15:24:51.947Z",
+  "updatedAt": "2026-10-23T15:24:53.936Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5955,6 +5955,32 @@
       "claimedAt": "2026-10-23T15:24:50.203Z",
       "expiresAt": "2026-10-23T15:39:50.203Z",
       "finalizedAt": "2026-10-23T15:24:51.947Z"
+    },
+    {
+      "claimId": "4b7f62fc-5409-404d-a996-69ebbe40fe7c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/trehan-iris-achieves-one-million-safe-working-hour",
+        "title-city:trehan iris achieves one million safe working hours at greater noida west project|noida",
+        "dedupe:9d5c431c21d645b2f49b14080c6131922fa1ccfffe0d32367e96fe39f74c9124",
+        "dedupe:568010122735ca5ea5813b6fc932004eb18e5368c09bf9c688fe305dbc644a4d",
+        "dedupe:be6006a071f4fa1c8099f5622ca68fe77f5b12b505100a1c3e01fe6328333dff",
+        "dedupe:0d0b51d93a0a61a618b8f272ba7cca0557a16cb19c275f6d7a0cf4c24c6a8463",
+        "dedupe:trehan iris achieves one safe working hours greater noida west|noida",
+        "dedupe:62ef79831ddd5b7c0b2a7057141334d0cbdd63c9f47163fa3f5822034b9c2958",
+        "dedupe:01e90754e048ed6d39395f02b40572bc343cc5a0d547c1c91dc610b45dc74a8d"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-23T15:24:53.936Z",
+      "expiresAt": "2026-10-23T15:39:53.936Z"
     }
   ]
 }
