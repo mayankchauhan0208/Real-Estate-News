@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T15:24:47.934Z",
+  "updatedAt": "2026-10-23T15:24:50.203Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5928,6 +5928,32 @@
       "claimedAt": "2026-10-23T15:24:45.293Z",
       "expiresAt": "2026-10-23T15:39:45.293Z",
       "finalizedAt": "2026-10-23T15:24:47.934Z"
+    },
+    {
+      "claimId": "44e4c9ee-f57b-469c-9389-d6c5dc8fe281",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-inner-ring-road-land-acquisition-begins-postdiwali-40413803.html",
+        "title-city:म रठ इनर र ग र ड न र म ण क ल ए भ म अध ग रहण क त य र द प वल क ब द क स न स जम न खर द ग म ड|meerut",
+        "dedupe:6cbe74af4e1e9a601497b91b0ac1eced123acb126a1007b15a15b5e8e51e8e7a",
+        "dedupe:9f20843350ef544c8c0badb3f17b6320bc0191fdfb25b2afb40fbd900b0624da",
+        "dedupe:a28cae45714dcb928810fc670bf48dacf372f0e15f3174796a41e29964f39256",
+        "dedupe:a77358bf6e279122e8914e8812fc2f64f94bcf4a70a791b2fb8d16fddc59284f",
+        "dedupe:म रठ इनर र ग र ड न र म ण क ल ए भ म अध ग रहण क त य र द प वल क ब द क स न स जम न खर द ग म ड|meerut",
+        "dedupe:f98de4d5302eebb28b1106b63af4c258e36bd54128ef3dc2a3fa2f8c16044956",
+        "dedupe:b250572ea6941c7e985a329d26a46b4084642bd8853cad3fe14bf9a968b77ec3"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "meerut",
+      "canonicalEventCity": "meerut",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "meerut"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-23T15:24:50.203Z",
+      "expiresAt": "2026-10-23T15:39:50.203Z"
     }
   ]
 }
