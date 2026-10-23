@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T19:32:59.385Z",
+  "updatedAt": "2026-10-23T22:35:22.460Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6063,6 +6063,32 @@
       "claimedAt": "2026-10-23T19:32:56.658Z",
       "expiresAt": "2026-10-23T19:47:56.658Z",
       "finalizedAt": "2026-10-23T19:32:59.385Z"
+    },
+    {
+      "claimId": "06ff1771-eec0-43d9-97a7-8874f21dfc36",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://birlaestatesltd.com/updates/birla-estates-to-develop-1-650-crore-residential-project-in-hinjewadi-pune-under-jda",
+        "title-city:joint ventureoct 2026birla estates plans premium hinjewadi homes and retail through a joint development deal|pune",
+        "dedupe:f5ee808f81a488ad7a8bc9f7bce7d0d21dedb81b47661d81bca9bcaedc384f92",
+        "dedupe:620cd3a8577c0e4fa1d5b75449833df1e23e3cf1bc2d3a8c9551b8730d04aefe",
+        "dedupe:e01115710983a0097ff1a27dc7de5c24a0d49ebee297e274ac595062914d3bf0",
+        "dedupe:65803e8fd1632045057424297eb4cdc0c213d3ea65497c15cb7faa503fabebef",
+        "dedupe:joint ventureoct 2026birla estates plans premium hinjewadi homes retail through a joint development deal|pune",
+        "dedupe:6be2aa031babca527647189a00a5f614f5a2bcc76284c840ebc252f0ac128d1b",
+        "dedupe:b17297c35b2c62c2b0ca2557bc2e799ec05e619081f4795e4067d289f6bab21f"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "pune",
+      "canonicalEventCity": "pune",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "pune"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-23T22:35:22.460Z",
+      "expiresAt": "2026-10-23T22:50:22.460Z"
     }
   ]
 }
