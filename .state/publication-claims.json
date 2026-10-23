@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T10:23:19.220Z",
+  "updatedAt": "2026-10-23T10:23:20.819Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5800,7 +5800,7 @@
     },
     {
       "claimId": "b3ce0728-f3ca-4d80-8939-f1caeeaa84d7",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://outlookmoney.com/personal-finance/whats-driving-indian-buyers-to-global-real-estate-knight-frank-irex-report-reveals-top-reasons",
         "title-city:what s driving indian buyers to global real estate knight frank irex report reveals top reasons|anand",
@@ -5822,7 +5822,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-23T10:23:19.220Z",
-      "expiresAt": "2026-10-23T10:38:19.220Z"
+      "expiresAt": "2026-10-23T10:38:19.220Z",
+      "finalizedAt": "2026-10-23T10:23:20.819Z"
     }
   ]
 }
