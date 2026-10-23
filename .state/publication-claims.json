@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T15:24:55.985Z",
+  "updatedAt": "2026-10-23T15:24:57.851Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5982,6 +5982,32 @@
       "claimedAt": "2026-10-23T15:24:53.936Z",
       "expiresAt": "2026-10-23T15:39:53.936Z",
       "finalizedAt": "2026-10-23T15:24:55.985Z"
+    },
+    {
+      "claimId": "bea9a8aa-7da1-46f3-8a0a-351936879a7c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-samvardhana-motherson-to-invest-3491-cr-in-yeida-create-20000-jobs-40414242.html",
+        "title-city:ग र टर न एड क ल ए बड ख शखबर मदरसन क पन कर ग 3500 कर ड क न व श 20 हज र ल ग क म ल ग र जग र|noida",
+        "dedupe:c614c4bbb606b84c6bea93d769182503db5be41c57a287f3093235b1c9356906",
+        "dedupe:ef900706d481d0b0cb0a1265d852c670b51476399c4fb94d6b3e4c24b991088b",
+        "dedupe:780d967738d787b370de5353819ba85304c42643fc5a372177f4da7df0890dfe",
+        "dedupe:c07d093cc85863180fa4d4723d2d7fabfe54b713b1d8084bc86822e6b15819ef",
+        "dedupe:ग र टर न एड क ल ए बड ख शखबर मदरसन क पन कर ग कर ड क न व श हज र ल ग क म ल ग र जग र|noida",
+        "dedupe:f24fc1f5bbc5d250b5f03a2e67b5aa9f36d4c4d55cfae2a36583baa31ad8dd06",
+        "dedupe:9e0e9c4171a6878421ed6d2a35857f84556535e2920cfab9d72ffb2f8de78055"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-23T15:24:57.851Z",
+      "expiresAt": "2026-10-23T15:39:57.851Z"
     }
   ]
 }
