@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T10:23:15.107Z",
+  "updatedAt": "2026-10-23T10:23:17.364Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5774,7 +5774,7 @@
     },
     {
       "claimId": "52f8ba1e-a7c1-4724-8f77-475474565556",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://mhada.gov.in/mr/node/540",
         "title-city:setup of board under authority|mumbai",
@@ -5795,7 +5795,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-23T10:23:15.107Z",
-      "expiresAt": "2026-10-23T10:38:15.107Z"
+      "expiresAt": "2026-10-23T10:38:15.107Z",
+      "finalizedAt": "2026-10-23T10:23:17.364Z"
     }
   ]
 }
