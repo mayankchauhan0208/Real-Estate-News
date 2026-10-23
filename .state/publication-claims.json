@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T15:24:42.582Z",
+  "updatedAt": "2026-10-23T15:24:45.293Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5901,6 +5901,32 @@
       "claimedAt": "2026-10-23T15:24:39.482Z",
       "expiresAt": "2026-10-23T15:39:39.482Z",
       "finalizedAt": "2026-10-23T15:24:42.582Z"
+    },
+    {
+      "claimId": "c5956012-7cb0-40c5-9cbf-2705a313ed14",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hilifebuilders.in/new-apartment-in-thrissur-buyers-checklist",
+        "title-city:what should you check before buying a new apartment in thrissur a practical buyer s checklist|thrissur",
+        "dedupe:ed4ca596a50566b08ece48d765fb4cf61c15476e5976ddf5e747bc4c62a6c0ed",
+        "dedupe:a44b796ffa0f4a32881add3aba7d2724719ebae62180324e6efb1fa545e5f16e",
+        "dedupe:adad137e866c9a4e7561e4c2df8da92e75111d45086cc64c0624f67cc6b9b9a3",
+        "dedupe:699b2ecfb51906e555922f4dc0111b906ba664baa4677357e4f73841c9fdf9aa",
+        "dedupe:what should you check before buying a new apartment thrissur a practical buyer s checklist|thrissur",
+        "dedupe:0e4c52594e22bf23e7573781ff36b6f85f6b9c55c76a9d5c0cdcda6c15914c14",
+        "dedupe:b3f109dcc5b79743a7743ef0264d859a02964b0a98bef5e4b87ea0dba4f6fc99"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "thrissur",
+      "canonicalEventCity": "thrissur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "thrissur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-23T15:24:45.293Z",
+      "expiresAt": "2026-10-23T15:39:45.293Z"
     }
   ]
 }
