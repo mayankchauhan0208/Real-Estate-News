@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T15:24:50.203Z",
+  "updatedAt": "2026-10-23T15:24:51.947Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -5931,7 +5931,7 @@
     },
     {
       "claimId": "44e4c9ee-f57b-469c-9389-d6c5dc8fe281",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-inner-ring-road-land-acquisition-begins-postdiwali-40413803.html",
         "title-city:म रठ इनर र ग र ड न र म ण क ल ए भ म अध ग रहण क त य र द प वल क ब द क स न स जम न खर द ग म ड|meerut",
@@ -5953,7 +5953,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-23T15:24:50.203Z",
-      "expiresAt": "2026-10-23T15:39:50.203Z"
+      "expiresAt": "2026-10-23T15:39:50.203Z",
+      "finalizedAt": "2026-10-23T15:24:51.947Z"
     }
   ]
 }
