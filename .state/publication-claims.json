@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T19:32:54.360Z",
+  "updatedAt": "2026-10-23T19:32:56.658Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6036,6 +6036,32 @@
       "claimedAt": "2026-10-23T19:32:51.838Z",
       "expiresAt": "2026-10-23T19:47:51.838Z",
       "finalizedAt": "2026-10-23T19:32:54.360Z"
+    },
+    {
+      "claimId": "e298803b-94ab-4a31-bce4-56104c2a1c04",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://proppuls.in/hyatt-place-dholera-200-room-hotel-gap-group",
+        "title-city:gap group begins work on hotel hyatt place dh|new_delhi",
+        "dedupe:c13d59bf334f2019615497ea3673857c5f22c1d27f288fd265bc986d25bf8194",
+        "dedupe:39a3dfaa4ef94c7563fbc0ae40e69827eb7380245ebfeeb0c3ea0b5b8914eb8d",
+        "dedupe:edad2a562574c3b2302500fbdb6037f1401282b867a6369f45d36e62ce6c8d46",
+        "dedupe:35683f6667a3a217203dbaaaaf8ab3380d9e4ca2de9dfdf310a9d7448e9e1eb3",
+        "dedupe:gap group begins work hotel hyatt place dh|new_delhi",
+        "dedupe:b3d631e46d3d95e73bfccaab2ab65f16aeeb58ab45b19905cf5b238096cbd236",
+        "dedupe:c00eaaa18ea433e644b8af4b4dda890b2173351aacbb49a969be1bced62f4ae7"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-23T19:32:56.658Z",
+      "expiresAt": "2026-10-23T19:47:56.658Z"
     }
   ]
 }
