@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-24T07:37:47.643Z",
+  "updatedAt": "2026-10-24T07:37:49.548Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6226,7 +6226,7 @@
     },
     {
       "claimId": "018fad7a-ca82-490a-9be1-90516e9d5b4e",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/meerut-city-arun-govil-at-un-health-access-barriers-indiaun-partnership-40414765.html",
         "title-city:न य य र क म स य क त र ष ट र स घ क म च पर पह च अर ण ग व ल ब ल स व स थ य स व ओ म ल गत भ ष और द र न बन ब ध|meerut",
@@ -6248,7 +6248,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-24T07:37:47.643Z",
-      "expiresAt": "2026-10-24T07:52:47.643Z"
+      "expiresAt": "2026-10-24T07:52:47.643Z",
+      "finalizedAt": "2026-10-24T07:37:49.548Z"
     }
   ]
 }
