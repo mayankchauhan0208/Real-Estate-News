@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-24T07:37:49.548Z",
+  "updatedAt": "2026-10-24T13:01:42.584Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6250,6 +6250,31 @@
       "claimedAt": "2026-10-24T07:37:47.643Z",
       "expiresAt": "2026-10-24T07:52:47.643Z",
       "finalizedAt": "2026-10-24T07:37:49.548Z"
+    },
+    {
+      "claimId": "1c690caf-8ef3-4cd4-bfa6-4d56cb65b0c6",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/gb-realty-to-invest-2400-2500-crore-in-jacob-co-branded-residences-in-mohali/135169769",
+        "title-city:gb realty to invest 2 400 2 500 crore in jacob and co branded residences in mohali|mohali",
+        "dedupe:abea5c91d37662c10b10f3ecd200ce8af601a69efbc8f9fbff28bc7346e98abb",
+        "dedupe:1aa98f1643ea80dc080eb96fe642d9cb97f39b9cc8ca50830741893c7a77a1f8",
+        "dedupe:c2502215c05748ea57334b26ecb5133899957ea81ccc356e525dbe880ac83734",
+        "dedupe:gb jacob co branded residences mohali|mohali",
+        "dedupe:82d70edc477f33723d91037e683c4d83f4f80ee3c1db9d4128b2085e66a4a791",
+        "dedupe:dfa28c8921ab530f23fbb126012051a582730f9b92aa35e6af06c47e2ae1c010"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mohali",
+      "canonicalEventCity": "mohali",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mohali"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-24T13:01:42.584Z",
+      "expiresAt": "2026-10-24T13:16:42.584Z"
     }
   ]
 }
