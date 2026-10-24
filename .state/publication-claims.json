@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-24T07:37:36.170Z",
+  "updatedAt": "2026-10-24T07:37:38.049Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6146,7 +6146,7 @@
     },
     {
       "claimId": "9d5f188f-4d6b-45e1-ae6a-f723e27ffa42",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://infra.economictimes.indiatimes.com/news/roads-highways/all-roads-in-walled-city-to-now-be-managed-by-pwd/135160756",
         "title-city:all roads in walled city to now be managed by pwd|delhi",
@@ -6167,7 +6167,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-24T07:37:36.170Z",
-      "expiresAt": "2026-10-24T07:52:36.170Z"
+      "expiresAt": "2026-10-24T07:52:36.170Z",
+      "finalizedAt": "2026-10-24T07:37:38.049Z"
     }
   ]
 }
