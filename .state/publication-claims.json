@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-24T16:56:34.138Z",
+  "updatedAt": "2026-10-24T16:56:36.558Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6303,6 +6303,32 @@
       "claimedAt": "2026-10-24T16:56:31.431Z",
       "expiresAt": "2026-10-24T17:11:31.431Z",
       "finalizedAt": "2026-10-24T16:56:34.138Z"
+    },
+    {
+      "claimId": "aa6090d7-8313-49f8-8be6-779660b30006",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://livehindustan.com/ncr/delhi-astha-kunj-park-security-tighten-after-gangrape-incident-201792856952832.html",
+        "title-city:ह ई म स ट ल इट न इट प ट र ल ग आस थ क ज प र क म ग गर प क ब द क य बदल व|delhi",
+        "dedupe:d3c8f8233fee422c360b38666c4a29070bc277b5ac3fa4d41ecce521a8462892",
+        "dedupe:9e453e3c2148cf103a622264a7a4b75ebc2ca43dbdb816ab32e674f102c37ce3",
+        "dedupe:52503c800e2b1143b031dd9d54e3a6a2f73eb66c6e62d484bc14a62e47da7130",
+        "dedupe:dd74e54bb52f06f597622344fe3b41c0c3e595282a71d24d1a01cf23c568d446",
+        "dedupe:ह ई म स ट ल इट न इट प ट र ल ग आस थ क ज प र क म ग गर प क ब द क य बदल व|delhi",
+        "dedupe:81fb9e2e4192554bf26e1f5a835c347d12ada626c6ee2e2403d343b360bf425d",
+        "dedupe:aab5457b8611abbc66ad51014f7bdc3bde03f0325295e5edbf08dd5f688a6226"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "delhi",
+      "canonicalEventCity": "delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-24T16:56:36.558Z",
+      "expiresAt": "2026-10-24T17:11:36.558Z"
     }
   ]
 }
