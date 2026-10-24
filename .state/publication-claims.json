@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-24T16:56:39.046Z",
+  "updatedAt": "2026-10-24T22:50:01.829Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6330,6 +6330,32 @@
       "claimedAt": "2026-10-24T16:56:36.558Z",
       "expiresAt": "2026-10-24T17:11:36.558Z",
       "finalizedAt": "2026-10-24T16:56:39.046Z"
+    },
+    {
+      "claimId": "e5789f53-5132-4247-a42b-32b2e2028431",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/varanasi-city-jdu-up-state-conference-in-varanasi-on-nov-1-shravan-kumar-leads-40415730.html",
+        "title-city:व र णस म 1 नव बर क ह ग जदय क प रद श क र यकर त सम म लन म त र श रवण क म र न स भ ल कम न|varanasi",
+        "dedupe:e632bc13c918681d76cef529b129e1ebe31d070679b385629941efbf524e7373",
+        "dedupe:155194d612dc0569bbcb5cd6ca4b9f8a48a10980d66c9fdbaa5268185d0a9db1",
+        "dedupe:ae15045b2627f9578f92059b3e7dc627a2d63d2c8fa4fdd52a55efcd2c76915d",
+        "dedupe:53abfa44f85ee5e066ce5245f32e82657a88c56c78e4d58b1c0808ac5197f3f8",
+        "dedupe:व र णस म नव बर क ह ग जदय क प रद श क र यकर त सम म लन म त र श रवण क म र न स भ ल कम न|varanasi",
+        "dedupe:a93344a19ad263d7b165eaf94938d70c2098c426fcd9fb8aca5159728dbddf33",
+        "dedupe:a51dee33541f47b402648592b3388ba1cac78ee86362d5c87cb028878b743980"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "varanasi",
+      "canonicalEventCity": "varanasi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "varanasi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-24T22:50:01.829Z",
+      "expiresAt": "2026-10-24T23:05:01.829Z"
     }
   ]
 }
