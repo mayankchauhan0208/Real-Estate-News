@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-23T22:35:24.786Z",
+  "updatedAt": "2026-10-24T01:56:02.053Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6090,6 +6090,32 @@
       "claimedAt": "2026-10-23T22:35:22.460Z",
       "expiresAt": "2026-10-23T22:50:22.460Z",
       "finalizedAt": "2026-10-23T22:35:24.786Z"
+    },
+    {
+      "claimId": "39977807-3538-4c78-99bb-ebca243f9fb6",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://tribuneindia.com/news/delhi/national-capitals-last-48-villages-to-go-urban",
+        "title-city:national capital s last 48 villages to go urban|new_delhi",
+        "dedupe:eff8a16d78eb1ed49abd38617a3c0bdc52f3a61790e154b0b2cd1b038bd2626d",
+        "dedupe:12a941c9945822f76049dbbb64de0f1ab839a64d8662d5775d042c98c5ee30a2",
+        "dedupe:7827735cf76fd789b7a7315a041752a5475e96d90fffcb617645ebf191c0768a",
+        "dedupe:e155f300a8d72c0ff52246e8bfdfbeb5cc45080b14f1a9ab04b7dd70e6eb825e",
+        "dedupe:national capital s last villages go urban|new_delhi",
+        "dedupe:cd2b21afca3c387aa63d57e3702f4da22dfcbcc40fa54b875f7de074d84a79c7",
+        "dedupe:2ccca2f99274a807a9dda0b0b03e21838e8122737a7e4e99cf08c4730bcacdd2"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-24T01:56:02.053Z",
+      "expiresAt": "2026-10-24T02:11:02.053Z"
     }
   ]
 }
