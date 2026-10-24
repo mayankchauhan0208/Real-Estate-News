@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-24T07:37:41.849Z",
+  "updatedAt": "2026-10-24T07:37:43.874Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6196,6 +6196,32 @@
       "claimedAt": "2026-10-24T07:37:40.043Z",
       "expiresAt": "2026-10-24T07:52:40.043Z",
       "finalizedAt": "2026-10-24T07:37:41.849Z"
+    },
+    {
+      "claimId": "69e41330-5870-4d6f-a051-5af92820967a",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/lucknow-city-lucknow-lda-plot-registration-deadline-extended-to-oct-27-40414756.html",
+        "title-city:लखनऊ lda क वर ण व ह र और न म ष नगर य जन म प ल ट प न क एक और म क रज स ट र शन क आख र त र ख बढ|lucknow",
+        "dedupe:94b62189d1d54f6279594f2b6d48b5029481693ef4e2ff45ac56d7c34b919e37",
+        "dedupe:070681d62b5b4c92d15da40236fbeeb885b4bc453630f45c66beba8bb786b336",
+        "dedupe:8c2e535de5c187e7a4acf1761a6b899f706cbc06773861dbf5a8ee5a3d15b8e3",
+        "dedupe:b57d5ed69dc0974caa60f3bd170a0c5f15396dc2ccac01956f4f1fd2acfafe78",
+        "dedupe:लखनऊ lda क वर ण व ह र और न म ष नगर य जन म प ल ट प न क एक और म क रज स ट र शन क आख र त र ख बढ|lucknow",
+        "dedupe:65407d50c2d007c932b7b941200f59c8fc275bc808e4a3240cc751184c4866de",
+        "dedupe:9cc0f21d762af262834aa303c30ba84fe05f02eecfcfb379cfa82de842cca370"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-24T07:37:43.874Z",
+      "expiresAt": "2026-10-24T07:52:43.874Z"
     }
   ]
 }
