@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-24T01:56:03.996Z",
+  "updatedAt": "2026-10-24T07:37:30.065Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6117,6 +6117,31 @@
       "claimedAt": "2026-10-24T01:56:02.053Z",
       "expiresAt": "2026-10-24T02:11:02.053Z",
       "finalizedAt": "2026-10-24T01:56:03.996Z"
+    },
+    {
+      "claimId": "3bf48b5b-6f2a-4953-9acb-ed009d687ac0",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/retail/lulu-international-leases-62035-sq-ft-retail-space-in-greater-noida-for-15-years/135160553",
+        "title-city:lulu international leases 62 035 sq ft retail space in greater noida for 15 years|noida",
+        "dedupe:7611f4cde1c48de8f1aec01c4cc43fa3204a1d15f4548a0060e81674e691c807",
+        "dedupe:643c2a64e0b27c4ca64880db3e2e1a1a8879d9a5f0cb224904bf766119dcc940",
+        "dedupe:8fd0c842a3a51af98fbafb16eeab852578a101cac89266b189faca4809cb0538",
+        "dedupe:lulu international leases retail space greater noida years|noida",
+        "dedupe:bb92172ae2abaee45e803dbc0f7cd984d803237e7824d3ca802b1416fbc7e370",
+        "dedupe:b930f3cb63378ae46ed26ab53b760f57dd5880c1ae2a751493195bc3a3020726"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-24T07:37:30.065Z",
+      "expiresAt": "2026-10-24T07:52:30.065Z"
     }
   ]
 }
