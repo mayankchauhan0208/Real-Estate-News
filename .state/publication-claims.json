@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-24T07:37:45.664Z",
+  "updatedAt": "2026-10-24T07:37:47.643Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6223,6 +6223,32 @@
       "claimedAt": "2026-10-24T07:37:43.874Z",
       "expiresAt": "2026-10-24T07:52:43.874Z",
       "finalizedAt": "2026-10-24T07:37:45.664Z"
+    },
+    {
+      "claimId": "018fad7a-ca82-490a-9be1-90516e9d5b4e",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/meerut-city-arun-govil-at-un-health-access-barriers-indiaun-partnership-40414765.html",
+        "title-city:न य य र क म स य क त र ष ट र स घ क म च पर पह च अर ण ग व ल ब ल स व स थ य स व ओ म ल गत भ ष और द र न बन ब ध|meerut",
+        "dedupe:5f6bf39eccd63668b1a3a44f94e82dee678168ff11722fabcef094d1c8fcad63",
+        "dedupe:f5640f807a577c236cbe4731c181ae092cae20ba8f4ec5d8d62cac06a06162c8",
+        "dedupe:2cd110990a3802df9a016f895a7202c056f7058884ec5f47497428078dc699af",
+        "dedupe:cbc3bdee552da3318547ceda40d1d4d8732aca839cf7c06dd36a130a45c7d7c5",
+        "dedupe:न य य र क म स य क त र ष ट र स घ क म च पर पह च अर ण ग व ल ब ल स व स थ य स व ओ म ल गत भ ष और द र न बन ब ध|meerut",
+        "dedupe:f3a7c447bd4216a9ef1361d4f2a96b88f60128a4d36a93629cddeb9ae1dc5a2a",
+        "dedupe:83b83e39552567b8fc644c2694f8ea8554d3b7936154f3b35169ee0e08a0a8de"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "meerut",
+      "canonicalEventCity": "meerut",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "meerut"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-24T07:37:47.643Z",
+      "expiresAt": "2026-10-24T07:52:47.643Z"
     }
   ]
 }
