@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-24T13:01:44.732Z",
+  "updatedAt": "2026-10-24T16:56:31.431Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6276,6 +6276,32 @@
       "claimedAt": "2026-10-24T13:01:42.584Z",
       "expiresAt": "2026-10-24T13:16:42.584Z",
       "finalizedAt": "2026-10-24T13:01:44.732Z"
+    },
+    {
+      "claimId": "72ff80fd-31a6-4620-b84d-557887be49e3",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/ska-group-unveils-1856-sq-ft-sample-flat-at-ska",
+        "title-city:ska group unveils 1 856 sq ft sample flat at ska estate in greater noida|noida",
+        "dedupe:5472e4e40748a0b1c98e17ff57950dec5460f38fceaf3db016debcb075d36cc3",
+        "dedupe:4e79dfe2464edc3229d586038e4a3bb0fc01d551288b8ea945f096552d38cfc0",
+        "dedupe:9053661356d481ddd7be833cd0186d3c896b71b93e9e987f9ac7547f5ff3e56d",
+        "dedupe:60f62184d6dba9fbd934d7f39e850f8e721460efdcb6d43d0938bd4e09761851",
+        "dedupe:ska group unveils sample flat ska estate greater noida|noida",
+        "dedupe:8b17288573da79863bb7c128b03a289dba3dd86a5fa66f5b44ddc0bfce035a6c",
+        "dedupe:63c7eccb975cf71ca94fa092db808bf0263763173c570f6582e96ba40c1d7ee9"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-24T16:56:31.431Z",
+      "expiresAt": "2026-10-24T17:11:31.431Z"
     }
   ]
 }
