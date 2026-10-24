@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-24T07:37:38.049Z",
+  "updatedAt": "2026-10-24T07:37:40.043Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6169,6 +6169,32 @@
       "claimedAt": "2026-10-24T07:37:36.170Z",
       "expiresAt": "2026-10-24T07:52:36.170Z",
       "finalizedAt": "2026-10-24T07:37:38.049Z"
+    },
+    {
+      "claimId": "51823ce8-7eac-4b99-b23f-4997db9a4842",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/real-estate-guide/from-sonu-sood-to-saif-ali-khan-bollywood-stars-invest-in-commercial-real-estate-for-rental-income-and-long-term-wealth-101792811489137.html",
+        "title-city:from sonu sood to saif ali khan bollywood stars invest in commercial real estate for rental income and long term wealth|mumbai",
+        "dedupe:c586c156e6ac114bafa21821022e1bcd319a21d06b1c06013155f71b7c67d9a3",
+        "dedupe:d15175f98ae4fec6b5157fe50b663dbe7b8176e9fa65c111e679f7c54df932fb",
+        "dedupe:67c2b5c4f7374b0a939511ff0af5964ec0c6234686f527f11113c0dfca8f9586",
+        "dedupe:ca0b3b86a9226fe1dce0a88043d0e7abadcd4b2b3e57ff12936a33e9af9dfe45",
+        "dedupe:sonu sood saif ali khan bollywood stars commercial real estate rental income long term wealth|mumbai",
+        "dedupe:d1f2fa6c659feafc38a63048743ab36b90a00b73d93227429544db82098e3955",
+        "dedupe:6d89433a27644a08157ac471e9533b0160a308d000611e9c984bb75a1adcb81e"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-24T07:37:40.043Z",
+      "expiresAt": "2026-10-24T07:52:40.043Z"
     }
   ]
 }
