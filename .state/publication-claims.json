@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-25T11:42:06.396Z",
+  "updatedAt": "2026-10-25T16:32:16.385Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6437,6 +6437,29 @@
       "claimedAt": "2026-10-25T11:42:03.716Z",
       "expiresAt": "2026-10-25T11:57:03.716Z",
       "finalizedAt": "2026-10-25T11:42:06.396Z"
+    },
+    {
+      "claimId": "49dc2b38-45d9-499c-a4ed-ea7660d0991a",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://infra.economictimes.indiatimes.com/news/aviation/akasa-air-launches-visakhapatnam-delhi-flights-as-third-airline-on-route/135189411",
+        "title-city:akasa air launches direct flights between visakhapatnam and delhi|visakhapatnam",
+        "dedupe:b113f122e6b9cc1375a8326857ddf2552bc7252f69f8a0a27ec4c0e1e2b06172",
+        "dedupe:9dede25d946a75db168f6717abde5bf94d7b14b16ef10ac069c2616b6bc6973c",
+        "dedupe:673a6736a99cb803c2b3baf4b465d00b2d62b2125b44f98bcc5a92a914f14091",
+        "dedupe:akasa air launches direct flights between visakhapatnam delhi|visakhapatnam"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "visakhapatnam",
+      "canonicalEventCity": "visakhapatnam",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "visakhapatnam"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-25T16:32:16.385Z",
+      "expiresAt": "2026-10-25T16:47:16.385Z"
     }
   ]
 }
