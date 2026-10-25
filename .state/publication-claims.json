@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-25T01:29:07.536Z",
+  "updatedAt": "2026-10-25T11:42:03.716Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6411,6 +6411,31 @@
       "claimedAt": "2026-10-25T01:29:04.829Z",
       "expiresAt": "2026-10-25T01:44:04.829Z",
       "finalizedAt": "2026-10-25T01:29:07.536Z"
+    },
+    {
+      "claimId": "a4798f94-184d-4798-8174-03b468ba31ef",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/hyderabad-development-body-banks-on-neopolis-auctions-for-2000-crore-haul/135185953",
+        "title-city:hyderabad development body banks on neopolis auctions for 2 000 crore haul|hyderabad",
+        "dedupe:78bf4c2590abc1af0d03e141d53799ac2b11e8d2bc7ec852defe8dcd757315fd",
+        "dedupe:72f1e00cdb00c7eb91f196bbdc11bb549b5c91e6ce6d01026892434fdc5a863d",
+        "dedupe:c250f6a5745c5b1f57486fca2f54130cd6012f3ee146e911b3970599faa8ec85",
+        "dedupe:hyderabad development body banks neopolis auctions haul|hyderabad",
+        "dedupe:a3b44d712be09c47b170774ad607851e4dc20602db4da71ed4df3c561d8c23ff",
+        "dedupe:53e14a47d12d091b60d93830a4a4eb55890cd5d1a3893c6c57bf63f6e8d4db3a"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-25T11:42:03.716Z",
+      "expiresAt": "2026-10-25T11:57:03.716Z"
     }
   ]
 }
