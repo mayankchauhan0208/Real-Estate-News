@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-25T19:27:33.498Z",
+  "updatedAt": "2026-10-25T19:27:35.031Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6491,7 +6491,7 @@
     },
     {
       "claimId": "05e00c3e-93c1-431c-ad86-5fc71e5aaeae",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/ghaziabad-harnandipuram-scheme-gda-secures-500-acres-in-ghaziabad-40416356.html",
         "title-city:ग ज य ब द हरन द प रम य जन 500 एकड जम न क ब न म प र rera प ज करण क ब द gda जल द कर ग ल न च|ghaziabad",
@@ -6513,7 +6513,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-25T19:27:33.498Z",
-      "expiresAt": "2026-10-25T19:42:33.498Z"
+      "expiresAt": "2026-10-25T19:42:33.498Z",
+      "finalizedAt": "2026-10-25T19:27:35.031Z"
     }
   ]
 }
