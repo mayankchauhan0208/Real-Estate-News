@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-25T19:27:31.062Z",
+  "updatedAt": "2026-10-25T19:27:33.498Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6488,6 +6488,32 @@
       "claimedAt": "2026-10-25T19:27:28.604Z",
       "expiresAt": "2026-10-25T19:42:28.604Z",
       "finalizedAt": "2026-10-25T19:27:31.062Z"
+    },
+    {
+      "claimId": "05e00c3e-93c1-431c-ad86-5fc71e5aaeae",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/ghaziabad-harnandipuram-scheme-gda-secures-500-acres-in-ghaziabad-40416356.html",
+        "title-city:ग ज य ब द हरन द प रम य जन 500 एकड जम न क ब न म प र rera प ज करण क ब द gda जल द कर ग ल न च|ghaziabad",
+        "dedupe:3ba4594d3e91d715736478cbf8d4b3259f49c9fe1cf6df9d3c73419f75c7a82a",
+        "dedupe:acb70d0f55b38ad939d129c4151f721ff84f9575d931c99f5b94a59d8518ae1a",
+        "dedupe:1c4c9ed5d78bdd0ecd8b72922ad4e3d4a8ccc716d13203e8bfc5f4f561376846",
+        "dedupe:9f31fb038e5f45f52c37dcf645025bcc52e888d37848c99ba5a5b6fe9293160c",
+        "dedupe:ग ज य ब द हरन द प रम य जन एकड जम न क ब न म प र rera प ज करण क ब द gda जल द कर ग ल न च|ghaziabad",
+        "dedupe:df3e831c2a2acefc940f6c089a351c6c98d019a139475d5a486ffd0e60b25eeb",
+        "dedupe:c5ac76deb648c5d2136f2b0217836381dba350dd57d210c722477690c2fa867e"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "ghaziabad",
+      "canonicalEventCity": "ghaziabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "ghaziabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-25T19:27:33.498Z",
+      "expiresAt": "2026-10-25T19:42:33.498Z"
     }
   ]
 }
