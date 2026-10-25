@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-25T01:28:58.970Z",
+  "updatedAt": "2026-10-25T01:29:01.838Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6360,7 +6360,7 @@
     },
     {
       "claimId": "01263fba-0cfe-410b-83bb-4df35b5ecec2",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/lucknow-city-lda-diwali-offer-2000-new-plots-1300-flats-in-lucknow-40415739.html",
         "title-city:द प वल पर lda क बड त हफ लखनऊ व ल क म ल ग 2000 नए प ल ट और 1300 फ ल ट ऐस ह ग रज स ट र शन|lucknow",
@@ -6382,7 +6382,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-25T01:28:58.970Z",
-      "expiresAt": "2026-10-25T01:43:58.970Z"
+      "expiresAt": "2026-10-25T01:43:58.970Z",
+      "finalizedAt": "2026-10-25T01:29:01.837Z"
     }
   ]
 }
