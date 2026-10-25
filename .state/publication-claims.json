@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-25T01:29:01.838Z",
+  "updatedAt": "2026-10-25T01:29:04.829Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6384,6 +6384,32 @@
       "claimedAt": "2026-10-25T01:28:58.970Z",
       "expiresAt": "2026-10-25T01:43:58.970Z",
       "finalizedAt": "2026-10-25T01:29:01.837Z"
+    },
+    {
+      "claimId": "312c5021-cdfa-4a76-adb3-a53f8431d99f",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-investors-eye-dubai-real-estate-property-clinic-fair-40415705.html",
+        "title-city:म रठ क न व शक क ल भ रह द बई क र यल एस ट ट म र क ट प र पर ट म ल म क र ब र य न तल श स भ वन ए|meerut",
+        "dedupe:901fdaf9f163b222ecefcc1c889fee090d9dd76cd6abc37ba0972857b90d56eb",
+        "dedupe:e771def3268bccd6195de7e0e88135488eefb42a8961829b10544e9f3ff291e2",
+        "dedupe:727f24759c8788366d012f4fcb430ce77acde1ffb79ee23d8e115dea674e4a6a",
+        "dedupe:c653b0d25bb15e5cb1a70a5d56d4ed598f3c64cb1cf92dd620ed3862865a4505",
+        "dedupe:म रठ क न व शक क ल भ रह द बई क र यल एस ट ट म र क ट प र पर ट म ल म क र ब र य न तल श स भ वन ए|meerut",
+        "dedupe:dccfa830943036fa530123df238f2537fb753c214e02bd95fbd47d281e5e5993",
+        "dedupe:681f43449d2201cd2d10ede5ebcab3f51b39643b6c7730e7fe4ab5d81f928ca8"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "meerut",
+      "canonicalEventCity": "meerut",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "meerut"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-25T01:29:04.829Z",
+      "expiresAt": "2026-10-25T01:44:04.829Z"
     }
   ]
 }
