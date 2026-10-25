@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-24T22:50:04.557Z",
+  "updatedAt": "2026-10-25T01:28:58.970Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6357,6 +6357,32 @@
       "claimedAt": "2026-10-24T22:50:01.829Z",
       "expiresAt": "2026-10-24T23:05:01.829Z",
       "finalizedAt": "2026-10-24T22:50:04.557Z"
+    },
+    {
+      "claimId": "01263fba-0cfe-410b-83bb-4df35b5ecec2",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/lucknow-city-lda-diwali-offer-2000-new-plots-1300-flats-in-lucknow-40415739.html",
+        "title-city:द प वल पर lda क बड त हफ लखनऊ व ल क म ल ग 2000 नए प ल ट और 1300 फ ल ट ऐस ह ग रज स ट र शन|lucknow",
+        "dedupe:60186d924735cb1de0994cbee8ef5bc2bc0fb7bd646d9ab562398794a6f07c53",
+        "dedupe:a977af67e287fe80a91d1ef3d314edbd2cf7ced244dc85c8ace7881d5bd30c2f",
+        "dedupe:205f84b8d8b84e332752530d5835fe5842095e06441db082930995382e4494e6",
+        "dedupe:206415b46ee30454d6f604ea6e056c12e7522114fca19e84ac38a3c01f9cb69d",
+        "dedupe:द प वल पर lda क बड त हफ लखनऊ व ल क म ल ग नए प ल ट और फ ल ट ऐस ह ग रज स ट र शन|lucknow",
+        "dedupe:6ffe3f00aeb6c536f6847ea4a38fa54a4d876e75dcc36791025d2947c77ffaa4",
+        "dedupe:cf1057f0a43a3a4168cb21ee0316a633e1c0d20993f0e49a4b899a1980a9ba32"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-25T01:28:58.970Z",
+      "expiresAt": "2026-10-25T01:43:58.970Z"
     }
   ]
 }
