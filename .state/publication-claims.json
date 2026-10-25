@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-25T16:32:16.385Z",
+  "updatedAt": "2026-10-25T16:32:18.598Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6440,7 +6440,7 @@
     },
     {
       "claimId": "49dc2b38-45d9-499c-a4ed-ea7660d0991a",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://infra.economictimes.indiatimes.com/news/aviation/akasa-air-launches-visakhapatnam-delhi-flights-as-third-airline-on-route/135189411",
         "title-city:akasa air launches direct flights between visakhapatnam and delhi|visakhapatnam",
@@ -6459,7 +6459,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-25T16:32:16.385Z",
-      "expiresAt": "2026-10-25T16:47:16.385Z"
+      "expiresAt": "2026-10-25T16:47:16.385Z",
+      "finalizedAt": "2026-10-25T16:32:18.598Z"
     }
   ]
 }
