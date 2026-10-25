@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-25T16:32:18.598Z",
+  "updatedAt": "2026-10-25T19:27:28.604Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6461,6 +6461,32 @@
       "claimedAt": "2026-10-25T16:32:16.385Z",
       "expiresAt": "2026-10-25T16:47:16.385Z",
       "finalizedAt": "2026-10-25T16:32:18.598Z"
+    },
+    {
+      "claimId": "b27a62c9-2e3f-4340-8191-e36e2ffda03c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://business-standard.com/industry/news/delhi-urbanises-48-villages-opening-new-avenues-for-realty-developers-126102500437_1.html",
+        "title-city:delhi urbanises 48 villages opening new avenues for realty developers|new_delhi",
+        "dedupe:489d9bd2b187f17a7ef6314757827b4ad96348a7540575ba0706fc8cf0fb71c7",
+        "dedupe:347cda9f0ed22a2637b26269118f727b7fcfe6c39848a8630b29281329b254fe",
+        "dedupe:9560c2362c790e0fb51dd77c5de9c240b472bb163099af76c3a5a39ae8fd1bff",
+        "dedupe:2f9bd3d80afae6a17a6ffa1b015dcf880f0427e494c2736a208a605ae36e958e",
+        "dedupe:delhi urbanises villages opening new avenues|new_delhi",
+        "dedupe:0b9f713cc7bd3181bb22e4ec6b0a139d7c134b83983817b7a1523b8de3122a54",
+        "dedupe:7299b6109a8180855c878ef435aeea17e7c3865af4cc09e3aea0020d2644ce54"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-25T19:27:28.604Z",
+      "expiresAt": "2026-10-25T19:42:28.604Z"
     }
   ]
 }
