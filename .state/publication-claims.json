@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-26T19:37:22.233Z",
+  "updatedAt": "2026-10-26T19:37:24.235Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6781,6 +6781,31 @@
       "claimedAt": "2026-10-26T19:37:20.635Z",
       "expiresAt": "2026-10-26T19:52:20.635Z",
       "finalizedAt": "2026-10-26T19:37:22.233Z"
+    },
+    {
+      "claimId": "a023a1e2-93f0-42c4-a906-84c3a65c9bb5",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://magicbricks.com/news/hyderabad-land-market-hmda-prepares-new-e-auctions-across-kokapet-raidurg-and-prime-corridors-targets-rs-2000-crore-revenue-jkmb/152429.html",
+        "title-city:hyderabad land market hmda prepares new e auctions across kokapet raidurg and prime corridors targets rs 2 000|hyderabad",
+        "dedupe:2f5058555305ba40ce27cb7f6be2321058c18ff6b1f6cd88fd749e750113d6c7",
+        "dedupe:1505ad32d5e3eb865e1cfcac1b7e867bbba4573ec79b2cab9af7360c005c725e",
+        "dedupe:b1ba96f6bcdab84b5fb4c6b2c2d3aa3f67b612ee5c9c155e32bd25b0106a345d",
+        "dedupe:hyderabad land market hmda prepares new e auctions across kokapet raidurg prime corridors targets|hyderabad",
+        "dedupe:ead83653e9852cddee048ae554b244d02f7749bbc0603f9a415b667c3009f685",
+        "dedupe:db2568516d8c4c781596735d9010f3b1baacb5691e095a8afdc998af8d6a0345"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-26T19:37:24.235Z",
+      "expiresAt": "2026-10-26T19:52:24.235Z"
     }
   ]
 }
