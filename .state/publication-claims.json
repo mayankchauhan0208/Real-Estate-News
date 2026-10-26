@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-25T19:27:35.031Z",
+  "updatedAt": "2026-10-26T06:30:44.050Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6515,6 +6515,32 @@
       "claimedAt": "2026-10-25T19:27:33.498Z",
       "expiresAt": "2026-10-25T19:42:33.498Z",
       "finalizedAt": "2026-10-25T19:27:35.031Z"
+    },
+    {
+      "claimId": "6352321e-f11c-44bf-a984-2b5065f07dc8",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/gurugram-news/gurugram-receives-25-new-electric-buses-operations-to-begin-november-1-101792952188421.html",
+        "title-city:gurugram receives 25 new electric buses operations to begin november 1|gurugram",
+        "dedupe:55a0370547125a19bd5fda9b8eb49035c21d8461f167bf4befea55e4e319172e",
+        "dedupe:006729a2c3c39d1c3181621bb5e6f688e619d5c1b111e326d7fe2db447b6baef",
+        "dedupe:e7494024cfb6678faf2e145ab6e772ffcdef62d83ac0412e5adf54de4b237250",
+        "dedupe:1a2ceda47f8a59e0505e90422e1ae578de37cdf23c8ed38d19a5c1cc14de1b0b",
+        "dedupe:gurugram receives new electric buses operations begin november|gurugram",
+        "dedupe:27a8b2fd24f24f581e0115fbd0c90ab5962c8347640914d74b6650a81f3bf520",
+        "dedupe:0fb27c6f8be8ae3bf4ce46a6ec7d1fd4bd2beba127888ca1b68f95637a8d2fc8"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-26T06:30:44.050Z",
+      "expiresAt": "2026-10-26T06:45:44.050Z"
     }
   ]
 }
