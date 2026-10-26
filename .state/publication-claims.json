@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-26T06:30:54.685Z",
+  "updatedAt": "2026-10-26T06:30:56.729Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6596,6 +6596,32 @@
       "claimedAt": "2026-10-26T06:30:52.566Z",
       "expiresAt": "2026-10-26T06:45:52.566Z",
       "finalizedAt": "2026-10-26T06:30:54.685Z"
+    },
+    {
+      "claimId": "f6ad360c-8dcf-4b8c-a3c9-06e898988e04",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/gb-realty-to-invest-up-to-rs-2500-crore",
+        "title-city:gb realty to invest up to rs 2 500 crore for punjab s first jacob and co branded residences in mohali|mohali",
+        "dedupe:16f2f92e7f610e7ba61e16afd7155ce525e0ecc3008ef9917ee81ba74f83a20e",
+        "dedupe:31d12c0ac80c78dda195a34fa0a0a8d7266d5b31efc7bcccf297e954f8d64a1b",
+        "dedupe:eb9d53ae91a9e510226b8a13e8d82e645b7f36a399662b45bdeb3b4894fba974",
+        "dedupe:a59b6a1dfec93790e06528f348f0e1d75a75be49fe60323b4a6561bbb9d3936a",
+        "dedupe:gb punjab s first jacob co branded residences mohali|mohali",
+        "dedupe:c2b2444f9ffc21c52ca64c001eaaece074c90f72a8375959932c2c1690a2c59d",
+        "dedupe:0ad723a73355b67f0087e9ab0b5d766a11d7de65121ad0579e8c1008f5983b17"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mohali",
+      "canonicalEventCity": "mohali",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mohali"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-26T06:30:56.729Z",
+      "expiresAt": "2026-10-26T06:45:56.729Z"
     }
   ]
 }
