@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-26T06:30:46.610Z",
+  "updatedAt": "2026-10-26T06:30:48.734Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6542,6 +6542,32 @@
       "claimedAt": "2026-10-26T06:30:44.050Z",
       "expiresAt": "2026-10-26T06:45:44.050Z",
       "finalizedAt": "2026-10-26T06:30:46.610Z"
+    },
+    {
+      "claimId": "ae1a8206-7614-4ff3-bb49-3b9c9e104193",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-noida-authority-re-tenders-for-sector-151a-golf-course-completion-40416748.html",
+        "title-city:3 स ल ब द न एड इ टरन शनल ग ल फ क र स क ल ए कव यद त ज 34 कर ड क ट डर ज र|noida",
+        "dedupe:b12ee71c4f80de566b3d1c26dfaaa3f7dce630cc541ff845261386c69015337d",
+        "dedupe:f110d65104dcfd08282837c495a449529d390980555f998322cb297e2e36eea1",
+        "dedupe:10609edd8ca26c596ba3d2743641de60ae587fc40d22eaf05c3d18320f44bb4c",
+        "dedupe:d05f3e613abb7215c29440ef4d55e84ab21ef43df5084a5bcd244001c819af86",
+        "dedupe:स ल ब द न एड इ टरन शनल ग ल फ क र स क ल ए कव यद त ज कर ड क ट डर ज र|noida",
+        "dedupe:ceb5dddc216729b839def42177b60462eb264713f1b3c564f80e5324f3a23601",
+        "dedupe:269988c7b889318be5bbc2b02966b48a2120e09f7b684586efad2e4e14eab675"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-26T06:30:48.734Z",
+      "expiresAt": "2026-10-26T06:45:48.734Z"
     }
   ]
 }
