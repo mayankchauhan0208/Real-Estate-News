@@ -147,7 +147,10 @@ jobs:
           SOURCE_BATCH_INTERVAL_MINUTES: "60"
           AUTO_SOURCE_BATCH: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
           SOURCE_BATCH_COUNT: ${{ github.event_name == 'schedule' && '6' || '1' }}
-          USE_RESUMABLE_SOURCE_SCHEDULER: "true"
+          # Exact-source validation runs are isolated from the durable normal
+          # rotation. A targeted manual run must not replace the 553-source
+          # checkpoint with its temporary one-source universe.
+          USE_RESUMABLE_SOURCE_SCHEDULER: ${{ (github.event_name == 'schedule' || github.event.inputs.source_urls == '') && 'true' || 'false' }}
           SOURCE_SHARD_SIZE: "50"
           # Leave enough time inside the hosted job for filtering, live
           # reconciliation, publication, and final artifact persistence.
