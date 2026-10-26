@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-26T06:31:02.318Z",
+  "updatedAt": "2026-10-26T19:37:12.154Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6702,6 +6702,31 @@
       "claimedAt": "2026-10-26T06:31:00.618Z",
       "expiresAt": "2026-10-26T06:46:00.618Z",
       "finalizedAt": "2026-10-26T06:31:02.318Z"
+    },
+    {
+      "claimId": "b2c04f29-77d1-4176-9bab-9e0e68c85c9a",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://constructionworld.in/latest-construction-news/real-estate-news/gb-realty-partners-jacob---co.-for-branded-residences-in-mohali/99369",
+        "title-city:gb realty partners jacob and co for branded residences in mohali|mohali",
+        "dedupe:bf2dd18c1d01b0cf0f4abcc61e4cfeb89c2feec5dade120d1cc28a2caf0949e3",
+        "dedupe:b3c7a3a96ca1a2901e1f5ffc7e531362ab4021724be2abeced64c8d8b012a10c",
+        "dedupe:4e1eb4d1a15d11ca9027d768f940512b8b8c7a7c7e23a1c04606170f8cd2ee76",
+        "dedupe:gb partners jacob co branded residences mohali|mohali",
+        "dedupe:79549fa29e6d8c66e75be066394598ec5c3fafd3cfc377ebceafc949e68887a2",
+        "dedupe:c8ac4a64f166fd318cb9ceeb74f321f3b5ae4872bebece531e88ea54dac66a95"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mohali",
+      "canonicalEventCity": "mohali",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mohali"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-26T19:37:12.154Z",
+      "expiresAt": "2026-10-26T19:52:12.154Z"
     }
   ]
 }
