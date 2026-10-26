@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-26T19:37:27.517Z",
+  "updatedAt": "2026-10-26T19:37:29.028Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6810,7 +6810,7 @@
     },
     {
       "claimId": "08963ff6-7f86-40b4-848e-2f784e5b500d",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/haryana/gurgaon-gurugram-doortodoor-waste-collection-starts-october-28-40417388.html",
         "title-city:ग र ग र म म 28 अक ट बर स ड र ट ड र कचर स ग रहण सफ ई व यवस थ ह ग ब हतर|gurugram",
@@ -6832,7 +6832,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-26T19:37:27.517Z",
-      "expiresAt": "2026-10-26T19:52:27.517Z"
+      "expiresAt": "2026-10-26T19:52:27.517Z",
+      "finalizedAt": "2026-10-26T19:37:29.028Z"
     }
   ]
 }
