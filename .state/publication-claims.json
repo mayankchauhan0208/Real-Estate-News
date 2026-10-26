@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-26T19:37:25.855Z",
+  "updatedAt": "2026-10-26T19:37:27.517Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6807,6 +6807,32 @@
       "claimedAt": "2026-10-26T19:37:24.235Z",
       "expiresAt": "2026-10-26T19:52:24.235Z",
       "finalizedAt": "2026-10-26T19:37:25.855Z"
+    },
+    {
+      "claimId": "08963ff6-7f86-40b4-848e-2f784e5b500d",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/haryana/gurgaon-gurugram-doortodoor-waste-collection-starts-october-28-40417388.html",
+        "title-city:ग र ग र म म 28 अक ट बर स ड र ट ड र कचर स ग रहण सफ ई व यवस थ ह ग ब हतर|gurugram",
+        "dedupe:92602ea6662142a210ff7751c323df8a83c3e32518d2a88b7006735cb4a1b0de",
+        "dedupe:adf4f35c047444a6e0d73743be10b3c45de92f4ff5af85b11de5e34ba62c8dd3",
+        "dedupe:d91d46ecbbc1336025e2d9d742e89924d83efd742780485e840a3f2ab6a6c6e9",
+        "dedupe:ca30cee0413d97f453a85a4d08ac890d69577239686e8fc25e44b43667e4b728",
+        "dedupe:ग र ग र म म अक ट बर स ड र ट ड र कचर स ग रहण सफ ई व यवस थ ह ग ब हतर|gurugram",
+        "dedupe:b0225eb09d307d4c87aacbb41d37bb42da80615ffd108de8556e0af0c36616b8",
+        "dedupe:cb805ea82004a5076e69efb41e89d19ba01fed6b9083f55b6fa10ca1de9f1f2b"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-26T19:37:27.517Z",
+      "expiresAt": "2026-10-26T19:52:27.517Z"
     }
   ]
 }
