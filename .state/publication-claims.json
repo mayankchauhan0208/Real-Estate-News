@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-26T19:37:31.200Z",
+  "updatedAt": "2026-10-26T19:37:32.726Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6837,7 +6837,7 @@
     },
     {
       "claimId": "c79dfe18-ba4e-402f-9fc1-a03a571853ce",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/raymond-realty-raises-rs-210-cr-from-icici-prudential-real-estate-development-fund/articleshow/135212087.cms",
         "title-city:raymond realty raises rs 210 cr from icici prudential real estate development fund|mumbai",
@@ -6859,7 +6859,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-26T19:37:31.200Z",
-      "expiresAt": "2026-10-26T19:52:31.200Z"
+      "expiresAt": "2026-10-26T19:52:31.200Z",
+      "finalizedAt": "2026-10-26T19:37:32.726Z"
     }
   ]
 }
