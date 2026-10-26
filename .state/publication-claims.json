@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-26T19:37:36.619Z",
+  "updatedAt": "2026-10-26T19:37:38.612Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6888,6 +6888,32 @@
       "claimedAt": "2026-10-26T19:37:34.808Z",
       "expiresAt": "2026-10-26T19:52:34.808Z",
       "finalizedAt": "2026-10-26T19:37:36.619Z"
+    },
+    {
+      "claimId": "61f5961d-092e-4462-961c-b9e5d6c34f3f",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/kanpur-city-employment-opportunities-skill-training-and-employment-scheme-launched-on-october-31-in-kanpur-40417743.html",
+        "title-city:31 अक ट बर क पट ल जय त पर 5 शहर स श र ह ग क शल प रश क षण एव र जग र क ष त र य जन य व ओ क म ल ग र जग र क|lucknow",
+        "dedupe:948fc7a0e92d9d41423199c935e5503ff63752ba02d0061721515a43b5589d2e",
+        "dedupe:a09f39c7420c5c43193be1a4d84d760ef04206eb5d8e0eb60dbc169d32c3ffef",
+        "dedupe:f9d189a12b5191267d079fd65742639c3c93b0c8ed835cb5e39b066c91fc8d67",
+        "dedupe:0efbe8cf67ab82cac36c4ceba28b49013ace381fcee93dfd88f3a9e9e30db84d",
+        "dedupe:अक ट बर क पट ल जय त पर शहर स श र ह ग क शल प रश क षण एव र जग र क ष त र य जन य व ओ क म ल ग र जग र क|lucknow",
+        "dedupe:fb232c475740a46e924a7943d7c04e1c94471fa81b27dcd9746ad9a181888246",
+        "dedupe:472cf4fabe88939a9d8fe85dc0aa9a9e419bc7f8850cb04875a6b58ab48093b1"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-26T19:37:38.612Z",
+      "expiresAt": "2026-10-26T19:52:38.612Z"
     }
   ]
 }
