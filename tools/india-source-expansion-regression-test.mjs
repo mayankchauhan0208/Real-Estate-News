@@ -52,6 +52,20 @@ for (const [id, cityCodes] of expressExpected) {
   assert.deepEqual(source.cityCodes, cityCodes);
 }
 
+const tamilExpected = new Map([
+  ["regional-dinamani-tamil-nadu", []],
+  ["regional-dinamani-chennai", ["chennai"]],
+  ["regional-dinamalar-tamil-nadu", []]
+]);
+for (const [id, cityCodes] of tamilExpected) {
+  const source = settings.manualSources.find((candidate) => candidate.id === id);
+  assert.ok(source, `${id} must be configured`);
+  assert.equal(source.enabled, true);
+  assert.equal(source.category, "regional-tamil");
+  assert.equal(source.sourceMode, "ACTIVE_FOR_REVIEW");
+  assert.deepEqual(source.cityCodes, cityCodes);
+}
+
 delete process.env.ENABLE_EXPERIMENTAL_SOURCES;
 const defaultRuntime = (await import("../src/index.js")).getSourceUrls();
 assert.equal(defaultRuntime.some((url) => url.includes("jagran.com")), false, "experimental sources must still require explicit runtime opt-in");
@@ -61,5 +75,6 @@ const productionRuntime = (await import(`../src/index.js?production-opt-in=${Dat
 assert.equal(productionRuntime.filter((url) => url.includes("jagran.com")).length, expected.size, "all verified Jagran surfaces must remain in the production runtime");
 assert.equal(productionRuntime.filter((url) => url.includes("anandabazar.com/topic/real-estate")).length, 1, "verified Bengali surface must be selectable with experimental opt-in");
 assert.equal(productionRuntime.filter((url) => url.includes("newindianexpress.com/cities/")).length, expressExpected.size, "verified New Indian Express city surfaces must be selectable with experimental opt-in");
+assert.equal(productionRuntime.filter((url) => /dinamani\.com|dinamalar\.com/.test(url)).length, tamilExpected.size, "verified Tamil surfaces must be selectable with experimental opt-in");
 
 console.log(`India source expansion safety regression passed: ${sources.length} verified Jagran city surfaces are enabled after the clean event-core dry proof.`);

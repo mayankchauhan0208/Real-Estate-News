@@ -6935,8 +6935,8 @@ function isObviousNonArticleDiscoveryCandidate(article) {
 // negative, language, date, geo, or full-article gates.
 function hasNativePropertyDevelopmentNexus(article) {
   const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
-  const nativeProperty = /(?:ఇల్లు|ఇండిరమ్మ|గృహ|ప్లాట్|స్థలం|భవన|టవర్స్|హౌసింగ్|నిర్మాణ|లేఅవుట్|భూమి|భూములు|ఎకర|ఆస్తి|ಆಸ್ತಿ|ಭೂ|ಖಾತಾ|ಕಟ್ಟಡ|ಮನೆ|ನಿವೇಶನ|ವಸತಿ|फ्लैट|आवास|भूखंड|संपत्ति|घर|निर्माण|योजना)/u.test(text);
-  const nativeEvent = /(?:నిర్మాణం|శంకుస్థాపన|ప్రారంభ|విక్రయ|వేలం|వెంచర్|ప్లాట్ల|నిబంధన|చట్టం|టవర్|ಟವರ್|ಪ್ರಾರಂಭ|ಮಾರಾಟ|ಹರಾಜು|ನಿಯಮ|परियोजना|लॉन्च|बिक्री|नीलामी|नियम|निर्माण|योजना)/u.test(text);
+  const nativeProperty = /(?:இல்லம்|வீடு|வீட்டுவசதி|குடியிருப்பு|மனை|நிலம்|கட்டடம்|ரியல் எஸ்டேட்|ఇల్లు|ఇండిరమ్మ|గృహ|ప్లాట్|స్థలం|భవన|టవర్స్|హౌసింగ్|నిర్మాణ|లేఅవుట్|భూమి|భూములు|ఎకర|ఆస్తి|ಆಸ್ತಿ|ಭೂ|ಖಾತಾ|ಕಟ್ಟಡ|ಮನೆ|ನಿವೇಶನ|ವಸತಿ|फ्लैट|आवास|भूखंड|संपत्ति|घर|निर्माण|योजना)/u.test(text);
+  const nativeEvent = /(?:திட்டம்|கட்டுமான|விற்பனை|பத்திரப்பதிவு|ஒப்புதல்|அனுமதி|ஒதுக்கீடு|அறிமுக|தொடக்கம்|నిర్మాణం|శంకుస్థాపన|ప్రారంభ|విక్రయ|వేలం|వెంచర్|ప్లాట్ల|నిబంధన|చట్టం|టవర్|ಟವರ್|ಪ್ರಾರಂಭ|ಮಾರಾಟ|ಹರಾಜು|ನಿಯಮ|परियोजना|लॉन्च|बिक्री|नीलामी|नियम|निर्माण|योजना)/u.test(text);
   return nativeProperty && nativeEvent;
 }
 
@@ -8030,6 +8030,8 @@ function extractPageTitle($) {
     pickFirst(
       $('meta[property="og:title"]').attr("content"),
       $('meta[name="twitter:title"]').attr("content"),
+      $('meta[name="headline"]').attr("content"),
+      $('meta[name="title"]').attr("content"),
       $("h1").first().text(),
       $("title").text()
     )
@@ -8213,7 +8215,11 @@ async function fetchArticleMetadata(articleUrl, fallback = {}, options = {}) {
     // Cheerio document. Preserve structured metadata before that destructive
     // cleanup so JSON-LD-only publication dates and images are not lost.
     const pagePublishedAt = extractPagePublishedAt($, fallback);
+    const pageTitle = extractPageTitle($);
     const metadataImage = extractMetadataImage($, fallback);
+    const resolvedMetadataImage = metadataImage && normalizeArticleUrlForDedupe(metadataImage) !== normalizeArticleUrlForDedupe(articleUrl)
+      ? metadataImage
+      : "";
     const metadataDescription = pickDescription(
       $('meta[property="og:description"]').attr("content"),
       $('meta[name="description"]').attr("content"),
@@ -8222,12 +8228,13 @@ async function fetchArticleMetadata(articleUrl, fallback = {}, options = {}) {
     const documentUrl = extractLinkedDocumentUrl($, articleUrl);
     const articleText = extractArticleText($);
     return {
+      title: pickFirst(pageTitle, fallback.title),
       description: pickFirst(
         metadataDescription,
         fallback.title
       ),
       thumbnailImage: pickFirst(
-        metadataImage,
+        resolvedMetadataImage,
         fallback.thumbnailImage
       ),
       publishedAt: pickFirst(pagePublishedAt, fallback.publishedAt),
@@ -9808,6 +9815,30 @@ function isManoramaNestSource(sourceUrl = "") {
 
 function regionalHtmlSourceConfig(sourceUrl = "") {
   const value = String(sourceUrl);
+  if (/dinamani\.com\/tamilnadu\/?$/i.test(value)) {
+    return {
+      language: "ta",
+      script: "Tamil",
+      linkPattern: /\/tamilnadu\/20\d{2}\/[A-Za-z]{3}\/\d{1,2}\/[^/?#]+(?:$|\?)/i,
+      titlePattern: null
+    };
+  }
+  if (/dinamani\.com\/all-editions\/edition-chennai\/chennai\/?$/i.test(value)) {
+    return {
+      language: "ta",
+      script: "Tamil",
+      linkPattern: /\/all-editions\/edition-chennai\/chennai\/20\d{2}\/[A-Za-z]{3}\/\d{1,2}\/[^/?#]+(?:$|\?)/i,
+      titlePattern: null
+    };
+  }
+  if (/dinamalar\.com\/news\/tamil-nadu-news\/?$/i.test(value)) {
+    return {
+      language: "ta",
+      script: "Tamil",
+      linkPattern: /\/news\/tamil-nadu-news\/[^/?#]+\/\d+(?:$|\?)/i,
+      titlePattern: null
+    };
+  }
   const newIndianExpressCity = value.match(/newindianexpress\.com\/cities\/(hyderabad|chennai|bengaluru|kochi)\/?$/i)?.[1];
   if (newIndianExpressCity) {
     return {

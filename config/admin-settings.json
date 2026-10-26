@@ -5338,6 +5338,36 @@
       "createdAt": "2026-10-26T00:00:00.000Z"
     },
     {
+      "id": "regional-dinamani-tamil-nadu",
+      "url": "https://www.dinamani.com/tamilnadu",
+      "label": "Dinamani Tamil Nadu | Regional P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "regional-tamil",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "id": "regional-dinamani-chennai",
+      "url": "https://www.dinamani.com/all-editions/edition-chennai/chennai",
+      "label": "Dinamani Chennai | Regional P2",
+      "cityCodes": ["chennai"],
+      "enabled": true,
+      "category": "regional-tamil",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "id": "regional-dinamalar-tamil-nadu",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-news",
+      "label": "Dinamalar Tamil Nadu | Regional P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "regional-tamil",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
       "id": "id-196410014",
       "url": "https://www.lokmat.com/real-estate/",
       "label": "Lokmat Marathi Real Estate | Regional P2",

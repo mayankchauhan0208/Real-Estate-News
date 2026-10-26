@@ -36,3 +36,20 @@ try {
 }
 
 console.log("Article metadata order regression passed: JSON-LD survives full-text cleanup.");
+
+const selfUrl = "https://example.com/news/property-story";
+const selfImageHtml = `
+  <html><head>
+    <title>Property story</title>
+    <meta property="og:image" content="${selfUrl}">
+  </head><body><article>${"Readable property development evidence. ".repeat(12)}</article></body></html>`;
+const originalFetch = globalThis.fetch;
+globalThis.fetch = async () => new Response(selfImageHtml, { status: 200, headers: { "content-type": "text/html" } });
+try {
+  const selfImageMetadata = await fetchArticleMetadata(selfUrl);
+  assert.equal(selfImageMetadata.thumbnailImage, "", "an article URL must never be reused as its thumbnail URL");
+} finally {
+  globalThis.fetch = originalFetch;
+}
+
+console.log("Article metadata order regression passed: self-referential thumbnail URLs are rejected.");
