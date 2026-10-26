@@ -4,7 +4,8 @@ import {
   cleanArticleFields,
   detectCityCodes,
   discoverRegionalHtmlCandidates,
-  isBlockedArticle
+  isBlockedArticle,
+  isPublishableArticle
 } from "../src/index.js";
 
 const sourceUrl = "https://www.anandabazar.com/topic/real-estate";
@@ -105,3 +106,49 @@ assert.equal(isBlockedArticle(tamilPropertyControl), false, "paired Tamil proper
 assert.deepEqual(detectCityCodes(tamilPropertyControl), ["chennai"], "explicit Tamil Chennai evidence must route without source-city forcing");
 
 console.log("Regional listing adapter regression passed: Tamil property-event evidence retains safe explicit-city routing.");
+
+const patrikaSource = "https://www.patrika.com/jaipur-news/";
+const patrikaHtml = `
+  <html><head><title>Jaipur News - Patrika</title></head><body>
+    <a href="/topic/rajasthan-panchayat-election">राजस्थान पंचायत चुनाव की ताजा खबरें यहां पढ़ें</a>
+    <a href="/lucknow-news/other-city-story-21010000">दूसरे शहर की खबर यहां प्रकाशित हुई है</a>
+    <article>
+      <a href="/jaipur-news/jaipur-housing-project-approved-21010074">
+        जयपुर में नई आवासीय परियोजना को मंजूरी मिली
+      </a>
+    </article>
+  </body></html>`;
+const patrikaCandidates = discoverRegionalHtmlCandidates(patrikaHtml, patrikaSource);
+assert.equal(patrikaCandidates.length, 1, "Patrika city adapters must exclude topic and cross-city links");
+assert.match(patrikaCandidates[0].newsLink, /\/jaipur-news\/[^/]+-\d+$/);
+
+console.log("Regional listing adapter regression passed: Patrika topic and cross-city links are excluded.");
+
+const heritageConstructionControl = applyCityCode(cleanArticleFields({
+  title: "जबलपुर के बैलेंसिंग रॉक के अस्तित्व पर खतरा, आसपास चल रहा निर्माण कार्य",
+  description: "प्राकृतिक धरोहर की उपेक्षा और अतिक्रमण के बीच संरक्षण की मांग उठी",
+  articleText: "पर्यटन कारोबारियों ने प्राकृतिक धरोहर के संरक्षण की योजना मांगी। आसपास निर्माण और अतिक्रमण से खतरा है।",
+  newsLink: "https://www.patrika.com/jabalpur-news/jabalpur-balancing-rock-tourism-heritage-conservation-20996228",
+  postedBy: "Patrika",
+  postedByLogo: "https://www.patrika.com/favicon.ico",
+  publishedAt: "2026-10-20T02:22:41.000Z",
+  fullArticleRead: true,
+  articleReadAttempted: true,
+  nativeLanguageSource: true,
+  language: "hi",
+  languageScript: "Devanagari",
+  isActive: true
+}));
+assert.equal(isBlockedArticle(heritageConstructionControl), true, "heritage threat coverage must not manufacture a native property nexus from construction/plan words");
+assert.equal(isPublishableArticle(heritageConstructionControl, new Set()), false);
+
+const hindiHousingContrast = applyCityCode(cleanArticleFields({
+  ...heritageConstructionControl,
+  title: "जबलपुर में नई आवासीय परियोजना के निर्माण को मंजूरी",
+  description: "शहर में 500 फ्लैट वाली आवासीय परियोजना को मंजूरी मिली",
+  articleText: "जबलपुर में 500 फ्लैट और आवास वाली नई परियोजना का निर्माण शुरू होगा।",
+  newsLink: "https://www.patrika.com/jabalpur-news/jabalpur-housing-project-approved-21000000"
+}));
+assert.equal(isBlockedArticle(hindiHousingContrast), false, "a concrete Hindi housing object plus development event must remain eligible");
+
+console.log("Regional listing adapter regression passed: incidental Hindi construction is rejected while concrete housing remains eligible.");

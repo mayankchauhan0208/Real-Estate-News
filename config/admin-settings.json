@@ -5368,6 +5368,76 @@
       "createdAt": "2026-10-26T00:00:00.000Z"
     },
     {
+      "id": "regional-patrika-jaipur",
+      "url": "https://www.patrika.com/jaipur-news/",
+      "label": "Patrika Jaipur Hindi | Regional P2",
+      "cityCodes": ["jaipur"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-bhopal",
+      "url": "https://www.patrika.com/bhopal-news/",
+      "label": "Patrika Bhopal Hindi | Regional P2",
+      "cityCodes": ["bhopal"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-indore",
+      "url": "https://www.patrika.com/indore-news/",
+      "label": "Patrika Indore Hindi | Regional P2",
+      "cityCodes": ["indore"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-jabalpur",
+      "url": "https://www.patrika.com/jabalpur-news/",
+      "label": "Patrika Jabalpur Hindi | Regional P2",
+      "cityCodes": ["jabalpur"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-raipur",
+      "url": "https://www.patrika.com/raipur-news/",
+      "label": "Patrika Raipur Hindi | Regional P2",
+      "cityCodes": ["raipur"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-udaipur",
+      "url": "https://www.patrika.com/udaipur-news/",
+      "label": "Patrika Udaipur Hindi | Regional P2",
+      "cityCodes": ["udaipur"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-noida",
+      "url": "https://www.patrika.com/noida-news/",
+      "label": "Patrika Noida Hindi | Regional P2",
+      "cityCodes": ["noida"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
       "id": "id-196410014",
       "url": "https://www.lokmat.com/real-estate/",
       "label": "Lokmat Marathi Real Estate | Regional P2",

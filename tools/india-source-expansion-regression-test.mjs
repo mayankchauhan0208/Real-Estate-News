@@ -66,6 +66,24 @@ for (const [id, cityCodes] of tamilExpected) {
   assert.deepEqual(source.cityCodes, cityCodes);
 }
 
+const patrikaExpected = new Map([
+  ["regional-patrika-jaipur", ["jaipur"]],
+  ["regional-patrika-bhopal", ["bhopal"]],
+  ["regional-patrika-indore", ["indore"]],
+  ["regional-patrika-jabalpur", ["jabalpur"]],
+  ["regional-patrika-raipur", ["raipur"]],
+  ["regional-patrika-udaipur", ["udaipur"]],
+  ["regional-patrika-noida", ["noida"]]
+]);
+for (const [id, cityCodes] of patrikaExpected) {
+  const source = settings.manualSources.find((candidate) => candidate.id === id);
+  assert.ok(source, `${id} must be configured`);
+  assert.equal(source.enabled, true);
+  assert.equal(source.category, "regional-hindi");
+  assert.equal(source.sourceMode, "ACTIVE_FOR_REVIEW");
+  assert.deepEqual(source.cityCodes, cityCodes);
+}
+
 delete process.env.ENABLE_EXPERIMENTAL_SOURCES;
 const defaultRuntime = (await import("../src/index.js")).getSourceUrls();
 assert.equal(defaultRuntime.some((url) => url.includes("jagran.com")), false, "experimental sources must still require explicit runtime opt-in");
@@ -76,5 +94,6 @@ assert.equal(productionRuntime.filter((url) => url.includes("jagran.com")).lengt
 assert.equal(productionRuntime.filter((url) => url.includes("anandabazar.com/topic/real-estate")).length, 1, "verified Bengali surface must be selectable with experimental opt-in");
 assert.equal(productionRuntime.filter((url) => url.includes("newindianexpress.com/cities/")).length, expressExpected.size, "verified New Indian Express city surfaces must be selectable with experimental opt-in");
 assert.equal(productionRuntime.filter((url) => /dinamani\.com|dinamalar\.com/.test(url)).length, tamilExpected.size, "verified Tamil surfaces must be selectable with experimental opt-in");
+assert.equal(productionRuntime.filter((url) => /patrika\.com\/(?:jaipur|bhopal|indore|jabalpur|raipur|udaipur|noida)-news/i.test(url)).length, patrikaExpected.size, "verified Patrika city surfaces must be selectable with experimental opt-in");
 
 console.log(`India source expansion safety regression passed: ${sources.length} verified Jagran city surfaces are enabled after the clean event-core dry proof.`);

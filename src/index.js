@@ -6886,6 +6886,14 @@ function isGenericTransportConstructionWithoutPropertyNexus(article) {
   return transportConstruction && !hasExplicitTransportPropertyNexus(article);
 }
 
+function isHeritageConservationConcernWithoutPropertyNexus(article) {
+  const primaryAndUrl = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const heritageConcern = /(?:balancing rock|natural heritage|heritage conservation|tourism heritage|प्राकृतिक धरोहर|धरोहर|संरक्षण)/iu.test(primaryAndUrl) &&
+    /(?:threat|threatened|neglect|encroachment|danger|खतरा|उपेक्षा|अतिक्रमण|बदहाली)/iu.test(primaryAndUrl);
+  const concretePropertyObject = /(?:real estate|property project|housing project|residential project|commercial project|apartment|flats?|plots?|land parcel|township|रियल एस्टेट|आवासीय परियोजना|व्यावसायिक परियोजना|फ्लैट|भूखंड|संपत्ति)/iu.test(primaryAndUrl);
+  return heritageConcern && !concretePropertyObject;
+}
+
 function isBlockedArticle(article) {
   const title = article.title || "";
   const description = article.description || "";
@@ -6899,6 +6907,7 @@ function isBlockedArticle(article) {
 
   return (
     isNavigationOrListingShell(article) ||
+    isHeritageConservationConcernWithoutPropertyNexus(article) ||
     blockedExactTitles.includes(normalizedTitle) ||
     isAddressLikeHeadline(title) ||
     isMalformedCategoryHeadline(title, article) ||
@@ -6935,7 +6944,7 @@ function isObviousNonArticleDiscoveryCandidate(article) {
 // negative, language, date, geo, or full-article gates.
 function hasNativePropertyDevelopmentNexus(article) {
   const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
-  const nativeProperty = /(?:இல்லம்|வீடு|வீட்டுவசதி|குடியிருப்பு|மனை|நிலம்|கட்டடம்|ரியல் எஸ்டேட்|ఇల్లు|ఇండిరమ్మ|గృహ|ప్లాట్|స్థలం|భవన|టవర్స్|హౌసింగ్|నిర్మాణ|లేఅవుట్|భూమి|భూములు|ఎకర|ఆస్తి|ಆಸ್ತಿ|ಭೂ|ಖಾತಾ|ಕಟ್ಟಡ|ಮನೆ|ನಿವೇಶನ|ವಸತಿ|फ्लैट|आवास|भूखंड|संपत्ति|घर|निर्माण|योजना)/u.test(text);
+  const nativeProperty = /(?:இல்லம்|வீடு|வீட்டுவசதி|குடியிருப்பு|மனை|நிலம்|கட்டடம்|ரியல் எஸ்டேட்|ఇల్లు|ఇండిరమ్మ|గృహ|ప్లాట్|స్థలం|భవన|టవర్స్|హౌసింగ్|నిర్మాణ|లేఅవుట్|భూమి|భూములు|ఎకర|ఆస్తి|ಆಸ್ತಿ|ಭೂ|ಖಾತಾ|ಕಟ್ಟಡ|ಮನೆ|ನಿವೇಶನ|ವಸತಿ|फ्लैट|आवास|भूखंड|संपत्ति|घर)/u.test(text);
   const nativeEvent = /(?:திட்டம்|கட்டுமான|விற்பனை|பத்திரப்பதிவு|ஒப்புதல்|அனுமதி|ஒதுக்கீடு|அறிமுக|தொடக்கம்|నిర్మాణం|శంకుస్థాపన|ప్రారంభ|విక్రయ|వేలం|వెంచర్|ప్లాట్ల|నిబంధన|చట్టం|టవర్|ಟವರ್|ಪ್ರಾರಂಭ|ಮಾರಾಟ|ಹರಾಜು|ನಿಯಮ|परियोजना|लॉन्च|बिक्री|नीलामी|नियम|निर्माण|योजना)/u.test(text);
   return nativeProperty && nativeEvent;
 }
@@ -9815,6 +9824,15 @@ function isManoramaNestSource(sourceUrl = "") {
 
 function regionalHtmlSourceConfig(sourceUrl = "") {
   const value = String(sourceUrl);
+  const patrikaCity = value.match(/patrika\.com\/(jaipur|bhopal|indore|jabalpur|raipur|udaipur|noida)-news\/?$/i)?.[1];
+  if (patrikaCity) {
+    return {
+      language: "hi",
+      script: "Devanagari",
+      linkPattern: new RegExp(`/${patrikaCity}-news/[^/?#]+-\\d+(?:$|\\?)`, "i"),
+      titlePattern: null
+    };
+  }
   if (/dinamani\.com\/tamilnadu\/?$/i.test(value)) {
     return {
       language: "ta",
