@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-26T19:37:29.028Z",
+  "updatedAt": "2026-10-26T19:37:31.200Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6834,6 +6834,32 @@
       "claimedAt": "2026-10-26T19:37:27.517Z",
       "expiresAt": "2026-10-26T19:52:27.517Z",
       "finalizedAt": "2026-10-26T19:37:29.028Z"
+    },
+    {
+      "claimId": "c79dfe18-ba4e-402f-9fc1-a03a571853ce",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/raymond-realty-raises-rs-210-cr-from-icici-prudential-real-estate-development-fund/articleshow/135212087.cms",
+        "title-city:raymond realty raises rs 210 cr from icici prudential real estate development fund|mumbai",
+        "dedupe:fe838a5326fd8a6f72363a7897d28401290ccb52e1afd2ad4774fdda60cabc6c",
+        "dedupe:ec635c158a27f262b9cdc8e377678a8e3e7991b738c988307b9fb9a2c794a77d",
+        "dedupe:104ba75943801f84c3f6a6d2037c8be71bb11549ebdddadf769e972d0bbe720e",
+        "dedupe:e2b929493e64b852e1f31ca32f082b517f30d818de931825739434d2862c1910",
+        "dedupe:raymond raises icici prudential real estate development|mumbai",
+        "dedupe:173c8dff9ceacaf1352e460beab71fc29c4be88eff693be579f6b50d25f37feb",
+        "dedupe:5a5a11f32c12bc6a8a6206605f0748934b403b40807cf0f4a18895c629294418"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-26T19:37:31.200Z",
+      "expiresAt": "2026-10-26T19:52:31.200Z"
     }
   ]
 }
