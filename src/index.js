@@ -8128,7 +8128,7 @@ function isRejectedImageCandidate(value = "", context = "") {
 
   const haystack = `${value} ${context}`.toLowerCase();
 
-  if (/1x1|artshare|blank|placeholder|spacer|logo|icon|avatar|favicon|advertise|banner|copylink|flipcoin|youtube|ytimg|playstore|app store|social|facebook|instagram|whatsapp|linkedin|loader|buffering/i.test(haystack)) {
+  if (/1x1|artshare|blank|placeholder|spacer|logo|icon|avatar|favicon|advertise|banner|copylink|flipcoin|google-preferred-source|youtube|ytimg|playstore|app store|social|facebook|instagram|whatsapp|linkedin|loader|buffering/i.test(haystack)) {
     return true;
   }
 
@@ -8209,21 +8209,25 @@ async function fetchArticleMetadata(articleUrl, fallback = {}, options = {}) {
   try {
     const html = await fetchArticleHtml(articleUrl, options);
     const $ = cheerio.load(html);
-    const articleText = extractArticleText($);
-    const documentUrl = extractLinkedDocumentUrl($, articleUrl);
-
+    // extractArticleText deliberately removes scripts/navigation from its
+    // Cheerio document. Preserve structured metadata before that destructive
+    // cleanup so JSON-LD-only publication dates and images are not lost.
     const pagePublishedAt = extractPagePublishedAt($, fallback);
+    const metadataImage = extractMetadataImage($, fallback);
+    const metadataDescription = pickDescription(
+      $('meta[property="og:description"]').attr("content"),
+      $('meta[name="description"]').attr("content"),
+      fallback.description
+    );
+    const documentUrl = extractLinkedDocumentUrl($, articleUrl);
+    const articleText = extractArticleText($);
     return {
       description: pickFirst(
-        pickDescription(
-          $('meta[property="og:description"]').attr("content"),
-          $('meta[name="description"]').attr("content"),
-          fallback.description
-        ),
+        metadataDescription,
         fallback.title
       ),
       thumbnailImage: pickFirst(
-        extractMetadataImage($, fallback),
+        metadataImage,
         fallback.thumbnailImage
       ),
       publishedAt: pickFirst(pagePublishedAt, fallback.publishedAt),
@@ -9834,6 +9838,17 @@ function regionalHtmlSourceConfig(sourceUrl = "") {
       titlePattern: null
     };
   }
+  if (/anandabazar\.com\/topic\/real-estate\/?$/i.test(value)) {
+    return {
+      language: "bn",
+      script: "Bengali",
+      // Anandabazar topic pages include category navigation before the story
+      // list. A content id is the stable distinction between an article and
+      // those navigation destinations.
+      linkPattern: /\/cid\/\d+(?:$|\?)/i,
+      titlePattern: null
+    };
+  }
   return null;
 }
 
@@ -9846,6 +9861,29 @@ async function fetchRegionalHtmlSource(sourceUrl, options = {}) {
   if (!config) return fetchPage(sourceUrl, options);
 
   const html = await fetchHtml(sourceUrl, options);
+  const candidates = discoverRegionalHtmlCandidates(html, sourceUrl, config);
+  const articles = await mapWithConcurrency(candidates.slice(0, getMaxItemsPerSource()), 6, async (candidate) => {
+    const metadata = await fetchArticleMetadataWithTimeout(candidate.newsLink, candidate, options);
+    const article = cleanArticleFields({
+      ...candidate,
+      ...metadata,
+      nativeLanguageSource: true,
+      language: config.language,
+      languageScript: config.script,
+      authoritativeContent: false,
+      description: stripHtml(metadata.description || candidate.description),
+      articleText: stripHtml(metadata.articleText || candidate.articleText || ""),
+      thumbnailImage: absoluteUrl(metadata.thumbnailImage || candidate.thumbnailImage, candidate.newsLink),
+      createdAt: metadata.publishedAt || candidate.publishedAt || ""
+    });
+    return { ...applyCityCode(article), id: stableId(article) };
+  });
+
+  return uniqueByDedupeIds(articles);
+}
+
+function discoverRegionalHtmlCandidates(html, sourceUrl, config = regionalHtmlSourceConfig(sourceUrl)) {
+  if (!config) return [];
   const $ = cheerio.load(html);
   const seenLinks = new Set();
   const candidates = [];
@@ -9860,7 +9898,10 @@ async function fetchRegionalHtmlSource(sourceUrl, options = {}) {
   $("a[href]").each((_, element) => {
     if (candidates.length >= candidateLimit) return;
     const link = absoluteUrl($(element).attr("href"), sourceUrl);
-    const title = stripHtml($(element).text()).replace(/\s+/g, " ").trim();
+    const title = stripHtml($(element).text())
+      .replace(/\s*শেষ আপডেট:\s*[০-৯\d]{1,2}\s+[^\s]+\s+[০-৯\d]{4}\s+[০-৯\d:]+.*$/u, "")
+      .replace(/\s+/g, " ")
+      .trim();
     if (!link || seenLinks.has(link) || title.length < 18 || !config.linkPattern.test(link)) return;
     if (/\/live-blog(?:-|\/)/i.test(link)) return;
     if (config.titlePattern && !config.titlePattern.test(title)) return;
@@ -9888,24 +9929,7 @@ async function fetchRegionalHtmlSource(sourceUrl, options = {}) {
     });
   });
 
-  const articles = await mapWithConcurrency(candidates.slice(0, getMaxItemsPerSource()), 6, async (candidate) => {
-    const metadata = await fetchArticleMetadataWithTimeout(candidate.newsLink, candidate, options);
-    const article = cleanArticleFields({
-      ...candidate,
-      ...metadata,
-      nativeLanguageSource: true,
-      language: config.language,
-      languageScript: config.script,
-      authoritativeContent: false,
-      description: stripHtml(metadata.description || candidate.description),
-      articleText: stripHtml(metadata.articleText || candidate.articleText || ""),
-      thumbnailImage: absoluteUrl(metadata.thumbnailImage || candidate.thumbnailImage, candidate.newsLink),
-      createdAt: metadata.publishedAt || candidate.publishedAt || ""
-    });
-    return { ...applyCityCode(article), id: stableId(article) };
-  });
-
-  return uniqueByDedupeIds(articles);
+  return candidates;
 }
 
 async function fetchManoramaNest(sourceUrl, options = {}) {
@@ -11190,10 +11214,13 @@ export {
   classifyArticle,
   cleanArticleFields,
   detectCityCodes,
+  discoverRegionalHtmlCandidates,
   expandCityArticles,
   extractArticleText,
+  extractPagePublishedAt,
   extractLinkedDocumentUrl,
   extractMetadataImage,
+  fetchArticleMetadata,
   fetchSource,
   fetchSourceBatch,
   fetchSourceWithRecovery,

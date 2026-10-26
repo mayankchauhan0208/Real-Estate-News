@@ -5288,6 +5288,16 @@
       "createdAt": "2026-10-03T00:00:00.000Z"
     },
     {
+      "id": "regional-anandabazar-real-estate",
+      "url": "https://www.anandabazar.com/topic/real-estate",
+      "label": "Anandabazar Bengali Real Estate | Regional P2",
+      "cityCodes": ["kolkata"],
+      "enabled": true,
+      "category": "regional-bengali",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-25T00:00:00.000Z"
+    },
+    {
       "id": "id-196410014",
       "url": "https://www.lokmat.com/real-estate/",
       "label": "Lokmat Marathi Real Estate | Regional P2",

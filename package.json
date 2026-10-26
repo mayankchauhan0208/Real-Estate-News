@@ -23,7 +23,9 @@
     "test:document-parity": "node tools/shared-document-ingestion-regression-test.mjs",
     "test:rera-policy": "node tools/rera-event-policy-regression-test.mjs",
     "test:source-expansion": "node tools/india-source-expansion-regression-test.mjs",
-    "build": "npm run check && node src/filter-smoke-test.js && npm run test:regional-recall && npm run test:document-parity && npm run test:rera-policy",
+    "test:article-metadata": "node tools/article-metadata-order-regression-test.mjs",
+    "test:regional-listing": "node tools/regional-listing-adapter-regression-test.mjs",
+    "build": "npm run check && node src/filter-smoke-test.js && npm run test:regional-recall && npm run test:document-parity && npm run test:rera-policy && npm run test:article-metadata && npm run test:regional-listing && npm run test:source-expansion",
     "admin": "node src/admin-server.js",
     "admin:export": "node tools/export-admin-static-state.js",
     "local:backfill-other-cities": "node tools/local-other-cities-backfill.mjs"
