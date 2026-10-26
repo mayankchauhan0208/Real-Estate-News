@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-26T06:30:58.459Z",
+  "updatedAt": "2026-10-26T06:31:00.618Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6623,6 +6623,84 @@
       "claimedAt": "2026-10-26T06:30:56.729Z",
       "expiresAt": "2026-10-26T06:45:56.729Z",
       "finalizedAt": "2026-10-26T06:30:58.459Z"
+    },
+    {
+      "claimId": "38fb3bcc-867d-4163-a3a1-1b4b1cb86bd8",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://magicbricks.com/news/old-rao-tula-ram-flyover-to-reopen-tuesday-after-repairs-vcmb/152411.html",
+        "title-city:delhi rtr flyover to reopen tuesday for cars two wheelers|new_delhi",
+        "dedupe:283b3fc243c493c188e1daf21ac7286ee0fa3e25371c2ab97e0a8cc5eb3a1e5a",
+        "dedupe:8f23f5264ea1742c8e9324445df0b0b5512e1461204f3068afcbc9716e4a8b40",
+        "dedupe:eda47f78f121cc506edd193a4c6308d5cee5f509f2e633e160efc1c7490b2931",
+        "dedupe:delhi rtr flyover reopen tuesday cars two wheelers|new_delhi",
+        "dedupe:6b8d601cd31259fcdf57c2bfc849a2c3ebe6ba6d1c7137b7dacca59f5aac4e3b",
+        "dedupe:ee9966fda61243753e567974c217919f1dca6e12fcfa1983a9db02b9ee0e4899"
+      ],
+      "semanticIdentity": {
+        "city": "new_delhi",
+        "canonicalEventCity": "new_delhi",
+        "normalizedBuilder": "gaurs",
+        "normalizedProject": "",
+        "canonicalEventType": "residential-sale",
+        "builder": "gaurs",
+        "project": "",
+        "eventType": "residential-sale",
+        "numericAnchors": [
+          "03:number",
+          "07:number",
+          "1.57:crore",
+          "1.70:crore",
+          "10.10:crore",
+          "10:number",
+          "11:number",
+          "12:number",
+          "13:number",
+          "14.95:lakh",
+          "15.39:crore",
+          "15:number",
+          "17:number",
+          "18:number",
+          "19:number",
+          "1:number",
+          "2.23:crore",
+          "2.89:crore",
+          "2025:number",
+          "2026:number",
+          "2027:number",
+          "21:number",
+          "22:number",
+          "23:number",
+          "25:number",
+          "26:number",
+          "27:number",
+          "28:number",
+          "29:number",
+          "2:number",
+          "3.2:number",
+          "30:number",
+          "36:number",
+          "3:number",
+          "4.4:number",
+          "4.5:number",
+          "4.70:crore",
+          "48:number",
+          "5.11:crore",
+          "56:number"
+        ],
+        "canonicalEventFingerprint": "gaurs|new_delhi|residential-sale|03:number,07:number,1.57:crore",
+        "semanticClusterId": "cluster:e946e96944eeb4f6fd9d62dc"
+      },
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "gaurs|new_delhi|residential-sale|03:number,07:number,1.57:crore",
+      "semanticClusterId": "cluster:e946e96944eeb4f6fd9d62dc",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-26T06:31:00.618Z",
+      "expiresAt": "2026-10-26T06:46:00.618Z"
     }
   ]
 }
