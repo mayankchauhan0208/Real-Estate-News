@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-26T19:37:20.635Z",
+  "updatedAt": "2026-10-26T19:37:22.233Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6758,7 +6758,7 @@
     },
     {
       "claimId": "521c38ab-8895-4b99-9e67-a941a9a8d2b8",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/industry/sugam-group-plans-2800-crore-development-across-three-kolkata-projects-in-fy27/135207830",
         "title-city:sugam plans 2 800 crore development across three kolkata projects in fy27|kolkata",
@@ -6779,7 +6779,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-26T19:37:20.635Z",
-      "expiresAt": "2026-10-26T19:52:20.635Z"
+      "expiresAt": "2026-10-26T19:52:20.635Z",
+      "finalizedAt": "2026-10-26T19:37:22.233Z"
     }
   ]
 }
