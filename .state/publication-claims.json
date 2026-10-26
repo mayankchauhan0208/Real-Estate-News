@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-26T19:37:14.619Z",
+  "updatedAt": "2026-10-26T19:37:16.865Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6728,6 +6728,32 @@
       "claimedAt": "2026-10-26T19:37:12.154Z",
       "expiresAt": "2026-10-26T19:52:12.154Z",
       "finalizedAt": "2026-10-26T19:37:14.619Z"
+    },
+    {
+      "claimId": "71603bd2-9633-4b39-aa29-81cacf7c6430",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://business-standard.com/industry/news/dubai-south-residential-sales-2026-anarock-smaller-homes-126102600450_1.html",
+        "title-city:dubai south home sales hit record in 8m 2026 as smaller units gain share|puri",
+        "dedupe:911e794c5ca15dc5e51793b9b746e5e5e8501b5503df0c8883f10f112bfcd597",
+        "dedupe:53b6c347c228a2142bc451d62412190e990ca344d9d0d1d7e06117e2c07ecdde",
+        "dedupe:dfef89c746e089ea56411fa058257e8f1521fadd453d3995395187105c31e21d",
+        "dedupe:f347a525d57636c55f5a81a904b437e84e5aa97c5cd206163323fb08b27fc0d4",
+        "dedupe:dubai south home sales hit record 8m as smaller units gain share|puri",
+        "dedupe:9bb65706ec452bf494b4819805b3f47fbf6889e7166a3319e881d34a52f6aeaf",
+        "dedupe:20c53c2dd83b986bcc5fe3f45e8c3bc5a22dfa7ff44b7a5fcb7f687af3af138c"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "puri",
+      "canonicalEventCity": "puri",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "puri"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-26T19:37:16.865Z",
+      "expiresAt": "2026-10-26T19:52:16.865Z"
     }
   ]
 }
