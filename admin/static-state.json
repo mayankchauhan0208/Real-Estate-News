@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T06:44:03.790Z",
+  "generatedAt": "2026-10-26T06:45:50.810Z",
   "settings": {
     "automationEnabled": true,
     "apiPushEnabled": true,
@@ -5862,7 +5862,7 @@
     "enabledSources": 591,
     "disabledSources": 0,
     "manualSources": 447,
-    "reports": 3,
+    "reports": 2,
     "postedNews": 0,
     "candidateNews": 0,
     "needsReviewNews": 0,
@@ -5873,7 +5873,7 @@
     "readyForApiPush": false,
     "duplicateSourceUrlGroups": 0,
     "disabledSourceUrls": 0,
-    "latestReportName": "news-progress-2586.json",
+    "latestReportName": "news-progress-2585.json",
     "checks": [
       {
         "key": "api-safe",
@@ -18936,8 +18936,8 @@
   ],
   "reports": [
     {
-      "name": "news-progress-2586.json",
-      "generatedAt": "2026-10-26T06:43:59.442Z",
+      "name": "news-progress-2585.json",
+      "generatedAt": "2026-10-26T06:45:47.796Z",
       "mode": "live",
       "dryRun": false,
       "sourceCount": 0,
@@ -18961,8 +18961,8 @@
       "skippedByReason": {}
     },
     {
-      "name": "news-run-2026-10-26T06-43-59-439Z.json",
-      "generatedAt": "2026-10-26T06:43:59.439Z",
+      "name": "news-run-2026-10-26T06-45-47-793Z.json",
+      "generatedAt": "2026-10-26T06:45:47.792Z",
       "mode": "live",
       "dryRun": false,
       "sourceCount": 1,
@@ -18993,7 +18993,7 @@
           "recovered": false,
           "operationStarted": true,
           "workerWaitMs": 1,
-          "operationStartedAt": 1792997036789
+          "operationStartedAt": 1792997146605
         }
       ],
       "candidates": [],
@@ -19047,7 +19047,7 @@
               "listingUrl": "https://www.anandabazar.com/topic/real-estate",
               "articleUrl": "https://www.anandabazar.com/viral/watch-in-viral-video-woman-says-dont-come-to-bengaluru-if-earning-less-than-rs-1-lakh-monthly-sparks-debate-dgtl/cid/1719024",
               "canonicalUrl": "https://www.anandabazar.com/viral/watch-in-viral-video-woman-says-dont-come-to-bengaluru-if-earning-less-than-rs-1-lakh-monthly-sparks-debate-dgtl/cid/1719024",
-              "discoveryTimestamp": "2026-10-26T06:43:57.263Z",
+              "discoveryTimestamp": "2026-10-26T06:45:46.747Z",
               "publicationDate": "2026-10-13T04:24:06.000Z",
               "publicationDateExtractionMethod": "article-page-metadata",
               "sourceFetchResult": "success",
@@ -19055,7 +19055,7 @@
               "redirectChain": [],
               "attemptNumber": 1,
               "fallbackUsed": false,
-              "fetchDurationMs": 2408,
+              "fetchDurationMs": 946,
               "articleLinkDiscoveryMethod": "HTML_GENERIC_EXTRACTOR",
               "listingExtraction": "not-captured",
               "fullArticleFetch": "success",
@@ -19155,7 +19155,7 @@
               "listingUrl": "https://www.anandabazar.com/topic/real-estate",
               "articleUrl": "https://www.anandabazar.com/viral/watch-in-viral-video-woman-says-dont-come-to-bengaluru-if-earning-less-than-rs-1-lakh-monthly-sparks-debate-dgtl/cid/1719024",
               "canonicalUrl": "https://www.anandabazar.com/viral/watch-in-viral-video-woman-says-dont-come-to-bengaluru-if-earning-less-than-rs-1-lakh-monthly-sparks-debate-dgtl/cid/1719024",
-              "discoveryTimestamp": "2026-10-26T06:43:57.263Z",
+              "discoveryTimestamp": "2026-10-26T06:45:46.747Z",
               "publicationDate": "2026-10-13T04:24:06.000Z",
               "publicationDateExtractionMethod": "article-page-metadata",
               "sourceFetchResult": "success",
@@ -19163,7 +19163,7 @@
               "redirectChain": [],
               "attemptNumber": 1,
               "fallbackUsed": false,
-              "fetchDurationMs": 2408,
+              "fetchDurationMs": 946,
               "articleLinkDiscoveryMethod": "HTML_GENERIC_EXTRACTOR",
               "listingExtraction": "not-captured",
               "fullArticleFetch": "success",
@@ -21358,31 +21358,6 @@
         "filter 5: no allowed city match": 1,
         "filter 8: outside-city conflict": 1
       }
-    },
-    {
-      "name": "news-cycle-source-cycle-2026-10-26-partial.json",
-      "generatedAt": "2026-10-26T06:43:59.229Z",
-      "mode": "unknown",
-      "dryRun": false,
-      "sourceCount": 0,
-      "fetchedArticleCount": 0,
-      "expandedArticleCount": 0,
-      "candidateCount": 0,
-      "postedCount": 0,
-      "rejectedArticleCount": 0,
-      "needsReviewCount": 0,
-      "failureCount": 0,
-      "failures": [],
-      "pushFailures": [],
-      "sourceHealthSummary": {},
-      "sourceHealth": [],
-      "candidates": [],
-      "posted": [],
-      "rejectedArticles": [],
-      "needsReviewArticles": [],
-      "cityBreakdown": [],
-      "coverageAlerts": [],
-      "skippedByReason": {}
     }
   ],
   "analytics": {
