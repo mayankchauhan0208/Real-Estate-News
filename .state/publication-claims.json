@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-26T06:30:48.734Z",
+  "updatedAt": "2026-10-26T06:30:50.445Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6545,7 +6545,7 @@
     },
     {
       "claimId": "ae1a8206-7614-4ff3-bb49-3b9c9e104193",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-noida-authority-re-tenders-for-sector-151a-golf-course-completion-40416748.html",
         "title-city:3 स ल ब द न एड इ टरन शनल ग ल फ क र स क ल ए कव यद त ज 34 कर ड क ट डर ज र|noida",
@@ -6567,7 +6567,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-26T06:30:48.734Z",
-      "expiresAt": "2026-10-26T06:45:48.734Z"
+      "expiresAt": "2026-10-26T06:45:48.734Z",
+      "finalizedAt": "2026-10-26T06:30:50.445Z"
     }
   ]
 }
