@@ -1,7 +1,7 @@
 {
   "cycleId": "source-cycle-2026-10-26",
-  "createdAt": "2026-10-26T00:18:35.110Z",
-  "universeFingerprint": "eef376dd6e1ac4433ee1c91fd211d7192a70ece733f03106bde1b91748148232",
+  "createdAt": "2026-10-26T13:01:53.368Z",
+  "universeFingerprint": "202d633c2d88a972de26239fa05cfcbe5c0f13d8455a10d534a5b36939a37e09",
   "sources": [
     {
       "sourceId": "source-00a0c32b225feb2f",
@@ -14,6 +14,10 @@
     {
       "sourceId": "source-014b78b07c631018",
       "url": "https://timesofindia.indiatimes.com/rssfeeds/3942663.cms"
+    },
+    {
+      "sourceId": "source-01763268c33d981c",
+      "url": "https://www.patrika.com/jabalpur-news"
     },
     {
       "sourceId": "source-023ac8c6548a4037",
@@ -194,6 +198,10 @@
     {
       "sourceId": "source-13ccdfb5df2a59d2",
       "url": "https://realty.economictimes.indiatimes.com/rss/webstories"
+    },
+    {
+      "sourceId": "source-1427c185c745d597",
+      "url": "https://www.patrika.com/bhopal-news"
     },
     {
       "sourceId": "source-14894528d7a649f2",
@@ -596,6 +604,10 @@
       "url": "https://www.dlf.in/press-releases"
     },
     {
+      "sourceId": "source-3cb3b1f27a671e41",
+      "url": "https://www.patrika.com/raipur-news"
+    },
+    {
       "sourceId": "source-3d8f6d19c94a6e73",
       "url": "https://www.hsiidc.org.in"
     },
@@ -988,8 +1000,16 @@
       "url": "https://www.pppinindia.gov.in"
     },
     {
+      "sourceId": "source-6920e41a6d48d4b4",
+      "url": "https://www.newindianexpress.com/cities/kochi"
+    },
+    {
       "sourceId": "source-69689debd6f0ec25",
       "url": "https://www.lokmat.com/real-estate"
+    },
+    {
+      "sourceId": "source-69e1df40733ebc3e",
+      "url": "https://www.patrika.com/jaipur-news"
     },
     {
       "sourceId": "source-69e4706f64a27681",
@@ -1032,6 +1052,10 @@
       "url": "https://puda.punjab.gov.in"
     },
     {
+      "sourceId": "source-6d1427969ae0a170",
+      "url": "https://www.dinamani.com/all-editions/edition-chennai/chennai"
+    },
+    {
       "sourceId": "source-6ec41eab75151214",
       "url": "https://nhai.gov.in"
     },
@@ -1042,6 +1066,10 @@
     {
       "sourceId": "source-6eddd99031a97f20",
       "url": "https://timesofindia.indiatimes.com/rssfeeds/-2128816762.cms"
+    },
+    {
+      "sourceId": "source-6ede6376b33fceaf",
+      "url": "https://www.newindianexpress.com/cities/chennai"
     },
     {
       "sourceId": "source-6ef09167f9f10208",
@@ -1104,6 +1132,10 @@
       "url": "https://www.unimarkgroup.com/blog"
     },
     {
+      "sourceId": "source-74383df0016e7ef9",
+      "url": "https://www.anandabazar.com/topic/real-estate"
+    },
+    {
       "sourceId": "source-745e30fa57c1cd2c",
       "url": "https://www.adaniairports.com/media-centre"
     },
@@ -1162,6 +1194,10 @@
     {
       "sourceId": "source-7a8d77c28455dee7",
       "url": "https://rera.cgstate.gov.in"
+    },
+    {
+      "sourceId": "source-7bb4633479ac14ec",
+      "url": "https://www.newindianexpress.com/cities/hyderabad"
     },
     {
       "sourceId": "source-7bcf4f7b6c386c4a",
@@ -1284,6 +1320,10 @@
       "url": "https://rera.tripura.gov.in"
     },
     {
+      "sourceId": "source-8cc8c26ca5a29b61",
+      "url": "https://www.patrika.com/indore-news"
+    },
+    {
       "sourceId": "source-8ceac557d3e13cc9",
       "url": "https://cci.gov.in/combination/green-channel-view"
     },
@@ -1380,6 +1420,10 @@
       "url": "https://ncrtc.in"
     },
     {
+      "sourceId": "source-97b4d50874b9dc8b",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-news"
+    },
+    {
       "sourceId": "source-9880fcf17f9691c5",
       "url": "https://publish.tribuneindia.com/state/madhya-pradesh/feed"
     },
@@ -1398,6 +1442,10 @@
     {
       "sourceId": "source-99b7f42a81c5986f",
       "url": "https://rera.telangana.gov.in/586784u3y5dsgfg-TG-RERA-45678jklshihnfgsfdg"
+    },
+    {
+      "sourceId": "source-9b0adf2be83ab4e0",
+      "url": "https://www.patrika.com/noida-news"
     },
     {
       "sourceId": "source-9b42deb272c79327",
@@ -1648,6 +1696,10 @@
       "url": "https://rera.telangana.gov.in/SUOMOTU-TG-RERA-15121976ORDERS"
     },
     {
+      "sourceId": "source-b1c866027fc3e1bf",
+      "url": "https://www.dinamani.com/tamilnadu"
+    },
+    {
       "sourceId": "source-b30e3231ec8a99e5",
       "url": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms"
     },
@@ -1702,6 +1754,10 @@
     {
       "sourceId": "source-b93f644fcac0e5d9",
       "url": "https://www.koltepatil.com/news-media/media-coverage"
+    },
+    {
+      "sourceId": "source-b96414254f66247e",
+      "url": "https://www.patrika.com/udaipur-news"
     },
     {
       "sourceId": "source-b9bc9278d35194fa",
@@ -1882,6 +1938,10 @@
     {
       "sourceId": "source-cf6dabfce0318e4a",
       "url": "https://www.centralpark.in/media.php"
+    },
+    {
+      "sourceId": "source-cf81466ae1eed46c",
+      "url": "https://www.newindianexpress.com/cities/bengaluru"
     },
     {
       "sourceId": "source-cfcea730d6287e6b",
