@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-26T06:30:50.445Z",
+  "updatedAt": "2026-10-26T06:30:52.566Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6569,6 +6569,32 @@
       "claimedAt": "2026-10-26T06:30:48.734Z",
       "expiresAt": "2026-10-26T06:45:48.734Z",
       "finalizedAt": "2026-10-26T06:30:50.445Z"
+    },
+    {
+      "claimId": "5feb47f0-6688-4bdf-999b-ae8855cbf43f",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/cybercity-launches-ultra-luxury-residences-trevita-in-hyderabad",
+        "title-city:cybercity launches ultra luxury residences|hyderabad",
+        "dedupe:1d46bcacb539f114bff40020b4ce83485a4588bee97c2c2b9315017edbf801e8",
+        "dedupe:2215758a67ed8b3ba045c43d3beedfb7037b296e17798bc8ad50987ae3ef310c",
+        "dedupe:ca7b742ad1e2555e45a96d28a795c9781f439ef12c79e654c155b4eb3dad7ec6",
+        "dedupe:63a6a629c83f7d156c44d640832319f7146fad3f9333717e6ad59538a2e8053a",
+        "dedupe:cybercity launches ultra residences|hyderabad",
+        "dedupe:7fcf74ef0f582fb755decd7a7801ff4b2239d43a262da1955622f9874773a265",
+        "dedupe:bbe46b23c0203c93b193652614a20e05bb7a57bc2f4404bb8b851d54a7aa3c37"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-26T06:30:52.566Z",
+      "expiresAt": "2026-10-26T06:45:52.566Z"
     }
   ]
 }
