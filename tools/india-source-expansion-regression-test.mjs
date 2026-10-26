@@ -37,6 +37,21 @@ assert.equal(anandabazar.category, "regional-bengali");
 assert.equal(anandabazar.sourceMode, "ACTIVE_FOR_REVIEW", "new regional source must remain review-only");
 assert.deepEqual(anandabazar.cityCodes, ["kolkata"]);
 
+const expressExpected = new Map([
+  ["regional-new-indian-express-hyderabad", ["hyderabad"]],
+  ["regional-new-indian-express-chennai", ["chennai"]],
+  ["regional-new-indian-express-bengaluru", ["bangalore"]],
+  ["regional-new-indian-express-kochi", ["kochi"]]
+]);
+for (const [id, cityCodes] of expressExpected) {
+  const source = settings.manualSources.find((candidate) => candidate.id === id);
+  assert.ok(source, `${id} must be configured`);
+  assert.equal(source.enabled, true);
+  assert.equal(source.category, "regional-english");
+  assert.equal(source.sourceMode, "ACTIVE_FOR_REVIEW");
+  assert.deepEqual(source.cityCodes, cityCodes);
+}
+
 delete process.env.ENABLE_EXPERIMENTAL_SOURCES;
 const defaultRuntime = (await import("../src/index.js")).getSourceUrls();
 assert.equal(defaultRuntime.some((url) => url.includes("jagran.com")), false, "experimental sources must still require explicit runtime opt-in");
@@ -45,5 +60,6 @@ process.env.ENABLE_EXPERIMENTAL_SOURCES = "true";
 const productionRuntime = (await import(`../src/index.js?production-opt-in=${Date.now()}`)).getSourceUrls();
 assert.equal(productionRuntime.filter((url) => url.includes("jagran.com")).length, expected.size, "all verified Jagran surfaces must remain in the production runtime");
 assert.equal(productionRuntime.filter((url) => url.includes("anandabazar.com/topic/real-estate")).length, 1, "verified Bengali surface must be selectable with experimental opt-in");
+assert.equal(productionRuntime.filter((url) => url.includes("newindianexpress.com/cities/")).length, expressExpected.size, "verified New Indian Express city surfaces must be selectable with experimental opt-in");
 
 console.log(`India source expansion safety regression passed: ${sources.length} verified Jagran city surfaces are enabled after the clean event-core dry proof.`);

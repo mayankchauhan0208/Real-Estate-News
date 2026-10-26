@@ -9808,6 +9808,15 @@ function isManoramaNestSource(sourceUrl = "") {
 
 function regionalHtmlSourceConfig(sourceUrl = "") {
   const value = String(sourceUrl);
+  const newIndianExpressCity = value.match(/newindianexpress\.com\/cities\/(hyderabad|chennai|bengaluru|kochi)\/?$/i)?.[1];
+  if (newIndianExpressCity) {
+    return {
+      language: "en",
+      script: "Latin",
+      linkPattern: new RegExp(`/cities/${newIndianExpressCity}/20\\d{2}/[A-Za-z]{3}/\\d{1,2}/[^/?#]+(?:$|\\?)`, "i"),
+      titlePattern: null
+    };
+  }
   if (/eisamay\.com\/topic\/kolkata-news/i.test(value)) {
     return {
       language: "bn",

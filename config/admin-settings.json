@@ -5298,6 +5298,46 @@
       "createdAt": "2026-10-25T00:00:00.000Z"
     },
     {
+      "id": "regional-new-indian-express-hyderabad",
+      "url": "https://www.newindianexpress.com/cities/hyderabad",
+      "label": "New Indian Express Hyderabad | Regional P2",
+      "cityCodes": ["hyderabad"],
+      "enabled": true,
+      "category": "regional-english",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "id": "regional-new-indian-express-chennai",
+      "url": "https://www.newindianexpress.com/cities/chennai",
+      "label": "New Indian Express Chennai | Regional P2",
+      "cityCodes": ["chennai"],
+      "enabled": true,
+      "category": "regional-english",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "id": "regional-new-indian-express-bengaluru",
+      "url": "https://www.newindianexpress.com/cities/bengaluru",
+      "label": "New Indian Express Bengaluru | Regional P2",
+      "cityCodes": ["bangalore"],
+      "enabled": true,
+      "category": "regional-english",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "id": "regional-new-indian-express-kochi",
+      "url": "https://www.newindianexpress.com/cities/kochi",
+      "label": "New Indian Express Kochi | Regional P2",
+      "cityCodes": ["kochi"],
+      "enabled": true,
+      "category": "regional-english",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
       "id": "id-196410014",
       "url": "https://www.lokmat.com/real-estate/",
       "label": "Lokmat Marathi Real Estate | Regional P2",

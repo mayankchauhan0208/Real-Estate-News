@@ -30,3 +30,20 @@ assert.ok(candidates.every((candidate) => candidate.title.length >= 18));
 assert.ok(candidates.every((candidate) => !candidate.title.includes("শেষ আপডেট")));
 
 console.log("Regional listing adapter regression passed: Anandabazar navigation links are excluded.");
+
+const expressSource = "https://www.newindianexpress.com/cities/hyderabad";
+const expressHtml = `
+  <html><head><title>Hyderabad News - New Indian Express</title></head><body>
+    <a href="/author/express-news-service">Express News Service</a>
+    <a href="/cities/chennai/2026/Oct/26/unrelated-chennai-story">Unrelated Chennai story</a>
+    <article>
+      <a href="/cities/hyderabad/2026/Oct/26/hyderabad-housing-project-approved">
+        Hyderabad housing project receives approval
+      </a>
+    </article>
+  </body></html>`;
+const expressCandidates = discoverRegionalHtmlCandidates(expressHtml, expressSource);
+assert.equal(expressCandidates.length, 1, "only same-city dated New Indian Express stories should be discovered");
+assert.match(expressCandidates[0].newsLink, /\/cities\/hyderabad\/2026\/Oct\/26\//);
+
+console.log("Regional listing adapter regression passed: New Indian Express author and cross-city links are excluded.");
