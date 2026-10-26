@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-26T19:37:34.808Z",
+  "updatedAt": "2026-10-26T19:37:36.619Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6864,7 +6864,7 @@
     },
     {
       "claimId": "3b507bbc-351e-467a-887e-f44df0b89e3f",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-noida-authoritys-85acre-land-deal-at-2012-rates-sparks-row-40417606.html",
         "title-city:exclusive न एड म ब ल डर क 15 स ल प र न दर पर 85 एकड जम न द न क त य र क स न पर व र म न र जग|noida",
@@ -6886,7 +6886,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-26T19:37:34.808Z",
-      "expiresAt": "2026-10-26T19:52:34.808Z"
+      "expiresAt": "2026-10-26T19:52:34.808Z",
+      "finalizedAt": "2026-10-26T19:37:36.619Z"
     }
   ]
 }
