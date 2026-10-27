@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T00:12:37.732Z",
+  "updatedAt": "2026-10-27T05:20:27.567Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7049,6 +7049,31 @@
       "claimedAt": "2026-10-27T00:12:35.306Z",
       "expiresAt": "2026-10-27T00:27:35.306Z",
       "finalizedAt": "2026-10-27T00:12:37.732Z"
+    },
+    {
+      "claimId": "7bc9ca14-95ad-45a6-8a70-b39fa53a7cfa",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://magicbricks.com/news/greater-noida-to-ballia-expressway-update-1047-km-corridor-once-again-proposed-to-be-developed-across-17-districts-jkmb/152420.html",
+        "title-city:greater noida to ballia expressway update 1047 km corridor once again proposed to be developed across 17 districts|noida",
+        "dedupe:feed6cd6abfb8ca751717397da0b9ae745492598ab29844947ae7d620e44ece5",
+        "dedupe:8017a47b284a8f6196d36fcf273f48ea38c6453c3e58550c9b96b481dfdc7eed",
+        "dedupe:4a75538385f4abaa70dc180bfe556ffcccc7330efee04d7b7e839ea22ee9d32b",
+        "dedupe:greater noida ballia expressway update km corridor once again proposed be developed across districts|noida",
+        "dedupe:d2f96cf51d3ead18282c223fb833dc622ec27f266131db8c2ac06d77f56f6328",
+        "dedupe:6ec3bddd52402d23caed17abd66e08bba66b929d38c4ab39998f89e85fa1cae5"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-27T05:20:27.567Z",
+      "expiresAt": "2026-10-27T05:35:27.567Z"
     }
   ]
 }
