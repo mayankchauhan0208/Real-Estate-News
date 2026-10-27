@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T21:39:43.443Z",
+  "updatedAt": "2026-10-27T21:39:45.193Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7607,7 +7607,7 @@
     },
     {
       "claimId": "5ef1e0e9-1298-446b-8cbe-ef08e85667c8",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://tribuneindia.com/news/amritsar/chabal-historic-village-known-for-its-revolutionary-legacy",
         "title-city:chabal historic village known for its revolutionary legacy|amritsar",
@@ -7629,7 +7629,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-27T21:39:43.443Z",
-      "expiresAt": "2026-10-27T21:54:43.443Z"
+      "expiresAt": "2026-10-27T21:54:43.443Z",
+      "finalizedAt": "2026-10-27T21:39:45.193Z"
     }
   ]
 }
