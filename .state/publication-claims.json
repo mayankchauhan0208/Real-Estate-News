@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T16:58:18.352Z",
+  "updatedAt": "2026-10-27T16:58:20.411Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7501,7 +7501,7 @@
     },
     {
       "claimId": "cab978fe-1722-4a29-b825-8118b05f07b9",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/lucknow-city-jhansi-lalitpur-to-get-65000-ton-warehouses-free-land-approved-40418852.html",
         "title-city:झ स और लल तप र म बन ग 65 हज र टन क षमत क ग द म क ब न ट न द म फ त जम न क म ज र|lucknow",
@@ -7523,7 +7523,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-27T16:58:18.352Z",
-      "expiresAt": "2026-10-27T17:13:18.352Z"
+      "expiresAt": "2026-10-27T17:13:18.352Z",
+      "finalizedAt": "2026-10-27T16:58:20.411Z"
     }
   ]
 }
