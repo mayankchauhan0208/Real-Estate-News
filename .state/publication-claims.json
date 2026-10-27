@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T00:12:25.107Z",
+  "updatedAt": "2026-10-27T00:12:27.544Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6972,7 +6972,7 @@
     },
     {
       "claimId": "1ff4f6af-5a11-4c3e-becf-4a3dbf2c3406",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://magicbricks.com/news/lulu-group-secures-15-year-lease-for-hypermarket-space-in-greater-noida-mall-worth-rs-51-crore-jkmb/152439.html",
         "title-city:lulu group secures 15 year lease for hypermarket space in greater noida mall worth rs 51 crore|noida",
@@ -6993,7 +6993,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-27T00:12:25.107Z",
-      "expiresAt": "2026-10-27T00:27:25.107Z"
+      "expiresAt": "2026-10-27T00:27:25.107Z",
+      "finalizedAt": "2026-10-27T00:12:27.544Z"
     }
   ]
 }
