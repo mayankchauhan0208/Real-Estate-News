@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T10:52:55.191Z",
+  "updatedAt": "2026-10-27T10:52:57.788Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7210,7 +7210,7 @@
     },
     {
       "claimId": "2915e1c4-c471-41cf-bfe6-47310d4a9e15",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/haryana/gurgaon-gurugram-municipal-corporation-to-sell-land-for-funds-40418415.html",
         "title-city:व य प र सदन क जम न ब चकर कम ई कर ग नगर न गम|gurugram",
@@ -7232,7 +7232,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-27T10:52:55.191Z",
-      "expiresAt": "2026-10-27T11:07:55.191Z"
+      "expiresAt": "2026-10-27T11:07:55.191Z",
+      "finalizedAt": "2026-10-27T10:52:57.788Z"
     }
   ]
 }
