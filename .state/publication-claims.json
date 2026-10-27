@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T16:58:08.638Z",
+  "updatedAt": "2026-10-27T16:58:11.185Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7447,7 +7447,7 @@
     },
     {
       "claimId": "2c855f1a-2198-4714-aabb-83fed503b6ff",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://patrika.com/raipur-news/list-of-chief-guests-for-chhattisgarh-rajyotsav-2026-at-district-headquarters-released-21012679",
         "title-city:rajyotsav 2026 छत त सगढ र ज य त सव 2026 म ज ल म ख य लय म य ह ग म ख य अत थ ल स ट द ख|raipur",
@@ -7469,7 +7469,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-27T16:58:08.638Z",
-      "expiresAt": "2026-10-27T17:13:08.638Z"
+      "expiresAt": "2026-10-27T17:13:08.638Z",
+      "finalizedAt": "2026-10-27T16:58:11.185Z"
     }
   ]
 }
