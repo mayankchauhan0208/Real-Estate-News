@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T16:57:44.598Z",
+  "updatedAt": "2026-10-27T16:57:48.772Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7337,6 +7337,31 @@
       "claimedAt": "2026-10-27T16:57:41.831Z",
       "expiresAt": "2026-10-27T17:12:41.831Z",
       "finalizedAt": "2026-10-27T16:57:44.598Z"
+    },
+    {
+      "claimId": "4e0a64ee-d281-4013-9cfb-0422d4338b8a",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://constructionworld.in/latest-construction-news/real-estate-news/dubai-south-home-sales-rise-27--above-2025-total--anarock/99429",
+        "title-city:dubai south home sales rise 27 above 2025 total anarock|puri",
+        "dedupe:95011cda9d5a0670e62553c3bbba2db5deedce15c1357ddb7bf2838942f460f8",
+        "dedupe:71d7cca4d16541b77b3dff73298f8090ba700fa1c78c2c2da302b6b3ea23c57b",
+        "dedupe:923976f6c9abd0a203aa6a98a96744465dafbd8454ae0c2eabc2a2a3b1841de3",
+        "dedupe:dubai south home sales rise above total anarock|puri",
+        "dedupe:4fbd766400cbb5125d7486f8233c7c6c9f99eb5217617e4c99c9a822ef86d108",
+        "dedupe:d7045a9b5c8e8b0af3b7c4816b86d27066d3b0d7be73ba188f8846f1fd7e9c30"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "puri",
+      "canonicalEventCity": "puri",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "puri"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-27T16:57:48.772Z",
+      "expiresAt": "2026-10-27T17:12:48.772Z"
     }
   ]
 }
