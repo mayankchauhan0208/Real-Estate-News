@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T10:53:02.642Z",
+  "updatedAt": "2026-10-27T10:53:05.010Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7261,6 +7261,32 @@
       "claimedAt": "2026-10-27T10:53:00.165Z",
       "expiresAt": "2026-10-27T11:08:00.165Z",
       "finalizedAt": "2026-10-27T10:53:02.642Z"
+    },
+    {
+      "claimId": "4a6896b1-b4dc-43fb-b5e7-327916bc3fd6",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-up-cabinet-approves-robotics-ai-hub-in-greater-noida-1-lakh-jobs-projected-40418449.html",
+        "title-city:य प क ब न ट क बड फ सल greater noida म बन ग र ब ट क स और ai हब 1 ल ख य व ओ क म ल ग र जग र|noida",
+        "dedupe:11b418d615972a0842dbbddb1dfda303ceb6143778d2835dd2c9502ac3f5046b",
+        "dedupe:e5815fb3046fd73c4b4a4bc3ec1a720e46b77c2c6b38c9fe34857576322caa69",
+        "dedupe:a8c84c128affcbe6fe89895e9a2debee5d377d7f8ac9c64a219e9ea13be93694",
+        "dedupe:d6bb439825a1847d26b47748987e47fc3e53fbb48f2994145dca97840c2993b5",
+        "dedupe:य प क ब न ट क बड फ सल greater noida म बन ग र ब ट क स और ai हब ल ख य व ओ क म ल ग र जग र|noida",
+        "dedupe:4119056f701b4f633eaf6f2a5bc22af1b572551aadbb0df7c5af8510c0ed362f",
+        "dedupe:22cc25dfa55a02faa295d56ad45955b4d4b87bfa23c2956b764717aeea3c8bc7"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-27T10:53:05.010Z",
+      "expiresAt": "2026-10-27T11:08:05.010Z"
     }
   ]
 }
