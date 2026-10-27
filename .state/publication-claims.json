@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T16:58:28.030Z",
+  "updatedAt": "2026-10-27T16:58:30.747Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7555,7 +7555,7 @@
     },
     {
       "claimId": "80a2a77f-acac-46c6-8063-c5f91d2838cb",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://dinamalar.com/news/tamil-nadu-news/housing-department-revises-apartment-building-ceiling-relaxation-rules/4360967",
         "title-city:அட க க ம ட கட டட உயர வரம ப தளர வ வ த கள த ர த த யத வ ட ட வசத த ற|chennai",
@@ -7576,7 +7576,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-27T16:58:28.030Z",
-      "expiresAt": "2026-10-27T17:13:28.030Z"
+      "expiresAt": "2026-10-27T17:13:28.030Z",
+      "finalizedAt": "2026-10-27T16:58:30.747Z"
     }
   ]
 }
