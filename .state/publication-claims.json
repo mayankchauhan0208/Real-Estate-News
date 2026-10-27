@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T16:57:35.722Z",
+  "updatedAt": "2026-10-27T16:57:38.890Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7291,7 +7291,7 @@
     },
     {
       "claimId": "28781885-2429-4ce9-b3e8-80993d714cc2",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://infra.economictimes.indiatimes.com/news/urban-infrastructure/jodhpur-pali-marwar-industrial-area-gets-railway-siding-approval-plot-allotments-begin/135237161",
         "title-city:jodhpur pali marwar industrial area gets railway siding approval plot allotments begin|jodhpur",
@@ -7310,7 +7310,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-27T16:57:35.722Z",
-      "expiresAt": "2026-10-27T17:12:35.722Z"
+      "expiresAt": "2026-10-27T17:12:35.722Z",
+      "finalizedAt": "2026-10-27T16:57:38.890Z"
     }
   ]
 }
