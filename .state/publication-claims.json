@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T16:57:56.619Z",
+  "updatedAt": "2026-10-27T16:57:58.974Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7390,6 +7390,32 @@
       "claimedAt": "2026-10-27T16:57:53.924Z",
       "expiresAt": "2026-10-27T17:12:53.924Z",
       "finalizedAt": "2026-10-27T16:57:56.619Z"
+    },
+    {
+      "claimId": "68bff236-1a90-4784-8ae9-2e7daabdc10e",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/kanpur-city-kanpur-waterlogging-relief-112-cr-released-for-makrikheda-cod-drains-40418593.html",
+        "title-city:क नप र क जलभर व स म ल ग म क त 320 कर ड स बन ग न ल 112 कर ड र पय ह ए ज र|kanpur",
+        "dedupe:6daebc53fc170fc5768941c5cf4a2123649fd8ff92c1d12e629b34a677c83d48",
+        "dedupe:3d07b8c4d8ea45b1300a01d37dfda7a831278e0cea5ff8d7f1a2d5570d36673a",
+        "dedupe:a0fe524c84a68af708b746d316422ee4a69059baf9e92f1e5d94303322e65d67",
+        "dedupe:ec6a8bbfd9e866416bf91d73b6decdaf3d2c4adbeebf195e60d3ccf6896656d8",
+        "dedupe:क नप र क जलभर व स म ल ग म क त कर ड स बन ग न ल कर ड र पय ह ए ज र|kanpur",
+        "dedupe:16478a72a7c2134735044f24eb9aae8871cd9761e83574c630651f1cf1f367ab",
+        "dedupe:fe3d0c41e77f981746e15587117e4c7a22833f8b0af423f19df0222f961e0dc7"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "kanpur",
+      "canonicalEventCity": "kanpur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "kanpur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-27T16:57:58.974Z",
+      "expiresAt": "2026-10-27T17:12:58.974Z"
     }
   ]
 }
