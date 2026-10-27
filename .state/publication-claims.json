@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T00:12:32.636Z",
+  "updatedAt": "2026-10-27T00:12:35.306Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7022,6 +7022,32 @@
       "claimedAt": "2026-10-27T00:12:30.176Z",
       "expiresAt": "2026-10-27T00:27:30.176Z",
       "finalizedAt": "2026-10-27T00:12:32.635Z"
+    },
+    {
+      "claimId": "5d0b7757-16f0-4f24-95ff-6bbce942df34",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/meerut-city-meeruts-first-integrated-tod-township-layout-approved-40417905.html",
+        "title-city:म रठ म स ब क पहल इ ट ग र ट ड ट ओड ट उनश प क ल आउट त य र जल द ह श र ह ग व क स क र य|meerut",
+        "dedupe:e856a6bb0192210318bd48d293ee6dcaa46cd3e8e2d99a5a94b93af82296ac25",
+        "dedupe:ce16433d3cbc699bccd591fb7b774976d7a9aa13abf381c14bbbe7d19a18380b",
+        "dedupe:9d8eed07719f3242fbd9f7d52e73c08bc42ff3745a7e50f1d4aaaeb83640ae91",
+        "dedupe:058b1b39a4a8576e82142202b236e7c93616853bfaf2eaa763e3cc7ed970afca",
+        "dedupe:म रठ म स ब क पहल इ ट ग र ट ड ट ओड ट उनश प क ल आउट त य र जल द ह श र ह ग व क स क र य|meerut",
+        "dedupe:df3b2553321256c96a79eb321d04be66e8bb523f3f90ea636791f35d970d9b9c",
+        "dedupe:8772edcff9e264f9b6c7f305428ab07e73bb6886ef041b89c0a2dcfe0f7428b3"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "meerut",
+      "canonicalEventCity": "meerut",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "meerut"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-27T00:12:35.306Z",
+      "expiresAt": "2026-10-27T00:27:35.306Z"
     }
   ]
 }
