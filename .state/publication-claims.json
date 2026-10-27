@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T16:58:01.482Z",
+  "updatedAt": "2026-10-27T16:58:03.833Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7417,6 +7417,32 @@
       "claimedAt": "2026-10-27T16:57:58.974Z",
       "expiresAt": "2026-10-27T17:12:58.974Z",
       "finalizedAt": "2026-10-27T16:58:01.482Z"
+    },
+    {
+      "claimId": "99702f17-56b0-4ade-8740-d35f061430b1",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/hiranandani-communities-krisala-developers-partner-for-97-acre-luxury-township-in-nagpur-with-2-100-crore-potential-101793105322794.html",
+        "title-city:hiranandani communities krisala developers partner for 97 acre luxury township in nagpur with 2 100 crore potential|nagpur",
+        "dedupe:24ad5df114bf05b022c1598eedd07195fc38db966c7de79e22c54a2e575941c2",
+        "dedupe:cde54f0b63c995f3cfe2b760c90f0a4655391e67eabe25b65bda4782faab0d05",
+        "dedupe:3ab8328b2a7a3e37922a72dbd925617fe09654e02cca5a8c4dc11b420efe63db",
+        "dedupe:febf3947c5dc1375d9af3e045d807d98afa7423c7008fb8c8f38a7892c6463d9",
+        "dedupe:hiranandani communities krisala acre township nagpur potential|nagpur",
+        "dedupe:d9e8ea368116099a159a17dcb9f2f9df0e2b2d70139c11b230e2a5c7071bf3c7",
+        "dedupe:64796e86ece89423f0610bf1530a283b40cf07161813f64ac7b91c10aa95add0"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "nagpur",
+      "canonicalEventCity": "nagpur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "nagpur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-27T16:58:03.833Z",
+      "expiresAt": "2026-10-27T17:13:03.833Z"
     }
   ]
 }
