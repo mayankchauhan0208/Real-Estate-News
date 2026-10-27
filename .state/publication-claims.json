@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T21:39:39.110Z",
+  "updatedAt": "2026-10-27T21:39:41.450Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7581,7 +7581,7 @@
     },
     {
       "claimId": "c779c5ef-666b-406f-aee5-f51a7e850d30",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/commercial/blackstones-gcc-in-bengaluru-anchors-fresh-50-billion-india-plan/135223995",
         "title-city:blackstone s gcc in bengaluru anchors fresh 50 billion india plan|bangalore",
@@ -7602,7 +7602,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-27T21:39:39.110Z",
-      "expiresAt": "2026-10-27T21:54:39.110Z"
+      "expiresAt": "2026-10-27T21:54:39.110Z",
+      "finalizedAt": "2026-10-27T21:39:41.450Z"
     }
   ]
 }
