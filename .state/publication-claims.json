@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T00:12:17.626Z",
+  "updatedAt": "2026-10-27T00:12:19.946Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6942,6 +6942,32 @@
       "claimedAt": "2026-10-27T00:12:14.851Z",
       "expiresAt": "2026-10-27T00:27:14.851Z",
       "finalizedAt": "2026-10-27T00:12:17.626Z"
+    },
+    {
+      "claimId": "2c15d952-0e3b-422a-a684-13a335765c77",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/state-bank-of-india-approves-project-finance-for",
+        "title-city:state bank of india approves project finance for highland mayfields in mohali|mohali",
+        "dedupe:5a38da1ff00c45e38aab0b49fe18b255764be089e7ba69aff8ede06dc3088d94",
+        "dedupe:2fc7c352b3cfc108224de76d721c389c5a024ea24ef5075a8e411de5484fd2f0",
+        "dedupe:0e117e37c2d506d2edb17904db3fc3fc0bd49179cd643de29d0b64a901039da1",
+        "dedupe:d424d651f491eff592f491ccc11246ab5f78464153df893f4b40d26d7ed8bacd",
+        "dedupe:state bank india approves finance highland mayfields mohali|mohali",
+        "dedupe:515284b7c62fb11ecc98ad484fd635674a564c845ffce91ecf9fb43e1aac65d3",
+        "dedupe:bfe8a01744c51cbc5bf869ee87496e2b0858b79d48c894b39ec1dfbe88f79855"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mohali",
+      "canonicalEventCity": "mohali",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mohali"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-27T00:12:19.946Z",
+      "expiresAt": "2026-10-27T00:27:19.946Z"
     }
   ]
 }
