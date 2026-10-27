@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T16:58:11.185Z",
+  "updatedAt": "2026-10-27T16:58:13.884Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7471,6 +7471,32 @@
       "claimedAt": "2026-10-27T16:58:08.638Z",
       "expiresAt": "2026-10-27T17:13:08.638Z",
       "finalizedAt": "2026-10-27T16:58:11.185Z"
+    },
+    {
+      "claimId": "0f7655bb-815e-457d-86be-bffb2a1170e0",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/platinum-corp-plans-260-crore-investment-for-four-residential-projects-in-mumbai-having-1-350-crore-revenue-potential-101793110762468.html",
+        "title-city:platinum corp plans 260 crore investment for four residential projects in mumbai having 1 350 crore revenue potential|mumbai",
+        "dedupe:e77f1faa04767686c1c2b589fbea82307c41c5b4597d551d54868fc84193eb46",
+        "dedupe:3ab2cbae044ff2f5572ef8fee8f7d3e658fe1dc00a4d887c514ff6e9ed275922",
+        "dedupe:ce0a47729b53b994255bf93a440bc22fcb7884103797a2f57d20ccfb1e0f0542",
+        "dedupe:0f1efbacd331b408f04a8a57fb405d2557f71aa7effba1037da8d319e0a8a438",
+        "dedupe:platinum corp plans four residential mumbai having revenue potential|mumbai",
+        "dedupe:851a3391bfb00382fb4433a4f803a401a11bba7e54af9f5e4f953891be413b0f",
+        "dedupe:e9b55a617baefcd30aa92aa07507c931e1b8b16722047994d4c26af1bbbf3da9"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-27T16:58:13.884Z",
+      "expiresAt": "2026-10-27T17:13:13.884Z"
     }
   ]
 }
