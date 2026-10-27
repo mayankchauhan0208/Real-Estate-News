@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T10:52:37.115Z",
+  "updatedAt": "2026-10-27T10:52:39.847Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7127,6 +7127,32 @@
       "claimedAt": "2026-10-27T10:52:34.057Z",
       "expiresAt": "2026-10-27T11:07:34.057Z",
       "finalizedAt": "2026-10-27T10:52:37.115Z"
+    },
+    {
+      "claimId": "1a444aa8-c459-4b39-8565-c0ee2358cf2d",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/vihang-ahead-launches-vihang-ventura-tower-2-in-mira-bhayandar",
+        "title-city:vihang ahead launches vihang ventura tower 2 in mira bhayandar|thane",
+        "dedupe:4d2cd880064c8bea67161e1d45dbd1f7f8ff490c7bf4909d305c85c19944e0f4",
+        "dedupe:b53426cd0b51d9149070b181a03357865262eb2401f495c7abecbf6ec72cd562",
+        "dedupe:77a58bf93b5b5d06ba3c518f26720a1d3eea2d9de322784f8e1ae9fd2882a183",
+        "dedupe:6091074b6dde55d227ec6bfc6de706915afced27f3d753ed6e14660da6275827",
+        "dedupe:vihang ahead launches vihang ventura tower mira bhayandar|thane",
+        "dedupe:898e9b96e16db1854f88edbdaaaba078e84b8ffdda2262c36eb5446dbde4cef9",
+        "dedupe:6134d54573f14aa78430841ce35fc0f0603274b0ce559b3fc91603a78fcef7bf"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "thane",
+      "canonicalEventCity": "thane",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "thane"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-27T10:52:39.847Z",
+      "expiresAt": "2026-10-27T11:07:39.847Z"
     }
   ]
 }
