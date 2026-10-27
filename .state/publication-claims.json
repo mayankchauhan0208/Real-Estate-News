@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T10:52:42.447Z",
+  "updatedAt": "2026-10-27T10:52:44.890Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7154,6 +7154,32 @@
       "claimedAt": "2026-10-27T10:52:39.847Z",
       "expiresAt": "2026-10-27T11:07:39.847Z",
       "finalizedAt": "2026-10-27T10:52:42.447Z"
+    },
+    {
+      "claimId": "92a58243-6e86-4ecc-a12c-efe091057ae6",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/mahindra-lifespaces-to-develop-10-acre-north-bengaluru-project-with-rs-1250-crore-gdv/articleshow/135226510.cms",
+        "title-city:mahindra lifespaces to develop 10 acre north bengaluru project with rs 1 250 crore gdv|bangalore",
+        "dedupe:69606897f3f03c2a943af14df4c38c7cb6e1f043a92e1b66ff4fa8437286a912",
+        "dedupe:42082d796dee2b32b7717ed6420db0eafdbe4322cd32ddc89ff4acb0173b6e8a",
+        "dedupe:4c332483a4989e9ec2d2040b9bf2ed905a9eee99bb7680a6221bba0c284dbc68",
+        "dedupe:ed4e9aade8f64ffbe1346efabd38c0289bf09b827c1b758511cbc9e51f2080e4",
+        "dedupe:mahindra lifespaces develop acre north bengaluru gdv|bangalore",
+        "dedupe:92090445a832b68ee45d457820999635174ab95ee4cb8f3e554f0409a808e8a5",
+        "dedupe:46f8203f3784ec1eadd4be8de0524113321457e0fde296026d38b55dbd28781b"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-27T10:52:44.890Z",
+      "expiresAt": "2026-10-27T11:07:44.890Z"
     }
   ]
 }
