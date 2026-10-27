@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-26T19:37:40.288Z",
+  "updatedAt": "2026-10-27T00:12:14.851Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6915,6 +6915,32 @@
       "claimedAt": "2026-10-26T19:37:38.612Z",
       "expiresAt": "2026-10-26T19:52:38.612Z",
       "finalizedAt": "2026-10-26T19:37:40.288Z"
+    },
+    {
+      "claimId": "c65d32b7-baf9-4185-be0c-c7c6ae88f1d7",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/gurugram-news/mcg-plans-three-ev-charging-stations-awaits-hsvp-nod-101792952198108.html",
+        "title-city:mcg plans three ev charging stations awaits hsvp nod|gurugram",
+        "dedupe:2f743253c45e8890ff2d754157647253880655b47f4a1035cdc14bbe8b9609d9",
+        "dedupe:cdf25b3f5a9eb08dae00bc99e66cc3c9241a6c27cc4bf57e90c04d50ca1278c6",
+        "dedupe:f60bc30a851e94f7148dcdc2eb277a1cdd94133638d2887ab54a6f20587b001b",
+        "dedupe:9d55f0e67486816b9069944ef6eb29522607c6cbc0f00a5cc2d846e411a593d9",
+        "dedupe:mcg plans three ev charging stations awaits hsvp nod|gurugram",
+        "dedupe:e9ab25b4bb78d18b2b29c289e79350b356699e7393e8ffefcf4c4405b10fc5c6",
+        "dedupe:2859f02f03087996f4ea6c9b74159abe74e0d9f9b3e1055f05de6e7a4d077b40"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-27T00:12:14.851Z",
+      "expiresAt": "2026-10-27T00:27:14.851Z"
     }
   ]
 }
