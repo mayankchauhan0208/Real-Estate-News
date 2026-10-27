@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T05:20:34.849Z",
+  "updatedAt": "2026-10-27T10:52:34.057Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7101,6 +7101,31 @@
       "claimedAt": "2026-10-27T05:20:32.522Z",
       "expiresAt": "2026-10-27T05:35:32.522Z",
       "finalizedAt": "2026-10-27T05:20:34.849Z"
+    },
+    {
+      "claimId": "5841ea92-c9a8-48fa-bc24-188b6c34774f",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://infra.economictimes.indiatimes.com/news/water/va-tech-wabag-bags-1000-crore-order-from-reliance-industries-for-jamnagar-desalination-plant/135225166",
+        "title-city:va tech wabag bags 1 000 crore order from reliance industries for jamnagar desalination plant|gujarat",
+        "dedupe:b81551a70358fc11e50ff8a8af0ebabb00169fc84de8158c611ec6d08246f198",
+        "dedupe:310cade4ad4f534448894adce9a47d9948ac93672a26218d4bc216169f5dbdbf",
+        "dedupe:f63104e9c5feae68ee1d28aa2568c788211fcda4b3b55afc12011d1f872ef574",
+        "dedupe:va tech wabag bags order reliance industries jamnagar desalination plant|gujarat",
+        "dedupe:a5c94644f059d10bd65be231aa2f457abd2213c9d5b3cfb02dfb6ac4ace50f05",
+        "dedupe:e23b1015fee5b89d8c2545c2794c25dfcb881e235c79636417c90c3214e0936e"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gujarat",
+      "canonicalEventCity": "gujarat",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gujarat"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-27T10:52:34.057Z",
+      "expiresAt": "2026-10-27T11:07:34.057Z"
     }
   ]
 }
