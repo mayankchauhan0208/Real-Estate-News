@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T10:53:05.010Z",
+  "updatedAt": "2026-10-27T10:53:07.585Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7264,7 +7264,7 @@
     },
     {
       "claimId": "4a6896b1-b4dc-43fb-b5e7-327916bc3fd6",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-up-cabinet-approves-robotics-ai-hub-in-greater-noida-1-lakh-jobs-projected-40418449.html",
         "title-city:य प क ब न ट क बड फ सल greater noida म बन ग र ब ट क स और ai हब 1 ल ख य व ओ क म ल ग र जग र|noida",
@@ -7286,7 +7286,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-27T10:53:05.010Z",
-      "expiresAt": "2026-10-27T11:08:05.010Z"
+      "expiresAt": "2026-10-27T11:08:05.010Z",
+      "finalizedAt": "2026-10-27T10:53:07.585Z"
     }
   ]
 }
