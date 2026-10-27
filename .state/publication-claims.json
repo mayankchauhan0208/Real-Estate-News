@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T16:58:16.154Z",
+  "updatedAt": "2026-10-27T16:58:18.352Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7498,6 +7498,32 @@
       "claimedAt": "2026-10-27T16:58:13.884Z",
       "expiresAt": "2026-10-27T17:13:13.884Z",
       "finalizedAt": "2026-10-27T16:58:16.154Z"
+    },
+    {
+      "claimId": "cab978fe-1722-4a29-b825-8118b05f07b9",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/lucknow-city-jhansi-lalitpur-to-get-65000-ton-warehouses-free-land-approved-40418852.html",
+        "title-city:झ स और लल तप र म बन ग 65 हज र टन क षमत क ग द म क ब न ट न द म फ त जम न क म ज र|lucknow",
+        "dedupe:60da4070fa836dcc360357d4ad66057cb4a50fc788e114583323f3fb82de01d1",
+        "dedupe:2b2fd332ca0709d13c73c5ca94af8010c0476b2ac135ca6953a8f95495c40772",
+        "dedupe:a4bd7364c2475b32b35fd54c146a98d5639a831146379577b96c7383133b1c18",
+        "dedupe:0c4ce140390ac117205194679ad67722d36366dba88c5ccca9e1de94e2f2d9fc",
+        "dedupe:झ स और लल तप र म बन ग हज र टन क षमत क ग द म क ब न ट न द म फ त जम न क म ज र|lucknow",
+        "dedupe:11d0cff45ba824b9401d2554c749ec5c24291e9f4cc5db298f28ff505c9519b6",
+        "dedupe:616a2db2dbdc44344ada69d2bafe1ad8a6f77d56653232e512f16ecee277e16e"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-27T16:58:18.352Z",
+      "expiresAt": "2026-10-27T17:13:18.352Z"
     }
   ]
 }
