@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T10:52:47.452Z",
+  "updatedAt": "2026-10-27T10:52:50.176Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7181,6 +7181,31 @@
       "claimedAt": "2026-10-27T10:52:44.890Z",
       "expiresAt": "2026-10-27T11:07:44.890Z",
       "finalizedAt": "2026-10-27T10:52:47.452Z"
+    },
+    {
+      "claimId": "8e0eed58-0de7-481a-af75-611567ac3b25",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/platinum-corp-to-invest-260-crore-across-four-mumbai-residential-projects/135228837",
+        "title-city:platinum corp to invest 260 crore across four mumbai residential projects|mumbai",
+        "dedupe:249e61b639f449718aaa5c667058c9ce345c286dc666e0595f8adaf374889a54",
+        "dedupe:f996f807125c5619cb393523e188e7fd263bebbb8ee27f66b9db76c5f4350c65",
+        "dedupe:225a83d5506d430301b957b17efbf8bb1a0829a177795c3ceb62952d1af16ec3",
+        "dedupe:platinum corp across four mumbai residential|mumbai",
+        "dedupe:2e2201c781f722427a43cd7ea1cc9fa8eb8eb3dc89c400970b240cbc5d2b37e1",
+        "dedupe:7e03cb8b7f5979b16190cc188546549628aa2d893a45a117d41e8cd694ad0a45"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-27T10:52:50.176Z",
+      "expiresAt": "2026-10-27T11:07:50.176Z"
     }
   ]
 }
