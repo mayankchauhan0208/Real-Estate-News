@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T16:57:53.924Z",
+  "updatedAt": "2026-10-27T16:57:56.619Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7366,7 +7366,7 @@
     },
     {
       "claimId": "42cc940c-90bc-47ef-85a1-e9e5f8dd5e23",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/mahindra-lifespaces-launches-rs-1250-crore-luxury-residential-project-in-north-bengaluru/articleshow/135232210.cms",
         "title-city:mahindra lifespaces to develop north bengaluru project with rs 1 250 crore gdv|bangalore",
@@ -7388,7 +7388,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-27T16:57:53.924Z",
-      "expiresAt": "2026-10-27T17:12:53.924Z"
+      "expiresAt": "2026-10-27T17:12:53.924Z",
+      "finalizedAt": "2026-10-27T16:57:56.619Z"
     }
   ]
 }
