@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T16:57:38.890Z",
+  "updatedAt": "2026-10-27T16:57:41.831Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7312,6 +7312,30 @@
       "claimedAt": "2026-10-27T16:57:35.722Z",
       "expiresAt": "2026-10-27T17:12:35.722Z",
       "finalizedAt": "2026-10-27T16:57:38.890Z"
+    },
+    {
+      "claimId": "d9725e3e-e316-4b80-bdd7-14795a8d7a21",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/infrastructure-growth-expands-delhi-ncr-resid",
+        "title-city:infrastructure growth expands delhi ncr residential market beyond gurugram and noida|gurugram",
+        "dedupe:03ee461c2afb50692a1fe392aa2442f07ecae2c8f303c59eca0ed761b55f2eda",
+        "dedupe:f5fee1d156d3933b35c4d5ae923e2ba7fd2c2dd93d769315504a38f9831b45d5",
+        "dedupe:50d90af8d62de81b39e2966fb01fcf304fbeac31cf29dcecff975d62cc0e023b",
+        "dedupe:c8d9805316fbb5d4d172b1b416d6aa5649e0c27a6e78a41968a737c625fb5c87",
+        "dedupe:infrastructure growth expands delhi residential market beyond gurugram noida|gurugram"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-27T16:57:41.831Z",
+      "expiresAt": "2026-10-27T17:12:41.831Z"
     }
   ]
 }
