@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T10:53:00.165Z",
+  "updatedAt": "2026-10-27T10:53:02.642Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7237,7 +7237,7 @@
     },
     {
       "claimId": "fc858118-aabe-4d4c-8850-d022f0b13f68",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/lucknow-city-mainpuri-sainik-school-expansion-gets-yogi-cabinet-nod-for-land-40418431.html",
         "title-city:स न क स क ल म नप र क व स त र क ल ए म ल ग 9 52 ह क ट यर जम न य ग क ब न ट न द म ज र|lucknow",
@@ -7259,7 +7259,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-27T10:53:00.165Z",
-      "expiresAt": "2026-10-27T11:08:00.165Z"
+      "expiresAt": "2026-10-27T11:08:00.165Z",
+      "finalizedAt": "2026-10-27T10:53:02.642Z"
     }
   ]
 }
