@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T00:12:27.544Z",
+  "updatedAt": "2026-10-27T00:12:30.176Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -6995,6 +6995,32 @@
       "claimedAt": "2026-10-27T00:12:25.107Z",
       "expiresAt": "2026-10-27T00:27:25.107Z",
       "finalizedAt": "2026-10-27T00:12:27.544Z"
+    },
+    {
+      "claimId": "45eedc9d-a5e3-4d63-b040-4bf87ffaccd1",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://proppuls.in/dubai-south-property-sales-surge-2026-anarock-report",
+        "title-city:dubai south property sales surge 27 above 2025 full year total|puri",
+        "dedupe:83e37aae58250cfd320f15e62ae2c8431b6a85932d6a8d14ae21b25397395b09",
+        "dedupe:6819899e2e00e12a54a4933f5d327dce18c1adecf67ac388447e5839ab7325fb",
+        "dedupe:7a5163bcba7a27334a5639a69caa5a40c4c89711813877ec2b4e6cdd169c8fef",
+        "dedupe:d69f42dfcd7e0e110adc5e4cdd0cf87930b944296138be1b21a746b9516e5264",
+        "dedupe:dubai south property sales surge above full year total|puri",
+        "dedupe:813839761b7eed4788ff280e10c863f8712388820ffced04a46e00913409020e",
+        "dedupe:e1c4ff143dd1f2bf888281305935b5289004cbb198cddc0b729fba01240b5fe4"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "puri",
+      "canonicalEventCity": "puri",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "puri"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-27T00:12:30.176Z",
+      "expiresAt": "2026-10-27T00:27:30.176Z"
     }
   ]
 }
