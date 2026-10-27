@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T16:58:20.411Z",
+  "updatedAt": "2026-10-27T16:58:22.907Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7525,6 +7525,32 @@
       "claimedAt": "2026-10-27T16:58:18.352Z",
       "expiresAt": "2026-10-27T17:13:18.352Z",
       "finalizedAt": "2026-10-27T16:58:20.411Z"
+    },
+    {
+      "claimId": "6c8b2b15-6ae5-438b-bf21-6348cdd45cc9",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://livehindustan.com/ncr/ghaziabad/story-ghaziabad-municipal-corporation-headquarters-approved-in-raj-nagar-extension-at-rs-92-crore-201793115827606.html",
+        "title-city:ghaziabad news न गम क नए म ख य लय पर 92 कर ड र पय खर च ह ग|ghaziabad",
+        "dedupe:c9d14b84e84aaf2c3bd249dcb25aed4ace34e06e08db294e8eefdcf5af044b39",
+        "dedupe:4d0295667869b6e903dde880493f3403de592a2248444f4b0658668a30d6583c",
+        "dedupe:2b1830bdd3adb7dc3dc260d1b6b3fdf92f5772a784aba884d94a48ca7e53e65e",
+        "dedupe:fc51b1b50aefe0446973730b58d0f0fabfb948cf5efc00c08a9e8c7aae3b9060",
+        "dedupe:ghaziabad news न गम क नए म ख य लय पर कर ड र पय खर च ह ग|ghaziabad",
+        "dedupe:6da5746af5aea65943e69c4807d3026df5037bf63cc3fdc6153a1ed0adf07b84",
+        "dedupe:f46ac5e598beaad0e967516b9b37c7325d0776e382cb39f41ba4687475a1ad3c"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "ghaziabad",
+      "canonicalEventCity": "ghaziabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "ghaziabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-27T16:58:22.907Z",
+      "expiresAt": "2026-10-27T17:13:22.907Z"
     }
   ]
 }
