@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T08:47:02.903Z",
+  "updatedAt": "2026-10-28T08:47:04.833Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7819,7 +7819,7 @@
     },
     {
       "claimId": "64e0c35e-a07e-459e-a255-5e4a3d7f6c39",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://tribuneindia.com/news/jalandhar/jalandhar-young-fans-flock-to-surjit-stadium-for-their-heroes",
         "title-city:jalandhar young fans flock to surjit stadium for their heroes|jalandhar",
@@ -7841,7 +7841,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-28T08:47:02.903Z",
-      "expiresAt": "2026-10-28T09:02:02.903Z"
+      "expiresAt": "2026-10-28T09:02:02.903Z",
+      "finalizedAt": "2026-10-28T08:47:04.833Z"
     }
   ]
 }
