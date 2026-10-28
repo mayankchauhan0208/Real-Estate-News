@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T08:46:53.787Z",
+  "updatedAt": "2026-10-28T08:46:55.817Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7763,6 +7763,32 @@
       "claimedAt": "2026-10-28T08:46:51.499Z",
       "expiresAt": "2026-10-28T09:01:51.499Z",
       "finalizedAt": "2026-10-28T08:46:53.787Z"
+    },
+    {
+      "claimId": "abb97d48-9052-45ec-812a-c7ae654f4545",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/lucknow-news/up-cabinet-clears-locs-for-six-firms-3-635-crore-investment-plans-101793126361435.html",
+        "title-city:up cabinet clears locs for six firms 3 635 crore investment plans|lucknow",
+        "dedupe:c20ecd7d57d5ab4fe185b0c6bb485461f800e43c85e965ecf54433330a553b3e",
+        "dedupe:1e5b64ca54ab755644dec8a7c523cfebaffe126bbc6612f1b3b93ebec6d5b759",
+        "dedupe:56bccf8ff6ec88a42d17fa42d9112843a8f96951e836c18e9061e9bd9ebf12f0",
+        "dedupe:53625a9996e506d2c55916b0513e63b0dd2bb4a50c0bca423eef5014947628cd",
+        "dedupe:cabinet clears locs six firms plans|lucknow",
+        "dedupe:4d26ec4a14dbdeb708bdfdbaa72891e49eca72307b25bbb215f5a31cbe2e832b",
+        "dedupe:11d156958d41837dfc24d5be1eef4a155a21939b6f7984e887c6347fe98e41ca"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-28T08:46:55.817Z",
+      "expiresAt": "2026-10-28T09:01:55.817Z"
     }
   ]
 }
