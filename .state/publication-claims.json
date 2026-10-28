@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T21:24:10.677Z",
+  "updatedAt": "2026-10-28T21:24:12.759Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8151,7 +8151,7 @@
     },
     {
       "claimId": "0f232978-cf75-42c1-9708-a78c0e871be6",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://business-standard.com/companies/news/anant-raj-gets-rera-nod-for-gurugram-project-eyes-357-mw-data-centres-126102801342_1.html",
         "title-city:anant raj gets rera nod for gurugram project eyes 357 mw data centres|gurugram",
@@ -8173,7 +8173,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-28T21:24:10.677Z",
-      "expiresAt": "2026-10-28T21:39:10.677Z"
+      "expiresAt": "2026-10-28T21:39:10.677Z",
+      "finalizedAt": "2026-10-28T21:24:12.759Z"
     }
   ]
 }
