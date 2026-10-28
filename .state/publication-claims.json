@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T01:41:44.576Z",
+  "updatedAt": "2026-10-28T01:41:47.404Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7656,6 +7656,31 @@
       "claimedAt": "2026-10-28T01:41:42.413Z",
       "expiresAt": "2026-10-28T01:56:42.413Z",
       "finalizedAt": "2026-10-28T01:41:44.576Z"
+    },
+    {
+      "claimId": "23ee8e8b-bceb-412c-891e-3971a82119eb",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://constructionworld.in/latest-construction-news/real-estate-news/bhartiya-urban-to-invest-over-rs-10-billion-in-bengaluru-project/99424",
+        "title-city:bhartiya urban to invest over rs 10 billion in bengaluru project|bangalore",
+        "dedupe:bf176c3c6a75bf85bb811eaa318e35af353d9e67ca884be44d690a6b2157bcc1",
+        "dedupe:189a0a4697bff228df534c06c1bc683760f47e0847eca5e2d5460edde53340a9",
+        "dedupe:00928784d5118f752b65c49c8a4504523f9aaee3543dfe9fbc81fdfbaa818f81",
+        "dedupe:bhartiya urban bengaluru|bangalore",
+        "dedupe:808be07abe2a9711fa2ab87967838c799bc29554c4081d52ea7e0221a4f86add",
+        "dedupe:abd07a4538f415ef77e137fe887f126ac197c00c08405db6223b99c45786f6db"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-28T01:41:47.404Z",
+      "expiresAt": "2026-10-28T01:56:47.404Z"
     }
   ]
 }
