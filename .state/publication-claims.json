@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T08:46:59.295Z",
+  "updatedAt": "2026-10-28T08:47:00.991Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7793,7 +7793,7 @@
     },
     {
       "claimId": "c8b39d70-5948-43cb-8754-ee87044914b5",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/industry/ahmedabad-development-body-sells-three-plots-for-871-crore-in-three-days/135251208",
         "title-city:ahmedabad development body sells three plots for 871 crore in three days|ahmedabad",
@@ -7814,7 +7814,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-28T08:46:59.295Z",
-      "expiresAt": "2026-10-28T09:01:59.295Z"
+      "expiresAt": "2026-10-28T09:01:59.295Z",
+      "finalizedAt": "2026-10-28T08:47:00.991Z"
     }
   ]
 }
