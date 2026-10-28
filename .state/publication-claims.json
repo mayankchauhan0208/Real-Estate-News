@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T08:47:06.664Z",
+  "updatedAt": "2026-10-28T08:47:08.328Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7846,7 +7846,7 @@
     },
     {
       "claimId": "c04e66a1-791d-460f-a265-bbec86f198fa",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/real-estate/real-estate-guide/mhada-lottery-2027-over-2-000-affordable-homes-expected-to-be-announced-for-sale-in-the-mumbai-real-estate-market-101793165579968.html",
         "title-city:mhada lottery 2027 over 2 000 affordable homes expected to be announced for sale in the mumbai real estate market|mumbai",
@@ -7868,7 +7868,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-28T08:47:06.664Z",
-      "expiresAt": "2026-10-28T09:02:06.664Z"
+      "expiresAt": "2026-10-28T09:02:06.664Z",
+      "finalizedAt": "2026-10-28T08:47:08.328Z"
     }
   ]
 }
