@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T16:21:21.246Z",
+  "updatedAt": "2026-10-28T16:21:23.776Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8061,6 +8061,65 @@
       "claimedAt": "2026-10-28T16:21:18.549Z",
       "expiresAt": "2026-10-28T16:36:18.549Z",
       "finalizedAt": "2026-10-28T16:21:21.246Z"
+    },
+    {
+      "claimId": "ef792f40-aedb-45dc-a16f-f0602177c289",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/signature-global-sells-phase-1-of-tonino-lamborghini-residences-in-gurugram-for-2000-crore/articleshow/135265753.cms",
+        "title-city:signature global sells phase 1 of tonino lamborghini residences in gurugram for 2 000 crore|gurugram",
+        "dedupe:60500cc2c5bb25d5ca929070b2e73cf2ce78f2d65641f400ccf899458ec5976b",
+        "dedupe:626180256da406b58c4cd2b86a02fc32f5634506e3d9006d7080816dc0e39a8c",
+        "dedupe:197fbb6f9b8260b36fff99dcd8c577c3b8fbd4d029260553cfad8561417b5778",
+        "dedupe:29749f1a3697877bc688b0fec6820f833268124614e9572a6859ca60065884f8",
+        "dedupe:signature global sells phase tonino lamborghini residences gurugram|gurugram",
+        "dedupe:ee17c5613c141cde4774ede8107ad1f9e094d1f6d77befb08c52279d403e9fea",
+        "dedupe:1f88b0686d15b0a06249f82d871260f5f576eef934dc753abbd50b21c5e10994"
+      ],
+      "semanticIdentity": {
+        "city": "gurugram",
+        "canonicalEventCity": "gurugram",
+        "normalizedBuilder": "signatureglobal",
+        "normalizedProject": "",
+        "canonicalEventType": "residential-sale",
+        "builder": "signatureglobal",
+        "project": "",
+        "eventType": "residential-sale",
+        "numericAnchors": [
+          "00:number",
+          "06:number",
+          "10:number",
+          "12.40:acre",
+          "12.40:number",
+          "1:number",
+          "2000:crore",
+          "2026:number",
+          "2032:number",
+          "25:acre",
+          "25:number",
+          "28:number",
+          "2:number",
+          "3:number",
+          "4.5:number",
+          "41:number",
+          "48:number",
+          "4:number",
+          "71:number",
+          "812:number"
+        ],
+        "canonicalEventFingerprint": "signatureglobal|gurugram|residential-sale|00:number,06:number,10:number",
+        "semanticClusterId": "cluster:3e5466db59be6fa5c2811852"
+      },
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "signatureglobal|gurugram|residential-sale|00:number,06:number,10:number",
+      "semanticClusterId": "cluster:3e5466db59be6fa5c2811852",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-28T16:21:23.776Z",
+      "expiresAt": "2026-10-28T16:36:23.776Z"
     }
   ]
 }
