@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T08:47:15.930Z",
+  "updatedAt": "2026-10-28T08:47:17.818Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7981,6 +7981,32 @@
       "claimedAt": "2026-10-28T08:47:14.179Z",
       "expiresAt": "2026-10-28T09:02:14.179Z",
       "finalizedAt": "2026-10-28T08:47:15.930Z"
+    },
+    {
+      "claimId": "c84fea6a-a411-4cb8-b86b-88f9cee1689c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://outlookmoney.com/invest/affordability-lifestyle-long-term-investment-prospects-key-factors-for-jaipur-homebuyers",
+        "title-city:jaipur real estate market prices housing demand and growth areas|jaipur",
+        "dedupe:bf62caa683d22fea48017008850a984ce4c7694421160aa3dbac5c067ef2d971",
+        "dedupe:fab79cd7720823c61ef3d298278725ce8a1f22a7aaa58feb6cdcff049360b1eb",
+        "dedupe:15996bab18a9615f5b49a6be44b696b17b41ee200593f0bf4d44e0ef11f0e52c",
+        "dedupe:a1991d6ce75633cc51a8d34d06e2acd6bc9ae8e4ea335921ac974e6cc87e8bf5",
+        "dedupe:jaipur real estate market prices housing demand growth areas|jaipur",
+        "dedupe:70d591a8a00caf33ca18d2ed39ac370794b971ee05dacdf797e025d45d869bb9",
+        "dedupe:fe58a671101b8f1783fe251eb7c4d847f6b0b352759e84b658c3b6998b60c787"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "jaipur",
+      "canonicalEventCity": "jaipur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "jaipur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-28T08:47:17.818Z",
+      "expiresAt": "2026-10-28T09:02:17.818Z"
     }
   ]
 }
