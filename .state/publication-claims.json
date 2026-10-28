@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T16:21:23.776Z",
+  "updatedAt": "2026-10-28T16:21:26.440Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8064,7 +8064,7 @@
     },
     {
       "claimId": "ef792f40-aedb-45dc-a16f-f0602177c289",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/signature-global-sells-phase-1-of-tonino-lamborghini-residences-in-gurugram-for-2000-crore/articleshow/135265753.cms",
         "title-city:signature global sells phase 1 of tonino lamborghini residences in gurugram for 2 000 crore|gurugram",
@@ -8119,7 +8119,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-28T16:21:23.776Z",
-      "expiresAt": "2026-10-28T16:36:23.776Z"
+      "expiresAt": "2026-10-28T16:36:23.776Z",
+      "finalizedAt": "2026-10-28T16:21:26.440Z"
     }
   ]
 }
