@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T01:41:51.468Z",
+  "updatedAt": "2026-10-28T01:41:53.111Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7685,7 +7685,7 @@
     },
     {
       "claimId": "b67c856d-6450-471e-aea5-a925946d425c",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/kanpur-city-kanpur-circle-rates-may-rise-premium-flats-cost-more-relief-for-large-plots-40418818.html",
         "title-city:kanpur circle rate क नप र म 10 तक मह ग ह सकत जम न प र म यम फ ल ट क सर क ल र ट बढ ग बड भ ख ड क छ ट|kanpur",
@@ -7707,7 +7707,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-28T01:41:51.468Z",
-      "expiresAt": "2026-10-28T01:56:51.468Z"
+      "expiresAt": "2026-10-28T01:56:51.468Z",
+      "finalizedAt": "2026-10-28T01:41:53.111Z"
     }
   ]
 }
