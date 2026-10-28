@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T16:21:18.549Z",
+  "updatedAt": "2026-10-28T16:21:21.246Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8038,7 +8038,7 @@
     },
     {
       "claimId": "daa19a3c-bdb4-44ac-aaac-0589a4b0df22",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/retail/trehan-iris-invests-400-crore-to-develop-greater-noida-west-mall/135265537",
         "title-city:trehan iris invests 400 crore to develop greater noida west mall|noida",
@@ -8059,7 +8059,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-28T16:21:18.549Z",
-      "expiresAt": "2026-10-28T16:36:18.549Z"
+      "expiresAt": "2026-10-28T16:36:18.549Z",
+      "finalizedAt": "2026-10-28T16:21:21.246Z"
     }
   ]
 }
