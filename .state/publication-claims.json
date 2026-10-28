@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-27T21:39:45.193Z",
+  "updatedAt": "2026-10-28T01:41:42.413Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7631,6 +7631,30 @@
       "claimedAt": "2026-10-27T21:39:43.443Z",
       "expiresAt": "2026-10-27T21:54:43.443Z",
       "finalizedAt": "2026-10-27T21:39:45.193Z"
+    },
+    {
+      "claimId": "1ec60d55-a7dc-4041-8b1a-2a249ebfc2d7",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/meerut-city-namo-bharat-rrts-meerut-to-connect-entire-ncr-9-new-corridors-jewar-airport-also-included-40418759.html",
+        "title-city:नम भ रत क व स त र म रठ स स ध ज ड ग ज वर ग र ग र म व प न पत बन ग 9 नए क र ड र प र ncr क य त र ह ग आस न|gurugram",
+        "dedupe:caf542f38e6d9cec69ec2b183328cc733adf660783ca21cb9a2eb6e18196db36",
+        "dedupe:5021aa96420ad833f8805179b2419299b887122a3766eca4183b1cb1c72d8305",
+        "dedupe:395b92ed372cbf9d4c0547a55ba4d75211728e03580babd4a80edc57ec8f2841",
+        "dedupe:a863f7b4affb44bda0ffa2db3ea760d7f67a114906074777f8d7a64ed84a5652",
+        "dedupe:नम भ रत क व स त र म रठ स स ध ज ड ग ज वर ग र ग र म व प न पत बन ग नए क र ड र प र क य त र ह ग आस न|gurugram"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-28T01:41:42.413Z",
+      "expiresAt": "2026-10-28T01:56:42.413Z"
     }
   ]
 }
