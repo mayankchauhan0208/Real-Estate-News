@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T16:21:12.946Z",
+  "updatedAt": "2026-10-28T16:21:15.936Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8011,7 +8011,7 @@
     },
     {
       "claimId": "6ab55dd7-00b7-449a-bb88-b1cc57567299",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/aris-unitern-gets-transcon-mandate-for-rs-250-cr-project-in-mumbai/articleshow/135264343.cms",
         "title-city:aris unitern gets transcon mandate for rs 250 cr project in mumbai|mumbai",
@@ -8033,7 +8033,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-28T16:21:12.946Z",
-      "expiresAt": "2026-10-28T16:36:12.946Z"
+      "expiresAt": "2026-10-28T16:36:12.946Z",
+      "finalizedAt": "2026-10-28T16:21:15.936Z"
     }
   ]
 }
