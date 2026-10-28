@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T08:47:10.308Z",
+  "updatedAt": "2026-10-28T08:47:12.168Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7873,7 +7873,7 @@
     },
     {
       "claimId": "1ad4774c-362d-4f41-985b-6fa40f37190d",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realtynmore.com/ralith-realty-unveils-festive-offers-for-plotted",
         "title-city:ralith realty unveils festive offers for plotted township in panipat|panipat",
@@ -7895,7 +7895,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-28T08:47:10.308Z",
-      "expiresAt": "2026-10-28T09:02:10.308Z"
+      "expiresAt": "2026-10-28T09:02:10.308Z",
+      "finalizedAt": "2026-10-28T08:47:12.168Z"
     }
   ]
 }
