@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T08:47:12.168Z",
+  "updatedAt": "2026-10-28T08:47:14.179Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7897,6 +7897,89 @@
       "claimedAt": "2026-10-28T08:47:10.308Z",
       "expiresAt": "2026-10-28T09:02:10.308Z",
       "finalizedAt": "2026-10-28T08:47:12.168Z"
+    },
+    {
+      "claimId": "c19117bb-305b-4b29-a25c-83aeaded92eb",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://magicbricks.com/news/hinjewadi-flyover-news-3-new-links-planned-towards-bhumkar-chowk-marunji-vcmb/152484.html",
+        "title-city:hinjewadi s 3 flyover plan which roads could get a new link|pune",
+        "dedupe:a09ccf639e52d738e758176644afec34b61ba2cea4e6f382cafb84d6404a5642",
+        "dedupe:acf2d2fa05ad9a1a6ae33374c7706118eec01a40f8d1dda754f45a1d13b801f7",
+        "dedupe:86d4ab2670eb0a99f2dd4c49b6efd5756a2b4b7281250c3a38e2ad141b650e67",
+        "dedupe:hinjewadi s flyover plan which roads could get a new link|pune",
+        "dedupe:e7b9b0166d3bf76e0b28ae434f114725665430df3996c77c35bbae8a337b91fd",
+        "dedupe:1f5e5303b3bb3f6c01c5cc2addf36d2abd521fa6566fbd566203de8867d13432"
+      ],
+      "semanticIdentity": {
+        "city": "pune",
+        "canonicalEventCity": "pune",
+        "normalizedBuilder": "gaurs",
+        "normalizedProject": "",
+        "canonicalEventType": "project-launch",
+        "builder": "gaurs",
+        "project": "",
+        "eventType": "project-launch",
+        "numericAnchors": [
+          "02:number",
+          "03:number",
+          "08:number",
+          "1.01:crore",
+          "1.19:crore",
+          "1.75:crore",
+          "1.80:crore",
+          "11:number",
+          "12:number",
+          "13:number",
+          "14:number",
+          "15:number",
+          "16:number",
+          "17000:crore",
+          "17:number",
+          "19:number",
+          "1:number",
+          "2.60:crore",
+          "2.68:crore",
+          "2.8:number",
+          "2.90:crore",
+          "2025:number",
+          "2026:number",
+          "2027:number",
+          "20:number",
+          "21:number",
+          "227:crore",
+          "23:number",
+          "25:number",
+          "26:number",
+          "27:number",
+          "28:number",
+          "2:number",
+          "33:number",
+          "36:number",
+          "3:number",
+          "4.4:number",
+          "520:number",
+          "54:number",
+          "590:number",
+          "5:number",
+          "70.9:number",
+          "740:number",
+          "850:number",
+          "85:number"
+        ],
+        "canonicalEventFingerprint": "gaurs|pune|project-launch|02:number,03:number,08:number",
+        "semanticClusterId": "cluster:a35cf6e58805f3246d2440bd"
+      },
+      "publishedCity": "pune",
+      "canonicalEventCity": "pune",
+      "canonicalEventFingerprint": "gaurs|pune|project-launch|02:number,03:number,08:number",
+      "semanticClusterId": "cluster:a35cf6e58805f3246d2440bd",
+      "city": [
+        "pune"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-28T08:47:14.179Z",
+      "expiresAt": "2026-10-28T09:02:14.179Z"
     }
   ]
 }
