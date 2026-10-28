@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T16:21:26.440Z",
+  "updatedAt": "2026-10-28T16:21:29.009Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8121,6 +8121,32 @@
       "claimedAt": "2026-10-28T16:21:23.776Z",
       "expiresAt": "2026-10-28T16:36:23.776Z",
       "finalizedAt": "2026-10-28T16:21:26.440Z"
+    },
+    {
+      "claimId": "00fe5b16-d6d5-4f0d-af40-850b57a2095d",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://livehindustan.com/ncr/dsiidc-says-permission-for-online-liquor-booking-app-granted-by-previous-govt-201793192014010.html",
+        "title-city:शर ब क ऑनल इन ब क ग पर आगबब ल aap पर उसक सरक र म ह म ल थ म ज र|delhi",
+        "dedupe:fed985e9fb91f7b51c5d374d07325b8ac2426d8cf4e50209e73c6377773abf22",
+        "dedupe:59b7befbed013ee5c85c2f2971b3ec9f826c9f6de92a2dc24f4651372e7386c0",
+        "dedupe:55531ac2704e8343dc53b5ca91bc36fdead9db5b7f63f4e7c7d4de2f61a47d85",
+        "dedupe:f8c127a4a582192b61424ccdef14b8dcef819ea0009fd40a2a1cff215fdb9005",
+        "dedupe:शर ब क ऑनल इन ब क ग पर आगबब ल aap पर उसक सरक र म ह म ल थ म ज र|delhi",
+        "dedupe:2975277d959debbf89318850b99eb4525571677a8b612d17f903c72541f884c9",
+        "dedupe:d7ff0ece847b0976a7dd9dcbb9317b7d88a3f1a703126226f41c484a2b256fd6"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "delhi",
+      "canonicalEventCity": "delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-28T16:21:29.009Z",
+      "expiresAt": "2026-10-28T16:36:29.009Z"
     }
   ]
 }
