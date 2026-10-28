@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T08:47:08.328Z",
+  "updatedAt": "2026-10-28T08:47:10.308Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7870,6 +7870,32 @@
       "claimedAt": "2026-10-28T08:47:06.664Z",
       "expiresAt": "2026-10-28T09:02:06.664Z",
       "finalizedAt": "2026-10-28T08:47:08.328Z"
+    },
+    {
+      "claimId": "1ad4774c-362d-4f41-985b-6fa40f37190d",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/ralith-realty-unveils-festive-offers-for-plotted",
+        "title-city:ralith realty unveils festive offers for plotted township in panipat|panipat",
+        "dedupe:3b80bf21066110cf2060250cb69bc40a38ee444ec57fc9ef0c9033391f962446",
+        "dedupe:f9a06361425f772be5c9ea342e483b5354127ddbff377d18e674b58be5ee3599",
+        "dedupe:356cf9dabba4d4a561db2a659f2e620828ef24e71ffda477cd95773645ddbec4",
+        "dedupe:dd819ceaead96ba5741a4511ab62bbdce1224f61344f464934bc00858172dc95",
+        "dedupe:ralith unveils festive offers plotted township panipat|panipat",
+        "dedupe:4d00f35225e916eeb32b928e2554cbac35de0c04fded36d97ab55bc80510e605",
+        "dedupe:4185c277866754379beed054149880c5605961b39dab1c7aee774a1a7e2cec00"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "panipat",
+      "canonicalEventCity": "panipat",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "panipat"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-28T08:47:10.308Z",
+      "expiresAt": "2026-10-28T09:02:10.308Z"
     }
   ]
 }
