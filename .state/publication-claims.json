@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T21:24:14.630Z",
+  "updatedAt": "2026-10-28T21:24:16.554Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8178,7 +8178,7 @@
     },
     {
       "claimId": "fd362078-ad79-476e-a8f6-12d4d2d67dba",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/industry/arkade-developers-net-profit-declines-46-to-24-80-crore-in-q2-fy27/135269086",
         "title-city:arkade developers net profit declines 46 to 24 80 crore in q2 fy27|mumbai",
@@ -8199,7 +8199,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-28T21:24:14.630Z",
-      "expiresAt": "2026-10-28T21:39:14.630Z"
+      "expiresAt": "2026-10-28T21:39:14.630Z",
+      "finalizedAt": "2026-10-28T21:24:16.554Z"
     }
   ]
 }
