@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T01:41:47.404Z",
+  "updatedAt": "2026-10-28T01:41:49.474Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7659,7 +7659,7 @@
     },
     {
       "claimId": "23ee8e8b-bceb-412c-891e-3971a82119eb",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://constructionworld.in/latest-construction-news/real-estate-news/bhartiya-urban-to-invest-over-rs-10-billion-in-bengaluru-project/99424",
         "title-city:bhartiya urban to invest over rs 10 billion in bengaluru project|bangalore",
@@ -7680,7 +7680,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-28T01:41:47.404Z",
-      "expiresAt": "2026-10-28T01:56:47.404Z"
+      "expiresAt": "2026-10-28T01:56:47.404Z",
+      "finalizedAt": "2026-10-28T01:41:49.474Z"
     }
   ]
 }
