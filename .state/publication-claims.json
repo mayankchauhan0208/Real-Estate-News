@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T01:41:56.829Z",
+  "updatedAt": "2026-10-28T08:46:51.499Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -7736,6 +7736,32 @@
       "claimedAt": "2026-10-28T01:41:55.120Z",
       "expiresAt": "2026-10-28T01:56:55.120Z",
       "finalizedAt": "2026-10-28T01:41:56.829Z"
+    },
+    {
+      "claimId": "da8f7fa3-df4c-4d72-82e2-89bac2fd0fd1",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://tribuneindia.com/news/jalandhar/punjab-village-hockey-hopefuls-arrive-holding-posters-of-their-idols",
+        "title-city:punjab village hockey hopefuls arrive holding posters of their idols|amritsar",
+        "dedupe:c8f90225e738d78532a6c82c99d5f7e3116eb8b3545f0ac9a89bb43e91266534",
+        "dedupe:2864bb8b9c8ec00859f05bf31a13afdf1b9cb37a724c044a539571f0593ace8b",
+        "dedupe:a1d32bdfa290b1043c23a705886d48d1ddec75ce6674526cc48a322fb2c165d1",
+        "dedupe:2d82f79da65070162ffc3560320d20e19ed0d858fa1273fe28bd3f8769e5922d",
+        "dedupe:punjab village hockey hopefuls arrive holding posters idols|amritsar",
+        "dedupe:91710f2a619915b377dd0cb45f768fa397d734cdad292a25fe646cec036d0cad",
+        "dedupe:45e57d2470b37a295149b9ee08de7cee70de76cf855155d0ca7e04dd56767e60"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "amritsar",
+      "canonicalEventCity": "amritsar",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "amritsar"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-28T08:46:51.499Z",
+      "expiresAt": "2026-10-28T09:01:51.499Z"
     }
   ]
 }
