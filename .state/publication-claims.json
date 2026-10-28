@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T16:21:29.009Z",
+  "updatedAt": "2026-10-28T16:21:31.630Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8124,7 +8124,7 @@
     },
     {
       "claimId": "00fe5b16-d6d5-4f0d-af40-850b57a2095d",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://livehindustan.com/ncr/dsiidc-says-permission-for-online-liquor-booking-app-granted-by-previous-govt-201793192014010.html",
         "title-city:शर ब क ऑनल इन ब क ग पर आगबब ल aap पर उसक सरक र म ह म ल थ म ज र|delhi",
@@ -8146,7 +8146,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-28T16:21:29.009Z",
-      "expiresAt": "2026-10-28T16:36:29.009Z"
+      "expiresAt": "2026-10-28T16:36:29.009Z",
+      "finalizedAt": "2026-10-28T16:21:31.630Z"
     }
   ]
 }
