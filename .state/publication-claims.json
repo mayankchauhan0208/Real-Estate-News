@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-28T21:24:12.759Z",
+  "updatedAt": "2026-10-28T21:24:14.630Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8175,6 +8175,31 @@
       "claimedAt": "2026-10-28T21:24:10.677Z",
       "expiresAt": "2026-10-28T21:39:10.677Z",
       "finalizedAt": "2026-10-28T21:24:12.759Z"
+    },
+    {
+      "claimId": "fd362078-ad79-476e-a8f6-12d4d2d67dba",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/arkade-developers-net-profit-declines-46-to-24-80-crore-in-q2-fy27/135269086",
+        "title-city:arkade developers net profit declines 46 to 24 80 crore in q2 fy27|mumbai",
+        "dedupe:adcb7ca416e1f8bea5de6f8bf0e51ee12b8f115662d1ff1b957acdfe8469bca0",
+        "dedupe:24814e2998b9b11cd4c838ff87e4f24cd58b56e4f11b5ac79756c8c8dd08fa13",
+        "dedupe:f208bad8fc36c8142e1455a77d273e88deb3014396e1654a92cf6663e6cbbdaa",
+        "dedupe:arkade net profit declines q2 fy27|mumbai",
+        "dedupe:8f42c1f9df88d5a549943d0b0773eff594092de9021825c1dedb48fb62143d32",
+        "dedupe:f0b979af160507e38d76ace3f15668d47bf9b370f2cebe1bdea64266b1ce3a97"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-28T21:24:14.630Z",
+      "expiresAt": "2026-10-28T21:39:14.630Z"
     }
   ]
 }
