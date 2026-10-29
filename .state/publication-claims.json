@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-29T20:38:23.968Z",
+  "updatedAt": "2026-10-29T20:38:25.632Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8418,7 +8418,7 @@
     },
     {
       "claimId": "5d2d2ec5-312c-473a-990b-2727cbc11122",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-noida-authority-cuts-industrial-plot-transfer-charge-by-3-40420410.html",
         "title-city:औद य ग क प ल ट पर ट र सफर च र ज घट कर 7 स स सस र स बह क श यर ट र सफर पर भ म ल ग छ ट|noida",
@@ -8440,7 +8440,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-29T20:38:23.968Z",
-      "expiresAt": "2026-10-29T20:53:23.968Z"
+      "expiresAt": "2026-10-29T20:53:23.968Z",
+      "finalizedAt": "2026-10-29T20:38:25.632Z"
     }
   ]
 }
