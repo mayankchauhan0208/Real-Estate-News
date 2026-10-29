@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-29T14:37:09.376Z",
+  "updatedAt": "2026-10-29T14:37:12.032Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8309,6 +8309,32 @@
       "claimedAt": "2026-10-29T14:37:06.500Z",
       "expiresAt": "2026-10-29T14:52:06.500Z",
       "finalizedAt": "2026-10-29T14:37:09.376Z"
+    },
+    {
+      "claimId": "6145bdd6-4080-4b7f-97c0-c80fb6f18295",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/horizon-industrial-parks-leases-record-2-5-million-sq-ft-in-q2-revenue-rises-30/articleshow/135309275.cms",
+        "title-city:horizon industrial parks leases record 2 5 million sq ft in q2 revenue rises 30|mumbai",
+        "dedupe:7e4dd53866900b834783490597f5ebc68ffbf1a63213eff0a5a006a809c17c3c",
+        "dedupe:1d2f806ed888745d5998b1ba8c644e041b3c0bb72f7e424e74d12a02565c42da",
+        "dedupe:44af3a1a5b2ed045df7fa9397205edf58fbc995b4e598640ce6c21789e99743c",
+        "dedupe:0277a34ed4d43aab1dde9104fd8844f6db04171923ed437991b8f52adb2999ea",
+        "dedupe:horizon industrial parks leases record q2 revenue rises|mumbai",
+        "dedupe:eeb4c484ed7c20040850045c4afa81876936f5fb75ba955e29afc152b3efce6b",
+        "dedupe:5175f09625b3734e2848a3980c2dce9bb91fb4ea90e6d6a479975341cb02aaaa"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-29T14:37:12.032Z",
+      "expiresAt": "2026-10-29T14:52:12.032Z"
     }
   ]
 }
