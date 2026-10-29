@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-29T14:37:06.500Z",
+  "updatedAt": "2026-10-29T14:37:09.376Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8285,7 +8285,7 @@
     },
     {
       "claimId": "ddbf92d8-4be1-496c-badd-3e19ab72766f",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/meerut-city-meeruts-gandhi-bagh-host-first-war-of-independence-1857-light-and-sound-show-40420626.html",
         "title-city:म रठ क ग ध ब ग म ल इट ए ड स उ ड श स ज व त ह ग 1857 क क र त क ग थ बह त ख स ह ग यह अन भव|meerut",
@@ -8307,7 +8307,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-29T14:37:06.500Z",
-      "expiresAt": "2026-10-29T14:52:06.500Z"
+      "expiresAt": "2026-10-29T14:52:06.500Z",
+      "finalizedAt": "2026-10-29T14:37:09.376Z"
     }
   ]
 }
