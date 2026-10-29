@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-29T14:37:04.443Z",
+  "updatedAt": "2026-10-29T14:37:06.500Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8282,6 +8282,32 @@
       "claimedAt": "2026-10-29T14:37:02.573Z",
       "expiresAt": "2026-10-29T14:52:02.573Z",
       "finalizedAt": "2026-10-29T14:37:04.443Z"
+    },
+    {
+      "claimId": "ddbf92d8-4be1-496c-badd-3e19ab72766f",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/meerut-city-meeruts-gandhi-bagh-host-first-war-of-independence-1857-light-and-sound-show-40420626.html",
+        "title-city:म रठ क ग ध ब ग म ल इट ए ड स उ ड श स ज व त ह ग 1857 क क र त क ग थ बह त ख स ह ग यह अन भव|meerut",
+        "dedupe:1be617655b3c96e9fec893c340bed415ec9cb8ee8504f90ac10eba27eb2a52d2",
+        "dedupe:09886986f5f2e16c7796bafc878d7aa49a7faa04b8fbca30f4aee9aa42d74914",
+        "dedupe:8b85965a46478925525279ed7e3c977afad6ca5361d22f0d930b889260061cf0",
+        "dedupe:70ff78690b6503cdd1681674fa2a9cf770b5c99bc0975a0efa644045aa0d574a",
+        "dedupe:म रठ क ग ध ब ग म ल इट ए ड स उ ड श स ज व त ह ग क क र त क ग थ बह त ख स ह ग यह अन भव|meerut",
+        "dedupe:c23c090acba5947e65e6dc0ffaec8258d5507ae9839cb560da827cc99acd8ecc",
+        "dedupe:72373eedad181226c42fd01e734a1252b8f8858bd232af5724f4da8900573372"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "meerut",
+      "canonicalEventCity": "meerut",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "meerut"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-29T14:37:06.500Z",
+      "expiresAt": "2026-10-29T14:52:06.500Z"
     }
   ]
 }
