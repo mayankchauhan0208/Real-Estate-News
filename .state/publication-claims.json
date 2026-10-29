@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-29T14:36:52.883Z",
+  "updatedAt": "2026-10-29T14:36:55.603Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8204,7 +8204,7 @@
     },
     {
       "claimId": "e1f5b4a3-7662-4d7a-8857-c85b2f00581f",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/cities/noida-news/new-building-code-sets-stage-for-noida-s-vertical-growth-101793213419285.html",
         "title-city:new building code sets stage for noida s vertical growth|noida",
@@ -8226,7 +8226,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-29T14:36:52.883Z",
-      "expiresAt": "2026-10-29T14:51:52.883Z"
+      "expiresAt": "2026-10-29T14:51:52.883Z",
+      "finalizedAt": "2026-10-29T14:36:55.603Z"
     }
   ]
 }
