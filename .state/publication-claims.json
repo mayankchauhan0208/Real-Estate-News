@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-29T20:38:25.632Z",
+  "updatedAt": "2026-10-29T20:38:27.382Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8442,6 +8442,32 @@
       "claimedAt": "2026-10-29T20:38:23.968Z",
       "expiresAt": "2026-10-29T20:53:23.968Z",
       "finalizedAt": "2026-10-29T20:38:25.632Z"
+    },
+    {
+      "claimId": "296a70aa-44e3-4a5e-81d1-bffd68ccf81c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/kanpur-city-kda-recovers-13940-sq-meter-land-in-kanpur-after-65-years-40421179.html",
+        "title-city:क नप र व क स प र ध करण क अपन ह जम न छ ड व न म लग 65 स ल 103 कर ड स अध क ह अन म न त क मत|kanpur",
+        "dedupe:2174ee87e4c05c4608876683950fea8623d918259cfb9e4d5cf8fee0a2669ab9",
+        "dedupe:3cdf570909a88b82792e69c94d1c2d1ad649f32037de3ae765d896ba448066f3",
+        "dedupe:f676af3d37425f436556d26e8f3ca0923e339cc0282ebce74c1e4710f9fa9cc8",
+        "dedupe:184a03d3f229fbd17959caa7cf8fcd7c590e654fdeefaa66d6bb2f351da0a126",
+        "dedupe:क नप र व क स प र ध करण क अपन ह जम न छ ड व न म लग स ल कर ड स अध क ह अन म न त क मत|kanpur",
+        "dedupe:8bcf50e2b2bca62401af14475acac556758d08777e12ad03f807bbd554082d2d",
+        "dedupe:b5a24e024f3024e4061ac64aeb865a75cd13e151a9a818cbb7766f81d49fdca8"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "kanpur",
+      "canonicalEventCity": "kanpur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "kanpur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-29T20:38:27.382Z",
+      "expiresAt": "2026-10-29T20:53:27.382Z"
     }
   ]
 }
