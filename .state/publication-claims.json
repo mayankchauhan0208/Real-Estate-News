@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-29T20:38:31.136Z",
+  "updatedAt": "2026-10-29T20:38:32.778Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8472,7 +8472,7 @@
     },
     {
       "claimId": "102e6792-c008-4621-bcfd-48b1c84b77ca",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://proppuls.in/hmda-land-auctions-hyderabad-november-2026",
         "title-city:hmda eyes 2 000 crore from land auctions in nov|hyderabad",
@@ -8494,7 +8494,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-29T20:38:31.136Z",
-      "expiresAt": "2026-10-29T20:53:31.136Z"
+      "expiresAt": "2026-10-29T20:53:31.136Z",
+      "finalizedAt": "2026-10-29T20:38:32.778Z"
     }
   ]
 }
