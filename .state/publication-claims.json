@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-29T14:37:16.887Z",
+  "updatedAt": "2026-10-29T14:37:19.762Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8339,7 +8339,7 @@
     },
     {
       "claimId": "491f7c3b-c383-48ee-83b1-e7e5e9639571",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/trehan-iris-to-develop-a-senior-living-project-in-gurugram/articleshow/135313552.cms",
         "title-city:trehan iris to develop a senior living project in gurugram|gurugram",
@@ -8361,7 +8361,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-29T14:37:16.887Z",
-      "expiresAt": "2026-10-29T14:52:16.887Z"
+      "expiresAt": "2026-10-29T14:52:16.887Z",
+      "finalizedAt": "2026-10-29T14:37:19.762Z"
     }
   ]
 }
