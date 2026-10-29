@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-29T14:37:24.439Z",
+  "updatedAt": "2026-10-29T20:38:19.589Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8389,6 +8389,31 @@
       "claimedAt": "2026-10-29T14:37:22.117Z",
       "expiresAt": "2026-10-29T14:52:22.117Z",
       "finalizedAt": "2026-10-29T14:37:24.439Z"
+    },
+    {
+      "claimId": "42b62dd8-c7a0-4b79-af35-84c7a7c49ae2",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/commercial/arisunitern-secures-daas-mandate-for-commercial-project-in-mumbai/135288307",
+        "title-city:arisunitern secures daas mandate for commercial project in mumbai|mumbai",
+        "dedupe:ff37dc57bf5465b3ca501b11e4a76f55d88e421aced0acca2c6e44609cca94f5",
+        "dedupe:c83aee44753411e724a67628d2bbc98cfab6dd6f9e1e4811e91fa94504a5a62f",
+        "dedupe:fd533fe1859c139151210feb29ed86c1fd3624a645f01328edbd3f5533098409",
+        "dedupe:arisunitern secures daas mandate commercial mumbai|mumbai",
+        "dedupe:0387a9da278fa802c96b88eedb12c26b18b1955735fb53f31cd06a150de9221e",
+        "dedupe:db3ef4d326a83d65ab27de63979836f134792b561ceebb7bedd73ac17304ab6d"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-29T20:38:19.589Z",
+      "expiresAt": "2026-10-29T20:53:19.589Z"
     }
   ]
 }
