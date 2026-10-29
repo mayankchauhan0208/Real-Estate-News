@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-29T14:37:02.573Z",
+  "updatedAt": "2026-10-29T14:37:04.443Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8258,7 +8258,7 @@
     },
     {
       "claimId": "8ae3f6e1-1a49-4757-a23c-6685def0928c",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realtynmore.com/up-rera-launches-real-estate-agent-training-2",
         "title-city:up rera launches real estate agent training programme in lucknow|lucknow",
@@ -8280,7 +8280,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-29T14:37:02.573Z",
-      "expiresAt": "2026-10-29T14:52:02.573Z"
+      "expiresAt": "2026-10-29T14:52:02.573Z",
+      "finalizedAt": "2026-10-29T14:37:04.443Z"
     }
   ]
 }
