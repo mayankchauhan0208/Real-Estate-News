@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-29T14:37:19.762Z",
+  "updatedAt": "2026-10-29T14:37:22.117Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8363,6 +8363,31 @@
       "claimedAt": "2026-10-29T14:37:16.887Z",
       "expiresAt": "2026-10-29T14:52:16.887Z",
       "finalizedAt": "2026-10-29T14:37:19.762Z"
+    },
+    {
+      "claimId": "e4eacba0-2d13-4bcf-b509-8849476096ab",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/savvy-india-to-add-1-8-million-sq-ft-in-gift-city-by-july-2027/135317376",
+        "title-city:savvy india to add 1 8 million sq ft in gift city by july 2027|gandhinagar",
+        "dedupe:46b632cf023331fef74c138db8fe933288d3184b69eab58111e6c20ebf4ef335",
+        "dedupe:b18c2eafb8ec7f9eb00c6bb8f9ed27d29d237d040aae76331b9262bd0a563d42",
+        "dedupe:379c1f3ef5c72182a6fef95bd288cdeba215537efb17b7c993ed38848b9f1064",
+        "dedupe:savvy india add gift city july|gandhinagar",
+        "dedupe:f4e5e14807453c35e1cda9df1c5817f25562614984f34f48cec4033f051e871c",
+        "dedupe:1f21453a8ebaaf96bf527c28ec59d5e424bf1c6165387e8bbbe8a0da8e928805"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gandhinagar",
+      "canonicalEventCity": "gandhinagar",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gandhinagar"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-29T14:37:22.117Z",
+      "expiresAt": "2026-10-29T14:52:22.117Z"
     }
   ]
 }
