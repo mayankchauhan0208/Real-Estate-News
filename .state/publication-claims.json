@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-29T20:38:27.382Z",
+  "updatedAt": "2026-10-29T20:38:29.077Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8445,7 +8445,7 @@
     },
     {
       "claimId": "296a70aa-44e3-4a5e-81d1-bffd68ccf81c",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/kanpur-city-kda-recovers-13940-sq-meter-land-in-kanpur-after-65-years-40421179.html",
         "title-city:क नप र व क स प र ध करण क अपन ह जम न छ ड व न म लग 65 स ल 103 कर ड स अध क ह अन म न त क मत|kanpur",
@@ -8467,7 +8467,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-29T20:38:27.382Z",
-      "expiresAt": "2026-10-29T20:53:27.382Z"
+      "expiresAt": "2026-10-29T20:53:27.382Z",
+      "finalizedAt": "2026-10-29T20:38:29.077Z"
     }
   ]
 }
