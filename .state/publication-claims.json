@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-29T20:38:29.077Z",
+  "updatedAt": "2026-10-29T20:38:31.136Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8469,6 +8469,32 @@
       "claimedAt": "2026-10-29T20:38:27.382Z",
       "expiresAt": "2026-10-29T20:53:27.382Z",
       "finalizedAt": "2026-10-29T20:38:29.077Z"
+    },
+    {
+      "claimId": "102e6792-c008-4621-bcfd-48b1c84b77ca",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://proppuls.in/hmda-land-auctions-hyderabad-november-2026",
+        "title-city:hmda eyes 2 000 crore from land auctions in nov|hyderabad",
+        "dedupe:1222f06032080d28d374ae4c99926e8676fb97a3709b0f14b18f768fc3f177cd",
+        "dedupe:78eb7be6be2b5346bc961081f218a2c2d7eb1ef146545e176132228d27c07e13",
+        "dedupe:d1a5ae25c5605ba094d518cc5c3e37479747b5a6efe12ec492fed757f5036c01",
+        "dedupe:c5f9f5950ed8672f3a8652a3357d55e631d54bbbd071b5d78fd2718bfab0f7e1",
+        "dedupe:hmda eyes land auctions nov|hyderabad",
+        "dedupe:9b2eb027b9d850dfe2865b84fa357971c377bffdcf677450faa2e71d372d7599",
+        "dedupe:ce6584f437345ee6153e2c84f2e76359640dd1ff4738d31cf74feac06cb39ad1"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-29T20:38:31.136Z",
+      "expiresAt": "2026-10-29T20:53:31.136Z"
     }
   ]
 }
