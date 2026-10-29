@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-29T14:36:55.603Z",
+  "updatedAt": "2026-10-29T14:36:57.784Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8228,6 +8228,32 @@
       "claimedAt": "2026-10-29T14:36:52.883Z",
       "expiresAt": "2026-10-29T14:51:52.883Z",
       "finalizedAt": "2026-10-29T14:36:55.603Z"
+    },
+    {
+      "claimId": "f21d70bd-8eb1-4e25-bbe5-1e844bbc073f",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-noida-authoritys-224th-board-meeting-key-decisions-for-ai-city-industry-40420493.html",
+        "title-city:न एड प र ध करण क 224व ब र ड ब ठक ai स ट स ल कर ल ज स ट क स और उद य ग क ल ए बड फ सल|noida",
+        "dedupe:177010b18b2e5eb720cbc8af1bb1f432203039797d990dfe7e285168ba81cf8f",
+        "dedupe:c245fd9f85e79f3b5e34a9b10b6324b3e6c3d24fdcab7754cff9ec455a2d57df",
+        "dedupe:ebb111cfb53bda1f82ca2d75cc67e6c5a0bc8c0548081937dc39b9068e8134c1",
+        "dedupe:deee2c8366fb56aade393fd9337a95d748288f3dfc472d5293d461662c7f179f",
+        "dedupe:न एड प र ध करण क व ब र ड ब ठक ai स ट स ल कर ल ज स ट क स और उद य ग क ल ए बड फ सल|noida",
+        "dedupe:2c7a00c697dc4dfc4498eaf0015a1a49ed48df5b4011bb3968b99ebfe0da99e4",
+        "dedupe:afab1b39604af693682fb19feb8dd6508ce36cdadbd6a67d33a4e73c1cbff734"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-29T14:36:57.784Z",
+      "expiresAt": "2026-10-29T14:51:57.784Z"
     }
   ]
 }
