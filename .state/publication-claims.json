@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-30T07:26:14.878Z",
+  "updatedAt": "2026-10-30T07:26:17.517Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8552,7 +8552,7 @@
     },
     {
       "claimId": "419a7745-2c84-41f8-8c59-e5e674f0b0f1",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-noida-authority-board-approves-lifeline-for-supertech-orb-600-cape-town-flat-buyers-expect-registry-soon-40420899.html",
         "title-city:न एड स परट क क पट उन क 600 फ ल ट क रज स ट र क जग उम म द अध र न र म ण प र ह न क र स त भ स फ|noida",
@@ -8574,7 +8574,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-30T07:26:14.878Z",
-      "expiresAt": "2026-10-30T07:41:14.878Z"
+      "expiresAt": "2026-10-30T07:41:14.878Z",
+      "finalizedAt": "2026-10-30T07:26:17.517Z"
     }
   ]
 }
