@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-30T07:26:35.110Z",
+  "updatedAt": "2026-10-30T07:26:37.367Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8684,6 +8684,32 @@
       "claimedAt": "2026-10-30T07:26:33.416Z",
       "expiresAt": "2026-10-30T07:41:33.416Z",
       "finalizedAt": "2026-10-30T07:26:35.110Z"
+    },
+    {
+      "claimId": "38a17d50-0003-44a3-a04b-9a1fdaf70789",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/lucknow-city-pm-awas-yojana-urban-in-lucknow-lottery-for-housing-units-of-sectori-of-the-basant-kunj-scheme-40421521.html",
+        "title-city:लखनऊ म प एम य जन शहर क भवन क ल टर आज बस त क ज य जन क स क टर आई क भवन ह ग आव ट त|lucknow",
+        "dedupe:056ad63a36fd9be192ee00a147f58b641724f1da72d9ce8f0a964b58782b1d5f",
+        "dedupe:d832d7a5d005d233634c385cf80282a473d033cb47aa9f8289f6abcdc93a5e69",
+        "dedupe:8450af02a6f1d617431759edba4f1f9d03f6e884a5a89751b54ac5c689ac2cf2",
+        "dedupe:982aac1b9d0d2188a60b057a1c382c73031a97ecd20204b85db8239c5e5b417c",
+        "dedupe:लखनऊ म प एम य जन शहर क भवन क ल टर आज बस त क ज य जन क स क टर आई क भवन ह ग आव ट त|lucknow",
+        "dedupe:24713e6794fd799865fec4bcf5190d75d2ded70980ad18ca0153e2ef213bd2db",
+        "dedupe:5b1888bdb0caaa7d5054e6c7b9e57fef13bf954796b9a11dedf5fc985e8160e6"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-30T07:26:37.367Z",
+      "expiresAt": "2026-10-30T07:41:37.367Z"
     }
   ]
 }
