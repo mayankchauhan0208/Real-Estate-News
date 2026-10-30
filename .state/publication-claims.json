@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-30T01:19:15.278Z",
+  "updatedAt": "2026-10-30T01:19:17.633Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8525,7 +8525,7 @@
     },
     {
       "claimId": "46c074de-41ca-481f-ac24-a7f099c61a4f",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://proppuls.in/dubai-south-smaller-homes-demand-2026",
         "title-city:dubai south sees surge in demand for smaller homes|hyderabad",
@@ -8547,7 +8547,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-30T01:19:15.278Z",
-      "expiresAt": "2026-10-30T01:34:15.278Z"
+      "expiresAt": "2026-10-30T01:34:15.278Z",
+      "finalizedAt": "2026-10-30T01:19:17.633Z"
     }
   ]
 }
