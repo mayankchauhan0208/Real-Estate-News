@@ -1210,7 +1210,12 @@
       "source-fcc25318821d95bd",
       "source-fd27f2f9304859da",
       "source-fe633b7375aeafc3",
-      "source-fea77e18cf344620"
+      "source-fea77e18cf344620",
+      "source-feeab52e5c2230a7",
+      "source-ff0e7eb8a6d81954",
+      "source-ff1921d0c22d6988",
+      "source-ff7f75827ae117e2",
+      "source-fff5e97e132c1bf9"
     ],
     "completedShardIds": [
       "source-cycle-2026-10-30-shard-0001",
@@ -1224,13 +1229,14 @@
       "source-cycle-2026-10-30-shard-0009",
       "source-cycle-2026-10-30-shard-0010",
       "source-cycle-2026-10-30-shard-0011",
-      "source-cycle-2026-10-30-shard-0012"
+      "source-cycle-2026-10-30-shard-0012",
+      "source-cycle-2026-10-30-shard-0013"
     ],
-    "nextShardNumber": 13,
+    "nextShardNumber": 14,
     "universeFingerprint": "202d633c2d88a972de26239fa05cfcbe5c0f13d8455a10d534a5b36939a37e09",
-    "cyclePositionStart": 0,
-    "lastCheckpointAt": "2026-10-30T14:25:14.485Z",
-    "cyclePositionEnd": 600
+    "cyclePositionStart": 600,
+    "lastCheckpointAt": "2026-10-30T19:18:53.758Z",
+    "cyclePositionEnd": 605
   },
   "sources": {
     "source-00a0c32b225feb2f": {
@@ -8424,14 +8430,14 @@
     },
     "undefined": {
       "url": "https://ncrtc.in/ncrtc-updates",
-      "attemptCount": 22873,
+      "attemptCount": 22878,
       "failureCount": 3480,
-      "consecutiveFailureCount": 1,
-      "lastAttemptAt": "2026-10-30T14:25:14.485Z",
+      "consecutiveFailureCount": 0,
+      "lastAttemptAt": "2026-10-30T19:18:53.758Z",
       "lastCycleId": "source-cycle-2026-10-30",
-      "lastFailureReason": "Command failed: curl -L --compressed --max-time 25 -A Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36 -H Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8 -H Accept-Language: en-IN,en;q=0.9,hi;q=0.8 -w \n__NEWS_API_STATUS__:%{http_code} https://mumbaiport.gov.in/show_tenders.php?catid=3&depid=1&lang=1\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (60) SSL certificate problem: unable to get local issuer certificate\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legitimacy of the server and therefore could not\nestablish a secure connection to it. To learn more about this situation and\nhow to fix it, please visit the web page mentioned above.\n",
-      "lastSuccessAt": "2026-10-30T14:25:14.485Z",
-      "lastProductiveAt": "2026-10-30T14:25:14.485Z"
+      "lastFailureReason": null,
+      "lastSuccessAt": "2026-10-30T19:18:53.758Z",
+      "lastProductiveAt": "2026-10-30T19:18:53.758Z"
     },
     "source-11b7e1e441ea3144": {
       "sourceId": "source-11b7e1e441ea3144",
