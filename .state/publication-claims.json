@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-30T07:26:24.465Z",
+  "updatedAt": "2026-10-30T07:26:26.298Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8606,7 +8606,7 @@
     },
     {
       "claimId": "9486c68b-12de-4098-98b7-e7ee71ba540a",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/cities/noida-news/noida-amends-master-plan-31-to-allot-pending-5-plots-for-farmers-101793305733282.html",
         "title-city:noida amends master plan 31 to allot pending 5 plots for farmers|noida",
@@ -8628,7 +8628,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-30T07:26:24.465Z",
-      "expiresAt": "2026-10-30T07:41:24.465Z"
+      "expiresAt": "2026-10-30T07:41:24.465Z",
+      "finalizedAt": "2026-10-30T07:26:26.298Z"
     }
   ]
 }
