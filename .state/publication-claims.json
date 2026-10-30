@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-30T07:26:26.298Z",
+  "updatedAt": "2026-10-30T07:26:28.632Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8630,6 +8630,32 @@
       "claimedAt": "2026-10-30T07:26:24.465Z",
       "expiresAt": "2026-10-30T07:41:24.465Z",
       "finalizedAt": "2026-10-30T07:26:26.298Z"
+    },
+    {
+      "claimId": "21418cf3-32f5-4127-990c-27f5bc9973e2",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/noida-news/harnandipuram-ph-1-launch-likely-by-year-end-pending-rera-nod-gda-101793306625710.html",
+        "title-city:harnandipuram ph 1 launch likely by year end pending rera nod gda|ghaziabad",
+        "dedupe:2f4c22fe69cf4bbcd3a3f828b62a8fd65ceb76f9e2f50740f7f7711b95eee88d",
+        "dedupe:d79e37734fee36d7e49ae4ea75cdb2e21adf1fc258656650a470814ee80c0f0d",
+        "dedupe:05321a814d0f57616570fbf34be100308f350b46c0ee65ceafbda9c7fae1bc3f",
+        "dedupe:4d86f6ea7fd6243c104fc069e8cc5a1de41373d13c244c9e588634616365197d",
+        "dedupe:harnandipuram ph launch likely year end pending rera nod gda|ghaziabad",
+        "dedupe:2f5f892d120126cc2dc30152e22b92cbf586221fb3dd0155c1fd1fd9879d9747",
+        "dedupe:3b60e817f93b9c925d1e463ab7a52c9898ddff5cc62f33d4132fd04f7b927669"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "ghaziabad",
+      "canonicalEventCity": "ghaziabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "ghaziabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-30T07:26:28.632Z",
+      "expiresAt": "2026-10-30T07:41:28.632Z"
     }
   ]
 }
