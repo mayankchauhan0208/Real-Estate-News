@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-30T07:26:19.911Z",
+  "updatedAt": "2026-10-30T07:26:22.447Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8579,7 +8579,7 @@
     },
     {
       "claimId": "e7067717-9ee2-4886-9100-36c1fc202801",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://birlaestatesltd.com/updates/birla-estates-plans-1-650-crore-revenue-project-in-hinjewadi-pune",
         "title-city:birla estates announces hinjewadi pune housing project|pune",
@@ -8601,7 +8601,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-30T07:26:19.911Z",
-      "expiresAt": "2026-10-30T07:41:19.911Z"
+      "expiresAt": "2026-10-30T07:41:19.911Z",
+      "finalizedAt": "2026-10-30T07:26:22.447Z"
     }
   ]
 }
