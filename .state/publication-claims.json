@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-30T07:26:31.030Z",
+  "updatedAt": "2026-10-30T07:26:33.416Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8657,6 +8657,32 @@
       "claimedAt": "2026-10-30T07:26:28.632Z",
       "expiresAt": "2026-10-30T07:41:28.632Z",
       "finalizedAt": "2026-10-30T07:26:31.030Z"
+    },
+    {
+      "claimId": "72920c1f-48f0-474e-950a-9c7cc5392f03",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/gurugram-building-safety-how-excavation-on-one-plot-can-put-neighbouring-homes-at-risk-explained-101793335752971.html",
+        "title-city:gurugram building safety how excavation on one plot can put neighbouring homes at risk explained|gurugram",
+        "dedupe:8c5a65dc53ccbbec96cb98934b3241e3818f80686d78fade2bef2d2a8263a09c",
+        "dedupe:49117a8d4320f443a752639f03228ef3080da6bef11a4770a6a0ca56f89fe3b0",
+        "dedupe:3f6a9324c594aa02c9fb6721835f2c94e0b233ab8775e2bd94f3a8931534fbcd",
+        "dedupe:c9d1cb81df0e168a3dafeca3cfb926134dee15afa91e1af852187543cc894f53",
+        "dedupe:gurugram building safety how excavation one plot can put neighbouring homes risk explained|gurugram",
+        "dedupe:953cf42f74451436368e5ffa8eda73760eedad29e8581ebe4ca87c239a72d5dd",
+        "dedupe:fa77a97f74eb7aa0e1dd9bfafaaaa9ab64a7328be49842feda4d67fad2c8cb37"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-30T07:26:33.416Z",
+      "expiresAt": "2026-10-30T07:41:33.416Z"
     }
   ]
 }
