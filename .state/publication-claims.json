@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-30T01:19:17.633Z",
+  "updatedAt": "2026-10-30T07:26:14.878Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8549,6 +8549,32 @@
       "claimedAt": "2026-10-30T01:19:15.278Z",
       "expiresAt": "2026-10-30T01:34:15.278Z",
       "finalizedAt": "2026-10-30T01:19:17.633Z"
+    },
+    {
+      "claimId": "419a7745-2c84-41f8-8c59-e5e674f0b0f1",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-noida-authority-board-approves-lifeline-for-supertech-orb-600-cape-town-flat-buyers-expect-registry-soon-40420899.html",
+        "title-city:न एड स परट क क पट उन क 600 फ ल ट क रज स ट र क जग उम म द अध र न र म ण प र ह न क र स त भ स फ|noida",
+        "dedupe:1ece8eab8a4efce4d3d442715c61e66ca3060fbe337b36d65b75ebc79baaa193",
+        "dedupe:d2070e65f92754abed896ae9eb8aba713fe2de7335e9a0c1da630e748c0140f4",
+        "dedupe:7f1c0a4b48caf933ef3c85449b2d2ab362ba6acf933749b58c959808f189a4cd",
+        "dedupe:bc2af4e772798d30229833d8691a654e33aeeba0b4f3f009a0e99d74b1979c3c",
+        "dedupe:न एड स परट क क पट उन क फ ल ट क रज स ट र क जग उम म द अध र न र म ण प र ह न क र स त भ स फ|noida",
+        "dedupe:5d83f424b446c1efbdd61b0d5ab6da311cd496a4b9904987057b2f1cfb4bed68",
+        "dedupe:7e5364e0b87e5c18d728cf890228ccf0779365f0739f4a63dbe96533cf08faf4"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-30T07:26:14.878Z",
+      "expiresAt": "2026-10-30T07:41:14.878Z"
     }
   ]
 }
