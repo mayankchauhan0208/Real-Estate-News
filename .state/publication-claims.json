@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-30T07:26:22.447Z",
+  "updatedAt": "2026-10-30T07:26:24.465Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8603,6 +8603,32 @@
       "claimedAt": "2026-10-30T07:26:19.911Z",
       "expiresAt": "2026-10-30T07:41:19.911Z",
       "finalizedAt": "2026-10-30T07:26:22.447Z"
+    },
+    {
+      "claimId": "9486c68b-12de-4098-98b7-e7ee71ba540a",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/noida-news/noida-amends-master-plan-31-to-allot-pending-5-plots-for-farmers-101793305733282.html",
+        "title-city:noida amends master plan 31 to allot pending 5 plots for farmers|noida",
+        "dedupe:8b6d0cc941e22f40bf6a7bed7ac72585807396ec819ad7ea984c4783b80a6f29",
+        "dedupe:22c53408b3d72d8550fa39c2f7153f7f7d6d041f3b4ac6d6fffa7b36779f2d0b",
+        "dedupe:2119e49048c851519ff3cd844262ccd2670a47eb19d193b4ee0a4fa92944e9d0",
+        "dedupe:8743def606bd0db50c538632c6feef2f0f4e2f279ee23285be88622492138cb1",
+        "dedupe:noida amends master plan allot pending plots farmers|noida",
+        "dedupe:82d25f381401e1d409e1049f83057bb46c84481084f97e104d34daf21eb50a75",
+        "dedupe:48cdca80b627f58018b8b7c7c1a0d2763da0f197846e3c542feec3a6dcedceb7"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-30T07:26:24.465Z",
+      "expiresAt": "2026-10-30T07:41:24.465Z"
     }
   ]
 }
