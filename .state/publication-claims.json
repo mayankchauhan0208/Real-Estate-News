@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-29T20:38:32.778Z",
+  "updatedAt": "2026-10-30T01:19:10.077Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8496,6 +8496,31 @@
       "claimedAt": "2026-10-29T20:38:31.136Z",
       "expiresAt": "2026-10-29T20:53:31.136Z",
       "finalizedAt": "2026-10-29T20:38:32.778Z"
+    },
+    {
+      "claimId": "364ca9d9-6183-4a5a-b6a8-e5b05e1c0ea9",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/omaxe-losses-narrow-to-25-55-crore-in-q2-fy27/135287511",
+        "title-city:omaxe losses narrow to 25 55 crore in q2 fy27|noida",
+        "dedupe:733a55129e201eec2b5423b57de369d21b6def900f0af5e4858f120f924ab238",
+        "dedupe:5308c6f15ed658b9c7e02f8514c080f6c0a372d656974b044c2e5f76cd8bea29",
+        "dedupe:bf93d2f838d4ff36001b6624cc2447d5a5df87ea3227a5e17e464f2cbfcf3f55",
+        "dedupe:omaxe losses narrow q2 fy27|noida",
+        "dedupe:f08ffe758b8813fb76d1f358c2b5187bf2c4e16fd2d13caaead6c7b7e9fef8f7",
+        "dedupe:94cc1c8a9754ed95916fe85d8b8a514fe54de1bd740116ec99695911f7216d51"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-30T01:19:10.077Z",
+      "expiresAt": "2026-10-30T01:34:10.077Z"
     }
   ]
 }
