@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-31T12:40:39.039Z",
+  "updatedAt": "2026-10-31T12:40:40.978Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8898,6 +8898,31 @@
       "claimedAt": "2026-10-31T12:40:37.421Z",
       "expiresAt": "2026-10-31T12:55:37.421Z",
       "finalizedAt": "2026-10-31T12:40:39.039Z"
+    },
+    {
+      "claimId": "1e024674-4ad5-4b3e-834a-8f4866100085",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/commercial/mangaluru-muda-gets-governments-in-principle-nod-for-30-crore-g9-urwa-commercial-building/135394906",
+        "title-city:mangaluru muda gets government s in principle nod for 30 crore g 9 urwa commercial building|mangalore",
+        "dedupe:859af5eb9fddb5c4f03452c6c3b5d6f53592d587162c2f5de268f16dd534bd65",
+        "dedupe:91557659cb3b4378334f427ac6fe5f9901c3dd65b0c3de8b101840e9566e32a2",
+        "dedupe:19f127ebfdc62d88963124ba64000132644b7c0648511eb7c1b2a258594a8343",
+        "dedupe:mangaluru muda gets government s principle nod g urwa commercial building|mangalore",
+        "dedupe:b21def91d3ea33afe8160f87fc7da15691ff5e98e74ebf4b2bdf5773161af943",
+        "dedupe:e60af45a2d1b7c520d66adecdf9e85f56b460a7279fbe37311abb9c74ed9c0f2"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mangalore",
+      "canonicalEventCity": "mangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-31T12:40:40.978Z",
+      "expiresAt": "2026-10-31T12:55:40.978Z"
     }
   ]
 }
