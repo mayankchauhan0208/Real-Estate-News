@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-30T07:26:39.321Z",
+  "updatedAt": "2026-10-31T00:04:36.978Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8711,6 +8711,32 @@
       "claimedAt": "2026-10-30T07:26:37.367Z",
       "expiresAt": "2026-10-30T07:41:37.367Z",
       "finalizedAt": "2026-10-30T07:26:39.321Z"
+    },
+    {
+      "claimId": "01620b0a-cbc8-4f2e-963b-c1e677b4eb7b",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/landmark-group-plans-15-000-crore-ncr-expansion-eyes-branded-residences-on-dwarka-expressway-101793351495799.html",
+        "title-city:landmark group plans 15 000 crore ncr expansion eyes branded residences on dwarka expressway|gurugram",
+        "dedupe:4b41c66692976a4e51c7facd9d5b2928a6a4118314c015d4f6e546f95bb2a706",
+        "dedupe:d0c63a6e908595f6ea361cf0f2ff4998ad936473a548afdeeabd0f1dc1ba6d26",
+        "dedupe:fe8e0fde2ce8772865d15c487ae43c88f419aa2de389580c86b1c6d9b913a51b",
+        "dedupe:efc0af2342fda613c6ce0f7a2afda426b70dd32c439f4e41f7642f37ea91fb09",
+        "dedupe:landmark group plans expansion eyes branded residences dwarka expressway|gurugram",
+        "dedupe:4152456739e7eab2bfbe957cde0905b72349e2c8d45b7ef1bb7b4a0b421df454",
+        "dedupe:180127134914dc6c6a49bb3ab038b8c8edb0751d49663a84f54e0fc8bc636180"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-31T00:04:36.978Z",
+      "expiresAt": "2026-10-31T00:19:36.978Z"
     }
   ]
 }
