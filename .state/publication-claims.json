@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-31T12:40:33.067Z",
+  "updatedAt": "2026-10-31T12:40:35.308Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8848,7 +8848,7 @@
     },
     {
       "claimId": "33455148-6c21-4ffa-8156-b778c87aa427",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://tribuneindia.com/news/haryana/saini-flags-off-run-for-unity-in-panchkula-joins-participants",
         "title-city:saini flags off run for unity in panchkula joins participants|panchkula",
@@ -8870,7 +8870,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-31T12:40:33.067Z",
-      "expiresAt": "2026-10-31T12:55:33.067Z"
+      "expiresAt": "2026-10-31T12:55:33.067Z",
+      "finalizedAt": "2026-10-31T12:40:35.308Z"
     }
   ]
 }
