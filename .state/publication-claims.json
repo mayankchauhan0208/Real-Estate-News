@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-31T21:51:43.450Z",
+  "updatedAt": "2026-10-31T21:51:45.172Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9058,6 +9058,32 @@
       "claimedAt": "2026-10-31T21:51:41.081Z",
       "expiresAt": "2026-10-31T22:06:41.081Z",
       "finalizedAt": "2026-10-31T21:51:43.450Z"
+    },
+    {
+      "claimId": "7d4abb47-963b-4ab5-bd9e-70caf2894cb2",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://livehindustan.com/ncr/akhil-wishva-gayatri-parivar-janmshtabdi-samaroh-dr-chinmay-pandya-postal-ticket-released-201793470917995.html",
+        "title-city:20 हज र श रद ध ल ओ स ग ग यत र पर व र क ऐत ह स क त र व ण स गम य ग न र म ण स कल प क धर तल पर उत रन क आह व न|delhi",
+        "dedupe:1f0745b8334a20b7c84cc001b2096e969bc6a378a965b199c0091f7706a1b94e",
+        "dedupe:70f678bc235ae0a1b3b07d25e5f929cbda2983a56509e458b5b1e8b8966c7077",
+        "dedupe:635c51d5b3b908cbabc2633e8139343b774c3b6da24002c576c951c717931056",
+        "dedupe:3b35ef16244e7b1151225584742ed2607359ec769bba83989685032221a36a35",
+        "dedupe:हज र श रद ध ल ओ स ग ग यत र पर व र क ऐत ह स क त र व ण स गम य ग न र म ण स कल प क धर तल पर उत रन क आह व न|delhi",
+        "dedupe:c94b71f57829e10d5217d5511e36170e8d1dbb63ff6f7de4bd37ff82c0ea33da",
+        "dedupe:43022bdbbf37ba6270e64ae9ef5bfce8b4c02cca62428d752f2f31a02e5b7f33"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "delhi",
+      "canonicalEventCity": "delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-31T21:51:45.172Z",
+      "expiresAt": "2026-10-31T22:06:45.172Z"
     }
   ]
 }
