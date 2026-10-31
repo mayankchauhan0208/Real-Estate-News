@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-31T18:03:59.732Z",
+  "updatedAt": "2026-10-31T18:04:01.534Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9005,6 +9005,32 @@
       "claimedAt": "2026-10-31T18:03:57.723Z",
       "expiresAt": "2026-10-31T18:18:57.723Z",
       "finalizedAt": "2026-10-31T18:03:59.732Z"
+    },
+    {
+      "claimId": "6494252c-df98-4eff-b61a-18f2a9dc8daf",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/marathon-nextgen-realty-to-buy-adani-groups-60-pc-stake-in-mumbai-project-for-rs-335-crore/articleshow/135405049.cms",
+        "title-city:marathon nextgen realty to buy adani group s 60 pc stake in mumbai project for rs 335 crore|mumbai",
+        "dedupe:de574f5db488dd01c5cf93bef5929799769b592827fe1160937b761c3e00b31f",
+        "dedupe:d716c4a548ddd3e98f6ac8b1c53dd1718d3336cffdfdd1aaf723d24865f6e8d7",
+        "dedupe:1ad0e45dc00aeebc62563d7d0c53fd3065f5c00810416ca18bb9c458a996ad02",
+        "dedupe:ad6484321e4fcf5f79d34b76b8b37b4f77cc674986867733b5f69e0f0777430d",
+        "dedupe:marathon nextgen buy adani group s pc stake mumbai|mumbai",
+        "dedupe:0726d07e385afbfdd41488aa192513da1fd208dd6b64a099a674745c94f890a3",
+        "dedupe:61b700013c28ac2552c52b86aa6f6d6e3241e4d2c2b625eec0f403ce0b3dcadc"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-31T18:04:01.534Z",
+      "expiresAt": "2026-10-31T18:19:01.534Z"
     }
   ]
 }
