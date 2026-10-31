@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-31T12:40:37.421Z",
+  "updatedAt": "2026-10-31T12:40:39.039Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8875,7 +8875,7 @@
     },
     {
       "claimId": "45bb22f2-b72b-41b4-a6c9-e8f1a3f9ceab",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/residential/over-270-agartala-slum-residents-get-flats-under-affordable-housing-scheme/135394556",
         "title-city:over 270 agartala slum residents get flats under affordable housing scheme|agartala",
@@ -8896,7 +8896,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-31T12:40:37.421Z",
-      "expiresAt": "2026-10-31T12:55:37.421Z"
+      "expiresAt": "2026-10-31T12:55:37.421Z",
+      "finalizedAt": "2026-10-31T12:40:39.039Z"
     }
   ]
 }
