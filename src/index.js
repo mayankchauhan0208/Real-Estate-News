@@ -6832,6 +6832,14 @@ function isGenericPropertyCommentaryWithoutConcreteEvent(article) {
   return genericMarketHeadline || (commentary && !hasConcreteMaterialPropertyEvent(article));
 }
 
+function isGenericPropertyGuideOrRecommendation(article) {
+  const title = getArticlePrimaryText(article).normalize("NFKC");
+  // Brokket publishes time-bound property events, not evergreen buying guides.
+  // Keep this title-only so article-body navigation or related-story text cannot
+  // turn a real event into a guide rejection.
+  return /\b(?:how to|guide to|tips? (?:for|to)|what to know|best|ideal|suitable)\b[^.!?]{0,90}\b(?:buy|buying|invest|investment|property|home|house|flat|apartment|plot|land|area|location|locality|neighbou?rhood)\b|\b(?:areas?|locations?|localities|neighbou?rhoods?)\b[^.!?]{0,60}\b(?:to|for)\s+(?:buy|invest)|ಮನೆ\s*ಖರೀದಿಸಲು\s*ಸೂಕ್ತವಾದ\s*ಬಡಾವಣೆಗಳು|ಆಸ್ತಿ\s*ಹೂಡಿಕೆಗೆ\s*ಪರಿಗಣಿಸಬಹುದಾದ\s*ಪ್ರದೇಶಗಳು/iu.test(title);
+}
+
 function isGenericCivicOrPlanningWithoutPropertyEvent(article) {
   const text = getArticlePrimaryText(article);
   const centralParkOnly = /\b(?:plans?|will develop|to develop)\s+(?:a\s+)?\d[\d,.-]*[- ]?(?:acre|hectare)[^\.]{0,80}\bcentral park\b/i.test(text)
@@ -7442,6 +7450,10 @@ function getRejectionReasons(article, sentIds) {
 
   if (!isOfficialReraPressRelease(article) && isGenericPropertyCommentaryWithoutConcreteEvent(article)) {
     reasons.push("filter 10: commentary without a concrete material property event");
+  }
+
+  if (!isOfficialReraPressRelease(article) && isGenericPropertyGuideOrRecommendation(article)) {
+    reasons.push("filter 10: evergreen property guide or recommendation, not a current news event");
   }
 
   if (!isOfficialReraPressRelease(article) && isGenericCivicOrPlanningWithoutPropertyEvent(article)) {
@@ -11311,6 +11323,7 @@ export {
   getArticleTrace,
   buildFunnelTelemetry,
   hasMeaningfulPropertyNexus,
+  isGenericPropertyGuideOrRecommendation,
   isBlockedArticle,
   isVerifiedAuthorityPropertyEvent,
   getVerifiedAuthorityEventCityCode,

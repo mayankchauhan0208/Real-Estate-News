@@ -4,6 +4,7 @@ import {
   cleanArticleFields,
   detectCityCodes,
   discoverRegionalHtmlCandidates,
+  isGenericPropertyGuideOrRecommendation,
   isBlockedArticle,
   isPublishableArticle
 } from "../src/index.js";
@@ -152,6 +153,35 @@ const hindiHousingContrast = applyCityCode(cleanArticleFields({
 assert.equal(isBlockedArticle(hindiHousingContrast), false, "a concrete Hindi housing object plus development event must remain eligible");
 
 console.log("Regional listing adapter regression passed: incidental Hindi construction is rejected while concrete housing remains eligible.");
+
+const kannadaInvestmentGuide = applyCityCode(cleanArticleFields({
+  title: "South Bangalore: ಎನ್ಆರ್ಐಗಳು ದಕ್ಷಿಣ ಬೆಂಗಳೂರಿನಲ್ಲಿ ಆಸ್ತಿ ಹೂಡಿಕೆಗೆ ಪರಿಗಣಿಸಬಹುದಾದ ಪ್ರದೇಶಗಳು",
+  description: "ಬೆಂಗಳೂರಿನಲ್ಲಿ ಮನೆ ಖರೀದಿಸಲು ಸೂಕ್ತವಾದ ಬಡಾವಣೆಗಳು",
+  articleText: "ದಕ್ಷಿಣ ಬೆಂಗಳೂರಿನಲ್ಲಿ ಆಸ್ತಿ ಹೂಡಿಕೆ ಮಾಡುವ ಬಗ್ಗೆ ಮಾರ್ಗದರ್ಶಿ.",
+  newsLink: "https://vijaykarnataka.com/real-estate/south-bengaluru-locations-nris-may-consider-for-property-investment/articleshow/135358724.cms",
+  postedBy: "Vijaya Karnataka",
+  postedByLogo: "https://vijaykarnataka.com/favicon.ico",
+  publishedAt: "2026-10-30T02:22:41.000Z",
+  fullArticleRead: true,
+  articleReadAttempted: true,
+  nativeLanguageSource: true,
+  language: "kn",
+  languageScript: "Kannada",
+  isActive: true
+}));
+assert.equal(isGenericPropertyGuideOrRecommendation(kannadaInvestmentGuide), true, "evergreen Kannada property-investment recommendations must be recognized as guides");
+assert.equal(isPublishableArticle(kannadaInvestmentGuide, new Set()), false, "evergreen Kannada property-investment recommendations must not publish as current news");
+
+const kannadaProjectContrast = applyCityCode(cleanArticleFields({
+  ...kannadaInvestmentGuide,
+  title: "ಬೆಂಗಳೂರು: ಹೊಸ ವಸತಿ ಯೋಜನೆಗೆ ಅನುಮೋದನೆ, 500 ಫ್ಲಾಟ್ ನಿರ್ಮಾಣ ಆರಂಭ",
+  description: "ನಗರದಲ್ಲಿ 500 ಫ್ಲಾಟ್‌ಗಳ ಹೊಸ ವಸತಿ ಯೋಜನೆಗೆ ಅನುಮೋದನೆ ದೊರಕಿದೆ",
+  articleText: "ಬೆಂಗಳೂರು ನಗರದಲ್ಲಿ ಹೊಸ ವಸತಿ ಯೋಜನೆಗೆ ಅನುಮೋದನೆ ದೊರಕಿದ್ದು, 500 ಫ್ಲಾಟ್‌ಗಳ ನಿರ್ಮಾಣ ಆರಂಭವಾಗಲಿದೆ.",
+  newsLink: "https://vijaykarnataka.com/real-estate/bengaluru-housing-project-approved/articleshow/135358725.cms"
+}));
+assert.equal(isGenericPropertyGuideOrRecommendation(kannadaProjectContrast), false, "a concrete Kannada housing approval must not be classified as evergreen guidance");
+
+console.log("Regional listing adapter regression passed: evergreen Kannada investment guidance is rejected while project news remains eligible.");
 
 const vijayaSource = "https://vijaykarnataka.com/real-estate/articlelist/133644218.cms";
 const vijayaHtml = `
