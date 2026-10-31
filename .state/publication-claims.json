@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-31T21:51:45.172Z",
+  "updatedAt": "2026-10-31T21:51:46.644Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9061,7 +9061,7 @@
     },
     {
       "claimId": "7d4abb47-963b-4ab5-bd9e-70caf2894cb2",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://livehindustan.com/ncr/akhil-wishva-gayatri-parivar-janmshtabdi-samaroh-dr-chinmay-pandya-postal-ticket-released-201793470917995.html",
         "title-city:20 हज र श रद ध ल ओ स ग ग यत र पर व र क ऐत ह स क त र व ण स गम य ग न र म ण स कल प क धर तल पर उत रन क आह व न|delhi",
@@ -9083,7 +9083,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-31T21:51:45.172Z",
-      "expiresAt": "2026-10-31T22:06:45.172Z"
+      "expiresAt": "2026-10-31T22:06:45.172Z",
+      "finalizedAt": "2026-10-31T21:51:46.644Z"
     }
   ]
 }
