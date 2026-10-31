@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-31T12:40:46.637Z",
+  "updatedAt": "2026-10-31T12:40:48.437Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8951,6 +8951,32 @@
       "claimedAt": "2026-10-31T12:40:44.669Z",
       "expiresAt": "2026-10-31T12:55:44.669Z",
       "finalizedAt": "2026-10-31T12:40:46.637Z"
+    },
+    {
+      "claimId": "0a77f19c-7e06-4683-9c7b-2e83dd34479e",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/landmark-group-acquires-22-acre-land-on-dwarka-expressway-property-in-delhi-real-estate/articleshow/135400174.cms",
+        "title-city:landmark group acquires 22 acre land on dwarka expressway|gurugram",
+        "dedupe:599204094af215007bf0bf80ca24d9fd1bc41aa02b5a41a5fcf9353b9480a65b",
+        "dedupe:af460a8e16491e314d86b037132f33153bf4b1724d7917d9cfcd6dbc47b07bfd",
+        "dedupe:98cea8a5af3d6320c5d3bf8080875c376e796aa512da7a7e8d5689c4851987fa",
+        "dedupe:b3780a74a7b8a783fe513da56cf31a232bdce699eb0ad8e6f25b1bf2adf93a2b",
+        "dedupe:landmark group acquires acre land dwarka expressway|gurugram",
+        "dedupe:746e6a9765c916872b3c6c13c3ec738fbf69f494225e59e451cede6e2a39575a",
+        "dedupe:84f03ce865f133271f98b499df064811562ef3265cd04d042d11f7af1add3649"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-31T12:40:48.437Z",
+      "expiresAt": "2026-10-31T12:55:48.437Z"
     }
   ]
 }
