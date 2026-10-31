@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-31T00:04:39.093Z",
+  "updatedAt": "2026-10-31T00:04:41.116Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8738,6 +8738,32 @@
       "claimedAt": "2026-10-31T00:04:36.978Z",
       "expiresAt": "2026-10-31T00:19:36.978Z",
       "finalizedAt": "2026-10-31T00:04:39.093Z"
+    },
+    {
+      "claimId": "e425ad01-941f-4558-98cf-41ec22119a1b",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://proppuls.in/salman-khan-residences-mohali-jacob-and-co-luxury-homes",
+        "title-city:salman khan residences gr realty jacob and co join hands for branded luxury homes in mohali|mohali",
+        "dedupe:8101dbd189aec8b3ae366b4008eb8f39a481fa67e3cc4359900b0a30b0af1510",
+        "dedupe:a1d5587ce10dd56b9fa3e8aa74dc9951e3593989cf67e4a49dd85542474bd713",
+        "dedupe:04612d2e2e3405a96527348953d97b44e303d3c4f07df02be7d14a4e789f9751",
+        "dedupe:af6f74181bc5ec1cc7a7785045306a56948ba3b111993e5d22afe29ece0f6bc5",
+        "dedupe:salman khan residences gr jacob co hands branded homes mohali|mohali",
+        "dedupe:d371e9362808026944ea58aa60d2d94c7967ae827b44cd299982c08704c053c3",
+        "dedupe:935bb08c5dbcb4185b121359ab818f37f6d8077d0a2029f090fcbce99abaa697"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mohali",
+      "canonicalEventCity": "mohali",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mohali"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-31T00:04:41.116Z",
+      "expiresAt": "2026-10-31T00:19:41.116Z"
     }
   ]
 }
