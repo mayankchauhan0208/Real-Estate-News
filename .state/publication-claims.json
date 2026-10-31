@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-31T12:40:44.669Z",
+  "updatedAt": "2026-10-31T12:40:46.637Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8927,7 +8927,7 @@
     },
     {
       "claimId": "38899b9b-e2b4-499b-8753-9fc358bb6e90",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/prayagraj-prayagraj-rambagh-banaras-memu-train-launched-daily-commuters-relief-40422932.html",
         "title-city:प रय गर ज र मब ग र लव स ट शन स बन रस क ल ए म म रव न 1 नव बर स द न क य त र य क म ल ग र हत|allahabad",
@@ -8949,7 +8949,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-31T12:40:44.669Z",
-      "expiresAt": "2026-10-31T12:55:44.669Z"
+      "expiresAt": "2026-10-31T12:55:44.669Z",
+      "finalizedAt": "2026-10-31T12:40:46.637Z"
     }
   ]
 }
