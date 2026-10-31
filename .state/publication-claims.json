@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-31T21:51:41.081Z",
+  "updatedAt": "2026-10-31T21:51:43.450Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9035,7 +9035,7 @@
     },
     {
       "claimId": "5624f95e-3009-48b4-b451-dffb45f67f1e",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://dinamalar.com/news/tamil-nadu-news/no-need-for-private-professionals-real-estate-authority-schedule/4364574",
         "title-city:தன ய ர ந ப ணர கள த வ ய ல ல ர யல எஸ ட ட ஆண யம த ட டவட டம|chennai",
@@ -9056,7 +9056,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-31T21:51:41.081Z",
-      "expiresAt": "2026-10-31T22:06:41.081Z"
+      "expiresAt": "2026-10-31T22:06:41.081Z",
+      "finalizedAt": "2026-10-31T21:51:43.450Z"
     }
   ]
 }
