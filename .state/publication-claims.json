@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-31T06:28:55.233Z",
+  "updatedAt": "2026-10-31T06:28:58.050Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8821,7 +8821,7 @@
     },
     {
       "claimId": "5d4afeb9-3112-4921-8c39-e93845f48482",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://vijaykarnataka.com/real-estate/south-bengaluru-locations-nris-may-consider-for-property-investment/articleshow/135358724.cms",
         "title-city:south bangalore ಎನ ಆರ ಐಗಳ ದಕ ಷ ಣ ಬ ಗಳ ರ ನಲ ಲ ಆಸ ತ ಹ ಡ ಕ ಗ ಪರ ಗಣ ಸಬಹ ದ ದ ಪ ರದ ಶಗಳ|bangalore",
@@ -8843,7 +8843,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-31T06:28:55.233Z",
-      "expiresAt": "2026-10-31T06:43:55.233Z"
+      "expiresAt": "2026-10-31T06:43:55.233Z",
+      "finalizedAt": "2026-10-31T06:28:58.050Z"
     }
   ]
 }
