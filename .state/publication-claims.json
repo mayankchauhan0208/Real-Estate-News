@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-31T00:04:42.662Z",
+  "updatedAt": "2026-10-31T05:56:53.704Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8765,6 +8765,31 @@
       "claimedAt": "2026-10-31T00:04:41.116Z",
       "expiresAt": "2026-10-31T00:19:41.116Z",
       "finalizedAt": "2026-10-31T00:04:42.662Z"
+    },
+    {
+      "claimId": "b4c98e2e-e316-471e-88e9-5810c192448a",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/commercial/landmark-group-to-invest-1000-crore-in-gurugram-commercial-project/135354611",
+        "title-city:landmark group to invest 1 000 crore in gurugram commercial project|gurugram",
+        "dedupe:f4f27bba85a28ee233542c6d17f522713346e2142a2dd512d55b3422e8ee9ccb",
+        "dedupe:1eaf328f162ff0192bb336b97cdff98c03fa70d9aac2d53be01e4d8a704e6f4b",
+        "dedupe:fc742485d3f26bfdbc39a1715b32a503d5269118874d75716f1ac67ce4449f0b",
+        "dedupe:landmark group gurugram commercial|gurugram",
+        "dedupe:7291dfd000573c8f54a7b938039b664c1a9389e25c8937a7b56126b50dea7f70",
+        "dedupe:c078039a5955f57bb2509a3eb3a310cceb1e2f439bd7c6b20b1c170e1f4af8c8"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-31T05:56:53.704Z",
+      "expiresAt": "2026-10-31T06:11:53.704Z"
     }
   ]
 }
