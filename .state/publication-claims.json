@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-31T12:40:42.668Z",
+  "updatedAt": "2026-10-31T12:40:44.669Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8924,6 +8924,32 @@
       "claimedAt": "2026-10-31T12:40:40.978Z",
       "expiresAt": "2026-10-31T12:55:40.978Z",
       "finalizedAt": "2026-10-31T12:40:42.668Z"
+    },
+    {
+      "claimId": "38899b9b-e2b4-499b-8753-9fc358bb6e90",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/prayagraj-prayagraj-rambagh-banaras-memu-train-launched-daily-commuters-relief-40422932.html",
+        "title-city:प रय गर ज र मब ग र लव स ट शन स बन रस क ल ए म म रव न 1 नव बर स द न क य त र य क म ल ग र हत|allahabad",
+        "dedupe:9c9fc218d3055f66ad0e61f7582665f85754e8a8d85ac18353544060743d2c2c",
+        "dedupe:55f0170335398e1b9bbd403014712f5c751b8d36eb5cf7167d5258fdd007111d",
+        "dedupe:0cfb1891a7f5f8a6d0d204944f011f04077dc5103f0da79e0c9a94f4e2e5a18d",
+        "dedupe:121f87a03751a8eb0fdb4752d5dcb6ea641d276305984ac0a89c33a059b0f4c3",
+        "dedupe:प रय गर ज र मब ग र लव स ट शन स बन रस क ल ए म म रव न नव बर स द न क य त र य क म ल ग र हत|allahabad",
+        "dedupe:3fa80f42e27fad6f203cbe0f2ac67c7dfc9aca69f6a86e99caed337080f36b86",
+        "dedupe:d11f3ed95d3992f73afc4caa654a5a2cdbdffeec78598c8368e0f3c80aacd6ee"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "allahabad",
+      "canonicalEventCity": "allahabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "allahabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-31T12:40:44.669Z",
+      "expiresAt": "2026-10-31T12:55:44.669Z"
     }
   ]
 }
