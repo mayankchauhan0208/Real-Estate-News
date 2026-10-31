@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-31T05:56:56.339Z",
+  "updatedAt": "2026-10-31T05:56:58.576Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8791,6 +8791,32 @@
       "claimedAt": "2026-10-31T05:56:53.704Z",
       "expiresAt": "2026-10-31T06:11:53.704Z",
       "finalizedAt": "2026-10-31T05:56:56.339Z"
+    },
+    {
+      "claimId": "958e8364-4205-43f5-bb9e-d065f0751c12",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/prayagraj-rajesh-yadavs-rapid-land-acquisition-48-registries-in-prayagraj-40422431.html",
+        "title-city:प रय गर ज अच नक कह स आए कर ड 3 स ल म 48 जम न खर दन व ल र ज श य दव क ख ग ल ज रह क डल|allahabad",
+        "dedupe:79922b88a3b303cdcd643efc843e28e03856a7725ee62035126cb49f8e0d5b54",
+        "dedupe:188422a3e668df1fbe62151089179d72cc7aad7f55e76d941a0b912b4fa2a75b",
+        "dedupe:3c188f9c4507b98de8ea644a8fadcbbdc63c69f8c24a1d2c63bcbdd0b3740f38",
+        "dedupe:2dc8b8c681e053a665158725efe6be0085baae56b777c730553d5a10f04002ba",
+        "dedupe:प रय गर ज अच नक कह स आए कर ड स ल म जम न खर दन व ल र ज श य दव क ख ग ल ज रह क डल|allahabad",
+        "dedupe:4a38ef64c4fcb8ea2c6ab8dbc075817e698951859b20fe2e06b974985b4ba285",
+        "dedupe:5720a4ca678f29ab76fbf4786aebf13b1c42283d85cbf80a9cf3119aad8dfdd4"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "allahabad",
+      "canonicalEventCity": "allahabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "allahabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-31T05:56:58.576Z",
+      "expiresAt": "2026-10-31T06:11:58.576Z"
     }
   ]
 }
