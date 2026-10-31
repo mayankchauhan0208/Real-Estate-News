@@ -152,3 +152,31 @@ const hindiHousingContrast = applyCityCode(cleanArticleFields({
 assert.equal(isBlockedArticle(hindiHousingContrast), false, "a concrete Hindi housing object plus development event must remain eligible");
 
 console.log("Regional listing adapter regression passed: incidental Hindi construction is rejected while concrete housing remains eligible.");
+
+const vijayaSource = "https://vijaykarnataka.com/real-estate/articlelist/133644218.cms";
+const vijayaHtml = `
+  <html><body>
+    <a href="/business/gold-silver-price/articlelist/65120374.cms">ಚಿನ್ನ ಬೆಳ್ಳಿ ಬೆಲೆ ಮಾಹಿತಿ</a>
+    <a href="/real-estate/rera-karnataka-what-home-buyers-need-to-know/articleshow/133751181.cms">
+      ಮನೆ ಖರೀದಿದಾರರಿಗೆ ರೇರಾ ಕಾಯ್ದೆಯ ಪ್ರಮುಖ ಮಾಹಿತಿ
+    </a>
+  </body></html>`;
+const vijayaCandidates = discoverRegionalHtmlCandidates(vijayaHtml, vijayaSource);
+assert.equal(vijayaCandidates.length, 1, "Vijaya Karnataka must exclude category and calculator links");
+assert.match(vijayaCandidates[0].newsLink, /\/real-estate\/[^/]+\/articleshow\/\d+\.cms$/);
+
+const telanganaTribuneSource = "https://www.telanganatribune.com/category/realestate/";
+const telanganaTribuneHtml = `
+  <html><body>
+    <a href="/tv-5-live/">TV 5 Telugu News Live</a>
+    <a href="/hyderabad-metro-train-timings-route-map/">Hyderabad Metro Train Timings</a>
+    <a href="/gold-silver-rate/">Today's Gold and Silver Rates in Hyderabad</a>
+    <a href="/trump-towers-hyderabad-to-bring-smart-home-living-to-kokapet/">
+      Trump Towers Hyderabad to Bring Smart-Home Living to Kokapet
+    </a>
+  </body></html>`;
+const telanganaTribuneCandidates = discoverRegionalHtmlCandidates(telanganaTribuneHtml, telanganaTribuneSource);
+assert.equal(telanganaTribuneCandidates.length, 1, "Telangana Tribune must exclude live-TV and utility pages");
+assert.match(telanganaTribuneCandidates[0].newsLink, /trump-towers-hyderabad-to-bring-smart-home-living-to-kokapet\/?$/);
+
+console.log("Regional listing adapter regression passed: Vijaya Karnataka and Telangana Tribune shell links are excluded.");

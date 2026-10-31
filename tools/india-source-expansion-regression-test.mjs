@@ -66,6 +66,11 @@ for (const [id, cityCodes] of tamilExpected) {
   assert.deepEqual(source.cityCodes, cityCodes);
 }
 
+for (const id of ["id-1800000012", "id-196410002", "id-196410004", "id-196410005"]) {
+  const source = settings.manualSources.find((candidate) => candidate.id === id);
+  assert.equal(source?.sourceMode, "ACTIVE_FOR_REVIEW", `${id} must be explicitly subject to regional review telemetry`);
+}
+
 const patrikaExpected = new Map([
   ["regional-patrika-jaipur", ["jaipur"]],
   ["regional-patrika-bhopal", ["bhopal"]],

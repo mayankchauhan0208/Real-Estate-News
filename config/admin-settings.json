@@ -3658,6 +3658,7 @@
       "cityCodes": [],
       "enabled": true,
       "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
       "createdAt": "2026-09-28T00:00:00.000Z"
     },
     {
@@ -5187,6 +5188,7 @@
       "cityCodes": [],
       "enabled": true,
       "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
       "createdAt": "2026-09-28T12:00:00.000Z"
     },
     {
@@ -5196,6 +5198,7 @@
       "cityCodes": [],
       "enabled": true,
       "category": "regional-kannada",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
       "createdAt": "2026-09-28T12:00:00.000Z"
     },
     {
@@ -5205,6 +5208,7 @@
       "cityCodes": [],
       "enabled": true,
       "category": "regional-telangana",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
       "createdAt": "2026-09-28T12:00:00.000Z"
     },
     {

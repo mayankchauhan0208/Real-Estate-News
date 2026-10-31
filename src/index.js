@@ -9824,6 +9824,24 @@ function isManoramaNestSource(sourceUrl = "") {
 
 function regionalHtmlSourceConfig(sourceUrl = "") {
   const value = String(sourceUrl);
+  if (/vijaykarnataka\.com\/real-estate\/articlelist\/133644218\.cms\/?$/i.test(value)) {
+    return {
+      language: "kn",
+      script: "Kannada",
+      linkPattern: /\/real-estate\/[^/?#]+\/articleshow\/\d+\.cms(?:$|\?)/i,
+      titlePattern: null
+    };
+  }
+  if (/telanganatribune\.com\/category\/realestate\/?$/i.test(value)) {
+    return {
+      language: "en",
+      script: "Latin",
+      // The WordPress category surface includes old live-TV and utility links
+      // before its posts. Real story permalinks are root-level slugs.
+      linkPattern: /\/(?!category\/|tag\/|author\/|page\/|wp-json\/|tv-5-live\/?$|tv9-telugu-live\/?$|v6-news-telugu-live\/?$|hyderabad-metro-train-timings-route-map\/?$)[a-z0-9][a-z0-9-]+\/?(?:$|\?)/i,
+      titlePattern: /(?:real estate|property|housing|residential|commercial|apartments?|flats?|plots?|land|rera|registration|township|towers?|villas?)/i
+    };
+  }
   const patrikaCity = value.match(/patrika\.com\/(jaipur|bhopal|indore|jabalpur|raipur|udaipur|noida)-news\/?$/i)?.[1];
   if (patrikaCity) {
     return {
