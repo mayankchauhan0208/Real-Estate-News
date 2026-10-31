@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-31T05:56:58.576Z",
+  "updatedAt": "2026-10-31T05:57:00.631Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8794,7 +8794,7 @@
     },
     {
       "claimId": "958e8364-4205-43f5-bb9e-d065f0751c12",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/prayagraj-rajesh-yadavs-rapid-land-acquisition-48-registries-in-prayagraj-40422431.html",
         "title-city:प रय गर ज अच नक कह स आए कर ड 3 स ल म 48 जम न खर दन व ल र ज श य दव क ख ग ल ज रह क डल|allahabad",
@@ -8816,7 +8816,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-10-31T05:56:58.576Z",
-      "expiresAt": "2026-10-31T06:11:58.576Z"
+      "expiresAt": "2026-10-31T06:11:58.576Z",
+      "finalizedAt": "2026-10-31T05:57:00.631Z"
     }
   ]
 }
