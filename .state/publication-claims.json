@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-31T05:57:00.631Z",
+  "updatedAt": "2026-10-31T06:28:55.233Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8818,6 +8818,32 @@
       "claimedAt": "2026-10-31T05:56:58.576Z",
       "expiresAt": "2026-10-31T06:11:58.576Z",
       "finalizedAt": "2026-10-31T05:57:00.631Z"
+    },
+    {
+      "claimId": "5d4afeb9-3112-4921-8c39-e93845f48482",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://vijaykarnataka.com/real-estate/south-bengaluru-locations-nris-may-consider-for-property-investment/articleshow/135358724.cms",
+        "title-city:south bangalore ಎನ ಆರ ಐಗಳ ದಕ ಷ ಣ ಬ ಗಳ ರ ನಲ ಲ ಆಸ ತ ಹ ಡ ಕ ಗ ಪರ ಗಣ ಸಬಹ ದ ದ ಪ ರದ ಶಗಳ|bangalore",
+        "dedupe:bc22147f90270b2eac01ba5834d968a7eccfdbba107dbf168def7155e8c44dd5",
+        "dedupe:6288e9a9360e17fd05c6fa23cfb02676ba77ac4464cfe96d8d4dfee63ac75a21",
+        "dedupe:74ef7adeb19aaa257693448e348cb5187621645d3d3638a5f84bc96c4d49d7be",
+        "dedupe:7880374f35a973bf2fade0e80f3a7f6c648b67dacca0cce7a919976cddad350a",
+        "dedupe:south bangalore ಎನ ಆರ ಐಗಳ ದಕ ಷ ಣ ಬ ಗಳ ರ ನಲ ಲ ಆಸ ತ ಹ ಡ ಕ ಗ ಪರ ಗಣ ಸಬಹ ದ ದ ಪ ರದ ಶಗಳ|bangalore",
+        "dedupe:7505068041a2efd3536c9c1742e7344603aba7fc00929ef4c3cdbf8ad19a1875",
+        "dedupe:e2ed59178303c6b67af41e352fe13cd6e87748a02e019922b0e1e9d0a86e6c94"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-31T06:28:55.233Z",
+      "expiresAt": "2026-10-31T06:43:55.233Z"
     }
   ]
 }
