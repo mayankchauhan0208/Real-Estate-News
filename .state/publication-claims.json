@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-31T12:40:50.028Z",
+  "updatedAt": "2026-10-31T18:03:57.723Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -8978,6 +8978,32 @@
       "claimedAt": "2026-10-31T12:40:48.437Z",
       "expiresAt": "2026-10-31T12:55:48.437Z",
       "finalizedAt": "2026-10-31T12:40:50.028Z"
+    },
+    {
+      "claimId": "e613bc72-d17c-4c80-9053-a56fe894f6f4",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/haryana/gurgaon-badshahpur-sco-dispute-court-rules-hsvp-accountability-questioned-40422930.html",
+        "title-city:110 र पय क र ए व ल द क न क क मत अब कर ड म ग र ग र म क 5 sco पर क र ट क बड फ सल hsvp पर उठ सव ल|gurugram",
+        "dedupe:972406ddbeaffe0337db4ef8037e6af4f5773addc9d574724574aea732db1614",
+        "dedupe:604c48db5dcff4294e01bb62c1deb2cd86c0ac16c2fcc948433601273858a8f2",
+        "dedupe:a8f64f5a40f7db7396b94cf496d92bcf0f225905de14f4696456e784627885b4",
+        "dedupe:0b57d3a3871bd9a11dedff89fe3daf1c3f12e8b3a339b066f5475db710d3ff35",
+        "dedupe:र पय क र ए व ल द क न क क मत अब कर ड म ग र ग र म क sco पर क र ट क बड फ सल hsvp पर उठ सव ल|gurugram",
+        "dedupe:033ffcd7359dc56b0161b9a1e29f112bb3b4747bec853456d77188a78997025c",
+        "dedupe:6e119c171211766672ebdb671547ecc438f1f970cbc82d0ba586a672284f3007"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-10-31T18:03:57.723Z",
+      "expiresAt": "2026-10-31T18:18:57.723Z"
     }
   ]
 }
