@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-01T07:52:57.414Z",
+  "updatedAt": "2026-11-01T07:52:59.693Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9115,7 +9115,7 @@
     },
     {
       "claimId": "62398c28-2be3-462d-98aa-45477bf25fe0",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://livehindustan.com/ncr/delhi-to-agra-in-59-minutes-pm-modi-approves-north-bullet-train-corridor-201793507861508.html",
         "title-city:द ल ल स आगर स र फ 59 म नट म ब ल ट ट र न क न र थ क र ड र क pm म द क म ज र|delhi",
@@ -9135,7 +9135,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-01T07:52:57.414Z",
-      "expiresAt": "2026-11-01T08:07:57.414Z"
+      "expiresAt": "2026-11-01T08:07:57.414Z",
+      "finalizedAt": "2026-11-01T07:52:59.693Z"
     }
   ]
 }
