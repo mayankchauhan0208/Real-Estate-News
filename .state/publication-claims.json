@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-01T01:28:21.811Z",
+  "updatedAt": "2026-11-01T01:28:24.363Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9088,7 +9088,7 @@
     },
     {
       "claimId": "74b50eab-b91b-4657-931e-e663d45b204e",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://tribuneindia.com/news/delhi/delhi-fire-service-to-get-2345-additional-posts-in-first-major-cadre-overhaul-in-84-yrs",
         "title-city:delhi fire service to get 2 345 additional posts in first major cadre overhaul in 84 yrs|new_delhi",
@@ -9110,7 +9110,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-01T01:28:21.811Z",
-      "expiresAt": "2026-11-01T01:43:21.811Z"
+      "expiresAt": "2026-11-01T01:43:21.811Z",
+      "finalizedAt": "2026-11-01T01:28:24.363Z"
     }
   ]
 }
