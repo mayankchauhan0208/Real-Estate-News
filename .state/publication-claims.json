@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-01T07:53:05.961Z",
+  "updatedAt": "2026-11-01T07:53:07.614Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9167,7 +9167,7 @@
     },
     {
       "claimId": "6a6bab27-80a6-45ca-921e-a1ebed55b7a5",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/varanasi-city-jdu-holds-a-workers-convention-in-kashi-bringing-together-supporters-as-the-party-seeks-to-establish-a-political-foothold-in-uttar-pradesh-40423700.html",
         "title-city:उत तर प रद श म स य स जम न क तल श म जदय क क र यकर त सम म लन समर थक क क श म ज ट न|varanasi",
@@ -9189,7 +9189,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-01T07:53:05.961Z",
-      "expiresAt": "2026-11-01T08:08:05.961Z"
+      "expiresAt": "2026-11-01T08:08:05.961Z",
+      "finalizedAt": "2026-11-01T07:53:07.614Z"
     }
   ]
 }
