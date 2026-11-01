@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-01T07:52:59.693Z",
+  "updatedAt": "2026-11-01T07:53:01.998Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9137,6 +9137,32 @@
       "claimedAt": "2026-11-01T07:52:57.414Z",
       "expiresAt": "2026-11-01T08:07:57.414Z",
       "finalizedAt": "2026-11-01T07:52:59.693Z"
+    },
+    {
+      "claimId": "2b80806b-5123-4f02-b9cd-a140e36f2ae7",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/agra-city-90-subsidy-on-solar-lights-for-women-and-50-for-men-investment-of-rs-40-crore-in-poultry-business-more-than-150-entrepreneurs-participated-40423665.html",
+        "title-city:आगर म क क क ट प लन क म ल 40 कर ड क न व श मह ल ओ क स लर ल इट पर 90 सब स ड|agra",
+        "dedupe:7c97cd7edc1c2c5369d13881300a1cb7898fb8edfa7c16f373a496aad96fe4eb",
+        "dedupe:fe7f426f536c5e392fa876814b6557cfae3f9b6b8e3b86b9c66d06c594e408f6",
+        "dedupe:1463d1230add4b0c83e3c1a283fdc55bafa862d3f66ebb6b60b2018555974334",
+        "dedupe:e9afc90ee54cd034dacc65c4f46a3261e2fd5a3789ac132a2efd0bdf4871c548",
+        "dedupe:आगर म क क क ट प लन क म ल कर ड क न व श मह ल ओ क स लर ल इट पर सब स ड|agra",
+        "dedupe:814e2b1c5b6c158249f6fd40f50ece4944fce69eeb61793964b75eb85e728314",
+        "dedupe:904c54726c1182844d1492e56c4afd3a74c319d9ac89428ac19a0bba48dacc04"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "agra",
+      "canonicalEventCity": "agra",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "agra"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-01T07:53:01.998Z",
+      "expiresAt": "2026-11-01T08:08:01.998Z"
     }
   ]
 }
