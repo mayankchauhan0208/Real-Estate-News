@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-01T15:25:49.905Z",
+  "updatedAt": "2026-11-01T15:25:52.472Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9194,7 +9194,7 @@
     },
     {
       "claimId": "4c048624-83c5-4d90-94a9-13ac778c4228",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-dm-leases-land-for-new-registration-building-project-40423972.html",
         "title-city:म रठ म न ब धन भवन क न र म ण क ल ए ड एम न व भ ग क स प जम न 500 म टर म बन ग त न म ज ल इम रत|meerut",
@@ -9216,7 +9216,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-01T15:25:49.905Z",
-      "expiresAt": "2026-11-01T15:40:49.905Z"
+      "expiresAt": "2026-11-01T15:40:49.905Z",
+      "finalizedAt": "2026-11-01T15:25:52.472Z"
     }
   ]
 }
