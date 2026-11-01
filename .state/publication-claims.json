@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-01T07:53:07.614Z",
+  "updatedAt": "2026-11-01T15:25:49.905Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9191,6 +9191,32 @@
       "claimedAt": "2026-11-01T07:53:05.961Z",
       "expiresAt": "2026-11-01T08:08:05.961Z",
       "finalizedAt": "2026-11-01T07:53:07.614Z"
+    },
+    {
+      "claimId": "4c048624-83c5-4d90-94a9-13ac778c4228",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-dm-leases-land-for-new-registration-building-project-40423972.html",
+        "title-city:म रठ म न ब धन भवन क न र म ण क ल ए ड एम न व भ ग क स प जम न 500 म टर म बन ग त न म ज ल इम रत|meerut",
+        "dedupe:5221d66bfd1a5b0272db3b3eb095681aacfd29f6b387f11106a3bd6e72770b2d",
+        "dedupe:4b94911f8396e9395658bdeca5637355f6c0936e15a39862687f21f504615d5b",
+        "dedupe:b5247f34a445c9e92c8afb9eeb7836fa51380e018025d8ed80cb8b9529e05717",
+        "dedupe:53901ee110f633f037b46c3c3fd4d99fd91366e446caea923ecb4cbce63d9c0c",
+        "dedupe:म रठ म न ब धन भवन क न र म ण क ल ए ड एम न व भ ग क स प जम न म टर म बन ग त न म ज ल इम रत|meerut",
+        "dedupe:5849c022cac4a6f747ca99095779f42d8f7ab0be0df2d437f418adf8c5e8127b",
+        "dedupe:b84139dd097dcefca9ac08f4065cea0737079a82d6719239e70a0c2b16937215"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "meerut",
+      "canonicalEventCity": "meerut",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "meerut"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-01T15:25:49.905Z",
+      "expiresAt": "2026-11-01T15:40:49.905Z"
     }
   ]
 }
