@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-01T19:59:08.441Z",
+  "updatedAt": "2026-11-01T19:59:10.964Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9221,7 +9221,7 @@
     },
     {
       "claimId": "8eacd045-99e5-494c-9528-d7c4f6db1ccd",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-jamfree-modipuram-bus-stand-land-for-ncrtc-by-diwali-40423896.html",
         "title-city:म रठ शहर ह ग ज म म क त द प वल पर एनस आरट स क म ल ज एग म द प रम म बस अड ड क ल ए जम न|meerut",
@@ -9243,7 +9243,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-01T19:59:08.441Z",
-      "expiresAt": "2026-11-01T20:14:08.441Z"
+      "expiresAt": "2026-11-01T20:14:08.441Z",
+      "finalizedAt": "2026-11-01T19:59:10.964Z"
     }
   ]
 }
