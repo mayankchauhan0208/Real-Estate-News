@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-10-31T21:51:46.644Z",
+  "updatedAt": "2026-11-01T01:28:21.811Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9085,6 +9085,32 @@
       "claimedAt": "2026-10-31T21:51:45.172Z",
       "expiresAt": "2026-10-31T22:06:45.172Z",
       "finalizedAt": "2026-10-31T21:51:46.644Z"
+    },
+    {
+      "claimId": "74b50eab-b91b-4657-931e-e663d45b204e",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://tribuneindia.com/news/delhi/delhi-fire-service-to-get-2345-additional-posts-in-first-major-cadre-overhaul-in-84-yrs",
+        "title-city:delhi fire service to get 2 345 additional posts in first major cadre overhaul in 84 yrs|new_delhi",
+        "dedupe:1a3e660fb0e8d2f125a59c7ad04d227553b9931864c8abb9d110b7ad6d3f62cd",
+        "dedupe:734c25ca4be2dfb2300273b5fd3dd9024754a769b8623e3350adac698925e756",
+        "dedupe:5d1e0747eefa4703d40f79cb9bf1914ac1b23b54ee06b3054b747c1615750628",
+        "dedupe:375a3da665ccf31c0f34f1c1c8a49e98822f5b3980ea47b4c586d3991d825038",
+        "dedupe:delhi fire service get additional posts first major cadre overhaul yrs|new_delhi",
+        "dedupe:fb1c0fb3bcd4a85394a1415b3aa889ec040fea4a7dd2778295818213ef7c46c1",
+        "dedupe:730c8f13f066780d10fa372b3db7c1f07aefc6206ad44bc20da71199f4b0aad3"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-01T01:28:21.811Z",
+      "expiresAt": "2026-11-01T01:43:21.811Z"
     }
   ]
 }
