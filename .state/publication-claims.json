@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-01T07:53:01.998Z",
+  "updatedAt": "2026-11-01T07:53:03.656Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9140,7 +9140,7 @@
     },
     {
       "claimId": "2b80806b-5123-4f02-b9cd-a140e36f2ae7",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/agra-city-90-subsidy-on-solar-lights-for-women-and-50-for-men-investment-of-rs-40-crore-in-poultry-business-more-than-150-entrepreneurs-participated-40423665.html",
         "title-city:आगर म क क क ट प लन क म ल 40 कर ड क न व श मह ल ओ क स लर ल इट पर 90 सब स ड|agra",
@@ -9162,7 +9162,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-01T07:53:01.998Z",
-      "expiresAt": "2026-11-01T08:08:01.998Z"
+      "expiresAt": "2026-11-01T08:08:01.998Z",
+      "finalizedAt": "2026-11-01T07:53:03.656Z"
     }
   ]
 }
