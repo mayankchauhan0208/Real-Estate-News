@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-02T16:06:09.965Z",
+  "updatedAt": "2026-11-02T23:51:16.579Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9380,6 +9380,32 @@
       "claimedAt": "2026-11-02T16:06:07.358Z",
       "expiresAt": "2026-11-02T16:21:07.358Z",
       "finalizedAt": "2026-11-02T16:06:09.965Z"
+    },
+    {
+      "claimId": "49cb13a8-5886-4053-80ec-25f2f3ffcfb6",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-sunil-sharma-inaugurates-gbu-green-skills-ai-center-slams-dhaphli-gang-40425419.html",
+        "title-city:ढपल ग ग न भ रत क प छ ढक लन म कसर नह छ ड फ र स ह गय ह एक ट व म त र स न ल शर म क बड हमल|noida",
+        "dedupe:a69eeaf6a986b11c1cb8d986c029a888a5a4833c56a902d8e5b1440d4779ad02",
+        "dedupe:b87406661ae171430825fd33df6c3ab4bd6bb1b64558b33573347a578d3e4793",
+        "dedupe:f5c13a6a56a528022dbbffc83ac7dcfa3e6ba2a554c2479951312a929a39e3dd",
+        "dedupe:2a1491381040bb4e8962d09159cde6182f717beeee939960a47ee78eed4407b4",
+        "dedupe:ढपल ग ग न भ रत क प छ ढक लन म कसर नह छ ड फ र स ह गय ह एक ट व म त र स न ल शर म क बड हमल|noida",
+        "dedupe:78fb3375f2010bcb70d83fd26fb2acd4f5cdc2cdec4f9b5aeddcb38c6066fb42",
+        "dedupe:13be86f9e3eb7ed364d5fc71aad68221637e6bb610e5e37aece14dc95c612df5"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-02T23:51:16.579Z",
+      "expiresAt": "2026-11-03T00:06:16.579Z"
     }
   ]
 }
