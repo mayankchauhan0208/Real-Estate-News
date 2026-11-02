@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-02T23:51:19.339Z",
+  "updatedAt": "2026-11-02T23:51:21.779Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9407,6 +9407,32 @@
       "claimedAt": "2026-11-02T23:51:16.579Z",
       "expiresAt": "2026-11-03T00:06:16.579Z",
       "finalizedAt": "2026-11-02T23:51:19.339Z"
+    },
+    {
+      "claimId": "7d491ad6-b18c-47bc-b753-2a691df4ce2c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://tribuneindia.com/news/haryana/90-year-old-sirsa-man-sees-five-generations-of-his-family",
+        "title-city:90 year old sirsa man sees five generations of his family|allahabad",
+        "dedupe:1bd509c60bb16b748e309acce3daf9098ca070d77c634051e318e9c8fa265f0a",
+        "dedupe:8a6275a27754ac7337b486af8252ddb6dc2166e1ca667a010df8bf7ff748a9e5",
+        "dedupe:41db7df57f3a5f61bac83929861daac572d1a4ade62d3cd5eb084259ca45c83d",
+        "dedupe:1943ef142a7249cd3c0499d5f1a6545e40d6e2fea5f79ddf23eba6303b09303b",
+        "dedupe:year old sirsa man sees five generations his family|allahabad",
+        "dedupe:a1c55dc7b2fdab8c70cd6836ba4c09a9799cc0d84ff436b8c3e0e8fe55dc293f",
+        "dedupe:8ca4295a7db31a127b6b14a168851853645ee3960f27d127e6891033cbcdc298"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "allahabad",
+      "canonicalEventCity": "allahabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "allahabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-02T23:51:21.779Z",
+      "expiresAt": "2026-11-03T00:06:21.779Z"
     }
   ]
 }
