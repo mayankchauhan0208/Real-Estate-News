@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-02T06:18:50.886Z",
+  "updatedAt": "2026-11-02T16:05:51.042Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9272,6 +9272,32 @@
       "claimedAt": "2026-11-02T06:18:48.062Z",
       "expiresAt": "2026-11-02T06:33:48.062Z",
       "finalizedAt": "2026-11-02T06:18:50.886Z"
+    },
+    {
+      "claimId": "4c5bc502-45d9-4d33-a010-aae3b654436c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/trehan-iris-plans-to-expand-omara-luxury-wellness-residences-to-noida-and-bengaluru-over-the-next-10-years-101793602176043.html",
+        "title-city:trehan iris plans to expand omara luxury wellness residences to noida and bengaluru over the next 10 years|noida",
+        "dedupe:b8a5f91395422bc083fefeb29a6c4530a6741907fa3bfef3370e7f8dd1de5eb3",
+        "dedupe:3770d97b528b37dbe4de3aaf2ff2814a47ac89739f51063798be91704aa18b14",
+        "dedupe:51203f523fc0148980037fbacfa7a420cc0c6599bb2b6e4b698ee978c0a22ec2",
+        "dedupe:c6198cc15099acf795ed184c5ed1416772910e2bbc86fc6a5d912d981e6d166d",
+        "dedupe:trehan iris plans expand omara wellness residences noida bengaluru next years|noida",
+        "dedupe:191edf5ff5a64aeba3e05875c73be890670eb0c0d30d42411157dde204a560fb",
+        "dedupe:1e382f4f0b0227ec4d087b0a2e42234e3cb18d98d281a2b8567dab20291b1c56"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-02T16:05:51.042Z",
+      "expiresAt": "2026-11-02T16:20:51.042Z"
     }
   ]
 }
