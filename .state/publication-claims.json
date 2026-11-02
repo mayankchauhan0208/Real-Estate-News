@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-02T16:05:53.860Z",
+  "updatedAt": "2026-11-02T16:05:56.539Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9299,6 +9299,32 @@
       "claimedAt": "2026-11-02T16:05:51.042Z",
       "expiresAt": "2026-11-02T16:20:51.042Z",
       "finalizedAt": "2026-11-02T16:05:53.860Z"
+    },
+    {
+      "claimId": "b6b1a052-7cef-4dab-919f-d501ef6d965c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/kanpur-city-kanpur-councillor-creates-ruckus-attempts-to-cut-wrist-40425131.html",
+        "title-city:क नप र क ब ग प र षद क ह ईव ल ट ज ह ग म ह थ क नस क टन क क य प रय स ल ग म ब इल स बन त रह व ड य|kanpur",
+        "dedupe:4ed02e3d038c2281f1e59602acd2e474c10ca3617f11d7d0c6b9074b47303960",
+        "dedupe:727a91901f289b5fd59846d3fe90fbda2f7fb745b85760f049c1baf9d73078ca",
+        "dedupe:d61d31545534bf5c7bacf5d751420c162874cae557b2894af024a33190a1604b",
+        "dedupe:a15c70ef8f3013ce863c291aa72af284a9160321dfd67263d73bf6a1443811b3",
+        "dedupe:क नप र क ब ग प र षद क ह ईव ल ट ज ह ग म ह थ क नस क टन क क य प रय स ल ग म ब इल स बन त रह व ड य|kanpur",
+        "dedupe:ed267cfd5557d456354bc7df1b6fb5b96b36b1bf57db5c2c36432ff6be318f62",
+        "dedupe:7c6a6fd2b895456ac32e85db13712dac71a84e4c584a4a73678dc7cf4c74f4f5"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "kanpur",
+      "canonicalEventCity": "kanpur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "kanpur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-02T16:05:56.539Z",
+      "expiresAt": "2026-11-02T16:20:56.539Z"
     }
   ]
 }
