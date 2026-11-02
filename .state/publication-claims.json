@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-01T19:59:10.964Z",
+  "updatedAt": "2026-11-02T06:18:48.062Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9245,6 +9245,32 @@
       "claimedAt": "2026-11-01T19:59:08.441Z",
       "expiresAt": "2026-11-01T20:14:08.441Z",
       "finalizedAt": "2026-11-01T19:59:10.964Z"
+    },
+    {
+      "claimId": "d8635f7b-d064-4e25-ab0e-8f764d5c70ff",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/varanasi-city-ancient-wisdom-offers-solutions-to-modern-challenges-development-is-rooted-in-the-wellbeing-of-humanity-priti-adani-40424657.html",
+        "title-city:प र च न ज ञ न आध न क च न त य क सम ध न म नवत क कल य ण म न ह त ह व क स प र त अद ण|varanasi",
+        "dedupe:b74ffe04dbee60319ff0a30824b8c7f1460f66ea149870e176121bc954faa348",
+        "dedupe:3c2f94eaa90b4d62dd8d69baa70e7608dc2f43db364c1796156aefefdee0a480",
+        "dedupe:9e649299bfc823567eff29c156d9ebf751623c5a0c4ec6006dd2498f26c9eb72",
+        "dedupe:e6724652076f8bab2185d93b6f079246d01756f48b5b2d03bf44b9ecf5b48ed5",
+        "dedupe:प र च न ज ञ न आध न क च न त य क सम ध न म नवत क कल य ण म न ह त ह व क स प र त अद ण|varanasi",
+        "dedupe:c49a98a650687e5bd303857ab85c717123a16f8daa35b8b07891c7efe723c67a",
+        "dedupe:f702cd6c55d030fa9e95eb061891cc40eca4b3378108fe338a56775c6490d90f"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "varanasi",
+      "canonicalEventCity": "varanasi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "varanasi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-02T06:18:48.062Z",
+      "expiresAt": "2026-11-02T06:33:48.062Z"
     }
   ]
 }
