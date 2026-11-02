@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-02T16:05:59.438Z",
+  "updatedAt": "2026-11-02T16:06:02.194Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9326,6 +9326,32 @@
       "claimedAt": "2026-11-02T16:05:56.539Z",
       "expiresAt": "2026-11-02T16:20:56.539Z",
       "finalizedAt": "2026-11-02T16:05:59.438Z"
+    },
+    {
+      "claimId": "ffbdca85-7ec6-4f45-a3fa-e168e0e2c7e7",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://business-standard.com/companies/quarterly-results/mindspace-reit-q2-results-noi-rises-32-to-836-crore-on-strong-leasing-126110201490_1.html",
+        "title-city:mindspace reit q2 results noi rises 32 to 836 crore on strong leasing|chennai",
+        "dedupe:2b0136346fc5ed57ddec3e3567c048a7699fc2dcee0d4992ed68ffabb0eb9e4d",
+        "dedupe:64ec9044374662be6fa0786ceb4d12819ee5e7e5aea112c58fa1c5402f206bdc",
+        "dedupe:5b965b079a09e867481cb700ec49915835686d08bbda41ff21bd5c88ea469285",
+        "dedupe:60e5bbcba17f7fd3c97a7ca30e69f62d9c1e2450bed3b5fd5bb88a92dddd0a1a",
+        "dedupe:mindspace reit q2 results noi rises strong leasing|chennai",
+        "dedupe:4c5edeeab10285bc2a2d41b29469e57332d6313cb23f45a6ff18468345b48194",
+        "dedupe:af83ff7d93b6d179cc617e533cd4af9417f602a9f0cf46fd41837e9fc595a2e0"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "chennai",
+      "canonicalEventCity": "chennai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "chennai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-02T16:06:02.194Z",
+      "expiresAt": "2026-11-02T16:21:02.194Z"
     }
   ]
 }
