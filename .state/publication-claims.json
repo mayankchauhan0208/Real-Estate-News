@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-02T16:06:04.806Z",
+  "updatedAt": "2026-11-02T16:06:07.358Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9353,6 +9353,32 @@
       "claimedAt": "2026-11-02T16:06:02.194Z",
       "expiresAt": "2026-11-02T16:21:02.194Z",
       "finalizedAt": "2026-11-02T16:06:04.806Z"
+    },
+    {
+      "claimId": "f1cff93b-6382-485c-b6d3-81ab71ba4f38",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/lucknow-city-up-to-launch-bharat-land-stack-all-property-records-online-40425359.html",
+        "title-city:उत तर प रद श म श र ह ग भ रत ल ड स ट क अब एक ह प र टल पर म ल ग जम न और मक न स ज ड स र र क र ड|lucknow",
+        "dedupe:cc28a3852da2aedc39120343f6f7c911f1862a402414f29c594053e161d7f53d",
+        "dedupe:80dd02bd5d97ef58ec2ccda90cb6d7253b2b7539ab4c396e44f8fd2bcd595c16",
+        "dedupe:f0a6947d31e08abc8aee43ce395435e81e70b111afbcaaf07cda5f69e12df7bf",
+        "dedupe:4b49fecb9647006ddfd9dc6113a0fd5836765ebae4b0f4b6371c0f9b8c5fd4ae",
+        "dedupe:उत तर प रद श म श र ह ग भ रत ल ड स ट क अब एक ह प र टल पर म ल ग जम न और मक न स ज ड स र र क र ड|lucknow",
+        "dedupe:5cb757ebf6ffca90429986a2b24a12fa67d2585400dfb9ffd6b68ac449f12209",
+        "dedupe:22783f162f42536cc54ffa9703548504758216bd0a4e38fe3daec21152eb60e2"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-02T16:06:07.358Z",
+      "expiresAt": "2026-11-02T16:21:07.358Z"
     }
   ]
 }
