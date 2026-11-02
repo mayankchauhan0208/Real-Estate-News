@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-02T06:18:48.062Z",
+  "updatedAt": "2026-11-02T06:18:50.886Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9248,7 +9248,7 @@
     },
     {
       "claimId": "d8635f7b-d064-4e25-ab0e-8f764d5c70ff",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/varanasi-city-ancient-wisdom-offers-solutions-to-modern-challenges-development-is-rooted-in-the-wellbeing-of-humanity-priti-adani-40424657.html",
         "title-city:प र च न ज ञ न आध न क च न त य क सम ध न म नवत क कल य ण म न ह त ह व क स प र त अद ण|varanasi",
@@ -9270,7 +9270,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-02T06:18:48.062Z",
-      "expiresAt": "2026-11-02T06:33:48.062Z"
+      "expiresAt": "2026-11-02T06:33:48.062Z",
+      "finalizedAt": "2026-11-02T06:18:50.886Z"
     }
   ]
 }
