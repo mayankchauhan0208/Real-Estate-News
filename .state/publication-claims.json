@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T15:27:42.089Z",
+  "updatedAt": "2026-11-03T21:20:14.965Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9647,6 +9647,31 @@
       "claimedAt": "2026-11-03T15:27:39.456Z",
       "expiresAt": "2026-11-03T15:42:39.456Z",
       "finalizedAt": "2026-11-03T15:27:42.089Z"
+    },
+    {
+      "claimId": "c55c2bbe-f2d6-489d-87db-d66e67cb2811",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/residential/tamil-nadu-housing-board-steps-out-of-old-blocks-decides-to-build-gated-communities-in-chennai/135501055",
+        "title-city:tamil nadu housing board steps out of old blocks decides to build gated communities in chennai|chennai",
+        "dedupe:7fc4732b229bff6a0a2c236dc570ec1acfefb75b774e2b418c3b753bf6eae71f",
+        "dedupe:487545f7550fdba917b8a9b8b082305d5947ef5117ebc1d1fa0e270c851fde3c",
+        "dedupe:aa7e9764578a8f0bc126219cacd9d7c9f3716a970f80b2cf9f2a33392ba349e8",
+        "dedupe:tamil nadu housing board steps out old blocks decides build gated communities chennai|chennai",
+        "dedupe:f00ea897c9cdf9b4b7942ee2c8c73a80c57f9e003de3e8d0f778c2eadd3f30d5",
+        "dedupe:3ecdd01b7125d9bfe9ebaae70ea9d951cc450bcaabd4d60ab358d332479bea3a"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "chennai",
+      "canonicalEventCity": "chennai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "chennai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-03T21:20:14.965Z",
+      "expiresAt": "2026-11-03T21:35:14.965Z"
     }
   ]
 }
