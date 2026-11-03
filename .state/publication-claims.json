@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T07:05:54.771Z",
+  "updatedAt": "2026-11-03T07:05:56.804Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9463,7 +9463,7 @@
     },
     {
       "claimId": "80fd5135-db39-4fe4-b80a-b830872c2c81",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/industry/nbcc-signs-2000-crore-patna-redevelopment-mous-avenue-towers-e-auction-fetches-5191-crore/135481839",
         "title-city:nbcc signs 2 000 crore patna redevelopment mous avenue towers e auction fetches 5 191 crore|patna",
@@ -9484,7 +9484,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-03T07:05:54.771Z",
-      "expiresAt": "2026-11-03T07:20:54.771Z"
+      "expiresAt": "2026-11-03T07:20:54.771Z",
+      "finalizedAt": "2026-11-03T07:05:56.804Z"
     }
   ]
 }
