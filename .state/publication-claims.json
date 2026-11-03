@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T21:20:23.961Z",
+  "updatedAt": "2026-11-03T21:20:26.629Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9700,6 +9700,32 @@
       "claimedAt": "2026-11-03T21:20:20.941Z",
       "expiresAt": "2026-11-03T21:35:20.941Z",
       "finalizedAt": "2026-11-03T21:20:23.961Z"
+    },
+    {
+      "claimId": "a863b118-d354-42c9-b48c-d787987db44c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://business-standard.com/companies/news/pioneer-urban-launches-3-500-cr-ultra-luxury-housing-project-in-gurugram-126110302035_1.html",
+        "title-city:pioneer urban launches 3 500 cr ultra luxury housing project in gurugram|gurugram",
+        "dedupe:ba0c7136189c9cf9ec92c23461c499a0ab555bbe16e7995cc04fac0b7f31df78",
+        "dedupe:cbb6d8560ec8122f3435c99197ad771d07dcda2e4ea0fa7898cfc624681088d8",
+        "dedupe:26205fea0125fa33abc3bf5d1091d463aea5a1a809e8c3c843e56ee2b46572b0",
+        "dedupe:8a0a2ef61d653bc52c10c211c31411b28018b045b785cd1ca418c010f46b32fc",
+        "dedupe:pioneer urban launches ultra housing gurugram|gurugram",
+        "dedupe:0b1164335cb6b57439551370198f2132644ffcd47f283f46be496f34d7aca11c",
+        "dedupe:d2965b51b19436a95439a7ea3cb7f8204d45ea47163303cbb02f0030bce12184"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-03T21:20:26.629Z",
+      "expiresAt": "2026-11-03T21:35:26.629Z"
     }
   ]
 }
