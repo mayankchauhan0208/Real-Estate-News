@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T15:27:25.518Z",
+  "updatedAt": "2026-11-03T15:27:28.029Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9566,6 +9566,32 @@
       "claimedAt": "2026-11-03T15:27:22.751Z",
       "expiresAt": "2026-11-03T15:42:22.751Z",
       "finalizedAt": "2026-11-03T15:27:25.518Z"
+    },
+    {
+      "claimId": "cd809d00-d2db-4f51-b160-e36bfea540fe",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/chandigarh-news/spice-of-life-shining-steel-tiffin-steals-the-deal-this-dhanteras-101793710059847.html",
+        "title-city:spice of life shining steel tiffin steals the deal this dhanteras|chandigarh",
+        "dedupe:d3ff11f18cb8747e19ead35372900fe718dcc56feca2d5f182ec91feea7021a5",
+        "dedupe:264cc2c5b44d1b682acb3f08fbc6158fa31da8d862c088abcab8e38c94086656",
+        "dedupe:95d0407fe5c864fc4af54afb82a948f2e8a909fc3b8d66b0ab4919de09efc1a6",
+        "dedupe:60f57cb217c39cea017f890a6f1aeff6c67187db9e544b1742ebb78502879065",
+        "dedupe:spice life shining steel tiffin steals deal this dhanteras|chandigarh",
+        "dedupe:73a650f5ca32b90f962cf21267ea9f9333ddab33354756f8a35ad0ccadb7b12e",
+        "dedupe:ac757ad524a2b153b1abe2740f6c95b16c4588174972cb3b8ce981b7cedd969c"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "chandigarh",
+      "canonicalEventCity": "chandigarh",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "chandigarh"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-03T15:27:28.029Z",
+      "expiresAt": "2026-11-03T15:42:28.029Z"
     }
   ]
 }
