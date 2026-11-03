@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T07:06:00.859Z",
+  "updatedAt": "2026-11-03T15:27:16.754Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9513,6 +9513,31 @@
       "claimedAt": "2026-11-03T07:05:58.939Z",
       "expiresAt": "2026-11-03T07:20:58.939Z",
       "finalizedAt": "2026-11-03T07:06:00.859Z"
+    },
+    {
+      "claimId": "fcdfd6e3-7b84-43ec-ae73-879e8fb98eb2",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://magicbricks.com/news/tamil-nadu-housing-board-plans-new-gated-projects-across-multiple-locations-of-chennai-jkmb/152636.html",
+        "title-city:tamil nadu housing board plans new gated projects across multiple locations of chennai|chennai",
+        "dedupe:086f47905c930b415e1a378fd9211d0180b2d3f53a2afe2fcefba02971d1a5a2",
+        "dedupe:3e82bdb6ade84b4b913f175b23990eecf55931fafad05b6f37fac6b7f8d0f4a4",
+        "dedupe:2ea05fcab9343d642b8899903d626a924014a884157ec16d93b309237b830911",
+        "dedupe:tamil nadu housing board plans new gated across multiple locations chennai|chennai",
+        "dedupe:8e072763e741c528ab5324abf69f0f71faa7e4881dfb75134a6a5b499eb1139b",
+        "dedupe:3d99babefb468f11019f26efb43b2123375bcf670c4f7c753d41252c98f27b02"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "chennai",
+      "canonicalEventCity": "chennai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "chennai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-03T15:27:16.754Z",
+      "expiresAt": "2026-11-03T15:42:16.754Z"
     }
   ]
 }
