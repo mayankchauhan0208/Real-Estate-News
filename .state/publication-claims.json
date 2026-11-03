@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T07:05:56.804Z",
+  "updatedAt": "2026-11-03T07:05:58.939Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9486,6 +9486,32 @@
       "claimedAt": "2026-11-03T07:05:54.771Z",
       "expiresAt": "2026-11-03T07:20:54.771Z",
       "finalizedAt": "2026-11-03T07:05:56.804Z"
+    },
+    {
+      "claimId": "0d480869-538f-4823-ad67-8c2a10b190cc",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/j-estates-partners-with-emoha-for-senior-living",
+        "title-city:j estates partners with emoha for senior living project in sohna targets rs 525 crore sales|gurugram",
+        "dedupe:5a477216bbe6125aeabf82800580fdc87d7ec79c48847c9190d717d84d8a9100",
+        "dedupe:3eb5fa44db38a005c4bc8a6a775925c3e5e8d9eeed95e549c91fc2e4fdad4cff",
+        "dedupe:67be8449ccf4f66e67d7778ffdc036d1ad47a45d2dab228fc7a4e9f1809bd5ff",
+        "dedupe:791f782a7cbc50d41891dfdd6bb1b41930c8b79eb3fe5f003ab2b11d5a7965be",
+        "dedupe:j estates partners emoha senior sohna targets sales|gurugram",
+        "dedupe:6fe1348ea8d4d586ef6b4e48b1406e5f1c6146ec5a662ccb2d1880511db8f0e5",
+        "dedupe:3c39bbeea66847a22f6840ad8bb02df0bb46417bf1ec4a8bbd16e4bce5d7787a"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-03T07:05:58.939Z",
+      "expiresAt": "2026-11-03T07:20:58.939Z"
     }
   ]
 }
