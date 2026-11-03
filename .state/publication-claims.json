@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T15:27:19.934Z",
+  "updatedAt": "2026-11-03T15:27:22.751Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9539,6 +9539,32 @@
       "claimedAt": "2026-11-03T15:27:16.754Z",
       "expiresAt": "2026-11-03T15:42:16.754Z",
       "finalizedAt": "2026-11-03T15:27:19.934Z"
+    },
+    {
+      "claimId": "9e4a48f0-fc15-414c-87a0-e21c612cce8c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://patrika.com/udaipur-news/udaipur-udiapole-bus-stand-multistorey-commercial-complex-development-21028136",
+        "title-city:उदयप र उद य प ल स ट ड क बदल ग तस व र बन ग मल ट स ट र क म प ल क स न च द ड ग बस ऊपर कमर श यल हब|udaipur",
+        "dedupe:8d20bc56a12d190e1788e99ddee0cd1ece94d22d171cf919e66da04eef2121e3",
+        "dedupe:0b6dcb91e1ce48c3735dccd618164ab35427a6ca283974c63c652098bfa374cb",
+        "dedupe:9b3c2787aab0a211b115e43eae6cdaae7c8e9a20cf4774b2fdfc70065023e82a",
+        "dedupe:4ffeaef0ef87c353173d3b24f0da19af13acfb50b5c0a72b3275913766084a42",
+        "dedupe:उदयप र उद य प ल स ट ड क बदल ग तस व र बन ग मल ट स ट र क म प ल क स न च द ड ग बस ऊपर कमर श यल हब|udaipur",
+        "dedupe:33a1319f39479872884a76f5501a780763418b36f2446e3c1071d62d382bb2cd",
+        "dedupe:129dcb08b2acf4f25bfa1d7f5861d6f1d5dddb1c564b9670dfaeac922c04cf18"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "udaipur",
+      "canonicalEventCity": "udaipur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "udaipur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-03T15:27:22.751Z",
+      "expiresAt": "2026-11-03T15:42:22.751Z"
     }
   ]
 }
