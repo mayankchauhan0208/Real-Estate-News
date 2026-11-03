@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T07:05:49.638Z",
+  "updatedAt": "2026-11-03T07:05:52.523Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9437,7 +9437,7 @@
     },
     {
       "claimId": "f8e6f3d9-c3ad-4414-933c-f69d93097150",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://magicbricks.com/news/hinjewadi-it-park-traffic-update-six-key-hinjewadi-maan-marunji-roads-set-for-december-works-jkmb/152617.html",
         "title-city:hinjewadi it park traffic update six key hinjewadi maan marunji roads set for december works|pune",
@@ -9458,7 +9458,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-03T07:05:49.638Z",
-      "expiresAt": "2026-11-03T07:20:49.638Z"
+      "expiresAt": "2026-11-03T07:20:49.638Z",
+      "finalizedAt": "2026-11-03T07:05:52.523Z"
     }
   ]
 }
