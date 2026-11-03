@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T21:20:18.259Z",
+  "updatedAt": "2026-11-03T21:20:20.941Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9673,6 +9673,32 @@
       "claimedAt": "2026-11-03T21:20:14.965Z",
       "expiresAt": "2026-11-03T21:35:14.965Z",
       "finalizedAt": "2026-11-03T21:20:18.259Z"
+    },
+    {
+      "claimId": "e2559ea8-0e14-45dc-9646-0944532d6f7e",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://business-standard.com/companies/news/nexus-select-trust-s-noi-rises-8-to-504-crore-in-q2-on-strong-leasing-126110301890_1.html",
+        "title-city:nexus select trust s noi rises 8 to 504 crore in q2 on strong leasing|guwahati",
+        "dedupe:ba9bdfa1a7bb0b0b44132755962ae095270fb330cd02098487b19398b1c2a42c",
+        "dedupe:f5d22c1d34383de6f0439f9149fe593cbc76a9169772c49561f6591606b74734",
+        "dedupe:5ef42f064ed4dad458005553367212eb0155620bc12ac92b3f03f021238a9bc2",
+        "dedupe:86e3dee0d8264d202de11f731315acb44cf4e51416810b2df0933f8847c09f5d",
+        "dedupe:nexus select trust s noi rises q2 strong leasing|guwahati",
+        "dedupe:773eb2aa5a6c84eb39cc56face0e7eb24e04fbebb9f61739eaa189da4730db5e",
+        "dedupe:16a3b276fab12afd3771e589b7ba898ad0f562fcbf2471f1e998d8123581b242"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "guwahati",
+      "canonicalEventCity": "guwahati",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "guwahati"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-03T21:20:20.941Z",
+      "expiresAt": "2026-11-03T21:35:20.941Z"
     }
   ]
 }
