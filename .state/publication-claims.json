@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T15:27:22.751Z",
+  "updatedAt": "2026-11-03T15:27:25.518Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9542,7 +9542,7 @@
     },
     {
       "claimId": "9e4a48f0-fc15-414c-87a0-e21c612cce8c",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://patrika.com/udaipur-news/udaipur-udiapole-bus-stand-multistorey-commercial-complex-development-21028136",
         "title-city:उदयप र उद य प ल स ट ड क बदल ग तस व र बन ग मल ट स ट र क म प ल क स न च द ड ग बस ऊपर कमर श यल हब|udaipur",
@@ -9564,7 +9564,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-03T15:27:22.751Z",
-      "expiresAt": "2026-11-03T15:42:22.751Z"
+      "expiresAt": "2026-11-03T15:42:22.751Z",
+      "finalizedAt": "2026-11-03T15:27:25.518Z"
     }
   ]
 }
