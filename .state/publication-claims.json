@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T15:27:31.170Z",
+  "updatedAt": "2026-11-03T15:27:33.969Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9593,6 +9593,32 @@
       "claimedAt": "2026-11-03T15:27:28.029Z",
       "expiresAt": "2026-11-03T15:42:28.029Z",
       "finalizedAt": "2026-11-03T15:27:31.170Z"
+    },
+    {
+      "claimId": "bf5560fa-747b-4722-b71a-6601d7ef72c3",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/pioneer-urban-to-invest-over-3-500-crore-in-ultra-luxury-serviced-residences-in-gurugram-targets-9-000-crore-revenue-101793710067997.html",
+        "title-city:pioneer urban to invest over 3 500 crore in ultra luxury serviced residences in gurugram targets 9 000 crore revenue|gurugram",
+        "dedupe:a83f43b995e83141fb3b3a2c4c25fcf6842a37687c41a70e225c3b6478978021",
+        "dedupe:c3b5c29e9b63356e22804fb46daba5cf13cc43378efe8b951c1c14fb2232f260",
+        "dedupe:6af88ff8195606f38fc10c001867285a4dbd9d27892514d16c11edf1eaf73015",
+        "dedupe:9ce2750db1c3660f3397ac90fd7e5496b04a4ddc7463fec8b042e59183032f1e",
+        "dedupe:pioneer urban ultra serviced residences gurugram targets revenue|gurugram",
+        "dedupe:81b5ccabe809026cdac8f23743f612e52761ac21701b9b6c29c143b2ab4acc35",
+        "dedupe:29c4cb120e304728abda8faefeaf39a8a851a48f4194f30480eeb8b7ca75cd09"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-03T15:27:33.969Z",
+      "expiresAt": "2026-11-03T15:42:33.969Z"
     }
   ]
 }
