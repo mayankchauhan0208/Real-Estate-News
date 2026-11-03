@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-03T15:27:39.456Z",
+  "updatedAt": "2026-11-03T15:27:42.089Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9623,7 +9623,7 @@
     },
     {
       "claimId": "143ad288-af78-4ddd-9d4f-0b2f4d7d7bac",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/real-estate/real-estate-guide/pune-metro-pink-line-real-estate-along-hinjewadi-shivajinagar-corridor-poised-for-growth-101793716232683.html",
         "title-city:pune metro pink line real estate along hinjewadi shivajinagar corridor poised for growth|pune",
@@ -9645,7 +9645,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-03T15:27:39.456Z",
-      "expiresAt": "2026-11-03T15:42:39.456Z"
+      "expiresAt": "2026-11-03T15:42:39.456Z",
+      "finalizedAt": "2026-11-03T15:27:42.089Z"
     }
   ]
 }
