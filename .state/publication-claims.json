@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T09:29:14.101Z",
+  "updatedAt": "2026-11-04T17:34:04.658Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10014,6 +10014,32 @@
       "claimedAt": "2026-11-04T09:29:12.380Z",
       "expiresAt": "2026-11-04T09:44:12.380Z",
       "finalizedAt": "2026-11-04T09:29:14.101Z"
+    },
+    {
+      "claimId": "a140a4b7-ffc9-46ab-a410-7bd0fced50fe",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/pioneer-urban-to-invest-rs-3500-crore-in-ultra-luxury-gurugram-residences/articleshow/135534814.cms",
+        "title-city:pioneer urban to invest rs 3 500 crore in ultra luxury gurugram residences|gurugram",
+        "dedupe:ae36b03512b0076b8bedd06c23a1db5738ac0e01a793051ecf9ed14a61705355",
+        "dedupe:8e5a7cc086cce9b45351cbc905cc2c9541d5a4efcd065bc87b2a2f236df0b66b",
+        "dedupe:ef33353587f10c7a04996ec85915bd26c48f1e466818c3bb62a51f6b20542436",
+        "dedupe:c65546a5126a82115d07b98b3c18fdd49d68aa8c3fb686231ea749422f31740f",
+        "dedupe:pioneer urban ultra gurugram residences|gurugram",
+        "dedupe:c02eed1cc54dd86156b414354d92efb580b6cf79c3234945a236b90d33ab479c",
+        "dedupe:2d4275a0948b7ecf79dad28018c52ed36b1da8d95c9bc5f046ab0403cb63bf15"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-04T17:34:04.658Z",
+      "expiresAt": "2026-11-04T17:49:04.658Z"
     }
   ]
 }
