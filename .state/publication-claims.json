@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T09:29:04.735Z",
+  "updatedAt": "2026-11-04T09:29:06.345Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9917,7 +9917,7 @@
     },
     {
       "claimId": "2658b4c5-d56a-48f6-bf3e-17386b79660a",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/industry/prestige-estates-acquires-gloind-vintage-infra-at-519-crore-enterprise-value/135521031",
         "title-city:prestige estates acquires gloind vintage infra at 519 crore enterprise value|bangalore",
@@ -9959,7 +9959,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-04T09:29:04.735Z",
-      "expiresAt": "2026-11-04T09:44:04.735Z"
+      "expiresAt": "2026-11-04T09:44:04.735Z",
+      "finalizedAt": "2026-11-04T09:29:06.345Z"
     }
   ]
 }
