@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T17:34:11.373Z",
+  "updatedAt": "2026-11-04T17:34:13.600Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10068,6 +10068,32 @@
       "claimedAt": "2026-11-04T17:34:09.614Z",
       "expiresAt": "2026-11-04T17:49:09.614Z",
       "finalizedAt": "2026-11-04T17:34:11.373Z"
+    },
+    {
+      "claimId": "f0200f21-ebba-4e4e-b0ed-a12710500ea2",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/prayagraj-prayagraj-pda-to-sell-200-residential-plots-after-diwali-40427367.html",
+        "title-city:प रय गर ज म द प वल क ब द 200 स ज य द आव स य प ल ट ब च ग pda जल द श र ह ग रज स ट र शन|allahabad",
+        "dedupe:982406d384438510a478e75568306786cdea077e71d290a819da728039b63739",
+        "dedupe:640655bd98e1299e9dc8920ba547ef1fa35905ad0a65b8bca1189628f3513646",
+        "dedupe:7e4afd767cdc799c7f28845975b5ffa16995e0030ad2986c159f95621e8bf171",
+        "dedupe:e81ac084e67f3b9a4bde5ecf9576f27ebaf351a412e9026c4fc456d3e2a97ea4",
+        "dedupe:प रय गर ज म द प वल क ब द स ज य द आव स य प ल ट ब च ग pda जल द श र ह ग रज स ट र शन|allahabad",
+        "dedupe:18e70ce48957e39dd6d6f209bf42c83e84bc7a2931f905b3d38f5785bd2c7288",
+        "dedupe:d412b3c15d69ce9b8e5bf4c25a9dda96af7eb9abdfa15629f07a51ff9777881f"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "allahabad",
+      "canonicalEventCity": "allahabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "allahabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-04T17:34:13.600Z",
+      "expiresAt": "2026-11-04T17:49:13.600Z"
     }
   ]
 }
