@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T09:28:49.402Z",
+  "updatedAt": "2026-11-04T09:28:51.669Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9810,7 +9810,7 @@
     },
     {
       "claimId": "5dcb70ce-3c6a-42b0-9897-f2a03f83ce72",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://infra.economictimes.indiatimes.com/news/roads-highways/highway-infrastructure-secures-198-31-crore-cpwd-order-for-cisf-infrastructure-in-madhya-pradesh/135530397",
         "title-city:highway infrastructure secures 198 31 crore cpwd order for cisf infrastructure in madhya pradesh|sehore",
@@ -9831,7 +9831,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-04T09:28:49.402Z",
-      "expiresAt": "2026-11-04T09:43:49.402Z"
+      "expiresAt": "2026-11-04T09:43:49.402Z",
+      "finalizedAt": "2026-11-04T09:28:51.669Z"
     }
   ]
 }
