@@ -6798,14 +6798,14 @@ function isPoliticalCampaignArticle(article) {
     "विधानसभा चुनाव"
   ];
   const partyOrPoliticalActor = hasWholeWordKeyword(text, [
-    "bjp", "congress", "aap", "nda", "india alliance", "political party",
-    "भाजपा", "कांग्रेस", "आम आदमी पार्टी", "आप पार्टी", "एनडीए", "इंडिया गठबंधन",
+    "bjp", "congress", "aap", "nda", "jdu", "rjd", "samajwadi party", "tmc", "dmk", "aiadmk", "brs", "ysrcp", "cpi", "cpim", "india alliance", "political party", "political leaders",
+    "भाजपा", "कांग्रेस", "आम आदमी पार्टी", "आप पार्टी", "एनडीए", "जदयू", "राजद", "समाजवादी पार्टी", "तृणमूल", "डीएमके", "एआईएडीएमके", "बीआरएस", "वाईएसआरसीपी", "सीपीआई", "इंडिया गठबंधन", "राजनीतिक दल", "राजनीतिक नेता",
     "अरविंद केजरीवाल", "अमित शाह", "राहुल गांधी", "प्रधानमंत्री", "मुख्यमंत्री", "विधायक", "सांसद"
   ]);
   const politicalDiscourse = hasWholeWordKeyword(text, [
     "attack", "attacks", "speech", "addresses party workers", "party workers", "political statement",
     "workers conference", "election promise", "criticises", "criticizes", "alleges",
-    "हमला", "अटैक", "बयान", "कार्यकर्ता", "सम्मेलन", "भाषण", "निशाना", "आरोप", "सरकार पर"
+    "हमला", "अटैक", "बयान", "कार्यकर्ता", "कार्यकर्ता सम्मेलन", "प्रदेश कार्यकर्ता सम्मेलन", "सम्मेलन", "भाषण", "निशाना", "आरोप", "सरकार पर"
   ]);
 
   // Government actors often announce genuine housing or land events. Only

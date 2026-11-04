@@ -162,6 +162,15 @@ const governmentHousingContrast = {
   newsLink: "https://example.com/faridabad-housing-project-approval"
 };
 
+const politicalWorkerConference = {
+  ...base,
+  title: "वाराणसी में 1 नवंबर को होगा जदयू का प्रदेश कार्यकर्ता सम्मेलन",
+  description: "जदयू के कार्यकर्ता सम्मेलन की तैयारी और राजनीतिक संगठन की बैठक होगी।",
+  articleText: "वाराणसी में जदयू का प्रदेश कार्यकर्ता सम्मेलन आयोजित होगा। यह राजनीतिक संगठन का कार्यक्रम है, कोई भूमि, आवास, संपत्ति या विकास परियोजना की घोषणा नहीं है।",
+  cityCode: "varanasi",
+  newsLink: "https://example.com/varanasi-jdu-worker-conference"
+};
+
 const routedCci = applyCityCode(cci);
 assert.equal(routedCci.cityCode, "", "CCI corporate transaction must not inherit Gujarat");
 assert.equal(isPublishableArticle(routedCci, new Set()), false, "CCI corporate transaction must not publish");
@@ -204,6 +213,7 @@ assert.equal(isPublishableArticle(replayValidAurelia, new Set()), true, "Previou
 assert.equal(isPublishableArticle(replayValidUpRera, new Set()), true, "Previously valid UP RERA approval report must remain publishable");
 assert.equal(isPublishableArticle(politicalAttack, new Set()), false, "political attacks must not publish merely because a city is assigned");
 assert.ok(getRejectionReasons(politicalAttack, new Set()).some((reason) => reason.includes("spam/menu page")), "political attack needs a deterministic rejection reason");
+assert.equal(isPublishableArticle(politicalWorkerConference, new Set()), false, "party worker conferences must not publish as real-estate news");
 assert.equal(isPublishableArticle(governmentHousingContrast, new Set()), true, "a government-announced concrete housing approval must remain publishable");
 
 const cookieHeaders = {
