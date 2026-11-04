@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T17:34:13.600Z",
+  "updatedAt": "2026-11-04T17:34:15.660Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10071,7 +10071,7 @@
     },
     {
       "claimId": "f0200f21-ebba-4e4e-b0ed-a12710500ea2",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/prayagraj-prayagraj-pda-to-sell-200-residential-plots-after-diwali-40427367.html",
         "title-city:प रय गर ज म द प वल क ब द 200 स ज य द आव स य प ल ट ब च ग pda जल द श र ह ग रज स ट र शन|allahabad",
@@ -10093,7 +10093,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-04T17:34:13.600Z",
-      "expiresAt": "2026-11-04T17:49:13.600Z"
+      "expiresAt": "2026-11-04T17:49:13.600Z",
+      "finalizedAt": "2026-11-04T17:34:15.660Z"
     }
   ]
 }
