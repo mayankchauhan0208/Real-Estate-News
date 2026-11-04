@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T17:34:19.866Z",
+  "updatedAt": "2026-11-04T17:34:22.307Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10122,6 +10122,32 @@
       "claimedAt": "2026-11-04T17:34:17.897Z",
       "expiresAt": "2026-11-04T17:49:17.897Z",
       "finalizedAt": "2026-11-04T17:34:19.866Z"
+    },
+    {
+      "claimId": "3c533f0e-ddb1-442e-8406-a5cc84c2f69c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://proppuls.in/cmc-considers-2394-cr-civic-works-sanitation-wage-revision",
+        "title-city:cmc considers 23 94 cr civic works sanitation wage revision|hyderabad",
+        "dedupe:7f8a6cfcb0e6b4c72255292bdfbd86f5de71f1049457b0436127ecd9e8af51bf",
+        "dedupe:add41b6d70533e4aafe0cbb84d65b486e97fdbf74af7131f28b9b24f36e10367",
+        "dedupe:636d14d6d017de71e17e224dd315d401543ba3c2dc38a073cf019ed21b4554ae",
+        "dedupe:0a24f87428174bb487b00816ac542a37ad734fbbe9aff9423639ac72e07ba0f5",
+        "dedupe:cmc considers civic works sanitation wage revision|hyderabad",
+        "dedupe:447ad7d806fda75e46d5367b433e2f252139a227fbb0204b3cdc89330c6aef6e",
+        "dedupe:91098149203e30210cad0f41814595cb9609b5825b2683ac86c13fd6d3cb4e98"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-04T17:34:22.307Z",
+      "expiresAt": "2026-11-04T17:49:22.307Z"
     }
   ]
 }
