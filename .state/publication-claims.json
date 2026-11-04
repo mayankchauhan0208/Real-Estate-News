@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T09:29:02.734Z",
+  "updatedAt": "2026-11-04T09:29:04.735Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9914,6 +9914,52 @@
       "claimedAt": "2026-11-04T09:29:01.062Z",
       "expiresAt": "2026-11-04T09:44:01.062Z",
       "finalizedAt": "2026-11-04T09:29:02.734Z"
+    },
+    {
+      "claimId": "2658b4c5-d56a-48f6-bf3e-17386b79660a",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/prestige-estates-acquires-gloind-vintage-infra-at-519-crore-enterprise-value/135521031",
+        "title-city:prestige estates acquires gloind vintage infra at 519 crore enterprise value|bangalore",
+        "dedupe:574519fb1952d1950c94c4ed935ae2b606c4fcdcfe6ac38d95d2fc7b5ac794bf",
+        "dedupe:ee1e57258e2d97878453edcbd9062ebe6d4605af502afa4ab9daeb4c7ac3961f",
+        "dedupe:489cf1566df608c388d17b99fe239124b89d3aa9fe93f3d3775ca237a64b1942",
+        "dedupe:prestige estates acquires gloind vintage infra enterprise value|bangalore",
+        "dedupe:db511207cbef13d1f1278e109b1e61bacddd6f92f03f923651322e0dbef4fe1b",
+        "dedupe:9f04cf21c553c3fdf4d22d29e0f10e5ccf7ad1865c570bcc32ce22cec499576c"
+      ],
+      "semanticIdentity": {
+        "city": "bangalore",
+        "canonicalEventCity": "bangalore",
+        "normalizedBuilder": "prestige",
+        "normalizedProject": "",
+        "canonicalEventType": "land-acquisition",
+        "builder": "prestige",
+        "project": "",
+        "eventType": "land-acquisition",
+        "numericAnchors": [
+          "09:number",
+          "100:number",
+          "1:number",
+          "2026:number",
+          "2:number",
+          "4:number",
+          "519:crore",
+          "5:lakh"
+        ],
+        "canonicalEventFingerprint": "prestige|bangalore|land-acquisition|09:number,100:number,1:number",
+        "semanticClusterId": "cluster:50d56f1c2b5d7b55a252047c"
+      },
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "prestige|bangalore|land-acquisition|09:number,100:number,1:number",
+      "semanticClusterId": "cluster:50d56f1c2b5d7b55a252047c",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-04T09:29:04.735Z",
+      "expiresAt": "2026-11-04T09:44:04.735Z"
     }
   ]
 }
