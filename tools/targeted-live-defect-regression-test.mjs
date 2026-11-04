@@ -144,6 +144,24 @@ const replayValidUpRera = {
   newsLink: "https://hindi.news24online.com/business/up-rera-approves-12-new-realty-projects-worth-1664-crore-lucknow-ghaziabad-ayodhya/1803624/"
 };
 
+const politicalAttack = {
+  ...base,
+  title: "AAP को पंजाब से भी उखाड़ फेंकेंगे, अमित शाह का अरविंद केजरीवाल पर अटैक",
+  description: "अमित शाह ने राजनीतिक दलों और अरविंद केजरीवाल पर हमला बोला।",
+  articleText: "राजनीतिक सभा में अमित शाह ने विपक्षी दलों पर हमला बोला। इसमें किसी भूमि, आवास, संपत्ति, परियोजना या विकास मंजूरी की घोषणा नहीं है।",
+  cityCode: "faridabad",
+  newsLink: "https://example.com/faridabad-aap-political-attack"
+};
+
+const governmentHousingContrast = {
+  ...base,
+  title: "मुख्यमंत्री ने Faridabad में 800 फ्लैट वाली आवासीय परियोजना को मंजूरी दी",
+  description: "सरकार ने नामित आवासीय परियोजना के निर्माण और भूमि आवंटन को मंजूरी दी।",
+  articleText: "मुख्यमंत्री ने Faridabad में 800 फ्लैट वाली नामित आवासीय परियोजना के लिए भूमि आवंटन और निर्माण मंजूरी जारी की।",
+  cityCode: "faridabad",
+  newsLink: "https://example.com/faridabad-housing-project-approval"
+};
+
 const routedCci = applyCityCode(cci);
 assert.equal(routedCci.cityCode, "", "CCI corporate transaction must not inherit Gujarat");
 assert.equal(isPublishableArticle(routedCci, new Set()), false, "CCI corporate transaction must not publish");
@@ -184,6 +202,9 @@ assert.equal(isPublishableArticle(genericProptechPartnership, new Set()), false,
 assert.equal(isPublishableArticle(technologyApproval, new Set()), true, "A concrete residential approval remains publishable alongside a technology partnership");
 assert.equal(isPublishableArticle(replayValidAurelia, new Set()), true, "Previously valid Aurelia replay record must remain publishable");
 assert.equal(isPublishableArticle(replayValidUpRera, new Set()), true, "Previously valid UP RERA approval report must remain publishable");
+assert.equal(isPublishableArticle(politicalAttack, new Set()), false, "political attacks must not publish merely because a city is assigned");
+assert.ok(getRejectionReasons(politicalAttack, new Set()).some((reason) => reason.includes("spam/menu page")), "political attack needs a deterministic rejection reason");
+assert.equal(isPublishableArticle(governmentHousingContrast, new Set()), true, "a government-announced concrete housing approval must remain publishable");
 
 const cookieHeaders = {
   getSetCookie: () => [

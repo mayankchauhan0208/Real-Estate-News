@@ -6773,8 +6773,9 @@ function isGenericLocalNonRealEstateNews(article) {
 }
 
 function isPoliticalCampaignArticle(article) {
-  const text = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
-  const politicalSignals = [
+  const primaryText = getArticlePrimaryText(article);
+  const text = `${primaryText} ${getArticleUrlText(article)}`;
+  const campaignSignals = [
     "bypoll",
     "by-election",
     "campaign rally",
@@ -6786,9 +6787,35 @@ function isPoliticalCampaignArticle(article) {
     "rally",
     "rallies",
     "poll campaign",
-    "parliamentary constituency"
+    "parliamentary constituency",
+    "चुनाव",
+    "उपचुनाव",
+    "चुनावी",
+    "रैली",
+    "प्रचार",
+    "मतदाता",
+    "सांसदीय क्षेत्र",
+    "विधानसभा चुनाव"
   ];
-  return hasWholeWordKeyword(text, politicalSignals);
+  const partyOrPoliticalActor = hasWholeWordKeyword(text, [
+    "bjp", "congress", "aap", "nda", "india alliance", "political party",
+    "भाजपा", "कांग्रेस", "आम आदमी पार्टी", "आप पार्टी", "एनडीए", "इंडिया गठबंधन",
+    "अरविंद केजरीवाल", "अमित शाह", "राहुल गांधी", "प्रधानमंत्री", "मुख्यमंत्री", "विधायक", "सांसद"
+  ]);
+  const politicalDiscourse = hasWholeWordKeyword(text, [
+    "attack", "attacks", "speech", "addresses party workers", "party workers", "political statement",
+    "workers conference", "election promise", "criticises", "criticizes", "alleges",
+    "हमला", "अटैक", "बयान", "कार्यकर्ता", "सम्मेलन", "भाषण", "निशाना", "आरोप", "सरकार पर"
+  ]);
+
+  // Government actors often announce genuine housing or land events. Only
+  // reject political discourse where the primary story lacks a concrete
+  // property object and a corresponding property-development action.
+  const propertyObject = /(?:real estate|realty|property|housing|residential|commercial|land parcel|plots?|township|apartments?|flats?|homes?|office space|warehouse|रियल एस्टेट|प्रॉपर्टी|आवासीय|व्यावसायिक|आवास|फ्लैट|भूखंड|प्लॉट|जमीन|भूमि|परियोजना)/iu.test(primaryText);
+  const propertyAction = /(?:approv(?:e|ed|al|es)|launch(?:ed|es)?|allot(?:ted|ment)?|acquir(?:e|ed|es|ition)|construct(?:ion|ed|s)?|develop(?:ment|ed|ing|s)?|register(?:ed|s|ation)|lease(?:d|s)?|auction(?:ed|s)?|मंजूरी|मंजूर|अनुमोदन|आवंटन|अधिग्रहण|निर्माण|विकास|पंजीकरण|नीलामी|लॉन्च)/iu.test(primaryText);
+  const concretePropertyEvent = propertyObject && propertyAction;
+
+  return (hasWholeWordKeyword(text, campaignSignals) || (partyOrPoliticalActor && politicalDiscourse)) && !concretePropertyEvent;
 }
 
 function isGenericBroadMarketHeadline(article) {
