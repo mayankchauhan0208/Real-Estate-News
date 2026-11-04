@@ -6800,7 +6800,7 @@ function isPoliticalCampaignArticle(article) {
   const partyOrPoliticalActor = hasWholeWordKeyword(text, [
     "bjp", "congress", "aap", "nda", "jdu", "rjd", "samajwadi party", "tmc", "dmk", "aiadmk", "brs", "ysrcp", "cpi", "cpim", "india alliance", "political party", "political leaders",
     "भाजपा", "कांग्रेस", "आम आदमी पार्टी", "आप पार्टी", "एनडीए", "जदयू", "राजद", "समाजवादी पार्टी", "तृणमूल", "डीएमके", "एआईएडीएमके", "बीआरएस", "वाईएसआरसीपी", "सीपीआई", "इंडिया गठबंधन", "राजनीतिक दल", "राजनीतिक नेता",
-    "अरविंद केजरीवाल", "अमित शाह", "राहुल गांधी", "प्रधानमंत्री", "मुख्यमंत्री", "विधायक", "सांसद"
+    "अरविंद केजरीवाल", "अमित शाह", "राहुल गांधी", "prime minister", "chief minister", "minister", "प्रधानमंत्री", "मुख्यमंत्री", "मंत्री", "विधायक", "सांसद"
   ]);
   const politicalDiscourse = hasWholeWordKeyword(text, [
     "attack", "attacks", "speech", "addresses party workers", "party workers", "political statement",
@@ -6815,7 +6815,7 @@ function isPoliticalCampaignArticle(article) {
   const propertyAction = /(?:approv(?:e|ed|al|es)|launch(?:ed|es)?|allot(?:ted|ment)?|acquir(?:e|ed|es|ition)|construct(?:ion|ed|s)?|develop(?:ment|ed|ing|s)?|register(?:ed|s|ation)|lease(?:d|s)?|auction(?:ed|s)?|मंजूरी|मंजूर|अनुमोदन|आवंटन|अधिग्रहण|निर्माण|विकास|पंजीकरण|नीलामी|लॉन्च)/iu.test(primaryText);
   const concretePropertyEvent = propertyObject && propertyAction;
 
-  return (hasWholeWordKeyword(text, campaignSignals) || (partyOrPoliticalActor && politicalDiscourse)) && !concretePropertyEvent;
+  return (hasWholeWordKeyword(text, campaignSignals) || partyOrPoliticalActor || politicalDiscourse) && !concretePropertyEvent;
 }
 
 function isGenericBroadMarketHeadline(article) {
