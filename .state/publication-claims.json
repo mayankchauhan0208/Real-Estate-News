@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T09:28:53.565Z",
+  "updatedAt": "2026-11-04T09:28:55.553Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9836,7 +9836,7 @@
     },
     {
       "claimId": "f19e2ff5-6046-4204-bb53-88b991cc37d3",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/cities/gurugram-news/broken-roads-poor-connectivity-plague-gurugram-s-sector-104-101793732686695.html",
         "title-city:broken roads poor connectivity plague gurugram s sector 104|gurugram",
@@ -9858,7 +9858,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-04T09:28:53.565Z",
-      "expiresAt": "2026-11-04T09:43:53.565Z"
+      "expiresAt": "2026-11-04T09:43:53.565Z",
+      "finalizedAt": "2026-11-04T09:28:55.553Z"
     }
   ]
 }
