@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T09:29:01.062Z",
+  "updatedAt": "2026-11-04T09:29:02.734Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9890,7 +9890,7 @@
     },
     {
       "claimId": "40cf4950-1b7c-4b43-9ceb-f44c0f682f6a",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-yeida-revenue-soars-gets-2-percent-share-of-stamp-duty-up-government-40426789.html",
         "title-city:य ड क ष त र म रज स ट र स र जस व क र क र ड म उछ ल दर ज अब प र ध करण क भ स ट प श ल क म म ल ग ह स स द र|noida",
@@ -9912,7 +9912,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-04T09:29:01.062Z",
-      "expiresAt": "2026-11-04T09:44:01.062Z"
+      "expiresAt": "2026-11-04T09:44:01.062Z",
+      "finalizedAt": "2026-11-04T09:29:02.734Z"
     }
   ]
 }
