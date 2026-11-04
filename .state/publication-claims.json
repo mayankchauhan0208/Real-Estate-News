@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T09:29:10.131Z",
+  "updatedAt": "2026-11-04T09:29:12.380Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9988,6 +9988,31 @@
       "claimedAt": "2026-11-04T09:29:08.330Z",
       "expiresAt": "2026-11-04T09:44:08.330Z",
       "finalizedAt": "2026-11-04T09:29:10.131Z"
+    },
+    {
+      "claimId": "6f57fd72-395a-451b-8dc5-e70124bbed99",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://magicbricks.com/news/kashi-ropeway-project-nears-completion-at-96-percent-varanasi-may-get-its-first-ropeway-in-december-pmmb/152654.html",
+        "title-city:kashi ropeway project nears completion at 96 varanasi may get its first ropeway in december|varanasi",
+        "dedupe:5dd1a93488e57741aff0d01c6aaeb8b96eaa13ce4f7b32b53abaea6ced816584",
+        "dedupe:adf069d21eb9161748fdfc5478695180e456177ef21848016dab4df81232d40a",
+        "dedupe:28b5f9a3a8adba8082a5dd54d7478a0f4060ef1cb6020ef7cb1af4bc90583f5b",
+        "dedupe:kashi ropeway nears completion varanasi may get first ropeway december|varanasi",
+        "dedupe:8f2189c32c9a2aa84a5339c1b2bdb5f327c1ac030db38cc2802c8913a2d25830",
+        "dedupe:297f01cc9cb3693127f8f0d77f39da07a4825b966db7d4d185f5dd7d231099cb"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "varanasi",
+      "canonicalEventCity": "varanasi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "varanasi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-04T09:29:12.380Z",
+      "expiresAt": "2026-11-04T09:44:12.380Z"
     }
   ]
 }
