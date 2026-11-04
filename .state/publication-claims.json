@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T09:29:06.345Z",
+  "updatedAt": "2026-11-04T09:29:08.330Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9961,6 +9961,32 @@
       "claimedAt": "2026-11-04T09:29:04.735Z",
       "expiresAt": "2026-11-04T09:44:04.735Z",
       "finalizedAt": "2026-11-04T09:29:06.345Z"
+    },
+    {
+      "claimId": "8ecd3078-5fde-4038-92e5-fa6ac448070c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://newindianexpress.com/cities/kochi/2026/nov/04/kochi-municipal-corporation-submits-30-mega-projects-to-centre-eyes-25-year-development",
+        "title-city:kochi municipal corporation submits 30 mega projects to centre eyes 25 year development|kochi",
+        "dedupe:42c09c840b35cbded333e97326d804165a8a0600ea303c97a77a4ebe871dddfa",
+        "dedupe:3228b1d798ac0b1bc4e99cf79118bb19e4f8766b117489a1abb03676b2f068f3",
+        "dedupe:19fcf637969b7b7da15303c23ee1a3590c43a7924a7ec5102d5631199eb6a6e3",
+        "dedupe:498f724e2958d7ceb174040a39a8bb183f9e3500b226d68b6c2b555fdbfea4ba",
+        "dedupe:kochi municipal corporation submits mega centre eyes year development|kochi",
+        "dedupe:a90b4524cf59b5b9ba7dc11017ae5db7a52548149fbabd017f2f25018dfb842b",
+        "dedupe:dc429aa970720b59551f5cd0e1c9c85311678fbc60086ad3998e91304311d71c"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "kochi",
+      "canonicalEventCity": "kochi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "kochi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-04T09:29:08.330Z",
+      "expiresAt": "2026-11-04T09:44:08.330Z"
     }
   ]
 }
