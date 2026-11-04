@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T01:41:28.076Z",
+  "updatedAt": "2026-11-04T01:41:30.120Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9753,6 +9753,32 @@
       "claimedAt": "2026-11-04T01:41:25.664Z",
       "expiresAt": "2026-11-04T01:56:25.664Z",
       "finalizedAt": "2026-11-04T01:41:28.076Z"
+    },
+    {
+      "claimId": "172a7e40-859b-401a-9ca8-ecf0a2862d3e",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/lucknow-city-cm-yogi-rajnath-singh-launch-lucknow-housing-schemes-nov-23-40426548.html",
+        "title-city:लखनऊ म घर बन न क सपन ह ग सच र जध न म 2092 आव स य प ल ट क ल ए जल द ह ग रज स ट र शन|lucknow",
+        "dedupe:423ee2b2733117356065062cc0f239c00f72eec68ee32dd3228b93d63cdbaa1b",
+        "dedupe:7b9725a0d8c061edab414406d24ffad40766c9e7ec760bc904dfdcf6a3cd1ec5",
+        "dedupe:f73f46ab65abc0b28fba639dc0791d753599e8eb02f16e26e33c36d4af8114d2",
+        "dedupe:f1a41f04f7c2d91a2f59de45f988f70a523d679ed29e23b9b7fda187f2b0512a",
+        "dedupe:लखनऊ म घर बन न क सपन ह ग सच र जध न म आव स य प ल ट क ल ए जल द ह ग रज स ट र शन|lucknow",
+        "dedupe:8d2cc39a9b59ba7cafe86fba1932bcf4a5b58976c2aebdf845d76dd25e7f6f3b",
+        "dedupe:1d950ed595d99409e2210732bb49d7ae46e4b16ddd394b48ca78092be685de1b"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-04T01:41:30.120Z",
+      "expiresAt": "2026-11-04T01:56:30.120Z"
     }
   ]
 }
