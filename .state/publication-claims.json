@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T09:28:57.541Z",
+  "updatedAt": "2026-11-04T09:28:59.184Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -9863,7 +9863,7 @@
     },
     {
       "claimId": "ed590606-e76d-4b00-b4f8-6461be0a8b29",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/cities/noida-news/22-new-public-toilets-to-be-built-in-greater-noida-tender-issued-101793733525955.html",
         "title-city:22 new public toilets to be built in greater noida tender issued|noida",
@@ -9885,7 +9885,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-04T09:28:57.541Z",
-      "expiresAt": "2026-11-04T09:43:57.541Z"
+      "expiresAt": "2026-11-04T09:43:57.541Z",
+      "finalizedAt": "2026-11-04T09:28:59.184Z"
     }
   ]
 }
