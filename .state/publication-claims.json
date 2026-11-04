@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T23:59:31.127Z",
+  "updatedAt": "2026-11-04T23:59:33.778Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10177,7 +10177,7 @@
     },
     {
       "claimId": "ed49eb8f-0ba7-4515-982d-495d57d6ddcf",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://torbitrealty.com/pioneer-urban-unveils-rs-3500-crore-alura-in-gurugram-targets-%e2%82%b99000-crore-sales",
         "title-city:pioneer urban unveils rs 3 500 crore alura in gurugram targets 9 000 crore sales|gurugram",
@@ -10199,7 +10199,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-04T23:59:31.127Z",
-      "expiresAt": "2026-11-05T00:14:31.127Z"
+      "expiresAt": "2026-11-05T00:14:31.127Z",
+      "finalizedAt": "2026-11-04T23:59:33.778Z"
     }
   ]
 }
