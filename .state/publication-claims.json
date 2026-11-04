@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T17:34:07.406Z",
+  "updatedAt": "2026-11-04T17:34:09.614Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10041,6 +10041,32 @@
       "claimedAt": "2026-11-04T17:34:04.658Z",
       "expiresAt": "2026-11-04T17:49:04.658Z",
       "finalizedAt": "2026-11-04T17:34:07.406Z"
+    },
+    {
+      "claimId": "9a7b5c58-cb51-4530-86a7-3cd89ef2dcc3",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/ajinkya-rahane-s-wife-radhika-buys-two-luxury-apartments-in-mumbai-s-dadar-for-24-75-crore-101793791907789.html",
+        "title-city:ajinkya rahane s wife radhika buys two luxury apartments in mumbai s dadar for 24 75 crore|mumbai",
+        "dedupe:78cb204a01a0bc5248286c490c05fe65432fd024ce82bf607a7afab50f81a77a",
+        "dedupe:1d128cfef43eb86f6cbcfa401dc8abd9cb35051b2bbaeb4154dcd6a9b7312a82",
+        "dedupe:89551f03b98361dc402e8474f8bb67333ac8ce125039739576940e42f00bc660",
+        "dedupe:17c98c935d6c28663194a2ee5946ce8d0f0a7e03d1c6eb88865b5269b4572397",
+        "dedupe:ajinkya rahane s wife radhika buys two apartments mumbai s dadar|mumbai",
+        "dedupe:7007815d4690355f0a6a96d066d2c18ec5a2ca4e0e2daca0b8445cc29008a864",
+        "dedupe:80a8d058a8aa349a1e532544be35b56387766bfe8eb9b9561b27f35f016572f4"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-04T17:34:09.614Z",
+      "expiresAt": "2026-11-04T17:49:09.614Z"
     }
   ]
 }
