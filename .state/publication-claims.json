@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T17:34:15.660Z",
+  "updatedAt": "2026-11-04T17:34:17.897Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10095,6 +10095,32 @@
       "claimedAt": "2026-11-04T17:34:13.600Z",
       "expiresAt": "2026-11-04T17:49:13.600Z",
       "finalizedAt": "2026-11-04T17:34:15.660Z"
+    },
+    {
+      "claimId": "a63b3f68-b158-4cd7-a6a5-aa351f780032",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://tribuneindia.com/news/delhi/delhis-160-year-old-mcd-town-hall-sees-unsafe-portion-collapse-after-heavy-rain",
+        "title-city:delhi s 160 year old mcd town hall sees unsafe portion collapse after heavy rain|new_delhi",
+        "dedupe:7b0c93e39654d46e062eecbc19a2a1e78dd45f75ba939771737873a28065a416",
+        "dedupe:efe604c6ad35e3dbb780315cedac7f65ed63426275fdda95383d67f471a61731",
+        "dedupe:e7868e75dc0fd0f4a335a0b3cd31034e11a1f39912de8eef646210990a26693a",
+        "dedupe:532866ddf49baa754ee8a20324c4c30101d1b9756add7f8e155d845d5dc71146",
+        "dedupe:delhi s year old mcd town hall sees unsafe portion collapse after heavy rain|new_delhi",
+        "dedupe:af588ed59226ba211482fbd1248cb7cce73bcf6bbf6db7019173abd562896b33",
+        "dedupe:45c00d9fdddf1a2862dc434ce883bb20b87f24156c9fd948abd24d697efe00d7"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-04T17:34:17.897Z",
+      "expiresAt": "2026-11-04T17:49:17.897Z"
     }
   ]
 }
