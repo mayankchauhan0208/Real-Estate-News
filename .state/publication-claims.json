@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T23:59:25.108Z",
+  "updatedAt": "2026-11-04T23:59:27.849Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10152,7 +10152,7 @@
     },
     {
       "claimId": "f8a6f77e-4858-44d8-a0b5-41740c8057fe",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://business-standard.com/industry/news/max-estates-delhi-ncr-projects-to-push-gdv-pipeline-past-29-000-crore-126110402108_1.html",
         "title-city:max estates delhi ghaziabad projects to lift pipeline value past 29k cr|new_delhi",
@@ -10172,7 +10172,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-04T23:59:25.108Z",
-      "expiresAt": "2026-11-05T00:14:25.108Z"
+      "expiresAt": "2026-11-05T00:14:25.108Z",
+      "finalizedAt": "2026-11-04T23:59:27.849Z"
     }
   ]
 }
