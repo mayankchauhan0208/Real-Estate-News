@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-04T23:59:33.778Z",
+  "updatedAt": "2026-11-05T07:00:25.650Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10201,6 +10201,31 @@
       "claimedAt": "2026-11-04T23:59:31.127Z",
       "expiresAt": "2026-11-05T00:14:31.127Z",
       "finalizedAt": "2026-11-04T23:59:33.778Z"
+    },
+    {
+      "claimId": "93ca0b62-e5bb-447c-a6f8-6222da0a760e",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/keystone-realtors-net-profit-jumps-over-10-fold-to-100-75-crore-in-q2-fy27/135539017",
+        "title-city:keystone realtors net profit jumps over 10 fold to 100 75 crore in q2 fy27|new_delhi",
+        "dedupe:6fbac69623def1303a6fcdac92828a6c39c3bf5362c65fca704c822202031c02",
+        "dedupe:24957139f476b5049454745818e3fb297f248f44ece4bfba685a4075b933f6b9",
+        "dedupe:57241dc061f81875f192d845dea21ce94d95a0b20d2792edc76f1b7576660825",
+        "dedupe:keystone realtors net profit jumps fold q2 fy27|new_delhi",
+        "dedupe:7ec169ef48c77b4453881e957fb461fb6c317331de76f4a34bc267bda001aa99",
+        "dedupe:2b60641b6c812daf23307a6a691a05006b91513e60a7a0d1f38d875852708913"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-05T07:00:25.650Z",
+      "expiresAt": "2026-11-05T07:15:25.650Z"
     }
   ]
 }
