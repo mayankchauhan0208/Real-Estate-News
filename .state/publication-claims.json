@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T15:49:04.352Z",
+  "updatedAt": "2026-11-05T15:49:07.164Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10508,6 +10508,31 @@
       "claimedAt": "2026-11-05T15:49:01.361Z",
       "expiresAt": "2026-11-05T16:04:01.361Z",
       "finalizedAt": "2026-11-05T15:49:04.352Z"
+    },
+    {
+      "claimId": "59b35477-776c-40f9-b97d-b2b4448a14de",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://magicbricks.com/news/faridabad-double-decker-corridor---namo-bharat-train-on-top-flyover-in-middle-service-road-below-kamb/152688.html",
+        "title-city:faridabad double decker corridor namo bharat train on top flyover in middle service road below|faridabad",
+        "dedupe:13cc5e813b4ab018528aa0ede559bdcfb115fc7a214658eb806655852edef3b5",
+        "dedupe:b5cd250a8dcfedc486ce041e1399986277a2030e0360c22d0943e7b7bc4d0cf5",
+        "dedupe:c7bb82615f6a7a23995867914403d9eda874397ae65f768cfb67184c832cad26",
+        "dedupe:faridabad double decker corridor namo bharat train top flyover middle service road below|faridabad",
+        "dedupe:7448c6cf84baa86488534162e8f2b3dacce9924278226f1b312760d128b4c858",
+        "dedupe:42efa4405ac20c02adb272e6e69196be4428e829ea5898b1ecc10c7aa8790e7d"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "faridabad",
+      "canonicalEventCity": "faridabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "faridabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-05T15:49:07.164Z",
+      "expiresAt": "2026-11-05T16:04:07.164Z"
     }
   ]
 }
