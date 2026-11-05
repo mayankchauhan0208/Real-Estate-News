@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T07:00:28.862Z",
+  "updatedAt": "2026-11-05T07:00:31.307Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10227,6 +10227,32 @@
       "claimedAt": "2026-11-05T07:00:25.650Z",
       "expiresAt": "2026-11-05T07:15:25.650Z",
       "finalizedAt": "2026-11-05T07:00:28.862Z"
+    },
+    {
+      "claimId": "773f1229-9c9e-4c2b-a0bb-f2ef6c9f68b1",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/gurugram-news/gmrl-seeks-early-transfer-of-sector-10-land-for-phase-2-metro-casting-yard-101793819647445.html",
+        "title-city:gmrl seeks early transfer of sector 10 land for phase 2 metro casting yard|gurugram",
+        "dedupe:59f16bc6b65d21cc25b547051bba2f5425d009a7759bcfa6b262ac32f051d2f5",
+        "dedupe:c4715453eb7da3135e19c579bc0a7c7b4a8a9f68c6bee20c1f2416e2fcfd2b56",
+        "dedupe:1defbed30d34e5994aed503dd1c2d328a25df3d2dd4e136053938b2709b6e440",
+        "dedupe:57e31c91c283b3f83f32c9b10043608a9b55c115d75b65a1885975a1915cbccd",
+        "dedupe:gmrl seeks early transfer sector land phase metro casting yard|gurugram",
+        "dedupe:38e5813e5f13d607c201d3be0ab25441f473a22568e5f0126b464b4f04989e7e",
+        "dedupe:16a527c27b12b5f772e83f2feaf1743a97361fdfa216c255c7a278b5e9f59ff0"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-05T07:00:31.307Z",
+      "expiresAt": "2026-11-05T07:15:31.307Z"
     }
   ]
 }
