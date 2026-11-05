@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T15:48:42.206Z",
+  "updatedAt": "2026-11-05T15:48:45.405Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10380,6 +10380,32 @@
       "claimedAt": "2026-11-05T15:48:39.377Z",
       "expiresAt": "2026-11-05T16:03:39.377Z",
       "finalizedAt": "2026-11-05T15:48:42.206Z"
+    },
+    {
+      "claimId": "94dcc1a4-5550-44a4-ac57-b6baddcb5ba1",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://birlaestatesltd.com/updates/birla-estates-opens-pre-launch-of-birla-estates-sector-67-in-sector-67-gurgaon",
+        "title-city:birla estates sector 67 pre launch in gurgaon|gurugram",
+        "dedupe:c9a05eec60d7ca7a9cd78f7b9c81c65c3707d0944437fc4660eab366901a1a5c",
+        "dedupe:04a37754d1276a4502ef27ea6085215241fd0af0cbf8da670b9d67fb1d41990f",
+        "dedupe:8249454480fad9c0a17ec4dab4b499507f298d1b50d15f8890fbfce96ae7149d",
+        "dedupe:67a5e1e4d07ed6ce4dcae5a892efe02597e9c1f1d3c79c203a2ed95b5d5a9834",
+        "dedupe:birla estates sector pre launch gurgaon|gurugram",
+        "dedupe:ba1f0aed996f64bd58e951e4bb5fe6bf9dbd0128745799217b59129d6c0b03bf",
+        "dedupe:4c132415e25bda27c4d83fcc77bcdefb28e063d687d8ae10cca3c5c05d2154c9"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-05T15:48:45.405Z",
+      "expiresAt": "2026-11-05T16:03:45.405Z"
     }
   ]
 }
