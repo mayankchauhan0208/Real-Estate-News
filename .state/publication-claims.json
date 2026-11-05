@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T15:48:58.379Z",
+  "updatedAt": "2026-11-05T15:49:01.361Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10481,6 +10481,32 @@
       "claimedAt": "2026-11-05T15:48:55.626Z",
       "expiresAt": "2026-11-05T16:03:55.626Z",
       "finalizedAt": "2026-11-05T15:48:58.379Z"
+    },
+    {
+      "claimId": "d2247b57-bbff-45e7-850e-c29fb4fa2720",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/richville-infra-to-develop-senior-living-focused-project-in-ludhiana/articleshow/135563930.cms",
+        "title-city:richville infra to develop senior living focused project in ludhiana|ludhiana",
+        "dedupe:f47f86fad36b8e1a8862841bffe88c1d19f9c5e18d33dea4ac73d0d3de9f5448",
+        "dedupe:dd5f97533e9b5dc801a11aa67ce3abd74dafb42961b26052f6edaa12bc1b718e",
+        "dedupe:63f43d90fbc45446821d62727232a4079b9e90edba97b472ca3326d55a23f1ad",
+        "dedupe:b548f5678cd1ed635d31ab514658816ff64d0c24b0a07743b43dca7e1910701e",
+        "dedupe:richville infra develop senior focused ludhiana|ludhiana",
+        "dedupe:5793ddaf951604286df34427f67191e6a9e4a6a47f51f9c01e39c37be8f5e955",
+        "dedupe:cfd8aea6bf460fd2a54af6387f324f75915029281f835510d79eeed50b5963df"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "ludhiana",
+      "canonicalEventCity": "ludhiana",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "ludhiana"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-05T15:49:01.361Z",
+      "expiresAt": "2026-11-05T16:04:01.361Z"
     }
   ]
 }
