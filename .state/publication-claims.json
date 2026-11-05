@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T15:48:55.626Z",
+  "updatedAt": "2026-11-05T15:48:58.379Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10436,7 +10436,7 @@
     },
     {
       "claimId": "975a4dc4-9dfc-446f-a411-35f44e8aafd7",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/noida-removes-far-cap-on-projects-along-45-metre-roads-paving-way-for-high-rises/articleshow/135563499.cms",
         "title-city:noida removes far cap on projects along 45 metre roads paving way for high rises|noida",
@@ -10479,7 +10479,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-05T15:48:55.626Z",
-      "expiresAt": "2026-11-05T16:03:55.626Z"
+      "expiresAt": "2026-11-05T16:03:55.626Z",
+      "finalizedAt": "2026-11-05T15:48:58.379Z"
     }
   ]
 }
