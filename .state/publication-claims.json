@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T15:49:09.949Z",
+  "updatedAt": "2026-11-05T22:21:00.779Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10534,6 +10534,32 @@
       "claimedAt": "2026-11-05T15:49:07.164Z",
       "expiresAt": "2026-11-05T16:04:07.164Z",
       "finalizedAt": "2026-11-05T15:49:09.949Z"
+    },
+    {
+      "claimId": "e66bfd9c-93e5-43e1-bc34-862118ff39ce",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://bptpltd.com/updates/bptp-opens-pre-launch-of-bptp-sco-102-at-amstoria-in-sector-102-gurgaon",
+        "title-city:bptp sco 102 at amstoria pre launch in sector 102|gurugram",
+        "dedupe:acf5e26ddbdc1208c2823e73cefe8e268271bb0815a455565ea69616b5c402e6",
+        "dedupe:4c1c6a3073075c880d75e9b57061bf6cacf56455f82d556309462cfdaf44f13e",
+        "dedupe:e1c0e65d437e6d29807e55675363303f72ddad6d0929d77971e05dab15cb5529",
+        "dedupe:1802283555ebcf0d8831df57eefd7ece2cad0dfc6af2fb6eeae40982c6d2833e",
+        "dedupe:bptp sco amstoria pre launch sector|gurugram",
+        "dedupe:bb7393b20696a30d4e85bed2c1b444b92fe4144596165ed57d3190c8bfccb0b7",
+        "dedupe:f44f8f74374dd0348e9f0cebaebf52dad401648e014a7e43f0f824dfb7e3aab1"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-05T22:21:00.779Z",
+      "expiresAt": "2026-11-05T22:36:00.779Z"
     }
   ]
 }
