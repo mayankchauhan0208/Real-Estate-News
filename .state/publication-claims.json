@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T07:00:38.155Z",
+  "updatedAt": "2026-11-05T07:00:40.472Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10307,6 +10307,53 @@
       "claimedAt": "2026-11-05T07:00:36.177Z",
       "expiresAt": "2026-11-05T07:15:36.177Z",
       "finalizedAt": "2026-11-05T07:00:38.155Z"
+    },
+    {
+      "claimId": "8d076486-acc2-49e8-996a-964c45a89f4c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/godrej-properties-unveils-the-pune-edition-of-the-elevated-living-edit",
+        "title-city:godrej properties unveils the pune edition of the elevated living edit|pune",
+        "dedupe:e882d286570d2d6bbfc7d04a1215ada7a4c92585d26708a931aa728de9c40bca",
+        "dedupe:5f68d40d955edd2b2512f84189d8b750dc1b305e6b45cd2ad526984c9c97bce3",
+        "dedupe:f461c8de607718a684713cc7de3dff6525f239902b63f089bbdae25abe4d7de7",
+        "dedupe:bf6a60659929ae650d6de500056fd86539b03e558a6a025ec1cf80a316867694",
+        "dedupe:godrej properties unveils pune edition elevated edit|pune",
+        "dedupe:a2e1e394c48ca6750c47c6878af2133f05f1a854a740af82bd5dd6fcc1b24c86",
+        "dedupe:42c4ff217f82cb56e34068d502968b2a74a2848bd405c9310d854ee65634167a"
+      ],
+      "semanticIdentity": {
+        "city": "pune",
+        "canonicalEventCity": "pune",
+        "normalizedBuilder": "godrej-properties",
+        "normalizedProject": "",
+        "canonicalEventType": "project-launch",
+        "builder": "godrej-properties",
+        "project": "",
+        "eventType": "project-launch",
+        "numericAnchors": [
+          "1400:number",
+          "2027:number",
+          "25:number",
+          "27:number",
+          "4000:homes",
+          "74:number",
+          "78:number",
+          "79:number"
+        ],
+        "canonicalEventFingerprint": "godrej-properties|pune|project-launch|1400:number,2027:number,25:number",
+        "semanticClusterId": "cluster:042b82a9a880b13f72b1cb24"
+      },
+      "publishedCity": "pune",
+      "canonicalEventCity": "pune",
+      "canonicalEventFingerprint": "godrej-properties|pune|project-launch|1400:number,2027:number,25:number",
+      "semanticClusterId": "cluster:042b82a9a880b13f72b1cb24",
+      "city": [
+        "pune"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-05T07:00:40.472Z",
+      "expiresAt": "2026-11-05T07:15:40.472Z"
     }
   ]
 }
