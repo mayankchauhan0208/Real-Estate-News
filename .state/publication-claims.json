@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T15:48:50.443Z",
+  "updatedAt": "2026-11-05T15:48:53.030Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10410,7 +10410,7 @@
     },
     {
       "claimId": "7e733fb0-1d69-4df9-9efc-85f867ba9d66",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://constructionworld.in/latest-construction-news/real-estate-news/divyasree-launches-rs-8-billion-residential-project-in-bengaluru/99912",
         "title-city:divyasree launches rs 8 billion residential project in bengaluru|bangalore",
@@ -10431,7 +10431,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-05T15:48:50.443Z",
-      "expiresAt": "2026-11-05T16:03:50.443Z"
+      "expiresAt": "2026-11-05T16:03:50.443Z",
+      "finalizedAt": "2026-11-05T15:48:53.030Z"
     }
   ]
 }
