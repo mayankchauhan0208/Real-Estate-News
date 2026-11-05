@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T22:21:09.471Z",
+  "updatedAt": "2026-11-05T22:21:12.194Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10587,6 +10587,32 @@
       "claimedAt": "2026-11-05T22:21:06.515Z",
       "expiresAt": "2026-11-05T22:36:06.515Z",
       "finalizedAt": "2026-11-05T22:21:09.471Z"
+    },
+    {
+      "claimId": "55105ef2-da1f-4f59-bb02-4146d033ecdf",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/lucknow-city-kukrail-night-safari-project-sc-committee-orders-review-40428805.html",
+        "title-city:क कर ल न इट सफ र स प र म क र ट क cec न उठ ए सव ल सरक र क नए स र स करन ह ग य जन क सम क ष|lucknow",
+        "dedupe:3b7e0978c2da8ebf85c9af88740ba020c9e21aec1875b7a4b2ca3f5d36026360",
+        "dedupe:8dd7a258f2e3b5191ffe15d5568f4d0d3bad024ef6472577ac2f8a4763fc61b0",
+        "dedupe:ce54bc605ef8e965b48013164a300e22b6cedd76668c1d3f8d9e8d79e7875570",
+        "dedupe:c5137bcd8ed1b7d69e396a73b80fb91a50d30012aa7e5d4d484cb425989990d4",
+        "dedupe:क कर ल न इट सफ र स प र म क र ट क cec न उठ ए सव ल सरक र क नए स र स करन ह ग य जन क सम क ष|lucknow",
+        "dedupe:ef516bd6711d0a2f8b78a96816de8a0be10e5cdc7fa9ed8ee2fb8edb802aae4f",
+        "dedupe:b7757c55bef7878f6fc67aa34756c434be381fdc263e63781dd9780557cf3c5f"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-05T22:21:12.194Z",
+      "expiresAt": "2026-11-05T22:36:12.194Z"
     }
   ]
 }
