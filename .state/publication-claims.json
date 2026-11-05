@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T22:21:15.999Z",
+  "updatedAt": "2026-11-05T22:21:18.940Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10614,6 +10614,32 @@
       "claimedAt": "2026-11-05T22:21:12.194Z",
       "expiresAt": "2026-11-05T22:36:12.194Z",
       "finalizedAt": "2026-11-05T22:21:15.999Z"
+    },
+    {
+      "claimId": "eba24e1b-c55e-45d8-90e5-6e892122c06e",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://proppuls.in/emaar-elara-lucknow-premium-residential-project",
+        "title-city:emaar india launches second premium tower in lucknow|lucknow",
+        "dedupe:62503f1ed5d36d385c2e75f06d64b4e03d9237b8edf741f86ded09126ab142e7",
+        "dedupe:4aea5ccd29b37f96bd89f8d2b37618db78c9f1f436c927fd07c5f92e172bedf3",
+        "dedupe:fa152b3d49809b780479d81fd2a3c5caaf805dff07c276130a070efd87536003",
+        "dedupe:830d7eb0df95ea0e3d7156f03a24d8b96e5c78ed2f202238f76fa2fd8482710a",
+        "dedupe:emaar india launches second premium tower lucknow|lucknow",
+        "dedupe:8dae7bc3f97f241b9f9dea58dc36deef934836fa5b8465b11e6d8d6c2fab3ccb",
+        "dedupe:94814552af43299af2762a59332c5a7f29d610831a980764d78f80c01e3cd37b"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-05T22:21:18.940Z",
+      "expiresAt": "2026-11-05T22:36:18.940Z"
     }
   ]
 }
