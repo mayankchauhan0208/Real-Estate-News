@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T07:00:33.962Z",
+  "updatedAt": "2026-11-05T07:00:36.177Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10254,6 +10254,58 @@
       "claimedAt": "2026-11-05T07:00:31.307Z",
       "expiresAt": "2026-11-05T07:15:31.307Z",
       "finalizedAt": "2026-11-05T07:00:33.962Z"
+    },
+    {
+      "claimId": "96690bc7-44b9-4adb-bddc-e5e08a700bd7",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/noida-news/gaur-chowk-underpass-to-open-for-trial-runs-today-101793819766697.html",
+        "title-city:gaur chowk underpass to open for trial runs today|noida",
+        "dedupe:f7df8a2cafe4363ee593138fd38748a24cd8dfbef5b6413c20f30e7cdf3fc90a",
+        "dedupe:0f7e6b1d72b04447e6f85cf59dc18d39541b50ac0de85662198c54208675f789",
+        "dedupe:2c0c8f54e78aad1a74ad406b1e8c1ec838a1ddb4955c06447de0ac8418ccd837",
+        "dedupe:60dd963d577ededc2d6e2e3745a4317ea9e8b2bc7dfedaf5b4a52f0abda24c76",
+        "dedupe:gaur chowk underpass open trial runs today|noida",
+        "dedupe:32b460e02f996f85d3780bfecc4fe02d70646ccea7beaeea6cdf158c73ec8f20",
+        "dedupe:ed708bd2c05744c9f5bcc0c7abfabbf8bbff4b07ee68b3f0ef6ff7e9635b91b4"
+      ],
+      "semanticIdentity": {
+        "city": "noida",
+        "canonicalEventCity": "noida",
+        "normalizedBuilder": "gaurs",
+        "normalizedProject": "",
+        "canonicalEventType": "development-approval",
+        "builder": "gaurs",
+        "project": "",
+        "eventType": "development-approval",
+        "numericAnchors": [
+          "07:number",
+          "15:number",
+          "18:number",
+          "2023:number",
+          "2024:number",
+          "2026:number",
+          "20:number",
+          "350:number",
+          "52:number",
+          "5:number",
+          "60:number",
+          "700:number",
+          "92:crore"
+        ],
+        "canonicalEventFingerprint": "gaurs|noida|development-approval|07:number,15:number,18:number",
+        "semanticClusterId": "cluster:ad6426c5d6dc9ed0641df6f4"
+      },
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "gaurs|noida|development-approval|07:number,15:number,18:number",
+      "semanticClusterId": "cluster:ad6426c5d6dc9ed0641df6f4",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-05T07:00:36.177Z",
+      "expiresAt": "2026-11-05T07:15:36.177Z"
     }
   ]
 }
