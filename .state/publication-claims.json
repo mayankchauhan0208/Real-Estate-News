@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T15:48:53.030Z",
+  "updatedAt": "2026-11-05T15:48:55.626Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10433,6 +10433,53 @@
       "claimedAt": "2026-11-05T15:48:50.443Z",
       "expiresAt": "2026-11-05T16:03:50.443Z",
       "finalizedAt": "2026-11-05T15:48:53.030Z"
+    },
+    {
+      "claimId": "975a4dc4-9dfc-446f-a411-35f44e8aafd7",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/noida-removes-far-cap-on-projects-along-45-metre-roads-paving-way-for-high-rises/articleshow/135563499.cms",
+        "title-city:noida removes far cap on projects along 45 metre roads paving way for high rises|noida",
+        "dedupe:fce7d4e33ade605dcf3899e5143bbfe28086c4fa3b69e1e5da118fe7ce716a72",
+        "dedupe:c69587ce6d71143254a0792d53a7bff20c8b445311e4c58c3dfc741c713ca68f",
+        "dedupe:cbe41c9567bb359ce893663f2cc71e67884638dc7ccfb5d500b56567d4344da7",
+        "dedupe:6ae15249842fac0b2da486c6ad7c2eb8084fa705a9371c05ce28084b0620b316",
+        "dedupe:noida removes far cap along metre roads paving way high rises|noida",
+        "dedupe:c3a25ede21c23fa99efc956fb1043e8c67d40a41b158739b9b68e128bcff1894",
+        "dedupe:4eeb4090471233107befeda7fe7e79f13283ac7e3b4b72520faf95da3834cc0d"
+      ],
+      "semanticIdentity": {
+        "city": "noida",
+        "canonicalEventCity": "noida",
+        "normalizedBuilder": "gaurs",
+        "normalizedProject": "",
+        "canonicalEventType": "residential-sale",
+        "builder": "gaurs",
+        "project": "",
+        "eventType": "residential-sale",
+        "numericAnchors": [
+          "00:number",
+          "05:number",
+          "12:number",
+          "1:number",
+          "200:crore",
+          "2026:number",
+          "45:number",
+          "50:number"
+        ],
+        "canonicalEventFingerprint": "gaurs|noida|residential-sale|00:number,05:number,12:number",
+        "semanticClusterId": "cluster:1f4dfa5ef535878339ece464"
+      },
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "gaurs|noida|residential-sale|00:number,05:number,12:number",
+      "semanticClusterId": "cluster:1f4dfa5ef535878339ece464",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-05T15:48:55.626Z",
+      "expiresAt": "2026-11-05T16:03:55.626Z"
     }
   ]
 }
