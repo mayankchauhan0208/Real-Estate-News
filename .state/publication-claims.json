@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T07:00:25.650Z",
+  "updatedAt": "2026-11-05T07:00:28.862Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10204,7 +10204,7 @@
     },
     {
       "claimId": "93ca0b62-e5bb-447c-a6f8-6222da0a760e",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/industry/keystone-realtors-net-profit-jumps-over-10-fold-to-100-75-crore-in-q2-fy27/135539017",
         "title-city:keystone realtors net profit jumps over 10 fold to 100 75 crore in q2 fy27|new_delhi",
@@ -10225,7 +10225,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-05T07:00:25.650Z",
-      "expiresAt": "2026-11-05T07:15:25.650Z"
+      "expiresAt": "2026-11-05T07:15:25.650Z",
+      "finalizedAt": "2026-11-05T07:00:28.862Z"
     }
   ]
 }
