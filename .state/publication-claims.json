@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T07:00:42.921Z",
+  "updatedAt": "2026-11-05T15:48:39.377Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10355,6 +10355,30 @@
       "claimedAt": "2026-11-05T07:00:40.472Z",
       "expiresAt": "2026-11-05T07:15:40.472Z",
       "finalizedAt": "2026-11-05T07:00:42.921Z"
+    },
+    {
+      "claimId": "8921f6be-4a4a-468a-9985-de8235a609de",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/prayagraj-phaphamau-raebareli-second-rail-line-doubling-work-starts-rs-1600-cr-project-length-200-km-40428425.html",
+        "title-city:फ फ मऊ र यबर ल र ट 1600 कर ड क पर य जन स 200 km बन ग द सर र ल ल इन आउटर पर नह र क ग ट र न|lucknow",
+        "dedupe:76a53d3cbd82e662443586c059c4251bffdf476ccab38498dc16250c20320aae",
+        "dedupe:0119dad0033da9026610f3d1bf66672b9fe3a001cdd91e58abc861276e5fa07c",
+        "dedupe:8e1ae4b23bdaa34634f108d684fc2956f2f3cb22ae6de77223b895050a54f64a",
+        "dedupe:69dfc2c8549b2bfae4617b0e02fad194dcabad7e526be27b281b97520de6584b",
+        "dedupe:फ फ मऊ र यबर ल र ट कर ड क पर य जन स km बन ग द सर र ल ल इन आउटर पर नह र क ग ट र न|lucknow"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-05T15:48:39.377Z",
+      "expiresAt": "2026-11-05T16:03:39.377Z"
     }
   ]
 }
