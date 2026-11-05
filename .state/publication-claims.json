@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T22:21:06.515Z",
+  "updatedAt": "2026-11-05T22:21:09.471Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10564,7 +10564,7 @@
     },
     {
       "claimId": "d4948dc4-b4d8-4858-a3e7-1ae6d3e20d9a",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://magicbricks.com/news/jewar-link-expressway-construction-picks-up-speed-with-3-year-deadline-check-latest-updates-rgmb/152692.html",
         "title-city:jewar link expressway construction picks up speed with 3 year deadline check latest updates|noida",
@@ -10585,7 +10585,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-05T22:21:06.515Z",
-      "expiresAt": "2026-11-05T22:36:06.515Z"
+      "expiresAt": "2026-11-05T22:36:06.515Z",
+      "finalizedAt": "2026-11-05T22:21:09.471Z"
     }
   ]
 }
