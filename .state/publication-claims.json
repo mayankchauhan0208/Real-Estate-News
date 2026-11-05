@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T22:21:12.194Z",
+  "updatedAt": "2026-11-05T22:21:15.999Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10590,7 +10590,7 @@
     },
     {
       "claimId": "55105ef2-da1f-4f59-bb02-4146d033ecdf",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/lucknow-city-kukrail-night-safari-project-sc-committee-orders-review-40428805.html",
         "title-city:क कर ल न इट सफ र स प र म क र ट क cec न उठ ए सव ल सरक र क नए स र स करन ह ग य जन क सम क ष|lucknow",
@@ -10612,7 +10612,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-05T22:21:12.194Z",
-      "expiresAt": "2026-11-05T22:36:12.194Z"
+      "expiresAt": "2026-11-05T22:36:12.194Z",
+      "finalizedAt": "2026-11-05T22:21:15.999Z"
     }
   ]
 }
