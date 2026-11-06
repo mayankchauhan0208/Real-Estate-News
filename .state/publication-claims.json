@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T18:19:38.521Z",
+  "updatedAt": "2026-11-06T18:19:40.618Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10828,7 +10828,7 @@
     },
     {
       "claimId": "2c88f7da-9652-46b9-b8cd-f3c1f9d1f06c",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/cities/noida-news/noida-authority-sends-dpr-of-84-crore-sector-148-150-flyover-to-iit-roorkee-for-technical-vetting-101793981765179.html",
         "title-city:noida authority sends dpr of 84 crore sector 148 150 flyover to iit roorkee for technical vetting|noida",
@@ -10850,7 +10850,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-06T18:19:38.521Z",
-      "expiresAt": "2026-11-06T18:34:38.521Z"
+      "expiresAt": "2026-11-06T18:34:38.521Z",
+      "finalizedAt": "2026-11-06T18:19:40.618Z"
     }
   ]
 }
