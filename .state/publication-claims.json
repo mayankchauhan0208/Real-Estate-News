@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T11:09:58.293Z",
+  "updatedAt": "2026-11-06T18:19:29.653Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10771,6 +10771,32 @@
       "claimedAt": "2026-11-06T11:09:55.573Z",
       "expiresAt": "2026-11-06T11:24:55.573Z",
       "finalizedAt": "2026-11-06T11:09:58.293Z"
+    },
+    {
+      "claimId": "eca85f56-9e2c-4d1c-9498-ff40ba7fc8a2",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/prayagraj-special-tet-answer-key-released-submit-objections-by-nov-12-40429421.html",
+        "title-city:special tet answer key व श ष श क षक प त रत पर क ष क उत तरक ज ज र आपत त दर ज करन क त थ घ ष त|allahabad",
+        "dedupe:b1416b3b4a54ebc240fe179dfad3dafca05007a24856de20f6db0abbd86fbb14",
+        "dedupe:202c89452a9babd82353bddb0e519d0899043eb4c230102be72cd411fef1497a",
+        "dedupe:5b384e4eda86e8d10331cafef5d6a792b28dd6c77ec728f97101cde30261b34a",
+        "dedupe:f04a6ee00be1d9357ed5861d80442df2e8090c1f48378e9cbedc30d769216b47",
+        "dedupe:special tet answer key व श ष श क षक प त रत पर क ष क उत तरक ज ज र आपत त दर ज करन क त थ घ ष त|allahabad",
+        "dedupe:066ef6eed30240a10be8d852781d3368d88bc724d3e41ca24fc6ee931efca3f0",
+        "dedupe:072a084d8eba674c8184259abaa215287153e1c15a98da816abb8206fae5d299"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "allahabad",
+      "canonicalEventCity": "allahabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "allahabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-06T18:19:29.653Z",
+      "expiresAt": "2026-11-06T18:34:29.653Z"
     }
   ]
 }
