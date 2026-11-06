@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T11:09:52.822Z",
+  "updatedAt": "2026-11-06T11:09:55.573Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10744,6 +10744,32 @@
       "claimedAt": "2026-11-06T11:09:50.203Z",
       "expiresAt": "2026-11-06T11:24:50.203Z",
       "finalizedAt": "2026-11-06T11:09:52.822Z"
+    },
+    {
+      "claimId": "9b6e737d-40ef-450f-8635-20d1ccfd0cf2",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://patrika.com/jaipur-news/jaipur-jda-new-housing-schemes-bhojpur-dudu-manpura-tilawala-rera-extension-launch-21033448",
+        "title-city:jaipur real estate news 2 आव स य सम त क ल 5 नई य जन ओ क म ल ग स ग त ज न ए jda क य द न ज रह ख शखबर|jaipur",
+        "dedupe:c57fb3a33713f8500920e8f02946ca551d67c3d2e996b420070fb28c20d46533",
+        "dedupe:b7d462ead43ea932fe24ba3112f9559f8ab33535f393ba5bcd9cce400017db9a",
+        "dedupe:08e919fe6eaf7b6b5c6fce24ca40ca1345dbc677b3a52f6a5aae558a6c44bc8c",
+        "dedupe:c4cb584081b8c7de88f2b1947241442c5de24d39ab1a3b63a14003e1bb0898a2",
+        "dedupe:jaipur real estate news आव स य सम त क ल नई य जन ओ क म ल ग स ग त ज न ए jda क य द न ज रह ख शखबर|jaipur",
+        "dedupe:db4d2abaa1c6b60d4d5cd1bd2caa232b2240561fd285f7f6dd3e5b00aa9c2cab",
+        "dedupe:8371b0c48fc2993e78d8776a68c5372457b007449d52f30efbeac7d3366375b8"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "jaipur",
+      "canonicalEventCity": "jaipur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "jaipur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-06T11:09:55.573Z",
+      "expiresAt": "2026-11-06T11:24:55.573Z"
     }
   ]
 }
