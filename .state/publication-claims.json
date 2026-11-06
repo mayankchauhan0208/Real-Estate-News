@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T18:19:40.618Z",
+  "updatedAt": "2026-11-06T18:19:42.831Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10852,6 +10852,31 @@
       "claimedAt": "2026-11-06T18:19:38.521Z",
       "expiresAt": "2026-11-06T18:34:38.521Z",
       "finalizedAt": "2026-11-06T18:19:40.618Z"
+    },
+    {
+      "claimId": "0ba6b1c2-c714-4a4b-bac5-99eb4f81db6e",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://dinamalar.com/news/tamil-nadu-news/tamil-nadu-government-approves-construction-of-70000-houses/4369948",
+        "title-city:வ கம எட க க றத வ ற ற வ ட கட ட ம த ட டம 70 000 வ ட கள க க தம ழக அரச அன மத|chennai",
+        "dedupe:098cf97d6475c0c4cc898ce8e0a72ea3149bc897a4ea290dc1dabc2ef45e14f1",
+        "dedupe:9d2e46f259ef87c100a5ec91c856bde740d3e96d1e06c0c56f34bc16f18c00c9",
+        "dedupe:3f6a838279d1f40f49afcf453e2e74436cb6df68238974e1ef11d70622d242a1",
+        "dedupe:வ கம எட க க றத வ ற ற வ ட கட ட ம த ட டம வ ட கள க க தம ழக அரச அன மத|chennai",
+        "dedupe:6e505e077055ce0d47150d5c1ea880bb0844344b0ecc55cbd15338f1d944f714",
+        "dedupe:04aad95715c04317647e0c65c5f5427cafe0bc4ec03adeab1bf8b4da75dbf4d0"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "chennai",
+      "canonicalEventCity": "chennai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "chennai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-06T18:19:42.831Z",
+      "expiresAt": "2026-11-06T18:34:42.831Z"
     }
   ]
 }
