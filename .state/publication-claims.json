@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T02:44:58.848Z",
+  "updatedAt": "2026-11-06T11:09:39.174Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10668,6 +10668,29 @@
       "claimedAt": "2026-11-06T02:44:55.008Z",
       "expiresAt": "2026-11-06T02:59:55.008Z",
       "finalizedAt": "2026-11-06T02:44:58.848Z"
+    },
+    {
+      "claimId": "5fcfb6ac-4726-4e84-b335-46f8c70bd3ba",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://infra.economictimes.indiatimes.com/news/urban-infrastructure/rajasthan-plans-to-develop-additional-300-hectares-at-jodhpur-pali-marwar-industrial-area/135600852",
+        "title-city:rajasthan plans to develop additional 300 hectares at jodhpur pali marwar industrial area|jodhpur",
+        "dedupe:b6cd9bf139dd5f75797d9e35560106d49688f9c4fe340f987f7ce2d96a67096a",
+        "dedupe:a0bf9fe05f81eaa3ab8a7ef8053edd3339ae02474ccb551e30918c8c86577f8b",
+        "dedupe:b160e56b60d0c1c0d521cb291846f1eb58233bea2b0f643684af7e41d86e567a",
+        "dedupe:rajasthan plans develop additional hectares jodhpur pali marwar industrial area|jodhpur"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "jodhpur",
+      "canonicalEventCity": "jodhpur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "jodhpur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-06T11:09:39.174Z",
+      "expiresAt": "2026-11-06T11:24:39.174Z"
     }
   ]
 }
