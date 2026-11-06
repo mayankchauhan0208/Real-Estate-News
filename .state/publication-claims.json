@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T18:19:48.394Z",
+  "updatedAt": "2026-11-06T23:29:07.309Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10905,6 +10905,32 @@
       "claimedAt": "2026-11-06T18:19:46.541Z",
       "expiresAt": "2026-11-06T18:34:46.541Z",
       "finalizedAt": "2026-11-06T18:19:48.394Z"
+    },
+    {
+      "claimId": "5122a85d-ef07-4b65-94c9-355c7e9b78e7",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/max-estates-buys-5-5-acre-land-in-noida-for-rs-272-crore-101793961092803.html",
+        "title-city:max estates buys 5 5 acre land in noida for 272 crore|noida",
+        "dedupe:8485f11e47d4ef3c2b147ff4b2846b91288b92bd00d9f59d4b1473ae17235490",
+        "dedupe:457e96a14f3fecf7127f685ee25d5abcc9d99a44e8336a7c407bfa84005ac742",
+        "dedupe:12e484fa67d67586db1d625a4063c0f55ca38c55320c52315d22ce013bb3dc39",
+        "dedupe:095a459919be2de53046723a6250e60a9407aa61db5d05a975087cc85f3cfb8c",
+        "dedupe:max estates buys acre land noida|noida",
+        "dedupe:af2f54334112a266a2f4bd379f0b49dfcff745e87f52b4d1b856d326e3f09ac0",
+        "dedupe:569f131bbac5d6e977b611ccd582b7c155139667453f8fab07f4d7db69431cdc"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-06T23:29:07.309Z",
+      "expiresAt": "2026-11-06T23:44:07.309Z"
     }
   ]
 }
