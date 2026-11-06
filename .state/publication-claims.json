@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T18:19:44.704Z",
+  "updatedAt": "2026-11-06T18:19:46.541Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10878,6 +10878,32 @@
       "claimedAt": "2026-11-06T18:19:42.831Z",
       "expiresAt": "2026-11-06T18:34:42.831Z",
       "finalizedAt": "2026-11-06T18:19:44.704Z"
+    },
+    {
+      "claimId": "c1914eed-a85d-40fe-9b6c-0136393b9d96",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/lucknow-city-lda-allots-860-plots-in-lucknows-naimish-nagar-varun-vihar-40429738.html",
+        "title-city:धनत रस पर lda क त हफ लखनऊ क न म ष नगर और वर ण व ह र य जन म 860 ल ग क म ल प ल ट|lucknow",
+        "dedupe:f30baa637ba82c3f6010752d4447e20a7b86116a8e2e5702742020c88fa03a3e",
+        "dedupe:f4b68dfdf0755a17265e8b79a4382fe947ccd213f111846440f4f4431f29addf",
+        "dedupe:9be948e4bec6f88564482cfda2adf1259d4fa3fbf5f1b707cc044135d1c57fb6",
+        "dedupe:2d6385eb90f2ebbdfab76ab647f055a8324afb7a1ff17826e8c8d022acc919c4",
+        "dedupe:धनत रस पर lda क त हफ लखनऊ क न म ष नगर और वर ण व ह र य जन म ल ग क म ल प ल ट|lucknow",
+        "dedupe:f0de36a9d687a54d0206230f0067a5de617482c4b22f1deb66d3a4c15a1aba8d",
+        "dedupe:a57b6318ab7c7132624b59d0835137a0135fea49ceaa70800633ba00d0681970"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-06T18:19:46.541Z",
+      "expiresAt": "2026-11-06T18:34:46.541Z"
     }
   ]
 }
