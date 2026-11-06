@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T18:19:46.541Z",
+  "updatedAt": "2026-11-06T18:19:48.394Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10881,7 +10881,7 @@
     },
     {
       "claimId": "c1914eed-a85d-40fe-9b6c-0136393b9d96",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/lucknow-city-lda-allots-860-plots-in-lucknows-naimish-nagar-varun-vihar-40429738.html",
         "title-city:धनत रस पर lda क त हफ लखनऊ क न म ष नगर और वर ण व ह र य जन म 860 ल ग क म ल प ल ट|lucknow",
@@ -10903,7 +10903,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-06T18:19:46.541Z",
-      "expiresAt": "2026-11-06T18:34:46.541Z"
+      "expiresAt": "2026-11-06T18:34:46.541Z",
+      "finalizedAt": "2026-11-06T18:19:48.394Z"
     }
   ]
 }
