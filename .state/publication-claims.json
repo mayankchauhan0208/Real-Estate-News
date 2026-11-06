@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T11:09:44.949Z",
+  "updatedAt": "2026-11-06T11:09:47.587Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10695,7 +10695,7 @@
     },
     {
       "claimId": "6cd1b219-2a70-40d3-bf40-9a695e1ff1f9",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://infra.economictimes.indiatimes.com/news/urban-infrastructure/adaniconnex-signs-1085-5-crore-deal-to-acquire-vizag-mega-data-center-park/135600416",
         "title-city:adaniconnex signs 1 085 5 crore deal to acquire vizag mega data center park|visakhapatnam",
@@ -10716,7 +10716,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-06T11:09:44.949Z",
-      "expiresAt": "2026-11-06T11:24:44.949Z"
+      "expiresAt": "2026-11-06T11:24:44.949Z",
+      "finalizedAt": "2026-11-06T11:09:47.587Z"
     }
   ]
 }
