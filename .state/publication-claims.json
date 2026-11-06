@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T11:09:39.174Z",
+  "updatedAt": "2026-11-06T11:09:42.046Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10671,7 +10671,7 @@
     },
     {
       "claimId": "5fcfb6ac-4726-4e84-b335-46f8c70bd3ba",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://infra.economictimes.indiatimes.com/news/urban-infrastructure/rajasthan-plans-to-develop-additional-300-hectares-at-jodhpur-pali-marwar-industrial-area/135600852",
         "title-city:rajasthan plans to develop additional 300 hectares at jodhpur pali marwar industrial area|jodhpur",
@@ -10690,7 +10690,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-06T11:09:39.174Z",
-      "expiresAt": "2026-11-06T11:24:39.174Z"
+      "expiresAt": "2026-11-06T11:24:39.174Z",
+      "finalizedAt": "2026-11-06T11:09:42.046Z"
     }
   ]
 }
