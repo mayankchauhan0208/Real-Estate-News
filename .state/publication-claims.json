@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-05T22:21:21.854Z",
+  "updatedAt": "2026-11-06T02:44:55.008Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10641,6 +10641,32 @@
       "claimedAt": "2026-11-05T22:21:18.940Z",
       "expiresAt": "2026-11-05T22:36:18.940Z",
       "finalizedAt": "2026-11-05T22:21:21.854Z"
+    },
+    {
+      "claimId": "2230f804-c8fb-4c48-ac1a-c9ce9ee6bd56",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://newindianexpress.com/cities/bengaluru/2026/nov/06/karnataka-cabinet-nods-to-30-year-lease-of-four-acres-to-bengaluru-turf-club",
+        "title-city:karnataka cabinet nods to 30 year lease of four acres to bengaluru turf club|bangalore",
+        "dedupe:400c7a994d16536bf3c24353dca30fbf0e1524a92dbf4182b78e5c30e208b687",
+        "dedupe:d827eb6a818de7edacfeafdd64174188e9a54d5effe6af64a60274deb217bd47",
+        "dedupe:b3155582e1e6f63dddc43f71af6ff32328e7549bf6dfa9fd5331f38b93a352ef",
+        "dedupe:61b7127a84fb39feb60802ad31ba9e78d85b3da01e3eebcccf2f6a33f9185940",
+        "dedupe:karnataka cabinet nods year lease four acres bengaluru turf club|bangalore",
+        "dedupe:862a31cbb5660accb3a9e963a7311dd2186aef67339260ae7d134355aa0f0dd9",
+        "dedupe:cc191ebdc6bb18f6c694680dee2ad36bee2e6952c61099cb8fc62c50eccb6f81"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-06T02:44:55.008Z",
+      "expiresAt": "2026-11-06T02:59:55.008Z"
     }
   ]
 }
