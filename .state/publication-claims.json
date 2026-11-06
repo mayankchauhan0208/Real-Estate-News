@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T18:19:32.343Z",
+  "updatedAt": "2026-11-06T18:19:34.565Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10798,6 +10798,32 @@
       "claimedAt": "2026-11-06T18:19:29.653Z",
       "expiresAt": "2026-11-06T18:34:29.653Z",
       "finalizedAt": "2026-11-06T18:19:32.343Z"
+    },
+    {
+      "claimId": "893f0b1f-e668-4565-b93a-e8831a7d390e",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/nivara-101-rattha-realtys-new-residential-project-takes-shape-on-nelson-manickam-road-chennai/articleshow/135608880.cms",
+        "title-city:nivara 101 rattha realty s new residential project takes shape on nelson manickam road chennai|chennai",
+        "dedupe:9b278160eeaa72b46e30ee822bdfa3dbc99cdeee396d16893112f5e936b14084",
+        "dedupe:72aac6efb9f2fbd1fff05b4ff6c0d57d7b76c21482d7d8610e0857b6236f6c62",
+        "dedupe:d374036fda1c610d4499f7d4450bb523266ad817a157e63051f8164312330a97",
+        "dedupe:b6bc7b4ea448f1c882fb93b49381ce94cc15a1f0f6114f6d1222bdac6ba9e818",
+        "dedupe:nivara rattha s new residential takes shape nelson manickam road chennai|chennai",
+        "dedupe:342bed6d3bb01abe39ba48743038115699566f3181b212c6d88b120fa97fd685",
+        "dedupe:58f4e94ebab07237cebfcd864bc3f4418c3c3d124a6b5ac1ad352ab4a4a409a6"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "chennai",
+      "canonicalEventCity": "chennai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "chennai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-06T18:19:34.565Z",
+      "expiresAt": "2026-11-06T18:34:34.565Z"
     }
   ]
 }
