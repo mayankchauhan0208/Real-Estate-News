@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T18:19:42.831Z",
+  "updatedAt": "2026-11-06T18:19:44.704Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10855,7 +10855,7 @@
     },
     {
       "claimId": "0ba6b1c2-c714-4a4b-bac5-99eb4f81db6e",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://dinamalar.com/news/tamil-nadu-news/tamil-nadu-government-approves-construction-of-70000-houses/4369948",
         "title-city:வ கம எட க க றத வ ற ற வ ட கட ட ம த ட டம 70 000 வ ட கள க க தம ழக அரச அன மத|chennai",
@@ -10876,7 +10876,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-06T18:19:42.831Z",
-      "expiresAt": "2026-11-06T18:34:42.831Z"
+      "expiresAt": "2026-11-06T18:34:42.831Z",
+      "finalizedAt": "2026-11-06T18:19:44.704Z"
     }
   ]
 }
