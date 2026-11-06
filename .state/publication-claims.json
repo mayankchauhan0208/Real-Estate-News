@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T11:09:47.587Z",
+  "updatedAt": "2026-11-06T11:09:50.203Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10718,6 +10718,31 @@
       "claimedAt": "2026-11-06T11:09:44.949Z",
       "expiresAt": "2026-11-06T11:24:44.949Z",
       "finalizedAt": "2026-11-06T11:09:47.587Z"
+    },
+    {
+      "claimId": "7c0ab3b3-57ff-4388-bd5f-2012a564a946",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/residential/delhi-government-notifies-new-slum-rehabilitation-policy-to-house-five-lakh-families/135591856",
+        "title-city:delhi government notifies new slum rehabilitation policy to house five lakh families|new_delhi",
+        "dedupe:04929d89a0a17b023981bd662dd2ed1735ec5db1f84a38845d37cab3f788573e",
+        "dedupe:122723b00cb3e5827f2d5f91c8b1a825d831f8843afdee15e162afc42b68a885",
+        "dedupe:e77936b024accde482c42423d3ee3bf3113e48af408e19f87ef58a26b03512ca",
+        "dedupe:delhi government notifies new slum rehabilitation policy house five families|new_delhi",
+        "dedupe:85290358d847bb3a7f0be23c49b6b1bc8103a06b7654b0415661a308484f8702",
+        "dedupe:742c39b09c1c06cfda8ef34792ccf82d67c1bcd98b7bc85eb9e72837a1b35e19"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-06T11:09:50.203Z",
+      "expiresAt": "2026-11-06T11:24:50.203Z"
     }
   ]
 }
