@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-07T10:22:05.962Z",
+  "updatedAt": "2026-11-07T10:22:07.620Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11147,7 +11147,7 @@
     },
     {
       "claimId": "691503c5-6caf-4167-b735-5c18a2996aa7",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/real-estate/real-estate-guide/mumbai-homebuyers-take-longer-to-book-homes-this-diwali-despite-higher-walk-ins-experts-cite-geopolitical-uncertainty-and-rising-prices-101794027837767.html",
         "title-city:mumbai homebuyers take longer to book homes this diwali despite higher walk ins experts cite geopolitical|mumbai",
@@ -11169,7 +11169,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-07T10:22:05.962Z",
-      "expiresAt": "2026-11-07T10:37:05.962Z"
+      "expiresAt": "2026-11-07T10:37:05.962Z",
+      "finalizedAt": "2026-11-07T10:22:07.620Z"
     }
   ]
 }
