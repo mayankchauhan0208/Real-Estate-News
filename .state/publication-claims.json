@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-07T16:46:19.664Z",
+  "updatedAt": "2026-11-07T16:46:21.982Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11311,6 +11311,32 @@
       "claimedAt": "2026-11-07T16:46:16.852Z",
       "expiresAt": "2026-11-07T17:01:16.852Z",
       "finalizedAt": "2026-11-07T16:46:19.664Z"
+    },
+    {
+      "claimId": "f7bfdb16-8587-4d27-b37f-e020aa742bc3",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/hsbc-electronic-data-processing-india-sub-leases-1-19-lakh-sq-ft-office-space-in-bengaluru-for-a-total-rent-of-over-207-crore-101793961490395.html",
+        "title-city:hsbc electronic data processing india sub leases 1 19 lakh sq ft office space in bengaluru for a total rent of over|bangalore",
+        "dedupe:02a1b07a62eefa19f35c82a1023a98673ec5a4f5ff07aabc61766f6d60a26c7c",
+        "dedupe:acb66c7de04f8f33276bd35f141fe3c449ad8fd4b0340e324e78e9e3ee41b9a3",
+        "dedupe:c75b9e2ef4f2e326600ef3400235e08bf0812e725a1a3e9966d21739a101a02b",
+        "dedupe:2f9438ce77a25c8e59f460952c888cb319fd2ca4ee4baab3d6826c4b0fc9b0c6",
+        "dedupe:hsbc electronic data processing india sub leases office space bengaluru a total rent|bangalore",
+        "dedupe:790ac973a18a809723aabe4045b8e3357ae0b41f2a0b1e136b91168b6a21a011",
+        "dedupe:b21d539e4528c3657af24b70028bd9bc43fa08dc26f92fa5ad83e19138749d89"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-07T16:46:21.982Z",
+      "expiresAt": "2026-11-07T17:01:21.982Z"
     }
   ]
 }
