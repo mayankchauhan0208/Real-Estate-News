@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-07T10:21:49.645Z",
+  "updatedAt": "2026-11-07T10:21:51.549Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11039,6 +11039,31 @@
       "claimedAt": "2026-11-07T10:21:47.335Z",
       "expiresAt": "2026-11-07T10:36:47.335Z",
       "finalizedAt": "2026-11-07T10:21:49.645Z"
+    },
+    {
+      "claimId": "744c3889-9edc-4e5b-9149-f8a789f2aab9",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://bda.gov.in/tenders",
+        "title-city:bda bhubaneswar development authority|bhubaneswar",
+        "dedupe:f038151c94305fd33e5711f45f2255b81b4f38a5ffa9a19ce9906358dfde8666",
+        "dedupe:acefd13f162e7195aef9a27801e10a514ae63577f2779f076bb74f2e3c866237",
+        "dedupe:f8abf1b16b7124d91240894d8396b304d68322156725183a6d1d350fc31897df",
+        "dedupe:bda bhubaneswar development authority|bhubaneswar",
+        "dedupe:ed7654bd54b0f62365c586c768451e984ea54f8bf69a4e50d3d9cccc8c1c1660",
+        "dedupe:2f327d30ec7e4c8663abd99d4bf5fd1d5e12342709ae45eeb770343d94960059"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bhubaneswar",
+      "canonicalEventCity": "bhubaneswar",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bhubaneswar"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-07T10:21:51.549Z",
+      "expiresAt": "2026-11-07T10:36:51.549Z"
     }
   ]
 }
