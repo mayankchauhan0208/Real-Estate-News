@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-07T10:21:56.792Z",
+  "updatedAt": "2026-11-07T10:21:58.648Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11091,6 +11091,32 @@
       "claimedAt": "2026-11-07T10:21:55.099Z",
       "expiresAt": "2026-11-07T10:36:55.099Z",
       "finalizedAt": "2026-11-07T10:21:56.792Z"
+    },
+    {
+      "claimId": "3f98443c-ede8-483e-b720-c56cc55742a0",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/hsbc-india-arm-leases-1-2-lakh-sq-ft-office-space-in-bengaluru/articleshow/135607394.cms",
+        "title-city:hsbc india arm leases 1 2 lakh sq ft office space in bengaluru|bangalore",
+        "dedupe:1540530e775374d250e62c1b467a9744d8457dacb65ff823f70665777589083b",
+        "dedupe:ff0cb002db6b06ad4a8e440587858202744ffcc77f09d56af9858ed0f892f6a7",
+        "dedupe:da6aabd7ad4cf5217258a2ad11edb23ba7cba759d3297300e673142d4c6a05b2",
+        "dedupe:412f80de7e166c13b81c8497a06350398b79d562d1d9871f5bd96b34cd2c1f73",
+        "dedupe:hsbc india arm leases office space bengaluru|bangalore",
+        "dedupe:5c41ec0667aa94fdfc52943f04dede0b0e59e209e8cb13a97c6d5b36306f8239",
+        "dedupe:cc132dad9e911a5d333237e6a29c5e7f06c30453bffa0fdd1c3bf0a5bf9b5bbb"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-07T10:21:58.648Z",
+      "expiresAt": "2026-11-07T10:36:58.648Z"
     }
   ]
 }
