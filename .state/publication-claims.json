@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-07T10:22:13.217Z",
+  "updatedAt": "2026-11-07T10:22:15.041Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11234,7 +11234,7 @@
     },
     {
       "claimId": "654f1394-d8fd-4777-a4ea-48dc8de318a2",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/haryana/yamunanagar-yamunanagar-andjagadhri-3-crore-rupees-development-works-for-wards-40430191.html",
         "title-city:हर य ण क यम न नगर जग धर म त न कर ड र पय क व क स क र य क म ज र सड क स ल कर प र क क स धर ग दश|yamunanagar",
@@ -11256,7 +11256,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-07T10:22:13.217Z",
-      "expiresAt": "2026-11-07T10:37:13.217Z"
+      "expiresAt": "2026-11-07T10:37:13.217Z",
+      "finalizedAt": "2026-11-07T10:22:15.041Z"
     }
   ]
 }
