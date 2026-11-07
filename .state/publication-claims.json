@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-07T03:09:14.591Z",
+  "updatedAt": "2026-11-07T03:09:16.862Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10959,6 +10959,32 @@
       "claimedAt": "2026-11-07T03:09:12.179Z",
       "expiresAt": "2026-11-07T03:24:12.179Z",
       "finalizedAt": "2026-11-07T03:09:14.591Z"
+    },
+    {
+      "claimId": "11afa5c3-f9e1-4fe1-b8ae-b56a0b5fcc4f",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://patrika.com/bhopal-news/government-to-establish-a-new-city-in-madhya-pradesh-21035197",
+        "title-city:एमप म 20 हज र कर ड म नय शहर बस एग सरक र 3 हज र ह क ट यर म ह ग व कस त|bhopal",
+        "dedupe:6d624232715479f5b968a666c442cb2c59882670bbb90f9e99cffac17fb2d0c2",
+        "dedupe:27116f3d32c3257528995e774e490e5d10bdd5c23ea598ecd924f06da204441a",
+        "dedupe:5f6df1525dd5b70dc8e195667fc13663413bc185be3bc972912eab583db8b4e8",
+        "dedupe:710180317d85fbd7084dc45edce0b776d65a4db08b0a61b7a6d6e92cb2f1e1c7",
+        "dedupe:एमप म हज र कर ड म नय शहर बस एग सरक र हज र ह क ट यर म ह ग व कस त|bhopal",
+        "dedupe:666e4614c8a2472e5a9e9d25b5f8793fb0addd1c86f4c94a717e02f5d073a009",
+        "dedupe:01bc65d1907d2e9fe02e7e1b9eba3119bbc71a53703142c54c964cc069155411"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bhopal",
+      "canonicalEventCity": "bhopal",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bhopal"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-07T03:09:16.862Z",
+      "expiresAt": "2026-11-07T03:24:16.862Z"
     }
   ]
 }
