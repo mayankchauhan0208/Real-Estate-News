@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-07T10:21:55.099Z",
+  "updatedAt": "2026-11-07T10:21:56.792Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11068,7 +11068,7 @@
     },
     {
       "claimId": "01bd0876-7c7b-4df2-81af-4338fbe12bd1",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/industry/nlmc-puts-hils-5-119-acre-delhi-land-parcel-on-e-auction-block-at-830-crore/135522389",
         "title-city:nlmc puts hil s 5 119 acre delhi land parcel on e auction block at 830 crore|new_delhi",
@@ -11089,7 +11089,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-07T10:21:55.099Z",
-      "expiresAt": "2026-11-07T10:36:55.099Z"
+      "expiresAt": "2026-11-07T10:36:55.099Z",
+      "finalizedAt": "2026-11-07T10:21:56.792Z"
     }
   ]
 }
