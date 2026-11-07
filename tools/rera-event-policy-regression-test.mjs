@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { classifyOfficialReraEvent, getRejectionReasons } from "../src/index.js";
+import { classifyOfficialReraEvent, getRejectionReasons, isPublishableArticle } from "../src/index.js";
 
 const base = {
   sourceUrl: "https://up-rera.in/documents/ViewDocument?id=12",
@@ -39,4 +39,23 @@ const qpr = {
 assert.equal(classifyOfficialReraEvent(qpr), "ROUTINE_ADMINISTRATIVE");
 assert.ok(getRejectionReasons(qpr, new Set()).some((reason) => reason.includes("filter 19")), "QPR procedural order must be rejected from the normal feed");
 
-console.log("Meaningful official RERA event policy passed: project approval accepted; QPR procedure rejected.");
+const adverse = {
+  ...base,
+  title: "UP RERA orders recovery and penalties against promoters",
+  description: "The authority began recovery proceedings and imposed penalties after complaints.",
+  articleText: "UP RERA ordered recovery, penalties and enforcement action against promoters after buyer complaints and non-compliance in housing projects."
+};
+assert.equal(classifyOfficialReraEvent(adverse), "ADVERSE");
+assert.equal(isPublishableArticle(adverse, new Set()), false, "adverse official RERA enforcement must not bypass the universal positive-content contract");
+
+const unreadableApproval = {
+  ...approval,
+  fullArticleRead: false,
+  officialDocumentRead: false,
+  articleReadAttempted: true,
+  articleText: "UP RERA approved registration of projects."
+};
+assert.equal(isPublishableArticle(unreadableApproval, new Set()), false, "official source metadata without a readable article or document must not publish");
+assert.ok(getRejectionReasons(unreadableApproval, new Set()).some((reason) => reason.includes("FULL_ARTICLE_EXTRACTION_FAILED")), "unreadable official content must have the same evidence rejection as every other source");
+
+console.log("RERA event policy passed: positive project approval accepted; procedural, adverse, and unreadable content rejected.");

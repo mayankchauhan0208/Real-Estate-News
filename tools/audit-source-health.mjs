@@ -13,7 +13,7 @@ const settingsPath = path.join(rootDir, "config", "admin-settings.json");
 const outputDir = path.join(rootDir, "reports", "source-audits");
 const userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123 Safari/537.36 BrokketNewsSourceAudit/1.0";
 const timeoutMs = Number(process.env.SOURCE_AUDIT_TIMEOUT_MS || 12000);
-const concurrency = Math.max(1, Math.min(Number(process.env.SOURCE_AUDIT_CONCURRENCY || 28), 40));
+const concurrency = Math.max(1, Math.min(Number(process.env.SOURCE_AUDIT_CONCURRENCY || 12), 40));
 const parser = new Parser();
 const articleSampleSize = Math.max(0, Math.min(Number(process.env.SOURCE_AUDIT_ARTICLE_SAMPLE || 3), 5));
 const maxBodyBytes = Math.max(250_000, Math.min(Number(process.env.SOURCE_AUDIT_MAX_BODY_BYTES || 1_000_000), 3_000_000));
@@ -450,6 +450,11 @@ const inventory = audited.map((row) => ({
   currentClassification: classifySourceHealth(row)
 }));
 
+const timeoutRows = inventory.filter((row) => /timeout|probe exceeded/i.test(String(row.error || "")));
+const transportFailures = inventory.filter((row) => row.contentHealth === "TRANSPORT_FAILED");
+const timeoutRatio = inventory.length ? timeoutRows.length / inventory.length : 0;
+const environmentDegraded = inventory.length >= 20 && timeoutRatio >= 0.5;
+
 const summary = {
   generatedAt: new Date().toISOString(),
   total: inventory.length,
@@ -468,6 +473,12 @@ const summary = {
   selectedInRuntime: inventory.filter((row) => row.selectedInRuntime).length,
   fallbackUsed: inventory.filter((row) => row.fallbackUsed).length,
   duplicateRows: inventory.filter((row) => row.duplicateCount > 1).length,
+  probeReliability: environmentDegraded ? "DEGRADED_NETWORK_ENVIRONMENT" : "VALID",
+  probeReliabilityReason: environmentDegraded
+    ? `${timeoutRows.length}/${inventory.length} sources timed out; do not treat this sweep as source-by-source failure evidence`
+    : "bounded probe completed without systemic timeout saturation",
+  timeoutRows: timeoutRows.length,
+  nonTimeoutTransportFailures: transportFailures.length - timeoutRows.length,
   classifications: Object.fromEntries([...new Set(inventory.map((row) => row.currentClassification))].sort().map((key) => [key, inventory.filter((row) => row.currentClassification === key).length]))
 };
 

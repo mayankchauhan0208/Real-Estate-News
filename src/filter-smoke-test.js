@@ -317,13 +317,48 @@ assert.ok(detectCityCodes(delhiNcrArticle).includes("gurugram"));
 assert.ok(!detectCityCodes(delhiNcrArticle).includes("new_delhi"));
 
 const sourceAssignedCityArticle = article({
-  title: "Residential project receives approval after strong investor demand",
-  description: "The residential project received authority approval and will add new housing supply.",
-  articleText: "The project includes residential development, infrastructure and new housing investment.",
+  title: "Gurugram residential project receives approval after strong investor demand",
+  description: "The Gurugram residential project received authority approval and will add new housing supply.",
+  articleText: "The Gurugram project includes residential development, infrastructure and new housing investment.",
   sourceCityCodes: ["gurugram"],
   newsLink: "https://example.com/gurugram/source-assigned-project"
 });
 assert.deepEqual(detectCityCodes(sourceAssignedCityArticle), ["gurugram"]);
+
+const statewidePolicyFromCityDeskArticle = article({
+  title: "Haryana introduces new ownership-rights law for village residents",
+  description: "The state law sets a process for recording ownership rights.",
+  articleText: "The Haryana law applies statewide and describes a process for ownership records.",
+  sourceCityCodes: ["rohtak"],
+  sourceUrl: "https://example.com/haryana/rohtak",
+  newsLink: "https://example.com/haryana/statewide-ownership-law"
+});
+assert.deepEqual(
+  detectCityCodes(statewidePolicyFromCityDeskArticle), [],
+  "A state-wide policy carried by a city desk must not inherit that desk's city route"
+);
+
+const agriculturalDigitalMappingArticle = article({
+  title: "AI soil mapping begins across six Haryana districts to improve farming",
+  description: "Digital soil mapping will guide crop nutrients and irrigation for farmers.",
+  articleText: "The agriculture initiative records soil fertility and crop nutrient needs for farmers.",
+  sourceCityCodes: ["karnal"],
+  newsLink: "https://example.com/karnal-agricultural-soil-mapping"
+});
+assert.equal(isPublishableArticle(agriculturalDigitalMappingArticle, sentIds), false);
+
+const sourceScopeCacheArticle = article({
+  title: "Housing market report shows registrations rising",
+  description: "A current residential market report covers property registrations and unsold inventory.",
+  articleText: "The market report covers residential registrations, housing inventory and developer activity.",
+  newsLink: "https://example.com/source-scope-cache"
+});
+assert.deepEqual(detectCityCodes(sourceScopeCacheArticle), []);
+assert.deepEqual(
+  applyCityCode({ ...sourceScopeCacheArticle, sourceCityCodes: ["thane"] }).cityCode,
+  "",
+  "Configured source scope cannot route a cityless article after an earlier geo lookup"
+);
 
 const palwalLocalityRoutingArticle = article({
   title: "Hodal housing project receives approval and adds new homes",
@@ -332,6 +367,14 @@ const palwalLocalityRoutingArticle = article({
   newsLink: "https://example.com/palwal/hodal-housing-project"
 });
 assert.deepEqual(detectCityCodes(palwalLocalityRoutingArticle), ["palwal"]);
+
+const neemranaLocalityRoutingArticle = article({
+  title: "शाहजहांपुर नीमराना में औद्योगिक भूखंडों के लिए नया विकास प्रस्ताव मंजूर",
+  description: "नीमराना कॉरिडोर में औद्योगिक विकास और प्लॉट आवंटन से निवेश को बढ़ावा मिलेगा।",
+  articleText: "शाहजहांपुर नीमराना में औद्योगिक क्षेत्र के भूखंडों और विकास कार्यों के प्रस्ताव को मंजूरी दी गई।",
+  newsLink: "https://example.com/neemrana/shahjahanpur-industrial-plot-development"
+});
+assert.deepEqual(detectCityCodes(neemranaLocalityRoutingArticle), ["neemrana"]);
 
 const hyderabadCorridorArticle = article({
   title: "Kokapet development corridor attracts new residential investment",
@@ -1435,7 +1478,7 @@ assert.match(
     description: "Bengaluru urban planning update.",
     articleText: "Bengaluru planning and expansion update."
   }).join("; "),
-  /no allowed city match|outside-city conflict|outside region/
+  /no allowed city match|outside-city conflict|outside region|negative\/crime\/utility concern|civic\/planning item/
 );
 
 assert.match(
@@ -1934,14 +1977,28 @@ assert.match(
   /negative\/crime\/utility concern news|spam\/menu page/
 );
 
-assert.match(
+assert.deepEqual(
   reasons({
     title: "Mumbai real estate project launched by developer",
     description: "Mumbai housing project launched with new residential towers.",
     articleText: "The project is in Mumbai and not in Gurugram or Faridabad.",
     newsLink: "https://example.com/mumbai/project-launch"
-  }).join("; "),
-  /outside-city conflict|outside region/
+  }),
+  [],
+  "A concrete Mumbai property launch must publish to its mapped Mumbai route"
+);
+
+assert.deepEqual(
+  detectCityCodes({
+    title: "ग्वालियर में नई आवासीय परियोजना का शुभारंभ",
+    description: "ग्वालियर में रियल एस्टेट डेवलपर ने नई हाउसिंग परियोजना लॉन्च की।",
+    articleText: "ग्वालियर में डेवलपर ने नई आवासीय परियोजना शुरू की। इस हाउसिंग प्रोजेक्ट में फ्लैट और प्लॉट होंगे।",
+    fullArticleRead: true,
+    articleReadAttempted: true,
+    newsLink: "https://example.com/gwalior-housing-project"
+  }),
+  ["gwalior"],
+  "A Hindi Gwalior property event must route to the supported Gwalior city feed"
 );
 
 assert.match(

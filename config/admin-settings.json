@@ -2606,7 +2606,7 @@
       "url": "https://www.cbre.co.in/insights",
       "label": "CBRE India — Insights | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -2626,7 +2626,7 @@
       "url": "https://www.colliers.com/en-in/research",
       "label": "Colliers India — Research | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.033194Z"
     },
@@ -2930,7 +2930,7 @@
       "url": "https://www.livemint.com/rss/AIRSS",
       "label": "Livemint — AI | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -2939,7 +2939,7 @@
       "url": "https://www.livemint.com/rss/budgetRSS",
       "label": "Livemint — Budget | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -2948,7 +2948,7 @@
       "url": "https://www.livemint.com/rss/companiesRSS",
       "label": "Livemint — Companies | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -2957,7 +2957,7 @@
       "url": "https://www.livemint.com/rss/industryRSS",
       "label": "Livemint — Industry | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -2966,7 +2966,7 @@
       "url": "https://www.livemint.com/rss/insuranceRSS",
       "label": "Livemint — Insurance | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -2975,7 +2975,7 @@
       "url": "https://www.livemint.com/rss/marketsRSS",
       "label": "Livemint — Markets | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -2984,7 +2984,7 @@
       "url": "https://www.livemint.com/rss/moneyRSS",
       "label": "Livemint — Money | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -2993,7 +2993,7 @@
       "url": "https://www.livemint.com/rss/newsRSS",
       "label": "Livemint — News | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -3002,7 +3002,7 @@
       "url": "https://www.livemint.com/rss/politicsRSS",
       "label": "Livemint — Politics | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -3011,7 +3011,7 @@
       "url": "https://www.livemint.com/rss/technologyRSS",
       "label": "Livemint — Technology | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -3357,7 +3357,7 @@
       "url": "https://www.savills.in/research.aspx",
       "label": "Savills India — Research | P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T07:15:38.034194Z"
     },
@@ -3860,7 +3860,7 @@
       "url": "https://hginfra.com/announcements.php",
       "label": "H.G. Infra — Announcements",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -3869,7 +3869,7 @@
       "url": "https://hginfra.com/investors-presentation.php",
       "label": "H.G. Infra — Investor Presentations",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -4039,7 +4039,7 @@
         "gujarat",
         "mumbai"
       ],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-19T13:57:42.64579+05:30"
     },
@@ -4982,6 +4982,56 @@
       "createdAt": "2026-09-23T11:37:26.649Z"
     },
     {
+      "id": "regional-propnewstime-thane",
+      "url": "https://propnewstime.com/sub-category/location/Thane",
+      "label": "PropNewsTime Thane Real Estate | Regional P2",
+      "cityCodes": ["thane"],
+      "enabled": true,
+      "category": "regional-english",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-propnewstime-kalyan",
+      "url": "https://propnewstime.com/sub-category/location/Kalyan",
+      "label": "PropNewsTime Kalyan Real Estate | Regional P2",
+      "cityCodes": ["kalyan_dombivli"],
+      "enabled": true,
+      "category": "regional-english",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-propnewstime-dombivli",
+      "url": "https://propnewstime.com/sub-category/location/Dombivli",
+      "label": "PropNewsTime Dombivli Real Estate | Regional P2",
+      "cityCodes": ["kalyan_dombivli"],
+      "enabled": true,
+      "category": "regional-english",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-propnewstime-delhi",
+      "url": "https://propnewstime.com/sub-category/location/Delhi",
+      "label": "PropNewsTime Delhi Real Estate | Regional P2",
+      "cityCodes": ["delhi"],
+      "enabled": true,
+      "category": "regional-english",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-propnewstime-guwahati",
+      "url": "https://propnewstime.com/sub-category/location/Guwahati",
+      "label": "PropNewsTime Guwahati Real Estate | Regional P2",
+      "cityCodes": ["guwahati"],
+      "enabled": true,
+      "category": "regional-english",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
       "id": "id-1922466082",
       "url": "https://bptpltd.com/updates/",
       "label": "BPTP Limited — Updates | P1",
@@ -5150,7 +5200,7 @@
       "url": "https://thepropertytimes.in/feed/",
       "label": "The Property Times Real Estate Feed | National Property P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-26T06:22:47.206Z"
     },
@@ -5159,7 +5209,7 @@
       "url": "https://updatesonproperty.com/rss/category/latest-news",
       "label": "Updates On Property Latest News RSS | National Property P2",
       "cityCodes": [],
-      "enabled": true,
+      "enabled": false,
       "category": "manual",
       "createdAt": "2026-09-26T06:22:47.206Z"
     },
@@ -5382,6 +5432,46 @@
       "createdAt": "2026-10-26T00:00:00.000Z"
     },
     {
+      "id": "regional-patrika-kota",
+      "url": "https://www.patrika.com/kota-news/",
+      "label": "Patrika Kota Hindi | Regional P2",
+      "cityCodes": ["kota"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-jodhpur",
+      "url": "https://www.patrika.com/jodhpur-news/",
+      "label": "Patrika Jodhpur Hindi | Regional P2",
+      "cityCodes": ["jodhpur"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-ajmer",
+      "url": "https://www.patrika.com/ajmer-news/",
+      "label": "Patrika Ajmer Hindi | Regional P2",
+      "cityCodes": ["ajmer"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-alwar",
+      "url": "https://www.patrika.com/alwar-news/",
+      "label": "Patrika Alwar Hindi | Regional P2",
+      "cityCodes": ["alwar"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
       "id": "regional-patrika-bhopal",
       "url": "https://www.patrika.com/bhopal-news/",
       "label": "Patrika Bhopal Hindi | Regional P2",
@@ -5402,6 +5492,16 @@
       "createdAt": "2026-10-26T00:00:00.000Z"
     },
     {
+      "id": "regional-patrika-gwalior",
+      "url": "https://www.patrika.com/gwalior-news/",
+      "label": "Patrika Gwalior Hindi | Regional P2",
+      "cityCodes": ["gwalior"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
       "id": "regional-patrika-jabalpur",
       "url": "https://www.patrika.com/jabalpur-news/",
       "label": "Patrika Jabalpur Hindi | Regional P2",
@@ -5410,6 +5510,66 @@
       "category": "regional-hindi",
       "sourceMode": "ACTIVE_FOR_REVIEW",
       "createdAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-ujjain",
+      "url": "https://www.patrika.com/ujjain-news/",
+      "label": "Patrika Ujjain Hindi | Regional P2",
+      "cityCodes": ["ujjain"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-sagar",
+      "url": "https://www.patrika.com/sagar-news/",
+      "label": "Patrika Sagar Hindi | Regional P2",
+      "cityCodes": ["sagar"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-dewas",
+      "url": "https://www.patrika.com/dewas-news/",
+      "label": "Patrika Dewas Hindi | Regional P2",
+      "cityCodes": ["dewas"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-satna",
+      "url": "https://www.patrika.com/satna-news/",
+      "label": "Patrika Satna Hindi | Regional P2",
+      "cityCodes": ["satna"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-ratlam",
+      "url": "https://www.patrika.com/ratlam-news/",
+      "label": "Patrika Ratlam Hindi | Regional P2",
+      "cityCodes": ["ratlam"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-rewa",
+      "url": "https://www.patrika.com/rewa-news/",
+      "label": "Patrika Rewa Hindi | Regional P2",
+      "cityCodes": ["rewa"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
     },
     {
       "id": "regional-patrika-raipur",
@@ -5542,6 +5702,486 @@
       "createdAt": "2026-10-15T00:00:00.000Z"
     },
     {
+      "id": "regional-jagran-rohtak",
+      "url": "https://www.jagran.com/haryana/rohtak",
+      "label": "Dainik Jagran — Rohtak Hindi News | Regional P2",
+      "cityCodes": ["rohtak"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-sonipat",
+      "url": "https://www.jagran.com/haryana/sonipat",
+      "label": "Dainik Jagran — Sonipat Hindi News | Regional P2",
+      "cityCodes": ["sonipat"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-panipat",
+      "url": "https://www.jagran.com/haryana/panipat",
+      "label": "Dainik Jagran — Panipat Hindi News | Regional P2",
+      "cityCodes": ["panipat"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-karnal",
+      "url": "https://www.jagran.com/haryana/karnal",
+      "label": "Dainik Jagran — Karnal Hindi News | Regional P2",
+      "cityCodes": ["karnal"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-palwal",
+      "url": "https://www.jagran.com/haryana/palwal",
+      "label": "Dainik Jagran — Palwal Hindi News | Regional P2",
+      "cityCodes": ["palwal"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-rewari",
+      "url": "https://www.jagran.com/haryana/rewari",
+      "label": "Dainik Jagran — Rewari Hindi News | Regional P2",
+      "cityCodes": ["rewari"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-hapur",
+      "url": "https://www.jagran.com/uttar-pradesh/hapur-city",
+      "label": "Dainik Jagran — Hapur Hindi News | Regional P2",
+      "cityCodes": ["hapur"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-aligarh",
+      "url": "https://www.jagran.com/uttar-pradesh/aligarh-city",
+      "label": "Dainik Jagran - Aligarh Hindi News | Regional P2",
+      "cityCodes": ["aligarh"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-moradabad",
+      "url": "https://www.jagran.com/uttar-pradesh/moradabad-city",
+      "label": "Dainik Jagran - Moradabad Hindi News | Regional P2",
+      "cityCodes": ["moradabad"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-mathura",
+      "url": "https://www.jagran.com/uttar-pradesh/mathura",
+      "label": "Dainik Jagran - Mathura/Vrindavan Hindi News | Regional P2",
+      "cityCodes": ["mathura", "vrindavan"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-panchkula",
+      "url": "https://www.jagran.com/haryana/panchkula",
+      "label": "Dainik Jagran - Panchkula Hindi News | Regional P2",
+      "cityCodes": ["panchkula"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-ambala",
+      "url": "https://www.jagran.com/haryana/ambala",
+      "label": "Dainik Jagran - Ambala Hindi News | Regional P2",
+      "cityCodes": ["ambala"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-kurukshetra",
+      "url": "https://www.jagran.com/haryana/kurukshetra",
+      "label": "Dainik Jagran - Kurukshetra Hindi News | Regional P2",
+      "cityCodes": ["kurukshetra"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-yamunanagar",
+      "url": "https://www.jagran.com/haryana/yamunanagar",
+      "label": "Dainik Jagran - Yamunanagar Hindi News | Regional P2",
+      "cityCodes": ["yamunanagar"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-bhiwadi",
+      "url": "https://www.patrika.com/bhiwadi-news/",
+      "label": "Patrika Bhiwadi Hindi | Regional P2",
+      "cityCodes": ["bhiwadi"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-bhaskar-kotputli-behror",
+      "url": "https://www.bhaskar.com/local/rajasthan/kotputli/",
+      "label": "Dainik Bhaskar - Kotputli-Behror Hindi News | Regional P2",
+      "cityCodes": ["neemrana"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-amarujala-alwar",
+      "url": "https://www.amarujala.com/rajasthan/alwar",
+      "label": "Amar Ujala - Alwar Hindi News | Regional P2",
+      "cityCodes": ["alwar"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-05T00:00:00.000Z"
+    },
+    {
+      "id": "regional-divyabhaskar-anand",
+      "url": "https://www.divyabhaskar.co.in/local/gujarat/anand/",
+      "label": "Divya Bhaskar - Anand Gujarati News | Regional P2",
+      "cityCodes": ["anand"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-divyabhaskar-bharuch",
+      "url": "https://www.divyabhaskar.co.in/local/gujarat/bharuch/",
+      "label": "Divya Bhaskar - Bharuch Gujarati News | Regional P2",
+      "cityCodes": ["bharuch"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-divyabhaskar-navsari",
+      "url": "https://www.divyabhaskar.co.in/local/gujarat/navsari/",
+      "label": "Divya Bhaskar - Navsari Gujarati News | Regional P2",
+      "cityCodes": ["navsari"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-divyabhaskar-valsad",
+      "url": "https://www.divyabhaskar.co.in/local/gujarat/valsad/",
+      "label": "Divya Bhaskar - Valsad Gujarati News | Regional P2",
+      "cityCodes": ["valsad"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-divyabhaskar-vapi",
+      "url": "https://www.divyabhaskar.co.in/local/gujarat/vapi/",
+      "label": "Divya Bhaskar - Vapi Gujarati News | Regional P2",
+      "cityCodes": ["vapi"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-divyabhaskar-kutch",
+      "url": "https://www.divyabhaskar.co.in/local/gujarat/kutch/",
+      "label": "Divya Bhaskar - Kutch Gujarati News | Regional P2",
+      "cityCodes": ["kutch"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-divyabhaskar-patan",
+      "url": "https://www.divyabhaskar.co.in/local/gujarat/patan/",
+      "label": "Divya Bhaskar - Patan Gujarati News | Regional P2",
+      "cityCodes": ["patan"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-divyabhaskar-surendranagar",
+      "url": "https://www.divyabhaskar.co.in/local/gujarat/surendranagar/",
+      "label": "Divya Bhaskar - Surendranagar Gujarati News | Regional P2",
+      "cityCodes": ["surendranagar"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-divyabhaskar-banaskantha",
+      "url": "https://www.divyabhaskar.co.in/local/gujarat/banaskantha/",
+      "label": "Divya Bhaskar - Banaskantha Gujarati News | Regional P2",
+      "cityCodes": ["banaskantha"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-divyabhaskar-dholera",
+      "url": "https://www.divyabhaskar.co.in/local/gujarat/dholera/",
+      "label": "Divya Bhaskar - Dholera Gujarati News | Regional P2",
+      "cityCodes": ["dholera"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-divyabhaskar-kheda",
+      "url": "https://www.divyabhaskar.co.in/local/gujarat/kheda/",
+      "label": "Divya Bhaskar - Kheda Gujarati News | Regional P2",
+      "cityCodes": ["kheda"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-divyabhaskar-sabarkantha",
+      "url": "https://www.divyabhaskar.co.in/local/gujarat/sabarkantha/",
+      "label": "Divya Bhaskar - Sabarkantha Gujarati News | Regional P2",
+      "cityCodes": ["sabarkantha"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-divyabhaskar-bardoli",
+      "url": "https://www.divyabhaskar.co.in/local/gujarat/surat/bardoli/",
+      "label": "Divya Bhaskar - Bardoli Gujarati News | Regional P2",
+      "cityCodes": ["bardoli"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-divyabhaskar-kalol",
+      "url": "https://www.divyabhaskar.co.in/local/gujarat/ahmedabad/kalol/",
+      "label": "Divya Bhaskar - Kalol Gujarati News | Regional P2",
+      "cityCodes": ["kalol"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-lokmat-ahmadnagar",
+      "url": "https://www.lokmat.com/ahmadnagar/",
+      "label": "Lokmat - Ahilyanagar Marathi News | Regional P2",
+      "cityCodes": ["ahmednagar"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-lokmat-akola",
+      "url": "https://www.lokmat.com/akola/",
+      "label": "Lokmat - Akola Marathi News | Regional P2",
+      "cityCodes": ["akola"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-lokmat-amravati",
+      "url": "https://www.lokmat.com/amravati/",
+      "label": "Lokmat - Amravati Marathi News | Regional P2",
+      "cityCodes": ["amravati"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-lokmat-jalgaon",
+      "url": "https://www.lokmat.com/jalgaon/",
+      "label": "Lokmat - Jalgaon Marathi News | Regional P2",
+      "cityCodes": ["jalgaon"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-lokmat-solapur",
+      "url": "https://www.lokmat.com/solapur/",
+      "label": "Lokmat - Solapur Marathi News | Regional P2",
+      "cityCodes": ["solapur"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-lokmat-kolhapur",
+      "url": "https://www.lokmat.com/kolhapur/",
+      "label": "Lokmat - Kolhapur Marathi News | Regional P2",
+      "cityCodes": ["kolhapur"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-lokmat-nanded",
+      "url": "https://www.lokmat.com/nanded/",
+      "label": "Lokmat - Nanded Marathi News | Regional P2",
+      "cityCodes": ["nanded"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-lokmat-latur",
+      "url": "https://www.lokmat.com/latur/",
+      "label": "Lokmat - Latur Marathi News | Regional P2",
+      "cityCodes": ["latur"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-lokmat-sangli",
+      "url": "https://www.lokmat.com/sangli/",
+      "label": "Lokmat - Sangli Marathi News | Regional P2",
+      "cityCodes": ["sangli"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-lokmat-ratnagiri",
+      "url": "https://www.lokmat.com/ratnagiri/",
+      "label": "Lokmat - Ratnagiri Marathi News | Regional P2",
+      "cityCodes": ["ratnagiri"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-lokmat-chandrapur",
+      "url": "https://www.lokmat.com/chandrapur/",
+      "label": "Lokmat - Chandrapur Marathi News | Regional P2",
+      "cityCodes": ["chandrapur"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-lokmat-dhule",
+      "url": "https://www.lokmat.com/dhule/",
+      "label": "Lokmat - Dhule Marathi News | Regional P2",
+      "cityCodes": ["dhule"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-lokmat-beed",
+      "url": "https://www.lokmat.com/beed/",
+      "label": "Lokmat - Beed Marathi News | Regional P2",
+      "cityCodes": ["beed"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-lokmat-dharashiv",
+      "url": "https://www.lokmat.com/dharashiv/",
+      "label": "Lokmat - Dharashiv Marathi News | Regional P2",
+      "cityCodes": ["osmanabad"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-lokmat-yavatmal",
+      "url": "https://www.lokmat.com/yavatmal/",
+      "label": "Lokmat - Yavatmal Marathi News | Regional P2",
+      "cityCodes": ["yavatmal"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-esakal-jalna",
+      "url": "https://www.esakal.com/topic/jalna",
+      "label": "Sakal - Jalna Marathi News | Regional P2",
+      "cityCodes": ["jalna"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-dainikgomantak-sindhudurg",
+      "url": "https://dainikgomantak.esakal.com/topic/sindhudurg-maharashtra",
+      "label": "Dainik Gomantak - Sindhudurg Marathi News | Regional P2",
+      "cityCodes": ["sindhudurg"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
       "id": "regional-jagran-prayagraj",
       "url": "https://www.jagran.com/uttar-pradesh/allahabad-city",
       "label": "Dainik Jagran — Prayagraj Hindi News | Regional P2",
@@ -5550,6 +6190,16 @@
       "category": "regional-hindi",
       "sourceMode": "ACTIVE_FOR_REVIEW",
       "createdAt": "2026-10-15T00:00:00.000Z"
+    },
+    {
+      "id": "national-mint-real-estate",
+      "url": "https://www.livemint.com/industry/real-estate",
+      "label": "Mint — Real Estate | National Property P2",
+      "cityCodes": [],
+      "enabled": true,
+      "category": "national-property",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-06T00:00:00.000Z"
     }
   ],
   "lastBackfill": {

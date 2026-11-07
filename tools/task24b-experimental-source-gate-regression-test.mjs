@@ -6,7 +6,9 @@ const experimental = settings.manualSources.filter((source) => {
   const label = String(source.label || "").toLowerCase();
   return category.startsWith("regional-") || /regional\s+p2/.test(label);
 });
-if (experimental.length !== 37) throw new Error(`Expected 37 experimental sources, found ${experimental.length}`);
+// The source universe is intentionally expanded over time. The safety
+// invariant is isolation from default runtime, not a stale fixed count.
+if (experimental.length === 0) throw new Error("Expected configured experimental sources");
 const enabledExperimental = experimental.filter((source) => source.enabled !== false);
 delete process.env.ENABLE_EXPERIMENTAL_SOURCES;
 const { getSourceUrls } = await import("../src/index.js");

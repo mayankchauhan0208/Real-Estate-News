@@ -391,7 +391,7 @@ const CITY_ALIAS_OVERRIDES = {
   nashik: ["nasik", "नाशिक"],
   jaipur: ["pink city", "jagatpura", "mansarovar extension", "ajmer road jaipur", "tonk road jaipur", "sitapura industrial area", "जयपुर"],
   bhiwadi: ["bhiwadi neemrana region", "bhiwadi alwar bypass", "khushkhera", "tapukara", "bhiwadi industrial area"],
-  neemrana: ["neemrana japanese zone", "neemrana industrial area", "behror neemrana corridor", "nh 48 neemrana"],
+  neemrana: ["neemrana japanese zone", "neemrana industrial area", "behror neemrana corridor", "nh 48 neemrana", "epip neemrana", "nic(m) neemrana", "majrakath neemrana", "keshwana neemrana", "ghiloth neemrana", "shahjahanpur neemrana", "नीमराना", "शाहजहांपुर नीमराना", "केशवाना नीमराना", "घिलोट नीमराना"],
   dehradun: ["doon valley", "देहरादून"],
   haridwar: ["हरिद्वार"],
   pondicherry: ["puducherry", "पुडुचेरी"]
@@ -4374,17 +4374,12 @@ function isSameOfficialContentHost(article) {
 }
 
 function hasAuthoritativeContentEvidence(article) {
-  if (article.authoritativeContent !== true || !isSameOfficialContentHost(article)) {
-    return false;
+  // A source label is never evidence. A readable article or extracted
+  // document is the only acceptable substitute for feed/listing metadata.
+  if (isDirectMediaUrl(article.newsLink || article.url || "")) {
+    return article.officialDocumentRead === true && article.directDocumentVerified === true;
   }
-
-  if (isAuthoritativeSnippetOnly(article)) {
-    return false;
-  }
-
-  return article.officialDocumentRead === true ||
-    article.fullArticleRead === true ||
-    getArticleBodyText(article).trim().length >= 200;
+  return article.fullArticleRead === true;
 }
 
 function isAuthoritativeSnippetOnly(article) {
@@ -4400,10 +4395,6 @@ function getArticleEvidenceReviewReason(article) {
   if (hasAuthoritativeContentEvidence(article) ||
       article.fullArticleRead === true) {
     return "";
-  }
-
-  if (isOfficialContentSource(article)) {
-    return "OFFICIAL_DOCUMENT_UNREADABLE";
   }
 
   if (article.articleReadAttempted !== true) {
@@ -4598,12 +4589,9 @@ function detectExplicitTargetCityCodes(article) {
     return [...new Set(strongCityCodes)];
   }
 
-  // City-specific feeds often omit the city from the article body. Their
-  // source path is still a reliable routing signal (for example /noida-news).
-  const sourceText = `${article.sourceUrl || ""} ${article.feedUrl || ""}`;
-  return [...new Set(cityRules
-    .filter((rule) => hasWholeWordKeyword(sourceText, rule.keywords))
-    .map((rule) => rule.code))];
+  // A listing path is discovery metadata, not event geography. City routing
+  // must be supported by the article's own title, description, or body.
+  return [];
 }
 
 function isGenericDelhiNcrCityAlias(code, article) {
@@ -5380,7 +5368,7 @@ function isEducationOnlyAnnouncement(article) {
   const primaryText = getArticlePrimaryText(article);
   const urlText = getArticleUrlText(article);
   const text = `${primaryText} ${urlText}`;
-  const educationSignal = hasKeyword(text, [
+  const educationSignal = hasWholeWordKeyword(text, [
     "admission",
     "admissions",
     "academic programme",
@@ -5401,7 +5389,7 @@ function isEducationOnlyAnnouncement(article) {
     "students",
     "university"
   ]);
-  const realEstateSignal = hasKeyword(text, [
+  const realEstateSignal = hasWholeWordKeyword(text, [
     "apartment",
     "builder",
     "commercial",
@@ -5427,17 +5415,27 @@ function hasConcretePropertyEvent(article) {
     /\b(?:top rated projects|property options|explore all projects|read more news on|prime exclusives|investment ideas)\b/i
   )[0].slice(0, 3500);
   const eventText = `${primary} ${body}`;
+  // Decimal land/site measurements (for example 5.4-acre) are not sentence
+  // boundaries and must not break the bounded action-to-property matcher.
+  const normalizedEventText = eventText.replace(/(\d)\.(\d)/g, "$1$2");
   const propertyObject = "(?:real estate|realty|property|properties|housing|residential|commercial|apartment|apartments|homes?|plots?|land parcel|land acquisition|township|warehouse|warehousing|logistics park|industrial park|office space|retail space|redevelopment|project|scheme|allotment|registration)";
   const eventAction = "(?:launch(?:ed|es)?|approv(?:e|es|ed|al)|acquir(?:e|ed|es)|purchas(?:e|ed|es)|sell|sold|sale|registr(?:ation|ered)|leas(?:e|ed|es)|rent(?:ed|s)?|allot(?:ment|ted)?|auction(?:ed|s)?|construct(?:ion|ed|s)|complet(?:ion|ed)|develop(?:ed|ing|ment|s)?|plan(?:s|ned)?|invest(?:ed|ment|s)?|redevelop(?:ed|ment|s)?|sign(?:ed|s)?|conver(?:sion|ted)|transact(?:ion|ions)?)";
 
   // Require the action and the concrete property object to occur in the same
-  // local phrase. Generic references to development, projects or markets in
-  // a long interview/panel body do not satisfy this event gate.
+  // local phrase. The primary story must also contain a property or event
+  // clue; generic related-story text in a long page cannot manufacture an
+  // otherwise absent real-estate event.
   const concreteEvent = new RegExp(`\\b${eventAction}\\b[^.!?]{0,100}\\b${propertyObject}\\b|\\b${propertyObject}\\b[^.!?]{0,100}\\b${eventAction}\\b`, "i");
-  if (concreteEvent.test(eventText)) return true;
+  const primaryEventClue = new RegExp(`\\b${propertyObject}\\b|\\b${eventAction}\\b`, "i").test(primary);
+  if (primaryEventClue && concreteEvent.test(normalizedEventText) && !hasExplicitlyNegatedPropertyEvent(article)) return true;
 
   const primaryAndUrl = `${primary} ${getArticleUrlText(article)}`;
   return new RegExp(`\\b(?:named|specific|identified|new|upcoming|proposed|approved|launched|acquired|leased|allotted|registered)\\b[^.!?]{0,100}\\b${propertyObject}\\b`, "i").test(primaryAndUrl);
+}
+
+function hasExplicitlyNegatedPropertyEvent(article) {
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  return /\b(?:no|not|without|lacks?|lacking|absence of|none of|does not|did not|has not|no concrete|no named|no specific)\b[^.!?]{0,80}\b(?:named |specific |concrete )?(?:real estate|property|housing|residential|commercial|land|plot|township|project)?\s*(?:project\s+)?(?:launch|approval|development|construction|allotment|acquisition|lease|sale|registration)\b/i.test(text);
 }
 
 function isCorporateTransactionWithoutPropertyEvent(article) {
@@ -5519,6 +5517,19 @@ function isClearlyOffTopicNonDevelopmentArticle(article) {
   const text = getArticleSearchText(article);
   const articleUrl = getArticleUrlText(article);
   if (isCorporateTransactionWithoutPropertyEvent(article)) {
+    return true;
+  }
+  const agriculturalContext = hasKeyword(`${title} ${text}`, [
+    "farm", "farming", "farmer", "farmers", "agriculture", "agricultural",
+    "crop", "crops", "soil", "fertilizer", "fertiliser", "irrigation",
+    "खेती", "किसान", "फसल", "मिट्टी", "उर्वरता", "खाद", "सिंचाई"
+  ]);
+  const materialPropertyEvent = hasKeyword(`${title} ${text}`, [
+    "real estate", "realty", "property", "housing project", "residential project",
+    "commercial project", "land parcel", "plot", "township", "developer", "builder",
+    "रियल एस्टेट", "प्रॉपर्टी", "आवासीय परियोजना", "हाउसिंग प्रोजेक्ट", "भूखंड"
+  ]);
+  if (agriculturalContext && !materialPropertyEvent) {
     return true;
   }
   if (/^property development$/i.test(title.trim()) ||
@@ -5717,6 +5728,16 @@ function isGenericStartupOrTechnologyFundraisingWithoutPropertyNexus(article) {
   return technologyOrStartup && fundraising && !hasStrongMaterialPropertyEvidence(article);
 }
 
+function isPublicServiceRegistrationWithoutPropertyEvent(article) {
+  const primary = getArticlePrimaryText(article);
+  const publicService = /\b(?:abha|digital health|health mission|health ids?|health registration|medical registration|vaccination|immuni[sz]ation|patient (?:id|registration)|healthcare scheme)\b/i.test(primary);
+  if (!publicService) return false;
+
+  // Full-page extraction can contain navigation or related-property links.
+  // A public-service story needs its own primary evidence of a property event.
+  return !hasConcretePropertyEvent({ ...article, articleText: "" });
+}
+
 function isCommodityOrMarketPriceReportWithoutPropertyEvent(article) {
   const eventCore = getArticleEventCoreText(article);
   const commodityPriceEvent = /\b(?:gold|silver|bullion|grain|pulses?|vegetables?|petrol|diesel|commodity)\b[^.!?]{0,100}\b(?:price|prices|rate|rates)\b|\b(?:price|prices|rate|rates)\b[^.!?]{0,100}\b(?:gold|silver|bullion|grain|pulses?|vegetables?|petrol|diesel|commodity)\b/i.test(eventCore)
@@ -5734,10 +5755,6 @@ function isRealEstateRelated(article) {
     return true;
   }
 
-  if (isOfficialReraPressRelease(article)) {
-    return true;
-  }
-
   if (isEventCenteredWithoutConcretePropertyEvent(article) || isTechnologyPartnershipWithoutConcretePropertyEvent(article)) {
     return false;
   }
@@ -5747,6 +5764,10 @@ function isRealEstateRelated(article) {
   }
 
   if (isGenericStartupOrTechnologyFundraisingWithoutPropertyNexus(article)) {
+    return false;
+  }
+
+  if (isPublicServiceRegistrationWithoutPropertyEvent(article)) {
     return false;
   }
 
@@ -5792,7 +5813,7 @@ function isRealEstateRelated(article) {
     return false;
   }
 
-  if (isVerifiedAuthorityPropertyEvent(article)) {
+  if (hasConcretePropertyEvent(article)) {
     return true;
   }
 
@@ -5836,7 +5857,11 @@ function isOrdinaryCommercialTenantLaunch(article) {
 }
 
 function hasSpecificProjectOrDevelopmentSignal(article) {
-  if (isVerifiedAuthorityPropertyEvent(article) || hasPositivePropertyRightsEvent(article)) {
+  if (hasConcretePropertyEvent(article)) {
+    return true;
+  }
+
+  if (hasPositivePropertyRightsEvent(article)) {
     return true;
   }
 
@@ -5918,7 +5943,17 @@ function hasSpecificYeidaProjectEvidence(article) {
 }
 
 function detectCityCodes(article) {
-  if (!isRealEstateRelated(article) || (isBlockedArticle(article) && !isOfficialReraPressRelease(article)) || (isNegativeNews(article) && !isOfficialReraPressRelease(article))) {
+  // Geography is evidence, not a publication decision. Map every article for
+  // audit, duplicate checks, and false-positive analysis, except clearly
+  // non-property content that must not acquire a city route at all.
+  if (isClearlyOffTopicNonDevelopmentArticle(article) || isEducationOnlyAnnouncement(article)) {
+    return [];
+  }
+
+  // A verified authority property record remains geographically useful for
+  // audit even when it is negative. This does not grant it relevance or a
+  // publication bypass.
+  if (!isRealEstateRelated(article) && !isVerifiedAuthorityPropertyEvent(article)) {
     return [];
   }
 
@@ -5939,9 +5974,17 @@ function detectCityCodes(article) {
   }
 
   const primaryText = getArticlePrimaryText(article);
-  const titleEventCityCodes = cityRules
-    .filter((rule) => hasWholeWordKeyword(String(article.title || "").toLowerCase(), rule.keywords))
-    .map((rule) => rule.code === "delhi" && enabledCityCodeSet.has("new_delhi") ? "new_delhi" : rule.code)
+  // Use the same title-only resolver as the rest of event-geography. Keeping
+  // a parallel inline matcher here had drifted from the canonical aliases
+  // and could discard an explicit, supported city such as Coimbatore.
+  const titleEventCityCodes = detectExplicitTargetCityCodes({
+    ...article,
+    description: "",
+    articleText: "",
+    sourceUrl: "",
+    feedUrl: ""
+  })
+    .map((code) => code === "delhi" && enabledCityCodeSet.has("new_delhi") ? "new_delhi" : code)
     .filter((code) => code !== "delhi_ncr" && !isGenericDelhiNcrCityAlias(code, article));
   if (titleEventCityCodes.length === 1 && !article.authoritativeContent) {
     // An explicit single-city title identifies the event location. It must
@@ -6060,7 +6103,14 @@ function detectMatchedCityCodes(article) {
   }
 
   const sourceCityCodes = getArticleSourceCityCodes(article);
-  if (sourceCityCodes.length > 0) {
+  const primarySourceCityEvidence = sourceCityCodes.some((cityCode) => {
+    const rule = cityRules.find((cityRule) => cityRule.code === cityCode);
+    return Boolean(rule && hasWholeWordKeyword(getArticlePrimaryText(article), rule.keywords));
+  });
+  // A city desk can prioritize discovery, but it cannot invent a city for a
+  // state-wide law or policy. Retain source routing only when the article's
+  // primary evidence itself names that supported city.
+  if (sourceCityCodes.length > 0 && primarySourceCityEvidence) {
     return sourceCityCodes;
   }
 
@@ -6355,7 +6405,10 @@ function hasOutsideRegionEvidence(article) {
 const cityDetectionCache = new Map();
 
 function getCityDetectionCacheKey(article) {
-  return [article.newsLink || article.url || "", normalizeTitle(article.title || ""), article.publishedAt || article.createdAt || ""].join("|");
+  const sourceCityCodes = Array.isArray(article.sourceCityCodes)
+    ? article.sourceCityCodes.map((code) => String(code || "").trim().toLowerCase()).sort().join(",")
+    : "";
+  return [article.newsLink || article.url || "", normalizeTitle(article.title || ""), article.publishedAt || article.createdAt || "", sourceCityCodes].join("|");
 }
 
 function getCachedDetectedCityCodes(article) {
@@ -6616,6 +6669,15 @@ function getDisqualifyingOutsideCityKeywords(article) {
     return outsideCityKeywords.filter((keyword) => !localTerms.includes(keyword));
   }
 
+  // A mapped event city must never be treated as its own conflicting outside
+  // location. This keeps the comparison protective for genuinely different
+  // cities while allowing articles such as a Delhi land auction to publish
+  // to the already evidenced New Delhi route.
+  const mappedCityRule = allCityRules.find((rule) => rule.code === article.cityCode);
+  if (mappedCityRule) {
+    return outsideCityKeywords.filter((keyword) => !mappedCityRule.keywords.includes(keyword));
+  }
+
   // Observed Hyderabad project articles can name Musi/Medchal localities
   // and Telangana, while a generic city token such as "Sagar" can appear
   // inside "Osman Sagar". Apply this narrow exception only when the article
@@ -6848,10 +6910,15 @@ function hasConcreteMaterialPropertyEvent(article) {
   const propertyObject = /\b(?:named project|project|property|housing|residential|commercial|land parcel|plots?|township|mall|hotel|office space|flats?|apartments?|units?|acres?|ownership rights|house sites?)\b/i.test(text)
     || /\bairport-led growth\b/i.test(text);
   const concreteEvent = /\b(?:project (?:launch|launched|development|approved|approval)|redevelopment (?:approved|approval|launched|project|will create)|(?:approves?|approved|sanctions?|sanctioned|registers?|registered)\b[^.!?]{0,120}\b(?:housing|residential|commercial|real estate|property|development)\s+projects?|new .*?(?:housing|residential|commercial) launches?|scouting land|residential development|commercial development|housing project|housing projects|residential township|mixed-use development|development zone|land parcel|plot (?:offering|allotment|pricing)|plots?\b.*?\b(?:off|near|airport|scheme|authority)|allot(?:ted|ment)|acqui(?:red|sition) of (?:land|property)|property (?:sale|acquisition|lease|purchase)|(?:buy|buys|bought|purchase|purchased)\b.*?\b(?:apartment|flat|home|property)s?\b|lease(?:d|s)? \d[\d,]*\s*(?:sq\.?\s*ft|square feet)|rent(?:s|ed)? \d[\d,]*\s*(?:sq\.?\s*ft|square feet)|lease(?:s|d)? .*?(?:office|retail|warehouse|space)|office stock|office space expansion|office leasing|commercial property demand|real estate growth|property development|projects? .*?(?:lined up|GDV)|pre-sales .*? projects?|infrastructure .*? real estate|real estate .*? infrastructure|boom .*? real estate|real estate .*? boom|airport-led growth|airport .*? development|mall|hotel(?: project)?|branded residences|apartments? sold|homes? sold|sell(?:s|out)? .*homes?|launch(?:es|ed)? .*?(?:housing|residential|commercial) project|invest(?:ed|ment) in .*?(?:project|housing|residential|commercial)|commit(?:s|ted|ment)? .*?(?:housing|residential|commercial) project|develop(?:ed|ing) .*project|ownership rights|house sites?|construction (?:complete|completion|milestone))\b/i.test(text);
-  return propertyObject && concreteEvent;
+  return propertyObject && concreteEvent && !hasExplicitlyNegatedPropertyEvent(article);
 }
 
 function isGenericPropertyCommentaryWithoutConcreteEvent(article) {
+  // A city-specific, positive property-market update is substantive coverage
+  // in its own right. It still has to meet the universal full-evidence, geo,
+  // negative, and duplicate gates; it merely is not a project-event story.
+  if (isPositiveCityMarketArticle(article)) return false;
+
   const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
   const title = getArticlePrimaryText(article);
   const genericMarketHeadline = /\b(?:drop|rise|increase|decline|lift)\b.*\b(?:home|housing) prices?|\b(?:drop|decline)\b.*\b(?:home|housing) launches?\b/i.test(title);
@@ -7066,19 +7133,6 @@ function isMalformedCategoryHeadline(title = "", article = {}) {
 }
 
 function isNegativeNews(article) {
-  if (isOfficialReraPressRelease(article)) {
-    return false;
-  }
-
-  // OCR can surface incidental words from official housing circulars (for
-  // example procedural notices) that are not the article's event. Once the
-  // authority identity, property event, and full document evidence are all
-  // verified, retain the normal adverse-event checks but do not let a generic
-  // body keyword discard a positive authority record.
-  if (isVerifiedAuthorityPropertyEvent(article) && !hasContextualAdverseEvent(article) && !isAdverseAuthorityLegalArticle(article)) {
-    return false;
-  }
-
   const primaryText = getArticlePrimaryText(article);
   const urlText = getArticleUrlText(article);
   const bodyText = getArticleBodyText(article);
@@ -7228,7 +7282,7 @@ function localQualityJudge(article) {
   const cityScore = article.cityCode
     ? Math.max(countKeywordMentions(fullText, cityKeywords), getArticleSourceCityCodes(article).includes(article.cityCode) ? 2 : 0)
     : 0;
-  const authorityEvent = isVerifiedAuthorityPropertyEvent(article) || hasPositivePropertyRightsEvent(article);
+  const authorityEvent = hasPositivePropertyRightsEvent(article);
   const hasCoreTopic = authorityEvent || hasKeyword(primaryAndUrl, ["real estate", "realty", "property", "housing", "infrastructure", "project", "metro", "expressway", "airport", "rera", "township", "land parcel", "construction", "builder", "developer", "residential", "commercial", "रियल एस्टेट", "रियल्टी", "प्रॉपर्टी", "परियोजना", "प्रोजेक्ट", "जमीन", "भूमि", "मेट्रो", "आवास", "निर्माण", "विकास", ...regionalRealEstateKeywords]);
   const hasStrongProjectSignal = authorityEvent || hasSpecificProjectOrDevelopmentSignal(article) || isPositiveTargetBusinessOrDevelopmentArticle(article) || isPositiveTargetProjectUpdate(article);
   const hasCityEvidence = cityScore > 0 || Boolean(getVerifiedAuthorityEventCityCode(article)) || hasNcrMatch(article) || hasMappedCorporateCityEvidence(article);
@@ -7292,9 +7346,7 @@ function hasMappedCorporateCityEvidence(article) {
   );
 }
 function isFullArticleReviewRequired(article) {
-  const potentiallyUseful = isOfficialContentSource(article)
-    ? isRealEstateRelated(article)
-    : isTargetLookingArticle(article);
+  const potentiallyUseful = isTargetLookingArticle(article);
 
   return Boolean(
     getArticleEvidenceReviewReason(article) &&
@@ -7378,22 +7430,22 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("filter 4: not positive target real-estate/project news");
   }
 
-  if (isBlockedArticle(article) && !isOfficialReraPressRelease(article)) {
+  if (isBlockedArticle(article)) {
     reasons.push("filter 1: spam/menu page");
   }
 
-  if (negativeNews && !isOfficialReraPressRelease(article)) {
+  if (negativeNews) {
     reasons.push("filter 3: negative/crime/utility concern news");
   }
 
-  if (isAdverseFullArticleEvent(article) && !isOfficialReraPressRelease(article)) {
+  if (isAdverseFullArticleEvent(article)) {
     reasons.push("filter 3: adverse property/court event in readable full article");
   }
 
   const adversePropertyTitle = /(?:recovery cases?|pending recovery|refund|refunds|dues|safety audit|fire audit|structural audit|unauthori[sz]ed construction|freeze(?:s|d)? bank accounts?|enforcement action|penalt(?:y|ies)|non-compliance|occupancy .*compliance|violation)/i.test(
     `${getArticlePrimaryText(article)} ${getArticleSearchText(article)}`
   );
-  if (adversePropertyTitle && !isOfficialReraPressRelease(article)) {
+  if (adversePropertyTitle) {
     reasons.push("filter 3: adverse property/RERA enforcement or recovery news");
   }
 
@@ -7409,12 +7461,9 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("filter 4: ordinary commercial tenant launch, not a property/development event");
   }
 
-  // Ordinary news must have a verified readable body. Source authority,
-  // category context, snippets, and city routing are never substitutes for
-  // the article itself. Official document exceptions remain handled by the
-  // existing authoritative-content path.
-  if (!isOfficialReraPressRelease(article) &&
-      article.fullArticleRead !== true &&
+  // Every source needs readable article or document evidence. Source type,
+  // category context, snippets, and city routing are never substitutes.
+  if (article.fullArticleRead !== true &&
       !hasAuthoritativeContentEvidence(article)) {
     reasons.push("review: FULL_ARTICLE_EXTRACTION_FAILED");
   }
@@ -7467,27 +7516,27 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("filter 16: source URL city mismatch");
   }
 
-  if (realEstateRelated && !isOfficialReraPressRelease(article) && !hasSpecificProjectOrDevelopmentSignal(article)) {
+  if (realEstateRelated && !hasSpecificProjectOrDevelopmentSignal(article)) {
     reasons.push("filter 9: no specific project/development signal");
   }
 
-  if (!isOfficialReraPressRelease(article) && isBroadNonProjectUpdate(article)) {
+  if (isBroadNonProjectUpdate(article)) {
     reasons.push("filter 10: broad market/company update, not city project news");
   }
 
-  if (!isOfficialReraPressRelease(article) && isGenericPropertyCommentaryWithoutConcreteEvent(article)) {
+  if (isGenericPropertyCommentaryWithoutConcreteEvent(article)) {
     reasons.push("filter 10: commentary without a concrete material property event");
   }
 
-  if (!isOfficialReraPressRelease(article) && isGenericPropertyGuideOrRecommendation(article)) {
+  if (isGenericPropertyGuideOrRecommendation(article)) {
     reasons.push("filter 10: evergreen property guide or recommendation, not a current news event");
   }
 
-  if (!isOfficialReraPressRelease(article) && isGenericCivicOrPlanningWithoutPropertyEvent(article)) {
+  if (isGenericCivicOrPlanningWithoutPropertyEvent(article)) {
     reasons.push("filter 10: civic/planning item without a material property nexus");
   }
 
-  if (!isOfficialReraPressRelease(article) && isFinancialOrTaxOnlyWithoutPropertyEvent(article)) {
+  if (isFinancialOrTaxOnlyWithoutPropertyEvent(article)) {
     reasons.push("filter 10: financial or enforcement event without a concrete property event");
   }
 
@@ -7495,7 +7544,7 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("filter 14: weak Noida developer blog signal");
   }
 
-  if (!isOfficialReraPressRelease(article) && isRejectedByLocalQualityJudge(article)) {
+  if (isRejectedByLocalQualityJudge(article)) {
     const decision = localQualityJudge(article);
     reasons.push(`filter 17: local quality judge rejected article (${decision.reason}, score ${decision.score})`);
   }
@@ -10553,8 +10602,9 @@ async function fetchSourceBatch(sourceList, options = {}) {
       worker.settleTime = new Date().toISOString();
       const memoryAfterDiscovery = getMemorySnapshot();
       const sourceCityCodes = getConfiguredSourceCityCodes(source);
-      const articles = result.articles.map((article) => ({
-        ...article,
+      const articles = result.articles.map((article) => {
+        const enrichedArticle = {
+          ...article,
         sourceUrl: article.sourceUrl || source,
         sourceCityCodes,
         sourceMode: getRegionalSourceMode(source),
@@ -10580,7 +10630,13 @@ async function fetchSourceBatch(sourceList, options = {}) {
           operationStartedAt,
           sourceType: isLikelyFeedUrl(source) ? "RSS_OR_ATOM" : "HTML_OR_SPECIALIZED"
         }
-      }));
+        };
+        // Adapters may calculate geo before the selected source's city scope
+        // is attached. Re-evaluate after enrichment so a vetted city surface
+        // can safely supply its configured fallback only when article-level
+        // geography is absent.
+        return applyCityCode(enrichedArticle);
+      });
       const recoveryLabel = result.recovered ? ` via ${result.fetchedSource}` : "";
       const memoryAfterArticleExtraction = getMemorySnapshot();
       await telemetry?.emit("SOURCE_MEMORY", {

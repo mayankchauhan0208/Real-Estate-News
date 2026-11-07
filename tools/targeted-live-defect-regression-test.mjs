@@ -54,6 +54,15 @@ const corporateProperty = {
   newsLink: "https://example.com/noida-residential-land"
 };
 
+const delhiLandAuction = {
+  ...base,
+  title: "NLMC puts Delhi land parcel on e-auction block at Rs 830 crore",
+  description: "The National Land Monetisation Corporation announced the e-auction of a 5.119-acre land parcel in Delhi.",
+  articleText: "NEW DELHI: The National Land Monetisation Corporation initiated the sale of a 5.119-acre land parcel at a reserve price of Rs 829.69 crore. The e-auction will monetise surplus public-sector land.",
+  cityCode: "new_delhi",
+  newsLink: "https://example.com/new-delhi-land-auction"
+};
+
 const substringOnly = {
   ...base,
   title: "Goahead housing project receives approval",
@@ -196,6 +205,9 @@ assert.ok(getRejectionReasons(routedWayanad, new Set()).includes("review: NO_SUP
 const detectedCorporateProperty = detectCityCodes(corporateProperty);
 assert.deepEqual(detectedCorporateProperty, ["noida"], "Concrete corporate property event must remain routable");
 assert.equal(isPublishableArticle(applyCityCode(corporateProperty), new Set()), true, "Concrete corporate property event must remain publishable");
+
+assert.equal(isPublishableArticle(delhiLandAuction, new Set()), true, "A mapped Delhi land auction must not reject Delhi as an outside city");
+assert.ok(!getRejectionReasons(delhiLandAuction, new Set()).some((reason) => /outside region|outside-city/i.test(reason)));
 
 assert.deepEqual(detectCityCodes(substringOnly), [], "City aliases must not match inside unrelated words");
 
