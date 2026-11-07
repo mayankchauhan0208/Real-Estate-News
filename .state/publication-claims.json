@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-07T10:22:15.041Z",
+  "updatedAt": "2026-11-07T16:46:11.196Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11258,6 +11258,32 @@
       "claimedAt": "2026-11-07T10:22:13.217Z",
       "expiresAt": "2026-11-07T10:37:13.217Z",
       "finalizedAt": "2026-11-07T10:22:15.041Z"
+    },
+    {
+      "claimId": "679d52b9-05e6-4106-bef0-74bed1cd8dc0",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/mahindra-lifespaces-acquires-100-acres-in-mumbai-region-for-plotted-development/articleshow/135574684.cms",
+        "title-city:mahindra lifespaces acquires 100 acres in mumbai region for plotted development|mumbai",
+        "dedupe:8f393ace27386e08631cc3c7f3ff0b42f41a5b848eb7f759ffeeac80dac40266",
+        "dedupe:be5d3839de13d42f2a8f941f06f183098eaa21db676db62e1e2124ab00796b59",
+        "dedupe:c497efb15a75a52d8d98580ab7440631651828d67b5beeb8297a4957801fb285",
+        "dedupe:8ebe88c24e41175a03c8da980e091eeedd74966244e6a5c0a32634ff4ffcc97b",
+        "dedupe:mahindra lifespaces acquires acres mumbai region plotted development|mumbai",
+        "dedupe:64ad2e7c7baea81b3b6664f1e19bb7481f903d374270c56ff04798caf6218db4",
+        "dedupe:20357d7d9217ac590de968a29b7083aa31d9364a1eae08d6437b337639806857"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-07T16:46:11.196Z",
+      "expiresAt": "2026-11-07T17:01:11.196Z"
     }
   ]
 }
