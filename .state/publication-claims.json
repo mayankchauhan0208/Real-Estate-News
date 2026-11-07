@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-07T03:09:18.707Z",
+  "updatedAt": "2026-11-07T03:09:20.859Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10986,6 +10986,32 @@
       "claimedAt": "2026-11-07T03:09:16.862Z",
       "expiresAt": "2026-11-07T03:24:16.862Z",
       "finalizedAt": "2026-11-07T03:09:18.707Z"
+    },
+    {
+      "claimId": "38a803f5-5ac0-48cf-ac74-4abb2d426b16",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/noida-news/project-report-of-sector-148-150-flyover-sent-to-iit-roorkee-for-vetting-101793990679951.html",
+        "title-city:project report of sector 148 150 flyover sent to iit roorkee for vetting|roorkee",
+        "dedupe:ee6f25ac3dd638301ee926956c78baecc649ad16b7cc8c5628a7fae439a4703c",
+        "dedupe:b7a10f6d842a0fa17cf8bd1ac7579737f695d79213d1b00f0b3b8b67b33df2c3",
+        "dedupe:3478e2eedb765ef816acea16697c99a5cfdc7a717232368e04dd753ed03d188a",
+        "dedupe:cd32f5c7e5d9dae74ea72ec1483c2b044b6597611055c0ec065367e576b227a0",
+        "dedupe:report sector flyover sent iit roorkee vetting|roorkee",
+        "dedupe:5a2dc25686a20d6cdf8f985cee8ef7fe640fb77689d8091caeceaaad7f7c2f62",
+        "dedupe:5c80d6008c0cf8c5d597596d697ac1ce6b462473833e4f7fd5e4b86b7b808dbf"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "roorkee",
+      "canonicalEventCity": "roorkee",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "roorkee"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-07T03:09:20.859Z",
+      "expiresAt": "2026-11-07T03:24:20.859Z"
     }
   ]
 }
