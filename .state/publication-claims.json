@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-07T10:22:07.620Z",
+  "updatedAt": "2026-11-07T10:22:09.514Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11171,6 +11171,65 @@
       "claimedAt": "2026-11-07T10:22:05.962Z",
       "expiresAt": "2026-11-07T10:37:05.962Z",
       "finalizedAt": "2026-11-07T10:22:07.620Z"
+    },
+    {
+      "claimId": "8b7c98f0-48ff-473e-86e9-5f8b4d9b8fdc",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/prestige-group-buys-100-stake-in-allure-developers-for-rs-524-crore-to-develop-housing-project-in-noida/articleshow/135630853.cms",
+        "title-city:prestige group buys 100 stake in allure developers for rs 524 crore to develop housing project in noida|noida",
+        "dedupe:d70e329c929da5ef375980d7404828d9cf706f0a1b3c3744b1bd4ed5fd2ad7b9",
+        "dedupe:c0675c1e3c23a3b329db0e224053fcb912b304c70356fcacda27c94d2e71c8cd",
+        "dedupe:608db32e0083400befcd5fc2ea418f43367427f0fad7f73890a18a6f07b54b7f",
+        "dedupe:a13d15acbc93db6bc465ceceb76a9ce10f7569db24e688da0bcce6c9cab163a1",
+        "dedupe:prestige group buys stake allure develop housing noida|noida",
+        "dedupe:089ae1f671640a2c979084749b40e46769eb17f9b5858577328338cb07723f15",
+        "dedupe:6b6fa8522b60d16c2c8954b4a77fbdc9cc5315664601d4755a25d06b2994b841"
+      ],
+      "semanticIdentity": {
+        "city": "noida",
+        "canonicalEventCity": "noida",
+        "normalizedBuilder": "prestige",
+        "normalizedProject": "",
+        "canonicalEventType": "project-launch",
+        "builder": "prestige",
+        "project": "",
+        "eventType": "project-launch",
+        "numericAnchors": [
+          "00:number",
+          "01:number",
+          "07:number",
+          "100:number",
+          "150:number",
+          "2026:number",
+          "2222.2:crore",
+          "256.2:crore",
+          "2697.8:crore",
+          "36:number",
+          "44:number",
+          "457.4:crore",
+          "5057.8:crore",
+          "5166.5:crore",
+          "519:crore",
+          "523.76:crore",
+          "524:crore",
+          "527.6:crore",
+          "6:number",
+          "768.9:crore"
+        ],
+        "canonicalEventFingerprint": "prestige|noida|project-launch|00:number,01:number,07:number",
+        "semanticClusterId": "cluster:8af4d8272bb3d094c15ab022"
+      },
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "prestige|noida|project-launch|00:number,01:number,07:number",
+      "semanticClusterId": "cluster:8af4d8272bb3d094c15ab022",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-07T10:22:09.514Z",
+      "expiresAt": "2026-11-07T10:37:09.514Z"
     }
   ]
 }
