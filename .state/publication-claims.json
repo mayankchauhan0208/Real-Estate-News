@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-07T21:13:31.381Z",
+  "updatedAt": "2026-11-07T21:13:33.941Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11395,7 +11395,7 @@
     },
     {
       "claimId": "6e5b40ff-a205-4e5e-a5e7-18d5e7a128a6",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-upssidc-to-launch-50-industrial-plots-scheme-in-sikandrabad-40430188.html",
         "title-city:छ ट न व शक क ल ए बड म क स क दर ब द म upsida क नई य जन msme उद यम य क क स म ल ग ल भ|noida",
@@ -11417,7 +11417,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-07T21:13:31.381Z",
-      "expiresAt": "2026-11-07T21:28:31.381Z"
+      "expiresAt": "2026-11-07T21:28:31.381Z",
+      "finalizedAt": "2026-11-07T21:13:33.941Z"
     }
   ]
 }
