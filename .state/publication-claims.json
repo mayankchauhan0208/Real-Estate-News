@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-07T16:46:16.852Z",
+  "updatedAt": "2026-11-07T16:46:19.664Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11288,7 +11288,7 @@
     },
     {
       "claimId": "9a8c0db6-063a-4dc0-9414-3c9af6f05ed1",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://magicbricks.com/news/greater-noida-plans-foot-overbridge-at-zero-point-near-yamuna-expressway-vcmb/152701.html",
         "title-city:greater noida plans foot overbridge at zero point near yamuna expressway|noida",
@@ -11309,7 +11309,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-07T16:46:16.852Z",
-      "expiresAt": "2026-11-07T17:01:16.852Z"
+      "expiresAt": "2026-11-07T17:01:16.852Z",
+      "finalizedAt": "2026-11-07T16:46:19.664Z"
     }
   ]
 }
