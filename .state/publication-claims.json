@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-06T23:29:10.081Z",
+  "updatedAt": "2026-11-07T03:09:12.179Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -10932,6 +10932,32 @@
       "claimedAt": "2026-11-06T23:29:07.309Z",
       "expiresAt": "2026-11-06T23:44:07.309Z",
       "finalizedAt": "2026-11-06T23:29:10.081Z"
+    },
+    {
+      "claimId": "2e71836f-d256-420f-95da-6b50fa6787cc",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/max-estates-secures-5-5-acre-mixed-use-land-parcel",
+        "title-city:max estates secures 5 5 acre mixed use land parcel in sector 132 noida|noida",
+        "dedupe:39597115a02e21a46cff1ec332d0b4fa25c584b763a3d2e9677c757761db6832",
+        "dedupe:265474e87d6897f1aa965b92fbb40d365dde4f6fdf038df50bfff2636f9f7c15",
+        "dedupe:09e9f30d1f94515bc33e30a05a471247545aa35eeb03d33a0ed922dae991effe",
+        "dedupe:4bb1fbee82030ea919a456a40eea3fa1f8994b0307d1e4d9722fcf903321bf42",
+        "dedupe:max estates secures acre mixed use land parcel sector noida|noida",
+        "dedupe:985425571439bc453c8b29a1efd7be438f41f882dbc5b09a9503969882e15b5f",
+        "dedupe:a1735676481dfda51e3674be18e4e3c9a384738af3107956c00e8ab285ac1c6a"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-07T03:09:12.179Z",
+      "expiresAt": "2026-11-07T03:24:12.179Z"
     }
   ]
 }
