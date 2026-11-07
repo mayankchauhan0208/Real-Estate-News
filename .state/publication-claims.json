@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-07T16:46:27.030Z",
+  "updatedAt": "2026-11-07T16:46:29.573Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11341,7 +11341,7 @@
     },
     {
       "claimId": "733db944-a426-4e06-b149-c513c2d5ebc5",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/agra-city-agra-air-quality-moderate-awas-vikas-colony-most-polluted-40430419.html",
         "title-city:द प वल स पहल ह हव ह ई खर ब आगर म आव स व क स क ल न सबस अध क प रद ष त|agra",
@@ -11363,7 +11363,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-07T16:46:27.030Z",
-      "expiresAt": "2026-11-07T17:01:27.030Z"
+      "expiresAt": "2026-11-07T17:01:27.030Z",
+      "finalizedAt": "2026-11-07T16:46:29.573Z"
     }
   ]
 }
