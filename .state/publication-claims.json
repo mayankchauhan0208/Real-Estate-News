@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-07T21:13:25.856Z",
+  "updatedAt": "2026-11-07T21:13:28.762Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11368,7 +11368,7 @@
     },
     {
       "claimId": "d73fb483-6891-45c3-a7b3-0f7b56481667",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://birlaestatesltd.com/updates/birla-estates-opens-pre-launch-of-birla-hoskote-in-hoskote-bangalore",
         "title-city:birla hoskote pre launch 2 and 3 bhk in hoskote|bangalore",
@@ -11390,7 +11390,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-07T21:13:25.856Z",
-      "expiresAt": "2026-11-07T21:28:25.856Z"
+      "expiresAt": "2026-11-07T21:28:25.856Z",
+      "finalizedAt": "2026-11-07T21:13:28.762Z"
     }
   ]
 }
