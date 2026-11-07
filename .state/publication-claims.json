@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-07T21:13:28.762Z",
+  "updatedAt": "2026-11-07T21:13:31.381Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11392,6 +11392,32 @@
       "claimedAt": "2026-11-07T21:13:25.856Z",
       "expiresAt": "2026-11-07T21:28:25.856Z",
       "finalizedAt": "2026-11-07T21:13:28.762Z"
+    },
+    {
+      "claimId": "6e5b40ff-a205-4e5e-a5e7-18d5e7a128a6",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-upssidc-to-launch-50-industrial-plots-scheme-in-sikandrabad-40430188.html",
+        "title-city:छ ट न व शक क ल ए बड म क स क दर ब द म upsida क नई य जन msme उद यम य क क स म ल ग ल भ|noida",
+        "dedupe:31eef6f64bb2e8bda55e418c0200a924c114f70d557f4769f8880cffed9969ef",
+        "dedupe:c127fd287b7afb528d3e62ad1b22befb5146ac76753179163970cc1e0ab978a5",
+        "dedupe:d0a8058f95cd38ac6ea6a90e6f826ce19464a1b09f96b191032d2bc2ce1a3403",
+        "dedupe:e4ca9581c9c8976854f2fab4ae8a09cc59eb83780380f06f46e658c4024df3e7",
+        "dedupe:छ ट न व शक क ल ए बड म क स क दर ब द म upsida क नई य जन msme उद यम य क क स म ल ग ल भ|noida",
+        "dedupe:2925d08393e7c3bd9c299cdae5f9a08ac1f769815cf475f3cdda533c0ffaaaea",
+        "dedupe:2daf9b9a07236e49a7abcc75364bf44ce46b6c7af0f5c127f82f66cfaff797e1"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-07T21:13:31.381Z",
+      "expiresAt": "2026-11-07T21:28:31.381Z"
     }
   ]
 }
