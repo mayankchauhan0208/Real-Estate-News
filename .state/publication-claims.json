@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-07T03:09:22.663Z",
+  "updatedAt": "2026-11-07T10:21:47.335Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11013,6 +11013,31 @@
       "claimedAt": "2026-11-07T03:09:20.859Z",
       "expiresAt": "2026-11-07T03:24:20.859Z",
       "finalizedAt": "2026-11-07T03:09:22.663Z"
+    },
+    {
+      "claimId": "aaab8788-5a8a-43d5-9d49-9ee0837b9774",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/technology/uttar-pradesh-government-plans-auto-mutation-after-property-registration/135224244",
+        "title-city:uttar pradesh government plans auto mutation after property registration|lucknow",
+        "dedupe:7ba00fce966ff581f05935beb8a7ff501569e34bb03bc9b752274bf62116497c",
+        "dedupe:76b45325cfaa947e64fd4c441856b052f34b5ecf4de6736f6b104e93cb369b6d",
+        "dedupe:c8a19ef4ef5299d1a00577bc347f7a95d99a3f42267924baf4d7d898da0ea08e",
+        "dedupe:uttar pradesh government plans auto mutation after property registration|lucknow",
+        "dedupe:7a6499472ab4b5e2638e5410e7389aec6041b9b920ffd885d35cc25c06552ac7",
+        "dedupe:bfa54f117f28fd80d287ee36df087356fb6aefcb1e53f5f60d1ea1b14703d45f"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-07T10:21:47.335Z",
+      "expiresAt": "2026-11-07T10:36:47.335Z"
     }
   ]
 }
