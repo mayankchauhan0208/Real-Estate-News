@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-07T21:13:33.941Z",
+  "updatedAt": "2026-11-07T21:13:36.509Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11419,6 +11419,32 @@
       "claimedAt": "2026-11-07T21:13:31.381Z",
       "expiresAt": "2026-11-07T21:28:31.381Z",
       "finalizedAt": "2026-11-07T21:13:33.941Z"
+    },
+    {
+      "claimId": "c549d484-4300-47f2-b8eb-1ae5f75fdc88",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://proppuls.in/cmc-secures-a-rating-gets-boost-for-infrastructure-funding-plans",
+        "title-city:cmc secures a rating gets boost for infrastructure funding plans|hyderabad",
+        "dedupe:2c398627e0ce04e383ffe689b5d177f00f1c043b9b354549faf18ad6e929398d",
+        "dedupe:45ee3184ebdd6d84f5e951cf95b34d5e6a7b41875e6bb67743200cdd4f801935",
+        "dedupe:d52f7063f20b8a029a2c82f237eb36f7ea857a4acf47c40525e4ceb724e75f6e",
+        "dedupe:165e070e8d2a8a7ea13822a916e3ae14f44931e90b5c357e1149387c6e001cb8",
+        "dedupe:cmc secures a rating gets boost infrastructure funding plans|hyderabad",
+        "dedupe:be751558c683578fcd503ae71ac957ab0fcb49fc06daf60bafa95df6469c78b2",
+        "dedupe:b7ab952d1fbb55341e837d21da931a6c7515727c5383e387f0f1b4c465f3cfc6"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-07T21:13:36.509Z",
+      "expiresAt": "2026-11-07T21:28:36.509Z"
     }
   ]
 }
