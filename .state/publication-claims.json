@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-08T23:43:13.825Z",
+  "updatedAt": "2026-11-08T23:43:16.761Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11583,7 +11583,7 @@
     },
     {
       "claimId": "65cb250e-cd21-405d-874b-f8a249ac9835",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hilifebuilders.in/apartment-for-parents-thrissur",
         "title-city:buying an apartment for your parents what should you look for in a thrissur home|thrissur",
@@ -11605,7 +11605,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-08T23:43:13.825Z",
-      "expiresAt": "2026-11-08T23:58:13.825Z"
+      "expiresAt": "2026-11-08T23:58:13.825Z",
+      "finalizedAt": "2026-11-08T23:43:16.761Z"
     }
   ]
 }
