@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-08T15:30:22.766Z",
+  "updatedAt": "2026-11-08T15:30:25.211Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11526,6 +11526,32 @@
       "claimedAt": "2026-11-08T15:30:20.164Z",
       "expiresAt": "2026-11-08T15:45:20.164Z",
       "finalizedAt": "2026-11-08T15:30:22.766Z"
+    },
+    {
+      "claimId": "7c6fd36a-2d01-4220-8f1c-6162cf5b7871",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/entertainment/music/mumbai-real-estate-sonu-nigam-buys-3-055-sq-ft-apartment-in-mumbai-s-andheri-for-44-30-crore-101794131635312.html",
+        "title-city:mumbai real estate sonu nigam buys 3 055 sq ft apartment in mumbai s andheri for 44 30 crore|mumbai",
+        "dedupe:dd42b6cde3457e55855e917d045565b199a13d1287333adfd9fc1574eebf5bc4",
+        "dedupe:030e6a3af88d89649ada7d38d1412589a92329baaa84ddd532472ff771fa7a10",
+        "dedupe:bde7696835636157ad0915a4c9f80e6bb6b78138d9395acb1102abd3805c932b",
+        "dedupe:253c856f8da10d09a426d9b1e2246c33857cd5c647424e42563d1b11278f1c44",
+        "dedupe:mumbai real estate sonu nigam buys apartment mumbai s andheri|mumbai",
+        "dedupe:7477011a78d1bbff0b4fc5a9c761cca25d0ef4a8fd2e3c6a4f07f3ab39925987",
+        "dedupe:529304b8ca67238788cab1f21e6c9c1e122b8907403186016c6e7334b662b7e9"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-08T15:30:25.211Z",
+      "expiresAt": "2026-11-08T15:45:25.211Z"
     }
   ]
 }
