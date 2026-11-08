@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-08T23:43:16.761Z",
+  "updatedAt": "2026-11-08T23:43:19.112Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11607,6 +11607,32 @@
       "claimedAt": "2026-11-08T23:43:13.825Z",
       "expiresAt": "2026-11-08T23:58:13.825Z",
       "finalizedAt": "2026-11-08T23:43:16.761Z"
+    },
+    {
+      "claimId": "cd37896c-074a-42a3-aabb-6b7d12c16cbf",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/haryana/rohtak-haryana-aabadi-deh-ownership-law-new-rules-for-property-rights-40426105.html",
+        "title-city:हर य ण म आब द द ह क म ल क न हक पर नय क न न कब ज ध र क न म दर ज ह न क ब द ह म ल ग प रम णपत र|rohtak",
+        "dedupe:41dfd4586ab4e6fe9e4bff80d53ec3bb11dac4b751831f8a950786ac9dca25df",
+        "dedupe:4a9d06542fb5d6f54b5b69d4f7cc758eab640da74a0a8567c98a434f2451fbb5",
+        "dedupe:e2581a17bc6d438f84fc0b07d0c89a69c0531c6f5468025174d5a9f1fcea3536",
+        "dedupe:2a294c518e4f2ddbbc83d615b9af1710cbff50f485979ac34ff567f4f9451f66",
+        "dedupe:हर य ण म आब द द ह क म ल क न हक पर नय क न न कब ज ध र क न म दर ज ह न क ब द ह म ल ग प रम णपत र|rohtak",
+        "dedupe:0d4a72780b7decf5b7aca41f0041692d3b3dbc81931d9663b9813a0c8aee8074",
+        "dedupe:d9d3594cde52b67d0d806306fe80c30cb2a9c16bb6d5155912e7fca9b3760914"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "rohtak",
+      "canonicalEventCity": "rohtak",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "rohtak"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-08T23:43:19.112Z",
+      "expiresAt": "2026-11-08T23:58:19.112Z"
     }
   ]
 }
