@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-08T23:43:21.542Z",
+  "updatedAt": "2026-11-08T23:43:23.898Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11634,6 +11634,32 @@
       "claimedAt": "2026-11-08T23:43:19.112Z",
       "expiresAt": "2026-11-08T23:58:19.112Z",
       "finalizedAt": "2026-11-08T23:43:21.542Z"
+    },
+    {
+      "claimId": "0fad1bcf-845c-47d0-8773-bd0cd63033ff",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/haryana/palwal-hasanpur-phirni-road-construction-rs-47-lakh-project-starts-40430398.html",
+        "title-city:हसनप र म जर जर म र ग क बदल ग स रत 47 ल ख स बन रह फ रन सड क ल ग क म ल ग बड र हत|palwal",
+        "dedupe:0d45f7a33e335b2420136202031234cc416adf37fe7bb38afdc4e9fcb5a5b42c",
+        "dedupe:4e6a98f28988a26b0d985a4c6276164973050512aaa9c30ce2028e8f5d00729d",
+        "dedupe:eaa10fc200ee74d7f17fc6f04bc460f9cdeee999ff8ba1a3dd11566644d1728e",
+        "dedupe:082ef2c6a7dab7a7ea27837b0eeb98f339a5044354cb65c6a1e7d1f2f0a4161d",
+        "dedupe:हसनप र म जर जर म र ग क बदल ग स रत ल ख स बन रह फ रन सड क ल ग क म ल ग बड र हत|palwal",
+        "dedupe:66a60f8f582a24219f1c4c76b2ff5a536de6764199e55a912ee43f7ebda61bc5",
+        "dedupe:bd4636606ee4b527544fc0f2bb0a1bbffb3bdb2d31c8ea03c2ce7e1b362ebc88"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "palwal",
+      "canonicalEventCity": "palwal",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "palwal"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-08T23:43:23.898Z",
+      "expiresAt": "2026-11-08T23:58:23.898Z"
     }
   ]
 }
