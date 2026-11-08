@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-08T23:43:23.898Z",
+  "updatedAt": "2026-11-08T23:43:26.561Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11637,7 +11637,7 @@
     },
     {
       "claimId": "0fad1bcf-845c-47d0-8773-bd0cd63033ff",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/haryana/palwal-hasanpur-phirni-road-construction-rs-47-lakh-project-starts-40430398.html",
         "title-city:हसनप र म जर जर म र ग क बदल ग स रत 47 ल ख स बन रह फ रन सड क ल ग क म ल ग बड र हत|palwal",
@@ -11659,7 +11659,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-08T23:43:23.898Z",
-      "expiresAt": "2026-11-08T23:58:23.898Z"
+      "expiresAt": "2026-11-08T23:58:23.898Z",
+      "finalizedAt": "2026-11-08T23:43:26.561Z"
     }
   ]
 }
