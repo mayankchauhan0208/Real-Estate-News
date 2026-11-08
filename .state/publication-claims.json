@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-08T15:30:28.045Z",
+  "updatedAt": "2026-11-08T15:30:30.595Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11553,6 +11553,32 @@
       "claimedAt": "2026-11-08T15:30:25.211Z",
       "expiresAt": "2026-11-08T15:45:25.211Z",
       "finalizedAt": "2026-11-08T15:30:28.045Z"
+    },
+    {
+      "claimId": "a9d98118-ae61-4d52-835a-fd83912c46f5",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/prayagraj-uphesc-assistant-professor-exam-advanced-district-info-released-40431028.html",
+        "title-city:upessc अस स ट ट प र फ सर पर क ष क ज ल क अग र म स चन ज र व बस इट पर द ख आपक स टर क स ज ल म ह|allahabad",
+        "dedupe:8e1e90c1648e7a6cb1bcee9953f41a90e8b680978fc7dd51299dba7f72b83d65",
+        "dedupe:21a9dd8b3d88e336191abbd52c3a0246fb6feecf69afe88db5748b031044d0c6",
+        "dedupe:abceea85e1d5488b681dd315c7ced22d3a4a3c52bdbe6f1b1aeec0fd0ac84e89",
+        "dedupe:cdc56948b309d804b4a262b2a0dfa231a2d632975b86a9030960f3230c4eb567",
+        "dedupe:upessc अस स ट ट प र फ सर पर क ष क ज ल क अग र म स चन ज र व बस इट पर द ख आपक स टर क स ज ल म ह|allahabad",
+        "dedupe:08e606f3bda94ee07fee58bdbe1c294e34b5c4d7fc1376a89c71c0df4beff730",
+        "dedupe:35131b09a68c99e8dcb266fc22845ff66fdc596ddde08283b303e5d0ee31badb"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "allahabad",
+      "canonicalEventCity": "allahabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "allahabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-08T15:30:30.595Z",
+      "expiresAt": "2026-11-08T15:45:30.595Z"
     }
   ]
 }
