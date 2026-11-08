@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-08T07:38:15.115Z",
+  "updatedAt": "2026-11-08T07:38:17.734Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11476,7 +11476,7 @@
     },
     {
       "claimId": "90dde835-dc20-4772-aaba-b3e2aed5f29e",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/lucknow-city-cm-yogi-celebrate-diwali-with-vantangiya-community-said-the-true-essence-of-diwali-lies-in-ensuring-that-the-light-of-happiness-40430871.html",
         "title-city:ग रखप र म स एम न द 82 कर ड क स ग त ल भ र थ य क ब ट क ट वनट ग य सम ज स ग मन ए ग द प वल|lucknow",
@@ -11498,7 +11498,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-08T07:38:15.115Z",
-      "expiresAt": "2026-11-08T07:53:15.115Z"
+      "expiresAt": "2026-11-08T07:53:15.115Z",
+      "finalizedAt": "2026-11-08T07:38:17.734Z"
     }
   ]
 }
