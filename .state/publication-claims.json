@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-08T23:43:19.112Z",
+  "updatedAt": "2026-11-08T23:43:21.542Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11610,7 +11610,7 @@
     },
     {
       "claimId": "cd37896c-074a-42a3-aabb-6b7d12c16cbf",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/haryana/rohtak-haryana-aabadi-deh-ownership-law-new-rules-for-property-rights-40426105.html",
         "title-city:हर य ण म आब द द ह क म ल क न हक पर नय क न न कब ज ध र क न म दर ज ह न क ब द ह म ल ग प रम णपत र|rohtak",
@@ -11632,7 +11632,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-08T23:43:19.112Z",
-      "expiresAt": "2026-11-08T23:58:19.112Z"
+      "expiresAt": "2026-11-08T23:58:19.112Z",
+      "finalizedAt": "2026-11-08T23:43:21.542Z"
     }
   ]
 }
