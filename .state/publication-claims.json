@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-08T15:30:30.595Z",
+  "updatedAt": "2026-11-08T15:30:32.962Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11556,7 +11556,7 @@
     },
     {
       "claimId": "a9d98118-ae61-4d52-835a-fd83912c46f5",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/prayagraj-uphesc-assistant-professor-exam-advanced-district-info-released-40431028.html",
         "title-city:upessc अस स ट ट प र फ सर पर क ष क ज ल क अग र म स चन ज र व बस इट पर द ख आपक स टर क स ज ल म ह|allahabad",
@@ -11578,7 +11578,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-08T15:30:30.595Z",
-      "expiresAt": "2026-11-08T15:45:30.595Z"
+      "expiresAt": "2026-11-08T15:45:30.595Z",
+      "finalizedAt": "2026-11-08T15:30:32.962Z"
     }
   ]
 }
