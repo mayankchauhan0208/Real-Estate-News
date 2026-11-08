@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-08T15:30:20.164Z",
+  "updatedAt": "2026-11-08T15:30:22.766Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11503,7 +11503,7 @@
     },
     {
       "claimId": "e4aee9eb-f130-442a-9caa-a4387cc5304f",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/residential/nbcc-cancels-bids-for-49-luxury-flats-after-declaring-winners-buyers-move-hc/135654751",
         "title-city:nbcc cancels bids for 49 luxury flats after declaring winners buyers move hc|new_delhi",
@@ -11524,7 +11524,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-08T15:30:20.164Z",
-      "expiresAt": "2026-11-08T15:45:20.164Z"
+      "expiresAt": "2026-11-08T15:45:20.164Z",
+      "finalizedAt": "2026-11-08T15:30:22.766Z"
     }
   ]
 }
