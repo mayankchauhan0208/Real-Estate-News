@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-07T21:13:39.280Z",
+  "updatedAt": "2026-11-08T00:54:06.443Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11446,6 +11446,32 @@
       "claimedAt": "2026-11-07T21:13:36.509Z",
       "expiresAt": "2026-11-07T21:28:36.509Z",
       "finalizedAt": "2026-11-07T21:13:39.280Z"
+    },
+    {
+      "claimId": "6b86268f-f23b-4d7d-97b9-9d232890aa3c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://birlaestatesltd.com/updates/birla-estates-opens-pre-launch-of-birla-commercial-shettigere-doddajala-in-shettigere-bangalore",
+        "title-city:birla commercial shettigere doddajala pre launch|bangalore",
+        "dedupe:321e5dbed1bc6a51477a3d1d5a8a58afbdfde7cf2ba201eff553134f44adb381",
+        "dedupe:b30ca57770d367bda13da81412ac8ee92d01b2f1365aebd6bf5c32fbbfbeac17",
+        "dedupe:920561b4645af2966f4dae68c133dfb8209e70ce7721a1c5aebeb3ed7417274b",
+        "dedupe:6c1efe871522d0afa31654522600a0b326160f425c04ab1a0357667afd3631ad",
+        "dedupe:birla commercial shettigere doddajala pre launch|bangalore",
+        "dedupe:8002bcb461f714f1240c1dd6a59ad53953d4b33b89e1b0d3e1cdd83abdb20606",
+        "dedupe:44459465323014890e2bbf23d86e6cd061936826cdef277ccc08ab72ef2437f9"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-08T00:54:06.443Z",
+      "expiresAt": "2026-11-08T01:09:06.443Z"
     }
   ]
 }
