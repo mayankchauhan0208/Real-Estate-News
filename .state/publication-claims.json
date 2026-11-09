@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-09T06:38:38.366Z",
+  "updatedAt": "2026-11-09T17:48:30.898Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11710,6 +11710,32 @@
       "claimedAt": "2026-11-09T06:38:35.816Z",
       "expiresAt": "2026-11-09T06:53:35.816Z",
       "finalizedAt": "2026-11-09T06:38:38.366Z"
+    },
+    {
+      "claimId": "ca57a00d-5cc6-4da0-ba91-2602e107d711",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/haryana/kurukshetra-crocodiles-were-released-in-kurukshetra-96-years-ago-now-a-breeding-center-a-12foottall-bahubali-has-become-an-attraction-40431840.html",
+        "title-city:96 स ल पहल मगरमच छ क क र क ष त र म छ ड ज त थ अब बन प रजनन क द र 12 फ ट ल ब ब ह बल बन आकर षण|kurukshetra",
+        "dedupe:bf62a1a1044c961a075fec42302ed05d91cf384a30a7561f030b6bb096333659",
+        "dedupe:45b767ecf02f9f9fcbc2c63a6c7a1925a00b53e7577c0aed8c0aa5455c00e0e9",
+        "dedupe:f4592c510b9d4e57767a950b8938a5a1c1d52611bd8675acb4433369ae280fe7",
+        "dedupe:c112f6d6232df1d5f397974a3595e4bfa61f3a5bddb8a2797b0b9939fa2eb2d9",
+        "dedupe:स ल पहल मगरमच छ क क र क ष त र म छ ड ज त थ अब बन प रजनन क द र फ ट ल ब ब ह बल बन आकर षण|kurukshetra",
+        "dedupe:3945362bba993e46e96e98200fbafb54a80ff7062cc75d2a02be0a914c2db513",
+        "dedupe:105e04cddee43bdd7340721c19e4f6c7d9720eb0b3dc5e564d6d24b1de372942"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "kurukshetra",
+      "canonicalEventCity": "kurukshetra",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "kurukshetra"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-09T17:48:30.898Z",
+      "expiresAt": "2026-11-09T18:03:30.898Z"
     }
   ]
 }
