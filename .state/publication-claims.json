@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-09T17:48:30.898Z",
+  "updatedAt": "2026-11-09T17:48:33.992Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11713,7 +11713,7 @@
     },
     {
       "claimId": "ca57a00d-5cc6-4da0-ba91-2602e107d711",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/haryana/kurukshetra-crocodiles-were-released-in-kurukshetra-96-years-ago-now-a-breeding-center-a-12foottall-bahubali-has-become-an-attraction-40431840.html",
         "title-city:96 स ल पहल मगरमच छ क क र क ष त र म छ ड ज त थ अब बन प रजनन क द र 12 फ ट ल ब ब ह बल बन आकर षण|kurukshetra",
@@ -11735,7 +11735,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-09T17:48:30.898Z",
-      "expiresAt": "2026-11-09T18:03:30.898Z"
+      "expiresAt": "2026-11-09T18:03:30.898Z",
+      "finalizedAt": "2026-11-09T17:48:33.992Z"
     }
   ]
 }
