@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-08T23:43:26.561Z",
+  "updatedAt": "2026-11-09T06:38:35.816Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11661,6 +11661,54 @@
       "claimedAt": "2026-11-08T23:43:23.898Z",
       "expiresAt": "2026-11-08T23:58:23.898Z",
       "finalizedAt": "2026-11-08T23:43:26.561Z"
+    },
+    {
+      "claimId": "3ac57e23-1597-4f2f-95f1-9e5544dc9301",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/delhi-sees-luxury-housing-boom-as-developers-bet-on-high-rise-gated-communities/articleshow/135667527.cms",
+        "title-city:delhi sees luxury housing boom as developers bet on high rise gated communities|new_delhi",
+        "dedupe:90071a1259ecd2a5ccdd94535f7ec62f9c27bd2aee37c117678647ccd91f2bdc",
+        "dedupe:2fac6db94451a5dc0100cf334d4cd4c1ff2213ea7f8962b6a7467dc289999fed",
+        "dedupe:0fc559b846bc139954f37613d708d79e0bedfdec6fa1b4d62a3d3c4ba3823a73",
+        "dedupe:60f3932b51e3669fcaec9466f262e59d1c685d2d4009d1b50aeb94c4009ede6b",
+        "dedupe:delhi sees housing boom as bet high rise gated communities|new_delhi",
+        "dedupe:3e95002290064ee7dbb5a556f704ee7c7b1d28797660b9e692e46e49c637ea3d",
+        "dedupe:843a3a6612c2c0134999a2bb5e6d14a5942186591d5e522a70a84b551190acf1"
+      ],
+      "semanticIdentity": {
+        "city": "new_delhi",
+        "canonicalEventCity": "new_delhi",
+        "normalizedBuilder": "dlf",
+        "normalizedProject": "",
+        "canonicalEventType": "residential-sale",
+        "builder": "dlf",
+        "project": "",
+        "eventType": "residential-sale",
+        "numericAnchors": [
+          "00:number",
+          "06:number",
+          "09:number",
+          "2026:number",
+          "27:number",
+          "400:crore",
+          "41:number",
+          "4500:crore",
+          "6500:crore"
+        ],
+        "canonicalEventFingerprint": "dlf|new_delhi|residential-sale|00:number,06:number,09:number",
+        "semanticClusterId": "cluster:95e98a8764796d47de7e82ff"
+      },
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "dlf|new_delhi|residential-sale|00:number,06:number,09:number",
+      "semanticClusterId": "cluster:95e98a8764796d47de7e82ff",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-09T06:38:35.816Z",
+      "expiresAt": "2026-11-09T06:53:35.816Z"
     }
   ]
 }
