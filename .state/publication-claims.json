@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-09T17:48:36.863Z",
+  "updatedAt": "2026-11-09T17:48:39.688Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11740,7 +11740,7 @@
     },
     {
       "claimId": "1f61ffd3-2a6c-4719-b7d2-ad175b83fa1c",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://proppuls.in/fgg-flags-rs-1108-cr-omkareshwara-temple-project-seeks-review-over-financial-strain",
         "title-city:fgg flags rs 1 108 cr omkareshwara temple project seeks review over financial strain|hyderabad",
@@ -11762,7 +11762,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-09T17:48:36.863Z",
-      "expiresAt": "2026-11-09T18:03:36.863Z"
+      "expiresAt": "2026-11-09T18:03:36.863Z",
+      "finalizedAt": "2026-11-09T17:48:39.688Z"
     }
   ]
 }
