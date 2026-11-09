@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-09T06:38:35.816Z",
+  "updatedAt": "2026-11-09T06:38:38.366Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11664,7 +11664,7 @@
     },
     {
       "claimId": "3ac57e23-1597-4f2f-95f1-9e5544dc9301",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/delhi-sees-luxury-housing-boom-as-developers-bet-on-high-rise-gated-communities/articleshow/135667527.cms",
         "title-city:delhi sees luxury housing boom as developers bet on high rise gated communities|new_delhi",
@@ -11708,7 +11708,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-09T06:38:35.816Z",
-      "expiresAt": "2026-11-09T06:53:35.816Z"
+      "expiresAt": "2026-11-09T06:53:35.816Z",
+      "finalizedAt": "2026-11-09T06:38:38.366Z"
     }
   ]
 }
