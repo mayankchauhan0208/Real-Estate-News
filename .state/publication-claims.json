@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-10T10:04:50.862Z",
+  "updatedAt": "2026-11-10T10:04:53.579Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11817,6 +11817,80 @@
       "claimedAt": "2026-11-10T10:04:48.011Z",
       "expiresAt": "2026-11-10T10:19:48.011Z",
       "finalizedAt": "2026-11-10T10:04:50.862Z"
+    },
+    {
+      "claimId": "e3138d78-44fd-4b23-939a-a6dd8bea934c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/max-estates-projects-noida-land-acquisition-to-take-gross-development-value-to-rs-50000-crore/articleshow/135697853.cms",
+        "title-city:max estates projects noida land acquisition to take gross development value to rs 50 000 crore|noida",
+        "dedupe:bb73c80274c87b01bd6d20d35064ab4b3fcd743b79802ca1bc2fd9ee8a9cea6c",
+        "dedupe:027c0bc764cb52beff9c588b9296ea6b7003bbb6be6d1a9d0a4f27b16741a240",
+        "dedupe:7357b3397e5ee305c83bff517bbf575f1e3be7da367fd4949118daf0b4adb6d9",
+        "dedupe:04648d1bd7c52a25fc0019f09e9ac69f2f251814a4aa1b2b59e0672b385685ab",
+        "dedupe:max estates noida land acquisition take gross development value|noida",
+        "dedupe:300740b0728226c84faf1222adf1e17180bae23db983c87d93b04ecde60b89b6",
+        "dedupe:ecd20a67453e2ab054aa831a24f644fc1dfbb627ef041d3f8ad4a5fc34cf687f"
+      ],
+      "semanticIdentity": {
+        "city": "noida",
+        "canonicalEventCity": "noida",
+        "normalizedBuilder": "godrej-properties",
+        "normalizedProject": "",
+        "canonicalEventType": "residential-sale",
+        "builder": "godrej-properties",
+        "project": "",
+        "eventType": "residential-sale",
+        "numericAnchors": [
+          "00:number",
+          "08:number",
+          "1051:crore",
+          "10:number",
+          "12:million sq ft",
+          "132:number",
+          "14:number",
+          "1500:number",
+          "15562:crore",
+          "18760:crore",
+          "1:million sq ft",
+          "2000:crore",
+          "2026:number",
+          "2092:crore",
+          "24:number",
+          "25.9:million sq ft",
+          "2500:number",
+          "272:crore",
+          "27:number",
+          "29000:crore",
+          "29058:crore",
+          "2:million sq ft",
+          "2:number",
+          "3000:crore",
+          "30:number",
+          "3184:crore",
+          "32000:crore",
+          "3:number",
+          "5.5:acre",
+          "50000:crore",
+          "560:crore",
+          "58:number",
+          "700:crore",
+          "84.7:acre",
+          "9.7:acre"
+        ],
+        "canonicalEventFingerprint": "godrej-properties|noida|residential-sale|00:number,08:number,1051:crore",
+        "semanticClusterId": "cluster:c2ddc7a2c9ab5e9ad0aefb18"
+      },
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "godrej-properties|noida|residential-sale|00:number,08:number,1051:crore",
+      "semanticClusterId": "cluster:c2ddc7a2c9ab5e9ad0aefb18",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-10T10:04:53.579Z",
+      "expiresAt": "2026-11-10T10:19:53.579Z"
     }
   ]
 }
