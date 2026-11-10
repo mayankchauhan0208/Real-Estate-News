@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-10T18:10:22.478Z",
+  "updatedAt": "2026-11-10T18:10:26.300Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11970,6 +11970,31 @@
       "claimedAt": "2026-11-10T18:10:17.096Z",
       "expiresAt": "2026-11-10T18:25:17.096Z",
       "finalizedAt": "2026-11-10T18:10:22.478Z"
+    },
+    {
+      "claimId": "0b696e97-fba3-44e3-a9e8-84504d54e95d",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/residential/nlmc-issues-rfp-to-e-auction-11-government-residential-flats-in-prayagraj/135710954",
+        "title-city:nlmc issues rfp to e auction 11 government residential flats in prayagraj|allahabad",
+        "dedupe:6a228587d0430c9d797a7f8af30a54058c26c00f3b8cfbbff0931411440dfc90",
+        "dedupe:532f059d252ab5fcbacd9b668b303e278dc50e5a47183f57211d0ef2096bc183",
+        "dedupe:b5e37d97c34b9f7b45dadaa01373607a748ea5132892e6f22f170edf679ad3ba",
+        "dedupe:nlmc issues rfp e auction government residential flats prayagraj|allahabad",
+        "dedupe:1af9c7759b188bfb31110eb2bbb8c8a1ea280a9e375ee8a1d0f3ecf9385bacd1",
+        "dedupe:76e6ea153ec67174902e41bfcfa170647821d640dc53e5bd81df0bafcf09b719"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "allahabad",
+      "canonicalEventCity": "allahabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "allahabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-10T18:10:26.300Z",
+      "expiresAt": "2026-11-10T18:25:26.300Z"
     }
   ]
 }
