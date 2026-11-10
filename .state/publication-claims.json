@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-10T01:51:04.548Z",
+  "updatedAt": "2026-11-10T10:04:48.011Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11791,6 +11791,31 @@
       "claimedAt": "2026-11-10T01:51:01.558Z",
       "expiresAt": "2026-11-10T02:06:01.558Z",
       "finalizedAt": "2026-11-10T01:51:04.548Z"
+    },
+    {
+      "claimId": "a246e06b-9f30-41c6-b5ff-f35090bd0bdd",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://constructionworld.in/latest-construction-news/real-estate-news/landmark-group-plans-rs-150-billion-ncr-expansion/100295",
+        "title-city:landmark group plans rs 150 billion ncr expansion|gurugram",
+        "dedupe:2cd5eb43cfad30580b7bd6c5b540c42f8edc1104e75ce143e3ff2cd6de468b44",
+        "dedupe:81d63f253077e92c4abe5116d1d97789bde72c0a8b72e396dc0a70916dc5cd23",
+        "dedupe:aa658ef1c648b4f4aa0b5bf0eaa60d076df3f9cc7ca8b93bc281b50563d8997c",
+        "dedupe:landmark group plans expansion|gurugram",
+        "dedupe:77069a6227f51a9eb299cdf71dbd5e319a9368a26fa423a89f967f8d19f0dd30",
+        "dedupe:7af8d27bf8e3ce51133b9b81d0287e59dc646c0f78c18bc3899208c14d424e49"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-10T10:04:48.011Z",
+      "expiresAt": "2026-11-10T10:19:48.011Z"
     }
   ]
 }
