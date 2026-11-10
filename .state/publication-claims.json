@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-10T10:04:56.496Z",
+  "updatedAt": "2026-11-10T18:09:59.719Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11892,6 +11892,31 @@
       "claimedAt": "2026-11-10T10:04:53.579Z",
       "expiresAt": "2026-11-10T10:19:53.579Z",
       "finalizedAt": "2026-11-10T10:04:56.496Z"
+    },
+    {
+      "claimId": "7153903d-6f1c-4a59-9896-e96be755ce36",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://constructionworld.in/latest-construction-news/real-estate-news/rmz-entities-secure-5-star-ratings-in-gresb-2026/100294",
+        "title-city:rmz entities secure 5 star ratings in gresb 2026|gurugram",
+        "dedupe:31f6dd35ef4b14266ad9a460e3a79d895278e72fdbdee934334ac409a59b351e",
+        "dedupe:7151c785d8f36eb5c79aa19141849b2b68873fabe5a3165cb2716b75955e4780",
+        "dedupe:cc87e6e3677558128ad7abff6ce4cdc15d7f68b84d73f62e79e662b0958caa2a",
+        "dedupe:rmz entities secure star ratings gresb|gurugram",
+        "dedupe:81980b038c79c550a687ce872e27b7d3265ad9ae1f181e3165edc0e6815f9572",
+        "dedupe:b7b31a9bb2881c3dacba38a64fc559e26844f3c55264ac098de033cda95a0688"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-10T18:09:59.719Z",
+      "expiresAt": "2026-11-10T18:24:59.719Z"
     }
   ]
 }
