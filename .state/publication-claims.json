@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-10T10:04:53.579Z",
+  "updatedAt": "2026-11-10T10:04:56.496Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11820,7 +11820,7 @@
     },
     {
       "claimId": "e3138d78-44fd-4b23-939a-a6dd8bea934c",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/max-estates-projects-noida-land-acquisition-to-take-gross-development-value-to-rs-50000-crore/articleshow/135697853.cms",
         "title-city:max estates projects noida land acquisition to take gross development value to rs 50 000 crore|noida",
@@ -11890,7 +11890,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-10T10:04:53.579Z",
-      "expiresAt": "2026-11-10T10:19:53.579Z"
+      "expiresAt": "2026-11-10T10:19:53.579Z",
+      "finalizedAt": "2026-11-10T10:04:56.496Z"
     }
   ]
 }
