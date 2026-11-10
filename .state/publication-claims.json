@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-10T18:10:17.096Z",
+  "updatedAt": "2026-11-10T18:10:22.478Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11947,7 +11947,7 @@
     },
     {
       "claimId": "c6fd64ee-a42b-4cb9-aad8-0216335acaa7",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://magicbricks.com/news/atal-setu-pune-expressway-link-67-percent-complete---to-save-90-minutes-kamb/152740.html",
         "title-city:atal setu pune expressway link 67 complete to save 90 minutes|pune",
@@ -11968,7 +11968,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-10T18:10:17.096Z",
-      "expiresAt": "2026-11-10T18:25:17.096Z"
+      "expiresAt": "2026-11-10T18:25:17.096Z",
+      "finalizedAt": "2026-11-10T18:10:22.478Z"
     }
   ]
 }
