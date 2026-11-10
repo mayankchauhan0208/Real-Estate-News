@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-10T18:10:29.953Z",
+  "updatedAt": "2026-11-10T18:10:33.504Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11996,6 +11996,31 @@
       "claimedAt": "2026-11-10T18:10:26.300Z",
       "expiresAt": "2026-11-10T18:25:26.300Z",
       "finalizedAt": "2026-11-10T18:10:29.953Z"
+    },
+    {
+      "claimId": "f69e3fe0-cfe2-4f01-9eb1-ad676dfc4a99",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://dinamalar.com/news/tamil-nadu-news/uncoordinated-public-works-department-implements-new-projects/4372754",
+        "title-city:ஒர ங க ண ப ப இல ல த ப த ப பண த த ற ப த ய த ட டங கள ச யல க கம இழ பற|chennai",
+        "dedupe:ea53d1c53f2118f9582db61962a635aba4ed16f35a4e745c90711692e3802a28",
+        "dedupe:48f707ab17a952e8337606b424b9f0f458a4876e6fa12cec76ccf0483755dc5d",
+        "dedupe:632c264fc3ad189610b87b9b9d94b0903a2d4eb4af544fb6c481e3a91246daff",
+        "dedupe:ஒர ங க ண ப ப இல ல த ப த ப பண த த ற ப த ய த ட டங கள ச யல க கம இழ பற|chennai",
+        "dedupe:62522468efc489d4296c38b30fd2f988edeb779e6eec3cbe275529d6902d68d4",
+        "dedupe:00d39719b2ba63b5ef1246ec668f1ea6103f8dc35afa2c15f8a3f90c6cf6e006"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "chennai",
+      "canonicalEventCity": "chennai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "chennai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-10T18:10:33.504Z",
+      "expiresAt": "2026-11-10T18:25:33.504Z"
     }
   ]
 }
