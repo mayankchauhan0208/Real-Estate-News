@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-10T18:10:08.858Z",
+  "updatedAt": "2026-11-10T18:10:13.122Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11921,7 +11921,7 @@
     },
     {
       "claimId": "234826f3-3190-420c-8c68-18d6e1989053",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://magicbricks.com/news/noida-metro-aqua-line-extension---10-new-stations-to-be-built-in-36-months-kamb/152736.html",
         "title-city:noida metro aqua line extension 10 new stations to be built in 36 months|noida",
@@ -11942,7 +11942,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-10T18:10:08.858Z",
-      "expiresAt": "2026-11-10T18:25:08.858Z"
+      "expiresAt": "2026-11-10T18:25:08.858Z",
+      "finalizedAt": "2026-11-10T18:10:13.122Z"
     }
   ]
 }
