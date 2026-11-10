@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-10T01:51:01.558Z",
+  "updatedAt": "2026-11-10T01:51:04.548Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -11767,7 +11767,7 @@
     },
     {
       "claimId": "6f456b7e-728b-49bd-ab67-edf2e31c3898",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/aligarh-city-greater-aligarh-housing-scheme-rera-hurdles-cleared-launch-soon-40431977.html",
         "title-city:ग र टर अल गढ आव स य य जन क र स त स फ पहल चरण म 165 एकड क ष त र म कट ग प ल ट|aligarh",
@@ -11789,7 +11789,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-10T01:51:01.558Z",
-      "expiresAt": "2026-11-10T02:06:01.558Z"
+      "expiresAt": "2026-11-10T02:06:01.558Z",
+      "finalizedAt": "2026-11-10T01:51:04.548Z"
     }
   ]
 }
