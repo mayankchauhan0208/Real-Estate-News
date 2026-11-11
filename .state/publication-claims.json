@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-11T14:36:38.783Z",
+  "updatedAt": "2026-11-11T14:36:41.033Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12184,6 +12184,32 @@
       "claimedAt": "2026-11-11T14:36:36.975Z",
       "expiresAt": "2026-11-11T14:51:36.975Z",
       "finalizedAt": "2026-11-11T14:36:38.783Z"
+    },
+    {
+      "claimId": "95a9067d-65ef-4ba5-8818-63756dd5411d",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/mathura-mathura-cm-grid-road-development-accelerates-phase-iii-works-40433619.html",
+        "title-city:स एम ग र ड य जन मथ र म व क स क र य पकड ग रफ त र स स सड क फ टप थ बन ग लग ग आकर षक ल इट|mathura",
+        "dedupe:8700c9efb74a0102bab582ba0e912f1f9e52b68ed8f7201de16fdd2210c1cdaa",
+        "dedupe:2940c660953f9a8d341ea147a79f9065181ff1e9ddd42cd5eeaaba424f0c6d90",
+        "dedupe:78ccd90d61bbcf0d8578e05aa30f38f980aa9db4edbed60087da1973f9484e82",
+        "dedupe:8bb50f2705c958c92112a9013a5b9b8bc586763510a27278ff20291fbe57e330",
+        "dedupe:स एम ग र ड य जन मथ र म व क स क र य पकड ग रफ त र स स सड क फ टप थ बन ग लग ग आकर षक ल इट|mathura",
+        "dedupe:4b1d5e00d5b1727abc1e7daa74dc52cd68bad2472d14d2661478159791075a3d",
+        "dedupe:369674e50dae027557c88ee1c80d1eb8bea23c8756117feeee426e7c14200ed7"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mathura",
+      "canonicalEventCity": "mathura",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mathura"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-11T14:36:41.033Z",
+      "expiresAt": "2026-11-11T14:51:41.033Z"
     }
   ]
 }
