@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-11T14:36:27.681Z",
+  "updatedAt": "2026-11-11T14:36:29.917Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12106,7 +12106,7 @@
     },
     {
       "claimId": "ec13d767-6ece-47ab-b8ab-699308fd37aa",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/agra-city-agra-property-map-arrears-ots-scheme-extended-to-dec-15-40433466.html",
         "title-city:स पत त और म नच त र बक य द र क ल ए ओट एस य जन 15 द स बर तक प ज करण क म क|agra",
@@ -12128,7 +12128,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-11T14:36:27.681Z",
-      "expiresAt": "2026-11-11T14:51:27.681Z"
+      "expiresAt": "2026-11-11T14:51:27.681Z",
+      "finalizedAt": "2026-11-11T14:36:29.917Z"
     }
   ]
 }
