@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-11T22:15:22.725Z",
+  "updatedAt": "2026-11-11T22:15:24.995Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12265,6 +12265,32 @@
       "claimedAt": "2026-11-11T22:15:20.119Z",
       "expiresAt": "2026-11-11T22:30:20.119Z",
       "finalizedAt": "2026-11-11T22:15:22.725Z"
+    },
+    {
+      "claimId": "8d719813-6bb4-419d-8a27-80d4e45e5d39",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-aqua-metro-boosts-greater-noida-west-property-market-prices-40433887.html",
+        "title-city:एक व म ट र क एल न स ग र टर न एड व स ट क प र पर ट ब ज र म हलचल इन 5 स ट शन पर बढ सकत ह क मत|noida",
+        "dedupe:95751c89998117d8e27ae701ccc0b052f71b2c2e7bb593455b6857d686bea46e",
+        "dedupe:ebc99ffacf5dd57387cbd4f2c7b9db5693d9337061cde5ad729f33594bca738c",
+        "dedupe:661847cc67a2cd35a7dbd50ba55fc2aa4aca8fa75cd512fe9bbb4c97c8a38264",
+        "dedupe:7386540fce2896f742ddf0758306bc12a64e632b0256960f7e73b467995e89d1",
+        "dedupe:एक व म ट र क एल न स ग र टर न एड व स ट क प र पर ट ब ज र म हलचल इन स ट शन पर बढ सकत ह क मत|noida",
+        "dedupe:80e36c828e0441ec8652112d547e496e38682d2803bea0eadb24ae8b39946678",
+        "dedupe:0835dcd56fe5ed202ec307550d2618a5e7b9c4689fc11977f29475131b34c8bb"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-11T22:15:24.995Z",
+      "expiresAt": "2026-11-11T22:30:24.995Z"
     }
   ]
 }
