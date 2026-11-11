@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-11T14:36:34.646Z",
+  "updatedAt": "2026-11-11T14:36:36.975Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12157,6 +12157,32 @@
       "claimedAt": "2026-11-11T14:36:32.244Z",
       "expiresAt": "2026-11-11T14:51:32.244Z",
       "finalizedAt": "2026-11-11T14:36:34.646Z"
+    },
+    {
+      "claimId": "cf99f882-25e9-4148-b771-6f2773b08567",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://livehindustan.com/ncr/former-vice-president-jadeep-dhankhar-fainted-during-walk-admitted-in-aiims-201794400085820.html",
+        "title-city:प र व उपर ष ट रपत धनखड अच नक ब ह श ह कर ग र पड एम स म भर त पहल भ ह ए ह दस|delhi",
+        "dedupe:99c4b89d7afd9353265c5142feda3c9f1936d3e982ab0c0808c74679ebbcfc0b",
+        "dedupe:19608ec13d9f8bc7803636c27894e6cd8b8060dee24a2f78fff3cad22f78a4c5",
+        "dedupe:29d1db7a7ef84a7b1e47be62fa2a5213d63e1e98233ff7eaa2448d152510755a",
+        "dedupe:273393cba9f9110f855db02cc02ca6fcefd83ed391035794f4cd72e12e90b0b7",
+        "dedupe:प र व उपर ष ट रपत धनखड अच नक ब ह श ह कर ग र पड एम स म भर त पहल भ ह ए ह दस|delhi",
+        "dedupe:ca78d1b79585dd1f1cafab2a43a6fc0ccc1bb3a95e9c0e782ab2b67698d6970b",
+        "dedupe:b511d9b2ef692edc7ea9216bd72052efb5f18f4b9dc83aff0d0df1bcf8799a9a"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "delhi",
+      "canonicalEventCity": "delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-11T14:36:36.975Z",
+      "expiresAt": "2026-11-11T14:51:36.975Z"
     }
   ]
 }
