@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-10T18:10:37.534Z",
+  "updatedAt": "2026-11-11T06:28:16.297Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12022,6 +12022,32 @@
       "claimedAt": "2026-11-10T18:10:33.504Z",
       "expiresAt": "2026-11-10T18:25:33.504Z",
       "finalizedAt": "2026-11-10T18:10:37.534Z"
+    },
+    {
+      "claimId": "5b872ee1-47d2-4c90-b9d8-cbc3f702369d",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-ring-road-13-km-ready-awaiting-forest-land-approval-40432981.html",
+        "title-city:म रठ म र ग र ड क 13 km ल ब ह स स बनकर त य र बस 6660 म टर वन भ म क अन मत क इ तज र|meerut",
+        "dedupe:fcfadd771ddae47a296fb4bdb774761ea5e3716300494b8fbfe7b4d0a6928361",
+        "dedupe:08968ccdb64581e87eff0c47133a14212cb2c28de1da6bd380b845a13c4ca99e",
+        "dedupe:5a7da037bf039b5c1b8b683864a453c953b23d437a731ba784ac6dc99390c3e4",
+        "dedupe:9892f72e9c28bd397342b5af4f8c0976526fe9c9bc0e00831d92302fd69cc251",
+        "dedupe:म रठ म र ग र ड क km ल ब ह स स बनकर त य र बस म टर वन भ म क अन मत क इ तज र|meerut",
+        "dedupe:3740f5660c8419c7513f7fbbfc4c1cdd21963f6278f8c5ef2fa77475d6f56f41",
+        "dedupe:df8925a95832764049f3eb347b820c0a65597069b5e792301461f6acc021daf5"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "meerut",
+      "canonicalEventCity": "meerut",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "meerut"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-11T06:28:16.297Z",
+      "expiresAt": "2026-11-11T06:43:16.297Z"
     }
   ]
 }
