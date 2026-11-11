@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-11T14:36:43.570Z",
+  "updatedAt": "2026-11-11T22:15:15.090Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12211,6 +12211,32 @@
       "claimedAt": "2026-11-11T14:36:41.033Z",
       "expiresAt": "2026-11-11T14:51:41.033Z",
       "finalizedAt": "2026-11-11T14:36:43.570Z"
+    },
+    {
+      "claimId": "429a5f72-4e1a-41a7-a471-d4f56448f39b",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/hca-global-pre-leases-6-44-lakh-sq-ft-in-mindspace-hyderabad-rental-outgo-rs-945-crore/articleshow/135736939.cms",
+        "title-city:hca global pre leases 6 44 lakh sq ft in mindspace hyderabad rental outgo rs 945 crore|hyderabad",
+        "dedupe:fc390f6ab8df3f0577afcae2f83a6350d45db9bf172276201bb7185e1a2aaa28",
+        "dedupe:9503aed5098e37ec713089fc1240108cdc1a2b6633be5c2eefd4571665337eec",
+        "dedupe:46a32b5564248cd456b9cac6a74e1ab8daef221878cf826c17a152f0f21c3fb6",
+        "dedupe:b4fad128b92595c2346d784c51bd811dcd33eb7a8c5d33c0b652b020d36b4661",
+        "dedupe:hca global pre leases mindspace hyderabad rental outgo|hyderabad",
+        "dedupe:fa8ebd8464bf0720c926917b404bff0dfa3f9078bb8b5c19be68ff755215d273",
+        "dedupe:ffae8b77e174b4e5f241341b321be40f647599118f882e062325e4fd994d1daf"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-11T22:15:15.090Z",
+      "expiresAt": "2026-11-11T22:30:15.090Z"
     }
   ]
 }
