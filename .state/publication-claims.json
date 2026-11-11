@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-11T06:28:24.406Z",
+  "updatedAt": "2026-11-11T14:36:22.547Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12076,6 +12076,32 @@
       "claimedAt": "2026-11-11T06:28:21.746Z",
       "expiresAt": "2026-11-11T06:43:21.746Z",
       "finalizedAt": "2026-11-11T06:28:24.406Z"
+    },
+    {
+      "claimId": "c8e36e2d-513d-40f3-bcbc-f57a3f9bc259",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/ghaziabad-niwari-industrial-area-modinagars-mega-hub-jobs-for-west-up-40433403.html",
+        "title-city:780 कर ड क म ग प र ज क ट म द नगर क न व ड बन ग व स ट up क सबस बड औद य ग क क द र म ल ग ल ख ज ब|lucknow",
+        "dedupe:80073fc0d61ba7bf84ae9b99f944faff0b05ca48b6d7d174e5a4eae81b8d70ac",
+        "dedupe:3893046d48b48c806c63887be84565b4141685d25e07957db08bfc4952320641",
+        "dedupe:28b53e895ada2e4ad72b5f4213fd4e2392a56fede0e58690d894186d2b3c3fc0",
+        "dedupe:6e0cba3fd8f6dcc15b223946d2e58b8757cb45494455e3611bd27d734471e0bf",
+        "dedupe:कर ड क म ग प र ज क ट म द नगर क न व ड बन ग व स ट क सबस बड औद य ग क क द र म ल ग ल ख ज ब|lucknow",
+        "dedupe:3f87da5a5a3986bf533292544f9ce012f8ff6536795720ffd8c157e8b52696a9",
+        "dedupe:68062c6cbb4e050e5dba5f814a579b706e40239469bf980c2f5818fb706e4c56"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-11T14:36:22.547Z",
+      "expiresAt": "2026-11-11T14:51:22.547Z"
     }
   ]
 }
