@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-11T22:15:17.624Z",
+  "updatedAt": "2026-11-11T22:15:20.119Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12238,6 +12238,32 @@
       "claimedAt": "2026-11-11T22:15:15.090Z",
       "expiresAt": "2026-11-11T22:30:15.090Z",
       "finalizedAt": "2026-11-11T22:15:17.624Z"
+    },
+    {
+      "claimId": "ba43351f-88b4-4382-8e49-d7534f04ecf6",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/lucknow-city-up-special-employment-week-nov-2330-rural-jobs-focus-40433885.html",
+        "title-city:य प म 23 स 30 नव बर तक मन य ज एग व श ष र जग र सप त ह ग व म ह म ल ग क म|lucknow",
+        "dedupe:52cc98c4cf22afcf4fa2d21950cd70a7abcb084536129fca7a9421baf83ec161",
+        "dedupe:a2342aa2b998a8c8ea8ca66ec419c1a419b02cf3a7cbaa7593d1877599adc30d",
+        "dedupe:f4eb4899c16c3c6af62bb42e7caa7bf6d7052329628a82125908cc11e70ba937",
+        "dedupe:59e384e7d3318057272884a6b5eec8bc43ef9df2e55b2e87de29d994d374043d",
+        "dedupe:य प म स नव बर तक मन य ज एग व श ष र जग र सप त ह ग व म ह म ल ग क म|lucknow",
+        "dedupe:f2733ae4d199b548dab241339a10064db74301e82c1d83ac0e26e0862141d501",
+        "dedupe:9d73119e171507a0642f76fd2163fd2130aa4bb9264b76f08474b963580e03b1"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-11T22:15:20.119Z",
+      "expiresAt": "2026-11-11T22:30:20.119Z"
     }
   ]
 }
