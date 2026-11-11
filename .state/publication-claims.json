@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-11T06:28:19.294Z",
+  "updatedAt": "2026-11-11T06:28:21.746Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12049,6 +12049,32 @@
       "claimedAt": "2026-11-11T06:28:16.297Z",
       "expiresAt": "2026-11-11T06:43:16.297Z",
       "finalizedAt": "2026-11-11T06:28:19.294Z"
+    },
+    {
+      "claimId": "e0645be6-cefe-4ad2-9d30-c19eebf1d38f",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/haryana/sonipat-nhai-approves-delhi-karnal-namo-bharat-corridor-project-check-the-full-route-and-list-of-stations-40433063.html",
+        "title-city:द ल ल करन ल नम भ रत क र ड र पर बड अपड ट nhai न द स द ध त क म ज र इन 22 स ट शन पर र क ग ट र न|new_delhi",
+        "dedupe:9e854cd8d288e8974a1a65654cfa28cf1b0b6bd0cd97f30ef16d56a8f0b72982",
+        "dedupe:cbebc4935bd246ade8dea53ed480759453f8524c3d7b2c9bb3c53dff42f4ce1a",
+        "dedupe:ce2ce9431587bff8342dfb43c4195355d32321a5ac634dff86510d9f5cd1ea81",
+        "dedupe:5e1e9249ad7f273291b6f74c5cf7d3f436d1cfc0284d5246510ef8d96a93ec82",
+        "dedupe:द ल ल करन ल नम भ रत क र ड र पर बड अपड ट nhai न द स द ध त क म ज र इन स ट शन पर र क ग ट र न|new_delhi",
+        "dedupe:efb370f2f5d6f196edbbdbdf76e0048f18c046a276f574cdb8509d77e1f5824f",
+        "dedupe:2504e5cc4b517de06ce86440bcca0edf0cbef0e08d251ecdea965ad1324f3887"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-11T06:28:21.746Z",
+      "expiresAt": "2026-11-11T06:43:21.746Z"
     }
   ]
 }
