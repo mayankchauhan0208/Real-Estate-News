@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-11T14:36:36.975Z",
+  "updatedAt": "2026-11-11T14:36:38.783Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12160,7 +12160,7 @@
     },
     {
       "claimId": "cf99f882-25e9-4148-b771-6f2773b08567",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://livehindustan.com/ncr/former-vice-president-jadeep-dhankhar-fainted-during-walk-admitted-in-aiims-201794400085820.html",
         "title-city:प र व उपर ष ट रपत धनखड अच नक ब ह श ह कर ग र पड एम स म भर त पहल भ ह ए ह दस|delhi",
@@ -12182,7 +12182,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-11T14:36:36.975Z",
-      "expiresAt": "2026-11-11T14:51:36.975Z"
+      "expiresAt": "2026-11-11T14:51:36.975Z",
+      "finalizedAt": "2026-11-11T14:36:38.783Z"
     }
   ]
 }
