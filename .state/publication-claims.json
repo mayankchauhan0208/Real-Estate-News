@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-11T14:36:29.917Z",
+  "updatedAt": "2026-11-11T14:36:32.244Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12130,6 +12130,32 @@
       "claimedAt": "2026-11-11T14:36:27.681Z",
       "expiresAt": "2026-11-11T14:51:27.681Z",
       "finalizedAt": "2026-11-11T14:36:29.917Z"
+    },
+    {
+      "claimId": "d1fed11d-318c-4ee4-b887-fe4935b98010",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/hca-global-pre-leases-6-44-lakh-sq-ft-office-space-for-gcc-in-hyderabad-for-10-years-rental-outgo-pegged-at-945-crore-101794394591368.html",
+        "title-city:hca global pre leases 6 44 lakh sq ft office space for gcc in hyderabad for 10 years rental outgo pegged at 945 crore|hyderabad",
+        "dedupe:416751196b60c9e24eb196d8292bdfa8024a8870615ca62481846ebf320a9e9d",
+        "dedupe:4247c0cc071cd89873ee5fe745eadc8baecd8fe225766e51957e014098f5ab2d",
+        "dedupe:c9f485c56d6c9284e19aab5c9b47bd11ec6f0e01163ee0a0db8ca65d556d54d8",
+        "dedupe:467a799966e44ae4d1fe69ccb38ddc2c9e3e49abf9a2ffdd2d5532bf5c8ae50b",
+        "dedupe:hca global pre leases office space gcc hyderabad years rental outgo pegged|hyderabad",
+        "dedupe:be97ef56548eda218a18cfcf946c423d69569bc9bc8c5013245c2a1a2dc0bfc2",
+        "dedupe:e47f8709da4e56cf8a6886a7d9cbe00d9409b439281dbf8eff4b9c5697b0e90c"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-11T14:36:32.244Z",
+      "expiresAt": "2026-11-11T14:51:32.244Z"
     }
   ]
 }
