@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-11T06:28:21.746Z",
+  "updatedAt": "2026-11-11T06:28:24.406Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12052,7 +12052,7 @@
     },
     {
       "claimId": "e0645be6-cefe-4ad2-9d30-c19eebf1d38f",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/haryana/sonipat-nhai-approves-delhi-karnal-namo-bharat-corridor-project-check-the-full-route-and-list-of-stations-40433063.html",
         "title-city:द ल ल करन ल नम भ रत क र ड र पर बड अपड ट nhai न द स द ध त क म ज र इन 22 स ट शन पर र क ग ट र न|new_delhi",
@@ -12074,7 +12074,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-11T06:28:21.746Z",
-      "expiresAt": "2026-11-11T06:43:21.746Z"
+      "expiresAt": "2026-11-11T06:43:21.746Z",
+      "finalizedAt": "2026-11-11T06:28:24.406Z"
     }
   ]
 }
