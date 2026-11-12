@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-11T22:15:28.127Z",
+  "updatedAt": "2026-11-12T03:16:53.527Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12292,6 +12292,32 @@
       "claimedAt": "2026-11-11T22:15:24.995Z",
       "expiresAt": "2026-11-11T22:30:24.995Z",
       "finalizedAt": "2026-11-11T22:15:28.127Z"
+    },
+    {
+      "claimId": "455540ae-5ec0-4313-9264-614d1a8bab7e",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-yamuna-authority-prioritizes-entertainment-in-greater-noida-plan-40434032.html",
+        "title-city:यम न प र ध करण ग र टर न एड शहर क व क स म मन र जन क द ग तरज ह त य र ह आ प र ख क|noida",
+        "dedupe:dc7771a179a204da3bd41ed049c83a60fe36d345206001fad9f100fc1afbdf07",
+        "dedupe:e4085eaf0ddaf9633c0007e8b8eef7fc280bc57e99aecd25c0b91e2eb9b5855f",
+        "dedupe:c39ba09b4bb7bc1522350a801f23dcd4bd96a97a3062972f1e6204f0c2eb5726",
+        "dedupe:338eea99b2d6e86eac17130cc1f7aeba9258f7278e5e926a174c7c914aa6f3c3",
+        "dedupe:यम न प र ध करण ग र टर न एड शहर क व क स म मन र जन क द ग तरज ह त य र ह आ प र ख क|noida",
+        "dedupe:9bfa793f889fb7505abb3769e7aa31eb5dd5f88fb57a3c2fe9ff2d5437696c68",
+        "dedupe:c0e005274cf49bb067d2e644ff64412eb44e94f27a9113a69fad75810a17910e"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-12T03:16:53.527Z",
+      "expiresAt": "2026-11-12T03:31:53.527Z"
     }
   ]
 }
