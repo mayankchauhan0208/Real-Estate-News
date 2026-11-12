@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-12T03:16:59.964Z",
+  "updatedAt": "2026-11-12T03:17:02.116Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12346,6 +12346,32 @@
       "claimedAt": "2026-11-12T03:16:58.252Z",
       "expiresAt": "2026-11-12T03:31:58.252Z",
       "finalizedAt": "2026-11-12T03:16:59.964Z"
+    },
+    {
+      "claimId": "f1e2524f-044b-44d9-8593-4f953e0060f2",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/chandigarh-news/chandigarh-villages-to-finally-get-official-land-records-for-lal-dora-properties-101794426594753.html",
+        "title-city:chandigarh villages to finally get official land records for lal dora properties|chandigarh",
+        "dedupe:5f394ab48646ca03b6912d77aa4885aabbac53a65dd626811c9cb735e3635d82",
+        "dedupe:1c90c1c7559b5099332180357ac50296f38d8bf94400e3016355f9ab05ccf635",
+        "dedupe:bcf080bd5260f8b3ccc1c88649a5058fb50be67519dee9b5055e60c7f461edb8",
+        "dedupe:a8b6ebc1a0f4923035b7fae1c3eb1de9dfb805d6800d50f533f22096f655ab04",
+        "dedupe:chandigarh villages finally get official land records lal dora properties|chandigarh",
+        "dedupe:51c2196724d7c17909d569c34d07c653ff4c0bc4aa0b89a0ef444b9472d7c0f9",
+        "dedupe:58ff2a235a78468b5dfde36addc3e68cc900dd1b6c3d4eaa5a46218b867c2299"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "chandigarh",
+      "canonicalEventCity": "chandigarh",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "chandigarh"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-12T03:17:02.116Z",
+      "expiresAt": "2026-11-12T03:32:02.116Z"
     }
   ]
 }
