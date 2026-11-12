@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-12T19:14:18.264Z",
+  "updatedAt": "2026-11-12T19:14:21.181Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12543,7 +12543,7 @@
     },
     {
       "claimId": "273975ab-9c24-4423-bce4-77830791752c",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://kannada.oneindia.com/news/bengaluru/bengaluru-real-estate-soaring-property-prices-push-buyers-towards-the-city-s-outskirts-bengaluru-pr-474247.html",
         "title-city:bengaluru real estate ಗಗನಕ ಕ ರ ದ ಭ ಮ ಬ ಲ ಬ ಗಳ ರ ನ ಹ ರವಲಯದ ಆಸ ತ ಖರ ದ ಗ ಹ ಚ ಚ ದ ಒಲವ|bangalore",
@@ -12565,7 +12565,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-12T19:14:18.264Z",
-      "expiresAt": "2026-11-12T19:29:18.264Z"
+      "expiresAt": "2026-11-12T19:29:18.264Z",
+      "finalizedAt": "2026-11-12T19:14:21.181Z"
     }
   ]
 }
