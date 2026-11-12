@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-12T03:16:56.015Z",
+  "updatedAt": "2026-11-12T03:16:58.252Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12319,6 +12319,32 @@
       "claimedAt": "2026-11-12T03:16:53.527Z",
       "expiresAt": "2026-11-12T03:31:53.527Z",
       "finalizedAt": "2026-11-12T03:16:56.015Z"
+    },
+    {
+      "claimId": "ad54acd1-fc61-4277-92d2-80b370146171",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/lucknow-news/lmcs-hi-tech-nursery-set-to-bloom-101794425395553.html",
+        "title-city:lmc s hi tech nursery set to bloom|lucknow",
+        "dedupe:702e8f949d4fcf8b8f230ad6cea29c0b3e9cc269c28d3984f705b62df24588af",
+        "dedupe:ba4c374801ba8398f504714366ffc21c248726ef1d5b46ddf45721656fe8587a",
+        "dedupe:7d961cefc8d02300088df4ae769ea92da218a863d16ec1f7036837ce84868a38",
+        "dedupe:94da8afe1592d3dfd65d9e16f6dac4d1ce15e345f4914b3aebd379ba28a9c128",
+        "dedupe:lmc s hi tech nursery set bloom|lucknow",
+        "dedupe:4716ceeeccb3b22f2816eea2aeebcb883e9ae2a97f60b38877570e6fbd994c2c",
+        "dedupe:bb778e7ea37e38e4718bdc618bb20e7ac03344a12c489762dc6a2dd3dc8d071c"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-12T03:16:58.252Z",
+      "expiresAt": "2026-11-12T03:31:58.252Z"
     }
   ]
 }
