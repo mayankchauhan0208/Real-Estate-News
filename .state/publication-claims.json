@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-12T19:14:21.181Z",
+  "updatedAt": "2026-11-12T19:14:24.442Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12567,6 +12567,66 @@
       "claimedAt": "2026-11-12T19:14:18.264Z",
       "expiresAt": "2026-11-12T19:29:18.264Z",
       "finalizedAt": "2026-11-12T19:14:21.181Z"
+    },
+    {
+      "claimId": "e2935db9-d86c-4586-8b4d-ed6b9b000412",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/kw-group-acquires-1-5-acre-land-parcel-in-ghaziabad-for-134-crore-plans-ultra-luxury-housing-project-101794492373691.html",
+        "title-city:kw group acquires 1 5 acre land parcel in ghaziabad for 134 crore plans ultra luxury housing project|ghaziabad",
+        "dedupe:c5b88097ce6e38bd2ffb581c88da5203f0aa90c8ff7d0522643e09956bfe2a33",
+        "dedupe:83efb33738ff2d93ec945b062942525b53d39d18eb4aece8395bae4fee888ee7",
+        "dedupe:3b0e254ca9211fed46f04cfae828a6cfb74097bc0e1398d575725f9c6f531157",
+        "dedupe:e4cc9acf377dfbf4cc1ca799bb11c6cffee21234104b1deb2fdd3117668d74bc",
+        "dedupe:kw group acquires acre land parcel ghaziabad plans ultra housing|ghaziabad",
+        "dedupe:d785f42ca68b26c26444b677fc860470002b8b65eed31433b59544a8b19ab756",
+        "dedupe:21c90e0014559463df5d21013ee49e096caeb671aabcb5dc7016d8ce88feba6d"
+      ],
+      "semanticIdentity": {
+        "city": "ghaziabad",
+        "canonicalEventCity": "ghaziabad",
+        "normalizedBuilder": "prestige",
+        "normalizedProject": "",
+        "canonicalEventType": "project-launch",
+        "builder": "prestige",
+        "project": "",
+        "eventType": "project-launch",
+        "numericAnchors": [
+          "1.5:acre",
+          "1.5:million sq ft",
+          "12000:crore",
+          "12:number",
+          "133.98:crore",
+          "134:crore",
+          "150:crore",
+          "15:number",
+          "18:number",
+          "19:number",
+          "2009:number",
+          "2025:number",
+          "2026:number",
+          "2500:number",
+          "27:number",
+          "3000:crore",
+          "48:number",
+          "5:lakh",
+          "7:number",
+          "877:crore",
+          "9.76:acre"
+        ],
+        "canonicalEventFingerprint": "prestige|ghaziabad|project-launch|1.5:acre,1.5:million sq ft,12000:crore",
+        "semanticClusterId": "cluster:6f2ffeebd3ed5e78cafbea0c"
+      },
+      "publishedCity": "ghaziabad",
+      "canonicalEventCity": "ghaziabad",
+      "canonicalEventFingerprint": "prestige|ghaziabad|project-launch|1.5:acre,1.5:million sq ft,12000:crore",
+      "semanticClusterId": "cluster:6f2ffeebd3ed5e78cafbea0c",
+      "city": [
+        "ghaziabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-12T19:14:24.442Z",
+      "expiresAt": "2026-11-12T19:29:24.442Z"
     }
   ]
 }
