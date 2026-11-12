@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-12T11:20:20.710Z",
+  "updatedAt": "2026-11-12T11:20:23.739Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12400,6 +12400,31 @@
       "claimedAt": "2026-11-12T11:20:16.917Z",
       "expiresAt": "2026-11-12T11:35:16.917Z",
       "finalizedAt": "2026-11-12T11:20:20.710Z"
+    },
+    {
+      "claimId": "1a4656ed-6e7f-4be2-ad3b-aa6ed66f0f59",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/kw-group-buys-1-5-acre-land-in-ghaziabad-for-134-crore/135764985",
+        "title-city:kw group buys 1 5 acre land in ghaziabad for 134 crore|ghaziabad",
+        "dedupe:74f93fd5f3e03636c08a4837ebdd0ca0398447d92bc95e20cba108a050f451aa",
+        "dedupe:30a5f5294d8624a1d747c6517754d2bb5b0504782d88d86b1e33f4191bc00e52",
+        "dedupe:52dfcd589f4b5a859aabc64da888b38bbbeb6eab52b59bfaa0b7cc3a5bfd6233",
+        "dedupe:kw group buys acre land ghaziabad|ghaziabad",
+        "dedupe:abd8d8c6fd3b4f28d9da05f5c05a0ed290d6206986f603a78163b43e3e5291cd",
+        "dedupe:b25f817514e7acaa893807ea9f62d72b6e688b0654f9eb9ca1ca88a92af7bb98"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "ghaziabad",
+      "canonicalEventCity": "ghaziabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "ghaziabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-12T11:20:23.739Z",
+      "expiresAt": "2026-11-12T11:35:23.739Z"
     }
   ]
 }
