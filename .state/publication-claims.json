@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-12T19:14:27.205Z",
+  "updatedAt": "2026-11-12T19:14:30.310Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12628,6 +12628,32 @@
       "claimedAt": "2026-11-12T19:14:24.442Z",
       "expiresAt": "2026-11-12T19:29:24.442Z",
       "finalizedAt": "2026-11-12T19:14:27.205Z"
+    },
+    {
+      "claimId": "5689be22-0687-48c9-9f63-77de915ec126",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/kanpur-city-iit-kanpur-uncovers-new-diabetes-insulin-secretion-mechanism-40434819.html",
+        "title-city:iit क नप र क व ज ञ न क न ख ज ड यब ट ज क नय त त र म नट म इ स ल न क स र व र क सकत ह इम य न स ल स|kanpur",
+        "dedupe:8f85caa251db77bb18d0ff04c6ddd95e4fe5f2cf01530d59d4306c21f1797247",
+        "dedupe:894e82d3435397c0c6534bda5ae4ade7af3a7a9ac17e6cb90894dfe2870b8a52",
+        "dedupe:d0c3662165d24d86a06bdb16232b026ca81260985bcb06cc19b68e436428eba0",
+        "dedupe:d380c6972b04749f2316f070b17fc443e106e21ebb427727826a0919a01c17cb",
+        "dedupe:iit क नप र क व ज ञ न क न ख ज ड यब ट ज क नय त त र म नट म इ स ल न क स र व र क सकत ह इम य न स ल स|kanpur",
+        "dedupe:d31672a674d5b129f3688b9a51d6eaa348ce68802ec66be4af3fb6892c54c25c",
+        "dedupe:da87eb760ae3543e3e330c40998bb0304b7bcb0fad8d85612bc221a3b366e264"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "kanpur",
+      "canonicalEventCity": "kanpur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "kanpur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-12T19:14:30.310Z",
+      "expiresAt": "2026-11-12T19:29:30.310Z"
     }
   ]
 }
