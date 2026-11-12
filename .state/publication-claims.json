@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-12T19:14:24.442Z",
+  "updatedAt": "2026-11-12T19:14:27.205Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12570,7 +12570,7 @@
     },
     {
       "claimId": "e2935db9-d86c-4586-8b4d-ed6b9b000412",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/real-estate/kw-group-acquires-1-5-acre-land-parcel-in-ghaziabad-for-134-crore-plans-ultra-luxury-housing-project-101794492373691.html",
         "title-city:kw group acquires 1 5 acre land parcel in ghaziabad for 134 crore plans ultra luxury housing project|ghaziabad",
@@ -12626,7 +12626,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-12T19:14:24.442Z",
-      "expiresAt": "2026-11-12T19:29:24.442Z"
+      "expiresAt": "2026-11-12T19:29:24.442Z",
+      "finalizedAt": "2026-11-12T19:14:27.205Z"
     }
   ]
 }
