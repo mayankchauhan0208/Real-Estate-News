@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-12T03:16:53.527Z",
+  "updatedAt": "2026-11-12T03:16:56.015Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12295,7 +12295,7 @@
     },
     {
       "claimId": "455540ae-5ec0-4313-9264-614d1a8bab7e",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-yamuna-authority-prioritizes-entertainment-in-greater-noida-plan-40434032.html",
         "title-city:यम न प र ध करण ग र टर न एड शहर क व क स म मन र जन क द ग तरज ह त य र ह आ प र ख क|noida",
@@ -12317,7 +12317,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-12T03:16:53.527Z",
-      "expiresAt": "2026-11-12T03:31:53.527Z"
+      "expiresAt": "2026-11-12T03:31:53.527Z",
+      "finalizedAt": "2026-11-12T03:16:56.015Z"
     }
   ]
 }
