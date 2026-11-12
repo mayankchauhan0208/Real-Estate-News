@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-12T03:17:03.890Z",
+  "updatedAt": "2026-11-12T11:20:16.917Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12373,6 +12373,32 @@
       "claimedAt": "2026-11-12T03:17:02.116Z",
       "expiresAt": "2026-11-12T03:32:02.116Z",
       "finalizedAt": "2026-11-12T03:17:03.890Z"
+    },
+    {
+      "claimId": "fadf7c20-fdb9-4c56-bc50-f1f2e2749346",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/ujjain-gets-%e2%82%b9950-crore-infrastructure-boost-ahead-of-simhastha-2028",
+        "title-city:ujjain gets 950 crore infrastructure boost ahead of simhastha 2028|ujjain",
+        "dedupe:1794d0d2559966df3e44cb7654069f909eeb0860602eed02b5886ac32dc4265a",
+        "dedupe:20f7d11477d3023bc95b5f0a218c036ba2015e8c3f12e12072f966369d94bd7b",
+        "dedupe:d4fcb1c52a57413066f5b7939d957940809d3689392e59708353069d077d69d3",
+        "dedupe:f69aafed4e21bd3d2179bb034ca75643ddc69c2881f9b82eb763679130cc4f04",
+        "dedupe:ujjain gets infrastructure boost ahead simhastha|ujjain",
+        "dedupe:026ab53fc7a11f24e37e7879b74d04916d19c290ecac97b6e64174677f51e7eb",
+        "dedupe:06e5f9957222d58f1d709177475687998d1ea46179c7706d16cece14d6d4e1c1"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "ujjain",
+      "canonicalEventCity": "ujjain",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "ujjain"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-12T11:20:16.917Z",
+      "expiresAt": "2026-11-12T11:35:16.917Z"
     }
   ]
 }
