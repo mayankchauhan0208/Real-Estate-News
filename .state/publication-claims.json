@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-13T08:16:13.036Z",
+  "updatedAt": "2026-11-13T08:16:14.867Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12841,6 +12841,32 @@
       "claimedAt": "2026-11-13T08:16:11.137Z",
       "expiresAt": "2026-11-13T08:31:11.137Z",
       "finalizedAt": "2026-11-13T08:16:13.036Z"
+    },
+    {
+      "claimId": "a9bb020c-cd9d-4e35-b7d7-9d069e238005",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/real-estate-guide/mumbais-property-registrations-rises-0-4-during-the-10-day-diwali-2026-period-while-stamp-duty-revenue-jumps-13-to-384-crore-101794550979256.html",
+        "title-city:mumbai s property registrations rises 0 4 during the 10 day diwali 2026 period while stamp duty revenue jumps 13|mumbai",
+        "dedupe:74ccfe012293422aa45a12bc88b684981052b295deb8c71741451d9937e556ec",
+        "dedupe:791f6e6e59742764a7bfba249079d809899a1cbc1df130e752e07bd0debccec5",
+        "dedupe:a1cb0a5b9dc7ed1f10ac6fb8d460b167189b8ad0fe5e9e4e41f43d50d3f140eb",
+        "dedupe:67e1fd2a70ed88e0e29d256590246348033c234f592f5b56e48ae2e9174d23ba",
+        "dedupe:mumbai s property registrations rises during day diwali period while stamp duty revenue jumps|mumbai",
+        "dedupe:623fd990ae5dd96c1607472634e2bd86d3492ea43739603415e88f6a6660b5a1",
+        "dedupe:9b4a5670a5f6e77ee4bd04a7bfa89a9bb274573e5f2bca188e56110d76230f6b"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-13T08:16:14.867Z",
+      "expiresAt": "2026-11-13T08:31:14.867Z"
     }
   ]
 }
