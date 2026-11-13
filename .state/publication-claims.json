@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-13T08:16:04.771Z",
+  "updatedAt": "2026-11-13T08:16:06.964Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12787,6 +12787,32 @@
       "claimedAt": "2026-11-13T08:16:02.943Z",
       "expiresAt": "2026-11-13T08:31:02.943Z",
       "finalizedAt": "2026-11-13T08:16:04.771Z"
+    },
+    {
+      "claimId": "5cdaab11-2b40-4e40-be5e-aa914387816f",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://livehindustan.com/ncr/dda-plans-new-big-convention-centre-in-shalimar-bagh-under-55-year-licence-model-ppp-mode-201794545477161.html",
+        "title-city:dda यह बन एग नय बड कन व शन स टर ppp क तहत न र म ण 55 स ल क ल ए ल इस स द न पर व च र|faridabad",
+        "dedupe:b41b919b8d60aba710fac54c8e931d57a13cfceb09eb6427de0426c10a5ec14b",
+        "dedupe:e62a4f94f7332073c93be6517a98e9114eeea0d980eb250012c47e9789fa3ab1",
+        "dedupe:08a574f27158a7300e15e47280a6d53c21f7a105ff8c1740f99172643721f01d",
+        "dedupe:c97b39ec9e8e20ada40d371aced86fc166feb56fc2a84645f2520d510ff10cf0",
+        "dedupe:dda यह बन एग नय बड कन व शन स टर ppp क तहत न र म ण स ल क ल ए ल इस स द न पर व च र|faridabad",
+        "dedupe:c419cd7888c7e37fb74786579f49aeb6519b26f63e34bc708c48ca0ad0fa3201",
+        "dedupe:55690c32f5a3a5ce23ff1ad70b01c95a784093c218245077957224fc856b3162"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "faridabad",
+      "canonicalEventCity": "faridabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "faridabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-13T08:16:06.964Z",
+      "expiresAt": "2026-11-13T08:31:06.964Z"
     }
   ]
 }
