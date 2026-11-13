@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-13T08:15:54.204Z",
+  "updatedAt": "2026-11-13T08:15:56.879Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12685,7 +12685,7 @@
     },
     {
       "claimId": "4706e87b-73a2-4b96-a8bb-2259f8849c28",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-noida-strict-enforcement-of-grap3-rules-for-air-quality-40435051.html",
         "title-city:ग तमब द ध नगर म ग र प 3 न यम क सख त स प लन ज ल ध क र न द ए न र द श|noida",
@@ -12707,7 +12707,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-13T08:15:54.204Z",
-      "expiresAt": "2026-11-13T08:30:54.204Z"
+      "expiresAt": "2026-11-13T08:30:54.204Z",
+      "finalizedAt": "2026-11-13T08:15:56.879Z"
     }
   ]
 }
