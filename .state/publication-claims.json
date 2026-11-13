@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-13T08:15:56.879Z",
+  "updatedAt": "2026-11-13T08:15:59.111Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12709,6 +12709,56 @@
       "claimedAt": "2026-11-13T08:15:54.204Z",
       "expiresAt": "2026-11-13T08:30:54.204Z",
       "finalizedAt": "2026-11-13T08:15:56.879Z"
+    },
+    {
+      "claimId": "1f1eeee8-79c8-4e98-89e2-561b59dd5ec5",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/godrej-properties-expands-presence-in-indore-acquires-31-acre-land-parcel-for-plotted-development-101794543239164.html",
+        "title-city:godrej properties expands presence in indore acquires 31 acre land parcel for plotted development|indore",
+        "dedupe:b1eff185cc11f419915ee53248e7b6d2affb0b93453a60cde644ba2f865b7ff0",
+        "dedupe:a3d3c81ec98439891fe2909d0f4fed39d6e25a730fa1bcc0ebc3d0a1f4b8c764",
+        "dedupe:65ddf62e24d693ee2ce49799ebc0e366da4dbc49c004681ae584304f61881f10",
+        "dedupe:2585a9b79515e2082bff4e38a01b1e0d2ce5ccd72f35b1d9336549ea6f7d7193",
+        "dedupe:godrej properties expands presence indore acquires acre land parcel plotted development|indore",
+        "dedupe:58a49d1d05978eccaddee2f7a9da8b687a4c36346f82003a722e82bdbca00106",
+        "dedupe:7fc18eb91349f578cadb6130fe5185f5def3ff5d720678e2ebd989e40f34b950"
+      ],
+      "semanticIdentity": {
+        "city": "indore",
+        "canonicalEventCity": "indore",
+        "normalizedBuilder": "godrej-properties",
+        "normalizedProject": "",
+        "canonicalEventType": "land-acquisition",
+        "builder": "godrej-properties",
+        "project": "",
+        "eventType": "land-acquisition",
+        "numericAnchors": [
+          "0.7:number",
+          "09:number",
+          "11:number",
+          "13:number",
+          "2026:number",
+          "24:acre",
+          "31:acre",
+          "46:acre",
+          "500:crore",
+          "51:number",
+          "55:number"
+        ],
+        "canonicalEventFingerprint": "godrej-properties|indore|land-acquisition|0.7:number,09:number,11:number",
+        "semanticClusterId": "cluster:9c61b6c48d76ee9b65356275"
+      },
+      "publishedCity": "indore",
+      "canonicalEventCity": "indore",
+      "canonicalEventFingerprint": "godrej-properties|indore|land-acquisition|0.7:number,09:number,11:number",
+      "semanticClusterId": "cluster:9c61b6c48d76ee9b65356275",
+      "city": [
+        "indore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-13T08:15:59.111Z",
+      "expiresAt": "2026-11-13T08:30:59.111Z"
     }
   ]
 }
