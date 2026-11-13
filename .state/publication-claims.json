@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-13T00:39:00.597Z",
+  "updatedAt": "2026-11-13T08:15:54.204Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12682,6 +12682,32 @@
       "claimedAt": "2026-11-13T00:38:57.985Z",
       "expiresAt": "2026-11-13T00:53:57.985Z",
       "finalizedAt": "2026-11-13T00:39:00.597Z"
+    },
+    {
+      "claimId": "4706e87b-73a2-4b96-a8bb-2259f8849c28",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-noida-strict-enforcement-of-grap3-rules-for-air-quality-40435051.html",
+        "title-city:ग तमब द ध नगर म ग र प 3 न यम क सख त स प लन ज ल ध क र न द ए न र द श|noida",
+        "dedupe:ba612fb8f3afe7322a4a8b99591e51b59552bbfd9ae8d8fb0a37de3b40c11171",
+        "dedupe:b939a9b0fbd94e6dd29abcbc1047df0e0addbd4f50a2291c057c353f686c8a57",
+        "dedupe:e630ef30016dfad435eb32b1f4bb5b69d1163363d34fc2e5c1c3311f974c19c6",
+        "dedupe:03df1aa1371ca5356c9db025ae82d739e270a5fb6289ec6120cbe23e997aa8b5",
+        "dedupe:ग तमब द ध नगर म ग र प न यम क सख त स प लन ज ल ध क र न द ए न र द श|noida",
+        "dedupe:77c164eb0a259f53bc5956f47256fe674c8fefcc0e58f38ce5ca9e77b2f095bf",
+        "dedupe:352e60b2f59b5e61db7dd76e3267f1966048c02b15c698cf728950115e1b8252"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-13T08:15:54.204Z",
+      "expiresAt": "2026-11-13T08:30:54.204Z"
     }
   ]
 }
