@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-13T08:16:11.137Z",
+  "updatedAt": "2026-11-13T08:16:13.036Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12817,7 +12817,7 @@
     },
     {
       "claimId": "6bf193a4-ab07-430e-b41b-afd614de0194",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://torbitrealty.com/kw-group-buys-1-5-acre-land-in-ghaziabad-for-rs-134-cr-to-build-luxury-homes",
         "title-city:kw group buys 1 5 acre land in ghaziabad for rs 134 cr to build luxury homes|ghaziabad",
@@ -12839,7 +12839,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-13T08:16:11.137Z",
-      "expiresAt": "2026-11-13T08:31:11.137Z"
+      "expiresAt": "2026-11-13T08:31:11.137Z",
+      "finalizedAt": "2026-11-13T08:16:13.036Z"
     }
   ]
 }
