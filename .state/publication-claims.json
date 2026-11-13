@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-12T19:14:33.279Z",
+  "updatedAt": "2026-11-13T00:38:57.985Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12655,6 +12655,32 @@
       "claimedAt": "2026-11-12T19:14:30.310Z",
       "expiresAt": "2026-11-12T19:29:30.310Z",
       "finalizedAt": "2026-11-12T19:14:33.279Z"
+    },
+    {
+      "claimId": "3d7b8cec-be73-450b-b3aa-188b9341d777",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/pune-news/amit-shah-to-visit-pune-on-nov-15-101794502572352.html",
+        "title-city:amit shah to visit pune on nov 15|pune",
+        "dedupe:02b52d2d36ffdcdd365cc638e004a76683a6b377f33313d1cf7c056aa94bf248",
+        "dedupe:7915029bf8e7d223832a1ebeec17f42727673dbd76195179b2de8a0737064e31",
+        "dedupe:a0892a05e94b109623047397bbe6dbbb7e2bdb43c62ee284855aa95ebae7f9d0",
+        "dedupe:0ab1af171a0e6318faadd8d2d7e95bc3b23411df036cea9ed9fc770ff7a3843d",
+        "dedupe:amit shah visit pune nov|pune",
+        "dedupe:81a5a472751ef1e2a069f3867e4081f75ddc79c2962ef8c0699d2a06f7f55716",
+        "dedupe:17abedee39166bc19ba49b35c487963c9e6dd09bcff6b04320772bdca7a4f9cb"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "pune",
+      "canonicalEventCity": "pune",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "pune"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-13T00:38:57.985Z",
+      "expiresAt": "2026-11-13T00:53:57.985Z"
     }
   ]
 }
