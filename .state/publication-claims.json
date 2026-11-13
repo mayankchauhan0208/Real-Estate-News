@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-13T16:38:54.477Z",
+  "updatedAt": "2026-11-13T16:38:57.175Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12922,6 +12922,32 @@
       "claimedAt": "2026-11-13T16:38:51.811Z",
       "expiresAt": "2026-11-13T16:53:51.811Z",
       "finalizedAt": "2026-11-13T16:38:54.477Z"
+    },
+    {
+      "claimId": "48d18c0d-00ef-42a6-85e3-f77fbb5d8a1d",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-noida-film-city-gets-1000-cr-loan-construction-soon-40435912.html",
+        "title-city:न एड फ ल म स ट क म ल 1000 कर ड क ल न जल द श र ह ग न र म ण क र य|noida",
+        "dedupe:176c2702688080216bc9c0635846733d967039a53b86cd2cf2a3b08c72ae0371",
+        "dedupe:5e8f002292fd2b3d37953929649d8475b0c77517bfdfa338674646d81d491a27",
+        "dedupe:3c9a58a5909d1ef68ade7447764676a57681e97cb9f80159c89f17af05ca2880",
+        "dedupe:98767824e781d7d9cd12080dab7fc16b1add86b70746b51ac81d98f6b5e16da2",
+        "dedupe:न एड फ ल म स ट क म ल कर ड क ल न जल द श र ह ग न र म ण क र य|noida",
+        "dedupe:67738cd80c5013d0e9bf7fd7e59bf9b966c110d45efbaee1ce9f1a5277f63be9",
+        "dedupe:b0aa618218885b0c68b16e89712da2524038d30e01a1889b80034cc85d220575"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-13T16:38:57.175Z",
+      "expiresAt": "2026-11-13T16:53:57.175Z"
     }
   ]
 }
