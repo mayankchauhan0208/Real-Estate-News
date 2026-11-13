@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-13T08:15:59.111Z",
+  "updatedAt": "2026-11-13T08:16:00.723Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12712,7 +12712,7 @@
     },
     {
       "claimId": "1f1eeee8-79c8-4e98-89e2-561b59dd5ec5",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/real-estate/godrej-properties-expands-presence-in-indore-acquires-31-acre-land-parcel-for-plotted-development-101794543239164.html",
         "title-city:godrej properties expands presence in indore acquires 31 acre land parcel for plotted development|indore",
@@ -12758,7 +12758,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-13T08:15:59.111Z",
-      "expiresAt": "2026-11-13T08:30:59.111Z"
+      "expiresAt": "2026-11-13T08:30:59.111Z",
+      "finalizedAt": "2026-11-13T08:16:00.723Z"
     }
   ]
 }
