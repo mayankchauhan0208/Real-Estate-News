@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-13T16:38:59.703Z",
+  "updatedAt": "2026-11-13T22:56:36.517Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12949,6 +12949,32 @@
       "claimedAt": "2026-11-13T16:38:57.175Z",
       "expiresAt": "2026-11-13T16:53:57.175Z",
       "finalizedAt": "2026-11-13T16:38:59.703Z"
+    },
+    {
+      "claimId": "ea471e98-0640-4933-876c-e5f0c93cdf0c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://proppuls.in/nri-homebuyers-hyderabad-real-estate-investment-demand",
+        "title-city:hyderabad turns favourite for nris buying homes|hyderabad",
+        "dedupe:2f9e7691e71057da93c32ab3b51fec41f70d24b6e9686774e9f50110a589a11e",
+        "dedupe:fe9a1765ffc505f57dd58742ca66305c0382922d33022ad94b04b7ebb8fad79b",
+        "dedupe:a4901fd952d2177be0bda6a3dc7b425f44a4c2d9ab55c27e3b4641e69466ee81",
+        "dedupe:676289d8e199dd35e9d9d3c034af90f7a3a366e64238d734e76ee0065af8467a",
+        "dedupe:hyderabad turns favourite nris buying homes|hyderabad",
+        "dedupe:578cad3af4e7cb71508db6592c6932211f98bf7893a515f494198bcbe36305c5",
+        "dedupe:ce60623e0302a8bab017109ec76eefa76e9ee79d49b25edff92267b553974ac7"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-13T22:56:36.517Z",
+      "expiresAt": "2026-11-13T23:11:36.517Z"
     }
   ]
 }
