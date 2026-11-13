@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-13T16:38:49.522Z",
+  "updatedAt": "2026-11-13T16:38:51.811Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12895,6 +12895,32 @@
       "claimedAt": "2026-11-13T16:38:46.536Z",
       "expiresAt": "2026-11-13T16:53:46.536Z",
       "finalizedAt": "2026-11-13T16:38:49.522Z"
+    },
+    {
+      "claimId": "929b7af7-5939-48b3-b39c-49a900797fc1",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/kanpur-city-kesco-launches-ai-calling-system-for-bill-recovery-40435733.html",
+        "title-city:क नप र म ai कर ग बक य ब जल ब ल क वस ल 87 54 कर ड क बक एद र क ज एग क ल|kanpur",
+        "dedupe:5207b2c5385d512e172dee1536de66e606d14543ac0ed73943b2e1a6bbc43df9",
+        "dedupe:f9a42b167b133edecdf315c189959746fffdebd8cd984afbd205f4f49d049045",
+        "dedupe:f6c5040be46a05c53b61420926e6dec0136f5870b59c7240ec83e05b15396799",
+        "dedupe:18e9ecf8cf6673c9df5d9f2c8db586023215e04bda7df1e3e85afc5b77f6bc09",
+        "dedupe:क नप र म ai कर ग बक य ब जल ब ल क वस ल कर ड क बक एद र क ज एग क ल|kanpur",
+        "dedupe:fdb7094b229f1f8ede60b5cfacef59055e61a1e40eb65e969bc37f81f7e6c8f0",
+        "dedupe:3bc7bc97159b2bb9c4b8be2ecfddda8cb7671272775a7462110ea3328910f374"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "kanpur",
+      "canonicalEventCity": "kanpur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "kanpur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-13T16:38:51.811Z",
+      "expiresAt": "2026-11-13T16:53:51.811Z"
     }
   ]
 }
