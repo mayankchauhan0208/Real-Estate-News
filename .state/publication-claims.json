@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-13T08:16:00.723Z",
+  "updatedAt": "2026-11-13T08:16:02.943Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12760,6 +12760,32 @@
       "claimedAt": "2026-11-13T08:15:59.111Z",
       "expiresAt": "2026-11-13T08:30:59.111Z",
       "finalizedAt": "2026-11-13T08:16:00.723Z"
+    },
+    {
+      "claimId": "0b0825bc-ac2c-49ad-bdfe-ad886a122631",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/j-estates-emoha-senior-living-project-sohna-gurugram-%e2%82%b9525-crore-sales",
+        "title-city:j estates partners with emoha for senior living project in sohna gurugram targets 525 crore sales|gurugram",
+        "dedupe:48c8bafc4d84a468d235b81dd8515ba46bb4c5e7a436a27953a889ee0a6b8341",
+        "dedupe:3e86e0e900a4e0129ce413a7ccf8c6192740539c5ed316f781d59a16a81efa3d",
+        "dedupe:6136aaa2070311189ea3a2945a2d4d7ce4ab6aa35b728628630661c26053b126",
+        "dedupe:760ebefeb63c27e484c98ea367e9f9b72b144f944668361b78580437808cc71f",
+        "dedupe:j estates partners emoha senior sohna gurugram targets sales|gurugram",
+        "dedupe:0a6172bc1a6816adff5a7c3726639d1073b37a02c8db1c308cb666131e974b6a",
+        "dedupe:9efcb4a00baa4a23716672c3735046479e0ebbb82ac4d5b921b6ebfeb7ba7dec"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-13T08:16:02.943Z",
+      "expiresAt": "2026-11-13T08:31:02.943Z"
     }
   ]
 }
