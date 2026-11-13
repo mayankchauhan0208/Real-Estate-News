@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-13T16:38:46.536Z",
+  "updatedAt": "2026-11-13T16:38:49.522Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12871,7 +12871,7 @@
     },
     {
       "claimId": "661c4e97-cd31-43a9-8a5c-0be63ce3bd60",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/prayagraj-prayagraj-multi-storey-to-be-building-allowed-in-civil-lines-george-town-and-tagore-town-posh-areas-40435549.html",
         "title-city:प रय गर ज क स व ल ल इ स ज र जट उन व ट ग र ट उन म भ बह म ज ल आव स य भवन बन सक ग म ल ग अन मत|allahabad",
@@ -12893,7 +12893,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-13T16:38:46.536Z",
-      "expiresAt": "2026-11-13T16:53:46.536Z"
+      "expiresAt": "2026-11-13T16:53:46.536Z",
+      "finalizedAt": "2026-11-13T16:38:49.522Z"
     }
   ]
 }
