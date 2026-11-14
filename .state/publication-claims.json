@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T03:32:22.373Z",
+  "updatedAt": "2026-11-14T03:32:24.765Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12979,7 +12979,7 @@
     },
     {
       "claimId": "028bd727-2d57-4a24-afd5-e678605038fa",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://livehindustan.com/ncr/8-stations-will-be-built-on-the-noida-metro-sector-142-route-awaiting-permission-to-fell-trees-201794617858682.html",
         "title-city:न एड म ट र क स क टर 142 र ट पर 8 स ट शन बन ए ज ए ग प ड क टन क अन मत क इ तज र|noida",
@@ -13001,7 +13001,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-14T03:32:22.373Z",
-      "expiresAt": "2026-11-14T03:47:22.373Z"
+      "expiresAt": "2026-11-14T03:47:22.373Z",
+      "finalizedAt": "2026-11-14T03:32:24.765Z"
     }
   ]
 }
