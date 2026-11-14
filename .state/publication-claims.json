@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T11:47:28.712Z",
+  "updatedAt": "2026-11-14T11:47:30.790Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13082,6 +13082,32 @@
       "claimedAt": "2026-11-14T11:47:26.744Z",
       "expiresAt": "2026-11-14T12:02:26.744Z",
       "finalizedAt": "2026-11-14T11:47:28.712Z"
+    },
+    {
+      "claimId": "8a34d637-f414-477f-bf21-44f5b045a1b2",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/swiggy-leases-2-62-lakh-sq-ft-office-space-in-bengalurus-whitefield-area-for-10-years-at-a-total-rent-outgo-of-241-crore-101794644902098.html",
+        "title-city:swiggy leases 2 62 lakh sq ft office space in bengaluru s whitefield area for 10 years at a total rent outgo of 241|bangalore",
+        "dedupe:fda6bbe74a5b425a1d0fd181cb5c95ba37bbb45d01cb65089056ec9adb3470bd",
+        "dedupe:6afaae802af01889489dc83d84379311e14026247c10224a26e9e0c292f54438",
+        "dedupe:114018191b05c060e0a771e49cdb32ef7d9eae48aef129e33fa7e27e43011e9e",
+        "dedupe:4799f3498075dc43de82fe1039c79afa5bd683ba2ab467fb0877f65fb3fb319f",
+        "dedupe:swiggy leases office space bengaluru s whitefield area years a total rent outgo|bangalore",
+        "dedupe:071339049f0efb837b8edca3924c8c0757cdad432bd80a0d3ccc3eded0fa2e3b",
+        "dedupe:36ae1318c6df9a61c44f1685008525be7794e55729ebe2f2cb0dbef36dacd88a"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-14T11:47:30.790Z",
+      "expiresAt": "2026-11-14T12:02:30.790Z"
     }
   ]
 }
