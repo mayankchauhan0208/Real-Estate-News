@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T18:20:21.321Z",
+  "updatedAt": "2026-11-14T18:20:23.663Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13193,7 +13193,7 @@
     },
     {
       "claimId": "e6a2e66b-ead4-4860-bd8f-739916c635a9",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/mathura-mathura-develops-wetlands-for-bird-conservation-eco-tourism-40436754.html",
         "title-city:मथ र म पक ष य क म ल ग स रक ष त आश य न स रक षण क ल ए व टल ड क ह रह व क स|mathura",
@@ -13215,7 +13215,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-14T18:20:21.321Z",
-      "expiresAt": "2026-11-14T18:35:21.321Z"
+      "expiresAt": "2026-11-14T18:35:21.321Z",
+      "finalizedAt": "2026-11-14T18:20:23.663Z"
     }
   ]
 }
