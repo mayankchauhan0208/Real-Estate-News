@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T03:32:29.538Z",
+  "updatedAt": "2026-11-14T11:47:22.282Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13030,6 +13030,31 @@
       "claimedAt": "2026-11-14T03:32:27.273Z",
       "expiresAt": "2026-11-14T03:47:27.273Z",
       "finalizedAt": "2026-11-14T03:32:29.538Z"
+    },
+    {
+      "claimId": "5a39ace8-bfd8-4e71-bfc1-184c2f8c62bf",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/bhubaneswar-development-body-proposes-extra-floor-area-ratio-incentive-new-infrastructure-fee/135821500",
+        "title-city:bhubaneswar development body proposes extra floor area ratio incentive new infrastructure fee|bhubaneswar",
+        "dedupe:cf15f482c27a077c231d74840a2e3747ad8ddabaaaa4a77f4a42a9e02be008fe",
+        "dedupe:2be284885111c7fedbbdf251d4617120369dd713a2a9dfc135f072c6064ad098",
+        "dedupe:0621b9481f344a7474b98cae9d49b7693a540748c0f743cbd76b5eb86c23574b",
+        "dedupe:bhubaneswar development body proposes extra floor area ratio incentive new infrastructure fee|bhubaneswar",
+        "dedupe:458058232af04dc820afd426fe86e482519a6104e720772dbeb062cf1dc0ec8f",
+        "dedupe:3d807df379796bf7564a5d7dcfbd191a8ddf25c2b98d7b44593bccfcb8f84e17"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bhubaneswar",
+      "canonicalEventCity": "bhubaneswar",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bhubaneswar"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-14T11:47:22.282Z",
+      "expiresAt": "2026-11-14T12:02:22.282Z"
     }
   ]
 }
