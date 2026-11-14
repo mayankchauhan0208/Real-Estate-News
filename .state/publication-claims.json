@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T11:47:34.539Z",
+  "updatedAt": "2026-11-14T11:47:36.412Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13112,7 +13112,7 @@
     },
     {
       "claimId": "12fa5cfc-92dd-45e7-89a8-7fdbd44a674a",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-up-15-fm-series-vip-number-eauction-begins-today-40436628.html",
         "title-city:व आइप य फ स न बर च ह ए त आव दन कर य प 15 एफएम स र ज म ह ग ई न ल म|meerut",
@@ -13134,7 +13134,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-14T11:47:34.539Z",
-      "expiresAt": "2026-11-14T12:02:34.539Z"
+      "expiresAt": "2026-11-14T12:02:34.539Z",
+      "finalizedAt": "2026-11-14T11:47:36.412Z"
     }
   ]
 }
