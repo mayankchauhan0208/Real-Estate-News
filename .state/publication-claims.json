@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T18:20:16.013Z",
+  "updatedAt": "2026-11-14T18:20:18.887Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13166,7 +13166,7 @@
     },
     {
       "claimId": "67957583-3582-4deb-aa6d-3052a979bc77",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-good-news-for-greater-noida-workers-upsida-to-launch-group-housing-and-hotel-scheme-in-site5-soon-40436739.html",
         "title-city:ग र टर न एड म क म करन व ल क बल ल बल ल upsida स इट 5 म जल द श र ह ग आव स य य जन|noida",
@@ -13188,7 +13188,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-14T18:20:16.013Z",
-      "expiresAt": "2026-11-14T18:35:16.013Z"
+      "expiresAt": "2026-11-14T18:35:16.013Z",
+      "finalizedAt": "2026-11-14T18:20:18.887Z"
     }
   ]
 }
