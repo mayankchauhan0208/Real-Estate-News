@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T03:32:24.765Z",
+  "updatedAt": "2026-11-14T03:32:27.273Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13003,6 +13003,32 @@
       "claimedAt": "2026-11-14T03:32:22.373Z",
       "expiresAt": "2026-11-14T03:47:22.373Z",
       "finalizedAt": "2026-11-14T03:32:24.765Z"
+    },
+    {
+      "claimId": "ca743c1d-ff7a-4888-acf0-320e335eb986",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/gurugram-news/gmda-finalises-850-crore-tender-for-vatika-chowk-interchange-101794595496849.html",
+        "title-city:gmda finalises 850 crore tender for vatika chowk interchange|gurugram",
+        "dedupe:4b2f5432ef7a191383dfcaf21a9d412a001ff64e5c6d596b078c25aeba5c467f",
+        "dedupe:333e13265130230377257d3aa5dbf1d63164c2aea7951be08850a898036187a3",
+        "dedupe:b70ac7258896108a1aba6fee3f54846ac5dbe56da2fa2ac068e119b5b17c5765",
+        "dedupe:fd984afcc0e78750699483b26994784f98a367051443754c9e3aff5d4642b8d8",
+        "dedupe:gmda finalises tender vatika chowk interchange|gurugram",
+        "dedupe:648d5c32670dbf22538ecc3339197e9442ab001634ff46b66738fff3eec98321",
+        "dedupe:f34eb9ba2225b2a064db8c65b0d7010a0d814a3137af01a55dfffedf09128630"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-14T03:32:27.273Z",
+      "expiresAt": "2026-11-14T03:47:27.273Z"
     }
   ]
 }
