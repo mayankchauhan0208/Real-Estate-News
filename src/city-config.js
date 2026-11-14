@@ -637,7 +637,8 @@ export const workbookCityRules = [
     "name": "New Delhi",
     "keywords": [
       "new delhi",
-      "delhi"
+      "delhi",
+      "shalimar bagh"
     ]
   },
   {

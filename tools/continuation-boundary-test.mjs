@@ -2,12 +2,12 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
-import { buildCycleSnapshot, createSchedulerState, selectShard, startOrResumeCycle, completeShard } from "../src/source-monitor-scheduler.js";
+import { buildCycleSnapshot, createSchedulerState, selectShard, startOrResumeCycle, completeShard, writeJsonAtomic } from "../src/source-monitor-scheduler.js";
 
 const tempRoot = await fs.mkdtemp(path.join(os.tmpdir(), "brokket-continuation-"));
 process.env.NEWS_STATE_DIR = tempRoot;
 process.env.NEWS_RUN_REPORTS_DIR = path.join(tempRoot, "reports");
-const { persistCycleSourceResults, readCycleSourceResults } = await import("../src/index.js");
+const { persistCycleSourceResults, readCycleSourceResults, prepareResumableSourceCycle } = await import("../src/index.js");
 
 const sources = ["https://fixture.test/a", "https://fixture.test/b", "https://fixture.test/c"];
 const snapshot = buildCycleSnapshot(sources, "fixture-cycle");
@@ -54,6 +54,29 @@ assert.equal(final.get(resumedShard.sources[0].sourceId).status, "SUCCESS_NO_CAN
 assert.equal(state.activeCycle.completedSourceIds.length, snapshot.sources.length);
 assert.equal(selectShard(state, snapshot, 2), null);
 
+// A day boundary cannot restart a matching incomplete source universe and
+// starve its final shard.
+process.env.SOURCE_CYCLE_ID = "day-one";
+const dateBoundary = await prepareResumableSourceCycle(sources);
+const dateBoundaryShard = selectShard(dateBoundary.state, dateBoundary.snapshot, 2);
+completeShard(dateBoundary.state, dateBoundaryShard, dateBoundaryShard.sources.map((source) => ({ source, sourceId: source.sourceId, status: "SUCCESS_NO_CANDIDATE" })));
+await writeJsonAtomic(dateBoundary.statePath, dateBoundary.state);
+process.env.SOURCE_CYCLE_ID = "day-two";
+const resumedAcrossDate = await prepareResumableSourceCycle(sources);
+assert.equal(resumedAcrossDate.snapshot.cycleId, "day-one");
+assert.equal(selectShard(resumedAcrossDate.state, resumedAcrossDate.snapshot, 2).sources.length, 1);
+const expandedSources = [...sources, "https://fixture.test/d"];
+const remainingOriginalSource = sources.find((sourceUrl) => !dateBoundaryShard.sources.some((source) => source.url === sourceUrl));
+process.env.SOURCE_CYCLE_ID = "day-three";
+const resumedAcrossUniverseChange = await prepareResumableSourceCycle(expandedSources);
+const migratedShard = selectShard(resumedAcrossUniverseChange.state, resumedAcrossUniverseChange.snapshot, 3);
+assert.equal(resumedAcrossUniverseChange.snapshot.cycleId, "day-one");
+assert.deepEqual(new Set(migratedShard.sources.map((source) => source.url)), new Set([
+  remainingOriginalSource,
+  "https://fixture.test/d"
+]));
+delete process.env.SOURCE_CYCLE_ID;
+
 console.log(JSON.stringify({
   passed: true,
   firstAccounted: firstResults.size,
@@ -61,7 +84,9 @@ console.log(JSON.stringify({
   finalAccounted: final.size,
   candidatePreserved: final.get([...firstResults.keys()][0]).articles.length === 1,
   reviewPreserved: final.get([...firstResults.keys()][1]).articles.length === 1,
-  noDuplicateResume: selectShard(state, snapshot, 2) === null
+  noDuplicateResume: selectShard(state, snapshot, 2) === null,
+  dateBoundaryTailPreserved: true,
+  universeChangeTailPreserved: true
 }));
 
 await fs.rm(tempRoot, { recursive: true, force: true });
