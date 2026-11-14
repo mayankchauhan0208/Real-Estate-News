@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T18:20:26.189Z",
+  "updatedAt": "2026-11-14T18:20:28.747Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13220,7 +13220,7 @@
     },
     {
       "claimId": "c711a497-eb01-4100-b1cc-a510bcc7d310",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://vijaykarnataka.com/real-estate/how-to-check-water-availability-in-apartment-during-the-summers-in-bengaluru/articleshow/135828726.cms",
         "title-city:ಬ ಸ ಗ ಯ ಸಮಯದಲ ಲ ಬ ಗಳ ರ ನ ಅಪ ರ ಟ ಮ ಟ ಗಳಲ ಲ ನ ರ ನ ಲಭ ಯತ ಯನ ನ ಪರ ಶ ಲ ಸ ವ ದ ಹ ಗ|bangalore",
@@ -13242,7 +13242,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-14T18:20:26.189Z",
-      "expiresAt": "2026-11-14T18:35:26.189Z"
+      "expiresAt": "2026-11-14T18:35:26.189Z",
+      "finalizedAt": "2026-11-14T18:20:28.747Z"
     }
   ]
 }
