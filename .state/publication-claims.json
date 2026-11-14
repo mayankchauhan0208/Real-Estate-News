@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T18:20:28.747Z",
+  "updatedAt": "2026-11-14T18:20:31.229Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13244,6 +13244,32 @@
       "claimedAt": "2026-11-14T18:20:26.189Z",
       "expiresAt": "2026-11-14T18:35:26.189Z",
       "finalizedAt": "2026-11-14T18:20:28.747Z"
+    },
+    {
+      "claimId": "c335cded-2748-4b1f-9deb-597e60be65c3",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/aligarh-city-harrison-group-opens-4-new-plants-in-aligarh-300-jobs-40436673.html",
+        "title-city:त ल नगर अल गढ म हर सन ग र प क च र नए प ल ट श र 300 ल ग क म ल ग र जग र औद य ग क व क स क गत|aligarh",
+        "dedupe:7e40f7d8a9ac43a82589614fcf9bfdf85122ef7ee8ae84159bd2ae7fa2b77d97",
+        "dedupe:36328db42a47d0e0e305e70650d7697bf338867fcc739565ed573ad0fea4bf10",
+        "dedupe:7e1e60979fc959e0164f301d78fc1e1715a5388039f7394a567158c666616d04",
+        "dedupe:9326a6dda578f31a1d3464dad3f773b31d5ccaad95f8098034c7d30e98979cd5",
+        "dedupe:त ल नगर अल गढ म हर सन ग र प क च र नए प ल ट श र ल ग क म ल ग र जग र औद य ग क व क स क गत|aligarh",
+        "dedupe:500955127c89f330bf9c0699e2953653dd04b891603816a4af42591eb34bb2d7",
+        "dedupe:83c93f7db03876d7b31ac6613eaaaf92127fea3b92a11e0c80d3cd03d07a9043"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "aligarh",
+      "canonicalEventCity": "aligarh",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "aligarh"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-14T18:20:31.229Z",
+      "expiresAt": "2026-11-14T18:35:31.229Z"
     }
   ]
 }
