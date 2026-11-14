@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-13T22:56:39.304Z",
+  "updatedAt": "2026-11-14T03:32:22.373Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -12976,6 +12976,32 @@
       "claimedAt": "2026-11-13T22:56:36.517Z",
       "expiresAt": "2026-11-13T23:11:36.517Z",
       "finalizedAt": "2026-11-13T22:56:39.304Z"
+    },
+    {
+      "claimId": "028bd727-2d57-4a24-afd5-e678605038fa",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://livehindustan.com/ncr/8-stations-will-be-built-on-the-noida-metro-sector-142-route-awaiting-permission-to-fell-trees-201794617858682.html",
+        "title-city:न एड म ट र क स क टर 142 र ट पर 8 स ट शन बन ए ज ए ग प ड क टन क अन मत क इ तज र|noida",
+        "dedupe:3783d04df996bb2dc036e7a6eb02a5dd830d153915626ee0ed6ba4f9a725be4e",
+        "dedupe:37a370de264a48446b7553a1f7105247b85afa803cebb11d423a2252348629df",
+        "dedupe:72d4f8fcba248d0ed37715cb556eddeb71980d7776897f077ea4b0e19bfbbca6",
+        "dedupe:944133b05d88801dde0400c24222ff0ab2f3394e5fa397824d15d65398eb39e4",
+        "dedupe:न एड म ट र क स क टर र ट पर स ट शन बन ए ज ए ग प ड क टन क अन मत क इ तज र|noida",
+        "dedupe:60b29cd0e8b606c3e75d9d327576345fdfe368a72c33f602d7d54af77c82c96f",
+        "dedupe:392a96c2fd6f5684ddad48c3eca20cdfe2092733caad5d4f86a39d5335e503c8"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-14T03:32:22.373Z",
+      "expiresAt": "2026-11-14T03:47:22.373Z"
     }
   ]
 }
