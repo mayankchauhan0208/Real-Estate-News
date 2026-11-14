@@ -3494,7 +3494,7 @@ function sourceSlugCityId(article) {
 }
 
 function articleDedupeIds(article) {
-  const cityScopedIds = [titleCityId(article), canonicalUrlCityId(article), sourceSlugCityId(article), storyClusterId(article)];
+  const cityScopedIds = [titleCityId(article), canonicalUrlCityId(article), sourceSlugCityId(article), storyClusterId(article), semanticStoryClusterId(article)];
   const articleScopedIds = article.sharedCityArticle ? [] : [canonicalUrlId(article), titleOnlyId(article)];
 
   return [article.id, ...cityScopedIds, ...articleScopedIds].filter(Boolean);
@@ -3996,6 +3996,7 @@ function isPressReleaseListingSource(sourceUrl = "") {
 
 function normalizeStoryText(value = "") {
   return normalizeTitle(value)
+    .replace(/\bsector\s+(\d+[a-z]?)\b/g, "sector$1")
     .replace(/\b(rs|inr|crore|cr|lakh|mn|million|billion|sq|ft|for|the|and|with|from|over|into|to|of|in|at|by|on|its|their|project|projects|developers|developer|realty|fund|investment|invest|partner|partnership|join|joins|forces|tie|up|scale|living|luxury|ncr)\b/g, " ")
     .replace(/\b\d+\b/g, " ")
     .replace(/\s+/g, " ")
@@ -4014,7 +4015,58 @@ function storyClusterId(article) {
     return `dwarka-expressway-price-surge|${article.cityCode || ""}`;
   }
 
-  return title && title.length >= 18 ? `${title}|${article.cityCode || ""}` : "";
+  const discriminator = semanticPropertyEventDiscriminator(article);
+  return title && title.length >= 18 && discriminator ? `${title}|${discriminator}|${article.cityCode || ""}` : "";
+}
+
+function semanticPropertyEventDiscriminator(article) {
+  const title = String(article.title || "").normalize("NFKC").toLowerCase().replace(/,/g, " ");
+  const parts = [];
+  const scale = title.match(/\b(\d+(?:\.\d+)?)\s*[- ]?\s*(acres?|hectares?|sq\.?\s*ft|sqft|square\s+feet)\b/i);
+  if (scale) {
+    const rawUnit = scale[2].replace(/\W+/g, "").toLowerCase();
+    const unit = rawUnit.startsWith("acre") ? "acre" : rawUnit.startsWith("hectare") ? "hectare" : "sqft";
+    parts.push(`scale:${scale[1]}-${unit}`);
+  }
+
+  const amount = title.match(/(?:₹|\brs\.?|\binr\b)\s*(\d+(?:\.\d+)?)\s*(crore|cr|lakh|million|billion)\b/i);
+  if (amount) {
+    const rawUnit = amount[2].toLowerCase();
+    const unit = rawUnit === "cr" ? "crore" : rawUnit;
+    parts.push(`amount:${amount[1]}-${unit}`);
+  }
+
+  const sector = title.match(/\bsector\s*[- ]?(\d+[a-z]?)\b/i);
+  if (sector) parts.push(`sector:${sector[1].toLowerCase()}`);
+
+  // A concrete value is part of the event identity, not decorative wording.
+  // Keep every available marker so equal-size deals with distinct prices (or
+  // sectors) cannot suppress each other across publishers.
+  return parts.join("|");
+}
+
+function semanticStoryClusterId(article) {
+  // Cross-publisher syndication often changes verbs and decorative words
+  // while describing the same concrete property event.
+  if (!article.cityCode) return "";
+
+  const title = normalizeTitle(article.title || "")
+    .replace(/\bsector\s+(\d+[a-z]?)\b/g, "sector$1")
+    .replace(/\b(?:buys?|bought|purchases?|purchased|acquires?|acquired)\b/g, "acquire")
+    .replace(/\b(?:leases?|leased|leasing)\b/g, "lease")
+    .replace(/\b(?:launches?|launched|launching)\b/g, "launch")
+    .replace(/\b(?:approves?|approved|approving)\b/g, "approve")
+    .replace(/\b(?:homes?|apartments?|flats?)\b/g, "housing")
+    .replace(/\bland\s+parcels?\b/g, "land")
+    .replace(/\b(?:rs|inr)?\s*\d+(?:\s*(?:crore|cr|lakh|million|billion))\b/g, " ")
+    .replace(/\b(?:ultra|new|plans?|planning|builds?|to|for|in|at|of|the|a|an|and|with|worth|rs|inr|crore|cr|lakh|acre|acres|sq|ft|project|projects)\b/g, " ");
+  const tokens = [...new Set(title.split(/\s+/).filter((token) => token.length >= 3))].sort();
+  const hasPropertyEvent = tokens.some((token) => ["acquire", "lease", "launch", "approve", "auction", "allotment", "registration"].includes(token)) &&
+    tokens.some((token) => ["land", "housing", "property", "realty", "residential", "commercial", "township", "office", "warehouse", "plot"].includes(token));
+
+  const discriminator = semanticPropertyEventDiscriminator(article);
+  if (!hasPropertyEvent || tokens.length < 4 || !discriminator) return "";
+  return crypto.createHash("sha256").update(`semantic-story|${article.cityCode}|${discriminator}|${tokens.join("|")}`).digest("hex");
 }
 
 function hasSourceCityUrlMismatch(article) {
@@ -4166,9 +4218,13 @@ function detectExplicitTargetCityCodes(article) {
 }
 
 function isGenericDelhiNcrCityAlias(code, article) {
-  return code === "new_delhi" &&
-    /\b(?:ncr|delhi\s+ncr)\b/i.test(getArticlePrimaryText(article)) &&
-    !/\b(?:new\s+delhi|central\s+delhi|south\s+delhi|north\s+delhi|east\s+delhi|west\s+delhi)\b/i.test(getArticlePrimaryText(article));
+  if (code !== "new_delhi" || !/\b(?:ncr|delhi\s+ncr)\b/i.test(getArticlePrimaryText(article))) {
+    return false;
+  }
+
+  const newDelhiRule = allCityRules.find((rule) => rule.code === "new_delhi");
+  const specificLocalityKeywords = (newDelhiRule?.keywords || []).filter((keyword) => keyword !== "delhi");
+  return !hasWholeWordKeyword(getArticlePrimaryText(article), specificLocalityKeywords);
 }
 function detectTargetCityCodesFromFullArticle(article) {
   return cityRules
@@ -4883,6 +4939,22 @@ function isClearlyOffTopicNonDevelopmentArticle(article) {
   }
   if (/(?:cm|chief minister|minister)\s+to\s+visit\b|\bto\s+visit\s+(?:singapore|australia|dubai|foreign)/i.test(title) &&
       !hasKeyword(title, ["project", "land", "plot", "housing", "township", "property", "real estate"])) {
+    return true;
+  }
+  if (/\b(?:amit\s+shah|narendra\s+modi|prime\s+minister|bjp|congress|aap)\b.{0,80}\b(?:visit|rally|campaign|address(?:es|ed|ing)?|speech)\b/i.test(title) &&
+      !hasKeyword(`${title} ${text}`, ["land acquisition", "land parcel", "housing project", "residential project", "commercial project", "township", "property development", "real estate project"])) {
+    return true;
+  }
+  if (hasKeyword(title, ["grap", "ग्रेप", "air quality", "वायु गुणवत्ता", "air pollution", "pollution curbs", "pollution control"]) &&
+      !hasKeyword(`${title} ${text}`, ["property development", "real estate project", "housing project", "land parcel", "township"])) {
+    return true;
+  }
+  if (hasKeyword(title, ["diabetes", "insulin", "डायबिटीज", "इंसुलिन", "medical research", "health research", "scientists discover", "scientists uncover"]) &&
+      !hasKeyword(`${title} ${text}`, ["property development", "real estate project", "housing project", "land parcel", "township"])) {
+    return true;
+  }
+  if (hasKeyword(title, ["infrastructure boost", "development works"]) &&
+      !hasKeyword(`${title} ${text}`, ["property development", "real estate project", "housing project", "land parcel", "township", "residential development", "commercial development"])) {
     return true;
   }
   if (/(?:elevated road|road corridor|road project|skywalk|interchange|landmark entry gate|multi-storey secretariat|mini secretariat|reserved forest|high-risk parks?|park safety audit|metro.*expansion|metro.*interview)/i.test(title) &&
@@ -5984,6 +6056,19 @@ function isNavigationOrListingShell(article) {
   return exactNavigationTitle || navigationUrl;
 }
 
+function isGenericAuthorityCategoryPage(article) {
+  const title = cleanText(article.title || "", 180).toLowerCase();
+  const url = getArticleUrlText(article);
+  const genericAuthorityTitle = /^(?:(?:[a-z.\s]+::\s*)?(?:[a-z\s]+development authority|[a-z\s]+housing board|[a-z\s]+rera|bda))$/i.test(title);
+  const categoryPath = /\/(?:tenders?|notices?|announcements?|news)(?:[/?#]|$)/i.test(url);
+  const concreteEvent = hasKeyword(getArticlePrimaryText(article), [
+    "land auction", "land parcel", "plot auction", "housing scheme", "residential project",
+    "commercial project", "allotment", "township", "project approval", "project launch"
+  ]);
+
+  return genericAuthorityTitle && categoryPath && !concreteEvent && !article.authorityEventType;
+}
+
 function hasExplicitTransportPropertyNexus(article) {
   // Do not let a publisher hostname such as `realty.example.com` satisfy
   // the nexus. The evidence must appear in the title, description or body.
@@ -6021,6 +6106,7 @@ function isBlockedArticle(article) {
 
   return (
     isNavigationOrListingShell(article) ||
+    isGenericAuthorityCategoryPage(article) ||
     blockedExactTitles.includes(normalizedTitle) ||
     isAddressLikeHeadline(title) ||
     isMalformedCategoryHeadline(title, article) ||
@@ -6430,6 +6516,14 @@ function getRejectionReasons(article, sentIds) {
   const explicitEventCities = detectMatchedCityCodes(article).filter((code) => code && code !== "delhi_ncr");
   if (article.cityCode && explicitEventCities.length === 1 && explicitEventCities[0] !== article.cityCode &&
       !ncrCityCodes.includes(article.cityCode) && !ncrCityCodes.includes(explicitEventCities[0])) {
+    reasons.push("filter 8: explicit event city conflicts with assigned city");
+  }
+
+  // A named city/locality outranks generic Delhi-NCR market wording. Shared
+  // NCR routing is valid only when no single concrete event city is named.
+  const directEventCities = detectExplicitTargetCityCodes(article)
+    .filter((code) => code && code !== "delhi_ncr" && !isGenericDelhiNcrCityAlias(code, article));
+  if (article.cityCode && directEventCities.length === 1 && directEventCities[0] !== article.cityCode) {
     reasons.push("filter 8: explicit event city conflicts with assigned city");
   }
 
@@ -9249,18 +9343,27 @@ async function fetchSourceBatch(sourceList, options = {}) {
   }
 }
 
-async function prepareResumableSourceCycle(sourceUrls) {
+export async function prepareResumableSourceCycle(sourceUrls) {
   const statePath = path.join(stateDir, "source-monitor-checkpoint.json");
   const snapshotPath = path.join(stateDir, "source-monitor-cycle.json");
   const cycleId = env("SOURCE_CYCLE_ID", `source-cycle-${new Date().toISOString().slice(0, 10)}`);
   const shardSize = getPositiveIntegerEnv("SOURCE_SHARD_SIZE", 50);
   const configuredSnapshot = buildCycleSnapshot(sourceUrls.map((url) => ({ url })), cycleId);
   const savedSnapshot = await readJson(snapshotPath, null);
+  const savedState = await readJson(statePath, createSchedulerState());
   const sameUniverse = savedSnapshot?.universeFingerprint === configuredSnapshot.universeFingerprint &&
     savedSnapshot?.sources?.length === configuredSnapshot.sources.length &&
     savedSnapshot.sources.every((source, index) => source.sourceId === configuredSnapshot.sources[index]?.sourceId);
-  let snapshot = savedSnapshot && savedSnapshot.cycleId === cycleId && sameUniverse ? savedSnapshot : configuredSnapshot;
-  let state = startOrResumeCycle(await readJson(statePath, createSchedulerState()), snapshot);
+  const previousCycleIncomplete = savedSnapshot &&
+    savedState.activeCycle?.cycleId === savedSnapshot.cycleId &&
+    (savedState.activeCycle.completedSourceIds?.length || 0) < savedSnapshot.sources.length;
+  // A date boundary or source-list maintenance must never discard the tail
+  // of an unfinished universe. Retain the cycle identity and let the
+  // scheduler migrate completed source IDs into the updated snapshot.
+  let snapshot = previousCycleIncomplete
+    ? (sameUniverse ? savedSnapshot : { ...configuredSnapshot, cycleId: savedSnapshot.cycleId, createdAt: savedSnapshot.createdAt })
+    : configuredSnapshot;
+  let state = startOrResumeCycle(savedState, snapshot);
   if (state.activeCycle?.completedSourceIds?.length >= snapshot.sources.length && snapshot.sources.length > 0) {
     const completedCycles = [...(state.completedCycles || []), {
       cycleId: state.activeCycle.cycleId,
@@ -9414,7 +9517,10 @@ async function main() {
     resumableContext = await prepareResumableSourceCycle(allSelectedSources);
     const cycleId = resumableContext.state.activeCycle?.cycleId || resumableContext.snapshot.cycleId;
     const persistedSourceResults = await readCycleSourceResults(cycleId);
-    const sourceResultsById = new Map(persistedSourceResults);
+    const activeSourceIds = new Set(resumableContext.snapshot.sources.map((source) => source.sourceId));
+    // Retained reports may include a source later removed from configuration.
+    // Keep the progress map aligned with the migrated active universe.
+    const sourceResultsById = new Map([...persistedSourceResults].filter(([sourceId]) => activeSourceIds.has(sourceId)));
     const runtimeBudgetMs = getPositiveIntegerEnv("SOURCE_RUNTIME_BUDGET_MS", 42 * 60 * 1000);
     const maxShards = getPositiveIntegerEnv("SOURCE_MAX_SHARDS_PER_RUN", 12);
     const cleanupReserveMs = getSourceCleanupReserveMs();

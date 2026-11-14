@@ -222,6 +222,114 @@ const politicalCampaignArticle = {
 assert.equal(isPublishableArticle(politicalCampaignArticle, sentIds), false);
 assert.ok(getRejectionReasons(politicalCampaignArticle, sentIds).length > 0);
 
+const productionPrecisionFailures = [
+  {
+    title: "Amit Shah to visit Pune on Nov 15",
+    description: "The political leader will visit Pune for a public programme.",
+    articleText: "The visit concerns party meetings and a public address, with no property event.",
+    newsLink: "https://example.com/pune/amit-shah-visit",
+    cityCode: "pune",
+    expectedReason: /filter 4: not positive target real-estate\/project news/
+  },
+  {
+    title: "Gautam Buddh Nagar orders strict GRAP 3 enforcement",
+    description: "The district administration issued air-quality enforcement directions.",
+    articleText: "Officials will enforce pollution-control restrictions across Noida.",
+    newsLink: "https://example.com/noida/grap-enforcement",
+    cityCode: "noida",
+    expectedReason: /filter 4: not positive target real-estate\/project news/
+  },
+  {
+    title: "IIT कानपुर के वैज्ञानिकों ने खोजा डायबिटीज का नया तंत्र, मिनटों में इंसुलिन का स्राव रोक सकती हैं इम्यून सेल्स",
+    description: "Researchers reported a medical discovery involving diabetes and insulin.",
+    articleText: "The research concerns insulin secretion and medical treatment.",
+    newsLink: "https://example.com/kanpur/diabetes-research",
+    cityCode: "kanpur",
+    expectedReason: /filter 4: not positive target real-estate\/project news/
+  },
+  {
+    title: "Ujjain gets Rs 950-crore infrastructure boost ahead of Simhastha 2028",
+    description: "The package covers civic infrastructure for the event.",
+    articleText: "The works cover roads, transport and visitor facilities for the religious gathering.",
+    newsLink: "https://example.com/ujjain/infrastructure-boost",
+    cityCode: "ujjain",
+    expectedReason: /POSITIVE_INFRASTRUCTURE_WITHOUT_SUFFICIENT_REAL_ESTATE_NEXUS/
+  },
+  {
+    title: "BDA :: Bhubaneswar Development Authority",
+    description: "BDA",
+    articleText: "Tender No: 620/EM Closing Date: 19-11-2026.",
+    newsLink: "https://bda.gov.in/tenders",
+    cityCode: "bhubaneswar",
+    expectedReason: /filter 1: spam\/menu page/
+  }
+];
+for (const failedPublication of productionPrecisionFailures) {
+  const reasons = getRejectionReasons({
+    ...failedPublication,
+    postedBy: "Production Precision Fixture",
+    thumbnailImage: "https://example.com/image.jpg",
+    postedByLogo: "https://example.com/logo.jpg",
+    fullArticleRead: true,
+    articleReadAttempted: true
+  }, sentIds);
+  assert.ok(reasons.some((reason) => failedPublication.expectedReason.test(reason)), `production false positive must be rejected by the intended gate: ${failedPublication.title}`);
+}
+
+const shalimarBaghMisroute = {
+  title: "DDA plans new convention centre in Shalimar Bagh",
+  description: "The Delhi NCR authority is considering a PPP convention centre in Shalimar Bagh.",
+  articleText: "The DDA proposal is for Shalimar Bagh in Delhi.",
+  newsLink: "https://example.com/ncr/dda-shalimar-bagh-convention-centre",
+  cityCode: "faridabad",
+  postedBy: "Production Precision Fixture",
+  thumbnailImage: "https://example.com/image.jpg",
+  postedByLogo: "https://example.com/logo.jpg",
+  fullArticleRead: true,
+  articleReadAttempted: true
+};
+assert.ok(getRejectionReasons(shalimarBaghMisroute, sentIds).some((reason) => /outside-city conflict|explicit event city conflicts/i.test(reason)));
+
+const kwEtArticle = {
+  title: "KW Group buys 1.5-acre land in Ghaziabad for Rs 134 crore to build luxury homes",
+  description: "KW Group acquired land for a luxury housing project in Ghaziabad.",
+  articleText: "The developer acquired a 1.5-acre land parcel in Ghaziabad for a luxury housing project.",
+  newsLink: "https://example.com/et/kw-group-ghaziabad-land",
+  cityCode: "ghaziabad"
+};
+const kwHtArticle = {
+  title: "KW Group acquires 1.5-acre land parcel in Ghaziabad for Rs 134 crore, plans ultra-luxury housing project",
+  description: "The developer plans a luxury housing project after its Ghaziabad land acquisition.",
+  articleText: "KW Group acquired a land parcel in Ghaziabad for a luxury housing development.",
+  newsLink: "https://example.com/ht/kw-group-ghaziabad-acquisition",
+  cityCode: "ghaziabad"
+};
+const kwSentIds = new Set(articleDedupeIds(kwEtArticle));
+assert.ok(getRejectionReasons(kwHtArticle, kwSentIds).includes("filter 13: already sent"), "cross-source paraphrase must be semantically deduped");
+const kwDifferentAcquisition = {
+  ...kwHtArticle,
+  title: "KW Group acquires 2-acre land parcel in Ghaziabad for a housing project",
+  newsLink: "https://example.com/other/kw-group-ghaziabad-acquisition"
+};
+assert.equal(articleDedupeIds(kwDifferentAcquisition).some((id) => kwSentIds.has(id)), false, "semantic dedupe must not collapse a distinct property event");
+const kwDifferentValueAcquisition = {
+  ...kwHtArticle,
+  title: "KW Group acquires 1.5-acre land parcel in Ghaziabad for Rs 150 crore to build luxury homes",
+  newsLink: "https://example.com/other/kw-group-ghaziabad-different-value"
+};
+assert.equal(articleDedupeIds(kwDifferentValueAcquisition).some((id) => kwSentIds.has(id)), false, "semantic dedupe must not collapse equal-size acquisitions with different transaction values");
+const kwDifferentSector = {
+  ...kwHtArticle,
+  title: "KW Group acquires 1.5-acre land parcel in Sector 60 Ghaziabad for a housing project",
+  newsLink: "https://example.com/other/kw-group-ghaziabad-sector-60"
+};
+const kwSectorFifty = {
+  ...kwHtArticle,
+  title: "KW Group acquires 1.5 acres land parcel in Sector 50 Ghaziabad for a housing project",
+  newsLink: "https://example.com/other/kw-group-ghaziabad-sector-50"
+};
+assert.equal(articleDedupeIds(kwDifferentSector).some((id) => articleDedupeIds(kwSectorFifty).includes(id)), false, "semantic dedupe must include sector alongside matching land area");
+
 assert.match(
   getRejectionReasons(reportedOffTopicArticles[1], sentIds)[0],
   /filter 4: not positive target real-estate\/project news/
