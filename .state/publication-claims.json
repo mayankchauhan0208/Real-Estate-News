@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T18:20:23.663Z",
+  "updatedAt": "2026-11-14T18:20:26.189Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13217,6 +13217,32 @@
       "claimedAt": "2026-11-14T18:20:21.321Z",
       "expiresAt": "2026-11-14T18:35:21.321Z",
       "finalizedAt": "2026-11-14T18:20:23.663Z"
+    },
+    {
+      "claimId": "c711a497-eb01-4100-b1cc-a510bcc7d310",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://vijaykarnataka.com/real-estate/how-to-check-water-availability-in-apartment-during-the-summers-in-bengaluru/articleshow/135828726.cms",
+        "title-city:ಬ ಸ ಗ ಯ ಸಮಯದಲ ಲ ಬ ಗಳ ರ ನ ಅಪ ರ ಟ ಮ ಟ ಗಳಲ ಲ ನ ರ ನ ಲಭ ಯತ ಯನ ನ ಪರ ಶ ಲ ಸ ವ ದ ಹ ಗ|bangalore",
+        "dedupe:bb30ca4ba5cfa8789d7b2d2a147d29bcfd84d1efbca410d0b57b94fd51ec49a6",
+        "dedupe:40fcbcfd9a23f07e32f454e1f13f7f00a3900a5ca27549c555d09b5d2aa9b43b",
+        "dedupe:3e71870d1d6e6cf6ddefe4877208d2182ed065232aaf55cd4f77c7feef4a035f",
+        "dedupe:67cf1dda504f13f3d2fd1633b4fcdd106e4f0b124e0f9df058e711d6633192c1",
+        "dedupe:ಬ ಸ ಗ ಯ ಸಮಯದಲ ಲ ಬ ಗಳ ರ ನ ಅಪ ರ ಟ ಮ ಟ ಗಳಲ ಲ ನ ರ ನ ಲಭ ಯತ ಯನ ನ ಪರ ಶ ಲ ಸ ವ ದ ಹ ಗ|bangalore",
+        "dedupe:ecd22c1c36558bd32a7d5f0f7e936d8a9ac04cf10ce521be9b37427c4b91cb1d",
+        "dedupe:c5ae3e92cf2badcd04e27455ebba0688bcdca4fe4dcdd9f24259d938f95ea4c9"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-14T18:20:26.189Z",
+      "expiresAt": "2026-11-14T18:35:26.189Z"
     }
   ]
 }
