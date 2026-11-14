@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T11:47:24.607Z",
+  "updatedAt": "2026-11-14T11:47:26.744Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13056,6 +13056,31 @@
       "claimedAt": "2026-11-14T11:47:22.282Z",
       "expiresAt": "2026-11-14T12:02:22.282Z",
       "finalizedAt": "2026-11-14T11:47:24.607Z"
+    },
+    {
+      "claimId": "0b8513f6-b8bf-4516-b589-4d2c817c4c60",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://magicbricks.com/news/chennai-metro-phase-ii-tbm-kurinji-completes-tricky-kolathur-srinivasa-nagar-stretch-under-north-chennai-homes-rbmb/152821.html",
+        "title-city:chennai metro phase ii tbm kurinji completes tricky kolathur srinivasa nagar stretch|chennai",
+        "dedupe:1ec986c3e26cbe756ee61b6f8b4785fc8877bf6855875520aec80c384d09b96c",
+        "dedupe:499d3161913f7c3ecb6c4774aeb126afa17653d7133fc12f02f4d71395a6fd36",
+        "dedupe:1f568fcc4d6d633f6b0bd549c1790c2a63983f5ea28c3dc9aaff897ac7a660dd",
+        "dedupe:chennai metro phase ii tbm kurinji completes tricky kolathur srinivasa nagar stretch|chennai",
+        "dedupe:5f572913b88f90aea093ba84d65f380a3adf407d479b012522eefc47dedabbf8",
+        "dedupe:6dc92a55f8baf36d6b4f5cbba4d238c6b89dc2910e8361a237ac9a3438a5eab4"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "chennai",
+      "canonicalEventCity": "chennai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "chennai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-14T11:47:26.744Z",
+      "expiresAt": "2026-11-14T12:02:26.744Z"
     }
   ]
 }
