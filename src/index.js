@@ -5610,6 +5610,8 @@ function isClearlyOffTopicNonDevelopmentArticle(article) {
   if (/\b(?:namo bharat|rrts|rapid rail|metro|rail corridor|flyover|underpass|road corridor|road project)\b/i.test(title) &&
       !hasKeyword(title, ["property", "real estate", "realty", "housing", "residential", "commercial", "township", "land", "plot", "development zone", "mixed-use"]) &&
       !transportPropertyEvidence) {
+    return true;
+  }
   if (/\b(?:amit\s+shah|narendra\s+modi|prime\s+minister|bjp|congress|aap)\b.{0,80}\b(?:visit|rally|campaign|address(?:es|ed|ing)?|speech)\b/i.test(title) &&
       !hasKeyword(`${title} ${text}`, ["land acquisition", "land parcel", "housing project", "residential project", "commercial project", "township", "property development", "real estate project"])) {
     return true;
