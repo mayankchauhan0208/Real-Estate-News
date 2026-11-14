@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T11:47:30.790Z",
+  "updatedAt": "2026-11-14T11:47:32.536Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13085,7 +13085,7 @@
     },
     {
       "claimId": "8a34d637-f414-477f-bf21-44f5b045a1b2",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/real-estate/swiggy-leases-2-62-lakh-sq-ft-office-space-in-bengalurus-whitefield-area-for-10-years-at-a-total-rent-outgo-of-241-crore-101794644902098.html",
         "title-city:swiggy leases 2 62 lakh sq ft office space in bengaluru s whitefield area for 10 years at a total rent outgo of 241|bangalore",
@@ -13107,7 +13107,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-14T11:47:30.790Z",
-      "expiresAt": "2026-11-14T12:02:30.790Z"
+      "expiresAt": "2026-11-14T12:02:30.790Z",
+      "finalizedAt": "2026-11-14T11:47:32.536Z"
     }
   ]
 }
