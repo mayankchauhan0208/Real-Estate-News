@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T11:47:22.282Z",
+  "updatedAt": "2026-11-14T11:47:24.607Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13033,7 +13033,7 @@
     },
     {
       "claimId": "5a39ace8-bfd8-4e71-bfc1-184c2f8c62bf",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/industry/bhubaneswar-development-body-proposes-extra-floor-area-ratio-incentive-new-infrastructure-fee/135821500",
         "title-city:bhubaneswar development body proposes extra floor area ratio incentive new infrastructure fee|bhubaneswar",
@@ -13054,7 +13054,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-14T11:47:22.282Z",
-      "expiresAt": "2026-11-14T12:02:22.282Z"
+      "expiresAt": "2026-11-14T12:02:22.282Z",
+      "finalizedAt": "2026-11-14T11:47:24.607Z"
     }
   ]
 }
