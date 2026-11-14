@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T18:20:13.580Z",
+  "updatedAt": "2026-11-14T18:20:16.013Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13163,6 +13163,32 @@
       "claimedAt": "2026-11-14T18:20:10.920Z",
       "expiresAt": "2026-11-14T18:35:10.920Z",
       "finalizedAt": "2026-11-14T18:20:13.580Z"
+    },
+    {
+      "claimId": "67957583-3582-4deb-aa6d-3052a979bc77",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-good-news-for-greater-noida-workers-upsida-to-launch-group-housing-and-hotel-scheme-in-site5-soon-40436739.html",
+        "title-city:ग र टर न एड म क म करन व ल क बल ल बल ल upsida स इट 5 म जल द श र ह ग आव स य य जन|noida",
+        "dedupe:2403f32d445a0723eec8a93dd270eaa490c92817bfe68db4067a2cb6021bdc29",
+        "dedupe:483955c73b6a7ad510896dc5234fdd764bd12e2790ef6192378b2580465e72c8",
+        "dedupe:8313c4c3b1a6e3d597dc4b964aa0009bbc8c6c5ccd3c8eaeb5599cb431c25a1c",
+        "dedupe:4124dbf41987c802d046b8cdc41dc75e8276a4412ade6cf211f51030e693017e",
+        "dedupe:ग र टर न एड म क म करन व ल क बल ल बल ल upsida स इट म जल द श र ह ग आव स य य जन|noida",
+        "dedupe:422218c4ac143a741f16009075e45b7166d4ac3a7a1778deb51cde742e1da9fd",
+        "dedupe:08420625337886bfc85b901cebd26b62205f97c2a377ef61fefd5c26e2a99156"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-14T18:20:16.013Z",
+      "expiresAt": "2026-11-14T18:35:16.013Z"
     }
   ]
 }
