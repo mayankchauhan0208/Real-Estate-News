@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T22:41:14.999Z",
+  "updatedAt": "2026-11-14T22:41:17.297Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13274,7 +13274,7 @@
     },
     {
       "claimId": "736a502c-0212-476b-b6e0-17e7e3d0606e",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-greater-noida-film-city-1000-cr-loan-approved-construction-cleared-40436753.html",
         "title-city:ग र टर न एड म इ टरन शनल फ ल म स ट क न र म ण क र स त स फ 1000 कर ड क ल न म ज र जल द रख ज एग आध रश ल|noida",
@@ -13296,7 +13296,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-14T22:41:14.999Z",
-      "expiresAt": "2026-11-14T22:56:14.999Z"
+      "expiresAt": "2026-11-14T22:56:14.999Z",
+      "finalizedAt": "2026-11-14T22:41:17.297Z"
     }
   ]
 }
