@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T18:20:18.887Z",
+  "updatedAt": "2026-11-14T18:20:21.321Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13190,6 +13190,32 @@
       "claimedAt": "2026-11-14T18:20:16.013Z",
       "expiresAt": "2026-11-14T18:35:16.013Z",
       "finalizedAt": "2026-11-14T18:20:18.887Z"
+    },
+    {
+      "claimId": "e6a2e66b-ead4-4860-bd8f-739916c635a9",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/mathura-mathura-develops-wetlands-for-bird-conservation-eco-tourism-40436754.html",
+        "title-city:मथ र म पक ष य क म ल ग स रक ष त आश य न स रक षण क ल ए व टल ड क ह रह व क स|mathura",
+        "dedupe:31e88a589eff55e5c2bc805ee6b180970c61f3eb46967c0bb42726f112fc91f0",
+        "dedupe:9f3dbe7d49e0f96fe55ab2a91e9dfbf3a86395ab78c35a3982dff99996ae41ca",
+        "dedupe:a4bc1ba0015177ae936a0cb0ad70f86d0e7ca338deab32d18a4f0b45e2c59f00",
+        "dedupe:7b67e285750368685018da6d2a7ba30b07f4b42806b2e2dcae9378ac0c4af3f8",
+        "dedupe:मथ र म पक ष य क म ल ग स रक ष त आश य न स रक षण क ल ए व टल ड क ह रह व क स|mathura",
+        "dedupe:afb2621bbf0f1093ecb93bf0834a07cf6f97d65aacf32264a78e11d83a8a94ad",
+        "dedupe:fd52ddd089d4fe027fc12738d7760fa2a9657757ed68c6da8d033be59605e5eb"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mathura",
+      "canonicalEventCity": "mathura",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mathura"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-14T18:20:21.321Z",
+      "expiresAt": "2026-11-14T18:35:21.321Z"
     }
   ]
 }
