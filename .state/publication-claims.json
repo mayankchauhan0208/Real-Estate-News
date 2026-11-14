@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T18:20:10.920Z",
+  "updatedAt": "2026-11-14T18:20:13.580Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13139,7 +13139,7 @@
     },
     {
       "claimId": "62cc6ba5-b8a3-4b20-a047-07775d93a097",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realtynmore.com/kw-group-acquires-1-5-acre-freehold-land-pa",
         "title-city:kw group acquires 1 5 acre freehold land parcel in indirapuram to develop ultra luxury residenceskw group acquires|ghaziabad",
@@ -13161,7 +13161,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-14T18:20:10.920Z",
-      "expiresAt": "2026-11-14T18:35:10.920Z"
+      "expiresAt": "2026-11-14T18:35:10.920Z",
+      "finalizedAt": "2026-11-14T18:20:13.580Z"
     }
   ]
 }
