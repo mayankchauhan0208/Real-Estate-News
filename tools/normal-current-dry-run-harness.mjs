@@ -33,6 +33,7 @@ const sourceUrls = Array.from({ length: sourceCount }, (_, index) => `${server.b
 const env = {
   ...process.env,
   RUN_MODE: "NORMAL_CURRENT",
+  RELEASE_MODE: "DRY_RUN",
   BACKFILL_MODE: "false",
   BACKFILL_FROM: "",
   BACKFILL_TO: "",
@@ -97,6 +98,9 @@ assert.equal(report.failedSources?.length || 0, 0);
 assert.equal(report.fetchedArticleCount, 1);
 assert.equal(report.posted?.length || 0, 0);
 assert.equal(report.dryRun, true);
+assert.equal(report.releaseMode, "DRY_RUN");
+assert.equal(report.apiPostAttempts, 0);
+assert.equal(report.apiMutations, 0);
 
 console.log(JSON.stringify({
   passed: true,

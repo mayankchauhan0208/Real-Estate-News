@@ -88,6 +88,23 @@ assert.match(dinamalarCandidates[0].newsLink, /\/news\/tamil-nadu-news\/[^/]+\/\
 
 console.log("Regional listing adapter regression passed: Tamil adapters exclude navigation and cross-surface links.");
 
+const dinamalarTiruppurSource = "https://www.dinamalar.com/news/tamil-nadu-district-news-tiruppur";
+const dinamalarTiruppurHtml = `
+  <html><head><title>Tiruppur District News - Dinamalar</title></head><body>
+    <nav><a href="/latestmain">தற்போதைய செய்திகள்</a></nav>
+    <a href="/news/tamil-nadu-district-news-coimbatore/other-district-story/4359001">கோவை மாவட்ட செய்தி</a>
+    <article>
+      <a href="/news/tamil-nadu-district-news-tiruppur/new-housing-project-opens/4359002">
+        திருப்பூரில் புதிய குடியிருப்பு திட்டம் திறப்பு
+      </a>
+    </article>
+  </body></html>`;
+const dinamalarTiruppurCandidates = discoverRegionalHtmlCandidates(dinamalarTiruppurHtml, dinamalarTiruppurSource);
+assert.equal(dinamalarTiruppurCandidates.length, 1, "Dinamalar Tiruppur must exclude navigation and other districts");
+assert.match(dinamalarTiruppurCandidates[0].newsLink, /tamil-nadu-district-news-tiruppur\/[^/]+\/\d+$/);
+
+console.log("Regional listing adapter regression passed: Dinamalar district surfaces retain only same-district articles.");
+
 const tamilPropertyControl = applyCityCode(cleanArticleFields({
   title: "‘ஆன்லைன்’ பத்திரப்பதிவுக்கு அரசு நிறுவனங்களுக்கும் அனுமதி",
   description: "சென்னையில் வீட்டுவசதி வாரியத்துக்கு புதிய திட்டங்களில் வீடு மற்றும் மனை விற்பனை பத்திரங்களை ஆன்லைனில் பதிவு செய்ய அனுமதி",
@@ -123,7 +140,36 @@ const patrikaCandidates = discoverRegionalHtmlCandidates(patrikaHtml, patrikaSou
 assert.equal(patrikaCandidates.length, 1, "Patrika city adapters must exclude topic and cross-city links");
 assert.match(patrikaCandidates[0].newsLink, /\/jaipur-news\/[^/]+-\d+$/);
 
+const patrikaUnlistedCitySource = "https://www.patrika.com/barmer-news/";
+const patrikaUnlistedCityCandidates = discoverRegionalHtmlCandidates(patrikaHtml
+  .replaceAll("jaipur-news", "barmer-news")
+  .replaceAll("जयपुर", "बाड़मेर"), patrikaUnlistedCitySource);
+assert.equal(patrikaUnlistedCityCandidates.length, 1, "Patrika's dated city-article contract must work beyond the original city allowlist");
+assert.match(patrikaUnlistedCityCandidates[0].newsLink, /\/barmer-news\/[^/]+-\d+$/);
+
 console.log("Regional listing adapter regression passed: Patrika topic and cross-city links are excluded.");
+
+const divyaBhaskarSource = "https://www.divyabhaskar.co.in/local/gujarat/bhavnagar/";
+const divyaBhaskarHtml = `
+  <a href="/bhaskar-investigation/">Bhaskar Investigation</a>
+  <a href="/local/gujarat/junagadh/news/other-city-139000001.html">Other city story</a>
+  <article><a href="/local/gujarat/bhavnagar/news/city-housing-project-139000002.html">ભાવનગરમાં નવી આવાસ યોજના</a></article>`;
+const divyaBhaskarCandidates = discoverRegionalHtmlCandidates(divyaBhaskarHtml, divyaBhaskarSource);
+assert.equal(divyaBhaskarCandidates.length, 1, "Divya Bhaskar city adapters must exclude global cards and other-city links");
+assert.match(divyaBhaskarCandidates[0].newsLink, /\/local\/gujarat\/bhavnagar\/news\/[^/]+-\d+\.html$/);
+
+console.log("Regional listing adapter regression passed: Divya Bhaskar city navigation is excluded.");
+
+const lokmatCitySource = "https://www.lokmat.com/chhatrapati-sambhajinagar/";
+const lokmatCityHtml = `
+  <a href="/raigad/not-local-a571/">Other city story</a>
+  <a href="/national/not-local-a597/">National story</a>
+  <article><a href="/chhatrapati-sambhajinagar/local-housing-project-a123/">स्थानिक गृहनिर्माण प्रकल्प</a></article>`;
+const lokmatCityCandidates = discoverRegionalHtmlCandidates(lokmatCityHtml, lokmatCitySource);
+assert.equal(lokmatCityCandidates.length, 1, "Lokmat city adapters must exclude cross-city and national navigation");
+assert.match(lokmatCityCandidates[0].newsLink, /\/chhatrapati-sambhajinagar\/[^/]+-a\d+\/?$/);
+
+console.log("Regional listing adapter regression passed: Lokmat city navigation is excluded.");
 
 const heritageConstructionControl = applyCityCode(cleanArticleFields({
   title: "जबलपुर के बैलेंसिंग रॉक के अस्तित्व पर खतरा, आसपास चल रहा निर्माण कार्य",

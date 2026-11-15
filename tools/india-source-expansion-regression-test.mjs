@@ -5,6 +5,11 @@ const settings = JSON.parse(fs.readFileSync("config/admin-settings.json", "utf8"
 const expected = new Map([
   ["regional-jagran-gurugram", ["gurugram"]],
   ["regional-jagran-lucknow", ["lucknow"]],
+  ["regional-jagran-barabanki", ["barabanki"]],
+  ["regional-jagran-bareilly", ["bareilly"]],
+  ["regional-jagran-firozabad", ["firozabad"]],
+  ["regional-jagran-gorakhpur", ["gorakhpur"]],
+  ["regional-jagran-jhansi", ["jhansi"]],
   ["regional-jagran-noida", ["noida"]],
   ["regional-jagran-ghaziabad", ["ghaziabad"]],
   ["regional-jagran-kanpur", ["kanpur"]],
@@ -100,7 +105,19 @@ for (const [id, cityCodes] of expressExpected) {
 const tamilExpected = new Map([
   ["regional-dinamani-tamil-nadu", []],
   ["regional-dinamani-chennai", ["chennai"]],
-  ["regional-dinamalar-tamil-nadu", []]
+  ["regional-dinamalar-tamil-nadu", []],
+  ["regional-dinamalar-tiruppur", ["tiruppur"]],
+  ["regional-dinamalar-cuddalore", ["cuddalore"]],
+  ["regional-dinamalar-dindigul", ["dindigul"]],
+  ["regional-dinamalar-erode", ["erode"]],
+  ["regional-dinamalar-karur", ["karur"]],
+  ["regional-dinamalar-madurai", ["madurai"]],
+  ["regional-dinamalar-namakkal", ["namakkal"]],
+  ["regional-dinamalar-salem", ["salem"]],
+  ["regional-dinamalar-thanjavur", ["thanjavur"]],
+  ["regional-dinamalar-tiruvannamalai", ["tiruvannamalai"]],
+  ["regional-dinamalar-vellore", ["vellore"]],
+  ["regional-dinamalar-pudukkottai", ["pudukkottai"]]
 ]);
 for (const [id, cityCodes] of tamilExpected) {
   const source = settings.manualSources.find((candidate) => candidate.id === id);
@@ -135,6 +152,32 @@ const patrikaExpected = new Map([
   ["regional-patrika-jodhpur", ["jodhpur"]],
   ["regional-patrika-ajmer", ["ajmer"]],
   ["regional-patrika-alwar", ["alwar"]],
+  ["regional-patrika-betul", ["betul"]],
+  ["regional-patrika-burhanpur", ["burhanpur"]],
+  ["regional-patrika-chhindwara", ["chhindwara"]],
+  ["regional-patrika-damoh", ["damoh"]],
+  ["regional-patrika-khandwa", ["khandwa"]],
+  ["regional-patrika-khargone", ["khargone"]],
+  ["regional-patrika-mandsaur", ["mandsaur"]],
+  ["regional-patrika-neemuch", ["neemuch"]],
+  ["regional-patrika-sehore", ["sehore"]],
+  ["regional-patrika-seoni", ["seoni"]],
+  ["regional-patrika-bhilai", ["bhilai"]],
+  ["regional-patrika-bilaspur", ["bilaspur"]],
+  ["regional-patrika-durg", ["durg"]],
+  ["regional-patrika-korba", ["korba"]],
+  ["regional-patrika-rajnandgaon", ["rajnandgaon"]],
+  ["regional-patrika-barmer", ["barmer"]],
+  ["regional-patrika-bhilwara", ["bhilwara"]],
+  ["regional-patrika-bikaner", ["bikaner"]],
+  ["regional-patrika-hanumangarh", ["hanumangarh"]],
+  ["regional-patrika-jhalawar", ["jhalawar"]],
+  ["regional-patrika-nagaur", ["nagaur"]],
+  ["regional-patrika-pali", ["pali"]],
+  ["regional-patrika-sikar", ["sikar"]],
+  ["regional-patrika-sirohi", ["sirohi"]],
+  ["regional-patrika-sri-ganganagar", ["sri_ganganagar"]],
+  ["regional-patrika-tonk", ["tonk"]],
   ["regional-patrika-bhiwadi", ["bhiwadi"]]
 ]);
 for (const [id, cityCodes] of patrikaExpected) {
@@ -168,6 +211,8 @@ const divyaBhaskarGujarati = new Map([
   ["regional-divyabhaskar-navsari", ["navsari"]],
   ["regional-divyabhaskar-valsad", ["valsad"]],
   ["regional-divyabhaskar-vapi", ["vapi"]],
+  ["regional-divyabhaskar-bhavnagar", ["bhavnagar"]],
+  ["regional-divyabhaskar-junagadh", ["junagadh"]],
   ["regional-divyabhaskar-kutch", ["kutch"]],
   ["regional-divyabhaskar-patan", ["patan"]],
   ["regional-divyabhaskar-surendranagar", ["surendranagar"]],
@@ -202,6 +247,7 @@ const lokmatMarathi = new Map([
   ["regional-lokmat-chandrapur", ["chandrapur"]],
   ["regional-lokmat-dhule", ["dhule"]],
   ["regional-lokmat-beed", ["beed"]],
+  ["regional-lokmat-aurangabad", ["aurangabad"]],
   ["regional-lokmat-dharashiv", ["osmanabad"]],
   ["regional-lokmat-yavatmal", ["yavatmal"]]
 ]);
@@ -238,7 +284,7 @@ assert.equal(productionRuntime.filter((url) => url.includes("jagran.com")).lengt
 assert.equal(productionRuntime.filter((url) => url.includes("anandabazar.com/topic/real-estate")).length, 1, "verified Bengali surface must be selectable with experimental opt-in");
 assert.equal(productionRuntime.filter((url) => url.includes("newindianexpress.com/cities/")).length, expressExpected.size, "verified New Indian Express city surfaces must be selectable with experimental opt-in");
 assert.equal(productionRuntime.filter((url) => /dinamani\.com|dinamalar\.com/.test(url)).length, tamilExpected.size, "verified Tamil surfaces must be selectable with experimental opt-in");
-assert.equal(productionRuntime.filter((url) => /patrika\.com\/(?:jaipur|bhopal|indore|jabalpur|raipur|udaipur|noida|gwalior|ujjain|sagar|dewas|satna|ratlam|rewa|kota|jodhpur|ajmer|alwar|bhiwadi)-news/i.test(url)).length, patrikaExpected.size, "verified Patrika city surfaces must be selectable with experimental opt-in");
+assert.equal(productionRuntime.filter((url) => [...patrikaExpected.keys()].some((id) => settings.manualSources.find((source) => source.id === id)?.url === url)).length, patrikaExpected.size, "verified Patrika city surfaces must be selectable with experimental opt-in");
 assert.equal(productionRuntime.filter((url) => url === kotputliBehror.url).length, 1, "Kotputli-Behror must be selectable only with experimental opt-in");
 assert.equal(productionRuntime.filter((url) => url === amarUjalaAlwar.url).length, 1, "Amar Ujala Alwar must be selectable only with experimental opt-in");
 assert.equal(productionRuntime.filter((url) => url.includes("divyabhaskar.co.in/local/gujarat/")).length, divyaBhaskarGujarati.size, "verified Gujarati local desks must be selectable only with experimental opt-in");

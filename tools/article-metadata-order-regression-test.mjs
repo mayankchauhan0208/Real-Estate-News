@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import http from "node:http";
 import { fetchArticleMetadata } from "../src/index.js";
 
+const originalFetch = globalThis.fetch;
+
 const html = `<!doctype html>
 <html>
   <head>
@@ -37,13 +39,26 @@ try {
 
 console.log("Article metadata order regression passed: JSON-LD survives full-text cleanup.");
 
+const embeddedJsonHtml = `<!doctype html><html><head>
+  <script type="application/json">{"props":{"pageProps":{"article":{"datePublished":"2026-11-13T20:27:02+05:30"}}}}</script>
+</head><body><article><h1>Tiruppur housing approval</h1><p>${"Readable property development evidence. ".repeat(12)}</p></article></body></html>`;
+globalThis.fetch = async () => new Response(embeddedJsonHtml, { status: 200, headers: { "content-type": "text/html" } });
+try {
+  const embeddedMetadata = await fetchArticleMetadata("https://example.com/district/tiruppur-housing");
+  assert.equal(embeddedMetadata.publishedAt, "2026-11-13T14:57:02.000Z");
+  assert.equal(embeddedMetadata.publicationDateExtractionMethod, "article-page-metadata");
+} finally {
+  globalThis.fetch = originalFetch;
+}
+
+console.log("Article metadata order regression passed: embedded JSON publication dates are retained.");
+
 const selfUrl = "https://example.com/news/property-story";
 const selfImageHtml = `
   <html><head>
     <title>Property story</title>
     <meta property="og:image" content="${selfUrl}">
   </head><body><article>${"Readable property development evidence. ".repeat(12)}</article></body></html>`;
-const originalFetch = globalThis.fetch;
 globalThis.fetch = async () => new Response(selfImageHtml, { status: 200, headers: { "content-type": "text/html" } });
 try {
   const selfImageMetadata = await fetchArticleMetadata(selfUrl);

@@ -8177,8 +8177,9 @@ function findStructuredImage(value) {
 }
 
 function extractStructuredPublishedAt($) {
-  const scripts = $("script[type='application/ld+json']")
+  const scripts = $("script[type='application/ld+json'], script[type='application/json']")
     .map((_, element) => $(element).contents().text())
+    .filter((_, script) => /"date(?:Published|Created|Modified)"/i.test(script))
     .get();
 
   for (const script of scripts) {
@@ -10024,12 +10025,26 @@ function regionalHtmlSourceConfig(sourceUrl = "") {
       titlePattern: /(?:real estate|property|housing|residential|commercial|apartments?|flats?|plots?|land|rera|registration|township|towers?|villas?)/i
     };
   }
-  const patrikaCity = value.match(/patrika\.com\/(jaipur|bhopal|indore|jabalpur|raipur|udaipur|noida)-news\/?$/i)?.[1];
+  const patrikaCity = value.match(/patrika\.com\/([a-z][a-z-]*)-news\/?$/i)?.[1];
   if (patrikaCity) {
     return {
       language: "hi",
       script: "Devanagari",
+      // Every configured Patrika city desk uses this dated article shape.
+      // Matching the desk slug keeps national topic/navigation links out of
+      // the regional candidate frontier without a per-city allowlist.
       linkPattern: new RegExp(`/${patrikaCity}-news/[^/?#]+-\\d+(?:$|\\?)`, "i"),
+      titlePattern: null
+    };
+  }
+  const divyaBhaskarCity = value.match(/divyabhaskar\.co\.in\/local\/gujarat\/([a-z][a-z-]*)\/?$/i)?.[1];
+  if (divyaBhaskarCity) {
+    return {
+      language: "gu",
+      script: "Gujarati",
+      // Gujarati city desks prepend global promotion cards. City news URLs
+      // are the only candidates allowed into the full-article frontier.
+      linkPattern: new RegExp(`/local/gujarat/${divyaBhaskarCity}/news/[^/?#]+-\\d+\\.html(?:$|\\?)`, "i"),
       titlePattern: null
     };
   }
@@ -10046,6 +10061,17 @@ function regionalHtmlSourceConfig(sourceUrl = "") {
       language: "ta",
       script: "Tamil",
       linkPattern: /\/all-editions\/edition-chennai\/chennai\/20\d{2}\/[A-Za-z]{3}\/\d{1,2}\/[^/?#]+(?:$|\?)/i,
+      titlePattern: null
+    };
+  }
+  const dinamalarDistrict = value.match(/dinamalar\.com\/news\/tamil-nadu-district-news-([a-z-]+)\/?$/i)?.[1];
+  if (dinamalarDistrict) {
+    return {
+      language: "ta",
+      script: "Tamil",
+      // District surfaces contain global navigation and other district links.
+      // Only same-district dated content URLs are eligible for article fetch.
+      linkPattern: new RegExp(`/news/tamil-nadu-district-news-${dinamalarDistrict}/[^/?#]+/\\d+(?:$|\\?)`, "i"),
       titlePattern: null
     };
   }
@@ -10082,6 +10108,15 @@ function regionalHtmlSourceConfig(sourceUrl = "") {
       language: "mr",
       script: "Devanagari",
       linkPattern: /\/real-estate\/[^/]+-a-a\d+\/?(?:$|\?)/i,
+      titlePattern: null
+    };
+  }
+  const lokmatCity = value.match(/lokmat\.com\/(chhatrapati-sambhajinagar)\/?$/i)?.[1];
+  if (lokmatCity) {
+    return {
+      language: "mr",
+      script: "Devanagari",
+      linkPattern: new RegExp(`/${lokmatCity}/[^/?#]+-a\\d+/?(?:$|\\?)`, "i"),
       titlePattern: null
     };
   }
@@ -10405,6 +10440,24 @@ function uniqueBySemanticEvent(articles) {
 
 function shouldDryRun() {
   return getBooleanEnv("DRY_RUN") || adminSettings.apiPushEnabled !== true;
+}
+
+function getReleaseMode() {
+  const configured = String(env("RELEASE_MODE") || "").trim().toUpperCase();
+  if (!configured) return getBooleanEnv("DRY_RUN") ? "DRY_RUN" : "PRODUCTION";
+  if (!new Set(["DRY_RUN", "PRODUCTION"]).has(configured)) {
+    throw new Error("RELEASE_MODE must be DRY_RUN or PRODUCTION.");
+  }
+  return configured;
+}
+
+function assertReleaseModeContract(releaseMode) {
+  if (releaseMode === "DRY_RUN" && !getBooleanEnv("DRY_RUN")) {
+    throw new Error("DRY_RUN_RELEASE_MODE_REQUIRES_DRY_RUN_TRUE");
+  }
+  if (releaseMode === "PRODUCTION" && getBooleanEnv("DRY_RUN")) {
+    throw new Error("PRODUCTION_RELEASE_MODE_FORBIDS_DRY_RUN_TRUE");
+  }
 }
 
 async function fetchSourceWithRetry(sourceUrl, timeoutMsOverride = getSourceTimeoutMs(), options = {}) {
@@ -10956,6 +11009,8 @@ async function main() {
 
   const allSelectedSources = getSourceUrls().filter(isAllowedSource);
   const runMode = getRunMode();
+  const releaseMode = getReleaseMode();
+  assertReleaseModeContract(releaseMode);
   const backfillDateRange = getBackfillDateRange();
   assertRunModeContract(runMode, backfillDateRange);
   const backfillMode = runMode === RUN_MODE.BACKFILL;
@@ -10994,6 +11049,7 @@ async function main() {
   const postedArticles = [];
   const pushFailures = [];
   const dryRunCandidates = [];
+  let apiPostAttempts = 0;
   const streamingBackfill = backfillMode && getBooleanEnv("BACKFILL_EXHAUSTIVE");
   const backfillTerminalStream = streamingBackfill ? createBackfillTerminalStream() : null;
   const streamedRejectionReasons = new Map();
@@ -11349,7 +11405,10 @@ async function main() {
         article,
         dedupeIds: articleDedupeIds(article),
         mode: backfillMode ? "BACKFILL" : "NORMAL",
-        publish: () => pushArticle(article),
+        publish: () => {
+          apiPostAttempts += 1;
+          return pushArticle(article);
+        },
         claimStore: distributedPublicationClaimStore
       });
       if (publication.duplicate) {
@@ -11400,6 +11459,7 @@ async function main() {
   await writeRunReport({
     generatedAt: new Date().toISOString(),
     mode: shouldDryRun() ? "dry-run" : "live",
+    releaseMode,
     runMode,
     backfillMode,
     dryRun: shouldDryRun(),
@@ -11464,6 +11524,8 @@ async function main() {
     coverageAlerts: runAnalytics.coverageAlerts,
     candidates: articlesToPush.map((article) => reportArticle(article, { candidate: true, finalState: "CANDIDATE" })),
     posted: postedArticles,
+    apiPostAttempts,
+    apiMutations: postedArticles.length,
     pushFailures,
     dryRunCandidates,
     missedCandidates: missedNewsCandidates.slice(0, 50).map(({ article, reasons }) => ({
@@ -11522,6 +11584,8 @@ export {
   hasDisallowedLanguage,
   hasBackfillDateRange,
   getRunMode,
+  getReleaseMode,
+  assertReleaseModeContract,
   getBackfillDateRange,
   getCurrentNewsFreshnessRange,
   assertRunModeContract,

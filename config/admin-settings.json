@@ -5422,6 +5422,126 @@
       "createdAt": "2026-10-26T00:00:00.000Z"
     },
     {
+      "id": "regional-dinamalar-tiruppur",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-tiruppur",
+      "label": "Dinamalar Tiruppur District | Regional P2",
+      "cityCodes": ["tiruppur"],
+      "enabled": true,
+      "category": "regional-tamil",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-14T00:00:00.000Z"
+    },
+    {
+      "id": "regional-dinamalar-cuddalore",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-cuddalore",
+      "label": "Dinamalar Cuddalore District | Regional P2",
+      "cityCodes": ["cuddalore"],
+      "enabled": true,
+      "category": "regional-tamil",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-dinamalar-dindigul",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-dindigul",
+      "label": "Dinamalar Dindigul District | Regional P2",
+      "cityCodes": ["dindigul"],
+      "enabled": true,
+      "category": "regional-tamil",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-dinamalar-erode",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-erode",
+      "label": "Dinamalar Erode District | Regional P2",
+      "cityCodes": ["erode"],
+      "enabled": true,
+      "category": "regional-tamil",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-dinamalar-karur",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-karur",
+      "label": "Dinamalar Karur District | Regional P2",
+      "cityCodes": ["karur"],
+      "enabled": true,
+      "category": "regional-tamil",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-dinamalar-madurai",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-madurai",
+      "label": "Dinamalar Madurai District | Regional P2",
+      "cityCodes": ["madurai"],
+      "enabled": true,
+      "category": "regional-tamil",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-dinamalar-namakkal",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-namakkal",
+      "label": "Dinamalar Namakkal District | Regional P2",
+      "cityCodes": ["namakkal"],
+      "enabled": true,
+      "category": "regional-tamil",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-dinamalar-salem",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-salem",
+      "label": "Dinamalar Salem District | Regional P2",
+      "cityCodes": ["salem"],
+      "enabled": true,
+      "category": "regional-tamil",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-dinamalar-thanjavur",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-thanjavur",
+      "label": "Dinamalar Thanjavur District | Regional P2",
+      "cityCodes": ["thanjavur"],
+      "enabled": true,
+      "category": "regional-tamil",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-dinamalar-tiruvannamalai",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-tiruvannamalai",
+      "label": "Dinamalar Tiruvannamalai District | Regional P2",
+      "cityCodes": ["tiruvannamalai"],
+      "enabled": true,
+      "category": "regional-tamil",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-dinamalar-vellore",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-vellore",
+      "label": "Dinamalar Vellore District | Regional P2",
+      "cityCodes": ["vellore"],
+      "enabled": true,
+      "category": "regional-tamil",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-dinamalar-pudukkottai",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-pudukottai",
+      "label": "Dinamalar Pudukkottai District | Regional P2",
+      "cityCodes": ["pudukkottai"],
+      "enabled": true,
+      "category": "regional-tamil",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
       "id": "regional-patrika-jaipur",
       "url": "https://www.patrika.com/jaipur-news/",
       "label": "Patrika Jaipur Hindi | Regional P2",
@@ -5472,6 +5592,116 @@
       "createdAt": "2026-11-05T00:00:00.000Z"
     },
     {
+      "id": "regional-patrika-barmer",
+      "url": "https://www.patrika.com/barmer-news/",
+      "label": "Patrika Barmer Hindi | Regional P2",
+      "cityCodes": ["barmer"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-bhilwara",
+      "url": "https://www.patrika.com/bhilwara-news/",
+      "label": "Patrika Bhilwara Hindi | Regional P2",
+      "cityCodes": ["bhilwara"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-bikaner",
+      "url": "https://www.patrika.com/bikaner-news/",
+      "label": "Patrika Bikaner Hindi | Regional P2",
+      "cityCodes": ["bikaner"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-hanumangarh",
+      "url": "https://www.patrika.com/hanumangarh-news/",
+      "label": "Patrika Hanumangarh Hindi | Regional P2",
+      "cityCodes": ["hanumangarh"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-jhalawar",
+      "url": "https://www.patrika.com/jhalawar-news/",
+      "label": "Patrika Jhalawar Hindi | Regional P2",
+      "cityCodes": ["jhalawar"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-nagaur",
+      "url": "https://www.patrika.com/nagaur-news/",
+      "label": "Patrika Nagaur Hindi | Regional P2",
+      "cityCodes": ["nagaur"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-pali",
+      "url": "https://www.patrika.com/pali-news/",
+      "label": "Patrika Pali Hindi | Regional P2",
+      "cityCodes": ["pali"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-sikar",
+      "url": "https://www.patrika.com/sikar-news/",
+      "label": "Patrika Sikar Hindi | Regional P2",
+      "cityCodes": ["sikar"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-sirohi",
+      "url": "https://www.patrika.com/sirohi-news/",
+      "label": "Patrika Sirohi Hindi | Regional P2",
+      "cityCodes": ["sirohi"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-sri-ganganagar",
+      "url": "https://www.patrika.com/sri-ganganagar-news/",
+      "label": "Patrika Sri Ganganagar Hindi | Regional P2",
+      "cityCodes": ["sri_ganganagar"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-tonk",
+      "url": "https://www.patrika.com/tonk-news/",
+      "label": "Patrika Tonk Hindi | Regional P2",
+      "cityCodes": ["tonk"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
       "id": "regional-patrika-bhopal",
       "url": "https://www.patrika.com/bhopal-news/",
       "label": "Patrika Bhopal Hindi | Regional P2",
@@ -5480,6 +5710,156 @@
       "category": "regional-hindi",
       "sourceMode": "ACTIVE_FOR_REVIEW",
       "createdAt": "2026-10-26T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-betul",
+      "url": "https://www.patrika.com/betul-news/",
+      "label": "Patrika Betul Hindi | Regional P2",
+      "cityCodes": ["betul"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-burhanpur",
+      "url": "https://www.patrika.com/burhanpur-news/",
+      "label": "Patrika Burhanpur Hindi | Regional P2",
+      "cityCodes": ["burhanpur"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-chhindwara",
+      "url": "https://www.patrika.com/chhindwara-news/",
+      "label": "Patrika Chhindwara Hindi | Regional P2",
+      "cityCodes": ["chhindwara"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-damoh",
+      "url": "https://www.patrika.com/damoh-news/",
+      "label": "Patrika Damoh Hindi | Regional P2",
+      "cityCodes": ["damoh"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-khandwa",
+      "url": "https://www.patrika.com/khandwa-news/",
+      "label": "Patrika Khandwa Hindi | Regional P2",
+      "cityCodes": ["khandwa"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-khargone",
+      "url": "https://www.patrika.com/khargone-news/",
+      "label": "Patrika Khargone Hindi | Regional P2",
+      "cityCodes": ["khargone"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-mandsaur",
+      "url": "https://www.patrika.com/mandsaur-news/",
+      "label": "Patrika Mandsaur Hindi | Regional P2",
+      "cityCodes": ["mandsaur"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-neemuch",
+      "url": "https://www.patrika.com/neemuch-news/",
+      "label": "Patrika Neemuch Hindi | Regional P2",
+      "cityCodes": ["neemuch"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-sehore",
+      "url": "https://www.patrika.com/sehore-news/",
+      "label": "Patrika Sehore Hindi | Regional P2",
+      "cityCodes": ["sehore"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-seoni",
+      "url": "https://www.patrika.com/seoni-news/",
+      "label": "Patrika Seoni Hindi | Regional P2",
+      "cityCodes": ["seoni"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-bhilai",
+      "url": "https://www.patrika.com/bhilai-news/",
+      "label": "Patrika Bhilai Hindi | Regional P2",
+      "cityCodes": ["bhilai"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-bilaspur",
+      "url": "https://www.patrika.com/bilaspur-news/",
+      "label": "Patrika Bilaspur Hindi | Regional P2",
+      "cityCodes": ["bilaspur"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-durg",
+      "url": "https://www.patrika.com/durg-news/",
+      "label": "Patrika Durg Hindi | Regional P2",
+      "cityCodes": ["durg"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-korba",
+      "url": "https://www.patrika.com/korba-news/",
+      "label": "Patrika Korba Hindi | Regional P2",
+      "cityCodes": ["korba"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-patrika-rajnandgaon",
+      "url": "https://www.patrika.com/rajnandgaon-news/",
+      "label": "Patrika Rajnandgaon Hindi | Regional P2",
+      "cityCodes": ["rajnandgaon"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
     },
     {
       "id": "regional-patrika-indore",
@@ -5640,6 +6020,56 @@
       "category": "regional-hindi",
       "sourceMode": "ACTIVE_FOR_REVIEW",
       "createdAt": "2026-10-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-barabanki",
+      "url": "https://www.jagran.com/uttar-pradesh/barabanki",
+      "label": "Dainik Jagran - Barabanki Hindi News | Regional P2",
+      "cityCodes": ["barabanki"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-bareilly",
+      "url": "https://www.jagran.com/uttar-pradesh/bareilly-city",
+      "label": "Dainik Jagran - Bareilly Hindi News | Regional P2",
+      "cityCodes": ["bareilly"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-firozabad",
+      "url": "https://www.jagran.com/uttar-pradesh/firozabad",
+      "label": "Dainik Jagran - Firozabad Hindi News | Regional P2",
+      "cityCodes": ["firozabad"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-gorakhpur",
+      "url": "https://www.jagran.com/uttar-pradesh/gorakhpur-city",
+      "label": "Dainik Jagran - Gorakhpur Hindi News | Regional P2",
+      "cityCodes": ["gorakhpur"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-jagran-jhansi",
+      "url": "https://www.jagran.com/uttar-pradesh/jhansi-city",
+      "label": "Dainik Jagran - Jhansi Hindi News | Regional P2",
+      "cityCodes": ["jhansi"],
+      "enabled": true,
+      "category": "regional-hindi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
     },
     {
       "id": "regional-jagran-noida",
@@ -5922,6 +6352,26 @@
       "createdAt": "2026-11-06T00:00:00.000Z"
     },
     {
+      "id": "regional-divyabhaskar-bhavnagar",
+      "url": "https://www.divyabhaskar.co.in/local/gujarat/bhavnagar/",
+      "label": "Divya Bhaskar - Bhavnagar Gujarati News | Regional P2",
+      "cityCodes": ["bhavnagar"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
+      "id": "regional-divyabhaskar-junagadh",
+      "url": "https://www.divyabhaskar.co.in/local/gujarat/junagadh/",
+      "label": "Divya Bhaskar - Junagadh Gujarati News | Regional P2",
+      "cityCodes": ["junagadh"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
+    },
+    {
       "id": "regional-divyabhaskar-kutch",
       "url": "https://www.divyabhaskar.co.in/local/gujarat/kutch/",
       "label": "Divya Bhaskar - Kutch Gujarati News | Regional P2",
@@ -6140,6 +6590,16 @@
       "category": "regional-marathi",
       "sourceMode": "ACTIVE_FOR_REVIEW",
       "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "regional-lokmat-aurangabad",
+      "url": "https://www.lokmat.com/chhatrapati-sambhajinagar/",
+      "label": "Lokmat Chhatrapati Sambhajinagar Marathi News | Regional P2",
+      "cityCodes": ["aurangabad"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-15T00:00:00.000Z"
     },
     {
       "id": "regional-lokmat-dharashiv",

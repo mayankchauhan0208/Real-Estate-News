@@ -18,6 +18,13 @@ const parser = new Parser();
 const articleSampleSize = Math.max(0, Math.min(Number(process.env.SOURCE_AUDIT_ARTICLE_SAMPLE || 3), 5));
 const maxBodyBytes = Math.max(250_000, Math.min(Number(process.env.SOURCE_AUDIT_MAX_BODY_BYTES || 1_000_000), 3_000_000));
 
+async function requestedAuditUrls() {
+  const inline = String(process.env.SOURCE_AUDIT_URLS || "").trim();
+  const file = String(process.env.SOURCE_AUDIT_URLS_FILE || "").trim();
+  const raw = file ? await fs.readFile(path.resolve(file), "utf8") : inline;
+  return new Set(raw.split(/[\n,;]+/).map((value) => normalizeSourceUrl(value)).filter(Boolean));
+}
+
 function normalizeSourceUrl(value = "") {
   try {
     const url = new URL(String(value).trim());
@@ -297,6 +304,7 @@ async function mapWithConcurrency(items, limit, worker) {
 }
 
 const settings = await readSettings();
+const requestedUrls = await requestedAuditUrls();
 const manualByUrl = new Map();
 for (const source of settings.manualSources || []) {
   const key = normalizeSourceUrl(source.url);
@@ -325,7 +333,9 @@ for (const source of settings.manualSources || []) {
   if (key) duplicateCounts.set(key, Math.max(duplicateCounts.get(key) || 0, manualByUrl.get(key)?.length || 1));
 }
 
-const rows = [...allKnownUrls.entries()].filter(([key]) => Boolean(key)).sort(([a], [b]) => a.localeCompare(b)).map(([key, url]) => {
+const rows = [...allKnownUrls.entries()]
+  .filter(([key]) => Boolean(key) && (requestedUrls.size === 0 || requestedUrls.has(key)))
+  .sort(([a], [b]) => a.localeCompare(b)).map(([key, url]) => {
   const manualRows = manualByUrl.get(key) || [];
   const cityRow = citySourceMap.get(key);
   const cityCodes = [...new Set([
@@ -356,6 +366,10 @@ const rows = [...allKnownUrls.entries()].filter(([key]) => Boolean(key)).sort(([
     notes: sourceNotes(url, cityCodes)
   };
 });
+
+if (requestedUrls.size > 0 && rows.length === 0) {
+  throw new Error("SOURCE_AUDIT_URLS did not match any configured source URL.");
+}
 
 console.log(`Auditing ${rows.length} known source URLs with concurrency ${concurrency}, timeout ${timeoutMs}ms.`);
 const audited = await mapWithConcurrency(rows, concurrency, async (row, index) => {

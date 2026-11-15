@@ -5,14 +5,18 @@ const names = [
   "BACKFILL_MODE",
   "BACKFILL_FROM",
   "BACKFILL_TO",
-  "DEFAULT_LOOKBACK_DAYS"
+  "DEFAULT_LOOKBACK_DAYS",
+  "DRY_RUN",
+  "RELEASE_MODE"
 ];
 const saved = Object.fromEntries(names.map((name) => [name, process.env[name]]));
 
 const {
   assertRunModeContract,
+  assertReleaseModeContract,
   getBackfillDateRange,
   getCurrentNewsFreshnessRange,
+  getReleaseMode,
   getRunMode,
   hasBackfillDateRange
 } = await import("../src/index.js");
@@ -78,6 +82,37 @@ try {
   assert.equal(getRunMode(), "BACKFILL");
   assert.doesNotThrow(() => assertRunModeContract("BACKFILL", getBackfillDateRange()));
   console.log("TEST_E_EXPLICIT_BACKFILL=PASS");
+
+  clearInputs();
+  process.env.RELEASE_MODE = "DRY_RUN";
+  process.env.DRY_RUN = "true";
+  assert.equal(getReleaseMode(), "DRY_RUN");
+  assert.doesNotThrow(() => assertReleaseModeContract(getReleaseMode()));
+  console.log("TEST_F_DRY_RUN_RELEASE_CONTRACT=PASS");
+
+  clearInputs();
+  process.env.RELEASE_MODE = "DRY_RUN";
+  process.env.DRY_RUN = "false";
+  assert.throws(() => assertReleaseModeContract(getReleaseMode()), /DRY_RUN_RELEASE_MODE_REQUIRES_DRY_RUN_TRUE/);
+  console.log("TEST_G_DRY_RUN_RELEASE_CONFLICT=PASS");
+
+  clearInputs();
+  process.env.RELEASE_MODE = "PRODUCTION";
+  process.env.DRY_RUN = "false";
+  assert.equal(getReleaseMode(), "PRODUCTION");
+  assert.doesNotThrow(() => assertReleaseModeContract(getReleaseMode()));
+  console.log("TEST_H_PRODUCTION_RELEASE_CONTRACT=PASS");
+
+  clearInputs();
+  process.env.RELEASE_MODE = "PRODUCTION";
+  process.env.DRY_RUN = "true";
+  assert.throws(() => assertReleaseModeContract(getReleaseMode()), /PRODUCTION_RELEASE_MODE_FORBIDS_DRY_RUN_TRUE/);
+  console.log("TEST_I_PRODUCTION_DRY_RUN_CONFLICT=PASS");
+
+  clearInputs();
+  process.env.RELEASE_MODE = "PREVIEW";
+  assert.throws(() => getReleaseMode(), /RELEASE_MODE must be DRY_RUN or PRODUCTION/);
+  console.log("TEST_J_INVALID_RELEASE_MODE=PASS");
 } finally {
   restoreInputs();
 }

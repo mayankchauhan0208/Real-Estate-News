@@ -11,6 +11,11 @@ tmp_*.mjs
 tmp_*.js
 tmp_*.py
 reports/source-audits/*.xlsx
+reports/source-audits/*.json
+reports/source-audits/task-normal-mode-repair/
+reports/city-coverage/
+reports/source-capabilities/
+local-build-backups/
 admin/document-thumbnails/*.jpg
 !admin/document-thumbnails/.gitkeep
 

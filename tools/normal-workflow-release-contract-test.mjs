@@ -1,0 +1,35 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+
+const workflowPath = new URL("../.github/workflows/news-pusher.yml", import.meta.url);
+const workflow = fs.readFileSync(workflowPath, "utf8");
+const dispatchStart = workflow.indexOf("  workflow_dispatch:");
+const concurrencyStart = workflow.indexOf("concurrency:");
+
+assert.ok(dispatchStart >= 0, "workflow_dispatch must be configured");
+assert.ok(concurrencyStart > dispatchStart, "workflow dispatch inputs must precede concurrency");
+
+const dispatchInputs = workflow.slice(dispatchStart, concurrencyStart);
+assert.match(dispatchInputs, /mode:\s*\r?\n\s+description:.*\r?\n\s+required: true\r?\n\s+type: choice/s);
+assert.match(dispatchInputs, /options:\s*\r?\n\s+- DRY_RUN\s*\r?\n\s+- PRODUCTION/s);
+assert.match(dispatchInputs, /default: DRY_RUN/);
+assert.doesNotMatch(dispatchInputs, /^\s+(backfill_from|backfill_to|resend_backfill):/m);
+
+assert.match(workflow, /^\s+RUN_MODE: NORMAL_CURRENT$/m);
+assert.match(workflow, /^\s+BACKFILL_MODE: "false"$/m);
+assert.match(workflow, /^\s+BACKFILL_FROM: ""$/m);
+assert.match(workflow, /^\s+BACKFILL_TO: ""$/m);
+assert.match(workflow, /^\s+RESEND_BACKFILL: "false"$/m);
+assert.match(workflow, /DRY_RUN: \$\{\{ github\.event_name == 'workflow_dispatch' && github\.event\.inputs\.mode == 'DRY_RUN' && 'true' \|\| 'false' \}\}/);
+
+for (const variable of ["APP_API_URL", "APP_API_KEY", "APP_LIST_API_URL", "APP_LIST_API_KEY", "GITHUB_TOKEN"]) {
+  const line = workflow.split(/\r?\n/).find((candidate) => candidate.trimStart().startsWith(`${variable}:`));
+  assert.ok(line, `${variable} must be configured`);
+  assert.match(line, /github\.event\.inputs\.mode == 'PRODUCTION'/, `${variable} must be withheld from manual dry runs`);
+}
+
+const protectedStateGate = "if: ${{ always() && (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') }}";
+assert.equal((workflow.match(new RegExp(protectedStateGate.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g")) || []).length, 2);
+assert.match(workflow, /- name: Upload run report\s*\r?\n\s+if: always\(\)/);
+
+console.log("NORMAL_WORKFLOW_RELEASE_CONTRACT=PASS");

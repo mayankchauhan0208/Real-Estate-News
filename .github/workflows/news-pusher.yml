@@ -5,18 +5,18 @@ on:
     - cron: "10 * * * *"
   workflow_dispatch:
     inputs:
-      backfill_from:
-        description: "Only consider articles published on or after this date, e.g. 2026-06-30"
-        required: false
-        default: ""
-      backfill_to:
-        description: "Only consider articles published on or before this date, e.g. 2026-07-13"
-        required: false
-        default: ""
+      mode:
+        description: "Manual runs are dry-run by default. Choose PRODUCTION only after reviewing a dry-run report."
+        required: true
+        type: choice
+        options:
+          - DRY_RUN
+          - PRODUCTION
+        default: DRY_RUN
       max_items_per_source:
         description: "How many links to inspect from each source"
         required: false
-        default: "8"
+        default: "3"
       max_pages_per_source:
         description: "How many paginated source pages to inspect where supported"
         required: false
@@ -24,12 +24,7 @@ on:
       max_items_per_run:
         description: "Maximum publish count for this run"
         required: false
-        default: "80"
-      resend_backfill:
-        description: "Repost articles in the date window even if the dedupe cache says they were already sent"
-        required: false
-        type: boolean
-        default: false
+        default: "5"
       skip_titles:
         description: "Exact titles to skip, separated by ||"
         required: false
@@ -59,9 +54,9 @@ on:
         required: false
         default: "0"
       source_limit:
-        description: "How many sources to process in this batch. Leave 0 for all sources."
+        description: "How many sources to process in this manual validation run."
         required: false
-        default: "0"
+        default: "3"
       source_concurrency:
         description: "How many sources to fetch in parallel. Default 20, max 20."
         required: false
@@ -117,18 +112,24 @@ jobs:
       - name: Fetch and push news
         run: npm start
         env:
-          APP_API_URL: ${{ secrets.APP_API_URL }}
-          APP_API_KEY: ${{ secrets.APP_API_KEY }}
-          APP_LIST_API_URL: ${{ secrets.APP_LIST_API_URL }}
-          APP_LIST_API_KEY: ${{ secrets.APP_LIST_API_KEY || secrets.APP_API_KEY }}
-          GITHUB_TOKEN: ${{ github.token }}
+          # Scheduled runs are normal production ingestion. A manually
+          # dispatched run is non-mutating unless PRODUCTION is selected.
+          RELEASE_MODE: ${{ github.event_name == 'schedule' && 'PRODUCTION' || github.event.inputs.mode }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.mode == 'DRY_RUN' && 'true' || 'false' }}
+          APP_API_URL: ${{ (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') && secrets.APP_API_URL || '' }}
+          APP_API_KEY: ${{ (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') && secrets.APP_API_KEY || '' }}
+          APP_LIST_API_URL: ${{ (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') && secrets.APP_LIST_API_URL || '' }}
+          APP_LIST_API_KEY: ${{ (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') && (secrets.APP_LIST_API_KEY || secrets.APP_API_KEY) || '' }}
+          GITHUB_TOKEN: ${{ (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') && github.token || '' }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_REF_NAME: ${{ github.ref_name }}
           PUBLICATION_CLAIM_PATH: .state/publication-claims.json
           PUBLICATION_LEDGER_PATH: .state/publication-ledger.json
-          BACKFILL_FROM: ${{ github.event.inputs.backfill_from || '' }}
-          BACKFILL_TO: ${{ github.event.inputs.backfill_to || '' }}
-          RESEND_BACKFILL: ${{ github.event.inputs.resend_backfill || 'false' }}
+          RUN_MODE: NORMAL_CURRENT
+          BACKFILL_MODE: "false"
+          BACKFILL_FROM: ""
+          BACKFILL_TO: ""
+          RESEND_BACKFILL: "false"
           SKIP_TITLES: ${{ github.event.inputs.skip_titles || '' }}
           SOURCE_URLS: ${{ github.event.inputs.source_urls || '' }}
           SOURCE_CATEGORY: ${{ github.event.inputs.source_category || '' }}
@@ -178,7 +179,7 @@ jobs:
           ENABLE_EXPERIMENTAL_SOURCES: "true"
 
       - name: Persist scheduler checkpoint
-        if: always()
+        if: ${{ always() && (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') }}
         continue-on-error: true
         run: |
           if [ -f .state/source-monitor-checkpoint.json ] && [ -f .state/source-monitor-cycle.json ]; then
@@ -203,7 +204,7 @@ jobs:
           if-no-files-found: ignore
 
       - name: Refresh hosted admin snapshot
-        if: always()
+        if: ${{ always() && (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') }}
         continue-on-error: true
         run: |
           npm run admin:export
