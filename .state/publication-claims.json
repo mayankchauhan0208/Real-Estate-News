@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-15T17:45:42.986Z",
+  "updatedAt": "2026-11-15T17:45:45.434Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13460,7 +13460,7 @@
     },
     {
       "claimId": "8ca91b9e-9dba-40af-a8db-a74477d4223b",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hilifebuilders.in/apartment-layout-matters-thrissur",
         "title-city:a home that works around your routine why layout matters more than size|thrissur",
@@ -13481,7 +13481,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-15T17:45:42.986Z",
-      "expiresAt": "2026-11-15T18:00:42.986Z"
+      "expiresAt": "2026-11-15T18:00:42.986Z",
+      "finalizedAt": "2026-11-15T17:45:45.434Z"
     }
   ]
 }
