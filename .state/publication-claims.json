@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-15T22:50:22.801Z",
+  "updatedAt": "2026-11-15T22:50:25.342Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13589,7 +13589,7 @@
     },
     {
       "claimId": "3fe9d432-7da5-48d3-8279-2558880d3508",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/haryana/rewari-rewari-lok-jan-seva-manch-to-launch-antidrug-social-evils-campaign-40437949.html",
         "title-city:र व ड म नश और स म ज क क र त य क व र द ध चल ग ज गर कत अभ य न बन प र प ल न|rewari",
@@ -13610,7 +13610,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-15T22:50:22.801Z",
-      "expiresAt": "2026-11-15T23:05:22.801Z"
+      "expiresAt": "2026-11-15T23:05:22.801Z",
+      "finalizedAt": "2026-11-15T22:50:25.342Z"
     }
   ]
 }
