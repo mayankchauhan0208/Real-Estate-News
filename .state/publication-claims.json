@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-15T10:49:32.088Z",
+  "updatedAt": "2026-11-15T10:49:33.811Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13404,6 +13404,33 @@
       "claimedAt": "2026-11-15T10:49:30.398Z",
       "expiresAt": "2026-11-15T11:04:30.398Z",
       "finalizedAt": "2026-11-15T10:49:32.088Z"
+    },
+    {
+      "claimId": "b9ff079b-362c-4c56-a47e-0b9151d22d71",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://business-standard.com/industry/news/kw-group-buys-1-5-acre-land-in-ghaziabad-134-cr-to-build-luxury-homes-126111200899_1.html",
+        "title-city:kw group buys 1 5 acre land in ghaziabad 134 cr to build luxury homes|ghaziabad",
+        "dedupe:a579abe83e945e49e2e4c2b7670b650f49394450b1cfed5d9caecacd66f8269d",
+        "dedupe:99b3e2d61cc564a1588df9e311dd9e8ef854d65ad7bf5f09c901eae294c2e5fb",
+        "dedupe:3db3a5477abe34b6a65cacf9d360cc2e7b9137353a6a78790df5cdd71c08acc4",
+        "dedupe:d9eaf93b47a33fa49f4839814c54e6bb9122e85390cc8c704af19116a184aa2f",
+        "dedupe:kw group buys acre land ghaziabad build homes|scale:1.5-acre|amount:134-crore|ghaziabad",
+        "dedupe:24683e7bb1d1c67b9bfa32e9c8612d38f7c0a04f8cb8cbc77af170f56b005cf4",
+        "dedupe:511d004c2862e368ea547a4adce9710877969aefce480d6a6b6e2ade8c5d8b35",
+        "dedupe:a40a2c0e84fc463f37057deaf9a1180b8b6e027c43b9735197e168a7c4586e34"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "ghaziabad",
+      "canonicalEventCity": "ghaziabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "ghaziabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-15T10:49:33.811Z",
+      "expiresAt": "2026-11-15T11:04:33.811Z"
     }
   ]
 }
