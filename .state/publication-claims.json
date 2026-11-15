@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-15T10:49:26.999Z",
+  "updatedAt": "2026-11-15T10:49:28.540Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13354,7 +13354,7 @@
     },
     {
       "claimId": "5098f4b1-b51e-4002-b0bc-73e5ccde40cb",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://business-standard.com/economy/news/india-s-wealthy-pivot-to-real-estate-as-stock-market-returns-cool-off-126111100113_1.html",
         "title-city:india s wealthy pivot to real estate as stock market returns cool off|mumbai",
@@ -13375,7 +13375,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-15T10:49:26.999Z",
-      "expiresAt": "2026-11-15T11:04:26.999Z"
+      "expiresAt": "2026-11-15T11:04:26.999Z",
+      "finalizedAt": "2026-11-15T10:49:28.540Z"
     }
   ]
 }
