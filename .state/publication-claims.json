@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T03:32:29.538Z",
+  "updatedAt": "2026-11-15T02:58:34.132Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13030,6 +13030,301 @@
       "claimedAt": "2026-11-14T03:32:27.273Z",
       "expiresAt": "2026-11-14T03:47:27.273Z",
       "finalizedAt": "2026-11-14T03:32:29.538Z"
+    },
+    {
+      "claimId": "5a39ace8-bfd8-4e71-bfc1-184c2f8c62bf",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/bhubaneswar-development-body-proposes-extra-floor-area-ratio-incentive-new-infrastructure-fee/135821500",
+        "title-city:bhubaneswar development body proposes extra floor area ratio incentive new infrastructure fee|bhubaneswar",
+        "dedupe:cf15f482c27a077c231d74840a2e3747ad8ddabaaaa4a77f4a42a9e02be008fe",
+        "dedupe:2be284885111c7fedbbdf251d4617120369dd713a2a9dfc135f072c6064ad098",
+        "dedupe:0621b9481f344a7474b98cae9d49b7693a540748c0f743cbd76b5eb86c23574b",
+        "dedupe:bhubaneswar development body proposes extra floor area ratio incentive new infrastructure fee|bhubaneswar",
+        "dedupe:458058232af04dc820afd426fe86e482519a6104e720772dbeb062cf1dc0ec8f",
+        "dedupe:3d807df379796bf7564a5d7dcfbd191a8ddf25c2b98d7b44593bccfcb8f84e17"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bhubaneswar",
+      "canonicalEventCity": "bhubaneswar",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bhubaneswar"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-14T11:47:22.282Z",
+      "expiresAt": "2026-11-14T12:02:22.282Z",
+      "finalizedAt": "2026-11-14T11:47:24.607Z"
+    },
+    {
+      "claimId": "0b8513f6-b8bf-4516-b589-4d2c817c4c60",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://magicbricks.com/news/chennai-metro-phase-ii-tbm-kurinji-completes-tricky-kolathur-srinivasa-nagar-stretch-under-north-chennai-homes-rbmb/152821.html",
+        "title-city:chennai metro phase ii tbm kurinji completes tricky kolathur srinivasa nagar stretch|chennai",
+        "dedupe:1ec986c3e26cbe756ee61b6f8b4785fc8877bf6855875520aec80c384d09b96c",
+        "dedupe:499d3161913f7c3ecb6c4774aeb126afa17653d7133fc12f02f4d71395a6fd36",
+        "dedupe:1f568fcc4d6d633f6b0bd549c1790c2a63983f5ea28c3dc9aaff897ac7a660dd",
+        "dedupe:chennai metro phase ii tbm kurinji completes tricky kolathur srinivasa nagar stretch|chennai",
+        "dedupe:5f572913b88f90aea093ba84d65f380a3adf407d479b012522eefc47dedabbf8",
+        "dedupe:6dc92a55f8baf36d6b4f5cbba4d238c6b89dc2910e8361a237ac9a3438a5eab4"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "chennai",
+      "canonicalEventCity": "chennai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "chennai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-14T11:47:26.744Z",
+      "expiresAt": "2026-11-14T12:02:26.744Z",
+      "finalizedAt": "2026-11-14T11:47:28.712Z"
+    },
+    {
+      "claimId": "8a34d637-f414-477f-bf21-44f5b045a1b2",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/swiggy-leases-2-62-lakh-sq-ft-office-space-in-bengalurus-whitefield-area-for-10-years-at-a-total-rent-outgo-of-241-crore-101794644902098.html",
+        "title-city:swiggy leases 2 62 lakh sq ft office space in bengaluru s whitefield area for 10 years at a total rent outgo of 241|bangalore",
+        "dedupe:fda6bbe74a5b425a1d0fd181cb5c95ba37bbb45d01cb65089056ec9adb3470bd",
+        "dedupe:6afaae802af01889489dc83d84379311e14026247c10224a26e9e0c292f54438",
+        "dedupe:114018191b05c060e0a771e49cdb32ef7d9eae48aef129e33fa7e27e43011e9e",
+        "dedupe:4799f3498075dc43de82fe1039c79afa5bd683ba2ab467fb0877f65fb3fb319f",
+        "dedupe:swiggy leases office space bengaluru s whitefield area years a total rent outgo|bangalore",
+        "dedupe:071339049f0efb837b8edca3924c8c0757cdad432bd80a0d3ccc3eded0fa2e3b",
+        "dedupe:36ae1318c6df9a61c44f1685008525be7794e55729ebe2f2cb0dbef36dacd88a"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-14T11:47:30.790Z",
+      "expiresAt": "2026-11-14T12:02:30.790Z",
+      "finalizedAt": "2026-11-14T11:47:32.536Z"
+    },
+    {
+      "claimId": "12fa5cfc-92dd-45e7-89a8-7fdbd44a674a",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/meerut-city-meerut-up-15-fm-series-vip-number-eauction-begins-today-40436628.html",
+        "title-city:व आइप य फ स न बर च ह ए त आव दन कर य प 15 एफएम स र ज म ह ग ई न ल म|meerut",
+        "dedupe:c907a41426543414e614d704098d4d28fedceadaabff4817d8abcdac6e7b2db2",
+        "dedupe:6c31b5bf5689d054cd41fe48af73c6a2cb38588add3da7aa4822af943dd8964f",
+        "dedupe:49b68657ebc5e7d67a4f965caeeb7ab11a679f15dd9056f5b4bce67982a31ea8",
+        "dedupe:2494b32970bba3d1b7890a293d8a5cd0913ac098829991cc64016abb32c92055",
+        "dedupe:व आइप य फ स न बर च ह ए त आव दन कर य प एफएम स र ज म ह ग ई न ल म|meerut",
+        "dedupe:0763690a6a4c564c860ca89bb2b47530d6b6c71296afe9140c550e946842e1ed",
+        "dedupe:d9c71341426ea72258ccd69e48754338f62f3b9b88f1a9e35600e220d1260884"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "meerut",
+      "canonicalEventCity": "meerut",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "meerut"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-14T11:47:34.539Z",
+      "expiresAt": "2026-11-14T12:02:34.539Z",
+      "finalizedAt": "2026-11-14T11:47:36.412Z"
+    },
+    {
+      "claimId": "62cc6ba5-b8a3-4b20-a047-07775d93a097",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://realtynmore.com/kw-group-acquires-1-5-acre-freehold-land-pa",
+        "title-city:kw group acquires 1 5 acre freehold land parcel in indirapuram to develop ultra luxury residenceskw group acquires|ghaziabad",
+        "dedupe:d153ae5629926ddfae6ac9322d78064ffa07699a0f21dc400436b75124116c50",
+        "dedupe:cb0beb2e01b8689d40e08dfc7b90e7c61b8cd2f7d34f990e60caa2bb1bc2d812",
+        "dedupe:7ac6402e15e68a4839d7a4f710eaca67ec3b10dbc67acf2008836805778411e5",
+        "dedupe:b14b0adca455e38d3412841fc6e78c65ed9efd367abd47aa6a62c5a25ab8defd",
+        "dedupe:kw group acquires acre freehold land parcel indirapuram develop ultra residenceskw group acquires|ghaziabad",
+        "dedupe:f657ce47be7d6e84d08a25f265030ad79f78ec4ed77d921f649a3069ee98b1d4",
+        "dedupe:df98dcae0dcbb084ae10ac891aca1d9b248fe68dff97c57cb5074a16db8c4b3d"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "ghaziabad",
+      "canonicalEventCity": "ghaziabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "ghaziabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-14T18:20:10.920Z",
+      "expiresAt": "2026-11-14T18:35:10.920Z",
+      "finalizedAt": "2026-11-14T18:20:13.580Z"
+    },
+    {
+      "claimId": "67957583-3582-4deb-aa6d-3052a979bc77",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-good-news-for-greater-noida-workers-upsida-to-launch-group-housing-and-hotel-scheme-in-site5-soon-40436739.html",
+        "title-city:ग र टर न एड म क म करन व ल क बल ल बल ल upsida स इट 5 म जल द श र ह ग आव स य य जन|noida",
+        "dedupe:2403f32d445a0723eec8a93dd270eaa490c92817bfe68db4067a2cb6021bdc29",
+        "dedupe:483955c73b6a7ad510896dc5234fdd764bd12e2790ef6192378b2580465e72c8",
+        "dedupe:8313c4c3b1a6e3d597dc4b964aa0009bbc8c6c5ccd3c8eaeb5599cb431c25a1c",
+        "dedupe:4124dbf41987c802d046b8cdc41dc75e8276a4412ade6cf211f51030e693017e",
+        "dedupe:ग र टर न एड म क म करन व ल क बल ल बल ल upsida स इट म जल द श र ह ग आव स य य जन|noida",
+        "dedupe:422218c4ac143a741f16009075e45b7166d4ac3a7a1778deb51cde742e1da9fd",
+        "dedupe:08420625337886bfc85b901cebd26b62205f97c2a377ef61fefd5c26e2a99156"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-14T18:20:16.013Z",
+      "expiresAt": "2026-11-14T18:35:16.013Z",
+      "finalizedAt": "2026-11-14T18:20:18.887Z"
+    },
+    {
+      "claimId": "e6a2e66b-ead4-4860-bd8f-739916c635a9",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/mathura-mathura-develops-wetlands-for-bird-conservation-eco-tourism-40436754.html",
+        "title-city:मथ र म पक ष य क म ल ग स रक ष त आश य न स रक षण क ल ए व टल ड क ह रह व क स|mathura",
+        "dedupe:31e88a589eff55e5c2bc805ee6b180970c61f3eb46967c0bb42726f112fc91f0",
+        "dedupe:9f3dbe7d49e0f96fe55ab2a91e9dfbf3a86395ab78c35a3982dff99996ae41ca",
+        "dedupe:a4bc1ba0015177ae936a0cb0ad70f86d0e7ca338deab32d18a4f0b45e2c59f00",
+        "dedupe:7b67e285750368685018da6d2a7ba30b07f4b42806b2e2dcae9378ac0c4af3f8",
+        "dedupe:मथ र म पक ष य क म ल ग स रक ष त आश य न स रक षण क ल ए व टल ड क ह रह व क स|mathura",
+        "dedupe:afb2621bbf0f1093ecb93bf0834a07cf6f97d65aacf32264a78e11d83a8a94ad",
+        "dedupe:fd52ddd089d4fe027fc12738d7760fa2a9657757ed68c6da8d033be59605e5eb"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mathura",
+      "canonicalEventCity": "mathura",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mathura"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-14T18:20:21.321Z",
+      "expiresAt": "2026-11-14T18:35:21.321Z",
+      "finalizedAt": "2026-11-14T18:20:23.663Z"
+    },
+    {
+      "claimId": "c711a497-eb01-4100-b1cc-a510bcc7d310",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://vijaykarnataka.com/real-estate/how-to-check-water-availability-in-apartment-during-the-summers-in-bengaluru/articleshow/135828726.cms",
+        "title-city:ಬ ಸ ಗ ಯ ಸಮಯದಲ ಲ ಬ ಗಳ ರ ನ ಅಪ ರ ಟ ಮ ಟ ಗಳಲ ಲ ನ ರ ನ ಲಭ ಯತ ಯನ ನ ಪರ ಶ ಲ ಸ ವ ದ ಹ ಗ|bangalore",
+        "dedupe:bb30ca4ba5cfa8789d7b2d2a147d29bcfd84d1efbca410d0b57b94fd51ec49a6",
+        "dedupe:40fcbcfd9a23f07e32f454e1f13f7f00a3900a5ca27549c555d09b5d2aa9b43b",
+        "dedupe:3e71870d1d6e6cf6ddefe4877208d2182ed065232aaf55cd4f77c7feef4a035f",
+        "dedupe:67cf1dda504f13f3d2fd1633b4fcdd106e4f0b124e0f9df058e711d6633192c1",
+        "dedupe:ಬ ಸ ಗ ಯ ಸಮಯದಲ ಲ ಬ ಗಳ ರ ನ ಅಪ ರ ಟ ಮ ಟ ಗಳಲ ಲ ನ ರ ನ ಲಭ ಯತ ಯನ ನ ಪರ ಶ ಲ ಸ ವ ದ ಹ ಗ|bangalore",
+        "dedupe:ecd22c1c36558bd32a7d5f0f7e936d8a9ac04cf10ce521be9b37427c4b91cb1d",
+        "dedupe:c5ae3e92cf2badcd04e27455ebba0688bcdca4fe4dcdd9f24259d938f95ea4c9"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-14T18:20:26.189Z",
+      "expiresAt": "2026-11-14T18:35:26.189Z",
+      "finalizedAt": "2026-11-14T18:20:28.747Z"
+    },
+    {
+      "claimId": "c335cded-2748-4b1f-9deb-597e60be65c3",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/aligarh-city-harrison-group-opens-4-new-plants-in-aligarh-300-jobs-40436673.html",
+        "title-city:त ल नगर अल गढ म हर सन ग र प क च र नए प ल ट श र 300 ल ग क म ल ग र जग र औद य ग क व क स क गत|aligarh",
+        "dedupe:7e40f7d8a9ac43a82589614fcf9bfdf85122ef7ee8ae84159bd2ae7fa2b77d97",
+        "dedupe:36328db42a47d0e0e305e70650d7697bf338867fcc739565ed573ad0fea4bf10",
+        "dedupe:7e1e60979fc959e0164f301d78fc1e1715a5388039f7394a567158c666616d04",
+        "dedupe:9326a6dda578f31a1d3464dad3f773b31d5ccaad95f8098034c7d30e98979cd5",
+        "dedupe:त ल नगर अल गढ म हर सन ग र प क च र नए प ल ट श र ल ग क म ल ग र जग र औद य ग क व क स क गत|aligarh",
+        "dedupe:500955127c89f330bf9c0699e2953653dd04b891603816a4af42591eb34bb2d7",
+        "dedupe:83c93f7db03876d7b31ac6613eaaaf92127fea3b92a11e0c80d3cd03d07a9043"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "aligarh",
+      "canonicalEventCity": "aligarh",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "aligarh"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-14T18:20:31.229Z",
+      "expiresAt": "2026-11-14T18:35:31.229Z",
+      "finalizedAt": "2026-11-14T18:20:33.679Z"
+    },
+    {
+      "claimId": "736a502c-0212-476b-b6e0-17e7e3d0606e",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-greater-noida-film-city-1000-cr-loan-approved-construction-cleared-40436753.html",
+        "title-city:ग र टर न एड म इ टरन शनल फ ल म स ट क न र म ण क र स त स फ 1000 कर ड क ल न म ज र जल द रख ज एग आध रश ल|noida",
+        "dedupe:7b817a6a9bd14fe2c0dc4f8adada808a78674b570923a054d70378fc2679e757",
+        "dedupe:158d8149a04bb1783db411c1403653fc6941868090a0a982a35a0a990986da24",
+        "dedupe:1c1bc64e1fbd05db87f61128740316f854dcf08639e0ba73bbef18ff60359343",
+        "dedupe:e43c6436f8029db4621825006055f4fb547457c962a17a1c5758ba5f89b49a9d",
+        "dedupe:ग र टर न एड म इ टरन शनल फ ल म स ट क न र म ण क र स त स फ कर ड क ल न म ज र जल द रख ज एग आध रश ल|noida",
+        "dedupe:2ff0fbd14700fde010f002df73869f72d735c2599baa68ca12984e32f55ba922",
+        "dedupe:0f285add21f34becd9755b72cd2d8659727869a136a3255cc8b60b41f2c3abc2"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-14T22:41:14.999Z",
+      "expiresAt": "2026-11-14T22:56:14.999Z",
+      "finalizedAt": "2026-11-14T22:41:17.297Z"
+    },
+    {
+      "claimId": "72d269fa-1cc7-4afc-a3e4-5d755809992b",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://livehindustan.com/ncr/cjp-announces-zonal-appointments-coordination-committees-in-10-states-and-regions-201794704167407.html",
+        "title-city:क कर च न पस र प र 10 र ज य और क ष त र म सम त य बन ई प र ट न क य जर रत बत ई|delhi",
+        "dedupe:9e8e427b3babdab4888ac51dc53714b320255274887c5d5e3408b09b33c8d006",
+        "dedupe:18e0abe7ccd68f4917d9bb7766b8a9a5f664647deed04c8d51e94a053c2e6502",
+        "dedupe:f8e7afde2a4e951be40634870487e7116b9b7760bb4230a2cf78b60a3564ea6c",
+        "dedupe:6ce765ed309ac739f9fcaac6776aa52b3a5af79184ff4e962e35351a8567e1bc",
+        "dedupe:क कर च न पस र प र र ज य और क ष त र म सम त य बन ई प र ट न क य जर रत बत ई|delhi",
+        "dedupe:c33e0f3ecf605cd19408fed4873df758c2d2430367a03f0514b8a3af82ee8a68",
+        "dedupe:334d6935dd05940a1c019fd60607e360ebe5a1a608933084a7df46d45b424175"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "delhi",
+      "canonicalEventCity": "delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-15T02:58:31.848Z",
+      "expiresAt": "2026-11-15T03:13:31.848Z",
+      "finalizedAt": "2026-11-15T02:58:34.132Z"
     }
   ]
 }
