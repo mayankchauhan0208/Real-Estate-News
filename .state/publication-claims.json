@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-15T10:49:37.703Z",
+  "updatedAt": "2026-11-15T10:49:39.378Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13435,7 +13435,7 @@
     },
     {
       "claimId": "7d85d50d-8c06-42d2-a3ed-820e82ca74a4",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://dinamalar.com/news/tamil-nadu-district-news-dindigul/will-an-integrated-readymade-textile-park-be-set-up-in-natham-industry-growth-will-help-generate-more-employment/4375946",
         "title-city:நத தத த ல ஒர ங க ண ந த ர ட ம ட ஜவ ள ப ப ங க அம க கப பட ம த ழ ல வளர ச ச அத க வ ல வ ய ப ப க க உதவ ம|dindigul",
@@ -13455,7 +13455,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-15T10:49:37.703Z",
-      "expiresAt": "2026-11-15T11:04:37.703Z"
+      "expiresAt": "2026-11-15T11:04:37.703Z",
+      "finalizedAt": "2026-11-15T10:49:39.378Z"
     }
   ]
 }
