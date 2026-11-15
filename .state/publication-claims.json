@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-15T10:49:22.181Z",
+  "updatedAt": "2026-11-15T10:49:24.486Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13328,7 +13328,7 @@
     },
     {
       "claimId": "e1fb33d8-6ff5-4eed-86cb-e15921ccef03",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hilifebuilders.in/future-ready-apartments-thrissur-2",
         "title-city:what makes an apartment future ready 7 things thrissur homebuyers should look for|thrissur",
@@ -13349,7 +13349,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-15T10:49:22.181Z",
-      "expiresAt": "2026-11-15T11:04:22.181Z"
+      "expiresAt": "2026-11-15T11:04:22.181Z",
+      "finalizedAt": "2026-11-15T10:49:24.486Z"
     }
   ]
 }
