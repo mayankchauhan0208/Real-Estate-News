@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-15T17:45:49.274Z",
+  "updatedAt": "2026-11-15T17:45:51.487Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13509,6 +13509,31 @@
       "claimedAt": "2026-11-15T17:45:47.507Z",
       "expiresAt": "2026-11-15T18:00:47.507Z",
       "finalizedAt": "2026-11-15T17:45:49.274Z"
+    },
+    {
+      "claimId": "04c390e8-fcab-452a-afa2-46a6d60409e1",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://business-standard.com/companies/news/max-estates-gets-harera-nod-for-4-000-crore-luxury-project-in-gurugram-126111500417_1.html",
+        "title-city:max estates gets harera nod for 4 000 crore luxury project in gurugram|gurugram",
+        "dedupe:ed43a122c2474bbfbbbf550a907bf8d13db6c84b192321e6102ac35d6a8373d8",
+        "dedupe:04baff29ccfd931962ec5fb8b9933979aa90bf234b9e2dd52801bafd5b460266",
+        "dedupe:554c5e464afdf0643422ba9efacdda3263a2a9028b57a6fecd37955785a5f929",
+        "dedupe:addea39740977e802ae6dab6475167979c474ec4ab1eb9beb204d39e76eaa240",
+        "dedupe:19ee8a8ff17c4006aeb7cbb6858d5c95de172cb3d7c9e2f1293dc02ab599a0f6",
+        "dedupe:8b624d29ebc17e72250a3363b70eae76e213d53a2df64bb43a92a7efed536dc7"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-15T17:45:51.487Z",
+      "expiresAt": "2026-11-15T18:00:51.487Z"
     }
   ]
 }
