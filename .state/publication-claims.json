@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-15T10:49:30.398Z",
+  "updatedAt": "2026-11-15T10:49:32.088Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13380,7 +13380,7 @@
     },
     {
       "claimId": "0f5e4ddb-e3fa-4437-94de-9c5cdeaec46d",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://gulshangroup.com/gulshan-one29-commercial-property-sector-129-noida",
         "title-city:gulshan one29 premium commercial property in sector 129 noida|noida",
@@ -13402,7 +13402,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-15T10:49:30.398Z",
-      "expiresAt": "2026-11-15T11:04:30.398Z"
+      "expiresAt": "2026-11-15T11:04:30.398Z",
+      "finalizedAt": "2026-11-15T10:49:32.088Z"
     }
   ]
 }
