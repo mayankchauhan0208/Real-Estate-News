@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-15T02:58:31.848Z",
+  "updatedAt": "2026-11-15T02:58:34.132Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13301,7 +13301,7 @@
     },
     {
       "claimId": "72d269fa-1cc7-4afc-a3e4-5d755809992b",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://livehindustan.com/ncr/cjp-announces-zonal-appointments-coordination-committees-in-10-states-and-regions-201794704167407.html",
         "title-city:क कर च न पस र प र 10 र ज य और क ष त र म सम त य बन ई प र ट न क य जर रत बत ई|delhi",
@@ -13323,7 +13323,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-15T02:58:31.848Z",
-      "expiresAt": "2026-11-15T03:13:31.848Z"
+      "expiresAt": "2026-11-15T03:13:31.848Z",
+      "finalizedAt": "2026-11-15T02:58:34.132Z"
     }
   ]
 }
