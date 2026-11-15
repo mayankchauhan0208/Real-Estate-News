@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-14T22:41:17.297Z",
+  "updatedAt": "2026-11-15T02:58:31.848Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13298,6 +13298,32 @@
       "claimedAt": "2026-11-14T22:41:14.999Z",
       "expiresAt": "2026-11-14T22:56:14.999Z",
       "finalizedAt": "2026-11-14T22:41:17.297Z"
+    },
+    {
+      "claimId": "72d269fa-1cc7-4afc-a3e4-5d755809992b",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://livehindustan.com/ncr/cjp-announces-zonal-appointments-coordination-committees-in-10-states-and-regions-201794704167407.html",
+        "title-city:क कर च न पस र प र 10 र ज य और क ष त र म सम त य बन ई प र ट न क य जर रत बत ई|delhi",
+        "dedupe:9e8e427b3babdab4888ac51dc53714b320255274887c5d5e3408b09b33c8d006",
+        "dedupe:18e0abe7ccd68f4917d9bb7766b8a9a5f664647deed04c8d51e94a053c2e6502",
+        "dedupe:f8e7afde2a4e951be40634870487e7116b9b7760bb4230a2cf78b60a3564ea6c",
+        "dedupe:6ce765ed309ac739f9fcaac6776aa52b3a5af79184ff4e962e35351a8567e1bc",
+        "dedupe:क कर च न पस र प र र ज य और क ष त र म सम त य बन ई प र ट न क य जर रत बत ई|delhi",
+        "dedupe:c33e0f3ecf605cd19408fed4873df758c2d2430367a03f0514b8a3af82ee8a68",
+        "dedupe:334d6935dd05940a1c019fd60607e360ebe5a1a608933084a7df46d45b424175"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "delhi",
+      "canonicalEventCity": "delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-15T02:58:31.848Z",
+      "expiresAt": "2026-11-15T03:13:31.848Z"
     }
   ]
 }
