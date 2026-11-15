@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-15T17:45:45.434Z",
+  "updatedAt": "2026-11-15T17:45:47.507Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13483,6 +13483,31 @@
       "claimedAt": "2026-11-15T17:45:42.986Z",
       "expiresAt": "2026-11-15T18:00:42.986Z",
       "finalizedAt": "2026-11-15T17:45:45.434Z"
+    },
+    {
+      "claimId": "65fb534c-1ecd-4e27-89f6-ee8b5712dd6f",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://gulshangroup.com/premium-residential-projects-in-noida",
+        "title-city:premium residential projects in noida what sets them apart|noida",
+        "dedupe:d8c8184ba1dfe29574c31ddb4517d4ac6d0b4b3b3b491bfe771649a8d33b42f0",
+        "dedupe:70ebb2a1bc504accd360501fdfb2e6dde71c877ade49cd5944233ec173f00b66",
+        "dedupe:f347b413dafb6de57d375180a863a698a10d523d6d26824cf5b38f25f4e6a603",
+        "dedupe:a914ecbcd8a66ac8e7477238ec0ea5faf2c71d1e63b2e070ff7099dabe0b8022",
+        "dedupe:f3865d642c5f5c59dee100c7733039e2af3bbc5c5de1e0aa6ccbe2de66ddf5d5",
+        "dedupe:90d1fe83ce5a9bacaa68e875e9dc433a25fd4caaa93b32e5e94bebcd938e13d6"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-15T17:45:47.507Z",
+      "expiresAt": "2026-11-15T18:00:47.507Z"
     }
   ]
 }
