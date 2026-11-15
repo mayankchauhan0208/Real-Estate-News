@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-15T17:45:55.104Z",
+  "updatedAt": "2026-11-15T17:45:56.832Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13538,7 +13538,7 @@
     },
     {
       "claimId": "72fb5467-da0f-423e-94f2-55ad10b2ee81",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/industry/hdfc-capital-receives-1100-crore-exit-from-five-house-of-abhinandan-lodha-projects/135854301",
         "title-city:hdfc capital receives 1 100 crore exit from five house of abhinandan lodha projects|mumbai",
@@ -13558,7 +13558,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-15T17:45:55.104Z",
-      "expiresAt": "2026-11-15T18:00:55.104Z"
+      "expiresAt": "2026-11-15T18:00:55.104Z",
+      "finalizedAt": "2026-11-15T17:45:56.832Z"
     }
   ]
 }
