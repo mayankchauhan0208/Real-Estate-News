@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-15T17:45:56.832Z",
+  "updatedAt": "2026-11-15T22:50:17.363Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13560,6 +13560,31 @@
       "claimedAt": "2026-11-15T17:45:55.104Z",
       "expiresAt": "2026-11-15T18:00:55.104Z",
       "finalizedAt": "2026-11-15T17:45:56.832Z"
+    },
+    {
+      "claimId": "84b9b9c6-61ac-4b6a-ab81-dac9bbf45a3c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hilifebuilders.in/apartment-privacy-thrissur-homebuyers",
+        "title-city:why privacy is becoming a bigger priority for apartment buyers|thrissur",
+        "dedupe:0e6feb40e5243a0ecc3003573158d0d977f75980831a08af110f0ae8ef03c6e1",
+        "dedupe:351b65117d209b85fc3c0a9e2cbe550d9a76ac55cb1ed894c07ceb8a104fe3a4",
+        "dedupe:386737cde1ac186876021ab2dfa590a8b63100f2918b842fd94f6a2d7827a4b3",
+        "dedupe:ac24189fa86405d588767be4704d4525250fc0d91475598d9a5dba29136def47",
+        "dedupe:99cdc7798395bcd83eea5a75dc651a1f9f5a260bd79d37be5614d95722c6a41b",
+        "dedupe:712b9ee7b605759a81a742b2f2f216284d16bbdf42134146cf828e5428a80cc3"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "thrissur",
+      "canonicalEventCity": "thrissur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "thrissur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-15T22:50:17.363Z",
+      "expiresAt": "2026-11-15T23:05:17.363Z"
     }
   ]
 }
