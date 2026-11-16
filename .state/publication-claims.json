@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T02:46:53.691Z",
+  "updatedAt": "2026-11-16T11:08:51.980Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13638,6 +13638,32 @@
       "claimedAt": "2026-11-16T02:46:51.181Z",
       "expiresAt": "2026-11-16T03:01:51.181Z",
       "finalizedAt": "2026-11-16T02:46:53.691Z"
+    },
+    {
+      "claimId": "343c6a60-c184-42b5-a829-5c5f38226ce0",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://business-standard.com/industry/news/address-maker-skylark-partnership-bengaluru-whitefield-realty-project-126111600957_1.html",
+        "title-city:address maker skylark plan 350 crore project in bengaluru s whitefield|bangalore",
+        "dedupe:7679a479d740a82a885dc91672ea8df1ccf395b6a6b223965968a00512c526ce",
+        "dedupe:9a10ab9e32402be21371132091ce47b9f04b7d17da894b9627605a81fb456f09",
+        "dedupe:1257542c37118c8380624098d4f890d739dd46c0b2ba9a8ee279dcb23e2c2b8c",
+        "dedupe:8a3714f8b780a5214df83cca0a63f9771acb8c59409590b83e676c62ffe2b07d",
+        "dedupe:address maker skylark plan bengaluru s whitefield|amount:350-crore|bangalore",
+        "dedupe:b4bce4bc5882ef3b86915eb2dcd62a267c34b4c2af42214bd802ac59b0f67eb1",
+        "dedupe:56ada4a69b35806838f0f8566abb10e49533727e70cb97d51697fd6cfee179ac"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-16T11:08:51.980Z",
+      "expiresAt": "2026-11-16T11:23:51.980Z"
     }
   ]
 }
