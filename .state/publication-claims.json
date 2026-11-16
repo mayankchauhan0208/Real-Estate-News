@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T21:03:41.881Z",
+  "updatedAt": "2026-11-16T21:03:44.869Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13720,7 +13720,7 @@
     },
     {
       "claimId": "05cad8f6-3560-4f6d-9df8-71c1225a2293",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://lokmat.com/chhatrapati-sambhajinagar/chhatrapati-sambhajinagar-municipal-corporation-collects-rs128-crore-property-tax-in-just-8-days-under-100-interest-waiver-scheme-satara-deolai-tops-list-a320",
         "title-city:म लमत त कर वर १०० टक क व य ज म फ मनप कड न आठ द वस त १ क ट २८ ल ख वस ल|aurangabad",
@@ -13741,7 +13741,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-16T21:03:41.881Z",
-      "expiresAt": "2026-11-16T21:18:41.881Z"
+      "expiresAt": "2026-11-16T21:18:41.881Z",
+      "finalizedAt": "2026-11-16T21:03:44.869Z"
     }
   ]
 }
