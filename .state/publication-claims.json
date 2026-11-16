@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T02:46:51.181Z",
+  "updatedAt": "2026-11-16T02:46:53.691Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13615,7 +13615,7 @@
     },
     {
       "claimId": "a0687266-4792-449e-8f64-4258bea77035",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hilifebuilders.in/apartment-amenities-thrissur",
         "title-city:why are amenities becoming part of the home not just added features|thrissur",
@@ -13636,7 +13636,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-16T02:46:51.181Z",
-      "expiresAt": "2026-11-16T03:01:51.181Z"
+      "expiresAt": "2026-11-16T03:01:51.181Z",
+      "finalizedAt": "2026-11-16T02:46:53.691Z"
     }
   ]
 }
