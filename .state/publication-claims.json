@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T11:08:55.124Z",
+  "updatedAt": "2026-11-16T11:08:57.633Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13665,6 +13665,31 @@
       "claimedAt": "2026-11-16T11:08:51.980Z",
       "expiresAt": "2026-11-16T11:23:51.980Z",
       "finalizedAt": "2026-11-16T11:08:55.124Z"
+    },
+    {
+      "claimId": "e67ab9b8-3022-4ab7-a235-1e0f0d500025",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/barabanki-barabanki-villagers-to-draft-own-village-development-plans-40438239.html",
+        "title-city:य प म अब ग र म ण तय कर ग अपन ग व क व क स क द श ब र ब क म जन य जन अभ य न क ख क त य र|barabanki",
+        "dedupe:63467a3d942216156aab034228d40d880a85505371051939d7dc7a44f4e3eb69",
+        "dedupe:9ce7e0f2f406bc0addced50f4af198c8a45c44ab7646e9df237684855a50c7a3",
+        "dedupe:fdc1a1f4881fcfb4b26ef2bc9f235490cf25b81be7574df44d83700bf0455c3d",
+        "dedupe:3c2be8ea86dfeb757b43ec1c19cd613b54c855e50ed4a39fedbc02d4263b8b4e",
+        "dedupe:3b8c35b2e3ad222f2d4b194e78bc00e06f2ecb90e980a2517f57588ed049a2ad",
+        "dedupe:946a8017ef087395826f65bee32163ad5999106f15f1dcfd5ca10d3456e42525"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "barabanki",
+      "canonicalEventCity": "barabanki",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "barabanki"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-16T11:08:57.633Z",
+      "expiresAt": "2026-11-16T11:23:57.633Z"
     }
   ]
 }
