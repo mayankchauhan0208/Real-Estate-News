@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T21:03:39.193Z",
+  "updatedAt": "2026-11-16T21:03:41.881Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13717,6 +13717,31 @@
       "claimedAt": "2026-11-16T21:03:36.237Z",
       "expiresAt": "2026-11-16T21:18:36.237Z",
       "finalizedAt": "2026-11-16T21:03:39.193Z"
+    },
+    {
+      "claimId": "05cad8f6-3560-4f6d-9df8-71c1225a2293",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://lokmat.com/chhatrapati-sambhajinagar/chhatrapati-sambhajinagar-municipal-corporation-collects-rs128-crore-property-tax-in-just-8-days-under-100-interest-waiver-scheme-satara-deolai-tops-list-a320",
+        "title-city:म लमत त कर वर १०० टक क व य ज म फ मनप कड न आठ द वस त १ क ट २८ ल ख वस ल|aurangabad",
+        "dedupe:0f9c2886f9f3aca3634f5008faa5817758b37084b6ce04c89b1c1eae93ef4f42",
+        "dedupe:16c920429b075f167e1e3d59e9fae2399aa23a4a37b2c71545f17ce741babcac",
+        "dedupe:46406bf7377e92bef332a3dc0f7972c19db38e9684d4822574e8b8b2bfa88927",
+        "dedupe:4caafd49dfc168ca87b7a44d42a1fad2b513b6fd174e332215fdb736ba975468",
+        "dedupe:dafcda0c37d86790a21b96b2a48b57b8998c3226f3f5065114d7c2fe27f3e68c",
+        "dedupe:6184e15d9fa98de5a438f3b161eacd7ecc9df1689cd140d36ebf63639a0d15ca"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "aurangabad",
+      "canonicalEventCity": "aurangabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "aurangabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-16T21:03:41.881Z",
+      "expiresAt": "2026-11-16T21:18:41.881Z"
     }
   ]
 }
