@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-16T21:03:36.237Z",
+  "updatedAt": "2026-11-16T21:03:39.193Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13694,7 +13694,7 @@
     },
     {
       "claimId": "00a27a49-32b2-4bc3-819b-28f0c746e17b",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/gorakhpur-city-gida-37-year-transformation-30k-cr-investment-50k-jobs-40438670.html",
         "title-city:37 स ल म बदल ग ड क तस व र 30 हज र कर ड क न व श और 50000 ल ग क म ल र जग र अब बन रह नय इ डस ट र यल हब|gorakhpur",
@@ -13715,7 +13715,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-16T21:03:36.237Z",
-      "expiresAt": "2026-11-16T21:18:36.237Z"
+      "expiresAt": "2026-11-16T21:18:36.237Z",
+      "finalizedAt": "2026-11-16T21:03:39.193Z"
     }
   ]
 }
