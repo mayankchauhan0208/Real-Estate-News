@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:40:02.942Z",
+  "updatedAt": "2026-11-17T13:40:05.616Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14113,7 +14113,7 @@
     },
     {
       "claimId": "1848d2d9-d50c-4dce-b8ca-83427c88bfcd",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/address-maker-group-and-skylark-group-collaborate-on-1-73-acre-development-project-in-bengaluru-worth-rs-350-crores/articleshow/135924024.cms",
         "title-city:address maker group and skylark group collaborate on 1 73 acre development project in bengaluru worth rs 350 crores|bangalore",
@@ -14160,7 +14160,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-17T13:40:02.942Z",
-      "expiresAt": "2026-11-17T13:55:02.942Z"
+      "expiresAt": "2026-11-17T13:55:02.942Z",
+      "finalizedAt": "2026-11-17T13:40:05.616Z"
     }
   ]
 }
