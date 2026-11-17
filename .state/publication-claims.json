@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T22:40:46.299Z",
+  "updatedAt": "2026-11-17T22:40:48.959Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14295,7 +14295,7 @@
     },
     {
       "claimId": "397b3ffa-a48c-4d64-9fe5-b76f13a9efb9",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/lucknow-city-lucknow-lda-allots-59-flats-in-park-view-aishbagh-square-40439927.html",
         "title-city:ऐशब ग स क व यर और प र क व य अप र टम ट क 59 फ ल ट क आव टन लखनऊ म आव दक क ह थ स न कलव ई ल टर|lucknow",
@@ -14316,7 +14316,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-17T22:40:46.299Z",
-      "expiresAt": "2026-11-17T22:55:46.299Z"
+      "expiresAt": "2026-11-17T22:55:46.299Z",
+      "finalizedAt": "2026-11-17T22:40:48.959Z"
     }
   ]
 }
