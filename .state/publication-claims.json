@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T22:40:48.959Z",
+  "updatedAt": "2026-11-17T22:40:51.635Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14318,6 +14318,32 @@
       "claimedAt": "2026-11-17T22:40:46.299Z",
       "expiresAt": "2026-11-17T22:55:46.299Z",
       "finalizedAt": "2026-11-17T22:40:48.959Z"
+    },
+    {
+      "claimId": "1a365c36-588c-4807-aabb-472d5b5e6631",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/gurugram-news/municipal-corporation-of-gurugram-approves-development-projects-worth-rs-61-crore-101794943158131.html",
+        "title-city:municipal corporation of gurugram approves development projects worth 61 crore|gurugram",
+        "dedupe:4cefa80523379a5583732ea42d7f80ef5356878f93cb74a24e1c32dd4ad85ced",
+        "dedupe:301390f55ca2641624645dce8717951d8630854517878f5be4c9bd0b242219bb",
+        "dedupe:bdfd3ca6b7fee806f1f16662b797e7fb90578479b2322e7d6a58d8f5ce4f9291",
+        "dedupe:0b826d213410271d0e2f6624867a095d63e90675bb4f5ad90da370d38b8c38a3",
+        "dedupe:municipal corporation gurugram approves development worth|amount:61-crore|gurugram",
+        "dedupe:7b8892d526a21e8ee886e8e861136273baa41a13246f40b9cc5fbb05636b0738",
+        "dedupe:c0767cabe1f4c7d1a9ed1b19fa2fb2a6bfe4d848d0f85e6aab6849e187ae13f0"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-17T22:40:51.635Z",
+      "expiresAt": "2026-11-17T22:55:51.635Z"
     }
   ]
 }
