@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:39:08.934Z",
+  "updatedAt": "2026-11-17T13:39:11.752Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13828,7 +13828,7 @@
     },
     {
       "claimId": "3cd1096e-db5c-4b3b-8b62-e2f880ebd1d3",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/aligarh-city-aligarh-to-get-4acre-adventure-park-on-mathura-road-40438929.html",
         "title-city:अल गढ म 4 एकड जम न पर बन ग एडव चर प र क म यर प रश त स घल न क घ षण|aligarh",
@@ -13849,7 +13849,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-17T13:39:08.934Z",
-      "expiresAt": "2026-11-17T13:54:08.934Z"
+      "expiresAt": "2026-11-17T13:54:08.934Z",
+      "finalizedAt": "2026-11-17T13:39:11.752Z"
     }
   ]
 }
