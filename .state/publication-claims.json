@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T22:40:23.932Z",
+  "updatedAt": "2026-11-17T22:40:27.376Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14191,7 +14191,7 @@
     },
     {
       "claimId": "b7f5b6ff-d284-4b25-8c81-8fba8fad040d",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/meerut-city-ccsu-law-exams-left-out-practical-and-viva-schedule-released-40439688.html",
         "title-city:ccsu ल क छ ट पर क ष ओ क क र यक रम ज र त न द न चल ग व श ष पर क ष क र यक रम प रव श पत र और id ल न अन व र य|meerut",
@@ -14212,7 +14212,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-17T22:40:23.932Z",
-      "expiresAt": "2026-11-17T22:55:23.932Z"
+      "expiresAt": "2026-11-17T22:55:23.932Z",
+      "finalizedAt": "2026-11-17T22:40:27.376Z"
     }
   ]
 }
