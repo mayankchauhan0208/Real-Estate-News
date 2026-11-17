@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:39:20.286Z",
+  "updatedAt": "2026-11-17T13:39:22.912Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13880,7 +13880,7 @@
     },
     {
       "claimId": "ed38667b-c631-452d-b56b-670433a3af8d",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://torbitrealty.com/mahima-group-rolls-out-festive-offers-across-jaipur-projects-to-make-homebuying-easier",
         "title-city:mahima group rolls out festive offers across jaipur projects to make homebuying easier|jaipur",
@@ -13901,7 +13901,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-17T13:39:20.286Z",
-      "expiresAt": "2026-11-17T13:54:20.286Z"
+      "expiresAt": "2026-11-17T13:54:20.286Z",
+      "finalizedAt": "2026-11-17T13:39:22.912Z"
     }
   ]
 }
