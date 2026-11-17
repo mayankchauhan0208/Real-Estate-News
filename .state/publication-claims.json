@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T22:40:38.262Z",
+  "updatedAt": "2026-11-17T22:40:40.904Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14266,6 +14266,31 @@
       "claimedAt": "2026-11-17T22:40:35.511Z",
       "expiresAt": "2026-11-17T22:55:35.511Z",
       "finalizedAt": "2026-11-17T22:40:38.262Z"
+    },
+    {
+      "claimId": "acebe91f-e042-4ab4-b602-4d3e50253d57",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/embassy-developments-eyes-rs-1-400-crore-revenue-from-bengaluru-ultra-luxury-housing-project-101794927030458.html",
+        "title-city:embassy developments eyes 1 400 crore revenue from bengaluru ultra luxury housing project|bangalore",
+        "dedupe:f84cb9fea2ff0d761ffb2327283e7e63df68fcd38d3a778fcc85ae0f1d322e8d",
+        "dedupe:bbf58cd031a4d03442e1c3aa1d4d5681c4f3fca8a244768cf907028fe8b76848",
+        "dedupe:ffd79070067ad3ca1dc66243d70c96c19d198d0531739cf71e64281c844becd3",
+        "dedupe:27d0d395d3a5027f9c55bf73db7ceca0669695d2bc8011b70bf0f56ae27987a6",
+        "dedupe:eb27233152d4d8f9d597a91bba56b98012c5c386919fd3d052991d9025336ae4",
+        "dedupe:40d7a1f5681223e9409dfd5c00b42b845bb5da54b3878a66018ffe18b774a6e1"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-17T22:40:40.904Z",
+      "expiresAt": "2026-11-17T22:55:40.904Z"
     }
   ]
 }
