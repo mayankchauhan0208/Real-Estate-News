@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:40:08.149Z",
+  "updatedAt": "2026-11-17T13:40:11.566Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14165,7 +14165,7 @@
     },
     {
       "claimId": "a7a7a9d9-b0ae-4d5d-8d3e-42c1d0164a8b",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://livehindustan.com/ncr/ghaziabad/story-ghaziabad-to-hold-camps-for-disability-assessment-and-assistive-devices-from-november-19-201794920885464.html",
         "title-city:ghaziabad news द व य ग क सह यक उपकरण क व तरण करन क ल ए च न ह कन क प लग ग|ghaziabad",
@@ -14186,7 +14186,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-17T13:40:08.149Z",
-      "expiresAt": "2026-11-17T13:55:08.149Z"
+      "expiresAt": "2026-11-17T13:55:08.149Z",
+      "finalizedAt": "2026-11-17T13:40:11.566Z"
     }
   ]
 }
