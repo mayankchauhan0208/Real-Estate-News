@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:39:25.413Z",
+  "updatedAt": "2026-11-17T13:39:27.975Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13906,7 +13906,7 @@
     },
     {
       "claimId": "045b93e0-7a4c-4c4f-bc97-10ab53bda4dc",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/kanpur-city-s-rajalingam-assumes-charge-as-kanpur-divisional-commissioner-40439222.html",
         "title-city:एस र जल गम न स भ ल क नप र म डल य क त क कम न अफसर क स मन शहर क य बड च न त य|kanpur",
@@ -13927,7 +13927,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-17T13:39:25.413Z",
-      "expiresAt": "2026-11-17T13:54:25.413Z"
+      "expiresAt": "2026-11-17T13:54:25.413Z",
+      "finalizedAt": "2026-11-17T13:39:27.975Z"
     }
   ]
 }
