@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T22:40:32.718Z",
+  "updatedAt": "2026-11-17T22:40:35.511Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14240,6 +14240,31 @@
       "claimedAt": "2026-11-17T22:40:30.057Z",
       "expiresAt": "2026-11-17T22:55:30.057Z",
       "finalizedAt": "2026-11-17T22:40:32.718Z"
+    },
+    {
+      "claimId": "ccd3781c-b604-4221-9cdf-675877af3f23",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/haryana/panchkula-dungarwas-land-acquisition-despite-paying-rs-125-crore-possession-was-not-granted-haryana-chief-secretary-to-investigate-40439742.html",
+        "title-city:र व ड जम न अध ग रहण 125 कर ड द न क ब वज द नह म ल कब ज ह ईक र ट क फटक र अब हर य ण क म ख य सच व कर ग ज च|rewari",
+        "dedupe:5728905b62d57f7a4b9027526ab86deec75a544d90519fc88a3bf4c6fb7f79f6",
+        "dedupe:23bbd3fd0ff39d2a94bf8bdf805c406e2aaabeb0b7397261c3c4ea010d073f13",
+        "dedupe:facfe389ed840bc5564d682673e8a29cc229641486278b3a57ece75e80ec3888",
+        "dedupe:9466c49bd0b527b4c9b29dfbf8cbd69c2d3cb9ac056a62c12bb94c6a34e7e82e",
+        "dedupe:5738b9e0de6cd2183cae75e3856fdb77b8be8a1d43c21ced554da1f302683cc3",
+        "dedupe:6f1a9eb5f4d36cd56d460768ab3826e7518822c4b7b58e03a58b915550fb2c8b"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "rewari",
+      "canonicalEventCity": "rewari",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "rewari"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-17T22:40:35.511Z",
+      "expiresAt": "2026-11-17T22:55:35.511Z"
     }
   ]
 }
