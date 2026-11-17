@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:39:14.713Z",
+  "updatedAt": "2026-11-17T13:39:17.832Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13854,7 +13854,7 @@
     },
     {
       "claimId": "7f0a14d1-3184-4e37-a25c-d1167cbffb6b",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://newindianexpress.com/cities/chennai/2026/nov/17/dr-shriram-nene-launches-his-new-book-in-chennai",
         "title-city:dr shriram nene launches his new book in chennai|chennai",
@@ -13875,7 +13875,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-17T13:39:14.713Z",
-      "expiresAt": "2026-11-17T13:54:14.713Z"
+      "expiresAt": "2026-11-17T13:54:14.713Z",
+      "finalizedAt": "2026-11-17T13:39:17.832Z"
     }
   ]
 }
