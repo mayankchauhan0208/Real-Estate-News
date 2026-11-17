@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:39:57.498Z",
+  "updatedAt": "2026-11-17T13:40:00.234Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14087,7 +14087,7 @@
     },
     {
       "claimId": "03b2e753-3c0d-49d2-8602-d13c3062c0a9",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realtynmore.com/the-new-blueprint-for-coastal-real-estate-balanci",
         "title-city:the new blueprint for coastal real estate balancing development aspirations with goa s natural landscape and local|goa",
@@ -14108,7 +14108,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-17T13:39:57.498Z",
-      "expiresAt": "2026-11-17T13:54:57.498Z"
+      "expiresAt": "2026-11-17T13:54:57.498Z",
+      "finalizedAt": "2026-11-17T13:40:00.234Z"
     }
   ]
 }
