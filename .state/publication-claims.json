@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:39:03.376Z",
+  "updatedAt": "2026-11-17T13:39:06.498Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13772,7 +13772,7 @@
     },
     {
       "claimId": "ff025214-eeff-4f6c-bea3-033003def96d",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://proppuls.in/who-is-building-hyderabad-top-10-developers-housing-supply",
         "title-city:who is building hyderabad top 10 developers hold just 29 2 of housing supply|hyderabad",
@@ -13823,7 +13823,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-17T13:39:03.376Z",
-      "expiresAt": "2026-11-17T13:54:03.376Z"
+      "expiresAt": "2026-11-17T13:54:03.376Z",
+      "finalizedAt": "2026-11-17T13:39:06.498Z"
     }
   ]
 }
