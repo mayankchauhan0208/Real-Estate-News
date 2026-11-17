@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T22:40:30.057Z",
+  "updatedAt": "2026-11-17T22:40:32.718Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14217,7 +14217,7 @@
     },
     {
       "claimId": "3b8bc3eb-edb7-4d3a-93d5-a6330c8840bf",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/real-estate/peninsula-land-signs-redevelopment-project-for-two-housing-society-in-mumbais-versova-with-revenue-potential-of-over-rs-750-crore-101794922584651.html",
         "title-city:peninsula land signs redevelopment project for two housing society in mumbai s versova with revenue potential of|mumbai",
@@ -14238,7 +14238,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-17T22:40:30.057Z",
-      "expiresAt": "2026-11-17T22:55:30.057Z"
+      "expiresAt": "2026-11-17T22:55:30.057Z",
+      "finalizedAt": "2026-11-17T22:40:32.718Z"
     }
   ]
 }
