@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:40:00.234Z",
+  "updatedAt": "2026-11-17T13:40:02.942Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14110,6 +14110,57 @@
       "claimedAt": "2026-11-17T13:39:57.498Z",
       "expiresAt": "2026-11-17T13:54:57.498Z",
       "finalizedAt": "2026-11-17T13:40:00.234Z"
+    },
+    {
+      "claimId": "1848d2d9-d50c-4dce-b8ca-83427c88bfcd",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/address-maker-group-and-skylark-group-collaborate-on-1-73-acre-development-project-in-bengaluru-worth-rs-350-crores/articleshow/135924024.cms",
+        "title-city:address maker group and skylark group collaborate on 1 73 acre development project in bengaluru worth rs 350 crores|bangalore",
+        "dedupe:08b6a6050b9d049accece6ff9c5e8670656d125f06bb9bf0e5474f41e24d4a6b",
+        "dedupe:b9aa90aad6c5c94764695e043342bb9e200b196394fbe2f8f72d6e7f532b7650",
+        "dedupe:26ec9dffcc2bea4edd2675c0dbd46a65b8a78dfa26ed14df1f61fa145acb8975",
+        "dedupe:46e951eac32e0330e2a2048102e27663d709726198615bbca63456b473990bca",
+        "dedupe:address maker group skylark group collaborate acre development bengaluru worth crores|scale:1.73-acre|bangalore",
+        "dedupe:da797a560f91629135b6e249d4e3a2abd29b60a6982e50827565e8b0c79a7b99",
+        "dedupe:f6927b7a68e0c77cb5862ed392c0572889e96b762f9166ad6fd796f7c866a6ab"
+      ],
+      "semanticIdentity": {
+        "city": "bangalore",
+        "canonicalEventCity": "bangalore",
+        "normalizedBuilder": "elan",
+        "normalizedProject": "",
+        "canonicalEventType": "residential-sale",
+        "builder": "elan",
+        "project": "",
+        "eventType": "residential-sale",
+        "numericAnchors": [
+          "00:number",
+          "05:number",
+          "1.73:acre",
+          "17:number",
+          "2.9:lakh",
+          "2026:number",
+          "2030:number",
+          "22:number",
+          "30:number",
+          "350:crore",
+          "35:million sq ft",
+          "7:million sq ft"
+        ],
+        "canonicalEventFingerprint": "elan|bangalore|residential-sale|00:number,05:number,1.73:acre",
+        "semanticClusterId": "cluster:0061c4bac4363ba24355b0a4"
+      },
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "elan|bangalore|residential-sale|00:number,05:number,1.73:acre",
+      "semanticClusterId": "cluster:0061c4bac4363ba24355b0a4",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-17T13:40:02.942Z",
+      "expiresAt": "2026-11-17T13:55:02.942Z"
     }
   ]
 }
