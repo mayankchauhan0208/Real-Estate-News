@@ -1,7 +1,7 @@
 {
   "cycleId": "source-cycle-2026-11-10",
   "createdAt": "2026-11-10T23:15:17.007Z",
-  "universeFingerprint": "7570a46664c64b6dc46a3cc127ac283d6b40c67db7565f8c59a70e8553ee362d",
+  "universeFingerprint": "99864045983ae648fdac1c85fb1a1a0981994e09cf86c0545e555930d8d1963d",
   "sources": [
     {
       "sourceId": "source-00a0c32b225feb2f",
@@ -10,6 +10,10 @@
     {
       "sourceId": "source-00e13730e494ecd8",
       "url": "https://www.divyabhaskar.co.in/local/gujarat/ahmedabad/kalol"
+    },
+    {
+      "sourceId": "source-0130c399bc246bc0",
+      "url": "https://www.patrika.com/sirohi-news"
     },
     {
       "sourceId": "source-0130f0c2db03fc06",
@@ -38,6 +42,10 @@
     {
       "sourceId": "source-0259585e62afaa8e",
       "url": "https://dfccil.com"
+    },
+    {
+      "sourceId": "source-02e6ddbfb49fc5c9",
+      "url": "https://www.jagran.com/uttar-pradesh/barabanki"
     },
     {
       "sourceId": "source-0314fae7f1b7167c",
@@ -160,6 +168,10 @@
       "url": "https://realty.economictimes.indiatimes.com/rss/international"
     },
     {
+      "sourceId": "source-0c856ca9e19f0222",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-pudukottai"
+    },
+    {
       "sourceId": "source-0d98ea0a5402ecad",
       "url": "https://in.esr.com/newsroom"
     },
@@ -236,6 +248,10 @@
       "url": "https://realty.economictimes.indiatimes.com/rss/webstories"
     },
     {
+      "sourceId": "source-14056e471c240b41",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-vellore"
+    },
+    {
       "sourceId": "source-1427c185c745d597",
       "url": "https://www.patrika.com/bhopal-news"
     },
@@ -276,12 +292,28 @@
       "url": "https://www.jagran.com/uttar-pradesh/allahabad-city"
     },
     {
+      "sourceId": "source-17cb03449ed6d5d8",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-madurai"
+    },
+    {
       "sourceId": "source-17d506eae1c7a8b0",
       "url": "https://publish.tribuneindia.com/state/chhattisgarh/feed"
     },
     {
+      "sourceId": "source-17dba298b4a051a7",
+      "url": "https://www.jagran.com/uttar-pradesh/bareilly-city"
+    },
+    {
       "sourceId": "source-18040f76e52be56f",
       "url": "https://www.indospace.in/indospace-news"
+    },
+    {
+      "sourceId": "source-1836c3ae8b793ea9",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-dindigul"
+    },
+    {
+      "sourceId": "source-18d6751d17722939",
+      "url": "https://www.patrika.com/chhindwara-news"
     },
     {
       "sourceId": "source-193bc6b30b3bcfc1",
@@ -384,6 +416,10 @@
       "url": "https://www.hindustantimes.com/topic/greater-noida/news"
     },
     {
+      "sourceId": "source-2067097249051299",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-tiruppur"
+    },
+    {
       "sourceId": "source-2117ebe9a65bdc8e",
       "url": "https://rera.chbonline.in"
     },
@@ -464,6 +500,10 @@
       "url": "https://ibbi.gov.in/search/index/press-release"
     },
     {
+      "sourceId": "source-25ee0d20c2ab7778",
+      "url": "https://www.patrika.com/jhalawar-news"
+    },
+    {
       "sourceId": "source-262d25752cd16496",
       "url": "https://www.mpmetrorail.com"
     },
@@ -532,6 +572,14 @@
       "url": "https://realty.economictimes.indiatimes.com/rss/lighting/led-technology"
     },
     {
+      "sourceId": "source-2bab41fde9049636",
+      "url": "https://www.patrika.com/nagaur-news"
+    },
+    {
+      "sourceId": "source-2bd404eadff28039",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-karur"
+    },
+    {
       "sourceId": "source-2c49fe09a08d8b82",
       "url": "https://gmda.assam.gov.in"
     },
@@ -578,6 +626,10 @@
     {
       "sourceId": "source-2fbe9fa552614ea3",
       "url": "https://www.omaxe.com"
+    },
+    {
+      "sourceId": "source-2ff91013c3e17806",
+      "url": "https://www.patrika.com/barmer-news"
     },
     {
       "sourceId": "source-3160c525a501e44e",
@@ -628,6 +680,10 @@
       "url": "https://www.divyabhaskar.co.in/local/gujarat/bharuch"
     },
     {
+      "sourceId": "source-356c5c46768cc266",
+      "url": "https://www.patrika.com/khandwa-news"
+    },
+    {
       "sourceId": "source-35fe2dd716f730f7",
       "url": "https://www.lodhagroup.in/investor-relations/shareholder-information"
     },
@@ -658,6 +714,10 @@
     {
       "sourceId": "source-3ab41e23b89c23d0",
       "url": "https://in.emaar.com/en/media"
+    },
+    {
+      "sourceId": "source-3addc5918f8930af",
+      "url": "https://www.patrika.com/tonk-news"
     },
     {
       "sourceId": "source-3b52202c55c766e9",
@@ -692,8 +752,16 @@
       "url": "https://www.shapoorjipallonji.com/Media/Press-Releases"
     },
     {
+      "sourceId": "source-3dfbf65cfaf81ab2",
+      "url": "https://www.patrika.com/mandsaur-news"
+    },
+    {
       "sourceId": "source-3e610af64aebd1ca",
       "url": "https://credai.org/media/press-release"
+    },
+    {
+      "sourceId": "source-3ee7dc89c36b5ff7",
+      "url": "https://www.patrika.com/bhilwara-news"
     },
     {
       "sourceId": "source-3efe511fed1434ff",
@@ -722,6 +790,10 @@
     {
       "sourceId": "source-4090a1311b9a7332",
       "url": "https://infra.economictimes.indiatimes.com/rss/videostories"
+    },
+    {
+      "sourceId": "source-40ad1098aaddb238",
+      "url": "https://www.patrika.com/sri-ganganagar-news"
     },
     {
       "sourceId": "source-41891c94be6ce7ff",
@@ -876,6 +948,10 @@
       "url": "https://hsvphry.org.in"
     },
     {
+      "sourceId": "source-502cd6a4df92027f",
+      "url": "https://www.patrika.com/betul-news"
+    },
+    {
       "sourceId": "source-50efebf0421f40a2",
       "url": "https://bptpltd.com/updates"
     },
@@ -884,8 +960,16 @@
       "url": "https://www.whitelandcorporation.com"
     },
     {
+      "sourceId": "source-522f7e3c1fe42250",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-thanjavur"
+    },
+    {
       "sourceId": "source-52460f6ad0b0218d",
       "url": "https://noidaauthorityonline.in"
+    },
+    {
+      "sourceId": "source-5265aef8eabca75f",
+      "url": "https://www.jagran.com/uttar-pradesh/gorakhpur-city"
     },
     {
       "sourceId": "source-527300cb717e7532",
@@ -902,6 +986,10 @@
     {
       "sourceId": "source-53cb703dfede1cac",
       "url": "https://indianexpress.com/section/cities"
+    },
+    {
+      "sourceId": "source-5434f39e4bd7a969",
+      "url": "https://www.patrika.com/korba-news"
     },
     {
       "sourceId": "source-54f054f2236da115",
@@ -930,6 +1018,10 @@
     {
       "sourceId": "source-56a9c55a80da95c2",
       "url": "https://cochinport.gov.in/tenders"
+    },
+    {
+      "sourceId": "source-574f330a7a1bcdd5",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-namakkal"
     },
     {
       "sourceId": "source-57d81e5677269b74",
@@ -978,6 +1070,10 @@
     {
       "sourceId": "source-5f517e663d64648c",
       "url": "https://www.bseindia.com/corporates/ann.html"
+    },
+    {
+      "sourceId": "source-5fbf9303137de95b",
+      "url": "https://www.lokmat.com/chhatrapati-sambhajinagar"
     },
     {
       "sourceId": "source-5fc341fd742dd054",
@@ -1126,6 +1222,10 @@
     {
       "sourceId": "source-6ae3f0672d608dd5",
       "url": "https://publish.tribuneindia.com/city/delhi/feed"
+    },
+    {
+      "sourceId": "source-6af64d976bf203bb",
+      "url": "https://www.divyabhaskar.co.in/local/gujarat/bhavnagar"
     },
     {
       "sourceId": "source-6b7d95f4d7b0b6c0",
@@ -1360,8 +1460,16 @@
       "url": "https://hsvphry.org.in/Home/Tenders"
     },
     {
+      "sourceId": "source-80b45f176bfe0d36",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-erode"
+    },
+    {
       "sourceId": "source-80ea1c2c607fc1c3",
       "url": "https://www.puriconstructions.com"
+    },
+    {
+      "sourceId": "source-81a485c829fc1cf5",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-cuddalore"
     },
     {
       "sourceId": "source-81f9146ea5a6ad92",
@@ -1414,6 +1522,10 @@
     {
       "sourceId": "source-89b86951d920c706",
       "url": "https://realtynxt.com"
+    },
+    {
+      "sourceId": "source-89c079aab7f4b629",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-tiruvannamalai"
     },
     {
       "sourceId": "source-89e78f3a5bb26c4e",
@@ -1550,6 +1662,10 @@
     {
       "sourceId": "source-9616b50d650f503d",
       "url": "https://surajestate.com/investor-relations"
+    },
+    {
+      "sourceId": "source-9629d7a3df5ab584",
+      "url": "https://www.divyabhaskar.co.in/local/gujarat/junagadh"
     },
     {
       "sourceId": "source-965428dfb8411501",
@@ -1732,6 +1848,10 @@
       "url": "https://cidco.maharashtra.gov.in/Page?Token=1C64F4F8470"
     },
     {
+      "sourceId": "source-a67efd5276a5e6f2",
+      "url": "https://www.patrika.com/damoh-news"
+    },
+    {
       "sourceId": "source-a713949ae91d1194",
       "url": "https://telugu.oneindia.com/topic/real-estate"
     },
@@ -1746,6 +1866,10 @@
     {
       "sourceId": "source-a8119226a73d3518",
       "url": "https://indianexpress.com/section/business/aviation"
+    },
+    {
+      "sourceId": "source-a818f781eaa72c53",
+      "url": "https://www.patrika.com/bilaspur-news"
     },
     {
       "sourceId": "source-a827f7ee37beaf5a",
@@ -1848,8 +1972,16 @@
       "url": "https://www.abacorp.in"
     },
     {
+      "sourceId": "source-b141412bbbd5f878",
+      "url": "https://www.patrika.com/bhilai-news"
+    },
+    {
       "sourceId": "source-b1453969ace75992",
       "url": "https://rera.telangana.gov.in/SUOMOTU-TG-RERA-15121976ORDERS"
+    },
+    {
+      "sourceId": "source-b1c0a9555a815997",
+      "url": "https://www.patrika.com/bikaner-news"
     },
     {
       "sourceId": "source-b1c866027fc3e1bf",
@@ -1858,6 +1990,10 @@
     {
       "sourceId": "source-b30e3231ec8a99e5",
       "url": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms"
+    },
+    {
+      "sourceId": "source-b3345e0a6e70d4c5",
+      "url": "https://www.patrika.com/sikar-news"
     },
     {
       "sourceId": "source-b3c79afc453c5d0e",
@@ -1898,6 +2034,10 @@
     {
       "sourceId": "source-b746e76e35ffe15c",
       "url": "https://realty.economictimes.indiatimes.com/rss/regulatory"
+    },
+    {
+      "sourceId": "source-b770396fd7155c2a",
+      "url": "https://www.jagran.com/uttar-pradesh/jhansi-city"
     },
     {
       "sourceId": "source-b80e7c4a794e0b06",
@@ -1968,6 +2108,10 @@
       "url": "https://realty.economictimes.indiatimes.com/news/residential"
     },
     {
+      "sourceId": "source-bef5c9f33907ebb3",
+      "url": "https://www.patrika.com/pali-news"
+    },
+    {
       "sourceId": "source-bf4a8258eb785191",
       "url": "https://www.jagran.com/uttar-pradesh/meerut-city"
     },
@@ -1978,6 +2122,10 @@
     {
       "sourceId": "source-bfa91ccf4fc18259",
       "url": "https://www.pib.gov.in"
+    },
+    {
+      "sourceId": "source-bfbd70a5951c4b06",
+      "url": "https://www.dinamalar.com/news/tamil-nadu-district-news-salem"
     },
     {
       "sourceId": "source-c040c0d950d87bd1",
@@ -2004,12 +2152,24 @@
       "url": "https://indianexpress.com/section/cities/nashik"
     },
     {
+      "sourceId": "source-c23f76678ef3eb0b",
+      "url": "https://www.patrika.com/hanumangarh-news"
+    },
+    {
       "sourceId": "source-c29bded819119079",
       "url": "https://faridabad.nic.in/department/faridabad-metropolitan-development-authority-fmda"
     },
     {
       "sourceId": "source-c29e43a96129297e",
       "url": "https://publish.tribuneindia.com/city/chandigarh/feed"
+    },
+    {
+      "sourceId": "source-c2d0db95e9386adb",
+      "url": "https://www.patrika.com/seoni-news"
+    },
+    {
+      "sourceId": "source-c305eb036b93021e",
+      "url": "https://www.patrika.com/durg-news"
     },
     {
       "sourceId": "source-c321d9d6ff68625a",
@@ -2084,12 +2244,20 @@
       "url": "https://gnida.up.gov.in/en/news"
     },
     {
+      "sourceId": "source-cd274018604a9db4",
+      "url": "https://www.patrika.com/sehore-news"
+    },
+    {
       "sourceId": "source-cd407e0375a45a80",
       "url": "https://www.cmdachennai.gov.in"
     },
     {
       "sourceId": "source-cdd24800c900633c",
       "url": "https://www.dlf.in/media"
+    },
+    {
+      "sourceId": "source-cddd1cd9caab84b6",
+      "url": "https://www.jagran.com/uttar-pradesh/firozabad"
     },
     {
       "sourceId": "source-ce1128afcbc6a427",
@@ -2266,6 +2434,10 @@
     {
       "sourceId": "source-dea0d23e852b1feb",
       "url": "https://realty.economictimes.indiatimes.com/rss/industry"
+    },
+    {
+      "sourceId": "source-debc5f7ea1a8de14",
+      "url": "https://www.patrika.com/burhanpur-news"
     },
     {
       "sourceId": "source-deff7d2998156a14",
@@ -2468,6 +2640,10 @@
       "url": "https://www.business-standard.com/topic/real-estate"
     },
     {
+      "sourceId": "source-f22bb606abb23ad9",
+      "url": "https://www.patrika.com/khargone-news"
+    },
+    {
       "sourceId": "source-f23d1d86a2bea3a4",
       "url": "https://www.supertechlimited.com"
     },
@@ -2592,6 +2768,10 @@
       "url": "https://www.mumbaiport.gov.in/show_tenders.php?catid=3&depid=1&lang=1"
     },
     {
+      "sourceId": "source-fecd984e876a5ccb",
+      "url": "https://www.patrika.com/neemuch-news"
+    },
+    {
       "sourceId": "source-feeab52e5c2230a7",
       "url": "https://www.hindustantimes.com/feeds/rss/cities/chandigarh-news/rssfeed.xml"
     },
@@ -2602,6 +2782,10 @@
     {
       "sourceId": "source-ff1921d0c22d6988",
       "url": "https://hilifebuilders.in/feed"
+    },
+    {
+      "sourceId": "source-ff6a12a6cabcd444",
+      "url": "https://www.patrika.com/rajnandgaon-news"
     },
     {
       "sourceId": "source-ff7f75827ae117e2",
