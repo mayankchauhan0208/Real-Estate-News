@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:39:33.424Z",
+  "updatedAt": "2026-11-17T13:39:36.102Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13955,6 +13955,56 @@
       "claimedAt": "2026-11-17T13:39:30.703Z",
       "expiresAt": "2026-11-17T13:54:30.703Z",
       "finalizedAt": "2026-11-17T13:39:33.424Z"
+    },
+    {
+      "claimId": "63ef8483-08bf-4d84-b3d0-ef1616c026a4",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/elan-group-partners-with-marriot-international-ot-launch-apartments-by-marriot-bonvoy-in-gurugram/articleshow/135921258.cms",
+        "title-city:elan group partners with marriot international to launch apartments by marriot bonvoy in gurugram|gurugram",
+        "dedupe:3c664e84e7774487991348d2130beefe53d3afdee8dc96cc042050a1e1cada43",
+        "dedupe:0d4b36b423caf864440eee8a5b4800a694c582b0db9d4b5e473f0dbed9a8891b",
+        "dedupe:eae6ed23b493060ffb5838c11319fbd517095c9a8b93d254a936c2abc4faffe7",
+        "dedupe:589d2666c9490c78c5ceca21dae027cc4323106100011a4834bbc2d2fdc44503",
+        "dedupe:6d89e7b1ae55af31d302a968243e97665b28da57a061216fa9ba40e7bd3dd68b",
+        "dedupe:5048c1c3c624c85f908e1a0fae2016d44e237063964bdbe4965b1c32b6955d3d"
+      ],
+      "semanticIdentity": {
+        "city": "gurugram",
+        "canonicalEventCity": "gurugram",
+        "normalizedBuilder": "elan",
+        "normalizedProject": "",
+        "canonicalEventType": "residential-sale",
+        "builder": "elan",
+        "project": "",
+        "eventType": "residential-sale",
+        "numericAnchors": [
+          "00:number",
+          "02:number",
+          "04:number",
+          "106:number",
+          "17:number",
+          "1:number",
+          "2.5:number",
+          "2026:number",
+          "2:number",
+          "82:number",
+          "840:crore",
+          "9:acre"
+        ],
+        "canonicalEventFingerprint": "elan|gurugram|residential-sale|00:number,02:number,04:number",
+        "semanticClusterId": "cluster:7ef805714112a5481e7b9d63"
+      },
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "elan|gurugram|residential-sale|00:number,02:number,04:number",
+      "semanticClusterId": "cluster:7ef805714112a5481e7b9d63",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-17T13:39:36.102Z",
+      "expiresAt": "2026-11-17T13:54:36.102Z"
     }
   ]
 }
