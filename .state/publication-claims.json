@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:39:38.737Z",
+  "updatedAt": "2026-11-17T13:39:41.210Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14006,6 +14006,31 @@
       "claimedAt": "2026-11-17T13:39:36.102Z",
       "expiresAt": "2026-11-17T13:54:36.102Z",
       "finalizedAt": "2026-11-17T13:39:38.737Z"
+    },
+    {
+      "claimId": "0d03200c-47d6-4b66-862a-80f075f61f1e",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/lucknow-city-yogi-govt-boosts-up-tribal-development-in-517-villages-40439460.html",
+        "title-city:य प क 517 जनज त य ग व क बदल ग तस व र 18 व भ ग म लकर द ग ब न य द स व ध ए|lucknow",
+        "dedupe:45308bd9598027be86f9747c8966ed01d6537016fac385c455f784ba07660052",
+        "dedupe:f690511845116a54da85e3b2ad74e8e987dfc2f06ebcc3b3d2f48fc6b1d48ba8",
+        "dedupe:abff2161a5bc31f60cd60e854ecb8b851ca34e739ca1243de4aea9d239457216",
+        "dedupe:9af91142d95c8375089ceaab86922fc0aceb848becfabcaae038b3227f772a09",
+        "dedupe:8a7ffad98948ea0b3507b655af5eda556b2dd9b904ff5afd9598e71b40e04e44",
+        "dedupe:7d31250ef85a816911e148a6445d4ae3a16daabc98912da59de5e151a800f345"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-17T13:39:41.210Z",
+      "expiresAt": "2026-11-17T13:54:41.210Z"
     }
   ]
 }
