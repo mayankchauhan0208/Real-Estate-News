@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:39:00.112Z",
+  "updatedAt": "2026-11-17T13:39:03.376Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13769,6 +13769,61 @@
       "claimedAt": "2026-11-17T13:38:56.822Z",
       "expiresAt": "2026-11-17T13:53:56.822Z",
       "finalizedAt": "2026-11-17T13:39:00.112Z"
+    },
+    {
+      "claimId": "ff025214-eeff-4f6c-bea3-033003def96d",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://proppuls.in/who-is-building-hyderabad-top-10-developers-housing-supply",
+        "title-city:who is building hyderabad top 10 developers hold just 29 2 of housing supply|hyderabad",
+        "dedupe:a5e2d2e9b7abdf55ae0f0712ce18adba53b9712413c766b779fcbe92679eafe3",
+        "dedupe:dcf1e50f66237a6f6d310fee8f1269a9e685fa9c0f8edc0fc6e07a6b731882af",
+        "dedupe:c3a3df5dd79758e1fb6769e7b07caa693b32ce4c9326b33cce97274ec2e19b2e",
+        "dedupe:cc9b4c6bc4020ebac2656990ec2c9d85f25c68602c170a9b5662773e639df993",
+        "dedupe:82da0a4ce7cd491a6d89b3ee97a482ad417414b6faaa72580d6411aa8c432891",
+        "dedupe:cfbf3214a6e81e2ce25328a53c6862848f100e2e4e0111a79f8d31134dbe2012"
+      ],
+      "semanticIdentity": {
+        "city": "hyderabad",
+        "canonicalEventCity": "hyderabad",
+        "normalizedBuilder": "prestige",
+        "normalizedProject": "",
+        "canonicalEventType": "project-launch",
+        "builder": "prestige",
+        "project": "",
+        "eventType": "project-launch",
+        "numericAnchors": [
+          "0.1:number",
+          "1.4:number",
+          "1.5:number",
+          "1.8:number",
+          "10:number",
+          "14.4:number",
+          "2.2:number",
+          "2026:number",
+          "2031:number",
+          "29.2:number",
+          "3.4:number",
+          "3:number",
+          "4.5:number",
+          "4.9:number",
+          "5:number",
+          "70.8:number",
+          "89:number"
+        ],
+        "canonicalEventFingerprint": "prestige|hyderabad|project-launch|0.1:number,1.4:number,1.5:number",
+        "semanticClusterId": "cluster:0becf108c3847f4de97813c9"
+      },
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "prestige|hyderabad|project-launch|0.1:number,1.4:number,1.5:number",
+      "semanticClusterId": "cluster:0becf108c3847f4de97813c9",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-17T13:39:03.376Z",
+      "expiresAt": "2026-11-17T13:54:03.376Z"
     }
   ]
 }
