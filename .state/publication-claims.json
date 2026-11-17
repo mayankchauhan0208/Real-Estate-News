@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:39:44.143Z",
+  "updatedAt": "2026-11-17T13:39:46.847Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14032,6 +14032,31 @@
       "claimedAt": "2026-11-17T13:39:41.210Z",
       "expiresAt": "2026-11-17T13:54:41.210Z",
       "finalizedAt": "2026-11-17T13:39:44.143Z"
+    },
+    {
+      "claimId": "b762baeb-6c49-4f7f-a949-01cee92a8bec",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/undrr-designates-gift-city-as-indias-first-mcr203",
+        "title-city:undrr designates gift city as india s first mcr2030 resilience hub|gandhinagar",
+        "dedupe:81c97693e6d8db84055a4d9a0470d7703fbec9af98fe8f99ae04bf52bcca197b",
+        "dedupe:af38a1364fa1536eedaff8603cbb43e05a0eb715cf9f8f4f0d244f10cce2bf37",
+        "dedupe:737755c86a3c73e55e4d4a03c660149beee6a0e842c750c04a7dd373c3295cd3",
+        "dedupe:50d3821ab8f8205a6d779a5f4375c71628de0ca46e23ba8a8af85964c7b346d5",
+        "dedupe:62016e682a9a7e3dca74b7b22dffba920fe22adaba39a7483b74122ad533a85f",
+        "dedupe:e38705a958fc9e8e27ff4c218db3ee496af9e43588debefe94062773f419b512"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gandhinagar",
+      "canonicalEventCity": "gandhinagar",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gandhinagar"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-17T13:39:46.847Z",
+      "expiresAt": "2026-11-17T13:54:46.847Z"
     }
   ]
 }
