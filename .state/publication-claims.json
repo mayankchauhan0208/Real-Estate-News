@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:39:30.703Z",
+  "updatedAt": "2026-11-17T13:39:33.424Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13932,7 +13932,7 @@
     },
     {
       "claimId": "ce3bf08c-0f51-4a5d-bbbd-7d4a153ba223",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/agra-city-ancient-history-of-fatehpur-sikri-to-be-showcased-in-diwaneaam-a-sound-and-light-show-an-865-crore-project-40439049.html",
         "title-city:स उ ड ए ड ल इट श म द ख ग फत हप र स कर क प र च न इत ह स 8 65 कर ड र पय क प र ज क ट|agra",
@@ -13953,7 +13953,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-17T13:39:30.703Z",
-      "expiresAt": "2026-11-17T13:54:30.703Z"
+      "expiresAt": "2026-11-17T13:54:30.703Z",
+      "finalizedAt": "2026-11-17T13:39:33.424Z"
     }
   ]
 }
