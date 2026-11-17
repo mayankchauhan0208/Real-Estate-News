@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:39:49.772Z",
+  "updatedAt": "2026-11-17T13:39:52.105Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14058,6 +14058,31 @@
       "claimedAt": "2026-11-17T13:39:46.847Z",
       "expiresAt": "2026-11-17T13:54:46.847Z",
       "finalizedAt": "2026-11-17T13:39:49.772Z"
+    },
+    {
+      "claimId": "7be8f51c-4d50-47eb-bef4-016cd7e763d1",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/peninsula-land-plans-redevelopment-project-in-versova-mumbai-valued-at-rs-750-775-crore/articleshow/135923547.cms",
+        "title-city:peninsula land plans redevelopment project in versova mumbai valued at rs 750 775 crore|mumbai",
+        "dedupe:73a767ad200311865cfae07eaa8efd2148445c3cbd6ecc55b040d2f2efc8ac93",
+        "dedupe:6ccb0e8e963e3f2e86f42877e58fa5b096f4c5df47ae1b392ed39a81be4e9309",
+        "dedupe:7fdcaaf8652c3eb4bdd543105874d9619baaecc81b6b563a3e076e49ca40cf19",
+        "dedupe:8e32a5dd87a3ce1dd52b3996579a4aeef117c023cc653949759bcacf934ca055",
+        "dedupe:0061664777d3330fb4729cddffa93b5ed3874ba5f38fb99efb3be3838ea43a17",
+        "dedupe:c46ba8bb1b03637d948350cd9cfbd651634524d2e578f48da6dc29b32756e3e8"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-17T13:39:52.105Z",
+      "expiresAt": "2026-11-17T13:54:52.105Z"
     }
   ]
 }
