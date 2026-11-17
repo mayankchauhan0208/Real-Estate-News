@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T13:38:56.822Z",
+  "updatedAt": "2026-11-17T13:39:00.112Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -13746,7 +13746,7 @@
     },
     {
       "claimId": "7485dff8-b285-4d3c-b22c-8e54263d6f83",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/cities/noida-news/greater-noida-authority-allots-developed-abadi-plots-to-127-farmers-101794768036636.html",
         "title-city:greater noida authority allots developed abadi plots to 127 farmers|noida",
@@ -13767,7 +13767,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-17T13:38:56.822Z",
-      "expiresAt": "2026-11-17T13:53:56.822Z"
+      "expiresAt": "2026-11-17T13:53:56.822Z",
+      "finalizedAt": "2026-11-17T13:39:00.112Z"
     }
   ]
 }
