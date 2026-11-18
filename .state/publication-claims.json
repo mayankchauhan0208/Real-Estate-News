@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T14:18:08.030Z",
+  "updatedAt": "2026-11-18T14:18:10.952Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14532,7 +14532,7 @@
     },
     {
       "claimId": "cb6c4884-8363-4a78-8f63-824687a5e3f5",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://patrika.com/indore-news/land-prices-around-road-and-rail-projects-set-to-change-government-rates-to-be-determined-in-indore-21061754",
         "title-city:सड क र ल पर य जन ओ क आसप स जम न क बदल ग र ट इ द र म तय ह ग सरक र दर|indore",
@@ -14553,7 +14553,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-18T14:18:08.030Z",
-      "expiresAt": "2026-11-18T14:33:08.030Z"
+      "expiresAt": "2026-11-18T14:33:08.030Z",
+      "finalizedAt": "2026-11-18T14:18:10.952Z"
     }
   ]
 }
