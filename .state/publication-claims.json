@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T04:37:09.195Z",
+  "updatedAt": "2026-11-18T04:37:11.320Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14452,6 +14452,31 @@
       "claimedAt": "2026-11-18T04:37:06.939Z",
       "expiresAt": "2026-11-18T04:52:06.939Z",
       "finalizedAt": "2026-11-18T04:37:09.195Z"
+    },
+    {
+      "claimId": "b27ae299-56c1-45e9-a101-6093a3c6def5",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/gorakhpur-city-gorakhpur-2020-batch-ias-officers-drive-city-development-40439984.html",
+        "title-city:ग रखप र म बन अजब स य ग एक ह ब च क च र ias द स त स भ ल रह शहर क व क स क कम न|gorakhpur",
+        "dedupe:6840f2e5fb222dfe18bb0eb455d2a23f6b58a038aa14982953c7307cd90346ed",
+        "dedupe:4f672ea7b22c8d2ba9112861cee88681e0b6984362893f36f99a6811f390a9ee",
+        "dedupe:ebe3d98e0106adcc5df25e91b1e778d87cb20b51adb2b1b69b1b9ae30113953f",
+        "dedupe:47f358e68624b1efe233a64da89b1a7a739075be3e59691fbd936227d1e98d2c",
+        "dedupe:551bd3e215b9ceba9d10726f2988630c463d2db09d37009c7db4bdd247146563",
+        "dedupe:46ed56b9194d84e667d29b208dd15210a2b8b0593f3192d3296e2a0df6ea5dd8"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gorakhpur",
+      "canonicalEventCity": "gorakhpur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gorakhpur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-18T04:37:11.320Z",
+      "expiresAt": "2026-11-18T04:52:11.320Z"
     }
   ]
 }
