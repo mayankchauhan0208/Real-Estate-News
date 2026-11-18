@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T22:17:37.490Z",
+  "updatedAt": "2026-11-18T22:17:40.266Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14713,6 +14713,32 @@
       "claimedAt": "2026-11-18T22:17:34.088Z",
       "expiresAt": "2026-11-18T22:32:34.088Z",
       "finalizedAt": "2026-11-18T22:17:37.490Z"
+    },
+    {
+      "claimId": "06f7576e-7946-47ad-8b38-07f31810013e",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/gygy-group-acquires-two-acre-commercial-land-in-noida-for-135-crore/135965096",
+        "title-city:gygy group acquires two acre commercial land in noida for 135 crore|noida",
+        "dedupe:1e1519b6799d9b744f43c456a04b94eeded8a2f30fb49c56772e94909c2c3beb",
+        "dedupe:5b32ca2b3c8f48abc53bd07e6ed5bb09a5c6a9f10eba190553c40ad2beb1d25b",
+        "dedupe:df03d5d8aaa38cfeabcacacba8f965de1de1a436f7d426153983e8e7c6d7fd88",
+        "dedupe:gygy group acquires two acre commercial land noida|amount:135-crore|noida",
+        "dedupe:1af4bd2af6aee48c3b9a14812aab57b2e3d4ac58add404189ae697b04359ab22",
+        "dedupe:d90f1d76eff0723f741001fe056ab5500cb7059f9dee05d2d5516d7aea6a61c2",
+        "dedupe:72c28eea261e3509855cd8ff18e61d74cbd88ef9b640fcbb7b1bfaba795e16a5"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-18T22:17:40.266Z",
+      "expiresAt": "2026-11-18T22:32:40.266Z"
     }
   ]
 }
