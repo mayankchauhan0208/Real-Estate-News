@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T04:37:04.311Z",
+  "updatedAt": "2026-11-18T04:37:06.939Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14398,6 +14398,59 @@
       "claimedAt": "2026-11-18T04:37:01.796Z",
       "expiresAt": "2026-11-18T04:52:01.796Z",
       "finalizedAt": "2026-11-18T04:37:04.311Z"
+    },
+    {
+      "claimId": "f1582ff2-83b8-4ad6-955d-9488efb518c5",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/m3m-india-announces-second-jacob-co-branded",
+        "title-city:m3m india announces second jacob and co branded residences project in gurugram|gurugram",
+        "dedupe:ae0a6c9f0f39453bafe11c88da20c7e15f5c503dc9d1d7e19657faa76c9305cd",
+        "dedupe:4e4094eb68d159445ff15129ebfcf76305ae0a84c7d895f527bf651e28855b03",
+        "dedupe:a4a62d078e7c1fa3e8928e7abde4b07a49cb51c23701d02e8e5e40980f8e6fc9",
+        "dedupe:3438eb744891261de737d990fb66bdd57ba2bd0481a7ac3e2ea85ef59c288be2",
+        "dedupe:b95bfd09daf60181e549b9a425c7ede688b65cef3af9a5b0b226ca65aba9bfb4",
+        "dedupe:5e32a84b7de85575726e89158f055719559ce618d6fc869f7732eaf56ac5a676"
+      ],
+      "semanticIdentity": {
+        "city": "gurugram",
+        "canonicalEventCity": "gurugram",
+        "normalizedBuilder": "m3m",
+        "normalizedProject": "",
+        "canonicalEventType": "project-launch",
+        "builder": "m3m",
+        "project": "",
+        "eventType": "project-launch",
+        "numericAnchors": [
+          "111:number",
+          "120:number",
+          "1650:crore",
+          "16:number",
+          "170:acre",
+          "17:number",
+          "1:lakh",
+          "2026:number",
+          "26:crore",
+          "2750:crore",
+          "3300:crore",
+          "3:number",
+          "40000:number",
+          "4:crore",
+          "7300:number"
+        ],
+        "canonicalEventFingerprint": "m3m|gurugram|project-launch|111:number,120:number,1650:crore",
+        "semanticClusterId": "cluster:02a9d1c8ba866253b0b1259a"
+      },
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "m3m|gurugram|project-launch|111:number,120:number,1650:crore",
+      "semanticClusterId": "cluster:02a9d1c8ba866253b0b1259a",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-18T04:37:06.939Z",
+      "expiresAt": "2026-11-18T04:52:06.939Z"
     }
   ]
 }
