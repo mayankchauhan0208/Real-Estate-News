@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-17T22:40:54.476Z",
+  "updatedAt": "2026-11-18T04:36:56.073Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14345,6 +14345,32 @@
       "claimedAt": "2026-11-17T22:40:51.635Z",
       "expiresAt": "2026-11-17T22:55:51.635Z",
       "finalizedAt": "2026-11-17T22:40:54.476Z"
+    },
+    {
+      "claimId": "0c6606f3-3e92-4306-9447-a3b4299510a3",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/k-raheja-corp-inks-165-acre-mixed-use-township-project-deal-with-over-one-million-sq-ft-development-potential-in-panvel-near-mumbai-101794907213774.html",
+        "title-city:k raheja corp inks 165 acre mixed use township project deal with over one million sq ft development potential in|mumbai",
+        "dedupe:8ac35859d68c91fbc049a338b066c14cd4aa79d8875358716a7c07dc2677b5f0",
+        "dedupe:54682b955becdb9db97849a7cdb5e6c3d617d9f96dc8c6e93a5edff769a427d0",
+        "dedupe:1c1404e408bd1f00de920852dd665b03cd4ed9d8532edefd9440cce361144c93",
+        "dedupe:21425cd3fd731992c9e8c25e4dd35d9486f25b3b080806444dbd940bfce5693f",
+        "dedupe:k raheja corp inks acre mixed use township deal one development potential|scale:165-acre|mumbai",
+        "dedupe:adbf9565d0bc39d28ace643362e13fef4c01ca95a31bf6857d11a69240663ddd",
+        "dedupe:0a8c84f3bce8ff658dde74ae8634c504ddfd3518a2aea5558d4ccd3baedcd79f"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-18T04:36:56.073Z",
+      "expiresAt": "2026-11-18T04:51:56.073Z"
     }
   ]
 }
