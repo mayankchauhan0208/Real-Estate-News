@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T04:37:01.796Z",
+  "updatedAt": "2026-11-18T04:37:04.311Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14375,7 +14375,7 @@
     },
     {
       "claimId": "46fc8a61-4488-4359-a8d2-257d1009fd12",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realtynmore.com/sattva-city-unveils-world-of-wonders-initiative",
         "title-city:sattva city unveils world of wonders initiative featuring children s artwork on bengaluru hoardings|bangalore",
@@ -14396,7 +14396,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-18T04:37:01.796Z",
-      "expiresAt": "2026-11-18T04:52:01.796Z"
+      "expiresAt": "2026-11-18T04:52:01.796Z",
+      "finalizedAt": "2026-11-18T04:37:04.311Z"
     }
   ]
 }
