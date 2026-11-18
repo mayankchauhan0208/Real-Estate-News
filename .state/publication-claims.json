@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T22:17:47.280Z",
+  "updatedAt": "2026-11-18T22:17:50.882Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14743,7 +14743,7 @@
     },
     {
       "claimId": "5fb75622-e427-4d36-ad1b-95a5e6e396a8",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/lucknow-city-up-approves-25-road-projects-for-better-connectivity-40441031.html",
         "title-city:य प क 25 सड क प र ज क ट क म ल म ज र अब प रद श क ब ईप स और औद य ग क क ष त र तक पह च ह ग आस न|lucknow",
@@ -14764,7 +14764,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-18T22:17:47.280Z",
-      "expiresAt": "2026-11-18T22:32:47.280Z"
+      "expiresAt": "2026-11-18T22:32:47.280Z",
+      "finalizedAt": "2026-11-18T22:17:50.882Z"
     }
   ]
 }
