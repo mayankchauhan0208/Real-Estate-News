@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T14:18:35.243Z",
+  "updatedAt": "2026-11-18T14:18:37.140Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14663,7 +14663,7 @@
     },
     {
       "claimId": "2ee14690-85c3-4446-92ba-152e18fe4829",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/commercial/goyal-co-invests-820-crore-in-bengaluru-tech-park-airbus-caterpillar-lease-1-18-million-sq-ft/135965141",
         "title-city:goyal and co invests 820 crore in bengaluru tech park airbus caterpillar lease 1 18 million sq ft|bangalore",
@@ -14684,7 +14684,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-18T14:18:35.243Z",
-      "expiresAt": "2026-11-18T14:33:35.243Z"
+      "expiresAt": "2026-11-18T14:33:35.243Z",
+      "finalizedAt": "2026-11-18T14:18:37.140Z"
     }
   ]
 }
