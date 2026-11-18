@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T14:18:16.162Z",
+  "updatedAt": "2026-11-18T14:18:19.036Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14581,6 +14581,31 @@
       "claimedAt": "2026-11-18T14:18:13.604Z",
       "expiresAt": "2026-11-18T14:33:13.604Z",
       "finalizedAt": "2026-11-18T14:18:16.162Z"
+    },
+    {
+      "claimId": "49423b8d-d975-4c4f-94c9-552738a89558",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/dubai-home-prices-hit-record-aed-1967-per-sq-ft/articleshow/135961166.cms",
+        "title-city:dubai home prices hit record aed 1 967 per sq ft|puri",
+        "dedupe:aba857c07ea1e09eba2893299b067c628b9a87011db40efbc3bc90149d017615",
+        "dedupe:3b430ae0eb843c5401467838c3d8ce1b6ccc39d9f68816b7591263e92fe8e754",
+        "dedupe:302c1cf567c1a5fafd0b5a24abb12024c78752725346155c291743bd4fa4b7ba",
+        "dedupe:fdb308d59b69a390516bac3feda65e5a5945e560318b488cf131e3688a0478df",
+        "dedupe:d358e38d1301825fdeb42a9ef17ed5eedcfa0e8b24b1fa1338f4b984ebb7a53b",
+        "dedupe:ec0edfe3a93af84c44ad83eb0c575700af7afb54985c6007d2d5c5c89b3368bd"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "puri",
+      "canonicalEventCity": "puri",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "puri"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-18T14:18:19.036Z",
+      "expiresAt": "2026-11-18T14:33:19.036Z"
     }
   ]
 }
