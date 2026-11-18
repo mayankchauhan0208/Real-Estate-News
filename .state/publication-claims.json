@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T04:37:06.939Z",
+  "updatedAt": "2026-11-18T04:37:09.195Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14401,7 +14401,7 @@
     },
     {
       "claimId": "f1582ff2-83b8-4ad6-955d-9488efb518c5",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realtynmore.com/m3m-india-announces-second-jacob-co-branded",
         "title-city:m3m india announces second jacob and co branded residences project in gurugram|gurugram",
@@ -14450,7 +14450,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-18T04:37:06.939Z",
-      "expiresAt": "2026-11-18T04:52:06.939Z"
+      "expiresAt": "2026-11-18T04:52:06.939Z",
+      "finalizedAt": "2026-11-18T04:37:09.195Z"
     }
   ]
 }
