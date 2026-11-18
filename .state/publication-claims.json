@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T22:17:53.459Z",
+  "updatedAt": "2026-11-18T22:17:56.406Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14769,7 +14769,7 @@
     },
     {
       "claimId": "2ce4d0a6-a92d-441e-8ed1-f6e997216be3",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/hdfc-capital-partners-pecan-realty-for-first-commercial-real-estate-investment/articleshow/135968852.cms",
         "title-city:hdfc capital partners with pecan realty for first commercial real estate investment|mumbai",
@@ -14814,7 +14814,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-18T22:17:53.459Z",
-      "expiresAt": "2026-11-18T22:32:53.459Z"
+      "expiresAt": "2026-11-18T22:32:53.459Z",
+      "finalizedAt": "2026-11-18T22:17:56.406Z"
     }
   ]
 }
