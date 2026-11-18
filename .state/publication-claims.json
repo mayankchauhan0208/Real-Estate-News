@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T04:37:20.610Z",
+  "updatedAt": "2026-11-18T04:37:22.636Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14506,7 +14506,7 @@
     },
     {
       "claimId": "2ca19f74-2e4c-49b7-bf8b-83217db9c29d",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-agra-new-city-master-plan-approval-expected-soon-40440129.html",
         "title-city:त जनगर क व क स क म ल ग नई रफ त र आगर क म स टर प ल न क जल द म ल सकत ह हर झ ड|agra",
@@ -14527,7 +14527,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-18T04:37:20.610Z",
-      "expiresAt": "2026-11-18T04:52:20.610Z"
+      "expiresAt": "2026-11-18T04:52:20.610Z",
+      "finalizedAt": "2026-11-18T04:37:22.636Z"
     }
   ]
 }
