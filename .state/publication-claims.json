@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T14:18:37.140Z",
+  "updatedAt": "2026-11-18T22:17:34.088Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14686,6 +14686,32 @@
       "claimedAt": "2026-11-18T14:18:35.243Z",
       "expiresAt": "2026-11-18T14:33:35.243Z",
       "finalizedAt": "2026-11-18T14:18:37.140Z"
+    },
+    {
+      "claimId": "030c8b54-55b8-4805-ab1a-eafe239767b0",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/goyal-co-invests-rs-820-crore-in-bengalurus",
+        "title-city:goyal and co invests rs 820 crore in bengaluru s titanium tech park develops 5 million sq ft with airbus and|bangalore",
+        "dedupe:11f6fdde7ae740cf46d0496eb52e0f4d6b33bbe55c4b8524d25cd6108b05d131",
+        "dedupe:68301f2d133e8b521bc237ad644eac413269e2864fafdef93a3b95cf246afd3e",
+        "dedupe:d6345df937f9d0a879154b5a7165238e73c5c415b6ec06ff6741c7bc808ecbcf",
+        "dedupe:4712bd22b21af22b149400f2861dac0dd14398950712e1111f416725d89e33d1",
+        "dedupe:goyal co invests bengaluru s titanium tech park develops airbus|amount:820-crore|bangalore",
+        "dedupe:f10cca57029de2d7d2e0c75a117882ee2866440398030e6908a523b77fdbd36f",
+        "dedupe:b2ef5e946f4b784229fd87e2baaa25c7fc2f5cd11ef12a44ca325a70f4b05dd6"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-18T22:17:34.088Z",
+      "expiresAt": "2026-11-18T22:32:34.088Z"
     }
   ]
 }
