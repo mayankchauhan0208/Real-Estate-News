@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T22:17:50.882Z",
+  "updatedAt": "2026-11-18T22:17:53.459Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14766,6 +14766,55 @@
       "claimedAt": "2026-11-18T22:17:47.280Z",
       "expiresAt": "2026-11-18T22:32:47.280Z",
       "finalizedAt": "2026-11-18T22:17:50.882Z"
+    },
+    {
+      "claimId": "2ce4d0a6-a92d-441e-8ed1-f6e997216be3",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/hdfc-capital-partners-pecan-realty-for-first-commercial-real-estate-investment/articleshow/135968852.cms",
+        "title-city:hdfc capital partners with pecan realty for first commercial real estate investment|mumbai",
+        "dedupe:8e606ee9e6036f5f5ffce765964405e0b46fc52e0e852367839c4e53f840096f",
+        "dedupe:f13010fff0adccafe1161087a6152a0d2b9d78bf1922e7ae3fc6dcefeca42ec5",
+        "dedupe:83e2ec077128871d69f601781e68225c2371048a826ee19878f51182f380ba89",
+        "dedupe:c557447227c8887fab8dfb381bbf974c9005a0462afb1bd843c3ce12ede386ae",
+        "dedupe:b8cc54541c72548c7037074c85bc86c990be069a42d318bc06147a2dd58562a2",
+        "dedupe:a756304dd664a62fa56f10bd5bb9e41db175eafb23ba7ac9a72729981bab6a9b"
+      ],
+      "semanticIdentity": {
+        "city": "mumbai",
+        "canonicalEventCity": "mumbai",
+        "normalizedBuilder": "prestige",
+        "normalizedProject": "",
+        "canonicalEventType": "project-launch",
+        "builder": "prestige",
+        "project": "",
+        "eventType": "project-launch",
+        "numericAnchors": [
+          "00:number",
+          "1000:crore",
+          "11:number",
+          "18:number",
+          "2012:number",
+          "2013:number",
+          "2026:number",
+          "400000:number",
+          "4:lakh",
+          "5000:crore",
+          "5:number"
+        ],
+        "canonicalEventFingerprint": "prestige|mumbai|project-launch|00:number,1000:crore,11:number",
+        "semanticClusterId": "cluster:e94d5e050875dcfdd7ce1284"
+      },
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "prestige|mumbai|project-launch|00:number,1000:crore,11:number",
+      "semanticClusterId": "cluster:e94d5e050875dcfdd7ce1284",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-18T22:17:53.459Z",
+      "expiresAt": "2026-11-18T22:32:53.459Z"
     }
   ]
 }
