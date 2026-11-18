@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T04:37:13.271Z",
+  "updatedAt": "2026-11-18T04:37:16.202Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14478,6 +14478,30 @@
       "claimedAt": "2026-11-18T04:37:11.320Z",
       "expiresAt": "2026-11-18T04:52:11.320Z",
       "finalizedAt": "2026-11-18T04:37:13.271Z"
+    },
+    {
+      "claimId": "03c32fc6-cb6c-400c-b2b4-218dc409f93b",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://dinamalar.com/news/tamil-nadu-district-news-karur/karthigai-month-begins-devotees-of-lord-ayyappa-wear-garlands/4379380",
+        "title-city:க ர த த க ம த த டக கம ம ல அண ந த ஐயப ப பக தர கள|karur",
+        "dedupe:c845131e73ef679802ea57bfb9012011c75eaece591d67360afe31d5a6092b48",
+        "dedupe:ef82067c26d2457fe34bde1549a55ad0fcb8d98e5127fc5f6b38774230f6fb6a",
+        "dedupe:dee1a0ec0889f965748d9559332b085c85b90018dd86a3406ee65811d43e718d",
+        "dedupe:fa706ba06bffc871e08d04dd69e6bc7ce5a93c46e93ad9cc6d943d204e95f04a",
+        "dedupe:ba267c42ba86ef8cb8ad25f525fd54f79397351578af3bf90166d82cd55d2238"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "karur",
+      "canonicalEventCity": "karur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "karur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-18T04:37:16.202Z",
+      "expiresAt": "2026-11-18T04:52:16.202Z"
     }
   ]
 }
