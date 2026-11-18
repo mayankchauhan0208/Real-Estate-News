@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T14:18:29.496Z",
+  "updatedAt": "2026-11-18T14:18:32.861Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14637,7 +14637,7 @@
     },
     {
       "claimId": "123aa1c8-71f5-4a24-a786-959f4c863ea3",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://vijaykarnataka.com/real-estate/luxury-homes-smart-touch-future-of-housing-in-karnataka/articleshow/135963370.cms",
         "title-city:smart homes ರ ಯಲ ಎಸ ಟ ಟ ನಲ ಲ ಐಷ ರ ಮ ಮನ ಗಳ ಹ ಸ ಯ ಗ ಭವ ಷ ಯದ ವಸತ ಕ ಷ ತ ರಕ ಕ ಸ ಮ ರ ಟ ಸ ಪರ ಶ|bangalore",
@@ -14658,7 +14658,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-18T14:18:29.496Z",
-      "expiresAt": "2026-11-18T14:33:29.496Z"
+      "expiresAt": "2026-11-18T14:33:29.496Z",
+      "finalizedAt": "2026-11-18T14:18:32.861Z"
     }
   ]
 }
