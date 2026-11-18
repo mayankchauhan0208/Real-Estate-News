@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T22:17:56.406Z",
+  "updatedAt": "2026-11-18T22:17:59.115Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14816,6 +14816,30 @@
       "claimedAt": "2026-11-18T22:17:53.459Z",
       "expiresAt": "2026-11-18T22:32:53.459Z",
       "finalizedAt": "2026-11-18T22:17:56.406Z"
+    },
+    {
+      "claimId": "3b39fe72-715f-4bd9-9dd0-7f79ca966c8f",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://dinamalar.com/news/tamil-nadu-district-news-tiruppur/instant-building-permit-online/4380182",
+        "title-city:ஆன ல ன ல உடனட ய க கட டட அன மத|tiruppur",
+        "dedupe:5c15c8f634ca8b0a966735475f30acfc79022c283aca87dff021524fd8c6819a",
+        "dedupe:ab4e7eb4f047110dc530c73e1039f01152e4964f3d7aae14fc9c8d74e0552ebd",
+        "dedupe:f95cd621cc867a95115ff4bcb5e563457f63a687bda9f116fcf857fa38ae5d80",
+        "dedupe:4efcff5c875f661349387e39bf7535ea16b1e866a761a3a26abe1740dc343691",
+        "dedupe:aeb75fda3fe729ae95138994de8a43d68ce3310a24fec32d7cca3b088af6fcca"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "tiruppur",
+      "canonicalEventCity": "tiruppur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "tiruppur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-18T22:17:59.115Z",
+      "expiresAt": "2026-11-18T22:32:59.115Z"
     }
   ]
 }
