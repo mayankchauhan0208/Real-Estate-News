@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-18T14:18:21.457Z",
+  "updatedAt": "2026-11-18T14:18:24.432Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14607,6 +14607,32 @@
       "claimedAt": "2026-11-18T14:18:19.036Z",
       "expiresAt": "2026-11-18T14:33:19.036Z",
       "finalizedAt": "2026-11-18T14:18:21.457Z"
+    },
+    {
+      "claimId": "2e5190fb-24a0-4767-a756-d112d34df6af",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gygy-groups-rs-135-crore-bet-on-noidas-next-commercial-hotspot/articleshow/135961528.cms",
+        "title-city:gygy group s rs 135 crore bet on noida s next commercial hotspot|noida",
+        "dedupe:c6434e0690b52e6119f28aaa16497628c64fa882dc094a8e3836fd1fc7fb9fc9",
+        "dedupe:d1e85bae2f47708a4be0e4a52dfb47caf33ae340a9bae6db6d6f6855ebc9ee1d",
+        "dedupe:05a8cf5c3a15900747bdb50e001c18ccb5dc7913b1f1951dbfe6333a426f58c6",
+        "dedupe:9ede8177a2829d35d93eca302a74765dec352973f2842cfd928ba8736bcf200f",
+        "dedupe:gygy group s bet noida s next commercial hotspot|amount:135-crore|noida",
+        "dedupe:3359f653c0fc98fee1976e2b71abe0808b625bc5d89ddd6c553e3a80202d0374",
+        "dedupe:27955168cdf36d33475a97ce23cb08e50da2a0210b1ecf5240af17bb92348317"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-18T14:18:24.432Z",
+      "expiresAt": "2026-11-18T14:33:24.432Z"
     }
   ]
 }
