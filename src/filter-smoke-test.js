@@ -555,6 +555,55 @@ const marathiRealEstateArticle = article({
 });
 assert.equal(isPublishableArticle(marathiRealEstateArticle, sentIds), true);
 
+const lastProductionRunFalsePositives = [
+  article({
+    title: "Allahabad HC bars construction, 3rd-party rights on Jaypee Greens land in Greater Noida",
+    description: "The Allahabad High Court directed the immediate freezing of all new construction and third-party rights across 236 acres.",
+    articleText: "The court heard a writ petition over land allotted for the Jaypee Greens Golf Course in Greater Noida and froze construction, external development and third-party rights.",
+    newsLink: "https://example.com/noida/jaypee-greens-construction-freeze"
+  }),
+  article({
+    title: "गुरुग्राम में मलबा प्रबंधन योजना को मिली मंजूरी, अब बिना अनुमति के काम पर लगेगी रोक",
+    description: "निर्माण और तोड़फोड़ मलबे के लिए वेस्ट मैनेजमेंट प्लान और पोर्टल पंजीकरण अनिवार्य होगा।",
+    articleText: "नियम उल्लंघन पर कड़ी कार्रवाई, जुर्माना और परियोजना बंद होगी। नगर निगम ने सीएंडडी वेस्ट प्रबंधन लागू किया है।",
+    newsLink: "https://example.com/gurugram/cd-waste-enforcement"
+  }),
+  article({
+    title: "युवा पीढ़ी के लिए नए अवतार में आएगी श्रीरामचरितमानस, पहली बार छपेगा खास एडिशन",
+    description: "गीताप्रेस नई पीढ़ी के लिए आधुनिक संस्करण प्रकाशित कर रहा है।",
+    articleText: "पुस्तक के नए संस्करण में रंगीन चित्र और मखमली जिल्द शामिल है।",
+    newsLink: "https://example.com/gorakhpur/ramcharitmanas-edition"
+  }),
+  article({
+    title: "होडल के गांवों में सड़क, ड्रेनेज और स्ट्रीट लाइट की मरम्मत परियोजनाओं को गति",
+    description: "स्मार्ट रोड, आरएमसी सड़क, ड्रेनेज और स्ट्रीट लाइट के लिए नगर निकाय बैठक हुई।",
+    articleText: "गांव बेधा और गढ़ी में सड़क निर्माण, ड्रेनेज और मरम्मत कार्य प्रस्तावित हैं।",
+    newsLink: "https://example.com/palwal/hodal-civic-works"
+  }),
+  article({
+    title: "Panchayat administrators in Uttar Pradesh to get six-month extension",
+    description: "Cabinet approval of a draft ordinance paves the way for panchayat polls after assembly elections.",
+    articleText: "The amendment would extend the tenure of administrators before the next panchayat election.",
+    newsLink: "https://example.com/lucknow/panchayat-administrators-extension"
+  }),
+  article({
+    title: "Madras HC upholds NGT's decision to ban construction in Pallikaranai",
+    description: "The High Court upheld a planning freeze prohibiting construction around the Pallikaranai marshland.",
+    articleText: "The tribunal decision barred construction across a one kilometre radius after petitions challenging the restriction were dismissed.",
+    newsLink: "https://example.com/chennai/pallikaranai-construction-ban"
+  })
+].map((productionArticle) => applyCityCode(productionArticle));
+for (const productionFalsePositive of lastProductionRunFalsePositives) {
+  assert.equal(isPublishableArticle(productionFalsePositive, sentIds), false, `last-run false positive must be rejected: ${productionFalsePositive.title}`);
+}
+const lastProductionRunValidPositive = publishable({
+  title: "Puravankara to invest Rs 1,000 crore in housing project in Kochi",
+  description: "Puravankara will develop a residential project in Edappally, Kochi, comprising 1,056 apartments.",
+  articleText: "Purva Cityspire is an 18-acre integrated township with six residential towers and an investment of Rs 1,000 crore.",
+  newsLink: "https://example.com/kochi/puravankara-housing-project"
+});
+assert.deepEqual(getRejectionReasons(lastProductionRunValidPositive, new Set()), []);
+
 assert.deepEqual(detectCityCodes(article({
   title: "नागपूरमध्ये नवीन गृहनिर्माण प्रकल्पाला मंजुरी",
   description: "नागपूरच्या निवासी प्रकल्पात नवीन घरांची भर पडेल.",

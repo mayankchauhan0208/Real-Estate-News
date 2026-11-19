@@ -5630,10 +5630,62 @@ function isNonRealEstateBusinessExpansion(article) {
   return !propertyEvent;
 }
 
+function isAdverseConstructionRestrictionArticle(article) {
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  const legalDecision = /\b(?:high court|supreme court|court|\bhc\b|ngt|tribunal|bench|petition)\b/i.test(text);
+  const restriction = /\b(?:bars?|ban(?:s|ned)?|prohibit(?:s|ed|ing)?|freez(?:e|es|ing)|restrain(?:s|ed|ing)|halt(?:s|ed|ing)|stopp?(?:s|ed|ing))\b/i.test(text);
+  const propertyActivity = /\b(?:construction|development|third[- ]party rights?|planning freeze|land|project|property|housing|residential|commercial)\b/i.test(text);
+  return legalDecision && restriction && propertyActivity;
+}
+
+function isMunicipalWasteEnforcementArticle(article) {
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  const wasteAdministration = /\b(?:construction and demolition waste|c&d waste|debris management|waste management plan|waste portal)\b/i.test(text)
+    || /(?:मलबा प्रबंधन|निर्माण और तोड़फोड़ मलबे|सीएंडडी वेस्ट|वेस्ट मैनेजमेंट प्लान)/u.test(text);
+  const enforcement = /\b(?:mandatory|violation|penalt(?:y|ies)|fine(?:s|d)?|stop work|registration required|enforcement)\b/i.test(text)
+    || /(?:अनिवार्य|उल्लंघन|जुर्माना|कार्रवाई|रोक|पंजीकरण)/u.test(text);
+  return wasteAdministration && enforcement;
+}
+
+function isCulturalPublishingArticle(article) {
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  const publishing = /\b(?:book|edition|literature|publisher|published|publication|printing press|scripture)\b/i.test(text)
+    || /(?:श्रीरामचरितमानस|गीताप्रेस|पुस्तक|संस्करण|साहित्य|प्रकाशित|प्रकाशन)/u.test(text);
+  const materialPropertyObject = /\b(?:real estate|realty|property|housing|residential|commercial|land parcel|plot|township|apartment|office space|warehouse)\b/i.test(text)
+    || /(?:रियल एस्टेट|प्रॉपर्टी|आवासीय|व्यावसायिक|भूखंड|फ्लैट|गृहनिर्माण|मालमत्ता|રહેણાંક|મિલકત|આવાસ|ଆବାସନ)/u.test(text);
+  return publishing && !materialPropertyObject;
+}
+
+function isGenericCivicWorksWithoutPropertyNexus(article) {
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  const civicWorks = /\b(?:road repair|road maintenance|street lights?|drainage|drains?|footpath|village road|rural road|right of way)\b/i.test(text)
+    || /(?:सड़क|ड्रेनेज|नाली|स्ट्रीट लाइट|मरम्मत|गांव)/u.test(text);
+  const materialPropertyObject = /\b(?:real estate|realty|property|housing|residential|commercial|land parcel|plots?|township|apartments?|office space|warehouse|industrial park|logistics park)\b/i.test(text)
+    || /(?:रियल एस्टेट|प्रॉपर्टी|आवासीय|व्यावसायिक|भूखंड|फ्लैट|गृहनिर्माण|मालमत्ता)/u.test(text);
+  return civicWorks && !materialPropertyObject;
+}
+
+function isPoliticalOrAdministrativeProcessArticle(article) {
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  const administrativeProcess = /\b(?:panchayat|polls?|elections?|ordinance|administrators?|cabinet amendment)\b/i.test(text)
+    || /(?:पंचायत|चुनाव|अध्यादेश|प्रशासक|मंत्रिमंडल)/u.test(text);
+  const materialPropertyObject = /\b(?:real estate|realty|property|housing|residential|commercial|land parcel|plots?|township|apartments?|office space|warehouse)\b/i.test(text)
+    || /(?:रियल एस्टेट|प्रॉपर्टी|आवासीय|व्यावसायिक|भूखंड|फ्लैट|गृहनिर्माण|मालमत्ता)/u.test(text);
+  return administrativeProcess && !materialPropertyObject;
+}
+
 function isClearlyOffTopicNonDevelopmentArticle(article) {
   const title = getArticlePrimaryText(article);
   const text = getArticleSearchText(article);
   const articleUrl = getArticleUrlText(article);
+  if (
+    isMunicipalWasteEnforcementArticle(article) ||
+    isCulturalPublishingArticle(article) ||
+    isGenericCivicWorksWithoutPropertyNexus(article) ||
+    isPoliticalOrAdministrativeProcessArticle(article)
+  ) {
+    return true;
+  }
   if (isCorporateTransactionWithoutPropertyEvent(article)) {
     return true;
   }
@@ -7318,6 +7370,12 @@ function isNegativeNews(article) {
   const urlText = getArticleUrlText(article);
   const bodyText = getArticleBodyText(article);
   const primaryAndUrl = `${primaryText} ${urlText}`;
+
+  // A legal order that freezes, bars, or bans property activity is adverse
+  // even if it contains words such as construction or development.
+  if (isAdverseConstructionRestrictionArticle(article)) {
+    return true;
+  }
 
   if (/\b(dumping|dumped|industrial waste|vacant land|residents flag|pollution|sewage|garbage|waste dumped)\b/i.test(primaryAndUrl)) {
     return true;
