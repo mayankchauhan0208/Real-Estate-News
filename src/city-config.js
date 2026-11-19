@@ -654,7 +654,8 @@ export const workbookCityRules = [
     "state": "Gujarat",
     "name": "Ahmedabad",
     "keywords": [
-      "ahmedabad"
+      "ahmedabad",
+      "અમદાવાદ"
     ]
   },
   {
@@ -715,7 +716,8 @@ export const workbookCityRules = [
     "state": "Gujarat",
     "name": "Gandhinagar",
     "keywords": [
-      "gandhinagar"
+      "gandhinagar",
+      "ગાંધીનગર"
     ]
   },
   {
@@ -776,7 +778,8 @@ export const workbookCityRules = [
     "state": "Gujarat",
     "name": "Rajkot",
     "keywords": [
-      "rajkot"
+      "rajkot",
+      "રાજકોટ"
     ]
   },
   {
@@ -793,7 +796,8 @@ export const workbookCityRules = [
     "state": "Gujarat",
     "name": "Surat",
     "keywords": [
-      "surat"
+      "surat",
+      "સુરત"
     ]
   },
   {
@@ -818,7 +822,8 @@ export const workbookCityRules = [
     "state": "Gujarat",
     "name": "Vadodara",
     "keywords": [
-      "vadodara"
+      "vadodara",
+      "વડોદરા"
     ]
   },
   {
@@ -1388,7 +1393,8 @@ export const workbookCityRules = [
     "state": "Maharashtra",
     "name": "Nagpur",
     "keywords": [
-      "nagpur"
+      "nagpur",
+      "नागपूर"
     ]
   },
   {
@@ -1396,7 +1402,8 @@ export const workbookCityRules = [
     "state": "Maharashtra",
     "name": "Nashik",
     "keywords": [
-      "nashik"
+      "nashik",
+      "नाशिक"
     ]
   },
   {
@@ -1592,7 +1599,9 @@ export const workbookCityRules = [
     "state": "Odisha",
     "name": "Bhubaneswar",
     "keywords": [
-      "bhubaneswar"
+      "bhubaneswar",
+      "ଭୁବନେଶ୍ୱର",
+      "ଭୁବନେଶ୍ଵର"
     ]
   },
   {
@@ -1600,7 +1609,8 @@ export const workbookCityRules = [
     "state": "Odisha",
     "name": "Cuttack",
     "keywords": [
-      "cuttack"
+      "cuttack",
+      "କଟକ"
     ]
   },
   {
@@ -1608,7 +1618,8 @@ export const workbookCityRules = [
     "state": "Odisha",
     "name": "Puri",
     "keywords": [
-      "puri"
+      "puri",
+      "ପୁରୀ"
     ]
   },
   {

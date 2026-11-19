@@ -6660,6 +6660,66 @@
       "category": "national-property",
       "sourceMode": "ACTIVE_FOR_REVIEW",
       "createdAt": "2026-11-06T00:00:00.000Z"
+    },
+    {
+      "id": "coverage-abp-majha-pune",
+      "url": "https://marathi.abplive.com/news/pune/feed",
+      "label": "ABP Majha - Pune Marathi City RSS | Coverage P1",
+      "cityCodes": ["pune"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-19T00:00:00.000Z"
+    },
+    {
+      "id": "coverage-abp-majha-nagpur",
+      "url": "https://marathi.abplive.com/news/nagpur/feed",
+      "label": "ABP Majha - Nagpur Marathi City RSS | Coverage P1",
+      "cityCodes": ["nagpur"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-19T00:00:00.000Z"
+    },
+    {
+      "id": "coverage-abp-majha-nashik",
+      "url": "https://marathi.abplive.com/news/nashik/feed",
+      "label": "ABP Majha - Nashik Marathi City RSS | Coverage P1",
+      "cityCodes": ["nashik"],
+      "enabled": true,
+      "category": "regional-marathi",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-19T00:00:00.000Z"
+    },
+    {
+      "id": "coverage-gujarat-post-ahmedabad",
+      "url": "https://gujaratpost.in/rss/ahmedabad.xml",
+      "label": "Gujarat Post - Ahmedabad Gujarati City RSS | Coverage P1",
+      "cityCodes": ["ahmedabad"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-19T00:00:00.000Z"
+    },
+    {
+      "id": "coverage-gujarat-post-surat",
+      "url": "https://gujaratpost.in/rss/surat.xml",
+      "label": "Gujarat Post - Surat Gujarati City RSS | Coverage P1",
+      "cityCodes": ["surat"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-19T00:00:00.000Z"
+    },
+    {
+      "id": "coverage-gujarat-post-rajkot",
+      "url": "https://gujaratpost.in/rss/rajkot.xml",
+      "label": "Gujarat Post - Rajkot Gujarati City RSS | Coverage P1",
+      "cityCodes": ["rajkot"],
+      "enabled": true,
+      "category": "regional-gujarati",
+      "sourceMode": "ACTIVE_FOR_REVIEW",
+      "createdAt": "2026-11-19T00:00:00.000Z"
     }
   ],
   "lastBackfill": {

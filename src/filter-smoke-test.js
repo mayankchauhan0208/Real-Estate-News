@@ -555,6 +555,33 @@ const marathiRealEstateArticle = article({
 });
 assert.equal(isPublishableArticle(marathiRealEstateArticle, sentIds), true);
 
+assert.deepEqual(detectCityCodes(article({
+  title: "नागपूरमध्ये नवीन गृहनिर्माण प्रकल्पाला मंजुरी",
+  description: "नागपूरच्या निवासी प्रकल्पात नवीन घरांची भर पडेल.",
+  articleText: "नागपूरमध्ये जमीन विकास आणि गृहनिर्माण प्रकल्पासाठी मंजुरी देण्यात आली.",
+  newsLink: "https://example.com/nagpur/housing-project"
+})), ["nagpur"]);
+assert.deepEqual(detectCityCodes(article({
+  title: "અમદાવાદમાં નવા રહેણાંક પ્રોજેક્ટને મંજૂરી",
+  description: "અમદાવાદમાં આવાસ અને રિયલ એસ્ટેટ વિકાસ માટે મંજૂરી મળી.",
+  articleText: "અમદાવાદના નવા રહેણાંક પ્રોજેક્ટથી ઘર પુરવઠો વધશે.",
+  newsLink: "https://example.com/ahmedabad/housing-project"
+})), ["ahmedabad"]);
+assert.deepEqual(detectCityCodes(article({
+  title: "ଭୁବନେଶ୍ୱରରେ ଆବାସନ ପ୍ରକଳ୍ପ ପାଇଁ ଜମି ବିକାଶ ପ୍ରସ୍ତାବ",
+  description: "ଭୁବନେଶ୍ୱରରେ ନୂତନ ଆବାସନ ପ୍ରକଳ୍ପ ହେବ।",
+  articleText: "ଭୁବନେଶ୍ୱର ରିଅଲ ଏଷ୍ଟେଟ ଏବଂ ଆବାସନ ବିକାଶ ପ୍ରକଳ୍ପ।",
+  newsLink: "https://example.com/bhubaneswar/housing-project"
+})), ["bhubaneswar"]);
+const gujaratiGenericProjectArticle = article({
+  title: "અમદાવાદમાં નવા પ્રોજેક્ટ અંગે ચર્ચા",
+  description: "શહેરના સામાન્ય વિકાસ મુદ્દે બેઠક યોજાઈ.",
+  articleText: "અમદાવાદમાં યોજાયેલી બેઠકમાં સામાન્ય વહીવટી પ્રોજેક્ટ અંગે ચર્ચા થઈ.",
+  newsLink: "https://example.com/ahmedabad/generic-project"
+});
+assert.deepEqual(detectCityCodes(gujaratiGenericProjectArticle), []);
+assert.equal(isPublishableArticle(gujaratiGenericProjectArticle, sentIds), false);
+
 assert.equal(isAllowedSource("https://www.moneycontrol.com/news/business/real-estate/"), true);
 assert.equal(isAllowedSource("https://www.moneycontrol.com/news/business/"), true);
 assert.equal(isAllowedSource("https://www.aninews.in/category/business/"), true);

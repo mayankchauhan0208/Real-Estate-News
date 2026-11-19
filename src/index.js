@@ -1922,6 +1922,47 @@ function getConfiguredSourceCityCodes(sourceUrl) {
   return configuredSourceCityCodes.get(normalizeSourceUrl(sourceUrl)) || [];
 }
 
+// Normal ingestion must reach thinly supplied cities early in each resumable
+// cycle. This is only an ordering policy: every configured source remains in
+// the immutable cycle snapshot and is still attempted at most once per cycle.
+function rankCoveragePriorityUrls(sourceUrls, sourceCityCodes = new Map(), explicitPriorityUrls = []) {
+  const normalizedSources = [...new Map((sourceUrls || []).map((url) => [normalizeSourceUrl(url), url])).values()];
+  const citySourceCounts = new Map();
+  for (const source of normalizedSources) {
+    for (const cityCode of sourceCityCodes.get(normalizeSourceUrl(source)) || []) {
+      citySourceCounts.set(cityCode, (citySourceCounts.get(cityCode) || 0) + 1);
+    }
+  }
+  const explicitRanks = new Map((explicitPriorityUrls || []).map((url, index) => [normalizeSourceUrl(url), index]));
+  return normalizedSources
+    .map((source) => {
+      const key = normalizeSourceUrl(source);
+      const cityCounts = (sourceCityCodes.get(key) || [])
+        .map((cityCode) => citySourceCounts.get(cityCode) || Number.MAX_SAFE_INTEGER);
+      return {
+        source,
+        explicitRank: explicitRanks.get(key) ?? Number.MAX_SAFE_INTEGER,
+        // Unmapped national sources retain normal scheduler order. A mapped
+        // source gets a boost only for a city with three or fewer supply paths.
+        thinCityCount: cityCounts.length ? Math.min(...cityCounts) : Number.MAX_SAFE_INTEGER
+      };
+    })
+    .sort((left, right) =>
+      left.explicitRank - right.explicitRank ||
+      left.thinCityCount - right.thinCityCount ||
+      normalizeSourceUrl(left.source).localeCompare(normalizeSourceUrl(right.source))
+    )
+    .map((entry) => entry.source);
+}
+
+function getResumableSourcePriorityUrls(sourceUrls) {
+  return rankCoveragePriorityUrls(
+    sourceUrls,
+    configuredSourceCityCodes,
+    splitDelimitedValues(env("SOURCE_PRIORITY_URLS"))
+  );
+}
+
 function sourceControlId(value) {
   let hash = 0;
   for (const char of String(value || "")) hash = ((hash << 5) - hash + char.charCodeAt(0)) | 0;
@@ -5500,7 +5541,14 @@ function hasConcretePropertyEvent(article) {
   if (primaryEventClue && concreteEvent.test(normalizedEventText) && !hasExplicitlyNegatedPropertyEvent(article)) return true;
 
   const primaryAndUrl = `${primary} ${getArticleUrlText(article)}`;
-  return new RegExp(`\\b(?:named|specific|identified|new|upcoming|proposed|approved|launched|acquired|leased|allotted|registered)\\b[^.!?]{0,100}\\b${propertyObject}\\b`, "i").test(primaryAndUrl);
+  if (new RegExp(`\\b(?:named|specific|identified|new|upcoming|proposed|approved|launched|acquired|leased|allotted|registered)\\b[^.!?]{0,100}\\b${propertyObject}\\b`, "i").test(primaryAndUrl)) return true;
+
+  // Native-language city sources must meet the same event standard as English
+  // sources: a concrete property object plus a constructive event action in
+  // the article's own primary text. A city desk alone is never enough.
+  const regionalPropertyObject = /(?:गृहनिर्माण|आवासीय|मालमत्ता|जमीन|भूखंड|ફ્લેટ|રહેણાંક|આવાસ|મિલકત|જમીન|ଆବାସନ|ଘର|ଜମି|ସମ୍ପତ୍ତି|ఇల్లు|భూమి|ఆస్తి|வீடு|நிலம்|சொத்து|മನೆ|ಭೂಮಿ|ಸ್ವತ್ತು)/u;
+  const regionalEventAction = /(?:मंजुरी|मंजूर|विकास|बांधकाम|મંજૂરી|મંજૂર|વિકાસ|બાંધકામ|ଅନୁମୋଦନ|ବିକାଶ|ନିର୍ମାଣ|అనుమతి|అభివృద్ధి|నిర్మాణం|அனுமதி|வளர்ச்சி|கட்டுமானம்|അനുമതി|വികസനം|നിർമ്മാണം|ಅನುಮತಿ|ಅಭಿವೃದ್ಧಿ|ನಿರ್ಮಾಣ)/u;
+  return regionalPropertyObject.test(primary) && regionalEventAction.test(primary);
 }
 
 function hasExplicitlyNegatedPropertyEvent(article) {
@@ -7179,8 +7227,8 @@ function isObviousNonArticleDiscoveryCandidate(article) {
 // negative, language, date, geo, or full-article gates.
 function hasNativePropertyDevelopmentNexus(article) {
   const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
-  const nativeProperty = /(?:இல்லம்|வீடு|வீட்டுவசதி|குடியிருப்பு|மனை|நிலம்|கட்டடம்|ரியல் எஸ்டேட்|ఇల్లు|ఇండిరమ్మ|గృహ|ప్లాట్|స్థలం|భవన|టవర్స్|హౌసింగ్|నిర్మాణ|లేఅవుట్|భూమి|భూములు|ఎకర|ఆస్తి|ಆಸ್ತಿ|ಭೂ|ಖಾತಾ|ಕಟ್ಟಡ|ಮನೆ|ನಿವೇಶನ|ವಸತಿ|फ्लैट|आवास|भूखंड|संपत्ति|घर)/u.test(text);
-  const nativeEvent = /(?:திட்டம்|கட்டுமான|விற்பனை|பத்திரப்பதிவு|ஒப்புதல்|அனுமதி|ஒதுக்கீடு|அறிமுக|தொடக்கம்|నిర్మాణం|శంకుస్థాపన|ప్రారంభ|విక్రయ|వేలం|వెంచర్|ప్లాట్ల|నిబంధన|చట్టం|టవర్|ಟವರ್|ಪ್ರಾರಂಭ|ಮಾರಾಟ|ಹರಾಜು|ನಿಯಮ|परियोजना|लॉन्च|बिक्री|नीलामी|नियम|निर्माण|योजना)/u.test(text);
+  const nativeProperty = /(?:गृहनिर्माण|मालमत्ता|जमीन|भूखंड|फ्लैट|आवास|संपत्ति|घर|રહેણાંક|આવાસ|મિલકત|જમીન|ફ્લેટ|ઘર|ଆବାସନ|ଘର|ଜମି|ସମ୍ପତ୍ତି|ಇಲ್ಲಂ|வீடு|வீட்டுவசதி|குடியிருப்பு|மனை|நிலம்|கட்டடம்|ரியல் எஸ்டேட்|ఇల్లు|ఇండిరమ్మ|గృహ|ప్లాట్|స్థలం|భవన|టవర్స్|హౌసింగ్|నిర్మాణ|లేఅవుట్|భూమి|భూములు|ఎకర|ఆస్తి|ಆಸ್ತಿ|ಭೂ|ಖಾತಾ|ಕಟ್ಟಡ|ಮನೆ|ನಿವೇಶನ|ವಸತಿ)/u.test(text);
+  const nativeEvent = /(?:मंजूरी|मंजूर|विकास|बांधकाम|परियोजना|लॉन्च|बिक्री|नीलामी|नियम|निर्माण|योजना|પ્રોજેક્ટ|મંજૂરી|મંજૂર|વિકાસ|બાંધકામ|ପ୍ରକଳ୍ପ|ଅନୁମୋଦନ|ବିକାଶ|ନିର୍ମାଣ|திட்டம்|கட்டுமான|விற்பனை|பத்திரப்பதிவு|ஒப்புதல்|அனுமதி|ஒதுக்கீடு|அறிமுக|தொடக்கம்|నిర్మాణం|శంకుస్థాపన|ప్రారంభ|విక్రయ|వేలం|వెంచర్|ప్లాట్ల|నిబంధన|చట్టం|టవర్|ಟವರ್|ಪ್ರಾರಂಭ|ಮಾರಾಟ|ಹರಾಜು|ನಿಯಮ)/u.test(text);
   return nativeProperty && nativeEvent;
 }
 
@@ -11229,7 +11277,12 @@ async function main() {
     console.log(`Resumable source scheduler enabled: shard size ${resumableContext.shardSize}, runtime budget ${formatDuration(runtimeBudgetMs)}, cleanup reserve ${formatDuration(cleanupReserveMs)}.`);
     try {
       while (sourceResults.length < allSelectedSources.length && !globalBudgetController.signal.aborted) {
-        const shard = selectShard(resumableContext.state, resumableContext.snapshot, resumableContext.shardSize);
+        const shard = selectShard(
+          resumableContext.state,
+          resumableContext.snapshot,
+          resumableContext.shardSize,
+          getResumableSourcePriorityUrls(allSelectedSources)
+        );
         if (!shard || sourceResults.length >= maxShards * resumableContext.shardSize) break;
         if (fetchDeadlineAt - Date.now() <= getSourceMinimumSafeStartWindowMs()) {
           budgetStopped = true;
@@ -11662,6 +11715,7 @@ export {
   isLikelyFeedUrl,
   getFeedFallbackPageUrl,
   getSourceRecoveryAliases,
+  rankCoveragePriorityUrls,
   getAutomaticSourceBatchIndex,
   readCycleSourceResults,
   persistCycleSourceResults,
