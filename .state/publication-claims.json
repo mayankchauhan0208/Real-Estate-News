@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-19T03:43:28.535Z",
+  "updatedAt": "2026-11-19T03:43:31.074Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14894,7 +14894,7 @@
     },
     {
       "claimId": "d1f82d69-4f10-433f-ad3e-bc3fc8aa1f12",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/gorakhpur-city-gita-press-launches-5color-shri-ramcharitmanas-for-youth-40441124.html",
         "title-city:य व प ढ क ल ए नए अवत र म आएग श र र मचर तम नस पहल ब र छप ग 5 र ग व ल ख स एड शन|gorakhpur",
@@ -14915,7 +14915,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-19T03:43:28.535Z",
-      "expiresAt": "2026-11-19T03:58:28.535Z"
+      "expiresAt": "2026-11-19T03:58:28.535Z",
+      "finalizedAt": "2026-11-19T03:43:31.074Z"
     }
   ]
 }
