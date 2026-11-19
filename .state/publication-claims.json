@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-19T03:43:44.358Z",
+  "updatedAt": "2026-11-19T03:43:46.992Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14972,7 +14972,7 @@
     },
     {
       "claimId": "24483bcd-930f-4045-b538-897540c944c0",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/regulatory/madras-hc-upholds-ngts-decision-to-ban-construction-in-pallikaranai/135975855",
         "title-city:madras hc upholds ngt s decision to ban construction in pallikaranai|chennai",
@@ -14992,7 +14992,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-19T03:43:44.358Z",
-      "expiresAt": "2026-11-19T03:58:44.358Z"
+      "expiresAt": "2026-11-19T03:58:44.358Z",
+      "finalizedAt": "2026-11-19T03:43:46.992Z"
     }
   ]
 }
