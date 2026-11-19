@@ -18,6 +18,7 @@ import {
   getArticleFinalState,
   getArticleTrace,
   getFeedFallbackPageUrl,
+  getSourceRecoveryAliases,
   hasBackfillDateRange,
   isAllowedSource,
   isLikelyFeedUrl,
@@ -36,6 +37,13 @@ const noidaCityEnabled = adminSettings.allCitiesEnabled === true ||
   ["1", "true", "yes", "on"].includes((process.env.ENABLE_NOIDA_CITY || "").trim().toLowerCase());
 
 assert.equal(parseNewsDateValue("23-09-2026"), "2026-09-22T18:30:00.000Z");
+
+// Official portals use explicitly verified recovery URLs only. In particular,
+// never invent a www host for a RERA portal because many do not publish it.
+assert.deepEqual(getSourceRecoveryAliases("https://rera.bihar.gov.in/publicorder.aspx"), []);
+assert.deepEqual(getSourceRecoveryAliases("https://rera.chbonline.in"), []);
+assert.deepEqual(getSourceRecoveryAliases("https://rera.py.gov.in/"), ["https://prera.py.gov.in"]);
+assert.equal(parseNewsDateValue("02 SEP 2026"), "2026-09-01T18:30:00.000Z");
 
 const reportedOffTopicArticles = [
   {

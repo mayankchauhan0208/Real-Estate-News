@@ -1852,7 +1852,12 @@ function getSourceRecoveryAliases(sourceUrl) {
     const host = url.hostname.replace(/^www\./, "");
     const pathName = url.pathname.replace(/\/+$/, "");
 
-    if (url.protocol === "https:" && host !== "localhost" && host.includes(".")) {
+    // Government and RERA portals frequently publish only one hostname. A
+    // speculative www variant can turn a transient portal failure into a
+    // deterministic DNS failure and consume the source's recovery budget.
+    // Authority migrations belong in sourceRecoveryAliases only after the
+    // alternate official endpoint has been verified.
+    if (url.protocol === "https:" && host !== "localhost" && host.includes(".") && !isGovernmentPortalUrl(sourceUrl)) {
       const alternateHost = url.hostname.startsWith("www.") ? host : `www.${host}`;
       const alternateUrl = new URL(url.toString());
       alternateUrl.hostname = alternateHost;
@@ -9321,6 +9326,12 @@ async function fetchPressReleaseListings(sourceUrl, options = {}) {
 
 function authorityListingProfile(sourceUrl) {
   const value = String(sourceUrl || "").toLowerCase();
+  if (/rera\.bihar\.gov\.in\/(?:newsarticles|reralatestnews)\.aspx/i.test(value)) {
+    return { publisher: "Bihar RERA", evidence: "Bihar Real Estate Regulatory Authority", cityCode: "patna", contentType: "RERA_OFFICIAL_NEWS" };
+  }
+  if (/rera\.wb\.gov\.in\/notice\.php/i.test(value)) {
+    return { publisher: "West Bengal RERA", evidence: "West Bengal Real Estate Regulatory Authority Kolkata", cityCode: "kolkata", contentType: "RERA_OFFICIAL_NOTICE" };
+  }
   if (/dda\.gov\.in\/housing\/(housing-circulars|housing-notices|housing-scheme)/i.test(value)) {
     return { publisher: "Delhi Development Authority", evidence: "Delhi Development Authority Delhi", cityCode: "new_delhi", contentType: "AUTHORITY_HOUSING" };
   }
@@ -9370,7 +9381,7 @@ function isAuthorityListingSource(sourceUrl) {
   const profile = authorityListingProfile(sourceUrl);
   if (!profile) return false;
   const value = String(sourceUrl || "").toLowerCase();
-  return authorityListingTarget(sourceUrl) !== sourceUrl || /housing-circulars|housing-notices|housing-scheme|frmschemes|\/en\/nashik|\/en\/latest-news|\/en\/lottery|cidco|uitkota|kda\.rajasthan|search-project|gujrera/i.test(value);
+  return authorityListingTarget(sourceUrl) !== sourceUrl || /housing-circulars|housing-notices|housing-scheme|frmschemes|\/en\/nashik|\/en\/latest-news|\/en\/lottery|cidco|uitkota|kda\.rajasthan|search-project|gujrera|rera\.bihar\.gov\.in\/(?:newsarticles|reralatestnews)\.aspx|rera\.wb\.gov\.in\/notice\.php/i.test(value);
 }
 
 function authorityRowTitle($, row) {
@@ -9395,11 +9406,12 @@ function authorityRowDate($, row) {
   const rowText = stripHtml(row.text());
   const explicit = row.find("time[datetime], [data-date], [class*='date' i]").map((_, element) => $(element).attr("datetime") || $(element).attr("data-date") || $(element).text()).get();
   for (const value of [...explicit, rowText]) {
-    const shortYear = String(value || "").match(/\b(\d{1,2})[-\s]([A-Za-z]+)[-\s](\d{2})\b/);
+    const shortYear = String(value || "").match(/\b(\d{1,2})[-\s]([A-Za-z]+)[-\s](\d{2}|\d{4})\b/);
     if (shortYear) {
       const month = authorityMonthNumbers.get(shortYear[2].toLowerCase());
       if (month) {
-        const parsed = new Date(Date.UTC(2000 + Number(shortYear[3]), month - 1, Number(shortYear[1]), 12));
+        const year = shortYear[3].length === 2 ? 2000 + Number(shortYear[3]) : Number(shortYear[3]);
+        const parsed = new Date(Date.UTC(year, month - 1, Number(shortYear[1]), 12));
         if (!Number.isNaN(parsed.getTime())) return parsed.toISOString();
       }
     }
@@ -9430,6 +9442,20 @@ function authorityRowLink($, row, sourceUrl) {
   return ranked[0]?.url || "";
 }
 
+function authorityListingRows($, sourceUrl) {
+  const value = String(sourceUrl || "").toLowerCase();
+  // These official registries have a dedicated dated-event table. Restricting
+  // traversal to it prevents site-wide navigation, manuals and regulations
+  // from consuming the bounded document frontier ahead of current notices.
+  if (/rera\.bihar\.gov\.in\/(?:newsarticles|reralatestnews)\.aspx/i.test(value)) {
+    return $("#myTable tr");
+  }
+  if (/rera\.wb\.gov\.in\/notice\.php/i.test(value)) {
+    return $("#agentDataTable tr");
+  }
+  return $("table tr, article, li, .card, [class*='notice' i], [class*='scheme' i], [class*='listing' i]");
+}
+
 function cleanAuthorityDocumentText(value = "") {
   const text = String(value || "").replace(/[^\x20-\x7E\u0900-\u097F\u0A80-\u0AFF\u0B80-\u0BFF\u0C00-\u0C7F\u0C80-\u0CFF\u0D00-\u0D7F\s]/g, " ").replace(/\s+/g, " ").trim();
   const alphaCount = (text.match(/[A-Za-z\u0900-\u097F\u0A80-\u0AFF\u0B80-\u0BFF\u0C00-\u0C7F\u0C80-\u0CFF\u0D00-\u0D7F]/g) || []).length;
@@ -9449,7 +9475,7 @@ async function fetchAuthorityListings(sourceUrl, options = {}) {
     getFallbackLogo(sourceUrl)
   );
   const candidateLimit = getMaxItemsPerSource();
-  const rows = $("table tr, article, li, .card, [class*='notice' i], [class*='scheme' i], [class*='listing' i]");
+  const rows = authorityListingRows($, listingUrl);
   const processCandidate = async (candidate) => {
     let articleText = `${profile.evidence}. ${candidate.title}. ${candidate.rowText}`.slice(0, 5000);
     let fullArticleRead = false;
@@ -11635,6 +11661,7 @@ export {
   assertRunModeContract,
   isLikelyFeedUrl,
   getFeedFallbackPageUrl,
+  getSourceRecoveryAliases,
   getAutomaticSourceBatchIndex,
   readCycleSourceResults,
   persistCycleSourceResults,
