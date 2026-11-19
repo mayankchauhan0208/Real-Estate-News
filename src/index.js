@@ -4126,12 +4126,6 @@ function parseNewsDateValue(value) {
     .replace(/\b(\d{1,2})(st|nd|rd|th)\b/gi, "$1")
     .replace(/\s+/g, " ")
     .trim();
-  const normalized = raw.replace(/\bIST\b/i, "+05:30");
-  const directDate = new Date(normalized);
-
-  if (!Number.isNaN(directDate.getTime())) {
-    return directDate.toISOString();
-  }
 
   const numericDate = raw.match(/\b(\d{1,2})[-/](\d{1,2})[-/](\d{4})\b/);
 
@@ -4180,6 +4174,15 @@ function parseNewsDateValue(value) {
       minute: dayFirst[5],
       meridiem: dayFirst[6]
     });
+  }
+
+  // Only delegate unambiguous timestamps to the host parser. Browser and
+  // Node runtimes disagree on plain dates such as "02 SEP 2026"; those are
+  // handled above as India-local publication dates.
+  const normalized = raw.replace(/\bIST\b/i, "+05:30");
+  const directDate = new Date(normalized);
+  if (!Number.isNaN(directDate.getTime())) {
+    return directDate.toISOString();
   }
 
   return "";
