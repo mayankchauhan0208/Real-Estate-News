@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-19T03:43:36.160Z",
+  "updatedAt": "2026-11-19T03:43:38.549Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14943,6 +14943,31 @@
       "claimedAt": "2026-11-19T03:43:33.568Z",
       "expiresAt": "2026-11-19T03:58:33.568Z",
       "finalizedAt": "2026-11-19T03:43:36.160Z"
+    },
+    {
+      "claimId": "63d89c84-3d2d-48ed-92b0-4c8059e29371",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/lucknow-news/panchayat-administrators-in-uttar-pradesh-to-get-six-month-extension-101795028236530.html",
+        "title-city:panchayat administrators in uttar pradesh to get six month extension|lucknow",
+        "dedupe:591b5c465868278ff0a176fba34a8f420bf312ee05de0f9fb1ada5b1dcdd986c",
+        "dedupe:004636d0ea7634921090f81ee95bc8cf50c86274b61773f46c5d1e529a781d8f",
+        "dedupe:430fc4c7cae4d4ddbabbf769fb302c17ea3d60e8b094db8a29a16223c3416d32",
+        "dedupe:160fa5a4dbc9ddfaba9523ead36abf8321e7e2f7ddb56339f2a787d3e5be151c",
+        "dedupe:30ab67f8657cc612ccea7271dc45e6ff95886d5138560d1581d0ced415109749",
+        "dedupe:1554b5c6089aa5f1741cae7332fa5452c9f71638adef97451fa616b7491de563"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "lucknow",
+      "canonicalEventCity": "lucknow",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "lucknow"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-19T03:43:38.549Z",
+      "expiresAt": "2026-11-19T03:58:38.549Z"
     }
   ]
 }
