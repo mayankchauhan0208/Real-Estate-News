@@ -1281,6 +1281,24 @@ const delhiNcrPremiumHousingArticle = publishable({
 assert.deepEqual(detectCityCodes(delhiNcrPremiumHousingArticle), []);
 assert.equal(isPublishableArticle(delhiNcrPremiumHousingArticle, sentIds), false);
 
+const ncrHeadlineWithConcreteGurugramProject = publishable({
+  title: "M3M invests in new branded residences in NCR",
+  description: "M3M will develop an ultra-luxury residential project in Gurugram with 120 homes.",
+  articleText: "The branded residential project at Sector 111 on Dwarka Expressway in Gurugram involves a concrete housing development and new residences.",
+  newsLink: "https://example.com/gurugram/m3m-branded-residences"
+});
+assert.deepEqual(detectCityCodes(ncrHeadlineWithConcreteGurugramProject), ["gurugram"]);
+assert.equal(isPublishableArticle(ncrHeadlineWithConcreteGurugramProject, sentIds), true);
+
+const panvelTownshipArticle = publishable({
+  title: "Developer signs agreement for a 165-acre mixed-use township in Panvel",
+  description: "The Panvel development will add residential and commercial space in the Mumbai region.",
+  articleText: "The developer will construct a named mixed-use township at Panvel with residential homes, commercial space and supporting infrastructure.",
+  newsLink: "https://example.com/navi-mumbai/panvel-township"
+});
+assert.deepEqual(detectCityCodes(panvelTownshipArticle), ["navi_mumbai"]);
+assert.equal(isPublishableArticle(panvelTownshipArticle, sentIds), true);
+
 const noidaDominantNcrArticle = publishable({
   title: "Delhi NCR developer plans new residential launches",
   description: "The developer said infrastructure growth is supporting premium housing demand.",

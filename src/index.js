@@ -397,6 +397,13 @@ const CITY_ALIAS_OVERRIDES = {
   pondicherry: ["puducherry", "पुडुचेरी"]
 };
 
+// These are event-locality routes, not source defaults.  They deliberately
+// outrank broader metropolitan labels when an article names the locality as
+// the site of a concrete property event.
+const CONCRETE_LOCALITY_CITY_ROUTES = {
+  panvel: "navi_mumbai"
+};
+
 const regionalRealEstateKeywords = [
   // Marathi, Gujarati, Bengali, Tamil, Telugu, Kannada, Malayalam, Punjabi, and Odia.
   "गृहनिर्माण", "स्थावर मालमत्ता", "मालमत्ता", "प्रकल्प", "जमीन", "गुंतवणूक", "मंजुरी", "बांधकाम", "विकास",
@@ -4307,7 +4314,9 @@ function isEventCenteredWithoutConcretePropertyEvent(article) {
 
 function isTechnologyPartnershipWithoutConcretePropertyEvent(article) {
   const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
-  const collaboration = /\b(?:memorandum of understanding|MoU|partnership|collaboration|innovation program|technology partnership|smart[- ]city technology program|proptech collaboration|proptech partnership|urban[- ]tech initiative|startup program|research collaboration|software partnership|platform partnership|technology solutions?)\b/i.test(text);
+  // A commercial JDA can legitimately be described as a partnership. Keep
+  // this exclusion limited to an actual technology or research collaboration.
+  const collaboration = /\b(?:memorandum of understanding|MoU|innovation program|technology partnership|smart[- ]city technology program|proptech collaboration|proptech partnership|urban[- ]tech initiative|startup program|research collaboration|software partnership|platform partnership|technology solutions?)\b/i.test(text);
   return collaboration && !hasConcreteMaterialPropertyEvent(article);
 }
 
@@ -6014,12 +6023,32 @@ function hasSpecificYeidaProjectEvidence(article) {
   return hasCorridor && hasProject && /sector\s*22\s*d|gaur(?:s|\s+group)?|yeida|greater\s+noida/u.test(text);
 }
 
+function getConcreteLocalityRouteCodes(article) {
+  const eventLocationText = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  const localityRouteCodes = Object.entries(CONCRETE_LOCALITY_CITY_ROUTES)
+    .filter(([locality]) => hasWholeWordKeyword(eventLocationText, [locality]))
+    .map(([, cityCode]) => cityCode)
+    .filter((cityCode) => enabledCityCodeSet.has(cityCode));
+
+  if (localityRouteCodes.length !== 1) {
+    return [];
+  }
+
+  const explicitLocalPropertyEvent = /\b(?:develop(?:s|ed|ing)?|construct(?:s|ed|ion)?|launch(?:es|ed)?|acquir(?:es|ed)|sign(?:s|ed))\b[^.!?]{0,100}\b(?:mixed[- ]use|residential|commercial)\s+(?:township|project|development)\b/i.test(eventLocationText);
+  return hasConcretePropertyEvent(article) || explicitLocalPropertyEvent ? localityRouteCodes : [];
+}
+
 function detectCityCodes(article) {
   // Geography is evidence, not a publication decision. Map every article for
   // audit, duplicate checks, and false-positive analysis, except clearly
   // non-property content that must not acquire a city route at all.
   if (isClearlyOffTopicNonDevelopmentArticle(article) || isEducationOnlyAnnouncement(article)) {
     return [];
+  }
+
+  const concreteLocalityRouteCodes = getConcreteLocalityRouteCodes(article);
+  if (concreteLocalityRouteCodes.length === 1) {
+    return concreteLocalityRouteCodes;
   }
 
   // A verified authority property record remains geographically useful for
@@ -6046,6 +6075,7 @@ function detectCityCodes(article) {
   }
 
   const primaryText = getArticlePrimaryText(article);
+
   // Use the same title-only resolver as the rest of event-geography. Keeping
   // a parallel inline matcher here had drifted from the canonical aliases
   // and could discard an explicit, supported city such as Coimbatore.
@@ -6067,6 +6097,18 @@ function detectCityCodes(article) {
   if (hasSpecificYeidaProjectEvidence(article)) {
     return ["noida"];
   }
+
+  // Generic "NCR" in a headline must not suppress a single concrete city
+  // stated in the article lead. This is still article evidence, and requires
+  // a concrete property event; generic NCR market commentary remains unmapped.
+  const primaryEventCityCodes = cityRules
+    .filter((rule) => hasWholeWordKeyword(primaryText, rule.keywords))
+    .map((rule) => rule.code)
+    .filter((code) => code !== "delhi_ncr" && !isGenericDelhiNcrCityAlias(code, article));
+  if (primaryEventCityCodes.length === 1 && hasConcretePropertyEvent(article)) {
+    return primaryEventCityCodes;
+  }
+
   const explicitEventCityCodes = detectExplicitTargetCityCodes(article)
     .filter((code) => code !== "delhi_ncr" && !isGenericDelhiNcrCityAlias(code, article));
   if (explicitEventCityCodes.length === 1 && !hasNcrMatch(article)) {
@@ -7365,13 +7407,14 @@ function localQualityJudge(article) {
   const negativeScore = countKeywordMentions(fullText, localJudgeNegativeKeywords);
   const strongNegativeScore = countKeywordMentions(fullText, localJudgeStrongNegativeKeywords);
   const cityKeywords = article.cityCode ? (allCityRules.find((rule) => rule.code === article.cityCode)?.keywords || []) : [];
+  const concreteLocalityRoute = Boolean(article.cityCode) && getConcreteLocalityRouteCodes(article).includes(article.cityCode);
   const cityScore = article.cityCode
-    ? Math.max(countKeywordMentions(fullText, cityKeywords), getArticleSourceCityCodes(article).includes(article.cityCode) ? 2 : 0)
+    ? Math.max(countKeywordMentions(fullText, cityKeywords), getArticleSourceCityCodes(article).includes(article.cityCode) ? 2 : 0, concreteLocalityRoute ? 2 : 0)
     : 0;
   const authorityEvent = hasPositivePropertyRightsEvent(article);
   const hasCoreTopic = authorityEvent || hasKeyword(primaryAndUrl, ["real estate", "realty", "property", "housing", "infrastructure", "project", "metro", "expressway", "airport", "rera", "township", "land parcel", "construction", "builder", "developer", "residential", "commercial", "रियल एस्टेट", "रियल्टी", "प्रॉपर्टी", "परियोजना", "प्रोजेक्ट", "जमीन", "भूमि", "मेट्रो", "आवास", "निर्माण", "विकास", ...regionalRealEstateKeywords]);
   const hasStrongProjectSignal = authorityEvent || hasSpecificProjectOrDevelopmentSignal(article) || isPositiveTargetBusinessOrDevelopmentArticle(article) || isPositiveTargetProjectUpdate(article);
-  const hasCityEvidence = cityScore > 0 || Boolean(getVerifiedAuthorityEventCityCode(article)) || hasNcrMatch(article) || hasMappedCorporateCityEvidence(article);
+  const hasCityEvidence = cityScore > 0 || concreteLocalityRoute || Boolean(getVerifiedAuthorityEventCityCode(article)) || hasNcrMatch(article) || hasMappedCorporateCityEvidence(article);
   const score = positiveScore * 2 + (hasCoreTopic ? 4 : 0) + (hasStrongProjectSignal ? 4 : 0) + Math.min(cityScore, 3) - negativeScore * 3 - strongNegativeScore * 8;
   const base = { score, positiveScore, negativeScore, strongNegativeScore, cityScore };
 
@@ -7562,16 +7605,17 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("filter 6: target region missing or weak");
   }
 
-  if (hasOutsideRegionInPrimaryText(article) && !isStrongPositiveMarketOrInfrastructureArticle(article)) {
+  const hasConcreteLocalityRoute = Boolean(article.cityCode) && getConcreteLocalityRouteCodes(article).includes(article.cityCode);
+  if (hasOutsideRegionInPrimaryText(article) && !isStrongPositiveMarketOrInfrastructureArticle(article) && !hasConcreteLocalityRoute) {
     reasons.push("filter 7: outside region in title/description");
   }
 
-  if (hasOutsideCityConflict(article)) {
+  if (hasOutsideCityConflict(article) && !hasConcreteLocalityRoute) {
     reasons.push("filter 8: outside-city conflict");
   }
 
   const explicitEventCities = detectMatchedCityCodes(article).filter((code) => code && code !== "delhi_ncr");
-  if (article.cityCode && explicitEventCities.length === 1 && explicitEventCities[0] !== article.cityCode &&
+  if (!hasConcreteLocalityRoute && article.cityCode && explicitEventCities.length === 1 && explicitEventCities[0] !== article.cityCode &&
       !ncrCityCodes.includes(article.cityCode) && !ncrCityCodes.includes(explicitEventCities[0])) {
     reasons.push("filter 8: explicit event city conflicts with assigned city");
   }
@@ -7580,7 +7624,7 @@ function getRejectionReasons(article, sentIds) {
   // NCR routing is valid only when no single concrete event city is named.
   const directEventCities = detectExplicitTargetCityCodes(article)
     .filter((code) => code && code !== "delhi_ncr" && !isGenericDelhiNcrCityAlias(code, article));
-  if (article.cityCode && directEventCities.length === 1 && directEventCities[0] !== article.cityCode) {
+  if (!hasConcreteLocalityRoute && article.cityCode && directEventCities.length === 1 && directEventCities[0] !== article.cityCode) {
     reasons.push("filter 8: explicit event city conflicts with assigned city");
   }
 
