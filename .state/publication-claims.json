@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-19T03:43:46.992Z",
+  "updatedAt": "2026-11-19T03:43:49.472Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14994,6 +14994,30 @@
       "claimedAt": "2026-11-19T03:43:44.358Z",
       "expiresAt": "2026-11-19T03:58:44.358Z",
       "finalizedAt": "2026-11-19T03:43:46.992Z"
+    },
+    {
+      "claimId": "1af9cb3d-d495-4837-82ae-3bcc96cdcb91",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/puravankara-to-invest-1000-crore-in-housing-project-in-kochi/135975907",
+        "title-city:puravankara to invest 1 000 crore in housing project in kochi|kochi",
+        "dedupe:cb755bf1f2fa1d09107a08b22eefa04b2a5f67afcfddb4748c93503f333a5db0",
+        "dedupe:58f7401fca0dc117789f5e26da618417c5289c718e3f4b22c74d41e0c09b8b7e",
+        "dedupe:42f43781fe27c748fcbd771a954e0678ddaf124f231349180f217c5741eb6ea6",
+        "dedupe:7f4653e3268ec4e393dc9a76bd13ca4cba93367cdfdeeeeea72ca9500d8b8721",
+        "dedupe:076b0295c53c4cbda10d218f2ade5ac5a6c00c132305c1c4094e80ba775b95da"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "kochi",
+      "canonicalEventCity": "kochi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "kochi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-19T03:43:49.472Z",
+      "expiresAt": "2026-11-19T03:58:49.472Z"
     }
   ]
 }
