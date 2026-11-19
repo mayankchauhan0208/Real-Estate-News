@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-19T03:43:31.074Z",
+  "updatedAt": "2026-11-19T03:43:33.568Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -14917,6 +14917,31 @@
       "claimedAt": "2026-11-19T03:43:28.535Z",
       "expiresAt": "2026-11-19T03:58:28.535Z",
       "finalizedAt": "2026-11-19T03:43:31.074Z"
+    },
+    {
+      "claimId": "05632364-c30c-4942-b421-0f5716e3b3e0",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/haryana/panchkula-haryana-receives-a-gift-of-2554-crore-rupees-four-major-projects-in-kaithalhodal-and-bahadurgarh-will-gain-momentum-the-picture-of-villages-will-change-40441136.html",
+        "title-city:हर य ण क 25 54 कर ड क स ग त क थल ह डल और बह द रगढ म 4 बड पर य जन ओ क म ल ग रफ त र ग व क बदल ग तस व र|palwal",
+        "dedupe:d3b6b578894fbb39c34d3eb5f41fd30de43316b12e2aff89f19b865f8f531aec",
+        "dedupe:d4115a7533c8c3bc68b530be937d1ceb5fc2cd664b17db36036e27826ef26c4c",
+        "dedupe:e45dcbe7e8092bef7ab7b2a86226380b767133369cacf73f8618ba653248b473",
+        "dedupe:8172e1aaa6cb4dd17c21af41c119ed6ff2ee1241fdc6b483a2a06eafb0a7f509",
+        "dedupe:218482052bfaab89d9e6724f5c3a841d410e3144b214b348a7fbefcc0308e20a",
+        "dedupe:ba3b595f153e480ab2576205f3c5e870a6b23bb8dcaddfcc14f3c5f8de262b38"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "palwal",
+      "canonicalEventCity": "palwal",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "palwal"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-19T03:43:33.568Z",
+      "expiresAt": "2026-11-19T03:58:33.568Z"
     }
   ]
 }
