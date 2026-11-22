@@ -23,6 +23,16 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - name: Verify cleanup credentials before mutation
+        if: ${{ inputs.execute == true }}
+        env:
+          APP_API_URL: ${{ secrets.APP_API_URL }}
+          APP_API_KEY: ${{ secrets.APP_API_KEY }}
+          APP_LIST_API_KEY: ${{ secrets.APP_LIST_API_KEY || secrets.APP_API_KEY }}
+        run: |
+          test -n "$APP_API_URL" || { echo "PRODUCTION_APP_API_URL_REQUIRED"; exit 1; }
+          test -n "$APP_API_KEY" || { echo "PRODUCTION_APP_API_KEY_REQUIRED"; exit 1; }
+          test -n "$APP_LIST_API_KEY" || { echo "PRODUCTION_HISTORY_RECONCILIATION_CREDENTIAL_REQUIRED"; exit 1; }
       - name: Resolve, tombstone, and deactivate exact records
         run: node tools/surgical-false-positive-cleanup.mjs
         env:

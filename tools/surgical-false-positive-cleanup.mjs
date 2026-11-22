@@ -95,30 +95,41 @@ async function deactivate(record) {
 
 let before = [];
 let listError = "";
-try {
-  before = await listAll();
-} catch (error) {
-  listError = String(error?.message || error);
+let listAttempted = false;
+let credentialError = "";
+if (execute && !apiKey) {
+  credentialError = "PRODUCTION_CREDENTIAL_REQUIRED";
+} else if (execute) {
+  listAttempted = true;
+  try {
+    before = await listAll();
+  } catch (error) {
+    listError = String(error?.message || error);
+  }
 }
-const store = new GitHubPublicationClaimStore({
-  token: process.env.GITHUB_TOKEN,
-  repository: process.env.GITHUB_REPOSITORY,
-  branch: process.env.GITHUB_REF_NAME || "main",
-  path: process.env.PUBLICATION_CLAIM_PATH || ".state/publication-claims.json"
-});
+let store = null;
+let claimStoreError = "";
+if (execute && !credentialError && !listError) {
+  try {
+    store = new GitHubPublicationClaimStore({
+      token: process.env.GITHUB_TOKEN,
+      repository: process.env.GITHUB_REPOSITORY,
+      branch: process.env.GITHUB_REF_NAME || "main",
+      path: process.env.PUBLICATION_CLAIM_PATH || ".state/publication-claims.json"
+    });
+  } catch (error) {
+    claimStoreError = String(error?.message || error);
+  }
+}
 const results = [];
 for (const target of targets) {
-  const matches = before.length ? exactMatches(before, target) : [{
-    id: target.articleId,
-    title: target.title,
-    description: target.description,
-    cityCode: target.city,
-    newsLink: target.sourceUrl,
-    isActive: true
-  }];
+  // A cleanup mutation is allowed only after an authenticated production
+  // listing has supplied exactly one matching record. Never infer a record
+  // from the static target when the production read path failed.
+  const matches = listAttempted && !listError ? exactMatches(before, target) : [];
   const classification = matches.length === 1 ? rejectionState(matches[0]) : null;
   const result = { ...target, exactMatchCount: matches.length, articleId: matches[0]?.id || "", classification, tombstone: false, deactivateAttempted: false };
-  if (execute && matches.length === 1 && classification?.finalState?.startsWith("REJECTED")) {
+  if (execute && store && matches.length === 1 && classification?.finalState?.startsWith("REJECTED")) {
     await store.tombstone(target.claimId, {
       rejectionReason: target.rejectionReason,
       deletedProductionArticleId: matches[0].id,
@@ -135,7 +146,7 @@ for (const target of targets) {
 }
 
 let after = before;
-if (execute && !listError) after = await listAll();
+if (execute && listAttempted && !listError) after = await listAll();
 for (const result of results) {
   const target = targets.find((item) => item.claimId === result.claimId);
   const matches = after.length ? exactMatches(after, target) : [];
@@ -147,8 +158,26 @@ for (const result of results) {
   result.publicRecordPresentAfter = result.activeMatchesAfter === null ? null : result.activeMatchesAfter > 0;
   result.verification = after.length ? "AUTHENTICATED_LIST" : "EXACT_UPDATE_RESPONSE";
 }
-const report = { generatedAt: new Date().toISOString(), execute, listUrl, apiUrl, listError, idEvidence: "AUTHORITATIVE_PRODUCTION_CREATE_RESPONSE_RUN_37753324192", recordsBefore: before.length, recordsAfter: after.length, results };
+const report = {
+  generatedAt: new Date().toISOString(),
+  execute,
+  listUrl,
+  apiUrl,
+  listAttempted,
+  credentialError,
+  listError,
+  claimStoreError,
+  idEvidence: "AUTHORITATIVE_PRODUCTION_CREATE_RESPONSE_RUN_37753324192",
+  recordsBefore: before.length,
+  recordsAfter: after.length,
+  results
+};
 await fs.mkdir(outputDir, { recursive: true });
 await fs.writeFile(path.join(outputDir, "surgical-cleanup-report.json"), `${JSON.stringify(report, null, 2)}\n`);
 console.log(JSON.stringify(report, null, 2));
-if (results.some((item) => item.exactMatchCount !== 1 || !item.classification?.finalState?.startsWith("REJECTED") || (execute && (!item.tombstone || item.publicRecordPresentAfter !== false)))) process.exitCode = 1;
+if (execute && (
+  credentialError ||
+  listError ||
+  claimStoreError ||
+  results.some((item) => item.exactMatchCount !== 1 || !item.classification?.finalState?.startsWith("REJECTED") || !item.tombstone || item.publicRecordPresentAfter !== false)
+)) process.exitCode = 1;
