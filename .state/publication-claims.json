@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-22T13:20:35.957Z",
+  "updatedAt": "2026-11-22T13:20:38.472Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15048,7 +15048,7 @@
     },
     {
       "claimId": "b350fd94-4271-4e8d-b4db-a332ba3acd7a",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/delhipanipatkarnal-namo-bharat-corridor-to-boost-real-estate-in-the-region/articleshow/136054780.cms",
         "title-city:delhi panipat karnal namo bharat corridor to boost real estate in the region|panipat",
@@ -15067,7 +15067,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-22T13:20:35.957Z",
-      "expiresAt": "2026-11-22T13:35:35.957Z"
+      "expiresAt": "2026-11-22T13:35:35.957Z",
+      "finalizedAt": "2026-11-22T13:20:38.472Z"
     }
   ]
 }
