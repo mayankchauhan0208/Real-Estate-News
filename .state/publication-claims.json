@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-22T13:21:59.776Z",
+  "updatedAt": "2026-11-22T13:22:09.916Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15306,6 +15306,31 @@
       "claimedAt": "2026-11-22T13:21:57.531Z",
       "expiresAt": "2026-11-22T13:36:57.531Z",
       "finalizedAt": "2026-11-22T13:21:59.776Z"
+    },
+    {
+      "claimId": "65b1fddc-425d-43cf-b6c3-d150e0703812",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://mhada.gov.in/en/content/mill-workers-housing-lottery-2020",
+        "title-city:mill workers lottery 2020|navi_mumbai",
+        "dedupe:b09067496a6d31ce46d363d5a7ee55ad7aafe7fdad9b47ab9cba2ba0eb6c0c4d",
+        "dedupe:3a33b5e8a5c6b2671d24cb52f24a287e94020fcf55d59dee355c497e136e7957",
+        "dedupe:c92bfa8d4d731c5978c6e106651a03397c9e48c7a5d36b524c28f505198c7716",
+        "dedupe:22664e3ca09106ceda01e1ddab92959e68bbddab8dbbd168b639e198506b7642",
+        "dedupe:081ca8ea9d8523deb0f12c59d11d5418f076be8ca83f4923bf2440d9713a5fe1",
+        "dedupe:5910edb7b761670c25566c07249a7ea839e7bdc6c97033d76e6037f0659a948b"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "navi_mumbai",
+      "canonicalEventCity": "navi_mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "navi_mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:22:09.916Z",
+      "expiresAt": "2026-11-22T13:37:09.916Z"
     }
   ]
 }
