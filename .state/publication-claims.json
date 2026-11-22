@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-22T13:20:38.472Z",
+  "updatedAt": "2026-11-22T13:20:55.066Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15069,6 +15069,59 @@
       "claimedAt": "2026-11-22T13:20:35.957Z",
       "expiresAt": "2026-11-22T13:35:35.957Z",
       "finalizedAt": "2026-11-22T13:20:38.472Z"
+    },
+    {
+      "claimId": "d84dd8e2-7464-4839-8d59-ea0ec92e6e6c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/county-group-inks-jda-for-rs-830-crore-land-in-noida/articleshow/135981780.cms",
+        "title-city:county group inks jda for rs 830 crore land in noida|noida",
+        "dedupe:165108249889079325bef4144e77d3b44d56f74edfd765fb38f59925564e96e3",
+        "dedupe:a20db808ce8e617ec8dac97c269931804d956228283c4b2b0fb1c9ee67f27d0e",
+        "dedupe:d5962ed0b3851bb4ff58eee5496964d349d26f2229c269585f5ce82ad24ad206",
+        "dedupe:4dc21d7fb0237d15b084f3b4ce564177139a514e1fdce5bc1c35fd150ba66e6b",
+        "dedupe:county group inks jda land noida|amount:830-crore|noida",
+        "dedupe:fed6d482fa7075bc06247809d57516465abaf9eaed338ef8595f1b803a4ab15a",
+        "dedupe:8fca1a3aecb5a1b02c12a41caa03b484f48a7819d2c552b554ff2e1352433d23"
+      ],
+      "semanticIdentity": {
+        "city": "noida",
+        "canonicalEventCity": "noida",
+        "normalizedBuilder": "county-group",
+        "normalizedProject": "",
+        "canonicalEventType": "project-launch",
+        "builder": "county-group",
+        "project": "",
+        "eventType": "project-launch",
+        "numericAnchors": [
+          "00:number",
+          "01:number",
+          "150:number",
+          "15:number",
+          "19:number",
+          "2.9:acre",
+          "2026:number",
+          "24.71:acre",
+          "25:acre",
+          "25:number",
+          "5.80:acre",
+          "50.05:number",
+          "8000:home",
+          "830:crore"
+        ],
+        "canonicalEventFingerprint": "county-group|noida|project-launch|00:number,01:number,150:number",
+        "semanticClusterId": "cluster:f4562f53928cc91ab5da9d94"
+      },
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "county-group|noida|project-launch|00:number,01:number,150:number",
+      "semanticClusterId": "cluster:f4562f53928cc91ab5da9d94",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:20:55.066Z",
+      "expiresAt": "2026-11-22T13:35:55.066Z"
     }
   ]
 }
