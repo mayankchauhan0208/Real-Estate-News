@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-22T13:21:45.050Z",
+  "updatedAt": "2026-11-22T13:21:47.653Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15258,7 +15258,7 @@
     },
     {
       "claimId": "34e744cd-e36c-4668-8326-2e31b4e0cd5d",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/industry/commercialisation-may-cost-heritage-homes-in-ahmedabad-their-tdr-benefits/136013300",
         "title-city:commercialisation may cost heritage homes in ahmedabad their tdr benefits|ahmedabad",
@@ -15278,7 +15278,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-22T13:21:45.050Z",
-      "expiresAt": "2026-11-22T13:36:45.050Z"
+      "expiresAt": "2026-11-22T13:36:45.050Z",
+      "finalizedAt": "2026-11-22T13:21:47.653Z"
     }
   ]
 }
