@@ -222,6 +222,14 @@ assert.deepEqual(detectCityCodes(ghaziabadArticle), ["ghaziabad"]);
 const foreignPropertyArticle = { title: "Developer pitches Dubai property to Australian investors", description: "The company targets property opportunities in Dubai and Ras Al Khaimah.", articleText: "The UAE developer is marketing residential property in Dubai and Ras Al Khaimah from its Sydney office.", newsLink: "https://example.com/dubai-property-pitch", cityCode: "anand", fullArticleRead: true, articleReadAttempted: true };
 assert.deepEqual(detectCityCodes(foreignPropertyArticle), []);
 assert.equal(isPublishableArticle(foreignPropertyArticle, sentIds), false);
+const foreignMarketWithIndianSurnameArticle = article({
+  title: "Dubai housing prices hit four-year high in 2026, up 18% since 2023",
+  description: "Dubai real estate prices rose as smaller apartments drove sales, according to an Anarock report.",
+  articleText: "Anarock chairman Anuj Puri said Dubai's residential market remains resilient.",
+  newsLink: "https://example.com/real-estate/dubai-housing-prices"
+});
+assert.deepEqual(detectCityCodes(foreignMarketWithIndianSurnameArticle), []);
+assert.ok(getRejectionReasons(foreignMarketWithIndianSurnameArticle, sentIds).includes("filter 5: foreign property event has no supported Indian city"));
 
 for (const article of reportedOffTopicArticles) {
   assert.equal(isPublishableArticle(article, sentIds), false, `reported off-topic article must remain rejected: ${article.title}`);

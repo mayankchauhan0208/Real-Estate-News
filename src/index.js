@@ -6340,11 +6340,13 @@ function detectMatchedCityCodes(article) {
 }
 
 function hasForeignPropertyEvent(article) {
-  const text = getArticleSearchText(article);
-  const foreignLocation = /\b(?:dubai|ras al khaimah|united arab emirates|uae|sydney|australia|london|singapore)\b/i.test(text);
-  const propertyEvent = /\b(?:property|real estate|realty|residential|commercial|developer|housing|apartment|land parcel|township)\b/i.test(text);
-  const supportedIndianLocation = cityRules.some((rule) => hasWholeWordKeyword(text, rule.keywords));
-  return foreignLocation && propertyEvent && !supportedIndianLocation;
+  // Event geography belongs to the headline, description, and canonical URL.
+  // Full articles can mention Indian people or companies such as Anuj Puri;
+  // those incidental body terms must not turn a Dubai market story into Puri.
+  const eventText = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
+  const foreignLocation = /\b(?:dubai|ras al khaimah|united arab emirates|uae|sydney|australia|london|singapore)\b/i.test(eventText);
+  const propertyEvent = /\b(?:property|real estate|realty|residential|commercial|developer|housing|apartment|land parcel|township)\b/i.test(eventText);
+  return foreignLocation && propertyEvent;
 }
 
 function getUnsupportedEventLocationEvidence(article) {
