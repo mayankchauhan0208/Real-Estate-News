@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-22T13:21:19.810Z",
+  "updatedAt": "2026-11-22T13:21:21.974Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15181,7 +15181,7 @@
     },
     {
       "claimId": "a8d017f3-1f67-4170-9924-d2bf73b0e4b4",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/bank-of-america-leases-over-1-million-sq-ft-in-mindspace-hyderabad-for-gcc/articleshow/135992424.cms",
         "title-city:bank of america leases over 1 million sq ft in mindspace hyderabad for gcc|hyderabad",
@@ -15202,7 +15202,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-22T13:21:19.810Z",
-      "expiresAt": "2026-11-22T13:36:19.810Z"
+      "expiresAt": "2026-11-22T13:36:19.810Z",
+      "finalizedAt": "2026-11-22T13:21:21.974Z"
     }
   ]
 }
