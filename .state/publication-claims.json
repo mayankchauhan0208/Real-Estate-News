@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-22T13:23:14.856Z",
+  "updatedAt": "2026-11-22T13:23:24.818Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15459,6 +15459,31 @@
       "claimedAt": "2026-11-22T13:23:12.400Z",
       "expiresAt": "2026-11-22T13:38:12.400Z",
       "finalizedAt": "2026-11-22T13:23:14.856Z"
+    },
+    {
+      "claimId": "bbe71c0b-8378-4920-b69e-9765182324bd",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/varanasi-city-digital-life-certificate-mega-camp-to-be-launched-at-varanasi-treasury-complex-facility-to-reconcile-pensioners-40444768.html",
+        "title-city:व र णस क ष ग र पर सर म लग ग ड ज टल ल इफ सर ट फ क ट म ग क प प शनर क म ल ग स व ध|varanasi",
+        "dedupe:e3f04d7afe3e5541adcba9f8e65812ebb12b872df9cc5d2c3a285ebe5b2a9f85",
+        "dedupe:5d3f5a5295f92eee5e28416e7c7d38aff263d7c641cda7e7f78e4cd50135cf9d",
+        "dedupe:db1d0f70b4dd4b22855fba703a5a7d16ba8139286f0c0d62cbfeacdafa62c4c1",
+        "dedupe:2a2f47413b824567255dd6ea6f6d37ba9f7be26d2799348ce1d7fd9b3a182a08",
+        "dedupe:ce23e14b165dc3c071bfc0122ea2ef9fd3341a79848f0a02d8108da261ba06b4",
+        "dedupe:bff865ef3c694dfe13bbfdacf554bbae9fee19fd75cb34f84a0c6b1fed907d22"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "varanasi",
+      "canonicalEventCity": "varanasi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "varanasi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:23:24.818Z",
+      "expiresAt": "2026-11-22T13:38:24.818Z"
     }
   ]
 }
