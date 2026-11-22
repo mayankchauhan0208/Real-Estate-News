@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-22T19:50:19.395Z",
+  "updatedAt": "2026-11-22T19:50:21.510Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15488,7 +15488,7 @@
     },
     {
       "claimId": "25e69e00-a68f-4733-b5dc-ab42b7384923",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/commercial/bank-of-america-leases-one-million-sq-ft-office-in-hyderabads-madhapur/136044326",
         "title-city:bank of america leases one million sq ft office in hyderabad s madhapur|hyderabad",
@@ -15508,7 +15508,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-22T19:50:19.395Z",
-      "expiresAt": "2026-11-22T20:05:19.395Z"
+      "expiresAt": "2026-11-22T20:05:19.395Z",
+      "finalizedAt": "2026-11-22T19:50:21.510Z"
     }
   ]
 }
