@@ -8,7 +8,10 @@ const concurrencyStart = workflow.indexOf("concurrency:");
 
 assert.ok(dispatchStart >= 0, "workflow_dispatch must be configured");
 assert.ok(concurrencyStart > dispatchStart, "workflow dispatch inputs must precede concurrency");
-assert.match(workflow, /- cron: "30 \* \* \* \*"/, "normal ingestion must run once per hour away from the top-of-hour queue");
+assert.match(workflow, /- cron: "7,22,37,52 \* \* \* \*"/, "scheduler must use off-peak guard wake-ups");
+assert.match(workflow, /scheduler-guard:/, "scheduler heartbeat guard must be configured");
+assert.match(workflow, /normal-ingestion-heartbeat\.json/, "successful normal runs must persist a scheduler heartbeat");
+assert.match(workflow, /\[ \$\(\(now_epoch - last_successful_epoch\)\) -ge 3300 \]/, "scheduler must not start the engine more often than every 55 minutes");
 
 const dispatchInputs = workflow.slice(dispatchStart, concurrencyStart);
 assert.match(dispatchInputs, /mode:\s*\r?\n\s+description:.*\r?\n\s+required: true\r?\n\s+type: choice/s);
