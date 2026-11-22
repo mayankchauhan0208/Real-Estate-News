@@ -2,7 +2,9 @@ name: News API Pusher
 
 on:
   schedule:
-    - cron: "10 * * * *"
+    # Avoid the crowded top-of-hour window while retaining one normal cycle
+    # every 60 minutes.
+    - cron: "30 * * * *"
   workflow_dispatch:
     inputs:
       mode:

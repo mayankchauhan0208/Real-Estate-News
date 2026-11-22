@@ -8,6 +8,7 @@ const concurrencyStart = workflow.indexOf("concurrency:");
 
 assert.ok(dispatchStart >= 0, "workflow_dispatch must be configured");
 assert.ok(concurrencyStart > dispatchStart, "workflow dispatch inputs must precede concurrency");
+assert.match(workflow, /- cron: "30 \* \* \* \*"/, "normal ingestion must run once per hour away from the top-of-hour queue");
 
 const dispatchInputs = workflow.slice(dispatchStart, concurrencyStart);
 assert.match(dispatchInputs, /mode:\s*\r?\n\s+description:.*\r?\n\s+required: true\r?\n\s+type: choice/s);
