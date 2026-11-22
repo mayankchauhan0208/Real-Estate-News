@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-22T13:21:47.653Z",
+  "updatedAt": "2026-11-22T13:21:57.531Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15280,6 +15280,31 @@
       "claimedAt": "2026-11-22T13:21:45.050Z",
       "expiresAt": "2026-11-22T13:36:45.050Z",
       "finalizedAt": "2026-11-22T13:21:47.653Z"
+    },
+    {
+      "claimId": "08dac894-def8-4b75-893f-5a7422729cf6",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hilifebuilders.in/luxury-apartments-thrissur-support-spaces",
+        "title-city:luxury apartments in thrissur the support spaces that matter|thrissur",
+        "dedupe:6753b05b344505017565ac2c7ffabd40d93a4c1bb3e10b3288f3b128b9c58688",
+        "dedupe:58531515a6c00b3caecd8e64df46c28ace944e9e00e9a92807beb2b340e3be5b",
+        "dedupe:dbe9a145d26444f8c4436e8cb9b800f70a423b527fe4a40777184927f7bd6d62",
+        "dedupe:9835b1cc2253a57e330716a962beec7c6a425b7cf90ab7d464c86612271d94f6",
+        "dedupe:5f1eabea07e3a134f68c58442772f9906b177cbd57fa3d8d2a54e6570eb2666b",
+        "dedupe:c9d496cf57120ad357dc64da4bc10bcb98b6e84edf138a643a02e6c008656ebf"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "thrissur",
+      "canonicalEventCity": "thrissur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "thrissur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:21:57.531Z",
+      "expiresAt": "2026-11-22T13:36:57.531Z"
     }
   ]
 }
