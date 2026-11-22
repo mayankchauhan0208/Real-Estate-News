@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-22T13:23:24.818Z",
+  "updatedAt": "2026-11-22T13:23:27.148Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15462,7 +15462,7 @@
     },
     {
       "claimId": "bbe71c0b-8378-4920-b69e-9765182324bd",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/varanasi-city-digital-life-certificate-mega-camp-to-be-launched-at-varanasi-treasury-complex-facility-to-reconcile-pensioners-40444768.html",
         "title-city:व र णस क ष ग र पर सर म लग ग ड ज टल ल इफ सर ट फ क ट म ग क प प शनर क म ल ग स व ध|varanasi",
@@ -15483,7 +15483,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-22T13:23:24.818Z",
-      "expiresAt": "2026-11-22T13:38:24.818Z"
+      "expiresAt": "2026-11-22T13:38:24.818Z",
+      "finalizedAt": "2026-11-22T13:23:27.148Z"
     }
   ]
 }
