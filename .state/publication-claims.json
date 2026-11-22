@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-22T13:21:21.974Z",
+  "updatedAt": "2026-11-22T13:21:32.121Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15204,6 +15204,56 @@
       "claimedAt": "2026-11-22T13:21:19.810Z",
       "expiresAt": "2026-11-22T13:36:19.810Z",
       "finalizedAt": "2026-11-22T13:21:21.974Z"
+    },
+    {
+      "claimId": "a3cc139f-6882-43af-80f9-614e01cf641d",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/signature-global-secures-development-rights-over-10-18-acre-land-in-sohna/136012099",
+        "title-city:signature global secures development rights over 10 18 acre land in sohna|gurugram",
+        "dedupe:405cec4730cf31ab775a98c36265c42572dc682dad830a305ba4431e7982a987",
+        "dedupe:bde187f2e616307733e63406d3d5579d9a22e17aa2131f0b5519eeccbb713e48",
+        "dedupe:107f532e96f459b5da853a55be7e5253e4f35e7ce47316cdad1fb463a11abc2f",
+        "dedupe:signature global secures development rights acre land sohna|scale:10.18-acre|gurugram",
+        "dedupe:c4ff48223787661f5021de56bcbe152dbb5a995bacb2b881260efab54c7271a8",
+        "dedupe:d12cbce5aa77c67a4a8067977656b1a0c92fa86cbe45d085baf64ab2ed553982"
+      ],
+      "semanticIdentity": {
+        "city": "gurugram",
+        "canonicalEventCity": "gurugram",
+        "normalizedBuilder": "signatureglobal",
+        "normalizedProject": "",
+        "canonicalEventType": "land-acquisition",
+        "builder": "signatureglobal",
+        "project": "",
+        "eventType": "land-acquisition",
+        "numericAnchors": [
+          "0.86:million sq ft",
+          "0.86:number",
+          "09:number",
+          "10.18:acre",
+          "100:number",
+          "19:number",
+          "1:number",
+          "2.623:acre",
+          "2026:number",
+          "20:number",
+          "2:number",
+          "7.557:acre"
+        ],
+        "canonicalEventFingerprint": "signatureglobal|gurugram|land-acquisition|0.86:million sq ft,0.86:number,09:number",
+        "semanticClusterId": "cluster:aa36e93eb5c5769674f6d6e4"
+      },
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "signatureglobal|gurugram|land-acquisition|0.86:million sq ft,0.86:number,09:number",
+      "semanticClusterId": "cluster:aa36e93eb5c5769674f6d6e4",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:21:32.121Z",
+      "expiresAt": "2026-11-22T13:36:32.121Z"
     }
   ]
 }
