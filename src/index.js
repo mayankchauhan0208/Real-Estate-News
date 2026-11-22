@@ -2038,6 +2038,17 @@ function env(name, fallback = "") {
   return process.env[name]?.trim() || fallback;
 }
 
+const DEFAULT_NEWS_API_URL = "https://api.propertymaster.com/api/news";
+const DEFAULT_NEWS_LIST_API_URL = "https://api.propertymaster.com/api/news/list";
+
+function getNewsApiUrl() {
+  return env("APP_API_URL") || DEFAULT_NEWS_API_URL;
+}
+
+function getNewsListApiUrl() {
+  return env("APP_LIST_API_URL") || env("BROKKET_NEWS_LIST_URL") || DEFAULT_NEWS_LIST_API_URL;
+}
+
 async function loadDotEnv() {
   try {
     const content = await fs.readFile(".env", "utf8");
@@ -7896,7 +7907,7 @@ async function writeSentIds(sentIds) {
 }
 
 async function reconcileRemoteSentIds() {
-  const listUrl = env("APP_LIST_API_URL") || env("BROKKET_NEWS_LIST_URL") || "https://www.brokket.app/api/more-pages/news/list";
+  const listUrl = getNewsListApiUrl();
   if (!listUrl) return { enabled: false, fetched: 0, pages: 0 };
 
   const apiKey = env("APP_LIST_API_KEY") || env("APP_API_KEY");
@@ -10641,16 +10652,22 @@ function assertReleaseModeContract(releaseMode) {
   }
 }
 
-function assertProductionCredentialContract(releaseMode) {
+function assertProductionApiContract(releaseMode) {
   if (releaseMode !== "PRODUCTION") return;
-  if (!env("APP_API_URL")) {
+  try {
+    const publishUrl = new URL(getNewsApiUrl());
+    const historyUrl = new URL(getNewsListApiUrl());
+    if (publishUrl.protocol !== "https:" || historyUrl.protocol !== "https:") {
+      throw new Error("Production API endpoints must use HTTPS.");
+    }
+  } catch {
     throw new Error("PRODUCTION_APP_API_URL_REQUIRED");
   }
-  if (!env("APP_API_KEY")) {
-    throw new Error("PRODUCTION_APP_API_KEY_REQUIRED");
-  }
-  if (!(env("APP_LIST_API_KEY") || env("APP_API_KEY"))) {
-    throw new Error("PRODUCTION_HISTORY_RECONCILIATION_CREDENTIAL_REQUIRED");
+}
+
+function assertProductionHistoryAvailable(releaseMode, reconciliation) {
+  if (releaseMode === "PRODUCTION" && reconciliation?.unavailable) {
+    throw new Error(`PRODUCTION_HISTORY_RECONCILIATION_REQUIRED: ${reconciliation.error || "unknown history endpoint failure"}`);
   }
 }
 
@@ -10722,12 +10739,8 @@ async function fetchSourceWithRecovery(sourceUrl, options = {}) {
 }
 
 async function pushArticle(article) {
-  const apiUrl = env("APP_API_URL");
+  const apiUrl = getNewsApiUrl();
   const apiKey = env("APP_API_KEY");
-
-  if (!apiUrl) {
-    throw new Error("APP_API_URL is required.");
-  }
 
   const headers = {
     "Content-Type": "application/json"
@@ -11205,7 +11218,7 @@ async function main() {
   const runMode = getRunMode();
   const releaseMode = getReleaseMode();
   assertReleaseModeContract(releaseMode);
-  assertProductionCredentialContract(releaseMode);
+  assertProductionApiContract(releaseMode);
   const backfillDateRange = getBackfillDateRange();
   assertRunModeContract(runMode, backfillDateRange);
   const backfillMode = runMode === RUN_MODE.BACKFILL;
@@ -11229,6 +11242,7 @@ async function main() {
     console.log(`Remote API reconciliation loaded ${reconciliation.fetched} existing article keys from ${reconciliation.pages} page(s).`);
   }
   if (reconciliation.unavailable) {
+    assertProductionHistoryAvailable(releaseMode, reconciliation);
     console.warn(`Remote history reconciliation unavailable; continuing with shared publication ledger: ${reconciliation.error}`);
   }
   const resendBackfill = backfillMode && getBooleanEnv("RESEND_BACKFILL");
@@ -11589,6 +11603,7 @@ async function main() {
 
     try {
       const latestReconciliation = await reconcileRemoteSentIds();
+      assertProductionHistoryAvailable(releaseMode, latestReconciliation);
       if (latestReconciliation.enabled) {
         for (const id of latestReconciliation.ids) sentIds.add(id);
         const alreadySent = getRejectionReasons(article, sentIds).some((reason) => reason === "filter 13: already sent");
@@ -11786,7 +11801,10 @@ export {
   getRunMode,
   getReleaseMode,
   assertReleaseModeContract,
-  assertProductionCredentialContract,
+  assertProductionApiContract,
+  assertProductionHistoryAvailable,
+  getNewsApiUrl,
+  getNewsListApiUrl,
   getBackfillDateRange,
   getCurrentNewsFreshnessRange,
   assertRunModeContract,

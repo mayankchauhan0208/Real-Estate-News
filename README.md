@@ -66,8 +66,9 @@ npm run local:backfill-other-cities -- --push
 
 Create a new GitHub repo for this folder, then add these repository secrets:
 
-- `APP_API_URL`: Your app API endpoint. Use your Brokket news API endpoint.
-- `APP_API_KEY`: Optional API key or token, only if your API starts requiring auth.
+- `APP_API_URL`: Optional override for the default PropertyMaster create endpoint, `https://api.propertymaster.com/api/news`.
+- `APP_LIST_API_URL`: Optional override for the default PropertyMaster history endpoint, `https://api.propertymaster.com/api/news/list`.
+- `APP_API_KEY`: Optional API key or token. The verified PropertyMaster create/history contract does not require one.
 Optional repository variable:
 
 - `MAX_ITEMS_PER_RUN`: Default is `80`.

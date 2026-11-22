@@ -17,9 +17,12 @@ const saved = Object.fromEntries(names.map((name) => [name, process.env[name]]))
 const {
   assertRunModeContract,
   assertReleaseModeContract,
-  assertProductionCredentialContract,
+  assertProductionApiContract,
+  assertProductionHistoryAvailable,
   getBackfillDateRange,
   getCurrentNewsFreshnessRange,
+  getNewsApiUrl,
+  getNewsListApiUrl,
   getReleaseMode,
   getRunMode,
   hasBackfillDateRange
@@ -105,14 +108,21 @@ try {
   process.env.DRY_RUN = "false";
   assert.equal(getReleaseMode(), "PRODUCTION");
   assert.doesNotThrow(() => assertReleaseModeContract(getReleaseMode()));
-  assert.throws(() => assertProductionCredentialContract(getReleaseMode()), /PRODUCTION_APP_API_URL_REQUIRED/);
+  assert.doesNotThrow(() => assertProductionApiContract(getReleaseMode()));
+  assert.equal(getNewsApiUrl(), "https://api.propertymaster.com/api/news");
+  assert.equal(getNewsListApiUrl(), "https://api.propertymaster.com/api/news/list");
+  assert.throws(
+    () => assertProductionHistoryAvailable(getReleaseMode(), { unavailable: true, error: "history endpoint failed" }),
+    /PRODUCTION_HISTORY_RECONCILIATION_REQUIRED/
+  );
+  assert.doesNotThrow(() => assertProductionHistoryAvailable("DRY_RUN", { unavailable: true, error: "history endpoint failed" }));
   console.log("TEST_H_PRODUCTION_RELEASE_CONTRACT=PASS");
 
+  process.env.APP_API_URL = "http://api.example.test/news";
+  assert.throws(() => assertProductionApiContract(getReleaseMode()), /PRODUCTION_APP_API_URL_REQUIRED/);
   process.env.APP_API_URL = "https://api.example.test/news";
-  assert.throws(() => assertProductionCredentialContract(getReleaseMode()), /PRODUCTION_APP_API_KEY_REQUIRED/);
-  process.env.APP_API_KEY = "test-write-and-list-token";
-  assert.doesNotThrow(() => assertProductionCredentialContract(getReleaseMode()));
-  console.log("TEST_H2_PRODUCTION_CREDENTIAL_CONTRACT=PASS");
+  assert.doesNotThrow(() => assertProductionApiContract(getReleaseMode()));
+  console.log("TEST_H2_PRODUCTION_API_CONTRACT=PASS");
 
   clearInputs();
   process.env.RELEASE_MODE = "PRODUCTION";

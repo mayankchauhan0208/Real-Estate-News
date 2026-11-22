@@ -109,16 +109,14 @@ jobs:
       - name: Build and verify filters
         run: npm run build
 
-      - name: Verify production credentials
+      - name: Verify production history endpoint
         if: ${{ github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION' }}
-        env:
-          APP_API_URL: ${{ secrets.APP_API_URL }}
-          APP_API_KEY: ${{ secrets.APP_API_KEY }}
-          APP_LIST_API_KEY: ${{ secrets.APP_LIST_API_KEY || secrets.APP_API_KEY }}
         run: |
-          test -n "$APP_API_URL" || { echo "PRODUCTION_APP_API_URL_REQUIRED"; exit 1; }
-          test -n "$APP_API_KEY" || { echo "PRODUCTION_APP_API_KEY_REQUIRED"; exit 1; }
-          test -n "$APP_LIST_API_KEY" || { echo "PRODUCTION_HISTORY_RECONCILIATION_CREDENTIAL_REQUIRED"; exit 1; }
+          curl --fail --silent --show-error --max-time 30 \
+            --request POST \
+            --header "Content-Type: application/json" \
+            --data '{"page":0,"size":1}' \
+            https://api.propertymaster.com/api/news/list >/dev/null
 
       - name: Fetch and push news
         run: npm start
@@ -127,10 +125,10 @@ jobs:
           # dispatched run is non-mutating unless PRODUCTION is selected.
           RELEASE_MODE: ${{ github.event_name == 'schedule' && 'PRODUCTION' || github.event.inputs.mode }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.mode == 'DRY_RUN' && 'true' || 'false' }}
-          APP_API_URL: ${{ (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') && secrets.APP_API_URL || '' }}
-          APP_API_KEY: ${{ (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') && secrets.APP_API_KEY || '' }}
-          APP_LIST_API_URL: ${{ (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') && secrets.APP_LIST_API_URL || '' }}
-          APP_LIST_API_KEY: ${{ (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') && (secrets.APP_LIST_API_KEY || secrets.APP_API_KEY) || '' }}
+          APP_API_URL: ${{ (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') && 'https://api.propertymaster.com/api/news' || '' }}
+          APP_API_KEY: ""
+          APP_LIST_API_URL: ${{ (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') && 'https://api.propertymaster.com/api/news/list' || '' }}
+          APP_LIST_API_KEY: ""
           GITHUB_TOKEN: ${{ (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') && github.token || '' }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_REF_NAME: ${{ github.ref_name }}

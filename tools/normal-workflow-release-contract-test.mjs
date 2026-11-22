@@ -21,10 +21,8 @@ assert.match(workflow, /^\s+BACKFILL_FROM: ""$/m);
 assert.match(workflow, /^\s+BACKFILL_TO: ""$/m);
 assert.match(workflow, /^\s+RESEND_BACKFILL: "false"$/m);
 assert.match(workflow, /DRY_RUN: \$\{\{ github\.event_name == 'workflow_dispatch' && github\.event\.inputs\.mode == 'DRY_RUN' && 'true' \|\| 'false' \}\}/);
-assert.match(workflow, /- name: Verify production credentials/);
-assert.match(workflow, /PRODUCTION_APP_API_URL_REQUIRED/);
-assert.match(workflow, /PRODUCTION_APP_API_KEY_REQUIRED/);
-assert.match(workflow, /PRODUCTION_HISTORY_RECONCILIATION_CREDENTIAL_REQUIRED/);
+assert.match(workflow, /- name: Verify production history endpoint/);
+assert.match(workflow, /https:\/\/api\.propertymaster\.com\/api\/news\/list/);
 
 const fetchStepStart = workflow.indexOf("      - name: Fetch and push news");
 const fetchStepEnd = workflow.indexOf("      - name: Persist scheduler checkpoint", fetchStepStart);
@@ -33,7 +31,11 @@ const fetchStep = workflow.slice(fetchStepStart, fetchStepEnd);
 for (const variable of ["APP_API_URL", "APP_API_KEY", "APP_LIST_API_URL", "APP_LIST_API_KEY", "GITHUB_TOKEN"]) {
   const line = fetchStep.split(/\r?\n/).find((candidate) => candidate.trimStart().startsWith(`${variable}:`));
   assert.ok(line, `${variable} must be configured`);
-  assert.match(line, /github\.event\.inputs\.mode == 'PRODUCTION'/, `${variable} must be withheld from manual dry runs`);
+  if (variable === "APP_API_KEY" || variable === "APP_LIST_API_KEY") {
+    assert.match(line, /""/, `${variable} must remain empty for the verified tokenless API contract`);
+  } else {
+    assert.match(line, /github\.event\.inputs\.mode == 'PRODUCTION'/, `${variable} must be withheld from manual dry runs`);
+  }
 }
 
 const protectedStateGate = "if: ${{ always() && (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') }}";
