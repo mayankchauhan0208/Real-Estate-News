@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-22T10:00:21.999Z",
+  "updatedAt": "2026-11-22T10:00:24.056Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15022,7 +15022,7 @@
     },
     {
       "claimId": "8955a05c-e3db-44c6-a3e9-87eb435c3523",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/real-estate/from-entire-towers-to-entire-floors-mumbai-investors-drive-big-ticket-property-deals-101795272423096.html",
         "title-city:from entire towers to entire floors mumbai investors drive big ticket property deals|mumbai",
@@ -15043,7 +15043,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-22T10:00:21.999Z",
-      "expiresAt": "2026-11-22T10:15:21.999Z"
+      "expiresAt": "2026-11-22T10:15:21.999Z",
+      "finalizedAt": "2026-11-22T10:00:24.056Z"
     }
   ]
 }
