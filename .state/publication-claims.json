@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-22T13:23:00.195Z",
+  "updatedAt": "2026-11-22T13:23:02.539Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15411,7 +15411,7 @@
     },
     {
       "claimId": "af3bff16-3348-4210-a232-516d24cb8a01",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/industry/delhi-jal-board-plans-to-monetise-land-and-buildings-for-revenue-generation/136071257",
         "title-city:delhi jal board plans to monetise land and buildings for revenue generation|new_delhi",
@@ -15431,7 +15431,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-22T13:23:00.195Z",
-      "expiresAt": "2026-11-22T13:38:00.195Z"
+      "expiresAt": "2026-11-22T13:38:00.195Z",
+      "finalizedAt": "2026-11-22T13:23:02.539Z"
     }
   ]
 }
