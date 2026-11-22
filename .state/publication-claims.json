@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-22T13:20:57.538Z",
+  "updatedAt": "2026-11-22T13:21:07.455Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15123,6 +15123,60 @@
       "claimedAt": "2026-11-22T13:20:55.066Z",
       "expiresAt": "2026-11-22T13:35:55.066Z",
       "finalizedAt": "2026-11-22T13:20:57.538Z"
+    },
+    {
+      "claimId": "45abc29b-03bc-48b6-bfb0-44c5875095d5",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/ametek-buidtech-targets-rs-150-crore-with-luxury-serviced-apartments-in-dehradun/articleshow/135990441.cms",
+        "title-city:ametek buidtech targets rs 150 crore with luxury serviced apartments in dehradun|dehradun",
+        "dedupe:5dce6a91f31071af69adf6aeffeb6eef10b4a8f92213a083797b17cb2b8c36c3",
+        "dedupe:d237c6697d40e716bf26e5d0e12267b39b7be0cf03ad25471a0d8edd089d741e",
+        "dedupe:040408f1200e0f8f9fd7d369e03d0c881bd4359bf5b0132c18d8dd53a6694ba8",
+        "dedupe:d4b09fa21059b7281cee9ec4b48b4972dbff828a9baf973b9bfa5bed7abb55e7",
+        "dedupe:ametek buidtech targets serviced apartments dehradun|amount:150-crore|dehradun",
+        "dedupe:d549ce014cd3ce0be042954564819ac904bf81c0a61fabf582399607233e367b",
+        "dedupe:eaad41356bd1697120034f1ee261f00a46ed1a4daafcacba732b30f7c4dc0c7f"
+      ],
+      "semanticIdentity": {
+        "city": "dehradun",
+        "canonicalEventCity": "dehradun",
+        "normalizedBuilder": "county-group",
+        "normalizedProject": "",
+        "canonicalEventType": "project-launch",
+        "builder": "county-group",
+        "project": "",
+        "eventType": "project-launch",
+        "numericAnchors": [
+          "00:number",
+          "05:number",
+          "150:crore",
+          "160:number",
+          "19:number",
+          "2.5:number",
+          "2026:number",
+          "20:number",
+          "25:number",
+          "2:lakh",
+          "308:number",
+          "35:number",
+          "400:number",
+          "50:number",
+          "830:crore"
+        ],
+        "canonicalEventFingerprint": "county-group|dehradun|project-launch|00:number,05:number,150:crore",
+        "semanticClusterId": "cluster:9204679767d9df6fd278838c"
+      },
+      "publishedCity": "dehradun",
+      "canonicalEventCity": "dehradun",
+      "canonicalEventFingerprint": "county-group|dehradun|project-launch|00:number,05:number,150:crore",
+      "semanticClusterId": "cluster:9204679767d9df6fd278838c",
+      "city": [
+        "dehradun"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:21:07.455Z",
+      "expiresAt": "2026-11-22T13:36:07.455Z"
     }
   ]
 }
