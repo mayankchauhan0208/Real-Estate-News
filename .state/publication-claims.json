@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-22T13:22:37.692Z",
+  "updatedAt": "2026-11-22T13:22:47.890Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15383,6 +15383,30 @@
       "claimedAt": "2026-11-22T13:22:35.424Z",
       "expiresAt": "2026-11-22T13:37:35.424Z",
       "finalizedAt": "2026-11-22T13:22:37.692Z"
+    },
+    {
+      "claimId": "9c1c6112-8116-45db-85a6-7ba59a5a5b5a",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://dinamalar.com/news/tamil-nadu-district-news-madurai/dengue-fever-75-people-allowed/4382837",
+        "title-city:ட ங க க ய ச சல 75 ப ர அன மத|madurai",
+        "dedupe:c666ad1e96b5c2b1d8055e659df85da56f8ad63d7037cfc6902e9d969bca6dd0",
+        "dedupe:5acb0400ffb57ff9195a0cae69f3638d52a92057dfba960ec82122b555d3e28d",
+        "dedupe:1a397ff60c7b9cdfa10590c5ea41708fc8ac0c29449459078dddfa6952b8b369",
+        "dedupe:137e6ba397fa09fa267750ea60228c62fc92cc90c76aa064ed46893fc99c7968",
+        "dedupe:0fd689a1a36457052ee8173aab714b63d46e2f78b1e093ae293a2b3026d3d255"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "madurai",
+      "canonicalEventCity": "madurai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "madurai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:22:47.890Z",
+      "expiresAt": "2026-11-22T13:37:47.890Z"
     }
   ]
 }
