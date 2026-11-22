@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-22T13:22:35.424Z",
+  "updatedAt": "2026-11-22T13:22:37.692Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15360,7 +15360,7 @@
     },
     {
       "claimId": "81aa4834-800d-4b10-a575-b3fa98737254",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://gulshangroup.com/gulshan-taj-skyscape",
         "title-city:gulshan taj skyscape taj managed residences in noida|noida",
@@ -15381,7 +15381,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-22T13:22:35.424Z",
-      "expiresAt": "2026-11-22T13:37:35.424Z"
+      "expiresAt": "2026-11-22T13:37:35.424Z",
+      "finalizedAt": "2026-11-22T13:22:37.692Z"
     }
   ]
 }
