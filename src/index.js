@@ -10639,6 +10639,19 @@ function assertReleaseModeContract(releaseMode) {
   }
 }
 
+function assertProductionCredentialContract(releaseMode) {
+  if (releaseMode !== "PRODUCTION") return;
+  if (!env("APP_API_URL")) {
+    throw new Error("PRODUCTION_APP_API_URL_REQUIRED");
+  }
+  if (!env("APP_API_KEY")) {
+    throw new Error("PRODUCTION_APP_API_KEY_REQUIRED");
+  }
+  if (!(env("APP_LIST_API_KEY") || env("APP_API_KEY"))) {
+    throw new Error("PRODUCTION_HISTORY_RECONCILIATION_CREDENTIAL_REQUIRED");
+  }
+}
+
 async function fetchSourceWithRetry(sourceUrl, timeoutMsOverride = getSourceTimeoutMs(), options = {}) {
   const maxAttempts = getSourceRetryAttempts();
   let lastError;
@@ -11190,6 +11203,7 @@ async function main() {
   const runMode = getRunMode();
   const releaseMode = getReleaseMode();
   assertReleaseModeContract(releaseMode);
+  assertProductionCredentialContract(releaseMode);
   const backfillDateRange = getBackfillDateRange();
   assertRunModeContract(runMode, backfillDateRange);
   const backfillMode = runMode === RUN_MODE.BACKFILL;
@@ -11770,6 +11784,7 @@ export {
   getRunMode,
   getReleaseMode,
   assertReleaseModeContract,
+  assertProductionCredentialContract,
   getBackfillDateRange,
   getCurrentNewsFreshnessRange,
   assertRunModeContract,

@@ -21,9 +21,17 @@ assert.match(workflow, /^\s+BACKFILL_FROM: ""$/m);
 assert.match(workflow, /^\s+BACKFILL_TO: ""$/m);
 assert.match(workflow, /^\s+RESEND_BACKFILL: "false"$/m);
 assert.match(workflow, /DRY_RUN: \$\{\{ github\.event_name == 'workflow_dispatch' && github\.event\.inputs\.mode == 'DRY_RUN' && 'true' \|\| 'false' \}\}/);
+assert.match(workflow, /- name: Verify production credentials/);
+assert.match(workflow, /PRODUCTION_APP_API_URL_REQUIRED/);
+assert.match(workflow, /PRODUCTION_APP_API_KEY_REQUIRED/);
+assert.match(workflow, /PRODUCTION_HISTORY_RECONCILIATION_CREDENTIAL_REQUIRED/);
 
+const fetchStepStart = workflow.indexOf("      - name: Fetch and push news");
+const fetchStepEnd = workflow.indexOf("      - name: Persist scheduler checkpoint", fetchStepStart);
+assert.ok(fetchStepStart >= 0 && fetchStepEnd > fetchStepStart, "fetch step must be present before state persistence");
+const fetchStep = workflow.slice(fetchStepStart, fetchStepEnd);
 for (const variable of ["APP_API_URL", "APP_API_KEY", "APP_LIST_API_URL", "APP_LIST_API_KEY", "GITHUB_TOKEN"]) {
-  const line = workflow.split(/\r?\n/).find((candidate) => candidate.trimStart().startsWith(`${variable}:`));
+  const line = fetchStep.split(/\r?\n/).find((candidate) => candidate.trimStart().startsWith(`${variable}:`));
   assert.ok(line, `${variable} must be configured`);
   assert.match(line, /github\.event\.inputs\.mode == 'PRODUCTION'/, `${variable} must be withheld from manual dry runs`);
 }

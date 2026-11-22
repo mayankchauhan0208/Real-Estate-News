@@ -7,13 +7,17 @@ const names = [
   "BACKFILL_TO",
   "DEFAULT_LOOKBACK_DAYS",
   "DRY_RUN",
-  "RELEASE_MODE"
+  "RELEASE_MODE",
+  "APP_API_URL",
+  "APP_API_KEY",
+  "APP_LIST_API_KEY"
 ];
 const saved = Object.fromEntries(names.map((name) => [name, process.env[name]]));
 
 const {
   assertRunModeContract,
   assertReleaseModeContract,
+  assertProductionCredentialContract,
   getBackfillDateRange,
   getCurrentNewsFreshnessRange,
   getReleaseMode,
@@ -101,7 +105,14 @@ try {
   process.env.DRY_RUN = "false";
   assert.equal(getReleaseMode(), "PRODUCTION");
   assert.doesNotThrow(() => assertReleaseModeContract(getReleaseMode()));
+  assert.throws(() => assertProductionCredentialContract(getReleaseMode()), /PRODUCTION_APP_API_URL_REQUIRED/);
   console.log("TEST_H_PRODUCTION_RELEASE_CONTRACT=PASS");
+
+  process.env.APP_API_URL = "https://api.example.test/news";
+  assert.throws(() => assertProductionCredentialContract(getReleaseMode()), /PRODUCTION_APP_API_KEY_REQUIRED/);
+  process.env.APP_API_KEY = "test-write-and-list-token";
+  assert.doesNotThrow(() => assertProductionCredentialContract(getReleaseMode()));
+  console.log("TEST_H2_PRODUCTION_CREDENTIAL_CONTRACT=PASS");
 
   clearInputs();
   process.env.RELEASE_MODE = "PRODUCTION";
