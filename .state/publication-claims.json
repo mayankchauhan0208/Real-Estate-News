@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-22T13:23:12.400Z",
+  "updatedAt": "2026-11-22T13:23:14.856Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15436,7 +15436,7 @@
     },
     {
       "claimId": "49c92fa9-b1e5-400b-b001-7c781318f508",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://jagran.com/uttar-pradesh/noida-greater-noida-greening-authority-spends-20-cr-on-residential-sectors-40444732.html",
         "title-city:ग र टर न एड बन ग हर भर और स दर य जन क क म श र प र ध करण खर च कर ग 20 कर ड र पय|noida",
@@ -15457,7 +15457,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-22T13:23:12.400Z",
-      "expiresAt": "2026-11-22T13:38:12.400Z"
+      "expiresAt": "2026-11-22T13:38:12.400Z",
+      "finalizedAt": "2026-11-22T13:23:14.856Z"
     }
   ]
 }
