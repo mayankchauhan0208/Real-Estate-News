@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-22T13:22:12.486Z",
+  "updatedAt": "2026-11-22T13:22:22.846Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15332,6 +15332,30 @@
       "claimedAt": "2026-11-22T13:22:09.916Z",
       "expiresAt": "2026-11-22T13:37:09.916Z",
       "finalizedAt": "2026-11-22T13:22:12.486Z"
+    },
+    {
+      "claimId": "75b584d2-f7e8-4e60-bf2a-57adb1cb2011",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/no-takers-for-madhya-pradesh-governments-117-year-old-edward-villa-in-mumbai/136044453",
+        "title-city:no takers for madhya pradesh government s 117 year old edward villa in mumbai|mumbai",
+        "dedupe:1140ac04b0b79b6a77fd3f7f23d039e012c7700b0389395736ad999595107d63",
+        "dedupe:3790402c58489f3be6c2d6d5219b76931b1a1445dac56e6f4beaf6cc748966a6",
+        "dedupe:346f0748227d14a2700174ff9eda4aa80c380f059ff37a33d36fb74f6b1fbce2",
+        "dedupe:634f815bb81e041ce23b49812c53def46c48474643dd8a4082f08a004ed7e712",
+        "dedupe:a1577532154e9bffbeeaae20f5264975d176488f6868d71e5aedfef24de8dd06"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:22:22.846Z",
+      "expiresAt": "2026-11-22T13:37:22.846Z"
     }
   ]
 }
