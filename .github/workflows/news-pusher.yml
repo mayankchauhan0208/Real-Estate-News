@@ -2,8 +2,9 @@ name: News API Pusher
 
 on:
   schedule:
-    # 13:30 IST first, then once every hour (cron is UTC).
-    - cron: "0 * * * *"
+    # 13:33 IST first, then once every hour (cron is UTC). The three-minute
+    # offset avoids the hosted scheduler's UTC top-of-hour congestion.
+    - cron: "3 * * * *"
   workflow_dispatch:
     inputs:
       mode:

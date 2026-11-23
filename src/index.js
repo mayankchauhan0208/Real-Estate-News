@@ -7149,16 +7149,20 @@ function hasConcreteMaterialPropertyEvent(article) {
 }
 
 function isGenericPropertyCommentaryWithoutConcreteEvent(article) {
-  // A city-specific, positive property-market update is substantive coverage
-  // in its own right. It still has to meet the universal full-evidence, geo,
-  // negative, and duplicate gates; it merely is not a project-event story.
-  if (isPositiveCityMarketArticle(article)) return false;
-
   const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
   const title = getArticlePrimaryText(article);
   const genericMarketHeadline = /\b(?:drop|rise|increase|decline|lift)\b.*\b(?:home|housing) prices?|\b(?:drop|decline)\b.*\b(?:home|housing) launches?\b/i.test(title);
+  // Explanatory "how/why ... drives the property market" pieces can contain
+  // property-development vocabulary without reporting a discrete event.
+  const explanatoryMarketAnalysisHeadline = /\b(?:how|why)\b[^.!?]{0,140}\b(?:driv(?:e|es|ing)|shap(?:e|es|ing)|boost(?:s|ing)|transform(?:s|ing)|affect(?:s|ing))\b[^.!?]{0,140}\b(?:property|real estate|housing|market)\b/i.test(title);
+  if (explanatoryMarketAnalysisHeadline) return true;
+
+  // City-level market reports remain allowed coverage when they are not
+  // explanatory analysis disguised as a current material event.
+  if (isPositiveCityMarketArticle(article)) return false;
+
   const commentary = /\b(?:market outlook|market trend|market trends|price commentary|prices? rise|prices? fell|demand|investment outlook|industry analysis|city attractiveness|tier[- ]?[23]|forecast|outlook|trend|trends|growth likely|what will drive|credibility metric|market statistics|sales growth|drop in .*?(?:home|housing) launches?|home prices?|housing prices?|land costs?)\b/i.test(text);
-  return genericMarketHeadline || (commentary && !hasConcreteMaterialPropertyEvent(article));
+  return genericMarketHeadline || explanatoryMarketAnalysisHeadline || (commentary && !hasConcreteMaterialPropertyEvent(article));
 }
 
 function isGenericPropertyGuideOrRecommendation(article) {

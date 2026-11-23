@@ -45,6 +45,16 @@ const propertyLinkedInfrastructure = {
   articleText: "The approved metro corridor will connect new sectors and unlock a named mixed-use development zone, supporting residential housing and commercial offices along the corridor."
 };
 
+const gurugramInfrastructureMarketCommentary = {
+  ...common,
+  cityCode: "gurugram",
+  source: "Outlook Money",
+  title: "Golf Course Extension Road: How Infrastructure Upgrades Are Driving Gurugram's Property Market",
+  description: "Proposed road widening and underpasses are expected to improve connectivity and residential appeal.",
+  newsLink: "https://www.outlookmoney.com/personal-finance/golf-course-extension-road-how-infrastructure-upgrades-are-driving-gurugrams-property-market",
+  articleText: "Golf Course Extension Road is a luxury housing corridor in Gurugram. Proposed eight-laning, proposed underpasses and planned connectivity are expected to improve access. Analysts say property values and rentals have risen, and developers expect future residential growth. The article is a market analysis and does not report an approved project, authority decision, construction milestone, launch, sale, lease or other completed material property event."
+};
+
 const manesarFlyoverWithoutPropertyNexus = {
   ...common,
   cityCode: "gurugram",
@@ -321,6 +331,8 @@ assert.equal(isPublishableArticle(dda, sentIds), false);
 assert.match(getRejectionReasons(dda, sentIds).join("; "), /adverse property\/court event in readable full article/);
 assert.equal(isPublishableArticle(mumbaiRegistrations, sentIds), true);
 assert.equal(isPublishableArticle(propertyLinkedInfrastructure, sentIds), true);
+assert.equal(isPublishableArticle(gurugramInfrastructureMarketCommentary, sentIds), false);
+assert.match(getRejectionReasons(gurugramInfrastructureMarketCommentary, sentIds).join("; "), /commentary without a concrete material property event|civic\/planning item without a material property nexus/);
 assert.equal(isPublishableArticle(manesarFlyoverWithoutPropertyNexus, sentIds), false);
 assert.match(getRejectionReasons(manesarFlyoverWithoutPropertyNexus, sentIds).join("; "), /not positive target real-estate|POSITIVE_INFRASTRUCTURE_WITHOUT_SUFFICIENT_REAL_ESTATE_NEXUS/);
 assert.equal(isPublishableArticle(unreadableOrdinaryNews, sentIds), false);
