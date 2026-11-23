@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-23T22:56:15.467Z",
+  "updatedAt": "2026-11-23T22:56:17.293Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15643,7 +15643,7 @@
     },
     {
       "claimId": "a9e6616c-8947-4a06-8cdf-56525f4ec12e",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/axa-global-leases-2-58-lakh-sq-ft-office-in-bengaluru-in-rs-334-cr-deal/articleshow/136101490.cms",
         "title-city:axa global leases 2 58 lakh sq ft office in bengaluru in rs 334 cr deal|bangalore",
@@ -15666,7 +15666,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-23T22:56:15.467Z",
-      "expiresAt": "2026-11-23T23:11:15.467Z"
+      "expiresAt": "2026-11-23T23:11:15.467Z",
+      "finalizedAt": "2026-11-23T22:56:17.293Z"
     }
   ]
 }
