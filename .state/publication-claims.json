@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-22T10:00:24.056Z",
+  "updatedAt": "2026-11-23T00:50:01.950Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15045,6 +15045,497 @@
       "claimedAt": "2026-11-22T10:00:21.999Z",
       "expiresAt": "2026-11-22T10:15:21.999Z",
       "finalizedAt": "2026-11-22T10:00:24.056Z"
+    },
+    {
+      "claimId": "b350fd94-4271-4e8d-b4db-a332ba3acd7a",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/delhipanipatkarnal-namo-bharat-corridor-to-boost-real-estate-in-the-region/articleshow/136054780.cms",
+        "title-city:delhi panipat karnal namo bharat corridor to boost real estate in the region|panipat",
+        "dedupe:792991818558ee580a89b8e558663f17011fc995860fbbd41b759d48a528501e",
+        "dedupe:aeb66c292104e074074cc9610f0300f0a98a0b5fce953e3cb4e575178d494bd2",
+        "dedupe:2069617c68d3fbf266cc0a12caebfb16051710254acacf7250d093d81859a0fe",
+        "dedupe:10203f69c828a27efc65b9d7c05d88bc2017c69bad150f360bbd80e853748b06"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "panipat",
+      "canonicalEventCity": "panipat",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "panipat"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:20:35.957Z",
+      "expiresAt": "2026-11-22T13:35:35.957Z",
+      "finalizedAt": "2026-11-22T13:20:38.472Z"
+    },
+    {
+      "claimId": "d84dd8e2-7464-4839-8d59-ea0ec92e6e6c",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/county-group-inks-jda-for-rs-830-crore-land-in-noida/articleshow/135981780.cms",
+        "title-city:county group inks jda for rs 830 crore land in noida|noida",
+        "dedupe:165108249889079325bef4144e77d3b44d56f74edfd765fb38f59925564e96e3",
+        "dedupe:a20db808ce8e617ec8dac97c269931804d956228283c4b2b0fb1c9ee67f27d0e",
+        "dedupe:d5962ed0b3851bb4ff58eee5496964d349d26f2229c269585f5ce82ad24ad206",
+        "dedupe:4dc21d7fb0237d15b084f3b4ce564177139a514e1fdce5bc1c35fd150ba66e6b",
+        "dedupe:county group inks jda land noida|amount:830-crore|noida",
+        "dedupe:fed6d482fa7075bc06247809d57516465abaf9eaed338ef8595f1b803a4ab15a",
+        "dedupe:8fca1a3aecb5a1b02c12a41caa03b484f48a7819d2c552b554ff2e1352433d23"
+      ],
+      "semanticIdentity": {
+        "city": "noida",
+        "canonicalEventCity": "noida",
+        "normalizedBuilder": "county-group",
+        "normalizedProject": "",
+        "canonicalEventType": "project-launch",
+        "builder": "county-group",
+        "project": "",
+        "eventType": "project-launch",
+        "numericAnchors": [
+          "00:number",
+          "01:number",
+          "150:number",
+          "15:number",
+          "19:number",
+          "2.9:acre",
+          "2026:number",
+          "24.71:acre",
+          "25:acre",
+          "25:number",
+          "5.80:acre",
+          "50.05:number",
+          "8000:home",
+          "830:crore"
+        ],
+        "canonicalEventFingerprint": "county-group|noida|project-launch|00:number,01:number,150:number",
+        "semanticClusterId": "cluster:f4562f53928cc91ab5da9d94"
+      },
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "county-group|noida|project-launch|00:number,01:number,150:number",
+      "semanticClusterId": "cluster:f4562f53928cc91ab5da9d94",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:20:55.066Z",
+      "expiresAt": "2026-11-22T13:35:55.066Z",
+      "finalizedAt": "2026-11-22T13:20:57.538Z"
+    },
+    {
+      "claimId": "45abc29b-03bc-48b6-bfb0-44c5875095d5",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/ametek-buidtech-targets-rs-150-crore-with-luxury-serviced-apartments-in-dehradun/articleshow/135990441.cms",
+        "title-city:ametek buidtech targets rs 150 crore with luxury serviced apartments in dehradun|dehradun",
+        "dedupe:5dce6a91f31071af69adf6aeffeb6eef10b4a8f92213a083797b17cb2b8c36c3",
+        "dedupe:d237c6697d40e716bf26e5d0e12267b39b7be0cf03ad25471a0d8edd089d741e",
+        "dedupe:040408f1200e0f8f9fd7d369e03d0c881bd4359bf5b0132c18d8dd53a6694ba8",
+        "dedupe:d4b09fa21059b7281cee9ec4b48b4972dbff828a9baf973b9bfa5bed7abb55e7",
+        "dedupe:ametek buidtech targets serviced apartments dehradun|amount:150-crore|dehradun",
+        "dedupe:d549ce014cd3ce0be042954564819ac904bf81c0a61fabf582399607233e367b",
+        "dedupe:eaad41356bd1697120034f1ee261f00a46ed1a4daafcacba732b30f7c4dc0c7f"
+      ],
+      "semanticIdentity": {
+        "city": "dehradun",
+        "canonicalEventCity": "dehradun",
+        "normalizedBuilder": "county-group",
+        "normalizedProject": "",
+        "canonicalEventType": "project-launch",
+        "builder": "county-group",
+        "project": "",
+        "eventType": "project-launch",
+        "numericAnchors": [
+          "00:number",
+          "05:number",
+          "150:crore",
+          "160:number",
+          "19:number",
+          "2.5:number",
+          "2026:number",
+          "20:number",
+          "25:number",
+          "2:lakh",
+          "308:number",
+          "35:number",
+          "400:number",
+          "50:number",
+          "830:crore"
+        ],
+        "canonicalEventFingerprint": "county-group|dehradun|project-launch|00:number,05:number,150:crore",
+        "semanticClusterId": "cluster:9204679767d9df6fd278838c"
+      },
+      "publishedCity": "dehradun",
+      "canonicalEventCity": "dehradun",
+      "canonicalEventFingerprint": "county-group|dehradun|project-launch|00:number,05:number,150:crore",
+      "semanticClusterId": "cluster:9204679767d9df6fd278838c",
+      "city": [
+        "dehradun"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:21:07.455Z",
+      "expiresAt": "2026-11-22T13:36:07.455Z",
+      "finalizedAt": "2026-11-22T13:21:09.722Z"
+    },
+    {
+      "claimId": "a8d017f3-1f67-4170-9924-d2bf73b0e4b4",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/bank-of-america-leases-over-1-million-sq-ft-in-mindspace-hyderabad-for-gcc/articleshow/135992424.cms",
+        "title-city:bank of america leases over 1 million sq ft in mindspace hyderabad for gcc|hyderabad",
+        "dedupe:99d79a04883f46370e7b3f598525858e762b43ebb0aae99ce02c557e040b07f7",
+        "dedupe:e55685cfe88371d2d131efb2c7ac5086013863e48a73c6a0da95505fe2db4279",
+        "dedupe:122a8b575df54812fc143b7a52899adfddf1d6d209691f97d901830c86dacad7",
+        "dedupe:a44f19af9fcdfb5e9f1d9ecb4f268f55a5bfd78e2aece9001d38e4dd18bba8a7",
+        "dedupe:e6a9243c4ac2960dbf31bdd7adfd530a09950839b15e44f8cb9cc65f82f3ca3d",
+        "dedupe:c9fb634036f20d510aea9f8c1eb55de14aad2104181df2fd17a80f20232d1398"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:21:19.810Z",
+      "expiresAt": "2026-11-22T13:36:19.810Z",
+      "finalizedAt": "2026-11-22T13:21:21.974Z"
+    },
+    {
+      "claimId": "a3cc139f-6882-43af-80f9-614e01cf641d",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/signature-global-secures-development-rights-over-10-18-acre-land-in-sohna/136012099",
+        "title-city:signature global secures development rights over 10 18 acre land in sohna|gurugram",
+        "dedupe:405cec4730cf31ab775a98c36265c42572dc682dad830a305ba4431e7982a987",
+        "dedupe:bde187f2e616307733e63406d3d5579d9a22e17aa2131f0b5519eeccbb713e48",
+        "dedupe:107f532e96f459b5da853a55be7e5253e4f35e7ce47316cdad1fb463a11abc2f",
+        "dedupe:signature global secures development rights acre land sohna|scale:10.18-acre|gurugram",
+        "dedupe:c4ff48223787661f5021de56bcbe152dbb5a995bacb2b881260efab54c7271a8",
+        "dedupe:d12cbce5aa77c67a4a8067977656b1a0c92fa86cbe45d085baf64ab2ed553982"
+      ],
+      "semanticIdentity": {
+        "city": "gurugram",
+        "canonicalEventCity": "gurugram",
+        "normalizedBuilder": "signatureglobal",
+        "normalizedProject": "",
+        "canonicalEventType": "land-acquisition",
+        "builder": "signatureglobal",
+        "project": "",
+        "eventType": "land-acquisition",
+        "numericAnchors": [
+          "0.86:million sq ft",
+          "0.86:number",
+          "09:number",
+          "10.18:acre",
+          "100:number",
+          "19:number",
+          "1:number",
+          "2.623:acre",
+          "2026:number",
+          "20:number",
+          "2:number",
+          "7.557:acre"
+        ],
+        "canonicalEventFingerprint": "signatureglobal|gurugram|land-acquisition|0.86:million sq ft,0.86:number,09:number",
+        "semanticClusterId": "cluster:aa36e93eb5c5769674f6d6e4"
+      },
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "signatureglobal|gurugram|land-acquisition|0.86:million sq ft,0.86:number,09:number",
+      "semanticClusterId": "cluster:aa36e93eb5c5769674f6d6e4",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:21:32.121Z",
+      "expiresAt": "2026-11-22T13:36:32.121Z",
+      "finalizedAt": "2026-11-22T13:21:34.307Z"
+    },
+    {
+      "claimId": "34e744cd-e36c-4668-8326-2e31b4e0cd5d",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/commercialisation-may-cost-heritage-homes-in-ahmedabad-their-tdr-benefits/136013300",
+        "title-city:commercialisation may cost heritage homes in ahmedabad their tdr benefits|ahmedabad",
+        "dedupe:023738f5d1e34c9e429dbe31f77edc958516bbe70071d6e2c36ecc0561b72115",
+        "dedupe:45464daac72edf1828d4c901cab23135a895e0e41a0220cb7f6b08d2a07da99d",
+        "dedupe:4fdcb30e1806f3c4148f9210c0a05483975bbbc84c2c8fc019962b4d68bc2ce0",
+        "dedupe:d294ac98d68bb76c9a204060043fe49a7fe6fb10666ba4f87d258a28f565c863",
+        "dedupe:6a135a9ee0791e38fef4ad9c046ca883349e242b558f9616c286e3c1a6680d0f"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "ahmedabad",
+      "canonicalEventCity": "ahmedabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "ahmedabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:21:45.050Z",
+      "expiresAt": "2026-11-22T13:36:45.050Z",
+      "finalizedAt": "2026-11-22T13:21:47.653Z"
+    },
+    {
+      "claimId": "08dac894-def8-4b75-893f-5a7422729cf6",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://hilifebuilders.in/luxury-apartments-thrissur-support-spaces",
+        "title-city:luxury apartments in thrissur the support spaces that matter|thrissur",
+        "dedupe:6753b05b344505017565ac2c7ffabd40d93a4c1bb3e10b3288f3b128b9c58688",
+        "dedupe:58531515a6c00b3caecd8e64df46c28ace944e9e00e9a92807beb2b340e3be5b",
+        "dedupe:dbe9a145d26444f8c4436e8cb9b800f70a423b527fe4a40777184927f7bd6d62",
+        "dedupe:9835b1cc2253a57e330716a962beec7c6a425b7cf90ab7d464c86612271d94f6",
+        "dedupe:5f1eabea07e3a134f68c58442772f9906b177cbd57fa3d8d2a54e6570eb2666b",
+        "dedupe:c9d496cf57120ad357dc64da4bc10bcb98b6e84edf138a643a02e6c008656ebf"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "thrissur",
+      "canonicalEventCity": "thrissur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "thrissur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:21:57.531Z",
+      "expiresAt": "2026-11-22T13:36:57.531Z",
+      "finalizedAt": "2026-11-22T13:21:59.776Z"
+    },
+    {
+      "claimId": "65b1fddc-425d-43cf-b6c3-d150e0703812",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://mhada.gov.in/en/content/mill-workers-housing-lottery-2020",
+        "title-city:mill workers lottery 2020|navi_mumbai",
+        "dedupe:b09067496a6d31ce46d363d5a7ee55ad7aafe7fdad9b47ab9cba2ba0eb6c0c4d",
+        "dedupe:3a33b5e8a5c6b2671d24cb52f24a287e94020fcf55d59dee355c497e136e7957",
+        "dedupe:c92bfa8d4d731c5978c6e106651a03397c9e48c7a5d36b524c28f505198c7716",
+        "dedupe:22664e3ca09106ceda01e1ddab92959e68bbddab8dbbd168b639e198506b7642",
+        "dedupe:081ca8ea9d8523deb0f12c59d11d5418f076be8ca83f4923bf2440d9713a5fe1",
+        "dedupe:5910edb7b761670c25566c07249a7ea839e7bdc6c97033d76e6037f0659a948b"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "navi_mumbai",
+      "canonicalEventCity": "navi_mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "navi_mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:22:09.916Z",
+      "expiresAt": "2026-11-22T13:37:09.916Z",
+      "finalizedAt": "2026-11-22T13:22:12.486Z"
+    },
+    {
+      "claimId": "75b584d2-f7e8-4e60-bf2a-57adb1cb2011",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/no-takers-for-madhya-pradesh-governments-117-year-old-edward-villa-in-mumbai/136044453",
+        "title-city:no takers for madhya pradesh government s 117 year old edward villa in mumbai|mumbai",
+        "dedupe:1140ac04b0b79b6a77fd3f7f23d039e012c7700b0389395736ad999595107d63",
+        "dedupe:3790402c58489f3be6c2d6d5219b76931b1a1445dac56e6f4beaf6cc748966a6",
+        "dedupe:346f0748227d14a2700174ff9eda4aa80c380f059ff37a33d36fb74f6b1fbce2",
+        "dedupe:634f815bb81e041ce23b49812c53def46c48474643dd8a4082f08a004ed7e712",
+        "dedupe:a1577532154e9bffbeeaae20f5264975d176488f6868d71e5aedfef24de8dd06"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:22:22.846Z",
+      "expiresAt": "2026-11-22T13:37:22.846Z",
+      "finalizedAt": "2026-11-22T13:22:25.314Z"
+    },
+    {
+      "claimId": "81aa4834-800d-4b10-a575-b3fa98737254",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://gulshangroup.com/gulshan-taj-skyscape",
+        "title-city:gulshan taj skyscape taj managed residences in noida|noida",
+        "dedupe:3a49b6ba6a51c94dec1eae3bf922cdfeadc35bbc2cb67346fef48f9f9985ee1e",
+        "dedupe:6a6184787fdf8af5435b03e54ac6aad17e685a10e93cbe32e057ccc79174e83a",
+        "dedupe:f8b6364732327d4480217b7db467ee9d3add85d6138306c2f8ad1b1bf2f49925",
+        "dedupe:6ef76942fde6a0c8c01bc76d176fa65eeeb8df2f1cf80d92aa91d436f133f1aa",
+        "dedupe:6dea71ae0962edec2f0da8161c387ebdc59071c533e5705794e34dd581f22b2f",
+        "dedupe:0f285aee44726f5e13c6ff8bb93c34f54841dad8c86dbcecf5f3097d0e4fffe6"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:22:35.424Z",
+      "expiresAt": "2026-11-22T13:37:35.424Z",
+      "finalizedAt": "2026-11-22T13:22:37.692Z"
+    },
+    {
+      "claimId": "9c1c6112-8116-45db-85a6-7ba59a5a5b5a",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://dinamalar.com/news/tamil-nadu-district-news-madurai/dengue-fever-75-people-allowed/4382837",
+        "title-city:ட ங க க ய ச சல 75 ப ர அன மத|madurai",
+        "dedupe:c666ad1e96b5c2b1d8055e659df85da56f8ad63d7037cfc6902e9d969bca6dd0",
+        "dedupe:5acb0400ffb57ff9195a0cae69f3638d52a92057dfba960ec82122b555d3e28d",
+        "dedupe:1a397ff60c7b9cdfa10590c5ea41708fc8ac0c29449459078dddfa6952b8b369",
+        "dedupe:137e6ba397fa09fa267750ea60228c62fc92cc90c76aa064ed46893fc99c7968",
+        "dedupe:0fd689a1a36457052ee8173aab714b63d46e2f78b1e093ae293a2b3026d3d255"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "madurai",
+      "canonicalEventCity": "madurai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "madurai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:22:47.890Z",
+      "expiresAt": "2026-11-22T13:37:47.890Z",
+      "finalizedAt": "2026-11-22T13:22:50.153Z"
+    },
+    {
+      "claimId": "af3bff16-3348-4210-a232-516d24cb8a01",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/delhi-jal-board-plans-to-monetise-land-and-buildings-for-revenue-generation/136071257",
+        "title-city:delhi jal board plans to monetise land and buildings for revenue generation|new_delhi",
+        "dedupe:1ef394773cb0432772dcd87695c8cb8a97e102ee0594729d52a98ede962582c2",
+        "dedupe:b69eafd5d34b219deae3e7e9843d17cf41c32fa224803a7fd4cad56ac14c1a67",
+        "dedupe:87c1d360f53f37bca374a7b3caaf76b08219611e396f073a009c7e274131c135",
+        "dedupe:415ae5b7a3e29bd84ed495387456fa5141ceab12f88468ba55e5f0094646b2c5",
+        "dedupe:e2033cdac953b608ade500de5a169b09fde6d17ab9d79f05dc39ec921155349d"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:23:00.195Z",
+      "expiresAt": "2026-11-22T13:38:00.195Z",
+      "finalizedAt": "2026-11-22T13:23:02.539Z"
+    },
+    {
+      "claimId": "49c92fa9-b1e5-400b-b001-7c781318f508",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/noida-greater-noida-greening-authority-spends-20-cr-on-residential-sectors-40444732.html",
+        "title-city:ग र टर न एड बन ग हर भर और स दर य जन क क म श र प र ध करण खर च कर ग 20 कर ड र पय|noida",
+        "dedupe:89167144dc8b4091fcca259d95a0a0fc616656894608d4b2d9009e6e32f389f3",
+        "dedupe:c80c4c8cde143cc3eb5341000ffc521b8dd7202ef2edb7ccf85e2ab27d8583c5",
+        "dedupe:67b1380618f2e42127e22bfcd924accba4ed2f9f9205cc24cc45f3f161a235eb",
+        "dedupe:5b09d0bf87f0c67351bcb6734ab469673567839373f87c40351370e13def3c60",
+        "dedupe:7a3d678e290114bfc0b588ac039003db81045e29db7ec679c4d9515d20e32ae5",
+        "dedupe:bddedecf861ffbb663ad0f60eed4b6ce7771a4b2d4d0b4a0c7030f48d18d4580"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:23:12.400Z",
+      "expiresAt": "2026-11-22T13:38:12.400Z",
+      "finalizedAt": "2026-11-22T13:23:14.856Z"
+    },
+    {
+      "claimId": "bbe71c0b-8378-4920-b69e-9765182324bd",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://jagran.com/uttar-pradesh/varanasi-city-digital-life-certificate-mega-camp-to-be-launched-at-varanasi-treasury-complex-facility-to-reconcile-pensioners-40444768.html",
+        "title-city:व र णस क ष ग र पर सर म लग ग ड ज टल ल इफ सर ट फ क ट म ग क प प शनर क म ल ग स व ध|varanasi",
+        "dedupe:e3f04d7afe3e5541adcba9f8e65812ebb12b872df9cc5d2c3a285ebe5b2a9f85",
+        "dedupe:5d3f5a5295f92eee5e28416e7c7d38aff263d7c641cda7e7f78e4cd50135cf9d",
+        "dedupe:db1d0f70b4dd4b22855fba703a5a7d16ba8139286f0c0d62cbfeacdafa62c4c1",
+        "dedupe:2a2f47413b824567255dd6ea6f6d37ba9f7be26d2799348ce1d7fd9b3a182a08",
+        "dedupe:ce23e14b165dc3c071bfc0122ea2ef9fd3341a79848f0a02d8108da261ba06b4",
+        "dedupe:bff865ef3c694dfe13bbfdacf554bbae9fee19fd75cb34f84a0c6b1fed907d22"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "varanasi",
+      "canonicalEventCity": "varanasi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "varanasi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T13:23:24.818Z",
+      "expiresAt": "2026-11-22T13:38:24.818Z",
+      "finalizedAt": "2026-11-22T13:23:27.148Z"
+    },
+    {
+      "claimId": "25e69e00-a68f-4733-b5dc-ab42b7384923",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/commercial/bank-of-america-leases-one-million-sq-ft-office-in-hyderabads-madhapur/136044326",
+        "title-city:bank of america leases one million sq ft office in hyderabad s madhapur|hyderabad",
+        "dedupe:10a5daa58720c21dcf75b91965d5036bd609b3a0ad0c829a64b1d5a86da719ba",
+        "dedupe:8b01ca13af34e286e2f548850e03bcffd975e1b5659e950653a93b8c160c0d16",
+        "dedupe:75dbf366d9b3c3c64035ce1dd35ae78e2cbde29b6caddd86001599a0ec107c9e",
+        "dedupe:83bcd6352db6ff455ff272d636a3d3e3278d6a081f0a04c1bf8e5ad3a9afcc6f",
+        "dedupe:4e1f4af39dfd4b962d4a4ee26cb4060df2fb44677e9c02f3800b4a0a15148f50"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-22T19:50:19.395Z",
+      "expiresAt": "2026-11-22T20:05:19.395Z",
+      "finalizedAt": "2026-11-22T19:50:21.510Z"
+    },
+    {
+      "claimId": "86292202-f73c-4198-b709-cb639ee551de",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://proppuls.in/hyderabad-real-estate-faces-growing-buyer-disconnect-rising-prices-unsold-inventory",
+        "title-city:hyd realty faces a growing buyer disconnect|hyderabad",
+        "dedupe:2edc75c44207b4776d65946b7cf48c39e7e313b2882f3463736ffd8a13daa46f",
+        "dedupe:7d1b77665fe93d6bff3d6d7c441bc0715f296b2c90235a681f9b91791336b1ba",
+        "dedupe:48b65d34c790ecaa8225fed0065972c6927d78ef81a9c5c65181ccd9658d19dc",
+        "dedupe:69343c2a4242fb4e841638059b077cfc1be848e081802ff2a8cee176dd261ff0",
+        "dedupe:575cdfd0d8dafb351aa11a4dd6abf09b4ab6354d6447d424157fbefbc2b30d28",
+        "dedupe:2575390e030f2cb5d5ae39802d4e4daf2786d7fe54d10defdc0f60f76df26ec1"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-23T00:49:59.572Z",
+      "expiresAt": "2026-11-23T01:04:59.572Z",
+      "finalizedAt": "2026-11-23T00:50:01.950Z"
     }
   ]
 }
