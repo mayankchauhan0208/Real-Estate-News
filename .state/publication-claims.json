@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-23T07:00:05.751Z",
+  "updatedAt": "2026-11-23T08:22:26.396Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15588,6 +15588,31 @@
       "claimedAt": "2026-11-23T07:00:03.974Z",
       "expiresAt": "2026-11-23T07:15:03.974Z",
       "finalizedAt": "2026-11-23T07:00:05.751Z"
+    },
+    {
+      "claimId": "bf3a5c89-00c6-4640-98ea-57df175ad4b1",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://outlookmoney.com/personal-finance/golf-course-extension-road-how-infrastructure-upgrades-are-driving-gurugrams-property-market",
+        "title-city:golf course extension road how infrastructure upgrades are driving gurugram s property market|gurugram",
+        "dedupe:7853f3a7ec5f0c840f860cdbc7378a4c674000f5ed833c04dfc8b0188658ea76",
+        "dedupe:18c27a027b2588df4c5a72eb8bf2eb9b2196c34fd3a79fc6a48d5a73787810f7",
+        "dedupe:08e0a48b0f620a379342f337e42a1025de1de048f86012e02ebaee5ac519ddaa",
+        "dedupe:f13385f09f44450b132094b1124e5155ffa5c0e377e07e5842097ac3042bba09",
+        "dedupe:fecd5fa1617095b128c0d05dc35e1519822022e4f83073ba4ab464425add8431",
+        "dedupe:3d7f383752d83f46cbef1c890c209a663a17b18745aae772dd1b968749419ca7"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-23T08:22:26.396Z",
+      "expiresAt": "2026-11-23T08:37:26.396Z"
     }
   ]
 }
