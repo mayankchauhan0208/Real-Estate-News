@@ -3,6 +3,7 @@ import {
   applyCityCode,
   cleanArticleFields,
   getRejectionReasons,
+  isNegativeNews,
   isPublishableArticle
 } from "../src/index.js";
 
@@ -60,10 +61,20 @@ const reviewModeValid = applyCityCode(cleanArticleFields({
   sourceMode: "ACTIVE_FOR_REVIEW",
   newsLink: "https://example.com/active-review-valid"
 }));
-assert.deepEqual(getRejectionReasons(reviewModeValid, new Set()), [], "ACTIVE_FOR_REVIEW must not impose a publication ceiling");
+assert.deepEqual(getRejectionReasons(reviewModeValid, new Set()), ["review: source requires editorial approval"], "ACTIVE_FOR_REVIEW must never auto-publish");
 
 const uncertainGeo = { ...reviewModeValid, cityConfidence: "uncertain", newsLink: "https://example.com/active-review-uncertain" };
-assert.deepEqual(getRejectionReasons(uncertainGeo, new Set()), ["review: uncertain event geography"]);
+assert.deepEqual(getRejectionReasons(uncertainGeo, new Set()), ["review: source requires editorial approval", "review: uncertain event geography"]);
+
+const buyerDisconnect = cleanArticleFields({
+  ...base,
+  cityCode: "hyderabad",
+  title: "Hyd realty faces a growing buyer disconnect",
+  description: "Rising prices and swelling inventory test homebuyer appetite.",
+  articleText: "Hyderabad property prices are rising while unsold inventory is swelling and buyer appetite is weakening.",
+  newsLink: "https://example.com/hyderabad-buyer-disconnect"
+});
+assert.equal(isNegativeNews(buyerDisconnect), true, "buyer-demand and inventory distress must be negative");
 
 const genericInfrastructure = {
   ...reviewModeValid,

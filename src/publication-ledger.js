@@ -41,6 +41,7 @@ const BUILDER_ALIASES = [
   [/\bprestige(?: estates| group)?\b/i, "prestige"],
   [/\bgodrej properties\b/i, "godrej-properties"],
   [/\bsignature\s*global\b/i, "signatureglobal"],
+  [/\bbank\s+of\s+america\b|\bba\s+continuum\b/i, "bank-of-america"],
   [/\bm3m\b/i, "m3m"],
   [/\belan group\b/i, "elan"]
 ];
@@ -59,6 +60,7 @@ function semanticNumbers(text) {
 }
 
 function semanticEventType(text) {
+  if (/\b(?:leases?|leased|leasing|rental outgo)\b/i.test(text) && /\b(?:office|commercial|sq\.?\s*ft|square feet)\b/i.test(text)) return "commercial-lease";
   if (/\b(?:sell(?:s|ing)?|sold|sell[- ]out|sales|bookings?)\b/i.test(text)) return "residential-sale";
   if (/\b(?:launch(?:es|ed|ing)?|unveil(?:s|ed|ing)?|upcoming)\b/i.test(text) ||
       /\b(?:plans?|develop(?:s|ed|ing)?|build(?:s|ing)?)\b[^.!?]{0,100}\b(?:develop|build|project|development|home|housing|apartment|acre)\b/i.test(text)) return "project-launch";

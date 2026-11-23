@@ -23,6 +23,22 @@ const countyAlternate = identityFor({
 });
 assert.equal(semanticIdentityMatches(countyHistory, countyAlternate), true);
 
+const bankLease = identityFor({
+  title: "Bank of America leases over 1 million sq ft in Mindspace Hyderabad for GCC",
+  description: "BA Continuum takes twelve floors at Mindspace Cyberabad.",
+  articleText: "Bank of America has leased over 1 million sq ft of office space at Mindspace Cyberabad in Hyderabad.",
+  cityCode: "hyderabad",
+  newsLink: "https://history.example/bofa-mindspace"
+});
+const bankLeaseAlternate = identityFor({
+  title: "Bank of America leases one million sq ft office in Hyderabad's Madhapur",
+  description: "BA Continuum signed a long-term commercial lease at Mindspace Cyberabad.",
+  articleText: "Bank of America has leased 1 million sq ft office space at Mindspace Cyberabad, Madhapur, Hyderabad.",
+  cityCode: "hyderabad",
+  newsLink: "https://alternate.example/bofa-madhapur"
+});
+assert.equal(semanticIdentityMatches(bankLease, bankLeaseAlternate), true, "cross-source Bank of America lease must be one semantic event");
+
 const signatureArticles = [
   { title: "Signature Global buys 25 acres for Rs 150 crore, ties up 169.22 acres in Gurugram", description: "Signature Global acquired 194.22 acres in Gurugram for a luxury farmhouse villa project.", cityCode: "gurugram", newsLink: "https://history.example/signature-a" },
   { title: "Signatureglobal signs pact to develop 194-acre land in Gurugram", description: "The project targets Rs 5,500-6,000 crore GDV and 6.77 million sq ft.", cityCode: "gurugram", newsLink: "https://history.example/signature-b" },

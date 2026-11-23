@@ -7387,6 +7387,10 @@ function isNegativeNews(article) {
   const bodyText = getArticleBodyText(article);
   const primaryAndUrl = `${primaryText} ${urlText}`;
 
+  if (/\b(?:buyer disconnect|weakening buyer appetite|unsold inventory|swelling inventory|rising inventory)\b/i.test(`${primaryText} ${bodyText}`)) {
+    return true;
+  }
+
   // A legal order that freezes, bars, or bans property activity is adverse
   // even if it contains words such as construction or development.
   if (isAdverseConstructionRestrictionArticle(article)) {
@@ -7642,6 +7646,11 @@ function getRejectionReasons(article, sentIds) {
 
   if (article.sourceMode === "OFF") {
     reasons.push("filter 18: source mode OFF");
+  }
+
+  // Review-mode regional sources require an explicit editorial decision.
+  if (article.sourceMode === "ACTIVE_FOR_REVIEW") {
+    reasons.push("review: source requires editorial approval");
   }
 
   if (officialReraEvent !== "NOT_RERA" && officialReraEvent !== "MEANINGFUL_PROPERTY_EVENT") {
