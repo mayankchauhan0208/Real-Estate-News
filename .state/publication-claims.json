@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-23T00:50:01.950Z",
+  "updatedAt": "2026-11-23T06:59:54.261Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15536,6 +15536,31 @@
       "claimedAt": "2026-11-23T00:49:59.572Z",
       "expiresAt": "2026-11-23T01:04:59.572Z",
       "finalizedAt": "2026-11-23T00:50:01.950Z"
+    },
+    {
+      "claimId": "539ba294-41f9-4a08-b7a0-1e17a3b5e8c9",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/mumbai-news/japanstyle-township-planned-around-virar-bullet-train-station-101795375986619.html",
+        "title-city:japan style township planned around virar bullet train station|mumbai",
+        "dedupe:a1238a5dd1f26598d31ea3b1489f2433e50f0f167f3fc64b68d116575ae80ded",
+        "dedupe:fd7d7507d52158c452743733757b304e7807a97b82fcbe222ba2e1045607fa20",
+        "dedupe:6f995413e6c53c074557498130d04dc49f2f5ea1c56c4abe04f3c95198a889c4",
+        "dedupe:78fdb288be2bff49957ac6d7ba9297067d3f6fa5e1afe5c2205957b99c0997b9",
+        "dedupe:b519dd5f1cc0a38bbae6f7629a3feef231152e6b57f9a9ab39d241cef957b1eb",
+        "dedupe:3dcae596fe4aa139ece7a44b38d353744bf21421d296b75d6abc4fb263de4e37"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-23T06:59:54.261Z",
+      "expiresAt": "2026-11-23T07:14:54.261Z"
     }
   ]
 }
