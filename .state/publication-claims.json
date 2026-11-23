@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-23T00:50:01.950Z",
+  "updatedAt": "2026-11-23T07:00:05.751Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15536,6 +15536,58 @@
       "claimedAt": "2026-11-23T00:49:59.572Z",
       "expiresAt": "2026-11-23T01:04:59.572Z",
       "finalizedAt": "2026-11-23T00:50:01.950Z"
+    },
+    {
+      "claimId": "539ba294-41f9-4a08-b7a0-1e17a3b5e8c9",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/mumbai-news/japanstyle-township-planned-around-virar-bullet-train-station-101795375986619.html",
+        "title-city:japan style township planned around virar bullet train station|mumbai",
+        "dedupe:a1238a5dd1f26598d31ea3b1489f2433e50f0f167f3fc64b68d116575ae80ded",
+        "dedupe:fd7d7507d52158c452743733757b304e7807a97b82fcbe222ba2e1045607fa20",
+        "dedupe:6f995413e6c53c074557498130d04dc49f2f5ea1c56c4abe04f3c95198a889c4",
+        "dedupe:78fdb288be2bff49957ac6d7ba9297067d3f6fa5e1afe5c2205957b99c0997b9",
+        "dedupe:b519dd5f1cc0a38bbae6f7629a3feef231152e6b57f9a9ab39d241cef957b1eb",
+        "dedupe:3dcae596fe4aa139ece7a44b38d353744bf21421d296b75d6abc4fb263de4e37"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-23T06:59:54.261Z",
+      "expiresAt": "2026-11-23T07:14:54.261Z",
+      "finalizedAt": "2026-11-23T06:59:56.175Z"
+    },
+    {
+      "claimId": "57a6e844-c1bd-4842-a086-e76198427f75",
+      "status": "PUBLISHED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gccs-drive-65-of-bengaluru-office-leasing-as-it-demand-slows/articleshow/136088333.cms",
+        "title-city:gccs drive 65 of bengaluru office leasing as it demand slows|bangalore",
+        "dedupe:92ad9a024725c92ece7498501ec1be7c29c5d9695c0c5aa8284cd26075f30a1d",
+        "dedupe:e264e7176e829c16011c794f6a7bbe2bb8123b58792a391de3d3ac5047a083a3",
+        "dedupe:7234525a7ddb0123dbbf6c115df4a6394dd4186374e90e7880413da55b5a4e2a",
+        "dedupe:152a80dc605655448f14ce890afdfc32759e095ed022f2f4f033e5be715f26e3",
+        "dedupe:62e140fc9dd00f9bfe7aec7ed342535b1430ba3c5c24307913f16b2c2ddeb271",
+        "dedupe:83240fdcfb0f1f10c9bf5b84cda0e3e94c5b69bafc56d98852f522a46f70fcce"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-23T07:00:03.974Z",
+      "expiresAt": "2026-11-23T07:15:03.974Z",
+      "finalizedAt": "2026-11-23T07:00:05.751Z"
     }
   ]
 }

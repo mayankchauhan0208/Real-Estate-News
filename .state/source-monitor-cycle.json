@@ -1,7 +1,7 @@
 {
-  "cycleId": "source-cycle-2026-11-10",
-  "createdAt": "2026-11-10T23:15:17.007Z",
-  "universeFingerprint": "99864045983ae648fdac1c85fb1a1a0981994e09cf86c0545e555930d8d1963d",
+  "cycleId": "source-cycle-2026-11-23",
+  "createdAt": "2026-11-23T06:37:03.945Z",
+  "universeFingerprint": "9e8356816a8429748f20b4641c36be54db59cb0b9200e18aabe2712b974a979e",
   "sources": [
     {
       "sourceId": "source-00a0c32b225feb2f",
@@ -880,8 +880,16 @@
       "url": "https://swarajyamag.com/stories.rss"
     },
     {
+      "sourceId": "source-482f846c58f801f7",
+      "url": "https://marathi.abplive.com/news/nagpur/feed"
+    },
+    {
       "sourceId": "source-4849066ca3dca9c4",
       "url": "https://sipcotweb.tn.gov.in"
+    },
+    {
+      "sourceId": "source-4884a37f4bc65f92",
+      "url": "https://prera.py.gov.in"
     },
     {
       "sourceId": "source-4a12329b56e358c8",
@@ -1320,6 +1328,10 @@
       "url": "https://realty.economictimes.indiatimes.com/rss/hospitality"
     },
     {
+      "sourceId": "source-71aef3f0ea554ab8",
+      "url": "https://gujaratpost.in/rss/rajkot.xml"
+    },
+    {
       "sourceId": "source-726f7b30ce17bd43",
       "url": "https://rera.telangana.gov.in/384798wfybwev9fya62435-TG-RERA-skfjdgky483yunskljghfdgjh"
     },
@@ -1390,6 +1402,10 @@
     {
       "sourceId": "source-78d7415b8cf47a6c",
       "url": "https://www.eldecogroup.com/investor/eldeco-housing-industries-ltd/investor-relations"
+    },
+    {
+      "sourceId": "source-79364cf8f38a42ac",
+      "url": "https://gujaratpost.in/rss/surat.xml"
     },
     {
       "sourceId": "source-79862cecb9e2f603",
@@ -1736,10 +1752,6 @@
       "url": "https://www.hindustantimes.com/feeds/rss/cities/indore-news/rssfeed.xml"
     },
     {
-      "sourceId": "source-9d2dc9b122285ce6",
-      "url": "https://rera.py.gov.in"
-    },
-    {
       "sourceId": "source-9d4d0179e54a5614",
       "url": "https://www.sobha.com/investor-relations"
     },
@@ -1946,6 +1958,10 @@
     {
       "sourceId": "source-ad570e3b76c1d0f9",
       "url": "https://infra.economictimes.indiatimes.com/rss/logistics"
+    },
+    {
+      "sourceId": "source-ad83ffd878788e28",
+      "url": "https://marathi.abplive.com/news/nashik/feed"
     },
     {
       "sourceId": "source-af1c4cb6008abeb0",
@@ -2680,6 +2696,10 @@
       "url": "https://www.mahagunindia.com/media"
     },
     {
+      "sourceId": "source-f501f30f6d33ac43",
+      "url": "https://gujaratpost.in/rss/ahmedabad.xml"
+    },
+    {
       "sourceId": "source-f535177838dc3512",
       "url": "https://rera.bihar.gov.in/Newsarticles.aspx"
     },
@@ -2758,6 +2778,10 @@
     {
       "sourceId": "source-fd27f2f9304859da",
       "url": "https://infra.economictimes.indiatimes.com/rss/urban-infrastructure"
+    },
+    {
+      "sourceId": "source-fd64501682e9e051",
+      "url": "https://marathi.abplive.com/news/pune/feed"
     },
     {
       "sourceId": "source-fe633b7375aeafc3",
