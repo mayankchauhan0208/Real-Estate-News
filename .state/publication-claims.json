@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-23T22:56:06.738Z",
+  "updatedAt": "2026-11-23T22:56:15.467Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15640,6 +15640,33 @@
       "claimedAt": "2026-11-23T22:56:04.666Z",
       "expiresAt": "2026-11-23T23:11:04.666Z",
       "finalizedAt": "2026-11-23T22:56:06.738Z"
+    },
+    {
+      "claimId": "a9e6616c-8947-4a06-8cdf-56525f4ec12e",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/axa-global-leases-2-58-lakh-sq-ft-office-in-bengaluru-in-rs-334-cr-deal/articleshow/136101490.cms",
+        "title-city:axa global leases 2 58 lakh sq ft office in bengaluru in rs 334 cr deal|bangalore",
+        "dedupe:e2e0f79aafac561be6d3b444158049b938887bbef1527513faef8ed50875632d",
+        "dedupe:acaf8078077f48e5d8c32d986fcfca3f3c1df97e51c0b40f8f5fadd19fbac578",
+        "dedupe:582a9ecc4d5a8d33391cdbbbcfb9d13133115588bce5b16a00ba20acfdcb98f4",
+        "dedupe:2ae3ad561eaad26241beeca3c572ee689282b1f67fabf750bead59687f0725af",
+        "dedupe:axa global leases office bengaluru deal|amount:334-crore|bangalore",
+        "dedupe:6623be71cb5adfd7b0708f77e894ef4502a9f47e1fc767373dc2003a2ec25b2c",
+        "dedupe:44f85d931e63da34cbe97beecefcfc679af732b93212768f7f2db071f0379297",
+        "dedupe:fae77e740fe6b343a092bcf16bc486891dbb78fbce22ce107dc9de2806d98d81"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-23T22:56:15.467Z",
+      "expiresAt": "2026-11-23T23:11:15.467Z"
     }
   ]
 }
