@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-23T00:49:59.572Z",
+  "updatedAt": "2026-11-23T00:50:01.950Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15513,7 +15513,7 @@
     },
     {
       "claimId": "86292202-f73c-4198-b709-cb639ee551de",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://proppuls.in/hyderabad-real-estate-faces-growing-buyer-disconnect-rising-prices-unsold-inventory",
         "title-city:hyd realty faces a growing buyer disconnect|hyderabad",
@@ -15534,7 +15534,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-23T00:49:59.572Z",
-      "expiresAt": "2026-11-23T01:04:59.572Z"
+      "expiresAt": "2026-11-23T01:04:59.572Z",
+      "finalizedAt": "2026-11-23T00:50:01.950Z"
     }
   ]
 }
