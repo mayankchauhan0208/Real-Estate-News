@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-23T22:56:34.558Z",
+  "updatedAt": "2026-11-23T22:56:36.598Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15697,7 +15697,7 @@
     },
     {
       "claimId": "95956094-0161-4873-8b8a-8e97518b1da6",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realtynmore.com/supreme-universal-launches-tower-c-at-supreme",
         "title-city:supreme universal launches tower c at supreme boulevard in chembur|mumbai",
@@ -15718,7 +15718,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-23T22:56:34.558Z",
-      "expiresAt": "2026-11-23T23:11:34.558Z"
+      "expiresAt": "2026-11-23T23:11:34.558Z",
+      "finalizedAt": "2026-11-23T22:56:36.598Z"
     }
   ]
 }
