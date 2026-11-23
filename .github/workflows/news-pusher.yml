@@ -230,13 +230,14 @@ jobs:
 
       - name: Persist normal-engine heartbeat
         if: ${{ success() && (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') }}
+        continue-on-error: true
         run: |
           mkdir -p .state
           node -e 'const fs = require("fs"); fs.writeFileSync(".state/normal-ingestion-heartbeat.json", `${JSON.stringify({ lastSuccessfulNormalRunAt: new Date().toISOString(), runId: process.env.GITHUB_RUN_ID, commit: process.env.GITHUB_SHA })}\n`);'
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -f .state/normal-ingestion-heartbeat.json
-          git diff --cached --quiet || (git commit -m "Persist normal ingestion heartbeat [skip ci]" && git pull --rebase origin main && git push)
+          git diff --cached --quiet || (git commit -m "Persist normal ingestion heartbeat [skip ci]" && git pull --rebase --autostash origin main && git push)
 
       - name: Persist scheduler checkpoint
         if: ${{ always() && (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') }}
@@ -249,7 +250,7 @@ jobs:
             if compgen -G "admin/document-thumbnails/*.jpg" > /dev/null; then
               git add -f admin/document-thumbnails/*.jpg
             fi
-            git diff --cached --quiet || (git commit -m "Persist source scheduler checkpoint [skip ci]" && git pull --rebase origin main && git push)
+            git diff --cached --quiet || (git commit -m "Persist source scheduler checkpoint [skip ci]" && git pull --rebase --autostash origin main && git push)
           fi
 
       - name: Upload run report
@@ -271,5 +272,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add admin/static-state.json
-          git diff --cached --quiet || (git commit -m "Update hosted admin snapshot [skip ci]" && git pull --rebase origin main && git push)
+          git diff --cached --quiet || (git commit -m "Update hosted admin snapshot [skip ci]" && git pull --rebase --autostash origin main && git push)
 

@@ -7387,7 +7387,7 @@ function isNegativeNews(article) {
   const bodyText = getArticleBodyText(article);
   const primaryAndUrl = `${primaryText} ${urlText}`;
 
-  if (/\b(?:buyer disconnect|weakening buyer appetite|unsold inventory|swelling inventory|rising inventory)\b/i.test(`${primaryText} ${bodyText}`)) {
+  if (/\b(?:buyer disconnect|weakening buyer appetite|unsold inventory|swelling inventory|rising inventory|demand slows?|slowing demand)\b/i.test(`${primaryText} ${bodyText}`)) {
     return true;
   }
 

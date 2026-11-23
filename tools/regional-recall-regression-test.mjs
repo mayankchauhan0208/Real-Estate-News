@@ -76,6 +76,16 @@ const buyerDisconnect = cleanArticleFields({
 });
 assert.equal(isNegativeNews(buyerDisconnect), true, "buyer-demand and inventory distress must be negative");
 
+const slowingLeaseMarket = cleanArticleFields({
+  ...base,
+  cityCode: "bangalore",
+  title: "GCCs drive 65% of Bengaluru office leasing as IT demand slows",
+  description: "Office leasing grows while IT demand slows.",
+  articleText: "Bengaluru office leasing is supported by GCCs, but IT demand slows and the market faces a weakening demand outlook.",
+  newsLink: "https://example.com/bengaluru-slowing-office-demand"
+});
+assert.equal(isNegativeNews(slowingLeaseMarket), true, "market deterioration must not auto-publish as positive leasing news");
+
 const genericInfrastructure = {
   ...reviewModeValid,
   title: "Indore opens new flyover to reduce traffic congestion",
