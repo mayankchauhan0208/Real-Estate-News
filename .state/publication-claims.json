@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-23T22:56:17.293Z",
+  "updatedAt": "2026-11-23T22:56:25.528Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15668,6 +15668,31 @@
       "claimedAt": "2026-11-23T22:56:15.467Z",
       "expiresAt": "2026-11-23T23:11:15.467Z",
       "finalizedAt": "2026-11-23T22:56:17.293Z"
+    },
+    {
+      "claimId": "d4f13df3-38db-46eb-8f84-52e94860cc93",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://gulshangroup.com/commercial-property-investment-india-delhi-ncr-noida",
+        "title-city:commercial property investment in india delhi ncr and noida|noida",
+        "dedupe:070ae97b70a9b20c164c3b3bea189692bb266e2a96c953197b79a3c619359d9b",
+        "dedupe:821125ae1d153cfa050d10d6680baa621b677dec629466864f8830870f699ebd",
+        "dedupe:bfde5d7e2e9fee572e504dba49b13e974449f7c5d798b156fc347cd9040dfc06",
+        "dedupe:f413caf9c840fb2efc3533bc40c4ba6a35ca7a91167c8ee4f6f2fa41f4503444",
+        "dedupe:3a8a712890267433485138b026acf7d16ddf953cc61b431177b6641d27b3fec8",
+        "dedupe:58cff6f3fdb406fe0032e591575db7a4b0aa6eb3e90050386485d818a4c424c3"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-23T22:56:25.528Z",
+      "expiresAt": "2026-11-23T23:11:25.528Z"
     }
   ]
 }
