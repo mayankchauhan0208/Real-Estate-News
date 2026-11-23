@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-23T22:56:36.598Z",
+  "updatedAt": "2026-11-23T22:56:44.946Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15720,6 +15720,33 @@
       "claimedAt": "2026-11-23T22:56:34.558Z",
       "expiresAt": "2026-11-23T23:11:34.558Z",
       "finalizedAt": "2026-11-23T22:56:36.598Z"
+    },
+    {
+      "claimId": "360e74f6-9f33-48f3-bac2-9891efdac87b",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/brigade-group-buys-2-25-acre-land-parcel-in-secunderabad-for-rs-180-crore/articleshow/136111627.cms",
+        "title-city:brigade group buys 2 25 acre land parcel in secunderabad for rs 180 crore|hyderabad",
+        "dedupe:67a133a0e12cbfaf775621ff5d4804263f6f1db72b28398f7fead70130873cb3",
+        "dedupe:05f4c063307f3b38ca67f31775dbb498a4f2ef21e88e8c9fd212046b77160afc",
+        "dedupe:34031991700a600a8e84d336ffcf9a1e9335dadb1e31910fa3f84c13faf7e721",
+        "dedupe:6ce28971003f84cd4714df8474668f51065535bafeba1dcffcbfe3c853d7b00c",
+        "dedupe:brigade group buys acre land parcel secunderabad|scale:2.25-acre|amount:180-crore|hyderabad",
+        "dedupe:f17e873df84514e549ae47deca3394fea0626f989bacdd4922cae7ecd004ccbf",
+        "dedupe:9d78b1c518fea12060190a3594078bd9d7531a4df60713c418f67a56f668539e",
+        "dedupe:cd2ffd1e2f843a6d79aea19c9544db7260d8c4f41e062f069bd367fdaad11416"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-23T22:56:44.946Z",
+      "expiresAt": "2026-11-23T23:11:44.946Z"
     }
   ]
 }
