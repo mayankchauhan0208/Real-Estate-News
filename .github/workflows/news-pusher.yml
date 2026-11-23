@@ -76,45 +76,7 @@ permissions:
   contents: write
 
 jobs:
-  scheduler-guard:
-    runs-on: ubuntu-latest
-    outputs:
-      should_run: ${{ steps.heartbeat.outputs.should_run }}
-
-    steps:
-      - name: Checkout scheduler heartbeat
-        uses: actions/checkout@v7
-        with:
-          fetch-depth: 1
-
-      - name: Check normal-engine heartbeat
-        id: heartbeat
-        shell: bash
-        run: |
-          if [ "${{ github.event_name }}" != "schedule" ]; then
-            echo "should_run=true" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-
-          heartbeat_file=.state/normal-ingestion-heartbeat.json
-          if [ ! -f "$heartbeat_file" ]; then
-            echo "should_run=true" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-
-          last_successful_at=$(node -e 'const fs = require("fs"); const value = JSON.parse(fs.readFileSync(process.argv[1], "utf8")); process.stdout.write(value.lastSuccessfulNormalRunAt || "");' "$heartbeat_file")
-          last_successful_epoch=$(date -u -d "$last_successful_at" +%s 2>/dev/null || true)
-          now_epoch=$(date -u +%s)
-
-          if [ -z "$last_successful_epoch" ] || [ $((now_epoch - last_successful_epoch)) -ge 3300 ]; then
-            echo "should_run=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "should_run=false" >> "$GITHUB_OUTPUT"
-          fi
-
   push-news:
-    needs: scheduler-guard
-    if: ${{ always() && (github.event_name != 'schedule' || needs.scheduler-guard.result == 'success') }}
     runs-on: ubuntu-latest
     timeout-minutes: 60
 
