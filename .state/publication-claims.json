@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-23T22:56:44.946Z",
+  "updatedAt": "2026-11-23T22:56:46.766Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15723,7 +15723,7 @@
     },
     {
       "claimId": "360e74f6-9f33-48f3-bac2-9891efdac87b",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/brigade-group-buys-2-25-acre-land-parcel-in-secunderabad-for-rs-180-crore/articleshow/136111627.cms",
         "title-city:brigade group buys 2 25 acre land parcel in secunderabad for rs 180 crore|hyderabad",
@@ -15746,7 +15746,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-23T22:56:44.946Z",
-      "expiresAt": "2026-11-23T23:11:44.946Z"
+      "expiresAt": "2026-11-23T23:11:44.946Z",
+      "finalizedAt": "2026-11-23T22:56:46.766Z"
     }
   ]
 }
