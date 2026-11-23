@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-23T06:59:56.175Z",
+  "updatedAt": "2026-11-23T07:00:03.974Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15562,6 +15562,31 @@
       "claimedAt": "2026-11-23T06:59:54.261Z",
       "expiresAt": "2026-11-23T07:14:54.261Z",
       "finalizedAt": "2026-11-23T06:59:56.175Z"
+    },
+    {
+      "claimId": "57a6e844-c1bd-4842-a086-e76198427f75",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/gccs-drive-65-of-bengaluru-office-leasing-as-it-demand-slows/articleshow/136088333.cms",
+        "title-city:gccs drive 65 of bengaluru office leasing as it demand slows|bangalore",
+        "dedupe:92ad9a024725c92ece7498501ec1be7c29c5d9695c0c5aa8284cd26075f30a1d",
+        "dedupe:e264e7176e829c16011c794f6a7bbe2bb8123b58792a391de3d3ac5047a083a3",
+        "dedupe:7234525a7ddb0123dbbf6c115df4a6394dd4186374e90e7880413da55b5a4e2a",
+        "dedupe:152a80dc605655448f14ce890afdfc32759e095ed022f2f4f033e5be715f26e3",
+        "dedupe:62e140fc9dd00f9bfe7aec7ed342535b1430ba3c5c24307913f16b2c2ddeb271",
+        "dedupe:83240fdcfb0f1f10c9bf5b84cda0e3e94c5b69bafc56d98852f522a46f70fcce"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-23T07:00:03.974Z",
+      "expiresAt": "2026-11-23T07:15:03.974Z"
     }
   ]
 }
