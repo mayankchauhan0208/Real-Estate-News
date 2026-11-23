@@ -2,10 +2,8 @@ name: News API Pusher
 
 on:
   schedule:
-    # GitHub can occasionally drop or substantially delay a single cron tick.
-    # The guard below permits the normal engine only when its persisted
-    # heartbeat is at least 55 minutes old.
-    - cron: "7,22,37,52 * * * *"
+    # 13:20 IST first, then once every hour (cron is UTC).
+    - cron: "50 * * * *"
   workflow_dispatch:
     inputs:
       mode:
@@ -115,7 +113,7 @@ jobs:
 
   push-news:
     needs: scheduler-guard
-    if: ${{ github.event_name != 'schedule' || needs.scheduler-guard.outputs.should_run == 'true' }}
+    if: ${{ always() && (github.event_name != 'schedule' || needs.scheduler-guard.result == 'success') }}
     runs-on: ubuntu-latest
     timeout-minutes: 60
 
