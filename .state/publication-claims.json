@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-23T22:56:04.666Z",
+  "updatedAt": "2026-11-23T22:56:06.738Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15617,7 +15617,7 @@
     },
     {
       "claimId": "3c99c6d8-186d-4cce-bf3c-909117c999a0",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/cities/others/ukhand-cm-announces-science-city-in-srinagar-chopper-connectivity-to-dehradun-soon-101795434916914.html",
         "title-city:u khand cm announces science city in srinagar chopper connectivity to dehradun soon|dehradun",
@@ -15638,7 +15638,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-23T22:56:04.666Z",
-      "expiresAt": "2026-11-23T23:11:04.666Z"
+      "expiresAt": "2026-11-23T23:11:04.666Z",
+      "finalizedAt": "2026-11-23T22:56:06.738Z"
     }
   ]
 }
