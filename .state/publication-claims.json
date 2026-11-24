@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-24T06:59:19.789Z",
+  "updatedAt": "2026-11-24T06:59:29.082Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15776,6 +15776,31 @@
       "claimedAt": "2026-11-24T06:59:17.439Z",
       "expiresAt": "2026-11-24T07:14:17.439Z",
       "finalizedAt": "2026-11-24T06:59:19.789Z"
+    },
+    {
+      "claimId": "ff77ffb7-e45f-42f7-b96b-f30abb758da1",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://business-standard.com/industry/news/mumbai-apac-top-10-cross-border-real-estate-investment-colliers-2027-126112400255_1.html",
+        "title-city:mumbai among apac s top 10 real estate investment destinations colliers|mumbai",
+        "dedupe:079ca9a47932492af9a6e6fba9e8bd87862d7c5eeec24a8eca3c1816b1c10476",
+        "dedupe:440d6887788ea83c00af866128b4701b8494a4700627f4e2e9d436bb83b6cc8f",
+        "dedupe:2b56ab6462ab8963c7eefc44578d8ecc1dbb2dc10e951de8a5cc6577dfaa5b8a",
+        "dedupe:da1f365492a885def1119566d8a834a280338facbdc26c12192dab84746b6881",
+        "dedupe:f2ac538383ef79c78dc76af31037d8e49ff7937a7086c481c08417a129e99fb7",
+        "dedupe:f25160bafad6da53fada09144084d3bbe43906d97b7e659baf29129fe09ee98d"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-24T06:59:29.082Z",
+      "expiresAt": "2026-11-24T07:14:29.082Z"
     }
   ]
 }
