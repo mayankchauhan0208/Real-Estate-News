@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-24T19:11:58.077Z",
+  "updatedAt": "2026-11-24T19:12:06.817Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15932,6 +15932,31 @@
       "claimedAt": "2026-11-24T19:11:55.618Z",
       "expiresAt": "2026-11-24T19:26:55.618Z",
       "finalizedAt": "2026-11-24T19:11:58.077Z"
+    },
+    {
+      "claimId": "147dd635-a1fa-480c-9c39-bd8bbb344390",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/mp-developers-acquires-chennais-pilot-theatre-plot-plans-residential-project/articleshow/136135876.cms",
+        "title-city:mp developers acquires chennai s pilot theatre plot plans residential project|chennai",
+        "dedupe:4bb402e9ed83b152415b666fd1f5d27f7677904848d967e36acc66ef5485503c",
+        "dedupe:d4f4014358f7a8ed89a5ad7523c17756ae284edb56cb6b78243c6bea4bf0dddf",
+        "dedupe:65f29a6b2b63932661c44dd6f1a00961783e049c980c75b60731644d6121cc0d",
+        "dedupe:b0bcee38533e68f082bf641a116ae512fa6cf46fb789e691e41566ffc8084ad4",
+        "dedupe:05ae370d414b93308c73e94b3f520d02f97b0a822ecd93354f3a7514784e291e",
+        "dedupe:7286f3bcdae243496c60cd6fa442b1ca920f32f137bae3dd683c02e0d39728fa"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "chennai",
+      "canonicalEventCity": "chennai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "chennai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-24T19:12:06.817Z",
+      "expiresAt": "2026-11-24T19:27:06.817Z"
     }
   ]
 }
