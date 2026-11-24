@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-24T19:11:55.618Z",
+  "updatedAt": "2026-11-24T19:11:58.077Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15909,7 +15909,7 @@
     },
     {
       "claimId": "32ade877-c697-4568-8d88-92f4743f60f3",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realtynmore.com/abhee-ventures-completes-17-years-of-operations",
         "title-city:abhee ventures completes 17 years of operations outlines expansion plans across bengaluru and new markets|bangalore",
@@ -15930,7 +15930,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-24T19:11:55.618Z",
-      "expiresAt": "2026-11-24T19:26:55.618Z"
+      "expiresAt": "2026-11-24T19:26:55.618Z",
+      "finalizedAt": "2026-11-24T19:11:58.077Z"
     }
   ]
 }
