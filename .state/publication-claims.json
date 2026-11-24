@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-24T19:11:45.968Z",
+  "updatedAt": "2026-11-24T19:11:55.618Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15906,6 +15906,31 @@
       "claimedAt": "2026-11-24T19:11:43.375Z",
       "expiresAt": "2026-11-24T19:26:43.375Z",
       "finalizedAt": "2026-11-24T19:11:45.968Z"
+    },
+    {
+      "claimId": "32ade877-c697-4568-8d88-92f4743f60f3",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/abhee-ventures-completes-17-years-of-operations",
+        "title-city:abhee ventures completes 17 years of operations outlines expansion plans across bengaluru and new markets|bangalore",
+        "dedupe:f7197812c5a411989575ffe3b33096e4d8dc2a0dd47c53552348763f43176d17",
+        "dedupe:aa65ae2e754bd2cf24337cb5da7c55e0ed275db151ebe066e9680e0c712e5792",
+        "dedupe:dd1a47b20be0dcd54da58537b2ac773c5d95fbecb5a7f0150e2cdb012ea3191b",
+        "dedupe:e6e13cefea9ded945ad1f1cf0b060e5afbfa0081f5f755010265bbbfb1727b3c",
+        "dedupe:5b927cae2f01d1196c4a3bfdca73f4eedfd77ac9fb154fe73809ff4712732780",
+        "dedupe:0fa53cadd7581a7baaea3f88680a63991deff6088d315020c627d858f6f6d127"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-24T19:11:55.618Z",
+      "expiresAt": "2026-11-24T19:26:55.618Z"
     }
   ]
 }
