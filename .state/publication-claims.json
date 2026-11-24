@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-24T19:11:33.878Z",
+  "updatedAt": "2026-11-24T19:11:43.375Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15880,6 +15880,31 @@
       "claimedAt": "2026-11-24T19:11:31.545Z",
       "expiresAt": "2026-11-24T19:26:31.545Z",
       "finalizedAt": "2026-11-24T19:11:33.878Z"
+    },
+    {
+      "claimId": "491c4f45-5b46-4909-81e2-3f9a95423076",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/mumbai-ranks-last-in-top-10-preferred-real-estate-cross-border-investment-destinations-in-apac-colliers/articleshow/136128229.cms",
+        "title-city:mumbai ranks last in top 10 preferred real estate cross border investment destinations in apac colliers|mumbai",
+        "dedupe:b064afca302b7fb8a7e494a5a517a259edb4d41d5de46bb0aaee67004ec0bb31",
+        "dedupe:845503acd172f735cacdf5bc0f36bf885f8ef798ed6be351b865e4ed6e44f558",
+        "dedupe:cb74b0d1ca4ed0fea057a0a79790cd48e56575534532e93b18356f3720fc10c5",
+        "dedupe:f997d5a124ccfd8141fb9e4dfac616e552aa2d0bf5d2dfcdcd0a82f8e93332ec",
+        "dedupe:68b789da58562d05d0e58e62abbab7847ad81e9d0a0a21975a04a83b31ad1c3b",
+        "dedupe:4b453253ac0db93f06c67877ad9e0091c7345afee398fed34e3be3b6fe5108f0"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-24T19:11:43.375Z",
+      "expiresAt": "2026-11-24T19:26:43.375Z"
     }
   ]
 }
