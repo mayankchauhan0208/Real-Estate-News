@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-24T06:59:31.247Z",
+  "updatedAt": "2026-11-24T19:11:09.321Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15802,6 +15802,32 @@
       "claimedAt": "2026-11-24T06:59:29.082Z",
       "expiresAt": "2026-11-24T07:14:29.082Z",
       "finalizedAt": "2026-11-24T06:59:31.247Z"
+    },
+    {
+      "claimId": "002c66bb-cbd7-4e22-985b-56ba01da5cfa",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/brigade-buys-2-25-acre-land-in-secunderabad-for-180-crore-arkade-developers-plans-redevelopment-project-in-tardeo/136104183",
+        "title-city:brigade buys 2 25 acre land in secunderabad for 180 crore arkade developers plans redevelopment project in tardeo|hyderabad",
+        "dedupe:de9f4deb533564f786f156fd475da4ceb60c2a9d057288f91df81e88945714f1",
+        "dedupe:70319a63435def93dc436b99d9ed52aae94638a4c2d92e366b310cc7b5ecb6e0",
+        "dedupe:af5da6e4fd1f84cb861258c68fd24752b079171add0ce9bb8a0ba59cf6beb6c4",
+        "dedupe:brigade buys acre land secunderabad arkade plans redevelopment tardeo|scale:2.25-acre|amount:180-crore|hyderabad",
+        "dedupe:c6d1deed8a1b981fbd642219ef907206ba4e5876aa48056afa9410b07c5788b8",
+        "dedupe:15403dbb4bf3a3fea951f0dfb6fe7ca58348d619f4bffa50747440ee5c199092",
+        "dedupe:bfb8e46f8337edf2b68d2ae4945fe6c84a0a1c79f728922dccdf322d566f16a2"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-24T19:11:09.321Z",
+      "expiresAt": "2026-11-24T19:26:09.321Z"
     }
   ]
 }
