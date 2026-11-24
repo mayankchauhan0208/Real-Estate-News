@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-24T19:11:22.571Z",
+  "updatedAt": "2026-11-24T19:11:31.545Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15855,6 +15855,30 @@
       "claimedAt": "2026-11-24T19:11:20.314Z",
       "expiresAt": "2026-11-24T19:26:20.314Z",
       "finalizedAt": "2026-11-24T19:11:22.571Z"
+    },
+    {
+      "claimId": "f2821164-1637-428b-913b-e3a816b896fa",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/residential/mohali-eco-city-4-landowners-to-get-a-hearing-on-december-16/136119340",
+        "title-city:mohali eco city 4 landowners to get a hearing on december 16|mohali",
+        "dedupe:63c9d57a8c70a42a2b071ed5f393e00f220914931b6509f4c5e262f4a1796b53",
+        "dedupe:d736a7e31c40c3130c444e93041e5d224392101e383a937a2bc7184aa7f28457",
+        "dedupe:9cdd10f4721b54cd18caba5deca62ead874e86eb23e3f59ec71fd23a67f040b9",
+        "dedupe:14444916771cd1a650a30814eff35d5985b42957795cffb5f68b9a2c882259e2",
+        "dedupe:aaf6d2a659e2b1da9f739f1500b8e06edc0b468eea3fb853bc7a633d82a3f1b0"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mohali",
+      "canonicalEventCity": "mohali",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mohali"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-24T19:11:31.545Z",
+      "expiresAt": "2026-11-24T19:26:31.545Z"
     }
   ]
 }
