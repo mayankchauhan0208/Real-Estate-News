@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-24T19:11:11.530Z",
+  "updatedAt": "2026-11-24T19:11:20.314Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15829,6 +15829,31 @@
       "claimedAt": "2026-11-24T19:11:09.321Z",
       "expiresAt": "2026-11-24T19:26:09.321Z",
       "finalizedAt": "2026-11-24T19:11:11.530Z"
+    },
+    {
+      "claimId": "d76401d5-dc5b-4fbe-b756-0757ff738756",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/cities/gurugram-news/gmda-plans-to-deepen-expand-wazirabad-lake-101795460182096.html",
+        "title-city:gmda plans to deepen expand wazirabad lake|gurugram",
+        "dedupe:303516aeb0559fa59692d74578619ab391925596d8131f0aa4f70b53beeeb3ea",
+        "dedupe:87aa484b6485493b5e6bb93f7390b87bf30b4942dd9ce8ad215358e5feac79c8",
+        "dedupe:a853a5dd66ee8a77c96eced1a508a570256db794bd8aeebbe0fd10b24942ed7a",
+        "dedupe:677d8e63704b976dc0b6f376457a98f2b72febe51842643a9c600e4873271ba5",
+        "dedupe:1a6a039275c71d7935bd1f231bae6d94f4100d7fd06fb3465d0285bf2976359d",
+        "dedupe:0a97ff56448dae6ce8d92b16f89f94c7cb10b2e4ce6b6c1a3dbe7b939f5c6d6a"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-24T19:11:20.314Z",
+      "expiresAt": "2026-11-24T19:26:20.314Z"
     }
   ]
 }
