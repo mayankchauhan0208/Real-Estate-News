@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-24T19:11:43.375Z",
+  "updatedAt": "2026-11-24T19:11:45.968Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15883,7 +15883,7 @@
     },
     {
       "claimId": "491c4f45-5b46-4909-81e2-3f9a95423076",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/mumbai-ranks-last-in-top-10-preferred-real-estate-cross-border-investment-destinations-in-apac-colliers/articleshow/136128229.cms",
         "title-city:mumbai ranks last in top 10 preferred real estate cross border investment destinations in apac colliers|mumbai",
@@ -15904,7 +15904,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-24T19:11:43.375Z",
-      "expiresAt": "2026-11-24T19:26:43.375Z"
+      "expiresAt": "2026-11-24T19:26:43.375Z",
+      "finalizedAt": "2026-11-24T19:11:45.968Z"
     }
   ]
 }
