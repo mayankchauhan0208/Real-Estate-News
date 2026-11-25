@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T12:43:22.304Z",
+  "updatedAt": "2026-11-25T13:05:49.012Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16142,6 +16142,31 @@
       "claimedAt": "2026-11-25T12:43:19.859Z",
       "expiresAt": "2026-11-25T12:58:19.859Z",
       "finalizedAt": "2026-11-25T12:43:22.304Z"
+    },
+    {
+      "claimId": "d999a5df-98f0-459d-8f1d-0df5f35a33c6",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://sumadhuragroup.com/blogs/under-construction-apartments-east-bangalore-2026",
+        "title-city:under construction apartments in east bangalore 2026|bangalore",
+        "dedupe:56e8c0490ac8950d8b2a79a91105c95cd71c3ddcd9f48237bd5ff16af4d76ea3",
+        "dedupe:bd11d6dfc63407913894d30ddeda935cf2f65b4ab0282df895784aba36aa2644",
+        "dedupe:caf1e88827a8f48901504da3dea50a9822421849e112e0ff0320df9b53a5ba00",
+        "dedupe:1db512d164088816d60becfa20982bb827260efca7450b4e61c1c7f18b2ade63",
+        "dedupe:26ac75feb6a8bea24a6c3c24c81f306c5573661852beab72d5bcb6d71f56636a",
+        "dedupe:a5b25e3eb4ac869364401e51c91dab70cbcb40db3e014837346933f0f19991b1"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-25T13:05:49.012Z",
+      "expiresAt": "2026-11-25T13:20:49.012Z"
     }
   ]
 }
