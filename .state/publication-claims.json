@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T13:06:38.721Z",
+  "updatedAt": "2026-11-25T13:06:40.878Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16250,7 +16250,7 @@
     },
     {
       "claimId": "f0bd1bc9-09ca-4e66-87c8-46af45ee33c9",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/us-based-unitedhealth-group-leases-4-34-lakh-sq-ft-office-space-in-chennai/articleshow/136161462.cms",
         "title-city:us based unitedhealth group leases 4 34 lakh sq ft office space in chennai|chennai",
@@ -16271,7 +16271,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-25T13:06:38.721Z",
-      "expiresAt": "2026-11-25T13:21:38.721Z"
+      "expiresAt": "2026-11-25T13:21:38.721Z",
+      "finalizedAt": "2026-11-25T13:06:40.878Z"
     }
   ]
 }
