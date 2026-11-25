@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T12:43:19.859Z",
+  "updatedAt": "2026-11-25T12:43:22.304Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16119,7 +16119,7 @@
     },
     {
       "claimId": "2011e403-ba9b-44bf-babb-97d83186ed74",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://gulshangroup.com/luxury-apartments-in-noida",
         "title-city:luxury apartments in noida the rise of ultra luxury living|noida",
@@ -16140,7 +16140,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-25T12:43:19.859Z",
-      "expiresAt": "2026-11-25T12:58:19.859Z"
+      "expiresAt": "2026-11-25T12:58:19.859Z",
+      "finalizedAt": "2026-11-25T12:43:22.304Z"
     }
   ]
 }
