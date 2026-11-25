@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T03:04:17.763Z",
+  "updatedAt": "2026-11-25T12:42:28.484Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15985,6 +15985,31 @@
       "claimedAt": "2026-11-25T03:04:15.423Z",
       "expiresAt": "2026-11-25T03:19:15.423Z",
       "finalizedAt": "2026-11-25T03:04:17.763Z"
+    },
+    {
+      "claimId": "b2cc538f-a19a-49ba-b5aa-5e92338676e3",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/chandak-group-raises-200-crore-investment-for-chembur-housing-project/136146823",
+        "title-city:chandak group raises 200 crore investment for chembur housing project|mumbai",
+        "dedupe:2b27b18021e26bd835ccd244bcf31955ae63f56eef9650235e51732b8310fbf1",
+        "dedupe:6c7da2efd7aff3dca8486f7f6770bde1bcbd84167657a1b8e82e39e58e7f771d",
+        "dedupe:c2ea818ad7554f1411b8bf7c4a60d87de434571748c92f00ef78e5414fe79334",
+        "dedupe:chandak group raises chembur housing|amount:200-crore|mumbai",
+        "dedupe:2489e133fd40fa300cf5973fe3d9eb9acb10a6c46a72a5956dfccf94dceb364a",
+        "dedupe:e4d7e9b43ea1456ebc2acb9bf8f10307418b8b06adb97b07e267e1a1e26e63eb"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-25T12:42:28.484Z",
+      "expiresAt": "2026-11-25T12:57:28.484Z"
     }
   ]
 }
