@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T13:06:15.439Z",
+  "updatedAt": "2026-11-25T13:06:25.895Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16221,6 +16221,31 @@
       "claimedAt": "2026-11-25T13:06:13.309Z",
       "expiresAt": "2026-11-25T13:21:13.309Z",
       "finalizedAt": "2026-11-25T13:06:15.439Z"
+    },
+    {
+      "claimId": "0d1979af-9857-4c6c-a340-96c74900e422",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/chandak-group-secures-%e2%82%b9200-cr-investment-from-japan-based-mori-trust-route78-partners-for-its-chembur-project",
+        "title-city:chandak group secures 200 cr investment from japan based mori trust and route78 partners for its chembur project|mumbai",
+        "dedupe:6a83e648edce8c7ae855775d95a55fa826007526228275b30232bb4229134bf3",
+        "dedupe:cbe8311a119c594727758d6c7e638dc9d71c6047ee1d37cd0579cda6b53250de",
+        "dedupe:55f8f4a50733a76afe69b0028dfd3c28b46ea831b0538339a51fe8e9fceb5d25",
+        "dedupe:10939a378fd1df4170ba4605e8e065407978279e0e80e6f46ba37afc42084392",
+        "dedupe:dde34458e9b8b28b21d880b44a3cdf4589271afb21488850f5214da5e8026b22",
+        "dedupe:0be4b39852b70a69f4014419b0831dab1cffbe3eb7dfe5626ad25384a3af0303"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-25T13:06:25.895Z",
+      "expiresAt": "2026-11-25T13:21:25.895Z"
     }
   ]
 }
