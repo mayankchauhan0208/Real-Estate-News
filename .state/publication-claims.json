@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T13:06:40.878Z",
+  "updatedAt": "2026-11-25T22:28:25.751Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16273,6 +16273,29 @@
       "claimedAt": "2026-11-25T13:06:38.721Z",
       "expiresAt": "2026-11-25T13:21:38.721Z",
       "finalizedAt": "2026-11-25T13:06:40.878Z"
+    },
+    {
+      "claimId": "6cf4048b-e780-4352-a1e0-50e7a7441982",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/aparna-constructions-launches-two-residential-projects-in-hyderabad-and-bengaluru-to-invest-1-825-crore-101795612753701.html",
+        "title-city:aparna constructions launches two residential projects in hyderabad and bengaluru to invest 1 825 crore|bangalore",
+        "dedupe:0bfe8d2376ea860e7c279ca7139b537f9cc4e11c35b94e37d601e5360b23cd88",
+        "dedupe:9da5e192433e406b824ed8832bc5305a6ded981d0bd5714a40aa3189dbf9fa47",
+        "dedupe:b994f4aae4c9459081fc0acf5f7842c2a288e55eae2ce1fc62ca6b1b3591c579",
+        "dedupe:27fdbfd444d73722466e48e92d459ae7ddd73431c8065c03362ed947f52fedf1"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-25T22:28:25.751Z",
+      "expiresAt": "2026-11-25T22:43:25.751Z"
     }
   ]
 }
