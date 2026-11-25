@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T12:42:53.794Z",
+  "updatedAt": "2026-11-25T12:42:56.144Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16040,7 +16040,7 @@
     },
     {
       "claimId": "c86a3f73-bc3b-452e-ac54-3cca47ad929c",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hilifebuilders.in/apartments-with-guest-room-in-thrissur-host-without-the-squeeze",
         "title-city:apartments with guest room in thrissur host without the squeeze|thrissur",
@@ -16061,7 +16061,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-25T12:42:53.794Z",
-      "expiresAt": "2026-11-25T12:57:53.794Z"
+      "expiresAt": "2026-11-25T12:57:53.794Z",
+      "finalizedAt": "2026-11-25T12:42:56.144Z"
     }
   ]
 }
