@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T03:04:15.423Z",
+  "updatedAt": "2026-11-25T03:04:17.763Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -15961,7 +15961,7 @@
     },
     {
       "claimId": "b044040a-8327-4559-bae4-c4da5cacae27",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://business-standard.com/industry/news/mp-developers-buys-iconic-pilot-theatre-in-chennai-plans-200-cr-project-126112400630_1.html",
         "title-city:mp developers buys iconic pilot theatre in chennai plans 200 cr project|chennai",
@@ -15983,7 +15983,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-25T03:04:15.423Z",
-      "expiresAt": "2026-11-25T03:19:15.423Z"
+      "expiresAt": "2026-11-25T03:19:15.423Z",
+      "finalizedAt": "2026-11-25T03:04:17.763Z"
     }
   ]
 }
