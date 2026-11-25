@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T12:42:31.249Z",
+  "updatedAt": "2026-11-25T12:42:41.153Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16011,6 +16011,31 @@
       "claimedAt": "2026-11-25T12:42:28.484Z",
       "expiresAt": "2026-11-25T12:57:28.484Z",
       "finalizedAt": "2026-11-25T12:42:31.249Z"
+    },
+    {
+      "claimId": "9a96ab4e-d048-4a82-a547-e5ddc2d447ec",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/residential/hsvp-plans-388-affordable-residential-plots-in-new-sector-27-in-panchkula/136147702",
+        "title-city:hsvp plans 388 affordable residential plots in new sector 27 in panchkula|panchkula",
+        "dedupe:8f5eb95dc1b88000ee0851702561d37b619c14113b011b7895175f2f04b9a3b6",
+        "dedupe:c8d3336b6a4796e24c2dfbd1deec95b81d08a361bdeeb9062f4d94c04144fcc7",
+        "dedupe:1e4143c166d7e22b3e9c7aab3cca103cd93eddf619a57dca35f31c7d720a4159",
+        "dedupe:hsvp plans affordable residential plots new sector27 panchkula|sector:27|panchkula",
+        "dedupe:da67712fd423eea8158cc1544c71528cedd918b0df0d13726c3d872760790a75",
+        "dedupe:adbdcf7d5998ebf63b383ca405281be31378ad17a9d76184c6495d200bbbb39b"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "panchkula",
+      "canonicalEventCity": "panchkula",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "panchkula"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-25T12:42:41.153Z",
+      "expiresAt": "2026-11-25T12:57:41.153Z"
     }
   ]
 }
