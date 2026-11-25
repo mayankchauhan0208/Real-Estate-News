@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T12:42:56.144Z",
+  "updatedAt": "2026-11-25T12:43:06.279Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16063,6 +16063,58 @@
       "claimedAt": "2026-11-25T12:42:53.794Z",
       "expiresAt": "2026-11-25T12:57:53.794Z",
       "finalizedAt": "2026-11-25T12:42:56.144Z"
+    },
+    {
+      "claimId": "bf29a6ed-21fb-4deb-9934-4c9e1b193cef",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://proppuls.in/bank-of-america-leases-10-lakh-sq-ft-office-space-mindspace-cyberabad-hyderabad",
+        "title-city:bank of america takes office space in hyderabad|hyderabad",
+        "dedupe:0681c85678bc33435e6f5704d9d359b25de3795fa0476333e8b1784c9f556470",
+        "dedupe:af2a6c2c96e2de125c566f6d2c7836d0a8d0234cc5f7ae2ace7098625f24cb09",
+        "dedupe:b6dad807d45a1636406d1a1b4b1bd6d248b7907303eaaf2cbb3e0be89b75ee31",
+        "dedupe:95af6e2d26f7ba20467ad99658501c6410d103a9263823bd5f6638ba51eda0fb",
+        "dedupe:e52d5c3131a9fd343b2d24c6194ef1bd16e1f0d66b25017636b14559ad1e0697",
+        "dedupe:07a77362760285fab95a5f85902e74f2cb36f482e49f67d618cf85621b498eb2"
+      ],
+      "semanticIdentity": {
+        "city": "hyderabad",
+        "canonicalEventCity": "hyderabad",
+        "normalizedBuilder": "bank-of-america",
+        "normalizedProject": "",
+        "canonicalEventType": "commercial-lease",
+        "builder": "bank-of-america",
+        "project": "",
+        "eventType": "commercial-lease",
+        "numericAnchors": [
+          "10.10:lakh",
+          "1010467:number",
+          "11:number",
+          "12:number",
+          "1450:crore",
+          "15:number",
+          "1:number",
+          "2026:number",
+          "2027:number",
+          "49.72:crore",
+          "7:number",
+          "8.28:crore",
+          "82:number",
+          "99.4:crore"
+        ],
+        "canonicalEventFingerprint": "bank-of-america|hyderabad|commercial-lease|10.10:lakh,1010467:number,11:number",
+        "semanticClusterId": "cluster:c5e438143dbf027c5c441ac0"
+      },
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "bank-of-america|hyderabad|commercial-lease|10.10:lakh,1010467:number,11:number",
+      "semanticClusterId": "cluster:c5e438143dbf027c5c441ac0",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-25T12:43:06.279Z",
+      "expiresAt": "2026-11-25T12:58:06.279Z"
     }
   ]
 }
