@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T13:05:51.530Z",
+  "updatedAt": "2026-11-25T13:06:01.333Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16168,6 +16168,31 @@
       "claimedAt": "2026-11-25T13:05:49.012Z",
       "expiresAt": "2026-11-25T13:20:49.012Z",
       "finalizedAt": "2026-11-25T13:05:51.530Z"
+    },
+    {
+      "claimId": "71ca7dfb-2371-46ae-959e-f9bf1f6b99dd",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/max-estates-sells-out-first-phase-of-gurugram-project-the-bungalows-for-%e2%82%b92319-crore",
+        "title-city:max estates sells out first phase of gurugram project the bungalows for 2 319 crore|gurugram",
+        "dedupe:812650f10a816ef2fc6eca78c98c7829156dc80359cb58fd59ea8c9d47c42933",
+        "dedupe:f5498a334198f178606cd82da98f9242e09dc11d54ed61e976277f13925ee4bf",
+        "dedupe:9204759b874b6249c14890a9a4930dde3186285c5604ab7bf325f16eb4d3491e",
+        "dedupe:e303f546a6041f72c7248a87ef9d090b4f569861052cb5af3eb3f0423676df89",
+        "dedupe:3aa89f03a775cfad37ffc262aaa266e3760402324472620041e0ac2749508642",
+        "dedupe:1d5907077234b4ea1ebf1ad43477b456a17ab7f2d057284b0460453b98e53b94"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-25T13:06:01.333Z",
+      "expiresAt": "2026-11-25T13:21:01.333Z"
     }
   ]
 }
