@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T12:43:06.279Z",
+  "updatedAt": "2026-11-25T12:43:08.944Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16066,7 +16066,7 @@
     },
     {
       "claimId": "bf29a6ed-21fb-4deb-9934-4c9e1b193cef",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://proppuls.in/bank-of-america-leases-10-lakh-sq-ft-office-space-mindspace-cyberabad-hyderabad",
         "title-city:bank of america takes office space in hyderabad|hyderabad",
@@ -16114,7 +16114,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-25T12:43:06.279Z",
-      "expiresAt": "2026-11-25T12:58:06.279Z"
+      "expiresAt": "2026-11-25T12:58:06.279Z",
+      "finalizedAt": "2026-11-25T12:43:08.944Z"
     }
   ]
 }
