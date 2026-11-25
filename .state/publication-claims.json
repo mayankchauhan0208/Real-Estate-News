@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T22:28:25.751Z",
+  "updatedAt": "2026-11-25T22:28:28.527Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16276,7 +16276,7 @@
     },
     {
       "claimId": "6cf4048b-e780-4352-a1e0-50e7a7441982",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/real-estate/aparna-constructions-launches-two-residential-projects-in-hyderabad-and-bengaluru-to-invest-1-825-crore-101795612753701.html",
         "title-city:aparna constructions launches two residential projects in hyderabad and bengaluru to invest 1 825 crore|bangalore",
@@ -16295,7 +16295,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-25T22:28:25.751Z",
-      "expiresAt": "2026-11-25T22:43:25.751Z"
+      "expiresAt": "2026-11-25T22:43:25.751Z",
+      "finalizedAt": "2026-11-25T22:28:28.527Z"
     }
   ]
 }
