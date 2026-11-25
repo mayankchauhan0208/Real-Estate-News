@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T22:28:46.997Z",
+  "updatedAt": "2026-11-25T22:28:56.656Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16324,6 +16324,32 @@
       "claimedAt": "2026-11-25T22:28:44.324Z",
       "expiresAt": "2026-11-25T22:43:44.324Z",
       "finalizedAt": "2026-11-25T22:28:46.997Z"
+    },
+    {
+      "claimId": "852aa4a1-1919-457e-8ded-557a2872ce22",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/united-healths-optum-leases-4-34-lakh-sq-ft-in-chennais-pallavaram-for-162-crore-over-five-years-101795604631048.html",
+        "title-city:united health s optum leases 4 34 lakh sq ft in chennai s pallavaram for 162 crore over five years|chennai",
+        "dedupe:b88d4924b63ed41a0e256ef753d64b3b5ba8fb345d367c9427655138a5767edc",
+        "dedupe:ad96d267a636ef70078f277f8345caf3a1eaa340e626ec8c1de966fc5728937d",
+        "dedupe:82ab13fce49852a8a735431d25fca8e956501ebc44ef8c1a5829b6e165eba4e3",
+        "dedupe:f3c9b71ab0e03ba5abbb5582120690681980f8805d0de1f32222ddaa345aa1d0",
+        "dedupe:united health s optum leases chennai s pallavaram five years|amount:162-crore|chennai",
+        "dedupe:0f0148d72acaa1aa3c131d7f027eaa20101161ccb710fa793be5e5c245bb4673",
+        "dedupe:5a4844908241be38fa616b64553f4ffff3641b7c33618403b6d2987809951029"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "chennai",
+      "canonicalEventCity": "chennai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "chennai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-25T22:28:56.656Z",
+      "expiresAt": "2026-11-25T22:43:56.656Z"
     }
   ]
 }
