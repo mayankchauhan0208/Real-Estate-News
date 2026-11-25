@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T13:06:13.309Z",
+  "updatedAt": "2026-11-25T13:06:15.439Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16197,7 +16197,7 @@
     },
     {
       "claimId": "9c57211f-a776-41c0-969c-80f8069828a7",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://torbitrealty.com/primus-senior-living-partners-with-mana-skanda-for-%e2%82%b9375-crore-senior-living-development-in-bengaluru",
         "title-city:primus senior living partners with mana skanda for 375 crore senior living development in bengaluru|bangalore",
@@ -16219,7 +16219,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-25T13:06:13.309Z",
-      "expiresAt": "2026-11-25T13:21:13.309Z"
+      "expiresAt": "2026-11-25T13:21:13.309Z",
+      "finalizedAt": "2026-11-25T13:06:15.439Z"
     }
   ]
 }
