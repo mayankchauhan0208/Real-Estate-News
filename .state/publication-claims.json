@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T22:28:28.527Z",
+  "updatedAt": "2026-11-25T22:28:44.324Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16297,6 +16297,32 @@
       "claimedAt": "2026-11-25T22:28:25.751Z",
       "expiresAt": "2026-11-25T22:43:25.751Z",
       "finalizedAt": "2026-11-25T22:28:28.527Z"
+    },
+    {
+      "claimId": "56d5b848-10c6-4cb6-88d3-6293c2023ee7",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/real-estate-guide/worlis-luxury-real-estate-market-where-home-prices-start-from-10-crore-and-monthly-rents-touch-28-5-lakh-101795540095951.html",
+        "title-city:worli s luxury real estate market where home prices start from 10 crore and monthly rents touch 28 5 lakh|mumbai",
+        "dedupe:549a6afadeb42b132ce991c7f594869c1f14841efcc88789cf66568b628fe780",
+        "dedupe:9745b69416658892be89604a2d0f9d9a7e94b4fb1a95456862c4cfc0c4ab90b9",
+        "dedupe:10eb15347ac2d909672db4c3fef70e15197ba35de1a32c21d123ff874ffc6015",
+        "dedupe:84367d77b47fad556493fcbe79056585d7c330c164f970e725366ffa21deb3bf",
+        "dedupe:worli s real estate market where home prices start monthly rents touch|amount:10-crore|mumbai",
+        "dedupe:4f1d41f8b17e5f3876e200d3c7296fb0babbfc77661b14f8d1da4b76edb459eb",
+        "dedupe:bfb2f27e64df0c80ba5745b9e642ee9970e90f6fb5df7915360aad82514d7265"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-25T22:28:44.324Z",
+      "expiresAt": "2026-11-25T22:43:44.324Z"
     }
   ]
 }
