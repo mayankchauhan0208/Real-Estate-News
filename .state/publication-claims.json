@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-26T05:18:10.555Z",
+  "updatedAt": "2026-11-26T05:18:20.252Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16481,6 +16481,31 @@
       "claimedAt": "2026-11-26T05:18:08.263Z",
       "expiresAt": "2026-11-26T05:33:08.263Z",
       "finalizedAt": "2026-11-26T05:18:10.555Z"
+    },
+    {
+      "claimId": "91d4afe7-251b-4e21-8aab-1823506efd36",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hilifebuilders.in/luxury-apartments-east-fort-thrissur-yoga",
+        "title-city:luxury apartments in east fort thrissur with a yoga peedam|thrissur",
+        "dedupe:196aba3f14c60784f248f1647e3bc07204f5b4ba81505e1fb183495adb51079b",
+        "dedupe:9d87af4912241e13451133f021690dd0d5b75b22b7aee1e58ed48354b6d6da94",
+        "dedupe:7cacce18c5118bc5042786b5972a63e84fe0a1b2c2a0338bbbbfbeb6bf339b8d",
+        "dedupe:68ecc25aa0ce38fc071d02a15c23ebadd7bc4fe2351445166030184b7b65c47b",
+        "dedupe:95bf86ae4f1f02f84b3bd844bb95a1f0b3a4f6def643960b9dbdfb2ee6d07ece",
+        "dedupe:23883b21c4f7ac01fa9b00d21660372d1734dde22ba9090d5f7cb1a5a5adfea9"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "thrissur",
+      "canonicalEventCity": "thrissur",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "thrissur"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-26T05:18:20.252Z",
+      "expiresAt": "2026-11-26T05:33:20.252Z"
     }
   ]
 }
