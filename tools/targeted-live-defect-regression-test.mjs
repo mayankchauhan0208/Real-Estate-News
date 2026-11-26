@@ -253,6 +253,51 @@ const politicalOfficeWithoutPropertyEvent = {
   newsLink: "https://example.com/lucknow-chief-minister-party-convention"
 };
 
+const scienceCityConnectivity = {
+  ...base,
+  title: "U'khand CM announces Science City in Srinagar, chopper connectivity to Dehradun soon",
+  description: "The chief minister announced a Science City and helicopter service between Srinagar and Dehradun.",
+  articleText: "The chief minister announced development of a Science City in Srinagar and a helicopter service to Dehradun during a cultural fair. The announcement concerns education and connectivity.",
+  cityCode: "dehradun",
+  newsLink: "https://example.com/dehradun-science-city-connectivity"
+};
+
+const lakeRestoration = {
+  ...base,
+  title: "GMDA plans to deepen, expand Wazirabad lake",
+  description: "GMDA plans lake deepening, desilting and rainwater harvesting to prevent waterlogging.",
+  articleText: "GMDA will dewater and desilt Wazirabad lake, plug sewage inflows and expand the waterbody for rainwater harvesting. The work is a water-management and flood-prevention measure.",
+  cityCode: "gurugram",
+  newsLink: "https://example.com/gurugram-wazirabad-lake"
+};
+
+const acquisitionObjectionHearing = {
+  ...base,
+  title: "Mohali: Eco City-4 landowners to get a hearing on December 16",
+  description: "Public hearing for landowner objections to acquisition for the proposed Eco City-4 township.",
+  articleText: "Affected landowners may raise objections at a public hearing over the proposed acquisition of 183 acres. The township remains at the land-acquisition stage; no scheme brochure, plot launch, booking schedule or allotment draw has been announced.",
+  cityCode: "mohali",
+  newsLink: "https://example.com/mohali-eco-city-hearing"
+};
+
+const negativeInvestmentRanking = {
+  ...base,
+  title: "Mumbai ranks last in top 10 preferred real estate cross-border investment destinations in APAC: Colliers",
+  description: "Mumbai was identified as the least preferred city in the cross-border real estate investment ranking.",
+  articleText: "The Colliers report ranks Mumbai last among the top ten APAC real-estate investment destinations. The report is a negative comparative market result, not a property transaction or project launch.",
+  cityCode: "mumbai",
+  newsLink: "https://example.com/mumbai-last-investment-ranking"
+};
+
+const transitOrientedMixedUseApproval = {
+  ...base,
+  title: "Authority approves 22-acre mixed-use development beside metro corridor in Gurugram",
+  description: "The approved project includes residential towers, commercial space and a transit-oriented development zone.",
+  articleText: "The authority approved a named 22-acre mixed-use development beside the metro corridor in Gurugram, with residential towers, commercial space and a published project plan.",
+  cityCode: "gurugram",
+  newsLink: "https://example.com/gurugram-mixed-use-metro-approval"
+};
+
 const routedCci = applyCityCode(cci);
 assert.equal(routedCci.cityCode, "", "CCI corporate transaction must not inherit Gujarat");
 assert.equal(isPublishableArticle(routedCci, new Set()), false, "CCI corporate transaction must not publish");
@@ -323,6 +368,15 @@ assert.ok(getRejectionReasons(politicalAttack, new Set()).some((reason) => reaso
 assert.equal(isPublishableArticle(politicalWorkerConference, new Set()), false, "party worker conferences must not publish as real-estate news");
 assert.equal(isPublishableArticle(politicalOfficeWithoutPropertyEvent, new Set()), false, "political office-holder coverage without a property event must not publish");
 assert.equal(isPublishableArticle(governmentHousingContrast, new Set()), true, "a government-announced concrete housing approval must remain publishable");
+assert.equal(isPublishableArticle(scienceCityConnectivity, new Set()), false, "science-city and helicopter-connectivity coverage without a property event must not publish");
+assert.ok(getRejectionReasons(scienceCityConnectivity, new Set()).some((reason) => reason.includes("civic amenity/connectivity")));
+assert.equal(isPublishableArticle(lakeRestoration, new Set()), false, "lake restoration without a property event must not publish");
+assert.ok(getRejectionReasons(lakeRestoration, new Set()).some((reason) => reason.includes("civic amenity/connectivity")));
+assert.equal(isPublishableArticle(acquisitionObjectionHearing, new Set()), false, "land-acquisition objection hearings must not auto-publish");
+assert.ok(getRejectionReasons(acquisitionObjectionHearing, new Set()).some((reason) => reason.includes("land-acquisition hearing")));
+assert.equal(isPublishableArticle(negativeInvestmentRanking, new Set()), false, "negative real-estate investment rankings must not publish");
+assert.ok(getRejectionReasons(negativeInvestmentRanking, new Set()).some((reason) => reason.includes("negative city real-estate market ranking")));
+assert.equal(isPublishableArticle(transitOrientedMixedUseApproval, new Set()), true, "a concrete transit-oriented mixed-use project must remain publishable");
 
 const cookieHeaders = {
   getSetCookie: () => [

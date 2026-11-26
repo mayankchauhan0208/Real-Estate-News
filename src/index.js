@@ -7239,6 +7239,34 @@ function isGenericCivicOrPlanningWithoutPropertyEvent(article) {
   return centralParkOnly || (civic && !hasConcreteMaterialPropertyEvent(article));
 }
 
+function isCivicAmenityOrConnectivityWithoutPropertyNexus(article) {
+  const primary = getArticlePrimaryText(article);
+  const eventLead = `${primary} ${getArticleBodyText(article).slice(0, 700)}`;
+  // A city amenity or connectivity announcement is not itself a Brokket
+  // property event. A named property project, development corridor, township,
+  // or concrete housing/commercial build stays eligible through the ordinary gate.
+  const civicAmenityOrConnectivity = /\b(?:science city|science centre|science center|chopper connectivity|helicopter service|helicopter connectivity|lake (?:revival|expansion|deepening)|(?:deepen|deepening|desilt|desilting|expand(?:ing|s)?)\s+(?:the\s+)?(?:[\w-]+\s+)?lake|rainwater harvesting|waterbody restoration)\b/i.test(eventLead);
+  const eventLeadPropertyNexus = /\b(?:real estate|property|housing|residential|commercial|apartments?|flats?|plots?|land parcel|township|mixed-use|office space|development corridor|tod|transit-oriented development)\b/i.test(eventLead) &&
+    /\b(?:approv(?:e|es|ed|al)|launch(?:es|ed)?|construct(?:s|ed|ion)|develop(?:s|ed|ment)|acquir(?:e|es|ed|ing)|lease(?:s|d|ing)|allot(?:s|ed|ment)|sell(?:s|ing|out)|bookings?)\b/i.test(eventLead);
+  return civicAmenityOrConnectivity && !eventLeadPropertyNexus;
+}
+
+function isProceduralLandAcquisitionObjectionArticle(article) {
+  const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
+  // An unresolved hearing for affected landowners is not a positive release.
+  return /\b(?:public\s+)?hearing\b/i.test(text) &&
+    /\blandowners?|affected owners?|affected landowners?\b/i.test(text) &&
+    /\b(?:objections?|representations?)\b/i.test(text) &&
+    /\b(?:land )?acquisition\b/i.test(text);
+}
+
+function isNegativeCityRealEstateRanking(article) {
+  const primary = getArticlePrimaryText(article);
+  return /\b(?:ranks?\s+last|least\s+preferred|bottom(?:[- ]?ranked)?|lowest[- ]?ranked)\b/i.test(primary) &&
+    /\b(?:real estate|realty|property|housing)\b/i.test(primary) &&
+    /\b(?:investment|destination|market|ranking)\b/i.test(primary);
+}
+
 function isFinancialOrTaxOnlyWithoutPropertyEvent(article) {
   const text = `${getArticlePrimaryText(article)} ${getArticleBodyText(article)}`;
   const financeOrTax = /\b(?:investor exits?|fund exits?|stake sale|share transaction|corporate finance|valuation|fundraise|debt exits?|investment exits?|tax|GST|enforcement|recovery|penalty|investigation|raid)\b/i.test(text);
@@ -7766,6 +7794,14 @@ function getRejectionReasons(article, sentIds) {
     reasons.push("filter 3: negative/crime/utility concern news");
   }
 
+  if (isProceduralLandAcquisitionObjectionArticle(article)) {
+    reasons.push("filter 3: unresolved land-acquisition hearing or objection process");
+  }
+
+  if (isNegativeCityRealEstateRanking(article)) {
+    reasons.push("filter 3: negative city real-estate market ranking");
+  }
+
   if (isAdverseFullArticleEvent(article)) {
     reasons.push("filter 3: adverse property/court event in readable full article");
   }
@@ -7871,6 +7907,10 @@ function getRejectionReasons(article, sentIds) {
 
   if (isGenericCivicOrPlanningWithoutPropertyEvent(article)) {
     reasons.push("filter 10: civic/planning item without a material property nexus");
+  }
+
+  if (isCivicAmenityOrConnectivityWithoutPropertyNexus(article)) {
+    reasons.push("filter 10: civic amenity/connectivity item without a material property nexus");
   }
 
   if (isFinancialOrTaxOnlyWithoutPropertyEvent(article)) {
