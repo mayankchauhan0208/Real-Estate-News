@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-25T22:28:58.974Z",
+  "updatedAt": "2026-11-26T05:17:22.195Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16351,6 +16351,31 @@
       "claimedAt": "2026-11-25T22:28:56.656Z",
       "expiresAt": "2026-11-25T22:43:56.656Z",
       "finalizedAt": "2026-11-25T22:28:58.974Z"
+    },
+    {
+      "claimId": "31510330-36ac-45e2-af5b-99b85a5bf375",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://sumadhuragroup.com/blogs/sumadhura-panorama-devanahalli-plots",
+        "title-city:sumadhura panorama devanahalli phases plot sizes and location|bangalore",
+        "dedupe:df8008adb95c2a1b3df6b824c25d2f6aa875feae77315ba153be7c4c4570a150",
+        "dedupe:d008fcfb072ff0ce5920cc91726bd77279198eb594049cbc3cdb38b5feaacd78",
+        "dedupe:23c7794366e4edbbf1c2c9a08a2e9bc2b448e71aa5dd73ec87ba1de02769c114",
+        "dedupe:998828a49f6dc87723cd13f496544c5e90e3403f93c7ff2808f8a7b8bfc6d22d",
+        "dedupe:9e138c835e6d154df9361f6bc1a05caafb726b9bc355e5bc988ae0c1c9675c89",
+        "dedupe:28ae857574477d1bf541f5be09147ba524420518dca3a85ec3e266b112995369"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-26T05:17:22.195Z",
+      "expiresAt": "2026-11-26T05:32:22.195Z"
     }
   ]
 }
