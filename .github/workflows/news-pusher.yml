@@ -5,6 +5,11 @@ on:
     # 13:33 IST first, then once every hour (cron is UTC). The three-minute
     # offset avoids the hosted scheduler's UTC top-of-hour congestion.
     - cron: "3 * * * *"
+  # A trusted external cron may invoke this event when GitHub's hosted
+  # scheduler is delayed or drops a scheduled delivery. It uses the exact
+  # same normal-current job, checkpoint, and dedupe ledger as `schedule`.
+  repository_dispatch:
+    types: [hourly-news-ingestion]
   workflow_dispatch:
     inputs:
       mode:
@@ -112,7 +117,7 @@ jobs:
         run: npm run build
 
       - name: Verify production history endpoint
-        if: ${{ github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION' }}
+        if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.mode == 'PRODUCTION' }}
         run: |
           curl --fail --silent --show-error --max-time 30 \
             --request POST \
@@ -123,15 +128,16 @@ jobs:
       - name: Fetch and push news
         run: npm start
         env:
-          # Scheduled runs are normal production ingestion. A manually
-          # dispatched run is non-mutating unless PRODUCTION is selected.
-          RELEASE_MODE: ${{ github.event_name == 'schedule' && 'PRODUCTION' || github.event.inputs.mode }}
+          # Scheduled and trusted external-dispatch runs are normal production
+          # ingestion. A manually dispatched run is non-mutating unless
+          # PRODUCTION is selected.
+          RELEASE_MODE: ${{ github.event_name != 'workflow_dispatch' && 'PRODUCTION' || github.event.inputs.mode }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.mode == 'DRY_RUN' && 'true' || 'false' }}
-          APP_API_URL: ${{ (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') && 'https://api.propertymaster.com/api/news' || '' }}
+          APP_API_URL: ${{ (github.event_name != 'workflow_dispatch' || github.event.inputs.mode == 'PRODUCTION') && 'https://api.propertymaster.com/api/news' || '' }}
           APP_API_KEY: ""
-          APP_LIST_API_URL: ${{ (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') && 'https://api.propertymaster.com/api/news/list' || '' }}
+          APP_LIST_API_URL: ${{ (github.event_name != 'workflow_dispatch' || github.event.inputs.mode == 'PRODUCTION') && 'https://api.propertymaster.com/api/news/list' || '' }}
           APP_LIST_API_KEY: ""
-          GITHUB_TOKEN: ${{ (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') && github.token || '' }}
+          GITHUB_TOKEN: ${{ (github.event_name != 'workflow_dispatch' || github.event.inputs.mode == 'PRODUCTION') && github.token || '' }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           GITHUB_REF_NAME: ${{ github.ref_name }}
           PUBLICATION_CLAIM_PATH: .state/publication-claims.json
@@ -157,12 +163,12 @@ jobs:
           SOURCE_STRATEGY: "rotating-source-coverage"
           SOURCE_PRIORITY_URLS: "https://realty.economictimes.indiatimes.com/rss/commercial,https://realty.economictimes.indiatimes.com/tag/noida%2Bauthority,https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida%2Bauthority,https://realty.economictimes.indiatimes.com/tag/greater%2Bnoida,https://www.hindustantimes.com/feeds/rss/cities/noida-news/rssfeed.xml,https://timesofindia.indiatimes.com/rssfeeds/8021716.cms"
           SOURCE_BATCH_INTERVAL_MINUTES: "60"
-          AUTO_SOURCE_BATCH: ${{ github.event_name == 'schedule' && 'true' || 'false' }}
-          SOURCE_BATCH_COUNT: ${{ github.event_name == 'schedule' && '6' || '1' }}
+          AUTO_SOURCE_BATCH: ${{ github.event_name != 'workflow_dispatch' && 'true' || 'false' }}
+          SOURCE_BATCH_COUNT: ${{ github.event_name != 'workflow_dispatch' && '6' || '1' }}
           # Exact-source validation runs are isolated from the durable normal
           # rotation. A targeted manual run must not replace the 553-source
           # checkpoint with its temporary one-source universe.
-          USE_RESUMABLE_SOURCE_SCHEDULER: ${{ (github.event_name == 'schedule' || github.event.inputs.source_urls == '') && 'true' || 'false' }}
+          USE_RESUMABLE_SOURCE_SCHEDULER: ${{ (github.event_name != 'workflow_dispatch' || github.event.inputs.source_urls == '') && 'true' || 'false' }}
           SOURCE_SHARD_SIZE: "50"
           # Leave enough time inside the hosted job for filtering, live
           # reconciliation, publication, and final artifact persistence.
@@ -190,7 +196,7 @@ jobs:
           ENABLE_EXPERIMENTAL_SOURCES: "true"
 
       - name: Persist normal-engine heartbeat
-        if: ${{ success() && (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') }}
+        if: ${{ success() && (github.event_name != 'workflow_dispatch' || github.event.inputs.mode == 'PRODUCTION') }}
         continue-on-error: true
         run: |
           mkdir -p .state
@@ -201,7 +207,7 @@ jobs:
           git diff --cached --quiet || (git commit -m "Persist normal ingestion heartbeat [skip ci]" && git pull --rebase --autostash origin main && git push)
 
       - name: Persist scheduler checkpoint
-        if: ${{ always() && (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') }}
+        if: ${{ always() && (github.event_name != 'workflow_dispatch' || github.event.inputs.mode == 'PRODUCTION') }}
         continue-on-error: true
         run: |
           if [ -f .state/source-monitor-checkpoint.json ] && [ -f .state/source-monitor-cycle.json ]; then
@@ -226,7 +232,7 @@ jobs:
           if-no-files-found: ignore
 
       - name: Refresh hosted admin snapshot
-        if: ${{ always() && (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') }}
+        if: ${{ always() && (github.event_name != 'workflow_dispatch' || github.event.inputs.mode == 'PRODUCTION') }}
         continue-on-error: true
         run: |
           npm run admin:export

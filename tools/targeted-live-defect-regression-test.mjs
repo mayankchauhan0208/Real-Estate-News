@@ -81,6 +81,26 @@ const headlineCityAgainstComparison = {
   newsLink: "https://torbitrealty.com/county-group-to-invest-rs-2500-cr-to-develop-luxury-homes-in-gurugram/"
 };
 
+const houseEazyPuneLaunch = {
+  ...base,
+  // Some listing cards omit the location from their compact title. The lead
+  // must still select the launch city rather than a prior NCR market.
+  title: "HouseEazy enters housing market after Rs 600 crore in transactions",
+  description: "HouseEazy has officially launched in Pune. This is its first expansion beyond NCR, where it already operates in Noida, Ghaziabad and Gurugram.",
+  articleText: "HouseEazy has officially launched in Pune. This is its first expansion beyond NCR, where it already operates in Noida, Ghaziabad and Gurugram. The Pune housing-market launch follows transactions exceeding Rs 600 crore.",
+  cityCode: "gurugram",
+  sourceCityCodes: ["gurugram"],
+  newsLink: "https://example.com/houseeazy-pune-launch"
+};
+
+const genuineMultiCityLaunch = {
+  ...base,
+  title: "Developer launches residential projects in Pune and Gurugram",
+  description: "The developer launched two named residential projects, one in Pune and one in Gurugram.",
+  articleText: "The developer launched two named residential projects, one in Pune and one in Gurugram. Both developments will add new homes.",
+  newsLink: "https://example.com/pune-gurugram-multi-city-launch"
+};
+
 const reraSeminar = {
   ...base,
   title: "Ranchi RERA seminar to guide stakeholders on the Act",
@@ -220,6 +240,22 @@ assert.equal(
   applyCityCode(headlineCityAgainstComparison).cityCode,
   "gurugram",
   "Headline event city must not be reassigned to a comparison city"
+);
+
+assert.deepEqual(
+  detectCityCodes(houseEazyPuneLaunch),
+  ["pune"],
+  "A launch-city lead must outrank prior-market references and source scope"
+);
+assert.equal(
+  applyCityCode(houseEazyPuneLaunch).cityCode,
+  "pune",
+  "HouseEazy's Pune launch must never inherit Gurugram from historical NCR presence"
+);
+assert.deepEqual(
+  detectCityCodes(genuineMultiCityLaunch).sort(),
+  ["gurugram", "pune"],
+  "A real multi-city announcement must remain multi-city rather than being forced to one city"
 );
 
 assert.equal(isPublishableArticle(reraSeminar, new Set()), false, "Routine non-official RERA seminar coverage must not publish");

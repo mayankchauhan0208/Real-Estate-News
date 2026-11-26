@@ -4715,6 +4715,28 @@ function detectExplicitTargetCityCodes(article) {
   return [];
 }
 
+function detectActionScopedEventCityCodes(article) {
+  // A story can name prior operating markets after its actual launch city.
+  // Treat only a city in the same lead sentence as a concrete event action as
+  // event geography. This preserves true multi-city announcements while
+  // stopping "enters Pune ... existing presence in Gurugram" from inheriting
+  // the older market.
+  const eventActions = /\b(?:enter(?:s|ed|ing)?|launch(?:es|ed|ing)?|expand(?:s|ed|ing|ion)?|open(?:s|ed|ing)?|acquir(?:e|es|ed|ing)|purchas(?:e|es|ed|ing)|lease(?:s|d|ing)?|sell(?:s|ing)?|sold|invest(?:s|ed|ing|ment)?|develop(?:s|ed|ing|ment)?|approv(?:e|es|ed|al)|allot(?:s|ted|ment)?|registr(?:ation|ations|ies|ed|ing)?)\b/i;
+  const primarySentences = `${article.title || ""}. ${article.description || ""}`
+    .split(/[.!?]+/)
+    .map((sentence) => sentence.trim())
+    .filter(Boolean);
+
+  const codes = new Set();
+  for (const sentence of primarySentences) {
+    if (!eventActions.test(sentence)) continue;
+    for (const rule of cityRules) {
+      if (hasWholeWordKeyword(sentence, rule.keywords)) codes.add(rule.code);
+    }
+  }
+  return [...codes];
+}
+
 function isGenericDelhiNcrCityAlias(code, article) {
   if (code !== "new_delhi" || !/\b(?:ncr|delhi\s+ncr)\b/i.test(getArticlePrimaryText(article))) {
     return false;
@@ -6195,6 +6217,15 @@ function detectCityCodes(article) {
 
   const primaryText = getArticlePrimaryText(article);
 
+  const actionScopedEventCityCodes = detectActionScopedEventCityCodes(article)
+    .filter((code) => code !== "delhi_ncr" && !isGenericDelhiNcrCityAlias(code, article));
+  if (actionScopedEventCityCodes.length === 1 &&
+      !isFngConnectivityCatalystArticle(article) &&
+      !isFaridabadJewarGrowthArticle(article) &&
+      !isFaridabadNcrGrowthComparisonArticle(article)) {
+    return actionScopedEventCityCodes;
+  }
+
   // Use the same title-only resolver as the rest of event-geography. Keeping
   // a parallel inline matcher here had drifted from the canonical aliases
   // and could discard an explicit, supported city such as Coimbatore.
@@ -6643,7 +6674,16 @@ function getCityDetectionCacheKey(article) {
   const sourceCityCodes = Array.isArray(article.sourceCityCodes)
     ? article.sourceCityCodes.map((code) => String(code || "").trim().toLowerCase()).sort().join(",")
     : "";
-  return [article.newsLink || article.url || "", normalizeTitle(article.title || ""), article.publishedAt || article.createdAt || "", sourceCityCodes].join("|");
+  // Geo is recomputed after article enrichment. The cache identity must carry
+  // the lead/body evidence used by the resolver; URL and title alone can
+  // otherwise retain a listing-stage route after the full article reveals a
+  // different event city.
+  const evidence = normalizeTitle([
+    article.title || "",
+    article.description || "",
+    String(article.articleText || "").slice(0, 1600)
+  ].join(" "));
+  return [article.newsLink || article.url || "", evidence, article.publishedAt || article.createdAt || "", sourceCityCodes].join("|");
 }
 
 function getCachedDetectedCityCodes(article) {

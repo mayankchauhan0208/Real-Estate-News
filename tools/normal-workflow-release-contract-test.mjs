@@ -9,6 +9,7 @@ const concurrencyStart = workflow.indexOf("concurrency:");
 assert.ok(dispatchStart >= 0, "workflow_dispatch must be configured");
 assert.ok(concurrencyStart > dispatchStart, "workflow dispatch inputs must precede concurrency");
 assert.match(workflow, /- cron: "3 \* \* \* \*"/, "scheduler must run once per hour at :33 IST, offset from UTC top-of-hour congestion");
+assert.match(workflow, /repository_dispatch:\s*\r?\n\s+types: \[hourly-news-ingestion\]/, "a trusted external hourly dispatcher must share the normal workflow");
 assert.match(workflow, /normal-ingestion-heartbeat\.json/, "successful normal runs must persist a scheduler heartbeat");
 assert.doesNotMatch(workflow, /scheduler-guard:|needs: scheduler-guard|needs\.scheduler-guard/, "scheduled production must invoke the ingestion job directly");
 
@@ -37,11 +38,11 @@ for (const variable of ["APP_API_URL", "APP_API_KEY", "APP_LIST_API_URL", "APP_L
   if (variable === "APP_API_KEY" || variable === "APP_LIST_API_KEY") {
     assert.match(line, /""/, `${variable} must remain empty for the verified tokenless API contract`);
   } else {
-    assert.match(line, /github\.event\.inputs\.mode == 'PRODUCTION'/, `${variable} must be withheld from manual dry runs`);
+  assert.match(line, /github\.event_name != 'workflow_dispatch'.*github\.event\.inputs\.mode == 'PRODUCTION'/, `${variable} must be withheld from manual dry runs`);
   }
 }
 
-const protectedStateGate = "if: ${{ always() && (github.event_name == 'schedule' || github.event.inputs.mode == 'PRODUCTION') }}";
+const protectedStateGate = "if: ${{ always() && (github.event_name != 'workflow_dispatch' || github.event.inputs.mode == 'PRODUCTION') }}";
 assert.equal((workflow.match(new RegExp(protectedStateGate.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g")) || []).length, 2);
 assert.match(workflow, /- name: Upload run report\s*\r?\n\s+if: always\(\)/);
 
