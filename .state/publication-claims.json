@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-26T05:17:24.170Z",
+  "updatedAt": "2026-11-26T05:17:34.559Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16377,6 +16377,31 @@
       "claimedAt": "2026-11-26T05:17:22.195Z",
       "expiresAt": "2026-11-26T05:32:22.195Z",
       "finalizedAt": "2026-11-26T05:17:24.170Z"
+    },
+    {
+      "claimId": "74e2705a-7e6b-483c-b9c4-ece9b65e4812",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realtynmore.com/reach-3-roads-launches-black-friday-shopping",
+        "title-city:reach 3 roads launches black friday shopping campaign with lucky draw in gurugram|gurugram",
+        "dedupe:1525fe90ee3ec4943f457bff2683eba0bd87edb6b02089717ac5f7a03544efe1",
+        "dedupe:d871620ee44d84794222f8ac982da1e07235af75dc3512841568a55c774b8bdd",
+        "dedupe:d1f910c6d6c1c25494d0b10b16b3ae73918f8ac48de10cdc9dabcdee16f90701",
+        "dedupe:adc60e29d9abfa58fe388bf1a6ae28b3a4c702ce97825d5c25fe2c34d16d4105",
+        "dedupe:3a1d1a9d242f1ffc25060f4a13df034d069566e86e79a3789fccd29c2bd94785",
+        "dedupe:7c928e464720d5c9ce349698111203ec67c92f1164ca87a0fe7ef8e2a685c532"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-26T05:17:34.559Z",
+      "expiresAt": "2026-11-26T05:32:34.559Z"
     }
   ]
 }
