@@ -3913,7 +3913,12 @@ function articleDedupeIds(article) {
   const cityScopedIds = [eventFingerprintId(article), titleCityId(article), canonicalUrlCityId(article), sourceSlugCityId(article), storyClusterId(article), semanticStoryClusterId(article)];
   const articleScopedIds = article.sharedCityArticle ? [] : [canonicalUrlId(article), titleOnlyId(article)];
 
-  return [article.id, ...cityScopedIds, ...articleScopedIds].filter(Boolean);
+  // A validated multi-city event intentionally becomes one city-feed copy per
+  // city. Its discovery ID belongs to the source article and is therefore
+  // global; retaining it here would collapse Hyderabad and Bengaluru copies
+  // before the city-scoped URL/title/event identities get a chance to work.
+  const sourceArticleId = article.sharedCityArticle ? "" : article.id;
+  return [sourceArticleId, ...cityScopedIds, ...articleScopedIds].filter(Boolean);
 }
 
 function stripHtml(value = "") {

@@ -3,6 +3,7 @@ import * as cheerio from "cheerio";
 import {
   applyCityCode,
   detectCityCodes,
+  expandCityArticles,
   getRejectionReasons,
   isPublishableArticle,
   isUpReraPostbackListingPage,
@@ -298,6 +299,16 @@ const transitOrientedMixedUseApproval = {
   newsLink: "https://example.com/gurugram-mixed-use-metro-approval"
 };
 
+const aparnaMultiCityLaunch = {
+  ...base,
+  id: "aparna-source-article",
+  title: "Aparna Constructions launches two residential projects in Hyderabad and Bengaluru, to invest ₹1,825 crore",
+  description: "Aparna launches one named residential project in Hyderabad and one in Bengaluru with a ₹1,825 crore investment.",
+  articleText: "Aparna Constructions launched Aparna Wonder Woods in Bengaluru and Aparna CyberZed in Hyderabad. The two residential projects will add 2,020 units across 21.3 acres with a ₹1,825 crore investment.",
+  cityCode: "bangalore",
+  newsLink: "https://example.com/aparna-hyderabad-bengaluru-launch"
+};
+
 const routedCci = applyCityCode(cci);
 assert.equal(routedCci.cityCode, "", "CCI corporate transaction must not inherit Gujarat");
 assert.equal(isPublishableArticle(routedCci, new Set()), false, "CCI corporate transaction must not publish");
@@ -352,6 +363,14 @@ assert.deepEqual(
   ["gurugram", "pune"],
   "A real multi-city announcement must remain multi-city rather than being forced to one city"
 );
+assert.deepEqual(
+  expandCityArticles(aparnaMultiCityLaunch).map((article) => article.cityCode).sort(),
+  ["bangalore", "hyderabad"],
+  "a validated Hyderabad and Bengaluru launch must retain one city-feed copy for each named event city"
+);
+const aparnaExpanded = expandCityArticles(aparnaMultiCityLaunch);
+assert.equal(new Set(aparnaExpanded.map((article) => article.id)).size, 2, "multi-city expansion must rekey city-feed copies instead of retaining one shared source ID");
+assert.ok(aparnaExpanded.every((article) => article.id && article.id !== "aparna-source-article"), "city-feed copies must keep a city-scoped stable identity");
 
 assert.equal(isPublishableArticle(reraSeminar, new Set()), false, "Routine non-official RERA seminar coverage must not publish");
 assert.ok(getRejectionReasons(reraSeminar, new Set()).some((reason) => reason.includes("not positive target")));

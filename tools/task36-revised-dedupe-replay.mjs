@@ -27,8 +27,8 @@ assert.equal(overlap(articleDedupeIds(base), articleDedupeIds(nativeDuplicate)),
 const distinctEvent = { ...base, title: "गुरुग्राम में अलग कार्यालय परियोजना को मंजूरी", newsLink: "https://publisher.example/item-3" };
 assert.equal(overlap(articleDedupeIds(base), articleDedupeIds(distinctEvent)), false, "distinct event must remain publishable");
 
-const shared = { ...base, sharedCityArticle: true, cityCode: "gurugram" };
-const sharedOtherCity = { ...base, sharedCityArticle: true, cityCode: "faridabad" };
+const shared = { ...base, id: "one-source-article", sharedCityArticle: true, cityCode: "gurugram" };
+const sharedOtherCity = { ...base, id: "one-source-article", sharedCityArticle: true, cityCode: "faridabad" };
 assert.equal(overlap(articleDedupeIds(shared), articleDedupeIds(sharedOtherCity)), false, "validated multi-city copies must retain city-scoped identity");
 
 const hindi = detectArticleLanguage({ ...base, sourceName: "Hindi regional desk" });
