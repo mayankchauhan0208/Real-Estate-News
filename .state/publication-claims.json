@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-26T05:17:36.470Z",
+  "updatedAt": "2026-11-26T05:17:45.354Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16403,6 +16403,31 @@
       "claimedAt": "2026-11-26T05:17:34.559Z",
       "expiresAt": "2026-11-26T05:32:34.559Z",
       "finalizedAt": "2026-11-26T05:17:36.470Z"
+    },
+    {
+      "claimId": "0d218f7f-58c8-4940-af01-f8fd8c4315b6",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://proppuls.in/cyberabad-to-get-twin-tower-net-zero-green-cmc-headquarters",
+        "title-city:cyberabad to get twin tower net zero green cmc headquarters|hyderabad",
+        "dedupe:ff0d34c5c0e53ff227aa5cc5cb90c500c8dbac3e46c336c8cf76c7163696a403",
+        "dedupe:f6d22bf05f1ad7ba47cac061e1de6ed1d52e77e451efa33b97837f802620c4d1",
+        "dedupe:ce12d2a45a36ac834614fae6a9074a075898f53e052bcae7ee4cbdf4f9bfdd1d",
+        "dedupe:361e887f73b9725c4323857ce5889f61b340f668513903e91096b0b29f3b2e6f",
+        "dedupe:8f10a7c0db0fa52a68d928017549c0be0af91e961a83e1bd45cc24de7910e730",
+        "dedupe:a17eebf5c1181d96c88fe578233a1f4259b6217b08588d24baed092f2e9ed169"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-26T05:17:45.354Z",
+      "expiresAt": "2026-11-26T05:32:45.354Z"
     }
   ]
 }
