@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-26T05:17:57.258Z",
+  "updatedAt": "2026-11-26T05:17:59.073Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16432,7 +16432,7 @@
     },
     {
       "claimId": "3f79fa25-ecbd-4226-9114-4348af2c9b78",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/unitedhealth-takes-4-3-l-sq-ft-office-on-lease-in-chennai/articleshow/136172091.cms",
         "title-city:unitedhealth takes 4 3 l sq ft office on lease in chennai|chennai",
@@ -16453,7 +16453,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-26T05:17:57.258Z",
-      "expiresAt": "2026-11-26T05:32:57.258Z"
+      "expiresAt": "2026-11-26T05:32:57.258Z",
+      "finalizedAt": "2026-11-26T05:17:59.073Z"
     }
   ]
 }
