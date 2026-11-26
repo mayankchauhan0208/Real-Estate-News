@@ -3608,13 +3608,7 @@ async function readResponseBodyWithTimeout(response, mode = "text", options = {}
   // parsers such as cheerio. Some authority portals serve oversized pages
   // with bundled scripts and media metadata; those pages must fail as an
   // external-source problem instead of starving the other source workers.
-  let maxBytes = mode === "arrayBuffer" ? 20 * 1024 * 1024 : 4 * 1024 * 1024;
-  try {
-    const host = new URL(response.url || options.sourceUrl || "").hostname.toLowerCase().replace(/^www\./, "");
-    if (mode === "text" && host === "rera.wb.gov.in") maxBytes = 1 * 1024 * 1024;
-  } catch {
-    // Keep the general bound when the response URL is unavailable or invalid.
-  }
+  const maxBytes = getResponseBodyMaxBytes(response.url || options.sourceUrl || "", mode);
   const readBody = reader
     ? (async () => {
       const chunks = [];
@@ -3686,6 +3680,23 @@ async function readResponseBodyWithTimeout(response, mode = "text", options = {}
       options.signal.removeEventListener("abort", abortHandler);
     }
   }
+}
+
+function getResponseBodyMaxBytes(sourceUrl = "", mode = "text") {
+  if (mode === "arrayBuffer") return 20 * 1024 * 1024;
+
+  try {
+    const host = new URL(sourceUrl).hostname.toLowerCase().replace(/^www\./, "");
+    if (host === "rera.wb.gov.in") return 1 * 1024 * 1024;
+    // BPTP's verified Next.js media listing is currently about 6 MB and is
+    // parsed by a dedicated, bounded adapter. Keep this exception scoped so
+    // generic HTML sources retain the 4 MB anti-starvation protection.
+    if (host === "bptp.com") return 8 * 1024 * 1024;
+  } catch {
+    // Keep the general bound when the response URL is unavailable or invalid.
+  }
+
+  return 4 * 1024 * 1024;
 }
 
 function formatDuration(ms) {
@@ -11927,6 +11938,7 @@ export {
   assertRunModeContract,
   isLikelyFeedUrl,
   getFeedFallbackPageUrl,
+  getResponseBodyMaxBytes,
   getSourceRecoveryAliases,
   rankCoveragePriorityUrls,
   getAutomaticSourceBatchIndex,

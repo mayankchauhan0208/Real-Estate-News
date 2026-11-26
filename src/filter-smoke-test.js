@@ -18,6 +18,7 @@ import {
   getArticleFinalState,
   getArticleTrace,
   getFeedFallbackPageUrl,
+  getResponseBodyMaxBytes,
   getSourceRecoveryAliases,
   hasBackfillDateRange,
   isAllowedSource,
@@ -51,6 +52,9 @@ assert.equal(utcDateParse, "2026-09-01T18:30:00.000Z");
 assert.deepEqual(getSourceRecoveryAliases("https://rera.bihar.gov.in/publicorder.aspx"), []);
 assert.deepEqual(getSourceRecoveryAliases("https://rera.chbonline.in"), []);
 assert.deepEqual(getSourceRecoveryAliases("https://rera.py.gov.in/"), ["https://prera.py.gov.in"]);
+assert.equal(getResponseBodyMaxBytes("https://www.bptp.com/media"), 8 * 1024 * 1024, "BPTP's verified media listing gets a bounded dedicated HTML allowance");
+assert.equal(getResponseBodyMaxBytes("https://example.com/news"), 4 * 1024 * 1024, "generic HTML must retain the anti-starvation body cap");
+assert.equal(getResponseBodyMaxBytes("https://rera.wb.gov.in/notice.php"), 1 * 1024 * 1024, "West Bengal RERA keeps its stricter known portal cap");
 
 const reportedOffTopicArticles = [
   {
