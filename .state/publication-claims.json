@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-26T05:17:45.354Z",
+  "updatedAt": "2026-11-26T05:17:47.600Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16406,7 +16406,7 @@
     },
     {
       "claimId": "0d218f7f-58c8-4940-af01-f8fd8c4315b6",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://proppuls.in/cyberabad-to-get-twin-tower-net-zero-green-cmc-headquarters",
         "title-city:cyberabad to get twin tower net zero green cmc headquarters|hyderabad",
@@ -16427,7 +16427,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-26T05:17:45.354Z",
-      "expiresAt": "2026-11-26T05:32:45.354Z"
+      "expiresAt": "2026-11-26T05:32:45.354Z",
+      "finalizedAt": "2026-11-26T05:17:47.600Z"
     }
   ]
 }
