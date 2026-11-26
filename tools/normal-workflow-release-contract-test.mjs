@@ -8,10 +8,13 @@ const concurrencyStart = workflow.indexOf("concurrency:");
 
 assert.ok(dispatchStart >= 0, "workflow_dispatch must be configured");
 assert.ok(concurrencyStart > dispatchStart, "workflow dispatch inputs must precede concurrency");
-assert.match(workflow, /- cron: "3 \* \* \* \*"/, "scheduler must run once per hour at :33 IST, offset from UTC top-of-hour congestion");
+assert.match(workflow, /- cron: "3,18,33,48 \* \* \* \*"/, "scheduler must provide four off-peak hourly delivery opportunities");
 assert.match(workflow, /repository_dispatch:\s*\r?\n\s+types: \[hourly-news-ingestion\]/, "a trusted external hourly dispatcher must share the normal workflow");
 assert.match(workflow, /normal-ingestion-heartbeat\.json/, "successful normal runs must persist a scheduler heartbeat");
-assert.doesNotMatch(workflow, /scheduler-guard:|needs: scheduler-guard|needs\.scheduler-guard/, "scheduled production must invoke the ingestion job directly");
+assert.match(workflow, /normal-hourly-gate:/, "automatic runs must use the durable normal heartbeat gate");
+assert.match(workflow, /successful-cycle-within-50-minutes/, "a recent successful automatic cycle must suppress redundant schedule deliveries");
+assert.match(workflow, /needs: normal-hourly-gate/, "the production job must wait for the due-cycle decision");
+assert.match(workflow, /failed run must never suppress its retry/, "failed automatic runs must remain eligible for the next delivery opportunity");
 
 const dispatchInputs = workflow.slice(dispatchStart, concurrencyStart);
 assert.match(dispatchInputs, /mode:\s*\r?\n\s+description:.*\r?\n\s+required: true\r?\n\s+type: choice/s);

@@ -2,9 +2,10 @@ name: News API Pusher
 
 on:
   schedule:
-    # 13:33 IST first, then once every hour (cron is UTC). The three-minute
-    # offset avoids the hosted scheduler's UTC top-of-hour congestion.
-    - cron: "3 * * * *"
+    # Four off-peak delivery opportunities per hour. GitHub Actions can delay
+    # or drop an individual scheduled delivery; the durable gate below lets
+    # exactly one successful normal cycle proceed every 50 minutes.
+    - cron: "3,18,33,48 * * * *"
   # A trusted external cron may invoke this event when GitHub's hosted
   # scheduler is delayed or drops a scheduled delivery. It uses the exact
   # same normal-current job, checkpoint, and dedupe ledger as `schedule`.
@@ -81,7 +82,50 @@ permissions:
   contents: write
 
 jobs:
+  normal-hourly-gate:
+    runs-on: ubuntu-latest
+    outputs:
+      should_run: ${{ steps.heartbeat.outputs.should_run }}
+
+    steps:
+      - name: Read durable normal-run heartbeat
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 1
+
+      - name: Admit only a due automatic normal cycle
+        id: heartbeat
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require("fs");
+          const output = process.env.GITHUB_OUTPUT;
+          const eventName = process.env.GITHUB_EVENT_NAME;
+          let shouldRun = eventName === "workflow_dispatch";
+          let reason = shouldRun ? "manual-dispatch" : "missing-or-stale-heartbeat";
+
+          if (!shouldRun) {
+            try {
+              const heartbeat = JSON.parse(fs.readFileSync(".state/normal-ingestion-heartbeat.json", "utf8"));
+              const lastSuccessfulAt = Date.parse(heartbeat.lastSuccessfulNormalRunAt || "");
+              const ageMs = Date.now() - lastSuccessfulAt;
+              if (Number.isFinite(lastSuccessfulAt) && ageMs >= 0 && ageMs < 50 * 60 * 1000) {
+                shouldRun = false;
+                reason = "successful-cycle-within-50-minutes";
+              }
+            } catch {
+              // No durable success record means the automatic cycle must be
+              // allowed to run; a failed run must never suppress its retry.
+            }
+          }
+
+          console.log(`normal-hourly-gate: ${shouldRun ? "admit" : "skip"} (${reason})`);
+          fs.appendFileSync(output, `should_run=${shouldRun}\nreason=${reason}\n`);
+          NODE
+
   push-news:
+    needs: normal-hourly-gate
+    if: ${{ needs.normal-hourly-gate.outputs.should_run == 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 60
 
