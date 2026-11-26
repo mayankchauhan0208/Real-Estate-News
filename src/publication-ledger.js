@@ -42,6 +42,10 @@ const BUILDER_ALIASES = [
   [/\bgodrej properties\b/i, "godrej-properties"],
   [/\bsignature\s*global\b/i, "signatureglobal"],
   [/\bbank\s+of\s+america\b|\bba\s+continuum\b/i, "bank-of-america"],
+  [/\baxa\s+global\b/i, "axa-global"],
+  [/\bbrigade(?: enterprises| group)?\b/i, "brigade"],
+  [/\bmp\s+developers?\b/i, "mp-developers"],
+  [/\b(?:unitedhealth(?:\s+group)?|united\s+health(?:'s)?|optum)\b/i, "unitedhealth-optum"],
   [/\bm3m\b/i, "m3m"],
   [/\belan group\b/i, "elan"]
 ];
@@ -73,7 +77,8 @@ function semanticProject(text) {
   const known = [
     [/\bgaur\s+alaris\b/i, "gaur-alaris"],
     [/\bprestige\s+parklane\b/i, "prestige-parklane"],
-    [/\bdlf\s+aureva\b/i, "dlf-aureva"]
+    [/\bdlf\s+aureva\b/i, "dlf-aureva"],
+    [/\bpilot\s+theatre\b/i, "pilot-theatre"]
   ];
   return known.find(([pattern]) => pattern.test(text))?.[1] || "";
 }
@@ -106,6 +111,14 @@ function canonicalEventFingerprintFor({ builder, city, project, eventType, text 
   if (builder === "county-group" && city === "gurugram" &&
       /\b(?:844|24)\b/.test(text) && /\b(?:luxury|residential|housing)\b/i.test(text)) {
     return "county-group|gurugram|sector-88a|844-home-development";
+  }
+  // The Pallavaram office lease is syndicated under UnitedHealth, United
+  // Health's Optum, and Optum. Publishers round the area differently, so its
+  // named tenant, micro-market, city, and commercial-lease event are the
+  // stable event identity rather than a rounded floor-area number.
+  if (builder === "unitedhealth-optum" && city === "chennai" &&
+      eventType === "commercial-lease" && /\bpallavaram\b/i.test(text)) {
+    return "unitedhealth-optum|chennai|pallavaram-commercial-lease";
   }
   if (!builder || !city || !eventType || (!project && !text)) return "";
   const anchors = semanticNumbers(text).slice(0, 3).join(",");

@@ -63,6 +63,63 @@ const laterLaunch = identityFor({
 });
 assert.equal(semanticIdentityMatches(signatureArticles[0], laterLaunch), false);
 
+const axaLease = identityFor({
+  title: "AXA Global leases 2.58 lakh sq ft office in Bengaluru in Rs 334 cr deal",
+  description: "AXA Global has leased office space in Bengaluru for Rs 334 crore.",
+  articleText: "AXA Global leased 2.58 lakh sq ft office space in Bengaluru for Rs 334 crore.",
+  cityCode: "bangalore",
+  newsLink: "https://example.test/axa-et"
+});
+const axaLeaseSyndicated = identityFor({
+  title: "AXA Global leases 2.58 lakh sq ft office space in Bengaluru for ₹334 crore over 10 years",
+  description: "The same AXA Global office lease was signed in Bengaluru.",
+  articleText: "AXA Global leased 2.58 lakh sq ft office space in Bengaluru for ₹334 crore over 10 years.",
+  cityCode: "bangalore",
+  newsLink: "https://example.test/axa-ht"
+});
+assert.equal(semanticIdentityMatches(axaLease, axaLeaseSyndicated), true, "syndicated AXA office lease must have one identity");
+
+const pilotTheatrePurchase = identityFor({
+  title: "MP Developers acquires Chennai’s Pilot Theatre plot, plans residential project",
+  description: "MP Developers acquired Pilot Theatre in Chennai for a ₹200 crore residential project.",
+  articleText: "MP Developers acquired the Pilot Theatre site in Chennai and plans a ₹200 crore residential project with 45 units.",
+  cityCode: "chennai",
+  newsLink: "https://example.test/pilot-et"
+});
+const pilotTheatrePurchaseSyndicated = identityFor({
+  title: "MP Developers buys iconic Pilot Theatre in Chennai, plans ₹200 cr project",
+  description: "The Pilot Theatre purchase will become a Chennai residential project.",
+  articleText: "MP Developers bought the Pilot Theatre site in Chennai for a ₹200 crore residential project.",
+  cityCode: "chennai",
+  newsLink: "https://example.test/pilot-bs"
+});
+assert.equal(semanticIdentityMatches(pilotTheatrePurchase, pilotTheatrePurchaseSyndicated), true, "named Pilot Theatre purchase must not publish twice");
+
+const optumLease = identityFor({
+  title: "United Health's Optum leases 4.34 lakh sq ft in Chennai's Pallavaram for ₹162 crore over five years",
+  description: "Optum leased office space in Pallavaram, Chennai.",
+  articleText: "United Health's Optum has leased 4.34 lakh sq ft office space in Pallavaram, Chennai.",
+  cityCode: "chennai",
+  newsLink: "https://example.test/optum-ht"
+});
+const unitedHealthLease = identityFor({
+  title: "UnitedHealth takes 4.3 L sq ft office on lease in Chennai",
+  description: "UnitedHealth takes Pallavaram office space on lease in Chennai.",
+  articleText: "UnitedHealth took about 4.3 L sq ft office space in Pallavaram, Chennai on lease.",
+  cityCode: "chennai",
+  newsLink: "https://example.test/united-et"
+});
+assert.equal(semanticIdentityMatches(optumLease, unitedHealthLease), true, "Pallavaram UnitedHealth/Optum lease must survive area rounding without duplication");
+
+const distinctOptumLease = identityFor({
+  title: "UnitedHealth leases 4.3 L sq ft office in OMR Chennai",
+  description: "UnitedHealth takes a different Chennai office on lease in OMR.",
+  articleText: "UnitedHealth took 4.3 L sq ft office space in OMR, Chennai on lease.",
+  cityCode: "chennai",
+  newsLink: "https://example.test/united-omr"
+});
+assert.equal(semanticIdentityMatches(optumLease, distinctOptumLease), false, "a distinct UnitedHealth Chennai lease must remain publishable");
+
 const statePath = path.join(root, "claims.json");
 const state = { version: 2, updatedAt: new Date().toISOString(), claims: signatureArticles.map((identity, index) => ({
   claimId: `signature-${index}`,
