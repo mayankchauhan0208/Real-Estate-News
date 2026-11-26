@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-26T05:18:08.263Z",
+  "updatedAt": "2026-11-26T05:18:10.555Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16458,7 +16458,7 @@
     },
     {
       "claimId": "02a14178-39b0-4a8a-b345-111353f03f13",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://realty.economictimes.indiatimes.com/news/residential/pritam-chakraborty-mother-sell-mumbai-apartment-for-2-30-crore/136177188",
         "title-city:pritam chakraborty mother sell mumbai apartment for 2 30 crore|mumbai",
@@ -16479,7 +16479,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-26T05:18:08.263Z",
-      "expiresAt": "2026-11-26T05:33:08.263Z"
+      "expiresAt": "2026-11-26T05:33:08.263Z",
+      "finalizedAt": "2026-11-26T05:18:10.555Z"
     }
   ]
 }
