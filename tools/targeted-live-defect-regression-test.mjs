@@ -101,6 +101,50 @@ const genuineMultiCityLaunch = {
   newsLink: "https://example.com/pune-gurugram-multi-city-launch"
 };
 
+const evergreenBuilderMarketing = [
+  {
+    ...base,
+    title: "Under-Construction Apartments in East Bangalore 2026",
+    description: "Six under-construction projects with RERA numbers, status and possession dates.",
+    articleText: "Compare six under-construction apartment projects, possession dates and amenities. Book your site visit today.",
+    cityCode: "bangalore",
+    newsLink: "https://sumadhuragroup.com/blogs/under-construction-apartments-east-bangalore-2026"
+  },
+  {
+    ...base,
+    title: "Sumadhura Panorama Devanahalli: Phases, Plot Sizes & Location",
+    description: "Compare Phase 1 and Phase 2 plot sizes, entry price, amenities and airport-corridor connectivity.",
+    articleText: "This guide compares plot sizes, phases and amenities. Explore the project and schedule a site visit.",
+    cityCode: "bangalore",
+    newsLink: "https://sumadhuragroup.com/blogs/sumadhura-panorama-devanahalli-plots"
+  },
+  {
+    ...base,
+    title: "Luxury Apartments in East Fort, Thrissur, with a Yoga Peedam",
+    description: "Explore luxury apartments with a yoga space, fitness room and pool. Book your site visit today.",
+    articleText: "The project describes its yoga amenity, fitness room and pool for residents. Contact us to arrange a visit.",
+    cityCode: "thrissur",
+    newsLink: "https://hilifebuilders.in/luxury-apartments-east-fort-thrissur-yoga/"
+  },
+  {
+    ...base,
+    title: "Reach 3 Roads Launches Black Friday Shopping Campaign with Lucky Draw in Gurugram",
+    description: "The retail destination launched a Black Friday promotional campaign featuring a lucky draw for visitors.",
+    articleText: "Visitors shopping at the retail destination can enter a lucky draw during the Black Friday campaign.",
+    cityCode: "gurugram",
+    newsLink: "https://realtynmore.com/reach-3-roads-launches-black-friday-shopping/"
+  }
+];
+
+const validBuilderLaunch = {
+  ...base,
+  title: "Max Estates sells out first phase of Gurugram project The Bungalows for Rs 2,319 crore",
+  description: "Max Estates sold out the first phase of its named Gurugram residential project.",
+  articleText: "The developer sold out the first phase of The Bungalows, a named residential project in Gurugram, recording Rs 2,319 crore in bookings.",
+  cityCode: "gurugram",
+  newsLink: "https://example.com/max-estates-bungalows-sold-out"
+};
+
 const reraSeminar = {
   ...base,
   title: "Ranchi RERA seminar to guide stakeholders on the Act",
@@ -236,6 +280,12 @@ assert.deepEqual(
   ["gurugram"],
   "A single explicit headline event city must outrank secondary comparison geography"
 );
+
+for (const marketingArticle of evergreenBuilderMarketing) {
+  assert.equal(isPublishableArticle(marketingArticle, new Set()), false, `Evergreen marketing must not publish: ${marketingArticle.title}`);
+  assert.ok(getRejectionReasons(marketingArticle, new Set()).some((reason) => reason.includes("spam/menu page")), `Evergreen marketing needs a deterministic rejection: ${marketingArticle.title}`);
+}
+assert.equal(isPublishableArticle(validBuilderLaunch, new Set()), true, "A named project sell-out remains a publishable positive event");
 assert.equal(
   applyCityCode(headlineCityAgainstComparison).cityCode,
   "gurugram",

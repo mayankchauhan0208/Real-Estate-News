@@ -7213,6 +7213,24 @@ function isGenericPropertyGuideOrRecommendation(article) {
   return /\b(?:how to|guide to|tips? (?:for|to)|what to know|best|ideal|suitable)\b[^.!?]{0,90}\b(?:buy|buying|invest|investment|property|home|house|flat|apartment|plot|land|area|location|locality|neighbou?rhood)\b|\b(?:areas?|locations?|localities|neighbou?rhoods?)\b[^.!?]{0,60}\b(?:to|for)\s+(?:buy|invest)|ಮನೆ\s*ಖರೀದಿಸಲು\s*ಸೂಕ್ತವಾದ\s*ಬಡಾವಣೆಗಳು|ಆಸ್ತಿ\s*ಹೂಡಿಕೆಗೆ\s*ಪರಿಗಣಿಸಬಹುದಾದ\s*ಪ್ರದೇಶಗಳು/iu.test(title);
 }
 
+function isEvergreenPropertyMarketingWithoutNewsEvent(article) {
+  const primary = getArticlePrimaryText(article);
+  const body = getArticleBodyText(article);
+  const title = String(article.title || "");
+  const eventLead = `${title} ${String(article.description || "")} ${body.slice(0, 1200)}`;
+
+  // These are current, material property events. Do not reject a genuine
+  // project launch just because its publisher also includes a booking CTA.
+  const timeBoundPropertyEvent = /\b(?:launch(?:es|ed)?|unveil(?:s|ed)?|sell(?:s|ing)?\s+out|sold\s+out|acquir(?:es?|ed)|buys?|purchases?|leases?|leased|signs?\s+(?:a\s+)?lease|approv(?:es?|ed|al)|register(?:s|ed|ation)|complete(?:s|d|ion)|hand(?:s|ed)?\s+over|bookings?\s+(?:worth|reach)|invest(?:s|ed|ment))\b[^.!?]{0,120}\b(?:project|tower|phase|residential|commercial|housing|homes?|apartments?|plot|plots|land|office space|development|real estate|realty)\b|\b(?:project|tower|phase|residential|commercial|housing|homes?|apartments?|plot|plots|land|office space|development)\b[^.!?]{0,120}\b(?:launch(?:es|ed)?|sell(?:s|ing)?\s+out|sold\s+out|acquir(?:es?|ed)|buys?|purchases?|leases?|leased|approv(?:es?|ed|al)|complete(?:s|d|ion)|bookings?\s+(?:worth|reach)|invest(?:s|ed|ment))\b/i.test(eventLead);
+  if (timeBoundPropertyEvent) return false;
+
+  const evergreenFormat = /\b(?:under[- ]construction apartments?|luxury apartments?)\b[^.!?]{0,90}\b(?:202\d|amenit(?:y|ies)|yoga|fitness|pool|lifestyle)\b|\b(?:which phase|phases?\s*,?\s*plot sizes?|plot sizes?\s*(?:&|and)\s*location|price(?:s)?\s*(?:&|and)\s*location)\b|\b(?:commercial property investment|property investment opportunities)\b/i.test(primary);
+  const marketingCta = /\b(?:book (?:your )?(?:site )?visit|schedule (?:a )?(?:site )?visit|enquir(?:e|y) now|contact us(?: today)?|explore (?:our|the) (?:project|apartments?|plots?)|compare\b[^.!?]{0,70}\b(?:phase|plot|apartment)|starting (?:at|from)|ideal (?:for|choice)|who buys? here)\b/i.test(`${primary} ${body.slice(0, 1800)}`);
+  const retailPromotion = /\b(?:black friday|lucky draw|shop(?:ping)? campaign|festive (?:offer|campaign)|win(?:ner)? announcement)\b/i.test(`${primary} ${body.slice(0, 1200)}`);
+
+  return retailPromotion || (evergreenFormat && marketingCta) || (marketingCta && /\b(?:amenit(?:y|ies)|phase|plot sizes?|location|luxury apartments?|investment opportunities)\b/i.test(primary));
+}
+
 function isGenericCivicOrPlanningWithoutPropertyEvent(article) {
   const text = getArticlePrimaryText(article);
   const centralParkOnly = /\b(?:plans?|will develop|to develop)\s+(?:a\s+)?\d[\d,.-]*[- ]?(?:acre|hectare)[^\.]{0,80}\bcentral park\b/i.test(text)
@@ -7312,6 +7330,7 @@ function isBlockedArticle(article) {
     isPoliticalCampaignArticle(article) ||
     isNonProjectCorporateUpdate(article) ||
     isNonProjectEducationOrCultureArticle(article) ||
+    isEvergreenPropertyMarketingWithoutNewsEvent(article) ||
     isWeakFoodRetailSource ||
     (!allowProjectAwardArticle && !allowNativePropertyDevelopmentArticle && hasKeyword(primaryText, blockedTitleKeywords)) ||
     (!allowProjectAwardArticle && !allowNativePropertyDevelopmentArticle && hasKeyword(newsLink, blockedUrlParts))
