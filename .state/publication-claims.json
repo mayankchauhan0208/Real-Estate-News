@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-27T18:41:38.792Z",
+  "updatedAt": "2026-11-27T18:41:48.079Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16823,6 +16823,31 @@
       "claimedAt": "2026-11-27T18:41:36.848Z",
       "expiresAt": "2026-11-27T18:56:36.848Z",
       "finalizedAt": "2026-11-27T18:41:38.792Z"
+    },
+    {
+      "claimId": "c7f49d74-495a-45df-bf4c-2984777549fc",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/officeworks-opens-global-capability-centre-in-bengalurus-manyata-tech-park",
+        "title-city:officeworks opens global capability centre in bengaluru s manyata tech park|bangalore",
+        "dedupe:eee581b3c3c6299cc7e3515c99bfaca3cfdfa2cffce558abb1bce5408cbc5213",
+        "dedupe:3408f6e9faf686c37076ffd5991e37e76a640afcc599de12e63aa46bcf05d6eb",
+        "dedupe:6df2b63d349c97c68e09a181f66dc9c8aa2cd114e50e4ffc597a5a3818ec34ff",
+        "dedupe:cd95d4aac4340d89ef51fc44158e45de78c094ffe43839572ce3d35c8d2e5732",
+        "dedupe:5936f42cde4e591f0e000c844b8556d1c20225ecde9b9ff75eb1f47cacdf0a90",
+        "dedupe:2333679d908991291a44ac69305707318749564f1ace46beedcb0d965bc4921f"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-27T18:41:48.079Z",
+      "expiresAt": "2026-11-27T18:56:48.079Z"
     }
   ]
 }
