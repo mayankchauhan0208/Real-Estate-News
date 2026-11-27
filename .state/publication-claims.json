@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-27T18:41:36.848Z",
+  "updatedAt": "2026-11-27T18:41:38.792Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16800,7 +16800,7 @@
     },
     {
       "claimId": "dffc546f-13ec-415c-8dd7-236f6893ca96",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://torbitrealty.com/concorde-signs-jda-for-premium-residential-development-in-north-bengaluru",
         "title-city:concorde signs jda for premium residential development in north bengaluru|bangalore",
@@ -16821,7 +16821,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-27T18:41:36.848Z",
-      "expiresAt": "2026-11-27T18:56:36.848Z"
+      "expiresAt": "2026-11-27T18:56:36.848Z",
+      "finalizedAt": "2026-11-27T18:41:38.792Z"
     }
   ]
 }
