@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-27T18:41:25.525Z",
+  "updatedAt": "2026-11-27T18:41:27.533Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16774,7 +16774,7 @@
     },
     {
       "claimId": "a21faf9b-7bed-4870-b478-d8b4eec06942",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/cities/chandigarh-news/lg-pushes-for-more-financial-powers-to-ladakh-hill-councils-101795723777424.html",
         "title-city:lg pushes for more financial powers to ladakh hill councils|chandigarh",
@@ -16795,7 +16795,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-27T18:41:25.525Z",
-      "expiresAt": "2026-11-27T18:56:25.525Z"
+      "expiresAt": "2026-11-27T18:56:25.525Z",
+      "finalizedAt": "2026-11-27T18:41:27.533Z"
     }
   ]
 }
