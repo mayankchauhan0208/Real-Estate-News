@@ -1,0 +1,31 @@
+name: Normal Ingestion Watchdog
+
+on:
+  schedule:
+    # A separate workflow gives normal ingestion an independent GitHub
+    # scheduler delivery path. These minutes deliberately avoid the top of
+    # the hour and do not overlap the primary pusher's five-minute cadence.
+    - cron: "1,11,21,31,41,51 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: normal-ingestion-watchdog
+  cancel-in-progress: false
+
+jobs:
+  relay-normal-cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Request the shared normal ingestion cycle
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api \
+            --method POST \
+            "repos/${GITHUB_REPOSITORY}/dispatches" \
+            -f event_type=hourly-news-ingestion \
+            -f 'client_payload[origin]=normal-ingestion-watchdog'
