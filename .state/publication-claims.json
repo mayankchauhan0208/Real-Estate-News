@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-27T18:40:30.260Z",
+  "updatedAt": "2026-11-27T18:40:39.313Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16667,6 +16667,32 @@
       "claimedAt": "2026-11-27T18:40:28.399Z",
       "expiresAt": "2026-11-27T18:55:28.399Z",
       "finalizedAt": "2026-11-27T18:40:30.260Z"
+    },
+    {
+      "claimId": "6e257a34-f65e-4844-bd9a-f259e7008b4f",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/industry/ashiana-arihant-jv-acquires-9-57-acre-chennai-land-concorde-signs-north-bengaluru-jda/136208202",
+        "title-city:ashiana arihant jv acquires 9 57 acre chennai land concorde signs north bengaluru jda|chennai",
+        "dedupe:fc5d3b9ece274f3ac607880bd9394ea9dcc9e71ce6e1c84c0ff067648752a913",
+        "dedupe:cbe593cf455476c8fe4fe50f52629ff18a2381eaae3d905b68f27f52e486265e",
+        "dedupe:dc5855648f49fd4646563671e3bb6ed862770b0dcc2cb73763d61c1ee6878aac",
+        "dedupe:ashiana arihant jv acquires acre chennai land concorde signs north bengaluru jda|scale:9.57-acre|chennai",
+        "dedupe:fe3d3546b5760fdab7818d570981fd8b9d80c96b1d5a508c863996c54d59bad3",
+        "dedupe:bc05776b26bbba3ecfd2a0a46cae5823802cdd6878e9f6df89440de8174692b6",
+        "dedupe:4ebcc116f6f2d05e810ed07d65105f807ad036ae785982b09226972952cad94d"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "chennai",
+      "canonicalEventCity": "chennai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "chennai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-27T18:40:39.313Z",
+      "expiresAt": "2026-11-27T18:55:39.313Z"
     }
   ]
 }
