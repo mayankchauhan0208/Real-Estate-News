@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-27T18:40:41.481Z",
+  "updatedAt": "2026-11-27T18:40:50.822Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16694,6 +16694,30 @@
       "claimedAt": "2026-11-27T18:40:39.313Z",
       "expiresAt": "2026-11-27T18:55:39.313Z",
       "finalizedAt": "2026-11-27T18:40:41.480Z"
+    },
+    {
+      "claimId": "5637ccb0-964a-4d99-8b45-9b77aab0a350",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/rera/uttar-pradesh-rera-takes-disciplinary-action-against-17-employees/136208063",
+        "title-city:uttar pradesh rera takes disciplinary action against 17 employees|new_delhi",
+        "dedupe:a93f0d9e43f8e49eb9ef1a3c2d2099e42173253fc1245ed9641cc74d1e36d454",
+        "dedupe:d591c4ecfedef39f4acda8a3b364f933dcdc3fd42b018909a1e606303e0b52a3",
+        "dedupe:fccfe879cbe6e19337c5af2f49a00a71c5211618a1aee5b20557fa5f89672531",
+        "dedupe:ddc8ab8047a1d70e8c39e2ce3fc0e2926b6e183c3740d1a38bc3c160f91e4f46",
+        "dedupe:b9d436f83d3103d63a54e7e86e607b8a82a5d347389c3f0d791c64f880067623"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "new_delhi",
+      "canonicalEventCity": "new_delhi",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "new_delhi"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-27T18:40:50.822Z",
+      "expiresAt": "2026-11-27T18:55:50.822Z"
     }
   ]
 }
