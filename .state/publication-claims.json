@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-27T09:16:32.077Z",
+  "updatedAt": "2026-11-27T09:16:41.139Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16561,6 +16561,31 @@
       "claimedAt": "2026-11-27T09:16:29.923Z",
       "expiresAt": "2026-11-27T09:31:29.923Z",
       "finalizedAt": "2026-11-27T09:16:32.077Z"
+    },
+    {
+      "claimId": "9102bbd4-3bba-42e3-8e7b-652e6a7dcdc0",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/proposed-yashobhoomi-gurugram-metro-link-may-boost-business-travel-commercial-real-estate-hospitality-and-retail-demand-101795669335886.html",
+        "title-city:proposed yashobhoomi gurugram metro link may boost business travel commercial real estate hospitality and retail|gurugram",
+        "dedupe:b851d3858afc1dea5623e8315feaac0d0abdead364cc36f791324d3d47f0993c",
+        "dedupe:cfedb77de382f08d56da36bb02ad373d30e4eb830b2a7cb7c5cc9361dd16fac9",
+        "dedupe:11d58aca43afe97fb57390aa743122302bc8d48b97f7386f63bafa5d67e3176d",
+        "dedupe:d3e97c4b0f46413c2c83b703d0854220ba3105403f35fbc3907da0ffb5ab9d0e",
+        "dedupe:0cb35b934729033caf6f0968c5e7049e7b3425feabb5c5b5b16adb4376e0ee61",
+        "dedupe:a00c2c7534d29dd4c694619a0eac7e741ab629d9f08e36828e78eba3dc0481b4"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-27T09:16:41.139Z",
+      "expiresAt": "2026-11-27T09:31:41.139Z"
     }
   ]
 }
