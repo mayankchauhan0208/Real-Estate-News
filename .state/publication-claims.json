@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-27T18:41:27.533Z",
+  "updatedAt": "2026-11-27T18:41:36.848Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16797,6 +16797,31 @@
       "claimedAt": "2026-11-27T18:41:25.525Z",
       "expiresAt": "2026-11-27T18:56:25.525Z",
       "finalizedAt": "2026-11-27T18:41:27.533Z"
+    },
+    {
+      "claimId": "dffc546f-13ec-415c-8dd7-236f6893ca96",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://torbitrealty.com/concorde-signs-jda-for-premium-residential-development-in-north-bengaluru",
+        "title-city:concorde signs jda for premium residential development in north bengaluru|bangalore",
+        "dedupe:5d00851aa835b78f43496f390feca718aed672de6843587c62d51d814aec9664",
+        "dedupe:f59391089da83cddbdfbc56dcfad3bfd5f871c29549b838ebab67b460949a96b",
+        "dedupe:4f196c0aeb4b9d02d78b97965f39ce16d0f7cb40c47dadd2c94f68fb3ca9be5d",
+        "dedupe:18f239587b064449d0d7dbce2332dfdf1a6f27e8b54d43ed803c313dca869456",
+        "dedupe:4b71179e8e70a2cf1cecfbdf1767aa3e6601726b60ecd706f6cbc52d4efb594f",
+        "dedupe:da23b5a3ac727c7ea6903af45da740981b844b2914e1730e492946583542c6e1"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-27T18:41:36.848Z",
+      "expiresAt": "2026-11-27T18:56:36.848Z"
     }
   ]
 }
