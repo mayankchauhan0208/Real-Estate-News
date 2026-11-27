@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-27T09:16:54.821Z",
+  "updatedAt": "2026-11-27T18:40:17.434Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16613,6 +16613,32 @@
       "claimedAt": "2026-11-27T09:16:52.891Z",
       "expiresAt": "2026-11-27T09:31:52.891Z",
       "finalizedAt": "2026-11-27T09:16:54.821Z"
+    },
+    {
+      "claimId": "fa6cdffa-7c6c-4e85-84b0-620970cb528e",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/houseeazy-enters-punes-housing-market-records-over-600-crore-in-transactions-in-its-first-month/articleshow/136191945.cms",
+        "title-city:houseeazy enters pune s housing market records over 600 crore in transactions in its first month|pune",
+        "dedupe:f46eebd180a7e207a4b4902a2ace6efe38ae3c855a5aad3d2ca8246ea87dc921",
+        "dedupe:b4d95a7553ae435c4b8e43332594fb444bbd7e4fb104b309cca92db70796008b",
+        "dedupe:30e3a7694d009d4cf4494a510688187c081687e4cadbf819229178098cb41eca",
+        "dedupe:4bcff7e60fbedc07f71d0a45c198cc0caef1581369ac94f8ab12977c78415782",
+        "dedupe:houseeazy enters pune s housing market records transactions first month|amount:600-crore|pune",
+        "dedupe:d179cd37dd488dc06520bdd923dba3dbcb0e51ceb60748d142b25b710abdfb19",
+        "dedupe:e1842ffadd8672e2c6fa55c4fb2f061c8b5d41769f560c2de3017e33032a77cd"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "pune",
+      "canonicalEventCity": "pune",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "pune"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-27T18:40:17.434Z",
+      "expiresAt": "2026-11-27T18:55:17.434Z"
     }
   ]
 }
