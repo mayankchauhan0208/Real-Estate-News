@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-27T18:42:01.627Z",
+  "updatedAt": "2026-11-27T18:42:10.661Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16875,6 +16875,31 @@
       "claimedAt": "2026-11-27T18:41:59.478Z",
       "expiresAt": "2026-11-27T18:56:59.478Z",
       "finalizedAt": "2026-11-27T18:42:01.627Z"
+    },
+    {
+      "claimId": "28af87a8-8795-42a3-8185-d041f3b4fda6",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/emaar-india-to-develop-a-office-tower-in-gurgaon/articleshow/136218620.cms",
+        "title-city:emaar india to develop a office tower in gurgaon|gurugram",
+        "dedupe:bb1cf7f493320db7c24d36cc34c70e2ea1b840778c7a43926c9f1f098fdbaabc",
+        "dedupe:c3272cdbae8990d1fd219a28bb393d510455fed3364088cea2b42bf6e218d4ac",
+        "dedupe:fc509b75143cd380b884c90be45f74d9812d1c53d3bc3d38a72ab3f6b012a44e",
+        "dedupe:ad06ea4bca9be8b41db08446a16188fee94c86f51197f0926d49deea9bbfbad4",
+        "dedupe:afd5b13b5b5a38355c094866495b973185207208a9061112c16b5d709df8998f",
+        "dedupe:7ef75aa7c9b260c8c26ce3aef25332b2cfd92bf566aff4fc02f99155c1d34411"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "gurugram",
+      "canonicalEventCity": "gurugram",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "gurugram"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-27T18:42:10.661Z",
+      "expiresAt": "2026-11-27T18:57:10.661Z"
     }
   ]
 }
