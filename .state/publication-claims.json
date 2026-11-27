@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-27T18:41:02.340Z",
+  "updatedAt": "2026-11-27T18:41:04.688Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16722,7 +16722,7 @@
     },
     {
       "claimId": "21e5ee78-6d21-403e-b6ed-03dda6a29c8a",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://infra.economictimes.indiatimes.com/news/roads-highways/brahmaputra-infrastructure-emerges-h1-bidder-for-6-61-crore-highway-project-in-jk/136219869",
         "title-city:brahmaputra infrastructure emerges h1 bidder for 6 61 crore highway project in j and k|amritsar",
@@ -16743,7 +16743,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-27T18:41:02.340Z",
-      "expiresAt": "2026-11-27T18:56:02.340Z"
+      "expiresAt": "2026-11-27T18:56:02.340Z",
+      "finalizedAt": "2026-11-27T18:41:04.688Z"
     }
   ]
 }
