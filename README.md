@@ -80,10 +80,13 @@ Optional repository variable:
 - `TARGET_CITY_CODES`: Optional comma-separated city filter, e.g. `noida` for a Noida-only dry run.
 - `EXTRA_ARTICLE_URLS`: Optional exact article URLs, separated by comma, semicolon, or newline. Use only for manually found articles; each URL still has to pass the strict full-article filters.
 
-The workflow is already scheduled for every 30 minutes:
+The workflow receives an off-peak delivery opportunity every five minutes.
+The durable heartbeat gate admits at most one normal production cycle per 50
+minutes, so the extra deliveries act as recovery opportunities rather than
+duplicate ingestion runs:
 
 ```yaml
-- cron: "10,40 * * * *"
+- cron: "3,8,13,18,23,28,33,38,43,48,53,58 * * * *"
 ```
 
 Push-triggered runs are disabled. Manual runs are allowed. To rerun a date window without reposting already-sent articles, start the workflow manually and set:

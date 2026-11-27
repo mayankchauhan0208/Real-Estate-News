@@ -2,10 +2,10 @@ name: News API Pusher
 
 on:
   schedule:
-    # Four off-peak delivery opportunities per hour. GitHub Actions can delay
-    # or drop an individual scheduled delivery; the durable gate below lets
-    # exactly one successful normal cycle proceed every 50 minutes.
-    - cron: "3,18,33,48 * * * *"
+    # Twelve off-peak delivery opportunities per hour. GitHub Actions can
+    # delay or drop individual scheduled deliveries; the durable gate below
+    # admits exactly one successful normal cycle every 50 minutes.
+    - cron: "3,8,13,18,23,28,33,38,43,48,53,58 * * * *"
   # A trusted external cron may invoke this event when GitHub's hosted
   # scheduler is delayed or drops a scheduled delivery. It uses the exact
   # same normal-current job, checkpoint, and dedupe ledger as `schedule`.

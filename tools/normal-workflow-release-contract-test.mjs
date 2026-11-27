@@ -11,7 +11,7 @@ const concurrencyStart = workflow.indexOf("concurrency:");
 
 assert.ok(dispatchStart >= 0, "workflow_dispatch must be configured");
 assert.ok(concurrencyStart > dispatchStart, "workflow dispatch inputs must precede concurrency");
-assert.match(workflow, /- cron: "3,18,33,48 \* \* \* \*"/, "scheduler must provide four off-peak hourly delivery opportunities");
+assert.match(workflow, /- cron: "3,8,13,18,23,28,33,38,43,48,53,58 \* \* \* \*"/, "scheduler must provide twelve off-peak hourly delivery opportunities");
 assert.match(workflow, /repository_dispatch:\s*\r?\n\s+types: \[hourly-news-ingestion\]/, "a trusted external hourly dispatcher must share the normal workflow");
 assert.match(workflow, /normal-ingestion-heartbeat\.json/, "successful normal runs must persist a scheduler heartbeat");
 assert.match(workflow, /normal-hourly-gate:/, "automatic runs must use the durable normal heartbeat gate");
