@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-27T09:16:52.891Z",
+  "updatedAt": "2026-11-27T09:16:54.821Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16590,7 +16590,7 @@
     },
     {
       "claimId": "1b76bd89-374e-4755-aa8b-d547ef1ed60c",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://business-standard.com/industry/news/avg-housing-prices-along-yamuna-expressway-in-ncr-jump-2-5-times-in-4-yrs-126112600404_1.html",
         "title-city:avg housing prices along yamuna expressway in ncr jump 2 5 times in 4 yrs|noida",
@@ -16611,7 +16611,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-27T09:16:52.891Z",
-      "expiresAt": "2026-11-27T09:31:52.891Z"
+      "expiresAt": "2026-11-27T09:31:52.891Z",
+      "finalizedAt": "2026-11-27T09:16:54.821Z"
     }
   ]
 }
