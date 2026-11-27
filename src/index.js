@@ -6305,11 +6305,52 @@ function detectCityCodes(article) {
   const ncrDelhiRoute = hasNcrMatch(article) && hasPreviousNcrRoute && hasConcreteDelhiEvidence
     ? ncrDelhiCityCodes
     : [];
-  const routedCodes = [...matchedCodes, ...ncrDelhiRoute];
+  const routedCodes = collapseOverlappingCityCodes([...matchedCodes, ...ncrDelhiRoute], primaryText);
   const sourceCityCodes = getArticleSourceCityCodes(article);
   return [...new Set(routedCodes)].filter((code) =>
     code !== "delhi_ncr" && (code !== "new_delhi" || ncrDelhiRoute.includes("new_delhi") || sourceCityCodes.includes("new_delhi") || /\bnew delhi\b|\bcentral delhi\b|\bsouth delhi\b|\bnorth delhi\b|\beast delhi\b|\bwest delhi\b/i.test(primaryText))
   );
+}
+
+function countWholeWordOccurrences(value, keyword) {
+  const normalizedKeyword = String(keyword || "").trim();
+  if (!normalizedKeyword) return 0;
+
+  if (/[^\u0000-\u007f]/u.test(normalizedKeyword)) {
+    return String(value || "").toLowerCase().split(normalizedKeyword.toLowerCase()).length - 1;
+  }
+
+  const expression = new RegExp(getWholeWordRegex(normalizedKeyword).source, "gi");
+  return [...String(value || "").matchAll(expression)].length;
+}
+
+function collapseOverlappingCityCodes(codes, evidenceText) {
+  const uniqueCodes = [...new Set(codes)];
+  const normalizedText = String(evidenceText || "").toLowerCase();
+
+  return uniqueCodes.filter((code) => {
+    const broadRule = cityRules.find((rule) => rule.code === code);
+    if (!broadRule) return true;
+
+    return !uniqueCodes.some((specificCode) => {
+      if (specificCode === code) return false;
+      const specificRule = cityRules.find((rule) => rule.code === specificCode);
+      if (!specificRule) return false;
+
+      return (broadRule.keywords || []).some((broadAlias) =>
+        (specificRule.keywords || []).some((specificAlias) => {
+          const broad = String(broadAlias || "").trim().toLowerCase();
+          const specific = String(specificAlias || "").trim().toLowerCase();
+          if (!broad || !specific || specific.length <= broad.length) return false;
+          if (!getWholeWordRegex(broad).test(specific) || !hasWholeWordKeyword(normalizedText, [specific])) return false;
+
+          // Do not erase a real two-city story. Suppress the broad route only
+          // when every occurrence of its alias is explained by the specific one.
+          return countWholeWordOccurrences(normalizedText, broad) <= countWholeWordOccurrences(normalizedText, specific);
+        })
+      );
+    });
+  });
 }
 
 function getArticleSourceCityCodes(article) {
@@ -7559,6 +7600,11 @@ function hasContextualAdverseEvent(article) {
 
 function isAdverseFullArticleEvent(article) {
   if (article.fullArticleRead !== true) return false;
+
+  // A current, clean approval of a concrete property project can recount the
+  // project's prior delays or litigation. That background must not turn a
+  // constructive recovery milestone into an adverse event.
+  if (isPositiveTargetProjectUpdate(article)) return false;
 
   const body = getArticleBodyText(article);
   if (body.length < 200) return false;

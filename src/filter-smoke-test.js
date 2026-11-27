@@ -1402,6 +1402,76 @@ const panvelTownshipArticle = publishable({
 assert.deepEqual(detectCityCodes(panvelTownshipArticle), ["navi_mumbai"]);
 assert.equal(isPublishableArticle(panvelTownshipArticle, sentIds), true);
 
+const naviMumbaiArticle = publishable({
+  title: "Navi Mumbai residential project receives approval",
+  description: "The Navi Mumbai development will add new homes and commercial space.",
+  articleText: "The approved Navi Mumbai project will create housing supply and supporting infrastructure.",
+  newsLink: "https://example.com/navi-mumbai/project-approval"
+});
+assert.deepEqual(
+  detectCityCodes(naviMumbaiArticle),
+  ["navi_mumbai"],
+  "Navi Mumbai must not also route to Mumbai merely because the name contains Mumbai"
+);
+
+const osmanSagarArticle = publishable({
+  title: "Hyderabad authority approves housing development near Osman Sagar",
+  description: "The Hyderabad residential project will add new homes near Osman Sagar.",
+  articleText: "The Hyderabad development near Osman Sagar includes residential housing and property investment.",
+  newsLink: "https://example.com/hyderabad/osman-sagar-development"
+});
+assert.deepEqual(
+  detectCityCodes(osmanSagarArticle),
+  ["hyderabad"],
+  "Osman Sagar must not route to the unrelated Sagar city"
+);
+
+const kotaChhattisgarhArticle = publishable({
+  title: "Kota Chhattisgarh housing project receives approval",
+  description: "A residential project in Kota Chhattisgarh will add new housing supply.",
+  articleText: "The Kota Chhattisgarh development includes residential homes, property investment and new infrastructure.",
+  newsLink: "https://example.com/kota-chhattisgarh/housing-project"
+});
+assert.deepEqual(
+  detectCityCodes(kotaChhattisgarhArticle),
+  ["kota_chhattisgarh"],
+  "Kota Chhattisgarh must not also route to Rajasthan's Kota"
+);
+
+const genuineMumbaiAndNaviMumbaiArticle = publishable({
+  title: "Mumbai and Navi Mumbai developers announce separate housing projects",
+  description: "New residential projects will add homes in Mumbai and Navi Mumbai.",
+  articleText: "A Mumbai project and a separate Navi Mumbai development will each add residential housing inventory.",
+  newsLink: "https://example.com/mumbai-and-navi-mumbai/housing-projects"
+});
+assert.deepEqual(
+  detectCityCodes(genuineMumbaiAndNaviMumbaiArticle).sort(),
+  ["mumbai", "navi_mumbai"],
+  "A genuine two-city announcement must remain multi-city"
+);
+
+for (const [location, expectedCity] of [
+  ["Himayat Sagar", "hyderabad"],
+  ["Rewari", "rewari"],
+  ["Durgapur", "durgapur"],
+  ["Sindhudurg", "sindhudurg"],
+  ["Kolhapur", "kolhapur"],
+  ["Thiruvananthapuram", "trivandrum"],
+  ["Prayagraj", "allahabad"]
+]) {
+  const overlapArticle = publishable({
+    title: `${location} residential project receives authority approval`,
+    description: `A named housing development in ${location} will add homes and commercial space.`,
+    articleText: `The ${location} project has received authority approval for a named residential development, adding homes and commercial space.`,
+    newsLink: `https://example.com/${expectedCity}/overlapping-city-name-project`
+  });
+  assert.deepEqual(
+    detectCityCodes(overlapArticle),
+    [expectedCity],
+    `${location} must resolve only to its supported city route`
+  );
+}
+
 const noidaDominantNcrArticle = publishable({
   title: "Delhi NCR developer plans new residential launches",
   description: "The developer said infrastructure growth is supporting premium housing demand.",
@@ -2673,6 +2743,32 @@ const positiveAuthorityProjectApproval = publishable({
   newsLink: "https://example.com/noida/authority-approves-residential-project"
 });
 assert.equal(isPublishableArticle(positiveAuthorityProjectApproval, sentIds), true);
+
+const constructiveSportsCityRecovery = publishable({
+  cityCode: "noida",
+  title: "Noida authority clears five facilities in Sector 150 Sports City project",
+  description: "The Noida Authority approved detailed maps for sports facilities, clearing the way for wider project development.",
+  articleText: "The Noida Authority approved detailed maps for a tennis centre, indoor sports hall, swimming centre and playfield in the Sector 150 Sports City project. The approval allows named developers to proceed with construction and supports wider development for the project. The project had remained stalled for years amid planning and regulatory hurdles, and homebuyers had awaited progress. Earlier Supreme Court orders addressed the historical dispute.",
+  newsLink: "https://example.com/noida/sector-150-sports-city-facilities-approved"
+});
+assert.equal(
+  isPublishableArticle(constructiveSportsCityRecovery, sentIds),
+  true,
+  "A current property approval must remain publishable when only historical body context is adverse"
+);
+
+const activeSportsCityDispute = publishable({
+  cityCode: "noida",
+  title: "Noida Sports City project faces fresh court challenge from homebuyers",
+  description: "Homebuyers have challenged the project layout and sought a stay on construction.",
+  articleText: "Homebuyers filed a fresh court challenge against the Noida Sports City project and requested a stay on construction. The dispute concerns alleged violations and unresolved project delays.",
+  newsLink: "https://example.com/noida/sports-city-fresh-court-challenge"
+});
+assert.equal(
+  isPublishableArticle(activeSportsCityDispute, sentIds),
+  false,
+  "An active Sports City dispute must remain blocked despite the project's property relevance"
+);
 
 const ambiguousMultiCityCorporateArticle = publishable({
   cityCode: "pune",
