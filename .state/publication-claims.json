@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-27T09:16:43.359Z",
+  "updatedAt": "2026-11-27T09:16:52.891Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16587,6 +16587,31 @@
       "claimedAt": "2026-11-27T09:16:41.139Z",
       "expiresAt": "2026-11-27T09:31:41.139Z",
       "finalizedAt": "2026-11-27T09:16:43.359Z"
+    },
+    {
+      "claimId": "1b76bd89-374e-4755-aa8b-d547ef1ed60c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://business-standard.com/industry/news/avg-housing-prices-along-yamuna-expressway-in-ncr-jump-2-5-times-in-4-yrs-126112600404_1.html",
+        "title-city:avg housing prices along yamuna expressway in ncr jump 2 5 times in 4 yrs|noida",
+        "dedupe:7cd14e6e0638e654827d0074b41181d8d84d11f2258f9cc0bf300fe7cdc4c160",
+        "dedupe:7635a9a4cd3499c16353ea0ecac669d6a7fa2a02edaf560579ea81e4b1cb2629",
+        "dedupe:ada0c5dab0844427bb4daa03b41f7c21fd9c29dd8864078be2a155023db60aec",
+        "dedupe:56f24edb1da8b6fa7023ff71fa2cbbe1b8e31bc01bdce3052af9f4b77bc5f578",
+        "dedupe:f841fd9cc4d343106e2e0629bc8661b60ffbaf5e922981d24d7e87b477ab3151",
+        "dedupe:0d291e86d50c286b0f58cf8af81581bef30b6da37123bf28e8c9dc4cf391b9f7"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-27T09:16:52.891Z",
+      "expiresAt": "2026-11-27T09:31:52.891Z"
     }
   ]
 }
