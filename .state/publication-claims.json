@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-27T09:16:29.923Z",
+  "updatedAt": "2026-11-27T09:16:32.077Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16510,7 +16510,7 @@
     },
     {
       "claimId": "95d6c197-0042-4c3e-ad36-cf528e6f6ef6",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://business-standard.com/companies/news/brigade-group-records-1-600-crore-sales-at-bengaluru-residential-launch-126112501138_1.html",
         "title-city:brigade group records 1 600 crore sales at bengaluru residential launch|bangalore",
@@ -16559,7 +16559,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-27T09:16:29.923Z",
-      "expiresAt": "2026-11-27T09:31:29.923Z"
+      "expiresAt": "2026-11-27T09:31:29.923Z",
+      "finalizedAt": "2026-11-27T09:16:32.077Z"
     }
   ]
 }
