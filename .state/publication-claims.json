@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-26T05:18:22.179Z",
+  "updatedAt": "2026-11-27T09:16:29.923Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16507,6 +16507,59 @@
       "claimedAt": "2026-11-26T05:18:20.252Z",
       "expiresAt": "2026-11-26T05:33:20.252Z",
       "finalizedAt": "2026-11-26T05:18:22.179Z"
+    },
+    {
+      "claimId": "95d6c197-0042-4c3e-ad36-cf528e6f6ef6",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://business-standard.com/companies/news/brigade-group-records-1-600-crore-sales-at-bengaluru-residential-launch-126112501138_1.html",
+        "title-city:brigade group records 1 600 crore sales at bengaluru residential launch|bangalore",
+        "dedupe:f7a0b93247932f9d95580f44b9aed05d62f262fe09cc242a9ddbc8a35efbdd20",
+        "dedupe:36e3cdc852461d38b434be640ecaddf56bfbdc438e1b3e7f493ea88166a67b68",
+        "dedupe:5d3098f315d9860fc7df79bd9aadcba649dededd740f11d9856098f876040636",
+        "dedupe:7e39c0b402f5a9bf2cf0dea20f3732308bd120fb39bc752d9777dbbfccdeab69",
+        "dedupe:8e7c50d4827793ba66bffc9ecd2270138c6361037c838b126074e73b32a41994",
+        "dedupe:743c2e5e217e145076d659584771546d1e389d3d431bcd2dc53091ba91fd85bb"
+      ],
+      "semanticIdentity": {
+        "city": "bangalore",
+        "canonicalEventCity": "bangalore",
+        "normalizedBuilder": "brigade",
+        "normalizedProject": "",
+        "canonicalEventType": "residential-sale",
+        "builder": "brigade",
+        "project": "",
+        "eventType": "residential-sale",
+        "numericAnchors": [
+          "11:number",
+          "12000:crore",
+          "14:number",
+          "1600:crore",
+          "18:number",
+          "1:number",
+          "2026:number",
+          "250:number",
+          "25:number",
+          "26:number",
+          "40:acre",
+          "49:number",
+          "7:number",
+          "8:million sq ft",
+          "8:number"
+        ],
+        "canonicalEventFingerprint": "brigade|bangalore|residential-sale|11:number,12000:crore,14:number",
+        "semanticClusterId": "cluster:a0941e718d6c81bc1a8dccd3"
+      },
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "brigade|bangalore|residential-sale|11:number,12000:crore,14:number",
+      "semanticClusterId": "cluster:a0941e718d6c81bc1a8dccd3",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-27T09:16:29.923Z",
+      "expiresAt": "2026-11-27T09:31:29.923Z"
     }
   ]
 }
