@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-27T18:40:19.385Z",
+  "updatedAt": "2026-11-27T18:40:28.399Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16640,6 +16640,32 @@
       "claimedAt": "2026-11-27T18:40:17.434Z",
       "expiresAt": "2026-11-27T18:55:17.434Z",
       "finalizedAt": "2026-11-27T18:40:19.385Z"
+    },
+    {
+      "claimId": "9692fa84-f6fa-4d2c-a0cf-d29870099fb2",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://economictimes.indiatimes.com/industry/services/property-/-cstruction/sumitomo-eyes-100-acre-industrial-park-near-bengaluru/articleshow/136199520.cms",
+        "title-city:sumitomo eyes 100 acre industrial park near bengaluru|bangalore",
+        "dedupe:9c96ed131d56bc9811db611b64df849bdfb5e3040b44354c58b54866c3be3f52",
+        "dedupe:eef99ad0f781e13918ffa5b341de1747d43042b4c5d706085a9937e87ec2a1ff",
+        "dedupe:04abdb4a0fd8c601d1acbc11492e776a0b959e4a128bc4039304d9f9fed5c5c8",
+        "dedupe:5568bbfb986b9dabc3e3841586d0990f6abb46c6d8e4e6cd225d8de990dce215",
+        "dedupe:sumitomo eyes acre industrial park near bengaluru|scale:100-acre|bangalore",
+        "dedupe:338bd75f94edbb00e2f43ec262251579f55c9a4c213b27af51f295871e0f1c75",
+        "dedupe:a920a2d13137fac82803be9a18866f28bce416dc9b34bd26c7a48945fd2adc31"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bangalore",
+      "canonicalEventCity": "bangalore",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bangalore"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-27T18:40:28.399Z",
+      "expiresAt": "2026-11-27T18:55:28.399Z"
     }
   ]
 }
