@@ -101,10 +101,13 @@ jobs:
           const fs = require("fs");
           const output = process.env.GITHUB_OUTPUT;
           const eventName = process.env.GITHUB_EVENT_NAME;
-          let shouldRun = eventName === "workflow_dispatch";
-          let reason = shouldRun ? "manual-dispatch" : "missing-or-stale-heartbeat";
+          // Automatic deliveries are due unless a recent successful normal
+          // cycle proves they would be redundant. A missing or stale
+          // heartbeat must never block recovery after a delivery gap.
+          let shouldRun = true;
+          let reason = eventName === "workflow_dispatch" ? "manual-dispatch" : "missing-or-stale-heartbeat";
 
-          if (!shouldRun) {
+          if (eventName !== "workflow_dispatch") {
             try {
               const heartbeat = JSON.parse(fs.readFileSync(".state/normal-ingestion-heartbeat.json", "utf8"));
               const lastSuccessfulAt = Date.parse(heartbeat.lastSuccessfulNormalRunAt || "");

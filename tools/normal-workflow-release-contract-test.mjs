@@ -1,5 +1,8 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { spawnSync } from "node:child_process";
 
 const workflowPath = new URL("../.github/workflows/news-pusher.yml", import.meta.url);
 const workflow = fs.readFileSync(workflowPath, "utf8");
@@ -15,6 +18,48 @@ assert.match(workflow, /normal-hourly-gate:/, "automatic runs must use the durab
 assert.match(workflow, /successful-cycle-within-50-minutes/, "a recent successful automatic cycle must suppress redundant schedule deliveries");
 assert.match(workflow, /needs: normal-hourly-gate/, "the production job must wait for the due-cycle decision");
 assert.match(workflow, /failed run must never suppress its retry/, "failed automatic runs must remain eligible for the next delivery opportunity");
+assert.match(workflow, /let shouldRun = true;/, "missing or stale automatic heartbeats must start eligible");
+assert.match(workflow, /if \(eventName !== "workflow_dispatch"\)/, "only automatic events may be suppressed by a fresh heartbeat");
+assert.doesNotMatch(workflow, /let shouldRun = eventName === "workflow_dispatch";/, "automatic events must not default to skipped");
+
+const gateMatch = workflow.match(/- name: Admit only a due automatic normal cycle[\s\S]*?node <<'NODE'\r?\n([\s\S]*?)\r?\n\s+NODE/);
+assert.ok(gateMatch, "workflow must contain an executable normal-hourly-gate script");
+
+function evaluateHourlyGate(eventName, heartbeat) {
+  const directory = fs.mkdtempSync(path.join(os.tmpdir(), "brokket-hourly-gate-"));
+  const outputPath = path.join(directory, "github-output.txt");
+
+  try {
+    if (heartbeat) {
+      fs.mkdirSync(path.join(directory, ".state"));
+      fs.writeFileSync(path.join(directory, ".state", "normal-ingestion-heartbeat.json"), JSON.stringify(heartbeat));
+    }
+
+    const result = spawnSync(process.execPath, ["-e", gateMatch[1]], {
+      cwd: directory,
+      encoding: "utf8",
+      env: {
+        ...process.env,
+        GITHUB_EVENT_NAME: eventName,
+        GITHUB_OUTPUT: outputPath,
+      },
+    });
+
+    assert.equal(result.status, 0, `hourly gate must execute: ${result.stderr}`);
+    return Object.fromEntries(
+      fs.readFileSync(outputPath, "utf8").trim().split(/\r?\n/).map((line) => line.split("=", 2)),
+    );
+  } finally {
+    fs.rmSync(directory, { recursive: true, force: true });
+  }
+}
+
+const freshHeartbeat = { lastSuccessfulNormalRunAt: new Date().toISOString() };
+const staleHeartbeat = { lastSuccessfulNormalRunAt: new Date(Date.now() - 51 * 60 * 1000).toISOString() };
+assert.equal(evaluateHourlyGate("schedule").should_run, "true", "a missing heartbeat must admit the automatic recovery cycle");
+assert.equal(evaluateHourlyGate("schedule", staleHeartbeat).should_run, "true", "a stale heartbeat must admit the automatic recovery cycle");
+assert.equal(evaluateHourlyGate("schedule", freshHeartbeat).should_run, "false", "a fresh successful cycle must suppress duplicate automatic work");
+assert.equal(evaluateHourlyGate("workflow_dispatch", freshHeartbeat).should_run, "true", "manual validation remains independently runnable");
 
 const dispatchInputs = workflow.slice(dispatchStart, concurrencyStart);
 assert.match(dispatchInputs, /mode:\s*\r?\n\s+description:.*\r?\n\s+required: true\r?\n\s+type: choice/s);
