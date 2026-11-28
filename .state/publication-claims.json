@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-28T01:34:45.958Z",
+  "updatedAt": "2026-11-28T01:34:48.010Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16929,7 +16929,7 @@
     },
     {
       "claimId": "156c9042-324b-410b-9142-345b214632ba",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://constructionworld.in/latest-construction-news/real-estate-news/navin---s-enters-plotted-development-with-navin---s-arc-in-chennai/101022",
         "title-city:navin s enters plotted development with navin s arc in chennai|chennai",
@@ -16949,7 +16949,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-28T01:34:45.958Z",
-      "expiresAt": "2026-11-28T01:49:45.958Z"
+      "expiresAt": "2026-11-28T01:49:45.958Z",
+      "finalizedAt": "2026-11-28T01:34:48.010Z"
     }
   ]
 }
