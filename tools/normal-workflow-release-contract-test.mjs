@@ -15,7 +15,8 @@ assert.match(workflow, /- cron: "3,8,13,18,23,28,33,38,43,48,53,58 \* \* \* \*"/
 assert.match(workflow, /repository_dispatch:\s*\r?\n\s+types: \[hourly-news-ingestion\]/, "a trusted external hourly dispatcher must share the normal workflow");
 assert.match(workflow, /normal-ingestion-heartbeat\.json/, "successful normal runs must persist a scheduler heartbeat");
 assert.match(workflow, /normal-hourly-gate:/, "automatic runs must use the durable normal heartbeat gate");
-assert.match(workflow, /successful-cycle-within-50-minutes/, "a recent successful automatic cycle must suppress redundant schedule deliveries");
+assert.match(workflow, /successful-cycle-started-within-60-minutes/, "a recent successful automatic cycle must suppress redundant schedule deliveries");
+assert.match(workflow, /lastSuccessfulNormalCycleStartedAt/, "the cadence must be based on successful cycle start time");
 assert.match(workflow, /needs: normal-hourly-gate/, "the production job must wait for the due-cycle decision");
 assert.match(workflow, /failed run must never suppress its retry/, "failed automatic runs must remain eligible for the next delivery opportunity");
 assert.match(workflow, /let shouldRun = true;/, "missing or stale automatic heartbeats must start eligible");
@@ -54,8 +55,8 @@ function evaluateHourlyGate(eventName, heartbeat) {
   }
 }
 
-const freshHeartbeat = { lastSuccessfulNormalRunAt: new Date().toISOString() };
-const staleHeartbeat = { lastSuccessfulNormalRunAt: new Date(Date.now() - 51 * 60 * 1000).toISOString() };
+const freshHeartbeat = { lastSuccessfulNormalCycleStartedAt: new Date().toISOString() };
+const staleHeartbeat = { lastSuccessfulNormalCycleStartedAt: new Date(Date.now() - 61 * 60 * 1000).toISOString() };
 assert.equal(evaluateHourlyGate("schedule").should_run, "true", "a missing heartbeat must admit the automatic recovery cycle");
 assert.equal(evaluateHourlyGate("schedule", staleHeartbeat).should_run, "true", "a stale heartbeat must admit the automatic recovery cycle");
 assert.equal(evaluateHourlyGate("schedule", freshHeartbeat).should_run, "false", "a fresh successful cycle must suppress duplicate automatic work");

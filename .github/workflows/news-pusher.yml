@@ -4,7 +4,7 @@ on:
   schedule:
     # Twelve off-peak delivery opportunities per hour. GitHub Actions can
     # delay or drop individual scheduled deliveries; the durable gate below
-    # admits exactly one successful normal cycle every 50 minutes.
+    # admits exactly one successful normal cycle per 60-minute cadence.
     - cron: "3,8,13,18,23,28,33,38,43,48,53,58 * * * *"
   # A trusted external cron may invoke this event when GitHub's hosted
   # scheduler is delayed or drops a scheduled delivery. It uses the exact
@@ -86,6 +86,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       should_run: ${{ steps.heartbeat.outputs.should_run }}
+      started_at: ${{ steps.heartbeat.outputs.started_at }}
 
     steps:
       - name: Read durable normal-run heartbeat
@@ -115,11 +116,16 @@ jobs:
           if (eventName !== "workflow_dispatch") {
             try {
               const heartbeat = JSON.parse(fs.readFileSync(".state/normal-ingestion-heartbeat.json", "utf8"));
-              const lastSuccessfulAt = Date.parse(heartbeat.lastSuccessfulNormalRunAt || "");
-              const ageMs = Date.now() - lastSuccessfulAt;
-              if (Number.isFinite(lastSuccessfulAt) && ageMs >= 0 && ageMs < 50 * 60 * 1000) {
+              // Prefer the successful cycle's start time so a long fetch does
+              // not push the next hourly cycle further and further forward.
+              // Older heartbeats fall back to completion time until upgraded.
+              const lastCycleStartedAt = Date.parse(
+                heartbeat.lastSuccessfulNormalCycleStartedAt || heartbeat.lastSuccessfulNormalRunAt || ""
+              );
+              const ageMs = Date.now() - lastCycleStartedAt;
+              if (Number.isFinite(lastCycleStartedAt) && ageMs >= 0 && ageMs < 60 * 60 * 1000) {
                 shouldRun = false;
-                reason = "successful-cycle-within-50-minutes";
+                reason = "successful-cycle-started-within-60-minutes";
               }
             } catch {
               // No durable success record means the automatic cycle must be
@@ -128,7 +134,8 @@ jobs:
           }
 
           console.log(`normal-hourly-gate: ${shouldRun ? "admit" : "skip"} (${reason})`);
-          fs.appendFileSync(output, `should_run=${shouldRun}\nreason=${reason}\n`);
+          const startedAt = shouldRun ? new Date().toISOString() : "";
+          fs.appendFileSync(output, `should_run=${shouldRun}\nreason=${reason}\nstarted_at=${startedAt}\n`);
           NODE
 
   push-news:
@@ -199,6 +206,7 @@ jobs:
           PUBLICATION_CLAIM_PATH: .state/publication-claims.json
           PUBLICATION_LEDGER_PATH: .state/publication-ledger.json
           RUN_MODE: NORMAL_CURRENT
+          NORMAL_CYCLE_STARTED_AT: ${{ needs.normal-hourly-gate.outputs.started_at }}
           BACKFILL_MODE: "false"
           BACKFILL_FROM: ""
           BACKFILL_TO: ""
@@ -256,7 +264,7 @@ jobs:
         continue-on-error: true
         run: |
           mkdir -p .state
-          node -e 'const fs = require("fs"); fs.writeFileSync(".state/normal-ingestion-heartbeat.json", `${JSON.stringify({ lastSuccessfulNormalRunAt: new Date().toISOString(), runId: process.env.GITHUB_RUN_ID, commit: process.env.GITHUB_SHA })}\n`);'
+          node -e 'const fs = require("fs"); fs.writeFileSync(".state/normal-ingestion-heartbeat.json", `${JSON.stringify({ lastSuccessfulNormalRunAt: new Date().toISOString(), lastSuccessfulNormalCycleStartedAt: process.env.NORMAL_CYCLE_STARTED_AT || new Date().toISOString(), runId: process.env.GITHUB_RUN_ID, commit: process.env.GITHUB_SHA })}\n`);'
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -f .state/normal-ingestion-heartbeat.json

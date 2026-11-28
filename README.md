@@ -81,8 +81,8 @@ Optional repository variable:
 - `EXTRA_ARTICLE_URLS`: Optional exact article URLs, separated by comma, semicolon, or newline. Use only for manually found articles; each URL still has to pass the strict full-article filters.
 
 The workflow receives an off-peak delivery opportunity every five minutes.
-The durable heartbeat gate admits at most one normal production cycle per 50
-minutes, so the extra deliveries act as recovery opportunities rather than
+The durable heartbeat gate admits at most one normal production cycle per
+60-minute start cadence, so the extra deliveries act as recovery opportunities rather than
 duplicate ingestion runs:
 
 ```yaml
