@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-28T13:25:21.004Z",
+  "updatedAt": "2026-11-28T14:49:08.369Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -17081,6 +17081,31 @@
       "claimedAt": "2026-11-28T13:25:18.849Z",
       "expiresAt": "2026-11-28T13:40:18.849Z",
       "finalizedAt": "2026-11-28T13:25:21.004Z"
+    },
+    {
+      "claimId": "f96abbd2-5a82-4021-8691-a4cdc2525a86",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://gulshangroup.com/taj-serviced-apartments-noida-experience-luxury-living-with-premium-comfort",
+        "title-city:taj serviced apartments noida|noida",
+        "dedupe:7b9bf3a6532726b68cbbbeaf4f745136dede2fd27baccedc303829e6e42d076b",
+        "dedupe:9bfc2a473efda106e2df12d20dcd6ca531a45d2b6745ae6fbb4e36147f1138bc",
+        "dedupe:9eb84e1163f1b09c7a213f00cb5ceb2b46a2a07a2612986b3bf159bca07f5074",
+        "dedupe:c38582a1f11d8e60d2c6469c3d6ba36126d820169fb2d5703577f98ba9e3b0b3",
+        "dedupe:80b7a113d8679ed2dda93118a9193fde451666b7f7b4944e3a7eed1c61de0829",
+        "dedupe:0d9c190f8251bc9a2bb0f638c6ad4446d4033b80e708516a49cc0140491f3dc2"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-28T14:49:08.369Z",
+      "expiresAt": "2026-11-28T15:04:08.369Z"
     }
   ]
 }
