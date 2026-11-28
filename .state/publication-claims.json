@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-27T18:42:13.025Z",
+  "updatedAt": "2026-11-28T01:34:35.393Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16901,6 +16901,30 @@
       "claimedAt": "2026-11-27T18:42:10.661Z",
       "expiresAt": "2026-11-27T18:57:10.661Z",
       "finalizedAt": "2026-11-27T18:42:13.025Z"
+    },
+    {
+      "claimId": "293b2f8e-de94-4339-b318-19867bbc118a",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://constructionworld.in/latest-construction-news/real-estate-news/ourika-estates-gets-completion-certificate-for-bareilly-project/101023",
+        "title-city:ourika estates gets completion certificate for bareilly project|bareilly",
+        "dedupe:b1b8b6882786d13e084d71e617f9503f40aa2151176a3845f2b87d34531907ff",
+        "dedupe:81f2a6039367b3d477d9c2c79c596710001e31b91d5f9b51e0f7767547bc125d",
+        "dedupe:2c1ec4d0f6f1b3dca07f1ba411405cdfd8313c207407e5b230b2da44749af0bb",
+        "dedupe:9398df7c1ad8e35a4297439f33b1ebd00293597c4ed60ae8038a80689f356248",
+        "dedupe:025fbd0b9e9088905fa08653a414cb9a1ff88ae0291a43b88bc2870fd13dabe0"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "bareilly",
+      "canonicalEventCity": "bareilly",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "bareilly"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-28T01:34:35.393Z",
+      "expiresAt": "2026-11-28T01:49:35.393Z"
     }
   ]
 }
