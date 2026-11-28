@@ -4642,7 +4642,7 @@ function isCourtRealEstateRelated(article) {
 
 function isAdverseCourtRealEstateArticle(article) {
   const haystack = `${getArticlePrimaryText(article)} ${getArticleUrlText(article)}`;
-  return isCourtRealEstateRelated(article) && hasKeyword(haystack, [
+  const directAdverseDisposition = hasKeyword(haystack, [
     "barred",
     "blocked",
     "fraud",
@@ -4650,10 +4650,28 @@ function isAdverseCourtRealEstateArticle(article) {
     "penalty",
     "restrained",
     "restraining",
+    "stay",
     "stayed",
     "terminated",
     "violation"
   ]);
+  const disputedFinancialRemedy = hasKeyword(haystack, [
+    "arbitration",
+    "arbitral",
+    "arbitral award",
+    "compensation",
+    "losses"
+  ]) && hasKeyword(haystack, [
+    "stay",
+    "stayed",
+    "award",
+    "compensation",
+    "losses",
+    "claim",
+    "dispute"
+  ]);
+
+  return isCourtRealEstateRelated(article) && (directAdverseDisposition || disputedFinancialRemedy);
 }
 
 // Court and tribunal reports involving development authorities can be adverse

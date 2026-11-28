@@ -2473,6 +2473,14 @@ const disputedPublicLandArticle = publishable({
 });
 assert.match(getRejectionReasons(disputedPublicLandArticle, sentIds).join("; "), /negative\/crime\/utility concern news|adverse property\/court event/i);
 
+const disputedArbitrationArticle = publishable({
+  title: "Bombay HC stays arbitral award against MMRDA and in favour of Lodha in Wadala project",
+  description: "The court granted a conditional stay after an award required compensation for losses in the Wadala development matter.",
+  articleText: "The Bombay High Court granted a conditional stay in an active arbitration dispute. The arbitral award required MMRDA to compensate the developer for financial losses connected with the Wadala project.",
+  newsLink: "https://example.com/mumbai-wadala-arbitration-compensation-dispute"
+});
+assert.match(getRejectionReasons(disputedArbitrationArticle, sentIds).join("; "), /negative\/crime\/utility concern news|adverse property\/court event/i);
+
 const borderlineReviewArticle = publishable({
   title: "Faridabad real estate sentiment improves among homebuyers",
   description: "Brief Faridabad property update with limited details.",
