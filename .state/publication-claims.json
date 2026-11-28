@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-28T01:34:58.934Z",
+  "updatedAt": "2026-11-28T06:13:03.206Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16978,6 +16978,30 @@
       "claimedAt": "2026-11-28T01:34:56.844Z",
       "expiresAt": "2026-11-28T01:49:56.844Z",
       "finalizedAt": "2026-11-28T01:34:58.934Z"
+    },
+    {
+      "claimId": "37008303-18c2-4d85-9893-2d0902c659d2",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/infrastructure/mumbai-bmcs-move-to-hand-over-bandra-reclamation-plots-to-sra-projects-developer-sparks-controversy/136178445",
+        "title-city:mumbai bmc s move to hand over bandra reclamation plots to sra project s developer sparks controversy|mumbai",
+        "dedupe:06a40ecac2cea84f4662e1a66ff9d7c38c6c4e768e41f94e1948403ae7d35219",
+        "dedupe:8bc9079ebde708f6b948c224fb9d690c6afff0fcf5f2cf0b93786af67b2ac19e",
+        "dedupe:a038bb6d054ca33486fefda8b9f2f983d0983819c231f3a2d09315be157fdb64",
+        "dedupe:00b2954c1ff08941ac98b66c85de9b896aba48a0fe94f1796241996f1ae7bcfd",
+        "dedupe:a2da17ed8f5805c8dd50dc602a78ab92582745abb01cd2268162127901dfb1e2"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-28T06:13:03.206Z",
+      "expiresAt": "2026-11-28T06:28:03.206Z"
     }
   ]
 }
