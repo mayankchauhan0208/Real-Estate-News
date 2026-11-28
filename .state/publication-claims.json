@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-28T01:34:48.010Z",
+  "updatedAt": "2026-11-28T01:34:56.844Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16951,6 +16951,32 @@
       "claimedAt": "2026-11-28T01:34:45.958Z",
       "expiresAt": "2026-11-28T01:49:45.958Z",
       "finalizedAt": "2026-11-28T01:34:48.010Z"
+    },
+    {
+      "claimId": "fc58fdf9-213e-49a1-99b4-bfcfc5777ef7",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://hindustantimes.com/real-estate/apple-india-leases-11-890-sq-ft-in-hyderabads-lake-shore-mall-for-starting-monthly-rent-of-18-50-lakh-101795770601253.html",
+        "title-city:apple india leases 11 890 sq ft in hyderabad s lake shore mall for starting monthly rent of 18 50 lakh|hyderabad",
+        "dedupe:ee722d17cd206e07b71e6c68bfaeb95cf297d590e0dfcc5d76d22bd91574b51d",
+        "dedupe:8928dd3b46c1fda10b853c0394b63eacd36d81a8bea7ab5e3934e4464291a9dc",
+        "dedupe:99f91bc3e5f08b2ebf375ee25164d56e0aeceb8d255db76ed141bc3feb2b8dc8",
+        "dedupe:bda1bcd93d392171d26b853131cb471ab1d8b9650405328434b9fd217c6522dd",
+        "dedupe:apple india leases hyderabad s lake shore mall starting monthly rent|scale:890-sqft|amount:18.50-lakh|hyderabad",
+        "dedupe:7e107fc7412fbab89045ad2d281f2eba05199090784ffc1d384e5350647d12c5",
+        "dedupe:d2d5d71767283e8806d6991f4b8d06060fdbf7b3d55494498a9d10a1b094bd3e"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-28T01:34:56.844Z",
+      "expiresAt": "2026-11-28T01:49:56.844Z"
     }
   ]
 }
