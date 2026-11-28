@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-28T06:13:05.275Z",
+  "updatedAt": "2026-11-28T07:57:40.575Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -17003,6 +17003,30 @@
       "claimedAt": "2026-11-28T06:13:03.206Z",
       "expiresAt": "2026-11-28T06:28:03.206Z",
       "finalizedAt": "2026-11-28T06:13:05.275Z"
+    },
+    {
+      "claimId": "d91a9a92-7727-4e27-9863-a781fe4cb711",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://realty.economictimes.indiatimes.com/news/regulatory/bombay-hc-stays-arbitral-award-against-mmrda-and-in-favour-of-lodha-in-wadala-project/136178046",
+        "title-city:bombay hc stays arbitral award against mmrda and in favour of lodha in wadala project|mumbai",
+        "dedupe:aba48fbf3450774654c917697643fffe652a9b789a057169386cfb22f4cd98bb",
+        "dedupe:db2987efc663ba729fef4e188ad6a517e4769f3581c2ded28bd5034f003cac65",
+        "dedupe:4f5f90a8772891bee4afb8a2b4ca3ee55d1d0c281e0a4ffa2a7071f1961d2411",
+        "dedupe:b97dbf30be230ab0d24c79db8cf2e9bd5c74fae076736fd488a8670bcd825e8e",
+        "dedupe:9f3b8aaa280f7223d4c1b36da7ebf7d4f1993c791d830f808a2f802a7ce04db7"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "mumbai",
+      "canonicalEventCity": "mumbai",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "mumbai"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-28T07:57:40.575Z",
+      "expiresAt": "2026-11-28T08:12:40.575Z"
     }
   ]
 }
