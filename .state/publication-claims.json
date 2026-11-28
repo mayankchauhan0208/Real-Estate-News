@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-28T07:57:42.866Z",
+  "updatedAt": "2026-11-28T12:39:18.539Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -17028,6 +17028,31 @@
       "claimedAt": "2026-11-28T07:57:40.575Z",
       "expiresAt": "2026-11-28T08:12:40.575Z",
       "finalizedAt": "2026-11-28T07:57:42.866Z"
+    },
+    {
+      "claimId": "c89b95e4-0a53-4858-b98f-a9e650124f91",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://proppuls.in/hyderabad-rental-market-supply-demand-tenant-landlord-competition",
+        "title-city:hyd to let boards rise as rental mkt gets competitive|hyderabad",
+        "dedupe:2906a7f45d90815eaac5af82b1cd89abef94db582bfd8b58cdd26995113e2cf5",
+        "dedupe:d97c755c3970886b7183cdbd9454c78f1ff4c797e8650cac1f96ab68d0737d27",
+        "dedupe:470c66b4f82400388ff432776e6ca1fe55b06f6bef3ad09571f0d114abe1cce1",
+        "dedupe:55979af64844a6cdaee2feebf9dacc809fd5c3312d3338f949d0a2798bd18acd",
+        "dedupe:9fb58640c4ff23fe4adf21eb9d7608bd3e65128abd958509e5cc762c9455107f",
+        "dedupe:6fbdf325fb5f13b35c377ec3bf70fe5873937e448e4998c67f163512130edc5a"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "hyderabad",
+      "canonicalEventCity": "hyderabad",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "hyderabad"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-28T12:39:18.539Z",
+      "expiresAt": "2026-11-28T12:54:18.539Z"
     }
   ]
 }
