@@ -18,6 +18,8 @@ assert.match(workflow, /normal-hourly-gate:/, "automatic runs must use the durab
 assert.match(workflow, /successful-cycle-started-within-60-minutes/, "a recent successful automatic cycle must suppress redundant schedule deliveries");
 assert.match(workflow, /lastSuccessfulNormalCycleStartedAt/, "the cadence must be based on successful cycle start time");
 assert.match(workflow, /needs: normal-hourly-gate/, "the production job must wait for the due-cycle decision");
+assert.match(workflow, /- name: Mark admitted normal cycle start/, "the admitted production job must record its own start timestamp");
+assert.match(workflow, /NORMAL_CYCLE_STARTED_AT=\$\(date -u/, "the cycle-start timestamp must be written through GITHUB_ENV");
 assert.match(workflow, /failed run must never suppress its retry/, "failed automatic runs must remain eligible for the next delivery opportunity");
 assert.match(workflow, /let shouldRun = true;/, "missing or stale automatic heartbeats must start eligible");
 assert.match(workflow, /if \(eventName !== "workflow_dispatch"\)/, "only automatic events may be suppressed by a fresh heartbeat");

@@ -86,7 +86,6 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       should_run: ${{ steps.heartbeat.outputs.should_run }}
-      started_at: ${{ steps.heartbeat.outputs.started_at }}
 
     steps:
       - name: Read durable normal-run heartbeat
@@ -134,8 +133,7 @@ jobs:
           }
 
           console.log(`normal-hourly-gate: ${shouldRun ? "admit" : "skip"} (${reason})`);
-          const startedAt = shouldRun ? new Date().toISOString() : "";
-          fs.appendFileSync(output, `should_run=${shouldRun}\nreason=${reason}\nstarted_at=${startedAt}\n`);
+          fs.appendFileSync(output, `should_run=${shouldRun}\nreason=${reason}\n`);
           NODE
 
   push-news:
@@ -151,6 +149,12 @@ jobs:
           # Normal production always runs the current protected main build,
           # rather than an older SHA retained by a queued dispatch event.
           ref: ${{ github.event.repository.default_branch }}
+
+      # Job outputs are not a reliable environment transport for this
+      # timestamp. Persist it through GITHUB_ENV in the admitted job itself.
+      - name: Mark admitted normal cycle start
+        shell: bash
+        run: echo "NORMAL_CYCLE_STARTED_AT=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> "$GITHUB_ENV"
 
       - name: Setup Node
         uses: actions/setup-node@v6
@@ -206,7 +210,6 @@ jobs:
           PUBLICATION_CLAIM_PATH: .state/publication-claims.json
           PUBLICATION_LEDGER_PATH: .state/publication-ledger.json
           RUN_MODE: NORMAL_CURRENT
-          NORMAL_CYCLE_STARTED_AT: ${{ needs.normal-hourly-gate.outputs.started_at }}
           BACKFILL_MODE: "false"
           BACKFILL_FROM: ""
           BACKFILL_TO: ""
