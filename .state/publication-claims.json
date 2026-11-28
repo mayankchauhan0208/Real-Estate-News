@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-28T13:25:18.849Z",
+  "updatedAt": "2026-11-28T13:25:21.004Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -17057,7 +17057,7 @@
     },
     {
       "claimId": "dfa334dd-5bfe-4ed3-811a-a0ef64ae973c",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://business-standard.com/industry/news/investoxpert-ski-capital-to-raise-500-cr-for-housing-projects-through-aif-126112800566_1.html",
         "title-city:investoxpert ski capital to raise 500 cr for housing projects through aif|noida",
@@ -17079,7 +17079,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-28T13:25:18.849Z",
-      "expiresAt": "2026-11-28T13:40:18.849Z"
+      "expiresAt": "2026-11-28T13:40:18.849Z",
+      "finalizedAt": "2026-11-28T13:25:21.004Z"
     }
   ]
 }
