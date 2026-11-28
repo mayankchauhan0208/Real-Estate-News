@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-28T01:34:56.844Z",
+  "updatedAt": "2026-11-28T01:34:58.934Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -16954,7 +16954,7 @@
     },
     {
       "claimId": "fc58fdf9-213e-49a1-99b4-bfcfc5777ef7",
-      "status": "CLAIMED",
+      "status": "PUBLISHED",
       "identityKeys": [
         "url:https://hindustantimes.com/real-estate/apple-india-leases-11-890-sq-ft-in-hyderabads-lake-shore-mall-for-starting-monthly-rent-of-18-50-lakh-101795770601253.html",
         "title-city:apple india leases 11 890 sq ft in hyderabad s lake shore mall for starting monthly rent of 18 50 lakh|hyderabad",
@@ -16976,7 +16976,8 @@
       ],
       "originMode": "NORMAL",
       "claimedAt": "2026-11-28T01:34:56.844Z",
-      "expiresAt": "2026-11-28T01:49:56.844Z"
+      "expiresAt": "2026-11-28T01:49:56.844Z",
+      "finalizedAt": "2026-11-28T01:34:58.934Z"
     }
   ]
 }
