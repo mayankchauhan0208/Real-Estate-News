@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updatedAt": "2026-11-28T12:39:21.470Z",
+  "updatedAt": "2026-11-28T13:25:18.849Z",
   "claims": [
     {
       "claimId": "099d3f76-1980-4fa7-a199-23617b4c08ef",
@@ -17054,6 +17054,32 @@
       "claimedAt": "2026-11-28T12:39:18.539Z",
       "expiresAt": "2026-11-28T12:54:18.539Z",
       "finalizedAt": "2026-11-28T12:39:21.470Z"
+    },
+    {
+      "claimId": "dfa334dd-5bfe-4ed3-811a-a0ef64ae973c",
+      "status": "CLAIMED",
+      "identityKeys": [
+        "url:https://business-standard.com/industry/news/investoxpert-ski-capital-to-raise-500-cr-for-housing-projects-through-aif-126112800566_1.html",
+        "title-city:investoxpert ski capital to raise 500 cr for housing projects through aif|noida",
+        "dedupe:aa783dc0c66c30b616acc426b368bf41e8b180e8673c515e996918c2ffd37dbd",
+        "dedupe:ffa6701de9fe2c38f852b7a1df996f88e7f865f528a34cf36b7ff0a015944e22",
+        "dedupe:8136aafea29460ed8679ea4e79974d4ae8be0181b9e1c30ba1f539f5ffcabc88",
+        "dedupe:640784a33b8bc6c1d353b5dddc9741571dfbd18ee9f3d9ba5bb2e677151331eb",
+        "dedupe:investoxpert ski capital raise housing through aif|amount:500-crore|noida",
+        "dedupe:1aa15f3d8170981b05ecb25fb207921845959e6d5ba46474bda3f37492633bee",
+        "dedupe:76e8674a2bc70fab659984895fd2d76d31292c2582d60f8f466bb50eeca47021"
+      ],
+      "semanticIdentity": null,
+      "publishedCity": "noida",
+      "canonicalEventCity": "noida",
+      "canonicalEventFingerprint": "",
+      "semanticClusterId": "",
+      "city": [
+        "noida"
+      ],
+      "originMode": "NORMAL",
+      "claimedAt": "2026-11-28T13:25:18.849Z",
+      "expiresAt": "2026-11-28T13:40:18.849Z"
     }
   ]
 }
