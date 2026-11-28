@@ -7590,6 +7590,10 @@ function hasContextualAdverseEvent(article) {
   const nativeProperty = /(?:गृहनिर्माण|घर|फ्लॅट|प्रकल्प|मालमत्ता|सोसायटी|ആവാസ|വീട്|ഫ്ലാറ്റ്|പദ്ധതി|റിയൽ എസ്റ്റേറ്റ്|ఇల్లు|ఫ్లాట్|ప్రాజెక్టు|రియల్ ఎస్టేట్|ಮನೆ|ವಸತಿ|ರಿಯಲ್ ಎಸ್ಟೇಟ್|আবাসন|বাড়ি|ফ্ল্যাট|রিয়েল এস্টেট)/u;
 
   if (/\b(?:razed|demolished|demolition|sealed)\b/i.test(primary) && propertyObject.test(`${primary} ${text}`)) return true;
+  // Public-land transfers or project decisions facing a concrete controversy,
+  // cancellation demand, or public-access objection are adverse civic/property
+  // disputes, not constructive development news.
+  if (/\b(?:controvers(?:y|ial)|(?:raised|raising) concerns|question(?:ed|ing) (?:the )?(?:necessity|legality)|(?:urged|demanded|called for) (?:the )?cancell?ation|public access issues?)\b/i.test(`${primary} ${text}`) && propertyObject.test(`${primary} ${text}`)) return true;
   if (/\b(?:pushing back|pushback|protest(?:ed|ing)?|residents? complain(?:ed|ts?)?|residents? oppose)\b/i.test(`${primary} ${text}`) && /\b(?:property|residential|residences|housing|home|neighbou?rhood|stay|rental)\b/i.test(`${primary} ${text}`)) return true;
   if (/\b(?:stake sale|sale timeline)\b/i.test(`${primary} ${text}`) && /\b(?:extend(?:s|ed)?|delay(?:ed|s)?|timeline|financial|regulatory challenge)\b/i.test(`${primary} ${text}`)) return true;
   if (adverseAction.test(primary) && propertyObject.test(`${primary} ${text}`) && !/\b(?:reduces?|removes?|resolves?|address(?:es|ed)?|avoids?)\s+(?:approval\s+)?(?:delay|delays|delayed)\b/i.test(primary)) return true;

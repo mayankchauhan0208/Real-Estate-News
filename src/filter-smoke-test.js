@@ -2465,6 +2465,14 @@ const localJudgeSpamArticle = publishable({
 });
 assert.match(getRejectionReasons(localJudgeSpamArticle, sentIds).join("; "), /filter 17: local quality judge rejected article|spam\/menu page/);
 
+const disputedPublicLandArticle = publishable({
+  title: "Mumbai: BMC plan to hand public Bandra plots to SRA developer sparks controversy",
+  description: "Citizens raise concerns and a corporator urges cancellation over public access issues.",
+  articleText: "BMC proposes handing over public recreation-ground and dispensary plots to an SRA project developer. Citizens questioned the necessity and public representatives urged cancellation, citing transparency and public access issues.",
+  newsLink: "https://example.com/mumbai-bandra-public-land-transfer-controversy"
+});
+assert.match(getRejectionReasons(disputedPublicLandArticle, sentIds).join("; "), /negative\/crime\/utility concern news|adverse property\/court event/i);
+
 const borderlineReviewArticle = publishable({
   title: "Faridabad real estate sentiment improves among homebuyers",
   description: "Brief Faridabad property update with limited details.",
